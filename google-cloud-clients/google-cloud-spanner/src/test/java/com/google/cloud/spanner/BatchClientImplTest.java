@@ -66,7 +66,8 @@ public final class BatchClientImplTest {
   @Test
   public void testBatchReadOnlyTxnWithBound() throws Exception {
     Session sessionProto = Session.newBuilder().setName(SESSION_NAME).build();
-    when(gapicRpc.createSession(eq(DB_NAME), (Map<String, String>) anyMap(), optionsCaptor.capture()))
+    when(gapicRpc.createSession(
+            eq(DB_NAME), (Map<String, String>) anyMap(), optionsCaptor.capture()))
         .thenReturn(sessionProto);
     com.google.protobuf.Timestamp timestamp = Timestamps.parse(TIMESTAMP);
     Transaction txnMetadata =

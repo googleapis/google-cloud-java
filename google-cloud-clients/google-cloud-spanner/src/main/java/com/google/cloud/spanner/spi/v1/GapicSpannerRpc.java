@@ -112,7 +112,7 @@ public class GapicSpannerRpc implements SpannerRpc {
   private static final PathTemplate OPERATION_NAME_TEMPLATE =
       PathTemplate.create("{database=projects/*/instances/*/databases/*}/operations/{operation}");
   private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
-  private static final int MAX_METADATA_SIZE = 32 * 1024; //bytes
+  private static final int MAX_METADATA_SIZE = 32 * 1024; // bytes
 
   private final SpannerStub spannerStub;
   private final InstanceAdminStub instanceAdminStub;
@@ -164,7 +164,8 @@ public class GapicSpannerRpc implements SpannerRpc {
                 // SpannerInterceptorProvider if none is provided
                 .setInterceptorProvider(
                     MoreObjects.firstNonNull(
-                        options.getInterceptorProvider(), SpannerInterceptorProvider.createDefault()))
+                        options.getInterceptorProvider(),
+                        SpannerInterceptorProvider.createDefault()))
                 .setHeaderProvider(mergedHeaderProvider)
                 .setExecutorProvider(InstantiatingExecutorProvider.newBuilder().build())
                 .build());
@@ -229,7 +230,7 @@ public class GapicSpannerRpc implements SpannerRpc {
   @Override
   public Paginated<InstanceConfig> listInstanceConfigs(int pageSize, @Nullable String pageToken)
       throws SpannerException {
-    ListInstanceConfigsRequest.Builder requestBuilder = 
+    ListInstanceConfigsRequest.Builder requestBuilder =
         ListInstanceConfigsRequest.newBuilder().setParent(projectName).setPageSize(pageSize);
     if (pageToken != null) {
       requestBuilder.setPageToken(pageToken);
@@ -237,14 +238,14 @@ public class GapicSpannerRpc implements SpannerRpc {
     ListInstanceConfigsRequest request = requestBuilder.build();
 
     GrpcCallContext context = newCallContext(null, projectName);
-    ListInstanceConfigsResponse response = 
+    ListInstanceConfigsResponse response =
         get(instanceAdminStub.listInstanceConfigsCallable().futureCall(request, context));
     return new Paginated<>(response.getInstanceConfigsList(), response.getNextPageToken());
   }
 
   @Override
   public InstanceConfig getInstanceConfig(String instanceConfigName) throws SpannerException {
-    GetInstanceConfigRequest request = 
+    GetInstanceConfigRequest request =
         GetInstanceConfigRequest.newBuilder().setName(instanceConfigName).build();
 
     GrpcCallContext context = newCallContext(null, projectName);
@@ -263,9 +264,9 @@ public class GapicSpannerRpc implements SpannerRpc {
       requestBuilder.setFilter(filter);
     }
     ListInstancesRequest request = requestBuilder.build();
-    
+
     GrpcCallContext context = newCallContext(null, projectName);
-    ListInstancesResponse response = 
+    ListInstancesResponse response =
         get(instanceAdminStub.listInstancesCallable().futureCall(request, context));
     return new Paginated<>(response.getInstancesList(), response.getNextPageToken());
   }
@@ -294,16 +295,15 @@ public class GapicSpannerRpc implements SpannerRpc {
 
   @Override
   public Instance getInstance(String instanceName) throws SpannerException {
-    GetInstanceRequest request = 
-        GetInstanceRequest.newBuilder().setName(instanceName).build();
-    
+    GetInstanceRequest request = GetInstanceRequest.newBuilder().setName(instanceName).build();
+
     GrpcCallContext context = newCallContext(null, instanceName);
     return get(instanceAdminStub.getInstanceCallable().futureCall(request, context));
   }
 
   @Override
   public void deleteInstance(String instanceName) throws SpannerException {
-    DeleteInstanceRequest request = 
+    DeleteInstanceRequest request =
         DeleteInstanceRequest.newBuilder().setName(instanceName).build();
 
     GrpcCallContext context = newCallContext(null, instanceName);
@@ -319,16 +319,17 @@ public class GapicSpannerRpc implements SpannerRpc {
       requestBuilder.setPageToken(pageToken);
     }
     ListDatabasesRequest request = requestBuilder.build();
-    
+
     GrpcCallContext context = newCallContext(null, instanceName);
-    ListDatabasesResponse response = get(databaseAdminStub.listDatabasesCallable()
-        .futureCall(request, context));
+    ListDatabasesResponse response =
+        get(databaseAdminStub.listDatabasesCallable().futureCall(request, context));
     return new Paginated<>(response.getDatabasesList(), response.getNextPageToken());
   }
 
   @Override
   public OperationFuture<Database, CreateDatabaseMetadata> createDatabase(
-      String instanceName, String createDatabaseStatement, Iterable<String> additionalStatements) throws SpannerException {
+      String instanceName, String createDatabaseStatement, Iterable<String> additionalStatements)
+      throws SpannerException {
     CreateDatabaseRequest request =
         CreateDatabaseRequest.newBuilder()
             .setParent(instanceName)
@@ -341,7 +342,8 @@ public class GapicSpannerRpc implements SpannerRpc {
 
   @Override
   public OperationFuture<Empty, UpdateDatabaseDdlMetadata> updateDatabaseDdl(
-      String databaseName, Iterable<String> updateDatabaseStatements, @Nullable String updateId) throws SpannerException {
+      String databaseName, Iterable<String> updateDatabaseStatements, @Nullable String updateId)
+      throws SpannerException {
     UpdateDatabaseDdlRequest request =
         UpdateDatabaseDdlRequest.newBuilder()
             .setDatabase(databaseName)
@@ -349,8 +351,10 @@ public class GapicSpannerRpc implements SpannerRpc {
             .setOperationId(MoreObjects.firstNonNull(updateId, ""))
             .build();
     GrpcCallContext context = newCallContext(null, databaseName);
-    OperationCallable<UpdateDatabaseDdlRequest, Empty, UpdateDatabaseDdlMetadata> callable = databaseAdminStub.updateDatabaseDdlOperationCallable();
-    OperationFuture<Empty, UpdateDatabaseDdlMetadata> operationFuture = callable.futureCall(request, context);
+    OperationCallable<UpdateDatabaseDdlRequest, Empty, UpdateDatabaseDdlMetadata> callable =
+        databaseAdminStub.updateDatabaseDdlOperationCallable();
+    OperationFuture<Empty, UpdateDatabaseDdlMetadata> operationFuture =
+        callable.futureCall(request, context);
     try {
       operationFuture.getInitialFuture().get();
     } catch (InterruptedException e) {
@@ -370,17 +374,14 @@ public class GapicSpannerRpc implements SpannerRpc {
   public void dropDatabase(String databaseName) throws SpannerException {
     DropDatabaseRequest request =
         DropDatabaseRequest.newBuilder().setDatabase(databaseName).build();
-    
+
     GrpcCallContext context = newCallContext(null, databaseName);
     get(databaseAdminStub.dropDatabaseCallable().futureCall(request, context));
   }
 
   @Override
   public Database getDatabase(String databaseName) throws SpannerException {
-    GetDatabaseRequest request = 
-        GetDatabaseRequest.newBuilder()
-        .setName(databaseName)
-        .build();
+    GetDatabaseRequest request = GetDatabaseRequest.newBuilder().setName(databaseName).build();
 
     GrpcCallContext context = newCallContext(null, databaseName);
     return get(databaseAdminStub.getDatabaseCallable().futureCall(request, context));
@@ -388,25 +389,26 @@ public class GapicSpannerRpc implements SpannerRpc {
 
   @Override
   public List<String> getDatabaseDdl(String databaseName) throws SpannerException {
-    GetDatabaseDdlRequest request = 
+    GetDatabaseDdlRequest request =
         GetDatabaseDdlRequest.newBuilder().setDatabase(databaseName).build();
 
     GrpcCallContext context = newCallContext(null, databaseName);
     return get(databaseAdminStub.getDatabaseDdlCallable().futureCall(request, context))
-               .getStatementsList();
+        .getStatementsList();
   }
 
   @Override
   public Operation getOperation(String name) throws SpannerException {
     GetOperationRequest request = GetOperationRequest.newBuilder().setName(name).build();
     GrpcCallContext context = newCallContext(null, name);
-    return get(databaseAdminStub.getOperationsStub().getOperationCallable()
-        .futureCall(request, context));
+    return get(
+        databaseAdminStub.getOperationsStub().getOperationCallable().futureCall(request, context));
   }
 
   @Override
-  public Session createSession(String databaseName, @Nullable Map<String, String> labels,
-      @Nullable Map<Option, ?> options) throws SpannerException {
+  public Session createSession(
+      String databaseName, @Nullable Map<String, String> labels, @Nullable Map<Option, ?> options)
+      throws SpannerException {
     CreateSessionRequest.Builder requestBuilder =
         CreateSessionRequest.newBuilder().setDatabase(databaseName);
     if (labels != null && !labels.isEmpty()) {
@@ -421,8 +423,7 @@ public class GapicSpannerRpc implements SpannerRpc {
   @Override
   public void deleteSession(String sessionName, @Nullable Map<Option, ?> options)
       throws SpannerException {
-    DeleteSessionRequest request =
-        DeleteSessionRequest.newBuilder().setName(sessionName).build();
+    DeleteSessionRequest request = DeleteSessionRequest.newBuilder().setName(sessionName).build();
     GrpcCallContext context = newCallContext(options, sessionName);
     get(spannerStub.deleteSessionCallable().futureCall(request, context));
   }
@@ -450,8 +451,7 @@ public class GapicSpannerRpc implements SpannerRpc {
   }
 
   @Override
-  public ResultSet executeQuery(
-      ExecuteSqlRequest request, @Nullable Map<Option, ?> options) {
+  public ResultSet executeQuery(ExecuteSqlRequest request, @Nullable Map<Option, ?> options) {
     GrpcCallContext context = newCallContext(options, request.getSession());
     return get(spannerStub.executeSqlCallable().futureCall(request, context));
   }
@@ -532,8 +532,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     if (options != null) {
       context = context.withChannelAffinity(Option.CHANNEL_HINT.getLong(options).intValue());
     }
-    context = context.withExtraHeaders(
-        metadataProvider.newExtraHeaders(resource, projectName));
+    context = context.withExtraHeaders(metadataProvider.newExtraHeaders(resource, projectName));
     return context;
   }
 
@@ -543,9 +542,9 @@ public class GapicSpannerRpc implements SpannerRpc {
     this.databaseAdminStub.close();
   }
 
-  /** 
-   * A {@code ResponseObserver} that exposes the {@code StreamController} and delegates callbacks
-   * to the {@link ResultStreamConsumer}.
+  /**
+   * A {@code ResponseObserver} that exposes the {@code StreamController} and delegates callbacks to
+   * the {@link ResultStreamConsumer}.
    */
   private static class SpannerResponseObserver implements ResponseObserver<PartialResultSet> {
     private StreamController controller;
@@ -583,5 +582,4 @@ public class GapicSpannerRpc implements SpannerRpc {
       return Preconditions.checkNotNull(this.controller);
     }
   }
-
 }

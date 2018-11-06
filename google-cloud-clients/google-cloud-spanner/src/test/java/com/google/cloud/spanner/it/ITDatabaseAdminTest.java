@@ -26,7 +26,6 @@ import com.google.cloud.spanner.DatabaseAdminClient;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.IntegrationTest;
 import com.google.cloud.spanner.IntegrationTestEnv;
-import com.google.cloud.spanner.Operation;
 import com.google.cloud.spanner.Options;
 import com.google.cloud.spanner.testing.RemoteSpannerHelper;
 import com.google.common.collect.ImmutableList;
@@ -162,8 +161,7 @@ public class ITDatabaseAdminTest {
 
     String instanceId = testHelper.getInstanceId().getInstance();
     for (String dbId : dbIds) {
-      dbs.add(dbAdminClient.createDatabase(instanceId, dbId, ImmutableList.<String>of())
-        .get());
+      dbs.add(dbAdminClient.createDatabase(instanceId, dbId, ImmutableList.<String>of()).get());
     }
     Page<Database> page = dbAdminClient.listDatabases(instanceId, Options.pageSize(1));
     List<String> dbIdsGot = new ArrayList<>();

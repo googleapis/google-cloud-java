@@ -35,7 +35,6 @@ import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
 import java.util.Collections;
 import java.util.List;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -119,8 +118,10 @@ public class DatabaseAdminClientImplTest {
     List<String> ddl = ImmutableList.of();
     OperationFuture<Empty, UpdateDatabaseDdlMetadata> originalOp =
         OperationFutureUtil.immediateOperationFuture(
-            originalOpName, Empty.getDefaultInstance(), UpdateDatabaseDdlMetadata.getDefaultInstance());
-    
+            originalOpName,
+            Empty.getDefaultInstance(),
+            UpdateDatabaseDdlMetadata.getDefaultInstance());
+
     String newOpName = DB_NAME + "/operations/newop";
     String newOpId = "newop";
     OperationFuture<Empty, UpdateDatabaseDdlMetadata> newop =
@@ -159,5 +160,4 @@ public class DatabaseAdminClientImplTest {
     assertThat(dbs.get(1).getId().getName()).isEqualTo(DB_NAME2);
     assertThat(dbs.size()).isEqualTo(2);
   }
-
 }

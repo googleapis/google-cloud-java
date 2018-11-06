@@ -24,9 +24,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * For internal use only.
- */
+/** For internal use only. */
 class SpannerMetadataProvider {
   private final Map<Metadata.Key<String>, String> headers;
   private final String resourceHeaderKey;
@@ -58,13 +56,13 @@ class SpannerMetadataProvider {
     return metadata;
   }
 
-  Map<String, List<String>> newExtraHeaders(String resourceTokenTemplate, String defaultResourceToken) {
+  Map<String, List<String>> newExtraHeaders(
+      String resourceTokenTemplate, String defaultResourceToken) {
     return ImmutableMap.<String, List<String>>builder()
         .put(
             resourceHeaderKey,
             Arrays.asList(getResourceHeaderValue(resourceTokenTemplate, defaultResourceToken)))
         .build();
-
   }
 
   private Map<Metadata.Key<String>, String> constructHeadersAsMetadata(

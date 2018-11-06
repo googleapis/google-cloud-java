@@ -174,5 +174,4 @@ public class InstanceAdminClientImplTest {
     assertThat(instances.get(1).getId().getName()).isEqualTo(INSTANCE_NAME2);
     assertThat(instances.size()).isEqualTo(2);
   }
-
 }

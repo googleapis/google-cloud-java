@@ -25,7 +25,6 @@ import com.google.cloud.spanner.InstanceConfig;
 import com.google.cloud.spanner.InstanceInfo;
 import com.google.cloud.spanner.IntegrationTest;
 import com.google.cloud.spanner.IntegrationTestEnv;
-import com.google.cloud.spanner.Operation;
 import com.google.cloud.spanner.Options;
 import com.google.common.collect.Iterators;
 import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;

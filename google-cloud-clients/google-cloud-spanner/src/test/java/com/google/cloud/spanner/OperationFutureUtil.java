@@ -79,8 +79,9 @@ class OperationFutureUtil {
     }
   }
 
-  public static final <ResponseT extends Message, MetadataT extends Message> OperationSnapshot completedSnapshot(
-      final String name, final ResponseT response, final MetadataT metadata) {
+  public static final <ResponseT extends Message, MetadataT extends Message>
+      OperationSnapshot completedSnapshot(
+          final String name, final ResponseT response, final MetadataT metadata) {
     return new OperationSnapshot() {
       @Override
       public String getName() {
@@ -115,8 +116,7 @@ class OperationFutureUtil {
   }
 
   /** Already-completed {@code ImmediateRetryingFuture}, useful for testing. */
-  public static final class ImmediateRetryingFuture<V>
-      implements RetryingFuture<V> {
+  public static final class ImmediateRetryingFuture<V> implements RetryingFuture<V> {
 
     private final ApiFuture<V> immediateFuture;
     private ApiFuture<V> attemptFuture;

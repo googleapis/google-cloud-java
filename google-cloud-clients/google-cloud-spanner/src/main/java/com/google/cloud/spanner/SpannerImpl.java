@@ -81,7 +81,6 @@ import com.google.spanner.v1.TransactionOptions;
 import com.google.spanner.v1.TransactionSelector;
 import com.google.spanner.v1.TypeCode;
 import io.grpc.Context;
-import io.grpc.ManagedChannel;
 import io.opencensus.common.Scope;
 import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
@@ -165,10 +164,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   @GuardedBy("this")
   private boolean spannerIsClosed = false;
 
-  SpannerImpl(
-      SpannerRpc gapicRpc,
-      int defaultPrefetchChunks,
-      SpannerOptions options) {
+  SpannerImpl(SpannerRpc gapicRpc, int defaultPrefetchChunks, SpannerOptions options) {
     super(options);
     this.gapicRpc = gapicRpc;
     this.defaultPrefetchChunks = defaultPrefetchChunks;
@@ -178,10 +174,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   SpannerImpl(SpannerOptions options) {
-    this(
-        options.getSpannerRpcV1(),
-        options.getPrefetchChunks(),
-        options);
+    this(options.getSpannerRpcV1(), options.getPrefetchChunks(), options);
   }
 
   private static ExponentialBackOff newBackOff() {
@@ -467,8 +460,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             public Database apply(OperationSnapshot snapshot) {
               return Database.fromProto(
                   ProtoOperationTransformers.ResponseTransformer.create(
-                      com.google.spanner.admin.database.v1.Database.class)
-                          .apply(snapshot),
+                          com.google.spanner.admin.database.v1.Database.class)
+                      .apply(snapshot),
                   DatabaseAdminClientImpl.this);
             }
           },
@@ -521,7 +514,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               throw SpannerExceptionFactory.newSpannerException(e);
             }
           });
-    }  
+    }
 
     @Override
     public void dropDatabase(String instanceId, String databaseId) throws SpannerException {
@@ -639,9 +632,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     public OperationFuture<Instance, CreateInstanceMetadata> createInstance(InstanceInfo instance)
         throws SpannerException {
       String projectName = PROJECT_NAME_TEMPLATE.instantiate("project", projectId);
-      OperationFuture<com.google.spanner.admin.instance.v1.Instance, CreateInstanceMetadata> rawOperationFuture =
-          rpc.createInstance(projectName, instance.getId().getInstance(), instance.toProto());
-      
+      OperationFuture<com.google.spanner.admin.instance.v1.Instance, CreateInstanceMetadata>
+          rawOperationFuture =
+              rpc.createInstance(projectName, instance.getId().getInstance(), instance.toProto());
+
       return new OperationFutureImpl<Instance, CreateInstanceMetadata>(
           rawOperationFuture.getPollingFuture(),
           rawOperationFuture.getInitialFuture(),
@@ -650,8 +644,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             public Instance apply(OperationSnapshot snapshot) {
               return Instance.fromProto(
                   ProtoOperationTransformers.ResponseTransformer.create(
-                      com.google.spanner.admin.instance.v1.Instance.class)
-                          .apply(snapshot),
+                          com.google.spanner.admin.instance.v1.Instance.class)
+                      .apply(snapshot),
                   InstanceAdminClientImpl.this,
                   dbClient);
             }
@@ -732,8 +726,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             public Instance apply(OperationSnapshot snapshot) {
               return Instance.fromProto(
                   ProtoOperationTransformers.ResponseTransformer.create(
-                      com.google.spanner.admin.instance.v1.Instance.class)
-                          .apply(snapshot),
+                          com.google.spanner.admin.instance.v1.Instance.class)
+                      .apply(snapshot),
                   InstanceAdminClientImpl.this,
                   dbClient);
             }
@@ -925,11 +919,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     TransactionContextImpl newTransaction() {
-      TransactionContextImpl txn = new TransactionContextImpl(this, readyTransactionId, gapicRpc,
-          defaultPrefetchChunks);
+      TransactionContextImpl txn =
+          new TransactionContextImpl(this, readyTransactionId, gapicRpc, defaultPrefetchChunks);
       return txn;
     }
-    
+
     <T extends SessionTransaction> T setActive(@Nullable T ctx) {
       throwIfTransactionsPending();
 
@@ -1102,10 +1096,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 request.setResumeToken(resumeToken);
               }
               SpannerRpc.StreamingCall call =
-                  rpc.executeQuery(
-                      request.build(),
-                      stream.consumer(),
-                      session.options);
+                  rpc.executeQuery(request.build(), stream.consumer(), session.options);
               call.request(prefetchChunks);
               stream.setCall(call);
               return stream;
@@ -1212,10 +1203,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 builder.setResumeToken(resumeToken);
               }
               SpannerRpc.StreamingCall call =
-                  rpc.read(
-                      builder.build(),
-                      stream.consumer(),
-                      session.options);
+                  rpc.read(builder.build(), stream.consumer(), session.options);
               call.request(prefetchChunks);
               stream.setCall(call);
               return stream;
@@ -2472,8 +2460,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     public boolean hasNext() {
       try {
         return iterator.hasNext();
-      }
-      catch (Exception e) {
+      } catch (Exception e) {
         throw SpannerExceptionFactory.newSpannerException(e);
       }
     }
@@ -2482,8 +2469,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     public T next() {
       try {
         return iterator.next();
-      }
-      catch (Exception e) {
+      } catch (Exception e) {
         throw SpannerExceptionFactory.newSpannerException(e);
       }
     }
@@ -2497,8 +2483,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     public void close(@Nullable String message) {
       try {
         stream.cancel();
-      }
-      catch (Exception e) {
+      } catch (Exception e) {
         throw SpannerExceptionFactory.newSpannerException(e);
       }
     }

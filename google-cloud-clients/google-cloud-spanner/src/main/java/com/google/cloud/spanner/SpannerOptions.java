@@ -26,22 +26,13 @@ import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
-import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
-import io.grpc.ClientInterceptor;
-import io.grpc.ManagedChannel;
-import io.grpc.netty.shaded.io.grpc.netty.GrpcSslContexts;
-import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
-import io.grpc.netty.shaded.io.netty.handler.ssl.SslContext;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import javax.net.ssl.SSLException;
 
 /** Options for the Cloud Spanner service. */
 public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
@@ -84,8 +75,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   private SpannerOptions(Builder builder) {
     super(SpannerFactory.class, SpannerRpcFactory.class, builder, new SpannerDefaults());
-      numChannels = builder.numChannels;
-      Preconditions.checkArgument(
+    numChannels = builder.numChannels;
+    Preconditions.checkArgument(
         numChannels >= 1 && numChannels <= MAX_CHANNELS,
         "Number of channels must fall in the range [1, %s], found: %s",
         MAX_CHANNELS,
@@ -103,14 +94,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   /** Builder for {@link SpannerOptions} instances. */
   public static class Builder
-      extends ServiceOptions.Builder<
-      Spanner, SpannerOptions, SpannerOptions.Builder> {
+      extends ServiceOptions.Builder<Spanner, SpannerOptions, SpannerOptions.Builder> {
     private static final int DEFAULT_PREFETCH_CHUNKS = 4;
     private TransportChannelProvider channelProvider;
     private GrpcInterceptorProvider interceptorProvider;
 
     /** By default, we create 4 channels per {@link SpannerOptions} */
     private int numChannels = 4;
+
     private int prefetchChunks = DEFAULT_PREFETCH_CHUNKS;
     private SessionPoolOptions sessionPoolOptions;
     private ImmutableMap<String, String> sessionLabels;
@@ -137,8 +128,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     /**
-     * Sets the {@code ChannelProvider}. {@link GapicSpannerRpc} would create a default 
-     * one if none is provided.
+     * Sets the {@code ChannelProvider}. {@link GapicSpannerRpc} would create a default one if none
+     * is provided.
      */
     public Builder setChannelProvider(TransportChannelProvider channelProvider) {
       this.channelProvider = channelProvider;
@@ -146,8 +137,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     /**
-     * Sets the {@code GrpcInterceptorProvider}. {@link GapicSpannerRpc} would create 
-     * a default one if none is provided.
+     * Sets the {@code GrpcInterceptorProvider}. {@link GapicSpannerRpc} would create a default one
+     * if none is provided.
      */
     public Builder setInterceptorProvider(GrpcInterceptorProvider interceptorProvider) {
       this.interceptorProvider = interceptorProvider;
@@ -253,8 +244,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     return DEFAULT_HOST;
   }
 
-  private static class SpannerDefaults implements
-      ServiceDefaults<Spanner, SpannerOptions> {
+  private static class SpannerDefaults implements ServiceDefaults<Spanner, SpannerOptions> {
 
     @Override
     public SpannerFactory getDefaultServiceFactory() {

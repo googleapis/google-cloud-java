@@ -169,10 +169,11 @@ public interface SpannerRpc extends ServiceRpc {
   Paginated<Instance> listInstances(
       int pageSize, @Nullable String pageToken, @Nullable String filter) throws SpannerException;
 
-  OperationFuture<Instance, CreateInstanceMetadata> createInstance(String parent, String instanceId, Instance instance)
-      throws SpannerException;
+  OperationFuture<Instance, CreateInstanceMetadata> createInstance(
+      String parent, String instanceId, Instance instance) throws SpannerException;
 
-  OperationFuture<Instance, UpdateInstanceMetadata> updateInstance(Instance instance, FieldMask fieldMask) throws SpannerException;
+  OperationFuture<Instance, UpdateInstanceMetadata> updateInstance(
+      Instance instance, FieldMask fieldMask) throws SpannerException;
 
   Instance getInstance(String instanceName) throws SpannerException;
 
@@ -224,8 +225,7 @@ public interface SpannerRpc extends ServiceRpc {
       PartitionQueryRequest request, @Nullable Map<Option, ?> options)
       throws SpannerException;
 
-  PartitionResponse partitionRead(
-      PartitionReadRequest request, @Nullable Map<Option, ?> options)
+  PartitionResponse partitionRead(PartitionReadRequest request, @Nullable Map<Option, ?> options)
       throws SpannerException;
 
   public void shutdown();

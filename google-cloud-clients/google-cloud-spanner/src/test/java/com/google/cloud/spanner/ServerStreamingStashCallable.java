@@ -28,11 +28,11 @@ import java.util.Queue;
 import java.util.concurrent.CancellationException;
 
 /**
- * TODO(hzyi): convert this class into a general utility class
- * This class is copied from gax and is used for testing ServerStream only.
+ * TODO(hzyi): convert this class into a general utility class This class is copied from gax and is
+ * used for testing ServerStream only.
  */
 public class ServerStreamingStashCallable<RequestT, ResponseT>
-      extends ServerStreamingCallable<RequestT, ResponseT> {
+    extends ServerStreamingCallable<RequestT, ResponseT> {
   private final List<ResponseT> responseList;
 
   public ServerStreamingStashCallable() {
