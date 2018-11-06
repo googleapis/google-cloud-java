@@ -234,7 +234,7 @@ public class Emulator {
   }
 
   /** Waits for a port to open. It's used to wait for the emulator's gRPC server to be ready. */
-  private void waitForPort(int port) throws InterruptedException, TimeoutException {
+  private static void waitForPort(int port) throws InterruptedException, TimeoutException {
     for (int i = 0; i < 100; i++) {
       try (Socket ignored = new Socket("localhost", port)) {
         return;
@@ -247,7 +247,7 @@ public class Emulator {
   }
 
   /** Creates a {@link io.grpc.ManagedChannelBuilder} preconfigured for the emulator's port. */
-  private ManagedChannelBuilder<?> newChannelBuilder(int port) {
+  private static ManagedChannelBuilder<?> newChannelBuilder(int port) {
     // NOTE: usePlaintext is currently @ExperimentalAPI.
     // See https://github.com/grpc/grpc-java/issues/1772 for discussion
     return ManagedChannelBuilder.forAddress("localhost", port)

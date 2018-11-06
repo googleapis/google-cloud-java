@@ -47,6 +47,7 @@ If you are using Maven, add this to your pom.xml file
     <groupId>junit</groupId>
     <artifactId>junit</artifactId>
     <version>4.12</version>
+    <scope>test</scope>
   </dependency>
 </dependencies>```
 
