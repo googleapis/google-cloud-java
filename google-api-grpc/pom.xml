@@ -348,6 +348,36 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-redis-v1beta1</artifactId>
+        <version>0.34.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-redis-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-redis-v1beta1</artifactId>
+        <version>0.34.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-redis-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-redis-v1</artifactId>
+        <version>0.34.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-redis-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-redis-v1</artifactId>
+        <version>0.34.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-redis-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-scheduler-v1beta1</artifactId>
+        <version>0.34.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-scheduler-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-scheduler-v1beta1</artifactId>
+        <version>0.34.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-scheduler-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-spanner-v1</artifactId>
         <version>0.34.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-spanner-v1:current} -->
       </dependency>
@@ -568,26 +598,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-redis-v1beta1</artifactId>
-        <version>0.34.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-redis-v1beta1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-redis-v1beta1</artifactId>
-        <version>0.34.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-redis-v1beta1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>proto-google-cloud-redis-v1</artifactId>
-        <version>0.34.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-redis-v1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
-        <artifactId>grpc-google-cloud-redis-v1</artifactId>
-        <version>0.34.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-redis-v1:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-websecurityscanner-v1alpha</artifactId>
         <version>0.34.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-websecurityscanner-v1alpha:current} -->
       </dependency>
@@ -614,6 +624,7 @@
     <module>grpc-google-cloud-dlp-v2</module>
     <module>grpc-google-cloud-error-reporting-v1beta1</module>
     <module>grpc-google-cloud-firestore-v1beta1</module>
+    <module>grpc-google-cloud-iot-v1</module>
     <module>grpc-google-cloud-kms-v1</module>
     <module>grpc-google-cloud-language-v1</module>
     <module>grpc-google-cloud-language-v1beta2</module>
@@ -621,6 +632,9 @@
     <module>grpc-google-cloud-monitoring-v3</module>
     <module>grpc-google-cloud-os-login-v1</module>
     <module>grpc-google-cloud-pubsub-v1</module>
+    <module>grpc-google-cloud-redis-v1beta1</module>
+    <module>grpc-google-cloud-redis-v1</module>
+    <module>grpc-google-cloud-scheduler-v1beta1</module>
     <module>grpc-google-cloud-spanner-admin-database-v1</module>
     <module>grpc-google-cloud-spanner-admin-instance-v1</module>
     <module>grpc-google-cloud-spanner-v1</module>
@@ -642,9 +656,6 @@
     <module>grpc-google-cloud-vision-v1p1beta1</module>
     <module>grpc-google-cloud-vision-v1p2beta1</module>
     <module>grpc-google-cloud-vision-v1p3beta1</module>
-    <module>grpc-google-cloud-iot-v1</module>
-    <module>grpc-google-cloud-redis-v1beta1</module>
-    <module>grpc-google-cloud-redis-v1</module>
     <module>grpc-google-cloud-websecurityscanner-v1alpha</module>
 
     <module>proto-google-cloud-asset-v1beta1</module>
@@ -662,6 +673,7 @@
     <module>proto-google-cloud-dlp-v2</module>
     <module>proto-google-cloud-error-reporting-v1beta1</module>
     <module>proto-google-cloud-firestore-v1beta1</module>
+    <module>proto-google-cloud-iot-v1</module>
     <module>proto-google-cloud-kms-v1</module>
     <module>proto-google-cloud-language-v1</module>
     <module>proto-google-cloud-language-v1beta2</module>
@@ -669,6 +681,9 @@
     <module>proto-google-cloud-monitoring-v3</module>
     <module>proto-google-cloud-os-login-v1</module>
     <module>proto-google-cloud-pubsub-v1</module>
+    <module>proto-google-cloud-redis-v1beta1</module>
+    <module>proto-google-cloud-redis-v1</module>
+    <module>proto-google-cloud-scheduler-v1beta1</module>
     <module>proto-google-cloud-spanner-admin-database-v1</module>
     <module>proto-google-cloud-spanner-admin-instance-v1</module>
     <module>proto-google-cloud-spanner-v1</module>
@@ -690,9 +705,6 @@
     <module>proto-google-cloud-vision-v1p1beta1</module>
     <module>proto-google-cloud-vision-v1p2beta1</module>
     <module>proto-google-cloud-vision-v1p3beta1</module>
-    <module>proto-google-cloud-iot-v1</module>
-    <module>proto-google-cloud-redis-v1beta1</module>
-    <module>proto-google-cloud-redis-v1</module>
     <module>proto-google-cloud-websecurityscanner-v1alpha</module>
   </modules>
 
