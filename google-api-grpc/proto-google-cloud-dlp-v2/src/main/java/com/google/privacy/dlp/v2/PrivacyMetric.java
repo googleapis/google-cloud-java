@@ -1648,7 +1648,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
-     * quasi-identifier tuples over distict rows, we consider the entire
+     * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
      * is a multiset: the order in which the different tuples appear in the
      * dataset is ignored, but their frequency is taken into account.
@@ -1664,7 +1664,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
-     * quasi-identifier tuples over distict rows, we consider the entire
+     * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
      * is a multiset: the order in which the different tuples appear in the
      * dataset is ignored, but their frequency is taken into account.
@@ -1680,7 +1680,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
-     * quasi-identifier tuples over distict rows, we consider the entire
+     * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
      * is a multiset: the order in which the different tuples appear in the
      * dataset is ignored, but their frequency is taken into account.
@@ -1876,7 +1876,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
-     * quasi-identifier tuples over distict rows, we consider the entire
+     * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
      * is a multiset: the order in which the different tuples appear in the
      * dataset is ignored, but their frequency is taken into account.
@@ -1894,7 +1894,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
-     * quasi-identifier tuples over distict rows, we consider the entire
+     * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
      * is a multiset: the order in which the different tuples appear in the
      * dataset is ignored, but their frequency is taken into account.
@@ -1912,7 +1912,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Optional message indicating that multiple rows might be associated to a
      * single individual. If the same entity_id is associated to multiple
-     * quasi-identifier tuples over distict rows, we consider the entire
+     * quasi-identifier tuples over distinct rows, we consider the entire
      * collection of tuples as the composite quasi-identifier. This collection
      * is a multiset: the order in which the different tuples appear in the
      * dataset is ignored, but their frequency is taken into account.
@@ -2697,7 +2697,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Optional message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
-       * quasi-identifier tuples over distict rows, we consider the entire
+       * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
        * is a multiset: the order in which the different tuples appear in the
        * dataset is ignored, but their frequency is taken into account.
@@ -2715,7 +2715,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Optional message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
-       * quasi-identifier tuples over distict rows, we consider the entire
+       * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
        * is a multiset: the order in which the different tuples appear in the
        * dataset is ignored, but their frequency is taken into account.
@@ -2737,7 +2737,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Optional message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
-       * quasi-identifier tuples over distict rows, we consider the entire
+       * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
        * is a multiset: the order in which the different tuples appear in the
        * dataset is ignored, but their frequency is taken into account.
@@ -2765,7 +2765,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Optional message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
-       * quasi-identifier tuples over distict rows, we consider the entire
+       * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
        * is a multiset: the order in which the different tuples appear in the
        * dataset is ignored, but their frequency is taken into account.
@@ -2791,7 +2791,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Optional message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
-       * quasi-identifier tuples over distict rows, we consider the entire
+       * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
        * is a multiset: the order in which the different tuples appear in the
        * dataset is ignored, but their frequency is taken into account.
@@ -2821,7 +2821,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Optional message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
-       * quasi-identifier tuples over distict rows, we consider the entire
+       * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
        * is a multiset: the order in which the different tuples appear in the
        * dataset is ignored, but their frequency is taken into account.
@@ -2847,7 +2847,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Optional message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
-       * quasi-identifier tuples over distict rows, we consider the entire
+       * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
        * is a multiset: the order in which the different tuples appear in the
        * dataset is ignored, but their frequency is taken into account.
@@ -2867,7 +2867,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Optional message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
-       * quasi-identifier tuples over distict rows, we consider the entire
+       * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
        * is a multiset: the order in which the different tuples appear in the
        * dataset is ignored, but their frequency is taken into account.
@@ -2890,7 +2890,7 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Optional message indicating that multiple rows might be associated to a
        * single individual. If the same entity_id is associated to multiple
-       * quasi-identifier tuples over distict rows, we consider the entire
+       * quasi-identifier tuples over distinct rows, we consider the entire
        * collection of tuples as the composite quasi-identifier. This collection
        * is a multiset: the order in which the different tuples appear in the
        * dataset is ignored, but their frequency is taken into account.

@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     rowsLimit_ = 0L;
     rowsLimitPercent_ = 0;
     sampleMethod_ = 0;
+    excludedFields_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -83,6 +84,15 @@ private static final long serialVersionUID = 0L;
             sampleMethod_ = rawValue;
             break;
           }
+          case 42: {
+            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              excludedFields_ = new java.util.ArrayList<com.google.privacy.dlp.v2.FieldId>();
+              mutable_bitField0_ |= 0x00000020;
+            }
+            excludedFields_.add(
+                input.readMessage(com.google.privacy.dlp.v2.FieldId.parser(), extensionRegistry));
+            break;
+          }
           case 48: {
 
             rowsLimitPercent_ = input.readInt32();
@@ -105,6 +115,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         identifyingFields_ = java.util.Collections.unmodifiableList(identifyingFields_);
+      }
+      if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+        excludedFields_ = java.util.Collections.unmodifiableList(excludedFields_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -396,6 +409,66 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod.UNRECOGNIZED : result;
   }
 
+  public static final int EXCLUDED_FIELDS_FIELD_NUMBER = 5;
+  private java.util.List<com.google.privacy.dlp.v2.FieldId> excludedFields_;
+  /**
+   * <pre>
+   * References to fields excluded from scanning. This allows you to skip
+   * inspection of entire columns which you know have no findings.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+   */
+  public java.util.List<com.google.privacy.dlp.v2.FieldId> getExcludedFieldsList() {
+    return excludedFields_;
+  }
+  /**
+   * <pre>
+   * References to fields excluded from scanning. This allows you to skip
+   * inspection of entire columns which you know have no findings.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+   */
+  public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+      getExcludedFieldsOrBuilderList() {
+    return excludedFields_;
+  }
+  /**
+   * <pre>
+   * References to fields excluded from scanning. This allows you to skip
+   * inspection of entire columns which you know have no findings.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+   */
+  public int getExcludedFieldsCount() {
+    return excludedFields_.size();
+  }
+  /**
+   * <pre>
+   * References to fields excluded from scanning. This allows you to skip
+   * inspection of entire columns which you know have no findings.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+   */
+  public com.google.privacy.dlp.v2.FieldId getExcludedFields(int index) {
+    return excludedFields_.get(index);
+  }
+  /**
+   * <pre>
+   * References to fields excluded from scanning. This allows you to skip
+   * inspection of entire columns which you know have no findings.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+   */
+  public com.google.privacy.dlp.v2.FieldIdOrBuilder getExcludedFieldsOrBuilder(
+      int index) {
+    return excludedFields_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -421,6 +494,9 @@ private static final long serialVersionUID = 0L;
     }
     if (sampleMethod_ != com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod.SAMPLE_METHOD_UNSPECIFIED.getNumber()) {
       output.writeEnum(4, sampleMethod_);
+    }
+    for (int i = 0; i < excludedFields_.size(); i++) {
+      output.writeMessage(5, excludedFields_.get(i));
     }
     if (rowsLimitPercent_ != 0) {
       output.writeInt32(6, rowsLimitPercent_);
@@ -449,6 +525,10 @@ private static final long serialVersionUID = 0L;
     if (sampleMethod_ != com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod.SAMPLE_METHOD_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(4, sampleMethod_);
+    }
+    for (int i = 0; i < excludedFields_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, excludedFields_.get(i));
     }
     if (rowsLimitPercent_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -482,6 +562,8 @@ private static final long serialVersionUID = 0L;
     result = result && (getRowsLimitPercent()
         == other.getRowsLimitPercent());
     result = result && sampleMethod_ == other.sampleMethod_;
+    result = result && getExcludedFieldsList()
+        .equals(other.getExcludedFieldsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -508,6 +590,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getRowsLimitPercent();
     hash = (37 * hash) + SAMPLE_METHOD_FIELD_NUMBER;
     hash = (53 * hash) + sampleMethod_;
+    if (getExcludedFieldsCount() > 0) {
+      hash = (37 * hash) + EXCLUDED_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getExcludedFieldsList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -641,6 +727,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getIdentifyingFieldsFieldBuilder();
+        getExcludedFieldsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -664,6 +751,12 @@ private static final long serialVersionUID = 0L;
 
       sampleMethod_ = 0;
 
+      if (excludedFieldsBuilder_ == null) {
+        excludedFields_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+      } else {
+        excludedFieldsBuilder_.clear();
+      }
       return this;
     }
 
@@ -709,6 +802,15 @@ private static final long serialVersionUID = 0L;
       result.rowsLimit_ = rowsLimit_;
       result.rowsLimitPercent_ = rowsLimitPercent_;
       result.sampleMethod_ = sampleMethod_;
+      if (excludedFieldsBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          excludedFields_ = java.util.Collections.unmodifiableList(excludedFields_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.excludedFields_ = excludedFields_;
+      } else {
+        result.excludedFields_ = excludedFieldsBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -795,6 +897,32 @@ private static final long serialVersionUID = 0L;
       }
       if (other.sampleMethod_ != 0) {
         setSampleMethodValue(other.getSampleMethodValue());
+      }
+      if (excludedFieldsBuilder_ == null) {
+        if (!other.excludedFields_.isEmpty()) {
+          if (excludedFields_.isEmpty()) {
+            excludedFields_ = other.excludedFields_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureExcludedFieldsIsMutable();
+            excludedFields_.addAll(other.excludedFields_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.excludedFields_.isEmpty()) {
+          if (excludedFieldsBuilder_.isEmpty()) {
+            excludedFieldsBuilder_.dispose();
+            excludedFieldsBuilder_ = null;
+            excludedFields_ = other.excludedFields_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            excludedFieldsBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getExcludedFieldsFieldBuilder() : null;
+          } else {
+            excludedFieldsBuilder_.addAllMessages(other.excludedFields_);
+          }
+        }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1449,6 +1577,336 @@ private static final long serialVersionUID = 0L;
       sampleMethod_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.privacy.dlp.v2.FieldId> excludedFields_ =
+      java.util.Collections.emptyList();
+    private void ensureExcludedFieldsIsMutable() {
+      if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+        excludedFields_ = new java.util.ArrayList<com.google.privacy.dlp.v2.FieldId>(excludedFields_);
+        bitField0_ |= 0x00000020;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> excludedFieldsBuilder_;
+
+    /**
+     * <pre>
+     * References to fields excluded from scanning. This allows you to skip
+     * inspection of entire columns which you know have no findings.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.FieldId> getExcludedFieldsList() {
+      if (excludedFieldsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(excludedFields_);
+      } else {
+        return excludedFieldsBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * References to fields excluded from scanning. This allows you to skip
+     * inspection of entire columns which you know have no findings.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+     */
+    public int getExcludedFieldsCount() {
+      if (excludedFieldsBuilder_ == null) {
+        return excludedFields_.size();
+      } else {
+        return excludedFieldsBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * References to fields excluded from scanning. This allows you to skip
+     * inspection of entire columns which you know have no findings.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+     */
+    public com.google.privacy.dlp.v2.FieldId getExcludedFields(int index) {
+      if (excludedFieldsBuilder_ == null) {
+        return excludedFields_.get(index);
+      } else {
+        return excludedFieldsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * References to fields excluded from scanning. This allows you to skip
+     * inspection of entire columns which you know have no findings.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+     */
+    public Builder setExcludedFields(
+        int index, com.google.privacy.dlp.v2.FieldId value) {
+      if (excludedFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludedFieldsIsMutable();
+        excludedFields_.set(index, value);
+        onChanged();
+      } else {
+        excludedFieldsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * References to fields excluded from scanning. This allows you to skip
+     * inspection of entire columns which you know have no findings.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+     */
+    public Builder setExcludedFields(
+        int index, com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
+      if (excludedFieldsBuilder_ == null) {
+        ensureExcludedFieldsIsMutable();
+        excludedFields_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        excludedFieldsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * References to fields excluded from scanning. This allows you to skip
+     * inspection of entire columns which you know have no findings.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+     */
+    public Builder addExcludedFields(com.google.privacy.dlp.v2.FieldId value) {
+      if (excludedFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludedFieldsIsMutable();
+        excludedFields_.add(value);
+        onChanged();
+      } else {
+        excludedFieldsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * References to fields excluded from scanning. This allows you to skip
+     * inspection of entire columns which you know have no findings.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+     */
+    public Builder addExcludedFields(
+        int index, com.google.privacy.dlp.v2.FieldId value) {
+      if (excludedFieldsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludedFieldsIsMutable();
+        excludedFields_.add(index, value);
+        onChanged();
+      } else {
+        excludedFieldsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * References to fields excluded from scanning. This allows you to skip
+     * inspection of entire columns which you know have no findings.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+     */
+    public Builder addExcludedFields(
+        com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
+      if (excludedFieldsBuilder_ == null) {
+        ensureExcludedFieldsIsMutable();
+        excludedFields_.add(builderForValue.build());
+        onChanged();
+      } else {
+        excludedFieldsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * References to fields excluded from scanning. This allows you to skip
+     * inspection of entire columns which you know have no findings.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+     */
+    public Builder addExcludedFields(
+        int index, com.google.privacy.dlp.v2.FieldId.Builder builderForValue) {
+      if (excludedFieldsBuilder_ == null) {
+        ensureExcludedFieldsIsMutable();
+        excludedFields_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        excludedFieldsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * References to fields excluded from scanning. This allows you to skip
+     * inspection of entire columns which you know have no findings.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+     */
+    public Builder addAllExcludedFields(
+        java.lang.Iterable<? extends com.google.privacy.dlp.v2.FieldId> values) {
+      if (excludedFieldsBuilder_ == null) {
+        ensureExcludedFieldsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, excludedFields_);
+        onChanged();
+      } else {
+        excludedFieldsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * References to fields excluded from scanning. This allows you to skip
+     * inspection of entire columns which you know have no findings.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+     */
+    public Builder clearExcludedFields() {
+      if (excludedFieldsBuilder_ == null) {
+        excludedFields_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        excludedFieldsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * References to fields excluded from scanning. This allows you to skip
+     * inspection of entire columns which you know have no findings.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+     */
+    public Builder removeExcludedFields(int index) {
+      if (excludedFieldsBuilder_ == null) {
+        ensureExcludedFieldsIsMutable();
+        excludedFields_.remove(index);
+        onChanged();
+      } else {
+        excludedFieldsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * References to fields excluded from scanning. This allows you to skip
+     * inspection of entire columns which you know have no findings.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+     */
+    public com.google.privacy.dlp.v2.FieldId.Builder getExcludedFieldsBuilder(
+        int index) {
+      return getExcludedFieldsFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * References to fields excluded from scanning. This allows you to skip
+     * inspection of entire columns which you know have no findings.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+     */
+    public com.google.privacy.dlp.v2.FieldIdOrBuilder getExcludedFieldsOrBuilder(
+        int index) {
+      if (excludedFieldsBuilder_ == null) {
+        return excludedFields_.get(index);  } else {
+        return excludedFieldsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * References to fields excluded from scanning. This allows you to skip
+     * inspection of entire columns which you know have no findings.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+     */
+    public java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+         getExcludedFieldsOrBuilderList() {
+      if (excludedFieldsBuilder_ != null) {
+        return excludedFieldsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(excludedFields_);
+      }
+    }
+    /**
+     * <pre>
+     * References to fields excluded from scanning. This allows you to skip
+     * inspection of entire columns which you know have no findings.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+     */
+    public com.google.privacy.dlp.v2.FieldId.Builder addExcludedFieldsBuilder() {
+      return getExcludedFieldsFieldBuilder().addBuilder(
+          com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * References to fields excluded from scanning. This allows you to skip
+     * inspection of entire columns which you know have no findings.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+     */
+    public com.google.privacy.dlp.v2.FieldId.Builder addExcludedFieldsBuilder(
+        int index) {
+      return getExcludedFieldsFieldBuilder().addBuilder(
+          index, com.google.privacy.dlp.v2.FieldId.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * References to fields excluded from scanning. This allows you to skip
+     * inspection of entire columns which you know have no findings.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.FieldId.Builder> 
+         getExcludedFieldsBuilderList() {
+      return getExcludedFieldsFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+        getExcludedFieldsFieldBuilder() {
+      if (excludedFieldsBuilder_ == null) {
+        excludedFieldsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.FieldId, com.google.privacy.dlp.v2.FieldId.Builder, com.google.privacy.dlp.v2.FieldIdOrBuilder>(
+                excludedFields_,
+                ((bitField0_ & 0x00000020) == 0x00000020),
+                getParentForChildren(),
+                isClean());
+        excludedFields_ = null;
+      }
+      return excludedFieldsBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
