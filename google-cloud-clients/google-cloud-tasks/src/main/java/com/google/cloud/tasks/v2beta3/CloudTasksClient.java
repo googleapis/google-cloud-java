@@ -365,7 +365,7 @@ public class CloudTasksClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Queue getQueue(GetQueueRequest request) {
+  public final Queue getQueue(GetQueueRequest request) {
     return getQueueCallable().call(request);
   }
 
@@ -728,7 +728,7 @@ public class CloudTasksClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteQueue(DeleteQueueRequest request) {
+  public final void deleteQueue(DeleteQueueRequest request) {
     deleteQueueCallable().call(request);
   }
 
@@ -843,7 +843,7 @@ public class CloudTasksClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Queue purgeQueue(PurgeQueueRequest request) {
+  public final Queue purgeQueue(PurgeQueueRequest request) {
     return purgeQueueCallable().call(request);
   }
 
@@ -958,7 +958,7 @@ public class CloudTasksClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Queue pauseQueue(PauseQueueRequest request) {
+  public final Queue pauseQueue(PauseQueueRequest request) {
     return pauseQueueCallable().call(request);
   }
 
@@ -1086,7 +1086,7 @@ public class CloudTasksClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Queue resumeQueue(ResumeQueueRequest request) {
+  public final Queue resumeQueue(ResumeQueueRequest request) {
     return resumeQueueCallable().call(request);
   }
 
@@ -1210,7 +1210,7 @@ public class CloudTasksClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Policy getIamPolicy(GetIamPolicyRequest request) {
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
     return getIamPolicyCallable().call(request);
   }
 
@@ -2035,7 +2035,7 @@ public class CloudTasksClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteTask(DeleteTaskRequest request) {
+  public final void deleteTask(DeleteTaskRequest request) {
     deleteTaskCallable().call(request);
   }
 

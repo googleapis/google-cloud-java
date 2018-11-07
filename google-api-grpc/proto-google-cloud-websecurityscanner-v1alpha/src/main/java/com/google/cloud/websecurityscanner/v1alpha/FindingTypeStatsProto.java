@@ -37,7 +37,7 @@ public final class FindingTypeStatsProto {
       "gle.cloud.websecurityscanner.v1alpha.Fin" +
       "ding.FindingType\022\025\n\rfinding_count\030\002 \001(\005B" +
       "\241\001\n+com.google.cloud.websecurityscanner." +
-      "v1alphaB\025FindingTypeStatsProtoP\001ZYgoogle",
+      "v1alphaB\025FindingTypeStatsProtoP\001ZYgoogle" +
       ".golang.org/genproto/googleapis/cloud/we" +
       "bsecurityscanner/v1alpha;websecurityscan" +
       "nerb\006proto3"

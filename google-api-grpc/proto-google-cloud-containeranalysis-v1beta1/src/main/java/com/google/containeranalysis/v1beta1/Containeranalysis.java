@@ -57,7 +57,7 @@ public final class Containeranalysis {
       "anConfig\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002 " +
       "\001(\t\022\017\n\007enabled\030\003 \001(\010\022/\n\013create_time\030\004 \001(" +
       "\0132\032.google.protobuf.Timestamp\022/\n\013update_" +
-      "time\030\005 \001(\0132\032.google.protobuf.Timestamp\"$",
+      "time\030\005 \001(\0132\032.google.protobuf.Timestamp\"$" +
       "\n\024GetScanConfigRequest\022\014\n\004name\030\001 \001(\t\"_\n\026" +
       "ListScanConfigsRequest\022\016\n\006parent\030\001 \001(\t\022\016" +
       "\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npag" +
@@ -67,7 +67,7 @@ public final class Containeranalysis {
       "\017next_page_token\030\002 \001(\t\"s\n\027UpdateScanConf" +
       "igRequest\022\014\n\004name\030\001 \001(\t\022J\n\013scan_config\030\002" +
       " \001(\01325.google.devtools.containeranalysis" +
-      ".v1beta1.ScanConfig2\204\n\n\030ContainerAnalysi",
+      ".v1beta1.ScanConfig2\204\n\n\030ContainerAnalysi" +
       "sV1Beta1\022\311\001\n\014SetIamPolicy\022\".google.iam.v" +
       "1.SetIamPolicyRequest\032\025.google.iam.v1.Po" +
       "licy\"~\202\323\344\223\002x\"3/v1beta1/{resource=project" +
@@ -77,7 +77,7 @@ public final class Containeranalysis {
       "am.v1.GetIamPolicyRequest\032\025.google.iam.v" +
       "1.Policy\"~\202\323\344\223\002x\"3/v1beta1/{resource=pro" +
       "jects/*/notes/*}:getIamPolicy:\001*Z>\"9/v1b" +
-      "eta1/{resource=projects/*/occurrences/*}",
+      "eta1/{resource=projects/*/occurrences/*}" +
       ":getIamPolicy:\001*\022\367\001\n\022TestIamPermissions\022" +
       "(.google.iam.v1.TestIamPermissionsReques" +
       "t\032).google.iam.v1.TestIamPermissionsResp" +
@@ -87,7 +87,7 @@ public final class Containeranalysis {
       "s/*}:testIamPermissions:\001*\022\271\001\n\rGetScanCo" +
       "nfig\022?.google.devtools.containeranalysis" +
       ".v1beta1.GetScanConfigRequest\0325.google.d" +
-      "evtools.containeranalysis.v1beta1.ScanCo",
+      "evtools.containeranalysis.v1beta1.ScanCo" +
       "nfig\"0\202\323\344\223\002*\022(/v1beta1/{name=projects/*/" +
       "scanConfigs/*}\022\312\001\n\017ListScanConfigs\022A.goo" +
       "gle.devtools.containeranalysis.v1beta1.L" +
@@ -97,7 +97,7 @@ public final class Containeranalysis {
       "ects/*}/scanConfigs\022\314\001\n\020UpdateScanConfig" +
       "\022B.google.devtools.containeranalysis.v1b" +
       "eta1.UpdateScanConfigRequest\0325.google.de" +
-      "vtools.containeranalysis.v1beta1.ScanCon",
+      "vtools.containeranalysis.v1beta1.ScanCon" +
       "fig\"=\202\323\344\223\0027\032(/v1beta1/{name=projects/*/s" +
       "canConfigs/*}:\013scan_configB\212\001\n$com.googl" +
       "e.containeranalysis.v1beta1P\001ZZgoogle.go" +

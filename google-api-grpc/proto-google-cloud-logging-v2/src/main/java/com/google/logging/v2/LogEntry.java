@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     insertId_ = "";
     trace_ = "";
     spanId_ = "";
+    traceSampled_ = false;
   }
 
   @java.lang.Override
@@ -37,6 +38,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -48,13 +52,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 18: {
             com.google.protobuf.Any.Builder subBuilder = null;
             if (payloadCase_ == 2) {
@@ -223,6 +220,18 @@ private static final long serialVersionUID = 0L;
             spanId_ = s;
             break;
           }
+          case 240: {
+
+            traceSampled_ = input.readBool();
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -241,6 +250,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
   protected com.google.protobuf.MapField internalGetMapField(
       int number) {
     switch (number) {
@@ -251,6 +261,7 @@ private static final long serialVersionUID = 0L;
             "Invalid map field number: " + number);
     }
   }
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.logging.v2.LogEntryProto.internal_static_google_logging_v2_LogEntry_fieldAccessorTable
@@ -560,7 +571,7 @@ private static final long serialVersionUID = 0L;
    * Optional. The time the event described by the log entry occurred.
    * This time is used to compute the log entry's age and to enforce
    * the logs retention period. If this field is omitted in a new log
-   * entry, then Stackdriver Logging assigns it the current time.
+   * entry, then Logging assigns it the current time.
    * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
    * seconds might be omitted when the timestamp is displayed.
    * Incoming log entries should have timestamps that are no more than
@@ -581,7 +592,7 @@ private static final long serialVersionUID = 0L;
    * Optional. The time the event described by the log entry occurred.
    * This time is used to compute the log entry's age and to enforce
    * the logs retention period. If this field is omitted in a new log
-   * entry, then Stackdriver Logging assigns it the current time.
+   * entry, then Logging assigns it the current time.
    * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
    * seconds might be omitted when the timestamp is displayed.
    * Incoming log entries should have timestamps that are no more than
@@ -602,7 +613,7 @@ private static final long serialVersionUID = 0L;
    * Optional. The time the event described by the log entry occurred.
    * This time is used to compute the log entry's age and to enforce
    * the logs retention period. If this field is omitted in a new log
-   * entry, then Stackdriver Logging assigns it the current time.
+   * entry, then Logging assigns it the current time.
    * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
    * seconds might be omitted when the timestamp is displayed.
    * Incoming log entries should have timestamps that are no more than
@@ -623,7 +634,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp receiveTimestamp_;
   /**
    * <pre>
-   * Output only. The time the log entry was received by Stackdriver Logging.
+   * Output only. The time the log entry was received by Logging.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
@@ -633,7 +644,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The time the log entry was received by Stackdriver Logging.
+   * Output only. The time the log entry was received by Logging.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
@@ -643,7 +654,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The time the log entry was received by Stackdriver Logging.
+   * Output only. The time the log entry was received by Logging.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
@@ -674,6 +685,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.logging.type.LogSeverity severity = 10;</code>
    */
   public com.google.logging.type.LogSeverity getSeverity() {
+    @SuppressWarnings("deprecation")
     com.google.logging.type.LogSeverity result = com.google.logging.type.LogSeverity.valueOf(severity_);
     return result == null ? com.google.logging.type.LogSeverity.UNRECOGNIZED : result;
   }
@@ -683,9 +695,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A unique identifier for the log entry. If you provide a value,
-   * then Stackdriver Logging considers other log entries in the same project,
+   * then Logging considers other log entries in the same project,
    * with the same `timestamp`, and with the same `insert_id` to be duplicates
-   * which can be removed.  If omitted in new log entries, then Stackdriver
+   * which can be removed.  If omitted in new log entries, then
    * Logging assigns its own unique identifier. The `insert_id` is also used
    * to order log entries that have the same `timestamp` value.
    * </pre>
@@ -707,9 +719,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Optional. A unique identifier for the log entry. If you provide a value,
-   * then Stackdriver Logging considers other log entries in the same project,
+   * then Logging considers other log entries in the same project,
    * with the same `timestamp`, and with the same `insert_id` to be duplicates
-   * which can be removed.  If omitted in new log entries, then Stackdriver
+   * which can be removed.  If omitted in new log entries, then
    * Logging assigns its own unique identifier. The `insert_id` is also used
    * to order log entries that have the same `timestamp` value.
    * </pre>
@@ -989,8 +1001,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object spanId_;
   /**
    * <pre>
-   * Optional. The span ID within the trace associated with the log entry. For
-   * Stackdriver Trace spans, this is the same format that the Stackdriver Trace
+   * Optional. The span ID within the trace associated with the log entry.
+   * For Trace spans, this is the same format that the Trace
    * API v2 uses: a 16-character hexadecimal encoding of an 8-byte array, such
    * as &lt;code&gt;"000000000000004a"&lt;/code&gt;.
    * </pre>
@@ -1011,8 +1023,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The span ID within the trace associated with the log entry. For
-   * Stackdriver Trace spans, this is the same format that the Stackdriver Trace
+   * Optional. The span ID within the trace associated with the log entry.
+   * For Trace spans, this is the same format that the Trace
    * API v2 uses: a 16-character hexadecimal encoding of an 8-byte array, such
    * as &lt;code&gt;"000000000000004a"&lt;/code&gt;.
    * </pre>
@@ -1031,6 +1043,24 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int TRACE_SAMPLED_FIELD_NUMBER = 30;
+  private boolean traceSampled_;
+  /**
+   * <pre>
+   * Optional. The sampling decision of the trace associated with the log entry.
+   * True means that the trace resource name in the `trace` field was sampled
+   * for storage in a trace backend. False means that the trace was not sampled
+   * for storage when this log entry was written, or the sampling decision was
+   * unknown at the time. A non-sampled `trace` value is still useful as a
+   * request correlation identifier. The default is False.
+   * </pre>
+   *
+   * <code>bool trace_sampled = 30;</code>
+   */
+  public boolean getTraceSampled() {
+    return traceSampled_;
   }
 
   public static final int SOURCE_LOCATION_FIELD_NUMBER = 23;
@@ -1070,6 +1100,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -1079,6 +1110,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (payloadCase_ == 2) {
@@ -1132,9 +1164,13 @@ private static final long serialVersionUID = 0L;
     if (!getSpanIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 27, spanId_);
     }
+    if (traceSampled_ != false) {
+      output.writeBool(30, traceSampled_);
+    }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -1205,6 +1241,10 @@ private static final long serialVersionUID = 0L;
     if (!getSpanIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, spanId_);
     }
+    if (traceSampled_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(30, traceSampled_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1262,6 +1302,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getTrace());
     result = result && getSpanId()
         .equals(other.getSpanId());
+    result = result && (getTraceSampled()
+        == other.getTraceSampled());
     result = result && (hasSourceLocation() == other.hasSourceLocation());
     if (hasSourceLocation()) {
       result = result && getSourceLocation()
@@ -1335,6 +1377,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getTrace().hashCode();
     hash = (37 * hash) + SPAN_ID_FIELD_NUMBER;
     hash = (53 * hash) + getSpanId().hashCode();
+    hash = (37 * hash) + TRACE_SAMPLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getTraceSampled());
     if (hasSourceLocation()) {
       hash = (37 * hash) + SOURCE_LOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getSourceLocation().hashCode();
@@ -1430,6 +1475,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -1437,6 +1483,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.logging.v2.LogEntry prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -1486,6 +1533,7 @@ private static final long serialVersionUID = 0L;
               "Invalid map field number: " + number);
       }
     }
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.logging.v2.LogEntryProto.internal_static_google_logging_v2_LogEntry_fieldAccessorTable
@@ -1508,6 +1556,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       logName_ = "";
@@ -1557,6 +1606,8 @@ private static final long serialVersionUID = 0L;
 
       spanId_ = "";
 
+      traceSampled_ = false;
+
       if (sourceLocationBuilder_ == null) {
         sourceLocation_ = null;
       } else {
@@ -1568,15 +1619,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.logging.v2.LogEntryProto.internal_static_google_logging_v2_LogEntry_descriptor;
     }
 
+    @java.lang.Override
     public com.google.logging.v2.LogEntry getDefaultInstanceForType() {
       return com.google.logging.v2.LogEntry.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.logging.v2.LogEntry build() {
       com.google.logging.v2.LogEntry result = buildPartial();
       if (!result.isInitialized()) {
@@ -1585,6 +1639,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.logging.v2.LogEntry buildPartial() {
       com.google.logging.v2.LogEntry result = new com.google.logging.v2.LogEntry(this);
       int from_bitField0_ = bitField0_;
@@ -1643,6 +1698,7 @@ private static final long serialVersionUID = 0L;
       }
       result.trace_ = trace_;
       result.spanId_ = spanId_;
+      result.traceSampled_ = traceSampled_;
       if (sourceLocationBuilder_ == null) {
         result.sourceLocation_ = sourceLocation_;
       } else {
@@ -1654,32 +1710,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.logging.v2.LogEntry) {
         return mergeFrom((com.google.logging.v2.LogEntry)other);
@@ -1730,6 +1793,9 @@ private static final long serialVersionUID = 0L;
         spanId_ = other.spanId_;
         onChanged();
       }
+      if (other.getTraceSampled() != false) {
+        setTraceSampled(other.getTraceSampled());
+      }
       if (other.hasSourceLocation()) {
         mergeSourceLocation(other.getSourceLocation());
       }
@@ -1757,10 +1823,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2628,7 +2696,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The time the event described by the log entry occurred.
      * This time is used to compute the log entry's age and to enforce
      * the logs retention period. If this field is omitted in a new log
-     * entry, then Stackdriver Logging assigns it the current time.
+     * entry, then Logging assigns it the current time.
      * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
      * seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than
@@ -2649,7 +2717,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The time the event described by the log entry occurred.
      * This time is used to compute the log entry's age and to enforce
      * the logs retention period. If this field is omitted in a new log
-     * entry, then Stackdriver Logging assigns it the current time.
+     * entry, then Logging assigns it the current time.
      * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
      * seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than
@@ -2674,7 +2742,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The time the event described by the log entry occurred.
      * This time is used to compute the log entry's age and to enforce
      * the logs retention period. If this field is omitted in a new log
-     * entry, then Stackdriver Logging assigns it the current time.
+     * entry, then Logging assigns it the current time.
      * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
      * seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than
@@ -2705,7 +2773,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The time the event described by the log entry occurred.
      * This time is used to compute the log entry's age and to enforce
      * the logs retention period. If this field is omitted in a new log
-     * entry, then Stackdriver Logging assigns it the current time.
+     * entry, then Logging assigns it the current time.
      * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
      * seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than
@@ -2734,7 +2802,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The time the event described by the log entry occurred.
      * This time is used to compute the log entry's age and to enforce
      * the logs retention period. If this field is omitted in a new log
-     * entry, then Stackdriver Logging assigns it the current time.
+     * entry, then Logging assigns it the current time.
      * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
      * seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than
@@ -2767,7 +2835,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The time the event described by the log entry occurred.
      * This time is used to compute the log entry's age and to enforce
      * the logs retention period. If this field is omitted in a new log
-     * entry, then Stackdriver Logging assigns it the current time.
+     * entry, then Logging assigns it the current time.
      * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
      * seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than
@@ -2796,7 +2864,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The time the event described by the log entry occurred.
      * This time is used to compute the log entry's age and to enforce
      * the logs retention period. If this field is omitted in a new log
-     * entry, then Stackdriver Logging assigns it the current time.
+     * entry, then Logging assigns it the current time.
      * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
      * seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than
@@ -2819,7 +2887,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The time the event described by the log entry occurred.
      * This time is used to compute the log entry's age and to enforce
      * the logs retention period. If this field is omitted in a new log
-     * entry, then Stackdriver Logging assigns it the current time.
+     * entry, then Logging assigns it the current time.
      * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
      * seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than
@@ -2845,7 +2913,7 @@ private static final long serialVersionUID = 0L;
      * Optional. The time the event described by the log entry occurred.
      * This time is used to compute the log entry's age and to enforce
      * the logs retention period. If this field is omitted in a new log
-     * entry, then Stackdriver Logging assigns it the current time.
+     * entry, then Logging assigns it the current time.
      * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
      * seconds might be omitted when the timestamp is displayed.
      * Incoming log entries should have timestamps that are no more than
@@ -2877,7 +2945,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> receiveTimestampBuilder_;
     /**
      * <pre>
-     * Output only. The time the log entry was received by Stackdriver Logging.
+     * Output only. The time the log entry was received by Logging.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
@@ -2887,7 +2955,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time the log entry was received by Stackdriver Logging.
+     * Output only. The time the log entry was received by Logging.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
@@ -2901,7 +2969,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time the log entry was received by Stackdriver Logging.
+     * Output only. The time the log entry was received by Logging.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
@@ -2921,7 +2989,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time the log entry was received by Stackdriver Logging.
+     * Output only. The time the log entry was received by Logging.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
@@ -2939,7 +3007,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time the log entry was received by Stackdriver Logging.
+     * Output only. The time the log entry was received by Logging.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
@@ -2961,7 +3029,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time the log entry was received by Stackdriver Logging.
+     * Output only. The time the log entry was received by Logging.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
@@ -2979,7 +3047,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time the log entry was received by Stackdriver Logging.
+     * Output only. The time the log entry was received by Logging.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
@@ -2991,7 +3059,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time the log entry was received by Stackdriver Logging.
+     * Output only. The time the log entry was received by Logging.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
@@ -3006,7 +3074,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time the log entry was received by Stackdriver Logging.
+     * Output only. The time the log entry was received by Logging.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
@@ -3059,6 +3127,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.logging.type.LogSeverity severity = 10;</code>
      */
     public com.google.logging.type.LogSeverity getSeverity() {
+      @SuppressWarnings("deprecation")
       com.google.logging.type.LogSeverity result = com.google.logging.type.LogSeverity.valueOf(severity_);
       return result == null ? com.google.logging.type.LogSeverity.UNRECOGNIZED : result;
     }
@@ -3098,9 +3167,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A unique identifier for the log entry. If you provide a value,
-     * then Stackdriver Logging considers other log entries in the same project,
+     * then Logging considers other log entries in the same project,
      * with the same `timestamp`, and with the same `insert_id` to be duplicates
-     * which can be removed.  If omitted in new log entries, then Stackdriver
+     * which can be removed.  If omitted in new log entries, then
      * Logging assigns its own unique identifier. The `insert_id` is also used
      * to order log entries that have the same `timestamp` value.
      * </pre>
@@ -3122,9 +3191,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A unique identifier for the log entry. If you provide a value,
-     * then Stackdriver Logging considers other log entries in the same project,
+     * then Logging considers other log entries in the same project,
      * with the same `timestamp`, and with the same `insert_id` to be duplicates
-     * which can be removed.  If omitted in new log entries, then Stackdriver
+     * which can be removed.  If omitted in new log entries, then
      * Logging assigns its own unique identifier. The `insert_id` is also used
      * to order log entries that have the same `timestamp` value.
      * </pre>
@@ -3147,9 +3216,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A unique identifier for the log entry. If you provide a value,
-     * then Stackdriver Logging considers other log entries in the same project,
+     * then Logging considers other log entries in the same project,
      * with the same `timestamp`, and with the same `insert_id` to be duplicates
-     * which can be removed.  If omitted in new log entries, then Stackdriver
+     * which can be removed.  If omitted in new log entries, then
      * Logging assigns its own unique identifier. The `insert_id` is also used
      * to order log entries that have the same `timestamp` value.
      * </pre>
@@ -3169,9 +3238,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A unique identifier for the log entry. If you provide a value,
-     * then Stackdriver Logging considers other log entries in the same project,
+     * then Logging considers other log entries in the same project,
      * with the same `timestamp`, and with the same `insert_id` to be duplicates
-     * which can be removed.  If omitted in new log entries, then Stackdriver
+     * which can be removed.  If omitted in new log entries, then
      * Logging assigns its own unique identifier. The `insert_id` is also used
      * to order log entries that have the same `timestamp` value.
      * </pre>
@@ -3187,9 +3256,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. A unique identifier for the log entry. If you provide a value,
-     * then Stackdriver Logging considers other log entries in the same project,
+     * then Logging considers other log entries in the same project,
      * with the same `timestamp`, and with the same `insert_id` to be duplicates
-     * which can be removed.  If omitted in new log entries, then Stackdriver
+     * which can be removed.  If omitted in new log entries, then
      * Logging assigns its own unique identifier. The `insert_id` is also used
      * to order log entries that have the same `timestamp` value.
      * </pre>
@@ -3968,8 +4037,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object spanId_ = "";
     /**
      * <pre>
-     * Optional. The span ID within the trace associated with the log entry. For
-     * Stackdriver Trace spans, this is the same format that the Stackdriver Trace
+     * Optional. The span ID within the trace associated with the log entry.
+     * For Trace spans, this is the same format that the Trace
      * API v2 uses: a 16-character hexadecimal encoding of an 8-byte array, such
      * as &lt;code&gt;"000000000000004a"&lt;/code&gt;.
      * </pre>
@@ -3990,8 +4059,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The span ID within the trace associated with the log entry. For
-     * Stackdriver Trace spans, this is the same format that the Stackdriver Trace
+     * Optional. The span ID within the trace associated with the log entry.
+     * For Trace spans, this is the same format that the Trace
      * API v2 uses: a 16-character hexadecimal encoding of an 8-byte array, such
      * as &lt;code&gt;"000000000000004a"&lt;/code&gt;.
      * </pre>
@@ -4013,8 +4082,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The span ID within the trace associated with the log entry. For
-     * Stackdriver Trace spans, this is the same format that the Stackdriver Trace
+     * Optional. The span ID within the trace associated with the log entry.
+     * For Trace spans, this is the same format that the Trace
      * API v2 uses: a 16-character hexadecimal encoding of an 8-byte array, such
      * as &lt;code&gt;"000000000000004a"&lt;/code&gt;.
      * </pre>
@@ -4033,8 +4102,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The span ID within the trace associated with the log entry. For
-     * Stackdriver Trace spans, this is the same format that the Stackdriver Trace
+     * Optional. The span ID within the trace associated with the log entry.
+     * For Trace spans, this is the same format that the Trace
      * API v2 uses: a 16-character hexadecimal encoding of an 8-byte array, such
      * as &lt;code&gt;"000000000000004a"&lt;/code&gt;.
      * </pre>
@@ -4049,8 +4118,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The span ID within the trace associated with the log entry. For
-     * Stackdriver Trace spans, this is the same format that the Stackdriver Trace
+     * Optional. The span ID within the trace associated with the log entry.
+     * For Trace spans, this is the same format that the Trace
      * API v2 uses: a 16-character hexadecimal encoding of an 8-byte array, such
      * as &lt;code&gt;"000000000000004a"&lt;/code&gt;.
      * </pre>
@@ -4065,6 +4134,59 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       spanId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean traceSampled_ ;
+    /**
+     * <pre>
+     * Optional. The sampling decision of the trace associated with the log entry.
+     * True means that the trace resource name in the `trace` field was sampled
+     * for storage in a trace backend. False means that the trace was not sampled
+     * for storage when this log entry was written, or the sampling decision was
+     * unknown at the time. A non-sampled `trace` value is still useful as a
+     * request correlation identifier. The default is False.
+     * </pre>
+     *
+     * <code>bool trace_sampled = 30;</code>
+     */
+    public boolean getTraceSampled() {
+      return traceSampled_;
+    }
+    /**
+     * <pre>
+     * Optional. The sampling decision of the trace associated with the log entry.
+     * True means that the trace resource name in the `trace` field was sampled
+     * for storage in a trace backend. False means that the trace was not sampled
+     * for storage when this log entry was written, or the sampling decision was
+     * unknown at the time. A non-sampled `trace` value is still useful as a
+     * request correlation identifier. The default is False.
+     * </pre>
+     *
+     * <code>bool trace_sampled = 30;</code>
+     */
+    public Builder setTraceSampled(boolean value) {
+      
+      traceSampled_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The sampling decision of the trace associated with the log entry.
+     * True means that the trace resource name in the `trace` field was sampled
+     * for storage in a trace backend. False means that the trace was not sampled
+     * for storage when this log entry was written, or the sampling decision was
+     * unknown at the time. A non-sampled `trace` value is still useful as a
+     * request correlation identifier. The default is False.
+     * </pre>
+     *
+     * <code>bool trace_sampled = 30;</code>
+     */
+    public Builder clearTraceSampled() {
+      
+      traceSampled_ = false;
       onChanged();
       return this;
     }
@@ -4230,11 +4352,13 @@ private static final long serialVersionUID = 0L;
       }
       return sourceLocationBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -4256,11 +4380,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<LogEntry>
       PARSER = new com.google.protobuf.AbstractParser<LogEntry>() {
+    @java.lang.Override
     public LogEntry parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LogEntry(input, extensionRegistry);
+      return new LogEntry(input, extensionRegistry);
     }
   };
 
@@ -4273,6 +4398,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.logging.v2.LogEntry getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

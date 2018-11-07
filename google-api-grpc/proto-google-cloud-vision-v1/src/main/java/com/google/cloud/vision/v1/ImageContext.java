@@ -33,6 +33,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -44,13 +47,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             com.google.cloud.vision.v1.LatLongRect.Builder subBuilder = null;
             if (latLongRect_ != null) {
@@ -86,6 +82,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 42: {
+            com.google.cloud.vision.v1.ProductSearchParams.Builder subBuilder = null;
+            if (productSearchParams_ != null) {
+              subBuilder = productSearchParams_.toBuilder();
+            }
+            productSearchParams_ = input.readMessage(com.google.cloud.vision.v1.ProductSearchParams.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(productSearchParams_);
+              productSearchParams_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           case 50: {
             com.google.cloud.vision.v1.WebDetectionParams.Builder subBuilder = null;
             if (webDetectionParams_ != null) {
@@ -97,6 +106,13 @@ private static final long serialVersionUID = 0L;
               webDetectionParams_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -119,6 +135,7 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_ImageContext_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_ImageContext_fieldAccessorTable
@@ -266,6 +283,39 @@ private static final long serialVersionUID = 0L;
     return getCropHintsParams();
   }
 
+  public static final int PRODUCT_SEARCH_PARAMS_FIELD_NUMBER = 5;
+  private com.google.cloud.vision.v1.ProductSearchParams productSearchParams_;
+  /**
+   * <pre>
+   * Parameters for product search.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+   */
+  public boolean hasProductSearchParams() {
+    return productSearchParams_ != null;
+  }
+  /**
+   * <pre>
+   * Parameters for product search.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+   */
+  public com.google.cloud.vision.v1.ProductSearchParams getProductSearchParams() {
+    return productSearchParams_ == null ? com.google.cloud.vision.v1.ProductSearchParams.getDefaultInstance() : productSearchParams_;
+  }
+  /**
+   * <pre>
+   * Parameters for product search.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+   */
+  public com.google.cloud.vision.v1.ProductSearchParamsOrBuilder getProductSearchParamsOrBuilder() {
+    return getProductSearchParams();
+  }
+
   public static final int WEB_DETECTION_PARAMS_FIELD_NUMBER = 6;
   private com.google.cloud.vision.v1.WebDetectionParams webDetectionParams_;
   /**
@@ -300,6 +350,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -309,6 +360,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (latLongRect_ != null) {
@@ -320,12 +372,16 @@ private static final long serialVersionUID = 0L;
     if (cropHintsParams_ != null) {
       output.writeMessage(4, getCropHintsParams());
     }
+    if (productSearchParams_ != null) {
+      output.writeMessage(5, getProductSearchParams());
+    }
     if (webDetectionParams_ != null) {
       output.writeMessage(6, getWebDetectionParams());
     }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -346,6 +402,10 @@ private static final long serialVersionUID = 0L;
     if (cropHintsParams_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getCropHintsParams());
+    }
+    if (productSearchParams_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getProductSearchParams());
     }
     if (webDetectionParams_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -379,6 +439,11 @@ private static final long serialVersionUID = 0L;
       result = result && getCropHintsParams()
           .equals(other.getCropHintsParams());
     }
+    result = result && (hasProductSearchParams() == other.hasProductSearchParams());
+    if (hasProductSearchParams()) {
+      result = result && getProductSearchParams()
+          .equals(other.getProductSearchParams());
+    }
     result = result && (hasWebDetectionParams() == other.hasWebDetectionParams());
     if (hasWebDetectionParams()) {
       result = result && getWebDetectionParams()
@@ -406,6 +471,10 @@ private static final long serialVersionUID = 0L;
     if (hasCropHintsParams()) {
       hash = (37 * hash) + CROP_HINTS_PARAMS_FIELD_NUMBER;
       hash = (53 * hash) + getCropHintsParams().hashCode();
+    }
+    if (hasProductSearchParams()) {
+      hash = (37 * hash) + PRODUCT_SEARCH_PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getProductSearchParams().hashCode();
     }
     if (hasWebDetectionParams()) {
       hash = (37 * hash) + WEB_DETECTION_PARAMS_FIELD_NUMBER;
@@ -486,6 +555,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -493,6 +563,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.cloud.vision.v1.ImageContext prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -520,6 +591,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_ImageContext_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_ImageContext_fieldAccessorTable
@@ -542,6 +614,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (latLongRectBuilder_ == null) {
@@ -558,6 +631,12 @@ private static final long serialVersionUID = 0L;
         cropHintsParams_ = null;
         cropHintsParamsBuilder_ = null;
       }
+      if (productSearchParamsBuilder_ == null) {
+        productSearchParams_ = null;
+      } else {
+        productSearchParams_ = null;
+        productSearchParamsBuilder_ = null;
+      }
       if (webDetectionParamsBuilder_ == null) {
         webDetectionParams_ = null;
       } else {
@@ -567,15 +646,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_ImageContext_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.ImageContext getDefaultInstanceForType() {
       return com.google.cloud.vision.v1.ImageContext.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.ImageContext build() {
       com.google.cloud.vision.v1.ImageContext result = buildPartial();
       if (!result.isInitialized()) {
@@ -584,6 +666,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.ImageContext buildPartial() {
       com.google.cloud.vision.v1.ImageContext result = new com.google.cloud.vision.v1.ImageContext(this);
       int from_bitField0_ = bitField0_;
@@ -603,6 +686,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.cropHintsParams_ = cropHintsParamsBuilder_.build();
       }
+      if (productSearchParamsBuilder_ == null) {
+        result.productSearchParams_ = productSearchParams_;
+      } else {
+        result.productSearchParams_ = productSearchParamsBuilder_.build();
+      }
       if (webDetectionParamsBuilder_ == null) {
         result.webDetectionParams_ = webDetectionParams_;
       } else {
@@ -613,32 +701,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1.ImageContext) {
         return mergeFrom((com.google.cloud.vision.v1.ImageContext)other);
@@ -666,6 +761,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasCropHintsParams()) {
         mergeCropHintsParams(other.getCropHintsParams());
       }
+      if (other.hasProductSearchParams()) {
+        mergeProductSearchParams(other.getProductSearchParams());
+      }
       if (other.hasWebDetectionParams()) {
         mergeWebDetectionParams(other.getWebDetectionParams());
       }
@@ -674,10 +772,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1196,6 +1296,159 @@ private static final long serialVersionUID = 0L;
       return cropHintsParamsBuilder_;
     }
 
+    private com.google.cloud.vision.v1.ProductSearchParams productSearchParams_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.vision.v1.ProductSearchParams, com.google.cloud.vision.v1.ProductSearchParams.Builder, com.google.cloud.vision.v1.ProductSearchParamsOrBuilder> productSearchParamsBuilder_;
+    /**
+     * <pre>
+     * Parameters for product search.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+     */
+    public boolean hasProductSearchParams() {
+      return productSearchParamsBuilder_ != null || productSearchParams_ != null;
+    }
+    /**
+     * <pre>
+     * Parameters for product search.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+     */
+    public com.google.cloud.vision.v1.ProductSearchParams getProductSearchParams() {
+      if (productSearchParamsBuilder_ == null) {
+        return productSearchParams_ == null ? com.google.cloud.vision.v1.ProductSearchParams.getDefaultInstance() : productSearchParams_;
+      } else {
+        return productSearchParamsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Parameters for product search.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+     */
+    public Builder setProductSearchParams(com.google.cloud.vision.v1.ProductSearchParams value) {
+      if (productSearchParamsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        productSearchParams_ = value;
+        onChanged();
+      } else {
+        productSearchParamsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Parameters for product search.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+     */
+    public Builder setProductSearchParams(
+        com.google.cloud.vision.v1.ProductSearchParams.Builder builderForValue) {
+      if (productSearchParamsBuilder_ == null) {
+        productSearchParams_ = builderForValue.build();
+        onChanged();
+      } else {
+        productSearchParamsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Parameters for product search.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+     */
+    public Builder mergeProductSearchParams(com.google.cloud.vision.v1.ProductSearchParams value) {
+      if (productSearchParamsBuilder_ == null) {
+        if (productSearchParams_ != null) {
+          productSearchParams_ =
+            com.google.cloud.vision.v1.ProductSearchParams.newBuilder(productSearchParams_).mergeFrom(value).buildPartial();
+        } else {
+          productSearchParams_ = value;
+        }
+        onChanged();
+      } else {
+        productSearchParamsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Parameters for product search.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+     */
+    public Builder clearProductSearchParams() {
+      if (productSearchParamsBuilder_ == null) {
+        productSearchParams_ = null;
+        onChanged();
+      } else {
+        productSearchParams_ = null;
+        productSearchParamsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Parameters for product search.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+     */
+    public com.google.cloud.vision.v1.ProductSearchParams.Builder getProductSearchParamsBuilder() {
+      
+      onChanged();
+      return getProductSearchParamsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Parameters for product search.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+     */
+    public com.google.cloud.vision.v1.ProductSearchParamsOrBuilder getProductSearchParamsOrBuilder() {
+      if (productSearchParamsBuilder_ != null) {
+        return productSearchParamsBuilder_.getMessageOrBuilder();
+      } else {
+        return productSearchParams_ == null ?
+            com.google.cloud.vision.v1.ProductSearchParams.getDefaultInstance() : productSearchParams_;
+      }
+    }
+    /**
+     * <pre>
+     * Parameters for product search.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.vision.v1.ProductSearchParams, com.google.cloud.vision.v1.ProductSearchParams.Builder, com.google.cloud.vision.v1.ProductSearchParamsOrBuilder> 
+        getProductSearchParamsFieldBuilder() {
+      if (productSearchParamsBuilder_ == null) {
+        productSearchParamsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vision.v1.ProductSearchParams, com.google.cloud.vision.v1.ProductSearchParams.Builder, com.google.cloud.vision.v1.ProductSearchParamsOrBuilder>(
+                getProductSearchParams(),
+                getParentForChildren(),
+                isClean());
+        productSearchParams_ = null;
+      }
+      return productSearchParamsBuilder_;
+    }
+
     private com.google.cloud.vision.v1.WebDetectionParams webDetectionParams_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.vision.v1.WebDetectionParams, com.google.cloud.vision.v1.WebDetectionParams.Builder, com.google.cloud.vision.v1.WebDetectionParamsOrBuilder> webDetectionParamsBuilder_;
@@ -1348,11 +1601,13 @@ private static final long serialVersionUID = 0L;
       }
       return webDetectionParamsBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1374,11 +1629,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<ImageContext>
       PARSER = new com.google.protobuf.AbstractParser<ImageContext>() {
+    @java.lang.Override
     public ImageContext parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ImageContext(input, extensionRegistry);
+      return new ImageContext(input, extensionRegistry);
     }
   };
 
@@ -1391,6 +1647,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.vision.v1.ImageContext getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

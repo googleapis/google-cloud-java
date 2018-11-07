@@ -341,7 +341,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final DeviceRegistry getDeviceRegistry(GetDeviceRegistryRequest request) {
+  public final DeviceRegistry getDeviceRegistry(GetDeviceRegistryRequest request) {
     return getDeviceRegistryCallable().call(request);
   }
 
@@ -520,7 +520,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteDeviceRegistry(DeleteDeviceRegistryRequest request) {
+  public final void deleteDeviceRegistry(DeleteDeviceRegistryRequest request) {
     deleteDeviceRegistryCallable().call(request);
   }
 
@@ -1028,7 +1028,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteDevice(DeleteDeviceRequest request) {
+  public final void deleteDevice(DeleteDeviceRequest request) {
     deleteDeviceCallable().call(request);
   }
 
@@ -1681,7 +1681,7 @@ public class DeviceManagerClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Policy getIamPolicy(GetIamPolicyRequest request) {
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
     return getIamPolicyCallable().call(request);
   }
 

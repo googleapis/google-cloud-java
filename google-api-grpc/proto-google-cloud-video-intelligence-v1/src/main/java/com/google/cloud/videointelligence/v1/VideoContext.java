@@ -33,6 +33,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -44,13 +47,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
               segments_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1.VideoSegment>();
@@ -112,6 +108,26 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 50: {
+            com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder subBuilder = null;
+            if (speechTranscriptionConfig_ != null) {
+              subBuilder = speechTranscriptionConfig_.toBuilder();
+            }
+            speechTranscriptionConfig_ = input.readMessage(com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(speechTranscriptionConfig_);
+              speechTranscriptionConfig_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -132,6 +148,7 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1_VideoContext_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1_VideoContext_fieldAccessorTable
@@ -145,8 +162,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
-   * to be contiguous or span the whole video. If unspecified, each video
-   * is treated as a single segment.
+   * to be contiguous or span the whole video. If unspecified, each video is
+   * treated as a single segment.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -157,8 +174,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
-   * to be contiguous or span the whole video. If unspecified, each video
-   * is treated as a single segment.
+   * to be contiguous or span the whole video. If unspecified, each video is
+   * treated as a single segment.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -170,8 +187,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
-   * to be contiguous or span the whole video. If unspecified, each video
-   * is treated as a single segment.
+   * to be contiguous or span the whole video. If unspecified, each video is
+   * treated as a single segment.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -182,8 +199,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
-   * to be contiguous or span the whole video. If unspecified, each video
-   * is treated as a single segment.
+   * to be contiguous or span the whole video. If unspecified, each video is
+   * treated as a single segment.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -194,8 +211,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
-   * to be contiguous or span the whole video. If unspecified, each video
-   * is treated as a single segment.
+   * to be contiguous or span the whole video. If unspecified, each video is
+   * treated as a single segment.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -337,7 +354,41 @@ private static final long serialVersionUID = 0L;
     return getFaceDetectionConfig();
   }
 
+  public static final int SPEECH_TRANSCRIPTION_CONFIG_FIELD_NUMBER = 6;
+  private com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speechTranscriptionConfig_;
+  /**
+   * <pre>
+   * Config for SPEECH_TRANSCRIPTION.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+   */
+  public boolean hasSpeechTranscriptionConfig() {
+    return speechTranscriptionConfig_ != null;
+  }
+  /**
+   * <pre>
+   * Config for SPEECH_TRANSCRIPTION.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+   */
+  public com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig getSpeechTranscriptionConfig() {
+    return speechTranscriptionConfig_ == null ? com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.getDefaultInstance() : speechTranscriptionConfig_;
+  }
+  /**
+   * <pre>
+   * Config for SPEECH_TRANSCRIPTION.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+   */
+  public com.google.cloud.videointelligence.v1.SpeechTranscriptionConfigOrBuilder getSpeechTranscriptionConfigOrBuilder() {
+    return getSpeechTranscriptionConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -347,6 +398,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < segments_.size(); i++) {
@@ -364,9 +416,13 @@ private static final long serialVersionUID = 0L;
     if (faceDetectionConfig_ != null) {
       output.writeMessage(5, getFaceDetectionConfig());
     }
+    if (speechTranscriptionConfig_ != null) {
+      output.writeMessage(6, getSpeechTranscriptionConfig());
+    }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -391,6 +447,10 @@ private static final long serialVersionUID = 0L;
     if (faceDetectionConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getFaceDetectionConfig());
+    }
+    if (speechTranscriptionConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getSpeechTranscriptionConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -430,6 +490,11 @@ private static final long serialVersionUID = 0L;
       result = result && getFaceDetectionConfig()
           .equals(other.getFaceDetectionConfig());
     }
+    result = result && (hasSpeechTranscriptionConfig() == other.hasSpeechTranscriptionConfig());
+    if (hasSpeechTranscriptionConfig()) {
+      result = result && getSpeechTranscriptionConfig()
+          .equals(other.getSpeechTranscriptionConfig());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -460,6 +525,10 @@ private static final long serialVersionUID = 0L;
     if (hasFaceDetectionConfig()) {
       hash = (37 * hash) + FACE_DETECTION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getFaceDetectionConfig().hashCode();
+    }
+    if (hasSpeechTranscriptionConfig()) {
+      hash = (37 * hash) + SPEECH_TRANSCRIPTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSpeechTranscriptionConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -536,6 +605,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -543,6 +613,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.cloud.videointelligence.v1.VideoContext prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -570,6 +641,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1_VideoContext_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1_VideoContext_fieldAccessorTable
@@ -593,6 +665,7 @@ private static final long serialVersionUID = 0L;
         getSegmentsFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (segmentsBuilder_ == null) {
@@ -625,18 +698,27 @@ private static final long serialVersionUID = 0L;
         faceDetectionConfig_ = null;
         faceDetectionConfigBuilder_ = null;
       }
+      if (speechTranscriptionConfigBuilder_ == null) {
+        speechTranscriptionConfig_ = null;
+      } else {
+        speechTranscriptionConfig_ = null;
+        speechTranscriptionConfigBuilder_ = null;
+      }
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1_VideoContext_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.videointelligence.v1.VideoContext getDefaultInstanceForType() {
       return com.google.cloud.videointelligence.v1.VideoContext.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.videointelligence.v1.VideoContext build() {
       com.google.cloud.videointelligence.v1.VideoContext result = buildPartial();
       if (!result.isInitialized()) {
@@ -645,6 +727,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.videointelligence.v1.VideoContext buildPartial() {
       com.google.cloud.videointelligence.v1.VideoContext result = new com.google.cloud.videointelligence.v1.VideoContext(this);
       int from_bitField0_ = bitField0_;
@@ -678,37 +761,49 @@ private static final long serialVersionUID = 0L;
       } else {
         result.faceDetectionConfig_ = faceDetectionConfigBuilder_.build();
       }
+      if (speechTranscriptionConfigBuilder_ == null) {
+        result.speechTranscriptionConfig_ = speechTranscriptionConfig_;
+      } else {
+        result.speechTranscriptionConfig_ = speechTranscriptionConfigBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.videointelligence.v1.VideoContext) {
         return mergeFrom((com.google.cloud.videointelligence.v1.VideoContext)other);
@@ -758,15 +853,20 @@ private static final long serialVersionUID = 0L;
       if (other.hasFaceDetectionConfig()) {
         mergeFaceDetectionConfig(other.getFaceDetectionConfig());
       }
+      if (other.hasSpeechTranscriptionConfig()) {
+        mergeSpeechTranscriptionConfig(other.getSpeechTranscriptionConfig());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -801,8 +901,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -817,8 +917,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -833,8 +933,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -849,8 +949,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -872,8 +972,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -892,8 +992,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -914,8 +1014,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -937,8 +1037,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -957,8 +1057,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -977,8 +1077,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -998,8 +1098,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -1017,8 +1117,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -1036,8 +1136,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -1049,8 +1149,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -1065,8 +1165,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -1082,8 +1182,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -1095,8 +1195,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -1109,8 +1209,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
-     * to be contiguous or span the whole video. If unspecified, each video
-     * is treated as a single segment.
+     * to be contiguous or span the whole video. If unspecified, each video is
+     * treated as a single segment.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
@@ -1745,11 +1845,166 @@ private static final long serialVersionUID = 0L;
       }
       return faceDetectionConfigBuilder_;
     }
+
+    private com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speechTranscriptionConfig_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig, com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder, com.google.cloud.videointelligence.v1.SpeechTranscriptionConfigOrBuilder> speechTranscriptionConfigBuilder_;
+    /**
+     * <pre>
+     * Config for SPEECH_TRANSCRIPTION.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+     */
+    public boolean hasSpeechTranscriptionConfig() {
+      return speechTranscriptionConfigBuilder_ != null || speechTranscriptionConfig_ != null;
+    }
+    /**
+     * <pre>
+     * Config for SPEECH_TRANSCRIPTION.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+     */
+    public com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig getSpeechTranscriptionConfig() {
+      if (speechTranscriptionConfigBuilder_ == null) {
+        return speechTranscriptionConfig_ == null ? com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.getDefaultInstance() : speechTranscriptionConfig_;
+      } else {
+        return speechTranscriptionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Config for SPEECH_TRANSCRIPTION.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+     */
+    public Builder setSpeechTranscriptionConfig(com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig value) {
+      if (speechTranscriptionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        speechTranscriptionConfig_ = value;
+        onChanged();
+      } else {
+        speechTranscriptionConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Config for SPEECH_TRANSCRIPTION.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+     */
+    public Builder setSpeechTranscriptionConfig(
+        com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder builderForValue) {
+      if (speechTranscriptionConfigBuilder_ == null) {
+        speechTranscriptionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        speechTranscriptionConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Config for SPEECH_TRANSCRIPTION.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+     */
+    public Builder mergeSpeechTranscriptionConfig(com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig value) {
+      if (speechTranscriptionConfigBuilder_ == null) {
+        if (speechTranscriptionConfig_ != null) {
+          speechTranscriptionConfig_ =
+            com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.newBuilder(speechTranscriptionConfig_).mergeFrom(value).buildPartial();
+        } else {
+          speechTranscriptionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        speechTranscriptionConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Config for SPEECH_TRANSCRIPTION.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+     */
+    public Builder clearSpeechTranscriptionConfig() {
+      if (speechTranscriptionConfigBuilder_ == null) {
+        speechTranscriptionConfig_ = null;
+        onChanged();
+      } else {
+        speechTranscriptionConfig_ = null;
+        speechTranscriptionConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Config for SPEECH_TRANSCRIPTION.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+     */
+    public com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder getSpeechTranscriptionConfigBuilder() {
+      
+      onChanged();
+      return getSpeechTranscriptionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Config for SPEECH_TRANSCRIPTION.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+     */
+    public com.google.cloud.videointelligence.v1.SpeechTranscriptionConfigOrBuilder getSpeechTranscriptionConfigOrBuilder() {
+      if (speechTranscriptionConfigBuilder_ != null) {
+        return speechTranscriptionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return speechTranscriptionConfig_ == null ?
+            com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.getDefaultInstance() : speechTranscriptionConfig_;
+      }
+    }
+    /**
+     * <pre>
+     * Config for SPEECH_TRANSCRIPTION.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig, com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder, com.google.cloud.videointelligence.v1.SpeechTranscriptionConfigOrBuilder> 
+        getSpeechTranscriptionConfigFieldBuilder() {
+      if (speechTranscriptionConfigBuilder_ == null) {
+        speechTranscriptionConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig, com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder, com.google.cloud.videointelligence.v1.SpeechTranscriptionConfigOrBuilder>(
+                getSpeechTranscriptionConfig(),
+                getParentForChildren(),
+                isClean());
+        speechTranscriptionConfig_ = null;
+      }
+      return speechTranscriptionConfigBuilder_;
+    }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -1771,11 +2026,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<VideoContext>
       PARSER = new com.google.protobuf.AbstractParser<VideoContext>() {
+    @java.lang.Override
     public VideoContext parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new VideoContext(input, extensionRegistry);
+      return new VideoContext(input, extensionRegistry);
     }
   };
 
@@ -1788,6 +2044,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1.VideoContext getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

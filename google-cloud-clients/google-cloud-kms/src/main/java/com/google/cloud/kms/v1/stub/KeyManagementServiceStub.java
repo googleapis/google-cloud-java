@@ -22,6 +22,10 @@ import static com.google.cloud.kms.v1.KeyManagementServiceClient.ListKeyRingsPag
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.kms.v1.AsymmetricDecryptRequest;
+import com.google.cloud.kms.v1.AsymmetricDecryptResponse;
+import com.google.cloud.kms.v1.AsymmetricSignRequest;
+import com.google.cloud.kms.v1.AsymmetricSignResponse;
 import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
 import com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.CreateKeyRingRequest;
@@ -35,6 +39,7 @@ import com.google.cloud.kms.v1.EncryptResponse;
 import com.google.cloud.kms.v1.GetCryptoKeyRequest;
 import com.google.cloud.kms.v1.GetCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.GetKeyRingRequest;
+import com.google.cloud.kms.v1.GetPublicKeyRequest;
 import com.google.cloud.kms.v1.KeyRing;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse;
@@ -42,6 +47,7 @@ import com.google.cloud.kms.v1.ListCryptoKeysRequest;
 import com.google.cloud.kms.v1.ListCryptoKeysResponse;
 import com.google.cloud.kms.v1.ListKeyRingsRequest;
 import com.google.cloud.kms.v1.ListKeyRingsResponse;
+import com.google.cloud.kms.v1.PublicKey;
 import com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyRequest;
@@ -55,7 +61,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Base stub class for Google Cloud Key Management Service (KMS) API.
+ * Base stub class for Cloud Key Management Service (KMS) API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
@@ -147,6 +153,19 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
   public UnaryCallable<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
       restoreCryptoKeyVersionCallable() {
     throw new UnsupportedOperationException("Not implemented: restoreCryptoKeyVersionCallable()");
+  }
+
+  public UnaryCallable<GetPublicKeyRequest, PublicKey> getPublicKeyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getPublicKeyCallable()");
+  }
+
+  public UnaryCallable<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+      asymmetricDecryptCallable() {
+    throw new UnsupportedOperationException("Not implemented: asymmetricDecryptCallable()");
+  }
+
+  public UnaryCallable<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignCallable() {
+    throw new UnsupportedOperationException("Not implemented: asymmetricSignCallable()");
   }
 
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {

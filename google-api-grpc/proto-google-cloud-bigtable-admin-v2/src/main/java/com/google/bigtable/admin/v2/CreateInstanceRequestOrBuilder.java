@@ -83,7 +83,7 @@ public interface CreateInstanceRequestOrBuilder extends
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently exactly one cluster must be specified.
+   * Currently, at most two clusters can be specified.
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
@@ -95,7 +95,7 @@ public interface CreateInstanceRequestOrBuilder extends
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently exactly one cluster must be specified.
+   * Currently, at most two clusters can be specified.
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
@@ -114,7 +114,7 @@ public interface CreateInstanceRequestOrBuilder extends
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently exactly one cluster must be specified.
+   * Currently, at most two clusters can be specified.
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
@@ -127,7 +127,7 @@ public interface CreateInstanceRequestOrBuilder extends
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently exactly one cluster must be specified.
+   * Currently, at most two clusters can be specified.
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
@@ -142,7 +142,7 @@ public interface CreateInstanceRequestOrBuilder extends
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently exactly one cluster must be specified.
+   * Currently, at most two clusters can be specified.
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>

@@ -38,6 +38,9 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -49,13 +52,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
               faceAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1.FaceAnnotation>();
@@ -179,6 +175,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 114: {
+            com.google.cloud.vision.v1.ProductSearchResults.Builder subBuilder = null;
+            if (productSearchResults_ != null) {
+              subBuilder = productSearchResults_.toBuilder();
+            }
+            productSearchResults_ = input.readMessage(com.google.cloud.vision.v1.ProductSearchResults.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(productSearchResults_);
+              productSearchResults_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           case 170: {
             com.google.cloud.vision.v1.ImageAnnotationContext.Builder subBuilder = null;
             if (context_ != null) {
@@ -199,6 +208,13 @@ private static final long serialVersionUID = 0L;
             }
             localizedObjectAnnotations_.add(
                 input.readMessage(com.google.cloud.vision.v1.LocalizedObjectAnnotation.parser(), extensionRegistry));
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
             break;
           }
         }
@@ -236,6 +252,7 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_AnnotateImageResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_AnnotateImageResponse_fieldAccessorTable
@@ -753,6 +770,39 @@ private static final long serialVersionUID = 0L;
     return getWebDetection();
   }
 
+  public static final int PRODUCT_SEARCH_RESULTS_FIELD_NUMBER = 14;
+  private com.google.cloud.vision.v1.ProductSearchResults productSearchResults_;
+  /**
+   * <pre>
+   * If present, product search has completed successfully.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+   */
+  public boolean hasProductSearchResults() {
+    return productSearchResults_ != null;
+  }
+  /**
+   * <pre>
+   * If present, product search has completed successfully.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+   */
+  public com.google.cloud.vision.v1.ProductSearchResults getProductSearchResults() {
+    return productSearchResults_ == null ? com.google.cloud.vision.v1.ProductSearchResults.getDefaultInstance() : productSearchResults_;
+  }
+  /**
+   * <pre>
+   * If present, product search has completed successfully.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+   */
+  public com.google.cloud.vision.v1.ProductSearchResultsOrBuilder getProductSearchResultsOrBuilder() {
+    return getProductSearchResults();
+  }
+
   public static final int ERROR_FIELD_NUMBER = 9;
   private com.google.rpc.Status error_;
   /**
@@ -829,6 +879,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -838,6 +889,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     for (int i = 0; i < faceAnnotations_.size(); i++) {
@@ -873,6 +925,9 @@ private static final long serialVersionUID = 0L;
     if (webDetection_ != null) {
       output.writeMessage(13, getWebDetection());
     }
+    if (productSearchResults_ != null) {
+      output.writeMessage(14, getProductSearchResults());
+    }
     if (context_ != null) {
       output.writeMessage(21, getContext());
     }
@@ -882,6 +937,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -930,6 +986,10 @@ private static final long serialVersionUID = 0L;
     if (webDetection_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getWebDetection());
+    }
+    if (productSearchResults_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, getProductSearchResults());
     }
     if (context_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -991,6 +1051,11 @@ private static final long serialVersionUID = 0L;
     if (hasWebDetection()) {
       result = result && getWebDetection()
           .equals(other.getWebDetection());
+    }
+    result = result && (hasProductSearchResults() == other.hasProductSearchResults());
+    if (hasProductSearchResults()) {
+      result = result && getProductSearchResults()
+          .equals(other.getProductSearchResults());
     }
     result = result && (hasError() == other.hasError());
     if (hasError()) {
@@ -1056,6 +1121,10 @@ private static final long serialVersionUID = 0L;
     if (hasWebDetection()) {
       hash = (37 * hash) + WEB_DETECTION_FIELD_NUMBER;
       hash = (53 * hash) + getWebDetection().hashCode();
+    }
+    if (hasProductSearchResults()) {
+      hash = (37 * hash) + PRODUCT_SEARCH_RESULTS_FIELD_NUMBER;
+      hash = (53 * hash) + getProductSearchResults().hashCode();
     }
     if (hasError()) {
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
@@ -1140,6 +1209,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -1147,6 +1217,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.google.cloud.vision.v1.AnnotateImageResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -1174,6 +1245,7 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_AnnotateImageResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_AnnotateImageResponse_fieldAccessorTable
@@ -1202,6 +1274,7 @@ private static final long serialVersionUID = 0L;
         getTextAnnotationsFieldBuilder();
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (faceAnnotationsBuilder_ == null) {
@@ -1270,6 +1343,12 @@ private static final long serialVersionUID = 0L;
         webDetection_ = null;
         webDetectionBuilder_ = null;
       }
+      if (productSearchResultsBuilder_ == null) {
+        productSearchResults_ = null;
+      } else {
+        productSearchResults_ = null;
+        productSearchResultsBuilder_ = null;
+      }
       if (errorBuilder_ == null) {
         error_ = null;
       } else {
@@ -1285,15 +1364,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_AnnotateImageResponse_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.AnnotateImageResponse getDefaultInstanceForType() {
       return com.google.cloud.vision.v1.AnnotateImageResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.AnnotateImageResponse build() {
       com.google.cloud.vision.v1.AnnotateImageResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -1302,6 +1384,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.AnnotateImageResponse buildPartial() {
       com.google.cloud.vision.v1.AnnotateImageResponse result = new com.google.cloud.vision.v1.AnnotateImageResponse(this);
       int from_bitField0_ = bitField0_;
@@ -1385,6 +1468,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.webDetection_ = webDetectionBuilder_.build();
       }
+      if (productSearchResultsBuilder_ == null) {
+        result.productSearchResults_ = productSearchResults_;
+      } else {
+        result.productSearchResults_ = productSearchResultsBuilder_.build();
+      }
       if (errorBuilder_ == null) {
         result.error_ = error_;
       } else {
@@ -1400,32 +1488,39 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1.AnnotateImageResponse) {
         return mergeFrom((com.google.cloud.vision.v1.AnnotateImageResponse)other);
@@ -1608,6 +1703,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasWebDetection()) {
         mergeWebDetection(other.getWebDetection());
       }
+      if (other.hasProductSearchResults()) {
+        mergeProductSearchResults(other.getProductSearchResults());
+      }
       if (other.hasError()) {
         mergeError(other.getError());
       }
@@ -1619,10 +1717,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4324,6 +4424,159 @@ private static final long serialVersionUID = 0L;
       return webDetectionBuilder_;
     }
 
+    private com.google.cloud.vision.v1.ProductSearchResults productSearchResults_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.vision.v1.ProductSearchResults, com.google.cloud.vision.v1.ProductSearchResults.Builder, com.google.cloud.vision.v1.ProductSearchResultsOrBuilder> productSearchResultsBuilder_;
+    /**
+     * <pre>
+     * If present, product search has completed successfully.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     */
+    public boolean hasProductSearchResults() {
+      return productSearchResultsBuilder_ != null || productSearchResults_ != null;
+    }
+    /**
+     * <pre>
+     * If present, product search has completed successfully.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     */
+    public com.google.cloud.vision.v1.ProductSearchResults getProductSearchResults() {
+      if (productSearchResultsBuilder_ == null) {
+        return productSearchResults_ == null ? com.google.cloud.vision.v1.ProductSearchResults.getDefaultInstance() : productSearchResults_;
+      } else {
+        return productSearchResultsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * If present, product search has completed successfully.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     */
+    public Builder setProductSearchResults(com.google.cloud.vision.v1.ProductSearchResults value) {
+      if (productSearchResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        productSearchResults_ = value;
+        onChanged();
+      } else {
+        productSearchResultsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, product search has completed successfully.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     */
+    public Builder setProductSearchResults(
+        com.google.cloud.vision.v1.ProductSearchResults.Builder builderForValue) {
+      if (productSearchResultsBuilder_ == null) {
+        productSearchResults_ = builderForValue.build();
+        onChanged();
+      } else {
+        productSearchResultsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, product search has completed successfully.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     */
+    public Builder mergeProductSearchResults(com.google.cloud.vision.v1.ProductSearchResults value) {
+      if (productSearchResultsBuilder_ == null) {
+        if (productSearchResults_ != null) {
+          productSearchResults_ =
+            com.google.cloud.vision.v1.ProductSearchResults.newBuilder(productSearchResults_).mergeFrom(value).buildPartial();
+        } else {
+          productSearchResults_ = value;
+        }
+        onChanged();
+      } else {
+        productSearchResultsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, product search has completed successfully.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     */
+    public Builder clearProductSearchResults() {
+      if (productSearchResultsBuilder_ == null) {
+        productSearchResults_ = null;
+        onChanged();
+      } else {
+        productSearchResults_ = null;
+        productSearchResultsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, product search has completed successfully.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     */
+    public com.google.cloud.vision.v1.ProductSearchResults.Builder getProductSearchResultsBuilder() {
+      
+      onChanged();
+      return getProductSearchResultsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * If present, product search has completed successfully.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     */
+    public com.google.cloud.vision.v1.ProductSearchResultsOrBuilder getProductSearchResultsOrBuilder() {
+      if (productSearchResultsBuilder_ != null) {
+        return productSearchResultsBuilder_.getMessageOrBuilder();
+      } else {
+        return productSearchResults_ == null ?
+            com.google.cloud.vision.v1.ProductSearchResults.getDefaultInstance() : productSearchResults_;
+      }
+    }
+    /**
+     * <pre>
+     * If present, product search has completed successfully.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.vision.v1.ProductSearchResults, com.google.cloud.vision.v1.ProductSearchResults.Builder, com.google.cloud.vision.v1.ProductSearchResultsOrBuilder> 
+        getProductSearchResultsFieldBuilder() {
+      if (productSearchResultsBuilder_ == null) {
+        productSearchResultsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vision.v1.ProductSearchResults, com.google.cloud.vision.v1.ProductSearchResults.Builder, com.google.cloud.vision.v1.ProductSearchResultsOrBuilder>(
+                getProductSearchResults(),
+                getParentForChildren(),
+                isClean());
+        productSearchResults_ = null;
+      }
+      return productSearchResultsBuilder_;
+    }
+
     private com.google.rpc.Status error_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> errorBuilder_;
@@ -4656,11 +4909,13 @@ private static final long serialVersionUID = 0L;
       }
       return contextBuilder_;
     }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -4682,11 +4937,12 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<AnnotateImageResponse>
       PARSER = new com.google.protobuf.AbstractParser<AnnotateImageResponse>() {
+    @java.lang.Override
     public AnnotateImageResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AnnotateImageResponse(input, extensionRegistry);
+      return new AnnotateImageResponse(input, extensionRegistry);
     }
   };
 
@@ -4699,6 +4955,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.vision.v1.AnnotateImageResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

@@ -394,7 +394,7 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final Policy getIamPolicy(GetIamPolicyRequest request) {
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
     return getIamPolicyCallable().call(request);
   }
 
@@ -623,7 +623,7 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final ScanConfig getScanConfig(GetScanConfigRequest request) {
+  public final ScanConfig getScanConfig(GetScanConfigRequest request) {
     return getScanConfigCallable().call(request);
   }
 

@@ -16,10 +16,13 @@
 
 package com.google.cloud.storage.contrib.nio.it;
 
+import static com.google.common.collect.ImmutableList.copyOf;
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.client.http.HttpResponseException;
+import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage.BlobTargetOption;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.contrib.nio.CloudStorageConfiguration;
@@ -298,6 +301,21 @@ public class ITGcsNio {
   // End of tests related to the "requester pays" feature
 
   @Test
+  public void testListBuckets() throws IOException {
+    boolean bucketFound = false;
+    boolean rpBucketFound = false;
+    for (Bucket b : CloudStorageFileSystem.listBuckets(project).iterateAll()) {
+      bucketFound |= BUCKET.equals(b.getName());
+      rpBucketFound |= REQUESTER_PAYS_BUCKET.equals(b.getName());
+    }
+    assertWithMessage("listBucket should have found the test bucket")
+        .that(bucketFound).isTrue();
+    assertWithMessage("listBucket should have found the test requester-pays bucket")
+        .that(rpBucketFound).isTrue();
+  }
+
+
+  @Test
   public void testFileExists() throws IOException {
     CloudStorageFileSystem testBucket = getTestBucket();
     Path path = testBucket.getPath(SML_FILE);
@@ -520,21 +538,66 @@ public class ITGcsNio {
       }
 
       List<Path> got = new ArrayList<>();
-      for (Path path : Files.newDirectoryStream(fs.getPath("/dir/"))) {
-        got.add(path);
+      for (String folder : new String[]{"/dir/", "/dir", "dir/", "dir"}) {
+        got.clear();
+        for (Path path : Files.newDirectoryStream(fs.getPath(folder))) {
+          got.add(path);
+        }
+        assertWithMessage("Listing " + folder+": ").that(got).containsExactlyElementsIn(goodPaths);
       }
-      assertThat(got).containsExactlyElementsIn(goodPaths);
 
-      // Must also work with relative path
-      got.clear();
-      for (Path path : Files.newDirectoryStream(fs.getPath("dir/"))) {
-        got.add(path);
-      }
-      assertThat(got).containsExactlyElementsIn(goodPaths);
+
       // clean up
       for (Path path : paths) {
         Files.delete(path);
       }
+    }
+  }
+
+  @Test
+  public void testRelativityOfResolve() throws IOException {
+    try (FileSystem fs = getTestBucket()) {
+      Path abs1 = fs.getPath("/dir");
+      Path abs2 = abs1.resolve("subdir/");
+      Path rel1 = fs.getPath("dir");
+      Path rel2 = rel1.resolve("subdir/");
+      // children of absolute paths are absolute,
+      // children of relative paths are relative.
+      assertThat(abs1.isAbsolute()).isTrue();
+      assertThat(abs2.isAbsolute()).isTrue();
+      assertThat(rel1.isAbsolute()).isFalse();
+      assertThat(rel2.isAbsolute()).isFalse();
+    }
+  }
+
+  @Test
+  public void testWalkFiles() throws IOException {
+    try (FileSystem fs = getTestBucket()) {
+      List<Path> goodPaths = new ArrayList<>();
+      List<Path> paths = new ArrayList<>();
+      goodPaths.add(fs.getPath("dir/angel"));
+      goodPaths.add(fs.getPath("dir/alone"));
+      paths.add(fs.getPath("dir/dir2/another_angel"));
+      paths.add(fs.getPath("atroot"));
+      paths.addAll(goodPaths);
+      for (Path path : paths) {
+        fillFile(storage, BUCKET, path.toString(), SML_SIZE);
+      }
+      // Given a relative path as starting point, walkFileTree must return only relative paths.
+      List<Path> relativePaths = PostTraversalWalker.walkFileTree(fs.getPath("dir/"));
+      for (Path p : relativePaths) {
+        assertWithMessage("Should have been relative: " + p.toString()).that(p.isAbsolute()).isFalse();
+      }
+      // The 5 paths are:
+      // dir/, dir/angel, dir/alone, dir/dir2/, dir/dir2/another_angel.
+      assertThat(relativePaths.size()).isEqualTo(5);
+
+      // Given an absolute path as starting point, walkFileTree must return only relative paths.
+      List<Path> absolutePaths = PostTraversalWalker.walkFileTree(fs.getPath("/dir/"));
+      for (Path p : absolutePaths) {
+        assertWithMessage("Should have been absolute: " + p.toString()).that(p.isAbsolute()).isTrue();
+      }
+      assertThat(absolutePaths.size()).isEqualTo(5);
     }
   }
 
@@ -566,20 +629,67 @@ public class ITGcsNio {
       BUCKET, CloudStorageConfiguration.builder().permitEmptyPathComponents(true)
       .build(), storageOptions);
 
-    // test absolute path
-    Path rootPath = fs.getPath("");
-    List<String> objectNames = new ArrayList<String>();
-    for (Path path : Files.newDirectoryStream(rootPath)) {
-      objectNames.add(path.toString());
+    // test absolute path, relative path.
+    for (String check : new String[]{".", "/", ""}) {
+      Path rootPath = fs.getPath(check);
+      List<String> objectNames = new ArrayList<>();
+      for (Path path : Files.newDirectoryStream(rootPath)) {
+        objectNames.add(path.toString());
+      }
+      assertWithMessage("Listing " + check + ": ").that(objectNames).containsExactly(BIG_FILE, SML_FILE);
     }
-    assertThat(objectNames).containsExactly(BIG_FILE, SML_FILE);
-    
-    // test relative path
-    rootPath = fs.getPath(".");
-    for (Path path : Files.newDirectoryStream(rootPath)) {
-      objectNames.add(path.toString());
+  }
+
+  @Test
+  public void testFakeDirectories() throws IOException {
+    try (FileSystem fs = getTestBucket()) {
+      List<Path> paths = new ArrayList<>();
+      paths.add(fs.getPath("dir/angel"));
+      paths.add(fs.getPath("dir/deepera"));
+      paths.add(fs.getPath("dir/deeperb"));
+      paths.add(fs.getPath("dir/deeper_"));
+      paths.add(fs.getPath("dir/deeper.sea/hasfish"));
+      paths.add(fs.getPath("dir/deeper/fish"));
+      for (Path path : paths) {
+        Files.createFile(path);
+      }
+
+      // ends with slash, must be a directory
+      assertThat(Files.isDirectory(fs.getPath("dir/"))).isTrue();
+      // files are not directories
+      assertThat(Files.exists(fs.getPath("dir/angel"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("dir/angel"))).isFalse();
+      // directories are recognized even without the trailing "/"
+      assertThat(Files.isDirectory(fs.getPath("dir"))).isTrue();
+      // also works for absolute paths
+      assertThat(Files.isDirectory(fs.getPath("/dir"))).isTrue();
+      // non-existent files are not directories (but they don't make us crash)
+      assertThat(Files.isDirectory(fs.getPath("di"))).isFalse();
+      assertThat(Files.isDirectory(fs.getPath("dirs"))).isFalse();
+      assertThat(Files.isDirectory(fs.getPath("dir/deep"))).isFalse();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper/fi"))).isFalse();
+      assertThat(Files.isDirectory(fs.getPath("/dir/deeper/fi"))).isFalse();
+      // also works for subdirectories
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper/"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("/dir/deeper/"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("/dir/deeper"))).isTrue();
+      // dot and .. folders are directories
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper/."))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper/.."))).isTrue();
+      // dots in the name are fine
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper.sea/"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper.sea"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath("dir/deeper.seax"))).isFalse();
+      // the root folder is a directory
+      assertThat(Files.isDirectory(fs.getPath("/"))).isTrue();
+      assertThat(Files.isDirectory(fs.getPath(""))).isTrue();
+
+      // clean up
+      for (Path path : paths) {
+        Files.delete(path);
+      }
     }
-    assertThat(objectNames).containsExactly(BIG_FILE, SML_FILE);
   }
 
   /**
@@ -620,6 +730,32 @@ public class ITGcsNio {
     return "-" + rnd.nextInt(99999);
   }
 
+  private static class PostTraversalWalker extends SimpleFileVisitor<Path> {
+    private final List<Path> paths = new ArrayList<>();
+
+    // Traverse the tree, return the list of files and folders.
+    static public ImmutableList<Path> walkFileTree(Path start) throws IOException {
+      PostTraversalWalker walker = new PostTraversalWalker();
+      Files.walkFileTree(start, walker);
+      return walker.getPaths();
+    }
+
+    @Override
+    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+      paths.add(file);
+      return FileVisitResult.CONTINUE;
+    }
+
+    @Override
+    public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+      paths.add(dir);
+      return FileVisitResult.CONTINUE;
+    }
+
+    public ImmutableList<Path> getPaths() {
+      return copyOf(paths);
+    }
+  }
 
   private CloudStorageFileSystem getTestBucket() throws IOException {
     // in typical usage we use the single-argument version of forBucket

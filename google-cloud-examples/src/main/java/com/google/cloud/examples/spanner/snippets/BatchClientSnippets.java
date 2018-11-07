@@ -55,18 +55,6 @@ public class BatchClientSnippets {
     return txn;
   }
 
-  /**
-   * Example to do a batch read with txn id.
-   */
-  BatchReadOnlyTransaction readWithId(BatchReadOnlyTransaction my_txn) {
-    // [START batch_client_read_with_id]
-    BatchTransactionId txnId = my_txn.getBatchTransactionId();
-    BatchReadOnlyTransaction txn = batchClient.batchReadOnlyTransaction(txnId);
-    // [END batch_client_read_with_id]
-
-    return txn;
-  }
-
   void partitionQuery() {
     // [START partition_query]
     final BatchReadOnlyTransaction txn =
@@ -104,7 +92,7 @@ public class BatchClientSnippets {
           long singerId = results.getLong(0);
           String firstName = results.getString(1);
           String lastName = results.getString(2);
-          System.out.println("P2 [" + singerId + "] " + firstName + " " + lastName);
+          System.out.println("[" + singerId + "] " + firstName + " " + lastName);
         }
       }
     }
@@ -121,14 +109,15 @@ public class BatchClientSnippets {
             "Singers",
             "SingerId",
             KeySet.all(),
-            Arrays.asList("FirstName"));
-    BatchTransactionId txnID = txn.getBatchTransactionId();
-    int numRowsRead = 0;
+            Arrays.asList("SingerId", "FirstName", "LastName"));
+
     for (Partition p : partitions) {
-      BatchReadOnlyTransaction batchTxnOnEachWorker = batchClient.batchReadOnlyTransaction(txnID);
-      try (ResultSet results = batchTxnOnEachWorker.execute(p)) {
+      try (ResultSet results = txn.execute(p)) {
         while (results.next()) {
-          System.out.println(results.getString(0));
+          long singerId = results.getLong(0);
+          String firstName = results.getString(1);
+          String lastName = results.getString(2);
+          System.out.println("[" + singerId + "] " + firstName + " " + lastName);
         }
       }
     }

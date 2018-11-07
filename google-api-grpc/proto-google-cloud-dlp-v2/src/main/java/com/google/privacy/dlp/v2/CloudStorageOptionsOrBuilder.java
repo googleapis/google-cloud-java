@@ -8,14 +8,26 @@ public interface CloudStorageOptionsOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   * <pre>
+   * The set of one or more files to scan.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
    */
   boolean hasFileSet();
   /**
+   * <pre>
+   * The set of one or more files to scan.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
    */
   com.google.privacy.dlp.v2.CloudStorageOptions.FileSet getFileSet();
   /**
+   * <pre>
+   * The set of one or more files to scan.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
    */
   com.google.privacy.dlp.v2.CloudStorageOptions.FileSetOrBuilder getFileSetOrBuilder();
@@ -47,7 +59,8 @@ public interface CloudStorageOptionsOrBuilder extends
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
-   * are applied.
+   * are applied. In addition, the binary content of the selected files
+   * is always scanned as well.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -57,7 +70,8 @@ public interface CloudStorageOptionsOrBuilder extends
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
-   * are applied.
+   * are applied. In addition, the binary content of the selected files
+   * is always scanned as well.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -67,7 +81,8 @@ public interface CloudStorageOptionsOrBuilder extends
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
-   * are applied.
+   * are applied. In addition, the binary content of the selected files
+   * is always scanned as well.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -77,7 +92,8 @@ public interface CloudStorageOptionsOrBuilder extends
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
-   * are applied.
+   * are applied. In addition, the binary content of the selected files
+   * is always scanned as well.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -88,7 +104,8 @@ public interface CloudStorageOptionsOrBuilder extends
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
-   * are applied.
+   * are applied. In addition, the binary content of the selected files
+   * is always scanned as well.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
