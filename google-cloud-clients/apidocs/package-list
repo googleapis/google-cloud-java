@@ -90,6 +90,8 @@ com.google.cloud.resourcemanager
 com.google.cloud.resourcemanager.spi
 com.google.cloud.resourcemanager.spi.v1beta1
 com.google.cloud.resourcemanager.testing
+com.google.cloud.scheduler.v1beta1
+com.google.cloud.scheduler.v1beta1.stub
 com.google.cloud.spanner
 com.google.cloud.spanner.admin.database.v1
 com.google.cloud.spanner.admin.database.v1.stub
