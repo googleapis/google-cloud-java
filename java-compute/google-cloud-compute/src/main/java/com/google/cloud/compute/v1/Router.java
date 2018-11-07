@@ -34,6 +34,7 @@ public final class Router implements ApiMessage {
   private final List<RouterInterface> interfaces;
   private final String kind;
   private final String name;
+  private final List<RouterNat> nats;
   private final String network;
   private final String region;
   private final String selfLink;
@@ -47,6 +48,7 @@ public final class Router implements ApiMessage {
     this.interfaces = null;
     this.kind = null;
     this.name = null;
+    this.nats = null;
     this.network = null;
     this.region = null;
     this.selfLink = null;
@@ -61,6 +63,7 @@ public final class Router implements ApiMessage {
       List<RouterInterface> interfaces,
       String kind,
       String name,
+      List<RouterNat> nats,
       String network,
       String region,
       String selfLink) {
@@ -72,6 +75,7 @@ public final class Router implements ApiMessage {
     this.interfaces = interfaces;
     this.kind = kind;
     this.name = name;
+    this.nats = nats;
     this.network = network;
     this.region = region;
     this.selfLink = selfLink;
@@ -102,6 +106,9 @@ public final class Router implements ApiMessage {
     }
     if (fieldName.equals("name")) {
       return name;
+    }
+    if (fieldName.equals("nats")) {
+      return nats;
     }
     if (fieldName.equals("network")) {
       return network;
@@ -159,6 +166,10 @@ public final class Router implements ApiMessage {
     return name;
   }
 
+  public List<RouterNat> getNatsList() {
+    return nats;
+  }
+
   public String getNetwork() {
     return network;
   }
@@ -202,6 +213,7 @@ public final class Router implements ApiMessage {
     private List<RouterInterface> interfaces;
     private String kind;
     private String name;
+    private List<RouterNat> nats;
     private String network;
     private String region;
     private String selfLink;
@@ -234,6 +246,9 @@ public final class Router implements ApiMessage {
       if (other.getName() != null) {
         this.name = other.name;
       }
+      if (other.getNatsList() != null) {
+        this.nats = other.nats;
+      }
       if (other.getNetwork() != null) {
         this.network = other.network;
       }
@@ -255,6 +270,7 @@ public final class Router implements ApiMessage {
       this.interfaces = source.interfaces;
       this.kind = source.kind;
       this.name = source.name;
+      this.nats = source.nats;
       this.network = source.network;
       this.region = source.region;
       this.selfLink = source.selfLink;
@@ -354,6 +370,26 @@ public final class Router implements ApiMessage {
       return this;
     }
 
+    public List<RouterNat> getNatsList() {
+      return nats;
+    }
+
+    public Builder addAllNats(List<RouterNat> nats) {
+      if (this.nats == null) {
+        this.nats = new LinkedList<>();
+      }
+      this.nats.addAll(nats);
+      return this;
+    }
+
+    public Builder addNats(RouterNat nats) {
+      if (this.nats == null) {
+        this.nats = new LinkedList<>();
+      }
+      this.nats.add(nats);
+      return this;
+    }
+
     public String getNetwork() {
       return network;
     }
@@ -392,6 +428,7 @@ public final class Router implements ApiMessage {
           interfaces,
           kind,
           name,
+          nats,
           network,
           region,
           selfLink);
@@ -407,6 +444,7 @@ public final class Router implements ApiMessage {
       newBuilder.addAllInterfaces(this.interfaces);
       newBuilder.setKind(this.kind);
       newBuilder.setName(this.name);
+      newBuilder.addAllNats(this.nats);
       newBuilder.setNetwork(this.network);
       newBuilder.setRegion(this.region);
       newBuilder.setSelfLink(this.selfLink);
@@ -441,6 +479,9 @@ public final class Router implements ApiMessage {
         + "name="
         + name
         + ", "
+        + "nats="
+        + nats
+        + ", "
         + "network="
         + network
         + ", "
@@ -467,6 +508,7 @@ public final class Router implements ApiMessage {
           && Objects.equals(this.interfaces, that.getInterfacesList())
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.nats, that.getNatsList())
           && Objects.equals(this.network, that.getNetwork())
           && Objects.equals(this.region, that.getRegion())
           && Objects.equals(this.selfLink, that.getSelfLink());
@@ -485,6 +527,7 @@ public final class Router implements ApiMessage {
         interfaces,
         kind,
         name,
+        nats,
         network,
         region,
         selfLink);
