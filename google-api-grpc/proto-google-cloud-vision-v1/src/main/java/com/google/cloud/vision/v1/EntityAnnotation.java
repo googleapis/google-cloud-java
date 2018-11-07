@@ -313,9 +313,9 @@ private static final long serialVersionUID = 0L;
    * image. Range [0, 1].
    * </pre>
    *
-   * <code>float confidence = 5;</code>
+   * <code>float confidence = 5 [deprecated = true];</code>
    */
-  public float getConfidence() {
+  @java.lang.Deprecated public float getConfidence() {
     return confidence_;
   }
 
@@ -1382,9 +1382,9 @@ private static final long serialVersionUID = 0L;
      * image. Range [0, 1].
      * </pre>
      *
-     * <code>float confidence = 5;</code>
+     * <code>float confidence = 5 [deprecated = true];</code>
      */
-    public float getConfidence() {
+    @java.lang.Deprecated public float getConfidence() {
       return confidence_;
     }
     /**
@@ -1396,9 +1396,9 @@ private static final long serialVersionUID = 0L;
      * image. Range [0, 1].
      * </pre>
      *
-     * <code>float confidence = 5;</code>
+     * <code>float confidence = 5 [deprecated = true];</code>
      */
-    public Builder setConfidence(float value) {
+    @java.lang.Deprecated public Builder setConfidence(float value) {
       
       confidence_ = value;
       onChanged();
@@ -1413,9 +1413,9 @@ private static final long serialVersionUID = 0L;
      * image. Range [0, 1].
      * </pre>
      *
-     * <code>float confidence = 5;</code>
+     * <code>float confidence = 5 [deprecated = true];</code>
      */
-    public Builder clearConfidence() {
+    @java.lang.Deprecated public Builder clearConfidence() {
       
       confidence_ = 0F;
       onChanged();

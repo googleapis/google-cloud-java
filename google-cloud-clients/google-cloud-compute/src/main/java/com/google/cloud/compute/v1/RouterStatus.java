@@ -29,12 +29,14 @@ public final class RouterStatus implements ApiMessage {
   private final List<Route> bestRoutes;
   private final List<Route> bestRoutesForRouter;
   private final List<RouterStatusBgpPeerStatus> bgpPeerStatus;
+  private final List<RouterStatusNatStatus> natStatus;
   private final String network;
 
   private RouterStatus() {
     this.bestRoutes = null;
     this.bestRoutesForRouter = null;
     this.bgpPeerStatus = null;
+    this.natStatus = null;
     this.network = null;
   }
 
@@ -42,10 +44,12 @@ public final class RouterStatus implements ApiMessage {
       List<Route> bestRoutes,
       List<Route> bestRoutesForRouter,
       List<RouterStatusBgpPeerStatus> bgpPeerStatus,
+      List<RouterStatusNatStatus> natStatus,
       String network) {
     this.bestRoutes = bestRoutes;
     this.bestRoutesForRouter = bestRoutesForRouter;
     this.bgpPeerStatus = bgpPeerStatus;
+    this.natStatus = natStatus;
     this.network = network;
   }
 
@@ -59,6 +63,9 @@ public final class RouterStatus implements ApiMessage {
     }
     if (fieldName.equals("bgpPeerStatus")) {
       return bgpPeerStatus;
+    }
+    if (fieldName.equals("natStatus")) {
+      return natStatus;
     }
     if (fieldName.equals("network")) {
       return network;
@@ -88,6 +95,10 @@ public final class RouterStatus implements ApiMessage {
 
   public List<RouterStatusBgpPeerStatus> getBgpPeerStatusList() {
     return bgpPeerStatus;
+  }
+
+  public List<RouterStatusNatStatus> getNatStatusList() {
+    return natStatus;
   }
 
   public String getNetwork() {
@@ -120,6 +131,7 @@ public final class RouterStatus implements ApiMessage {
     private List<Route> bestRoutes;
     private List<Route> bestRoutesForRouter;
     private List<RouterStatusBgpPeerStatus> bgpPeerStatus;
+    private List<RouterStatusNatStatus> natStatus;
     private String network;
 
     Builder() {}
@@ -135,6 +147,9 @@ public final class RouterStatus implements ApiMessage {
       if (other.getBgpPeerStatusList() != null) {
         this.bgpPeerStatus = other.bgpPeerStatus;
       }
+      if (other.getNatStatusList() != null) {
+        this.natStatus = other.natStatus;
+      }
       if (other.getNetwork() != null) {
         this.network = other.network;
       }
@@ -145,6 +160,7 @@ public final class RouterStatus implements ApiMessage {
       this.bestRoutes = source.bestRoutes;
       this.bestRoutesForRouter = source.bestRoutesForRouter;
       this.bgpPeerStatus = source.bgpPeerStatus;
+      this.natStatus = source.natStatus;
       this.network = source.network;
     }
 
@@ -208,6 +224,26 @@ public final class RouterStatus implements ApiMessage {
       return this;
     }
 
+    public List<RouterStatusNatStatus> getNatStatusList() {
+      return natStatus;
+    }
+
+    public Builder addAllNatStatus(List<RouterStatusNatStatus> natStatus) {
+      if (this.natStatus == null) {
+        this.natStatus = new LinkedList<>();
+      }
+      this.natStatus.addAll(natStatus);
+      return this;
+    }
+
+    public Builder addNatStatus(RouterStatusNatStatus natStatus) {
+      if (this.natStatus == null) {
+        this.natStatus = new LinkedList<>();
+      }
+      this.natStatus.add(natStatus);
+      return this;
+    }
+
     public String getNetwork() {
       return network;
     }
@@ -219,7 +255,7 @@ public final class RouterStatus implements ApiMessage {
 
     public RouterStatus build() {
 
-      return new RouterStatus(bestRoutes, bestRoutesForRouter, bgpPeerStatus, network);
+      return new RouterStatus(bestRoutes, bestRoutesForRouter, bgpPeerStatus, natStatus, network);
     }
 
     public Builder clone() {
@@ -227,6 +263,7 @@ public final class RouterStatus implements ApiMessage {
       newBuilder.addAllBestRoutes(this.bestRoutes);
       newBuilder.addAllBestRoutesForRouter(this.bestRoutesForRouter);
       newBuilder.addAllBgpPeerStatus(this.bgpPeerStatus);
+      newBuilder.addAllNatStatus(this.natStatus);
       newBuilder.setNetwork(this.network);
       return newBuilder;
     }
@@ -244,6 +281,9 @@ public final class RouterStatus implements ApiMessage {
         + "bgpPeerStatus="
         + bgpPeerStatus
         + ", "
+        + "natStatus="
+        + natStatus
+        + ", "
         + "network="
         + network
         + "}";
@@ -259,6 +299,7 @@ public final class RouterStatus implements ApiMessage {
       return Objects.equals(this.bestRoutes, that.getBestRoutesList())
           && Objects.equals(this.bestRoutesForRouter, that.getBestRoutesForRouterList())
           && Objects.equals(this.bgpPeerStatus, that.getBgpPeerStatusList())
+          && Objects.equals(this.natStatus, that.getNatStatusList())
           && Objects.equals(this.network, that.getNetwork());
     }
     return false;
@@ -266,6 +307,6 @@ public final class RouterStatus implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bestRoutes, bestRoutesForRouter, bgpPeerStatus, network);
+    return Objects.hash(bestRoutes, bestRoutesForRouter, bgpPeerStatus, natStatus, network);
   }
 }

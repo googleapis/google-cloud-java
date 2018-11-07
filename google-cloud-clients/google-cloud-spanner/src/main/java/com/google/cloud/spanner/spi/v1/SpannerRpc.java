@@ -16,15 +16,21 @@
 
 package com.google.cloud.spanner.spi.v1;
 
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
 import com.google.common.collect.ImmutableList;
 import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.database.v1.Database;
+import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
+import com.google.spanner.admin.instance.v1.CreateInstanceMetadata;
 import com.google.spanner.admin.instance.v1.Instance;
 import com.google.spanner.admin.instance.v1.InstanceConfig;
+import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
@@ -163,10 +169,11 @@ public interface SpannerRpc extends ServiceRpc {
   Paginated<Instance> listInstances(
       int pageSize, @Nullable String pageToken, @Nullable String filter) throws SpannerException;
 
-  Operation createInstance(String parent, String instanceId, Instance instance)
-      throws SpannerException;
+  OperationFuture<Instance, CreateInstanceMetadata> createInstance(
+      String parent, String instanceId, Instance instance) throws SpannerException;
 
-  Operation updateInstance(Instance instance, FieldMask fieldMask) throws SpannerException;
+  OperationFuture<Instance, UpdateInstanceMetadata> updateInstance(
+      Instance instance, FieldMask fieldMask) throws SpannerException;
 
   Instance getInstance(String instanceName) throws SpannerException;
 
@@ -176,11 +183,11 @@ public interface SpannerRpc extends ServiceRpc {
   Paginated<Database> listDatabases(String instanceName, int pageSize, @Nullable String pageToken)
       throws SpannerException;
 
-  Operation createDatabase(
+  OperationFuture<Database, CreateDatabaseMetadata> createDatabase(
       String instanceName, String createDatabaseStatement, Iterable<String> additionalStatements)
       throws SpannerException;
 
-  Operation updateDatabaseDdl(
+  OperationFuture<Empty, UpdateDatabaseDdlMetadata> updateDatabaseDdl(
       String databaseName, Iterable<String> updateDatabaseStatements, @Nullable String updateId)
       throws SpannerException;
 
@@ -218,7 +225,8 @@ public interface SpannerRpc extends ServiceRpc {
       PartitionQueryRequest request, @Nullable Map<Option, ?> options)
       throws SpannerException;
 
-  PartitionResponse partitionRead(
-      PartitionReadRequest request, @Nullable Map<Option, ?> options)
+  PartitionResponse partitionRead(PartitionReadRequest request, @Nullable Map<Option, ?> options)
       throws SpannerException;
+
+  public void shutdown();
 }
