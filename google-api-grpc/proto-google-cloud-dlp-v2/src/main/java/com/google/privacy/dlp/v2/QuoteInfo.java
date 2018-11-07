@@ -130,12 +130,20 @@ private static final long serialVersionUID = 0L;
 
   public static final int DATE_TIME_FIELD_NUMBER = 2;
   /**
+   * <pre>
+   * The date time indicated by the quote.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
    */
   public boolean hasDateTime() {
     return parsedQuoteCase_ == 2;
   }
   /**
+   * <pre>
+   * The date time indicated by the quote.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
    */
   public com.google.privacy.dlp.v2.DateTime getDateTime() {
@@ -145,6 +153,10 @@ private static final long serialVersionUID = 0L;
     return com.google.privacy.dlp.v2.DateTime.getDefaultInstance();
   }
   /**
+   * <pre>
+   * The date time indicated by the quote.
+   * </pre>
+   *
    * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
    */
   public com.google.privacy.dlp.v2.DateTimeOrBuilder getDateTimeOrBuilder() {
@@ -507,12 +519,20 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.privacy.dlp.v2.DateTime, com.google.privacy.dlp.v2.DateTime.Builder, com.google.privacy.dlp.v2.DateTimeOrBuilder> dateTimeBuilder_;
     /**
+     * <pre>
+     * The date time indicated by the quote.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
      */
     public boolean hasDateTime() {
       return parsedQuoteCase_ == 2;
     }
     /**
+     * <pre>
+     * The date time indicated by the quote.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
      */
     public com.google.privacy.dlp.v2.DateTime getDateTime() {
@@ -529,6 +549,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The date time indicated by the quote.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
      */
     public Builder setDateTime(com.google.privacy.dlp.v2.DateTime value) {
@@ -545,6 +569,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The date time indicated by the quote.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
      */
     public Builder setDateTime(
@@ -559,6 +587,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The date time indicated by the quote.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
      */
     public Builder mergeDateTime(com.google.privacy.dlp.v2.DateTime value) {
@@ -581,6 +613,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The date time indicated by the quote.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
      */
     public Builder clearDateTime() {
@@ -600,12 +636,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * The date time indicated by the quote.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
      */
     public com.google.privacy.dlp.v2.DateTime.Builder getDateTimeBuilder() {
       return getDateTimeFieldBuilder().getBuilder();
     }
     /**
+     * <pre>
+     * The date time indicated by the quote.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
      */
     public com.google.privacy.dlp.v2.DateTimeOrBuilder getDateTimeOrBuilder() {
@@ -619,6 +663,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * The date time indicated by the quote.
+     * </pre>
+     *
      * <code>.google.privacy.dlp.v2.DateTime date_time = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

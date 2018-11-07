@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner;
 
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.spanner.Options.ListOption;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
@@ -29,7 +30,8 @@ public interface DatabaseAdminClient {
    * Creates a new database in a Cloud Spanner instance.
    *
    * <p>Example to create database.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String instanceId = my_instance_id;
    * String databaseId = my_database_id;
    * Operation<Database, CreateDatabaseMetadata> op = dbAdminClient
@@ -58,19 +60,19 @@ public interface DatabaseAdminClient {
    * @param statements DDL statements to run while creating the database, for example {@code CREATE
    *     TABLE MyTable ( ... )}. This should not include {@code CREATE DATABASE} statement.
    */
-  Operation<Database, CreateDatabaseMetadata> createDatabase(
+  OperationFuture<Database, CreateDatabaseMetadata> createDatabase(
       String instanceId, String databaseId, Iterable<String> statements) throws SpannerException;
 
-  /** 
-   * Gets the current state of a Cloud Spanner database. 
+  /**
+   * Gets the current state of a Cloud Spanner database.
    *
    * <p>Example to getDatabase.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String instanceId = my_instance_id;
    * String databaseId = my_database_id;
    * Database db = dbAdminClient.getDatabase(instanceId, databaseId);
    * }</pre>
-   *
    */
   Database getDatabase(String instanceId, String databaseId) throws SpannerException;
 
@@ -84,7 +86,8 @@ public interface DatabaseAdminClient {
    * fails, all subsequent statements in the batch are automatically cancelled.
    *
    * <p>Example to update the database DDL.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String instanceId = my_instance_id;
    * String databaseId = my_database_id;
    * dbAdminClient.updateDatabaseDdl(instanceId,
@@ -97,7 +100,7 @@ public interface DatabaseAdminClient {
    *     one. This must be unique within a database abd must be a valid identifier
    *     [a-zA-Z][a-zA-Z0-9_]*.
    */
-  Operation<Void, UpdateDatabaseDdlMetadata> updateDatabaseDdl(
+  OperationFuture<Void, UpdateDatabaseDdlMetadata> updateDatabaseDdl(
       String instanceId,
       String databaseId,
       Iterable<String> statements,

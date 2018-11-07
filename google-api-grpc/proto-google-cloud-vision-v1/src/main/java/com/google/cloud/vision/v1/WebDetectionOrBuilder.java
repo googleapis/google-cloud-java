@@ -244,7 +244,8 @@ public interface WebDetectionOrBuilder extends
 
   /**
    * <pre>
-   * Best guess text labels for the request image.
+   * The service's best guess as to the topic of the request image.
+   * Inferred from similar images on the open web.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -253,7 +254,8 @@ public interface WebDetectionOrBuilder extends
       getBestGuessLabelsList();
   /**
    * <pre>
-   * Best guess text labels for the request image.
+   * The service's best guess as to the topic of the request image.
+   * Inferred from similar images on the open web.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -261,7 +263,8 @@ public interface WebDetectionOrBuilder extends
   com.google.cloud.vision.v1.WebDetection.WebLabel getBestGuessLabels(int index);
   /**
    * <pre>
-   * Best guess text labels for the request image.
+   * The service's best guess as to the topic of the request image.
+   * Inferred from similar images on the open web.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -269,7 +272,8 @@ public interface WebDetectionOrBuilder extends
   int getBestGuessLabelsCount();
   /**
    * <pre>
-   * Best guess text labels for the request image.
+   * The service's best guess as to the topic of the request image.
+   * Inferred from similar images on the open web.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -278,7 +282,8 @@ public interface WebDetectionOrBuilder extends
       getBestGuessLabelsOrBuilderList();
   /**
    * <pre>
-   * Best guess text labels for the request image.
+   * The service's best guess as to the topic of the request image.
+   * Inferred from similar images on the open web.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
