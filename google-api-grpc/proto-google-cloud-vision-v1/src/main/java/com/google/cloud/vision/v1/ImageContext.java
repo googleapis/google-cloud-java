@@ -82,6 +82,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 42: {
+            com.google.cloud.vision.v1.ProductSearchParams.Builder subBuilder = null;
+            if (productSearchParams_ != null) {
+              subBuilder = productSearchParams_.toBuilder();
+            }
+            productSearchParams_ = input.readMessage(com.google.cloud.vision.v1.ProductSearchParams.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(productSearchParams_);
+              productSearchParams_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           case 50: {
             com.google.cloud.vision.v1.WebDetectionParams.Builder subBuilder = null;
             if (webDetectionParams_ != null) {
@@ -270,6 +283,39 @@ private static final long serialVersionUID = 0L;
     return getCropHintsParams();
   }
 
+  public static final int PRODUCT_SEARCH_PARAMS_FIELD_NUMBER = 5;
+  private com.google.cloud.vision.v1.ProductSearchParams productSearchParams_;
+  /**
+   * <pre>
+   * Parameters for product search.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+   */
+  public boolean hasProductSearchParams() {
+    return productSearchParams_ != null;
+  }
+  /**
+   * <pre>
+   * Parameters for product search.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+   */
+  public com.google.cloud.vision.v1.ProductSearchParams getProductSearchParams() {
+    return productSearchParams_ == null ? com.google.cloud.vision.v1.ProductSearchParams.getDefaultInstance() : productSearchParams_;
+  }
+  /**
+   * <pre>
+   * Parameters for product search.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+   */
+  public com.google.cloud.vision.v1.ProductSearchParamsOrBuilder getProductSearchParamsOrBuilder() {
+    return getProductSearchParams();
+  }
+
   public static final int WEB_DETECTION_PARAMS_FIELD_NUMBER = 6;
   private com.google.cloud.vision.v1.WebDetectionParams webDetectionParams_;
   /**
@@ -326,6 +372,9 @@ private static final long serialVersionUID = 0L;
     if (cropHintsParams_ != null) {
       output.writeMessage(4, getCropHintsParams());
     }
+    if (productSearchParams_ != null) {
+      output.writeMessage(5, getProductSearchParams());
+    }
     if (webDetectionParams_ != null) {
       output.writeMessage(6, getWebDetectionParams());
     }
@@ -353,6 +402,10 @@ private static final long serialVersionUID = 0L;
     if (cropHintsParams_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getCropHintsParams());
+    }
+    if (productSearchParams_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getProductSearchParams());
     }
     if (webDetectionParams_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -386,6 +439,11 @@ private static final long serialVersionUID = 0L;
       result = result && getCropHintsParams()
           .equals(other.getCropHintsParams());
     }
+    result = result && (hasProductSearchParams() == other.hasProductSearchParams());
+    if (hasProductSearchParams()) {
+      result = result && getProductSearchParams()
+          .equals(other.getProductSearchParams());
+    }
     result = result && (hasWebDetectionParams() == other.hasWebDetectionParams());
     if (hasWebDetectionParams()) {
       result = result && getWebDetectionParams()
@@ -413,6 +471,10 @@ private static final long serialVersionUID = 0L;
     if (hasCropHintsParams()) {
       hash = (37 * hash) + CROP_HINTS_PARAMS_FIELD_NUMBER;
       hash = (53 * hash) + getCropHintsParams().hashCode();
+    }
+    if (hasProductSearchParams()) {
+      hash = (37 * hash) + PRODUCT_SEARCH_PARAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getProductSearchParams().hashCode();
     }
     if (hasWebDetectionParams()) {
       hash = (37 * hash) + WEB_DETECTION_PARAMS_FIELD_NUMBER;
@@ -569,6 +631,12 @@ private static final long serialVersionUID = 0L;
         cropHintsParams_ = null;
         cropHintsParamsBuilder_ = null;
       }
+      if (productSearchParamsBuilder_ == null) {
+        productSearchParams_ = null;
+      } else {
+        productSearchParams_ = null;
+        productSearchParamsBuilder_ = null;
+      }
       if (webDetectionParamsBuilder_ == null) {
         webDetectionParams_ = null;
       } else {
@@ -617,6 +685,11 @@ private static final long serialVersionUID = 0L;
         result.cropHintsParams_ = cropHintsParams_;
       } else {
         result.cropHintsParams_ = cropHintsParamsBuilder_.build();
+      }
+      if (productSearchParamsBuilder_ == null) {
+        result.productSearchParams_ = productSearchParams_;
+      } else {
+        result.productSearchParams_ = productSearchParamsBuilder_.build();
       }
       if (webDetectionParamsBuilder_ == null) {
         result.webDetectionParams_ = webDetectionParams_;
@@ -687,6 +760,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasCropHintsParams()) {
         mergeCropHintsParams(other.getCropHintsParams());
+      }
+      if (other.hasProductSearchParams()) {
+        mergeProductSearchParams(other.getProductSearchParams());
       }
       if (other.hasWebDetectionParams()) {
         mergeWebDetectionParams(other.getWebDetectionParams());
@@ -1218,6 +1294,159 @@ private static final long serialVersionUID = 0L;
         cropHintsParams_ = null;
       }
       return cropHintsParamsBuilder_;
+    }
+
+    private com.google.cloud.vision.v1.ProductSearchParams productSearchParams_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.vision.v1.ProductSearchParams, com.google.cloud.vision.v1.ProductSearchParams.Builder, com.google.cloud.vision.v1.ProductSearchParamsOrBuilder> productSearchParamsBuilder_;
+    /**
+     * <pre>
+     * Parameters for product search.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+     */
+    public boolean hasProductSearchParams() {
+      return productSearchParamsBuilder_ != null || productSearchParams_ != null;
+    }
+    /**
+     * <pre>
+     * Parameters for product search.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+     */
+    public com.google.cloud.vision.v1.ProductSearchParams getProductSearchParams() {
+      if (productSearchParamsBuilder_ == null) {
+        return productSearchParams_ == null ? com.google.cloud.vision.v1.ProductSearchParams.getDefaultInstance() : productSearchParams_;
+      } else {
+        return productSearchParamsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Parameters for product search.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+     */
+    public Builder setProductSearchParams(com.google.cloud.vision.v1.ProductSearchParams value) {
+      if (productSearchParamsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        productSearchParams_ = value;
+        onChanged();
+      } else {
+        productSearchParamsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Parameters for product search.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+     */
+    public Builder setProductSearchParams(
+        com.google.cloud.vision.v1.ProductSearchParams.Builder builderForValue) {
+      if (productSearchParamsBuilder_ == null) {
+        productSearchParams_ = builderForValue.build();
+        onChanged();
+      } else {
+        productSearchParamsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Parameters for product search.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+     */
+    public Builder mergeProductSearchParams(com.google.cloud.vision.v1.ProductSearchParams value) {
+      if (productSearchParamsBuilder_ == null) {
+        if (productSearchParams_ != null) {
+          productSearchParams_ =
+            com.google.cloud.vision.v1.ProductSearchParams.newBuilder(productSearchParams_).mergeFrom(value).buildPartial();
+        } else {
+          productSearchParams_ = value;
+        }
+        onChanged();
+      } else {
+        productSearchParamsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Parameters for product search.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+     */
+    public Builder clearProductSearchParams() {
+      if (productSearchParamsBuilder_ == null) {
+        productSearchParams_ = null;
+        onChanged();
+      } else {
+        productSearchParams_ = null;
+        productSearchParamsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Parameters for product search.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+     */
+    public com.google.cloud.vision.v1.ProductSearchParams.Builder getProductSearchParamsBuilder() {
+      
+      onChanged();
+      return getProductSearchParamsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Parameters for product search.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+     */
+    public com.google.cloud.vision.v1.ProductSearchParamsOrBuilder getProductSearchParamsOrBuilder() {
+      if (productSearchParamsBuilder_ != null) {
+        return productSearchParamsBuilder_.getMessageOrBuilder();
+      } else {
+        return productSearchParams_ == null ?
+            com.google.cloud.vision.v1.ProductSearchParams.getDefaultInstance() : productSearchParams_;
+      }
+    }
+    /**
+     * <pre>
+     * Parameters for product search.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.vision.v1.ProductSearchParams, com.google.cloud.vision.v1.ProductSearchParams.Builder, com.google.cloud.vision.v1.ProductSearchParamsOrBuilder> 
+        getProductSearchParamsFieldBuilder() {
+      if (productSearchParamsBuilder_ == null) {
+        productSearchParamsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vision.v1.ProductSearchParams, com.google.cloud.vision.v1.ProductSearchParams.Builder, com.google.cloud.vision.v1.ProductSearchParamsOrBuilder>(
+                getProductSearchParams(),
+                getParentForChildren(),
+                isClean());
+        productSearchParams_ = null;
+      }
+      return productSearchParamsBuilder_;
     }
 
     private com.google.cloud.vision.v1.WebDetectionParams webDetectionParams_ = null;

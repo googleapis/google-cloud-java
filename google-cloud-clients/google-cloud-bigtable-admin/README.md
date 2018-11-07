@@ -21,16 +21,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigtable-admin</artifactId>
-  <version>0.67.0-alpha</version>
+  <version>0.69.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigtable-admin:0.67.0-alpha'
+compile 'com.google.cloud:google-cloud-bigtable-admin:0.69.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigtable-admin" % "0.67.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigtable-admin" % "0.69.0-alpha"
 ```
 [//]: # ({x-version-update-end})
 
@@ -72,22 +72,23 @@ at the top of your file:
 
 
 ```java
-import com.google.bigtable.admin.v2.ColumnFamily;
+import static com.google.cloud.bigtable.admin.v2.models.GCRules.GCRULES;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
+import com.google.cloud.bigtable.admin.v2.models.Table;
 ```
 
 Then, to create a table, use the following code:
 ```java
 InstanceName instanceName = InstanceName.of("my-project", "my-instance");
 
-TableAdminClient tableAdminClient = TableAdminClient.create(instanceName);
+BigtableTableAdminClient tableAdminClient = BigtableTableAdminClient.create(instanceName);
 
 try {
-    CreateTable createTableReq = TableAdminRequests.createTable("tableId")
+  Table createdTable = tableAdminClient.createTable(
+    CreateTableRequest.of("my-table")
       .addFamily("cf2", GCRULES.maxVersions(10));
-    client.createTable(createTableReq);
-
 } finally {
   tableAdminClient.close();
 }

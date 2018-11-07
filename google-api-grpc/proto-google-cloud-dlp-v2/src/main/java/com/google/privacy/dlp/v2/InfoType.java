@@ -92,7 +92,8 @@ private static final long serialVersionUID = 0L;
    * Name of the information type. Either a name of your choosing when
    * creating a CustomInfoType, or one of the names listed
    * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
-   * a built-in type.
+   * a built-in type. InfoType names should conform to the pattern
+   * [a-zA-Z0-9_]{1,64}.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -114,7 +115,8 @@ private static final long serialVersionUID = 0L;
    * Name of the information type. Either a name of your choosing when
    * creating a CustomInfoType, or one of the names listed
    * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
-   * a built-in type.
+   * a built-in type. InfoType names should conform to the pattern
+   * [a-zA-Z0-9_]{1,64}.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -446,7 +448,8 @@ private static final long serialVersionUID = 0L;
      * Name of the information type. Either a name of your choosing when
      * creating a CustomInfoType, or one of the names listed
      * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
-     * a built-in type.
+     * a built-in type. InfoType names should conform to the pattern
+     * [a-zA-Z0-9_]{1,64}.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -468,7 +471,8 @@ private static final long serialVersionUID = 0L;
      * Name of the information type. Either a name of your choosing when
      * creating a CustomInfoType, or one of the names listed
      * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
-     * a built-in type.
+     * a built-in type. InfoType names should conform to the pattern
+     * [a-zA-Z0-9_]{1,64}.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -491,7 +495,8 @@ private static final long serialVersionUID = 0L;
      * Name of the information type. Either a name of your choosing when
      * creating a CustomInfoType, or one of the names listed
      * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
-     * a built-in type.
+     * a built-in type. InfoType names should conform to the pattern
+     * [a-zA-Z0-9_]{1,64}.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -511,7 +516,8 @@ private static final long serialVersionUID = 0L;
      * Name of the information type. Either a name of your choosing when
      * creating a CustomInfoType, or one of the names listed
      * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
-     * a built-in type.
+     * a built-in type. InfoType names should conform to the pattern
+     * [a-zA-Z0-9_]{1,64}.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -527,7 +533,8 @@ private static final long serialVersionUID = 0L;
      * Name of the information type. Either a name of your choosing when
      * creating a CustomInfoType, or one of the names listed
      * at https://cloud.google.com/dlp/docs/infotypes-reference when specifying
-     * a built-in type.
+     * a built-in type. InfoType names should conform to the pattern
+     * [a-zA-Z0-9_]{1,64}.
      * </pre>
      *
      * <code>string name = 1;</code>
