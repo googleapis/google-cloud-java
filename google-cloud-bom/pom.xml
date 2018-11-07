@@ -587,6 +587,16 @@
         <version>0.69.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-resourcemanager:current} -->
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-scheduler-v1beta1</artifactId>
+        <version>0.34.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-scheduler-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-scheduler-v1beta1</artifactId>
+        <version>0.34.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-scheduler-v1beta1:current} -->
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-spanner</artifactId>
         <version>0.69.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
