@@ -67,6 +67,7 @@ public class LogEntry implements Serializable {
   private final Operation operation;
   private final String trace;
   private final String spanId;
+  private final boolean traceSampled;
   private final SourceLocation sourceLocation;
   private final Payload<?> payload;
 
@@ -86,6 +87,7 @@ public class LogEntry implements Serializable {
     private Operation operation;
     private String trace;
     private String spanId;
+    private boolean traceSampled;
     private SourceLocation sourceLocation;
     private Payload<?> payload;
 
@@ -105,6 +107,7 @@ public class LogEntry implements Serializable {
       this.operation = entry.operation;
       this.trace = entry.trace;
       this.spanId = entry.spanId;
+      this.traceSampled = entry.traceSampled;
       this.sourceLocation = entry.sourceLocation;
       this.payload = entry.payload;
     }
@@ -241,6 +244,15 @@ public class LogEntry implements Serializable {
 
 
     /**
+     * Sets the sampling decision of the trace span associated with the log entry.
+     */
+    public Builder setTraceSampled(boolean traceSampled) {
+      this.traceSampled = traceSampled;
+      return this;
+    }
+
+
+    /**
      * Sets the source code location information associated with the log entry if any.
      */
     public Builder setSourceLocation(SourceLocation sourceLocation) {
@@ -281,6 +293,7 @@ public class LogEntry implements Serializable {
     this.operation = builder.operation;
     this.trace = builder.trace;
     this.spanId = builder.spanId;
+    this.traceSampled = builder.traceSampled;
     this.sourceLocation = builder.sourceLocation;
     this.payload = builder.payload;
   }
@@ -385,6 +398,15 @@ public class LogEntry implements Serializable {
 
 
   /**
+   * Returns the sampling decision of the trace span associated with the log entry, or
+   * {@code false} if there is no trace span.
+   */
+  public boolean getTraceSampled() {
+    return traceSampled;
+  }
+
+
+  /**
    * Returns the source code location information associated with the log entry, if any.
    */
   public SourceLocation getSourceLocation() {
@@ -407,7 +429,7 @@ public class LogEntry implements Serializable {
   @Override
   public int hashCode() {
     return Objects.hash(logName, resource, timestamp, receiveTimestamp, severity, insertId,
-        httpRequest, labels, operation, trace, spanId, sourceLocation, payload);
+        httpRequest, labels, operation, trace, spanId, traceSampled, sourceLocation, payload);
   }
 
   @Override
@@ -430,6 +452,7 @@ public class LogEntry implements Serializable {
         && Objects.equals(operation, other.operation)
         && Objects.equals(trace, other.trace)
         && Objects.equals(spanId, other.spanId)
+        && Objects.equals(traceSampled, other.traceSampled)
         && Objects.equals(sourceLocation, other.sourceLocation)
         && Objects.equals(payload, other.payload);
   }
@@ -448,6 +471,7 @@ public class LogEntry implements Serializable {
         .add("operation", operation)
         .add("trace", trace)
         .add("spanId", spanId)
+        .add("traceSampled", traceSampled)
         .add("sourceLocation", sourceLocation)
         .add("payload", payload)
         .toString();
@@ -505,6 +529,7 @@ public class LogEntry implements Serializable {
     if (spanId != null) {
       builder.setSpanId(spanId);
     }
+    builder.setTraceSampled(traceSampled);
     if (sourceLocation != null) {
       builder.setSourceLocation(sourceLocation.toPb());
     }
@@ -572,6 +597,7 @@ public class LogEntry implements Serializable {
     if (!entryPb.getSpanId().equals("")) {
       builder.setSpanId(entryPb.getSpanId());
     }
+    builder.setTraceSampled(entryPb.getTraceSampled());
     if (!entryPb.getSourceLocation().equals(LogEntrySourceLocation.getDefaultInstance())) {
       builder.setSourceLocation(SourceLocation.fromPb(entryPb.getSourceLocation()));
     }
