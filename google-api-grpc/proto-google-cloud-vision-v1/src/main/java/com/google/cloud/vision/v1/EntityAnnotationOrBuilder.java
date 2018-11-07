@@ -85,9 +85,9 @@ public interface EntityAnnotationOrBuilder extends
    * image. Range [0, 1].
    * </pre>
    *
-   * <code>float confidence = 5;</code>
+   * <code>float confidence = 5 [deprecated = true];</code>
    */
-  float getConfidence();
+  @java.lang.Deprecated float getConfidence();
 
   /**
    * <pre>

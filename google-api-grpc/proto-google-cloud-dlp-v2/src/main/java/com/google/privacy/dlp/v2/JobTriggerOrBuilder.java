@@ -135,7 +135,7 @@ public interface JobTriggerOrBuilder extends
   /**
    * <pre>
    * A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automaticaly being paused.
+   * errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared. Output only field.
    * </pre>
@@ -147,7 +147,7 @@ public interface JobTriggerOrBuilder extends
   /**
    * <pre>
    * A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automaticaly being paused.
+   * errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared. Output only field.
    * </pre>
@@ -158,7 +158,7 @@ public interface JobTriggerOrBuilder extends
   /**
    * <pre>
    * A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automaticaly being paused.
+   * errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared. Output only field.
    * </pre>
@@ -169,7 +169,7 @@ public interface JobTriggerOrBuilder extends
   /**
    * <pre>
    * A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automaticaly being paused.
+   * errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared. Output only field.
    * </pre>
@@ -181,7 +181,7 @@ public interface JobTriggerOrBuilder extends
   /**
    * <pre>
    * A stream of errors encountered when the trigger was activated. Repeated
-   * errors may result in the JobTrigger automaticaly being paused.
+   * errors may result in the JobTrigger automatically being paused.
    * Will return the last 100 errors. Whenever the JobTrigger is modified
    * this list will be cleared. Output only field.
    * </pre>
