@@ -150,7 +150,8 @@ public class SubscriberTest {
     return Subscriber.newBuilder(TEST_SUBSCRIPTION, receiver)
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
         .setSystemExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
-        .setChannelProvider(FixedTransportChannelProvider.create(GrpcTransportChannel.create(testChannel)))
+        .setChannelProvider(
+            FixedTransportChannelProvider.create(GrpcTransportChannel.create(testChannel)))
         .setCredentialsProvider(NoCredentialsProvider.create())
         .setClock(fakeExecutor.getClock())
         .setParallelPullCount(1);
