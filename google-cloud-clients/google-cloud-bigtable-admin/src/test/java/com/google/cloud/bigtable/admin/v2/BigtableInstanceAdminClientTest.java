@@ -870,7 +870,7 @@ public class BigtableInstanceAdminClientTest {
         new NotFoundException("fake-error", null, GrpcStatusCode.of(Status.Code.NOT_FOUND), false);
 
     Mockito.when(mockGetInstanceCallable.futureCall(Matchers.any(GetInstanceRequest.class)))
-        .thenReturn(ApiFutures.immediateFailedFuture(exception));
+        .thenReturn(ApiFutures.<com.google.bigtable.admin.v2.Instance>immediateFailedFuture(exception));
 
     // Execute
     boolean found = adminClient.exists(INSTANCE_NAME.getInstance());
