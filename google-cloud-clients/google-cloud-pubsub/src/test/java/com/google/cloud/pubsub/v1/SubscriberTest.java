@@ -114,8 +114,6 @@ public class SubscriberTest {
 
   @Test(expected = IllegalStateException.class)
   public void testFailedChannel_fatalError_subscriberFails() throws Exception {
-    System.err.println("testFailedChannel_fatalError_subscriberFails");
-
     Subscriber subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)

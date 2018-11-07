@@ -66,7 +66,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
   private static final int MAX_PER_REQUEST_CHANGES = 1000;
 
   private final SubscriberStub stub;
-  private final int chanAffinity;
+  private final int channelAffinity;
   private final String subscription;
   private final ScheduledExecutorService systemExecutor;
   private final MessageDispatcher messageDispatcher;
@@ -84,7 +84,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       Duration maxAckExtensionPeriod,
       Distribution ackLatencyDistribution,
       SubscriberStub stub,
-      int chanAffinity,
+      int channelAffinity,
       FlowController flowController,
       Deque<MessageDispatcher.OutstandingMessageBatch> outstandingMessageBatches,
       ScheduledExecutorService executor,
@@ -93,7 +93,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     this.subscription = subscription;
     this.systemExecutor = systemExecutor;
     this.stub = stub;
-    this.chanAffinity = chanAffinity;
+    this.channelAffinity = channelAffinity;
     this.messageDispatcher =
         new MessageDispatcher(
             receiver,
@@ -198,7 +198,7 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
         stub.streamingPullCallable()
             .splitCall(
                 responseObserver,
-                GrpcCallContext.createDefault().withChannelAffinity(chanAffinity));
+                GrpcCallContext.createDefault().withChannelAffinity(channelAffinity));
 
     logger.log(Level.FINER, "Initializing stream to subscription {0}", subscription);
     // We need to set streaming ack deadline, but it's not useful since we'll modack to send receipt

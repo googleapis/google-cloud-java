@@ -114,11 +114,6 @@ public class Subscriber extends AbstractApiService {
   private final FlowController flowController;
   private final int numPullers;
 
-  // private final int numChannels;
-  // private final TransportChannelProvider channelProvider;
-  // private final CredentialsProvider credentialsProvider;
-  // private final List<Channel> channels;
-
   private final MessageReceiver receiver;
   private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
   private final Deque<MessageDispatcher.OutstandingMessageBatch> outstandingMessageBatches =
