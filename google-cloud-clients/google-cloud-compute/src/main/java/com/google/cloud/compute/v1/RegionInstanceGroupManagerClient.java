@@ -158,7 +158,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to remove the specified instances from the managed instance group.
+   * Flags the specified instances to be immediately removed from the managed instance group.
    * Abandoning an instance does not delete the instance, but it does remove the instance from any
    * target pools that are applied by the managed instance group. This method reduces the targetSize
    * of the managed instance group by the number of instances that you abandon. This operation is
@@ -204,7 +204,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to remove the specified instances from the managed instance group.
+   * Flags the specified instances to be immediately removed from the managed instance group.
    * Abandoning an instance does not delete the instance, but it does remove the instance from any
    * target pools that are applied by the managed instance group. This method reduces the targetSize
    * of the managed instance group by the number of instances that you abandon. This operation is
@@ -249,7 +249,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to remove the specified instances from the managed instance group.
+   * Flags the specified instances to be immediately removed from the managed instance group.
    * Abandoning an instance does not delete the instance, but it does remove the instance from any
    * target pools that are applied by the managed instance group. This method reduces the targetSize
    * of the managed instance group by the number of instances that you abandon. This operation is
@@ -288,7 +288,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to remove the specified instances from the managed instance group.
+   * Flags the specified instances to be immediately removed from the managed instance group.
    * Abandoning an instance does not delete the instance, but it does remove the instance from any
    * target pools that are applied by the managed instance group. This method reduces the targetSize
    * of the managed instance group by the number of instances that you abandon. This operation is
@@ -429,12 +429,12 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to delete the specified instances in the managed instance group. The
+   * Flags the specified instances in the managed instance group to be immediately deleted. The
    * instances are also removed from any target pools of which they were a member. This method
    * reduces the targetSize of the managed instance group by the number of instances that you
-   * delete. This operation is marked as DONE when the action is scheduled even if the instances are
-   * still being deleted. You must separately verify the status of the deleting action with the
-   * listmanagedinstances method.
+   * delete. The deleteInstances operation is marked DONE if the deleteInstances request is
+   * successful. The underlying actions take additional time. You must separately verify the status
+   * of the deleting action with the listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
@@ -474,12 +474,12 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to delete the specified instances in the managed instance group. The
+   * Flags the specified instances in the managed instance group to be immediately deleted. The
    * instances are also removed from any target pools of which they were a member. This method
    * reduces the targetSize of the managed instance group by the number of instances that you
-   * delete. This operation is marked as DONE when the action is scheduled even if the instances are
-   * still being deleted. You must separately verify the status of the deleting action with the
-   * listmanagedinstances method.
+   * delete. The deleteInstances operation is marked DONE if the deleteInstances request is
+   * successful. The underlying actions take additional time. You must separately verify the status
+   * of the deleting action with the listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
@@ -518,12 +518,12 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to delete the specified instances in the managed instance group. The
+   * Flags the specified instances in the managed instance group to be immediately deleted. The
    * instances are also removed from any target pools of which they were a member. This method
    * reduces the targetSize of the managed instance group by the number of instances that you
-   * delete. This operation is marked as DONE when the action is scheduled even if the instances are
-   * still being deleted. You must separately verify the status of the deleting action with the
-   * listmanagedinstances method.
+   * delete. The deleteInstances operation is marked DONE if the deleteInstances request is
+   * successful. The underlying actions take additional time. You must separately verify the status
+   * of the deleting action with the listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
@@ -556,12 +556,12 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to delete the specified instances in the managed instance group. The
+   * Flags the specified instances in the managed instance group to be immediately deleted. The
    * instances are also removed from any target pools of which they were a member. This method
    * reduces the targetSize of the managed instance group by the number of instances that you
-   * delete. This operation is marked as DONE when the action is scheduled even if the instances are
-   * still being deleted. You must separately verify the status of the deleting action with the
-   * listmanagedinstances method.
+   * delete. The deleteInstances operation is marked DONE if the deleteInstances request is
+   * successful. The underlying actions take additional time. You must separately verify the status
+   * of the deleting action with the listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
@@ -697,10 +697,10 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a managed instance group using the information that you specify in the request. After
-   * the group is created, it schedules an action to create instances in the group using the
-   * specified instance template. This operation is marked as DONE when the group is created even if
-   * the instances in the group have not yet been created. You must separately verify the status of
-   * the individual instances with the listmanagedinstances method.
+   * the group is created, instances in the group are created using the specified instance template.
+   * This operation is marked as DONE when the group is created even if the instances in the group
+   * have not yet been created. You must separately verify the status of the individual instances
+   * with the listmanagedinstances method.
    *
    * <p>A regional managed instance group can contain up to 2000 instances.
    *
@@ -736,10 +736,10 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a managed instance group using the information that you specify in the request. After
-   * the group is created, it schedules an action to create instances in the group using the
-   * specified instance template. This operation is marked as DONE when the group is created even if
-   * the instances in the group have not yet been created. You must separately verify the status of
-   * the individual instances with the listmanagedinstances method.
+   * the group is created, instances in the group are created using the specified instance template.
+   * This operation is marked as DONE when the group is created even if the instances in the group
+   * have not yet been created. You must separately verify the status of the individual instances
+   * with the listmanagedinstances method.
    *
    * <p>A regional managed instance group can contain up to 2000 instances.
    *
@@ -775,10 +775,10 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a managed instance group using the information that you specify in the request. After
-   * the group is created, it schedules an action to create instances in the group using the
-   * specified instance template. This operation is marked as DONE when the group is created even if
-   * the instances in the group have not yet been created. You must separately verify the status of
-   * the individual instances with the listmanagedinstances method.
+   * the group is created, instances in the group are created using the specified instance template.
+   * This operation is marked as DONE when the group is created even if the instances in the group
+   * have not yet been created. You must separately verify the status of the individual instances
+   * with the listmanagedinstances method.
    *
    * <p>A regional managed instance group can contain up to 2000 instances.
    *
@@ -808,10 +808,10 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a managed instance group using the information that you specify in the request. After
-   * the group is created, it schedules an action to create instances in the group using the
-   * specified instance template. This operation is marked as DONE when the group is created even if
-   * the instances in the group have not yet been created. You must separately verify the status of
-   * the individual instances with the listmanagedinstances method.
+   * the group is created, instances in the group are created using the specified instance template.
+   * This operation is marked as DONE when the group is created even if the instances in the group
+   * have not yet been created. You must separately verify the status of the individual instances
+   * with the listmanagedinstances method.
    *
    * <p>A regional managed instance group can contain up to 2000 instances.
    *
@@ -1093,11 +1093,11 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to recreate the specified instances in the managed instance group. The
+   * Flags the specified instances in the managed instance group to be immediately recreated. The
    * instances are deleted and recreated using the current instance template for the managed
-   * instance group. This operation is marked as DONE when the action is scheduled even if the
-   * instances have not yet been recreated. You must separately verify the status of the recreating
-   * action with the listmanagedinstances method.
+   * instance group. This operation is marked as DONE when the flag is set even if the instances
+   * have not yet been recreated. You must separately verify the status of the recreating action
+   * with the listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
@@ -1137,11 +1137,11 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to recreate the specified instances in the managed instance group. The
+   * Flags the specified instances in the managed instance group to be immediately recreated. The
    * instances are deleted and recreated using the current instance template for the managed
-   * instance group. This operation is marked as DONE when the action is scheduled even if the
-   * instances have not yet been recreated. You must separately verify the status of the recreating
-   * action with the listmanagedinstances method.
+   * instance group. This operation is marked as DONE when the flag is set even if the instances
+   * have not yet been recreated. You must separately verify the status of the recreating action
+   * with the listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
@@ -1180,11 +1180,11 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to recreate the specified instances in the managed instance group. The
+   * Flags the specified instances in the managed instance group to be immediately recreated. The
    * instances are deleted and recreated using the current instance template for the managed
-   * instance group. This operation is marked as DONE when the action is scheduled even if the
-   * instances have not yet been recreated. You must separately verify the status of the recreating
-   * action with the listmanagedinstances method.
+   * instance group. This operation is marked as DONE when the flag is set even if the instances
+   * have not yet been recreated. You must separately verify the status of the recreating action
+   * with the listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
@@ -1217,11 +1217,11 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to recreate the specified instances in the managed instance group. The
+   * Flags the specified instances in the managed instance group to be immediately recreated. The
    * instances are deleted and recreated using the current instance template for the managed
-   * instance group. This operation is marked as DONE when the action is scheduled even if the
-   * instances have not yet been recreated. You must separately verify the status of the recreating
-   * action with the listmanagedinstances method.
+   * instance group. This operation is marked as DONE when the flag is set even if the instances
+   * have not yet been recreated. You must separately verify the status of the recreating action
+   * with the listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
@@ -1253,11 +1253,12 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the intended size for the managed instance group. If you increase the size, the group
-   * schedules actions to create new instances using the current instance template. If you decrease
-   * the size, the group schedules delete actions on one or more instances. The resize operation is
-   * marked DONE when the resize actions are scheduled even if the group has not yet added or
-   * deleted any instances. You must separately verify the status of the creating or deleting
+   * Changes the intended size of the managed instance group. If you increase the size, the group
+   * creates new instances using the current instance template. If you decrease the size, the group
+   * deletes one or more instances.
+   *
+   * <p>The resize operation is marked DONE if the resize request is successful. The underlying
+   * actions take additional time. You must separately verify the status of the creating or deleting
    * actions with the listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
@@ -1293,11 +1294,12 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the intended size for the managed instance group. If you increase the size, the group
-   * schedules actions to create new instances using the current instance template. If you decrease
-   * the size, the group schedules delete actions on one or more instances. The resize operation is
-   * marked DONE when the resize actions are scheduled even if the group has not yet added or
-   * deleted any instances. You must separately verify the status of the creating or deleting
+   * Changes the intended size of the managed instance group. If you increase the size, the group
+   * creates new instances using the current instance template. If you decrease the size, the group
+   * deletes one or more instances.
+   *
+   * <p>The resize operation is marked DONE if the resize request is successful. The underlying
+   * actions take additional time. You must separately verify the status of the creating or deleting
    * actions with the listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
@@ -1332,11 +1334,12 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the intended size for the managed instance group. If you increase the size, the group
-   * schedules actions to create new instances using the current instance template. If you decrease
-   * the size, the group schedules delete actions on one or more instances. The resize operation is
-   * marked DONE when the resize actions are scheduled even if the group has not yet added or
-   * deleted any instances. You must separately verify the status of the creating or deleting
+   * Changes the intended size of the managed instance group. If you increase the size, the group
+   * creates new instances using the current instance template. If you decrease the size, the group
+   * deletes one or more instances.
+   *
+   * <p>The resize operation is marked DONE if the resize request is successful. The underlying
+   * actions take additional time. You must separately verify the status of the creating or deleting
    * actions with the listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
@@ -1368,11 +1371,12 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Changes the intended size for the managed instance group. If you increase the size, the group
-   * schedules actions to create new instances using the current instance template. If you decrease
-   * the size, the group schedules delete actions on one or more instances. The resize operation is
-   * marked DONE when the resize actions are scheduled even if the group has not yet added or
-   * deleted any instances. You must separately verify the status of the creating or deleting
+   * Changes the intended size of the managed instance group. If you increase the size, the group
+   * creates new instances using the current instance template. If you decrease the size, the group
+   * deletes one or more instances.
+   *
+   * <p>The resize operation is marked DONE if the resize request is successful. The underlying
+   * actions take additional time. You must separately verify the status of the creating or deleting
    * actions with the listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
