@@ -1360,7 +1360,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of referrers to instances contained within the specified zone.
+   * Retrieves the list of referrers to instances contained within the specified zone. For more
+   * information, read Viewing Referrers to VM Instances.
    *
    * <p>Sample code:
    *
@@ -1389,7 +1390,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of referrers to instances contained within the specified zone.
+   * Retrieves the list of referrers to instances contained within the specified zone. For more
+   * information, read Viewing Referrers to VM Instances.
    *
    * <p>Sample code:
    *
@@ -1415,7 +1417,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of referrers to instances contained within the specified zone.
+   * Retrieves the list of referrers to instances contained within the specified zone. For more
+   * information, read Viewing Referrers to VM Instances.
    *
    * <p>Sample code:
    *
@@ -1442,7 +1445,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of referrers to instances contained within the specified zone.
+   * Retrieves the list of referrers to instances contained within the specified zone. For more
+   * information, read Viewing Referrers to VM Instances.
    *
    * <p>Sample code:
    *
@@ -1468,7 +1472,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves the list of referrers to instances contained within the specified zone.
+   * Retrieves the list of referrers to instances contained within the specified zone. For more
+   * information, read Viewing Referrers to VM Instances.
    *
    * <p>Sample code:
    *
@@ -2641,7 +2646,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets tags for the specified instance to the data included in the request.
+   * Sets network tags for the specified instance to the data included in the request.
    *
    * <p>Sample code:
    *
@@ -2670,7 +2675,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets tags for the specified instance to the data included in the request.
+   * Sets network tags for the specified instance to the data included in the request.
    *
    * <p>Sample code:
    *
@@ -2699,7 +2704,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets tags for the specified instance to the data included in the request.
+   * Sets network tags for the specified instance to the data included in the request.
    *
    * <p>Sample code:
    *
@@ -2725,7 +2730,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets tags for the specified instance to the data included in the request.
+   * Sets network tags for the specified instance to the data included in the request.
    *
    * <p>Sample code:
    *
