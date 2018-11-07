@@ -6,6 +6,7 @@ package com.google.privacy.dlp.v2;
 /**
  * <pre>
  * Message for a date time object.
+ * e.g. 2018-01-01, 5th August.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.DateTime}
@@ -926,6 +927,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Message for a date time object.
+   * e.g. 2018-01-01, 5th August.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.DateTime}
