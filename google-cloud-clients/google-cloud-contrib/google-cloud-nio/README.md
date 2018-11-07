@@ -138,7 +138,6 @@ Limitations
 
 This library is usable, but not yet complete. The following features are not
 yet implemented:
- * Listing all the buckets
  * Resuming upload or download
  * Generations
  * File attributes
@@ -153,8 +152,9 @@ subset via a familiar interface.
 **NOTE:** Cloud Storage uses a flat namespace and therefore doesn't support real
 directories. So this library supports what's known as "pseudo-directories". Any
 path that includes a trailing slash, will be considered a directory. It will
-always be assumed to exist, without performing any I/O. This allows you to do
-path manipulation in the same manner as you would with the normal UNIX file
+always be assumed to exist, without performing any I/O. Paths without the trailing
+slash will result in an I/O operation to check a file is present in that "directory".
+This allows you to do path manipulation in the same manner as you would with the normal UNIX file
 system implementation. You can disable this feature with
 `CloudStorageConfiguration.usePseudoDirectories()`.
 

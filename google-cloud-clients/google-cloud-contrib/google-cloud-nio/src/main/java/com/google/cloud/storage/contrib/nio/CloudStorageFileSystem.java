@@ -19,6 +19,10 @@ package com.google.cloud.storage.contrib.nio;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.gax.paging.Page;
+import com.google.cloud.storage.Bucket;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableSet;
@@ -83,6 +87,27 @@ public final class CloudStorageFileSystem extends FileSystem {
 
   static CloudStorageConfiguration getDefaultCloudStorageConfiguration() {
     return userSpecifiedDefault;
+  }
+
+  /**
+   * Lists the project's buckets. Pass "null" to use the default project.
+   *
+   * <p>Example of listing buckets, specifying the page size and a name prefix.
+   * <pre> {@code
+   * String prefix = "bucket_";
+   * Page<Bucket> buckets = CloudStorageFileSystem.listBuckets("my-project", BucketListOption.prefix(prefix));
+   * Iterator<Bucket> bucketIterator = buckets.iterateAll();
+   * while (bucketIterator.hasNext()) {
+   *   Bucket bucket = bucketIterator.next();
+   *   // do something with the bucket
+   * }
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  public static Page<Bucket> listBuckets(@Nullable String project, Storage.BucketListOption... options) {
+    CloudStorageFileSystemProvider provider = new CloudStorageFileSystemProvider(null, StorageOptions.newBuilder().setProjectId(project).build());
+    return provider.listBuckets(options);
   }
 
   /**

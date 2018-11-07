@@ -18,6 +18,7 @@ package com.google.cloud.spanner;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
 
 /**
@@ -51,7 +52,7 @@ public class Database extends DatabaseInfo {
    *     one. This must be unique within a database abd must be a valid identifier
    *     [a-zA-Z][a-zA-Z0-9_]*.
    */
-  public Operation<Void, UpdateDatabaseDdlMetadata> updateDdl(
+  public OperationFuture<Void, UpdateDatabaseDdlMetadata> updateDdl(
       Iterable<String> statements, String operationId) throws SpannerException {
     return dbClient.updateDatabaseDdl(instance(), database(), statements, operationId);
   }
