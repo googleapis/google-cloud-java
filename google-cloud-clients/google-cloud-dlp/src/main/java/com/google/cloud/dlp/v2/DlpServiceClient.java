@@ -32,6 +32,7 @@ import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.CreateJobTriggerRequest;
+import com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
@@ -39,11 +40,13 @@ import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
+import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
+import com.google.privacy.dlp.v2.GetStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.InspectTemplate;
@@ -58,13 +61,17 @@ import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
 import com.google.privacy.dlp.v2.ListInspectTemplatesResponse;
 import com.google.privacy.dlp.v2.ListJobTriggersRequest;
 import com.google.privacy.dlp.v2.ListJobTriggersResponse;
+import com.google.privacy.dlp.v2.ListStoredInfoTypesRequest;
+import com.google.privacy.dlp.v2.ListStoredInfoTypesResponse;
 import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
+import com.google.privacy.dlp.v2.StoredInfoType;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateJobTriggerRequest;
+import com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -1579,6 +1586,284 @@ public class DlpServiceClient implements BackgroundResource {
     return stub.createJobTriggerCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a pre-built stored infoType to be used for inspection. See
+   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   CreateStoredInfoTypeRequest request = CreateStoredInfoTypeRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   StoredInfoType response = dlpServiceClient.createStoredInfoType(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StoredInfoType createStoredInfoType(CreateStoredInfoTypeRequest request) {
+    return createStoredInfoTypeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates a pre-built stored infoType to be used for inspection. See
+   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   CreateStoredInfoTypeRequest request = CreateStoredInfoTypeRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;StoredInfoType&gt; future = dlpServiceClient.createStoredInfoTypeCallable().futureCall(request);
+   *   // Do something
+   *   StoredInfoType response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<CreateStoredInfoTypeRequest, StoredInfoType>
+      createStoredInfoTypeCallable() {
+    return stub.createStoredInfoTypeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the stored infoType by creating a new version. The existing version will continue to be
+   * used until the new version is ready. See
+   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   StoredInfoTypeName name = OrganizationStoredInfoTypeName.of("[ORGANIZATION]", "[STORED_INFO_TYPE]");
+   *   UpdateStoredInfoTypeRequest request = UpdateStoredInfoTypeRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   StoredInfoType response = dlpServiceClient.updateStoredInfoType(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StoredInfoType updateStoredInfoType(UpdateStoredInfoTypeRequest request) {
+    return updateStoredInfoTypeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates the stored infoType by creating a new version. The existing version will continue to be
+   * used until the new version is ready. See
+   * https://cloud.google.com/dlp/docs/creating-stored-infotypes to learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   StoredInfoTypeName name = OrganizationStoredInfoTypeName.of("[ORGANIZATION]", "[STORED_INFO_TYPE]");
+   *   UpdateStoredInfoTypeRequest request = UpdateStoredInfoTypeRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;StoredInfoType&gt; future = dlpServiceClient.updateStoredInfoTypeCallable().futureCall(request);
+   *   // Do something
+   *   StoredInfoType response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UpdateStoredInfoTypeRequest, StoredInfoType>
+      updateStoredInfoTypeCallable() {
+    return stub.updateStoredInfoTypeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   StoredInfoTypeName name = OrganizationStoredInfoTypeName.of("[ORGANIZATION]", "[STORED_INFO_TYPE]");
+   *   GetStoredInfoTypeRequest request = GetStoredInfoTypeRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   StoredInfoType response = dlpServiceClient.getStoredInfoType(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final StoredInfoType getStoredInfoType(GetStoredInfoTypeRequest request) {
+    return getStoredInfoTypeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   StoredInfoTypeName name = OrganizationStoredInfoTypeName.of("[ORGANIZATION]", "[STORED_INFO_TYPE]");
+   *   GetStoredInfoTypeRequest request = GetStoredInfoTypeRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;StoredInfoType&gt; future = dlpServiceClient.getStoredInfoTypeCallable().futureCall(request);
+   *   // Do something
+   *   StoredInfoType response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<GetStoredInfoTypeRequest, StoredInfoType> getStoredInfoTypeCallable() {
+    return stub.getStoredInfoTypeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   ListStoredInfoTypesRequest request = ListStoredInfoTypesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   for (StoredInfoType element : dlpServiceClient.listStoredInfoTypes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListStoredInfoTypesPagedResponse listStoredInfoTypes(
+      ListStoredInfoTypesRequest request) {
+    return listStoredInfoTypesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   ListStoredInfoTypesRequest request = ListStoredInfoTypesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   ApiFuture&lt;ListStoredInfoTypesPagedResponse&gt; future = dlpServiceClient.listStoredInfoTypesPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (StoredInfoType element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListStoredInfoTypesRequest, ListStoredInfoTypesPagedResponse>
+      listStoredInfoTypesPagedCallable() {
+    return stub.listStoredInfoTypesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists stored infoTypes. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   ListStoredInfoTypesRequest request = ListStoredInfoTypesRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .build();
+   *   while (true) {
+   *     ListStoredInfoTypesResponse response = dlpServiceClient.listStoredInfoTypesCallable().call(request);
+   *     for (StoredInfoType element : response.getStoredInfoTypesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>
+      listStoredInfoTypesCallable() {
+    return stub.listStoredInfoTypesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   StoredInfoTypeName name = OrganizationStoredInfoTypeName.of("[ORGANIZATION]", "[STORED_INFO_TYPE]");
+   *   DeleteStoredInfoTypeRequest request = DeleteStoredInfoTypeRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   dlpServiceClient.deleteStoredInfoType(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteStoredInfoType(DeleteStoredInfoTypeRequest request) {
+    deleteStoredInfoTypeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a stored infoType. See https://cloud.google.com/dlp/docs/creating-stored-infotypes to
+   * learn more.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+   *   StoredInfoTypeName name = OrganizationStoredInfoTypeName.of("[ORGANIZATION]", "[STORED_INFO_TYPE]");
+   *   DeleteStoredInfoTypeRequest request = DeleteStoredInfoTypeRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .build();
+   *   ApiFuture&lt;Void&gt; future = dlpServiceClient.deleteStoredInfoTypeCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeCallable() {
+    return stub.deleteStoredInfoTypeCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -1918,6 +2203,86 @@ public class DlpServiceClient implements BackgroundResource {
     protected ListJobTriggersFixedSizeCollection createCollection(
         List<ListJobTriggersPage> pages, int collectionSize) {
       return new ListJobTriggersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListStoredInfoTypesPagedResponse
+      extends AbstractPagedListResponse<
+          ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType,
+          ListStoredInfoTypesPage, ListStoredInfoTypesFixedSizeCollection> {
+
+    public static ApiFuture<ListStoredInfoTypesPagedResponse> createAsync(
+        PageContext<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>
+            context,
+        ApiFuture<ListStoredInfoTypesResponse> futureResponse) {
+      ApiFuture<ListStoredInfoTypesPage> futurePage =
+          ListStoredInfoTypesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListStoredInfoTypesPage, ListStoredInfoTypesPagedResponse>() {
+            @Override
+            public ListStoredInfoTypesPagedResponse apply(ListStoredInfoTypesPage input) {
+              return new ListStoredInfoTypesPagedResponse(input);
+            }
+          });
+    }
+
+    private ListStoredInfoTypesPagedResponse(ListStoredInfoTypesPage page) {
+      super(page, ListStoredInfoTypesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListStoredInfoTypesPage
+      extends AbstractPage<
+          ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType,
+          ListStoredInfoTypesPage> {
+
+    private ListStoredInfoTypesPage(
+        PageContext<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>
+            context,
+        ListStoredInfoTypesResponse response) {
+      super(context, response);
+    }
+
+    private static ListStoredInfoTypesPage createEmptyPage() {
+      return new ListStoredInfoTypesPage(null, null);
+    }
+
+    @Override
+    protected ListStoredInfoTypesPage createPage(
+        PageContext<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>
+            context,
+        ListStoredInfoTypesResponse response) {
+      return new ListStoredInfoTypesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListStoredInfoTypesPage> createPageAsync(
+        PageContext<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>
+            context,
+        ApiFuture<ListStoredInfoTypesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListStoredInfoTypesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType,
+          ListStoredInfoTypesPage, ListStoredInfoTypesFixedSizeCollection> {
+
+    private ListStoredInfoTypesFixedSizeCollection(
+        List<ListStoredInfoTypesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListStoredInfoTypesFixedSizeCollection createEmptyCollection() {
+      return new ListStoredInfoTypesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListStoredInfoTypesFixedSizeCollection createCollection(
+        List<ListStoredInfoTypesPage> pages, int collectionSize) {
+      return new ListStoredInfoTypesFixedSizeCollection(pages, collectionSize);
     }
   }
 }
