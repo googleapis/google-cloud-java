@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>google-cloud-testing</artifactId>
+    <groupId>com.google.cloud</groupId>
+    <version>0.70.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>google-cloud-bigtable-emulator</artifactId>
+  <version>0.70.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-gcloud-maven-plugin</artifactId>
+        <version>0.70.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-gcloud-maven-plugin:current} -->
+
+        <executions>
+          <execution>
+            <id>gen-sources</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>download</goal>
+            </goals>
+            <configuration>
+              <componentNames>
+                <componentName>bigtable-darwin-x86</componentName>
+                <componentName>bigtable-darwin-x86_64</componentName>
+                <componentName>bigtable-linux-x86</componentName>
+                <componentName>bigtable-linux-x86_64</componentName>
+                <componentName>bigtable-windows-x86</componentName>
+                <componentName>bigtable-windows-x86_64</componentName>
+              </componentNames>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <!-- grpc deps are provided by the client -->
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-core</artifactId>
+      <version>1.13.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-netty-shaded</artifactId>
+      <version>1.13.1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>api-common</artifactId>
+    </dependency>
+
+    <!-- junit is optional because the emulator can be used w/o the junit Rule. -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>compile</scope>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.truth</groupId>
+      <artifactId>truth</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-bigtable-admin-v2</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
