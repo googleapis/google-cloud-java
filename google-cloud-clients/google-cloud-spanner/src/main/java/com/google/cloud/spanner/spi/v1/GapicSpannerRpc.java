@@ -19,6 +19,7 @@ package com.google.cloud.spanner.spi.v1;
 import static com.google.cloud.spanner.SpannerExceptionFactory.newSpannerException;
 
 import com.google.api.core.ApiFunction;
+import com.google.api.core.NanoClock;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
@@ -29,12 +30,14 @@ import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.rpc.AlreadyExistsException;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
+import com.google.api.gax.rpc.InstantiatingWatchdogProvider;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StreamController;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.WatchdogProvider;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.grpc.GrpcTransportOptions;
@@ -54,6 +57,7 @@ import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.longrunning.GetOperationRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -101,8 +105,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import javax.annotation.Nullable;
+import org.threeten.bp.Duration;
 
 /** Implementation of Cloud Spanner remote calls using Gapic libraries. */
 public class GapicSpannerRpc implements SpannerRpc {
@@ -113,6 +119,12 @@ public class GapicSpannerRpc implements SpannerRpc {
       PathTemplate.create("{database=projects/*/instances/*/databases/*}/operations/{operation}");
   private static final int MAX_MESSAGE_SIZE = 100 * 1024 * 1024;
   private static final int MAX_METADATA_SIZE = 32 * 1024; // bytes
+  private static final String PROPERTY_TIMEOUT_SECONDS =
+      "com.google.cloud.spanner.watchdogTimeoutSeconds";
+  private static final String PROPERTY_PERIOD_SECONDS =
+      "com.google.cloud.spanner.watchdogPeriodSeconds";
+  private static final int DEFAULT_TIMEOUT_SECONDS = 30 * 60;
+  private static final int DEFAULT_PERIOD_SECONDS = 10;
 
   private final SpannerStub spannerStub;
   private final InstanceAdminStub instanceAdminStub;
@@ -120,6 +132,9 @@ public class GapicSpannerRpc implements SpannerRpc {
   private final String projectId;
   private final String projectName;
   private final SpannerMetadataProvider metadataProvider;
+  private final Duration waitTimeout = systemProperty(PROPERTY_TIMEOUT_SECONDS, DEFAULT_TIMEOUT_SECONDS);
+  private final Duration idleTimeout = systemProperty(PROPERTY_TIMEOUT_SECONDS, DEFAULT_TIMEOUT_SECONDS);
+  private final Duration checkInterval = systemProperty(PROPERTY_PERIOD_SECONDS, DEFAULT_PERIOD_SECONDS);
 
   public static GapicSpannerRpc create(SpannerOptions options) {
     return new GapicSpannerRpc(options);
@@ -173,6 +188,17 @@ public class GapicSpannerRpc implements SpannerRpc {
     CredentialsProvider credentialsProvider =
         GrpcTransportOptions.setUpCredentialsProvider(options);
 
+    WatchdogProvider watchdogProvider =
+        InstantiatingWatchdogProvider.create()
+            .withExecutor(
+                Executors.newSingleThreadScheduledExecutor(
+                    new ThreadFactoryBuilder()
+                        .setDaemon(true)
+                        .setNameFormat("Cloud-Spanner-WatchdogInterceptor-%d")
+                        .build()))
+            .withCheckInterval(checkInterval)
+            .withClock(NanoClock.getDefaultClock());
+
     // Disabling retry for now because spanner handles retry in SpannerImpl.
     // We will finally want to improve gax but for smooth transitioning we
     // preserve the retry in SpannerImpl
@@ -184,6 +210,7 @@ public class GapicSpannerRpc implements SpannerRpc {
               SpannerStubSettings.newBuilder()
                   .setTransportChannelProvider(channelProvider)
                   .setCredentialsProvider(credentialsProvider)
+                  .setStreamWatchdogProvider(watchdogProvider)
                   .applyToAllUnaryMethods(
                       new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
                         @Override
@@ -199,6 +226,7 @@ public class GapicSpannerRpc implements SpannerRpc {
               InstanceAdminStubSettings.newBuilder()
                   .setTransportChannelProvider(channelProvider)
                   .setCredentialsProvider(credentialsProvider)
+                  .setStreamWatchdogProvider(watchdogProvider)
                   .applyToAllUnaryMethods(
                       new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
                         @Override
@@ -213,6 +241,7 @@ public class GapicSpannerRpc implements SpannerRpc {
               DatabaseAdminStubSettings.newBuilder()
                   .setTransportChannelProvider(channelProvider)
                   .setCredentialsProvider(credentialsProvider)
+                  .setStreamWatchdogProvider(watchdogProvider)
                   .applyToAllUnaryMethods(
                       new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
                         @Override
@@ -527,12 +556,20 @@ public class GapicSpannerRpc implements SpannerRpc {
     }
   }
 
-  private GrpcCallContext newCallContext(@Nullable Map<Option, ?> options, String resource) {
+  private GrpcCallContext newCallContext(
+      @Nullable Map<Option, ?> options,
+      String resource) {
     GrpcCallContext context = GrpcCallContext.createDefault();
     if (options != null) {
       context = context.withChannelAffinity(Option.CHANNEL_HINT.getLong(options).intValue());
     }
     context = context.withExtraHeaders(metadataProvider.newExtraHeaders(resource, projectName));
+    if (waitTimeout != null) {
+      context = context.withStreamWaitTimeout(waitTimeout);
+    }
+    if (idleTimeout != null) {
+      context = context.withStreamIdleTimeout(waitTimeout);
+    }
     return context;
   }
 
@@ -581,5 +618,10 @@ public class GapicSpannerRpc implements SpannerRpc {
     StreamController getController() {
       return Preconditions.checkNotNull(this.controller);
     }
+  }
+
+  private static Duration systemProperty(String name, int defaultValue) {
+    String stringValue = System.getProperty(name, "");
+    return Duration.ofSeconds(stringValue.isEmpty() ? defaultValue : Integer.parseInt(stringValue));
   }
 }
