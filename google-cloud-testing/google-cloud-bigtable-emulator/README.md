@@ -156,7 +156,7 @@ public class ExampleTest {
 
 ## Java Versions
 
-Java 7 or above is required for using this client.
+Java 7 or above is required for using this emulator.
 
 ## Versioning
 
