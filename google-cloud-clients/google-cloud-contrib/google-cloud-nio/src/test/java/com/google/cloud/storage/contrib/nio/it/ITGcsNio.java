@@ -127,9 +127,13 @@ public class ITGcsNio {
 
   @AfterClass
   public static void afterClass() throws ExecutionException, InterruptedException {
-    if (storage != null && !RemoteStorageHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS) &&
-      log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
+    if (storage != null) {
+      for (String bucket : new String[]{BUCKET, REQUESTER_PAYS_BUCKET}) {
+        if (!RemoteStorageHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS, project) &&
+            log.isLoggable(Level.WARNING)) {
+          log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", bucket);
+        }
+      }
     }
   }
 
