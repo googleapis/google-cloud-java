@@ -22,18 +22,21 @@
 
 package com.google.cloud.examples.spanner.snippets;
 
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.spanner.Instance;
 import com.google.cloud.spanner.InstanceAdminClient;
 import com.google.cloud.spanner.InstanceConfig;
 import com.google.cloud.spanner.InstanceConfigId;
 import com.google.cloud.spanner.InstanceId;
 import com.google.cloud.spanner.InstanceInfo;
-import com.google.cloud.spanner.Operation;
 import com.google.cloud.spanner.Options;
+import com.google.cloud.spanner.SpannerException;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.common.collect.Lists;
 import com.google.spanner.admin.instance.v1.CreateInstanceMetadata;
 import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 /**
  * This class contains snippets for {@link InstanceAdminClient} interface.
@@ -80,14 +83,20 @@ public class InstanceAdminClientSnippets {
     final String configId = my_config_id;
     final String clientProject = my_client_project;
 
-    Operation<Instance, CreateInstanceMetadata> op =
+    OperationFuture<Instance, CreateInstanceMetadata> op =
         instanceAdminClient.createInstance(InstanceInfo
             .newBuilder(InstanceId.of(clientProject, instanceId))
             .setInstanceConfigId(InstanceConfigId.of(clientProject, configId))
             .setDisplayName(instanceId)
             .setNodeCount(1)
             .build());
-    op.waitFor();
+    try {
+      op.get();
+    } catch(ExecutionException e) {
+      throw (SpannerException) e.getCause();
+    } catch(InterruptedException e) {
+      throw SpannerExceptionFactory.propagateInterrupt(e);
+    }
     // [END instance_admin_client_create_instance]
   }
 
@@ -144,9 +153,15 @@ public class InstanceAdminClientSnippets {
             .setNodeCount(instance.getNodeCount() + 1)
             .build();
     // Only update display name
-    Operation<Instance, UpdateInstanceMetadata> op =
+    OperationFuture<Instance, UpdateInstanceMetadata> op =
         instanceAdminClient.updateInstance(toUpdate, InstanceInfo.InstanceField.DISPLAY_NAME);
-    op.waitFor().getResult();
+    try {
+      op.get();
+    } catch(ExecutionException e) {
+      throw (SpannerException) e.getCause();
+    } catch(InterruptedException e) {
+      throw SpannerExceptionFactory.propagateInterrupt(e);
+    }
     // [END instance_admin_client_update_instance]
   }
 }

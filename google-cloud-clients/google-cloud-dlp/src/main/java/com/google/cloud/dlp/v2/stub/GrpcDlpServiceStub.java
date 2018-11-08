@@ -19,6 +19,7 @@ import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPa
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListStoredInfoTypesPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -32,6 +33,7 @@ import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.CreateJobTriggerRequest;
+import com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
@@ -39,11 +41,13 @@ import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
+import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
+import com.google.privacy.dlp.v2.GetStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.InspectTemplate;
@@ -58,13 +62,17 @@ import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
 import com.google.privacy.dlp.v2.ListInspectTemplatesResponse;
 import com.google.privacy.dlp.v2.ListJobTriggersRequest;
 import com.google.privacy.dlp.v2.ListJobTriggersResponse;
+import com.google.privacy.dlp.v2.ListStoredInfoTypesRequest;
+import com.google.privacy.dlp.v2.ListStoredInfoTypesResponse;
 import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
+import com.google.privacy.dlp.v2.StoredInfoType;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateJobTriggerRequest;
+import com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -308,6 +316,52 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   ProtoUtils.marshaller(CreateJobTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(JobTrigger.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<CreateStoredInfoTypeRequest, StoredInfoType>
+      createStoredInfoTypeMethodDescriptor =
+          MethodDescriptor.<CreateStoredInfoTypeRequest, StoredInfoType>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/CreateStoredInfoType")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateStoredInfoTypeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(StoredInfoType.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<UpdateStoredInfoTypeRequest, StoredInfoType>
+      updateStoredInfoTypeMethodDescriptor =
+          MethodDescriptor.<UpdateStoredInfoTypeRequest, StoredInfoType>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/UpdateStoredInfoType")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateStoredInfoTypeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(StoredInfoType.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<GetStoredInfoTypeRequest, StoredInfoType>
+      getStoredInfoTypeMethodDescriptor =
+          MethodDescriptor.<GetStoredInfoTypeRequest, StoredInfoType>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/GetStoredInfoType")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetStoredInfoTypeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(StoredInfoType.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>
+      listStoredInfoTypesMethodDescriptor =
+          MethodDescriptor.<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/ListStoredInfoTypes")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListStoredInfoTypesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListStoredInfoTypesResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<DeleteStoredInfoTypeRequest, Empty>
+      deleteStoredInfoTypeMethodDescriptor =
+          MethodDescriptor.<DeleteStoredInfoTypeRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/DeleteStoredInfoType")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteStoredInfoTypeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -356,6 +410,16 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
   private final UnaryCallable<DeleteJobTriggerRequest, Empty> deleteJobTriggerCallable;
   private final UnaryCallable<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerCallable;
   private final UnaryCallable<CreateJobTriggerRequest, JobTrigger> createJobTriggerCallable;
+  private final UnaryCallable<CreateStoredInfoTypeRequest, StoredInfoType>
+      createStoredInfoTypeCallable;
+  private final UnaryCallable<UpdateStoredInfoTypeRequest, StoredInfoType>
+      updateStoredInfoTypeCallable;
+  private final UnaryCallable<GetStoredInfoTypeRequest, StoredInfoType> getStoredInfoTypeCallable;
+  private final UnaryCallable<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>
+      listStoredInfoTypesCallable;
+  private final UnaryCallable<ListStoredInfoTypesRequest, ListStoredInfoTypesPagedResponse>
+      listStoredInfoTypesPagedCallable;
+  private final UnaryCallable<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -510,6 +574,29 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
         GrpcCallSettings.<CreateJobTriggerRequest, JobTrigger>newBuilder()
             .setMethodDescriptor(createJobTriggerMethodDescriptor)
             .build();
+    GrpcCallSettings<CreateStoredInfoTypeRequest, StoredInfoType>
+        createStoredInfoTypeTransportSettings =
+            GrpcCallSettings.<CreateStoredInfoTypeRequest, StoredInfoType>newBuilder()
+                .setMethodDescriptor(createStoredInfoTypeMethodDescriptor)
+                .build();
+    GrpcCallSettings<UpdateStoredInfoTypeRequest, StoredInfoType>
+        updateStoredInfoTypeTransportSettings =
+            GrpcCallSettings.<UpdateStoredInfoTypeRequest, StoredInfoType>newBuilder()
+                .setMethodDescriptor(updateStoredInfoTypeMethodDescriptor)
+                .build();
+    GrpcCallSettings<GetStoredInfoTypeRequest, StoredInfoType> getStoredInfoTypeTransportSettings =
+        GrpcCallSettings.<GetStoredInfoTypeRequest, StoredInfoType>newBuilder()
+            .setMethodDescriptor(getStoredInfoTypeMethodDescriptor)
+            .build();
+    GrpcCallSettings<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>
+        listStoredInfoTypesTransportSettings =
+            GrpcCallSettings.<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>newBuilder()
+                .setMethodDescriptor(listStoredInfoTypesMethodDescriptor)
+                .build();
+    GrpcCallSettings<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeTransportSettings =
+        GrpcCallSettings.<DeleteStoredInfoTypeRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteStoredInfoTypeMethodDescriptor)
+            .build();
 
     this.inspectContentCallable =
         callableFactory.createUnaryCallable(
@@ -626,6 +713,36 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
     this.createJobTriggerCallable =
         callableFactory.createUnaryCallable(
             createJobTriggerTransportSettings, settings.createJobTriggerSettings(), clientContext);
+    this.createStoredInfoTypeCallable =
+        callableFactory.createUnaryCallable(
+            createStoredInfoTypeTransportSettings,
+            settings.createStoredInfoTypeSettings(),
+            clientContext);
+    this.updateStoredInfoTypeCallable =
+        callableFactory.createUnaryCallable(
+            updateStoredInfoTypeTransportSettings,
+            settings.updateStoredInfoTypeSettings(),
+            clientContext);
+    this.getStoredInfoTypeCallable =
+        callableFactory.createUnaryCallable(
+            getStoredInfoTypeTransportSettings,
+            settings.getStoredInfoTypeSettings(),
+            clientContext);
+    this.listStoredInfoTypesCallable =
+        callableFactory.createUnaryCallable(
+            listStoredInfoTypesTransportSettings,
+            settings.listStoredInfoTypesSettings(),
+            clientContext);
+    this.listStoredInfoTypesPagedCallable =
+        callableFactory.createPagedCallable(
+            listStoredInfoTypesTransportSettings,
+            settings.listStoredInfoTypesSettings(),
+            clientContext);
+    this.deleteStoredInfoTypeCallable =
+        callableFactory.createUnaryCallable(
+            deleteStoredInfoTypeTransportSettings,
+            settings.deleteStoredInfoTypeSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -756,6 +873,32 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
 
   public UnaryCallable<CreateJobTriggerRequest, JobTrigger> createJobTriggerCallable() {
     return createJobTriggerCallable;
+  }
+
+  public UnaryCallable<CreateStoredInfoTypeRequest, StoredInfoType> createStoredInfoTypeCallable() {
+    return createStoredInfoTypeCallable;
+  }
+
+  public UnaryCallable<UpdateStoredInfoTypeRequest, StoredInfoType> updateStoredInfoTypeCallable() {
+    return updateStoredInfoTypeCallable;
+  }
+
+  public UnaryCallable<GetStoredInfoTypeRequest, StoredInfoType> getStoredInfoTypeCallable() {
+    return getStoredInfoTypeCallable;
+  }
+
+  public UnaryCallable<ListStoredInfoTypesRequest, ListStoredInfoTypesPagedResponse>
+      listStoredInfoTypesPagedCallable() {
+    return listStoredInfoTypesPagedCallable;
+  }
+
+  public UnaryCallable<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>
+      listStoredInfoTypesCallable() {
+    return listStoredInfoTypesCallable;
+  }
+
+  public UnaryCallable<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeCallable() {
+    return deleteStoredInfoTypeCallable;
   }
 
   @Override

@@ -63,16 +63,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage</artifactId>
-  <version>1.51.0</version>
+  <version>1.52.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:1.51.0'
+compile 'com.google.cloud:google-cloud-storage:1.52.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.51.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "1.52.0"
 ```
 [//]: # ({x-version-update-end})
 
@@ -84,7 +84,25 @@ Besides adding client libraries, the plugins provide additional functionality, s
 
 These client libraries can be used on App Engine standard for Java 8 runtime and App Engine flexible (including the Compat runtime).  Most of the libraries do not work on the App Engine standard for Java 7 runtime. However, Datastore, Storage, and Bigquery should work.
 
-If you are running into problems with version conflicts, see [Version Management](#version-management).
+If you are running into problems with version conflicts, the easiest way to solve the conflicts is to use google-cloud's BOM. In Maven, add the following to your POM:
+
+[//]: # ({x-version-update-start:google-cloud-bom:released})
+```xml
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-bom</artifactId>
+        <version>0.70.0-alpha</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+```
+[//]: # ({x-version-update-end})
+
+Note that the BOM is only available starting at version 0.32.0-alpha. For prior versions, refer to [Old Version Combinations](#old-version-combinations) to make sure that your versions are compatible.
 
 Specifying a Project ID
 -----------------------
@@ -284,29 +302,11 @@ a higher priority.
 are more likely to get backwards-incompatible updates. Additionally, it's possible for Alpha
 libraries to get deprecated and deleted before ever being promoted to Beta or GA.
 
-Version Management
+Old Version Combinations
 ------------------
 
-The easiest way to solve version conflicts is to use google-cloud's BOM. In Maven, add the following to your POM:
-
-[//]: # ({x-version-update-start:google-cloud-bom:released})
-```xml
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-bom</artifactId>
-        <version>0.69.0-alpha</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-```
-[//]: # ({x-version-update-end})
-
-This BOM is only available starting at version 0.32.0-alpha. If you are having problems with prior versions of
-google-cloud, use the following table as a reference to make sure that your versions are compatible. Definitions:
+If you are having compatbility problems with google-cloud prior to version 0.32.0-alpha, use the 
+following table as a reference to make sure that your versions are compatible. Definitions:
 
 * **alpha**: The version of any alpha package in google-cloud
 * **beta**: The version of any beta package in google-cloud
