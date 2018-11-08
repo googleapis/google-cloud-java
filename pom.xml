@@ -111,7 +111,6 @@
           <excludes>
             <exclude>**/*SmokeTest.java</exclude>
             <exclude>**/IT*.java</exclude>
-            <exclude>**/*SmokeTest.java</exclude>
           </excludes>
         </configuration>
       </plugin>
@@ -134,7 +133,7 @@
                 <requireJavaVersion>
                   <version>[1.7,)</version>
                 </requireJavaVersion>
-                <dependencyConvergence />
+                <dependencyConvergence/>
                 <requireUpperBoundDeps/>
               </rules>
             </configuration>
