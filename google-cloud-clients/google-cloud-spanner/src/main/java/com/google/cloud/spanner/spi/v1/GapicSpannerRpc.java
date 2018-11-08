@@ -132,9 +132,12 @@ public class GapicSpannerRpc implements SpannerRpc {
   private final String projectId;
   private final String projectName;
   private final SpannerMetadataProvider metadataProvider;
-  private final Duration waitTimeout = systemProperty(PROPERTY_TIMEOUT_SECONDS, DEFAULT_TIMEOUT_SECONDS);
-  private final Duration idleTimeout = systemProperty(PROPERTY_TIMEOUT_SECONDS, DEFAULT_TIMEOUT_SECONDS);
-  private final Duration checkInterval = systemProperty(PROPERTY_PERIOD_SECONDS, DEFAULT_PERIOD_SECONDS);
+  private final Duration waitTimeout =
+      systemProperty(PROPERTY_TIMEOUT_SECONDS, DEFAULT_TIMEOUT_SECONDS);
+  private final Duration idleTimeout =
+      systemProperty(PROPERTY_TIMEOUT_SECONDS, DEFAULT_TIMEOUT_SECONDS);
+  private final Duration checkInterval =
+      systemProperty(PROPERTY_PERIOD_SECONDS, DEFAULT_PERIOD_SECONDS);
 
   public static GapicSpannerRpc create(SpannerOptions options) {
     return new GapicSpannerRpc(options);
@@ -556,21 +559,13 @@ public class GapicSpannerRpc implements SpannerRpc {
     }
   }
 
-  private GrpcCallContext newCallContext(
-      @Nullable Map<Option, ?> options,
-      String resource) {
+  private GrpcCallContext newCallContext(@Nullable Map<Option, ?> options, String resource) {
     GrpcCallContext context = GrpcCallContext.createDefault();
     if (options != null) {
       context = context.withChannelAffinity(Option.CHANNEL_HINT.getLong(options).intValue());
     }
     context = context.withExtraHeaders(metadataProvider.newExtraHeaders(resource, projectName));
-    if (waitTimeout != null) {
-      context = context.withStreamWaitTimeout(waitTimeout);
-    }
-    if (idleTimeout != null) {
-      context = context.withStreamIdleTimeout(waitTimeout);
-    }
-    return context;
+    return context.withStreamWaitTimeout(waitTimeout).withStreamIdleTimeout(waitTimeout);
   }
 
   public void shutdown() {
