@@ -71,6 +71,19 @@ private static final long serialVersionUID = 0L;
             stability_ = input.readFloat();
             break;
           }
+          case 34: {
+            com.google.protobuf.Duration.Builder subBuilder = null;
+            if (resultEndTime_ != null) {
+              subBuilder = resultEndTime_.toBuilder();
+            }
+            resultEndTime_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(resultEndTime_);
+              resultEndTime_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           case 40: {
 
             channelTag_ = input.readInt32();
@@ -222,6 +235,42 @@ private static final long serialVersionUID = 0L;
     return stability_;
   }
 
+  public static final int RESULT_END_TIME_FIELD_NUMBER = 4;
+  private com.google.protobuf.Duration resultEndTime_;
+  /**
+   * <pre>
+   * Output only. Time offset of the end of this result relative to the
+   * beginning of the audio.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration result_end_time = 4;</code>
+   */
+  public boolean hasResultEndTime() {
+    return resultEndTime_ != null;
+  }
+  /**
+   * <pre>
+   * Output only. Time offset of the end of this result relative to the
+   * beginning of the audio.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration result_end_time = 4;</code>
+   */
+  public com.google.protobuf.Duration getResultEndTime() {
+    return resultEndTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : resultEndTime_;
+  }
+  /**
+   * <pre>
+   * Output only. Time offset of the end of this result relative to the
+   * beginning of the audio.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration result_end_time = 4;</code>
+   */
+  public com.google.protobuf.DurationOrBuilder getResultEndTimeOrBuilder() {
+    return getResultEndTime();
+  }
+
   public static final int CHANNEL_TAG_FIELD_NUMBER = 5;
   private int channelTag_;
   /**
@@ -308,6 +357,9 @@ private static final long serialVersionUID = 0L;
     if (stability_ != 0F) {
       output.writeFloat(3, stability_);
     }
+    if (resultEndTime_ != null) {
+      output.writeMessage(4, getResultEndTime());
+    }
     if (channelTag_ != 0) {
       output.writeInt32(5, channelTag_);
     }
@@ -334,6 +386,10 @@ private static final long serialVersionUID = 0L;
     if (stability_ != 0F) {
       size += com.google.protobuf.CodedOutputStream
         .computeFloatSize(3, stability_);
+    }
+    if (resultEndTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getResultEndTime());
     }
     if (channelTag_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -366,6 +422,11 @@ private static final long serialVersionUID = 0L;
         java.lang.Float.floatToIntBits(getStability())
         == java.lang.Float.floatToIntBits(
             other.getStability()));
+    result = result && (hasResultEndTime() == other.hasResultEndTime());
+    if (hasResultEndTime()) {
+      result = result && getResultEndTime()
+          .equals(other.getResultEndTime());
+    }
     result = result && (getChannelTag()
         == other.getChannelTag());
     result = result && getLanguageCode()
@@ -391,6 +452,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + STABILITY_FIELD_NUMBER;
     hash = (53 * hash) + java.lang.Float.floatToIntBits(
         getStability());
+    if (hasResultEndTime()) {
+      hash = (37 * hash) + RESULT_END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getResultEndTime().hashCode();
+    }
     hash = (37 * hash) + CHANNEL_TAG_FIELD_NUMBER;
     hash = (53 * hash) + getChannelTag();
     hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
@@ -544,6 +609,12 @@ private static final long serialVersionUID = 0L;
 
       stability_ = 0F;
 
+      if (resultEndTimeBuilder_ == null) {
+        resultEndTime_ = null;
+      } else {
+        resultEndTime_ = null;
+        resultEndTimeBuilder_ = null;
+      }
       channelTag_ = 0;
 
       languageCode_ = "";
@@ -587,6 +658,11 @@ private static final long serialVersionUID = 0L;
       }
       result.isFinal_ = isFinal_;
       result.stability_ = stability_;
+      if (resultEndTimeBuilder_ == null) {
+        result.resultEndTime_ = resultEndTime_;
+      } else {
+        result.resultEndTime_ = resultEndTimeBuilder_.build();
+      }
       result.channelTag_ = channelTag_;
       result.languageCode_ = languageCode_;
       result.bitField0_ = to_bitField0_;
@@ -669,6 +745,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getStability() != 0F) {
         setStability(other.getStability());
+      }
+      if (other.hasResultEndTime()) {
+        mergeResultEndTime(other.getResultEndTime());
       }
       if (other.getChannelTag() != 0) {
         setChannelTag(other.getChannelTag());
@@ -1171,6 +1250,168 @@ private static final long serialVersionUID = 0L;
       stability_ = 0F;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Duration resultEndTime_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> resultEndTimeBuilder_;
+    /**
+     * <pre>
+     * Output only. Time offset of the end of this result relative to the
+     * beginning of the audio.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     */
+    public boolean hasResultEndTime() {
+      return resultEndTimeBuilder_ != null || resultEndTime_ != null;
+    }
+    /**
+     * <pre>
+     * Output only. Time offset of the end of this result relative to the
+     * beginning of the audio.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     */
+    public com.google.protobuf.Duration getResultEndTime() {
+      if (resultEndTimeBuilder_ == null) {
+        return resultEndTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : resultEndTime_;
+      } else {
+        return resultEndTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Time offset of the end of this result relative to the
+     * beginning of the audio.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     */
+    public Builder setResultEndTime(com.google.protobuf.Duration value) {
+      if (resultEndTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resultEndTime_ = value;
+        onChanged();
+      } else {
+        resultEndTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Time offset of the end of this result relative to the
+     * beginning of the audio.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     */
+    public Builder setResultEndTime(
+        com.google.protobuf.Duration.Builder builderForValue) {
+      if (resultEndTimeBuilder_ == null) {
+        resultEndTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        resultEndTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Time offset of the end of this result relative to the
+     * beginning of the audio.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     */
+    public Builder mergeResultEndTime(com.google.protobuf.Duration value) {
+      if (resultEndTimeBuilder_ == null) {
+        if (resultEndTime_ != null) {
+          resultEndTime_ =
+            com.google.protobuf.Duration.newBuilder(resultEndTime_).mergeFrom(value).buildPartial();
+        } else {
+          resultEndTime_ = value;
+        }
+        onChanged();
+      } else {
+        resultEndTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Time offset of the end of this result relative to the
+     * beginning of the audio.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     */
+    public Builder clearResultEndTime() {
+      if (resultEndTimeBuilder_ == null) {
+        resultEndTime_ = null;
+        onChanged();
+      } else {
+        resultEndTime_ = null;
+        resultEndTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Time offset of the end of this result relative to the
+     * beginning of the audio.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     */
+    public com.google.protobuf.Duration.Builder getResultEndTimeBuilder() {
+      
+      onChanged();
+      return getResultEndTimeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Output only. Time offset of the end of this result relative to the
+     * beginning of the audio.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getResultEndTimeOrBuilder() {
+      if (resultEndTimeBuilder_ != null) {
+        return resultEndTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return resultEndTime_ == null ?
+            com.google.protobuf.Duration.getDefaultInstance() : resultEndTime_;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Time offset of the end of this result relative to the
+     * beginning of the audio.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+        getResultEndTimeFieldBuilder() {
+      if (resultEndTimeBuilder_ == null) {
+        resultEndTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                getResultEndTime(),
+                getParentForChildren(),
+                isClean());
+        resultEndTime_ = null;
+      }
+      return resultEndTimeBuilder_;
     }
 
     private int channelTag_ ;
