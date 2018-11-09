@@ -565,7 +565,7 @@ public class GapicSpannerRpc implements SpannerRpc {
       context = context.withChannelAffinity(Option.CHANNEL_HINT.getLong(options).intValue());
     }
     context = context.withExtraHeaders(metadataProvider.newExtraHeaders(resource, projectName));
-    return context.withStreamWaitTimeout(waitTimeout).withStreamIdleTimeout(waitTimeout);
+    return context.withStreamWaitTimeout(waitTimeout).withStreamIdleTimeout(idleTimeout);
   }
 
   public void shutdown() {
