@@ -197,7 +197,7 @@ public class GapicSpannerRpc implements SpannerRpc {
                 Executors.newSingleThreadScheduledExecutor(
                     new ThreadFactoryBuilder()
                         .setDaemon(true)
-                        .setNameFormat("Cloud-Spanner-WatchdogInterceptor-%d")
+                        .setNameFormat("Cloud-Spanner-WatchdogProvider-%d")
                         .build()))
             .withCheckInterval(checkInterval)
             .withClock(NanoClock.getDefaultClock());
