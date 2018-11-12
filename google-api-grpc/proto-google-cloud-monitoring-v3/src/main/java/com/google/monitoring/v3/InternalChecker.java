@@ -5,7 +5,8 @@ package com.google.monitoring.v3;
 
 /**
  * <pre>
- * Nimbus InternalCheckers.
+ * An internal checker allows uptime checks to run on private/internal GCP
+ * resources.
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.InternalChecker}
@@ -20,11 +21,11 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private InternalChecker() {
-    projectId_ = "";
+    name_ = "";
+    displayName_ = "";
     network_ = "";
     gcpZone_ = "";
-    checkerId_ = "";
-    displayName_ = "";
+    peerProjectId_ = "";
   }
 
   @java.lang.Override
@@ -54,31 +55,31 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            projectId_ = s;
+            name_ = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            network_ = s;
+            displayName_ = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            gcpZone_ = s;
+            network_ = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            checkerId_ = s;
+            gcpZone_ = s;
             break;
           }
-          case 42: {
+          case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            displayName_ = s;
+            peerProjectId_ = s;
             break;
           }
           default: {
@@ -113,58 +114,109 @@ private static final long serialVersionUID = 0L;
             com.google.monitoring.v3.InternalChecker.class, com.google.monitoring.v3.InternalChecker.Builder.class);
   }
 
-  public static final int PROJECT_ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object projectId_;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The GCP project ID. Not necessarily the same as the project_id for the
-   * config.
+   * A unique resource name for this InternalChecker. The format is:
+   *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
+   * PROJECT_ID is the stackdriver workspace project for the
+   * uptime check config associated with the internal checker.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string name = 1;</code>
    */
-  public java.lang.String getProjectId() {
-    java.lang.Object ref = projectId_;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      projectId_ = s;
+      name_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * The GCP project ID. Not necessarily the same as the project_id for the
-   * config.
+   * A unique resource name for this InternalChecker. The format is:
+   *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
+   * PROJECT_ID is the stackdriver workspace project for the
+   * uptime check config associated with the internal checker.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string name = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getProjectIdBytes() {
-    java.lang.Object ref = projectId_;
+      getNameBytes() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      projectId_ = b;
+      name_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int NETWORK_FIELD_NUMBER = 2;
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
+  private volatile java.lang.Object displayName_;
+  /**
+   * <pre>
+   * The checker's human-readable name. The display name
+   * should be unique within a Stackdriver Workspace in order to make it easier
+   * to identify; however, uniqueness is not enforced.
+   * </pre>
+   *
+   * <code>string display_name = 2;</code>
+   */
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The checker's human-readable name. The display name
+   * should be unique within a Stackdriver Workspace in order to make it easier
+   * to identify; however, uniqueness is not enforced.
+   * </pre>
+   *
+   * <code>string display_name = 2;</code>
+   */
+  public com.google.protobuf.ByteString
+      getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NETWORK_FIELD_NUMBER = 3;
   private volatile java.lang.Object network_;
   /**
    * <pre>
-   * The internal network to perform this uptime check on.
+   * The [GCP VPC network](https://cloud.google.com/vpc/docs/vpc) where the
+   * internal resource lives (ex: "default").
    * </pre>
    *
-   * <code>string network = 2;</code>
+   * <code>string network = 3;</code>
    */
   public java.lang.String getNetwork() {
     java.lang.Object ref = network_;
@@ -180,10 +232,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The internal network to perform this uptime check on.
+   * The [GCP VPC network](https://cloud.google.com/vpc/docs/vpc) where the
+   * internal resource lives (ex: "default").
    * </pre>
    *
-   * <code>string network = 2;</code>
+   * <code>string network = 3;</code>
    */
   public com.google.protobuf.ByteString
       getNetworkBytes() {
@@ -199,7 +252,7 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int GCP_ZONE_FIELD_NUMBER = 3;
+  public static final int GCP_ZONE_FIELD_NUMBER = 4;
   private volatile java.lang.Object gcpZone_;
   /**
    * <pre>
@@ -207,7 +260,7 @@ private static final long serialVersionUID = 0L;
    * internal uptime checks, where internal_network is specified.
    * </pre>
    *
-   * <code>string gcp_zone = 3;</code>
+   * <code>string gcp_zone = 4;</code>
    */
   public java.lang.String getGcpZone() {
     java.lang.Object ref = gcpZone_;
@@ -227,7 +280,7 @@ private static final long serialVersionUID = 0L;
    * internal uptime checks, where internal_network is specified.
    * </pre>
    *
-   * <code>string gcp_zone = 3;</code>
+   * <code>string gcp_zone = 4;</code>
    */
   public com.google.protobuf.ByteString
       getGcpZoneBytes() {
@@ -243,84 +296,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int CHECKER_ID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object checkerId_;
+  public static final int PEER_PROJECT_ID_FIELD_NUMBER = 6;
+  private volatile java.lang.Object peerProjectId_;
   /**
    * <pre>
-   * The checker ID.
+   * The GCP project_id where the internal checker lives. Not necessary
+   * the same as the workspace project.
    * </pre>
    *
-   * <code>string checker_id = 4;</code>
+   * <code>string peer_project_id = 6;</code>
    */
-  public java.lang.String getCheckerId() {
-    java.lang.Object ref = checkerId_;
+  public java.lang.String getPeerProjectId() {
+    java.lang.Object ref = peerProjectId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      checkerId_ = s;
+      peerProjectId_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * The checker ID.
+   * The GCP project_id where the internal checker lives. Not necessary
+   * the same as the workspace project.
    * </pre>
    *
-   * <code>string checker_id = 4;</code>
+   * <code>string peer_project_id = 6;</code>
    */
   public com.google.protobuf.ByteString
-      getCheckerIdBytes() {
-    java.lang.Object ref = checkerId_;
+      getPeerProjectIdBytes() {
+    java.lang.Object ref = peerProjectId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      checkerId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int DISPLAY_NAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object displayName_;
-  /**
-   * <pre>
-   * The checker's human-readable name.
-   * </pre>
-   *
-   * <code>string display_name = 5;</code>
-   */
-  public java.lang.String getDisplayName() {
-    java.lang.Object ref = displayName_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      displayName_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * The checker's human-readable name.
-   * </pre>
-   *
-   * <code>string display_name = 5;</code>
-   */
-  public com.google.protobuf.ByteString
-      getDisplayNameBytes() {
-    java.lang.Object ref = displayName_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      displayName_ = b;
+      peerProjectId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -341,20 +354,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getProjectIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
-    }
-    if (!getNetworkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, network_);
-    }
-    if (!getGcpZoneBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, gcpZone_);
-    }
-    if (!getCheckerIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, checkerId_);
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (!getDisplayNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, displayName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
+    }
+    if (!getNetworkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, network_);
+    }
+    if (!getGcpZoneBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, gcpZone_);
+    }
+    if (!getPeerProjectIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, peerProjectId_);
     }
     unknownFields.writeTo(output);
   }
@@ -365,20 +378,20 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
-    }
-    if (!getNetworkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, network_);
-    }
-    if (!getGcpZoneBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, gcpZone_);
-    }
-    if (!getCheckerIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, checkerId_);
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (!getDisplayNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, displayName_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
+    }
+    if (!getNetworkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, network_);
+    }
+    if (!getGcpZoneBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, gcpZone_);
+    }
+    if (!getPeerProjectIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, peerProjectId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -396,16 +409,16 @@ private static final long serialVersionUID = 0L;
     com.google.monitoring.v3.InternalChecker other = (com.google.monitoring.v3.InternalChecker) obj;
 
     boolean result = true;
-    result = result && getProjectId()
-        .equals(other.getProjectId());
+    result = result && getName()
+        .equals(other.getName());
+    result = result && getDisplayName()
+        .equals(other.getDisplayName());
     result = result && getNetwork()
         .equals(other.getNetwork());
     result = result && getGcpZone()
         .equals(other.getGcpZone());
-    result = result && getCheckerId()
-        .equals(other.getCheckerId());
-    result = result && getDisplayName()
-        .equals(other.getDisplayName());
+    result = result && getPeerProjectId()
+        .equals(other.getPeerProjectId());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -417,16 +430,16 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getProjectId().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + NETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getNetwork().hashCode();
     hash = (37 * hash) + GCP_ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getGcpZone().hashCode();
-    hash = (37 * hash) + CHECKER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + getCheckerId().hashCode();
-    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getDisplayName().hashCode();
+    hash = (37 * hash) + PEER_PROJECT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getPeerProjectId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -524,7 +537,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Nimbus InternalCheckers.
+   * An internal checker allows uptime checks to run on private/internal GCP
+   * resources.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.InternalChecker}
@@ -564,15 +578,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      projectId_ = "";
+      name_ = "";
+
+      displayName_ = "";
 
       network_ = "";
 
       gcpZone_ = "";
 
-      checkerId_ = "";
-
-      displayName_ = "";
+      peerProjectId_ = "";
 
       return this;
     }
@@ -600,11 +614,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.monitoring.v3.InternalChecker buildPartial() {
       com.google.monitoring.v3.InternalChecker result = new com.google.monitoring.v3.InternalChecker(this);
-      result.projectId_ = projectId_;
+      result.name_ = name_;
+      result.displayName_ = displayName_;
       result.network_ = network_;
       result.gcpZone_ = gcpZone_;
-      result.checkerId_ = checkerId_;
-      result.displayName_ = displayName_;
+      result.peerProjectId_ = peerProjectId_;
       onBuilt();
       return result;
     }
@@ -653,8 +667,12 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.google.monitoring.v3.InternalChecker other) {
       if (other == com.google.monitoring.v3.InternalChecker.getDefaultInstance()) return this;
-      if (!other.getProjectId().isEmpty()) {
-        projectId_ = other.projectId_;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
+        onChanged();
+      }
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
         onChanged();
       }
       if (!other.getNetwork().isEmpty()) {
@@ -665,12 +683,8 @@ private static final long serialVersionUID = 0L;
         gcpZone_ = other.gcpZone_;
         onChanged();
       }
-      if (!other.getCheckerId().isEmpty()) {
-        checkerId_ = other.checkerId_;
-        onChanged();
-      }
-      if (!other.getDisplayName().isEmpty()) {
-        displayName_ = other.displayName_;
+      if (!other.getPeerProjectId().isEmpty()) {
+        peerProjectId_ = other.peerProjectId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -702,22 +716,24 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object projectId_ = "";
+    private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The GCP project ID. Not necessarily the same as the project_id for the
-     * config.
+     * A unique resource name for this InternalChecker. The format is:
+     *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
+     * PROJECT_ID is the stackdriver workspace project for the
+     * uptime check config associated with the internal checker.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string name = 1;</code>
      */
-    public java.lang.String getProjectId() {
-      java.lang.Object ref = projectId_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        projectId_ = s;
+        name_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -725,20 +741,22 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The GCP project ID. Not necessarily the same as the project_id for the
-     * config.
+     * A unique resource name for this InternalChecker. The format is:
+     *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
+     * PROJECT_ID is the stackdriver workspace project for the
+     * uptime check config associated with the internal checker.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string name = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getProjectIdBytes() {
-      java.lang.Object ref = projectId_;
+        getNameBytes() {
+      java.lang.Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        projectId_ = b;
+        name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -746,52 +764,157 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The GCP project ID. Not necessarily the same as the project_id for the
-     * config.
+     * A unique resource name for this InternalChecker. The format is:
+     *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
+     * PROJECT_ID is the stackdriver workspace project for the
+     * uptime check config associated with the internal checker.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string name = 1;</code>
      */
-    public Builder setProjectId(
+    public Builder setName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      projectId_ = value;
+      name_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The GCP project ID. Not necessarily the same as the project_id for the
-     * config.
+     * A unique resource name for this InternalChecker. The format is:
+     *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
+     * PROJECT_ID is the stackdriver workspace project for the
+     * uptime check config associated with the internal checker.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string name = 1;</code>
      */
-    public Builder clearProjectId() {
+    public Builder clearName() {
       
-      projectId_ = getDefaultInstance().getProjectId();
+      name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The GCP project ID. Not necessarily the same as the project_id for the
-     * config.
+     * A unique resource name for this InternalChecker. The format is:
+     *   `projects/[PROJECT_ID]/internalCheckers/[INTERNAL_CHECKER_ID]`.
+     * PROJECT_ID is the stackdriver workspace project for the
+     * uptime check config associated with the internal checker.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string name = 1;</code>
      */
-    public Builder setProjectIdBytes(
+    public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      projectId_ = value;
+      name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object displayName_ = "";
+    /**
+     * <pre>
+     * The checker's human-readable name. The display name
+     * should be unique within a Stackdriver Workspace in order to make it easier
+     * to identify; however, uniqueness is not enforced.
+     * </pre>
+     *
+     * <code>string display_name = 2;</code>
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The checker's human-readable name. The display name
+     * should be unique within a Stackdriver Workspace in order to make it easier
+     * to identify; however, uniqueness is not enforced.
+     * </pre>
+     *
+     * <code>string display_name = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The checker's human-readable name. The display name
+     * should be unique within a Stackdriver Workspace in order to make it easier
+     * to identify; however, uniqueness is not enforced.
+     * </pre>
+     *
+     * <code>string display_name = 2;</code>
+     */
+    public Builder setDisplayName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      displayName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The checker's human-readable name. The display name
+     * should be unique within a Stackdriver Workspace in order to make it easier
+     * to identify; however, uniqueness is not enforced.
+     * </pre>
+     *
+     * <code>string display_name = 2;</code>
+     */
+    public Builder clearDisplayName() {
+      
+      displayName_ = getDefaultInstance().getDisplayName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The checker's human-readable name. The display name
+     * should be unique within a Stackdriver Workspace in order to make it easier
+     * to identify; however, uniqueness is not enforced.
+     * </pre>
+     *
+     * <code>string display_name = 2;</code>
+     */
+    public Builder setDisplayNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      displayName_ = value;
       onChanged();
       return this;
     }
@@ -799,10 +922,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object network_ = "";
     /**
      * <pre>
-     * The internal network to perform this uptime check on.
+     * The [GCP VPC network](https://cloud.google.com/vpc/docs/vpc) where the
+     * internal resource lives (ex: "default").
      * </pre>
      *
-     * <code>string network = 2;</code>
+     * <code>string network = 3;</code>
      */
     public java.lang.String getNetwork() {
       java.lang.Object ref = network_;
@@ -818,10 +942,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The internal network to perform this uptime check on.
+     * The [GCP VPC network](https://cloud.google.com/vpc/docs/vpc) where the
+     * internal resource lives (ex: "default").
      * </pre>
      *
-     * <code>string network = 2;</code>
+     * <code>string network = 3;</code>
      */
     public com.google.protobuf.ByteString
         getNetworkBytes() {
@@ -838,10 +963,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The internal network to perform this uptime check on.
+     * The [GCP VPC network](https://cloud.google.com/vpc/docs/vpc) where the
+     * internal resource lives (ex: "default").
      * </pre>
      *
-     * <code>string network = 2;</code>
+     * <code>string network = 3;</code>
      */
     public Builder setNetwork(
         java.lang.String value) {
@@ -855,10 +981,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The internal network to perform this uptime check on.
+     * The [GCP VPC network](https://cloud.google.com/vpc/docs/vpc) where the
+     * internal resource lives (ex: "default").
      * </pre>
      *
-     * <code>string network = 2;</code>
+     * <code>string network = 3;</code>
      */
     public Builder clearNetwork() {
       
@@ -868,10 +995,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The internal network to perform this uptime check on.
+     * The [GCP VPC network](https://cloud.google.com/vpc/docs/vpc) where the
+     * internal resource lives (ex: "default").
      * </pre>
      *
-     * <code>string network = 2;</code>
+     * <code>string network = 3;</code>
      */
     public Builder setNetworkBytes(
         com.google.protobuf.ByteString value) {
@@ -892,7 +1020,7 @@ private static final long serialVersionUID = 0L;
      * internal uptime checks, where internal_network is specified.
      * </pre>
      *
-     * <code>string gcp_zone = 3;</code>
+     * <code>string gcp_zone = 4;</code>
      */
     public java.lang.String getGcpZone() {
       java.lang.Object ref = gcpZone_;
@@ -912,7 +1040,7 @@ private static final long serialVersionUID = 0L;
      * internal uptime checks, where internal_network is specified.
      * </pre>
      *
-     * <code>string gcp_zone = 3;</code>
+     * <code>string gcp_zone = 4;</code>
      */
     public com.google.protobuf.ByteString
         getGcpZoneBytes() {
@@ -933,7 +1061,7 @@ private static final long serialVersionUID = 0L;
      * internal uptime checks, where internal_network is specified.
      * </pre>
      *
-     * <code>string gcp_zone = 3;</code>
+     * <code>string gcp_zone = 4;</code>
      */
     public Builder setGcpZone(
         java.lang.String value) {
@@ -951,7 +1079,7 @@ private static final long serialVersionUID = 0L;
      * internal uptime checks, where internal_network is specified.
      * </pre>
      *
-     * <code>string gcp_zone = 3;</code>
+     * <code>string gcp_zone = 4;</code>
      */
     public Builder clearGcpZone() {
       
@@ -965,7 +1093,7 @@ private static final long serialVersionUID = 0L;
      * internal uptime checks, where internal_network is specified.
      * </pre>
      *
-     * <code>string gcp_zone = 3;</code>
+     * <code>string gcp_zone = 4;</code>
      */
     public Builder setGcpZoneBytes(
         com.google.protobuf.ByteString value) {
@@ -979,21 +1107,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object checkerId_ = "";
+    private java.lang.Object peerProjectId_ = "";
     /**
      * <pre>
-     * The checker ID.
+     * The GCP project_id where the internal checker lives. Not necessary
+     * the same as the workspace project.
      * </pre>
      *
-     * <code>string checker_id = 4;</code>
+     * <code>string peer_project_id = 6;</code>
      */
-    public java.lang.String getCheckerId() {
-      java.lang.Object ref = checkerId_;
+    public java.lang.String getPeerProjectId() {
+      java.lang.Object ref = peerProjectId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        checkerId_ = s;
+        peerProjectId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1001,19 +1130,20 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The checker ID.
+     * The GCP project_id where the internal checker lives. Not necessary
+     * the same as the workspace project.
      * </pre>
      *
-     * <code>string checker_id = 4;</code>
+     * <code>string peer_project_id = 6;</code>
      */
     public com.google.protobuf.ByteString
-        getCheckerIdBytes() {
-      java.lang.Object ref = checkerId_;
+        getPeerProjectIdBytes() {
+      java.lang.Object ref = peerProjectId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        checkerId_ = b;
+        peerProjectId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1021,138 +1151,52 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The checker ID.
+     * The GCP project_id where the internal checker lives. Not necessary
+     * the same as the workspace project.
      * </pre>
      *
-     * <code>string checker_id = 4;</code>
+     * <code>string peer_project_id = 6;</code>
      */
-    public Builder setCheckerId(
+    public Builder setPeerProjectId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      checkerId_ = value;
+      peerProjectId_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The checker ID.
+     * The GCP project_id where the internal checker lives. Not necessary
+     * the same as the workspace project.
      * </pre>
      *
-     * <code>string checker_id = 4;</code>
+     * <code>string peer_project_id = 6;</code>
      */
-    public Builder clearCheckerId() {
+    public Builder clearPeerProjectId() {
       
-      checkerId_ = getDefaultInstance().getCheckerId();
+      peerProjectId_ = getDefaultInstance().getPeerProjectId();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The checker ID.
+     * The GCP project_id where the internal checker lives. Not necessary
+     * the same as the workspace project.
      * </pre>
      *
-     * <code>string checker_id = 4;</code>
+     * <code>string peer_project_id = 6;</code>
      */
-    public Builder setCheckerIdBytes(
+    public Builder setPeerProjectIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      checkerId_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object displayName_ = "";
-    /**
-     * <pre>
-     * The checker's human-readable name.
-     * </pre>
-     *
-     * <code>string display_name = 5;</code>
-     */
-    public java.lang.String getDisplayName() {
-      java.lang.Object ref = displayName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        displayName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The checker's human-readable name.
-     * </pre>
-     *
-     * <code>string display_name = 5;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDisplayNameBytes() {
-      java.lang.Object ref = displayName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        displayName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The checker's human-readable name.
-     * </pre>
-     *
-     * <code>string display_name = 5;</code>
-     */
-    public Builder setDisplayName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      displayName_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The checker's human-readable name.
-     * </pre>
-     *
-     * <code>string display_name = 5;</code>
-     */
-    public Builder clearDisplayName() {
-      
-      displayName_ = getDefaultInstance().getDisplayName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The checker's human-readable name.
-     * </pre>
-     *
-     * <code>string display_name = 5;</code>
-     */
-    public Builder setDisplayNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      displayName_ = value;
+      peerProjectId_ = value;
       onChanged();
       return this;
     }
