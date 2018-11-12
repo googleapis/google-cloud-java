@@ -15,11 +15,14 @@
  */
 package com.google.cloud.spanner.spi.v1;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import io.grpc.Metadata;
 import io.grpc.Metadata.Key;
+import java.util.List;
 import java.util.Map;
 import org.junit.Test;
 
@@ -65,6 +68,16 @@ public class SpannerMetadataProviderTest {
     assertEquals(
         "projects/p/instances/i/databases/d",
         getResourceHeaderValue(metadataProvider, "projects/p/instances/i/databases/d/operations"));
+  }
+
+  @Test
+  public void testNewExtraHeaders() {
+    SpannerMetadataProvider metadataProvider =
+        SpannerMetadataProvider.create(ImmutableMap.<String, String>of(), "header1");
+    Map<String, List<String>> extraHeaders = metadataProvider.newExtraHeaders(null, "value1");
+    assertThat(extraHeaders)
+        .containsExactlyEntriesIn(
+            ImmutableMap.<String, List<String>>of("header1", ImmutableList.<String>of("value1")));
   }
 
   private String getResourceHeaderValue(

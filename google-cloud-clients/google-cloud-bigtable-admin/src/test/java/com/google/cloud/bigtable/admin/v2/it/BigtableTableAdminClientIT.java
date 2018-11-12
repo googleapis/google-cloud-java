@@ -22,7 +22,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.bigtable.admin.v2.InstanceName;
-import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.models.ColumnFamily;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
@@ -37,6 +36,7 @@ import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.AssumptionViolatedException;
 import org.junit.Before;
@@ -48,6 +48,7 @@ public class BigtableTableAdminClientIT {
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
 
   private static BigtableTableAdminClient tableAdmin;
+  private static String prefix;
 
   @BeforeClass
   public static void createClient() throws IOException {
@@ -60,6 +61,17 @@ public class BigtableTableAdminClientIT {
 
     InstanceName instanceName = InstanceName.parse(targetInstance);
     tableAdmin = BigtableTableAdminClient.create(instanceName);
+
+    // Setup a prefix to avoid collisions between concurrent test runs
+    prefix = String.format("020%d", System.currentTimeMillis());
+
+    // Cleanup old tables, under normal circumstances this will do nothing
+    String stalePrefix = String.format("020%d", System.currentTimeMillis() - TimeUnit.DAYS.toMillis(1));
+    for (String tableId: tableAdmin.listTables()) {
+      if (stalePrefix.compareTo(tableId) > 0) {
+        tableAdmin.deleteTable(tableId);
+      }
+    }
   }
 
   @AfterClass
@@ -79,7 +91,7 @@ public class BigtableTableAdminClientIT {
 
   @Test
   public void createTable() {
-    String tableId = "adminCreateTest";
+    String tableId = getTableId("adminCreateTest");
     CreateTableRequest createTableReq =
         CreateTableRequest.of(tableId)
             .addFamily("cf1")
@@ -110,7 +122,7 @@ public class BigtableTableAdminClientIT {
 
   @Test
   public void modifyFamilies() {
-    String tableId = "adminModifyFamTest";
+    String tableId = getTableId("adminModifyFamTest");
     ModifyColumnFamiliesRequest modifyFamiliesReq = ModifyColumnFamiliesRequest.of(tableId);
 
     modifyFamiliesReq
@@ -179,14 +191,14 @@ public class BigtableTableAdminClientIT {
 
   @Test
   public void deleteTable() {
-    String tableId = "adminDeleteTest";
+    String tableId = getTableId("adminDeleteTest");
     tableAdmin.createTable(CreateTableRequest.of(tableId));
     tableAdmin.deleteTable(tableId);
   }
 
   @Test
   public void getTable() {
-    String tableId = "adminGetTest";
+    String tableId = getTableId("adminGetTest");
 
     try {
       tableAdmin.createTable(CreateTableRequest.of(tableId));
@@ -200,11 +212,11 @@ public class BigtableTableAdminClientIT {
 
   @Test
   public void listTables() {
-    String tableId = "adminListTest";
+    String tableId = getTableId("adminListTest");
 
     try {
       tableAdmin.createTable(CreateTableRequest.of(tableId));
-      List<TableName> tables = tableAdmin.listTables();
+      List<String> tables = tableAdmin.listTables();
       assertNotNull(tables);
       assertFalse("List tables did not return any tables", tables.isEmpty());
     } finally {
@@ -214,11 +226,11 @@ public class BigtableTableAdminClientIT {
 
   @Test
   public void listTablesAsync() throws Exception {
-    String tableId = "adminListTest";
+    String tableId = getTableId("adminListTest");
 
     try {
       tableAdmin.createTable(CreateTableRequest.of(tableId));
-      List<TableName> tables = tableAdmin.listTablesAsync().get();
+      List<String> tables = tableAdmin.listTablesAsync().get();
       assertNotNull(tables);
       assertFalse("List tables did not return any tables", tables.isEmpty());
     } finally {
@@ -228,7 +240,7 @@ public class BigtableTableAdminClientIT {
 
   @Test
   public void dropRowRange() {
-    String tableId = "adminDropRowrangeTest";
+    String tableId = getTableId("adminDropRowrangeTest");
 
     try {
       tableAdmin.createTable(CreateTableRequest.of(tableId));
@@ -241,7 +253,7 @@ public class BigtableTableAdminClientIT {
 
   @Test
   public void awaitReplication() {
-    String tableId = "adminConsistencyTest";
+    String tableId = getTableId("adminConsistencyTest");
 
     try {
       tableAdmin.createTable(CreateTableRequest.of(tableId));
@@ -249,5 +261,9 @@ public class BigtableTableAdminClientIT {
     } finally {
       tableAdmin.deleteTable(tableId);
     }
+  }
+
+  private static String getTableId(String name) {
+    return prefix + "-" + name;
   }
 }
