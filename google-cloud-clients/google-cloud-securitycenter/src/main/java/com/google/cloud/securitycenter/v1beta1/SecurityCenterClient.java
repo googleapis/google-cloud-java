@@ -27,33 +27,8 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.securitycenter.v1beta1.Finding.Finding;
-import com.google.cloud.securitycenter.v1beta1.Finding.Finding.State;
-import com.google.cloud.securitycenter.v1beta1.OrganizationSettings.OrganizationSettings;
-import com.google.cloud.securitycenter.v1beta1.SecurityMarks.SecurityMarks;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.CreateFindingRequest;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.CreateSourceRequest;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.GetOrganizationSettingsRequest;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.GetSourceRequest;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.GroupAssetsRequest;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.GroupAssetsResponse;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.GroupFindingsRequest;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.GroupFindingsResponse;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.GroupResult;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.ListAssetsRequest;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.ListAssetsResponse;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.ListAssetsResponse.ListAssetsResult;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.ListFindingsRequest;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.ListFindingsResponse;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.ListSourcesRequest;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.ListSourcesResponse;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.RunAssetDiscoveryRequest;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.SetFindingStateRequest;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.UpdateFindingRequest;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.UpdateOrganizationSettingsRequest;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.UpdateSecurityMarksRequest;
-import com.google.cloud.securitycenter.v1beta1.SecuritycenterService.UpdateSourceRequest;
-import com.google.cloud.securitycenter.v1beta1.Source.Source;
+import com.google.cloud.securitycenter.v1beta1.Finding.State;
+import com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult;
 import com.google.cloud.securitycenter.v1beta1.stub.SecurityCenterStub;
 import com.google.cloud.securitycenter.v1beta1.stub.SecurityCenterStubSettings;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -1056,7 +1031,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists an organization or source's assets.
+   * Lists an organization or source's findings.
    *
    * <p>To list across all sources provide a `-` as the source id. Example:
    * /v1beta1/organizations/123/sources/-/findings
@@ -1084,7 +1059,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists an organization or source's assets.
+   * Lists an organization or source's findings.
    *
    * <p>To list across all sources provide a `-` as the source id. Example:
    * /v1beta1/organizations/123/sources/-/findings
@@ -1112,7 +1087,7 @@ public class SecurityCenterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists an organization or source's assets.
+   * Lists an organization or source's findings.
    *
    * <p>To list across all sources provide a `-` as the source id. Example:
    * /v1beta1/organizations/123/sources/-/findings
