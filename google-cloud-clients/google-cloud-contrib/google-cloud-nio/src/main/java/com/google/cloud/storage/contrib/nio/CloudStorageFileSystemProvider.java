@@ -26,6 +26,7 @@ import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
+import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.CopyWriter;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobGetOption;
@@ -34,7 +35,6 @@ import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
-import com.google.common.base.Strings;
 import com.google.common.collect.AbstractIterator;
 import com.google.common.net.UrlEscapers;
 import com.google.common.primitives.Ints;
@@ -913,6 +913,35 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    */
   public CloudStorageFileSystemProvider withNoUserProject() {
     return new CloudStorageFileSystemProvider("", this.storageOptions);
+  }
+
+  /**
+   * Returns the project that is assigned to this provider.
+   */
+  public String getProject() {
+    initStorage();
+    return storage.getOptions().getProjectId();
+  }
+
+  /**
+   * Lists the project's buckets. But use the one in CloudStorageFileSystem.
+   *
+   * <p>Example of listing buckets, specifying the page size and a name prefix.
+   * <pre> {@code
+   * String prefix = "bucket_";
+   * Page<Bucket> buckets = provider.listBuckets(BucketListOption.prefix(prefix));
+   * Iterator<Bucket> bucketIterator = buckets.iterateAll();
+   * while (bucketIterator.hasNext()) {
+   *   Bucket bucket = bucketIterator.next();
+   *   // do something with the bucket
+   * }
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  Page<Bucket> listBuckets(Storage.BucketListOption... options) {
+    initStorage();
+    return storage.list(options);
   }
 
   private IOException asIoException(StorageException oops) {

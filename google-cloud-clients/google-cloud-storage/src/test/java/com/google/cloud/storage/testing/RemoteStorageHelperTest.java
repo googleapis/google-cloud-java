@@ -76,8 +76,9 @@ public class RemoteStorageHelperTest {
   private static final InputStream JSON_KEY_STREAM = new ByteArrayInputStream(JSON_KEY.getBytes());
   private static final StorageException RETRYABLE_EXCEPTION = new StorageException(409, "");
   private static final StorageException FATAL_EXCEPTION = new StorageException(500, "");
+  private static final String BLOB_NAME2 ="n2";
   private static final BlobId BLOB_ID1 = BlobId.of(BUCKET_NAME, "n1");
-  private static final BlobId BLOB_ID2 = BlobId.of(BUCKET_NAME, "n2");
+  private static final BlobId BLOB_ID2 = BlobId.of(BUCKET_NAME, BLOB_NAME2);
 
   private Blob blob1;
   private Blob blob2;
@@ -216,6 +217,29 @@ public class RemoteStorageHelperTest {
     thrown.expect(StorageException.class);
     try {
       RemoteStorageHelper.forceDelete(storageMock, BUCKET_NAME);
+    } finally {
+      EasyMock.verify(storageMock);
+    }
+  }
+
+  @Test
+  public void testForceDeleteRetriesWithUserProject() throws Exception {
+    final String USER_PROJECT="user-project";
+    Storage storageMock = EasyMock.createMock(Storage.class);
+    EasyMock.expect(blob1.getBlobId()).andReturn(BLOB_ID1);
+    EasyMock.expect(blob2.getBlobId()).andReturn(BLOB_ID2);
+    EasyMock.expect(blob2.getName()).andReturn(BLOB_NAME2);
+    ArrayList<BlobId> ids = new ArrayList<>();
+    ids.add(BLOB_ID1);
+    ids.add(BLOB_ID2);
+    EasyMock.expect(storageMock.delete(ids)).andReturn(ImmutableList.of(Boolean.TRUE, Boolean.FALSE)).anyTimes();
+    EasyMock.expect(storageMock.delete(BUCKET_NAME, BLOB_NAME2, Storage.BlobSourceOption.userProject(USER_PROJECT))).andReturn(true).anyTimes();
+    EasyMock.expect(storageMock.list(BUCKET_NAME, BlobListOption.versions(true), BlobListOption.userProject(USER_PROJECT)))
+        .andReturn(blobPage);
+    EasyMock.expect(storageMock.delete(BUCKET_NAME, Storage.BucketSourceOption.userProject(USER_PROJECT))).andReturn(true);
+    EasyMock.replay(storageMock, blob1, blob2);
+    try {
+      RemoteStorageHelper.forceDelete(storageMock, BUCKET_NAME, 5, TimeUnit.SECONDS, USER_PROJECT);
     } finally {
       EasyMock.verify(storageMock);
     }
