@@ -106,6 +106,9 @@ public class ConformanceTest {
   /** If non-empty, only runs tests included in this set. */
   private final Set<String> includedTests = Collections.emptySet();
 
+  /** If true, prints debug information to System.out. */
+  private final boolean DEBUG_MODE = !includedTests.isEmpty();
+
   @Captor private ArgumentCaptor<CommitRequest> commitCapture;
 
   @Captor private ArgumentCaptor<BatchGetDocumentsRequest> getAllCapture;
@@ -386,8 +389,9 @@ public class ConformanceTest {
             new Protectable() {
               @Override
               public void protect() throws Throwable {
-                // Uncomment to print the test protobuf:
-                // System.out.println(testDefinition);
+                if (DEBUG_MODE) {
+                  System.out.println(testDefinition);
+                }
 
                 switch (testDefinition.getTestCase()) {
                   case GET:
