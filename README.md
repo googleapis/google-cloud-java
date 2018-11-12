@@ -55,17 +55,35 @@ This library supports the following Google Cloud Platform services with clients 
 Quickstart
 ----------
 
-To call any of the supported Google Cloud Services simply add a corresponding client library artifact as a dependency to your project. The following instructions use `google-cloud-storage` as an example (specific instructions can be found in the README of each client).
+To call any of the supported Google Cloud Services simply add a corresponding client library 
+artifact as a dependency to your project. The following instructions use `google-cloud-storage` 
+as an example (specific instructions can be found in the README of each client).
 
-[//]: # ({x-version-update-start:google-cloud-storage:released})
+[//]: # ({x-version-update-start:google-cloud-bom:released})
 If you are using Maven, add this to your pom.xml file
 ```xml
-<dependency>
-  <groupId>com.google.cloud</groupId>
-  <artifactId>google-cloud-storage</artifactId>
-  <version>1.52.0</version>
-</dependency>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-bom</artifactId>
+        <version>0.70.0-alpha</version>
+        <type>pom</type>
+        <scope>import</scope>
+       </dependency>
+     </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-storage</artifactId>
+    </dependency>
+    ...
 ```
+[//]: # ({x-version-update-end})
+
+[//]: # ({x-version-update-start:google-cloud-storage:released})
 If you are using Gradle, add this to your dependencies
 ```Groovy
 compile 'com.google.cloud:google-cloud-storage:1.52.0'
