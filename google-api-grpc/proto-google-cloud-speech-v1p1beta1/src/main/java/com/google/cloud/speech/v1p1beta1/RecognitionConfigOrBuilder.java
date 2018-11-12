@@ -51,9 +51,9 @@ public interface RecognitionConfigOrBuilder extends
    * Valid values for OGG_OPUS are '1'-'254'.
    * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
    * If `0` or omitted, defaults to one channel (mono).
-   * NOTE: We only recognize the first channel by default.
+   * Note: We only recognize the first channel by default.
    * To perform independent recognition on each channel set
-   * enable_separate_recognition_per_channel to 'true'.
+   * `enable_separate_recognition_per_channel` to 'true'.
    * </pre>
    *
    * <code>int32 audio_channel_count = 7;</code>
@@ -62,12 +62,12 @@ public interface RecognitionConfigOrBuilder extends
 
   /**
    * <pre>
-   * This needs to be set to ‘true’ explicitly and audio_channel_count &gt; 1
+   * This needs to be set to ‘true’ explicitly and `audio_channel_count` &gt; 1
    * to get each channel recognized separately. The recognition result will
-   * contain a channel_tag field to state which channel that result belongs to.
-   * If this is not ‘true’, we will only recognize the first channel.
-   * NOTE: The request is also billed cumulatively for all channels recognized:
-   *     (audio_channel_count times the audio length)
+   * contain a `channel_tag` field to state which channel that result belongs
+   * to. If this is not true, we will only recognize the first channel. The
+   * request is billed cumulatively for all channels recognized:
+   * `audio_channel_count` multiplied by the length of the audio.
    * </pre>
    *
    * <code>bool enable_separate_recognition_per_channel = 12;</code>
@@ -79,7 +79,7 @@ public interface RecognitionConfigOrBuilder extends
    * *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    * Example: "en-US".
-   * See [Language Support](https://cloud.google.com/speech/docs/languages)
+   * See [Language Support](/speech-to-text/docs/languages)
    * for a list of the currently supported language codes.
    * </pre>
    *
@@ -91,7 +91,7 @@ public interface RecognitionConfigOrBuilder extends
    * *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
    * Example: "en-US".
-   * See [Language Support](https://cloud.google.com/speech/docs/languages)
+   * See [Language Support](/speech-to-text/docs/languages)
    * for a list of the currently supported language codes.
    * </pre>
    *
@@ -105,13 +105,13 @@ public interface RecognitionConfigOrBuilder extends
    * *Optional* A list of up to 3 additional
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
    * listing possible alternative languages of the supplied audio.
-   * See [Language Support](https://cloud.google.com/speech/docs/languages)
+   * See [Language Support](/speech-to-text/docs/languages)
    * for a list of the currently supported language codes.
    * If alternative languages are listed, recognition result will contain
    * recognition in the most likely language detected including the main
    * language_code. The recognition result will include the language tag
    * of the language detected in the audio.
-   * NOTE: This feature is only supported for Voice Command and Voice Search
+   * Note: This feature is only supported for Voice Command and Voice Search
    * use cases and performance may vary for other use cases (e.g., phone call
    * transcription).
    * </pre>
@@ -125,13 +125,13 @@ public interface RecognitionConfigOrBuilder extends
    * *Optional* A list of up to 3 additional
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
    * listing possible alternative languages of the supplied audio.
-   * See [Language Support](https://cloud.google.com/speech/docs/languages)
+   * See [Language Support](/speech-to-text/docs/languages)
    * for a list of the currently supported language codes.
    * If alternative languages are listed, recognition result will contain
    * recognition in the most likely language detected including the main
    * language_code. The recognition result will include the language tag
    * of the language detected in the audio.
-   * NOTE: This feature is only supported for Voice Command and Voice Search
+   * Note: This feature is only supported for Voice Command and Voice Search
    * use cases and performance may vary for other use cases (e.g., phone call
    * transcription).
    * </pre>
@@ -144,13 +144,13 @@ public interface RecognitionConfigOrBuilder extends
    * *Optional* A list of up to 3 additional
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
    * listing possible alternative languages of the supplied audio.
-   * See [Language Support](https://cloud.google.com/speech/docs/languages)
+   * See [Language Support](/speech-to-text/docs/languages)
    * for a list of the currently supported language codes.
    * If alternative languages are listed, recognition result will contain
    * recognition in the most likely language detected including the main
    * language_code. The recognition result will include the language tag
    * of the language detected in the audio.
-   * NOTE: This feature is only supported for Voice Command and Voice Search
+   * Note: This feature is only supported for Voice Command and Voice Search
    * use cases and performance may vary for other use cases (e.g., phone call
    * transcription).
    * </pre>
@@ -163,13 +163,13 @@ public interface RecognitionConfigOrBuilder extends
    * *Optional* A list of up to 3 additional
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
    * listing possible alternative languages of the supplied audio.
-   * See [Language Support](https://cloud.google.com/speech/docs/languages)
+   * See [Language Support](/speech-to-text/docs/languages)
    * for a list of the currently supported language codes.
    * If alternative languages are listed, recognition result will contain
    * recognition in the most likely language detected including the main
    * language_code. The recognition result will include the language tag
    * of the language detected in the audio.
-   * NOTE: This feature is only supported for Voice Command and Voice Search
+   * Note: This feature is only supported for Voice Command and Voice Search
    * use cases and performance may vary for other use cases (e.g., phone call
    * transcription).
    * </pre>
@@ -207,7 +207,9 @@ public interface RecognitionConfigOrBuilder extends
 
   /**
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -216,7 +218,9 @@ public interface RecognitionConfigOrBuilder extends
       getSpeechContextsList();
   /**
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -224,7 +228,9 @@ public interface RecognitionConfigOrBuilder extends
   com.google.cloud.speech.v1p1beta1.SpeechContext getSpeechContexts(int index);
   /**
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -232,7 +238,9 @@ public interface RecognitionConfigOrBuilder extends
   int getSpeechContextsCount();
   /**
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -241,7 +249,9 @@ public interface RecognitionConfigOrBuilder extends
       getSpeechContextsOrBuilderList();
   /**
    * <pre>
-   * *Optional* A means to provide context to assist the speech recognition.
+   * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
+   * A means to provide context to assist the speech recognition. For more
+   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -278,9 +288,9 @@ public interface RecognitionConfigOrBuilder extends
    * This feature is only available in select languages. Setting this for
    * requests in other languages has no effect at all.
    * The default 'false' value does not add punctuation to result hypotheses.
-   * NOTE: "This is currently offered as an experimental service, complimentary
+   * Note: This is currently offered as an experimental service, complimentary
    * to all users. In the future this may be exclusively available as a
-   * premium feature."
+   * premium feature.
    * </pre>
    *
    * <code>bool enable_automatic_punctuation = 11;</code>
@@ -293,9 +303,11 @@ public interface RecognitionConfigOrBuilder extends
    * the top alternative of the recognition result using a speaker_tag provided
    * in the WordInfo.
    * Note: When this is true, we send all the words from the beginning of the
-   * audio for the top alternative in every consecutive responses.
+   * audio for the top alternative in every consecutive STREAMING responses.
    * This is done in order to improve our speaker tags as our models learn to
    * identify the speakers in the conversation over time.
+   * For non-streaming requests, the diarization results will be provided only
+   * in the top alternative of the FINAL SpeechRecognitionResult.
    * </pre>
    *
    * <code>bool enable_speaker_diarization = 16;</code>
@@ -422,13 +434,16 @@ public interface RecognitionConfigOrBuilder extends
   /**
    * <pre>
    * *Optional* Set to true to use an enhanced model for speech recognition.
-   * You must also set the `model` field to a valid, enhanced model. If
-   * `use_enhanced` is set to true and the `model` field is not set, then
-   * `use_enhanced` is ignored. If `use_enhanced` is true and an enhanced
-   * version of the specified model does not exist, then the speech is
-   * recognized using the standard version of the specified model.
-   * Enhanced speech models require that you opt-in to the audio logging using
-   * instructions in the [alpha documentation](/speech/data-sharing). If you set
+   * If `use_enhanced` is set to true and the `model` field is not set, then
+   * an appropriate enhanced model is chosen if:
+   * 1. project is eligible for requesting enhanced models
+   * 2. an enhanced model exists for the audio
+   * If `use_enhanced` is true and an enhanced version of the specified model
+   * does not exist, then the speech is recognized using the standard version
+   * of the specified model.
+   * Enhanced speech models require that you opt-in to data logging using
+   * instructions in the
+   * [documentation](/speech-to-text/docs/enable-data-logging). If you set
    * `use_enhanced` to true and you have not enabled audio logging, then you
    * will receive an error.
    * </pre>
