@@ -447,38 +447,37 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   }
 
   /**
-   * Lists all TableNames in the instance.
+   * Lists all table ids in the instance.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * List<TableName> tableNames = client.listTables();
-   * for(TableName name : tableNames) {
+   * List<String> tableIds = client.listTables();
+   * for(String tableId: tableIds) {
    *   System.out.println(name.getTable());
    * }
    * }</pre>
    */
-  // TODO(igorbernstein2): consider changing this method to use relative table ids.
   @SuppressWarnings("WeakerAccess")
-  public List<TableName> listTables() {
+  public List<String> listTables() {
     return ApiExceptions.callAndTranslateApiException(listTablesAsync());
   }
 
   /**
-   * Asynchronously lists all TableNames in the instance.
+   * Asynchronously lists all table ids in the instance.
    *
    * <p>Sample code:
    *
    * <pre>{@code
-   * ApiFuture<List<TableName>> listFuture = client.listTablesAsync();
+   * ApiFuture<List<String>> listFuture = client.listTables();
    *
    * ApiFutures.addCallback(
    *   listFuture,
-   *   new ApiFutureCallback<List<TableName>>() {
-   *     public void onSuccess(List<TableName> tableNames) {
+   *   new ApiFutureCallback<List<String>>() {
+   *     public void onSuccess(List<String> tableIds) {
    *       System.out.println("Got list of tables:");
-   *       for (TableName name : tableNames) {
-   *         System.out.println(name.getTable());
+   *       for (String tableId : tableIds) {
+   *         System.out.println(tableId);
    *       }
    *     }
    *
@@ -490,9 +489,8 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    * );
    * }</pre>
    */
-  // TODO(igorbernstein2): consider changing this method to use relative table ids.
   @SuppressWarnings("WeakerAccess")
-  public ApiFuture<List<TableName>> listTablesAsync() {
+  public ApiFuture<List<String>> listTablesAsync() {
     ListTablesRequest request = ListTablesRequest.newBuilder().setParent(instanceName.toString())
         .build();
 
@@ -543,12 +541,12 @@ public final class BigtableTableAdminClient implements AutoCloseable {
 
     // Wrap all of the accumulated protos.
     return ApiFutures.transform(allProtos,
-        new ApiFunction<List<com.google.bigtable.admin.v2.Table>, List<TableName>>() {
+        new ApiFunction<List<com.google.bigtable.admin.v2.Table>, List<String>>() {
           @Override
-          public List<TableName> apply(List<com.google.bigtable.admin.v2.Table> protos) {
-            List<TableName> results = Lists.newArrayListWithCapacity(protos.size());
+          public List<String> apply(List<com.google.bigtable.admin.v2.Table> protos) {
+            List<String> results = Lists.newArrayListWithCapacity(protos.size());
             for (com.google.bigtable.admin.v2.Table proto : protos) {
-              results.add(TableName.parse(proto.getName()));
+              results.add(TableName.parse(proto.getName()).getTable());
             }
             return results;
           }

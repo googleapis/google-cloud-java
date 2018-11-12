@@ -22,7 +22,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.bigtable.admin.v2.InstanceName;
-import com.google.bigtable.admin.v2.TableName;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.models.ColumnFamily;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
@@ -68,9 +67,9 @@ public class BigtableTableAdminClientIT {
 
     // Cleanup old tables, under normal circumstances this will do nothing
     String stalePrefix = String.format("020%d", System.currentTimeMillis() - TimeUnit.DAYS.toMillis(1));
-    for (TableName tableName : tableAdmin.listTables()) {
-      if (stalePrefix.compareTo(tableName.getTable()) > 0) {
-        tableAdmin.deleteTable(tableName.getTable());
+    for (String tableId: tableAdmin.listTables()) {
+      if (stalePrefix.compareTo(tableId) > 0) {
+        tableAdmin.deleteTable(tableId);
       }
     }
   }
@@ -217,7 +216,7 @@ public class BigtableTableAdminClientIT {
 
     try {
       tableAdmin.createTable(CreateTableRequest.of(tableId));
-      List<TableName> tables = tableAdmin.listTables();
+      List<String> tables = tableAdmin.listTables();
       assertNotNull(tables);
       assertFalse("List tables did not return any tables", tables.isEmpty());
     } finally {
@@ -231,7 +230,7 @@ public class BigtableTableAdminClientIT {
 
     try {
       tableAdmin.createTable(CreateTableRequest.of(tableId));
-      List<TableName> tables = tableAdmin.listTablesAsync().get();
+      List<String> tables = tableAdmin.listTablesAsync().get();
       assertNotNull(tables);
       assertFalse("List tables did not return any tables", tables.isEmpty());
     } finally {
