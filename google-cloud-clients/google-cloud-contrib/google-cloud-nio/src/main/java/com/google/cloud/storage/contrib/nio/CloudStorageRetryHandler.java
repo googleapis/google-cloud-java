@@ -33,6 +33,21 @@ public class CloudStorageRetryHandler {
   private final CloudStorageConfiguration config;
 
   /**
+   * Create a CloudStorageRetryHandler with the maximum retries and reopens set to different values.
+   *
+   * @param maxRetries maximum number of retries
+   * @param maxReopens maximum number of reopens
+   *
+   * @deprecated use CloudStorageRetryHandler(CloudStorageConfiguration) instead.
+   */
+  public CloudStorageRetryHandler(final int maxRetries, final int maxReopens) {
+    this.maxRetries = maxRetries;
+    this.maxReopens = maxReopens;
+    // we're just using the retry parameters from the config, so it's OK to have a default.
+    this.config = CloudStorageConfiguration.DEFAULT;
+  }
+
+  /**
    * Create a CloudStorageRetryHandler with the maximum retries and reopens set to the same value.
    *
    * @param config - configuration for reopens and retryable codes.
