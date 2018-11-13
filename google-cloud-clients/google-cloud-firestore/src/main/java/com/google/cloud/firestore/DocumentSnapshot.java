@@ -270,15 +270,39 @@ public class DocumentSnapshot {
   /**
    * Returns the value at the field or null if the field doesn't exist.
    *
+   * @param field The path to the field.
+   * @param defaultValue The value to return if the field doesn't exist
+   * @return The value at the given field or the default value.
+   */
+  @Nullable
+  public Object get(@Nonnull String field, Object defaultValue) {
+    return get(FieldPath.fromDotSeparatedString(field), defaultValue);
+  }
+
+  /**
+   * Returns the value at the field or null if the field doesn't exist.
+   *
    * @param fieldPath The path to the field.
    * @return The value at the given field or null.
    */
   @Nullable
   public Object get(@Nonnull FieldPath fieldPath) {
+    return get(fieldPath, null);
+  }
+
+  /**
+   * Returns the value at the field or the default value if the field doesn't exist.
+   *
+   * @param fieldPath The path to the field.
+   * @param defaultValue The value to return if the field doesn't exist
+   * @return The value at the given field or the default value.
+   */
+  @Nullable
+  public Object get(@Nonnull FieldPath fieldPath, Object defaultValue) {
     Value value = extractField(fieldPath);
 
     if (value == null) {
-      return null;
+      return defaultValue;
     }
 
     Object decodedValue = decodeValue(value);
@@ -323,7 +347,20 @@ public class DocumentSnapshot {
    */
   @Nullable
   public Boolean getBoolean(@Nonnull String field) {
-    return (Boolean) get(field);
+    return getBoolean(field, null);
+  }
+
+  /**
+   * Returns the value of the field as a boolean.
+   *
+   * @param field The path to the field.
+   * @param defaultValue The value to return if the field doesn't exist
+   * @throws RuntimeException if the value is not a Boolean.
+   * @return The value of the field.
+   */
+  @Nullable
+  public Boolean getBoolean(@Nonnull String field, Boolean defaultValue) {
+    return (Boolean) get(field, defaultValue);
   }
 
   /**
@@ -335,8 +372,21 @@ public class DocumentSnapshot {
    */
   @Nullable
   public Double getDouble(@Nonnull String field) {
+    return getDouble(field, null);
+  }
+
+  /**
+   * Returns the value of the field as a double.
+   *
+   * @param field The path to the field
+   * @param defaultValue The value to return if the field doesn't exist
+   * @throws RuntimeException if the value is not a Number.
+   * @return The value of the field.
+   */
+  @Nullable
+  public Double getDouble(@Nonnull String field, Double defaultValue) {
     Number number = (Number) get(field);
-    return number == null ? null : number.doubleValue();
+    return number == null ? defaultValue : number.doubleValue();
   }
 
   /**
@@ -348,7 +398,20 @@ public class DocumentSnapshot {
    */
   @Nullable
   public String getString(@Nonnull String field) {
-    return (String) get(field);
+    return getString(field, null);
+  }
+
+  /**
+   * Returns the value of the field as a String.
+   *
+   * @param field The path to the field.
+   * @param defaultValue The value to return if the field doesn't exist
+   * @throws RuntimeException if the value is not a String.
+   * @return The value of the field.
+   */
+  @Nullable
+  public String getString(@Nonnull String field, String defaultValue) {
+    return (String) get(field, defaultValue);
   }
 
   /**
@@ -360,8 +423,21 @@ public class DocumentSnapshot {
    */
   @Nullable
   public Long getLong(@Nonnull String field) {
+    return getLong(field, null);
+  }
+
+  /**
+   * Returns the value of the field as a long.
+   *
+   * @param field The path to the field.
+   * @param defaultValue The value to return if the field doesn't exist
+   * @throws RuntimeException if the value is not a Number.
+   * @return The value of the field.
+   */
+  @Nullable
+  public Long getLong(@Nonnull String field, Long defaultValue) {
     Number number = (Number) get(field);
-    return number == null ? null : number.longValue();
+    return number == null ? defaultValue : number.longValue();
   }
 
   /**
@@ -376,7 +452,24 @@ public class DocumentSnapshot {
    */
   @Nullable
   public Date getDate(@Nonnull String field) {
-    return ((Timestamp) get(field)).toDate();
+    return getDate(field, null);
+  }
+
+  /**
+   * Returns the value of the field as a Date.
+   *
+   * <p>This method ignores the global setting {@link
+   * FirestoreOptions#areTimestampsInSnapshotsEnabled}.
+   *
+   * @param field The path to the field.
+   * @param defaultValue The value to return if the field doesn't exist
+   * @throws RuntimeException if the value is not a Date.
+   * @return The value of the field.
+   */
+  @Nullable
+  public Date getDate(@Nonnull String field, Date defaultValue) {
+    Timestamp timestamp = (Timestamp) get(field);
+    return timestamp == null ? defaultValue : timestamp.toDate();
   }
 
   /**
@@ -391,7 +484,23 @@ public class DocumentSnapshot {
    */
   @Nullable
   public Timestamp getTimestamp(@Nonnull String field) {
-    return (Timestamp) get(field);
+    return getTimestamp(field, null);
+  }
+
+  /**
+   * Returns the value of the field as a {@link Timestamp}.
+   *
+   * <p>This method ignores the global setting {@link
+   * FirestoreOptions#areTimestampsInSnapshotsEnabled}.
+   *
+   * @param field The path to the field.
+   * @param defaultValue The value to return if the field doesn't exist
+   * @throws RuntimeException if the value is not a Date.
+   * @return The value of the field.
+   */
+  @Nullable
+  public Timestamp getTimestamp(@Nonnull String field, Timestamp defaultValue) {
+    return (Timestamp) get(field, defaultValue);
   }
 
   /**
@@ -403,7 +512,20 @@ public class DocumentSnapshot {
    */
   @Nullable
   public Blob getBlob(@Nonnull String field) {
-    return (Blob) get(field);
+    return getBlob(field, null);
+  }
+
+  /**
+   * Returns the value of the field as a Blob.
+   *
+   * @param field The path to the field.
+   * @param defaultValue The value to return if the field doesn't exist
+   * @throws RuntimeException if the value is not a Blob.
+   * @return The value of the field.
+   */
+  @Nullable
+  public Blob getBlob(@Nonnull String field, Blob defaultValue) {
+    return (Blob) get(field, defaultValue);
   }
 
   /**
@@ -415,7 +537,20 @@ public class DocumentSnapshot {
    */
   @Nullable
   public GeoPoint getGeoPoint(@Nonnull String field) {
-    return (GeoPoint) get(field);
+    return getGeoPoint(field, null);
+  }
+
+  /**
+   * Returns the value of the field as a GeoPoint.
+   *
+   * @param field The path to the field.
+   * @param defaultValue The value to return if the field doesn't exist
+   * @throws RuntimeException if the value is not a GeoPoint.
+   * @return The value of the field.
+   */
+  @Nullable
+  public GeoPoint getGeoPoint(@Nonnull String field, GeoPoint defaultValue) {
+    return (GeoPoint) get(field, defaultValue);
   }
 
   /**
