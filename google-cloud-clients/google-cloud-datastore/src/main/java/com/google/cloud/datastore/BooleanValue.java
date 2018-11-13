@@ -77,7 +77,6 @@ public final class BooleanValue extends Value<Boolean> {
     return new BooleanValue(value);
   }
 
-
   public static Builder newBuilder(boolean value) {
     return new Builder().set(value);
   }

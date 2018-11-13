@@ -23,12 +23,10 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
-
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
 
@@ -66,9 +64,7 @@ public class Region implements Serializable {
   private final List<Quota> quotas;
   private final DeprecationStatus<RegionId> deprecationStatus;
 
-  /**
-   * Status of the region.
-   */
+  /** Status of the region. */
   public static final class Status extends StringEnumValue {
     private static final long serialVersionUID = 658578478474360264L;
 
@@ -80,9 +76,8 @@ public class Region implements Serializable {
           }
         };
 
-    private static final StringEnumType<Status> type = new StringEnumType(
-        Status.class,
-        CONSTRUCTOR);
+    private static final StringEnumType<Status> type =
+        new StringEnumType(Status.class, CONSTRUCTOR);
 
     public static final Status UP = type.createAndRegister("UP");
     public static final Status DOWN = type.createAndRegister("DOWN");
@@ -92,31 +87,25 @@ public class Region implements Serializable {
     }
 
     /**
-     * Get the Status for the given String constant, and throw an exception if the constant is
-     * not recognized.
+     * Get the Status for the given String constant, and throw an exception if the constant is not
+     * recognized.
      */
     public static Status valueOfStrict(String constant) {
       return type.valueOfStrict(constant);
     }
 
-    /**
-     * Get the Status for the given String constant, and allow unrecognized values.
-     */
+    /** Get the Status for the given String constant, and allow unrecognized values. */
     public static Status valueOf(String constant) {
       return type.valueOf(constant);
     }
 
-    /**
-     * Return the known values for Status.
-     */
+    /** Return the known values for Status. */
     public static Status[] values() {
       return type.values();
     }
   }
 
-  /**
-   * A quota assigned to this region.
-   */
+  /** A quota assigned to this region. */
   public static final class Quota implements Serializable {
 
     static final Function<com.google.api.services.compute.model.Quota, Quota> FROM_PB_FUNCTION =
@@ -139,32 +128,24 @@ public class Region implements Serializable {
     private final double limit;
     private final double usage;
 
-    /**
-     * Returns a region quota object.
-     */
+    /** Returns a region quota object. */
     Quota(String metric, double limit, double usage) {
       this.metric = metric;
       this.limit = limit;
       this.usage = usage;
     }
 
-    /**
-     * Returns the name of the quota metric.
-     */
+    /** Returns the name of the quota metric. */
     public String getMetric() {
       return metric;
     }
 
-    /**
-     * Returns the quota limit for this metric.
-     */
+    /** Returns the quota limit for this metric. */
     public double getLimit() {
       return limit;
     }
 
-    /**
-     * Returns the current usage for this quota.
-     */
+    /** Returns the current usage for this quota. */
     public double getUsage() {
       return usage;
     }
@@ -216,7 +197,7 @@ public class Region implements Serializable {
     private Status status;
     private List<ZoneId> zones;
     private List<Quota> quotas;
-    private  DeprecationStatus<RegionId> deprecationStatus;
+    private DeprecationStatus<RegionId> deprecationStatus;
 
     private Builder() {}
 
@@ -276,59 +257,45 @@ public class Region implements Serializable {
     this.deprecationStatus = builder.deprecationStatus;
   }
 
-  /**
-   * Returns the region's identity.
-   */
+  /** Returns the region's identity. */
   public RegionId getRegionId() {
     return regionId;
   }
 
-  /**
-   * Returns the service-generated unique identifier for the region.
-   */
+  /** Returns the service-generated unique identifier for the region. */
   public String getGeneratedId() {
     return generatedId;
   }
 
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
+  /** Returns the creation timestamp in milliseconds since epoch. */
   public Long getCreationTimestamp() {
     return creationTimestamp;
   }
 
-  /**
-   * Returns an optional textual description of the region.
-   */
+  /** Returns an optional textual description of the region. */
   public String getDescription() {
     return description;
   }
 
-  /**
-   * Returns the status of the status.
-   */
+  /** Returns the status of the status. */
   public Status getStatus() {
     return status;
   }
 
-  /**
-   * Returns a list of identities of zones available in this region.
-   */
+  /** Returns a list of identities of zones available in this region. */
   public List<ZoneId> getZones() {
     return zones;
   }
 
-  /**
-   * Returns quotas assigned to this region.
-   */
+  /** Returns quotas assigned to this region. */
   public List<Quota> getQuotas() {
     return quotas;
   }
 
   /**
-   * Returns the deprecation status of the region. If {@link DeprecationStatus#getStatus()} is either
-   * {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE} the
-   * region should not be used. Returns {@code null} if the region is not deprecated.
+   * Returns the deprecation status of the region. If {@link DeprecationStatus#getStatus()} is
+   * either {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE}
+   * the region should not be used. Returns {@code null} if the region is not deprecated.
    */
   public DeprecationStatus<RegionId> getDeprecationStatus() {
     return deprecationStatus;
@@ -357,8 +324,8 @@ public class Region implements Serializable {
   public final boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(Region.class)
-        && Objects.equals(toPb(), ((Region) obj).toPb());
+            && obj.getClass().equals(Region.class)
+            && Objects.equals(toPb(), ((Region) obj).toPb());
   }
 
   com.google.api.services.compute.model.Region toPb() {

@@ -66,7 +66,8 @@ import javax.annotation.Generated;
 public class AutoscalerSettings extends ClientSettings<AutoscalerSettings> {
   /** Returns the object with the settings used for calls to aggregatedListAutoscalers. */
   public PagedCallSettings<
-          AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList,
+          AggregatedListAutoscalersHttpRequest,
+          AutoscalerAggregatedList,
           AggregatedListAutoscalersPagedResponse>
       aggregatedListAutoscalersSettings() {
     return ((AutoscalerStubSettings) getStubSettings()).aggregatedListAutoscalersSettings();
@@ -206,7 +207,8 @@ public class AutoscalerSettings extends ClientSettings<AutoscalerSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListAutoscalers. */
     public PagedCallSettings.Builder<
-            AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList,
+            AggregatedListAutoscalersHttpRequest,
+            AutoscalerAggregatedList,
             AggregatedListAutoscalersPagedResponse>
         aggregatedListAutoscalersSettings() {
       return getStubSettingsBuilder().aggregatedListAutoscalersSettings();

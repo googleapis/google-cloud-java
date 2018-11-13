@@ -26,7 +26,6 @@ import java.nio.channels.ReadableByteChannel;
  * <p>Implementations of this class may buffer data internally to reduce remote calls. This
  * interface implements {@link Restorable} to allow saving the reader's state to continue reading
  * afterwards.
- * </p>
  */
 public interface ReadChannel extends ReadableByteChannel, Closeable, Restorable<ReadChannel> {
 
@@ -40,10 +39,9 @@ public interface ReadChannel extends ReadableByteChannel, Closeable, Restorable<
 
   void seek(long position) throws IOException;
 
-
   /**
-   * Sets the minimum size that will be read by a single RPC.
-   * Read data will be locally buffered until consumed.
+   * Sets the minimum size that will be read by a single RPC. Read data will be locally buffered
+   * until consumed.
    */
   void setChunkSize(int chunkSize);
 

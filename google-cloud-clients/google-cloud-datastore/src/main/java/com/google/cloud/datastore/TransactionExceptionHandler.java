@@ -33,7 +33,8 @@ public class TransactionExceptionHandler {
         public RetryResult beforeEval(Exception exception) {
           if (exception instanceof DatastoreException) {
             DatastoreException e = getInnerException((DatastoreException) exception);
-            if (e.getCode() == ABORTED_CODE || e.getReason()!=null && e.getReason().equals("ABORTED")) {
+            if (e.getCode() == ABORTED_CODE
+                || e.getReason() != null && e.getReason().equals("ABORTED")) {
               return Interceptor.RetryResult.RETRY;
             }
           }

@@ -16,25 +16,24 @@
 
 package com.google.cloud.bigquery;
 
-import org.junit.Test;
-
 import static com.google.common.truth.Truth.assertThat;
+
+import org.junit.Test;
 
 public class GoogleSheetsOptionsTest {
 
   private static final long SKIP_LEADING_ROWS = 42L;
-  private static final GoogleSheetsOptions GOOGLE_SHEETS_OPTIONS = GoogleSheetsOptions.newBuilder()
-      .setSkipLeadingRows(SKIP_LEADING_ROWS)
-      .build();
+  private static final GoogleSheetsOptions GOOGLE_SHEETS_OPTIONS =
+      GoogleSheetsOptions.newBuilder().setSkipLeadingRows(SKIP_LEADING_ROWS).build();
 
   @Test
   public void testToBuilder() {
     compareGoogleSheetsOptions(GOOGLE_SHEETS_OPTIONS, GOOGLE_SHEETS_OPTIONS.toBuilder().build());
-    GoogleSheetsOptions googleSheetsOptions = GOOGLE_SHEETS_OPTIONS.toBuilder()
-        .setSkipLeadingRows(123)
-        .build();
+    GoogleSheetsOptions googleSheetsOptions =
+        GOOGLE_SHEETS_OPTIONS.toBuilder().setSkipLeadingRows(123).build();
     assertThat(googleSheetsOptions.getSkipLeadingRows()).isEqualTo(123);
-    googleSheetsOptions = googleSheetsOptions.toBuilder().setSkipLeadingRows(SKIP_LEADING_ROWS).build();
+    googleSheetsOptions =
+        googleSheetsOptions.toBuilder().setSkipLeadingRows(SKIP_LEADING_ROWS).build();
     compareGoogleSheetsOptions(GOOGLE_SHEETS_OPTIONS, googleSheetsOptions);
   }
 
@@ -50,12 +49,13 @@ public class GoogleSheetsOptionsTest {
     assertThat(GOOGLE_SHEETS_OPTIONS.getSkipLeadingRows()).isEqualTo(SKIP_LEADING_ROWS);
   }
 
-
   @Test
   public void testToAndFromPb() {
-    compareGoogleSheetsOptions(GOOGLE_SHEETS_OPTIONS, GoogleSheetsOptions.fromPb(GOOGLE_SHEETS_OPTIONS.toPb()));
+    compareGoogleSheetsOptions(
+        GOOGLE_SHEETS_OPTIONS, GoogleSheetsOptions.fromPb(GOOGLE_SHEETS_OPTIONS.toPb()));
     GoogleSheetsOptions googleSheetsOptions = GoogleSheetsOptions.newBuilder().build();
-    compareGoogleSheetsOptions(googleSheetsOptions, GoogleSheetsOptions.fromPb(googleSheetsOptions.toPb()));
+    compareGoogleSheetsOptions(
+        googleSheetsOptions, GoogleSheetsOptions.fromPb(googleSheetsOptions.toPb()));
   }
 
   private void compareGoogleSheetsOptions(GoogleSheetsOptions expected, GoogleSheetsOptions value) {

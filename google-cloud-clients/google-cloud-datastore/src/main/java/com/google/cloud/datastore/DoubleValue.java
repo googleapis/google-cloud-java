@@ -77,7 +77,6 @@ public final class DoubleValue extends Value<Double> {
     return new DoubleValue(value);
   }
 
-
   public static Builder newBuilder(double value) {
     return new Builder().set(value);
   }

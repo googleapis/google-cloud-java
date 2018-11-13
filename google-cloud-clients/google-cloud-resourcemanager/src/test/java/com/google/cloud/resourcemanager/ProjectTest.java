@@ -31,13 +31,11 @@ import com.google.cloud.Role;
 import com.google.cloud.resourcemanager.ProjectInfo.ResourceId;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
+import java.util.List;
+import java.util.Map;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.List;
-import java.util.Map;
 
 public class ProjectTest {
   private static final String PROJECT_ID = "project-id";
@@ -46,20 +44,22 @@ public class ProjectTest {
   private static final Long PROJECT_NUMBER = 123L;
   private static final Long CREATE_TIME_MILLIS = 123456789L;
   private static final ProjectInfo.State STATE = ProjectInfo.State.DELETE_REQUESTED;
-  private static final ProjectInfo PROJECT_INFO = ProjectInfo.newBuilder(PROJECT_ID)
-      .setName(NAME)
-      .setLabels(LABELS)
-      .setProjectNumber(PROJECT_NUMBER)
-      .setCreateTimeMillis(CREATE_TIME_MILLIS)
-      .setState(STATE)
-      .build();
+  private static final ProjectInfo PROJECT_INFO =
+      ProjectInfo.newBuilder(PROJECT_ID)
+          .setName(NAME)
+          .setLabels(LABELS)
+          .setProjectNumber(PROJECT_NUMBER)
+          .setCreateTimeMillis(CREATE_TIME_MILLIS)
+          .setState(STATE)
+          .build();
   private static final Identity USER = Identity.user("abc@gmail.com");
   private static final Identity SERVICE_ACCOUNT =
       Identity.serviceAccount("service-account@gmail.com");
-  private static final Policy POLICY = Policy.newBuilder()
-      .addIdentity(Role.owner(), USER)
-      .addIdentity(Role.editor(), SERVICE_ACCOUNT)
-      .build();
+  private static final Policy POLICY =
+      Policy.newBuilder()
+          .addIdentity(Role.owner(), USER)
+          .addIdentity(Role.editor(), SERVICE_ACCOUNT)
+          .build();
 
   private ResourceManager serviceMockReturnsOptions = createStrictMock(ResourceManager.class);
   private ResourceManagerOptions mockOptions = createMock(ResourceManagerOptions.class);
@@ -101,13 +101,15 @@ public class ProjectTest {
     replay(resourceManager);
     Project.Builder builder =
         new Project.Builder(new Project(resourceManager, new ProjectInfo.BuilderImpl("wrong-id")));
-    Project project = builder.setProjectId(PROJECT_ID)
-        .setName(NAME)
-        .setLabels(LABELS)
-        .setProjectNumber(PROJECT_NUMBER)
-        .setCreateTimeMillis(CREATE_TIME_MILLIS)
-        .setState(STATE)
-        .build();
+    Project project =
+        builder
+            .setProjectId(PROJECT_ID)
+            .setName(NAME)
+            .setLabels(LABELS)
+            .setProjectNumber(PROJECT_NUMBER)
+            .setCreateTimeMillis(CREATE_TIME_MILLIS)
+            .setState(STATE)
+            .build();
     assertEquals(PROJECT_ID, project.getProjectId());
     assertEquals(NAME, project.getName());
     assertEquals(LABELS, project.getLabels());
@@ -117,13 +119,15 @@ public class ProjectTest {
     assertEquals(resourceManager.getOptions(), project.getResourceManager().getOptions());
     assertNull(project.getParent());
     ResourceId parent = new ResourceId("id", "type");
-    project = project.toBuilder()
-        .clearLabels()
-        .addLabel("k3", "v3")
-        .addLabel("k4", "v4")
-        .removeLabel("k4")
-        .setParent(parent)
-        .build();
+    project =
+        project
+            .toBuilder()
+            .clearLabels()
+            .addLabel("k3", "v3")
+            .addLabel("k4", "v4")
+            .removeLabel("k4")
+            .setParent(parent)
+            .build();
     assertEquals(PROJECT_ID, project.getProjectId());
     assertEquals(NAME, project.getName());
     assertEquals(ImmutableMap.of("k3", "v3"), project.getLabels());
@@ -133,7 +137,6 @@ public class ProjectTest {
     assertEquals(resourceManager.getOptions(), project.getResourceManager().getOptions());
     assertEquals(parent, project.getParent());
   }
-
 
   @Test
   public void testGet() {
@@ -242,8 +245,9 @@ public class ProjectTest {
     String getPermission = "resourcemanager.projects.get";
     String deletePermission = "resourcemanager.projects.delete";
     expect(resourceManager.getOptions()).andReturn(mockOptions).times(1);
-    expect(resourceManager.testPermissions(
-            PROJECT_ID, ImmutableList.of(getPermission, deletePermission)))
+    expect(
+            resourceManager.testPermissions(
+                PROJECT_ID, ImmutableList.of(getPermission, deletePermission)))
         .andReturn(response);
     replay(resourceManager);
     initializeProject();
@@ -254,8 +258,8 @@ public class ProjectTest {
   private void compareProjects(Project expected, Project value) {
     assertEquals(expected, value);
     compareProjectInfos(expected, value);
-    assertEquals(expected.getResourceManager().getOptions(),
-        value.getResourceManager().getOptions());
+    assertEquals(
+        expected.getResourceManager().getOptions(), value.getResourceManager().getOptions());
   }
 
   private void compareProjectInfos(ProjectInfo expected, ProjectInfo value) {

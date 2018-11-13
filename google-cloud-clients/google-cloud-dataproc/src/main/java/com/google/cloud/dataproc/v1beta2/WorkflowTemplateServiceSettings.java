@@ -104,7 +104,8 @@ public class WorkflowTemplateServiceSettings
 
   /** Returns the object with the settings used for calls to listWorkflowTemplates. */
   public PagedCallSettings<
-          ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse,
+          ListWorkflowTemplatesRequest,
+          ListWorkflowTemplatesResponse,
           ListWorkflowTemplatesPagedResponse>
       listWorkflowTemplatesSettings() {
     return ((WorkflowTemplateServiceStubSettings) getStubSettings())
@@ -250,7 +251,8 @@ public class WorkflowTemplateServiceSettings
 
     /** Returns the builder for the settings used for calls to listWorkflowTemplates. */
     public PagedCallSettings.Builder<
-            ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse,
+            ListWorkflowTemplatesRequest,
+            ListWorkflowTemplatesResponse,
             ListWorkflowTemplatesPagedResponse>
         listWorkflowTemplatesSettings() {
       return getStubSettingsBuilder().listWorkflowTemplatesSettings();

@@ -235,7 +235,8 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
           ListKnowledgeBasesRequest, ListKnowledgeBasesResponse, ListKnowledgeBasesPagedResponse>
       LIST_KNOWLEDGE_BASES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListKnowledgeBasesRequest, ListKnowledgeBasesResponse,
+              ListKnowledgeBasesRequest,
+              ListKnowledgeBasesResponse,
               ListKnowledgeBasesPagedResponse>() {
             @Override
             public ApiFuture<ListKnowledgeBasesPagedResponse> getFuturePagedResponse(

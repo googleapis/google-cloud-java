@@ -36,13 +36,10 @@ import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.common.collect.Lists;
-
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * This class contains a number of snippets for the {@link Datastore} interface.
- */
+/** This class contains a number of snippets for the {@link Datastore} interface. */
 public class DatastoreSnippets {
 
   private final Datastore datastore;
@@ -51,27 +48,24 @@ public class DatastoreSnippets {
     this.datastore = datastore;
   }
 
-  /**
-   * Example of running in a transaction.
-   */
+  /** Example of running in a transaction. */
   // [TARGET runInTransaction(TransactionCallable)]
   // [VARIABLE "my_callable_result"]
   public String runInTransaction(final String callableResult) {
     // [START runInTransaction]
-    TransactionCallable<String> callable = new TransactionCallable<String>() {
-      public String run(DatastoreReaderWriter readerWriter) {
-        // use readerWriter to run in transaction
-        return callableResult;
-      }
-    };
+    TransactionCallable<String> callable =
+        new TransactionCallable<String>() {
+          public String run(DatastoreReaderWriter readerWriter) {
+            // use readerWriter to run in transaction
+            return callableResult;
+          }
+        };
     String result = datastore.runInTransaction(callable);
     // [END runInTransaction]
     return result;
   }
 
-  /**
-   * Example of starting a new batch.
-   */
+  /** Example of starting a new batch. */
   // [TARGET newBatch()]
   // [VARIABLE "my_key_name_1"]
   // [VARIABLE "my_key_name_2"]
@@ -89,9 +83,7 @@ public class DatastoreSnippets {
     return batch;
   }
 
-  /**
-   * Example of allocating an id.
-   */
+  /** Example of allocating an id. */
   // [TARGET allocateId(IncompleteKey)]
   public Key allocateIdSingle() {
     // [START allocateIdSingle]
@@ -104,9 +96,7 @@ public class DatastoreSnippets {
     return key;
   }
 
-  /**
-   * Example of allocating multiple ids in a single batch.
-   */
+  /** Example of allocating multiple ids in a single batch. */
   // [TARGET allocateId(IncompleteKey...)]
   public List<Key> batchAllocateId() {
     // [START batchAllocateId]
@@ -120,9 +110,7 @@ public class DatastoreSnippets {
     return keys;
   }
 
-  /**
-   * Example of updating multiple entities.
-   */
+  /** Example of updating multiple entities. */
   // [TARGET update(Entity...)]
   // [VARIABLE "my_key_name_1"]
   // [VARIABLE "my_key_name_2"]
@@ -142,9 +130,7 @@ public class DatastoreSnippets {
     // [END batchUpdateEntities]
   }
 
-  /**
-   * Example of adding a single entity.
-   */
+  /** Example of adding a single entity. */
   // [TARGET add(FullEntity)]
   // [VARIABLE "my_key_name"]
   public void addSingleEntity(String keyName) {
@@ -163,9 +149,7 @@ public class DatastoreSnippets {
     // [END addSingleEntity]
   }
 
-  /**
-   * Example of adding multiple entities.
-   */
+  /** Example of adding multiple entities. */
   // [TARGET add(FullEntity...)]
   // [VARIABLE "my_key_name1"]
   // [VARIABLE "my_key_name2"]
@@ -191,9 +175,7 @@ public class DatastoreSnippets {
     // [END batchAddEntities]
   }
 
-  /**
-   * Example of putting a single entity.
-   */
+  /** Example of putting a single entity. */
   // [TARGET put(FullEntity)]
   // [VARIABLE "my_key_name"]
   public void putSingleEntity(String keyName) {
@@ -206,9 +188,7 @@ public class DatastoreSnippets {
     // [END putSingleEntity]
   }
 
-  /**
-   * Example of putting multiple entities.
-   */
+  /** Example of putting multiple entities. */
   // [TARGET put(FullEntity...)]
   // [VARIABLE "my_key_name1"]
   // [VARIABLE "my_key_name2"]
@@ -228,9 +208,7 @@ public class DatastoreSnippets {
     // [END batchPutEntities]
   }
 
-  /**
-   * Example of deleting multiple entities.
-   */
+  /** Example of deleting multiple entities. */
   // [TARGET delete(Key...)]
   // [VARIABLE "my_key_name1"]
   // [VARIABLE "my_key_name2"]
@@ -242,9 +220,7 @@ public class DatastoreSnippets {
     // [END batchDeleteEntities]
   }
 
-  /**
-   * Example of creating a {@code KeyFactory}.
-   */
+  /** Example of creating a {@code KeyFactory}. */
   // [TARGET newKeyFactory()]
   public KeyFactory createKeyFactory() {
     // [START createKeyFactory]
@@ -253,9 +229,7 @@ public class DatastoreSnippets {
     return keyFactory;
   }
 
-  /**
-   * Example of getting an entity.
-   */
+  /** Example of getting an entity. */
   // [TARGET get(Key, ReadOption...)]
   // [VARIABLE "my_key_name"]
   public Entity getEntityWithKey(String keyName) {
@@ -267,9 +241,7 @@ public class DatastoreSnippets {
     return entity;
   }
 
-  /**
-   * Example of getting multiple entity objects.
-   */
+  /** Example of getting multiple entity objects. */
   // [TARGET get(Iterable, ReadOption...)]
   // [VARIABLE "my_first_key_name"]
   // [VARIABLE "my_second_key_name"]
@@ -290,9 +262,7 @@ public class DatastoreSnippets {
     return entities;
   }
 
-  /**
-   * Example of fetching a list of Entity objects.
-   */
+  /** Example of fetching a list of Entity objects. */
   // [TARGET fetch(Iterable, ReadOption...)]
   // [VARIABLE "my_first_key_name"]
   // [VARIABLE "my_second_key_name"]
@@ -309,17 +279,13 @@ public class DatastoreSnippets {
     return entities;
   }
 
-  /**
-   * Example of running a query to find all entities of one kind.
-   */
+  /** Example of running a query to find all entities of one kind. */
   // [TARGET run(Query, ReadOption...)]
   // [VARIABLE "my_kind"]
   public List<Entity> runQuery(String kind) {
     // TODO change so that it's not necessary to hold the entities in a list for integration testing
     // [START runQuery]
-    StructuredQuery<Entity> query = Query.newEntityQueryBuilder()
-        .setKind(kind)
-        .build();
+    StructuredQuery<Entity> query = Query.newEntityQueryBuilder().setKind(kind).build();
     QueryResults<Entity> results = datastore.run(query);
     List<Entity> entities = Lists.newArrayList();
     while (results.hasNext()) {
@@ -331,9 +297,7 @@ public class DatastoreSnippets {
     return entities;
   }
 
-  /**
-   * Example of running a query to find all entities with a matching property value.
-   */
+  /** Example of running a query to find all entities with a matching property value. */
   // [TARGET run(Query, ReadOption...)]
   // [VARIABLE "my_kind"]
   // [VARIABLE "my_property"]
@@ -341,10 +305,11 @@ public class DatastoreSnippets {
   public List<Entity> runQueryOnProperty(String kind, String property, String value) {
     // TODO change so that it's not necessary to hold the entities in a list for integration testing
     // [START runQueryOnProperty]
-    StructuredQuery<Entity> query = Query.newEntityQueryBuilder()
-        .setKind(kind)
-        .setFilter(PropertyFilter.eq(property, value))
-        .build();
+    StructuredQuery<Entity> query =
+        Query.newEntityQueryBuilder()
+            .setKind(kind)
+            .setFilter(PropertyFilter.eq(property, value))
+            .build();
     QueryResults<Entity> results = datastore.run(query);
     List<Entity> entities = Lists.newArrayList();
     while (results.hasNext()) {

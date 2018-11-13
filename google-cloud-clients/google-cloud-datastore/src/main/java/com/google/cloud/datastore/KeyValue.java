@@ -77,7 +77,6 @@ public final class KeyValue extends Value<Key> {
     return new KeyValue(key);
   }
 
-
   public static Builder newBuilder(Key key) {
     return new Builder().set(key);
   }

@@ -17,10 +17,10 @@ package com.google.cloud.bigtable.data.v2.it.env;
 
 import com.google.bigtable.admin.v2.ColumnFamily;
 import com.google.bigtable.admin.v2.CreateTableRequest;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.bigtable.admin.v2.Table;
 import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
+import com.google.cloud.bigtable.data.v2.models.InstanceName;
 
 public class EmulatorEnv implements TestEnv {
   private static final InstanceName INSTANCE_NAME =

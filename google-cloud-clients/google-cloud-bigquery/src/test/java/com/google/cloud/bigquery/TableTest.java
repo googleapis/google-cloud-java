@@ -61,9 +61,10 @@ public class TableTest {
   private static final Schema SCHEMA = Schema.of(FIELD);
   private static final TableDefinition TABLE_DEFINITION = StandardTableDefinition.of(SCHEMA);
   private static final TableInfo TABLE_INFO = TableInfo.of(TABLE_ID1, TABLE_DEFINITION);
-  private static final List<RowToInsert> ROWS_TO_INSERT = ImmutableList.of(
-      RowToInsert.of("id1", ImmutableMap.<String, Object>of("key", "val1")),
-      RowToInsert.of("id2", ImmutableMap.<String, Object>of("key", "val2")));
+  private static final List<RowToInsert> ROWS_TO_INSERT =
+      ImmutableList.of(
+          RowToInsert.of("id1", ImmutableMap.<String, Object>of("key", "val1")),
+          RowToInsert.of("id2", ImmutableMap.<String, Object>of("key", "val2")));
   private static final InsertAllRequest INSERT_ALL_REQUEST =
       InsertAllRequest.of(TABLE_ID1, ROWS_TO_INSERT);
   private static final InsertAllRequest INSERT_ALL_REQUEST_COMPLETE =
@@ -111,16 +112,17 @@ public class TableTest {
   public void testBuilder() {
     initializeExpectedTable(2);
     replay(bigquery);
-    Table builtTable = new Table.Builder(serviceMockReturnsOptions, TABLE_ID1, TABLE_DEFINITION)
-        .setCreationTime(CREATION_TIME)
-        .setDescription(DESCRIPTION)
-        .setEtag(ETAG)
-        .setExpirationTime(EXPIRATION_TIME)
-        .setFriendlyName(FRIENDLY_NAME)
-        .setGeneratedId(GENERATED_ID)
-        .setLastModifiedTime(LAST_MODIFIED_TIME)
-        .setSelfLink(SELF_LINK)
-        .build();
+    Table builtTable =
+        new Table.Builder(serviceMockReturnsOptions, TABLE_ID1, TABLE_DEFINITION)
+            .setCreationTime(CREATION_TIME)
+            .setDescription(DESCRIPTION)
+            .setEtag(ETAG)
+            .setExpirationTime(EXPIRATION_TIME)
+            .setFriendlyName(FRIENDLY_NAME)
+            .setGeneratedId(GENERATED_ID)
+            .setLastModifiedTime(LAST_MODIFIED_TIME)
+            .setSelfLink(SELF_LINK)
+            .build();
     assertEquals(TABLE_ID1, builtTable.getTableId());
     assertEquals(CREATION_TIME, builtTable.getCreationTime());
     assertEquals(DESCRIPTION, builtTable.getDescription());
@@ -133,7 +135,6 @@ public class TableTest {
     assertEquals(SELF_LINK, builtTable.getSelfLink());
     assertSame(serviceMockReturnsOptions, builtTable.getBigQuery());
   }
-
 
   @Test
   public void testToBuilder() {
@@ -311,8 +312,7 @@ public class TableTest {
     initializeExpectedTable(2);
     expect(bigquery.getOptions()).andReturn(mockOptions);
     Job expectedJob = new Job(serviceMockReturnsOptions, new JobInfo.BuilderImpl(COPY_JOB_INFO));
-    expect(bigquery.create(COPY_JOB_INFO))
-        .andReturn(expectedJob);
+    expect(bigquery.create(COPY_JOB_INFO)).andReturn(expectedJob);
     replay(bigquery);
     initializeTable();
     Job job = table.copy(TABLE_ID2.getDataset(), TABLE_ID2.getTable());

@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.compute.model.Network;
 import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
 
 /**
@@ -70,8 +69,8 @@ public class StandardNetworkConfiguration extends NetworkConfiguration {
   public final boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(StandardNetworkConfiguration.class)
-        && Objects.equals(toPb(), ((StandardNetworkConfiguration) obj).toPb());
+            && obj.getClass().equals(StandardNetworkConfiguration.class)
+            && Objects.equals(toPb(), ((StandardNetworkConfiguration) obj).toPb());
   }
 
   @Override

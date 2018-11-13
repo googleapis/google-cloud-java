@@ -24,7 +24,6 @@ import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.Storage;
 import com.google.common.collect.UnmodifiableIterator;
-
 import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -38,7 +37,6 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Objects;
 import java.util.regex.Pattern;
-
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
 
@@ -66,19 +64,14 @@ public final class CloudStoragePath implements Path {
         fileSystem, UnixPath.getPath(fileSystem.config().permitEmptyPathComponents(), path, more));
   }
 
-  /**
-   * Returns the Cloud Storage bucket name being served by this file system.
-   */
+  /** Returns the Cloud Storage bucket name being served by this file system. */
   public String bucket() {
     return fileSystem.bucket();
   }
 
-  /**
-   * Returns path converted to a {@link BlobId} so I/O can be performed.
-   */
+  /** Returns path converted to a {@link BlobId} so I/O can be performed. */
   BlobId getBlobId() {
-    checkArgument(!path.toString().isEmpty(), 
-      "Object names cannot be empty.");
+    checkArgument(!path.toString().isEmpty(), "Object names cannot be empty.");
     return BlobId.of(bucket(), toRealPath().path.toString());
   }
 
@@ -110,11 +103,12 @@ public final class CloudStoragePath implements Path {
     if (!prefix.endsWith("/")) {
       prefix += "/";
     }
-    Page<Blob> list = storage.list(
-        this.bucket(),
-        Storage.BlobListOption.prefix(prefix),
-        // we only look at the first result, so no need for a bigger page.
-        Storage.BlobListOption.pageSize(1));
+    Page<Blob> list =
+        storage.list(
+            this.bucket(),
+            Storage.BlobListOption.prefix(prefix),
+            // we only look at the first result, so no need for a bigger page.
+            Storage.BlobListOption.pageSize(1));
     for (Blob b : list.getValues()) {
       // if this blob starts with our prefix and then a slash, then prefix is indeed a folder!
       if (b.getBlobId() == null) {
@@ -149,8 +143,8 @@ public final class CloudStoragePath implements Path {
   }
 
   /**
-   * Changes relative path to be absolute, using
-   * {@link CloudStorageConfiguration#workingDirectory() workingDirectory} as current dir.
+   * Changes relative path to be absolute, using {@link CloudStorageConfiguration#workingDirectory()
+   * workingDirectory} as current dir.
    */
   @Override
   public CloudStoragePath toAbsolutePath() {
@@ -161,12 +155,12 @@ public final class CloudStoragePath implements Path {
    * Returns this path rewritten to the Cloud Storage object name that'd be used to perform i/o.
    *
    * <p>This method makes path {@link #toAbsolutePath() absolute} and removes the prefix slash from
-   * the absolute path when {@link CloudStorageConfiguration#stripPrefixSlash() stripPrefixSlash}
-   * is {@code true}.
+   * the absolute path when {@link CloudStorageConfiguration#stripPrefixSlash() stripPrefixSlash} is
+   * {@code true}.
    *
-   * @throws IllegalArgumentException if path contains extra slashes or dot-dirs when
-   *     {@link CloudStorageConfiguration#permitEmptyPathComponents() permitEmptyPathComponents}
-   *     is {@code false}, or if the resulting path is empty.
+   * @throws IllegalArgumentException if path contains extra slashes or dot-dirs when {@link
+   *     CloudStorageConfiguration#permitEmptyPathComponents() permitEmptyPathComponents} is {@code
+   *     false}, or if the resulting path is empty.
    */
   @Override
   public CloudStoragePath toRealPath(LinkOption... options) {
@@ -379,9 +373,7 @@ public final class CloudStoragePath implements Path {
     return getUnixPath(fileSystem.config().workingDirectory());
   }
 
-  /**
-   * Transform iterator providing a slight performance boost over {@code FluentIterable}.
-   */
+  /** Transform iterator providing a slight performance boost over {@code FluentIterable}. */
   private final class PathIterator extends UnmodifiableIterator<Path> {
     private final Iterator<String> delegate = path.split();
 

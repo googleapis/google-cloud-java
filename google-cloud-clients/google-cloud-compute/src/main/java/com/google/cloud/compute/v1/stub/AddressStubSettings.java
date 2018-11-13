@@ -101,7 +101,8 @@ public class AddressStubSettings extends StubSettings<AddressStubSettings> {
           .build();
 
   private final PagedCallSettings<
-          AggregatedListAddressesHttpRequest, AddressAggregatedList,
+          AggregatedListAddressesHttpRequest,
+          AddressAggregatedList,
           AggregatedListAddressesPagedResponse>
       aggregatedListAddressesSettings;
   private final UnaryCallSettings<DeleteAddressHttpRequest, Operation> deleteAddressSettings;
@@ -112,7 +113,8 @@ public class AddressStubSettings extends StubSettings<AddressStubSettings> {
 
   /** Returns the object with the settings used for calls to aggregatedListAddresses. */
   public PagedCallSettings<
-          AggregatedListAddressesHttpRequest, AddressAggregatedList,
+          AggregatedListAddressesHttpRequest,
+          AddressAggregatedList,
           AggregatedListAddressesPagedResponse>
       aggregatedListAddressesSettings() {
     return aggregatedListAddressesSettings;
@@ -299,11 +301,13 @@ public class AddressStubSettings extends StubSettings<AddressStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListAddressesHttpRequest, AddressAggregatedList,
+          AggregatedListAddressesHttpRequest,
+          AddressAggregatedList,
           AggregatedListAddressesPagedResponse>
       AGGREGATED_LIST_ADDRESSES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListAddressesHttpRequest, AddressAggregatedList,
+              AggregatedListAddressesHttpRequest,
+              AddressAggregatedList,
               AggregatedListAddressesPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListAddressesPagedResponse> getFuturePagedResponse(
@@ -312,7 +316,8 @@ public class AddressStubSettings extends StubSettings<AddressStubSettings> {
                 ApiCallContext context,
                 ApiFuture<AddressAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListAddressesHttpRequest, AddressAggregatedList,
+                      AggregatedListAddressesHttpRequest,
+                      AddressAggregatedList,
                       AddressesScopedList>
                   pageContext =
                       PageContext.create(
@@ -343,7 +348,8 @@ public class AddressStubSettings extends StubSettings<AddressStubSettings> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            AggregatedListAddressesHttpRequest, AddressAggregatedList,
+            AggregatedListAddressesHttpRequest,
+            AddressAggregatedList,
             AggregatedListAddressesPagedResponse>
         aggregatedListAddressesSettings;
     private final UnaryCallSettings.Builder<DeleteAddressHttpRequest, Operation>
@@ -493,7 +499,8 @@ public class AddressStubSettings extends StubSettings<AddressStubSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListAddresses. */
     public PagedCallSettings.Builder<
-            AggregatedListAddressesHttpRequest, AddressAggregatedList,
+            AggregatedListAddressesHttpRequest,
+            AddressAggregatedList,
             AggregatedListAddressesPagedResponse>
         aggregatedListAddressesSettings() {
       return aggregatedListAddressesSettings;

@@ -33,10 +33,11 @@ public class InsertAllRequestTest {
   private static final Map<String, Object> CONTENT2 =
       ImmutableMap.<String, Object>of("key", "val2");
   private static final List<InsertAllRequest.RowToInsert> ROWS =
-      ImmutableList.of(InsertAllRequest.RowToInsert.of(CONTENT1),
-          InsertAllRequest.RowToInsert.of(CONTENT2));
+      ImmutableList.of(
+          InsertAllRequest.RowToInsert.of(CONTENT1), InsertAllRequest.RowToInsert.of(CONTENT2));
   private static final List<InsertAllRequest.RowToInsert> ROWS_WITH_ID =
-      ImmutableList.of(InsertAllRequest.RowToInsert.of("id1", CONTENT1),
+      ImmutableList.of(
+          InsertAllRequest.RowToInsert.of("id1", CONTENT1),
           InsertAllRequest.RowToInsert.of("id2", CONTENT2));
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
   private static final Schema TABLE_SCHEMA = Schema.of();
@@ -45,17 +46,19 @@ public class InsertAllRequestTest {
   private static final boolean SKIP_INVALID_ROWS = true;
   private static final boolean IGNORE_UNKNOWN_VALUES = false;
   private static final String TEMPLATE_SUFFIX = "templateSuffix";
-  private static final InsertAllRequest INSERT_ALL_REQUEST1 = InsertAllRequest.newBuilder(TABLE_ID)
-      .addRow(CONTENT1)
-      .addRow(CONTENT2)
-      .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
-      .setSkipInvalidRows(SKIP_INVALID_ROWS)
-      .build();
-  private static final InsertAllRequest INSERT_ALL_REQUEST2 = InsertAllRequest.newBuilder(TABLE_ID)
-      .setRows(ROWS)
-      .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
-      .setSkipInvalidRows(SKIP_INVALID_ROWS)
-      .build();
+  private static final InsertAllRequest INSERT_ALL_REQUEST1 =
+      InsertAllRequest.newBuilder(TABLE_ID)
+          .addRow(CONTENT1)
+          .addRow(CONTENT2)
+          .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .setSkipInvalidRows(SKIP_INVALID_ROWS)
+          .build();
+  private static final InsertAllRequest INSERT_ALL_REQUEST2 =
+      InsertAllRequest.newBuilder(TABLE_ID)
+          .setRows(ROWS)
+          .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .setSkipInvalidRows(SKIP_INVALID_ROWS)
+          .build();
   private static final InsertAllRequest INSERT_ALL_REQUEST3 =
       InsertAllRequest.newBuilder(TABLE_ID.getDataset(), TABLE_ID.getTable())
           .setRows(ROWS_WITH_ID)
@@ -78,8 +81,8 @@ public class InsertAllRequestTest {
           .setSkipInvalidRows(SKIP_INVALID_ROWS)
           .build();
   private static final InsertAllRequest INSERT_ALL_REQUEST7 =
-      InsertAllRequest.newBuilder(TABLE_ID.getDataset(), TABLE_ID.getTable(), ROWS_WITH_ID.get(0),
-          ROWS_WITH_ID.get(1))
+      InsertAllRequest.newBuilder(
+              TABLE_ID.getDataset(), TABLE_ID.getTable(), ROWS_WITH_ID.get(0), ROWS_WITH_ID.get(1))
           .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .setSkipInvalidRows(SKIP_INVALID_ROWS)
           .build();
@@ -172,7 +175,6 @@ public class InsertAllRequestTest {
     assertThat(TEMPLATE_SUFFIX).isEqualTo(INSERT_ALL_REQUEST11.getTemplateSuffix());
   }
 
-
   @Test
   public void testOf() {
     InsertAllRequest request = InsertAllRequest.of(TABLE_ID, ROWS);
@@ -212,9 +214,10 @@ public class InsertAllRequestTest {
     compareInsertAllRequest(INSERT_ALL_REQUEST11, INSERT_ALL_REQUEST11);
   }
 
-  @Test(expected=UnsupportedOperationException.class)
+  @Test(expected = UnsupportedOperationException.class)
   public void testImmutable() {
-    InsertAllRequest.RowToInsert row = InsertAllRequest.RowToInsert.of(new HashMap<String,Object>());
+    InsertAllRequest.RowToInsert row =
+        InsertAllRequest.RowToInsert.of(new HashMap<String, Object>());
     row.getContent().put("zip", "zap");
   }
 

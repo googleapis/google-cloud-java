@@ -101,7 +101,8 @@ public class TargetVpnGatewayStubSettings extends StubSettings<TargetVpnGatewayS
           .build();
 
   private final PagedCallSettings<
-          AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList,
+          AggregatedListTargetVpnGatewaysHttpRequest,
+          TargetVpnGatewayAggregatedList,
           AggregatedListTargetVpnGatewaysPagedResponse>
       aggregatedListTargetVpnGatewaysSettings;
   private final UnaryCallSettings<DeleteTargetVpnGatewayHttpRequest, Operation>
@@ -111,13 +112,15 @@ public class TargetVpnGatewayStubSettings extends StubSettings<TargetVpnGatewayS
   private final UnaryCallSettings<InsertTargetVpnGatewayHttpRequest, Operation>
       insertTargetVpnGatewaySettings;
   private final PagedCallSettings<
-          ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList,
+          ListTargetVpnGatewaysHttpRequest,
+          TargetVpnGatewayList,
           ListTargetVpnGatewaysPagedResponse>
       listTargetVpnGatewaysSettings;
 
   /** Returns the object with the settings used for calls to aggregatedListTargetVpnGateways. */
   public PagedCallSettings<
-          AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList,
+          AggregatedListTargetVpnGatewaysHttpRequest,
+          TargetVpnGatewayAggregatedList,
           AggregatedListTargetVpnGatewaysPagedResponse>
       aggregatedListTargetVpnGatewaysSettings() {
     return aggregatedListTargetVpnGatewaysSettings;
@@ -143,7 +146,8 @@ public class TargetVpnGatewayStubSettings extends StubSettings<TargetVpnGatewayS
 
   /** Returns the object with the settings used for calls to listTargetVpnGateways. */
   public PagedCallSettings<
-          ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList,
+          ListTargetVpnGatewaysHttpRequest,
+          TargetVpnGatewayList,
           ListTargetVpnGatewaysPagedResponse>
       listTargetVpnGatewaysSettings() {
     return listTargetVpnGatewaysSettings;
@@ -233,11 +237,13 @@ public class TargetVpnGatewayStubSettings extends StubSettings<TargetVpnGatewayS
   }
 
   private static final PagedListDescriptor<
-          AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList,
+          AggregatedListTargetVpnGatewaysHttpRequest,
+          TargetVpnGatewayAggregatedList,
           TargetVpnGatewaysScopedList>
       AGGREGATED_LIST_TARGET_VPN_GATEWAYS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList,
+              AggregatedListTargetVpnGatewaysHttpRequest,
+              TargetVpnGatewayAggregatedList,
               TargetVpnGatewaysScopedList>() {
             @Override
             public String emptyToken() {
@@ -320,11 +326,13 @@ public class TargetVpnGatewayStubSettings extends StubSettings<TargetVpnGatewayS
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList,
+          AggregatedListTargetVpnGatewaysHttpRequest,
+          TargetVpnGatewayAggregatedList,
           AggregatedListTargetVpnGatewaysPagedResponse>
       AGGREGATED_LIST_TARGET_VPN_GATEWAYS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList,
+              AggregatedListTargetVpnGatewaysHttpRequest,
+              TargetVpnGatewayAggregatedList,
               AggregatedListTargetVpnGatewaysPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListTargetVpnGatewaysPagedResponse> getFuturePagedResponse(
@@ -335,7 +343,8 @@ public class TargetVpnGatewayStubSettings extends StubSettings<TargetVpnGatewayS
                 ApiCallContext context,
                 ApiFuture<TargetVpnGatewayAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList,
+                      AggregatedListTargetVpnGatewaysHttpRequest,
+                      TargetVpnGatewayAggregatedList,
                       TargetVpnGatewaysScopedList>
                   pageContext =
                       PageContext.create(
@@ -349,11 +358,13 @@ public class TargetVpnGatewayStubSettings extends StubSettings<TargetVpnGatewayS
           };
 
   private static final PagedListResponseFactory<
-          ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList,
+          ListTargetVpnGatewaysHttpRequest,
+          TargetVpnGatewayList,
           ListTargetVpnGatewaysPagedResponse>
       LIST_TARGET_VPN_GATEWAYS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList,
+              ListTargetVpnGatewaysHttpRequest,
+              TargetVpnGatewayList,
               ListTargetVpnGatewaysPagedResponse>() {
             @Override
             public ApiFuture<ListTargetVpnGatewaysPagedResponse> getFuturePagedResponse(
@@ -374,7 +385,8 @@ public class TargetVpnGatewayStubSettings extends StubSettings<TargetVpnGatewayS
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList,
+            AggregatedListTargetVpnGatewaysHttpRequest,
+            TargetVpnGatewayAggregatedList,
             AggregatedListTargetVpnGatewaysPagedResponse>
         aggregatedListTargetVpnGatewaysSettings;
     private final UnaryCallSettings.Builder<DeleteTargetVpnGatewayHttpRequest, Operation>
@@ -384,7 +396,8 @@ public class TargetVpnGatewayStubSettings extends StubSettings<TargetVpnGatewayS
     private final UnaryCallSettings.Builder<InsertTargetVpnGatewayHttpRequest, Operation>
         insertTargetVpnGatewaySettings;
     private final PagedCallSettings.Builder<
-            ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList,
+            ListTargetVpnGatewaysHttpRequest,
+            TargetVpnGatewayList,
             ListTargetVpnGatewaysPagedResponse>
         listTargetVpnGatewaysSettings;
 
@@ -528,7 +541,8 @@ public class TargetVpnGatewayStubSettings extends StubSettings<TargetVpnGatewayS
 
     /** Returns the builder for the settings used for calls to aggregatedListTargetVpnGateways. */
     public PagedCallSettings.Builder<
-            AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList,
+            AggregatedListTargetVpnGatewaysHttpRequest,
+            TargetVpnGatewayAggregatedList,
             AggregatedListTargetVpnGatewaysPagedResponse>
         aggregatedListTargetVpnGatewaysSettings() {
       return aggregatedListTargetVpnGatewaysSettings;
@@ -554,7 +568,8 @@ public class TargetVpnGatewayStubSettings extends StubSettings<TargetVpnGatewayS
 
     /** Returns the builder for the settings used for calls to listTargetVpnGateways. */
     public PagedCallSettings.Builder<
-            ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList,
+            ListTargetVpnGatewaysHttpRequest,
+            TargetVpnGatewayList,
             ListTargetVpnGatewaysPagedResponse>
         listTargetVpnGatewaysSettings() {
       return listTargetVpnGatewaysSettings;

@@ -76,13 +76,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -772,7 +772,10 @@ public class GroupServiceClient implements BackgroundResource {
 
   public static class ListGroupsPagedResponse
       extends AbstractPagedListResponse<
-          ListGroupsRequest, ListGroupsResponse, Group, ListGroupsPage,
+          ListGroupsRequest,
+          ListGroupsResponse,
+          Group,
+          ListGroupsPage,
           ListGroupsFixedSizeCollection> {
 
     public static ApiFuture<ListGroupsPagedResponse> createAsync(
@@ -825,7 +828,10 @@ public class GroupServiceClient implements BackgroundResource {
 
   public static class ListGroupsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListGroupsRequest, ListGroupsResponse, Group, ListGroupsPage,
+          ListGroupsRequest,
+          ListGroupsResponse,
+          Group,
+          ListGroupsPage,
           ListGroupsFixedSizeCollection> {
 
     private ListGroupsFixedSizeCollection(List<ListGroupsPage> pages, int collectionSize) {
@@ -845,8 +851,11 @@ public class GroupServiceClient implements BackgroundResource {
 
   public static class ListGroupMembersPagedResponse
       extends AbstractPagedListResponse<
-          ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource,
-          ListGroupMembersPage, ListGroupMembersFixedSizeCollection> {
+          ListGroupMembersRequest,
+          ListGroupMembersResponse,
+          MonitoredResource,
+          ListGroupMembersPage,
+          ListGroupMembersFixedSizeCollection> {
 
     public static ApiFuture<ListGroupMembersPagedResponse> createAsync(
         PageContext<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource> context,
@@ -870,7 +879,9 @@ public class GroupServiceClient implements BackgroundResource {
 
   public static class ListGroupMembersPage
       extends AbstractPage<
-          ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource,
+          ListGroupMembersRequest,
+          ListGroupMembersResponse,
+          MonitoredResource,
           ListGroupMembersPage> {
 
     private ListGroupMembersPage(
@@ -900,8 +911,11 @@ public class GroupServiceClient implements BackgroundResource {
 
   public static class ListGroupMembersFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource,
-          ListGroupMembersPage, ListGroupMembersFixedSizeCollection> {
+          ListGroupMembersRequest,
+          ListGroupMembersResponse,
+          MonitoredResource,
+          ListGroupMembersPage,
+          ListGroupMembersFixedSizeCollection> {
 
     private ListGroupMembersFixedSizeCollection(
         List<ListGroupMembersPage> pages, int collectionSize) {

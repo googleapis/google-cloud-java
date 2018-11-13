@@ -20,21 +20,16 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.auto.value.AutoValue;
-
-import javax.annotation.Nullable;
 import java.util.Map;
+import javax.annotation.Nullable;
 
-/**
- * Configuration for {@link CloudStorageFileSystem} instances.
- */
+/** Configuration for {@link CloudStorageFileSystem} instances. */
 @AutoValue
 public abstract class CloudStorageConfiguration {
 
   public static final CloudStorageConfiguration DEFAULT = builder().build();
 
-  /**
-   * Returns path of current working directory. This defaults to the root directory.
-   */
+  /** Returns path of current working directory. This defaults to the root directory. */
   public abstract String workingDirectory();
 
   /**
@@ -55,58 +50,53 @@ public abstract class CloudStorageConfiguration {
    * Returns {@code true} if directories and paths with a trailing slash should be treated as fake
    * directories.
    *
-   * <p>With this feature, if file "foo/bar.txt" exists then both "foo" and "foo/" will be
-   * treated as if they were existing directories.
+   * <p>With this feature, if file "foo/bar.txt" exists then both "foo" and "foo/" will be treated
+   * as if they were existing directories.
    */
   public abstract boolean usePseudoDirectories();
 
-  /**
-   * Returns block size (in bytes) used when talking to the Google Cloud Storage HTTP server.
-   */
+  /** Returns block size (in bytes) used when talking to the Google Cloud Storage HTTP server. */
   public abstract int blockSize();
 
   /**
-   * Returns the number of times we try re-opening a channel if it's closed unexpectedly
-   * while reading.
+   * Returns the number of times we try re-opening a channel if it's closed unexpectedly while
+   * reading.
    */
   public abstract int maxChannelReopens();
 
   /**
-   * Returns the project to be billed when accessing buckets. Leave empty for normal semantics,
-   * set to bill that project (project you own) for all accesses. This is required for accessing
+   * Returns the project to be billed when accessing buckets. Leave empty for normal semantics, set
+   * to bill that project (project you own) for all accesses. This is required for accessing
    * requester-pays buckets. This value cannot be null.
    */
   public abstract @Nullable String userProject();
 
   /**
-   * Returns whether userProject will be cleared for non-requester-pays buckets. That is,
-   * if false (the default value), setting userProject causes that project to be billed
-   * regardless of whether the bucket is requester-pays or not. If true, setting
-   * userProject will only cause that project to be billed when the project is requester-pays.
+   * Returns whether userProject will be cleared for non-requester-pays buckets. That is, if false
+   * (the default value), setting userProject causes that project to be billed regardless of whether
+   * the bucket is requester-pays or not. If true, setting userProject will only cause that project
+   * to be billed when the project is requester-pays.
    *
-   * Setting this will cause the bucket to be accessed when the CloudStorageFileSystem object
-   * is created.
+   * <p>Setting this will cause the bucket to be accessed when the CloudStorageFileSystem object is
+   * created.
    */
   public abstract boolean useUserProjectOnlyForRequesterPaysBuckets();
-
 
   /**
    * Creates a new builder, initialized with the following settings:
    *
    * <ul>
-   * <li>Performing I/O on paths with extra slashes, e.g. {@code a//b} will throw an error.
-   * <li>The prefix slash on absolute paths will be removed when converting to an object name.
-   * <li>Pseudo-directories are enabled, so any path with a trailing slash is a fake directory.
-   * <li>Channel re-opens are disabled.
+   *   <li>Performing I/O on paths with extra slashes, e.g. {@code a//b} will throw an error.
+   *   <li>The prefix slash on absolute paths will be removed when converting to an object name.
+   *   <li>Pseudo-directories are enabled, so any path with a trailing slash is a fake directory.
+   *   <li>Channel re-opens are disabled.
    * </ul>
    */
   public static Builder builder() {
     return new Builder();
   }
 
-  /**
-   * Builder for {@link CloudStorageConfiguration}.
-   */
+  /** Builder for {@link CloudStorageConfiguration}. */
   public static final class Builder {
 
     private String workingDirectory = UnixPath.ROOT;
@@ -153,9 +143,7 @@ public abstract class CloudStorageConfiguration {
       return this;
     }
 
-    /**
-     * Configures if paths with a trailing slash should be treated as fake directories.
-     */
+    /** Configures if paths with a trailing slash should be treated as fake directories. */
     public Builder usePseudoDirectories(boolean value) {
       usePseudoDirectories = value;
       return this;
@@ -186,9 +174,7 @@ public abstract class CloudStorageConfiguration {
       return this;
     }
 
-    /**
-     * Creates new instance without destroying builder.
-     */
+    /** Creates new instance without destroying builder. */
     public CloudStorageConfiguration build() {
       return new AutoValue_CloudStorageConfiguration(
           workingDirectory,
@@ -209,7 +195,8 @@ public abstract class CloudStorageConfiguration {
       blockSize = toModify.blockSize();
       maxChannelReopens = toModify.maxChannelReopens();
       userProject = toModify.userProject();
-      useUserProjectOnlyForRequesterPaysBuckets = toModify.useUserProjectOnlyForRequesterPaysBuckets();
+      useUserProjectOnlyForRequesterPaysBuckets =
+          toModify.useUserProjectOnlyForRequesterPaysBuckets();
     }
 
     Builder() {}
@@ -219,11 +206,12 @@ public abstract class CloudStorageConfiguration {
     return fromMap(builder(), env);
   }
 
-  static CloudStorageConfiguration fromMap(CloudStorageConfiguration defaultValues, Map<String, ?> env) {
+  static CloudStorageConfiguration fromMap(
+      CloudStorageConfiguration defaultValues, Map<String, ?> env) {
     return fromMap(new Builder(defaultValues), env);
   }
 
-  static private CloudStorageConfiguration fromMap(Builder builder, Map<String, ?> env) {
+  private static CloudStorageConfiguration fromMap(Builder builder, Map<String, ?> env) {
     for (Map.Entry<String, ?> entry : env.entrySet()) {
       switch (entry.getKey()) {
         case "workingDirectory":

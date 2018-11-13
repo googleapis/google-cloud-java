@@ -103,7 +103,8 @@ public class InterconnectAttachmentStubSettings
           .build();
 
   private final PagedCallSettings<
-          AggregatedListInterconnectAttachmentsHttpRequest, InterconnectAttachmentAggregatedList,
+          AggregatedListInterconnectAttachmentsHttpRequest,
+          InterconnectAttachmentAggregatedList,
           AggregatedListInterconnectAttachmentsPagedResponse>
       aggregatedListInterconnectAttachmentsSettings;
   private final UnaryCallSettings<DeleteInterconnectAttachmentHttpRequest, Operation>
@@ -113,7 +114,8 @@ public class InterconnectAttachmentStubSettings
   private final UnaryCallSettings<InsertInterconnectAttachmentHttpRequest, Operation>
       insertInterconnectAttachmentSettings;
   private final PagedCallSettings<
-          ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
+          ListInterconnectAttachmentsHttpRequest,
+          InterconnectAttachmentList,
           ListInterconnectAttachmentsPagedResponse>
       listInterconnectAttachmentsSettings;
   private final UnaryCallSettings<PatchInterconnectAttachmentHttpRequest, Operation>
@@ -123,7 +125,8 @@ public class InterconnectAttachmentStubSettings
    * Returns the object with the settings used for calls to aggregatedListInterconnectAttachments.
    */
   public PagedCallSettings<
-          AggregatedListInterconnectAttachmentsHttpRequest, InterconnectAttachmentAggregatedList,
+          AggregatedListInterconnectAttachmentsHttpRequest,
+          InterconnectAttachmentAggregatedList,
           AggregatedListInterconnectAttachmentsPagedResponse>
       aggregatedListInterconnectAttachmentsSettings() {
     return aggregatedListInterconnectAttachmentsSettings;
@@ -149,7 +152,8 @@ public class InterconnectAttachmentStubSettings
 
   /** Returns the object with the settings used for calls to listInterconnectAttachments. */
   public PagedCallSettings<
-          ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
+          ListInterconnectAttachmentsHttpRequest,
+          InterconnectAttachmentList,
           ListInterconnectAttachmentsPagedResponse>
       listInterconnectAttachmentsSettings() {
     return listInterconnectAttachmentsSettings;
@@ -250,12 +254,14 @@ public class InterconnectAttachmentStubSettings
   }
 
   private static final PagedListDescriptor<
-          AggregatedListInterconnectAttachmentsHttpRequest, InterconnectAttachmentAggregatedList,
+          AggregatedListInterconnectAttachmentsHttpRequest,
+          InterconnectAttachmentAggregatedList,
           InterconnectAttachmentsScopedList>
       AGGREGATED_LIST_INTERCONNECT_ATTACHMENTS_PAGE_STR_DESC =
           new PagedListDescriptor<
               AggregatedListInterconnectAttachmentsHttpRequest,
-              InterconnectAttachmentAggregatedList, InterconnectAttachmentsScopedList>() {
+              InterconnectAttachmentAggregatedList,
+              InterconnectAttachmentsScopedList>() {
             @Override
             public String emptyToken() {
               return "";
@@ -296,11 +302,13 @@ public class InterconnectAttachmentStubSettings
           };
 
   private static final PagedListDescriptor<
-          ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
+          ListInterconnectAttachmentsHttpRequest,
+          InterconnectAttachmentList,
           InterconnectAttachment>
       LIST_INTERCONNECT_ATTACHMENTS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
+              ListInterconnectAttachmentsHttpRequest,
+              InterconnectAttachmentList,
               InterconnectAttachment>() {
             @Override
             public String emptyToken() {
@@ -341,7 +349,8 @@ public class InterconnectAttachmentStubSettings
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListInterconnectAttachmentsHttpRequest, InterconnectAttachmentAggregatedList,
+          AggregatedListInterconnectAttachmentsHttpRequest,
+          InterconnectAttachmentAggregatedList,
           AggregatedListInterconnectAttachmentsPagedResponse>
       AGGREGATED_LIST_INTERCONNECT_ATTACHMENTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -360,7 +369,8 @@ public class InterconnectAttachmentStubSettings
                     ApiFuture<InterconnectAttachmentAggregatedList> futureResponse) {
               PageContext<
                       AggregatedListInterconnectAttachmentsHttpRequest,
-                      InterconnectAttachmentAggregatedList, InterconnectAttachmentsScopedList>
+                      InterconnectAttachmentAggregatedList,
+                      InterconnectAttachmentsScopedList>
                   pageContext =
                       PageContext.create(
                           callable,
@@ -373,11 +383,13 @@ public class InterconnectAttachmentStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
+          ListInterconnectAttachmentsHttpRequest,
+          InterconnectAttachmentList,
           ListInterconnectAttachmentsPagedResponse>
       LIST_INTERCONNECT_ATTACHMENTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
+              ListInterconnectAttachmentsHttpRequest,
+              InterconnectAttachmentList,
               ListInterconnectAttachmentsPagedResponse>() {
             @Override
             public ApiFuture<ListInterconnectAttachmentsPagedResponse> getFuturePagedResponse(
@@ -387,7 +399,8 @@ public class InterconnectAttachmentStubSettings
                 ApiCallContext context,
                 ApiFuture<InterconnectAttachmentList> futureResponse) {
               PageContext<
-                      ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
+                      ListInterconnectAttachmentsHttpRequest,
+                      InterconnectAttachmentList,
                       InterconnectAttachment>
                   pageContext =
                       PageContext.create(
@@ -403,7 +416,8 @@ public class InterconnectAttachmentStubSettings
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            AggregatedListInterconnectAttachmentsHttpRequest, InterconnectAttachmentAggregatedList,
+            AggregatedListInterconnectAttachmentsHttpRequest,
+            InterconnectAttachmentAggregatedList,
             AggregatedListInterconnectAttachmentsPagedResponse>
         aggregatedListInterconnectAttachmentsSettings;
     private final UnaryCallSettings.Builder<DeleteInterconnectAttachmentHttpRequest, Operation>
@@ -414,7 +428,8 @@ public class InterconnectAttachmentStubSettings
     private final UnaryCallSettings.Builder<InsertInterconnectAttachmentHttpRequest, Operation>
         insertInterconnectAttachmentSettings;
     private final PagedCallSettings.Builder<
-            ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
+            ListInterconnectAttachmentsHttpRequest,
+            InterconnectAttachmentList,
             ListInterconnectAttachmentsPagedResponse>
         listInterconnectAttachmentsSettings;
     private final UnaryCallSettings.Builder<PatchInterconnectAttachmentHttpRequest, Operation>
@@ -576,7 +591,8 @@ public class InterconnectAttachmentStubSettings
      * Returns the builder for the settings used for calls to aggregatedListInterconnectAttachments.
      */
     public PagedCallSettings.Builder<
-            AggregatedListInterconnectAttachmentsHttpRequest, InterconnectAttachmentAggregatedList,
+            AggregatedListInterconnectAttachmentsHttpRequest,
+            InterconnectAttachmentAggregatedList,
             AggregatedListInterconnectAttachmentsPagedResponse>
         aggregatedListInterconnectAttachmentsSettings() {
       return aggregatedListInterconnectAttachmentsSettings;
@@ -602,7 +618,8 @@ public class InterconnectAttachmentStubSettings
 
     /** Returns the builder for the settings used for calls to listInterconnectAttachments. */
     public PagedCallSettings.Builder<
-            ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
+            ListInterconnectAttachmentsHttpRequest,
+            InterconnectAttachmentList,
             ListInterconnectAttachmentsPagedResponse>
         listInterconnectAttachmentsSettings() {
       return listInterconnectAttachmentsSettings;

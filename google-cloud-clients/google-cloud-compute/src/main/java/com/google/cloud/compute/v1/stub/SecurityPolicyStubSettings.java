@@ -309,7 +309,8 @@ public class SecurityPolicyStubSettings extends StubSettings<SecurityPolicyStubS
           ListSecurityPoliciesHttpRequest, SecurityPolicyList, ListSecurityPoliciesPagedResponse>
       LIST_SECURITY_POLICIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListSecurityPoliciesHttpRequest, SecurityPolicyList,
+              ListSecurityPoliciesHttpRequest,
+              SecurityPolicyList,
               ListSecurityPoliciesPagedResponse>() {
             @Override
             public ApiFuture<ListSecurityPoliciesPagedResponse> getFuturePagedResponse(

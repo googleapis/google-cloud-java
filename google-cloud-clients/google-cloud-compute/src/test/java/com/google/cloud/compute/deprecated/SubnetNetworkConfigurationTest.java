@@ -21,17 +21,16 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class SubnetNetworkConfigurationTest {
 
   private static final Boolean AUTO_CREATE_SUBNETWORKS = true;
-  private static final List<SubnetworkId> SUBNETWORKS = ImmutableList.of(
-      SubnetworkId.of("project", "region", "subnetwork1"),
-      SubnetworkId.of("project", "region", "subnetwork2"));
+  private static final List<SubnetworkId> SUBNETWORKS =
+      ImmutableList.of(
+          SubnetworkId.of("project", "region", "subnetwork1"),
+          SubnetworkId.of("project", "region", "subnetwork2"));
   private static final SubnetNetworkConfiguration NETWORK_CONFIGURATION =
       new SubnetNetworkConfiguration(AUTO_CREATE_SUBNETWORKS, SUBNETWORKS);
 
@@ -50,15 +49,19 @@ public class SubnetNetworkConfigurationTest {
 
   @Test
   public void testToAndFromPb() {
-    assertTrue(NetworkConfiguration.fromPb(NETWORK_CONFIGURATION.toPb())
-        instanceof SubnetNetworkConfiguration);
-    compareNetworkConfiguration(NETWORK_CONFIGURATION,
+    assertTrue(
+        NetworkConfiguration.fromPb(NETWORK_CONFIGURATION.toPb())
+            instanceof SubnetNetworkConfiguration);
+    compareNetworkConfiguration(
+        NETWORK_CONFIGURATION,
         NetworkConfiguration.<SubnetNetworkConfiguration>fromPb(NETWORK_CONFIGURATION.toPb()));
     SubnetNetworkConfiguration networkConfiguration =
         new SubnetNetworkConfiguration(AUTO_CREATE_SUBNETWORKS, null);
-    assertTrue(NetworkConfiguration.fromPb(networkConfiguration.toPb())
-        instanceof SubnetNetworkConfiguration);
-    compareNetworkConfiguration(networkConfiguration,
+    assertTrue(
+        NetworkConfiguration.fromPb(networkConfiguration.toPb())
+            instanceof SubnetNetworkConfiguration);
+    compareNetworkConfiguration(
+        networkConfiguration,
         NetworkConfiguration.<SubnetNetworkConfiguration>fromPb(networkConfiguration.toPb()));
   }
 
@@ -71,8 +74,8 @@ public class SubnetNetworkConfigurationTest {
     assertEquals(NetworkConfiguration.Type.SUBNET, configuration.getType());
   }
 
-  private void compareNetworkConfiguration(SubnetNetworkConfiguration expected,
-      SubnetNetworkConfiguration value) {
+  private void compareNetworkConfiguration(
+      SubnetNetworkConfiguration expected, SubnetNetworkConfiguration value) {
     assertEquals(expected, value);
     assertEquals(expected.autoCreateSubnetworks(), value.autoCreateSubnetworks());
     assertEquals(expected.getSubnetworks(), value.getSubnetworks());

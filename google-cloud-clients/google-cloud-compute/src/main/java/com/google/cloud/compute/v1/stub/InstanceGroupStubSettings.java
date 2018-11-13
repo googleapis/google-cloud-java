@@ -110,7 +110,8 @@ public class InstanceGroupStubSettings extends StubSettings<InstanceGroupStubSet
   private final UnaryCallSettings<AddInstancesInstanceGroupHttpRequest, Operation>
       addInstancesInstanceGroupSettings;
   private final PagedCallSettings<
-          AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+          AggregatedListInstanceGroupsHttpRequest,
+          InstanceGroupAggregatedList,
           AggregatedListInstanceGroupsPagedResponse>
       aggregatedListInstanceGroupsSettings;
   private final UnaryCallSettings<DeleteInstanceGroupHttpRequest, Operation>
@@ -123,7 +124,8 @@ public class InstanceGroupStubSettings extends StubSettings<InstanceGroupStubSet
           ListInstanceGroupsHttpRequest, InstanceGroupList, ListInstanceGroupsPagedResponse>
       listInstanceGroupsSettings;
   private final PagedCallSettings<
-          ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+          ListInstancesInstanceGroupsHttpRequest,
+          InstanceGroupsListInstances,
           ListInstancesInstanceGroupsPagedResponse>
       listInstancesInstanceGroupsSettings;
   private final UnaryCallSettings<RemoveInstancesInstanceGroupHttpRequest, Operation>
@@ -139,7 +141,8 @@ public class InstanceGroupStubSettings extends StubSettings<InstanceGroupStubSet
 
   /** Returns the object with the settings used for calls to aggregatedListInstanceGroups. */
   public PagedCallSettings<
-          AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+          AggregatedListInstanceGroupsHttpRequest,
+          InstanceGroupAggregatedList,
           AggregatedListInstanceGroupsPagedResponse>
       aggregatedListInstanceGroupsSettings() {
     return aggregatedListInstanceGroupsSettings;
@@ -171,7 +174,8 @@ public class InstanceGroupStubSettings extends StubSettings<InstanceGroupStubSet
 
   /** Returns the object with the settings used for calls to listInstancesInstanceGroups. */
   public PagedCallSettings<
-          ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+          ListInstancesInstanceGroupsHttpRequest,
+          InstanceGroupsListInstances,
           ListInstancesInstanceGroupsPagedResponse>
       listInstancesInstanceGroupsSettings() {
     return listInstancesInstanceGroupsSettings;
@@ -280,11 +284,13 @@ public class InstanceGroupStubSettings extends StubSettings<InstanceGroupStubSet
   }
 
   private static final PagedListDescriptor<
-          AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+          AggregatedListInstanceGroupsHttpRequest,
+          InstanceGroupAggregatedList,
           InstanceGroupsScopedList>
       AGGREGATED_LIST_INSTANCE_GROUPS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+              AggregatedListInstanceGroupsHttpRequest,
+              InstanceGroupAggregatedList,
               InstanceGroupsScopedList>() {
             @Override
             public String emptyToken() {
@@ -365,11 +371,13 @@ public class InstanceGroupStubSettings extends StubSettings<InstanceGroupStubSet
           };
 
   private static final PagedListDescriptor<
-          ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+          ListInstancesInstanceGroupsHttpRequest,
+          InstanceGroupsListInstances,
           InstanceWithNamedPorts>
       LIST_INSTANCES_INSTANCE_GROUPS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+              ListInstancesInstanceGroupsHttpRequest,
+              InstanceGroupsListInstances,
               InstanceWithNamedPorts>() {
             @Override
             public String emptyToken() {
@@ -410,11 +418,13 @@ public class InstanceGroupStubSettings extends StubSettings<InstanceGroupStubSet
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+          AggregatedListInstanceGroupsHttpRequest,
+          InstanceGroupAggregatedList,
           AggregatedListInstanceGroupsPagedResponse>
       AGGREGATED_LIST_INSTANCE_GROUPS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+              AggregatedListInstanceGroupsHttpRequest,
+              InstanceGroupAggregatedList,
               AggregatedListInstanceGroupsPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListInstanceGroupsPagedResponse> getFuturePagedResponse(
@@ -424,7 +434,8 @@ public class InstanceGroupStubSettings extends StubSettings<InstanceGroupStubSet
                 ApiCallContext context,
                 ApiFuture<InstanceGroupAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+                      AggregatedListInstanceGroupsHttpRequest,
+                      InstanceGroupAggregatedList,
                       InstanceGroupsScopedList>
                   pageContext =
                       PageContext.create(
@@ -457,11 +468,13 @@ public class InstanceGroupStubSettings extends StubSettings<InstanceGroupStubSet
           };
 
   private static final PagedListResponseFactory<
-          ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+          ListInstancesInstanceGroupsHttpRequest,
+          InstanceGroupsListInstances,
           ListInstancesInstanceGroupsPagedResponse>
       LIST_INSTANCES_INSTANCE_GROUPS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+              ListInstancesInstanceGroupsHttpRequest,
+              InstanceGroupsListInstances,
               ListInstancesInstanceGroupsPagedResponse>() {
             @Override
             public ApiFuture<ListInstancesInstanceGroupsPagedResponse> getFuturePagedResponse(
@@ -471,7 +484,8 @@ public class InstanceGroupStubSettings extends StubSettings<InstanceGroupStubSet
                 ApiCallContext context,
                 ApiFuture<InstanceGroupsListInstances> futureResponse) {
               PageContext<
-                      ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+                      ListInstancesInstanceGroupsHttpRequest,
+                      InstanceGroupsListInstances,
                       InstanceWithNamedPorts>
                   pageContext =
                       PageContext.create(
@@ -488,7 +502,8 @@ public class InstanceGroupStubSettings extends StubSettings<InstanceGroupStubSet
     private final UnaryCallSettings.Builder<AddInstancesInstanceGroupHttpRequest, Operation>
         addInstancesInstanceGroupSettings;
     private final PagedCallSettings.Builder<
-            AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+            AggregatedListInstanceGroupsHttpRequest,
+            InstanceGroupAggregatedList,
             AggregatedListInstanceGroupsPagedResponse>
         aggregatedListInstanceGroupsSettings;
     private final UnaryCallSettings.Builder<DeleteInstanceGroupHttpRequest, Operation>
@@ -501,7 +516,8 @@ public class InstanceGroupStubSettings extends StubSettings<InstanceGroupStubSet
             ListInstanceGroupsHttpRequest, InstanceGroupList, ListInstanceGroupsPagedResponse>
         listInstanceGroupsSettings;
     private final PagedCallSettings.Builder<
-            ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+            ListInstancesInstanceGroupsHttpRequest,
+            InstanceGroupsListInstances,
             ListInstancesInstanceGroupsPagedResponse>
         listInstancesInstanceGroupsSettings;
     private final UnaryCallSettings.Builder<RemoveInstancesInstanceGroupHttpRequest, Operation>
@@ -697,7 +713,8 @@ public class InstanceGroupStubSettings extends StubSettings<InstanceGroupStubSet
 
     /** Returns the builder for the settings used for calls to aggregatedListInstanceGroups. */
     public PagedCallSettings.Builder<
-            AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
+            AggregatedListInstanceGroupsHttpRequest,
+            InstanceGroupAggregatedList,
             AggregatedListInstanceGroupsPagedResponse>
         aggregatedListInstanceGroupsSettings() {
       return aggregatedListInstanceGroupsSettings;
@@ -730,7 +747,8 @@ public class InstanceGroupStubSettings extends StubSettings<InstanceGroupStubSet
 
     /** Returns the builder for the settings used for calls to listInstancesInstanceGroups. */
     public PagedCallSettings.Builder<
-            ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
+            ListInstancesInstanceGroupsHttpRequest,
+            InstanceGroupsListInstances,
             ListInstancesInstanceGroupsPagedResponse>
         listInstancesInstanceGroupsSettings() {
       return listInstancesInstanceGroupsSettings;

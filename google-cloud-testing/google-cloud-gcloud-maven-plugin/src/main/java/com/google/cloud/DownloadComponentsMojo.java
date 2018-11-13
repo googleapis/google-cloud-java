@@ -157,8 +157,8 @@ public class DownloadComponentsMojo extends AbstractMojo {
     URL manifestUrl = getManifestUrl();
     File localCache = getManifestCache();
 
-    boolean isStale = !localCache.exists()
-        || new Date().getTime() - localCache.lastModified() < STALE_MS;
+    boolean isStale =
+        !localCache.exists() || new Date().getTime() - localCache.lastModified() < STALE_MS;
 
     if (forceRefresh && session.isOffline()) {
       throw new IllegalStateException("Can't force manifest refresh while offline");
@@ -197,9 +197,7 @@ public class DownloadComponentsMojo extends AbstractMojo {
     FileUtils.moveFile(tempFile, localCache);
   }
 
-  /**
-   * Parse the locally cached manifest and extract the relevant components.
-   */
+  /** Parse the locally cached manifest and extract the relevant components. */
   private List<Component> parseManifest() throws IOException {
     JsonParser parser = new JsonParser();
     JsonElement json;
@@ -223,9 +221,7 @@ public class DownloadComponentsMojo extends AbstractMojo {
     return results;
   }
 
-  /**
-   * Parses a local manifest of the downloaded component checksums
-   */
+  /** Parses a local manifest of the downloaded component checksums */
   private Map<String, String> parseLocalChecksums() throws IOException {
     JsonElement json = new JsonObject();
 
@@ -248,9 +244,7 @@ public class DownloadComponentsMojo extends AbstractMojo {
     return results;
   }
 
-  /**
-   * Downloads and extracts the component into the destinationDir.
-   */
+  /** Downloads and extracts the component into the destinationDir. */
   private void downloadComponent(Component component) throws IOException, NoSuchAlgorithmException {
     getLog().info("Downloading " + component.getId());
 
@@ -277,16 +271,17 @@ public class DownloadComponentsMojo extends AbstractMojo {
     String checksum = byteArrayToHex(digest.digest());
 
     if (!checksum.equals(component.getChecksum())) {
-      throw new RuntimeException(String
-          .format("Checksum mismatch for %s %s != %s", component.getId(), component.getChecksum(),
-              checksum));
+      throw new RuntimeException(
+          String.format(
+              "Checksum mismatch for %s %s != %s",
+              component.getId(), component.getChecksum(), checksum));
     }
 
     // Stage the expanded archive
     File tmpPath = Files.createTempDirectory(component.getId()).toFile();
 
-    try (TarArchiveInputStream stream = new TarArchiveInputStream(
-        new GzipCompressorInputStream(new FileInputStream(tmpArchive)))) {
+    try (TarArchiveInputStream stream =
+        new TarArchiveInputStream(new GzipCompressorInputStream(new FileInputStream(tmpArchive)))) {
 
       ArchiveEntry entry;
 
@@ -318,7 +313,6 @@ public class DownloadComponentsMojo extends AbstractMojo {
     }
     return sb.toString();
   }
-
 
   /**
    * Update the checksums of the downloaded components. This will avoid the need to download them in

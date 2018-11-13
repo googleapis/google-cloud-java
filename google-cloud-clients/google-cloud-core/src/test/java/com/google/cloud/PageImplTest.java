@@ -20,17 +20,14 @@ import static org.junit.Assert.assertEquals;
 
 import com.google.api.gax.paging.Page;
 import com.google.common.collect.ImmutableList;
-
 import org.junit.Test;
 
 public class PageImplTest {
 
   private static final ImmutableList<String> VALUES = ImmutableList.of("1", "2");
   private static final ImmutableList<String> NEXT_VALUES = ImmutableList.of("3", "4");
-  private static final ImmutableList<String> ALL_VALUES = ImmutableList.<String>builder()
-      .addAll(VALUES)
-      .addAll(NEXT_VALUES)
-      .build();
+  private static final ImmutableList<String> ALL_VALUES =
+      ImmutableList.<String>builder().addAll(VALUES).addAll(NEXT_VALUES).build();
 
   private static class TestPageFetcher implements PageImpl.NextPageFetcher<String> {
     private static final long serialVersionUID = -8316752901403429976L;
@@ -56,7 +53,6 @@ public class PageImplTest {
     assertEquals("c", result.getNextPageToken());
     assertEquals(VALUES, result.getValues());
   }
-
 
   @Test
   public void testIterateAll() {

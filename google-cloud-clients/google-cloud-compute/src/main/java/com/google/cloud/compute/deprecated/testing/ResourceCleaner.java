@@ -163,7 +163,7 @@ public class ResourceCleaner {
 
   public ResourceCleaner remove(Object resourceId) {
     if (!resources.containsKey(resourceId)) {
-        throw new NoSuchElementException(resourceId + " has not been added to managed resources");
+      throw new NoSuchElementException(resourceId + " has not been added to managed resources");
     }
     resources.remove(resourceId);
     return this;

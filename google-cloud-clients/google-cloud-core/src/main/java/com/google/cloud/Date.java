@@ -18,15 +18,12 @@ package com.google.cloud;
 
 import com.google.api.core.BetaApi;
 import com.google.common.base.Preconditions;
-
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Represents a Date without time, such as 2017-03-17. Date is timezone independent.
- */
+/** Represents a Date without time, such as 2017-03-17. Date is timezone independent. */
 @BetaApi("This is going to be replaced with LocalDate from threetenbp")
 public final class Date implements Comparable<Date>, Serializable {
 

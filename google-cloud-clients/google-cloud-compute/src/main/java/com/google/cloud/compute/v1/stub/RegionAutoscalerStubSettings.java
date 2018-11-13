@@ -105,7 +105,8 @@ public class RegionAutoscalerStubSettings extends StubSettings<RegionAutoscalerS
   private final UnaryCallSettings<InsertRegionAutoscalerHttpRequest, Operation>
       insertRegionAutoscalerSettings;
   private final PagedCallSettings<
-          ListRegionAutoscalersHttpRequest, RegionAutoscalerList,
+          ListRegionAutoscalersHttpRequest,
+          RegionAutoscalerList,
           ListRegionAutoscalersPagedResponse>
       listRegionAutoscalersSettings;
   private final UnaryCallSettings<PatchRegionAutoscalerHttpRequest, Operation>
@@ -133,7 +134,8 @@ public class RegionAutoscalerStubSettings extends StubSettings<RegionAutoscalerS
 
   /** Returns the object with the settings used for calls to listRegionAutoscalers. */
   public PagedCallSettings<
-          ListRegionAutoscalersHttpRequest, RegionAutoscalerList,
+          ListRegionAutoscalersHttpRequest,
+          RegionAutoscalerList,
           ListRegionAutoscalersPagedResponse>
       listRegionAutoscalersSettings() {
     return listRegionAutoscalersSettings;
@@ -277,11 +279,13 @@ public class RegionAutoscalerStubSettings extends StubSettings<RegionAutoscalerS
           };
 
   private static final PagedListResponseFactory<
-          ListRegionAutoscalersHttpRequest, RegionAutoscalerList,
+          ListRegionAutoscalersHttpRequest,
+          RegionAutoscalerList,
           ListRegionAutoscalersPagedResponse>
       LIST_REGION_AUTOSCALERS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListRegionAutoscalersHttpRequest, RegionAutoscalerList,
+              ListRegionAutoscalersHttpRequest,
+              RegionAutoscalerList,
               ListRegionAutoscalersPagedResponse>() {
             @Override
             public ApiFuture<ListRegionAutoscalersPagedResponse> getFuturePagedResponse(
@@ -308,7 +312,8 @@ public class RegionAutoscalerStubSettings extends StubSettings<RegionAutoscalerS
     private final UnaryCallSettings.Builder<InsertRegionAutoscalerHttpRequest, Operation>
         insertRegionAutoscalerSettings;
     private final PagedCallSettings.Builder<
-            ListRegionAutoscalersHttpRequest, RegionAutoscalerList,
+            ListRegionAutoscalersHttpRequest,
+            RegionAutoscalerList,
             ListRegionAutoscalersPagedResponse>
         listRegionAutoscalersSettings;
     private final UnaryCallSettings.Builder<PatchRegionAutoscalerHttpRequest, Operation>
@@ -482,7 +487,8 @@ public class RegionAutoscalerStubSettings extends StubSettings<RegionAutoscalerS
 
     /** Returns the builder for the settings used for calls to listRegionAutoscalers. */
     public PagedCallSettings.Builder<
-            ListRegionAutoscalersHttpRequest, RegionAutoscalerList,
+            ListRegionAutoscalersHttpRequest,
+            RegionAutoscalerList,
             ListRegionAutoscalersPagedResponse>
         listRegionAutoscalersSettings() {
       return listRegionAutoscalersSettings;

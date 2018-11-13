@@ -17,13 +17,11 @@
 package com.google.cloud.storage.contrib.nio;
 
 import com.google.cloud.WriteChannel;
-
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.ClosedChannelException;
 import java.nio.channels.NonReadableChannelException;
 import java.nio.channels.SeekableByteChannel;
-
 import javax.annotation.concurrent.ThreadSafe;
 
 /**

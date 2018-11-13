@@ -126,7 +126,8 @@ public class KeyManagementServiceStubSettings
           ListCryptoKeysRequest, ListCryptoKeysResponse, ListCryptoKeysPagedResponse>
       listCryptoKeysSettings;
   private final PagedCallSettings<
-          ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+          ListCryptoKeyVersionsRequest,
+          ListCryptoKeyVersionsResponse,
           ListCryptoKeyVersionsPagedResponse>
       listCryptoKeyVersionsSettings;
   private final UnaryCallSettings<GetKeyRingRequest, KeyRing> getKeyRingSettings;
@@ -173,7 +174,8 @@ public class KeyManagementServiceStubSettings
 
   /** Returns the object with the settings used for calls to listCryptoKeyVersions. */
   public PagedCallSettings<
-          ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+          ListCryptoKeyVersionsRequest,
+          ListCryptoKeyVersionsResponse,
           ListCryptoKeyVersionsPagedResponse>
       listCryptoKeyVersionsSettings() {
     return listCryptoKeyVersionsSettings;
@@ -518,11 +520,13 @@ public class KeyManagementServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+          ListCryptoKeyVersionsRequest,
+          ListCryptoKeyVersionsResponse,
           ListCryptoKeyVersionsPagedResponse>
       LIST_CRYPTO_KEY_VERSIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+              ListCryptoKeyVersionsRequest,
+              ListCryptoKeyVersionsResponse,
               ListCryptoKeyVersionsPagedResponse>() {
             @Override
             public ApiFuture<ListCryptoKeyVersionsPagedResponse> getFuturePagedResponse(
@@ -551,7 +555,8 @@ public class KeyManagementServiceStubSettings
             ListCryptoKeysRequest, ListCryptoKeysResponse, ListCryptoKeysPagedResponse>
         listCryptoKeysSettings;
     private final PagedCallSettings.Builder<
-            ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+            ListCryptoKeyVersionsRequest,
+            ListCryptoKeyVersionsResponse,
             ListCryptoKeyVersionsPagedResponse>
         listCryptoKeyVersionsSettings;
     private final UnaryCallSettings.Builder<GetKeyRingRequest, KeyRing> getKeyRingSettings;
@@ -908,7 +913,8 @@ public class KeyManagementServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listCryptoKeyVersions. */
     public PagedCallSettings.Builder<
-            ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+            ListCryptoKeyVersionsRequest,
+            ListCryptoKeyVersionsResponse,
             ListCryptoKeyVersionsPagedResponse>
         listCryptoKeyVersionsSettings() {
       return listCryptoKeyVersionsSettings;

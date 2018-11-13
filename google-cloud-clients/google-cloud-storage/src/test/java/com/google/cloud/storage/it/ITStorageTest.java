@@ -32,20 +32,20 @@ import com.google.api.client.util.DateTime;
 import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
-import com.google.cloud.kms.v1.CreateKeyRingRequest;
-import com.google.cloud.kms.v1.CryptoKeyName;
-import com.google.cloud.kms.v1.CryptoKey;
-import com.google.cloud.kms.v1.GetCryptoKeyRequest;
-import com.google.cloud.kms.v1.GetKeyRingRequest;
-import com.google.cloud.kms.v1.KeyManagementServiceGrpc.KeyManagementServiceBlockingStub;
-import com.google.cloud.kms.v1.KeyManagementServiceGrpc;
-import com.google.cloud.kms.v1.KeyRingName;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RestorableState;
 import com.google.cloud.WriteChannel;
+import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
+import com.google.cloud.kms.v1.CreateKeyRingRequest;
+import com.google.cloud.kms.v1.CryptoKey;
+import com.google.cloud.kms.v1.CryptoKeyName;
+import com.google.cloud.kms.v1.GetCryptoKeyRequest;
+import com.google.cloud.kms.v1.GetKeyRingRequest;
+import com.google.cloud.kms.v1.KeyManagementServiceGrpc;
+import com.google.cloud.kms.v1.KeyManagementServiceGrpc.KeyManagementServiceBlockingStub;
+import com.google.cloud.kms.v1.KeyRingName;
 import com.google.cloud.kms.v1.LocationName;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.Role;
@@ -79,6 +79,15 @@ import com.google.common.collect.Lists;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.ByteStreams;
 import com.google.iam.v1.Binding;
+import com.google.iam.v1.IAMPolicyGrpc;
+import com.google.iam.v1.SetIamPolicyRequest;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+import io.grpc.Metadata;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
+import io.grpc.auth.MoreCallCredentials;
+import io.grpc.stub.MetadataUtils;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -102,17 +111,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.GZIPInputStream;
 import javax.crypto.spec.SecretKeySpec;
-
-import com.google.iam.v1.IAMPolicyGrpc;
-import com.google.iam.v1.SetIamPolicyRequest;
-import io.grpc.auth.MoreCallCredentials;
-import io.grpc.ManagedChannel;
-import io.grpc.ManagedChannelBuilder;
-import io.grpc.Metadata;
-import io.grpc.Status;
-import io.grpc.StatusRuntimeException;
-import io.grpc.stub.MetadataUtils;
-
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -148,7 +146,8 @@ public class ITStorageTest {
   private static final String KMS_KEY_RING_LOCATION = "us";
   private static final String KMS_KEY_ONE_NAME = "gcs_kms_key_one";
   private static final String KMS_KEY_TWO_NAME = "gcs_kms_key_two";
-  private static final boolean IS_VPC_TEST = System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") != null
+  private static final boolean IS_VPC_TEST =
+      System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") != null
           && System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC").equalsIgnoreCase("true");
 
   @BeforeClass
@@ -160,8 +159,9 @@ public class ITStorageTest {
             .setLocation("us")
             .setLifecycleRules(
                 ImmutableList.of(
-                    new LifecycleRule(LifecycleAction.newDeleteAction(),
-                            LifecycleCondition.newBuilder().setAge(1).build())))
+                    new LifecycleRule(
+                        LifecycleAction.newDeleteAction(),
+                        LifecycleCondition.newBuilder().setAge(1).build())))
             .build());
 
     // Prepare KMS KeyRing for CMEK tests
@@ -363,8 +363,7 @@ public class ITStorageTest {
             .setLifecycleRules(
                 ImmutableList.of(
                     new LifecycleRule(
-                        LifecycleAction.newSetStorageClassAction(
-                            StorageClass.COLDLINE),
+                        LifecycleAction.newSetStorageClassAction(StorageClass.COLDLINE),
                         LifecycleCondition.newBuilder()
                             .setAge(1)
                             .setNumberOfNewerVersions(3)
@@ -373,12 +372,16 @@ public class ITStorageTest {
                             .setMatchesStorageClass(ImmutableList.of(StorageClass.COLDLINE))
                             .build())))
             .build());
-    Bucket remoteBucket = storage.get(lifecycleTestBucketName, Storage.BucketGetOption.fields(BucketField.LIFECYCLE));
+    Bucket remoteBucket =
+        storage.get(lifecycleTestBucketName, Storage.BucketGetOption.fields(BucketField.LIFECYCLE));
     LifecycleRule lifecycleRule = remoteBucket.getLifecycleRules().get(0);
     try {
       assertTrue(
-          lifecycleRule.getAction().getActionType().equals(LifecycleRule.SetStorageClassLifecycleAction.TYPE));
-      assertEquals(3,  lifecycleRule.getCondition().getNumberOfNewerVersions().intValue());
+          lifecycleRule
+              .getAction()
+              .getActionType()
+              .equals(LifecycleRule.SetStorageClassLifecycleAction.TYPE));
+      assertEquals(3, lifecycleRule.getCondition().getNumberOfNewerVersions().intValue());
       assertNotNull(lifecycleRule.getCondition().getCreatedBefore());
       assertFalse(lifecycleRule.getCondition().getIsLive());
       assertEquals(1, lifecycleRule.getCondition().getAge().intValue());
@@ -1743,7 +1746,7 @@ public class ITStorageTest {
 
   @Test
   public void testGetSignedUrl() throws IOException {
-    if(storage.getOptions().getCredentials() != null) {
+    if (storage.getOptions().getCredentials() != null) {
       assumeTrue(storage.getOptions().getCredentials() instanceof ServiceAccountSigner);
     }
 

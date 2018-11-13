@@ -31,9 +31,8 @@ public class GrpcTransportOptionsTest {
 
   private static final ExecutorFactory MOCK_EXECUTOR_FACTORY =
       EasyMock.createMock(ExecutorFactory.class);
-  private static final GrpcTransportOptions OPTIONS = GrpcTransportOptions.newBuilder()
-      .setExecutorFactory(MOCK_EXECUTOR_FACTORY)
-      .build();
+  private static final GrpcTransportOptions OPTIONS =
+      GrpcTransportOptions.newBuilder().setExecutorFactory(MOCK_EXECUTOR_FACTORY).build();
   private static final GrpcTransportOptions DEFAULT_OPTIONS =
       GrpcTransportOptions.newBuilder().build();
   private static final GrpcTransportOptions OPTIONS_COPY = OPTIONS.toBuilder().build();
@@ -48,9 +47,8 @@ public class GrpcTransportOptionsTest {
   public void testBaseEquals() {
     assertEquals(OPTIONS, OPTIONS_COPY);
     assertNotEquals(DEFAULT_OPTIONS, OPTIONS);
-    GrpcTransportOptions options = OPTIONS.toBuilder()
-        .setExecutorFactory(new DefaultExecutorFactory())
-        .build();
+    GrpcTransportOptions options =
+        OPTIONS.toBuilder().setExecutorFactory(new DefaultExecutorFactory()).build();
     assertNotEquals(OPTIONS, options);
   }
 
@@ -58,9 +56,8 @@ public class GrpcTransportOptionsTest {
   public void testBaseHashCode() {
     assertEquals(OPTIONS.hashCode(), OPTIONS_COPY.hashCode());
     assertNotEquals(DEFAULT_OPTIONS.hashCode(), OPTIONS.hashCode());
-    GrpcTransportOptions options = OPTIONS.toBuilder()
-        .setExecutorFactory(new DefaultExecutorFactory())
-        .build();
+    GrpcTransportOptions options =
+        OPTIONS.toBuilder().setExecutorFactory(new DefaultExecutorFactory()).build();
     assertNotEquals(OPTIONS.hashCode(), options.hashCode());
   }
 

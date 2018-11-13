@@ -56,22 +56,15 @@ public abstract class StandardTableDefinition extends TableDefinition {
       this.oldestEntryTime = oldestEntryTime;
     }
 
-
-    /**
-     * Returns a lower-bound estimate of the number of rows currently in the streaming buffer.
-     */
+    /** Returns a lower-bound estimate of the number of rows currently in the streaming buffer. */
     public long getEstimatedRows() {
       return estimatedRows;
     }
 
-
-    /**
-     * Returns a lower-bound estimate of the number of bytes currently in the streaming buffer.
-     */
+    /** Returns a lower-bound estimate of the number of bytes currently in the streaming buffer. */
     public long getEstimatedBytes() {
       return estimatedBytes;
     }
-
 
     /**
      * Returns the timestamp of the oldest entry in the streaming buffer, in milliseconds since
@@ -113,7 +106,8 @@ public abstract class StandardTableDefinition extends TableDefinition {
       if (streamingBufferPb.getOldestEntryTime() != null) {
         oldestEntryTime = streamingBufferPb.getOldestEntryTime().longValue();
       }
-      return new StreamingBuffer(streamingBufferPb.getEstimatedRows().longValue(),
+      return new StreamingBuffer(
+          streamingBufferPb.getEstimatedRows().longValue(),
           streamingBufferPb.getEstimatedBytes().longValue(),
           oldestEntryTime);
     }
@@ -143,11 +137,10 @@ public abstract class StandardTableDefinition extends TableDefinition {
     public abstract Builder setTimePartitioning(TimePartitioning timePartitioning);
 
     /**
-     * Set the clustering configuration for the table.  If not set, the table is not
-     * clustered.  Clustering is only available for partitioned tables.
+     * Set the clustering configuration for the table. If not set, the table is not clustered.
+     * Clustering is only available for partitioned tables.
      */
     public abstract Builder setClustering(Clustering clustering);
-
 
     /** Creates a {@code StandardTableDefinition} object. */
     public abstract StandardTableDefinition build();
@@ -186,17 +179,14 @@ public abstract class StandardTableDefinition extends TableDefinition {
   @Nullable
   public abstract TimePartitioning getTimePartitioning();
 
-
   /**
-   * Returns the clustering configuration for this table.  If {@code null}, the table is not
+   * Returns the clustering configuration for this table. If {@code null}, the table is not
    * clustered.
    */
   @Nullable
   public abstract Clustering getClustering();
 
-  /**
-   * Returns a builder for a BigQuery standard table definition.
-   */
+  /** Returns a builder for a BigQuery standard table definition. */
   public static Builder newBuilder() {
     return new AutoValue_StandardTableDefinition.Builder().setType(Type.TABLE);
   }

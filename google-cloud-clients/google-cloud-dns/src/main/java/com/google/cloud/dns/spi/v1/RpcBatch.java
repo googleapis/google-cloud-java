@@ -23,27 +23,18 @@ import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.ManagedZonesListResponse;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSetsListResponse;
-
 import java.util.Map;
 
-/**
- * An interface for the collection of batch operations.
- */
+/** An interface for the collection of batch operations. */
 public interface RpcBatch {
 
-  /**
-   * An interface for batch callbacks.
-   */
+  /** An interface for batch callbacks. */
   interface Callback<T> {
 
-    /**
-     * This method will be called upon success of the batch operation.
-     */
+    /** This method will be called upon success of the batch operation. */
     void onSuccess(T response);
 
-    /**
-     * This method will be called upon failure of the batch operation.
-     */
+    /** This method will be called upon failure of the batch operation. */
     void onFailure(GoogleJsonError googleJsonError);
   }
 
@@ -57,8 +48,8 @@ public interface RpcBatch {
    * Adds a call to "create zone" to the batch with the provided {@code callback} and {@code
    * options}.
    */
-  void addCreateZone(ManagedZone zone, Callback<ManagedZone> callback,
-      Map<DnsRpc.Option, ?> options);
+  void addCreateZone(
+      ManagedZone zone, Callback<ManagedZone> callback, Map<DnsRpc.Option, ?> options);
 
   /**
    * Adds a call to "get zone" to the batch with the provided {@code callback} and {@code options}.
@@ -82,7 +73,9 @@ public interface RpcBatch {
    * Adds a call to "list record sets" to the batch with the provided {@code callback} and {@code
    * options}. The zone whose record sets are to be listed is identified by {@code zoneName}.
    */
-  void addListRecordSets(String zoneName, Callback<ResourceRecordSetsListResponse> callback,
+  void addListRecordSets(
+      String zoneName,
+      Callback<ResourceRecordSetsListResponse> callback,
       Map<DnsRpc.Option, ?> options);
 
   /**
@@ -90,15 +83,18 @@ public interface RpcBatch {
    * {@code options}. The zone whose change requests are to be listed is identified by {@code
    * zoneName}.
    */
-  void addListChangeRequests(String zoneName, Callback<ChangesListResponse> callback,
-      Map<DnsRpc.Option, ?> options);
+  void addListChangeRequests(
+      String zoneName, Callback<ChangesListResponse> callback, Map<DnsRpc.Option, ?> options);
 
   /**
    * Adds a call to "get change request" to the batch with the provided {@code callback} and {@code
    * options}. The change request to be retrieved is identified by {@code changeRequestId}. The zone
    * to which the change request was applied is identified by {@code zoneName}.
    */
-  void addGetChangeRequest(String zoneName, String changeRequestId, Callback<Change> callback,
+  void addGetChangeRequest(
+      String zoneName,
+      String changeRequestId,
+      Callback<Change> callback,
       Map<DnsRpc.Option, ?> options);
 
   /**
@@ -106,12 +102,9 @@ public interface RpcBatch {
    * {@code options}. The parameter {@code change} is the change request to be applied. The zone to
    * which the change request should be applied is identified by {@code zoneName}.
    */
-  void addApplyChangeRequest(String zoneName, Change change, Callback<Change> callback,
-      Map<DnsRpc.Option, ?> options);
+  void addApplyChangeRequest(
+      String zoneName, Change change, Callback<Change> callback, Map<DnsRpc.Option, ?> options);
 
-  /**
-   * Submits a batch of requests for processing using a single RPC request to Cloud DNS.
-   */
+  /** Submits a batch of requests for processing using a single RPC request to Cloud DNS. */
   void submit();
 }
-

@@ -30,7 +30,6 @@ import com.google.cloud.dns.DnsOptions;
 import com.google.cloud.dns.RecordSet;
 import com.google.cloud.dns.Zone;
 import com.google.cloud.dns.ZoneInfo;
-
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -61,10 +60,11 @@ public class ManipulateZonesAndRecordSets {
 
     // Prepare a www.someexampledomain.com. type A record with ttl of 24 hours
     String ip = "12.13.14.15";
-    RecordSet toCreate = RecordSet.newBuilder("www.someexampledomain.com.", RecordSet.Type.A)
-        .setTtl(24, TimeUnit.HOURS)
-        .addRecord(ip)
-        .build();
+    RecordSet toCreate =
+        RecordSet.newBuilder("www.someexampledomain.com.", RecordSet.Type.A)
+            .setTtl(24, TimeUnit.HOURS)
+            .addRecord(ip)
+            .build();
 
     // Make a change
     ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.newBuilder().add(toCreate);
@@ -133,8 +133,8 @@ public class ManipulateZonesAndRecordSets {
         try {
           Thread.sleep(500);
         } catch (InterruptedException e) {
-          System.err.println("The thread was interrupted while waiting for change request to be "
-              + "processed.");
+          System.err.println(
+              "The thread was interrupted while waiting for change request to be " + "processed.");
         }
       }
     }

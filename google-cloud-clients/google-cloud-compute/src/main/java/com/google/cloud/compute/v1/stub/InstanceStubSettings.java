@@ -130,7 +130,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
   private final UnaryCallSettings<AddAccessConfigInstanceHttpRequest, Operation>
       addAccessConfigInstanceSettings;
   private final PagedCallSettings<
-          AggregatedListInstancesHttpRequest, InstanceAggregatedList,
+          AggregatedListInstancesHttpRequest,
+          InstanceAggregatedList,
           AggregatedListInstancesPagedResponse>
       aggregatedListInstancesSettings;
   private final UnaryCallSettings<AttachDiskInstanceHttpRequest, Operation>
@@ -148,7 +149,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
           ListInstancesHttpRequest, InstanceList, ListInstancesPagedResponse>
       listInstancesSettings;
   private final PagedCallSettings<
-          ListReferrersInstancesHttpRequest, InstanceListReferrers,
+          ListReferrersInstancesHttpRequest,
+          InstanceListReferrers,
           ListReferrersInstancesPagedResponse>
       listReferrersInstancesSettings;
   private final UnaryCallSettings<ResetInstanceHttpRequest, Operation> resetInstanceSettings;
@@ -190,7 +192,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
   /** Returns the object with the settings used for calls to aggregatedListInstances. */
   public PagedCallSettings<
-          AggregatedListInstancesHttpRequest, InstanceAggregatedList,
+          AggregatedListInstancesHttpRequest,
+          InstanceAggregatedList,
           AggregatedListInstancesPagedResponse>
       aggregatedListInstancesSettings() {
     return aggregatedListInstancesSettings;
@@ -241,7 +244,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
   /** Returns the object with the settings used for calls to listReferrersInstances. */
   public PagedCallSettings<
-          ListReferrersInstancesHttpRequest, InstanceListReferrers,
+          ListReferrersInstancesHttpRequest,
+          InstanceListReferrers,
           ListReferrersInstancesPagedResponse>
       listReferrersInstancesSettings() {
     return listReferrersInstancesSettings;
@@ -577,11 +581,13 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListInstancesHttpRequest, InstanceAggregatedList,
+          AggregatedListInstancesHttpRequest,
+          InstanceAggregatedList,
           AggregatedListInstancesPagedResponse>
       AGGREGATED_LIST_INSTANCES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListInstancesHttpRequest, InstanceAggregatedList,
+              AggregatedListInstancesHttpRequest,
+              InstanceAggregatedList,
               AggregatedListInstancesPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListInstancesPagedResponse> getFuturePagedResponse(
@@ -590,7 +596,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
                 ApiCallContext context,
                 ApiFuture<InstanceAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListInstancesHttpRequest, InstanceAggregatedList,
+                      AggregatedListInstancesHttpRequest,
+                      InstanceAggregatedList,
                       InstancesScopedList>
                   pageContext =
                       PageContext.create(
@@ -617,11 +624,13 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          ListReferrersInstancesHttpRequest, InstanceListReferrers,
+          ListReferrersInstancesHttpRequest,
+          InstanceListReferrers,
           ListReferrersInstancesPagedResponse>
       LIST_REFERRERS_INSTANCES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListReferrersInstancesHttpRequest, InstanceListReferrers,
+              ListReferrersInstancesHttpRequest,
+              InstanceListReferrers,
               ListReferrersInstancesPagedResponse>() {
             @Override
             public ApiFuture<ListReferrersInstancesPagedResponse> getFuturePagedResponse(
@@ -644,7 +653,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     private final UnaryCallSettings.Builder<AddAccessConfigInstanceHttpRequest, Operation>
         addAccessConfigInstanceSettings;
     private final PagedCallSettings.Builder<
-            AggregatedListInstancesHttpRequest, InstanceAggregatedList,
+            AggregatedListInstancesHttpRequest,
+            InstanceAggregatedList,
             AggregatedListInstancesPagedResponse>
         aggregatedListInstancesSettings;
     private final UnaryCallSettings.Builder<AttachDiskInstanceHttpRequest, Operation>
@@ -665,7 +675,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
             ListInstancesHttpRequest, InstanceList, ListInstancesPagedResponse>
         listInstancesSettings;
     private final PagedCallSettings.Builder<
-            ListReferrersInstancesHttpRequest, InstanceListReferrers,
+            ListReferrersInstancesHttpRequest,
+            InstanceListReferrers,
             ListReferrersInstancesPagedResponse>
         listReferrersInstancesSettings;
     private final UnaryCallSettings.Builder<ResetInstanceHttpRequest, Operation>
@@ -1084,7 +1095,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListInstances. */
     public PagedCallSettings.Builder<
-            AggregatedListInstancesHttpRequest, InstanceAggregatedList,
+            AggregatedListInstancesHttpRequest,
+            InstanceAggregatedList,
             AggregatedListInstancesPagedResponse>
         aggregatedListInstancesSettings() {
       return aggregatedListInstancesSettings;
@@ -1140,7 +1152,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
     /** Returns the builder for the settings used for calls to listReferrersInstances. */
     public PagedCallSettings.Builder<
-            ListReferrersInstancesHttpRequest, InstanceListReferrers,
+            ListReferrersInstancesHttpRequest,
+            InstanceListReferrers,
             ListReferrersInstancesPagedResponse>
         listReferrersInstancesSettings() {
       return listReferrersInstancesSettings;

@@ -103,7 +103,8 @@ public class AutoscalerStubSettings extends StubSettings<AutoscalerStubSettings>
           .build();
 
   private final PagedCallSettings<
-          AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList,
+          AggregatedListAutoscalersHttpRequest,
+          AutoscalerAggregatedList,
           AggregatedListAutoscalersPagedResponse>
       aggregatedListAutoscalersSettings;
   private final UnaryCallSettings<DeleteAutoscalerHttpRequest, Operation> deleteAutoscalerSettings;
@@ -117,7 +118,8 @@ public class AutoscalerStubSettings extends StubSettings<AutoscalerStubSettings>
 
   /** Returns the object with the settings used for calls to aggregatedListAutoscalers. */
   public PagedCallSettings<
-          AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList,
+          AggregatedListAutoscalersHttpRequest,
+          AutoscalerAggregatedList,
           AggregatedListAutoscalersPagedResponse>
       aggregatedListAutoscalersSettings() {
     return aggregatedListAutoscalersSettings;
@@ -242,7 +244,8 @@ public class AutoscalerStubSettings extends StubSettings<AutoscalerStubSettings>
           AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList, AutoscalersScopedList>
       AGGREGATED_LIST_AUTOSCALERS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList,
+              AggregatedListAutoscalersHttpRequest,
+              AutoscalerAggregatedList,
               AutoscalersScopedList>() {
             @Override
             public String emptyToken() {
@@ -319,11 +322,13 @@ public class AutoscalerStubSettings extends StubSettings<AutoscalerStubSettings>
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList,
+          AggregatedListAutoscalersHttpRequest,
+          AutoscalerAggregatedList,
           AggregatedListAutoscalersPagedResponse>
       AGGREGATED_LIST_AUTOSCALERS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList,
+              AggregatedListAutoscalersHttpRequest,
+              AutoscalerAggregatedList,
               AggregatedListAutoscalersPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListAutoscalersPagedResponse> getFuturePagedResponse(
@@ -333,7 +338,8 @@ public class AutoscalerStubSettings extends StubSettings<AutoscalerStubSettings>
                 ApiCallContext context,
                 ApiFuture<AutoscalerAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList,
+                      AggregatedListAutoscalersHttpRequest,
+                      AutoscalerAggregatedList,
                       AutoscalersScopedList>
                   pageContext =
                       PageContext.create(
@@ -365,7 +371,8 @@ public class AutoscalerStubSettings extends StubSettings<AutoscalerStubSettings>
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList,
+            AggregatedListAutoscalersHttpRequest,
+            AutoscalerAggregatedList,
             AggregatedListAutoscalersPagedResponse>
         aggregatedListAutoscalersSettings;
     private final UnaryCallSettings.Builder<DeleteAutoscalerHttpRequest, Operation>
@@ -540,7 +547,8 @@ public class AutoscalerStubSettings extends StubSettings<AutoscalerStubSettings>
 
     /** Returns the builder for the settings used for calls to aggregatedListAutoscalers. */
     public PagedCallSettings.Builder<
-            AggregatedListAutoscalersHttpRequest, AutoscalerAggregatedList,
+            AggregatedListAutoscalersHttpRequest,
+            AutoscalerAggregatedList,
             AggregatedListAutoscalersPagedResponse>
         aggregatedListAutoscalersSettings() {
       return aggregatedListAutoscalersSettings;

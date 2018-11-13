@@ -16,11 +16,10 @@
 
 package com.google.cloud.compute.deprecated.testing;
 
-import com.google.auth.oauth2.ServiceAccountCredentials;
-import com.google.cloud.http.HttpTransportOptions;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.compute.deprecated.ComputeOptions;
-
+import com.google.cloud.http.HttpTransportOptions;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
@@ -29,16 +28,14 @@ import java.util.logging.Logger;
 import org.threeten.bp.Duration;
 
 /**
- * Utility to create a remote Compute configuration for testing. Compute options can be obtained
- * via the {@link #getOptions()} method. Returned options have custom
- * {@link ComputeOptions#getRetrySettings()}: {@link RetrySettings#getMaxAttempts()} is {@code 10},
- * {@link RetrySettings#getMaxAttempts()} ()} is {@code 6},
- * {@link RetrySettings#getMaxRetryDelay()} is {@code 30000},
- * {@link RetrySettings#getTotalTimeout()} is {@code 120000} and
- * {@link RetrySettings#getInitialRetryDelay()} is {@code 250}.
- * {@link HttpTransportOptions#getConnectTimeout()} and
- * {@link HttpTransportOptions#getReadTimeout()} are both
- * set to {@code 60000}.
+ * Utility to create a remote Compute configuration for testing. Compute options can be obtained via
+ * the {@link #getOptions()} method. Returned options have custom {@link
+ * ComputeOptions#getRetrySettings()}: {@link RetrySettings#getMaxAttempts()} is {@code 10}, {@link
+ * RetrySettings#getMaxAttempts()} ()} is {@code 6}, {@link RetrySettings#getMaxRetryDelay()} is
+ * {@code 30000}, {@link RetrySettings#getTotalTimeout()} is {@code 120000} and {@link
+ * RetrySettings#getInitialRetryDelay()} is {@code 250}. {@link
+ * HttpTransportOptions#getConnectTimeout()} and {@link HttpTransportOptions#getReadTimeout()} are
+ * both set to {@code 60000}.
  */
 public class RemoteComputeHelper {
 
@@ -49,9 +46,7 @@ public class RemoteComputeHelper {
     this.options = options;
   }
 
-  /**
-   * Returns a {@link ComputeOptions} object to be used for testing.
-   */
+  /** Returns a {@link ComputeOptions} object to be used for testing. */
   public ComputeOptions getOptions() {
     return options;
   }
@@ -78,14 +73,15 @@ public class RemoteComputeHelper {
   public static RemoteComputeHelper create(String projectId, InputStream keyStream) {
     try {
       HttpTransportOptions transportOptions = ComputeOptions.getDefaultHttpTransportOptions();
-      transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
-          .build();
-      ComputeOptions computeOptions = ComputeOptions.newBuilder()
-          .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
-          .setProjectId(projectId)
-          .setRetrySettings(retrySettings())
-          .setTransportOptions(transportOptions)
-          .build();
+      transportOptions =
+          transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000).build();
+      ComputeOptions computeOptions =
+          ComputeOptions.newBuilder()
+              .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
+              .setProjectId(projectId)
+              .setRetrySettings(retrySettings())
+              .setTransportOptions(transportOptions)
+              .build();
       return new RemoteComputeHelper(computeOptions);
     } catch (IOException ex) {
       if (log.isLoggable(Level.WARNING)) {
@@ -101,17 +97,19 @@ public class RemoteComputeHelper {
    */
   public static RemoteComputeHelper create() {
     HttpTransportOptions transportOptions = ComputeOptions.getDefaultHttpTransportOptions();
-    transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
-        .build();
-    ComputeOptions computeOptions = ComputeOptions.newBuilder()
-        .setRetrySettings(retrySettings())
-        .setTransportOptions(transportOptions)
-        .build();
+    transportOptions =
+        transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000).build();
+    ComputeOptions computeOptions =
+        ComputeOptions.newBuilder()
+            .setRetrySettings(retrySettings())
+            .setTransportOptions(transportOptions)
+            .build();
     return new RemoteComputeHelper(computeOptions);
   }
 
   private static RetrySettings retrySettings() {
-    return RetrySettings.newBuilder().setMaxAttempts(10)
+    return RetrySettings.newBuilder()
+        .setMaxAttempts(10)
         .setMaxRetryDelay(Duration.ofMillis(30000L))
         .setTotalTimeout(Duration.ofMillis(120000L))
         .setInitialRetryDelay(Duration.ofMillis(250L))
