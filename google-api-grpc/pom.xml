@@ -722,6 +722,14 @@
             <autoReleaseAfterClose>false</autoReleaseAfterClose>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>com.coveo</groupId>
+          <artifactId>fmt-maven-plugin</artifactId>
+          <version>2.6.0</version>
+          <configuration>
+            <skip>true</skip>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>

@@ -490,6 +490,14 @@
             <executable>java</executable>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>com.coveo</groupId>
+          <artifactId>fmt-maven-plugin</artifactId>
+          <version>2.6.0</version>
+          <configuration>
+            <verbose>true</verbose>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
