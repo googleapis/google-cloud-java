@@ -40,6 +40,7 @@ public class CloudStorageRetryHandler {
    *
    * @deprecated use CloudStorageRetryHandler(CloudStorageConfiguration) instead.
    */
+  @java.lang.Deprecated
   public CloudStorageRetryHandler(final int maxRetriesAndReopens) {
     this.maxRetries = maxRetriesAndReopens;
     this.maxReopens = maxRetriesAndReopens;
@@ -55,6 +56,7 @@ public class CloudStorageRetryHandler {
    *
    * @deprecated use CloudStorageRetryHandler(CloudStorageConfiguration) instead.
    */
+  @java.lang.Deprecated
   public CloudStorageRetryHandler(final int maxRetries, final int maxReopens) {
     this.maxRetries = maxRetries;
     this.maxReopens = maxReopens;
@@ -77,7 +79,7 @@ public class CloudStorageRetryHandler {
    * Create a CloudStorageRetryHandler with the maximum retries and reopens set to different values.
    *
    * @param maxRetries maximum number of retries
-   * @param maxReopens maximum number of reopens
+   * @param maxReopens maximum number of reopens (overrides what's in the config)
    * @param config http codes we'll retry on, and exceptions we'll reopen on.
    */
   public CloudStorageRetryHandler(final int maxRetries, final int maxReopens, final CloudStorageConfiguration config) {
