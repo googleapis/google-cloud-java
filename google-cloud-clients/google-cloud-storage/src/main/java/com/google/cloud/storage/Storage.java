@@ -892,7 +892,7 @@ public interface Storage extends Service<StorageOptions> {
     private final Object value;
 
     enum Option {
-      HTTP_METHOD, CONTENT_TYPE, MD5, EXT_HEADERS, SERVICE_ACCOUNT_CRED,EXT_HOST
+      HTTP_METHOD, CONTENT_TYPE, MD5, EXT_HEADERS, SERVICE_ACCOUNT_CRED,SERVICE_ENDPOINT
     }
 
     private SignUrlOption(Option option, Object value) {
@@ -957,8 +957,8 @@ public interface Storage extends Service<StorageOptions> {
     /**
     * Provides a host name to sign the URL. If not provided than host name will be default 
     */ 
-    public static SignUrlOption withExtHostName(String extHostName){
-      return new SignUrlOption(Option.EXT_HOST, extHostName);	
+    public static SignUrlOption withHostName(String hostName){
+      return new SignUrlOption(Option.SERVICE_ENDPOINT, hostName);	
     }
   }
 

@@ -1645,10 +1645,10 @@ public class StorageImplTest {
     ServiceAccountCredentials credentials =
         new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
     storage = options.toBuilder().setCredentials(credentials).build().getService();
-    URL url = storage.signUrl(BLOB_INFO1, 14, TimeUnit.DAYS, Storage.SignUrlOption.withExtHostName("https://custom.host.com"));
+    URL url = storage.signUrl(BLOB_INFO1, 14, TimeUnit.DAYS, Storage.SignUrlOption.withHostName("https://example.com"));
     String stringUrl = url.toString();
     String expectedUrl =
-        new StringBuilder("https://custom.host.com/")
+        new StringBuilder("https://example.com/")
             .append(BUCKET_NAME1)
             .append('/')
             .append(BLOB_NAME1)
@@ -1730,11 +1730,11 @@ public class StorageImplTest {
         new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
     storage = options.toBuilder().setCredentials(credentials).build().getService();
     URL url =
-        storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS, Storage.SignUrlOption.withExtHostName("https://custom.host.com"));
+        storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS, Storage.SignUrlOption.withHostName("https://example.com"));
     String escapedBlobName = UrlEscapers.urlFragmentEscaper().escape(blobName);
     String stringUrl = url.toString();
     String expectedUrl =
-        new StringBuilder("https://custom.host.com/")
+        new StringBuilder("https://example.com/")
             .append(BUCKET_NAME1)
             .append(escapedBlobName)
             .append("?GoogleAccessId=")
@@ -1830,10 +1830,10 @@ public class StorageImplTest {
             Storage.SignUrlOption.httpMethod(HttpMethod.POST),
             Storage.SignUrlOption.withContentType(),
             Storage.SignUrlOption.withMd5(),
-            Storage.SignUrlOption.withExtHostName("https://custom.host.com"));
+            Storage.SignUrlOption.withHostName("https://example.com"));
     String stringUrl = url.toString();
     String expectedUrl =
-        new StringBuilder("https://custom.host.com/")
+        new StringBuilder("https://example.com/")
             .append(BUCKET_NAME1)
             .append('/')
             .append(BLOB_NAME1)
@@ -1937,12 +1937,12 @@ public class StorageImplTest {
     for (char specialChar : specialChars) {
       String blobName = "/a" + specialChar + "b";
       URL url =
-          storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS, Storage.SignUrlOption.withExtHostName("https://custom.host.com"));
+          storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS, Storage.SignUrlOption.withHostName("https://example.com"));
       String escapedBlobName =
           UrlEscapers.urlFragmentEscaper().escape(blobName).replace("?", "%3F");
       String stringUrl = url.toString();
       String expectedUrl =
-          new StringBuilder("https://custom.host.com/")
+          new StringBuilder("https://example.com/")
               .append(BUCKET_NAME1)
               .append(escapedBlobName)
               .append("?GoogleAccessId=")
@@ -2047,10 +2047,10 @@ public class StorageImplTest {
             Storage.SignUrlOption.httpMethod(HttpMethod.PUT),
             Storage.SignUrlOption.withContentType(),
             Storage.SignUrlOption.withExtHeaders(extHeaders),
-            Storage.SignUrlOption.withExtHostName("https://custom.host.com"));
+            Storage.SignUrlOption.withHostName("https://example.com"));
     String stringUrl = url.toString();
     String expectedUrl =
-        new StringBuilder("https://custom.host.com/")
+        new StringBuilder("https://example.com/")
             .append(BUCKET_NAME1)
             .append('/')
             .append(BLOB_NAME1)
@@ -2140,11 +2140,11 @@ public class StorageImplTest {
 
     String blobName = "/foo/bar/baz #%20other cool stuff.txt";
     URL url =
-        storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS, Storage.SignUrlOption.withExtHostName("https://custom.host.com"));
+        storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS, Storage.SignUrlOption.withHostName("https://example.com"));
     String escapedBlobName = UrlEscapers.urlFragmentEscaper().escape(blobName);
     String stringUrl = url.toString();
     String expectedUrl =
-        new StringBuilder("https://custom.host.com/")
+        new StringBuilder("https://example.com/")
             .append(BUCKET_NAME1)
             .append(escapedBlobName)
             .append("?GoogleAccessId=")
