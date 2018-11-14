@@ -280,6 +280,16 @@
         <version>0.35.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerydatatransfer-v1:current} -->
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-bigquerystorage-v1beta1</artifactId>
+        <version>0.35.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-bigquerystorage-v1beta1</artifactId>
+        <version>0.35.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerystorage-v1beta1:current} -->
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-compute</artifactId>
         <version>0.70.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-compute:current} -->
