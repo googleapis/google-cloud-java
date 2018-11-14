@@ -23,7 +23,7 @@ common_templates = gcp.CommonTemplates()
 library = gapic.java_library(
     service='container',
     version='v1',
-    config_path='/google/container/artman_container.yaml',
+    config_path='/google/container/artman_container_v1.yaml',
     artman_output_name='')
 
 s.copy(library / 'gapic-google-cloud-container-v1/src', 'src')
