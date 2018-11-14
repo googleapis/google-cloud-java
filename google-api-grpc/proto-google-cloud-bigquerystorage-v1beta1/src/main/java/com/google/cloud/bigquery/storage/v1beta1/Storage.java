@@ -24,6 +24,10 @@ public final class Storage {
   public enum DataFormat
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     * <pre>
+     * Data format is unspecified.
+     * </pre>
+     *
      * <code>DATA_FORMAT_UNSPECIFIED = 0;</code>
      */
     DATA_FORMAT_UNSPECIFIED(0),
@@ -40,6 +44,10 @@ public final class Storage {
     ;
 
     /**
+     * <pre>
+     * Data format is unspecified.
+     * </pre>
+     *
      * <code>DATA_FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int DATA_FORMAT_UNSPECIFIED_VALUE = 0;
@@ -160,6 +168,10 @@ public final class Storage {
     long getRowCount();
   }
   /**
+   * <pre>
+   * Information about a single data stream within a read session.
+   * </pre>
+   *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.Stream}
    */
   public  static final class Stream extends
@@ -468,6 +480,10 @@ public final class Storage {
       return builder;
     }
     /**
+     * <pre>
+     * Information about a single data stream within a read session.
+     * </pre>
+     *
      * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.Stream}
      */
     public static final class Builder extends
@@ -810,14 +826,26 @@ public final class Storage {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * Identifier for a given Stream.
+     * </pre>
+     *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
      */
     boolean hasStream();
     /**
+     * <pre>
+     * Identifier for a given Stream.
+     * </pre>
+     *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getStream();
     /**
+     * <pre>
+     * Identifier for a given Stream.
+     * </pre>
+     *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
      */
     com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder getStreamOrBuilder();
@@ -832,6 +860,10 @@ public final class Storage {
     long getOffset();
   }
   /**
+   * <pre>
+   * Expresses a point within a given stream using an offset position.
+   * </pre>
+   *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.StreamPosition}
    */
   public  static final class StreamPosition extends
@@ -924,18 +956,30 @@ public final class Storage {
     public static final int STREAM_FIELD_NUMBER = 1;
     private com.google.cloud.bigquery.storage.v1beta1.Storage.Stream stream_;
     /**
+     * <pre>
+     * Identifier for a given Stream.
+     * </pre>
+     *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
      */
     public boolean hasStream() {
       return stream_ != null;
     }
     /**
+     * <pre>
+     * Identifier for a given Stream.
+     * </pre>
+     *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getStream() {
       return stream_ == null ? com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.getDefaultInstance() : stream_;
     }
     /**
+     * <pre>
+     * Identifier for a given Stream.
+     * </pre>
+     *
      * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
      */
     public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder getStreamOrBuilder() {
@@ -1129,6 +1173,10 @@ public final class Storage {
       return builder;
     }
     /**
+     * <pre>
+     * Expresses a point within a given stream using an offset position.
+     * </pre>
+     *
      * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.StreamPosition}
      */
     public static final class Builder extends
@@ -1293,12 +1341,20 @@ public final class Storage {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.cloud.bigquery.storage.v1beta1.Storage.Stream, com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder, com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder> streamBuilder_;
       /**
+       * <pre>
+       * Identifier for a given Stream.
+       * </pre>
+       *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
        */
       public boolean hasStream() {
         return streamBuilder_ != null || stream_ != null;
       }
       /**
+       * <pre>
+       * Identifier for a given Stream.
+       * </pre>
+       *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream getStream() {
@@ -1309,6 +1365,10 @@ public final class Storage {
         }
       }
       /**
+       * <pre>
+       * Identifier for a given Stream.
+       * </pre>
+       *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
        */
       public Builder setStream(com.google.cloud.bigquery.storage.v1beta1.Storage.Stream value) {
@@ -1325,6 +1385,10 @@ public final class Storage {
         return this;
       }
       /**
+       * <pre>
+       * Identifier for a given Stream.
+       * </pre>
+       *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
        */
       public Builder setStream(
@@ -1339,6 +1403,10 @@ public final class Storage {
         return this;
       }
       /**
+       * <pre>
+       * Identifier for a given Stream.
+       * </pre>
+       *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
        */
       public Builder mergeStream(com.google.cloud.bigquery.storage.v1beta1.Storage.Stream value) {
@@ -1357,6 +1425,10 @@ public final class Storage {
         return this;
       }
       /**
+       * <pre>
+       * Identifier for a given Stream.
+       * </pre>
+       *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
        */
       public Builder clearStream() {
@@ -1371,6 +1443,10 @@ public final class Storage {
         return this;
       }
       /**
+       * <pre>
+       * Identifier for a given Stream.
+       * </pre>
+       *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.Stream.Builder getStreamBuilder() {
@@ -1379,6 +1455,10 @@ public final class Storage {
         return getStreamFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       * Identifier for a given Stream.
+       * </pre>
+       *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
        */
       public com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder getStreamOrBuilder() {
@@ -1390,6 +1470,10 @@ public final class Storage {
         }
       }
       /**
+       * <pre>
+       * Identifier for a given Stream.
+       * </pre>
+       *
        * <code>.google.cloud.bigquery.storage.v1beta1.Stream stream = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1670,6 +1754,10 @@ public final class Storage {
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession.SchemaCase getSchemaCase();
   }
   /**
+   * <pre>
+   * Information returned from a `CreateReadSession` request.
+   * </pre>
+   *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.ReadSession}
    */
   public  static final class ReadSession extends
@@ -2332,6 +2420,10 @@ public final class Storage {
       return builder;
     }
     /**
+     * <pre>
+     * Information returned from a `CreateReadSession` request.
+     * </pre>
+     *
      * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.ReadSession}
      */
     public static final class Builder extends
@@ -3832,6 +3924,11 @@ public final class Storage {
     com.google.cloud.bigquery.storage.v1beta1.Storage.DataFormat getFormat();
   }
   /**
+   * <pre>
+   * Creates a new read session, which may include additional options such as
+   * requested parallelism, projection filters and constraints.
+   * </pre>
+   *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.CreateReadSessionRequest}
    */
   public  static final class CreateReadSessionRequest extends
@@ -4374,6 +4471,11 @@ public final class Storage {
       return builder;
     }
     /**
+     * <pre>
+     * Creates a new read session, which may include additional options such as
+     * requested parallelism, projection filters and constraints.
+     * </pre>
+     *
      * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.CreateReadSessionRequest}
      */
     public static final class Builder extends
@@ -5339,6 +5441,10 @@ public final class Storage {
     com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPositionOrBuilder getReadPositionOrBuilder();
   }
   /**
+   * <pre>
+   * Requesting row data via `ReadRows` must provide Stream position information.
+   * </pre>
+   *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.ReadRowsRequest}
    */
   public  static final class ReadRowsRequest extends
@@ -5623,6 +5729,10 @@ public final class Storage {
       return builder;
     }
     /**
+     * <pre>
+     * Requesting row data via `ReadRows` must provide Stream position information.
+     * </pre>
+     *
      * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.ReadRowsRequest}
      */
     public static final class Builder extends
@@ -6016,6 +6126,10 @@ public final class Storage {
     long getEstimatedRowCount();
   }
   /**
+   * <pre>
+   * Progress information for a given Stream.
+   * </pre>
+   *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.StreamStatus}
    */
   public  static final class StreamStatus extends
@@ -6265,6 +6379,10 @@ public final class Storage {
       return builder;
     }
     /**
+     * <pre>
+     * Progress information for a given Stream.
+     * </pre>
+     *
      * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.StreamStatus}
      */
     public static final class Builder extends
@@ -7101,6 +7219,11 @@ public final class Storage {
     public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse.RowsCase getRowsCase();
   }
   /**
+   * <pre>
+   * Response from calling `ReadRows` may include row data, progress and
+   * throttling information.
+   * </pre>
+   *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.ReadRowsResponse}
    */
   public  static final class ReadRowsResponse extends
@@ -7558,6 +7681,11 @@ public final class Storage {
       return builder;
     }
     /**
+     * <pre>
+     * Response from calling `ReadRows` may include row data, progress and
+     * throttling information.
+     * </pre>
+     *
      * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.ReadRowsResponse}
      */
     public static final class Builder extends
@@ -8343,6 +8471,11 @@ public final class Storage {
     int getRequestedStreams();
   }
   /**
+   * <pre>
+   * Information needed to request additional streams for an established read
+   * session.
+   * </pre>
+   *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.BatchCreateReadSessionStreamsRequest}
    */
   public  static final class BatchCreateReadSessionStreamsRequest extends
@@ -8656,6 +8789,11 @@ public final class Storage {
       return builder;
     }
     /**
+     * <pre>
+     * Information needed to request additional streams for an established read
+     * session.
+     * </pre>
+     *
      * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.BatchCreateReadSessionStreamsRequest}
      */
     public static final class Builder extends
@@ -9123,6 +9261,11 @@ public final class Storage {
         int index);
   }
   /**
+   * <pre>
+   * The response from `BatchCreateReadSessionStreams` returns the stream
+   * identifiers for the newly created streams.
+   * </pre>
+   *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.BatchCreateReadSessionStreamsResponse}
    */
   public  static final class BatchCreateReadSessionStreamsResponse extends
@@ -9420,6 +9563,11 @@ public final class Storage {
       return builder;
     }
     /**
+     * <pre>
+     * The response from `BatchCreateReadSessionStreams` returns the stream
+     * identifiers for the newly created streams.
+     * </pre>
+     *
      * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.BatchCreateReadSessionStreamsResponse}
      */
     public static final class Builder extends
@@ -9998,6 +10146,10 @@ public final class Storage {
     com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder getStreamOrBuilder();
   }
   /**
+   * <pre>
+   * Request information for invoking `FinalizeStream`.
+   * </pre>
+   *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.FinalizeStreamRequest}
    */
   public  static final class FinalizeStreamRequest extends
@@ -10276,6 +10428,10 @@ public final class Storage {
       return builder;
     }
     /**
+     * <pre>
+     * Request information for invoking `FinalizeStream`.
+     * </pre>
+     *
      * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.FinalizeStreamRequest}
      */
     public static final class Builder extends
@@ -10665,6 +10821,10 @@ public final class Storage {
     com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder getOriginalStreamOrBuilder();
   }
   /**
+   * <pre>
+   * Request information for `SplitReadStream`.
+   * </pre>
+   *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.SplitReadStreamRequest}
    */
   public  static final class SplitReadStreamRequest extends
@@ -10943,6 +11103,10 @@ public final class Storage {
       return builder;
     }
     /**
+     * <pre>
+     * Request information for `SplitReadStream`.
+     * </pre>
+     *
      * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.SplitReadStreamRequest}
      */
     public static final class Builder extends
@@ -11360,6 +11524,10 @@ public final class Storage {
     com.google.cloud.bigquery.storage.v1beta1.Storage.StreamOrBuilder getRemainderStreamOrBuilder();
   }
   /**
+   * <pre>
+   * Response from `SplitReadStream`.
+   * </pre>
+   *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.SplitReadStreamResponse}
    */
   public  static final class SplitReadStreamResponse extends
@@ -11703,6 +11871,10 @@ public final class Storage {
       return builder;
     }
     /**
+     * <pre>
+     * Response from `SplitReadStream`.
+     * </pre>
+     *
      * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.SplitReadStreamResponse}
      */
     public static final class Builder extends
