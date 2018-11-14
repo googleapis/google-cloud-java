@@ -612,6 +612,16 @@
         <version>0.35.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-scheduler-v1beta1:current} -->
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-securitycenter-v1beta1</artifactId>
+        <version>0.35.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-securitycenter-v1beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-securitycenter-v1beta1</artifactId>
+        <version>0.35.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-securitycenter-v1beta1:current} -->
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-spanner</artifactId>
         <version>0.70.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
