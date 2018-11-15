@@ -47,7 +47,7 @@ public interface StreamingRecognizeRequestOrBuilder extends
    * `audio_content` data. The audio bytes must be encoded as specified in
    * `RecognitionConfig`. Note: as with all bytes fields, protobuffers use a
    * pure binary representation (not base64). See
-   * [audio limits](https://cloud.google.com/speech/limits#content).
+   * [content limits](/speech-to-text/quotas#content).
    * </pre>
    *
    * <code>bytes audio_content = 2;</code>
