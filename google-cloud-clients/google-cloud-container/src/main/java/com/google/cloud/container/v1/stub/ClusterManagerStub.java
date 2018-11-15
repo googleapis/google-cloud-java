@@ -60,7 +60,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Base stub class for Google Container Engine API.
+ * Base stub class for Kubernetes Engine API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */

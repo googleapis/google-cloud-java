@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private CreateClusterRequest() {
     projectId_ = "";
     zone_ = "";
+    parent_ = "";
   }
 
   @java.lang.Override
@@ -73,6 +74,12 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            parent_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -109,13 +116,14 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object projectId_;
   /**
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
+   * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
-  public java.lang.String getProjectId() {
+  @java.lang.Deprecated public java.lang.String getProjectId() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -129,13 +137,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
+   * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
@@ -153,14 +162,15 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object zone_;
   /**
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  public java.lang.String getZone() {
+  @java.lang.Deprecated public java.lang.String getZone() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -174,14 +184,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getZoneBytes() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
@@ -231,6 +242,50 @@ private static final long serialVersionUID = 0L;
     return getCluster();
   }
 
+  public static final int PARENT_FIELD_NUMBER = 5;
+  private volatile java.lang.Object parent_;
+  /**
+   * <pre>
+   * The parent (project and location) where the cluster will be created.
+   * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+   * </pre>
+   *
+   * <code>string parent = 5;</code>
+   */
+  public java.lang.String getParent() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      parent_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The parent (project and location) where the cluster will be created.
+   * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+   * </pre>
+   *
+   * <code>string parent = 5;</code>
+   */
+  public com.google.protobuf.ByteString
+      getParentBytes() {
+    java.lang.Object ref = parent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -254,6 +309,9 @@ private static final long serialVersionUID = 0L;
     if (cluster_ != null) {
       output.writeMessage(3, getCluster());
     }
+    if (!getParentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, parent_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -272,6 +330,9 @@ private static final long serialVersionUID = 0L;
     if (cluster_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getCluster());
+    }
+    if (!getParentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, parent_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -298,6 +359,8 @@ private static final long serialVersionUID = 0L;
       result = result && getCluster()
           .equals(other.getCluster());
     }
+    result = result && getParent()
+        .equals(other.getParent());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -317,6 +380,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CLUSTER_FIELD_NUMBER;
       hash = (53 * hash) + getCluster().hashCode();
     }
+    hash = (37 * hash) + PARENT_FIELD_NUMBER;
+    hash = (53 * hash) + getParent().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -464,6 +529,8 @@ private static final long serialVersionUID = 0L;
         cluster_ = null;
         clusterBuilder_ = null;
       }
+      parent_ = "";
+
       return this;
     }
 
@@ -497,6 +564,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.cluster_ = clusterBuilder_.build();
       }
+      result.parent_ = parent_;
       onBuilt();
       return result;
     }
@@ -556,6 +624,10 @@ private static final long serialVersionUID = 0L;
       if (other.hasCluster()) {
         mergeCluster(other.getCluster());
       }
+      if (!other.getParent().isEmpty()) {
+        parent_ = other.parent_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -588,13 +660,14 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object projectId_ = "";
     /**
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
+     * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
-    public java.lang.String getProjectId() {
+    @java.lang.Deprecated public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -608,13 +681,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
+     * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getProjectIdBytes() {
       java.lang.Object ref = projectId_;
       if (ref instanceof String) {
@@ -629,13 +703,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
+     * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
-    public Builder setProjectId(
+    @java.lang.Deprecated public Builder setProjectId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -647,13 +722,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
+     * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
-    public Builder clearProjectId() {
+    @java.lang.Deprecated public Builder clearProjectId() {
       
       projectId_ = getDefaultInstance().getProjectId();
       onChanged();
@@ -661,13 +737,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Google Developers Console [project ID or project
+     * Deprecated. The Google Developers Console [project ID or project
      * number](https://support.google.com/cloud/answer/6158840).
+     * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string project_id = 1;</code>
+     * <code>string project_id = 1 [deprecated = true];</code>
      */
-    public Builder setProjectIdBytes(
+    @java.lang.Deprecated public Builder setProjectIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -682,14 +759,15 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object zone_ = "";
     /**
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public java.lang.String getZone() {
+    @java.lang.Deprecated public java.lang.String getZone() {
       java.lang.Object ref = zone_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -703,14 +781,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getZoneBytes() {
       java.lang.Object ref = zone_;
       if (ref instanceof String) {
@@ -725,14 +804,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public Builder setZone(
+    @java.lang.Deprecated public Builder setZone(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -744,14 +824,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public Builder clearZone() {
+    @java.lang.Deprecated public Builder clearZone() {
       
       zone_ = getDefaultInstance().getZone();
       onChanged();
@@ -759,14 +840,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the Google Compute Engine
+     * Deprecated. The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field has been deprecated and replaced by the parent field.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public Builder setZoneBytes(
+    @java.lang.Deprecated public Builder setZoneBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -938,6 +1020,100 @@ private static final long serialVersionUID = 0L;
         cluster_ = null;
       }
       return clusterBuilder_;
+    }
+
+    private java.lang.Object parent_ = "";
+    /**
+     * <pre>
+     * The parent (project and location) where the cluster will be created.
+     * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+     * </pre>
+     *
+     * <code>string parent = 5;</code>
+     */
+    public java.lang.String getParent() {
+      java.lang.Object ref = parent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        parent_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The parent (project and location) where the cluster will be created.
+     * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+     * </pre>
+     *
+     * <code>string parent = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getParentBytes() {
+      java.lang.Object ref = parent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        parent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The parent (project and location) where the cluster will be created.
+     * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+     * </pre>
+     *
+     * <code>string parent = 5;</code>
+     */
+    public Builder setParent(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      parent_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The parent (project and location) where the cluster will be created.
+     * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+     * </pre>
+     *
+     * <code>string parent = 5;</code>
+     */
+    public Builder clearParent() {
+      
+      parent_ = getDefaultInstance().getParent();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The parent (project and location) where the cluster will be created.
+     * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+     * </pre>
+     *
+     * <code>string parent = 5;</code>
+     */
+    public Builder setParentBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      parent_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
