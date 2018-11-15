@@ -42,6 +42,7 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class ImageAnnotatorClientTest {
+  private static MockProductSearch mockProductSearch;
   private static MockImageAnnotator mockImageAnnotator;
   private static MockServiceHelper serviceHelper;
   private ImageAnnotatorClient client;
@@ -49,9 +50,11 @@ public class ImageAnnotatorClientTest {
 
   @BeforeClass
   public static void startStaticServer() {
+    mockProductSearch = new MockProductSearch();
     mockImageAnnotator = new MockImageAnnotator();
     serviceHelper =
-        new MockServiceHelper("in-process-1", Arrays.<MockGrpcService>asList(mockImageAnnotator));
+        new MockServiceHelper(
+            "in-process-1", Arrays.<MockGrpcService>asList(mockProductSearch, mockImageAnnotator));
     serviceHelper.start();
   }
 

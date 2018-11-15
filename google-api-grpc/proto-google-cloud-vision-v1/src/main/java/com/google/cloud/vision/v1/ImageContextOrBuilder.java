@@ -122,6 +122,31 @@ public interface ImageContextOrBuilder extends
 
   /**
    * <pre>
+   * Parameters for product search.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+   */
+  boolean hasProductSearchParams();
+  /**
+   * <pre>
+   * Parameters for product search.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+   */
+  com.google.cloud.vision.v1.ProductSearchParams getProductSearchParams();
+  /**
+   * <pre>
+   * Parameters for product search.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+   */
+  com.google.cloud.vision.v1.ProductSearchParamsOrBuilder getProductSearchParamsOrBuilder();
+
+  /**
+   * <pre>
    * Parameters for web detection.
    * </pre>
    *

@@ -175,6 +175,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 114: {
+            com.google.cloud.vision.v1.ProductSearchResults.Builder subBuilder = null;
+            if (productSearchResults_ != null) {
+              subBuilder = productSearchResults_.toBuilder();
+            }
+            productSearchResults_ = input.readMessage(com.google.cloud.vision.v1.ProductSearchResults.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(productSearchResults_);
+              productSearchResults_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           case 170: {
             com.google.cloud.vision.v1.ImageAnnotationContext.Builder subBuilder = null;
             if (context_ != null) {
@@ -757,6 +770,39 @@ private static final long serialVersionUID = 0L;
     return getWebDetection();
   }
 
+  public static final int PRODUCT_SEARCH_RESULTS_FIELD_NUMBER = 14;
+  private com.google.cloud.vision.v1.ProductSearchResults productSearchResults_;
+  /**
+   * <pre>
+   * If present, product search has completed successfully.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+   */
+  public boolean hasProductSearchResults() {
+    return productSearchResults_ != null;
+  }
+  /**
+   * <pre>
+   * If present, product search has completed successfully.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+   */
+  public com.google.cloud.vision.v1.ProductSearchResults getProductSearchResults() {
+    return productSearchResults_ == null ? com.google.cloud.vision.v1.ProductSearchResults.getDefaultInstance() : productSearchResults_;
+  }
+  /**
+   * <pre>
+   * If present, product search has completed successfully.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+   */
+  public com.google.cloud.vision.v1.ProductSearchResultsOrBuilder getProductSearchResultsOrBuilder() {
+    return getProductSearchResults();
+  }
+
   public static final int ERROR_FIELD_NUMBER = 9;
   private com.google.rpc.Status error_;
   /**
@@ -879,6 +925,9 @@ private static final long serialVersionUID = 0L;
     if (webDetection_ != null) {
       output.writeMessage(13, getWebDetection());
     }
+    if (productSearchResults_ != null) {
+      output.writeMessage(14, getProductSearchResults());
+    }
     if (context_ != null) {
       output.writeMessage(21, getContext());
     }
@@ -937,6 +986,10 @@ private static final long serialVersionUID = 0L;
     if (webDetection_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getWebDetection());
+    }
+    if (productSearchResults_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, getProductSearchResults());
     }
     if (context_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -998,6 +1051,11 @@ private static final long serialVersionUID = 0L;
     if (hasWebDetection()) {
       result = result && getWebDetection()
           .equals(other.getWebDetection());
+    }
+    result = result && (hasProductSearchResults() == other.hasProductSearchResults());
+    if (hasProductSearchResults()) {
+      result = result && getProductSearchResults()
+          .equals(other.getProductSearchResults());
     }
     result = result && (hasError() == other.hasError());
     if (hasError()) {
@@ -1063,6 +1121,10 @@ private static final long serialVersionUID = 0L;
     if (hasWebDetection()) {
       hash = (37 * hash) + WEB_DETECTION_FIELD_NUMBER;
       hash = (53 * hash) + getWebDetection().hashCode();
+    }
+    if (hasProductSearchResults()) {
+      hash = (37 * hash) + PRODUCT_SEARCH_RESULTS_FIELD_NUMBER;
+      hash = (53 * hash) + getProductSearchResults().hashCode();
     }
     if (hasError()) {
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
@@ -1281,6 +1343,12 @@ private static final long serialVersionUID = 0L;
         webDetection_ = null;
         webDetectionBuilder_ = null;
       }
+      if (productSearchResultsBuilder_ == null) {
+        productSearchResults_ = null;
+      } else {
+        productSearchResults_ = null;
+        productSearchResultsBuilder_ = null;
+      }
       if (errorBuilder_ == null) {
         error_ = null;
       } else {
@@ -1399,6 +1467,11 @@ private static final long serialVersionUID = 0L;
         result.webDetection_ = webDetection_;
       } else {
         result.webDetection_ = webDetectionBuilder_.build();
+      }
+      if (productSearchResultsBuilder_ == null) {
+        result.productSearchResults_ = productSearchResults_;
+      } else {
+        result.productSearchResults_ = productSearchResultsBuilder_.build();
       }
       if (errorBuilder_ == null) {
         result.error_ = error_;
@@ -1629,6 +1702,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasWebDetection()) {
         mergeWebDetection(other.getWebDetection());
+      }
+      if (other.hasProductSearchResults()) {
+        mergeProductSearchResults(other.getProductSearchResults());
       }
       if (other.hasError()) {
         mergeError(other.getError());
@@ -4346,6 +4422,159 @@ private static final long serialVersionUID = 0L;
         webDetection_ = null;
       }
       return webDetectionBuilder_;
+    }
+
+    private com.google.cloud.vision.v1.ProductSearchResults productSearchResults_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.vision.v1.ProductSearchResults, com.google.cloud.vision.v1.ProductSearchResults.Builder, com.google.cloud.vision.v1.ProductSearchResultsOrBuilder> productSearchResultsBuilder_;
+    /**
+     * <pre>
+     * If present, product search has completed successfully.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     */
+    public boolean hasProductSearchResults() {
+      return productSearchResultsBuilder_ != null || productSearchResults_ != null;
+    }
+    /**
+     * <pre>
+     * If present, product search has completed successfully.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     */
+    public com.google.cloud.vision.v1.ProductSearchResults getProductSearchResults() {
+      if (productSearchResultsBuilder_ == null) {
+        return productSearchResults_ == null ? com.google.cloud.vision.v1.ProductSearchResults.getDefaultInstance() : productSearchResults_;
+      } else {
+        return productSearchResultsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * If present, product search has completed successfully.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     */
+    public Builder setProductSearchResults(com.google.cloud.vision.v1.ProductSearchResults value) {
+      if (productSearchResultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        productSearchResults_ = value;
+        onChanged();
+      } else {
+        productSearchResultsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, product search has completed successfully.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     */
+    public Builder setProductSearchResults(
+        com.google.cloud.vision.v1.ProductSearchResults.Builder builderForValue) {
+      if (productSearchResultsBuilder_ == null) {
+        productSearchResults_ = builderForValue.build();
+        onChanged();
+      } else {
+        productSearchResultsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, product search has completed successfully.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     */
+    public Builder mergeProductSearchResults(com.google.cloud.vision.v1.ProductSearchResults value) {
+      if (productSearchResultsBuilder_ == null) {
+        if (productSearchResults_ != null) {
+          productSearchResults_ =
+            com.google.cloud.vision.v1.ProductSearchResults.newBuilder(productSearchResults_).mergeFrom(value).buildPartial();
+        } else {
+          productSearchResults_ = value;
+        }
+        onChanged();
+      } else {
+        productSearchResultsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, product search has completed successfully.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     */
+    public Builder clearProductSearchResults() {
+      if (productSearchResultsBuilder_ == null) {
+        productSearchResults_ = null;
+        onChanged();
+      } else {
+        productSearchResults_ = null;
+        productSearchResultsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * If present, product search has completed successfully.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     */
+    public com.google.cloud.vision.v1.ProductSearchResults.Builder getProductSearchResultsBuilder() {
+      
+      onChanged();
+      return getProductSearchResultsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * If present, product search has completed successfully.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     */
+    public com.google.cloud.vision.v1.ProductSearchResultsOrBuilder getProductSearchResultsOrBuilder() {
+      if (productSearchResultsBuilder_ != null) {
+        return productSearchResultsBuilder_.getMessageOrBuilder();
+      } else {
+        return productSearchResults_ == null ?
+            com.google.cloud.vision.v1.ProductSearchResults.getDefaultInstance() : productSearchResults_;
+      }
+    }
+    /**
+     * <pre>
+     * If present, product search has completed successfully.
+     * </pre>
+     *
+     * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.vision.v1.ProductSearchResults, com.google.cloud.vision.v1.ProductSearchResults.Builder, com.google.cloud.vision.v1.ProductSearchResultsOrBuilder> 
+        getProductSearchResultsFieldBuilder() {
+      if (productSearchResultsBuilder_ == null) {
+        productSearchResultsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vision.v1.ProductSearchResults, com.google.cloud.vision.v1.ProductSearchResults.Builder, com.google.cloud.vision.v1.ProductSearchResultsOrBuilder>(
+                getProductSearchResults(),
+                getParentForChildren(),
+                isClean());
+        productSearchResults_ = null;
+      }
+      return productSearchResultsBuilder_;
     }
 
     private com.google.rpc.Status error_ = null;

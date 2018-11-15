@@ -412,6 +412,31 @@ public interface AnnotateImageResponseOrBuilder extends
 
   /**
    * <pre>
+   * If present, product search has completed successfully.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+   */
+  boolean hasProductSearchResults();
+  /**
+   * <pre>
+   * If present, product search has completed successfully.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+   */
+  com.google.cloud.vision.v1.ProductSearchResults getProductSearchResults();
+  /**
+   * <pre>
+   * If present, product search has completed successfully.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchResults product_search_results = 14;</code>
+   */
+  com.google.cloud.vision.v1.ProductSearchResultsOrBuilder getProductSearchResultsOrBuilder();
+
+  /**
+   * <pre>
    * If set, represents the error message for the operation.
    * Note that filled-in image annotations are guaranteed to be
    * correct, even when `error` is set.

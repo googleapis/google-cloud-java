@@ -30,33 +30,29 @@ import com.google.api.gax.core.Distribution;
 import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.FixedExecutorProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
-import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.pubsub.v1.stub.GrpcSubscriberStub;
+import com.google.cloud.pubsub.v1.stub.SubscriberStub;
+import com.google.cloud.pubsub.v1.stub.SubscriberStubSettings;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.pubsub.v1.ProjectSubscriptionName;
-import com.google.pubsub.v1.SubscriberGrpc;
-import com.google.pubsub.v1.SubscriberGrpc.SubscriberStub;
-import io.grpc.CallCredentials;
-import io.grpc.Channel;
-import io.grpc.auth.MoreCallCredentials;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import com.google.api.gax.rpc.UnaryCallSettings;
 import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
+import com.google.api.core.ApiFunction;
 
 /**
  * A Cloud Pub/Sub <a href="https://cloud.google.com/pubsub/docs/subscriber">subscriber</a> that is
@@ -70,7 +66,8 @@ import org.threeten.bp.Duration;
  *
  * <p>The subscriber handles the ack management, by automatically extending the ack deadline while
  * the message is being processed, to then issue the ack or nack of such message when the processing
- * is done (see {@link Builder#setMaxAckExtensionPeriod(Duration)}). <strong>Note:</strong> message redelivery is still possible.
+ * is done (see {@link Builder#setMaxAckExtensionPeriod(Duration)}). <strong>Note:</strong> message
+ * redelivery is still possible.
  *
  * <p>It also provides customizable options that control:
  *
@@ -96,6 +93,7 @@ public class Subscriber extends AbstractApiService {
       20 * 1024 * 1024; // 20MB API maximum message size.
   @InternalApi static final int MAX_ACK_DEADLINE_SECONDS = 600;
   @InternalApi static final int MIN_ACK_DEADLINE_SECONDS = 10;
+  private static final Duration UNARY_TIMEOUT = Duration.ofSeconds(60);
 
   private static final ScheduledExecutorService SHARED_SYSTEM_EXECUTOR =
       InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(6).build().getExecutor();
@@ -110,11 +108,12 @@ public class Subscriber extends AbstractApiService {
   @Nullable private final ScheduledExecutorService alarmsExecutor;
   private final Distribution ackLatencyDistribution =
       new Distribution(MAX_ACK_DEADLINE_SECONDS + 1);
-  private final int numChannels;
+
+  private SubscriberStub subStub;
+  private final SubscriberStubSettings subStubSettings;
   private final FlowController flowController;
-  private final TransportChannelProvider channelProvider;
-  private final CredentialsProvider credentialsProvider;
-  private final List<Channel> channels;
+  private final int numPullers;
+
   private final MessageReceiver receiver;
   private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
   private final Deque<MessageDispatcher.OutstandingMessageBatch> outstandingMessageBatches =
@@ -167,27 +166,33 @@ public class Subscriber extends AbstractApiService {
           });
     }
 
+    this.numPullers = builder.parallelPullCount;
     TransportChannelProvider channelProvider = builder.channelProvider;
-    if (channelProvider.needsExecutor()) {
-      channelProvider = channelProvider.withExecutor(executor);
+    if (channelProvider.acceptsPoolSize()) {
+      channelProvider = channelProvider.withPoolSize(numPullers);
     }
-    if (channelProvider.needsHeaders()) {
-      Map<String, String> headers =
-          ImmutableMap.<String, String>builder()
-              .putAll(builder.headerProvider.getHeaders())
-              .putAll(builder.internalHeaderProvider.getHeaders())
-              .build();
-      channelProvider = channelProvider.withHeaders(headers);
-    }
-    if (channelProvider.needsEndpoint()) {
-      channelProvider = channelProvider.withEndpoint(SubscriptionAdminSettings.getDefaultEndpoint());
-    }
-    this.channelProvider = channelProvider;
-    credentialsProvider = builder.credentialsProvider;
 
-    numChannels = builder.parallelPullCount;
-    channels = new ArrayList<>(numChannels);
-    streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numChannels);
+    try {
+      this.subStubSettings =
+          SubscriberStubSettings.newBuilder()
+              .setExecutorProvider(FixedExecutorProvider.create(alarmsExecutor))
+              .setCredentialsProvider(builder.credentialsProvider)
+              .setTransportChannelProvider(channelProvider)
+              .setHeaderProvider(builder.headerProvider)
+              .applyToAllUnaryMethods(new ApiFunction<UnaryCallSettings.Builder<?,?>, Void>() {
+                @Override
+                public Void apply(UnaryCallSettings.Builder<?,?> settingsBuilder) {
+                  settingsBuilder.setSimpleTimeoutNoRetries(UNARY_TIMEOUT);
+                  return null;
+                }
+              })
+              .build();
+      // TODO(pongad): what about internal header??
+    } catch (Exception e) {
+      throw new IllegalStateException(e);
+    }
+
+    streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numPullers);
 
     // We regularly look up the distribution for a good subscription deadline.
     // So we seed the distribution with something reasonable to start with.
@@ -277,14 +282,7 @@ public class Subscriber extends AbstractApiService {
     logger.log(Level.FINE, "Starting subscriber group.");
 
     try {
-      for (int i = 0; i < numChannels; i++) {
-        GrpcTransportChannel transportChannel =
-            (GrpcTransportChannel) channelProvider.getTransportChannel();
-        channels.add(transportChannel.getChannel());
-        if (channelProvider.shouldAutoClose()) {
-          closeables.add(transportChannel);
-        }
-      }
+      this.subStub = GrpcSubscriberStub.create(subStubSettings);
     } catch (IOException e) {
       // doesn't matter what we throw, the Service will just catch it and fail to start.
       throw new IllegalStateException(e);
@@ -334,15 +332,7 @@ public class Subscriber extends AbstractApiService {
 
   private void startStreamingConnections() throws IOException {
     synchronized (streamingSubscriberConnections) {
-      Credentials credentials = credentialsProvider.getCredentials();
-      CallCredentials callCredentials =
-          credentials == null ? null : MoreCallCredentials.from(credentials);
-
-      for (Channel channel : channels) {
-        SubscriberStub stub = SubscriberGrpc.newStub(channel);
-        if (callCredentials != null) {
-          stub = stub.withCallCredentials(callCredentials);
-        }
+      for (int i = 0; i < numPullers; i++) {
         streamingSubscriberConnections.add(
             new StreamingSubscriberConnection(
                 subscriptionName,
@@ -350,7 +340,8 @@ public class Subscriber extends AbstractApiService {
                 ackExpirationPadding,
                 maxAckExtensionPeriod,
                 ackLatencyDistribution,
-                stub,
+                subStub,
+                i,
                 flowController,
                 outstandingMessageBatches,
                 executor,
@@ -425,8 +416,7 @@ public class Subscriber extends AbstractApiService {
     static final ExecutorProvider DEFAULT_EXECUTOR_PROVIDER =
         InstantiatingExecutorProvider.newBuilder()
             .setExecutorThreadCount(
-                THREADS_PER_CHANNEL
-                    * Runtime.getRuntime().availableProcessors())
+                THREADS_PER_CHANNEL * Runtime.getRuntime().availableProcessors())
             .build();
 
     String subscriptionName;
@@ -579,8 +569,8 @@ public class Subscriber extends AbstractApiService {
     }
 
     /**
-     * Gives the ability to set a custom executor for managing lease extensions. If none
-     * is provided a shared one will be used by all {@link Subscriber} instances.
+     * Gives the ability to set a custom executor for managing lease extensions. If none is provided
+     * a shared one will be used by all {@link Subscriber} instances.
      */
     public Builder setSystemExecutorProvider(ExecutorProvider executorProvider) {
       this.systemExecutorProvider = Preconditions.checkNotNull(executorProvider);

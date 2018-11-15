@@ -114,4 +114,53 @@ public interface BigQueryOptionsOrBuilder extends
    * <code>.google.privacy.dlp.v2.BigQueryOptions.SampleMethod sample_method = 4;</code>
    */
   com.google.privacy.dlp.v2.BigQueryOptions.SampleMethod getSampleMethod();
+
+  /**
+   * <pre>
+   * References to fields excluded from scanning. This allows you to skip
+   * inspection of entire columns which you know have no findings.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+   */
+  java.util.List<com.google.privacy.dlp.v2.FieldId> 
+      getExcludedFieldsList();
+  /**
+   * <pre>
+   * References to fields excluded from scanning. This allows you to skip
+   * inspection of entire columns which you know have no findings.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+   */
+  com.google.privacy.dlp.v2.FieldId getExcludedFields(int index);
+  /**
+   * <pre>
+   * References to fields excluded from scanning. This allows you to skip
+   * inspection of entire columns which you know have no findings.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+   */
+  int getExcludedFieldsCount();
+  /**
+   * <pre>
+   * References to fields excluded from scanning. This allows you to skip
+   * inspection of entire columns which you know have no findings.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+   */
+  java.util.List<? extends com.google.privacy.dlp.v2.FieldIdOrBuilder> 
+      getExcludedFieldsOrBuilderList();
+  /**
+   * <pre>
+   * References to fields excluded from scanning. This allows you to skip
+   * inspection of entire columns which you know have no findings.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.FieldId excluded_fields = 5;</code>
+   */
+  com.google.privacy.dlp.v2.FieldIdOrBuilder getExcludedFieldsOrBuilder(
+      int index);
 }
