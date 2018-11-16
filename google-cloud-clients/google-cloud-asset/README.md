@@ -95,6 +95,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
-[cloud-asset]: https://cloud.google.com/
-[asset-product-docs]: https://cloud.google.com/
+[cloud-asset]: https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview
+[asset-product-docs]: https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview
 [asset-lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/asset/v1beta1/package-summary.html
