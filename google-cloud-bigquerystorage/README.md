@@ -20,16 +20,16 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerystorage</artifactId>
-  <version>0.69.0-alpha</version>
+  <version>0.71.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigquerystorage:0.69.0-alpha'
+compile 'com.google.cloud:google-cloud-bigquerystorage:0.71.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquerystorage" % "0.69.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquerystorage" % "0.71.0-beta"
 ```
 [//]: # ({x-version-update-end})
 
