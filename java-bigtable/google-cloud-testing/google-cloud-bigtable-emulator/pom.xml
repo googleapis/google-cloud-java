@@ -5,19 +5,19 @@
   <parent>
     <artifactId>google-cloud-testing</artifactId>
     <groupId>com.google.cloud</groupId>
-    <version>0.71.0-alpha</version><!-- {x-version-update:google-cloud-testing:current} -->
+    <version>0.71.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>google-cloud-bigtable-emulator</artifactId>
-  <version>0.71.0-alpha</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
+  <version>0.71.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
 
   <build>
     <plugins>
       <plugin>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gcloud-maven-plugin</artifactId>
-        <version>0.71.0-alpha</version><!-- {x-version-update:google-cloud-gcloud-maven-plugin:current} -->
+        <version>0.71.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-gcloud-maven-plugin:current} -->
 
         <executions>
           <execution>
