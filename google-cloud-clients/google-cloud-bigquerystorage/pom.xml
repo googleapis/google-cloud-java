@@ -37,26 +37,17 @@
         <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>gax-grpc</artifactId>
-            <version>1.34.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>gax-grpc</artifactId>
-            <version>1.34.0</version>
             <classifier>testlib</classifier>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>gax</artifactId>
-            <version>0.4.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.api</groupId>
-            <artifactId>gax</artifactId>
-            <version>1.34.0</version>
             <scope>test</scope>
         </dependency>
 
@@ -69,12 +60,10 @@
         <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>gax</artifactId>
-            <version>1.34.0</version>
         </dependency>
         <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>gax-grpc</artifactId>
-            <version>1.34.0</version>
         </dependency>
     </dependencies>
 </project>
