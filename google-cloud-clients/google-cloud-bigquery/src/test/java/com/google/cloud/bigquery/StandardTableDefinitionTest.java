@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.services.bigquery.model.Streamingbuffer;
 import com.google.cloud.bigquery.StandardTableDefinition.StreamingBuffer;
 
 import com.google.common.collect.ImmutableList;
@@ -115,6 +116,12 @@ public class StandardTableDefinitionTest {
     assertTrue(TableDefinition.fromPb(definition.toPb()) instanceof StandardTableDefinition);
     compareStandardTableDefinition(definition,
         TableDefinition.<StandardTableDefinition>fromPb(definition.toPb()));
+  }
+
+  @Test
+  public void testFromPbWithNullEstimatedRowsAndBytes() {
+    StandardTableDefinition.fromPb(
+        TABLE_DEFINITION.toPb().setStreamingBuffer( new Streamingbuffer()));
   }
 
   private void compareStandardTableDefinition(StandardTableDefinition expected,
