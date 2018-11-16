@@ -8,6 +8,8 @@ com.google.cloud.bigquery.datatransfer.v1
 com.google.cloud.bigquery.datatransfer.v1.stub
 com.google.cloud.bigquery.spi
 com.google.cloud.bigquery.spi.v2
+com.google.cloud.bigquery.storage.v1beta1
+com.google.cloud.bigquery.storage.v1beta1.stub
 com.google.cloud.bigquery.testing
 com.google.cloud.bigtable
 com.google.cloud.bigtable.admin.v2
@@ -92,6 +94,8 @@ com.google.cloud.resourcemanager.spi.v1beta1
 com.google.cloud.resourcemanager.testing
 com.google.cloud.scheduler.v1beta1
 com.google.cloud.scheduler.v1beta1.stub
+com.google.cloud.securitycenter.v1beta1
+com.google.cloud.securitycenter.v1beta1.stub
 com.google.cloud.spanner
 com.google.cloud.spanner.admin.database.v1
 com.google.cloud.spanner.admin.database.v1.stub

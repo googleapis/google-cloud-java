@@ -3,6 +3,7 @@ com.google.bigtable.v2
 com.google.cloud.asset.v1beta1
 com.google.cloud.automl.v1beta1
 com.google.cloud.bigquery.datatransfer.v1
+com.google.cloud.bigquery.storage.v1beta1
 com.google.cloud.dataproc.v1
 com.google.cloud.dataproc.v1beta2
 com.google.cloud.dialogflow.v2
@@ -16,6 +17,7 @@ com.google.cloud.oslogin.v1
 com.google.cloud.redis.v1
 com.google.cloud.redis.v1beta1
 com.google.cloud.scheduler.v1beta1
+com.google.cloud.securitycenter.v1beta1
 com.google.cloud.speech.v1
 com.google.cloud.speech.v1beta1
 com.google.cloud.speech.v1p1beta1
