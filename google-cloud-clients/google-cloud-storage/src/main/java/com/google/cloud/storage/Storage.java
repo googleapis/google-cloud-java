@@ -892,7 +892,7 @@ public interface Storage extends Service<StorageOptions> {
     private final Object value;
 
     enum Option {
-      HTTP_METHOD, CONTENT_TYPE, MD5, EXT_HEADERS, SERVICE_ACCOUNT_CRED,SERVICE_ENDPOINT
+      HTTP_METHOD, CONTENT_TYPE, MD5, EXT_HEADERS, SERVICE_ACCOUNT_CRED, HOST_NAME
     }
 
     private SignUrlOption(Option option, Object value) {
@@ -955,10 +955,10 @@ public interface Storage extends Service<StorageOptions> {
     }
     
     /**
-    * Provides a host name to sign the URL. If not provided than host name will be default 
+    * Provides a host name to sign the URL. If not provided than default host name will be used. 
     */ 
     public static SignUrlOption withHostName(String hostName){
-      return new SignUrlOption(Option.SERVICE_ENDPOINT, hostName);	
+      return new SignUrlOption(Option.HOST_NAME, hostName);	
     }
   }
 
@@ -2114,7 +2114,7 @@ public interface Storage extends Service<StorageOptions> {
    *     granularity supported is 1 second, finer granularities will be truncated
    * @param unit time unit of the {@code duration} parameter
    * @param options optional URL signing options
-   *        {@code SignUrlOption.withExtHostName()} option is used for external host name of signed url
+   *     {@code SignUrlOption.withHostName()} option to sign url with custom hostname.
    * @throws IllegalStateException if {@link SignUrlOption#signWith(ServiceAccountSigner)} was not
    *     used and no implementation of {@link ServiceAccountSigner} was provided to
    *     {@link StorageOptions}

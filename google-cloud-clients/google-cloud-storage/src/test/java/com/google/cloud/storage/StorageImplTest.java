@@ -26,6 +26,37 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.api.core.ApiClock;
+import com.google.api.gax.paging.Page;
+import com.google.api.services.storage.model.Policy.Bindings;
+import com.google.api.services.storage.model.StorageObject;
+import com.google.api.services.storage.model.TestIamPermissionsResponse;
+import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.google.cloud.Identity;
+import com.google.cloud.Policy;
+import com.google.cloud.ReadChannel;
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.Tuple;
+import com.google.cloud.WriteChannel;
+import com.google.cloud.storage.Acl.Project;
+import com.google.cloud.storage.Acl.Project.ProjectRole;
+import com.google.cloud.storage.Acl.Role;
+import com.google.cloud.storage.Acl.User;
+import com.google.cloud.storage.Storage.BlobSourceOption;
+import com.google.cloud.storage.Storage.BlobTargetOption;
+import com.google.cloud.storage.Storage.BlobWriteOption;
+import com.google.cloud.storage.Storage.BucketSourceOption;
+import com.google.cloud.storage.Storage.CopyRequest;
+import com.google.cloud.storage.spi.StorageRpcFactory;
+import com.google.cloud.storage.spi.v1.RpcBatch;
+import com.google.cloud.storage.spi.v1.StorageRpc;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Iterables;
+import com.google.common.io.BaseEncoding;
+import com.google.common.net.UrlEscapers;
+
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -59,37 +90,6 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
-import com.google.api.client.googleapis.json.GoogleJsonError;
-import com.google.api.core.ApiClock;
-import com.google.api.gax.paging.Page;
-import com.google.api.services.storage.model.Policy.Bindings;
-import com.google.api.services.storage.model.StorageObject;
-import com.google.api.services.storage.model.TestIamPermissionsResponse;
-import com.google.auth.oauth2.ServiceAccountCredentials;
-import com.google.cloud.Identity;
-import com.google.cloud.Policy;
-import com.google.cloud.ReadChannel;
-import com.google.cloud.ServiceOptions;
-import com.google.cloud.Tuple;
-import com.google.cloud.WriteChannel;
-import com.google.cloud.storage.Acl.Project;
-import com.google.cloud.storage.Acl.Project.ProjectRole;
-import com.google.cloud.storage.Acl.Role;
-import com.google.cloud.storage.Acl.User;
-import com.google.cloud.storage.Storage.BlobSourceOption;
-import com.google.cloud.storage.Storage.BlobTargetOption;
-import com.google.cloud.storage.Storage.BlobWriteOption;
-import com.google.cloud.storage.Storage.BucketSourceOption;
-import com.google.cloud.storage.Storage.CopyRequest;
-import com.google.cloud.storage.spi.StorageRpcFactory;
-import com.google.cloud.storage.spi.v1.RpcBatch;
-import com.google.cloud.storage.spi.v1.StorageRpc;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Iterables;
-import com.google.common.io.BaseEncoding;
-import com.google.common.net.UrlEscapers;
 
 public class StorageImplTest {
 
@@ -1638,7 +1638,7 @@ public class StorageImplTest {
   }
   
   @Test
-  public void testSignUrlWithCustomUrl()
+  public void testSignUrlWithHostName()
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
@@ -1721,7 +1721,7 @@ public class StorageImplTest {
   }
   
   @Test
-  public void testSignUrlLeadingSlashWithCustomUrl()
+  public void testSignUrlLeadingSlashWithHostName()
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
     String blobName = "/b1";
@@ -1815,7 +1815,7 @@ public class StorageImplTest {
   }
   
   @Test
-  public void testSignUrlWithOptionsAndCustomUrl()
+  public void testSignUrlWithOptionsAndHostName()
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
@@ -1920,7 +1920,7 @@ public class StorageImplTest {
   }
   
   @Test
-  public void testSignUrlForBlobWithSpecialCharsAndCustomUrl()
+  public void testSignUrlForBlobWithSpecialCharsAndHostName()
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
     // List of chars under test were taken from
@@ -2029,7 +2029,7 @@ public class StorageImplTest {
   }
   
   @Test
-  public void testSignUrlWithExtHeadersAndCustomUrl()
+  public void testSignUrlWithExtHeadersAndHostName()
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
@@ -2130,7 +2130,7 @@ public class StorageImplTest {
   }
   
   @Test
-  public void testSignUrlForBlobWithSlashesAndCustomUrl()
+  public void testSignUrlForBlobWithSlashesAndHostName()
       throws NoSuchAlgorithmException, InvalidKeyException, SignatureException,
           UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);

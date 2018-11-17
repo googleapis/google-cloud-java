@@ -84,7 +84,10 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   private static final String EMPTY_BYTE_ARRAY_MD5 = "1B2M2Y8AsgTpgAmY7PhCfg==";
   private static final String EMPTY_BYTE_ARRAY_CRC32C = "AAAAAA==";
   private static final String PATH_DELIMITER = "/";
-  private static final String DEFAULT_STORAGE_HOST = "https://storage.googleapis.com";
+  /**
+   * SignedUrls uses GCS XML API endpoint.
+   */
+  private static final String STORAGE_XML_HOST_NAME = "https://storage.googleapis.com";
 
   private static final Function<Tuple<Storage, Boolean>, Boolean> DELETE_FUNCTION =
       new Function<Tuple<Storage, Boolean>, Boolean>() {
@@ -537,11 +540,11 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       byte[] signatureBytes =
           credentials.sign(signatureInfo.constructUnsignedPayload().getBytes(UTF_8));
       StringBuilder stBuilder = new StringBuilder();
-      if (optionMap.get(SignUrlOption.Option.SERVICE_ENDPOINT) == null){
-    	stBuilder.append(DEFAULT_STORAGE_HOST).append(path);
+      if (optionMap.get(SignUrlOption.Option.HOST_NAME) == null) {
+    	stBuilder.append(STORAGE_XML_HOST_NAME).append(path);
       }
       else {
-    	stBuilder.append(optionMap.get(SignUrlOption.Option.SERVICE_ENDPOINT)).append(path);
+    	stBuilder.append(optionMap.get(SignUrlOption.Option.HOST_NAME)).append(path);
       }
     		  
       String signature =
