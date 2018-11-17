@@ -25,14 +25,21 @@ import com.google.cloud.videointelligence.v1.ExplicitContentFrame;
 import com.google.cloud.videointelligence.v1.Feature;
 import com.google.cloud.videointelligence.v1.LabelAnnotation;
 import com.google.cloud.videointelligence.v1.LabelSegment;
+import com.google.cloud.videointelligence.v1.SpeechRecognitionAlternative;
+import com.google.cloud.videointelligence.v1.SpeechTranscription;
+import com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig;
 import com.google.cloud.videointelligence.v1.VideoAnnotationResults;
+import com.google.cloud.videointelligence.v1.VideoContext;
 import com.google.cloud.videointelligence.v1.VideoIntelligenceServiceClient;
 import com.google.cloud.videointelligence.v1.VideoSegment;
+import com.google.cloud.videointelligence.v1.WordInfo;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.concurrent.TimeUnit;
+
 import org.apache.commons.codec.binary.Base64;
 
 
@@ -82,6 +89,9 @@ public class Detect {
     }
     if (command.equals("explicit-content")) {
       analyzeExplicitContent(path);
+    }
+    if (command.equals("speech-transcription")) {
+      speechTranscription(path);
     }
   }
 
@@ -321,5 +331,70 @@ public class Detect {
       }
       // [END video_analyze_explicit_content]
     }
+  }
+
+  /**
+   * Transcribe speech from a video stored on GCS.
+   *
+   * @param gcsUri the path to the video file to analyze.
+   */
+  public static void speechTranscription(String gcsUri) throws Exception {
+    // [START video_speech_transcription_gcs]
+    // Instantiate a com.google.cloud.videointelligence.v1.VideoIntelligenceServiceClient
+    try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
+      // Set the language code
+      SpeechTranscriptionConfig config = SpeechTranscriptionConfig.newBuilder()
+              .setLanguageCode("en-US")
+              .setEnableAutomaticPunctuation(true)
+              .build();
+
+      // Set the video context with the above configuration
+      VideoContext context = VideoContext.newBuilder()
+              .setSpeechTranscriptionConfig(config)
+              .build();
+
+      // Create the request
+      AnnotateVideoRequest request = AnnotateVideoRequest.newBuilder()
+              .setInputUri(gcsUri)
+              .addFeatures(Feature.SPEECH_TRANSCRIPTION)
+              .setVideoContext(context)
+              .build();
+
+      // asynchronously perform speech transcription on videos
+      OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> response =
+              client.annotateVideoAsync(request);
+
+      System.out.println("Waiting for operation to complete...");
+      // Display the results
+      for (VideoAnnotationResults results : response.get(600, TimeUnit.SECONDS)
+              .getAnnotationResultsList()) {
+        for (SpeechTranscription speechTranscription : results.getSpeechTranscriptionsList()) {
+          try {
+            // Print the transcription
+            if (speechTranscription.getAlternativesCount() > 0) {
+              SpeechRecognitionAlternative alternative = speechTranscription.getAlternatives(0);
+
+              System.out.printf("Transcript: %s\n", alternative.getTranscript());
+              System.out.printf("Confidence: %.2f\n", alternative.getConfidence());
+
+              System.out.println("Word level information:");
+              for (WordInfo wordInfo : alternative.getWordsList()) {
+                double startTime = wordInfo.getStartTime().getSeconds()
+                        + wordInfo.getStartTime().getNanos() / 1e9;
+                double endTime = wordInfo.getEndTime().getSeconds()
+                        + wordInfo.getEndTime().getNanos() / 1e9;
+                System.out.printf("\t%4.2fs - %4.2fs: %s\n",
+                        startTime, endTime, wordInfo.getWord());
+              }
+            } else {
+              System.out.println("No transcription found");
+            }
+          } catch (IndexOutOfBoundsException ioe) {
+            System.out.println("Could not retrieve frame: " + ioe.getMessage());
+          }
+        }
+      }
+    }
+    // [END video_speech_transcription_gcs]
   }
 }

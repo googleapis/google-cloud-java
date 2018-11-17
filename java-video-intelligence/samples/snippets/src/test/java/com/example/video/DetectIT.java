@@ -37,6 +37,8 @@ public class DetectIT {
   static final String LABEL_FILE_LOCATION = "./resources/cat.mp4";
   static final String SHOTS_FILE_LOCATION = "gs://demomaker/gbikes_dinosaur.mp4";
   static final String EXPLICIT_CONTENT_LOCATION =  "gs://demomaker/cat.mp4";
+  static final String SPEECH_GCS_LOCATION =
+          "gs://java-docs-samples-testing/video/googlework_short.mp4";
 
   @Before
   public void setUp() {
@@ -83,5 +85,14 @@ public class DetectIT {
     String got = bout.toString();
     assertThat(got).contains("Shots:");
     assertThat(got).contains("Location: 0");
+  }
+
+  @Test
+  public void testSpeechTranscription() throws Exception {
+    String[] args = {"speech-transcription", SPEECH_GCS_LOCATION};
+    Detect.argsHelper(args);
+    String got = bout.toString();
+
+    assertThat(got).contains("cultural");
   }
 }
