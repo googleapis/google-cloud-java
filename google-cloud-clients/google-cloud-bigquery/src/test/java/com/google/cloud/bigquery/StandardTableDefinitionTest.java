@@ -121,7 +121,7 @@ public class StandardTableDefinitionTest {
   @Test
   public void testFromPbWithNullEstimatedRowsAndBytes() {
     StandardTableDefinition.fromPb(
-        TABLE_DEFINITION.toPb().setStreamingBuffer( new Streamingbuffer()));
+        TABLE_DEFINITION.toPb().setStreamingBuffer(new Streamingbuffer()));
   }
 
   private void compareStandardTableDefinition(StandardTableDefinition expected,

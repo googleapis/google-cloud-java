@@ -115,9 +115,11 @@ public abstract class StandardTableDefinition extends TableDefinition {
       }
       return new StreamingBuffer(
           streamingBufferPb.getEstimatedRows() != null
-            ? streamingBufferPb.getEstimatedRows().longValue() : null,
+              ? streamingBufferPb.getEstimatedRows().longValue()
+              : null,
           streamingBufferPb.getEstimatedBytes() != null
-            ? streamingBufferPb.getEstimatedBytes().longValue() : null,
+              ? streamingBufferPb.getEstimatedBytes().longValue()
+              : null,
           oldestEntryTime);
     }
   }
