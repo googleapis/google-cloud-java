@@ -541,10 +541,10 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
           credentials.sign(signatureInfo.constructUnsignedPayload().getBytes(UTF_8));
       StringBuilder stBuilder = new StringBuilder();
       if (optionMap.get(SignUrlOption.Option.HOST_NAME) == null) {
-    	stBuilder.append(STORAGE_XML_HOST_NAME).append(path);
+        stBuilder.append(STORAGE_XML_HOST_NAME).append(path);
       }
       else {
-    	stBuilder.append(optionMap.get(SignUrlOption.Option.HOST_NAME)).append(path);
+        stBuilder.append(optionMap.get(SignUrlOption.Option.HOST_NAME)).append(path);
       }
     		  
       String signature =
