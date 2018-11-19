@@ -90,7 +90,7 @@ class UserDataConverter {
    * @param path path THe field path of the object to encode.
    * @param sanitizedObject An Object that has been sanitized by CustomClassMapper and only contains
    *     valid types.
-   * @param options Encoding opions to use for this value.
+   * @param options Encoding options to use for this value.
    * @return The Value proto.
    */
   @Nullable
