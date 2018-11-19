@@ -145,8 +145,18 @@ public interface NodeConfigOrBuilder extends
    * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
-   * metadata keys for the project or be one of the four reserved keys:
-   * "instance-template", "kube-env", "startup-script", and "user-data"
+   * metadata keys for the project or be one of the reserved keys:
+   *  "cluster-location"
+   *  "cluster-name"
+   *  "cluster-uid"
+   *  "configure-sh"
+   *  "enable-os-login"
+   *  "gci-update-strategy"
+   *  "gci-ensure-gke-docker"
+   *  "instance-template"
+   *  "kube-env"
+   *  "startup-script"
+   *  "user-data"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -162,8 +172,18 @@ public interface NodeConfigOrBuilder extends
    * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
-   * metadata keys for the project or be one of the four reserved keys:
-   * "instance-template", "kube-env", "startup-script", and "user-data"
+   * metadata keys for the project or be one of the reserved keys:
+   *  "cluster-location"
+   *  "cluster-name"
+   *  "cluster-uid"
+   *  "configure-sh"
+   *  "enable-os-login"
+   *  "gci-update-strategy"
+   *  "gci-ensure-gke-docker"
+   *  "instance-template"
+   *  "kube-env"
+   *  "startup-script"
+   *  "user-data"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -186,8 +206,18 @@ public interface NodeConfigOrBuilder extends
    * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
-   * metadata keys for the project or be one of the four reserved keys:
-   * "instance-template", "kube-env", "startup-script", and "user-data"
+   * metadata keys for the project or be one of the reserved keys:
+   *  "cluster-location"
+   *  "cluster-name"
+   *  "cluster-uid"
+   *  "configure-sh"
+   *  "enable-os-login"
+   *  "gci-update-strategy"
+   *  "gci-ensure-gke-docker"
+   *  "instance-template"
+   *  "kube-env"
+   *  "startup-script"
+   *  "user-data"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -204,8 +234,18 @@ public interface NodeConfigOrBuilder extends
    * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
-   * metadata keys for the project or be one of the four reserved keys:
-   * "instance-template", "kube-env", "startup-script", and "user-data"
+   * metadata keys for the project or be one of the reserved keys:
+   *  "cluster-location"
+   *  "cluster-name"
+   *  "cluster-uid"
+   *  "configure-sh"
+   *  "enable-os-login"
+   *  "gci-update-strategy"
+   *  "gci-ensure-gke-docker"
+   *  "instance-template"
+   *  "kube-env"
+   *  "startup-script"
+   *  "user-data"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -224,8 +264,18 @@ public interface NodeConfigOrBuilder extends
    * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
-   * metadata keys for the project or be one of the four reserved keys:
-   * "instance-template", "kube-env", "startup-script", and "user-data"
+   * metadata keys for the project or be one of the reserved keys:
+   *  "cluster-location"
+   *  "cluster-name"
+   *  "cluster-uid"
+   *  "configure-sh"
+   *  "enable-os-login"
+   *  "gci-update-strategy"
+   *  "gci-ensure-gke-docker"
+   *  "instance-template"
+   *  "kube-env"
+   *  "startup-script"
+   *  "user-data"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -474,12 +524,33 @@ public interface NodeConfigOrBuilder extends
 
   /**
    * <pre>
+   * Type of the disk attached to each node (e.g. 'pd-standard' or 'pd-ssd')
+   * If unspecified, the default disk type is 'pd-standard'
+   * </pre>
+   *
+   * <code>string disk_type = 12;</code>
+   */
+  java.lang.String getDiskType();
+  /**
+   * <pre>
+   * Type of the disk attached to each node (e.g. 'pd-standard' or 'pd-ssd')
+   * If unspecified, the default disk type is 'pd-standard'
+   * </pre>
+   *
+   * <code>string disk_type = 12;</code>
+   */
+  com.google.protobuf.ByteString
+      getDiskTypeBytes();
+
+  /**
+   * <pre>
    * Minimum CPU platform to be used by this instance. The instance may be
    * scheduled on the specified or newer CPU platform. Applicable values are the
    * friendly names of CPU platforms, such as
    * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Haswell&amp;quot;&lt;/code&gt; or
    * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Sandy Bridge&amp;quot;&lt;/code&gt;. For more
-   * information, read [how to specify min CPU platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+   * information, read [how to specify min CPU
+   * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
    * </pre>
    *
    * <code>string min_cpu_platform = 13;</code>
@@ -492,7 +563,8 @@ public interface NodeConfigOrBuilder extends
    * friendly names of CPU platforms, such as
    * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Haswell&amp;quot;&lt;/code&gt; or
    * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Sandy Bridge&amp;quot;&lt;/code&gt;. For more
-   * information, read [how to specify min CPU platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+   * information, read [how to specify min CPU
+   * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
    * </pre>
    *
    * <code>string min_cpu_platform = 13;</code>

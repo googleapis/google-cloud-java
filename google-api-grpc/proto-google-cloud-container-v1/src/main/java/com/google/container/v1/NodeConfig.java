@@ -29,6 +29,7 @@ private static final long serialVersionUID = 0L;
     tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     preemptible_ = false;
     accelerators_ = java.util.Collections.emptyList();
+    diskType_ = "";
     minCpuPlatform_ = "";
   }
 
@@ -140,6 +141,12 @@ private static final long serialVersionUID = 0L;
             }
             accelerators_.add(
                 input.readMessage(com.google.container.v1.AcceleratorConfig.parser(), extensionRegistry));
+            break;
+          }
+          case 98: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            diskType_ = s;
             break;
           }
           case 106: {
@@ -430,8 +437,18 @@ private static final long serialVersionUID = 0L;
    * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
-   * metadata keys for the project or be one of the four reserved keys:
-   * "instance-template", "kube-env", "startup-script", and "user-data"
+   * metadata keys for the project or be one of the reserved keys:
+   *  "cluster-location"
+   *  "cluster-name"
+   *  "cluster-uid"
+   *  "configure-sh"
+   *  "enable-os-login"
+   *  "gci-update-strategy"
+   *  "gci-ensure-gke-docker"
+   *  "instance-template"
+   *  "kube-env"
+   *  "startup-script"
+   *  "user-data"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -459,8 +476,18 @@ private static final long serialVersionUID = 0L;
    * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
-   * metadata keys for the project or be one of the four reserved keys:
-   * "instance-template", "kube-env", "startup-script", and "user-data"
+   * metadata keys for the project or be one of the reserved keys:
+   *  "cluster-location"
+   *  "cluster-name"
+   *  "cluster-uid"
+   *  "configure-sh"
+   *  "enable-os-login"
+   *  "gci-update-strategy"
+   *  "gci-ensure-gke-docker"
+   *  "instance-template"
+   *  "kube-env"
+   *  "startup-script"
+   *  "user-data"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -479,8 +506,18 @@ private static final long serialVersionUID = 0L;
    * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
-   * metadata keys for the project or be one of the four reserved keys:
-   * "instance-template", "kube-env", "startup-script", and "user-data"
+   * metadata keys for the project or be one of the reserved keys:
+   *  "cluster-location"
+   *  "cluster-name"
+   *  "cluster-uid"
+   *  "configure-sh"
+   *  "enable-os-login"
+   *  "gci-update-strategy"
+   *  "gci-ensure-gke-docker"
+   *  "instance-template"
+   *  "kube-env"
+   *  "startup-script"
+   *  "user-data"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -504,8 +541,18 @@ private static final long serialVersionUID = 0L;
    * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
    * in length. These are reflected as part of a URL in the metadata server.
    * Additionally, to avoid ambiguity, keys must not conflict with any other
-   * metadata keys for the project or be one of the four reserved keys:
-   * "instance-template", "kube-env", "startup-script", and "user-data"
+   * metadata keys for the project or be one of the reserved keys:
+   *  "cluster-location"
+   *  "cluster-name"
+   *  "cluster-uid"
+   *  "configure-sh"
+   *  "enable-os-login"
+   *  "gci-update-strategy"
+   *  "gci-ensure-gke-docker"
+   *  "instance-template"
+   *  "kube-env"
+   *  "startup-script"
+   *  "user-data"
    * Values are free-form strings, and only have meaning as interpreted by
    * the image running in the instance. The only restriction placed on them is
    * that each value's size must be less than or equal to 32 KB.
@@ -844,6 +891,50 @@ private static final long serialVersionUID = 0L;
     return accelerators_.get(index);
   }
 
+  public static final int DISK_TYPE_FIELD_NUMBER = 12;
+  private volatile java.lang.Object diskType_;
+  /**
+   * <pre>
+   * Type of the disk attached to each node (e.g. 'pd-standard' or 'pd-ssd')
+   * If unspecified, the default disk type is 'pd-standard'
+   * </pre>
+   *
+   * <code>string disk_type = 12;</code>
+   */
+  public java.lang.String getDiskType() {
+    java.lang.Object ref = diskType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      diskType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Type of the disk attached to each node (e.g. 'pd-standard' or 'pd-ssd')
+   * If unspecified, the default disk type is 'pd-standard'
+   * </pre>
+   *
+   * <code>string disk_type = 12;</code>
+   */
+  public com.google.protobuf.ByteString
+      getDiskTypeBytes() {
+    java.lang.Object ref = diskType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      diskType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int MIN_CPU_PLATFORM_FIELD_NUMBER = 13;
   private volatile java.lang.Object minCpuPlatform_;
   /**
@@ -853,7 +944,8 @@ private static final long serialVersionUID = 0L;
    * friendly names of CPU platforms, such as
    * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Haswell&amp;quot;&lt;/code&gt; or
    * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Sandy Bridge&amp;quot;&lt;/code&gt;. For more
-   * information, read [how to specify min CPU platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+   * information, read [how to specify min CPU
+   * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
    * </pre>
    *
    * <code>string min_cpu_platform = 13;</code>
@@ -877,7 +969,8 @@ private static final long serialVersionUID = 0L;
    * friendly names of CPU platforms, such as
    * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Haswell&amp;quot;&lt;/code&gt; or
    * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Sandy Bridge&amp;quot;&lt;/code&gt;. For more
-   * information, read [how to specify min CPU platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+   * information, read [how to specify min CPU
+   * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
    * </pre>
    *
    * <code>string min_cpu_platform = 13;</code>
@@ -948,6 +1041,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < accelerators_.size(); i++) {
       output.writeMessage(11, accelerators_.get(i));
+    }
+    if (!getDiskTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, diskType_);
     }
     if (!getMinCpuPlatformBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, minCpuPlatform_);
@@ -1022,6 +1118,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, accelerators_.get(i));
     }
+    if (!getDiskTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, diskType_);
+    }
     if (!getMinCpuPlatformBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, minCpuPlatform_);
     }
@@ -1063,6 +1162,8 @@ private static final long serialVersionUID = 0L;
         == other.getPreemptible());
     result = result && getAcceleratorsList()
         .equals(other.getAcceleratorsList());
+    result = result && getDiskType()
+        .equals(other.getDiskType());
     result = result && getMinCpuPlatform()
         .equals(other.getMinCpuPlatform());
     result = result && unknownFields.equals(other.unknownFields);
@@ -1109,6 +1210,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ACCELERATORS_FIELD_NUMBER;
       hash = (53 * hash) + getAcceleratorsList().hashCode();
     }
+    hash = (37 * hash) + DISK_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getDiskType().hashCode();
     hash = (37 * hash) + MIN_CPU_PLATFORM_FIELD_NUMBER;
     hash = (53 * hash) + getMinCpuPlatform().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -1299,6 +1402,8 @@ private static final long serialVersionUID = 0L;
       } else {
         acceleratorsBuilder_.clear();
       }
+      diskType_ = "";
+
       minCpuPlatform_ = "";
 
       return this;
@@ -1358,6 +1463,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.accelerators_ = acceleratorsBuilder_.build();
       }
+      result.diskType_ = diskType_;
       result.minCpuPlatform_ = minCpuPlatform_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1478,6 +1584,10 @@ private static final long serialVersionUID = 0L;
             acceleratorsBuilder_.addAllMessages(other.accelerators_);
           }
         }
+      }
+      if (!other.getDiskType().isEmpty()) {
+        diskType_ = other.diskType_;
+        onChanged();
       }
       if (!other.getMinCpuPlatform().isEmpty()) {
         minCpuPlatform_ = other.minCpuPlatform_;
@@ -2012,8 +2122,18 @@ private static final long serialVersionUID = 0L;
      * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
-     * metadata keys for the project or be one of the four reserved keys:
-     * "instance-template", "kube-env", "startup-script", and "user-data"
+     * metadata keys for the project or be one of the reserved keys:
+     *  "cluster-location"
+     *  "cluster-name"
+     *  "cluster-uid"
+     *  "configure-sh"
+     *  "enable-os-login"
+     *  "gci-update-strategy"
+     *  "gci-ensure-gke-docker"
+     *  "instance-template"
+     *  "kube-env"
+     *  "startup-script"
+     *  "user-data"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -2041,8 +2161,18 @@ private static final long serialVersionUID = 0L;
      * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
-     * metadata keys for the project or be one of the four reserved keys:
-     * "instance-template", "kube-env", "startup-script", and "user-data"
+     * metadata keys for the project or be one of the reserved keys:
+     *  "cluster-location"
+     *  "cluster-name"
+     *  "cluster-uid"
+     *  "configure-sh"
+     *  "enable-os-login"
+     *  "gci-update-strategy"
+     *  "gci-ensure-gke-docker"
+     *  "instance-template"
+     *  "kube-env"
+     *  "startup-script"
+     *  "user-data"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -2061,8 +2191,18 @@ private static final long serialVersionUID = 0L;
      * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
-     * metadata keys for the project or be one of the four reserved keys:
-     * "instance-template", "kube-env", "startup-script", and "user-data"
+     * metadata keys for the project or be one of the reserved keys:
+     *  "cluster-location"
+     *  "cluster-name"
+     *  "cluster-uid"
+     *  "configure-sh"
+     *  "enable-os-login"
+     *  "gci-update-strategy"
+     *  "gci-ensure-gke-docker"
+     *  "instance-template"
+     *  "kube-env"
+     *  "startup-script"
+     *  "user-data"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -2086,8 +2226,18 @@ private static final long serialVersionUID = 0L;
      * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
-     * metadata keys for the project or be one of the four reserved keys:
-     * "instance-template", "kube-env", "startup-script", and "user-data"
+     * metadata keys for the project or be one of the reserved keys:
+     *  "cluster-location"
+     *  "cluster-name"
+     *  "cluster-uid"
+     *  "configure-sh"
+     *  "enable-os-login"
+     *  "gci-update-strategy"
+     *  "gci-ensure-gke-docker"
+     *  "instance-template"
+     *  "kube-env"
+     *  "startup-script"
+     *  "user-data"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -2119,8 +2269,18 @@ private static final long serialVersionUID = 0L;
      * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
-     * metadata keys for the project or be one of the four reserved keys:
-     * "instance-template", "kube-env", "startup-script", and "user-data"
+     * metadata keys for the project or be one of the reserved keys:
+     *  "cluster-location"
+     *  "cluster-name"
+     *  "cluster-uid"
+     *  "configure-sh"
+     *  "enable-os-login"
+     *  "gci-update-strategy"
+     *  "gci-ensure-gke-docker"
+     *  "instance-template"
+     *  "kube-env"
+     *  "startup-script"
+     *  "user-data"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -2151,8 +2311,18 @@ private static final long serialVersionUID = 0L;
      * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
-     * metadata keys for the project or be one of the four reserved keys:
-     * "instance-template", "kube-env", "startup-script", and "user-data"
+     * metadata keys for the project or be one of the reserved keys:
+     *  "cluster-location"
+     *  "cluster-name"
+     *  "cluster-uid"
+     *  "configure-sh"
+     *  "enable-os-login"
+     *  "gci-update-strategy"
+     *  "gci-ensure-gke-docker"
+     *  "instance-template"
+     *  "kube-env"
+     *  "startup-script"
+     *  "user-data"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -2176,8 +2346,18 @@ private static final long serialVersionUID = 0L;
      * Keys must conform to the regexp [a-zA-Z0-9-_]+ and be less than 128 bytes
      * in length. These are reflected as part of a URL in the metadata server.
      * Additionally, to avoid ambiguity, keys must not conflict with any other
-     * metadata keys for the project or be one of the four reserved keys:
-     * "instance-template", "kube-env", "startup-script", and "user-data"
+     * metadata keys for the project or be one of the reserved keys:
+     *  "cluster-location"
+     *  "cluster-name"
+     *  "cluster-uid"
+     *  "configure-sh"
+     *  "enable-os-login"
+     *  "gci-update-strategy"
+     *  "gci-ensure-gke-docker"
+     *  "instance-template"
+     *  "kube-env"
+     *  "startup-script"
+     *  "user-data"
      * Values are free-form strings, and only have meaning as interpreted by
      * the image running in the instance. The only restriction placed on them is
      * that each value's size must be less than or equal to 32 KB.
@@ -3087,6 +3267,100 @@ private static final long serialVersionUID = 0L;
       return acceleratorsBuilder_;
     }
 
+    private java.lang.Object diskType_ = "";
+    /**
+     * <pre>
+     * Type of the disk attached to each node (e.g. 'pd-standard' or 'pd-ssd')
+     * If unspecified, the default disk type is 'pd-standard'
+     * </pre>
+     *
+     * <code>string disk_type = 12;</code>
+     */
+    public java.lang.String getDiskType() {
+      java.lang.Object ref = diskType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        diskType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Type of the disk attached to each node (e.g. 'pd-standard' or 'pd-ssd')
+     * If unspecified, the default disk type is 'pd-standard'
+     * </pre>
+     *
+     * <code>string disk_type = 12;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDiskTypeBytes() {
+      java.lang.Object ref = diskType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        diskType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Type of the disk attached to each node (e.g. 'pd-standard' or 'pd-ssd')
+     * If unspecified, the default disk type is 'pd-standard'
+     * </pre>
+     *
+     * <code>string disk_type = 12;</code>
+     */
+    public Builder setDiskType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      diskType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Type of the disk attached to each node (e.g. 'pd-standard' or 'pd-ssd')
+     * If unspecified, the default disk type is 'pd-standard'
+     * </pre>
+     *
+     * <code>string disk_type = 12;</code>
+     */
+    public Builder clearDiskType() {
+      
+      diskType_ = getDefaultInstance().getDiskType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Type of the disk attached to each node (e.g. 'pd-standard' or 'pd-ssd')
+     * If unspecified, the default disk type is 'pd-standard'
+     * </pre>
+     *
+     * <code>string disk_type = 12;</code>
+     */
+    public Builder setDiskTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      diskType_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object minCpuPlatform_ = "";
     /**
      * <pre>
@@ -3095,7 +3369,8 @@ private static final long serialVersionUID = 0L;
      * friendly names of CPU platforms, such as
      * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Haswell&amp;quot;&lt;/code&gt; or
      * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Sandy Bridge&amp;quot;&lt;/code&gt;. For more
-     * information, read [how to specify min CPU platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * information, read [how to specify min CPU
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
      * </pre>
      *
      * <code>string min_cpu_platform = 13;</code>
@@ -3119,7 +3394,8 @@ private static final long serialVersionUID = 0L;
      * friendly names of CPU platforms, such as
      * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Haswell&amp;quot;&lt;/code&gt; or
      * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Sandy Bridge&amp;quot;&lt;/code&gt;. For more
-     * information, read [how to specify min CPU platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * information, read [how to specify min CPU
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
      * </pre>
      *
      * <code>string min_cpu_platform = 13;</code>
@@ -3144,7 +3420,8 @@ private static final long serialVersionUID = 0L;
      * friendly names of CPU platforms, such as
      * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Haswell&amp;quot;&lt;/code&gt; or
      * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Sandy Bridge&amp;quot;&lt;/code&gt;. For more
-     * information, read [how to specify min CPU platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * information, read [how to specify min CPU
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
      * </pre>
      *
      * <code>string min_cpu_platform = 13;</code>
@@ -3166,7 +3443,8 @@ private static final long serialVersionUID = 0L;
      * friendly names of CPU platforms, such as
      * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Haswell&amp;quot;&lt;/code&gt; or
      * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Sandy Bridge&amp;quot;&lt;/code&gt;. For more
-     * information, read [how to specify min CPU platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * information, read [how to specify min CPU
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
      * </pre>
      *
      * <code>string min_cpu_platform = 13;</code>
@@ -3184,7 +3462,8 @@ private static final long serialVersionUID = 0L;
      * friendly names of CPU platforms, such as
      * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Haswell&amp;quot;&lt;/code&gt; or
      * &lt;code&gt;minCpuPlatform: &amp;quot;Intel Sandy Bridge&amp;quot;&lt;/code&gt;. For more
-     * information, read [how to specify min CPU platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
+     * information, read [how to specify min CPU
+     * platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
      * </pre>
      *
      * <code>string min_cpu_platform = 13;</code>
