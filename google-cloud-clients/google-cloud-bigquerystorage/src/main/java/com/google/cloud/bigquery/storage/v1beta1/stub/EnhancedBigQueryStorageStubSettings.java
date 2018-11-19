@@ -36,6 +36,7 @@ import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest;
 import com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse;
+import com.google.cloud.bigquery.storage.v1beta1.stub.readrows.ReadRowsResumptionStrategy;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Empty;
 import java.util.List;
@@ -217,8 +218,10 @@ public class EnhancedBigQueryStorageStubSettings
       splitReadStreamSettings = baseDefaults.splitReadStreamSettings();
 
       // Per-method settings using override values for defaults.
-      readRowsSettings = baseDefaults.readRowsSettings();
-      readRowsSettings.setRetrySettings(READ_ROWS_RETRY_SETTINGS);
+      readRowsSettings =
+          baseDefaults.readRowsSettings()
+              .setRetrySettings(READ_ROWS_RETRY_SETTINGS)
+              .setResumptionStrategy(new ReadRowsResumptionStrategy());
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
