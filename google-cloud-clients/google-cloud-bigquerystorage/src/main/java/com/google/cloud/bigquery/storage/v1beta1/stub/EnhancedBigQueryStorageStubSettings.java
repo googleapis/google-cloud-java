@@ -62,6 +62,9 @@ import java.util.List;
 public class EnhancedBigQueryStorageStubSettings
     extends StubSettings<EnhancedBigQueryStorageStubSettings> {
 
+  // The largest possible inbound message is a ReadRowsResponse with a single 10mb Row object.
+  private static final int MAX_INBOUND_MESSAGE_SIZE = 1024 * 1024 * 11;
+
   private final UnaryCallSettings<CreateReadSessionRequest, ReadSession> createReadSessionSettings;
   private final ServerStreamingCallSettings<ReadRowsRequest, ReadRowsResponse> readRowsSettings;
   private final UnaryCallSettings<
@@ -121,11 +124,14 @@ public class EnhancedBigQueryStorageStubSettings
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return BigQueryStorageStubSettings.defaultGrpcTransportProviderBuilder();
+    return BigQueryStorageStubSettings
+        .defaultGrpcTransportProviderBuilder()
+        .setChannelsPerCpu(2.0)
+        .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE);
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
-    return BigQueryStorageStubSettings.defaultTransportChannelProvider();
+    return defaultGrpcTransportProviderBuilder().build();
   }
 
   @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
@@ -186,7 +192,7 @@ public class EnhancedBigQueryStorageStubSettings
       // Defaults provider
       BigQueryStorageStubSettings.Builder baseDefaults = BigQueryStorageStubSettings.newBuilder();
       setEndpoint(baseDefaults.getEndpoint());
-      setTransportChannelProvider(baseDefaults.getTransportChannelProvider());
+      setTransportChannelProvider(defaultTransportChannelProvider());
       setCredentialsProvider(baseDefaults.getCredentialsProvider());
       setStreamWatchdogCheckInterval(baseDefaults.getStreamWatchdogCheckInterval());
       setStreamWatchdogProvider(baseDefaults.getStreamWatchdogProvider());

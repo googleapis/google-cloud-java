@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.storage.v1beta1.stub;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
@@ -42,6 +43,8 @@ import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class EnhancedBigQueryStorageStubSettingsTest {
+
+  private static final int MAX_INBOUND_MESSAGE_SIZE = 1024 * 1024 * 11;
 
   @Test
   public void testSettingsArePreserved() {
@@ -89,6 +92,12 @@ public class EnhancedBigQueryStorageStubSettingsTest {
     assertThat(builder.getCredentialsProvider()).isEqualTo(credentialsProvider);
     assertThat(builder.getStreamWatchdogCheckInterval()).isEqualTo(watchdogInterval);
     assertThat(builder.getStreamWatchdogProvider()).isEqualTo(watchdogProvider);
+
+    InstantiatingGrpcChannelProvider channelProvider =
+        (InstantiatingGrpcChannelProvider) builder.getTransportChannelProvider();
+    assertThat(channelProvider.toBuilder().getMaxInboundMessageSize())
+        .isEqualTo(MAX_INBOUND_MESSAGE_SIZE);
+    assertThat(channelProvider.toBuilder().getPoolSize()).isGreaterThan(1);
   }
 
   private void verifySettings(
@@ -101,6 +110,12 @@ public class EnhancedBigQueryStorageStubSettingsTest {
     assertThat(settings.getCredentialsProvider()).isEqualTo(credentialsProvider);
     assertThat(settings.getStreamWatchdogCheckInterval()).isEqualTo(watchdogInterval);
     assertThat(settings.getStreamWatchdogProvider()).isEqualTo(watchdogProvider);
+
+    InstantiatingGrpcChannelProvider channelProvider =
+        (InstantiatingGrpcChannelProvider) settings.getTransportChannelProvider();
+    assertThat(channelProvider.toBuilder().getMaxInboundMessageSize())
+        .isEqualTo(MAX_INBOUND_MESSAGE_SIZE);
+    assertThat(channelProvider.toBuilder().getPoolSize()).isGreaterThan(1);
   }
 
   @Test
