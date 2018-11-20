@@ -955,7 +955,7 @@ public interface Storage extends Service<StorageOptions> {
     }
     
     /**
-    * Provides a host name to sign the URL. If not provided than default host name will be used. 
+    * Use a different host name than the default host name 'storage.googleapis.com' 
     */ 
     public static SignUrlOption withHostName(String hostName){
       return new SignUrlOption(Option.HOST_NAME, hostName);	
@@ -2114,7 +2114,8 @@ public interface Storage extends Service<StorageOptions> {
    *     granularity supported is 1 second, finer granularities will be truncated
    * @param unit time unit of the {@code duration} parameter
    * @param options optional URL signing options
-   *     {@code SignUrlOption.withHostName()} option to sign url with custom hostname.
+   *     {@code SignUrlOption.withHostName()} option to set a custom host name instead of using 
+   *     https://storage.googleapis.com.
    * @throws IllegalStateException if {@link SignUrlOption#signWith(ServiceAccountSigner)} was not
    *     used and no implementation of {@link ServiceAccountSigner} was provided to
    *     {@link StorageOptions}
