@@ -85,7 +85,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   private static final String EMPTY_BYTE_ARRAY_CRC32C = "AAAAAA==";
   private static final String PATH_DELIMITER = "/";
   /**
-   * SignedUrls uses GCS XML API endpoint.
+   * Signed URLs are only supported through the GCS XML API endpoint.
    */
   private static final String STORAGE_XML_HOST_NAME = "https://storage.googleapis.com";
 
