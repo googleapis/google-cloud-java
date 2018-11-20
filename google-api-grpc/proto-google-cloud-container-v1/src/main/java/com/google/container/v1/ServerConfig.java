@@ -5,7 +5,7 @@ package com.google.container.v1;
 
 /**
  * <pre>
- * Container Engine service configuration.
+ * Kubernetes Engine service configuration.
  * </pre>
  *
  * Protobuf type {@code google.container.v1.ServerConfig}
@@ -569,7 +569,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Container Engine service configuration.
+   * Kubernetes Engine service configuration.
    * </pre>
    *
    * Protobuf type {@code google.container.v1.ServerConfig}
