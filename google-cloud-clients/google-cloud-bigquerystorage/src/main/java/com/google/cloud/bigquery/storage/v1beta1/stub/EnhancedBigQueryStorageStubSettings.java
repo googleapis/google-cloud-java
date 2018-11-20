@@ -20,6 +20,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
@@ -38,6 +39,7 @@ import com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.Empty;
 import java.util.List;
+import org.threeten.bp.Duration;
 
 /**
  * Settings class to configure an instance of {@link EnhancedBigQueryStorageStub}.
@@ -169,6 +171,17 @@ public class EnhancedBigQueryStorageStubSettings
   public static class Builder
       extends StubSettings.Builder<EnhancedBigQueryStorageStubSettings, Builder> {
 
+    private static final RetrySettings READ_ROWS_RETRY_SETTINGS =
+        RetrySettings.newBuilder()
+            .setInitialRetryDelay(Duration.ofMillis(100L))
+            .setRetryDelayMultiplier(1.3)
+            .setMaxRetryDelay(Duration.ofMinutes(1L))
+            .setInitialRpcTimeout(Duration.ofDays(1L))
+            .setRpcTimeoutMultiplier(1.0)
+            .setMaxRpcTimeout(Duration.ofDays(1L))
+            .setTotalTimeout(Duration.ofDays(1L))
+            .build();
+
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final UnaryCallSettings.Builder<CreateReadSessionRequest, ReadSession>
@@ -199,10 +212,13 @@ public class EnhancedBigQueryStorageStubSettings
 
       // Per-method settings using baseSettings for defaults.
       createReadSessionSettings = baseDefaults.createReadSessionSettings();
-      readRowsSettings = baseDefaults.readRowsSettings();
       batchCreateReadSessionStreamsSettings = baseDefaults.batchCreateReadSessionStreamsSettings();
       finalizeStreamSettings = baseDefaults.finalizeStreamSettings();
       splitReadStreamSettings = baseDefaults.splitReadStreamSettings();
+
+      // Per-method settings using override values for defaults.
+      readRowsSettings = baseDefaults.readRowsSettings();
+      readRowsSettings.setRetrySettings(READ_ROWS_RETRY_SETTINGS);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
