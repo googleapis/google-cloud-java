@@ -1237,7 +1237,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
-   * are applied.
+   * are applied. In addition, the binary content of the selected files
+   * is always scanned as well.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -1250,7 +1251,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
-   * are applied.
+   * are applied. In addition, the binary content of the selected files
+   * is always scanned as well.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -1262,7 +1264,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
-   * are applied.
+   * are applied. In addition, the binary content of the selected files
+   * is always scanned as well.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -1274,7 +1277,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
-   * are applied.
+   * are applied. In addition, the binary content of the selected files
+   * is always scanned as well.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -1287,7 +1291,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
-   * are applied.
+   * are applied. In addition, the binary content of the selected files
+   * is always scanned as well.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2020,7 +2025,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
-     * are applied.
+     * are applied. In addition, the binary content of the selected files
+     * is always scanned as well.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2033,7 +2039,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
-     * are applied.
+     * are applied. In addition, the binary content of the selected files
+     * is always scanned as well.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2045,7 +2052,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
-     * are applied.
+     * are applied. In addition, the binary content of the selected files
+     * is always scanned as well.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2057,7 +2065,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
-     * are applied.
+     * are applied. In addition, the binary content of the selected files
+     * is always scanned as well.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2076,7 +2085,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
-     * are applied.
+     * are applied. In addition, the binary content of the selected files
+     * is always scanned as well.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2094,7 +2104,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
-     * are applied.
+     * are applied. In addition, the binary content of the selected files
+     * is always scanned as well.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2112,7 +2123,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
-     * are applied.
+     * are applied. In addition, the binary content of the selected files
+     * is always scanned as well.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2127,7 +2139,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
-     * are applied.
+     * are applied. In addition, the binary content of the selected files
+     * is always scanned as well.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2140,7 +2153,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
-     * are applied.
+     * are applied. In addition, the binary content of the selected files
+     * is always scanned as well.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2152,7 +2166,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
-     * are applied.
+     * are applied. In addition, the binary content of the selected files
+     * is always scanned as well.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2168,7 +2183,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
-     * are applied.
+     * are applied. In addition, the binary content of the selected files
+     * is always scanned as well.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
@@ -2183,7 +2199,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
-     * are applied.
+     * are applied. In addition, the binary content of the selected files
+     * is always scanned as well.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>

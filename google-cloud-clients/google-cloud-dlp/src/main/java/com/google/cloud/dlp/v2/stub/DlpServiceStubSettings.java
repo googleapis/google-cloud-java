@@ -19,6 +19,7 @@ import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPa
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListStoredInfoTypesPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -51,6 +52,7 @@ import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.CreateJobTriggerRequest;
+import com.google.privacy.dlp.v2.CreateStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
@@ -58,11 +60,13 @@ import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
+import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
+import com.google.privacy.dlp.v2.GetStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.InspectContentRequest;
 import com.google.privacy.dlp.v2.InspectContentResponse;
 import com.google.privacy.dlp.v2.InspectTemplate;
@@ -77,13 +81,17 @@ import com.google.privacy.dlp.v2.ListInspectTemplatesRequest;
 import com.google.privacy.dlp.v2.ListInspectTemplatesResponse;
 import com.google.privacy.dlp.v2.ListJobTriggersRequest;
 import com.google.privacy.dlp.v2.ListJobTriggersResponse;
+import com.google.privacy.dlp.v2.ListStoredInfoTypesRequest;
+import com.google.privacy.dlp.v2.ListStoredInfoTypesResponse;
 import com.google.privacy.dlp.v2.RedactImageRequest;
 import com.google.privacy.dlp.v2.RedactImageResponse;
 import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
+import com.google.privacy.dlp.v2.StoredInfoType;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateJobTriggerRequest;
+import com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -169,6 +177,16 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
   private final UnaryCallSettings<DeleteJobTriggerRequest, Empty> deleteJobTriggerSettings;
   private final UnaryCallSettings<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerSettings;
   private final UnaryCallSettings<CreateJobTriggerRequest, JobTrigger> createJobTriggerSettings;
+  private final UnaryCallSettings<CreateStoredInfoTypeRequest, StoredInfoType>
+      createStoredInfoTypeSettings;
+  private final UnaryCallSettings<UpdateStoredInfoTypeRequest, StoredInfoType>
+      updateStoredInfoTypeSettings;
+  private final UnaryCallSettings<GetStoredInfoTypeRequest, StoredInfoType>
+      getStoredInfoTypeSettings;
+  private final PagedCallSettings<
+          ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, ListStoredInfoTypesPagedResponse>
+      listStoredInfoTypesSettings;
+  private final UnaryCallSettings<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeSettings;
 
   /** Returns the object with the settings used for calls to inspectContent. */
   public UnaryCallSettings<InspectContentRequest, InspectContentResponse> inspectContentSettings() {
@@ -313,6 +331,35 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     return createJobTriggerSettings;
   }
 
+  /** Returns the object with the settings used for calls to createStoredInfoType. */
+  public UnaryCallSettings<CreateStoredInfoTypeRequest, StoredInfoType>
+      createStoredInfoTypeSettings() {
+    return createStoredInfoTypeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateStoredInfoType. */
+  public UnaryCallSettings<UpdateStoredInfoTypeRequest, StoredInfoType>
+      updateStoredInfoTypeSettings() {
+    return updateStoredInfoTypeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getStoredInfoType. */
+  public UnaryCallSettings<GetStoredInfoTypeRequest, StoredInfoType> getStoredInfoTypeSettings() {
+    return getStoredInfoTypeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listStoredInfoTypes. */
+  public PagedCallSettings<
+          ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, ListStoredInfoTypesPagedResponse>
+      listStoredInfoTypesSettings() {
+    return listStoredInfoTypesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteStoredInfoType. */
+  public UnaryCallSettings<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeSettings() {
+    return deleteStoredInfoTypeSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public DlpServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -406,6 +453,11 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     deleteJobTriggerSettings = settingsBuilder.deleteJobTriggerSettings().build();
     updateJobTriggerSettings = settingsBuilder.updateJobTriggerSettings().build();
     createJobTriggerSettings = settingsBuilder.createJobTriggerSettings().build();
+    createStoredInfoTypeSettings = settingsBuilder.createStoredInfoTypeSettings().build();
+    updateStoredInfoTypeSettings = settingsBuilder.updateStoredInfoTypeSettings().build();
+    getStoredInfoTypeSettings = settingsBuilder.getStoredInfoTypeSettings().build();
+    listStoredInfoTypesSettings = settingsBuilder.listStoredInfoTypesSettings().build();
+    deleteStoredInfoTypeSettings = settingsBuilder.deleteStoredInfoTypeSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -560,6 +612,44 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
             }
           };
 
+  private static final PagedListDescriptor<
+          ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>
+      LIST_STORED_INFO_TYPES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListStoredInfoTypesRequest injectToken(
+                ListStoredInfoTypesRequest payload, String token) {
+              return ListStoredInfoTypesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListStoredInfoTypesRequest injectPageSize(
+                ListStoredInfoTypesRequest payload, int pageSize) {
+              return ListStoredInfoTypesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListStoredInfoTypesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListStoredInfoTypesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<StoredInfoType> extractResources(ListStoredInfoTypesResponse payload) {
+              return payload.getStoredInfoTypesList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListInspectTemplatesRequest, ListInspectTemplatesResponse,
           ListInspectTemplatesPagedResponse>
@@ -640,6 +730,26 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, ListStoredInfoTypesPagedResponse>
+      LIST_STORED_INFO_TYPES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListStoredInfoTypesRequest, ListStoredInfoTypesResponse,
+              ListStoredInfoTypesPagedResponse>() {
+            @Override
+            public ApiFuture<ListStoredInfoTypesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse> callable,
+                ListStoredInfoTypesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListStoredInfoTypesResponse> futureResponse) {
+              PageContext<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_STORED_INFO_TYPES_PAGE_STR_DESC, request, context);
+              return ListStoredInfoTypesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Builder for DlpServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<DlpServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
@@ -695,6 +805,18 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
         updateJobTriggerSettings;
     private final UnaryCallSettings.Builder<CreateJobTriggerRequest, JobTrigger>
         createJobTriggerSettings;
+    private final UnaryCallSettings.Builder<CreateStoredInfoTypeRequest, StoredInfoType>
+        createStoredInfoTypeSettings;
+    private final UnaryCallSettings.Builder<UpdateStoredInfoTypeRequest, StoredInfoType>
+        updateStoredInfoTypeSettings;
+    private final UnaryCallSettings.Builder<GetStoredInfoTypeRequest, StoredInfoType>
+        getStoredInfoTypeSettings;
+    private final PagedCallSettings.Builder<
+            ListStoredInfoTypesRequest, ListStoredInfoTypesResponse,
+            ListStoredInfoTypesPagedResponse>
+        listStoredInfoTypesSettings;
+    private final UnaryCallSettings.Builder<DeleteStoredInfoTypeRequest, Empty>
+        deleteStoredInfoTypeSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -707,13 +829,7 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "http_get",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put("no_retry", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -795,6 +911,17 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
 
       createJobTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      createStoredInfoTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      updateStoredInfoTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      getStoredInfoTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      listStoredInfoTypesSettings =
+          PagedCallSettings.newBuilder(LIST_STORED_INFO_TYPES_PAGE_STR_FACT);
+
+      deleteStoredInfoTypeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               inspectContentSettings,
@@ -821,7 +948,12 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               getJobTriggerSettings,
               deleteJobTriggerSettings,
               updateJobTriggerSettings,
-              createJobTriggerSettings);
+              createJobTriggerSettings,
+              createStoredInfoTypeSettings,
+              updateStoredInfoTypeSettings,
+              getStoredInfoTypeSettings,
+              listStoredInfoTypesSettings,
+              deleteStoredInfoTypeSettings);
 
       initDefaults(this);
     }
@@ -962,6 +1094,31 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .createStoredInfoTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .updateStoredInfoTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getStoredInfoTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listStoredInfoTypesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteStoredInfoTypeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -993,6 +1150,11 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
       deleteJobTriggerSettings = settings.deleteJobTriggerSettings.toBuilder();
       updateJobTriggerSettings = settings.updateJobTriggerSettings.toBuilder();
       createJobTriggerSettings = settings.createJobTriggerSettings.toBuilder();
+      createStoredInfoTypeSettings = settings.createStoredInfoTypeSettings.toBuilder();
+      updateStoredInfoTypeSettings = settings.updateStoredInfoTypeSettings.toBuilder();
+      getStoredInfoTypeSettings = settings.getStoredInfoTypeSettings.toBuilder();
+      listStoredInfoTypesSettings = settings.listStoredInfoTypesSettings.toBuilder();
+      deleteStoredInfoTypeSettings = settings.deleteStoredInfoTypeSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1020,7 +1182,12 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
               getJobTriggerSettings,
               deleteJobTriggerSettings,
               updateJobTriggerSettings,
-              createJobTriggerSettings);
+              createJobTriggerSettings,
+              createStoredInfoTypeSettings,
+              updateStoredInfoTypeSettings,
+              getStoredInfoTypeSettings,
+              listStoredInfoTypesSettings,
+              deleteStoredInfoTypeSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -1187,6 +1354,38 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
     public UnaryCallSettings.Builder<CreateJobTriggerRequest, JobTrigger>
         createJobTriggerSettings() {
       return createJobTriggerSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createStoredInfoType. */
+    public UnaryCallSettings.Builder<CreateStoredInfoTypeRequest, StoredInfoType>
+        createStoredInfoTypeSettings() {
+      return createStoredInfoTypeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateStoredInfoType. */
+    public UnaryCallSettings.Builder<UpdateStoredInfoTypeRequest, StoredInfoType>
+        updateStoredInfoTypeSettings() {
+      return updateStoredInfoTypeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getStoredInfoType. */
+    public UnaryCallSettings.Builder<GetStoredInfoTypeRequest, StoredInfoType>
+        getStoredInfoTypeSettings() {
+      return getStoredInfoTypeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listStoredInfoTypes. */
+    public PagedCallSettings.Builder<
+            ListStoredInfoTypesRequest, ListStoredInfoTypesResponse,
+            ListStoredInfoTypesPagedResponse>
+        listStoredInfoTypesSettings() {
+      return listStoredInfoTypesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteStoredInfoType. */
+    public UnaryCallSettings.Builder<DeleteStoredInfoTypeRequest, Empty>
+        deleteStoredInfoTypeSettings() {
+      return deleteStoredInfoTypeSettings;
     }
 
     @Override

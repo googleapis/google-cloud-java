@@ -43,7 +43,7 @@ public interface SpeechRecognitionAlternativeOrBuilder extends
   /**
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
-   * Note: When enable_speaker_diarization is true, you will see all the words
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
    * from the beginning of the audio.
    * </pre>
    *
@@ -54,7 +54,7 @@ public interface SpeechRecognitionAlternativeOrBuilder extends
   /**
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
-   * Note: When enable_speaker_diarization is true, you will see all the words
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
    * from the beginning of the audio.
    * </pre>
    *
@@ -64,7 +64,7 @@ public interface SpeechRecognitionAlternativeOrBuilder extends
   /**
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
-   * Note: When enable_speaker_diarization is true, you will see all the words
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
    * from the beginning of the audio.
    * </pre>
    *
@@ -74,7 +74,7 @@ public interface SpeechRecognitionAlternativeOrBuilder extends
   /**
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
-   * Note: When enable_speaker_diarization is true, you will see all the words
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
    * from the beginning of the audio.
    * </pre>
    *
@@ -85,7 +85,7 @@ public interface SpeechRecognitionAlternativeOrBuilder extends
   /**
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
-   * Note: When enable_speaker_diarization is true, you will see all the words
+   * Note: When `enable_speaker_diarization` is true, you will see all the words
    * from the beginning of the audio.
    * </pre>
    *

@@ -15,13 +15,13 @@
  */
 
 /**
- * A client to Google Container Engine API.
+ * A client to Kubernetes Engine API.
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>==================== ClusterManagerClient ====================
  *
- * <p>Service Description: Google Container Engine Cluster Manager v1
+ * <p>Service Description: Google Kubernetes Engine Cluster Manager v1
  *
  * <p>Sample for ClusterManagerClient:
  *

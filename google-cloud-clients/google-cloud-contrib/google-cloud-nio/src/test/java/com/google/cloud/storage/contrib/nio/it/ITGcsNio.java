@@ -16,11 +16,13 @@
 
 package com.google.cloud.storage.contrib.nio.it;
 
+import static com.google.common.collect.ImmutableList.copyOf;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.client.http.HttpResponseException;
+import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage.BlobTargetOption;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.contrib.nio.CloudStorageConfiguration;
@@ -125,9 +127,13 @@ public class ITGcsNio {
 
   @AfterClass
   public static void afterClass() throws ExecutionException, InterruptedException {
-    if (storage != null && !RemoteStorageHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS) &&
-      log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
+    if (storage != null) {
+      for (String bucket : new String[]{BUCKET, REQUESTER_PAYS_BUCKET}) {
+        if (!RemoteStorageHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS, project) &&
+            log.isLoggable(Level.WARNING)) {
+          log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", bucket);
+        }
+      }
     }
   }
 
@@ -297,6 +303,21 @@ public class ITGcsNio {
   }
 
   // End of tests related to the "requester pays" feature
+
+  @Test
+  public void testListBuckets() throws IOException {
+    boolean bucketFound = false;
+    boolean rpBucketFound = false;
+    for (Bucket b : CloudStorageFileSystem.listBuckets(project).iterateAll()) {
+      bucketFound |= BUCKET.equals(b.getName());
+      rpBucketFound |= REQUESTER_PAYS_BUCKET.equals(b.getName());
+    }
+    assertWithMessage("listBucket should have found the test bucket")
+        .that(bucketFound).isTrue();
+    assertWithMessage("listBucket should have found the test requester-pays bucket")
+        .that(rpBucketFound).isTrue();
+  }
+
 
   @Test
   public void testFileExists() throws IOException {
@@ -742,7 +763,7 @@ public class ITGcsNio {
     }
 
     public ImmutableList<Path> getPaths() {
-      return ImmutableList.copyOf(paths);
+      return copyOf(paths);
     }
   }
 

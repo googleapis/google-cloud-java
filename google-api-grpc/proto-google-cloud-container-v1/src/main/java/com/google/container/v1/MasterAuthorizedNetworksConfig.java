@@ -5,7 +5,6 @@ package com.google.container.v1;
 
 /**
  * <pre>
- * Master authorized networks is a Beta feature.
  * Configuration options for the master authorized networks feature. Enabled
  * master authorized networks will disallow all external traffic to access
  * Kubernetes master through HTTPS except traffic from the given CIDR blocks,
@@ -1114,7 +1113,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Master authorized networks is a Beta feature.
    * Configuration options for the master authorized networks feature. Enabled
    * master authorized networks will disallow all external traffic to access
    * Kubernetes master through HTTPS except traffic from the given CIDR blocks,

@@ -337,6 +337,9 @@ public class Query {
     Cursor.Builder result = Cursor.newBuilder();
 
     Preconditions.checkState(
+        fieldValues.length != 0, "At least one cursor value must be specified.");
+
+    Preconditions.checkState(
         fieldValues.length <= order.size(),
         "Too many cursor values specified. The specified values must match the "
             + "orderBy() constraints of the query.");
