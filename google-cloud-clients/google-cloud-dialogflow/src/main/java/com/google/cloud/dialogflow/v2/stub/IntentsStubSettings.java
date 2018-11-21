@@ -271,7 +271,9 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
 
             @Override
             public Iterable<Intent> extractResources(ListIntentsResponse payload) {
-              return payload.getIntentsList();
+              return payload.getIntentsList() != null
+                  ? payload.getIntentsList()
+                  : ImmutableList.<Intent>of();
             }
           };
 
