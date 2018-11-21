@@ -300,7 +300,9 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
 
             @Override
             public Iterable<Session> extractResources(ListSessionsResponse payload) {
-              return payload.getSessionsList();
+              return payload.getSessionsList() != null
+                  ? payload.getSessionsList()
+                  : ImmutableList.<Session>of();
             }
           };
 
@@ -380,6 +382,17 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("default", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.ofMillis(1000L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.ofMillis(32000L))
+              .setInitialRpcTimeout(Duration.ofMillis(120000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(120000L))
+              .setTotalTimeout(Duration.ofMillis(1200000L))
+              .build();
+      definitions.put("streaming", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(1000L))
@@ -483,7 +496,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
       builder
           .executeStreamingSqlSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("streaming"));
 
       builder
           .readSettings()
@@ -493,7 +506,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
       builder
           .streamingReadSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("streaming"));
 
       builder
           .beginTransactionSettings()
