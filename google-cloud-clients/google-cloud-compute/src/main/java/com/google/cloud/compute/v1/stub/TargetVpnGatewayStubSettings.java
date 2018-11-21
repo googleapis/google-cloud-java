@@ -273,7 +273,9 @@ public class TargetVpnGatewayStubSettings extends StubSettings<TargetVpnGatewayS
             @Override
             public Iterable<TargetVpnGatewaysScopedList> extractResources(
                 TargetVpnGatewayAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<TargetVpnGatewaysScopedList>of();
             }
           };
 
@@ -315,7 +317,9 @@ public class TargetVpnGatewayStubSettings extends StubSettings<TargetVpnGatewayS
 
             @Override
             public Iterable<TargetVpnGateway> extractResources(TargetVpnGatewayList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<TargetVpnGateway>of();
             }
           };
 

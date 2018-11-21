@@ -335,7 +335,9 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
             @Override
             public Iterable<BackendServicesScopedList> extractResources(
                 BackendServiceAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<BackendServicesScopedList>of();
             }
           };
 
@@ -375,7 +377,9 @@ public class BackendServiceStubSettings extends StubSettings<BackendServiceStubS
 
             @Override
             public Iterable<BackendService> extractResources(BackendServiceList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<BackendService>of();
             }
           };
 

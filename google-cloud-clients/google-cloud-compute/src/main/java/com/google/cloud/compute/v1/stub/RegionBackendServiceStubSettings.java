@@ -289,7 +289,9 @@ public class RegionBackendServiceStubSettings
 
             @Override
             public Iterable<BackendService> extractResources(BackendServiceList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<BackendService>of();
             }
           };
 

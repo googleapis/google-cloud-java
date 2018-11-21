@@ -294,7 +294,9 @@ public class TargetSslProxyStubSettings extends StubSettings<TargetSslProxyStubS
 
             @Override
             public Iterable<TargetSslProxy> extractResources(TargetSslProxyList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<TargetSslProxy>of();
             }
           };
 

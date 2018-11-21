@@ -252,7 +252,9 @@ public class InstanceTemplateStubSettings extends StubSettings<InstanceTemplateS
 
             @Override
             public Iterable<InstanceTemplate> extractResources(InstanceTemplateList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<InstanceTemplate>of();
             }
           };
 
