@@ -244,7 +244,9 @@ public class GlobalAddressStubSettings extends StubSettings<GlobalAddressStubSet
 
             @Override
             public Iterable<Address> extractResources(AddressList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Address>of();
             }
           };
 

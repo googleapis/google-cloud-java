@@ -301,7 +301,9 @@ public class SecurityPolicyStubSettings extends StubSettings<SecurityPolicyStubS
 
             @Override
             public Iterable<SecurityPolicy> extractResources(SecurityPolicyList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<SecurityPolicy>of();
             }
           };
 

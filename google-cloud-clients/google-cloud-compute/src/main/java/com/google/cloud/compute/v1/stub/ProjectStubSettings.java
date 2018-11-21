@@ -343,7 +343,9 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
 
             @Override
             public Iterable<XpnResourceId> extractResources(ProjectsGetXpnResources payload) {
-              return payload.getResourcesList();
+              return payload.getResourcesList() != null
+                  ? payload.getResourcesList()
+                  : ImmutableList.<XpnResourceId>of();
             }
           };
 
@@ -383,7 +385,9 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
 
             @Override
             public Iterable<Project> extractResources(XpnHostList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Project>of();
             }
           };
 
