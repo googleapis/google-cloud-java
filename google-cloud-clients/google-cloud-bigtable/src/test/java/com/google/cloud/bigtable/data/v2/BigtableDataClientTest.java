@@ -138,6 +138,25 @@ public class BigtableDataClientTest {
   }
 
   @Test
+  public void readRowQueryAsyncTest() {
+    Query query = Query.create("fake-table").rowKey("fake-row-key");
+    bigtableDataClient.readRowAsync(query);
+    ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
+    Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
+
+    RequestContext ctx =
+        RequestContext.create(InstanceName.of("fake-project", "fake-instance"), "fake-profile");
+    // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
+    assertThat(requestCaptor.getValue().toProto(ctx))
+        .isEqualTo(
+            ReadRowsRequest.newBuilder()
+                .setTableName("projects/fake-project/instances/fake-instance/tables/fake-table")
+                .setAppProfileId("fake-profile")
+                .setRows(RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("fake-row-key")))
+                .build());
+  }
+
+  @Test
   public void readRowTest() {
     Mockito.when(mockReadRowsCallable.first().futureCall(any(Query.class)))
         .thenReturn(
@@ -169,6 +188,29 @@ public class BigtableDataClientTest {
                 Row.create(
                     ByteString.copyFromUtf8("fake-row-key"), Collections.<RowCell>emptyList())));
     bigtableDataClient.readRow("fake-table", "fake-row-key");
+
+    ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
+    Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
+
+    RequestContext ctx =
+        RequestContext.create(InstanceName.of("fake-project", "fake-instance"), "fake-profile");
+    // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
+    assertThat(requestCaptor.getValue().toProto(ctx))
+        .isEqualTo(
+            ReadRowsRequest.newBuilder()
+                .setTableName("projects/fake-project/instances/fake-instance/tables/fake-table")
+                .setAppProfileId("fake-profile")
+                .setRows(RowSet.newBuilder().addRowKeys(ByteString.copyFromUtf8("fake-row-key")))
+                .build());
+  }
+
+  @Test
+  public void readRowQueryTest() {
+    Query query = Query.create("fake-table").rowKey("fake-row-key");
+    Mockito.when(mockReadRowsCallable.first().futureCall(any(Query.class)))
+        .thenReturn(ApiFutures.immediateFuture(
+            Row.create(ByteString.copyFromUtf8("fake-row-key"), Collections.<RowCell>emptyList())));
+    bigtableDataClient.readRow(query);
 
     ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
     Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());

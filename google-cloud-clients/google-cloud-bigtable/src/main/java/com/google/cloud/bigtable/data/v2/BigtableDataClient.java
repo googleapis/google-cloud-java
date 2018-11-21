@@ -229,7 +229,7 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
    */
-  public Row ReadRow(Query query) {
+  public Row readRow(Query query) {
     return ApiExceptions.callAndTranslateApiException(readRowAsync(query));
   }
 
