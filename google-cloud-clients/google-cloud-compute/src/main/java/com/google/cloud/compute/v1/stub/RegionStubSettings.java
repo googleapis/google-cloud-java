@@ -218,7 +218,9 @@ public class RegionStubSettings extends StubSettings<RegionStubSettings> {
 
             @Override
             public Iterable<Region> extractResources(RegionList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Region>of();
             }
           };
 

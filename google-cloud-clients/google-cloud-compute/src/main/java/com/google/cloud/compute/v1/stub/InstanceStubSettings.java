@@ -494,7 +494,9 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
             @Override
             public Iterable<InstancesScopedList> extractResources(InstanceAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<InstancesScopedList>of();
             }
           };
 
@@ -530,7 +532,9 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
             @Override
             public Iterable<Instance> extractResources(InstanceList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Instance>of();
             }
           };
 
@@ -572,7 +576,9 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
             @Override
             public Iterable<Reference> extractResources(InstanceListReferrers payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Reference>of();
             }
           };
 
