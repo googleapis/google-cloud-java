@@ -283,7 +283,9 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
 
             @Override
             public Iterable<Cluster> extractResources(ListClustersResponse payload) {
-              return payload.getClustersList();
+              return payload.getClustersList() != null
+                  ? payload.getClustersList()
+                  : ImmutableList.<Cluster>of();
             }
           };
 

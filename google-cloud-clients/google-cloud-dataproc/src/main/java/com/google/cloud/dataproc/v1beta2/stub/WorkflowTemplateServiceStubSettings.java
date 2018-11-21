@@ -272,7 +272,9 @@ public class WorkflowTemplateServiceStubSettings
             @Override
             public Iterable<WorkflowTemplate> extractResources(
                 ListWorkflowTemplatesResponse payload) {
-              return payload.getTemplatesList();
+              return payload.getTemplatesList() != null
+                  ? payload.getTemplatesList()
+                  : ImmutableList.<WorkflowTemplate>of();
             }
           };
 
