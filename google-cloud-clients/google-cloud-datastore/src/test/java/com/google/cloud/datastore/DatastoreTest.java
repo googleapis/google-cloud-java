@@ -633,6 +633,13 @@ public class DatastoreTest {
     EasyMock.verify(rpcFactoryMock, rpcMock);
   }
 
+  @Test
+  public void testRunKeyQueryWithOffset() {
+    Query<Key> query = Query.newKeyQueryBuilder().setOffset(Integer.MAX_VALUE).build();
+    int numberOfEntities = datastore.run(query).getSkippedResults();
+    assertEquals(2, numberOfEntities);
+  }
+
   private List<RunQueryResponse> buildResponsesForQueryPaginationWithLimit() {
     Entity entity4 = Entity.newBuilder(KEY4).set("value", StringValue.of("value")).build();
     Entity entity5 = Entity.newBuilder(KEY5).set("value", "value").build();

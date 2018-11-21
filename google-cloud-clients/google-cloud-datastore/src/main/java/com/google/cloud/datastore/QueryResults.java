@@ -55,4 +55,19 @@ public interface QueryResults<V> extends Iterator<V> {
    * }</pre>
    */
   Cursor getCursorAfter();
+
+  /**
+   * Returns the number fo results skipped, typically because of an offset.
+   *
+   * <p>A simple use case to count entities:
+   *
+   * <pre>{@code
+   * Query<Key> query = Query.newKeyQueryBuilder().setOffset(Integer.MAX_VALUE).build();
+   * QueryResults<Key> result = datasore.datastore.run(query);
+   * if (!result.hasNext()) {
+   *  int numberOfEntities = result.getSkippedResults();
+   * }
+   * }</pre>
+   */
+  int getSkippedResults();
 }
