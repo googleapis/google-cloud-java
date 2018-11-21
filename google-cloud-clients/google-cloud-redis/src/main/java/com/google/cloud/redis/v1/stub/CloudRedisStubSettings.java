@@ -264,7 +264,9 @@ public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings>
 
             @Override
             public Iterable<Instance> extractResources(ListInstancesResponse payload) {
-              return payload.getInstancesList();
+              return payload.getInstancesList() != null
+                  ? payload.getInstancesList()
+                  : ImmutableList.<Instance>of();
             }
           };
 
