@@ -892,7 +892,7 @@ public interface Storage extends Service<StorageOptions> {
     private final Object value;
 
     enum Option {
-      HTTP_METHOD, CONTENT_TYPE, MD5, EXT_HEADERS, SERVICE_ACCOUNT_CRED
+      HTTP_METHOD, CONTENT_TYPE, MD5, EXT_HEADERS, SERVICE_ACCOUNT_CRED, HOST_NAME
     }
 
     private SignUrlOption(Option option, Object value) {
@@ -952,6 +952,13 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static SignUrlOption signWith(ServiceAccountSigner signer) {
       return new SignUrlOption(Option.SERVICE_ACCOUNT_CRED, signer);
+    }
+    
+    /**
+    * Use a different host name than the default host name 'storage.googleapis.com' 
+    */ 
+    public static SignUrlOption withHostName(String hostName){
+      return new SignUrlOption(Option.HOST_NAME, hostName);	
     }
   }
 
@@ -2107,6 +2114,8 @@ public interface Storage extends Service<StorageOptions> {
    *     granularity supported is 1 second, finer granularities will be truncated
    * @param unit time unit of the {@code duration} parameter
    * @param options optional URL signing options
+   *     {@code SignUrlOption.withHostName()} option to set a custom host name instead of using 
+   *     https://storage.googleapis.com.
    * @throws IllegalStateException if {@link SignUrlOption#signWith(ServiceAccountSigner)} was not
    *     used and no implementation of {@link ServiceAccountSigner} was provided to
    *     {@link StorageOptions}
