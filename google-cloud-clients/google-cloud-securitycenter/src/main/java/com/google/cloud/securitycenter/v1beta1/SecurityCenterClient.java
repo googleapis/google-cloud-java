@@ -27,7 +27,6 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.securitycenter.v1beta1.Finding.State;
 import com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult;
 import com.google.cloud.securitycenter.v1beta1.stub.SecurityCenterStub;
 import com.google.cloud.securitycenter.v1beta1.stub.SecurityCenterStubSettings;
