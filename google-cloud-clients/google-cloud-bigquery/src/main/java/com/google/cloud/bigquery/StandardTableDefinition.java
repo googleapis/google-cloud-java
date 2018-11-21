@@ -46,11 +46,11 @@ public abstract class StandardTableDefinition extends TableDefinition {
   public static class StreamingBuffer implements Serializable {
 
     private static final long serialVersionUID = 822027055549277843L;
-    private final long estimatedRows;
-    private final long estimatedBytes;
+    private final Long estimatedRows;
+    private final Long estimatedBytes;
     private final Long oldestEntryTime;
 
-    StreamingBuffer(long estimatedRows, long estimatedBytes, Long oldestEntryTime) {
+    StreamingBuffer(Long estimatedRows, Long estimatedBytes, Long oldestEntryTime) {
       this.estimatedRows = estimatedRows;
       this.estimatedBytes = estimatedBytes;
       this.oldestEntryTime = oldestEntryTime;
@@ -113,8 +113,13 @@ public abstract class StandardTableDefinition extends TableDefinition {
       if (streamingBufferPb.getOldestEntryTime() != null) {
         oldestEntryTime = streamingBufferPb.getOldestEntryTime().longValue();
       }
-      return new StreamingBuffer(streamingBufferPb.getEstimatedRows().longValue(),
-          streamingBufferPb.getEstimatedBytes().longValue(),
+      return new StreamingBuffer(
+          streamingBufferPb.getEstimatedRows() != null
+              ? streamingBufferPb.getEstimatedRows().longValue()
+              : null,
+          streamingBufferPb.getEstimatedBytes() != null
+              ? streamingBufferPb.getEstimatedBytes().longValue()
+              : null,
           oldestEntryTime);
     }
   }

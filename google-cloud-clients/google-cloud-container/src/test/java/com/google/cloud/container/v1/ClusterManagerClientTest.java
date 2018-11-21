@@ -175,6 +175,7 @@ public class ClusterManagerClientTest {
     String servicesIpv4Cidr = "servicesIpv4Cidr1966438125";
     int currentNodeCount = 178977560;
     String expireTime = "expireTime-96179731";
+    String location = "location1901043637";
     Cluster expectedResponse =
         Cluster.newBuilder()
             .setName(name)
@@ -199,6 +200,7 @@ public class ClusterManagerClientTest {
             .setServicesIpv4Cidr(servicesIpv4Cidr)
             .setCurrentNodeCount(currentNodeCount)
             .setExpireTime(expireTime)
+            .setLocation(location)
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -249,6 +251,7 @@ public class ClusterManagerClientTest {
     String statusMessage = "statusMessage-239442758";
     String selfLink = "selfLink-1691268851";
     String targetLink = "targetLink-2084812312";
+    String location = "location1901043637";
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     Operation expectedResponse =
@@ -259,6 +262,7 @@ public class ClusterManagerClientTest {
             .setStatusMessage(statusMessage)
             .setSelfLink(selfLink)
             .setTargetLink(targetLink)
+            .setLocation(location)
             .setStartTime(startTime)
             .setEndTime(endTime)
             .build();
@@ -311,6 +315,7 @@ public class ClusterManagerClientTest {
     String statusMessage = "statusMessage-239442758";
     String selfLink = "selfLink-1691268851";
     String targetLink = "targetLink-2084812312";
+    String location = "location1901043637";
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     Operation expectedResponse =
@@ -321,6 +326,7 @@ public class ClusterManagerClientTest {
             .setStatusMessage(statusMessage)
             .setSelfLink(selfLink)
             .setTargetLink(targetLink)
+            .setLocation(location)
             .setStartTime(startTime)
             .setEndTime(endTime)
             .build();
@@ -376,6 +382,7 @@ public class ClusterManagerClientTest {
     String statusMessage = "statusMessage-239442758";
     String selfLink = "selfLink-1691268851";
     String targetLink = "targetLink-2084812312";
+    String location = "location1901043637";
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     Operation expectedResponse =
@@ -386,6 +393,7 @@ public class ClusterManagerClientTest {
             .setStatusMessage(statusMessage)
             .setSelfLink(selfLink)
             .setTargetLink(targetLink)
+            .setLocation(location)
             .setStartTime(startTime)
             .setEndTime(endTime)
             .build();
@@ -441,6 +449,7 @@ public class ClusterManagerClientTest {
     String statusMessage = "statusMessage-239442758";
     String selfLink = "selfLink-1691268851";
     String targetLink = "targetLink-2084812312";
+    String location = "location1901043637";
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     Operation expectedResponse =
@@ -451,6 +460,7 @@ public class ClusterManagerClientTest {
             .setStatusMessage(statusMessage)
             .setSelfLink(selfLink)
             .setTargetLink(targetLink)
+            .setLocation(location)
             .setStartTime(startTime)
             .setEndTime(endTime)
             .build();
@@ -507,6 +517,7 @@ public class ClusterManagerClientTest {
     String statusMessage = "statusMessage-239442758";
     String selfLink = "selfLink-1691268851";
     String targetLink = "targetLink-2084812312";
+    String location = "location1901043637";
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     Operation expectedResponse =
@@ -517,6 +528,7 @@ public class ClusterManagerClientTest {
             .setStatusMessage(statusMessage)
             .setSelfLink(selfLink)
             .setTargetLink(targetLink)
+            .setLocation(location)
             .setStartTime(startTime)
             .setEndTime(endTime)
             .build();
@@ -572,6 +584,7 @@ public class ClusterManagerClientTest {
     String statusMessage = "statusMessage-239442758";
     String selfLink = "selfLink-1691268851";
     String targetLink = "targetLink-2084812312";
+    String location = "location1901043637";
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     Operation expectedResponse =
@@ -582,6 +595,7 @@ public class ClusterManagerClientTest {
             .setStatusMessage(statusMessage)
             .setSelfLink(selfLink)
             .setTargetLink(targetLink)
+            .setLocation(location)
             .setStartTime(startTime)
             .setEndTime(endTime)
             .build();
@@ -637,6 +651,7 @@ public class ClusterManagerClientTest {
     String statusMessage = "statusMessage-239442758";
     String selfLink = "selfLink-1691268851";
     String targetLink = "targetLink-2084812312";
+    String location = "location1901043637";
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     Operation expectedResponse =
@@ -647,6 +662,7 @@ public class ClusterManagerClientTest {
             .setStatusMessage(statusMessage)
             .setSelfLink(selfLink)
             .setTargetLink(targetLink)
+            .setLocation(location)
             .setStartTime(startTime)
             .setEndTime(endTime)
             .build();
@@ -702,6 +718,7 @@ public class ClusterManagerClientTest {
     String statusMessage = "statusMessage-239442758";
     String selfLink = "selfLink-1691268851";
     String targetLink = "targetLink-2084812312";
+    String location = "location1901043637";
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     Operation expectedResponse =
@@ -712,6 +729,7 @@ public class ClusterManagerClientTest {
             .setStatusMessage(statusMessage)
             .setSelfLink(selfLink)
             .setTargetLink(targetLink)
+            .setLocation(location)
             .setStartTime(startTime)
             .setEndTime(endTime)
             .build();
@@ -805,6 +823,7 @@ public class ClusterManagerClientTest {
     String statusMessage = "statusMessage-239442758";
     String selfLink = "selfLink-1691268851";
     String targetLink = "targetLink-2084812312";
+    String location = "location1901043637";
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     Operation expectedResponse =
@@ -815,6 +834,7 @@ public class ClusterManagerClientTest {
             .setStatusMessage(statusMessage)
             .setSelfLink(selfLink)
             .setTargetLink(targetLink)
+            .setLocation(location)
             .setStartTime(startTime)
             .setEndTime(endTime)
             .build();
@@ -1060,6 +1080,7 @@ public class ClusterManagerClientTest {
     String statusMessage = "statusMessage-239442758";
     String selfLink = "selfLink-1691268851";
     String targetLink = "targetLink-2084812312";
+    String location = "location1901043637";
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     Operation expectedResponse =
@@ -1070,6 +1091,7 @@ public class ClusterManagerClientTest {
             .setStatusMessage(statusMessage)
             .setSelfLink(selfLink)
             .setTargetLink(targetLink)
+            .setLocation(location)
             .setStartTime(startTime)
             .setEndTime(endTime)
             .build();
@@ -1125,6 +1147,7 @@ public class ClusterManagerClientTest {
     String statusMessage = "statusMessage-239442758";
     String selfLink = "selfLink-1691268851";
     String targetLink = "targetLink-2084812312";
+    String location = "location1901043637";
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     Operation expectedResponse =
@@ -1135,6 +1158,7 @@ public class ClusterManagerClientTest {
             .setStatusMessage(statusMessage)
             .setSelfLink(selfLink)
             .setTargetLink(targetLink)
+            .setLocation(location)
             .setStartTime(startTime)
             .setEndTime(endTime)
             .build();
@@ -1190,6 +1214,7 @@ public class ClusterManagerClientTest {
     String statusMessage = "statusMessage-239442758";
     String selfLink = "selfLink-1691268851";
     String targetLink = "targetLink-2084812312";
+    String location = "location1901043637";
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     Operation expectedResponse =
@@ -1200,6 +1225,7 @@ public class ClusterManagerClientTest {
             .setStatusMessage(statusMessage)
             .setSelfLink(selfLink)
             .setTargetLink(targetLink)
+            .setLocation(location)
             .setStartTime(startTime)
             .setEndTime(endTime)
             .build();
@@ -1257,6 +1283,7 @@ public class ClusterManagerClientTest {
     String statusMessage = "statusMessage-239442758";
     String selfLink = "selfLink-1691268851";
     String targetLink = "targetLink-2084812312";
+    String location = "location1901043637";
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     Operation expectedResponse =
@@ -1267,6 +1294,7 @@ public class ClusterManagerClientTest {
             .setStatusMessage(statusMessage)
             .setSelfLink(selfLink)
             .setTargetLink(targetLink)
+            .setLocation(location)
             .setStartTime(startTime)
             .setEndTime(endTime)
             .build();
@@ -1322,6 +1350,7 @@ public class ClusterManagerClientTest {
     String statusMessage = "statusMessage-239442758";
     String selfLink = "selfLink-1691268851";
     String targetLink = "targetLink-2084812312";
+    String location = "location1901043637";
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     Operation expectedResponse =
@@ -1332,6 +1361,7 @@ public class ClusterManagerClientTest {
             .setStatusMessage(statusMessage)
             .setSelfLink(selfLink)
             .setTargetLink(targetLink)
+            .setLocation(location)
             .setStartTime(startTime)
             .setEndTime(endTime)
             .build();
@@ -1384,6 +1414,7 @@ public class ClusterManagerClientTest {
     String statusMessage = "statusMessage-239442758";
     String selfLink = "selfLink-1691268851";
     String targetLink = "targetLink-2084812312";
+    String location = "location1901043637";
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     Operation expectedResponse =
@@ -1394,6 +1425,7 @@ public class ClusterManagerClientTest {
             .setStatusMessage(statusMessage)
             .setSelfLink(selfLink)
             .setTargetLink(targetLink)
+            .setLocation(location)
             .setStartTime(startTime)
             .setEndTime(endTime)
             .build();
@@ -1446,6 +1478,7 @@ public class ClusterManagerClientTest {
     String statusMessage = "statusMessage-239442758";
     String selfLink = "selfLink-1691268851";
     String targetLink = "targetLink-2084812312";
+    String location = "location1901043637";
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     Operation expectedResponse =
@@ -1456,6 +1489,7 @@ public class ClusterManagerClientTest {
             .setStatusMessage(statusMessage)
             .setSelfLink(selfLink)
             .setTargetLink(targetLink)
+            .setLocation(location)
             .setStartTime(startTime)
             .setEndTime(endTime)
             .build();
@@ -1511,6 +1545,7 @@ public class ClusterManagerClientTest {
     String statusMessage = "statusMessage-239442758";
     String selfLink = "selfLink-1691268851";
     String targetLink = "targetLink-2084812312";
+    String location = "location1901043637";
     String startTime = "startTime-1573145462";
     String endTime = "endTime1725551537";
     Operation expectedResponse =
@@ -1521,6 +1556,7 @@ public class ClusterManagerClientTest {
             .setStatusMessage(statusMessage)
             .setSelfLink(selfLink)
             .setTargetLink(targetLink)
+            .setLocation(location)
             .setStartTime(startTime)
             .setEndTime(endTime)
             .build();

@@ -69,7 +69,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Google Container Engine Cluster Manager v1
+ * Service Description: Google Kubernetes Engine Cluster Manager v1
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -202,10 +202,12 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides, or "-" for all zones.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
+   *     and replaced by the parent field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides, or "-" for all zones.
+   *     This field has been deprecated and replaced by the parent field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListClustersResponse listClusters(String projectId, String zone) {
@@ -279,11 +281,14 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides.
-   * @param clusterId The name of the cluster to retrieve.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
+   *     and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides. This field has been
+   *     deprecated and replaced by the name field.
+   * @param clusterId Deprecated. The name of the cluster to retrieve. This field has been
+   *     deprecated and replaced by the name field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Cluster getCluster(String projectId, String zone, String clusterId) {
@@ -376,10 +381,12 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
+   *     and replaced by the parent field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides. This field has been
+   *     deprecated and replaced by the parent field.
    * @param cluster A [cluster
    *     resource](/container-engine/reference/rest/v1/projects.zones.clusters)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -486,11 +493,14 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides.
-   * @param clusterId The name of the cluster to upgrade.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
+   *     and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides. This field has been
+   *     deprecated and replaced by the name field.
+   * @param clusterId Deprecated. The name of the cluster to upgrade. This field has been deprecated
+   *     and replaced by the name field.
    * @param update A description of the update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -566,7 +576,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the version and/or image type of a specific node pool.
+   * Updates the version and/or image type for a specific node pool.
    *
    * <p>Sample code:
    *
@@ -599,7 +609,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the version and/or image type of a specific node pool.
+   * Updates the version and/or image type for a specific node pool.
    *
    * <p>Sample code:
    *
@@ -631,7 +641,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the autoscaling settings of a specific node pool.
+   * Sets the autoscaling settings for a specific node pool.
    *
    * <p>Sample code:
    *
@@ -662,7 +672,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the autoscaling settings of a specific node pool.
+   * Sets the autoscaling settings for a specific node pool.
    *
    * <p>Sample code:
    *
@@ -693,7 +703,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the logging service of a specific cluster.
+   * Sets the logging service for a specific cluster.
    *
    * <p>Sample code:
    *
@@ -707,11 +717,14 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides.
-   * @param clusterId The name of the cluster to upgrade.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
+   *     and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides. This field has been
+   *     deprecated and replaced by the name field.
+   * @param clusterId Deprecated. The name of the cluster to upgrade. This field has been deprecated
+   *     and replaced by the name field.
    * @param loggingService The logging service the cluster should use to write metrics. Currently
    *     available options:
    *     <p>&#42; "logging.googleapis.com" - the Google Cloud Logging service &#42; "none" - no
@@ -733,7 +746,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the logging service of a specific cluster.
+   * Sets the logging service for a specific cluster.
    *
    * <p>Sample code:
    *
@@ -762,7 +775,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the logging service of a specific cluster.
+   * Sets the logging service for a specific cluster.
    *
    * <p>Sample code:
    *
@@ -790,7 +803,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the monitoring service of a specific cluster.
+   * Sets the monitoring service for a specific cluster.
    *
    * <p>Sample code:
    *
@@ -804,11 +817,14 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides.
-   * @param clusterId The name of the cluster to upgrade.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
+   *     and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides. This field has been
+   *     deprecated and replaced by the name field.
+   * @param clusterId Deprecated. The name of the cluster to upgrade. This field has been deprecated
+   *     and replaced by the name field.
    * @param monitoringService The monitoring service the cluster should use to write metrics.
    *     Currently available options:
    *     <p>&#42; "monitoring.googleapis.com" - the Google Cloud Monitoring service &#42; "none" -
@@ -830,7 +846,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the monitoring service of a specific cluster.
+   * Sets the monitoring service for a specific cluster.
    *
    * <p>Sample code:
    *
@@ -859,7 +875,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the monitoring service of a specific cluster.
+   * Sets the monitoring service for a specific cluster.
    *
    * <p>Sample code:
    *
@@ -888,7 +904,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the addons of a specific cluster.
+   * Sets the addons for a specific cluster.
    *
    * <p>Sample code:
    *
@@ -902,11 +918,14 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides.
-   * @param clusterId The name of the cluster to upgrade.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
+   *     and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides. This field has been
+   *     deprecated and replaced by the name field.
+   * @param clusterId Deprecated. The name of the cluster to upgrade. This field has been deprecated
+   *     and replaced by the name field.
    * @param addonsConfig The desired configurations for the various addons available to run in the
    *     cluster.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -926,7 +945,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the addons of a specific cluster.
+   * Sets the addons for a specific cluster.
    *
    * <p>Sample code:
    *
@@ -955,7 +974,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the addons of a specific cluster.
+   * Sets the addons for a specific cluster.
    *
    * <p>Sample code:
    *
@@ -983,7 +1002,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the locations of a specific cluster.
+   * Sets the locations for a specific cluster.
    *
    * <p>Sample code:
    *
@@ -997,11 +1016,14 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides.
-   * @param clusterId The name of the cluster to upgrade.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
+   *     and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides. This field has been
+   *     deprecated and replaced by the name field.
+   * @param clusterId Deprecated. The name of the cluster to upgrade. This field has been deprecated
+   *     and replaced by the name field.
    * @param locations The desired list of Google Compute Engine
    *     [locations](/compute/docs/zones#available) in which the cluster's nodes should be located.
    *     Changing the locations a cluster is in will result in nodes being either created or removed
@@ -1024,7 +1046,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the locations of a specific cluster.
+   * Sets the locations for a specific cluster.
    *
    * <p>Sample code:
    *
@@ -1053,7 +1075,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the locations of a specific cluster.
+   * Sets the locations for a specific cluster.
    *
    * <p>Sample code:
    *
@@ -1081,7 +1103,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the master of a specific cluster.
+   * Updates the master for a specific cluster.
    *
    * <p>Sample code:
    *
@@ -1095,14 +1117,21 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides.
-   * @param clusterId The name of the cluster to upgrade.
-   * @param masterVersion The Kubernetes version to change the master to. The only valid value is
-   *     the latest supported version. Use "-" to have the server automatically select the latest
-   *     version.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
+   *     and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides. This field has been
+   *     deprecated and replaced by the name field.
+   * @param clusterId Deprecated. The name of the cluster to upgrade. This field has been deprecated
+   *     and replaced by the name field.
+   * @param masterVersion The Kubernetes version to change the master to.
+   *     <p>Users may specify either explicit versions offered by Kubernetes Engine or version
+   *     aliases, which have the following behavior:
+   *     <p>- "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid
+   *     patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the
+   *     1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "-": picks the
+   *     default Kubernetes version
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation updateMaster(
@@ -1120,7 +1149,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the master of a specific cluster.
+   * Updates the master for a specific cluster.
    *
    * <p>Sample code:
    *
@@ -1149,7 +1178,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates the master of a specific cluster.
+   * Updates the master for a specific cluster.
    *
    * <p>Sample code:
    *
@@ -1177,7 +1206,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Used to set master auth materials. Currently supports :- Changing the admin password of a
+   * Used to set master auth materials. Currently supports :- Changing the admin password for a
    * specific cluster. This can be either via password generation or explicitly set the password.
    *
    * <p>Sample code:
@@ -1209,7 +1238,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Used to set master auth materials. Currently supports :- Changing the admin password of a
+   * Used to set master auth materials. Currently supports :- Changing the admin password for a
    * specific cluster. This can be either via password generation or explicitly set the password.
    *
    * <p>Sample code:
@@ -1258,11 +1287,14 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides.
-   * @param clusterId The name of the cluster to delete.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
+   *     and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides. This field has been
+   *     deprecated and replaced by the name field.
+   * @param clusterId Deprecated. The name of the cluster to delete. This field has been deprecated
+   *     and replaced by the name field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation deleteCluster(String projectId, String zone, String clusterId) {
@@ -1353,10 +1385,12 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) to
-   *     return operations for, or `-` for all zones.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
+   *     and replaced by the parent field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) to return operations for, or `-` for all zones. This
+   *     field has been deprecated and replaced by the parent field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListOperationsResponse listOperations(String projectId, String zone) {
@@ -1431,11 +1465,14 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides.
-   * @param operationId The server-assigned `name` of the operation.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
+   *     and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides. This field has been
+   *     deprecated and replaced by the name field.
+   * @param operationId Deprecated. The server-assigned `name` of the operation. This field has been
+   *     deprecated and replaced by the name field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation getOperation(String projectId, String zone, String operationId) {
@@ -1517,11 +1554,14 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the operation resides.
-   * @param operationId The server-assigned `name` of the operation.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
+   *     and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the operation resides. This field has been
+   *     deprecated and replaced by the name field.
+   * @param operationId Deprecated. The server-assigned `name` of the operation. This field has been
+   *     deprecated and replaced by the name field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void cancelOperation(String projectId, String zone, String operationId) {
@@ -1590,7 +1630,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns configuration info about the Container Engine service.
+   * Returns configuration info about the Kubernetes Engine service.
    *
    * <p>Sample code:
    *
@@ -1602,10 +1642,12 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) to
-   *     return operations for.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
+   *     and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) to return operations for. This field has been
+   *     deprecated and replaced by the name field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServerConfig getServerConfig(String projectId, String zone) {
@@ -1617,7 +1659,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns configuration info about the Container Engine service.
+   * Returns configuration info about the Kubernetes Engine service.
    *
    * <p>Sample code:
    *
@@ -1642,7 +1684,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns configuration info about the Container Engine service.
+   * Returns configuration info about the Kubernetes Engine service.
    *
    * <p>Sample code:
    *
@@ -1679,11 +1721,14 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://developers.google.com/console/help/new/#projectnumber).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides.
-   * @param clusterId The name of the cluster.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
+   *     deprecated and replaced by the parent field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides. This field has been
+   *     deprecated and replaced by the parent field.
+   * @param clusterId Deprecated. The name of the cluster. This field has been deprecated and
+   *     replaced by the parent field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNodePoolsResponse listNodePools(
@@ -1767,12 +1812,16 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://developers.google.com/console/help/new/#projectnumber).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides.
-   * @param clusterId The name of the cluster.
-   * @param nodePoolId The name of the node pool.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
+   *     deprecated and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides. This field has been
+   *     deprecated and replaced by the name field.
+   * @param clusterId Deprecated. The name of the cluster. This field has been deprecated and
+   *     replaced by the name field.
+   * @param nodePoolId Deprecated. The name of the node pool. This field has been deprecated and
+   *     replaced by the name field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final NodePool getNodePool(
@@ -1861,11 +1910,14 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://developers.google.com/console/help/new/#projectnumber).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides.
-   * @param clusterId The name of the cluster.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
+   *     deprecated and replaced by the parent field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides. This field has been
+   *     deprecated and replaced by the parent field.
+   * @param clusterId Deprecated. The name of the cluster. This field has been deprecated and
+   *     replaced by the parent field.
    * @param nodePool The node pool to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1955,12 +2007,16 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://developers.google.com/console/help/new/#projectnumber).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides.
-   * @param clusterId The name of the cluster.
-   * @param nodePoolId The name of the node pool to delete.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
+   *     deprecated and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides. This field has been
+   *     deprecated and replaced by the name field.
+   * @param clusterId Deprecated. The name of the cluster. This field has been deprecated and
+   *     replaced by the name field.
+   * @param nodePoolId Deprecated. The name of the node pool to delete. This field has been
+   *     deprecated and replaced by the name field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation deleteNodePool(
@@ -2050,12 +2106,16 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides.
-   * @param clusterId The name of the cluster to rollback.
-   * @param nodePoolId The name of the node pool to rollback.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
+   *     and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides. This field has been
+   *     deprecated and replaced by the name field.
+   * @param clusterId Deprecated. The name of the cluster to rollback. This field has been
+   *     deprecated and replaced by the name field.
+   * @param nodePoolId Deprecated. The name of the node pool to rollback. This field has been
+   *     deprecated and replaced by the name field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation rollbackNodePoolUpgrade(
@@ -2270,11 +2330,14 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://support.google.com/cloud/answer/6158840).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides.
-   * @param clusterId The name of the cluster to update.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
+   *     and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides. This field has been
+   *     deprecated and replaced by the name field.
+   * @param clusterId Deprecated. The name of the cluster to update. This field has been deprecated
+   *     and replaced by the name field.
    * @param enabled Whether ABAC authorization will be enabled in the cluster.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2363,11 +2426,14 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://developers.google.com/console/help/new/#projectnumber).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides.
-   * @param clusterId The name of the cluster.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
+   *     deprecated and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides. This field has been
+   *     deprecated and replaced by the name field.
+   * @param clusterId Deprecated. The name of the cluster. This field has been deprecated and
+   *     replaced by the name field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation startIPRotation(String projectId, String zone, String clusterId) {
@@ -2449,11 +2515,14 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://developers.google.com/console/help/new/#projectnumber).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides.
-   * @param clusterId The name of the cluster.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
+   *     deprecated and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides. This field has been
+   *     deprecated and replaced by the name field.
+   * @param clusterId Deprecated. The name of the cluster. This field has been deprecated and
+   *     replaced by the name field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation completeIPRotation(String projectId, String zone, String clusterId) {
@@ -2522,7 +2591,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the size of a specific node pool.
+   * Sets the size for a specific node pool.
    *
    * <p>Sample code:
    *
@@ -2553,7 +2622,7 @@ public class ClusterManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the size of a specific node pool.
+   * Sets the size for a specific node pool.
    *
    * <p>Sample code:
    *
@@ -2597,11 +2666,14 @@ public class ClusterManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param projectId The Google Developers Console [project ID or project
-   *     number](https://developers.google.com/console/help/new/#projectnumber).
-   * @param zone The name of the Google Compute Engine [zone](/compute/docs/zones#available) in
-   *     which the cluster resides.
-   * @param clusterId The name of the cluster.
+   * @param projectId Deprecated. The Google Developers Console [project ID or project
+   *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
+   *     deprecated and replaced by the name field.
+   * @param zone Deprecated. The name of the Google Compute Engine
+   *     [zone](/compute/docs/zones#available) in which the cluster resides. This field has been
+   *     deprecated and replaced by the name field.
+   * @param clusterId Deprecated. The name of the cluster. This field has been deprecated and
+   *     replaced by the name field.
    * @param networkPolicy Configuration options for the NetworkPolicy feature.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

@@ -9,44 +9,48 @@ public interface CreateClusterRequestOrBuilder extends
 
   /**
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
+   * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
-  java.lang.String getProjectId();
+  @java.lang.Deprecated java.lang.String getProjectId();
   /**
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
+   * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getProjectIdBytes();
 
   /**
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  java.lang.String getZone();
+  @java.lang.Deprecated java.lang.String getZone();
   /**
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getZoneBytes();
 
   /**
@@ -76,4 +80,24 @@ public interface CreateClusterRequestOrBuilder extends
    * <code>.google.container.v1.Cluster cluster = 3;</code>
    */
   com.google.container.v1.ClusterOrBuilder getClusterOrBuilder();
+
+  /**
+   * <pre>
+   * The parent (project and location) where the cluster will be created.
+   * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+   * </pre>
+   *
+   * <code>string parent = 5;</code>
+   */
+  java.lang.String getParent();
+  /**
+   * <pre>
+   * The parent (project and location) where the cluster will be created.
+   * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
+   * </pre>
+   *
+   * <code>string parent = 5;</code>
+   */
+  com.google.protobuf.ByteString
+      getParentBytes();
 }

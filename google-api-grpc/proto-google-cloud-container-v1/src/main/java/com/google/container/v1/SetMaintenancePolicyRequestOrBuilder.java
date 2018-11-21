@@ -94,4 +94,26 @@ public interface SetMaintenancePolicyRequestOrBuilder extends
    * <code>.google.container.v1.MaintenancePolicy maintenance_policy = 4;</code>
    */
   com.google.container.v1.MaintenancePolicyOrBuilder getMaintenancePolicyOrBuilder();
+
+  /**
+   * <pre>
+   * The name (project, location, cluster id) of the cluster to set maintenance
+   * policy.
+   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * </pre>
+   *
+   * <code>string name = 5;</code>
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * The name (project, location, cluster id) of the cluster to set maintenance
+   * policy.
+   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * </pre>
+   *
+   * <code>string name = 5;</code>
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
 }

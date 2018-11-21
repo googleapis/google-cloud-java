@@ -173,8 +173,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The Kubernetes version to change the nodes to (typically an
-   * upgrade). Use `-` to upgrade to the latest version supported by
-   * the server.
+   * upgrade).
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "-": picks the Kubernetes master version
    * </pre>
    *
    * <code>string desired_node_version = 4;</code>
@@ -194,8 +200,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The Kubernetes version to change the nodes to (typically an
-   * upgrade). Use `-` to upgrade to the latest version supported by
-   * the server.
+   * upgrade).
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "-": picks the Kubernetes master version
    * </pre>
    *
    * <code>string desired_node_version = 4;</code>
@@ -498,7 +510,6 @@ private static final long serialVersionUID = 0L;
   private com.google.container.v1.MasterAuthorizedNetworksConfig desiredMasterAuthorizedNetworksConfig_;
   /**
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The desired configuration options for master authorized networks feature.
    * </pre>
    *
@@ -509,7 +520,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The desired configuration options for master authorized networks feature.
    * </pre>
    *
@@ -520,7 +530,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The desired configuration options for master authorized networks feature.
    * </pre>
    *
@@ -534,9 +543,14 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object desiredMasterVersion_;
   /**
    * <pre>
-   * The Kubernetes version to change the master to. The only valid value is the
-   * latest supported version. Use "-" to have the server automatically select
-   * the latest version.
+   * The Kubernetes version to change the master to.
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "-": picks the default Kubernetes version
    * </pre>
    *
    * <code>string desired_master_version = 100;</code>
@@ -555,9 +569,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The Kubernetes version to change the master to. The only valid value is the
-   * latest supported version. Use "-" to have the server automatically select
-   * the latest version.
+   * The Kubernetes version to change the master to.
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "-": picks the default Kubernetes version
    * </pre>
    *
    * <code>string desired_master_version = 100;</code>
@@ -1085,8 +1104,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The Kubernetes version to change the nodes to (typically an
-     * upgrade). Use `-` to upgrade to the latest version supported by
-     * the server.
+     * upgrade).
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the Kubernetes master version
      * </pre>
      *
      * <code>string desired_node_version = 4;</code>
@@ -1106,8 +1131,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The Kubernetes version to change the nodes to (typically an
-     * upgrade). Use `-` to upgrade to the latest version supported by
-     * the server.
+     * upgrade).
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the Kubernetes master version
      * </pre>
      *
      * <code>string desired_node_version = 4;</code>
@@ -1128,8 +1159,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The Kubernetes version to change the nodes to (typically an
-     * upgrade). Use `-` to upgrade to the latest version supported by
-     * the server.
+     * upgrade).
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the Kubernetes master version
      * </pre>
      *
      * <code>string desired_node_version = 4;</code>
@@ -1147,8 +1184,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The Kubernetes version to change the nodes to (typically an
-     * upgrade). Use `-` to upgrade to the latest version supported by
-     * the server.
+     * upgrade).
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the Kubernetes master version
      * </pre>
      *
      * <code>string desired_node_version = 4;</code>
@@ -1162,8 +1205,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The Kubernetes version to change the nodes to (typically an
-     * upgrade). Use `-` to upgrade to the latest version supported by
-     * the server.
+     * upgrade).
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the Kubernetes master version
      * </pre>
      *
      * <code>string desired_node_version = 4;</code>
@@ -1995,7 +2044,6 @@ private static final long serialVersionUID = 0L;
         com.google.container.v1.MasterAuthorizedNetworksConfig, com.google.container.v1.MasterAuthorizedNetworksConfig.Builder, com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder> desiredMasterAuthorizedNetworksConfigBuilder_;
     /**
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The desired configuration options for master authorized networks feature.
      * </pre>
      *
@@ -2006,7 +2054,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The desired configuration options for master authorized networks feature.
      * </pre>
      *
@@ -2021,7 +2068,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The desired configuration options for master authorized networks feature.
      * </pre>
      *
@@ -2042,7 +2088,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The desired configuration options for master authorized networks feature.
      * </pre>
      *
@@ -2061,7 +2106,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The desired configuration options for master authorized networks feature.
      * </pre>
      *
@@ -2084,7 +2128,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The desired configuration options for master authorized networks feature.
      * </pre>
      *
@@ -2103,7 +2146,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The desired configuration options for master authorized networks feature.
      * </pre>
      *
@@ -2116,7 +2158,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The desired configuration options for master authorized networks feature.
      * </pre>
      *
@@ -2132,7 +2173,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The desired configuration options for master authorized networks feature.
      * </pre>
      *
@@ -2155,9 +2195,14 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object desiredMasterVersion_ = "";
     /**
      * <pre>
-     * The Kubernetes version to change the master to. The only valid value is the
-     * latest supported version. Use "-" to have the server automatically select
-     * the latest version.
+     * The Kubernetes version to change the master to.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string desired_master_version = 100;</code>
@@ -2176,9 +2221,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Kubernetes version to change the master to. The only valid value is the
-     * latest supported version. Use "-" to have the server automatically select
-     * the latest version.
+     * The Kubernetes version to change the master to.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string desired_master_version = 100;</code>
@@ -2198,9 +2248,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Kubernetes version to change the master to. The only valid value is the
-     * latest supported version. Use "-" to have the server automatically select
-     * the latest version.
+     * The Kubernetes version to change the master to.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string desired_master_version = 100;</code>
@@ -2217,9 +2272,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Kubernetes version to change the master to. The only valid value is the
-     * latest supported version. Use "-" to have the server automatically select
-     * the latest version.
+     * The Kubernetes version to change the master to.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string desired_master_version = 100;</code>
@@ -2232,9 +2292,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The Kubernetes version to change the master to. The only valid value is the
-     * latest supported version. Use "-" to have the server automatically select
-     * the latest version.
+     * The Kubernetes version to change the master to.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string desired_master_version = 100;</code>

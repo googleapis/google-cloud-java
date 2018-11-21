@@ -53,17 +53,17 @@ public interface IPAllocationPolicyOrBuilder extends
    * This field is deprecated, use cluster_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string cluster_ipv4_cidr = 4;</code>
+   * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    */
-  java.lang.String getClusterIpv4Cidr();
+  @java.lang.Deprecated java.lang.String getClusterIpv4Cidr();
   /**
    * <pre>
    * This field is deprecated, use cluster_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string cluster_ipv4_cidr = 4;</code>
+   * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getClusterIpv4CidrBytes();
 
   /**
@@ -71,17 +71,17 @@ public interface IPAllocationPolicyOrBuilder extends
    * This field is deprecated, use node_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string node_ipv4_cidr = 5;</code>
+   * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    */
-  java.lang.String getNodeIpv4Cidr();
+  @java.lang.Deprecated java.lang.String getNodeIpv4Cidr();
   /**
    * <pre>
    * This field is deprecated, use node_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string node_ipv4_cidr = 5;</code>
+   * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getNodeIpv4CidrBytes();
 
   /**
@@ -89,17 +89,17 @@ public interface IPAllocationPolicyOrBuilder extends
    * This field is deprecated, use services_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string services_ipv4_cidr = 6;</code>
+   * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    */
-  java.lang.String getServicesIpv4Cidr();
+  @java.lang.Deprecated java.lang.String getServicesIpv4Cidr();
   /**
    * <pre>
    * This field is deprecated, use services_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string services_ipv4_cidr = 6;</code>
+   * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getServicesIpv4CidrBytes();
 
   /**

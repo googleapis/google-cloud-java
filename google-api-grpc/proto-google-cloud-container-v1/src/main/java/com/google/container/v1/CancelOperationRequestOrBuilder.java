@@ -9,59 +9,85 @@ public interface CancelOperationRequestOrBuilder extends
 
   /**
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
-  java.lang.String getProjectId();
+  @java.lang.Deprecated java.lang.String getProjectId();
   /**
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getProjectIdBytes();
 
   /**
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the operation resides.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  java.lang.String getZone();
+  @java.lang.Deprecated java.lang.String getZone();
   /**
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the operation resides.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getZoneBytes();
 
   /**
    * <pre>
-   * The server-assigned `name` of the operation.
+   * Deprecated. The server-assigned `name` of the operation.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string operation_id = 3;</code>
+   * <code>string operation_id = 3 [deprecated = true];</code>
    */
-  java.lang.String getOperationId();
+  @java.lang.Deprecated java.lang.String getOperationId();
   /**
    * <pre>
-   * The server-assigned `name` of the operation.
+   * Deprecated. The server-assigned `name` of the operation.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string operation_id = 3;</code>
+   * <code>string operation_id = 3 [deprecated = true];</code>
+   */
+  @java.lang.Deprecated com.google.protobuf.ByteString
+      getOperationIdBytes();
+
+  /**
+   * <pre>
+   * The name (project, location, operation id) of the operation to cancel.
+   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;operations/&#42;'.
+   * </pre>
+   *
+   * <code>string name = 4;</code>
+   */
+  java.lang.String getName();
+  /**
+   * <pre>
+   * The name (project, location, operation id) of the operation to cancel.
+   * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;operations/&#42;'.
+   * </pre>
+   *
+   * <code>string name = 4;</code>
    */
   com.google.protobuf.ByteString
-      getOperationIdBytes();
+      getNameBytes();
 }
