@@ -5,22 +5,24 @@ package com.google.cloud.iot.v1;
 
 /**
  * <pre>
- * Request for `CreateDevice`.
+ * Request for `UnbindDeviceFromGateway`.
  * </pre>
  *
- * Protobuf type {@code google.cloud.iot.v1.CreateDeviceRequest}
+ * Protobuf type {@code google.cloud.iot.v1.UnbindDeviceFromGatewayRequest}
  */
-public  final class CreateDeviceRequest extends
+public  final class UnbindDeviceFromGatewayRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.CreateDeviceRequest)
-    CreateDeviceRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.UnbindDeviceFromGatewayRequest)
+    UnbindDeviceFromGatewayRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use CreateDeviceRequest.newBuilder() to construct.
-  private CreateDeviceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use UnbindDeviceFromGatewayRequest.newBuilder() to construct.
+  private UnbindDeviceFromGatewayRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CreateDeviceRequest() {
+  private UnbindDeviceFromGatewayRequest() {
     parent_ = "";
+    gatewayId_ = "";
+    deviceId_ = "";
   }
 
   @java.lang.Override
@@ -28,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private CreateDeviceRequest(
+  private UnbindDeviceFromGatewayRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -54,16 +56,15 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            com.google.cloud.iot.v1.Device.Builder subBuilder = null;
-            if (device_ != null) {
-              subBuilder = device_.toBuilder();
-            }
-            device_ = input.readMessage(com.google.cloud.iot.v1.Device.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(device_);
-              device_ = subBuilder.buildPartial();
-            }
+            java.lang.String s = input.readStringRequireUtf8();
 
+            gatewayId_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            deviceId_ = s;
             break;
           }
           default: {
@@ -87,23 +88,22 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_CreateDeviceRequest_descriptor;
+    return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_UnbindDeviceFromGatewayRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_CreateDeviceRequest_fieldAccessorTable
+    return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_UnbindDeviceFromGatewayRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.iot.v1.CreateDeviceRequest.class, com.google.cloud.iot.v1.CreateDeviceRequest.Builder.class);
+            com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest.class, com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * The name of the device registry where this device should be created.
-   * For example,
+   * The name of the registry. For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
    * </pre>
    *
@@ -123,8 +123,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The name of the device registry where this device should be created.
-   * For example,
+   * The name of the registry. For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
    * </pre>
    *
@@ -144,43 +143,94 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DEVICE_FIELD_NUMBER = 2;
-  private com.google.cloud.iot.v1.Device device_;
+  public static final int GATEWAY_ID_FIELD_NUMBER = 2;
+  private volatile java.lang.Object gatewayId_;
   /**
    * <pre>
-   * The device registration details. The field `name` must be empty. The server
-   * generates `name` from the device registry `id` and the
-   * `parent` field.
+   * The value of `gateway_id` can be either the device numeric ID or the
+   * user-defined device identifier.
    * </pre>
    *
-   * <code>.google.cloud.iot.v1.Device device = 2;</code>
+   * <code>string gateway_id = 2;</code>
    */
-  public boolean hasDevice() {
-    return device_ != null;
+  public java.lang.String getGatewayId() {
+    java.lang.Object ref = gatewayId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      gatewayId_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * The device registration details. The field `name` must be empty. The server
-   * generates `name` from the device registry `id` and the
-   * `parent` field.
+   * The value of `gateway_id` can be either the device numeric ID or the
+   * user-defined device identifier.
    * </pre>
    *
-   * <code>.google.cloud.iot.v1.Device device = 2;</code>
+   * <code>string gateway_id = 2;</code>
    */
-  public com.google.cloud.iot.v1.Device getDevice() {
-    return device_ == null ? com.google.cloud.iot.v1.Device.getDefaultInstance() : device_;
+  public com.google.protobuf.ByteString
+      getGatewayIdBytes() {
+    java.lang.Object ref = gatewayId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      gatewayId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DEVICE_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object deviceId_;
+  /**
+   * <pre>
+   * The device to disassociate from the specified gateway. The value of
+   * `device_id` can be either the device numeric ID or the user-defined device
+   * identifier.
+   * </pre>
+   *
+   * <code>string device_id = 3;</code>
+   */
+  public java.lang.String getDeviceId() {
+    java.lang.Object ref = deviceId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      deviceId_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * The device registration details. The field `name` must be empty. The server
-   * generates `name` from the device registry `id` and the
-   * `parent` field.
+   * The device to disassociate from the specified gateway. The value of
+   * `device_id` can be either the device numeric ID or the user-defined device
+   * identifier.
    * </pre>
    *
-   * <code>.google.cloud.iot.v1.Device device = 2;</code>
+   * <code>string device_id = 3;</code>
    */
-  public com.google.cloud.iot.v1.DeviceOrBuilder getDeviceOrBuilder() {
-    return getDevice();
+  public com.google.protobuf.ByteString
+      getDeviceIdBytes() {
+    java.lang.Object ref = deviceId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      deviceId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -200,8 +250,11 @@ private static final long serialVersionUID = 0L;
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
-    if (device_ != null) {
-      output.writeMessage(2, getDevice());
+    if (!getGatewayIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, gatewayId_);
+    }
+    if (!getDeviceIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, deviceId_);
     }
     unknownFields.writeTo(output);
   }
@@ -215,9 +268,11 @@ private static final long serialVersionUID = 0L;
     if (!getParentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
-    if (device_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getDevice());
+    if (!getGatewayIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, gatewayId_);
+    }
+    if (!getDeviceIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, deviceId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -229,19 +284,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.google.cloud.iot.v1.CreateDeviceRequest)) {
+    if (!(obj instanceof com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.iot.v1.CreateDeviceRequest other = (com.google.cloud.iot.v1.CreateDeviceRequest) obj;
+    com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest other = (com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest) obj;
 
     boolean result = true;
     result = result && getParent()
         .equals(other.getParent());
-    result = result && (hasDevice() == other.hasDevice());
-    if (hasDevice()) {
-      result = result && getDevice()
-          .equals(other.getDevice());
-    }
+    result = result && getGatewayId()
+        .equals(other.getGatewayId());
+    result = result && getDeviceId()
+        .equals(other.getDeviceId());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -255,78 +309,78 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
-    if (hasDevice()) {
-      hash = (37 * hash) + DEVICE_FIELD_NUMBER;
-      hash = (53 * hash) + getDevice().hashCode();
-    }
+    hash = (37 * hash) + GATEWAY_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getGatewayId().hashCode();
+    hash = (37 * hash) + DEVICE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getDeviceId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.iot.v1.CreateDeviceRequest parseFrom(
+  public static com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.iot.v1.CreateDeviceRequest parseFrom(
+  public static com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.iot.v1.CreateDeviceRequest parseFrom(
+  public static com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.iot.v1.CreateDeviceRequest parseFrom(
+  public static com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.iot.v1.CreateDeviceRequest parseFrom(byte[] data)
+  public static com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.iot.v1.CreateDeviceRequest parseFrom(
+  public static com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.iot.v1.CreateDeviceRequest parseFrom(java.io.InputStream input)
+  public static com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.iot.v1.CreateDeviceRequest parseFrom(
+  public static com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.iot.v1.CreateDeviceRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.google.cloud.iot.v1.CreateDeviceRequest parseDelimitedFrom(
+  public static com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.iot.v1.CreateDeviceRequest parseFrom(
+  public static com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.iot.v1.CreateDeviceRequest parseFrom(
+  public static com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -339,7 +393,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.iot.v1.CreateDeviceRequest prototype) {
+  public static Builder newBuilder(com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -356,29 +410,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request for `CreateDevice`.
+   * Request for `UnbindDeviceFromGateway`.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.iot.v1.CreateDeviceRequest}
+   * Protobuf type {@code google.cloud.iot.v1.UnbindDeviceFromGatewayRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.iot.v1.CreateDeviceRequest)
-      com.google.cloud.iot.v1.CreateDeviceRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.iot.v1.UnbindDeviceFromGatewayRequest)
+      com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_CreateDeviceRequest_descriptor;
+      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_UnbindDeviceFromGatewayRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_CreateDeviceRequest_fieldAccessorTable
+      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_UnbindDeviceFromGatewayRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.iot.v1.CreateDeviceRequest.class, com.google.cloud.iot.v1.CreateDeviceRequest.Builder.class);
+              com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest.class, com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.iot.v1.CreateDeviceRequest.newBuilder()
+    // Construct using com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -398,29 +452,27 @@ private static final long serialVersionUID = 0L;
       super.clear();
       parent_ = "";
 
-      if (deviceBuilder_ == null) {
-        device_ = null;
-      } else {
-        device_ = null;
-        deviceBuilder_ = null;
-      }
+      gatewayId_ = "";
+
+      deviceId_ = "";
+
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_CreateDeviceRequest_descriptor;
+      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_UnbindDeviceFromGatewayRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.iot.v1.CreateDeviceRequest getDefaultInstanceForType() {
-      return com.google.cloud.iot.v1.CreateDeviceRequest.getDefaultInstance();
+    public com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest getDefaultInstanceForType() {
+      return com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.iot.v1.CreateDeviceRequest build() {
-      com.google.cloud.iot.v1.CreateDeviceRequest result = buildPartial();
+    public com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest build() {
+      com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -428,14 +480,11 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.cloud.iot.v1.CreateDeviceRequest buildPartial() {
-      com.google.cloud.iot.v1.CreateDeviceRequest result = new com.google.cloud.iot.v1.CreateDeviceRequest(this);
+    public com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest buildPartial() {
+      com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest result = new com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest(this);
       result.parent_ = parent_;
-      if (deviceBuilder_ == null) {
-        result.device_ = device_;
-      } else {
-        result.device_ = deviceBuilder_.build();
-      }
+      result.gatewayId_ = gatewayId_;
+      result.deviceId_ = deviceId_;
       onBuilt();
       return result;
     }
@@ -474,22 +523,27 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.iot.v1.CreateDeviceRequest) {
-        return mergeFrom((com.google.cloud.iot.v1.CreateDeviceRequest)other);
+      if (other instanceof com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest) {
+        return mergeFrom((com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.iot.v1.CreateDeviceRequest other) {
-      if (other == com.google.cloud.iot.v1.CreateDeviceRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest other) {
+      if (other == com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest.getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         onChanged();
       }
-      if (other.hasDevice()) {
-        mergeDevice(other.getDevice());
+      if (!other.getGatewayId().isEmpty()) {
+        gatewayId_ = other.gatewayId_;
+        onChanged();
+      }
+      if (!other.getDeviceId().isEmpty()) {
+        deviceId_ = other.deviceId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -506,11 +560,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.iot.v1.CreateDeviceRequest parsedMessage = null;
+      com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.iot.v1.CreateDeviceRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -523,8 +577,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * The name of the device registry where this device should be created.
-     * For example,
+     * The name of the registry. For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
      * </pre>
      *
@@ -544,8 +597,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the device registry where this device should be created.
-     * For example,
+     * The name of the registry. For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
      * </pre>
      *
@@ -566,8 +618,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the device registry where this device should be created.
-     * For example,
+     * The name of the registry. For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
      * </pre>
      *
@@ -585,8 +636,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the device registry where this device should be created.
-     * For example,
+     * The name of the registry. For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
      * </pre>
      *
@@ -600,8 +650,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The name of the device registry where this device should be created.
-     * For example,
+     * The name of the registry. For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
      * </pre>
      *
@@ -619,175 +668,197 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.cloud.iot.v1.Device device_ = null;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.iot.v1.Device, com.google.cloud.iot.v1.Device.Builder, com.google.cloud.iot.v1.DeviceOrBuilder> deviceBuilder_;
+    private java.lang.Object gatewayId_ = "";
     /**
      * <pre>
-     * The device registration details. The field `name` must be empty. The server
-     * generates `name` from the device registry `id` and the
-     * `parent` field.
+     * The value of `gateway_id` can be either the device numeric ID or the
+     * user-defined device identifier.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.Device device = 2;</code>
+     * <code>string gateway_id = 2;</code>
      */
-    public boolean hasDevice() {
-      return deviceBuilder_ != null || device_ != null;
-    }
-    /**
-     * <pre>
-     * The device registration details. The field `name` must be empty. The server
-     * generates `name` from the device registry `id` and the
-     * `parent` field.
-     * </pre>
-     *
-     * <code>.google.cloud.iot.v1.Device device = 2;</code>
-     */
-    public com.google.cloud.iot.v1.Device getDevice() {
-      if (deviceBuilder_ == null) {
-        return device_ == null ? com.google.cloud.iot.v1.Device.getDefaultInstance() : device_;
+    public java.lang.String getGatewayId() {
+      java.lang.Object ref = gatewayId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        gatewayId_ = s;
+        return s;
       } else {
-        return deviceBuilder_.getMessage();
+        return (java.lang.String) ref;
       }
     }
     /**
      * <pre>
-     * The device registration details. The field `name` must be empty. The server
-     * generates `name` from the device registry `id` and the
-     * `parent` field.
+     * The value of `gateway_id` can be either the device numeric ID or the
+     * user-defined device identifier.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.Device device = 2;</code>
+     * <code>string gateway_id = 2;</code>
      */
-    public Builder setDevice(com.google.cloud.iot.v1.Device value) {
-      if (deviceBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        device_ = value;
-        onChanged();
+    public com.google.protobuf.ByteString
+        getGatewayIdBytes() {
+      java.lang.Object ref = gatewayId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        gatewayId_ = b;
+        return b;
       } else {
-        deviceBuilder_.setMessage(value);
+        return (com.google.protobuf.ByteString) ref;
       }
-
-      return this;
     }
     /**
      * <pre>
-     * The device registration details. The field `name` must be empty. The server
-     * generates `name` from the device registry `id` and the
-     * `parent` field.
+     * The value of `gateway_id` can be either the device numeric ID or the
+     * user-defined device identifier.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.Device device = 2;</code>
+     * <code>string gateway_id = 2;</code>
      */
-    public Builder setDevice(
-        com.google.cloud.iot.v1.Device.Builder builderForValue) {
-      if (deviceBuilder_ == null) {
-        device_ = builderForValue.build();
-        onChanged();
-      } else {
-        deviceBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The device registration details. The field `name` must be empty. The server
-     * generates `name` from the device registry `id` and the
-     * `parent` field.
-     * </pre>
-     *
-     * <code>.google.cloud.iot.v1.Device device = 2;</code>
-     */
-    public Builder mergeDevice(com.google.cloud.iot.v1.Device value) {
-      if (deviceBuilder_ == null) {
-        if (device_ != null) {
-          device_ =
-            com.google.cloud.iot.v1.Device.newBuilder(device_).mergeFrom(value).buildPartial();
-        } else {
-          device_ = value;
-        }
-        onChanged();
-      } else {
-        deviceBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The device registration details. The field `name` must be empty. The server
-     * generates `name` from the device registry `id` and the
-     * `parent` field.
-     * </pre>
-     *
-     * <code>.google.cloud.iot.v1.Device device = 2;</code>
-     */
-    public Builder clearDevice() {
-      if (deviceBuilder_ == null) {
-        device_ = null;
-        onChanged();
-      } else {
-        device_ = null;
-        deviceBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     * <pre>
-     * The device registration details. The field `name` must be empty. The server
-     * generates `name` from the device registry `id` and the
-     * `parent` field.
-     * </pre>
-     *
-     * <code>.google.cloud.iot.v1.Device device = 2;</code>
-     */
-    public com.google.cloud.iot.v1.Device.Builder getDeviceBuilder() {
-      
+    public Builder setGatewayId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      gatewayId_ = value;
       onChanged();
-      return getDeviceFieldBuilder().getBuilder();
+      return this;
     }
     /**
      * <pre>
-     * The device registration details. The field `name` must be empty. The server
-     * generates `name` from the device registry `id` and the
-     * `parent` field.
+     * The value of `gateway_id` can be either the device numeric ID or the
+     * user-defined device identifier.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.Device device = 2;</code>
+     * <code>string gateway_id = 2;</code>
      */
-    public com.google.cloud.iot.v1.DeviceOrBuilder getDeviceOrBuilder() {
-      if (deviceBuilder_ != null) {
-        return deviceBuilder_.getMessageOrBuilder();
+    public Builder clearGatewayId() {
+      
+      gatewayId_ = getDefaultInstance().getGatewayId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The value of `gateway_id` can be either the device numeric ID or the
+     * user-defined device identifier.
+     * </pre>
+     *
+     * <code>string gateway_id = 2;</code>
+     */
+    public Builder setGatewayIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      gatewayId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object deviceId_ = "";
+    /**
+     * <pre>
+     * The device to disassociate from the specified gateway. The value of
+     * `device_id` can be either the device numeric ID or the user-defined device
+     * identifier.
+     * </pre>
+     *
+     * <code>string device_id = 3;</code>
+     */
+    public java.lang.String getDeviceId() {
+      java.lang.Object ref = deviceId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deviceId_ = s;
+        return s;
       } else {
-        return device_ == null ?
-            com.google.cloud.iot.v1.Device.getDefaultInstance() : device_;
+        return (java.lang.String) ref;
       }
     }
     /**
      * <pre>
-     * The device registration details. The field `name` must be empty. The server
-     * generates `name` from the device registry `id` and the
-     * `parent` field.
+     * The device to disassociate from the specified gateway. The value of
+     * `device_id` can be either the device numeric ID or the user-defined device
+     * identifier.
      * </pre>
      *
-     * <code>.google.cloud.iot.v1.Device device = 2;</code>
+     * <code>string device_id = 3;</code>
      */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.iot.v1.Device, com.google.cloud.iot.v1.Device.Builder, com.google.cloud.iot.v1.DeviceOrBuilder> 
-        getDeviceFieldBuilder() {
-      if (deviceBuilder_ == null) {
-        deviceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.iot.v1.Device, com.google.cloud.iot.v1.Device.Builder, com.google.cloud.iot.v1.DeviceOrBuilder>(
-                getDevice(),
-                getParentForChildren(),
-                isClean());
-        device_ = null;
+    public com.google.protobuf.ByteString
+        getDeviceIdBytes() {
+      java.lang.Object ref = deviceId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deviceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
       }
-      return deviceBuilder_;
+    }
+    /**
+     * <pre>
+     * The device to disassociate from the specified gateway. The value of
+     * `device_id` can be either the device numeric ID or the user-defined device
+     * identifier.
+     * </pre>
+     *
+     * <code>string device_id = 3;</code>
+     */
+    public Builder setDeviceId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      deviceId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The device to disassociate from the specified gateway. The value of
+     * `device_id` can be either the device numeric ID or the user-defined device
+     * identifier.
+     * </pre>
+     *
+     * <code>string device_id = 3;</code>
+     */
+    public Builder clearDeviceId() {
+      
+      deviceId_ = getDefaultInstance().getDeviceId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The device to disassociate from the specified gateway. The value of
+     * `device_id` can be either the device numeric ID or the user-defined device
+     * identifier.
+     * </pre>
+     *
+     * <code>string device_id = 3;</code>
+     */
+    public Builder setDeviceIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      deviceId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
@@ -802,41 +873,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.iot.v1.CreateDeviceRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.iot.v1.UnbindDeviceFromGatewayRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.iot.v1.CreateDeviceRequest)
-  private static final com.google.cloud.iot.v1.CreateDeviceRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.iot.v1.UnbindDeviceFromGatewayRequest)
+  private static final com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.iot.v1.CreateDeviceRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest();
   }
 
-  public static com.google.cloud.iot.v1.CreateDeviceRequest getDefaultInstance() {
+  public static com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CreateDeviceRequest>
-      PARSER = new com.google.protobuf.AbstractParser<CreateDeviceRequest>() {
+  private static final com.google.protobuf.Parser<UnbindDeviceFromGatewayRequest>
+      PARSER = new com.google.protobuf.AbstractParser<UnbindDeviceFromGatewayRequest>() {
     @java.lang.Override
-    public CreateDeviceRequest parsePartialFrom(
+    public UnbindDeviceFromGatewayRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CreateDeviceRequest(input, extensionRegistry);
+      return new UnbindDeviceFromGatewayRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<CreateDeviceRequest> parser() {
+  public static com.google.protobuf.Parser<UnbindDeviceFromGatewayRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<CreateDeviceRequest> getParserForType() {
+  public com.google.protobuf.Parser<UnbindDeviceFromGatewayRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.iot.v1.CreateDeviceRequest getDefaultInstanceForType() {
+  public com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
