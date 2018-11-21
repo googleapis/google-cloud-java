@@ -143,7 +143,7 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * <p>Sample code:
    *
-   * <pre>{code
+   * <pre>{@code
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
    * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
    *   String tableId = "[TABLE]";
@@ -153,7 +153,8 @@ public class BigtableDataClient implements AutoCloseable {
    *   if(row != null) {
    *     System.out.println(row.getKey().toStringUtf8());
    *     for(RowCell cell : row.getCells()) {
-   *       System.out.println("Family: " + cell.getFamily() + "   Qualifier: " + cell.getQualifier().toStringUtf8() + "   Value: " + cell.getValue().toStringUtf8());
+   *        System.out.printf("Family: %s   Qualifier: %s   Value: %s", cell.getFamily(),
+   *           cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
    *     }
    *   }
    * } catch(ApiException e) {
@@ -173,7 +174,7 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * <p>Sample code:
    *
-   * <pre>{code
+   * <pre>{@code
    * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
    * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
    *   String tableId = "[TABLE]";
@@ -183,7 +184,8 @@ public class BigtableDataClient implements AutoCloseable {
    *   if(row != null) {
    *     System.out.println(row.getKey().toStringUtf8());
    *      for(RowCell cell : row.getCells()) {
-   *        System.out.println("Family: " + cell.getFamily() + "   Qualifier: " + cell.getQualifier().toStringUtf8() + "   Value: " + cell.getValue().toStringUtf8());
+   *        System.out.printf("Family: %s   Qualifier: %s   Value: %s", cell.getFamily(),
+   *           cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
    *      }
    *   }
    * } catch(ApiException e) {
@@ -195,6 +197,40 @@ public class BigtableDataClient implements AutoCloseable {
    */
   public Row readRow(String tableId, String rowKey) {
     return ApiExceptions.callAndTranslateApiException(readRowAsync(tableId, rowKey));
+  }
+
+  /**
+   * Convenience method for synchronously reading a single row. If the row does not exist, the
+   * value will be null.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   *   String tableId = "[TABLE]";
+   *
+   * Query query = Query.create(tableId)
+   *         .rowKey("key");
+   *
+   *   Row row = bigtableDataClient.readRow(query);
+   *   // Do something with row, for example, display all cells
+   *   if(row != null) {
+   *     System.out.println(row.getKey().toStringUtf8());
+   *      for(RowCell cell : row.getCells()) {
+   *        System.out.printf("Family: %s   Qualifier: %s   Value: %s", cell.getFamily(),
+   *           cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
+   *      }
+   *   }
+   * } catch(ApiException e) {
+   *   e.printStackTrace();
+   * }
+   * }</pre>
+   *
+   * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
+   */
+  public Row ReadRow(Query query) {
+    return ApiExceptions.callAndTranslateApiException(readRowAsync(query));
   }
 
   /**
@@ -263,6 +299,43 @@ public class BigtableDataClient implements AutoCloseable {
    */
   public ApiFuture<Row> readRowAsync(String tableId, ByteString rowKey) {
     return readRowsCallable().first().futureCall(Query.create(tableId).rowKey(rowKey));
+  }
+
+  /**
+   * Convenience method for asynchronously reading a single row. If the row does not exist, the
+   * future's value will be null.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   *   String tableId = "[TABLE]";
+   *
+   *   Query query = Query.create(tableId)
+   *          .rowKey("key");
+   *
+   *   ApiFuture<Row> futureResult = bigtableDataClient.readRowAsync(query);
+   *
+   *   ApiFutures.addCallback(futureResult, new ApiFutureCallback<Row>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to read a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(Row row) {
+   *       if (result != null) {
+   *          System.out.println("Got row: " + result);
+   *       }
+   *     }
+   *   }, MoreExecutors.directExecutor());
+   * }
+   * }</pre>
+   */
+  public ApiFuture<Row> readRowAsync(Query query) {
+    return readRowsCallable().first().futureCall(query);
   }
 
   /**
