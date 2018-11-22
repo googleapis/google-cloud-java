@@ -16,15 +16,14 @@
 
 package com.google.cloud;
 
-import com.google.api.core.BetaApi;
-import com.google.common.base.Preconditions;
-
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.threeten.bp.LocalDate;
+import com.google.api.core.BetaApi;
+import com.google.common.base.Preconditions;
 
 /**
  * Represents a Date without time, such as 2017-03-17. Date is timezone independent.
@@ -70,39 +69,41 @@ public final class Date implements Comparable<Date>, Serializable {
     int dayOfMonth = Integer.parseInt(matcher.group(3));
     return new Date(year, month, dayOfMonth);
   }
-  
+
   /**
-  * @param date
-  * @return LocalDate
-  */
-  public static LocalDate toDate(Date date){
-	return LocalDate.of(date.year, date.month, date.dayOfMonth);  
-  }
-   
-  /**
-  * @param date
-  * @return Date
-  */
-  public static Date toDate(LocalDate date){
-    return new Date(date.getYear(), date.getMonthValue(), date.getDayOfMonth());
+   * Set the Google Date.
+   *
+   * @param date the date of the Google Date.
+   * @return java.util.Date
+   */
+  public static java.util.Date toJavaUtilDate(Date date) {
+    Calendar cal = Calendar.getInstance();
+    cal.set(Calendar.HOUR_OF_DAY, 0);
+    cal.set(Calendar.MINUTE, 0);
+    cal.set(Calendar.SECOND, 0);
+    cal.set(Calendar.MILLISECOND, 0);
+    // Calender.MONTH starts from 0 while G C date starts from 1
+    cal.set(date.year, date.month - 1, date.dayOfMonth);
+    return cal.getTime();
   }
 
   /**
-  * @param date
-  * @return LocalDate
-  */
-  public static LocalDate fromDate(Date date){
- 	return LocalDate.of(date.year, date.month, date.dayOfMonth);  
+   * Set the Java Util Date.
+   *
+   * @param date the date of the java.util.Date
+   * @return Google Java Date
+   */
+  public static Date fromJavaUtilDate(java.util.Date date) {
+    Calendar cal = Calendar.getInstance();
+    cal.setTime(date);
+    cal.set(Calendar.HOUR_OF_DAY, 0);
+    cal.set(Calendar.MINUTE, 0);
+    cal.set(Calendar.SECOND, 0);
+    cal.set(Calendar.MILLISECOND, 0);
+    // Calender.MONTH starts from 0 while G C date starts from 1
+    return new Date(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) + 1, cal.get(Calendar.DAY_OF_MONTH));
   }
-   
-  /**
-  * @param date
-  * @return Date 
-  */
-  public static Date fromDate(LocalDate date){
-    return new Date(date.getYear(), date.getMonthValue(), date.getDayOfMonth());  
-  }
-   
+
   /** Returns the year. */
   public int getYear() {
     return year;
