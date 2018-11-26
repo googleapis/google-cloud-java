@@ -77,10 +77,17 @@ public class DownloadComponentsMojo extends AbstractMojo {
   @Parameter(defaultValue = "false", required = true, property = "gcloud.download.force")
   private boolean forceRefresh;
 
+  @Parameter(defaultValue = "false", required = true, property = "gcloud.download.skip")
+  private boolean skip;
+
   @Parameter(defaultValue = "${session}", readonly = true)
   private MavenSession session;
 
   public void execute() throws MojoExecutionException {
+    if (skip) {
+      return;
+    }
+
     if (session.isOffline() && forceRefresh) {
       throw new MojoExecutionException("Can't force refresh when offline");
     }
