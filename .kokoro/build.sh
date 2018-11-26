@@ -21,7 +21,7 @@ cd github/google-cloud-java/
 java -version
 echo $JOB_TYPE
 
-mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V
 
 # prepend Kokoro root directory onto GOOGLE_APPLICATION_CREDENTIALS path
 if [ ! -z "$GOOGLE_APPLICATION_CREDENTIALS" ]; then
