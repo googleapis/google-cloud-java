@@ -78,13 +78,13 @@ public class DownloadComponentsMojo extends AbstractMojo {
   private boolean forceRefresh;
 
   @Parameter(defaultValue = "false", required = true, property = "gcloud.download.skip")
-  private boolean skip;
+  private boolean shouldSkipDownload;
 
   @Parameter(defaultValue = "${session}", readonly = true)
   private MavenSession session;
 
   public void execute() throws MojoExecutionException {
-    if (skip) {
+    if (shouldSkipDownload) {
       return;
     }
 
