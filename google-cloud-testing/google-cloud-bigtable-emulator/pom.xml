@@ -60,6 +60,7 @@
           <serverId>ossrh</serverId>
           <nexusUrl>https://oss.sonatype.org/</nexusUrl>
           <autoReleaseAfterClose>false</autoReleaseAfterClose>
+          <skipNexusStagingDeployMojo>false</skipNexusStagingDeployMojo>
         </configuration>
       </plugin>
     </plugins>
