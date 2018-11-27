@@ -367,7 +367,9 @@ public class InstanceGroupManagerStubSettings
             @Override
             public Iterable<InstanceGroupManagersScopedList> extractResources(
                 InstanceGroupManagerAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<InstanceGroupManagersScopedList>of();
             }
           };
 
@@ -411,7 +413,9 @@ public class InstanceGroupManagerStubSettings
             @Override
             public Iterable<InstanceGroupManager> extractResources(
                 InstanceGroupManagerList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<InstanceGroupManager>of();
             }
           };
 

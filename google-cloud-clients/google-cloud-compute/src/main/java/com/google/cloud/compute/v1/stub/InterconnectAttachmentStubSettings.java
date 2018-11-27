@@ -291,7 +291,9 @@ public class InterconnectAttachmentStubSettings
             @Override
             public Iterable<InterconnectAttachmentsScopedList> extractResources(
                 InterconnectAttachmentAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<InterconnectAttachmentsScopedList>of();
             }
           };
 
@@ -336,7 +338,9 @@ public class InterconnectAttachmentStubSettings
             @Override
             public Iterable<InterconnectAttachment> extractResources(
                 InterconnectAttachmentList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<InterconnectAttachment>of();
             }
           };
 

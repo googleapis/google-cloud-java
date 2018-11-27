@@ -357,7 +357,9 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
 
             @Override
             public Iterable<Queue> extractResources(ListQueuesResponse payload) {
-              return payload.getQueuesList();
+              return payload.getQueuesList() != null
+                  ? payload.getQueuesList()
+                  : ImmutableList.<Queue>of();
             }
           };
 
@@ -391,7 +393,9 @@ public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings>
 
             @Override
             public Iterable<Task> extractResources(ListTasksResponse payload) {
-              return payload.getTasksList();
+              return payload.getTasksList() != null
+                  ? payload.getTasksList()
+                  : ImmutableList.<Task>of();
             }
           };
 

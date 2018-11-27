@@ -15,7 +15,6 @@
  */
 package com.google.cloud.language.v1beta2;
 
-import com.google.cloud.language.v1beta2.Document.Type;
 import com.google.common.base.Preconditions;
 import java.util.logging.Level;
 import java.util.logging.Logger;

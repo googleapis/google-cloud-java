@@ -242,7 +242,9 @@ public class DiskTypeStubSettings extends StubSettings<DiskTypeStubSettings> {
 
             @Override
             public Iterable<DiskTypesScopedList> extractResources(DiskTypeAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<DiskTypesScopedList>of();
             }
           };
 
@@ -278,7 +280,9 @@ public class DiskTypeStubSettings extends StubSettings<DiskTypeStubSettings> {
 
             @Override
             public Iterable<DiskType> extractResources(DiskTypeList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<DiskType>of();
             }
           };
 

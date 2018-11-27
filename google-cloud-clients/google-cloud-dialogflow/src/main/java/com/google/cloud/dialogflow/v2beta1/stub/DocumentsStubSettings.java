@@ -245,7 +245,9 @@ public class DocumentsStubSettings extends StubSettings<DocumentsStubSettings> {
 
             @Override
             public Iterable<Document> extractResources(ListDocumentsResponse payload) {
-              return payload.getDocumentsList();
+              return payload.getDocumentsList() != null
+                  ? payload.getDocumentsList()
+                  : ImmutableList.<Document>of();
             }
           };
 
