@@ -20,8 +20,13 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.auto.value.AutoValue;
+import com.google.common.collect.ImmutableList;
 
 import javax.annotation.Nullable;
+import javax.net.ssl.SSLException;
+import java.io.EOFException;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
 import java.util.Map;
 
 /**
@@ -89,6 +94,17 @@ public abstract class CloudStorageConfiguration {
    */
   public abstract boolean useUserProjectOnlyForRequesterPaysBuckets();
 
+  /**
+   * Returns the set of HTTP error codes that will be retried, in addition to the normally
+   * retryable ones.
+   */
+  public abstract ImmutableList<Integer> retryableHttpCodes();
+
+  /**
+   * Returns the set of exceptions for which we'll try a channel reopen if maxChannelReopens
+   * is positive.
+   */
+  public abstract ImmutableList<Class<? extends Exception>> reopenableExceptions();
 
   /**
    * Creates a new builder, initialized with the following settings:
@@ -118,6 +134,10 @@ public abstract class CloudStorageConfiguration {
     private @Nullable String userProject = null;
     // This of this as "clear userProject if not RequesterPays"
     private boolean useUserProjectOnlyForRequesterPaysBuckets = false;
+    private ImmutableList<Integer> retryableHttpCodes = ImmutableList.of(500, 502, 503);
+    private ImmutableList<Class<? extends Exception>> reopenableExceptions =
+        ImmutableList.<Class<? extends Exception>>of(
+            SSLException.class, EOFException.class, SocketException.class, SocketTimeoutException.class);
 
     /**
      * Changes current working directory for new filesystem. This defaults to the root directory.
@@ -186,6 +206,16 @@ public abstract class CloudStorageConfiguration {
       return this;
     }
 
+    public Builder retryableHttpCodes(ImmutableList<Integer> value) {
+      retryableHttpCodes = value;
+      return this;
+    }
+
+    public Builder reopenableExceptions(ImmutableList<Class<? extends Exception>> values) {
+      reopenableExceptions = values;
+      return this;
+    }
+
     /**
      * Creates new instance without destroying builder.
      */
@@ -198,7 +228,9 @@ public abstract class CloudStorageConfiguration {
           blockSize,
           maxChannelReopens,
           userProject,
-          useUserProjectOnlyForRequesterPaysBuckets);
+          useUserProjectOnlyForRequesterPaysBuckets,
+          retryableHttpCodes,
+          reopenableExceptions);
     }
 
     Builder(CloudStorageConfiguration toModify) {
@@ -210,6 +242,8 @@ public abstract class CloudStorageConfiguration {
       maxChannelReopens = toModify.maxChannelReopens();
       userProject = toModify.userProject();
       useUserProjectOnlyForRequesterPaysBuckets = toModify.useUserProjectOnlyForRequesterPaysBuckets();
+      retryableHttpCodes = toModify.retryableHttpCodes();
+      reopenableExceptions = toModify.reopenableExceptions();
     }
 
     Builder() {}
@@ -249,6 +283,12 @@ public abstract class CloudStorageConfiguration {
           break;
         case "useUserProjectOnlyForRequesterPaysBuckets":
           builder.autoDetectRequesterPays((Boolean) entry.getValue());
+          break;
+        case "retryableHttpCodes":
+          builder.retryableHttpCodes((ImmutableList<Integer>) entry.getValue());
+          break;
+        case "reopenableExceptions":
+          builder.reopenableExceptions((ImmutableList<Class<? extends Exception>>) entry.getValue());
           break;
         default:
           throw new IllegalArgumentException(entry.getKey());
