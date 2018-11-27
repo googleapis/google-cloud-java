@@ -235,7 +235,9 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
 
             @Override
             public Iterable<Job> extractResources(ListJobsResponse payload) {
-              return payload.getJobsList();
+              return payload.getJobsList() != null
+                  ? payload.getJobsList()
+                  : ImmutableList.<Job>of();
             }
           };
 
