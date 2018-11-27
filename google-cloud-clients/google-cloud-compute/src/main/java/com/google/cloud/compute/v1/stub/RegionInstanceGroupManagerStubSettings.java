@@ -361,7 +361,9 @@ public class RegionInstanceGroupManagerStubSettings
             @Override
             public Iterable<InstanceGroupManager> extractResources(
                 RegionInstanceGroupManagerList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<InstanceGroupManager>of();
             }
           };
 

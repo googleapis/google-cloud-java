@@ -309,7 +309,9 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
             @Override
             public Iterable<SubnetworksScopedList> extractResources(
                 SubnetworkAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<SubnetworksScopedList>of();
             }
           };
 
@@ -345,7 +347,9 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
 
             @Override
             public Iterable<Subnetwork> extractResources(SubnetworkList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Subnetwork>of();
             }
           };
 
@@ -389,7 +393,9 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
             @Override
             public Iterable<UsableSubnetwork> extractResources(
                 UsableSubnetworksAggregatedList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<UsableSubnetwork>of();
             }
           };
 

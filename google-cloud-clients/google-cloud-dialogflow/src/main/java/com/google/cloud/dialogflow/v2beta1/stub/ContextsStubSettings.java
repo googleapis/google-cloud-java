@@ -235,7 +235,9 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
 
             @Override
             public Iterable<Context> extractResources(ListContextsResponse payload) {
-              return payload.getContextsList();
+              return payload.getContextsList() != null
+                  ? payload.getContextsList()
+                  : ImmutableList.<Context>of();
             }
           };
 

@@ -247,7 +247,9 @@ public class LicenseStubSettings extends StubSettings<LicenseStubSettings> {
 
             @Override
             public Iterable<License> extractResources(LicensesListResponse payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<License>of();
             }
           };
 

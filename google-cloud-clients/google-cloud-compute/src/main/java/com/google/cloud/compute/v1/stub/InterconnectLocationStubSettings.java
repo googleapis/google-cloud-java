@@ -234,7 +234,9 @@ public class InterconnectLocationStubSettings
             @Override
             public Iterable<InterconnectLocation> extractResources(
                 InterconnectLocationList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<InterconnectLocation>of();
             }
           };
 
