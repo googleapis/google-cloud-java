@@ -20,16 +20,13 @@
 #
 
 import attr
+import copy
 import sys, os
 import subprocess
 from jinja2 import Environment, FileSystemLoader
 from lxml import etree as ElementTree
 from typing import List
 from releasetool.commands.start import java as releasetool
-
-namespaces = {
-    'pom': 'http://maven.apache.org/POM/4.0.0'
-}
 
 class Context:
     service: str = None
@@ -51,11 +48,8 @@ class Context:
         self.api_version = api_version
         self.artman_config = artman_config
         self.google_cloud_artifact = f'google-cloud-{service}'
-        self.google_cloud_version = 'FIXME'
         self.grpc_artifact = f'grpc-google-cloud-{service}-{api_version}'
-        self.grpc_version = 'FIXME'
         self.proto_artifact = f'proto-google-cloud-{service}-{api_version}'
-        self.proto_version = 'FIXME'
         self.root_directory = os.path.dirname(os.path.realpath(os.path.join('..', __file__)))
 
     def path(self, suffix) -> str:
@@ -63,7 +57,10 @@ class Context:
 
 def add_to_versions(ctx: Context) -> None:
     versions = []
-    with open(os.path.join(ctx.root_directory, 'versions.txt')) as f:
+
+    # read from versions.txt
+    versions_path = os.path.join(ctx.root_directory, 'versions.txt')
+    with open(versions_path) as f:
         for line in f:
             version_line = line.strip()
             if not version_line or version_line.startswith("#"):
@@ -71,6 +68,34 @@ def add_to_versions(ctx: Context) -> None:
 
             versions.append(releasetool.ArtifactVersions(version_line))
 
+    if not next((v for v in versions if v.module == ctx.google_cloud_artifact), None):
+        print("adding new versions to versions.txt")
+        # insert new versions
+        # use assets API for new api versions
+        version = copy.deepcopy(next(v for v in versions if v.module == 'google-cloud-asset'))
+        version.module = ctx.google_cloud_artifact
+        versions.append(version)
+        ctx.google_cloud_version = str(version)
+
+        version = copy.deepcopy(next(v for v in versions if v.module == 'proto-google-cloud-asset-v1beta1'))
+        version.module = ctx.proto_artifact
+        versions.append(version)
+        ctx.proto_version = str(version)
+
+        version = copy.deepcopy(next(v for v in versions if v.module == 'grpc-google-cloud-asset-v1beta1'))
+        version.module = ctx.grpc_artifact
+        versions.append(version)
+        ctx.grpc_version = str(version)
+
+        # sort by name
+        versions.sort(key=lambda v: v.module)
+
+        # update versions.txt
+        with open(versions_path, "w") as f:
+            f.write("# Format:\n")
+            f.write("# module:released-version:current-version\n\n")
+            for versions in versions:
+                f.write("{}\n".format(versions))
 
     ctx.versions = versions
 
@@ -78,7 +103,7 @@ def add_module_to_pom(pom: str, module_name: str) -> None:
     parser = ElementTree.XMLParser()
     tree = ElementTree.parse(pom, parser)
     root = tree.getroot()
-    modules = root.find('pom:modules', namespaces)
+    modules = root.find('{http://maven.apache.org/POM/4.0.0}modules')
 
     new_module = ElementTree.Element('{http://maven.apache.org/POM/4.0.0}module')
     new_module.text = module_name
