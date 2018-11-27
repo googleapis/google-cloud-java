@@ -347,7 +347,9 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
 
             @Override
             public Iterable<Table> extractResources(ListTablesResponse payload) {
-              return payload.getTablesList();
+              return payload.getTablesList() != null
+                  ? payload.getTablesList()
+                  : ImmutableList.<Table>of();
             }
           };
 
@@ -381,7 +383,9 @@ public class BigtableTableAdminStubSettings extends StubSettings<BigtableTableAd
 
             @Override
             public Iterable<Snapshot> extractResources(ListSnapshotsResponse payload) {
-              return payload.getSnapshotsList();
+              return payload.getSnapshotsList() != null
+                  ? payload.getSnapshotsList()
+                  : ImmutableList.<Snapshot>of();
             }
           };
 
