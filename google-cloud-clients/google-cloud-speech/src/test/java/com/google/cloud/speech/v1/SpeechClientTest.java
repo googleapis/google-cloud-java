@@ -26,7 +26,6 @@ import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
-import com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.GeneratedMessageV3;

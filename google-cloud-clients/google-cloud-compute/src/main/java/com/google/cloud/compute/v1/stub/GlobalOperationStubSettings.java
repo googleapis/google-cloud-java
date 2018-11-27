@@ -257,7 +257,9 @@ public class GlobalOperationStubSettings extends StubSettings<GlobalOperationStu
             @Override
             public Iterable<OperationsScopedList> extractResources(
                 OperationAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<OperationsScopedList>of();
             }
           };
 
@@ -298,7 +300,9 @@ public class GlobalOperationStubSettings extends StubSettings<GlobalOperationStu
 
             @Override
             public Iterable<Operation> extractResources(OperationList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Operation>of();
             }
           };
 

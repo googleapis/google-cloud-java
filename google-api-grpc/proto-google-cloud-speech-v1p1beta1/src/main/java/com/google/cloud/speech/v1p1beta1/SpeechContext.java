@@ -101,7 +101,7 @@ private static final long serialVersionUID = 0L;
    * to improve the accuracy for specific words and phrases, for example, if
    * specific commands are typically spoken by the user. This can also be used
    * to add additional words to the vocabulary of the recognizer. See
-   * [usage limits](https://cloud.google.com/speech/limits#content).
+   * [usage limits](/speech-to-text/quotas#content).
    * </pre>
    *
    * <code>repeated string phrases = 1;</code>
@@ -117,7 +117,7 @@ private static final long serialVersionUID = 0L;
    * to improve the accuracy for specific words and phrases, for example, if
    * specific commands are typically spoken by the user. This can also be used
    * to add additional words to the vocabulary of the recognizer. See
-   * [usage limits](https://cloud.google.com/speech/limits#content).
+   * [usage limits](/speech-to-text/quotas#content).
    * </pre>
    *
    * <code>repeated string phrases = 1;</code>
@@ -132,7 +132,7 @@ private static final long serialVersionUID = 0L;
    * to improve the accuracy for specific words and phrases, for example, if
    * specific commands are typically spoken by the user. This can also be used
    * to add additional words to the vocabulary of the recognizer. See
-   * [usage limits](https://cloud.google.com/speech/limits#content).
+   * [usage limits](/speech-to-text/quotas#content).
    * </pre>
    *
    * <code>repeated string phrases = 1;</code>
@@ -147,7 +147,7 @@ private static final long serialVersionUID = 0L;
    * to improve the accuracy for specific words and phrases, for example, if
    * specific commands are typically spoken by the user. This can also be used
    * to add additional words to the vocabulary of the recognizer. See
-   * [usage limits](https://cloud.google.com/speech/limits#content).
+   * [usage limits](/speech-to-text/quotas#content).
    * </pre>
    *
    * <code>repeated string phrases = 1;</code>
@@ -498,7 +498,7 @@ private static final long serialVersionUID = 0L;
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
      * to add additional words to the vocabulary of the recognizer. See
-     * [usage limits](https://cloud.google.com/speech/limits#content).
+     * [usage limits](/speech-to-text/quotas#content).
      * </pre>
      *
      * <code>repeated string phrases = 1;</code>
@@ -514,7 +514,7 @@ private static final long serialVersionUID = 0L;
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
      * to add additional words to the vocabulary of the recognizer. See
-     * [usage limits](https://cloud.google.com/speech/limits#content).
+     * [usage limits](/speech-to-text/quotas#content).
      * </pre>
      *
      * <code>repeated string phrases = 1;</code>
@@ -529,7 +529,7 @@ private static final long serialVersionUID = 0L;
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
      * to add additional words to the vocabulary of the recognizer. See
-     * [usage limits](https://cloud.google.com/speech/limits#content).
+     * [usage limits](/speech-to-text/quotas#content).
      * </pre>
      *
      * <code>repeated string phrases = 1;</code>
@@ -544,7 +544,7 @@ private static final long serialVersionUID = 0L;
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
      * to add additional words to the vocabulary of the recognizer. See
-     * [usage limits](https://cloud.google.com/speech/limits#content).
+     * [usage limits](/speech-to-text/quotas#content).
      * </pre>
      *
      * <code>repeated string phrases = 1;</code>
@@ -560,7 +560,7 @@ private static final long serialVersionUID = 0L;
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
      * to add additional words to the vocabulary of the recognizer. See
-     * [usage limits](https://cloud.google.com/speech/limits#content).
+     * [usage limits](/speech-to-text/quotas#content).
      * </pre>
      *
      * <code>repeated string phrases = 1;</code>
@@ -582,7 +582,7 @@ private static final long serialVersionUID = 0L;
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
      * to add additional words to the vocabulary of the recognizer. See
-     * [usage limits](https://cloud.google.com/speech/limits#content).
+     * [usage limits](/speech-to-text/quotas#content).
      * </pre>
      *
      * <code>repeated string phrases = 1;</code>
@@ -604,7 +604,7 @@ private static final long serialVersionUID = 0L;
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
      * to add additional words to the vocabulary of the recognizer. See
-     * [usage limits](https://cloud.google.com/speech/limits#content).
+     * [usage limits](/speech-to-text/quotas#content).
      * </pre>
      *
      * <code>repeated string phrases = 1;</code>
@@ -624,7 +624,7 @@ private static final long serialVersionUID = 0L;
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
      * to add additional words to the vocabulary of the recognizer. See
-     * [usage limits](https://cloud.google.com/speech/limits#content).
+     * [usage limits](/speech-to-text/quotas#content).
      * </pre>
      *
      * <code>repeated string phrases = 1;</code>
@@ -642,7 +642,7 @@ private static final long serialVersionUID = 0L;
      * to improve the accuracy for specific words and phrases, for example, if
      * specific commands are typically spoken by the user. This can also be used
      * to add additional words to the vocabulary of the recognizer. See
-     * [usage limits](https://cloud.google.com/speech/limits#content).
+     * [usage limits](/speech-to-text/quotas#content).
      * </pre>
      *
      * <code>repeated string phrases = 1;</code>

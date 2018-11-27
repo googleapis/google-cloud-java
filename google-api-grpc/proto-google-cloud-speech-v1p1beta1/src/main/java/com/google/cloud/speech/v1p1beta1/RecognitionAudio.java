@@ -8,7 +8,7 @@ package com.google.cloud.speech.v1p1beta1;
  * Contains audio data in the encoding specified in the `RecognitionConfig`.
  * Either `content` or `uri` must be supplied. Supplying both or neither
  * returns [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. See
- * [audio limits](https://cloud.google.com/speech/limits#content).
+ * [content limits](/speech-to-text/quotas#content).
  * </pre>
  *
  * Protobuf type {@code google.cloud.speech.v1p1beta1.RecognitionAudio}
@@ -151,7 +151,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * URI that points to a file that contains audio data bytes as specified in
-   * `RecognitionConfig`. Currently, only Google Cloud Storage URIs are
+   * `RecognitionConfig`. The file must not be compressed (for example, gzip).
+   * Currently, only Google Cloud Storage URIs are
    * supported, which must be specified in the following format:
    * `gs://bucket_name/object_name` (other URI formats return
    * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
@@ -180,7 +181,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * URI that points to a file that contains audio data bytes as specified in
-   * `RecognitionConfig`. Currently, only Google Cloud Storage URIs are
+   * `RecognitionConfig`. The file must not be compressed (for example, gzip).
+   * Currently, only Google Cloud Storage URIs are
    * supported, which must be specified in the following format:
    * `gs://bucket_name/object_name` (other URI formats return
    * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
@@ -400,7 +402,7 @@ private static final long serialVersionUID = 0L;
    * Contains audio data in the encoding specified in the `RecognitionConfig`.
    * Either `content` or `uri` must be supplied. Supplying both or neither
    * returns [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. See
-   * [audio limits](https://cloud.google.com/speech/limits#content).
+   * [content limits](/speech-to-text/quotas#content).
    * </pre>
    *
    * Protobuf type {@code google.cloud.speech.v1p1beta1.RecognitionAudio}
@@ -636,7 +638,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * URI that points to a file that contains audio data bytes as specified in
-     * `RecognitionConfig`. Currently, only Google Cloud Storage URIs are
+     * `RecognitionConfig`. The file must not be compressed (for example, gzip).
+     * Currently, only Google Cloud Storage URIs are
      * supported, which must be specified in the following format:
      * `gs://bucket_name/object_name` (other URI formats return
      * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
@@ -665,7 +668,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * URI that points to a file that contains audio data bytes as specified in
-     * `RecognitionConfig`. Currently, only Google Cloud Storage URIs are
+     * `RecognitionConfig`. The file must not be compressed (for example, gzip).
+     * Currently, only Google Cloud Storage URIs are
      * supported, which must be specified in the following format:
      * `gs://bucket_name/object_name` (other URI formats return
      * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
@@ -695,7 +699,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * URI that points to a file that contains audio data bytes as specified in
-     * `RecognitionConfig`. Currently, only Google Cloud Storage URIs are
+     * `RecognitionConfig`. The file must not be compressed (for example, gzip).
+     * Currently, only Google Cloud Storage URIs are
      * supported, which must be specified in the following format:
      * `gs://bucket_name/object_name` (other URI formats return
      * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
@@ -717,7 +722,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * URI that points to a file that contains audio data bytes as specified in
-     * `RecognitionConfig`. Currently, only Google Cloud Storage URIs are
+     * `RecognitionConfig`. The file must not be compressed (for example, gzip).
+     * Currently, only Google Cloud Storage URIs are
      * supported, which must be specified in the following format:
      * `gs://bucket_name/object_name` (other URI formats return
      * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see
@@ -737,7 +743,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * URI that points to a file that contains audio data bytes as specified in
-     * `RecognitionConfig`. Currently, only Google Cloud Storage URIs are
+     * `RecognitionConfig`. The file must not be compressed (for example, gzip).
+     * Currently, only Google Cloud Storage URIs are
      * supported, which must be specified in the following format:
      * `gs://bucket_name/object_name` (other URI formats return
      * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more information, see

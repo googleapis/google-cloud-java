@@ -233,9 +233,9 @@ private static final long serialVersionUID = 0L;
    * This field is deprecated, use cluster_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string cluster_ipv4_cidr = 4;</code>
+   * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    */
-  public java.lang.String getClusterIpv4Cidr() {
+  @java.lang.Deprecated public java.lang.String getClusterIpv4Cidr() {
     java.lang.Object ref = clusterIpv4Cidr_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -252,9 +252,9 @@ private static final long serialVersionUID = 0L;
    * This field is deprecated, use cluster_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string cluster_ipv4_cidr = 4;</code>
+   * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getClusterIpv4CidrBytes() {
     java.lang.Object ref = clusterIpv4Cidr_;
     if (ref instanceof java.lang.String) {
@@ -275,9 +275,9 @@ private static final long serialVersionUID = 0L;
    * This field is deprecated, use node_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string node_ipv4_cidr = 5;</code>
+   * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    */
-  public java.lang.String getNodeIpv4Cidr() {
+  @java.lang.Deprecated public java.lang.String getNodeIpv4Cidr() {
     java.lang.Object ref = nodeIpv4Cidr_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -294,9 +294,9 @@ private static final long serialVersionUID = 0L;
    * This field is deprecated, use node_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string node_ipv4_cidr = 5;</code>
+   * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getNodeIpv4CidrBytes() {
     java.lang.Object ref = nodeIpv4Cidr_;
     if (ref instanceof java.lang.String) {
@@ -317,9 +317,9 @@ private static final long serialVersionUID = 0L;
    * This field is deprecated, use services_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string services_ipv4_cidr = 6;</code>
+   * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    */
-  public java.lang.String getServicesIpv4Cidr() {
+  @java.lang.Deprecated public java.lang.String getServicesIpv4Cidr() {
     java.lang.Object ref = servicesIpv4Cidr_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -336,9 +336,9 @@ private static final long serialVersionUID = 0L;
    * This field is deprecated, use services_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string services_ipv4_cidr = 6;</code>
+   * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getServicesIpv4CidrBytes() {
     java.lang.Object ref = servicesIpv4Cidr_;
     if (ref instanceof java.lang.String) {
@@ -1303,9 +1303,9 @@ private static final long serialVersionUID = 0L;
      * This field is deprecated, use cluster_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string cluster_ipv4_cidr = 4;</code>
+     * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      */
-    public java.lang.String getClusterIpv4Cidr() {
+    @java.lang.Deprecated public java.lang.String getClusterIpv4Cidr() {
       java.lang.Object ref = clusterIpv4Cidr_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -1322,9 +1322,9 @@ private static final long serialVersionUID = 0L;
      * This field is deprecated, use cluster_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string cluster_ipv4_cidr = 4;</code>
+     * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getClusterIpv4CidrBytes() {
       java.lang.Object ref = clusterIpv4Cidr_;
       if (ref instanceof String) {
@@ -1342,9 +1342,9 @@ private static final long serialVersionUID = 0L;
      * This field is deprecated, use cluster_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string cluster_ipv4_cidr = 4;</code>
+     * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      */
-    public Builder setClusterIpv4Cidr(
+    @java.lang.Deprecated public Builder setClusterIpv4Cidr(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1359,9 +1359,9 @@ private static final long serialVersionUID = 0L;
      * This field is deprecated, use cluster_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string cluster_ipv4_cidr = 4;</code>
+     * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      */
-    public Builder clearClusterIpv4Cidr() {
+    @java.lang.Deprecated public Builder clearClusterIpv4Cidr() {
       
       clusterIpv4Cidr_ = getDefaultInstance().getClusterIpv4Cidr();
       onChanged();
@@ -1372,9 +1372,9 @@ private static final long serialVersionUID = 0L;
      * This field is deprecated, use cluster_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string cluster_ipv4_cidr = 4;</code>
+     * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      */
-    public Builder setClusterIpv4CidrBytes(
+    @java.lang.Deprecated public Builder setClusterIpv4CidrBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1392,9 +1392,9 @@ private static final long serialVersionUID = 0L;
      * This field is deprecated, use node_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string node_ipv4_cidr = 5;</code>
+     * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      */
-    public java.lang.String getNodeIpv4Cidr() {
+    @java.lang.Deprecated public java.lang.String getNodeIpv4Cidr() {
       java.lang.Object ref = nodeIpv4Cidr_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -1411,9 +1411,9 @@ private static final long serialVersionUID = 0L;
      * This field is deprecated, use node_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string node_ipv4_cidr = 5;</code>
+     * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getNodeIpv4CidrBytes() {
       java.lang.Object ref = nodeIpv4Cidr_;
       if (ref instanceof String) {
@@ -1431,9 +1431,9 @@ private static final long serialVersionUID = 0L;
      * This field is deprecated, use node_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string node_ipv4_cidr = 5;</code>
+     * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      */
-    public Builder setNodeIpv4Cidr(
+    @java.lang.Deprecated public Builder setNodeIpv4Cidr(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1448,9 +1448,9 @@ private static final long serialVersionUID = 0L;
      * This field is deprecated, use node_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string node_ipv4_cidr = 5;</code>
+     * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      */
-    public Builder clearNodeIpv4Cidr() {
+    @java.lang.Deprecated public Builder clearNodeIpv4Cidr() {
       
       nodeIpv4Cidr_ = getDefaultInstance().getNodeIpv4Cidr();
       onChanged();
@@ -1461,9 +1461,9 @@ private static final long serialVersionUID = 0L;
      * This field is deprecated, use node_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string node_ipv4_cidr = 5;</code>
+     * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      */
-    public Builder setNodeIpv4CidrBytes(
+    @java.lang.Deprecated public Builder setNodeIpv4CidrBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1481,9 +1481,9 @@ private static final long serialVersionUID = 0L;
      * This field is deprecated, use services_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string services_ipv4_cidr = 6;</code>
+     * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      */
-    public java.lang.String getServicesIpv4Cidr() {
+    @java.lang.Deprecated public java.lang.String getServicesIpv4Cidr() {
       java.lang.Object ref = servicesIpv4Cidr_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -1500,9 +1500,9 @@ private static final long serialVersionUID = 0L;
      * This field is deprecated, use services_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string services_ipv4_cidr = 6;</code>
+     * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getServicesIpv4CidrBytes() {
       java.lang.Object ref = servicesIpv4Cidr_;
       if (ref instanceof String) {
@@ -1520,9 +1520,9 @@ private static final long serialVersionUID = 0L;
      * This field is deprecated, use services_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string services_ipv4_cidr = 6;</code>
+     * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      */
-    public Builder setServicesIpv4Cidr(
+    @java.lang.Deprecated public Builder setServicesIpv4Cidr(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1537,9 +1537,9 @@ private static final long serialVersionUID = 0L;
      * This field is deprecated, use services_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string services_ipv4_cidr = 6;</code>
+     * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      */
-    public Builder clearServicesIpv4Cidr() {
+    @java.lang.Deprecated public Builder clearServicesIpv4Cidr() {
       
       servicesIpv4Cidr_ = getDefaultInstance().getServicesIpv4Cidr();
       onChanged();
@@ -1550,9 +1550,9 @@ private static final long serialVersionUID = 0L;
      * This field is deprecated, use services_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string services_ipv4_cidr = 6;</code>
+     * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      */
-    public Builder setServicesIpv4CidrBytes(
+    @java.lang.Deprecated public Builder setServicesIpv4CidrBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();

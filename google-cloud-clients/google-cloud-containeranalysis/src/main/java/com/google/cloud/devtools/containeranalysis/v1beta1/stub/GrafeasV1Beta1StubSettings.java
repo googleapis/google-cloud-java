@@ -336,7 +336,9 @@ public class GrafeasV1Beta1StubSettings extends StubSettings<GrafeasV1Beta1StubS
 
             @Override
             public Iterable<Occurrence> extractResources(ListOccurrencesResponse payload) {
-              return payload.getOccurrencesList();
+              return payload.getOccurrencesList() != null
+                  ? payload.getOccurrencesList()
+                  : ImmutableList.<Occurrence>of();
             }
           };
 
@@ -370,7 +372,9 @@ public class GrafeasV1Beta1StubSettings extends StubSettings<GrafeasV1Beta1StubS
 
             @Override
             public Iterable<Note> extractResources(ListNotesResponse payload) {
-              return payload.getNotesList();
+              return payload.getNotesList() != null
+                  ? payload.getNotesList()
+                  : ImmutableList.<Note>of();
             }
           };
 
@@ -408,7 +412,9 @@ public class GrafeasV1Beta1StubSettings extends StubSettings<GrafeasV1Beta1StubS
 
             @Override
             public Iterable<Occurrence> extractResources(ListNoteOccurrencesResponse payload) {
-              return payload.getOccurrencesList();
+              return payload.getOccurrencesList() != null
+                  ? payload.getOccurrencesList()
+                  : ImmutableList.<Occurrence>of();
             }
           };
 

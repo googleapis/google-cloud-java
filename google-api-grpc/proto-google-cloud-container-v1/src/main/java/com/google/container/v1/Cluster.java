@@ -5,7 +5,7 @@ package com.google.container.v1;
 
 /**
  * <pre>
- * A Google Container Engine cluster.
+ * A Google Kubernetes Engine cluster.
  * </pre>
  *
  * Protobuf type {@code google.container.v1.Cluster}
@@ -46,6 +46,7 @@ private static final long serialVersionUID = 0L;
     instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     currentNodeCount_ = 0;
     expireTime_ = "";
+    location_ = "";
   }
 
   @java.lang.Override
@@ -266,6 +267,32 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 218: {
+            com.google.container.v1.NetworkConfig.Builder subBuilder = null;
+            if (networkConfig_ != null) {
+              subBuilder = networkConfig_.toBuilder();
+            }
+            networkConfig_ = input.readMessage(com.google.container.v1.NetworkConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(networkConfig_);
+              networkConfig_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 298: {
+            com.google.container.v1.PrivateClusterConfig.Builder subBuilder = null;
+            if (privateClusterConfig_ != null) {
+              subBuilder = privateClusterConfig_.toBuilder();
+            }
+            privateClusterConfig_ = input.readMessage(com.google.container.v1.PrivateClusterConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(privateClusterConfig_);
+              privateClusterConfig_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           case 802: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -333,9 +360,9 @@ private static final long serialVersionUID = 0L;
           }
           case 890: {
             java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField1_ & 0x00000001) == 0x00000001)) {
+            if (!((mutable_bitField1_ & 0x00000004) == 0x00000004)) {
               instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField1_ |= 0x00000001;
+              mutable_bitField1_ |= 0x00000004;
             }
             instanceGroupUrls_.add(s);
             break;
@@ -349,6 +376,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             expireTime_ = s;
+            break;
+          }
+          case 914: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            location_ = s;
             break;
           }
           default: {
@@ -372,7 +405,7 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
         locations_ = locations_.getUnmodifiableView();
       }
-      if (((mutable_bitField1_ & 0x00000001) == 0x00000001)) {
+      if (((mutable_bitField1_ & 0x00000004) == 0x00000004)) {
         instanceGroupUrls_ = instanceGroupUrls_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
@@ -465,6 +498,15 @@ private static final long serialVersionUID = 0L;
      * <code>ERROR = 5;</code>
      */
     ERROR(5),
+    /**
+     * <pre>
+     * The DEGRADED state indicates the cluster requires user action to restore
+     * full functionality. Details can be found in the `statusMessage` field.
+     * </pre>
+     *
+     * <code>DEGRADED = 6;</code>
+     */
+    DEGRADED(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -520,6 +562,15 @@ private static final long serialVersionUID = 0L;
      * <code>ERROR = 5;</code>
      */
     public static final int ERROR_VALUE = 5;
+    /**
+     * <pre>
+     * The DEGRADED state indicates the cluster requires user action to restore
+     * full functionality. Details can be found in the `statusMessage` field.
+     * </pre>
+     *
+     * <code>DEGRADED = 6;</code>
+     */
+    public static final int DEGRADED_VALUE = 6;
 
 
     public final int getNumber() {
@@ -546,6 +597,7 @@ private static final long serialVersionUID = 0L;
         case 3: return RECONCILING;
         case 4: return STOPPING;
         case 5: return ERROR;
+        case 6: return DEGRADED;
         default: return null;
       }
     }
@@ -599,6 +651,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
+  private int bitField1_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -1453,7 +1506,6 @@ private static final long serialVersionUID = 0L;
   private com.google.container.v1.MasterAuthorizedNetworksConfig masterAuthorizedNetworksConfig_;
   /**
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The configuration options for master authorized networks feature.
    * </pre>
    *
@@ -1464,7 +1516,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The configuration options for master authorized networks feature.
    * </pre>
    *
@@ -1475,7 +1526,6 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The configuration options for master authorized networks feature.
    * </pre>
    *
@@ -1516,6 +1566,72 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.container.v1.MaintenancePolicyOrBuilder getMaintenancePolicyOrBuilder() {
     return getMaintenancePolicy();
+  }
+
+  public static final int NETWORK_CONFIG_FIELD_NUMBER = 27;
+  private com.google.container.v1.NetworkConfig networkConfig_;
+  /**
+   * <pre>
+   * Configuration for cluster networking.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+   */
+  public boolean hasNetworkConfig() {
+    return networkConfig_ != null;
+  }
+  /**
+   * <pre>
+   * Configuration for cluster networking.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+   */
+  public com.google.container.v1.NetworkConfig getNetworkConfig() {
+    return networkConfig_ == null ? com.google.container.v1.NetworkConfig.getDefaultInstance() : networkConfig_;
+  }
+  /**
+   * <pre>
+   * Configuration for cluster networking.
+   * </pre>
+   *
+   * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+   */
+  public com.google.container.v1.NetworkConfigOrBuilder getNetworkConfigOrBuilder() {
+    return getNetworkConfig();
+  }
+
+  public static final int PRIVATE_CLUSTER_CONFIG_FIELD_NUMBER = 37;
+  private com.google.container.v1.PrivateClusterConfig privateClusterConfig_;
+  /**
+   * <pre>
+   * Configuration for private cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+   */
+  public boolean hasPrivateClusterConfig() {
+    return privateClusterConfig_ != null;
+  }
+  /**
+   * <pre>
+   * Configuration for private cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+   */
+  public com.google.container.v1.PrivateClusterConfig getPrivateClusterConfig() {
+    return privateClusterConfig_ == null ? com.google.container.v1.PrivateClusterConfig.getDefaultInstance() : privateClusterConfig_;
+  }
+  /**
+   * <pre>
+   * Configuration for private cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+   */
+  public com.google.container.v1.PrivateClusterConfigOrBuilder getPrivateClusterConfigOrBuilder() {
+    return getPrivateClusterConfig();
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 100;
@@ -1567,11 +1683,12 @@ private static final long serialVersionUID = 0L;
    * [Output only] The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field is deprecated, use location instead.
    * </pre>
    *
-   * <code>string zone = 101;</code>
+   * <code>string zone = 101 [deprecated = true];</code>
    */
-  public java.lang.String getZone() {
+  @java.lang.Deprecated public java.lang.String getZone() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -1588,11 +1705,12 @@ private static final long serialVersionUID = 0L;
    * [Output only] The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field is deprecated, use location instead.
    * </pre>
    *
-   * <code>string zone = 101;</code>
+   * <code>string zone = 101 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getZoneBytes() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
@@ -1664,6 +1782,13 @@ private static final long serialVersionUID = 0L;
    * found in validMasterVersions returned by getServerConfig.  The version can
    * be upgraded over time; such upgrades are reflected in
    * currentMasterVersion and currentNodeVersion.
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "","-": picks the default Kubernetes version
    * </pre>
    *
    * <code>string initial_cluster_version = 103;</code>
@@ -1686,6 +1811,13 @@ private static final long serialVersionUID = 0L;
    * found in validMasterVersions returned by getServerConfig.  The version can
    * be upgraded over time; such upgrades are reflected in
    * currentMasterVersion and currentNodeVersion.
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "","-": picks the default Kubernetes version
    * </pre>
    *
    * <code>string initial_cluster_version = 103;</code>
@@ -1750,14 +1882,16 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object currentNodeVersion_;
   /**
    * <pre>
-   * [Output only] The current version of the node software components.
-   * If they are currently at multiple versions because they're in the process
-   * of being upgraded, this reflects the minimum version of all nodes.
+   * [Output only] Deprecated, use
+   * [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool)
+   * instead. The current version of the node software components. If they are
+   * currently at multiple versions because they're in the process of being
+   * upgraded, this reflects the minimum version of all nodes.
    * </pre>
    *
-   * <code>string current_node_version = 105;</code>
+   * <code>string current_node_version = 105 [deprecated = true];</code>
    */
-  public java.lang.String getCurrentNodeVersion() {
+  @java.lang.Deprecated public java.lang.String getCurrentNodeVersion() {
     java.lang.Object ref = currentNodeVersion_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -1771,14 +1905,16 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * [Output only] The current version of the node software components.
-   * If they are currently at multiple versions because they're in the process
-   * of being upgraded, this reflects the minimum version of all nodes.
+   * [Output only] Deprecated, use
+   * [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool)
+   * instead. The current version of the node software components. If they are
+   * currently at multiple versions because they're in the process of being
+   * upgraded, this reflects the minimum version of all nodes.
    * </pre>
    *
-   * <code>string current_node_version = 105;</code>
+   * <code>string current_node_version = 105 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getCurrentNodeVersionBytes() {
     java.lang.Object ref = currentNodeVersion_;
     if (ref instanceof java.lang.String) {
@@ -1977,9 +2113,9 @@ private static final long serialVersionUID = 0L;
    * Deprecated. Use node_pools.instance_group_urls.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 111;</code>
+   * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    */
-  public com.google.protobuf.ProtocolStringList
+  @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
       getInstanceGroupUrlsList() {
     return instanceGroupUrls_;
   }
@@ -1988,9 +2124,9 @@ private static final long serialVersionUID = 0L;
    * Deprecated. Use node_pools.instance_group_urls.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 111;</code>
+   * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    */
-  public int getInstanceGroupUrlsCount() {
+  @java.lang.Deprecated public int getInstanceGroupUrlsCount() {
     return instanceGroupUrls_.size();
   }
   /**
@@ -1998,9 +2134,9 @@ private static final long serialVersionUID = 0L;
    * Deprecated. Use node_pools.instance_group_urls.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 111;</code>
+   * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    */
-  public java.lang.String getInstanceGroupUrls(int index) {
+  @java.lang.Deprecated public java.lang.String getInstanceGroupUrls(int index) {
     return instanceGroupUrls_.get(index);
   }
   /**
@@ -2008,9 +2144,9 @@ private static final long serialVersionUID = 0L;
    * Deprecated. Use node_pools.instance_group_urls.
    * </pre>
    *
-   * <code>repeated string instance_group_urls = 111;</code>
+   * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getInstanceGroupUrlsBytes(int index) {
     return instanceGroupUrls_.getByteString(index);
   }
@@ -2066,6 +2202,54 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       expireTime_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LOCATION_FIELD_NUMBER = 114;
+  private volatile java.lang.Object location_;
+  /**
+   * <pre>
+   * [Output only] The name of the Google Compute Engine
+   * [zone](/compute/docs/regions-zones/regions-zones#available) or
+   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * the cluster resides.
+   * </pre>
+   *
+   * <code>string location = 114;</code>
+   */
+  public java.lang.String getLocation() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      location_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * [Output only] The name of the Google Compute Engine
+   * [zone](/compute/docs/regions-zones/regions-zones#available) or
+   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * the cluster resides.
+   * </pre>
+   *
+   * <code>string location = 114;</code>
+   */
+  public com.google.protobuf.ByteString
+      getLocationBytes() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      location_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -2152,6 +2336,12 @@ private static final long serialVersionUID = 0L;
     if (maintenancePolicy_ != null) {
       output.writeMessage(23, getMaintenancePolicy());
     }
+    if (networkConfig_ != null) {
+      output.writeMessage(27, getNetworkConfig());
+    }
+    if (privateClusterConfig_ != null) {
+      output.writeMessage(37, getPrivateClusterConfig());
+    }
     if (!getSelfLinkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100, selfLink_);
     }
@@ -2193,6 +2383,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getExpireTimeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 113, expireTime_);
+    }
+    if (!getLocationBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 114, location_);
     }
     unknownFields.writeTo(output);
   }
@@ -2289,6 +2482,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(23, getMaintenancePolicy());
     }
+    if (networkConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(27, getNetworkConfig());
+    }
+    if (privateClusterConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(37, getPrivateClusterConfig());
+    }
     if (!getSelfLinkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, selfLink_);
     }
@@ -2338,6 +2539,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getExpireTimeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(113, expireTime_);
+    }
+    if (!getLocationBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(114, location_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2421,6 +2625,16 @@ private static final long serialVersionUID = 0L;
       result = result && getMaintenancePolicy()
           .equals(other.getMaintenancePolicy());
     }
+    result = result && (hasNetworkConfig() == other.hasNetworkConfig());
+    if (hasNetworkConfig()) {
+      result = result && getNetworkConfig()
+          .equals(other.getNetworkConfig());
+    }
+    result = result && (hasPrivateClusterConfig() == other.hasPrivateClusterConfig());
+    if (hasPrivateClusterConfig()) {
+      result = result && getPrivateClusterConfig()
+          .equals(other.getPrivateClusterConfig());
+    }
     result = result && getSelfLink()
         .equals(other.getSelfLink());
     result = result && getZone()
@@ -2448,6 +2662,8 @@ private static final long serialVersionUID = 0L;
         == other.getCurrentNodeCount());
     result = result && getExpireTime()
         .equals(other.getExpireTime());
+    result = result && getLocation()
+        .equals(other.getLocation());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -2524,6 +2740,14 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MAINTENANCE_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getMaintenancePolicy().hashCode();
     }
+    if (hasNetworkConfig()) {
+      hash = (37 * hash) + NETWORK_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkConfig().hashCode();
+    }
+    if (hasPrivateClusterConfig()) {
+      hash = (37 * hash) + PRIVATE_CLUSTER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPrivateClusterConfig().hashCode();
+    }
     hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
     hash = (53 * hash) + getSelfLink().hashCode();
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
@@ -2554,6 +2778,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCurrentNodeCount();
     hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
     hash = (53 * hash) + getExpireTime().hashCode();
+    hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+    hash = (53 * hash) + getLocation().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2651,7 +2877,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A Google Container Engine cluster.
+   * A Google Kubernetes Engine cluster.
    * </pre>
    *
    * Protobuf type {@code google.container.v1.Cluster}
@@ -2791,6 +3017,18 @@ private static final long serialVersionUID = 0L;
         maintenancePolicy_ = null;
         maintenancePolicyBuilder_ = null;
       }
+      if (networkConfigBuilder_ == null) {
+        networkConfig_ = null;
+      } else {
+        networkConfig_ = null;
+        networkConfigBuilder_ = null;
+      }
+      if (privateClusterConfigBuilder_ == null) {
+        privateClusterConfig_ = null;
+      } else {
+        privateClusterConfig_ = null;
+        privateClusterConfigBuilder_ = null;
+      }
       selfLink_ = "";
 
       zone_ = "";
@@ -2814,10 +3052,12 @@ private static final long serialVersionUID = 0L;
       servicesIpv4Cidr_ = "";
 
       instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000004);
       currentNodeCount_ = 0;
 
       expireTime_ = "";
+
+      location_ = "";
 
       return this;
     }
@@ -2848,6 +3088,7 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
+      int to_bitField1_ = 0;
       result.name_ = name_;
       result.description_ = description_;
       result.initialNodeCount_ = initialNodeCount_;
@@ -2914,6 +3155,16 @@ private static final long serialVersionUID = 0L;
       } else {
         result.maintenancePolicy_ = maintenancePolicyBuilder_.build();
       }
+      if (networkConfigBuilder_ == null) {
+        result.networkConfig_ = networkConfig_;
+      } else {
+        result.networkConfig_ = networkConfigBuilder_.build();
+      }
+      if (privateClusterConfigBuilder_ == null) {
+        result.privateClusterConfig_ = privateClusterConfig_;
+      } else {
+        result.privateClusterConfig_ = privateClusterConfigBuilder_.build();
+      }
       result.selfLink_ = selfLink_;
       result.zone_ = zone_;
       result.endpoint_ = endpoint_;
@@ -2925,14 +3176,16 @@ private static final long serialVersionUID = 0L;
       result.statusMessage_ = statusMessage_;
       result.nodeIpv4CidrSize_ = nodeIpv4CidrSize_;
       result.servicesIpv4Cidr_ = servicesIpv4Cidr_;
-      if (((bitField1_ & 0x00000001) == 0x00000001)) {
+      if (((bitField1_ & 0x00000004) == 0x00000004)) {
         instanceGroupUrls_ = instanceGroupUrls_.getUnmodifiableView();
-        bitField1_ = (bitField1_ & ~0x00000001);
+        bitField1_ = (bitField1_ & ~0x00000004);
       }
       result.instanceGroupUrls_ = instanceGroupUrls_;
       result.currentNodeCount_ = currentNodeCount_;
       result.expireTime_ = expireTime_;
+      result.location_ = location_;
       result.bitField0_ = to_bitField0_;
+      result.bitField1_ = to_bitField1_;
       onBuilt();
       return result;
     }
@@ -3081,6 +3334,12 @@ private static final long serialVersionUID = 0L;
       if (other.hasMaintenancePolicy()) {
         mergeMaintenancePolicy(other.getMaintenancePolicy());
       }
+      if (other.hasNetworkConfig()) {
+        mergeNetworkConfig(other.getNetworkConfig());
+      }
+      if (other.hasPrivateClusterConfig()) {
+        mergePrivateClusterConfig(other.getPrivateClusterConfig());
+      }
       if (!other.getSelfLink().isEmpty()) {
         selfLink_ = other.selfLink_;
         onChanged();
@@ -3126,7 +3385,7 @@ private static final long serialVersionUID = 0L;
       if (!other.instanceGroupUrls_.isEmpty()) {
         if (instanceGroupUrls_.isEmpty()) {
           instanceGroupUrls_ = other.instanceGroupUrls_;
-          bitField1_ = (bitField1_ & ~0x00000001);
+          bitField1_ = (bitField1_ & ~0x00000004);
         } else {
           ensureInstanceGroupUrlsIsMutable();
           instanceGroupUrls_.addAll(other.instanceGroupUrls_);
@@ -3138,6 +3397,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getExpireTime().isEmpty()) {
         expireTime_ = other.expireTime_;
+        onChanged();
+      }
+      if (!other.getLocation().isEmpty()) {
+        location_ = other.location_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -5744,7 +6007,6 @@ private static final long serialVersionUID = 0L;
         com.google.container.v1.MasterAuthorizedNetworksConfig, com.google.container.v1.MasterAuthorizedNetworksConfig.Builder, com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder> masterAuthorizedNetworksConfigBuilder_;
     /**
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The configuration options for master authorized networks feature.
      * </pre>
      *
@@ -5755,7 +6017,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The configuration options for master authorized networks feature.
      * </pre>
      *
@@ -5770,7 +6031,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The configuration options for master authorized networks feature.
      * </pre>
      *
@@ -5791,7 +6051,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The configuration options for master authorized networks feature.
      * </pre>
      *
@@ -5810,7 +6069,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The configuration options for master authorized networks feature.
      * </pre>
      *
@@ -5833,7 +6091,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The configuration options for master authorized networks feature.
      * </pre>
      *
@@ -5852,7 +6109,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The configuration options for master authorized networks feature.
      * </pre>
      *
@@ -5865,7 +6121,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The configuration options for master authorized networks feature.
      * </pre>
      *
@@ -5881,7 +6136,6 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Master authorized networks is a Beta feature.
      * The configuration options for master authorized networks feature.
      * </pre>
      *
@@ -6054,6 +6308,312 @@ private static final long serialVersionUID = 0L;
       return maintenancePolicyBuilder_;
     }
 
+    private com.google.container.v1.NetworkConfig networkConfig_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.container.v1.NetworkConfig, com.google.container.v1.NetworkConfig.Builder, com.google.container.v1.NetworkConfigOrBuilder> networkConfigBuilder_;
+    /**
+     * <pre>
+     * Configuration for cluster networking.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+     */
+    public boolean hasNetworkConfig() {
+      return networkConfigBuilder_ != null || networkConfig_ != null;
+    }
+    /**
+     * <pre>
+     * Configuration for cluster networking.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+     */
+    public com.google.container.v1.NetworkConfig getNetworkConfig() {
+      if (networkConfigBuilder_ == null) {
+        return networkConfig_ == null ? com.google.container.v1.NetworkConfig.getDefaultInstance() : networkConfig_;
+      } else {
+        return networkConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Configuration for cluster networking.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+     */
+    public Builder setNetworkConfig(com.google.container.v1.NetworkConfig value) {
+      if (networkConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        networkConfig_ = value;
+        onChanged();
+      } else {
+        networkConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration for cluster networking.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+     */
+    public Builder setNetworkConfig(
+        com.google.container.v1.NetworkConfig.Builder builderForValue) {
+      if (networkConfigBuilder_ == null) {
+        networkConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        networkConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration for cluster networking.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+     */
+    public Builder mergeNetworkConfig(com.google.container.v1.NetworkConfig value) {
+      if (networkConfigBuilder_ == null) {
+        if (networkConfig_ != null) {
+          networkConfig_ =
+            com.google.container.v1.NetworkConfig.newBuilder(networkConfig_).mergeFrom(value).buildPartial();
+        } else {
+          networkConfig_ = value;
+        }
+        onChanged();
+      } else {
+        networkConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration for cluster networking.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+     */
+    public Builder clearNetworkConfig() {
+      if (networkConfigBuilder_ == null) {
+        networkConfig_ = null;
+        onChanged();
+      } else {
+        networkConfig_ = null;
+        networkConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration for cluster networking.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+     */
+    public com.google.container.v1.NetworkConfig.Builder getNetworkConfigBuilder() {
+      
+      onChanged();
+      return getNetworkConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Configuration for cluster networking.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+     */
+    public com.google.container.v1.NetworkConfigOrBuilder getNetworkConfigOrBuilder() {
+      if (networkConfigBuilder_ != null) {
+        return networkConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return networkConfig_ == null ?
+            com.google.container.v1.NetworkConfig.getDefaultInstance() : networkConfig_;
+      }
+    }
+    /**
+     * <pre>
+     * Configuration for cluster networking.
+     * </pre>
+     *
+     * <code>.google.container.v1.NetworkConfig network_config = 27;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.container.v1.NetworkConfig, com.google.container.v1.NetworkConfig.Builder, com.google.container.v1.NetworkConfigOrBuilder> 
+        getNetworkConfigFieldBuilder() {
+      if (networkConfigBuilder_ == null) {
+        networkConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.NetworkConfig, com.google.container.v1.NetworkConfig.Builder, com.google.container.v1.NetworkConfigOrBuilder>(
+                getNetworkConfig(),
+                getParentForChildren(),
+                isClean());
+        networkConfig_ = null;
+      }
+      return networkConfigBuilder_;
+    }
+
+    private com.google.container.v1.PrivateClusterConfig privateClusterConfig_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.container.v1.PrivateClusterConfig, com.google.container.v1.PrivateClusterConfig.Builder, com.google.container.v1.PrivateClusterConfigOrBuilder> privateClusterConfigBuilder_;
+    /**
+     * <pre>
+     * Configuration for private cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+     */
+    public boolean hasPrivateClusterConfig() {
+      return privateClusterConfigBuilder_ != null || privateClusterConfig_ != null;
+    }
+    /**
+     * <pre>
+     * Configuration for private cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+     */
+    public com.google.container.v1.PrivateClusterConfig getPrivateClusterConfig() {
+      if (privateClusterConfigBuilder_ == null) {
+        return privateClusterConfig_ == null ? com.google.container.v1.PrivateClusterConfig.getDefaultInstance() : privateClusterConfig_;
+      } else {
+        return privateClusterConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Configuration for private cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+     */
+    public Builder setPrivateClusterConfig(com.google.container.v1.PrivateClusterConfig value) {
+      if (privateClusterConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        privateClusterConfig_ = value;
+        onChanged();
+      } else {
+        privateClusterConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration for private cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+     */
+    public Builder setPrivateClusterConfig(
+        com.google.container.v1.PrivateClusterConfig.Builder builderForValue) {
+      if (privateClusterConfigBuilder_ == null) {
+        privateClusterConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        privateClusterConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration for private cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+     */
+    public Builder mergePrivateClusterConfig(com.google.container.v1.PrivateClusterConfig value) {
+      if (privateClusterConfigBuilder_ == null) {
+        if (privateClusterConfig_ != null) {
+          privateClusterConfig_ =
+            com.google.container.v1.PrivateClusterConfig.newBuilder(privateClusterConfig_).mergeFrom(value).buildPartial();
+        } else {
+          privateClusterConfig_ = value;
+        }
+        onChanged();
+      } else {
+        privateClusterConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration for private cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+     */
+    public Builder clearPrivateClusterConfig() {
+      if (privateClusterConfigBuilder_ == null) {
+        privateClusterConfig_ = null;
+        onChanged();
+      } else {
+        privateClusterConfig_ = null;
+        privateClusterConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration for private cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+     */
+    public com.google.container.v1.PrivateClusterConfig.Builder getPrivateClusterConfigBuilder() {
+      
+      onChanged();
+      return getPrivateClusterConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Configuration for private cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+     */
+    public com.google.container.v1.PrivateClusterConfigOrBuilder getPrivateClusterConfigOrBuilder() {
+      if (privateClusterConfigBuilder_ != null) {
+        return privateClusterConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return privateClusterConfig_ == null ?
+            com.google.container.v1.PrivateClusterConfig.getDefaultInstance() : privateClusterConfig_;
+      }
+    }
+    /**
+     * <pre>
+     * Configuration for private cluster.
+     * </pre>
+     *
+     * <code>.google.container.v1.PrivateClusterConfig private_cluster_config = 37;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.container.v1.PrivateClusterConfig, com.google.container.v1.PrivateClusterConfig.Builder, com.google.container.v1.PrivateClusterConfigOrBuilder> 
+        getPrivateClusterConfigFieldBuilder() {
+      if (privateClusterConfigBuilder_ == null) {
+        privateClusterConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.PrivateClusterConfig, com.google.container.v1.PrivateClusterConfig.Builder, com.google.container.v1.PrivateClusterConfigOrBuilder>(
+                getPrivateClusterConfig(),
+                getParentForChildren(),
+                isClean());
+        privateClusterConfig_ = null;
+      }
+      return privateClusterConfigBuilder_;
+    }
+
     private java.lang.Object selfLink_ = "";
     /**
      * <pre>
@@ -6149,11 +6709,12 @@ private static final long serialVersionUID = 0L;
      * [Output only] The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 101;</code>
+     * <code>string zone = 101 [deprecated = true];</code>
      */
-    public java.lang.String getZone() {
+    @java.lang.Deprecated public java.lang.String getZone() {
       java.lang.Object ref = zone_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -6170,11 +6731,12 @@ private static final long serialVersionUID = 0L;
      * [Output only] The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 101;</code>
+     * <code>string zone = 101 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getZoneBytes() {
       java.lang.Object ref = zone_;
       if (ref instanceof String) {
@@ -6192,11 +6754,12 @@ private static final long serialVersionUID = 0L;
      * [Output only] The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 101;</code>
+     * <code>string zone = 101 [deprecated = true];</code>
      */
-    public Builder setZone(
+    @java.lang.Deprecated public Builder setZone(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -6211,11 +6774,12 @@ private static final long serialVersionUID = 0L;
      * [Output only] The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 101;</code>
+     * <code>string zone = 101 [deprecated = true];</code>
      */
-    public Builder clearZone() {
+    @java.lang.Deprecated public Builder clearZone() {
       
       zone_ = getDefaultInstance().getZone();
       onChanged();
@@ -6226,11 +6790,12 @@ private static final long serialVersionUID = 0L;
      * [Output only] The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the cluster
      * resides.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 101;</code>
+     * <code>string zone = 101 [deprecated = true];</code>
      */
-    public Builder setZoneBytes(
+    @java.lang.Deprecated public Builder setZoneBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -6358,6 +6923,13 @@ private static final long serialVersionUID = 0L;
      * found in validMasterVersions returned by getServerConfig.  The version can
      * be upgraded over time; such upgrades are reflected in
      * currentMasterVersion and currentNodeVersion.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "","-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string initial_cluster_version = 103;</code>
@@ -6380,6 +6952,13 @@ private static final long serialVersionUID = 0L;
      * found in validMasterVersions returned by getServerConfig.  The version can
      * be upgraded over time; such upgrades are reflected in
      * currentMasterVersion and currentNodeVersion.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "","-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string initial_cluster_version = 103;</code>
@@ -6403,6 +6982,13 @@ private static final long serialVersionUID = 0L;
      * found in validMasterVersions returned by getServerConfig.  The version can
      * be upgraded over time; such upgrades are reflected in
      * currentMasterVersion and currentNodeVersion.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "","-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string initial_cluster_version = 103;</code>
@@ -6423,6 +7009,13 @@ private static final long serialVersionUID = 0L;
      * found in validMasterVersions returned by getServerConfig.  The version can
      * be upgraded over time; such upgrades are reflected in
      * currentMasterVersion and currentNodeVersion.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "","-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string initial_cluster_version = 103;</code>
@@ -6439,6 +7032,13 @@ private static final long serialVersionUID = 0L;
      * found in validMasterVersions returned by getServerConfig.  The version can
      * be upgraded over time; such upgrades are reflected in
      * currentMasterVersion and currentNodeVersion.
+     * Users may specify either explicit versions offered by
+     * Kubernetes Engine or version aliases, which have the following behavior:
+     * - "latest": picks the highest valid Kubernetes version
+     * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+     * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+     * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+     * - "","-": picks the default Kubernetes version
      * </pre>
      *
      * <code>string initial_cluster_version = 103;</code>
@@ -6547,14 +7147,16 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object currentNodeVersion_ = "";
     /**
      * <pre>
-     * [Output only] The current version of the node software components.
-     * If they are currently at multiple versions because they're in the process
-     * of being upgraded, this reflects the minimum version of all nodes.
+     * [Output only] Deprecated, use
+     * [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool)
+     * instead. The current version of the node software components. If they are
+     * currently at multiple versions because they're in the process of being
+     * upgraded, this reflects the minimum version of all nodes.
      * </pre>
      *
-     * <code>string current_node_version = 105;</code>
+     * <code>string current_node_version = 105 [deprecated = true];</code>
      */
-    public java.lang.String getCurrentNodeVersion() {
+    @java.lang.Deprecated public java.lang.String getCurrentNodeVersion() {
       java.lang.Object ref = currentNodeVersion_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -6568,14 +7170,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * [Output only] The current version of the node software components.
-     * If they are currently at multiple versions because they're in the process
-     * of being upgraded, this reflects the minimum version of all nodes.
+     * [Output only] Deprecated, use
+     * [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool)
+     * instead. The current version of the node software components. If they are
+     * currently at multiple versions because they're in the process of being
+     * upgraded, this reflects the minimum version of all nodes.
      * </pre>
      *
-     * <code>string current_node_version = 105;</code>
+     * <code>string current_node_version = 105 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getCurrentNodeVersionBytes() {
       java.lang.Object ref = currentNodeVersion_;
       if (ref instanceof String) {
@@ -6590,14 +7194,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * [Output only] The current version of the node software components.
-     * If they are currently at multiple versions because they're in the process
-     * of being upgraded, this reflects the minimum version of all nodes.
+     * [Output only] Deprecated, use
+     * [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool)
+     * instead. The current version of the node software components. If they are
+     * currently at multiple versions because they're in the process of being
+     * upgraded, this reflects the minimum version of all nodes.
      * </pre>
      *
-     * <code>string current_node_version = 105;</code>
+     * <code>string current_node_version = 105 [deprecated = true];</code>
      */
-    public Builder setCurrentNodeVersion(
+    @java.lang.Deprecated public Builder setCurrentNodeVersion(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -6609,14 +7215,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * [Output only] The current version of the node software components.
-     * If they are currently at multiple versions because they're in the process
-     * of being upgraded, this reflects the minimum version of all nodes.
+     * [Output only] Deprecated, use
+     * [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool)
+     * instead. The current version of the node software components. If they are
+     * currently at multiple versions because they're in the process of being
+     * upgraded, this reflects the minimum version of all nodes.
      * </pre>
      *
-     * <code>string current_node_version = 105;</code>
+     * <code>string current_node_version = 105 [deprecated = true];</code>
      */
-    public Builder clearCurrentNodeVersion() {
+    @java.lang.Deprecated public Builder clearCurrentNodeVersion() {
       
       currentNodeVersion_ = getDefaultInstance().getCurrentNodeVersion();
       onChanged();
@@ -6624,14 +7232,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * [Output only] The current version of the node software components.
-     * If they are currently at multiple versions because they're in the process
-     * of being upgraded, this reflects the minimum version of all nodes.
+     * [Output only] Deprecated, use
+     * [NodePool.version](/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePool)
+     * instead. The current version of the node software components. If they are
+     * currently at multiple versions because they're in the process of being
+     * upgraded, this reflects the minimum version of all nodes.
      * </pre>
      *
-     * <code>string current_node_version = 105;</code>
+     * <code>string current_node_version = 105 [deprecated = true];</code>
      */
-    public Builder setCurrentNodeVersionBytes(
+    @java.lang.Deprecated public Builder setCurrentNodeVersionBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -7051,9 +7661,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureInstanceGroupUrlsIsMutable() {
-      if (!((bitField1_ & 0x00000001) == 0x00000001)) {
+      if (!((bitField1_ & 0x00000004) == 0x00000004)) {
         instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList(instanceGroupUrls_);
-        bitField1_ |= 0x00000001;
+        bitField1_ |= 0x00000004;
        }
     }
     /**
@@ -7061,9 +7671,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. Use node_pools.instance_group_urls.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 111;</code>
+     * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      */
-    public com.google.protobuf.ProtocolStringList
+    @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
         getInstanceGroupUrlsList() {
       return instanceGroupUrls_.getUnmodifiableView();
     }
@@ -7072,9 +7682,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. Use node_pools.instance_group_urls.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 111;</code>
+     * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      */
-    public int getInstanceGroupUrlsCount() {
+    @java.lang.Deprecated public int getInstanceGroupUrlsCount() {
       return instanceGroupUrls_.size();
     }
     /**
@@ -7082,9 +7692,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. Use node_pools.instance_group_urls.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 111;</code>
+     * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      */
-    public java.lang.String getInstanceGroupUrls(int index) {
+    @java.lang.Deprecated public java.lang.String getInstanceGroupUrls(int index) {
       return instanceGroupUrls_.get(index);
     }
     /**
@@ -7092,9 +7702,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. Use node_pools.instance_group_urls.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 111;</code>
+     * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getInstanceGroupUrlsBytes(int index) {
       return instanceGroupUrls_.getByteString(index);
     }
@@ -7103,9 +7713,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. Use node_pools.instance_group_urls.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 111;</code>
+     * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      */
-    public Builder setInstanceGroupUrls(
+    @java.lang.Deprecated public Builder setInstanceGroupUrls(
         int index, java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -7120,9 +7730,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. Use node_pools.instance_group_urls.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 111;</code>
+     * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      */
-    public Builder addInstanceGroupUrls(
+    @java.lang.Deprecated public Builder addInstanceGroupUrls(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -7137,9 +7747,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. Use node_pools.instance_group_urls.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 111;</code>
+     * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      */
-    public Builder addAllInstanceGroupUrls(
+    @java.lang.Deprecated public Builder addAllInstanceGroupUrls(
         java.lang.Iterable<java.lang.String> values) {
       ensureInstanceGroupUrlsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -7152,11 +7762,11 @@ private static final long serialVersionUID = 0L;
      * Deprecated. Use node_pools.instance_group_urls.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 111;</code>
+     * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      */
-    public Builder clearInstanceGroupUrls() {
+    @java.lang.Deprecated public Builder clearInstanceGroupUrls() {
       instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -7165,9 +7775,9 @@ private static final long serialVersionUID = 0L;
      * Deprecated. Use node_pools.instance_group_urls.
      * </pre>
      *
-     * <code>repeated string instance_group_urls = 111;</code>
+     * <code>repeated string instance_group_urls = 111 [deprecated = true];</code>
      */
-    public Builder addInstanceGroupUrlsBytes(
+    @java.lang.Deprecated public Builder addInstanceGroupUrlsBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -7307,6 +7917,110 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       expireTime_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object location_ = "";
+    /**
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 114;</code>
+     */
+    public java.lang.String getLocation() {
+      java.lang.Object ref = location_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        location_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 114;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLocationBytes() {
+      java.lang.Object ref = location_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        location_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 114;</code>
+     */
+    public Builder setLocation(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      location_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 114;</code>
+     */
+    public Builder clearLocation() {
+      
+      location_ = getDefaultInstance().getLocation();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 114;</code>
+     */
+    public Builder setLocationBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      location_ = value;
       onChanged();
       return this;
     }

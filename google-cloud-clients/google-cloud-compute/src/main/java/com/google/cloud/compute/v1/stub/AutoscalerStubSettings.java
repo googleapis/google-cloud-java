@@ -278,7 +278,9 @@ public class AutoscalerStubSettings extends StubSettings<AutoscalerStubSettings>
             @Override
             public Iterable<AutoscalersScopedList> extractResources(
                 AutoscalerAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<AutoscalersScopedList>of();
             }
           };
 
@@ -314,7 +316,9 @@ public class AutoscalerStubSettings extends StubSettings<AutoscalerStubSettings>
 
             @Override
             public Iterable<Autoscaler> extractResources(AutoscalerList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Autoscaler>of();
             }
           };
 
