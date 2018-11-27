@@ -33,9 +33,9 @@ import org.junit.runners.JUnit4;
 public class ProductManagementIT {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String COMPUTE_REGION = "us-west1";
-  private static final String PRODUCT_DISPLAY_NAME = "fake_product_display_name_for_testing";
+  private static final String PRODUCT_DISPLAY_NAME = "fake_prod_display_name_for_testing";
   private static final String PRODUCT_CATEGORY = "homegoods";
-  private static final String PRODUCT_ID = "fake_product_id_for_testing";
+  private static final String PRODUCT_ID = "fake_prod_id_for_testing";
   private static final String KEY = "fake_key_for_testing";
   private static final String VALUE = "fake_value_for_testing";
   private ByteArrayOutputStream bout;
@@ -102,7 +102,6 @@ public class ProductManagementIT {
     // Act
     ProductManagement.createProduct(
         PROJECT_ID, COMPUTE_REGION, PRODUCT_ID, PRODUCT_DISPLAY_NAME, PRODUCT_CATEGORY);
-    ProductManagement.listProducts(PROJECT_ID, COMPUTE_REGION);
     ProductManagement.getProduct(PROJECT_ID, COMPUTE_REGION, PRODUCT_ID);
 
     // Assert

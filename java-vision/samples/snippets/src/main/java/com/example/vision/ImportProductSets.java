@@ -18,14 +18,13 @@ package com.example.vision;
 
 // [START vision_product_search_tutorial_import]
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.vision.v1p3beta1.BatchOperationMetadata;
-import com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource;
-import com.google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.Builder;
-import com.google.cloud.vision.v1p3beta1.ImportProductSetsInputConfig;
-import com.google.cloud.vision.v1p3beta1.ImportProductSetsResponse;
-import com.google.cloud.vision.v1p3beta1.LocationName;
-import com.google.cloud.vision.v1p3beta1.ProductSearchClient;
-import com.google.cloud.vision.v1p3beta1.ReferenceImage;
+import com.google.cloud.vision.v1.BatchOperationMetadata;
+import com.google.cloud.vision.v1.ImportProductSetsGcsSource;
+import com.google.cloud.vision.v1.ImportProductSetsGcsSource.Builder;
+import com.google.cloud.vision.v1.ImportProductSetsInputConfig;
+import com.google.cloud.vision.v1.ImportProductSetsResponse;
+import com.google.cloud.vision.v1.ProductSearchClient;
+import com.google.cloud.vision.v1.ReferenceImage;
 // [END vision_product_search_tutorial_import]
 import java.io.PrintStream;
 import javax.swing.JPanel;
@@ -38,13 +37,11 @@ import net.sourceforge.argparse4j.inf.Subparser;
 import net.sourceforge.argparse4j.inf.Subparsers;
 
 /**
- * This application demonstrates how to Import Product Sets in Cloud Vision
- * Product Search.
+ * This application demonstrates how to Import Product Sets in Cloud Vision Product Search.
  *
- * For more information, see the tutorial page at
+ * <p>For more information, see the tutorial page at
  * https://cloud.google.com/vision/product-search/docs/
  */
-
 public class ImportProductSets extends JPanel {
   // [START vision_product_search_import_product_images]
   /**
@@ -57,34 +54,36 @@ public class ImportProductSets extends JPanel {
    */
   public static void importProductSets(String projectId, String computeRegion, String gcsUri)
       throws Exception {
-    ProductSearchClient client = ProductSearchClient.create();
+    try (ProductSearchClient client = ProductSearchClient.create()) {
 
-    // A resource that represents Google Cloud Platform location.
-    LocationName projectLocation = LocationName.of(projectId, computeRegion);
-    Builder gcsSource = ImportProductSetsGcsSource.newBuilder().setCsvFileUri(gcsUri);
+      // A resource that represents Google Cloud Platform location.
+      String formattedParent = ProductSearchClient.formatLocationName(projectId, computeRegion);
+      Builder gcsSource = ImportProductSetsGcsSource.newBuilder().setCsvFileUri(gcsUri);
 
-    // Set the input configuration along with Google Cloud Storage URI
-    ImportProductSetsInputConfig inputConfig =
-        ImportProductSetsInputConfig.newBuilder().setGcsSource(gcsSource).build();
+      // Set the input configuration along with Google Cloud Storage URI
+      ImportProductSetsInputConfig inputConfig =
+          ImportProductSetsInputConfig.newBuilder().setGcsSource(gcsSource).build();
 
-    // Import the product sets from the input URI.
-    OperationFuture<ImportProductSetsResponse, BatchOperationMetadata> response =
-        client.importProductSetsAsync(projectLocation, inputConfig);
+      // Import the product sets from the input URI.
+      OperationFuture<ImportProductSetsResponse, BatchOperationMetadata> response =
+          client.importProductSetsAsync(formattedParent, inputConfig);
 
-    System.out.println(String.format("Processing operation name: %s", response.getName()));
-    ImportProductSetsResponse results = response.get();
-    System.out.println("Processing done.");
-    System.out.println("Results of the processing:");
+      System.out.println(String.format("Processing operation name: %s", response.getName()));
+      ImportProductSetsResponse results = response.get();
+      System.out.println("Processing done.");
+      System.out.println("Results of the processing:");
 
-    for (int i = 0; i < results.getStatusesCount(); i++) {
-      System.out.println(
-          String.format("Status of processing line %s of the csv: %s", i, results.getStatuses(i)));
-      // Check the status of reference image.
-      if (results.getStatuses(i).getCode() == 0) {
-        ReferenceImage referenceImage = results.getReferenceImages(i);
-        System.out.println(referenceImage);
-      } else {
-        System.out.println("No reference image.");
+      for (int i = 0; i < results.getStatusesCount(); i++) {
+        System.out.println(
+            String.format(
+                "Status of processing line %s of the csv: %s", i, results.getStatuses(i)));
+        // Check the status of reference image.
+        if (results.getStatuses(i).getCode() == 0) {
+          ReferenceImage referenceImage = results.getReferenceImages(i);
+          System.out.println(referenceImage);
+        } else {
+          System.out.println("No reference image.");
+        }
       }
     }
   }

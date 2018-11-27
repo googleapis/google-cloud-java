@@ -19,9 +19,7 @@ package com.example.vision;
 import static com.google.common.truth.Truth.assertThat;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.PrintStream;
-import java.util.List;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,7 +42,6 @@ public class ProductSearchIT {
       "gs://java-docs-samples-testing/product-search/shoes_1.jpg";
   private static final String FILE_PATH_1 = "./resources/shoes_1.jpg";
   private static final String FILTER = "style=womens";
-  private static final String BUCKET = "java-docs-samples-testing";
   private ByteArrayOutputStream bout;
   private PrintStream out;
 

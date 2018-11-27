@@ -65,6 +65,7 @@ public class ImportProductSetsIT {
 
     // Assert
     String got = bout.toString();
+    System.out.println(got);
     assertThat(got).doesNotContain(PRODUCT_SET_ID);
 
     // Act
