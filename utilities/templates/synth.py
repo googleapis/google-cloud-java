@@ -20,7 +20,7 @@ import synthtool.gcp as gcp
 gapic = gcp.GAPICGenerator()
 common_templates = gcp.CommonTemplates()
 
-versions = {{versions}}
+versions = ['{{version}}']
 service = '{{service}}'
 
 for version in versions:
