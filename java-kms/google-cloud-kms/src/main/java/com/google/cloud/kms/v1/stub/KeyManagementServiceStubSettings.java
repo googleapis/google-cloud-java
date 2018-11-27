@@ -405,7 +405,9 @@ public class KeyManagementServiceStubSettings
 
             @Override
             public Iterable<KeyRing> extractResources(ListKeyRingsResponse payload) {
-              return payload.getKeyRingsList();
+              return payload.getKeyRingsList() != null
+                  ? payload.getKeyRingsList()
+                  : ImmutableList.<KeyRing>of();
             }
           };
 
@@ -440,7 +442,9 @@ public class KeyManagementServiceStubSettings
 
             @Override
             public Iterable<CryptoKey> extractResources(ListCryptoKeysResponse payload) {
-              return payload.getCryptoKeysList();
+              return payload.getCryptoKeysList() != null
+                  ? payload.getCryptoKeysList()
+                  : ImmutableList.<CryptoKey>of();
             }
           };
 
@@ -479,7 +483,9 @@ public class KeyManagementServiceStubSettings
             @Override
             public Iterable<CryptoKeyVersion> extractResources(
                 ListCryptoKeyVersionsResponse payload) {
-              return payload.getCryptoKeyVersionsList();
+              return payload.getCryptoKeyVersionsList() != null
+                  ? payload.getCryptoKeyVersionsList()
+                  : ImmutableList.<CryptoKeyVersion>of();
             }
           };
 
