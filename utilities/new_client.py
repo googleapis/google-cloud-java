@@ -33,6 +33,9 @@ class PomBuilder(ElementTree.TreeBuilder):
         self.data(data)
         self.end(ElementTree.Comment)
 
+def add_to_versions(service: str) -> None:
+    print("TODO: add to versions")
+
 def add_module_to_pom(pom: str, module_name: str) -> None:
     parser = ElementTree.XMLParser()
     tree = ElementTree.parse(pom, parser)#, ElementTree.XMLParser(target=PomBuilder()))
@@ -69,11 +72,11 @@ def write_synthfile(path: str, versions: str, service: str, config_path: str) ->
         os.makedirs(directory)
     synth.dump(path)
 
-def write_cloud_pom(path: str, api_version: str, version: str, service: str, name: str, description: str) -> None:
+def write_pom(template: str, path: str, api_version: str, version: str, service: str, name: str, description: str) -> None:
     env = Environment(
         loader=FileSystemLoader('templates')
     )
-    template = env.get_template('pom.xml')
+    template = env.get_template(template)
     pom = template.stream(
         api_version=api_version,
         description=description,
@@ -89,22 +92,24 @@ def write_cloud_pom(path: str, api_version: str, version: str, service: str, nam
 def run_synthtool() -> None:
     print("TODO: run synthtool")
 
+def update_stub_packages() -> None:
+    print("TODO: update stub packages")
+
 root_directory = os.path.dirname(os.path.realpath(os.path.join('..', __file__)))
 versions = ['v1']
 service = 'iamcredentials'
 config_path = '/google/iam/credentials/artman_iamcredentials_{version}.yaml'
 
-add_module_to_pom(
-    pom=os.path.join(root_directory, 'google-cloud-clients/pom.xml'),
-    module_name='google-cloud-iamcredentials'
-)
+add_to_versions(service=service)
 write_synthfile(
     path=os.path.join(root_directory, 'google-cloud-clients/google-cloud-iamcredentials/synth.py'),
     versions=versions,
     service=service,
     config_path=config_path
 )
-write_cloud_pom(
+run_synthtool()
+write_pom(
+    template="cloud_pom.xml",
     path=os.path.join(root_directory, 'google-cloud-clients/google-cloud-iamcredentials/pom.xml'),
     api_version='v1',
     version='0.71.1-alpha-SNAPSHOT',
@@ -112,4 +117,36 @@ write_cloud_pom(
     description='FIXME',
     name='FIXME',
 )
-run_synthtool()
+add_module_to_pom(
+    pom=os.path.join(root_directory, 'google-cloud-clients/pom.xml'),
+    module_name='google-cloud-iamcredentials'
+)
+write_pom(
+    template="proto_pom.xml",
+    path=os.path.join(root_directory, 'google-api-grpc/proto-google-cloud-iamcredentials-v1/pom.xml'),
+    api_version='v1',
+    version='0.71.1-alpha-SNAPSHOT',
+    service='iamcredentials',
+    description='FIXME',
+    name='FIXME',
+)
+write_pom(
+    template="grpc_pom.xml",
+    path=os.path.join(root_directory, 'google-api-grpc/grpc-google-cloud-iamcredentials-v1/pom.xml'),
+    api_version='v1',
+    version='0.71.1-alpha-SNAPSHOT',
+    service='iamcredentials',
+    description='FIXME',
+    name='FIXME',
+)
+add_module_to_pom(
+    pom=os.path.join(root_directory, 'google-api-grpc/pom.xml'),
+    module_name='grpc-google-cloud-iamcredentials-v1'
+)
+add_module_to_pom(
+    pom=os.path.join(root_directory, 'google-api-grpc/pom.xml'),
+    module_name='proto-google-cloud-iamcredentials-v1'
+)
+update_stub_packages(
+
+)
