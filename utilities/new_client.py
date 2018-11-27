@@ -21,6 +21,7 @@
 
 import attr
 import sys, os
+import subprocess
 from jinja2 import Environment, FileSystemLoader
 from lxml import etree as ElementTree
 from typing import List
@@ -91,7 +92,7 @@ def add_module_to_pom(pom: str, module_name: str) -> None:
             modules.insert(i, new_module)
             break
 
-    tree.write(pom, pretty_print=True)
+    tree.write(pom, pretty_print=True, xml_declaration=True, encoding='utf-8')
 
 def write_synthfile(ctx: Context) -> None:
     env = Environment(
@@ -127,7 +128,11 @@ def write_pom(template: str, path: str, ctx: Context, version: str) -> None:
     pom.dump(path)
 
 def run_synthtool(ctx: Context) -> None:
-    print("TODO: run synthtool")
+    subprocess.run(
+        [sys.executable, 'synth.py'],
+        check=True,
+        cwd=ctx.path(f'google-cloud-clients/{ctx.google_cloud_artifact}')
+    )
 
 def update_stub_packages() -> None:
     print("TODO: update stub packages")
@@ -147,7 +152,7 @@ run_synthtool(ctx)
 write_pom(
     ctx=ctx,
     template="cloud_pom.xml",
-    path=ctx.path('google-cloud-clients/google-cloud-iamcredentials/pom.xml'),
+    path=ctx.path(f'google-cloud-clients/{ctx.google_cloud_artifact}/pom.xml'),
     version=ctx.google_cloud_version
 )
 add_module_to_pom(
@@ -157,13 +162,13 @@ add_module_to_pom(
 write_pom(
     ctx=ctx,
     template="proto_pom.xml",
-    path=ctx.path('google-api-grpc/proto-google-cloud-iamcredentials-v1/pom.xml'),
+    path=ctx.path(f'google-api-grpc/{ctx.proto_artifact}/pom.xml'),
     version=ctx.proto_version
 )
 write_pom(
     ctx=ctx,
     template="grpc_pom.xml",
-    path=ctx.path('google-api-grpc/grpc-google-cloud-iamcredentials-v1/pom.xml'),
+    path=ctx.path(f'google-api-grpc/{ctx.grpc_artifact}/pom.xml'),
     version=ctx.grpc_version
 )
 add_module_to_pom(
