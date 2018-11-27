@@ -259,7 +259,9 @@ public class SslPolicyStubSettings extends StubSettings<SslPolicyStubSettings> {
 
             @Override
             public Iterable<SslPolicy> extractResources(SslPoliciesList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<SslPolicy>of();
             }
           };
 
