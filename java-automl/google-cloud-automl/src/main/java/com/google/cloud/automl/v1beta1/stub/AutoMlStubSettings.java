@@ -371,7 +371,9 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
 
             @Override
             public Iterable<Dataset> extractResources(ListDatasetsResponse payload) {
-              return payload.getDatasetsList();
+              return payload.getDatasetsList() != null
+                  ? payload.getDatasetsList()
+                  : ImmutableList.<Dataset>of();
             }
           };
 
@@ -405,7 +407,9 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
 
             @Override
             public Iterable<Model> extractResources(ListModelsResponse payload) {
-              return payload.getModelList();
+              return payload.getModelList() != null
+                  ? payload.getModelList()
+                  : ImmutableList.<Model>of();
             }
           };
 
@@ -444,7 +448,9 @@ public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
             @Override
             public Iterable<ModelEvaluation> extractResources(
                 ListModelEvaluationsResponse payload) {
-              return payload.getModelEvaluationList();
+              return payload.getModelEvaluationList() != null
+                  ? payload.getModelEvaluationList()
+                  : ImmutableList.<ModelEvaluation>of();
             }
           };
 
