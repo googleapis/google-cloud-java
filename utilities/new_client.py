@@ -48,7 +48,11 @@ class Context:
         self.google_cloud_artifact = f'google-cloud-{service}'
         self.grpc_artifact = f'grpc-google-cloud-{service}-{api_version}'
         self.proto_artifact = f'proto-google-cloud-{service}-{api_version}'
-        self.root_directory = os.path.dirname(os.path.realpath(os.path.join('..', __file__)))
+        self.root_directory = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..'))
+        self.jinja_env = Environment(
+            loader=FileSystemLoader(self.path('utilities/templates'))
+        )
+        print(self.root_directory)
 
     def path(self, suffix) -> str:
         return os.path.join(self.root_directory, suffix)
@@ -57,7 +61,7 @@ def add_to_versions(ctx: Context) -> None:
     versions = []
 
     # read from versions.txt
-    versions_path = os.path.join(ctx.root_directory, 'versions.txt')
+    versions_path = ctx.path('versions.txt')
     with open(versions_path) as f:
         for line in f:
             version_line = line.strip()
@@ -117,10 +121,7 @@ def add_module_to_pom(pom: str, module_name: str) -> None:
     tree.write(pom, pretty_print=True, xml_declaration=True, encoding='utf-8')
 
 def write_synthfile(ctx: Context) -> None:
-    env = Environment(
-        loader=FileSystemLoader('templates')
-    )
-    template = env.get_template('synth.py')
+    template = ctx.jinja_env.get_template('synth.py')
     synth = template.stream(
         version=ctx.api_version,
         service=ctx.service,
@@ -133,10 +134,7 @@ def write_synthfile(ctx: Context) -> None:
     synth.dump(path)
 
 def write_pom(template: str, path: str, ctx: Context, version: str) -> None:
-    env = Environment(
-        loader=FileSystemLoader('templates')
-    )
-    template = env.get_template(template)
+    template = ctx.jinja_env.get_template(template)
     pom = template.stream(
         api_version=ctx.api_version,
         description=ctx.description,
@@ -174,10 +172,7 @@ def update_stub_packages(ctx: Context) -> None:
     tree.write(pom, pretty_print=True, xml_declaration=True, encoding='utf-8')
 
 def write_readme(ctx: Context) -> None:
-    env = Environment(
-        loader=FileSystemLoader('templates')
-    )
-    template = env.get_template('README.md')
+    template = ctx.jinja_env.get_template('README.md')
     pom = template.stream(
         api_version=ctx.api_version,
         description=ctx.description,
