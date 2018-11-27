@@ -12,20 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Usage: python new_client.py
-#
-# client name: i.e. securitycenter
-# path to artman file
-#
-#
+# Usage: python new_client.py -v <api version> -s <service name> -c <path to config>
 
+import argparse
 import attr
 import copy
+import os
 import re
-import sys, os
+import sys
 import subprocess
 from jinja2 import Environment, FileSystemLoader
-from lxml import etree as ElementTree
+from lxml import etree
 from typing import List
 from releasetool.commands.start import java as releasetool
 
@@ -101,11 +98,11 @@ def add_to_versions(ctx: Context) -> None:
     ctx.versions = versions
 
 def add_module_to_pom(pom: str, module_name: str) -> None:
-    tree = ElementTree.parse(pom)
+    tree = etree.parse(pom)
     root = tree.getroot()
     modules = root.find('{http://maven.apache.org/POM/4.0.0}modules')
 
-    new_module = ElementTree.Element('{http://maven.apache.org/POM/4.0.0}module')
+    new_module = etree.Element('{http://maven.apache.org/POM/4.0.0}module')
     new_module.text = module_name
 
     for i, module in enumerate(modules):
@@ -162,7 +159,7 @@ def run_synthtool(ctx: Context) -> None:
 def update_stub_packages(ctx: Context) -> None:
     # open google-cloud-clients/pom.xml and fix the Stub packages list
     pom = ctx.path('google-cloud-clients/pom.xml')
-    tree = ElementTree.parse(pom)
+    tree = etree.parse(pom)
 
     grpc_artifacts = [v.module for v in ctx.versions if v.module.startswith('grpc-')]
     stub_classes = []
@@ -194,18 +191,22 @@ def write_readme(ctx: Context) -> None:
         os.makedirs(directory)
     pom.dump(path)
 
-api_version = 'v1'
-service = 'iamcredentials'
-config_path = '/google/iam/credentials/artman_iamcredentials_{version}.yaml'
+
+parser = argparse.ArgumentParser(description='Create a new client')
+parser.add_argument('-v', required=True, help='API version (i.e. v1)')
+parser.add_argument('-c', required=True, help='Path to config in googleapis/googleapis')
+parser.add_argument('-s', required=True, help='Service name')
+args = parser.parse_args()
+
 ctx = Context(
-    api_version=api_version,
-    service=service,
-    artman_config=config_path
+    api_version=args.v,
+    service=args.s,
+    artman_config=args.c
 )
 
 add_to_versions(ctx)
 write_synthfile(ctx)
-# run_synthtool(ctx)
+run_synthtool(ctx)
 write_pom(
     ctx=ctx,
     template="cloud_pom.xml",
