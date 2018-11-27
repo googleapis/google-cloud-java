@@ -69,6 +69,23 @@ def write_synthfile(path: str, versions: str, service: str, config_path: str) ->
         os.makedirs(directory)
     synth.dump(path)
 
+def write_cloud_pom(path: str, api_version: str, version: str, service: str, name: str, description: str) -> None:
+    env = Environment(
+        loader=FileSystemLoader('templates')
+    )
+    template = env.get_template('pom.xml')
+    pom = template.stream(
+        api_version=api_version,
+        description=description,
+        name=name,
+        service=service,
+        version=version
+    )
+    directory = os.path.dirname(path)
+    if not os.path.isdir(directory):
+        os.makedirs(directory)
+    pom.dump(path)
+
 def run_synthtool() -> None:
     print("TODO: run synthtool")
 
@@ -86,5 +103,13 @@ write_synthfile(
     versions=versions,
     service=service,
     config_path=config_path
+)
+write_cloud_pom(
+    path=os.path.join(root_directory, 'google-cloud-clients/google-cloud-iamcredentials/pom.xml'),
+    api_version='v1',
+    version='0.71.1-alpha-SNAPSHOT',
+    service='iamcredentials',
+    description='FIXME',
+    name='FIXME',
 )
 run_synthtool()
