@@ -176,6 +176,24 @@ def update_stub_packages(ctx: Context) -> None:
 
     tree.write(pom, pretty_print=True, xml_declaration=True, encoding='utf-8')
 
+def write_readme(ctx: Context) -> None:
+    env = Environment(
+        loader=FileSystemLoader('templates')
+    )
+    template = env.get_template('README.md')
+    pom = template.stream(
+        api_version=ctx.api_version,
+        description=ctx.description,
+        name=ctx.name,
+        service=ctx.service,
+        version=ctx.google_cloud_version
+    )
+    path = ctx.path(f'google-cloud-clients/{ctx.google_cloud_artifact}/README.md')
+    directory = os.path.dirname(path)
+    if not os.path.isdir(directory):
+        os.makedirs(directory)
+    pom.dump(path)
+
 api_version = 'v1'
 service = 'iamcredentials'
 config_path = '/google/iam/credentials/artman_iamcredentials_{version}.yaml'
@@ -219,3 +237,4 @@ add_module_to_pom(
     module_name=ctx.proto_artifact
 )
 update_stub_packages(ctx)
+write_readme(ctx)
