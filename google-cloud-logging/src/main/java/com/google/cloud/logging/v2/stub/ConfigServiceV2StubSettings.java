@@ -280,7 +280,9 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
 
             @Override
             public Iterable<LogSink> extractResources(ListSinksResponse payload) {
-              return payload.getSinksList();
+              return payload.getSinksList() != null
+                  ? payload.getSinksList()
+                  : ImmutableList.<LogSink>of();
             }
           };
 
@@ -316,7 +318,9 @@ public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2Stu
 
             @Override
             public Iterable<LogExclusion> extractResources(ListExclusionsResponse payload) {
-              return payload.getExclusionsList();
+              return payload.getExclusionsList() != null
+                  ? payload.getExclusionsList()
+                  : ImmutableList.<LogExclusion>of();
             }
           };
 
