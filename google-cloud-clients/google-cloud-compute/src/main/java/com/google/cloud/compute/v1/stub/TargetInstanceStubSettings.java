@@ -271,7 +271,9 @@ public class TargetInstanceStubSettings extends StubSettings<TargetInstanceStubS
             @Override
             public Iterable<TargetInstancesScopedList> extractResources(
                 TargetInstanceAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<TargetInstancesScopedList>of();
             }
           };
 
@@ -311,7 +313,9 @@ public class TargetInstanceStubSettings extends StubSettings<TargetInstanceStubS
 
             @Override
             public Iterable<TargetInstance> extractResources(TargetInstanceList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<TargetInstance>of();
             }
           };
 

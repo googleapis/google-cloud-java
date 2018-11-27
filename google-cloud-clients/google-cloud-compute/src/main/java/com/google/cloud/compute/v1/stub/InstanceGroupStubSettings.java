@@ -320,7 +320,9 @@ public class InstanceGroupStubSettings extends StubSettings<InstanceGroupStubSet
             @Override
             public Iterable<InstanceGroupsScopedList> extractResources(
                 InstanceGroupAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<InstanceGroupsScopedList>of();
             }
           };
 
@@ -360,7 +362,9 @@ public class InstanceGroupStubSettings extends StubSettings<InstanceGroupStubSet
 
             @Override
             public Iterable<InstanceGroup> extractResources(InstanceGroupList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<InstanceGroup>of();
             }
           };
 
@@ -405,7 +409,9 @@ public class InstanceGroupStubSettings extends StubSettings<InstanceGroupStubSet
             @Override
             public Iterable<InstanceWithNamedPorts> extractResources(
                 InstanceGroupsListInstances payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<InstanceWithNamedPorts>of();
             }
           };
 

@@ -305,7 +305,9 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
             @Override
             public Iterable<NodeGroupsScopedList> extractResources(
                 NodeGroupAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<NodeGroupsScopedList>of();
             }
           };
 
@@ -341,7 +343,9 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
 
             @Override
             public Iterable<NodeGroup> extractResources(NodeGroupList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<NodeGroup>of();
             }
           };
 
@@ -381,7 +385,9 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
 
             @Override
             public Iterable<NodeGroupNode> extractResources(NodeGroupsListNodes payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<NodeGroupNode>of();
             }
           };
 

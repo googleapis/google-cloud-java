@@ -261,7 +261,9 @@ public class RegionCommitmentStubSettings extends StubSettings<RegionCommitmentS
             @Override
             public Iterable<CommitmentsScopedList> extractResources(
                 CommitmentAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<CommitmentsScopedList>of();
             }
           };
 
@@ -302,7 +304,9 @@ public class RegionCommitmentStubSettings extends StubSettings<RegionCommitmentS
 
             @Override
             public Iterable<Commitment> extractResources(CommitmentList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Commitment>of();
             }
           };
 

@@ -245,7 +245,9 @@ public class ContainerAnalysisV1Beta1StubSettings
 
             @Override
             public Iterable<ScanConfig> extractResources(ListScanConfigsResponse payload) {
-              return payload.getScanConfigsList();
+              return payload.getScanConfigsList() != null
+                  ? payload.getScanConfigsList()
+                  : ImmutableList.<ScanConfig>of();
             }
           };
 

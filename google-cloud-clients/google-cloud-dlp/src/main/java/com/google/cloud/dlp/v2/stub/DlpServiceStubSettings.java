@@ -495,7 +495,9 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
             @Override
             public Iterable<InspectTemplate> extractResources(
                 ListInspectTemplatesResponse payload) {
-              return payload.getInspectTemplatesList();
+              return payload.getInspectTemplatesList() != null
+                  ? payload.getInspectTemplatesList()
+                  : ImmutableList.<InspectTemplate>of();
             }
           };
 
@@ -537,7 +539,9 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
             @Override
             public Iterable<DeidentifyTemplate> extractResources(
                 ListDeidentifyTemplatesResponse payload) {
-              return payload.getDeidentifyTemplatesList();
+              return payload.getDeidentifyTemplatesList() != null
+                  ? payload.getDeidentifyTemplatesList()
+                  : ImmutableList.<DeidentifyTemplate>of();
             }
           };
 
@@ -571,7 +575,9 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
 
             @Override
             public Iterable<DlpJob> extractResources(ListDlpJobsResponse payload) {
-              return payload.getJobsList();
+              return payload.getJobsList() != null
+                  ? payload.getJobsList()
+                  : ImmutableList.<DlpJob>of();
             }
           };
 
@@ -608,7 +614,9 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
 
             @Override
             public Iterable<JobTrigger> extractResources(ListJobTriggersResponse payload) {
-              return payload.getJobTriggersList();
+              return payload.getJobTriggersList() != null
+                  ? payload.getJobTriggersList()
+                  : ImmutableList.<JobTrigger>of();
             }
           };
 
@@ -646,7 +654,9 @@ public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings>
 
             @Override
             public Iterable<StoredInfoType> extractResources(ListStoredInfoTypesResponse payload) {
-              return payload.getStoredInfoTypesList();
+              return payload.getStoredInfoTypesList() != null
+                  ? payload.getStoredInfoTypesList()
+                  : ImmutableList.<StoredInfoType>of();
             }
           };
 

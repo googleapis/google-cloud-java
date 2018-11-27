@@ -312,7 +312,9 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
 
             @Override
             public Iterable<Document> extractResources(ListDocumentsResponse payload) {
-              return payload.getDocumentsList();
+              return payload.getDocumentsList() != null
+                  ? payload.getDocumentsList()
+                  : ImmutableList.<Document>of();
             }
           };
 
@@ -349,7 +351,9 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
 
             @Override
             public Iterable<String> extractResources(ListCollectionIdsResponse payload) {
-              return payload.getCollectionIdsList();
+              return payload.getCollectionIdsList() != null
+                  ? payload.getCollectionIdsList()
+                  : ImmutableList.<String>of();
             }
           };
 
@@ -566,7 +570,7 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
       builder
           .runQuerySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("streaming"));
 
       builder
           .listCollectionIdsSettings()
