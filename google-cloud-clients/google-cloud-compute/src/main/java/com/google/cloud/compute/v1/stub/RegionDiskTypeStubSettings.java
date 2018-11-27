@@ -224,7 +224,9 @@ public class RegionDiskTypeStubSettings extends StubSettings<RegionDiskTypeStubS
 
             @Override
             public Iterable<DiskType> extractResources(RegionDiskTypeList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<DiskType>of();
             }
           };
 

@@ -382,7 +382,9 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
             @Override
             public Iterable<GroupResult> extractResources(GroupAssetsResponse payload) {
-              return payload.getGroupByResultsList();
+              return payload.getGroupByResultsList() != null
+                  ? payload.getGroupByResultsList()
+                  : ImmutableList.<GroupResult>of();
             }
           };
 
@@ -416,7 +418,9 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
             @Override
             public Iterable<GroupResult> extractResources(GroupFindingsResponse payload) {
-              return payload.getGroupByResultsList();
+              return payload.getGroupByResultsList() != null
+                  ? payload.getGroupByResultsList()
+                  : ImmutableList.<GroupResult>of();
             }
           };
 
@@ -453,7 +457,9 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
             @Override
             public Iterable<ListAssetsResponse.ListAssetsResult> extractResources(
                 ListAssetsResponse payload) {
-              return payload.getListAssetsResultsList();
+              return payload.getListAssetsResultsList() != null
+                  ? payload.getListAssetsResultsList()
+                  : ImmutableList.<ListAssetsResponse.ListAssetsResult>of();
             }
           };
 
@@ -487,7 +493,9 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
             @Override
             public Iterable<Finding> extractResources(ListFindingsResponse payload) {
-              return payload.getFindingsList();
+              return payload.getFindingsList() != null
+                  ? payload.getFindingsList()
+                  : ImmutableList.<Finding>of();
             }
           };
 
@@ -521,7 +529,9 @@ public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubS
 
             @Override
             public Iterable<Source> extractResources(ListSourcesResponse payload) {
-              return payload.getSourcesList();
+              return payload.getSourcesList() != null
+                  ? payload.getSourcesList()
+                  : ImmutableList.<Source>of();
             }
           };
 

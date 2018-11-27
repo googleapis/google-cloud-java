@@ -296,7 +296,9 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
 
             @Override
             public Iterable<RoutersScopedList> extractResources(RouterAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<RoutersScopedList>of();
             }
           };
 
@@ -332,7 +334,9 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
 
             @Override
             public Iterable<Router> extractResources(RouterList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Router>of();
             }
           };
 

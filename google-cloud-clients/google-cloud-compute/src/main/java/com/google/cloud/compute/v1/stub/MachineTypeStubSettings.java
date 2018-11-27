@@ -247,7 +247,9 @@ public class MachineTypeStubSettings extends StubSettings<MachineTypeStubSetting
             @Override
             public Iterable<MachineTypesScopedList> extractResources(
                 MachineTypeAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<MachineTypesScopedList>of();
             }
           };
 
@@ -286,7 +288,9 @@ public class MachineTypeStubSettings extends StubSettings<MachineTypeStubSetting
 
             @Override
             public Iterable<MachineType> extractResources(MachineTypeList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<MachineType>of();
             }
           };
 
