@@ -434,7 +434,8 @@
     <module>google-cloud-dns</module>
     <module>google-cloud-errorreporting</module>
     <module>google-cloud-firestore</module>
-    <module>google-cloud-iamcredentials</module><module>google-cloud-iot</module>
+    <module>google-cloud-iamcredentials</module>
+    <module>google-cloud-iot</module>
     <module>google-cloud-kms</module>
     <module>google-cloud-language</module>
     <module>google-cloud-logging</module>
