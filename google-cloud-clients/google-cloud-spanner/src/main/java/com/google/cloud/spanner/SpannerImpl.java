@@ -452,7 +452,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       String createStatement = "CREATE DATABASE `" + databaseId + "`";
       OperationFuture<com.google.spanner.admin.database.v1.Database, CreateDatabaseMetadata>
           rawOperationFuture = rpc.createDatabase(instanceName, createStatement, statements);
-      return new OperationFutureImpl(
+      return new OperationFutureImpl<Database, CreateDatabaseMetadata>(
           rawOperationFuture.getPollingFuture(),
           rawOperationFuture.getInitialFuture(),
           new ApiFunction<OperationSnapshot, Database>() {
@@ -498,19 +498,20 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       final String opId = operationId != null ? operationId : randomOperationId();
       OperationFuture<Empty, UpdateDatabaseDdlMetadata> rawOperationFuture =
           rpc.updateDatabaseDdl(dbName, statements, opId);
-      return new OperationFutureImpl(
+      return new OperationFutureImpl<Void, UpdateDatabaseDdlMetadata>(
           rawOperationFuture.getPollingFuture(),
           rawOperationFuture.getInitialFuture(),
           new ApiFunction<OperationSnapshot, Void>() {
             @Override
             public Void apply(OperationSnapshot snapshot) {
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class).apply(snapshot);
               return null;
             }
           },
           ProtoOperationTransformers.MetadataTransformer.create(UpdateDatabaseDdlMetadata.class),
-          new ApiFunction<Exception, Database>() {
+          new ApiFunction<Exception, Void>() {
             @Override
-            public Database apply(Exception e) {
+            public Void apply(Exception e) {
               throw SpannerExceptionFactory.newSpannerException(e);
             }
           });
@@ -799,12 +800,12 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       Mutation.toProto(mutations, mutationsProto);
       final CommitRequest request =
           CommitRequest.newBuilder()
-          .setSession(name)
-          .addAllMutations(mutationsProto)
-          .setSingleUseTransaction(
-              TransactionOptions.newBuilder()
-              .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
-          .build();
+              .setSession(name)
+              .addAllMutations(mutationsProto)
+              .setSingleUseTransaction(
+                  TransactionOptions.newBuilder()
+                      .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
+              .build();
       Span span = tracer.spanBuilder(COMMIT).startSpan();
       try (Scope s = tracer.withSpan(span)) {
         CommitResponse response =
@@ -894,11 +895,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       try (Scope s = tracer.withSpan(span)) {
         final BeginTransactionRequest request =
             BeginTransactionRequest.newBuilder()
-            .setSession(name)
-            .setOptions(
-                TransactionOptions.newBuilder()
-                .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
-            .build();
+                .setSession(name)
+                .setOptions(
+                    TransactionOptions.newBuilder()
+                        .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
+                .build();
         Transaction txn =
             runWithRetries(
                 new Callable<Transaction>() {
@@ -1103,7 +1104,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             }
           };
       return new GrpcResultSet(stream, this, queryMode);
-    } 
+    }
 
     /**
      * Called before any read or query is started to perform state checks and initializations.
@@ -1649,7 +1650,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       }
       // For standard DML, using the exact row count.
       return resultSet.getStats().getRowCountExact();
-    } 
+    }
   }
 
   /**
@@ -2792,7 +2793,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
      * results will return null.
      */
     @Nullable
-    ResultSetStats getStats() { 
+    ResultSetStats getStats() {
       return statistics;
     }
 
