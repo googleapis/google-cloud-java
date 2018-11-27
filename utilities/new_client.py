@@ -21,6 +21,7 @@
 
 import attr
 import copy
+import re
 import sys, os
 import subprocess
 from jinja2 import Environment, FileSystemLoader
@@ -100,8 +101,7 @@ def add_to_versions(ctx: Context) -> None:
     ctx.versions = versions
 
 def add_module_to_pom(pom: str, module_name: str) -> None:
-    parser = ElementTree.XMLParser()
-    tree = ElementTree.parse(pom, parser)
+    tree = ElementTree.parse(pom)
     root = tree.getroot()
     modules = root.find('{http://maven.apache.org/POM/4.0.0}modules')
 
@@ -110,7 +110,7 @@ def add_module_to_pom(pom: str, module_name: str) -> None:
 
     for i, module in enumerate(modules):
         if module.text == module_name:
-            print("already added to pom.xml, skipping")
+            # print("already added to pom.xml, skipping")
             return
 
         if module.text > module_name:
@@ -159,8 +159,22 @@ def run_synthtool(ctx: Context) -> None:
         cwd=ctx.path(f'google-cloud-clients/{ctx.google_cloud_artifact}')
     )
 
-def update_stub_packages() -> None:
-    print("TODO: update stub packages")
+def update_stub_packages(ctx: Context) -> None:
+    # open google-cloud-clients/pom.xml and fix the Stub packages list
+    pom = ctx.path('google-cloud-clients/pom.xml')
+    tree = ElementTree.parse(pom)
+
+    grpc_artifacts = [v.module for v in ctx.versions if v.module.startswith('grpc-')]
+    stub_classes = []
+    for artifact in grpc_artifacts:
+        m = re.match('grpc-google-cloud-(.*)-(v.*)', artifact)
+        stub_classes.append(f'com.google.cloud.{m[1]}.{m[2]}.stub')
+
+    for group in tree.findall('.//{http://maven.apache.org/POM/4.0.0}group'):
+        if group.find('{http://maven.apache.org/POM/4.0.0}title').text == 'Stub packages':
+            group.find('{http://maven.apache.org/POM/4.0.0}packages').text = ':'.join(stub_classes)
+
+    tree.write(pom, pretty_print=True, xml_declaration=True, encoding='utf-8')
 
 api_version = 'v1'
 service = 'iamcredentials'
@@ -173,7 +187,7 @@ ctx = Context(
 
 add_to_versions(ctx)
 write_synthfile(ctx)
-run_synthtool(ctx)
+# run_synthtool(ctx)
 write_pom(
     ctx=ctx,
     template="cloud_pom.xml",
@@ -204,6 +218,4 @@ add_module_to_pom(
     pom=ctx.path('google-api-grpc/pom.xml'),
     module_name=ctx.proto_artifact
 )
-update_stub_packages(
-
-)
+update_stub_packages(ctx)
