@@ -278,7 +278,9 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
 
             @Override
             public Iterable<Agent> extractResources(SearchAgentsResponse payload) {
-              return payload.getAgentsList();
+              return payload.getAgentsList() != null
+                  ? payload.getAgentsList()
+                  : ImmutableList.<Agent>of();
             }
           };
 
