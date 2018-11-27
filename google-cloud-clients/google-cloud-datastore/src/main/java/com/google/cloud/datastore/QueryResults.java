@@ -57,7 +57,7 @@ public interface QueryResults<V> extends Iterator<V> {
   Cursor getCursorAfter();
 
   /**
-   * Returns the number fo results skipped, typically because of an offset.
+   * Returns the number of results skipped, typically because of an offset.
    *
    * <p>A simple use case to count entities:
    *
