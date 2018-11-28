@@ -31,11 +31,11 @@ class Context:
     api_version: str = None
     artman_config: str = None
     google_cloud_artifact: str = None
-    google_cloud_version: str = None
+    google_cloud_version: releasetool.Version = None
     grpc_artifact: str = None
-    grpc_version: str = None
+    grpc_version: releasetool.Version = None
     proto_artifact: str = None
-    proto_version: str = None
+    proto_version: releasetool.Version = None
     root_directory: str = None
     description: str = "FIXME"
     name: str = "FIXME"
@@ -70,34 +70,38 @@ def add_to_versions(ctx: Context) -> None:
 
             versions.append(releasetool.ArtifactVersions(version_line))
 
-    if not next((v for v in versions if v.module == ctx.google_cloud_artifact), None):
-        print("adding new versions to versions.txt")
+    ctx.google_cloud_version = next((v for v in versions if v.module == ctx.google_cloud_artifact), None)
+    if not ctx.google_cloud_version:
         # insert new versions
-        # use assets API for new api versions
-        version = copy.deepcopy(next(v for v in versions if v.module == 'google-cloud-asset'))
+        # use scheduler API for new api versions
+        version = copy.deepcopy(next(v for v in versions if v.module == 'google-cloud-scheduler'))
         version.module = ctx.google_cloud_artifact
         versions.append(version)
-        ctx.google_cloud_version = str(version)
+        ctx.google_cloud_version = version
 
-        version = copy.deepcopy(next(v for v in versions if v.module == 'proto-google-cloud-asset-v1beta1'))
+    ctx.proto_version = next((v for v in versions if v.module == ctx.proto_artifact), None)
+    if not ctx.proto_version:
+        version = copy.deepcopy(next(v for v in versions if v.module == 'proto-google-cloud-scheduler-v1beta1'))
         version.module = ctx.proto_artifact
         versions.append(version)
-        ctx.proto_version = str(version)
+        ctx.proto_version = version
 
-        version = copy.deepcopy(next(v for v in versions if v.module == 'grpc-google-cloud-asset-v1beta1'))
+    ctx.grpc_version = next((v for v in versions if v.module == ctx.grpc_artifact), None)
+    if not ctx.grpc_version:
+        version = copy.deepcopy(next(v for v in versions if v.module == 'grpc-google-cloud-scheduler-v1beta1'))
         version.module = ctx.grpc_artifact
         versions.append(version)
-        ctx.grpc_version = str(version)
+        ctx.grpc_version = version
 
-        # sort by name
-        versions.sort(key=lambda v: v.module)
+    # sort by name
+    versions.sort(key=lambda v: v.module)
 
-        # update versions.txt
-        with open(versions_path, "w") as f:
-            f.write("# Format:\n")
-            f.write("# module:released-version:current-version\n\n")
-            for versions in versions:
-                f.write("{}\n".format(versions))
+    # update versions.txt
+    with open(versions_path, "w") as f:
+        f.write("# Format:\n")
+        f.write("# module:released-version:current-version\n\n")
+        for version in versions:
+            f.write("{}\n".format(version))
 
     ctx.versions = versions
 
@@ -206,7 +210,7 @@ write_pom(
     ctx=ctx,
     template="cloud_pom.xml",
     path=ctx.path(f'google-cloud-clients/{ctx.google_cloud_artifact}/pom.xml'),
-    version=ctx.google_cloud_version
+    version=ctx.google_cloud_version.current
 )
 add_module_to_pom(
     pom=ctx.path('google-cloud-clients/pom.xml'),
@@ -216,13 +220,13 @@ write_pom(
     ctx=ctx,
     template="proto_pom.xml",
     path=ctx.path(f'google-api-grpc/{ctx.proto_artifact}/pom.xml'),
-    version=ctx.proto_version
+    version=ctx.proto_version.current
 )
 write_pom(
     ctx=ctx,
     template="grpc_pom.xml",
     path=ctx.path(f'google-api-grpc/{ctx.grpc_artifact}/pom.xml'),
-    version=ctx.grpc_version
+    version=ctx.grpc_version.current
 )
 add_module_to_pom(
     pom=ctx.path('google-api-grpc/pom.xml'),

@@ -34,7 +34,7 @@ google-cloud-errorreporting:0.71.0-beta:0.71.1-beta-SNAPSHOT
 google-cloud-examples:0.71.0-alpha:0.71.1-alpha-SNAPSHOT
 google-cloud-firestore:0.71.0-beta:0.71.1-beta-SNAPSHOT
 google-cloud-gcloud-maven-plugin:0.71.0-alpha:0.71.1-alpha-SNAPSHOT
-google-cloud-iamcredentials:0.71.0-beta:0.71.1-beta-SNAPSHOT
+google-cloud-iamcredentials:0.71.0-alpha:0.71.1-alpha-SNAPSHOT
 google-cloud-iot:0.71.0-beta:0.71.1-beta-SNAPSHOT
 google-cloud-kms:0.71.0-beta:0.71.1-beta-SNAPSHOT
 google-cloud-language:1.53.0:1.53.1-SNAPSHOT
