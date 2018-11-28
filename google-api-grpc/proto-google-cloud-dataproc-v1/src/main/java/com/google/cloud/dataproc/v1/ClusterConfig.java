@@ -128,6 +128,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 122: {
+            com.google.cloud.dataproc.v1.EncryptionConfig.Builder subBuilder = null;
+            if (encryptionConfig_ != null) {
+              subBuilder = encryptionConfig_.toBuilder();
+            }
+            encryptionConfig_ = input.readMessage(com.google.cloud.dataproc.v1.EncryptionConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(encryptionConfig_);
+              encryptionConfig_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -168,7 +181,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object configBucket_;
   /**
    * <pre>
-   * Optional. A Google Cloud Storage staging bucket used for sharing generated
+   * Optional. A Cloud Storage staging bucket used for sharing generated
    * SSH keys and config. If you do not specify a staging bucket, Cloud
    * Dataproc will determine an appropriate Cloud Storage location (US,
    * ASIA, or EU) for your cluster's staging bucket according to the Google
@@ -192,7 +205,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. A Google Cloud Storage staging bucket used for sharing generated
+   * Optional. A Cloud Storage staging bucket used for sharing generated
    * SSH keys and config. If you do not specify a staging bucket, Cloud
    * Dataproc will determine an appropriate Cloud Storage location (US,
    * ASIA, or EU) for your cluster's staging bucket according to the Google
@@ -220,7 +233,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.dataproc.v1.GceClusterConfig gceClusterConfig_;
   /**
    * <pre>
-   * Required. The shared Google Compute Engine config settings for
+   * Required. The shared Compute Engine config settings for
    * all instances in a cluster.
    * </pre>
    *
@@ -231,7 +244,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The shared Google Compute Engine config settings for
+   * Required. The shared Compute Engine config settings for
    * all instances in a cluster.
    * </pre>
    *
@@ -242,7 +255,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The shared Google Compute Engine config settings for
+   * Required. The shared Compute Engine config settings for
    * all instances in a cluster.
    * </pre>
    *
@@ -256,7 +269,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.dataproc.v1.InstanceGroupConfig masterConfig_;
   /**
    * <pre>
-   * Optional. The Google Compute Engine config settings for
+   * Optional. The Compute Engine config settings for
    * the master instance in a cluster.
    * </pre>
    *
@@ -267,7 +280,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The Google Compute Engine config settings for
+   * Optional. The Compute Engine config settings for
    * the master instance in a cluster.
    * </pre>
    *
@@ -278,7 +291,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The Google Compute Engine config settings for
+   * Optional. The Compute Engine config settings for
    * the master instance in a cluster.
    * </pre>
    *
@@ -292,7 +305,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.dataproc.v1.InstanceGroupConfig workerConfig_;
   /**
    * <pre>
-   * Optional. The Google Compute Engine config settings for
+   * Optional. The Compute Engine config settings for
    * worker instances in a cluster.
    * </pre>
    *
@@ -303,7 +316,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The Google Compute Engine config settings for
+   * Optional. The Compute Engine config settings for
    * worker instances in a cluster.
    * </pre>
    *
@@ -314,7 +327,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The Google Compute Engine config settings for
+   * Optional. The Compute Engine config settings for
    * worker instances in a cluster.
    * </pre>
    *
@@ -328,7 +341,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.dataproc.v1.InstanceGroupConfig secondaryWorkerConfig_;
   /**
    * <pre>
-   * Optional. The Google Compute Engine config settings for
+   * Optional. The Compute Engine config settings for
    * additional worker instances in a cluster.
    * </pre>
    *
@@ -339,7 +352,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The Google Compute Engine config settings for
+   * Optional. The Compute Engine config settings for
    * additional worker instances in a cluster.
    * </pre>
    *
@@ -350,7 +363,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The Google Compute Engine config settings for
+   * Optional. The Compute Engine config settings for
    * additional worker instances in a cluster.
    * </pre>
    *
@@ -493,6 +506,39 @@ private static final long serialVersionUID = 0L;
     return initializationActions_.get(index);
   }
 
+  public static final int ENCRYPTION_CONFIG_FIELD_NUMBER = 15;
+  private com.google.cloud.dataproc.v1.EncryptionConfig encryptionConfig_;
+  /**
+   * <pre>
+   * Optional. Encryption settings for the cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15;</code>
+   */
+  public boolean hasEncryptionConfig() {
+    return encryptionConfig_ != null;
+  }
+  /**
+   * <pre>
+   * Optional. Encryption settings for the cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15;</code>
+   */
+  public com.google.cloud.dataproc.v1.EncryptionConfig getEncryptionConfig() {
+    return encryptionConfig_ == null ? com.google.cloud.dataproc.v1.EncryptionConfig.getDefaultInstance() : encryptionConfig_;
+  }
+  /**
+   * <pre>
+   * Optional. Encryption settings for the cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15;</code>
+   */
+  public com.google.cloud.dataproc.v1.EncryptionConfigOrBuilder getEncryptionConfigOrBuilder() {
+    return getEncryptionConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -527,6 +573,9 @@ private static final long serialVersionUID = 0L;
     }
     if (softwareConfig_ != null) {
       output.writeMessage(13, getSoftwareConfig());
+    }
+    if (encryptionConfig_ != null) {
+      output.writeMessage(15, getEncryptionConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -563,6 +612,10 @@ private static final long serialVersionUID = 0L;
     if (softwareConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getSoftwareConfig());
+    }
+    if (encryptionConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, getEncryptionConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -609,6 +662,11 @@ private static final long serialVersionUID = 0L;
     }
     result = result && getInitializationActionsList()
         .equals(other.getInitializationActionsList());
+    result = result && (hasEncryptionConfig() == other.hasEncryptionConfig());
+    if (hasEncryptionConfig()) {
+      result = result && getEncryptionConfig()
+          .equals(other.getEncryptionConfig());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -645,6 +703,10 @@ private static final long serialVersionUID = 0L;
     if (getInitializationActionsCount() > 0) {
       hash = (37 * hash) + INITIALIZATION_ACTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getInitializationActionsList().hashCode();
+    }
+    if (hasEncryptionConfig()) {
+      hash = (37 * hash) + ENCRYPTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -822,6 +884,12 @@ private static final long serialVersionUID = 0L;
       } else {
         initializationActionsBuilder_.clear();
       }
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfig_ = null;
+      } else {
+        encryptionConfig_ = null;
+        encryptionConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -884,6 +952,11 @@ private static final long serialVersionUID = 0L;
         result.initializationActions_ = initializationActions_;
       } else {
         result.initializationActions_ = initializationActionsBuilder_.build();
+      }
+      if (encryptionConfigBuilder_ == null) {
+        result.encryptionConfig_ = encryptionConfig_;
+      } else {
+        result.encryptionConfig_ = encryptionConfigBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -979,6 +1052,9 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (other.hasEncryptionConfig()) {
+        mergeEncryptionConfig(other.getEncryptionConfig());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -1012,7 +1088,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object configBucket_ = "";
     /**
      * <pre>
-     * Optional. A Google Cloud Storage staging bucket used for sharing generated
+     * Optional. A Cloud Storage staging bucket used for sharing generated
      * SSH keys and config. If you do not specify a staging bucket, Cloud
      * Dataproc will determine an appropriate Cloud Storage location (US,
      * ASIA, or EU) for your cluster's staging bucket according to the Google
@@ -1036,7 +1112,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A Google Cloud Storage staging bucket used for sharing generated
+     * Optional. A Cloud Storage staging bucket used for sharing generated
      * SSH keys and config. If you do not specify a staging bucket, Cloud
      * Dataproc will determine an appropriate Cloud Storage location (US,
      * ASIA, or EU) for your cluster's staging bucket according to the Google
@@ -1061,7 +1137,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A Google Cloud Storage staging bucket used for sharing generated
+     * Optional. A Cloud Storage staging bucket used for sharing generated
      * SSH keys and config. If you do not specify a staging bucket, Cloud
      * Dataproc will determine an appropriate Cloud Storage location (US,
      * ASIA, or EU) for your cluster's staging bucket according to the Google
@@ -1083,7 +1159,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A Google Cloud Storage staging bucket used for sharing generated
+     * Optional. A Cloud Storage staging bucket used for sharing generated
      * SSH keys and config. If you do not specify a staging bucket, Cloud
      * Dataproc will determine an appropriate Cloud Storage location (US,
      * ASIA, or EU) for your cluster's staging bucket according to the Google
@@ -1101,7 +1177,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A Google Cloud Storage staging bucket used for sharing generated
+     * Optional. A Cloud Storage staging bucket used for sharing generated
      * SSH keys and config. If you do not specify a staging bucket, Cloud
      * Dataproc will determine an appropriate Cloud Storage location (US,
      * ASIA, or EU) for your cluster's staging bucket according to the Google
@@ -1128,7 +1204,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.dataproc.v1.GceClusterConfig, com.google.cloud.dataproc.v1.GceClusterConfig.Builder, com.google.cloud.dataproc.v1.GceClusterConfigOrBuilder> gceClusterConfigBuilder_;
     /**
      * <pre>
-     * Required. The shared Google Compute Engine config settings for
+     * Required. The shared Compute Engine config settings for
      * all instances in a cluster.
      * </pre>
      *
@@ -1139,7 +1215,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The shared Google Compute Engine config settings for
+     * Required. The shared Compute Engine config settings for
      * all instances in a cluster.
      * </pre>
      *
@@ -1154,7 +1230,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The shared Google Compute Engine config settings for
+     * Required. The shared Compute Engine config settings for
      * all instances in a cluster.
      * </pre>
      *
@@ -1175,7 +1251,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The shared Google Compute Engine config settings for
+     * Required. The shared Compute Engine config settings for
      * all instances in a cluster.
      * </pre>
      *
@@ -1194,7 +1270,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The shared Google Compute Engine config settings for
+     * Required. The shared Compute Engine config settings for
      * all instances in a cluster.
      * </pre>
      *
@@ -1217,7 +1293,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The shared Google Compute Engine config settings for
+     * Required. The shared Compute Engine config settings for
      * all instances in a cluster.
      * </pre>
      *
@@ -1236,7 +1312,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The shared Google Compute Engine config settings for
+     * Required. The shared Compute Engine config settings for
      * all instances in a cluster.
      * </pre>
      *
@@ -1249,7 +1325,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The shared Google Compute Engine config settings for
+     * Required. The shared Compute Engine config settings for
      * all instances in a cluster.
      * </pre>
      *
@@ -1265,7 +1341,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The shared Google Compute Engine config settings for
+     * Required. The shared Compute Engine config settings for
      * all instances in a cluster.
      * </pre>
      *
@@ -1290,7 +1366,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.dataproc.v1.InstanceGroupConfig, com.google.cloud.dataproc.v1.InstanceGroupConfig.Builder, com.google.cloud.dataproc.v1.InstanceGroupConfigOrBuilder> masterConfigBuilder_;
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * the master instance in a cluster.
      * </pre>
      *
@@ -1301,7 +1377,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * the master instance in a cluster.
      * </pre>
      *
@@ -1316,7 +1392,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * the master instance in a cluster.
      * </pre>
      *
@@ -1337,7 +1413,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * the master instance in a cluster.
      * </pre>
      *
@@ -1356,7 +1432,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * the master instance in a cluster.
      * </pre>
      *
@@ -1379,7 +1455,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * the master instance in a cluster.
      * </pre>
      *
@@ -1398,7 +1474,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * the master instance in a cluster.
      * </pre>
      *
@@ -1411,7 +1487,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * the master instance in a cluster.
      * </pre>
      *
@@ -1427,7 +1503,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * the master instance in a cluster.
      * </pre>
      *
@@ -1452,7 +1528,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.dataproc.v1.InstanceGroupConfig, com.google.cloud.dataproc.v1.InstanceGroupConfig.Builder, com.google.cloud.dataproc.v1.InstanceGroupConfigOrBuilder> workerConfigBuilder_;
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * worker instances in a cluster.
      * </pre>
      *
@@ -1463,7 +1539,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * worker instances in a cluster.
      * </pre>
      *
@@ -1478,7 +1554,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * worker instances in a cluster.
      * </pre>
      *
@@ -1499,7 +1575,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * worker instances in a cluster.
      * </pre>
      *
@@ -1518,7 +1594,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * worker instances in a cluster.
      * </pre>
      *
@@ -1541,7 +1617,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * worker instances in a cluster.
      * </pre>
      *
@@ -1560,7 +1636,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * worker instances in a cluster.
      * </pre>
      *
@@ -1573,7 +1649,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * worker instances in a cluster.
      * </pre>
      *
@@ -1589,7 +1665,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * worker instances in a cluster.
      * </pre>
      *
@@ -1614,7 +1690,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.dataproc.v1.InstanceGroupConfig, com.google.cloud.dataproc.v1.InstanceGroupConfig.Builder, com.google.cloud.dataproc.v1.InstanceGroupConfigOrBuilder> secondaryWorkerConfigBuilder_;
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * additional worker instances in a cluster.
      * </pre>
      *
@@ -1625,7 +1701,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * additional worker instances in a cluster.
      * </pre>
      *
@@ -1640,7 +1716,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * additional worker instances in a cluster.
      * </pre>
      *
@@ -1661,7 +1737,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * additional worker instances in a cluster.
      * </pre>
      *
@@ -1680,7 +1756,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * additional worker instances in a cluster.
      * </pre>
      *
@@ -1703,7 +1779,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * additional worker instances in a cluster.
      * </pre>
      *
@@ -1722,7 +1798,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * additional worker instances in a cluster.
      * </pre>
      *
@@ -1735,7 +1811,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * additional worker instances in a cluster.
      * </pre>
      *
@@ -1751,7 +1827,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The Google Compute Engine config settings for
+     * Optional. The Compute Engine config settings for
      * additional worker instances in a cluster.
      * </pre>
      *
@@ -2396,6 +2472,159 @@ private static final long serialVersionUID = 0L;
         initializationActions_ = null;
       }
       return initializationActionsBuilder_;
+    }
+
+    private com.google.cloud.dataproc.v1.EncryptionConfig encryptionConfig_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dataproc.v1.EncryptionConfig, com.google.cloud.dataproc.v1.EncryptionConfig.Builder, com.google.cloud.dataproc.v1.EncryptionConfigOrBuilder> encryptionConfigBuilder_;
+    /**
+     * <pre>
+     * Optional. Encryption settings for the cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15;</code>
+     */
+    public boolean hasEncryptionConfig() {
+      return encryptionConfigBuilder_ != null || encryptionConfig_ != null;
+    }
+    /**
+     * <pre>
+     * Optional. Encryption settings for the cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15;</code>
+     */
+    public com.google.cloud.dataproc.v1.EncryptionConfig getEncryptionConfig() {
+      if (encryptionConfigBuilder_ == null) {
+        return encryptionConfig_ == null ? com.google.cloud.dataproc.v1.EncryptionConfig.getDefaultInstance() : encryptionConfig_;
+      } else {
+        return encryptionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Encryption settings for the cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15;</code>
+     */
+    public Builder setEncryptionConfig(com.google.cloud.dataproc.v1.EncryptionConfig value) {
+      if (encryptionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionConfig_ = value;
+        onChanged();
+      } else {
+        encryptionConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Encryption settings for the cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15;</code>
+     */
+    public Builder setEncryptionConfig(
+        com.google.cloud.dataproc.v1.EncryptionConfig.Builder builderForValue) {
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        encryptionConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Encryption settings for the cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15;</code>
+     */
+    public Builder mergeEncryptionConfig(com.google.cloud.dataproc.v1.EncryptionConfig value) {
+      if (encryptionConfigBuilder_ == null) {
+        if (encryptionConfig_ != null) {
+          encryptionConfig_ =
+            com.google.cloud.dataproc.v1.EncryptionConfig.newBuilder(encryptionConfig_).mergeFrom(value).buildPartial();
+        } else {
+          encryptionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        encryptionConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Encryption settings for the cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15;</code>
+     */
+    public Builder clearEncryptionConfig() {
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfig_ = null;
+        onChanged();
+      } else {
+        encryptionConfig_ = null;
+        encryptionConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Encryption settings for the cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15;</code>
+     */
+    public com.google.cloud.dataproc.v1.EncryptionConfig.Builder getEncryptionConfigBuilder() {
+      
+      onChanged();
+      return getEncryptionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Optional. Encryption settings for the cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15;</code>
+     */
+    public com.google.cloud.dataproc.v1.EncryptionConfigOrBuilder getEncryptionConfigOrBuilder() {
+      if (encryptionConfigBuilder_ != null) {
+        return encryptionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionConfig_ == null ?
+            com.google.cloud.dataproc.v1.EncryptionConfig.getDefaultInstance() : encryptionConfig_;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Encryption settings for the cluster.
+     * </pre>
+     *
+     * <code>.google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.dataproc.v1.EncryptionConfig, com.google.cloud.dataproc.v1.EncryptionConfig.Builder, com.google.cloud.dataproc.v1.EncryptionConfigOrBuilder> 
+        getEncryptionConfigFieldBuilder() {
+      if (encryptionConfigBuilder_ == null) {
+        encryptionConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.EncryptionConfig, com.google.cloud.dataproc.v1.EncryptionConfig.Builder, com.google.cloud.dataproc.v1.EncryptionConfigOrBuilder>(
+                getEncryptionConfig(),
+                getParentForChildren(),
+                isClean());
+        encryptionConfig_ = null;
+      }
+      return encryptionConfigBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

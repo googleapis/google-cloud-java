@@ -62,4 +62,58 @@ public interface DeleteClusterRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getClusterNameBytes();
+
+  /**
+   * <pre>
+   * Optional. Specifying the `cluster_uuid` means the RPC should fail
+   * (with error NOT_FOUND) if cluster with specified UUID does not exist.
+   * </pre>
+   *
+   * <code>string cluster_uuid = 4;</code>
+   */
+  java.lang.String getClusterUuid();
+  /**
+   * <pre>
+   * Optional. Specifying the `cluster_uuid` means the RPC should fail
+   * (with error NOT_FOUND) if cluster with specified UUID does not exist.
+   * </pre>
+   *
+   * <code>string cluster_uuid = 4;</code>
+   */
+  com.google.protobuf.ByteString
+      getClusterUuidBytes();
+
+  /**
+   * <pre>
+   * Optional. A unique id used to identify the request. If the server
+   * receives two [DeleteClusterRequest][google.cloud.dataproc.v1.DeleteClusterRequest] requests  with the same
+   * id, then the second request will be ignored and the
+   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
+   * backend is returned.
+   * It is recommended to always set this value to a
+   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   * The id must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), and hyphens (-). The maximum length is 40 characters.
+   * </pre>
+   *
+   * <code>string request_id = 5;</code>
+   */
+  java.lang.String getRequestId();
+  /**
+   * <pre>
+   * Optional. A unique id used to identify the request. If the server
+   * receives two [DeleteClusterRequest][google.cloud.dataproc.v1.DeleteClusterRequest] requests  with the same
+   * id, then the second request will be ignored and the
+   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
+   * backend is returned.
+   * It is recommended to always set this value to a
+   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   * The id must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), and hyphens (-). The maximum length is 40 characters.
+   * </pre>
+   *
+   * <code>string request_id = 5;</code>
+   */
+  com.google.protobuf.ByteString
+      getRequestIdBytes();
 }

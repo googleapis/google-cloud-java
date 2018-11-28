@@ -103,7 +103,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object executableFile_;
   /**
    * <pre>
-   * Required. Google Cloud Storage URI of executable file.
+   * Required. Cloud Storage URI of executable file.
    * </pre>
    *
    * <code>string executable_file = 1;</code>
@@ -122,7 +122,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Google Cloud Storage URI of executable file.
+   * Required. Cloud Storage URI of executable file.
    * </pre>
    *
    * <code>string executable_file = 1;</code>
@@ -524,7 +524,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object executableFile_ = "";
     /**
      * <pre>
-     * Required. Google Cloud Storage URI of executable file.
+     * Required. Cloud Storage URI of executable file.
      * </pre>
      *
      * <code>string executable_file = 1;</code>
@@ -543,7 +543,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Google Cloud Storage URI of executable file.
+     * Required. Cloud Storage URI of executable file.
      * </pre>
      *
      * <code>string executable_file = 1;</code>
@@ -563,7 +563,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Google Cloud Storage URI of executable file.
+     * Required. Cloud Storage URI of executable file.
      * </pre>
      *
      * <code>string executable_file = 1;</code>
@@ -580,7 +580,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Google Cloud Storage URI of executable file.
+     * Required. Cloud Storage URI of executable file.
      * </pre>
      *
      * <code>string executable_file = 1;</code>
@@ -593,7 +593,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Google Cloud Storage URI of executable file.
+     * Required. Cloud Storage URI of executable file.
      * </pre>
      *
      * <code>string executable_file = 1;</code>

@@ -18,7 +18,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 /**
  * <pre>
  * The ClusterControllerService provides methods to manage clusters
- * of Google Compute Engine instances.
+ * of Compute Engine instances.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -280,7 +280,7 @@ public final class ClusterControllerGrpc {
   /**
    * <pre>
    * The ClusterControllerService provides methods to manage clusters
-   * of Google Compute Engine instances.
+   * of Compute Engine instances.
    * </pre>
    */
   public static abstract class ClusterControllerImplBase implements io.grpc.BindableService {
@@ -398,7 +398,7 @@ public final class ClusterControllerGrpc {
   /**
    * <pre>
    * The ClusterControllerService provides methods to manage clusters
-   * of Google Compute Engine instances.
+   * of Compute Engine instances.
    * </pre>
    */
   public static final class ClusterControllerStub extends io.grpc.stub.AbstractStub<ClusterControllerStub> {
@@ -489,7 +489,7 @@ public final class ClusterControllerGrpc {
   /**
    * <pre>
    * The ClusterControllerService provides methods to manage clusters
-   * of Google Compute Engine instances.
+   * of Compute Engine instances.
    * </pre>
    */
   public static final class ClusterControllerBlockingStub extends io.grpc.stub.AbstractStub<ClusterControllerBlockingStub> {
@@ -574,7 +574,7 @@ public final class ClusterControllerGrpc {
   /**
    * <pre>
    * The ClusterControllerService provides methods to manage clusters
-   * of Google Compute Engine instances.
+   * of Compute Engine instances.
    * </pre>
    */
   public static final class ClusterControllerFutureStub extends io.grpc.stub.AbstractStub<ClusterControllerFutureStub> {

@@ -281,4 +281,58 @@ public interface WorkflowTemplateOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder getJobsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  java.util.List<com.google.cloud.dataproc.v1beta2.TemplateParameter> 
+      getParametersList();
+  /**
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  com.google.cloud.dataproc.v1beta2.TemplateParameter getParameters(int index);
+  /**
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  int getParametersCount();
+  /**
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  java.util.List<? extends com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder> 
+      getParametersOrBuilderList();
+  /**
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder getParametersOrBuilder(
+      int index);
 }

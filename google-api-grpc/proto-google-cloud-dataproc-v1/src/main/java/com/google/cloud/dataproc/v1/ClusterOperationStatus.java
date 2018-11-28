@@ -268,7 +268,7 @@ private static final long serialVersionUID = 0L;
   private int state_;
   /**
    * <pre>
-   * Output-only. A message containing the operation state.
+   * Output only. A message containing the operation state.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1;</code>
@@ -278,7 +278,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. A message containing the operation state.
+   * Output only. A message containing the operation state.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1;</code>
@@ -293,7 +293,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object innerState_;
   /**
    * <pre>
-   * Output-only. A message containing the detailed operation state.
+   * Output only. A message containing the detailed operation state.
    * </pre>
    *
    * <code>string inner_state = 2;</code>
@@ -312,7 +312,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. A message containing the detailed operation state.
+   * Output only. A message containing the detailed operation state.
    * </pre>
    *
    * <code>string inner_state = 2;</code>
@@ -335,7 +335,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object details_;
   /**
    * <pre>
-   * Output-only.A message containing any operation metadata details.
+   * Output only. A message containing any operation metadata details.
    * </pre>
    *
    * <code>string details = 3;</code>
@@ -354,7 +354,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only.A message containing any operation metadata details.
+   * Output only. A message containing any operation metadata details.
    * </pre>
    *
    * <code>string details = 3;</code>
@@ -377,7 +377,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp stateStartTime_;
   /**
    * <pre>
-   * Output-only. The time this state was entered.
+   * Output only. The time this state was entered.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
@@ -387,7 +387,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The time this state was entered.
+   * Output only. The time this state was entered.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
@@ -397,7 +397,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The time this state was entered.
+   * Output only. The time this state was entered.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
@@ -779,7 +779,7 @@ private static final long serialVersionUID = 0L;
     private int state_ = 0;
     /**
      * <pre>
-     * Output-only. A message containing the operation state.
+     * Output only. A message containing the operation state.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1;</code>
@@ -789,7 +789,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A message containing the operation state.
+     * Output only. A message containing the operation state.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1;</code>
@@ -801,7 +801,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A message containing the operation state.
+     * Output only. A message containing the operation state.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1;</code>
@@ -813,7 +813,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A message containing the operation state.
+     * Output only. A message containing the operation state.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1;</code>
@@ -829,7 +829,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A message containing the operation state.
+     * Output only. A message containing the operation state.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1;</code>
@@ -844,7 +844,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object innerState_ = "";
     /**
      * <pre>
-     * Output-only. A message containing the detailed operation state.
+     * Output only. A message containing the detailed operation state.
      * </pre>
      *
      * <code>string inner_state = 2;</code>
@@ -863,7 +863,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A message containing the detailed operation state.
+     * Output only. A message containing the detailed operation state.
      * </pre>
      *
      * <code>string inner_state = 2;</code>
@@ -883,7 +883,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A message containing the detailed operation state.
+     * Output only. A message containing the detailed operation state.
      * </pre>
      *
      * <code>string inner_state = 2;</code>
@@ -900,7 +900,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A message containing the detailed operation state.
+     * Output only. A message containing the detailed operation state.
      * </pre>
      *
      * <code>string inner_state = 2;</code>
@@ -913,7 +913,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A message containing the detailed operation state.
+     * Output only. A message containing the detailed operation state.
      * </pre>
      *
      * <code>string inner_state = 2;</code>
@@ -933,7 +933,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object details_ = "";
     /**
      * <pre>
-     * Output-only.A message containing any operation metadata details.
+     * Output only. A message containing any operation metadata details.
      * </pre>
      *
      * <code>string details = 3;</code>
@@ -952,7 +952,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only.A message containing any operation metadata details.
+     * Output only. A message containing any operation metadata details.
      * </pre>
      *
      * <code>string details = 3;</code>
@@ -972,7 +972,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only.A message containing any operation metadata details.
+     * Output only. A message containing any operation metadata details.
      * </pre>
      *
      * <code>string details = 3;</code>
@@ -989,7 +989,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only.A message containing any operation metadata details.
+     * Output only. A message containing any operation metadata details.
      * </pre>
      *
      * <code>string details = 3;</code>
@@ -1002,7 +1002,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only.A message containing any operation metadata details.
+     * Output only. A message containing any operation metadata details.
      * </pre>
      *
      * <code>string details = 3;</code>
@@ -1024,7 +1024,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> stateStartTimeBuilder_;
     /**
      * <pre>
-     * Output-only. The time this state was entered.
+     * Output only. The time this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
@@ -1034,7 +1034,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The time this state was entered.
+     * Output only. The time this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
@@ -1048,7 +1048,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The time this state was entered.
+     * Output only. The time this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
@@ -1068,7 +1068,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The time this state was entered.
+     * Output only. The time this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
@@ -1086,7 +1086,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The time this state was entered.
+     * Output only. The time this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
@@ -1108,7 +1108,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The time this state was entered.
+     * Output only. The time this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
@@ -1126,7 +1126,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The time this state was entered.
+     * Output only. The time this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
@@ -1138,7 +1138,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The time this state was entered.
+     * Output only. The time this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
@@ -1153,7 +1153,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The time this state was entered.
+     * Output only. The time this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
