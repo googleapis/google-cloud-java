@@ -52,7 +52,6 @@ class Context:
         self.jinja_env = Environment(
             loader=FileSystemLoader(self.path('utilities/templates'))
         )
-        print(self.root_directory)
 
     def path(self, suffix) -> str:
         return os.path.join(self.root_directory, suffix)
@@ -123,6 +122,35 @@ def add_module_to_pom(pom: str, module_name: str) -> None:
             break
 
     tree.write(pom, pretty_print=True, xml_declaration=True, encoding='utf-8')
+
+def add_dependency_management_to_pom(pom: str, group: str, artifact: str, version: str) -> None:
+    tree = etree.parse(pom)
+    root = tree.getroot()
+    dependencies = root.find('{http://maven.apache.org/POM/4.0.0}dependencyManagement/{http://maven.apache.org/POM/4.0.0}dependencies')
+
+    for dependency in dependencies:
+        existing = dependency.find('{http://maven.apache.org/POM/4.0.0}artifactId')
+        if existing is not None:
+            if existing.text == artifact:
+                print("already added dependency to pom.xml, skipping")
+                return
+
+    new_dependency = etree.Element('{http://maven.apache.org/POM/4.0.0}dependency')
+    group_element = etree.Element('{http://maven.apache.org/POM/4.0.0}groupId')
+    group_element.text = group
+    new_dependency.append(group_element)
+    artifact_element = etree.Element('{http://maven.apache.org/POM/4.0.0}artifactId')
+    artifact_element.text = artifact
+    new_dependency.append(artifact_element)
+    version_element = etree.Element('{http://maven.apache.org/POM/4.0.0}version')
+    version_element.text = version
+    new_dependency.append(version_element)
+    comment = etree.Comment('{x-version-update:' + artifact + ':current}')
+    new_dependency.append(comment)
+    dependencies.append(new_dependency)
+
+    tree.write(pom, pretty_print=True, xml_declaration=True, encoding='utf-8')
+
 
 def write_synthfile(ctx: Context) -> None:
     template = ctx.jinja_env.get_template('synth.py')
@@ -215,6 +243,36 @@ write_pom(
 add_module_to_pom(
     pom=ctx.path('google-cloud-clients/pom.xml'),
     module_name='google-cloud-iamcredentials'
+)
+add_dependency_management_to_pom(
+    pom=ctx.path('google-api-grpc/pom.xml'),
+    group='com.google.api.grpc',
+    artifact=ctx.proto_artifact,
+    version=str(ctx.proto_version.current)
+)
+add_dependency_management_to_pom(
+    pom=ctx.path('google-api-grpc/pom.xml'),
+    group='com.google.api.grpc',
+    artifact=ctx.grpc_artifact,
+    version=str(ctx.grpc_version.current)
+)
+add_dependency_management_to_pom(
+    pom=ctx.path('google-cloud-bom/pom.xml'),
+    group='com.google.api.grpc',
+    artifact=ctx.proto_artifact,
+    version=str(ctx.proto_version.current)
+)
+add_dependency_management_to_pom(
+    pom=ctx.path('google-cloud-bom/pom.xml'),
+    group='com.google.api.grpc',
+    artifact=ctx.grpc_artifact,
+    version=str(ctx.grpc_version.current)
+)
+add_dependency_management_to_pom(
+    pom=ctx.path('google-cloud-bom/pom.xml'),
+    group='com.google.cloud',
+    artifact=ctx.google_cloud_artifact,
+    version=str(ctx.google_cloud_version.current)
 )
 write_pom(
     ctx=ctx,
