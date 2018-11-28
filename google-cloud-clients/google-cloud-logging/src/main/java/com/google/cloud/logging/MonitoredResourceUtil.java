@@ -140,8 +140,8 @@ public class MonitoredResourceUtil {
         value = MetadataConfig.getClusterName();
         break;
       case ContainerName:
-    	value = MetadataConfig.getContainerName();
-    	break;  
+        value = MetadataConfig.getContainerName();
+        break;
       case InstanceId:
         value = MetadataConfig.getInstanceId();
         break;
@@ -152,8 +152,8 @@ public class MonitoredResourceUtil {
         value = getAppEngineModuleId();
         break;
       case NamespaceId:
-    	value = MetadataConfig.getNamespaceId();
-    	break;
+        value = MetadataConfig.getNamespaceId();
+        break;
       case PodId:
         value = System.getenv("HOSTNAME");
         break;
