@@ -436,6 +436,27 @@ public interface DeviceOrBuilder extends
 
   /**
    * <pre>
+   * **Beta Feature**
+   * The logging verbosity for device activity. If unspecified,
+   * DeviceRegistry.log_level will be used.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+   */
+  int getLogLevelValue();
+  /**
+   * <pre>
+   * **Beta Feature**
+   * The logging verbosity for device activity. If unspecified,
+   * DeviceRegistry.log_level will be used.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+   */
+  com.google.cloud.iot.v1.LogLevel getLogLevel();
+
+  /**
+   * <pre>
    * The metadata key-value pairs assigned to the device. This metadata is not
    * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
    * information for the device.
@@ -527,4 +548,29 @@ public interface DeviceOrBuilder extends
 
   java.lang.String getMetadataOrThrow(
       java.lang.String key);
+
+  /**
+   * <pre>
+   * Gateway-related configuration and state.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+   */
+  boolean hasGatewayConfig();
+  /**
+   * <pre>
+   * Gateway-related configuration and state.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+   */
+  com.google.cloud.iot.v1.GatewayConfig getGatewayConfig();
+  /**
+   * <pre>
+   * Gateway-related configuration and state.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+   */
+  com.google.cloud.iot.v1.GatewayConfigOrBuilder getGatewayConfigOrBuilder();
 }

@@ -17,8 +17,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
- * Internet of things (IoT) service. Allows to manipulate device registry
- * instances and the registration of devices (Things) to the cloud.
+ * Internet of Things (IoT) service. Securely connect and manage IoT devices.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -623,6 +622,117 @@ public final class DeviceManagerGrpc {
      }
      return getTestIamPermissionsMethod;
   }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getSendCommandToDeviceMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<com.google.cloud.iot.v1.SendCommandToDeviceRequest,
+      com.google.cloud.iot.v1.SendCommandToDeviceResponse> METHOD_SEND_COMMAND_TO_DEVICE = getSendCommandToDeviceMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.iot.v1.SendCommandToDeviceRequest,
+      com.google.cloud.iot.v1.SendCommandToDeviceResponse> getSendCommandToDeviceMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<com.google.cloud.iot.v1.SendCommandToDeviceRequest,
+      com.google.cloud.iot.v1.SendCommandToDeviceResponse> getSendCommandToDeviceMethod() {
+    return getSendCommandToDeviceMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<com.google.cloud.iot.v1.SendCommandToDeviceRequest,
+      com.google.cloud.iot.v1.SendCommandToDeviceResponse> getSendCommandToDeviceMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.cloud.iot.v1.SendCommandToDeviceRequest, com.google.cloud.iot.v1.SendCommandToDeviceResponse> getSendCommandToDeviceMethod;
+    if ((getSendCommandToDeviceMethod = DeviceManagerGrpc.getSendCommandToDeviceMethod) == null) {
+      synchronized (DeviceManagerGrpc.class) {
+        if ((getSendCommandToDeviceMethod = DeviceManagerGrpc.getSendCommandToDeviceMethod) == null) {
+          DeviceManagerGrpc.getSendCommandToDeviceMethod = getSendCommandToDeviceMethod = 
+              io.grpc.MethodDescriptor.<com.google.cloud.iot.v1.SendCommandToDeviceRequest, com.google.cloud.iot.v1.SendCommandToDeviceResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "google.cloud.iot.v1.DeviceManager", "SendCommandToDevice"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.iot.v1.SendCommandToDeviceRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.iot.v1.SendCommandToDeviceResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new DeviceManagerMethodDescriptorSupplier("SendCommandToDevice"))
+                  .build();
+          }
+        }
+     }
+     return getSendCommandToDeviceMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getBindDeviceToGatewayMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<com.google.cloud.iot.v1.BindDeviceToGatewayRequest,
+      com.google.cloud.iot.v1.BindDeviceToGatewayResponse> METHOD_BIND_DEVICE_TO_GATEWAY = getBindDeviceToGatewayMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.iot.v1.BindDeviceToGatewayRequest,
+      com.google.cloud.iot.v1.BindDeviceToGatewayResponse> getBindDeviceToGatewayMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<com.google.cloud.iot.v1.BindDeviceToGatewayRequest,
+      com.google.cloud.iot.v1.BindDeviceToGatewayResponse> getBindDeviceToGatewayMethod() {
+    return getBindDeviceToGatewayMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<com.google.cloud.iot.v1.BindDeviceToGatewayRequest,
+      com.google.cloud.iot.v1.BindDeviceToGatewayResponse> getBindDeviceToGatewayMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.cloud.iot.v1.BindDeviceToGatewayRequest, com.google.cloud.iot.v1.BindDeviceToGatewayResponse> getBindDeviceToGatewayMethod;
+    if ((getBindDeviceToGatewayMethod = DeviceManagerGrpc.getBindDeviceToGatewayMethod) == null) {
+      synchronized (DeviceManagerGrpc.class) {
+        if ((getBindDeviceToGatewayMethod = DeviceManagerGrpc.getBindDeviceToGatewayMethod) == null) {
+          DeviceManagerGrpc.getBindDeviceToGatewayMethod = getBindDeviceToGatewayMethod = 
+              io.grpc.MethodDescriptor.<com.google.cloud.iot.v1.BindDeviceToGatewayRequest, com.google.cloud.iot.v1.BindDeviceToGatewayResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "google.cloud.iot.v1.DeviceManager", "BindDeviceToGateway"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.iot.v1.BindDeviceToGatewayRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.iot.v1.BindDeviceToGatewayResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new DeviceManagerMethodDescriptorSupplier("BindDeviceToGateway"))
+                  .build();
+          }
+        }
+     }
+     return getBindDeviceToGatewayMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getUnbindDeviceFromGatewayMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest,
+      com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse> METHOD_UNBIND_DEVICE_FROM_GATEWAY = getUnbindDeviceFromGatewayMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest,
+      com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse> getUnbindDeviceFromGatewayMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest,
+      com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse> getUnbindDeviceFromGatewayMethod() {
+    return getUnbindDeviceFromGatewayMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest,
+      com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse> getUnbindDeviceFromGatewayMethodHelper() {
+    io.grpc.MethodDescriptor<com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest, com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse> getUnbindDeviceFromGatewayMethod;
+    if ((getUnbindDeviceFromGatewayMethod = DeviceManagerGrpc.getUnbindDeviceFromGatewayMethod) == null) {
+      synchronized (DeviceManagerGrpc.class) {
+        if ((getUnbindDeviceFromGatewayMethod = DeviceManagerGrpc.getUnbindDeviceFromGatewayMethod) == null) {
+          DeviceManagerGrpc.getUnbindDeviceFromGatewayMethod = getUnbindDeviceFromGatewayMethod = 
+              io.grpc.MethodDescriptor.<com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest, com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "google.cloud.iot.v1.DeviceManager", "UnbindDeviceFromGateway"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new DeviceManagerMethodDescriptorSupplier("UnbindDeviceFromGateway"))
+                  .build();
+          }
+        }
+     }
+     return getUnbindDeviceFromGatewayMethod;
+  }
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -649,8 +759,7 @@ public final class DeviceManagerGrpc {
 
   /**
    * <pre>
-   * Internet of things (IoT) service. Allows to manipulate device registry
-   * instances and the registration of devices (Things) to the cloud.
+   * Internet of Things (IoT) service. Securely connect and manage IoT devices.
    * </pre>
    */
   public static abstract class DeviceManagerImplBase implements io.grpc.BindableService {
@@ -824,6 +933,48 @@ public final class DeviceManagerGrpc {
       asyncUnimplementedUnaryCall(getTestIamPermissionsMethodHelper(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Sends a command to the specified device. In order for a device to be able
+     * to receive commands, it must:
+     * 1) be connected to Cloud IoT Core using the MQTT protocol, and
+     * 2) be subscribed to the group of MQTT topics specified by
+     *    /devices/{device-id}/commands/#. This subscription will receive commands
+     *    at the top-level topic /devices/{device-id}/commands as well as commands
+     *    for subfolders, like /devices/{device-id}/commands/subfolder.
+     *    Note that subscribing to specific subfolders is not supported.
+     * If the command could not be delivered to the device, this method will
+     * return an error; in particular, if the device is not subscribed, this
+     * method will return FAILED_PRECONDITION. Otherwise, this method will
+     * return OK. If the subscription is QoS 1, at least once delivery will be
+     * guaranteed; for QoS 0, no acknowledgment will be expected from the device.
+     * </pre>
+     */
+    public void sendCommandToDevice(com.google.cloud.iot.v1.SendCommandToDeviceRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.SendCommandToDeviceResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getSendCommandToDeviceMethodHelper(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Associates the device with the gateway.
+     * </pre>
+     */
+    public void bindDeviceToGateway(com.google.cloud.iot.v1.BindDeviceToGatewayRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.BindDeviceToGatewayResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getBindDeviceToGatewayMethodHelper(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Deletes the association between the device and the gateway.
+     * </pre>
+     */
+    public void unbindDeviceFromGateway(com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getUnbindDeviceFromGatewayMethodHelper(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -938,14 +1089,34 @@ public final class DeviceManagerGrpc {
                 com.google.iam.v1.TestIamPermissionsRequest,
                 com.google.iam.v1.TestIamPermissionsResponse>(
                   this, METHODID_TEST_IAM_PERMISSIONS)))
+          .addMethod(
+            getSendCommandToDeviceMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.iot.v1.SendCommandToDeviceRequest,
+                com.google.cloud.iot.v1.SendCommandToDeviceResponse>(
+                  this, METHODID_SEND_COMMAND_TO_DEVICE)))
+          .addMethod(
+            getBindDeviceToGatewayMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.iot.v1.BindDeviceToGatewayRequest,
+                com.google.cloud.iot.v1.BindDeviceToGatewayResponse>(
+                  this, METHODID_BIND_DEVICE_TO_GATEWAY)))
+          .addMethod(
+            getUnbindDeviceFromGatewayMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest,
+                com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse>(
+                  this, METHODID_UNBIND_DEVICE_FROM_GATEWAY)))
           .build();
     }
   }
 
   /**
    * <pre>
-   * Internet of things (IoT) service. Allows to manipulate device registry
-   * instances and the registration of devices (Things) to the cloud.
+   * Internet of Things (IoT) service. Securely connect and manage IoT devices.
    * </pre>
    */
   public static final class DeviceManagerStub extends io.grpc.stub.AbstractStub<DeviceManagerStub> {
@@ -1148,12 +1319,56 @@ public final class DeviceManagerGrpc {
       asyncUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethodHelper(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Sends a command to the specified device. In order for a device to be able
+     * to receive commands, it must:
+     * 1) be connected to Cloud IoT Core using the MQTT protocol, and
+     * 2) be subscribed to the group of MQTT topics specified by
+     *    /devices/{device-id}/commands/#. This subscription will receive commands
+     *    at the top-level topic /devices/{device-id}/commands as well as commands
+     *    for subfolders, like /devices/{device-id}/commands/subfolder.
+     *    Note that subscribing to specific subfolders is not supported.
+     * If the command could not be delivered to the device, this method will
+     * return an error; in particular, if the device is not subscribed, this
+     * method will return FAILED_PRECONDITION. Otherwise, this method will
+     * return OK. If the subscription is QoS 1, at least once delivery will be
+     * guaranteed; for QoS 0, no acknowledgment will be expected from the device.
+     * </pre>
+     */
+    public void sendCommandToDevice(com.google.cloud.iot.v1.SendCommandToDeviceRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.SendCommandToDeviceResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getSendCommandToDeviceMethodHelper(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Associates the device with the gateway.
+     * </pre>
+     */
+    public void bindDeviceToGateway(com.google.cloud.iot.v1.BindDeviceToGatewayRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.BindDeviceToGatewayResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getBindDeviceToGatewayMethodHelper(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Deletes the association between the device and the gateway.
+     * </pre>
+     */
+    public void unbindDeviceFromGateway(com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUnbindDeviceFromGatewayMethodHelper(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
    * <pre>
-   * Internet of things (IoT) service. Allows to manipulate device registry
-   * instances and the registration of devices (Things) to the cloud.
+   * Internet of Things (IoT) service. Securely connect and manage IoT devices.
    * </pre>
    */
   public static final class DeviceManagerBlockingStub extends io.grpc.stub.AbstractStub<DeviceManagerBlockingStub> {
@@ -1340,12 +1555,53 @@ public final class DeviceManagerGrpc {
       return blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethodHelper(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     * Sends a command to the specified device. In order for a device to be able
+     * to receive commands, it must:
+     * 1) be connected to Cloud IoT Core using the MQTT protocol, and
+     * 2) be subscribed to the group of MQTT topics specified by
+     *    /devices/{device-id}/commands/#. This subscription will receive commands
+     *    at the top-level topic /devices/{device-id}/commands as well as commands
+     *    for subfolders, like /devices/{device-id}/commands/subfolder.
+     *    Note that subscribing to specific subfolders is not supported.
+     * If the command could not be delivered to the device, this method will
+     * return an error; in particular, if the device is not subscribed, this
+     * method will return FAILED_PRECONDITION. Otherwise, this method will
+     * return OK. If the subscription is QoS 1, at least once delivery will be
+     * guaranteed; for QoS 0, no acknowledgment will be expected from the device.
+     * </pre>
+     */
+    public com.google.cloud.iot.v1.SendCommandToDeviceResponse sendCommandToDevice(com.google.cloud.iot.v1.SendCommandToDeviceRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getSendCommandToDeviceMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Associates the device with the gateway.
+     * </pre>
+     */
+    public com.google.cloud.iot.v1.BindDeviceToGatewayResponse bindDeviceToGateway(com.google.cloud.iot.v1.BindDeviceToGatewayRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getBindDeviceToGatewayMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Deletes the association between the device and the gateway.
+     * </pre>
+     */
+    public com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse unbindDeviceFromGateway(com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUnbindDeviceFromGatewayMethodHelper(), getCallOptions(), request);
+    }
   }
 
   /**
    * <pre>
-   * Internet of things (IoT) service. Allows to manipulate device registry
-   * instances and the registration of devices (Things) to the cloud.
+   * Internet of Things (IoT) service. Securely connect and manage IoT devices.
    * </pre>
    */
   public static final class DeviceManagerFutureStub extends io.grpc.stub.AbstractStub<DeviceManagerFutureStub> {
@@ -1548,6 +1804,51 @@ public final class DeviceManagerGrpc {
       return futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Sends a command to the specified device. In order for a device to be able
+     * to receive commands, it must:
+     * 1) be connected to Cloud IoT Core using the MQTT protocol, and
+     * 2) be subscribed to the group of MQTT topics specified by
+     *    /devices/{device-id}/commands/#. This subscription will receive commands
+     *    at the top-level topic /devices/{device-id}/commands as well as commands
+     *    for subfolders, like /devices/{device-id}/commands/subfolder.
+     *    Note that subscribing to specific subfolders is not supported.
+     * If the command could not be delivered to the device, this method will
+     * return an error; in particular, if the device is not subscribed, this
+     * method will return FAILED_PRECONDITION. Otherwise, this method will
+     * return OK. If the subscription is QoS 1, at least once delivery will be
+     * guaranteed; for QoS 0, no acknowledgment will be expected from the device.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.iot.v1.SendCommandToDeviceResponse> sendCommandToDevice(
+        com.google.cloud.iot.v1.SendCommandToDeviceRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getSendCommandToDeviceMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Associates the device with the gateway.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.iot.v1.BindDeviceToGatewayResponse> bindDeviceToGateway(
+        com.google.cloud.iot.v1.BindDeviceToGatewayRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getBindDeviceToGatewayMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Deletes the association between the device and the gateway.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse> unbindDeviceFromGateway(
+        com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUnbindDeviceFromGatewayMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_DEVICE_REGISTRY = 0;
@@ -1566,6 +1867,9 @@ public final class DeviceManagerGrpc {
   private static final int METHODID_SET_IAM_POLICY = 13;
   private static final int METHODID_GET_IAM_POLICY = 14;
   private static final int METHODID_TEST_IAM_PERMISSIONS = 15;
+  private static final int METHODID_SEND_COMMAND_TO_DEVICE = 16;
+  private static final int METHODID_BIND_DEVICE_TO_GATEWAY = 17;
+  private static final int METHODID_UNBIND_DEVICE_FROM_GATEWAY = 18;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1648,6 +1952,18 @@ public final class DeviceManagerGrpc {
           serviceImpl.testIamPermissions((com.google.iam.v1.TestIamPermissionsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>) responseObserver);
           break;
+        case METHODID_SEND_COMMAND_TO_DEVICE:
+          serviceImpl.sendCommandToDevice((com.google.cloud.iot.v1.SendCommandToDeviceRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.SendCommandToDeviceResponse>) responseObserver);
+          break;
+        case METHODID_BIND_DEVICE_TO_GATEWAY:
+          serviceImpl.bindDeviceToGateway((com.google.cloud.iot.v1.BindDeviceToGatewayRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.BindDeviceToGatewayResponse>) responseObserver);
+          break;
+        case METHODID_UNBIND_DEVICE_FROM_GATEWAY:
+          serviceImpl.unbindDeviceFromGateway((com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -1725,6 +2041,9 @@ public final class DeviceManagerGrpc {
               .addMethod(getSetIamPolicyMethodHelper())
               .addMethod(getGetIamPolicyMethodHelper())
               .addMethod(getTestIamPermissionsMethodHelper())
+              .addMethod(getSendCommandToDeviceMethodHelper())
+              .addMethod(getBindDeviceToGatewayMethodHelper())
+              .addMethod(getUnbindDeviceFromGatewayMethodHelper())
               .build();
         }
       }

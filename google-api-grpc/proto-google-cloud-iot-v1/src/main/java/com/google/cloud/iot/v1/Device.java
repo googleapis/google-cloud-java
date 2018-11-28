@@ -25,6 +25,7 @@ private static final long serialVersionUID = 0L;
     numId_ = 0L;
     credentials_ = java.util.Collections.emptyList();
     blocked_ = false;
+    logLevel_ = 0;
   }
 
   @java.lang.Override
@@ -169,10 +170,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 138: {
-            if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+            if (!((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
               metadata_ = com.google.protobuf.MapField.newMapField(
                   MetadataDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00004000;
+              mutable_bitField0_ |= 0x00008000;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             metadata__ = input.readMessage(
@@ -208,6 +209,25 @@ private static final long serialVersionUID = 0L;
             if (subBuilder != null) {
               subBuilder.mergeFrom(lastStateTime_);
               lastStateTime_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 168: {
+            int rawValue = input.readEnum();
+
+            logLevel_ = rawValue;
+            break;
+          }
+          case 194: {
+            com.google.cloud.iot.v1.GatewayConfig.Builder subBuilder = null;
+            if (gatewayConfig_ != null) {
+              subBuilder = gatewayConfig_.toBuilder();
+            }
+            gatewayConfig_ = input.readMessage(com.google.cloud.iot.v1.GatewayConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(gatewayConfig_);
+              gatewayConfig_ = subBuilder.buildPartial();
             }
 
             break;
@@ -826,6 +846,35 @@ private static final long serialVersionUID = 0L;
     return getState();
   }
 
+  public static final int LOG_LEVEL_FIELD_NUMBER = 21;
+  private int logLevel_;
+  /**
+   * <pre>
+   * **Beta Feature**
+   * The logging verbosity for device activity. If unspecified,
+   * DeviceRegistry.log_level will be used.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+   */
+  public int getLogLevelValue() {
+    return logLevel_;
+  }
+  /**
+   * <pre>
+   * **Beta Feature**
+   * The logging verbosity for device activity. If unspecified,
+   * DeviceRegistry.log_level will be used.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+   */
+  public com.google.cloud.iot.v1.LogLevel getLogLevel() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.iot.v1.LogLevel result = com.google.cloud.iot.v1.LogLevel.valueOf(logLevel_);
+    return result == null ? com.google.cloud.iot.v1.LogLevel.UNRECOGNIZED : result;
+  }
+
   public static final int METADATA_FIELD_NUMBER = 17;
   private static final class MetadataDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
@@ -950,6 +999,39 @@ private static final long serialVersionUID = 0L;
     return map.get(key);
   }
 
+  public static final int GATEWAY_CONFIG_FIELD_NUMBER = 24;
+  private com.google.cloud.iot.v1.GatewayConfig gatewayConfig_;
+  /**
+   * <pre>
+   * Gateway-related configuration and state.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+   */
+  public boolean hasGatewayConfig() {
+    return gatewayConfig_ != null;
+  }
+  /**
+   * <pre>
+   * Gateway-related configuration and state.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+   */
+  public com.google.cloud.iot.v1.GatewayConfig getGatewayConfig() {
+    return gatewayConfig_ == null ? com.google.cloud.iot.v1.GatewayConfig.getDefaultInstance() : gatewayConfig_;
+  }
+  /**
+   * <pre>
+   * Gateway-related configuration and state.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+   */
+  public com.google.cloud.iot.v1.GatewayConfigOrBuilder getGatewayConfigOrBuilder() {
+    return getGatewayConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1011,6 +1093,12 @@ private static final long serialVersionUID = 0L;
     }
     if (lastStateTime_ != null) {
       output.writeMessage(20, getLastStateTime());
+    }
+    if (logLevel_ != com.google.cloud.iot.v1.LogLevel.LOG_LEVEL_UNSPECIFIED.getNumber()) {
+      output.writeEnum(21, logLevel_);
+    }
+    if (gatewayConfig_ != null) {
+      output.writeMessage(24, getGatewayConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -1085,6 +1173,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(20, getLastStateTime());
     }
+    if (logLevel_ != com.google.cloud.iot.v1.LogLevel.LOG_LEVEL_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(21, logLevel_);
+    }
+    if (gatewayConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(24, getGatewayConfig());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1156,8 +1252,14 @@ private static final long serialVersionUID = 0L;
       result = result && getState()
           .equals(other.getState());
     }
+    result = result && logLevel_ == other.logLevel_;
     result = result && internalGetMetadata().equals(
         other.internalGetMetadata());
+    result = result && (hasGatewayConfig() == other.hasGatewayConfig());
+    if (hasGatewayConfig()) {
+      result = result && getGatewayConfig()
+          .equals(other.getGatewayConfig());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1219,9 +1321,15 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + getState().hashCode();
     }
+    hash = (37 * hash) + LOG_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + logLevel_;
     if (!internalGetMetadata().getMap().isEmpty()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + internalGetMetadata().hashCode();
+    }
+    if (hasGatewayConfig()) {
+      hash = (37 * hash) + GATEWAY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGatewayConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1451,7 +1559,15 @@ private static final long serialVersionUID = 0L;
         state_ = null;
         stateBuilder_ = null;
       }
+      logLevel_ = 0;
+
       internalGetMutableMetadata().clear();
+      if (gatewayConfigBuilder_ == null) {
+        gatewayConfig_ = null;
+      } else {
+        gatewayConfig_ = null;
+        gatewayConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -1538,8 +1654,14 @@ private static final long serialVersionUID = 0L;
       } else {
         result.state_ = stateBuilder_.build();
       }
+      result.logLevel_ = logLevel_;
       result.metadata_ = internalGetMetadata();
       result.metadata_.makeImmutable();
+      if (gatewayConfigBuilder_ == null) {
+        result.gatewayConfig_ = gatewayConfig_;
+      } else {
+        result.gatewayConfig_ = gatewayConfigBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -1656,8 +1778,14 @@ private static final long serialVersionUID = 0L;
       if (other.hasState()) {
         mergeState(other.getState());
       }
+      if (other.logLevel_ != 0) {
+        setLogLevelValue(other.getLogLevelValue());
+      }
       internalGetMutableMetadata().mergeFrom(
           other.internalGetMetadata());
+      if (other.hasGatewayConfig()) {
+        mergeGatewayConfig(other.getGatewayConfig());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -3953,6 +4081,81 @@ private static final long serialVersionUID = 0L;
       return stateBuilder_;
     }
 
+    private int logLevel_ = 0;
+    /**
+     * <pre>
+     * **Beta Feature**
+     * The logging verbosity for device activity. If unspecified,
+     * DeviceRegistry.log_level will be used.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+     */
+    public int getLogLevelValue() {
+      return logLevel_;
+    }
+    /**
+     * <pre>
+     * **Beta Feature**
+     * The logging verbosity for device activity. If unspecified,
+     * DeviceRegistry.log_level will be used.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+     */
+    public Builder setLogLevelValue(int value) {
+      logLevel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * **Beta Feature**
+     * The logging verbosity for device activity. If unspecified,
+     * DeviceRegistry.log_level will be used.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+     */
+    public com.google.cloud.iot.v1.LogLevel getLogLevel() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.iot.v1.LogLevel result = com.google.cloud.iot.v1.LogLevel.valueOf(logLevel_);
+      return result == null ? com.google.cloud.iot.v1.LogLevel.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * **Beta Feature**
+     * The logging verbosity for device activity. If unspecified,
+     * DeviceRegistry.log_level will be used.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+     */
+    public Builder setLogLevel(com.google.cloud.iot.v1.LogLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      logLevel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * **Beta Feature**
+     * The logging verbosity for device activity. If unspecified,
+     * DeviceRegistry.log_level will be used.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+     */
+    public Builder clearLogLevel() {
+      
+      logLevel_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.MapField<
         java.lang.String, java.lang.String> metadata_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -4158,6 +4361,159 @@ private static final long serialVersionUID = 0L;
       internalGetMutableMetadata().getMutableMap()
           .putAll(values);
       return this;
+    }
+
+    private com.google.cloud.iot.v1.GatewayConfig gatewayConfig_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.iot.v1.GatewayConfig, com.google.cloud.iot.v1.GatewayConfig.Builder, com.google.cloud.iot.v1.GatewayConfigOrBuilder> gatewayConfigBuilder_;
+    /**
+     * <pre>
+     * Gateway-related configuration and state.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     */
+    public boolean hasGatewayConfig() {
+      return gatewayConfigBuilder_ != null || gatewayConfig_ != null;
+    }
+    /**
+     * <pre>
+     * Gateway-related configuration and state.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     */
+    public com.google.cloud.iot.v1.GatewayConfig getGatewayConfig() {
+      if (gatewayConfigBuilder_ == null) {
+        return gatewayConfig_ == null ? com.google.cloud.iot.v1.GatewayConfig.getDefaultInstance() : gatewayConfig_;
+      } else {
+        return gatewayConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Gateway-related configuration and state.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     */
+    public Builder setGatewayConfig(com.google.cloud.iot.v1.GatewayConfig value) {
+      if (gatewayConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gatewayConfig_ = value;
+        onChanged();
+      } else {
+        gatewayConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Gateway-related configuration and state.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     */
+    public Builder setGatewayConfig(
+        com.google.cloud.iot.v1.GatewayConfig.Builder builderForValue) {
+      if (gatewayConfigBuilder_ == null) {
+        gatewayConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        gatewayConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Gateway-related configuration and state.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     */
+    public Builder mergeGatewayConfig(com.google.cloud.iot.v1.GatewayConfig value) {
+      if (gatewayConfigBuilder_ == null) {
+        if (gatewayConfig_ != null) {
+          gatewayConfig_ =
+            com.google.cloud.iot.v1.GatewayConfig.newBuilder(gatewayConfig_).mergeFrom(value).buildPartial();
+        } else {
+          gatewayConfig_ = value;
+        }
+        onChanged();
+      } else {
+        gatewayConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Gateway-related configuration and state.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     */
+    public Builder clearGatewayConfig() {
+      if (gatewayConfigBuilder_ == null) {
+        gatewayConfig_ = null;
+        onChanged();
+      } else {
+        gatewayConfig_ = null;
+        gatewayConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Gateway-related configuration and state.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     */
+    public com.google.cloud.iot.v1.GatewayConfig.Builder getGatewayConfigBuilder() {
+      
+      onChanged();
+      return getGatewayConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Gateway-related configuration and state.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     */
+    public com.google.cloud.iot.v1.GatewayConfigOrBuilder getGatewayConfigOrBuilder() {
+      if (gatewayConfigBuilder_ != null) {
+        return gatewayConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gatewayConfig_ == null ?
+            com.google.cloud.iot.v1.GatewayConfig.getDefaultInstance() : gatewayConfig_;
+      }
+    }
+    /**
+     * <pre>
+     * Gateway-related configuration and state.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.iot.v1.GatewayConfig, com.google.cloud.iot.v1.GatewayConfig.Builder, com.google.cloud.iot.v1.GatewayConfigOrBuilder> 
+        getGatewayConfigFieldBuilder() {
+      if (gatewayConfigBuilder_ == null) {
+        gatewayConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.iot.v1.GatewayConfig, com.google.cloud.iot.v1.GatewayConfig.Builder, com.google.cloud.iot.v1.GatewayConfigOrBuilder>(
+                getGatewayConfig(),
+                getParentForChildren(),
+                isClean());
+        gatewayConfig_ = null;
+      }
+      return gatewayConfigBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
