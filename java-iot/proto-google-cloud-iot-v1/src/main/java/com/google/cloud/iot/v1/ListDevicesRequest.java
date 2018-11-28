@@ -100,6 +100,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 50: {
+            com.google.cloud.iot.v1.GatewayListOptions.Builder subBuilder = null;
+            if (gatewayListOptions_ != null) {
+              subBuilder = gatewayListOptions_.toBuilder();
+            }
+            gatewayListOptions_ = input.readMessage(com.google.cloud.iot.v1.GatewayListOptions.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(gatewayListOptions_);
+              gatewayListOptions_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           case 800: {
 
             pageSize_ = input.readInt32();
@@ -198,8 +211,8 @@ private static final long serialVersionUID = 0L;
   private java.util.List<java.lang.Long> deviceNumIds_;
   /**
    * <pre>
-   * A list of device numerical ids. If empty, it will ignore this field. This
-   * field cannot hold more than 10,000 entries.
+   * A list of device numeric IDs. If empty, this field is ignored. Maximum
+   * IDs: 10,000.
    * </pre>
    *
    * <code>repeated uint64 device_num_ids = 2;</code>
@@ -210,8 +223,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of device numerical ids. If empty, it will ignore this field. This
-   * field cannot hold more than 10,000 entries.
+   * A list of device numeric IDs. If empty, this field is ignored. Maximum
+   * IDs: 10,000.
    * </pre>
    *
    * <code>repeated uint64 device_num_ids = 2;</code>
@@ -221,8 +234,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of device numerical ids. If empty, it will ignore this field. This
-   * field cannot hold more than 10,000 entries.
+   * A list of device numeric IDs. If empty, this field is ignored. Maximum
+   * IDs: 10,000.
    * </pre>
    *
    * <code>repeated uint64 device_num_ids = 2;</code>
@@ -236,9 +249,8 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList deviceIds_;
   /**
    * <pre>
-   * A list of device string identifiers. If empty, it will ignore this field.
-   * For example, `['device0', 'device12']`. This field cannot hold more than
-   * 10,000 entries.
+   * A list of device string IDs. For example, `['device0', 'device12']`.
+   * If empty, this field is ignored. Maximum IDs: 10,000
    * </pre>
    *
    * <code>repeated string device_ids = 3;</code>
@@ -249,9 +261,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of device string identifiers. If empty, it will ignore this field.
-   * For example, `['device0', 'device12']`. This field cannot hold more than
-   * 10,000 entries.
+   * A list of device string IDs. For example, `['device0', 'device12']`.
+   * If empty, this field is ignored. Maximum IDs: 10,000
    * </pre>
    *
    * <code>repeated string device_ids = 3;</code>
@@ -261,9 +272,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of device string identifiers. If empty, it will ignore this field.
-   * For example, `['device0', 'device12']`. This field cannot hold more than
-   * 10,000 entries.
+   * A list of device string IDs. For example, `['device0', 'device12']`.
+   * If empty, this field is ignored. Maximum IDs: 10,000
    * </pre>
    *
    * <code>repeated string device_ids = 3;</code>
@@ -273,9 +283,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A list of device string identifiers. If empty, it will ignore this field.
-   * For example, `['device0', 'device12']`. This field cannot hold more than
-   * 10,000 entries.
+   * A list of device string IDs. For example, `['device0', 'device12']`.
+   * If empty, this field is ignored. Maximum IDs: 10,000
    * </pre>
    *
    * <code>repeated string device_ids = 3;</code>
@@ -290,7 +299,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The fields of the `Device` resource to be returned in the response. The
-   * fields `id`, and `num_id` are always returned by default, along with any
+   * fields `id` and `num_id` are always returned, along with any
    * other fields specified.
    * </pre>
    *
@@ -302,7 +311,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The fields of the `Device` resource to be returned in the response. The
-   * fields `id`, and `num_id` are always returned by default, along with any
+   * fields `id` and `num_id` are always returned, along with any
    * other fields specified.
    * </pre>
    *
@@ -314,7 +323,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The fields of the `Device` resource to be returned in the response. The
-   * fields `id`, and `num_id` are always returned by default, along with any
+   * fields `id` and `num_id` are always returned, along with any
    * other fields specified.
    * </pre>
    *
@@ -324,14 +333,47 @@ private static final long serialVersionUID = 0L;
     return getFieldMask();
   }
 
+  public static final int GATEWAY_LIST_OPTIONS_FIELD_NUMBER = 6;
+  private com.google.cloud.iot.v1.GatewayListOptions gatewayListOptions_;
+  /**
+   * <pre>
+   * Options related to gateways.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
+   */
+  public boolean hasGatewayListOptions() {
+    return gatewayListOptions_ != null;
+  }
+  /**
+   * <pre>
+   * Options related to gateways.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
+   */
+  public com.google.cloud.iot.v1.GatewayListOptions getGatewayListOptions() {
+    return gatewayListOptions_ == null ? com.google.cloud.iot.v1.GatewayListOptions.getDefaultInstance() : gatewayListOptions_;
+  }
+  /**
+   * <pre>
+   * Options related to gateways.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
+   */
+  public com.google.cloud.iot.v1.GatewayListOptionsOrBuilder getGatewayListOptionsOrBuilder() {
+    return getGatewayListOptions();
+  }
+
   public static final int PAGE_SIZE_FIELD_NUMBER = 100;
   private int pageSize_;
   /**
    * <pre>
    * The maximum number of devices to return in the response. If this value
    * is zero, the service will select a default size. A call may return fewer
-   * objects than requested, but if there is a non-empty `page_token`, it
-   * indicates that more entries are available.
+   * objects than requested. A non-empty `next_page_token` in the response
+   * indicates that more data is available.
    * </pre>
    *
    * <code>int32 page_size = 100;</code>
@@ -345,8 +387,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The value returned by the last `ListDevicesResponse`; indicates
-   * that this is a continuation of a prior `ListDevices` call, and
-   * that the system should return the next page of data.
+   * that this is a continuation of a prior `ListDevices` call and
+   * the system should return the next page of data.
    * </pre>
    *
    * <code>string page_token = 101;</code>
@@ -366,8 +408,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The value returned by the last `ListDevicesResponse`; indicates
-   * that this is a continuation of a prior `ListDevices` call, and
-   * that the system should return the next page of data.
+   * that this is a continuation of a prior `ListDevices` call and
+   * the system should return the next page of data.
    * </pre>
    *
    * <code>string page_token = 101;</code>
@@ -417,6 +459,9 @@ private static final long serialVersionUID = 0L;
     if (fieldMask_ != null) {
       output.writeMessage(4, getFieldMask());
     }
+    if (gatewayListOptions_ != null) {
+      output.writeMessage(6, getGatewayListOptions());
+    }
     if (pageSize_ != 0) {
       output.writeInt32(100, pageSize_);
     }
@@ -461,6 +506,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getFieldMask());
     }
+    if (gatewayListOptions_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getGatewayListOptions());
+    }
     if (pageSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(100, pageSize_);
@@ -495,6 +544,11 @@ private static final long serialVersionUID = 0L;
       result = result && getFieldMask()
           .equals(other.getFieldMask());
     }
+    result = result && (hasGatewayListOptions() == other.hasGatewayListOptions());
+    if (hasGatewayListOptions()) {
+      result = result && getGatewayListOptions()
+          .equals(other.getGatewayListOptions());
+    }
     result = result && (getPageSize()
         == other.getPageSize());
     result = result && getPageToken()
@@ -523,6 +577,10 @@ private static final long serialVersionUID = 0L;
     if (hasFieldMask()) {
       hash = (37 * hash) + FIELD_MASK_FIELD_NUMBER;
       hash = (53 * hash) + getFieldMask().hashCode();
+    }
+    if (hasGatewayListOptions()) {
+      hash = (37 * hash) + GATEWAY_LIST_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getGatewayListOptions().hashCode();
     }
     hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
     hash = (53 * hash) + getPageSize();
@@ -677,6 +735,12 @@ private static final long serialVersionUID = 0L;
         fieldMask_ = null;
         fieldMaskBuilder_ = null;
       }
+      if (gatewayListOptionsBuilder_ == null) {
+        gatewayListOptions_ = null;
+      } else {
+        gatewayListOptions_ = null;
+        gatewayListOptionsBuilder_ = null;
+      }
       pageSize_ = 0;
 
       pageToken_ = "";
@@ -724,6 +788,11 @@ private static final long serialVersionUID = 0L;
         result.fieldMask_ = fieldMask_;
       } else {
         result.fieldMask_ = fieldMaskBuilder_.build();
+      }
+      if (gatewayListOptionsBuilder_ == null) {
+        result.gatewayListOptions_ = gatewayListOptions_;
+      } else {
+        result.gatewayListOptions_ = gatewayListOptionsBuilder_.build();
       }
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
@@ -802,6 +871,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasFieldMask()) {
         mergeFieldMask(other.getFieldMask());
+      }
+      if (other.hasGatewayListOptions()) {
+        mergeGatewayListOptions(other.getGatewayListOptions());
       }
       if (other.getPageSize() != 0) {
         setPageSize(other.getPageSize());
@@ -943,8 +1015,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of device numerical ids. If empty, it will ignore this field. This
-     * field cannot hold more than 10,000 entries.
+     * A list of device numeric IDs. If empty, this field is ignored. Maximum
+     * IDs: 10,000.
      * </pre>
      *
      * <code>repeated uint64 device_num_ids = 2;</code>
@@ -955,8 +1027,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of device numerical ids. If empty, it will ignore this field. This
-     * field cannot hold more than 10,000 entries.
+     * A list of device numeric IDs. If empty, this field is ignored. Maximum
+     * IDs: 10,000.
      * </pre>
      *
      * <code>repeated uint64 device_num_ids = 2;</code>
@@ -966,8 +1038,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of device numerical ids. If empty, it will ignore this field. This
-     * field cannot hold more than 10,000 entries.
+     * A list of device numeric IDs. If empty, this field is ignored. Maximum
+     * IDs: 10,000.
      * </pre>
      *
      * <code>repeated uint64 device_num_ids = 2;</code>
@@ -977,8 +1049,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of device numerical ids. If empty, it will ignore this field. This
-     * field cannot hold more than 10,000 entries.
+     * A list of device numeric IDs. If empty, this field is ignored. Maximum
+     * IDs: 10,000.
      * </pre>
      *
      * <code>repeated uint64 device_num_ids = 2;</code>
@@ -992,8 +1064,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of device numerical ids. If empty, it will ignore this field. This
-     * field cannot hold more than 10,000 entries.
+     * A list of device numeric IDs. If empty, this field is ignored. Maximum
+     * IDs: 10,000.
      * </pre>
      *
      * <code>repeated uint64 device_num_ids = 2;</code>
@@ -1006,8 +1078,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of device numerical ids. If empty, it will ignore this field. This
-     * field cannot hold more than 10,000 entries.
+     * A list of device numeric IDs. If empty, this field is ignored. Maximum
+     * IDs: 10,000.
      * </pre>
      *
      * <code>repeated uint64 device_num_ids = 2;</code>
@@ -1022,8 +1094,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of device numerical ids. If empty, it will ignore this field. This
-     * field cannot hold more than 10,000 entries.
+     * A list of device numeric IDs. If empty, this field is ignored. Maximum
+     * IDs: 10,000.
      * </pre>
      *
      * <code>repeated uint64 device_num_ids = 2;</code>
@@ -1044,9 +1116,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of device string identifiers. If empty, it will ignore this field.
-     * For example, `['device0', 'device12']`. This field cannot hold more than
-     * 10,000 entries.
+     * A list of device string IDs. For example, `['device0', 'device12']`.
+     * If empty, this field is ignored. Maximum IDs: 10,000
      * </pre>
      *
      * <code>repeated string device_ids = 3;</code>
@@ -1057,9 +1128,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of device string identifiers. If empty, it will ignore this field.
-     * For example, `['device0', 'device12']`. This field cannot hold more than
-     * 10,000 entries.
+     * A list of device string IDs. For example, `['device0', 'device12']`.
+     * If empty, this field is ignored. Maximum IDs: 10,000
      * </pre>
      *
      * <code>repeated string device_ids = 3;</code>
@@ -1069,9 +1139,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of device string identifiers. If empty, it will ignore this field.
-     * For example, `['device0', 'device12']`. This field cannot hold more than
-     * 10,000 entries.
+     * A list of device string IDs. For example, `['device0', 'device12']`.
+     * If empty, this field is ignored. Maximum IDs: 10,000
      * </pre>
      *
      * <code>repeated string device_ids = 3;</code>
@@ -1081,9 +1150,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of device string identifiers. If empty, it will ignore this field.
-     * For example, `['device0', 'device12']`. This field cannot hold more than
-     * 10,000 entries.
+     * A list of device string IDs. For example, `['device0', 'device12']`.
+     * If empty, this field is ignored. Maximum IDs: 10,000
      * </pre>
      *
      * <code>repeated string device_ids = 3;</code>
@@ -1094,9 +1162,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of device string identifiers. If empty, it will ignore this field.
-     * For example, `['device0', 'device12']`. This field cannot hold more than
-     * 10,000 entries.
+     * A list of device string IDs. For example, `['device0', 'device12']`.
+     * If empty, this field is ignored. Maximum IDs: 10,000
      * </pre>
      *
      * <code>repeated string device_ids = 3;</code>
@@ -1113,9 +1180,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of device string identifiers. If empty, it will ignore this field.
-     * For example, `['device0', 'device12']`. This field cannot hold more than
-     * 10,000 entries.
+     * A list of device string IDs. For example, `['device0', 'device12']`.
+     * If empty, this field is ignored. Maximum IDs: 10,000
      * </pre>
      *
      * <code>repeated string device_ids = 3;</code>
@@ -1132,9 +1198,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of device string identifiers. If empty, it will ignore this field.
-     * For example, `['device0', 'device12']`. This field cannot hold more than
-     * 10,000 entries.
+     * A list of device string IDs. For example, `['device0', 'device12']`.
+     * If empty, this field is ignored. Maximum IDs: 10,000
      * </pre>
      *
      * <code>repeated string device_ids = 3;</code>
@@ -1149,9 +1214,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of device string identifiers. If empty, it will ignore this field.
-     * For example, `['device0', 'device12']`. This field cannot hold more than
-     * 10,000 entries.
+     * A list of device string IDs. For example, `['device0', 'device12']`.
+     * If empty, this field is ignored. Maximum IDs: 10,000
      * </pre>
      *
      * <code>repeated string device_ids = 3;</code>
@@ -1164,9 +1228,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A list of device string identifiers. If empty, it will ignore this field.
-     * For example, `['device0', 'device12']`. This field cannot hold more than
-     * 10,000 entries.
+     * A list of device string IDs. For example, `['device0', 'device12']`.
+     * If empty, this field is ignored. Maximum IDs: 10,000
      * </pre>
      *
      * <code>repeated string device_ids = 3;</code>
@@ -1189,7 +1252,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
-     * fields `id`, and `num_id` are always returned by default, along with any
+     * fields `id` and `num_id` are always returned, along with any
      * other fields specified.
      * </pre>
      *
@@ -1201,7 +1264,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
-     * fields `id`, and `num_id` are always returned by default, along with any
+     * fields `id` and `num_id` are always returned, along with any
      * other fields specified.
      * </pre>
      *
@@ -1217,7 +1280,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
-     * fields `id`, and `num_id` are always returned by default, along with any
+     * fields `id` and `num_id` are always returned, along with any
      * other fields specified.
      * </pre>
      *
@@ -1239,7 +1302,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
-     * fields `id`, and `num_id` are always returned by default, along with any
+     * fields `id` and `num_id` are always returned, along with any
      * other fields specified.
      * </pre>
      *
@@ -1259,7 +1322,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
-     * fields `id`, and `num_id` are always returned by default, along with any
+     * fields `id` and `num_id` are always returned, along with any
      * other fields specified.
      * </pre>
      *
@@ -1283,7 +1346,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
-     * fields `id`, and `num_id` are always returned by default, along with any
+     * fields `id` and `num_id` are always returned, along with any
      * other fields specified.
      * </pre>
      *
@@ -1303,7 +1366,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
-     * fields `id`, and `num_id` are always returned by default, along with any
+     * fields `id` and `num_id` are always returned, along with any
      * other fields specified.
      * </pre>
      *
@@ -1317,7 +1380,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
-     * fields `id`, and `num_id` are always returned by default, along with any
+     * fields `id` and `num_id` are always returned, along with any
      * other fields specified.
      * </pre>
      *
@@ -1334,7 +1397,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
-     * fields `id`, and `num_id` are always returned by default, along with any
+     * fields `id` and `num_id` are always returned, along with any
      * other fields specified.
      * </pre>
      *
@@ -1354,13 +1417,166 @@ private static final long serialVersionUID = 0L;
       return fieldMaskBuilder_;
     }
 
+    private com.google.cloud.iot.v1.GatewayListOptions gatewayListOptions_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.iot.v1.GatewayListOptions, com.google.cloud.iot.v1.GatewayListOptions.Builder, com.google.cloud.iot.v1.GatewayListOptionsOrBuilder> gatewayListOptionsBuilder_;
+    /**
+     * <pre>
+     * Options related to gateways.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
+     */
+    public boolean hasGatewayListOptions() {
+      return gatewayListOptionsBuilder_ != null || gatewayListOptions_ != null;
+    }
+    /**
+     * <pre>
+     * Options related to gateways.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
+     */
+    public com.google.cloud.iot.v1.GatewayListOptions getGatewayListOptions() {
+      if (gatewayListOptionsBuilder_ == null) {
+        return gatewayListOptions_ == null ? com.google.cloud.iot.v1.GatewayListOptions.getDefaultInstance() : gatewayListOptions_;
+      } else {
+        return gatewayListOptionsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Options related to gateways.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
+     */
+    public Builder setGatewayListOptions(com.google.cloud.iot.v1.GatewayListOptions value) {
+      if (gatewayListOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gatewayListOptions_ = value;
+        onChanged();
+      } else {
+        gatewayListOptionsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Options related to gateways.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
+     */
+    public Builder setGatewayListOptions(
+        com.google.cloud.iot.v1.GatewayListOptions.Builder builderForValue) {
+      if (gatewayListOptionsBuilder_ == null) {
+        gatewayListOptions_ = builderForValue.build();
+        onChanged();
+      } else {
+        gatewayListOptionsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Options related to gateways.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
+     */
+    public Builder mergeGatewayListOptions(com.google.cloud.iot.v1.GatewayListOptions value) {
+      if (gatewayListOptionsBuilder_ == null) {
+        if (gatewayListOptions_ != null) {
+          gatewayListOptions_ =
+            com.google.cloud.iot.v1.GatewayListOptions.newBuilder(gatewayListOptions_).mergeFrom(value).buildPartial();
+        } else {
+          gatewayListOptions_ = value;
+        }
+        onChanged();
+      } else {
+        gatewayListOptionsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Options related to gateways.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
+     */
+    public Builder clearGatewayListOptions() {
+      if (gatewayListOptionsBuilder_ == null) {
+        gatewayListOptions_ = null;
+        onChanged();
+      } else {
+        gatewayListOptions_ = null;
+        gatewayListOptionsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Options related to gateways.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
+     */
+    public com.google.cloud.iot.v1.GatewayListOptions.Builder getGatewayListOptionsBuilder() {
+      
+      onChanged();
+      return getGatewayListOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Options related to gateways.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
+     */
+    public com.google.cloud.iot.v1.GatewayListOptionsOrBuilder getGatewayListOptionsOrBuilder() {
+      if (gatewayListOptionsBuilder_ != null) {
+        return gatewayListOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return gatewayListOptions_ == null ?
+            com.google.cloud.iot.v1.GatewayListOptions.getDefaultInstance() : gatewayListOptions_;
+      }
+    }
+    /**
+     * <pre>
+     * Options related to gateways.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.iot.v1.GatewayListOptions, com.google.cloud.iot.v1.GatewayListOptions.Builder, com.google.cloud.iot.v1.GatewayListOptionsOrBuilder> 
+        getGatewayListOptionsFieldBuilder() {
+      if (gatewayListOptionsBuilder_ == null) {
+        gatewayListOptionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.iot.v1.GatewayListOptions, com.google.cloud.iot.v1.GatewayListOptions.Builder, com.google.cloud.iot.v1.GatewayListOptionsOrBuilder>(
+                getGatewayListOptions(),
+                getParentForChildren(),
+                isClean());
+        gatewayListOptions_ = null;
+      }
+      return gatewayListOptionsBuilder_;
+    }
+
     private int pageSize_ ;
     /**
      * <pre>
      * The maximum number of devices to return in the response. If this value
      * is zero, the service will select a default size. A call may return fewer
-     * objects than requested, but if there is a non-empty `page_token`, it
-     * indicates that more entries are available.
+     * objects than requested. A non-empty `next_page_token` in the response
+     * indicates that more data is available.
      * </pre>
      *
      * <code>int32 page_size = 100;</code>
@@ -1372,8 +1588,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The maximum number of devices to return in the response. If this value
      * is zero, the service will select a default size. A call may return fewer
-     * objects than requested, but if there is a non-empty `page_token`, it
-     * indicates that more entries are available.
+     * objects than requested. A non-empty `next_page_token` in the response
+     * indicates that more data is available.
      * </pre>
      *
      * <code>int32 page_size = 100;</code>
@@ -1388,8 +1604,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The maximum number of devices to return in the response. If this value
      * is zero, the service will select a default size. A call may return fewer
-     * objects than requested, but if there is a non-empty `page_token`, it
-     * indicates that more entries are available.
+     * objects than requested. A non-empty `next_page_token` in the response
+     * indicates that more data is available.
      * </pre>
      *
      * <code>int32 page_size = 100;</code>
@@ -1405,8 +1621,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The value returned by the last `ListDevicesResponse`; indicates
-     * that this is a continuation of a prior `ListDevices` call, and
-     * that the system should return the next page of data.
+     * that this is a continuation of a prior `ListDevices` call and
+     * the system should return the next page of data.
      * </pre>
      *
      * <code>string page_token = 101;</code>
@@ -1426,8 +1642,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The value returned by the last `ListDevicesResponse`; indicates
-     * that this is a continuation of a prior `ListDevices` call, and
-     * that the system should return the next page of data.
+     * that this is a continuation of a prior `ListDevices` call and
+     * the system should return the next page of data.
      * </pre>
      *
      * <code>string page_token = 101;</code>
@@ -1448,8 +1664,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The value returned by the last `ListDevicesResponse`; indicates
-     * that this is a continuation of a prior `ListDevices` call, and
-     * that the system should return the next page of data.
+     * that this is a continuation of a prior `ListDevices` call and
+     * the system should return the next page of data.
      * </pre>
      *
      * <code>string page_token = 101;</code>
@@ -1467,8 +1683,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The value returned by the last `ListDevicesResponse`; indicates
-     * that this is a continuation of a prior `ListDevices` call, and
-     * that the system should return the next page of data.
+     * that this is a continuation of a prior `ListDevices` call and
+     * the system should return the next page of data.
      * </pre>
      *
      * <code>string page_token = 101;</code>
@@ -1482,8 +1698,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The value returned by the last `ListDevicesResponse`; indicates
-     * that this is a continuation of a prior `ListDevices` call, and
-     * that the system should return the next page of data.
+     * that this is a continuation of a prior `ListDevices` call and
+     * the system should return the next page of data.
      * </pre>
      *
      * <code>string page_token = 101;</code>

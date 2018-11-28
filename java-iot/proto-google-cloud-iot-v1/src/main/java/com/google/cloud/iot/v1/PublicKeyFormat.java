@@ -170,7 +170,7 @@ public enum PublicKeyFormat
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.google.cloud.iot.v1.ResourcesProto.getDescriptor().getEnumTypes().get(3);
+    return com.google.cloud.iot.v1.ResourcesProto.getDescriptor().getEnumTypes().get(6);
   }
 
   private static final PublicKeyFormat[] VALUES = values();

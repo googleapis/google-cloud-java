@@ -26,6 +26,8 @@ import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.iot.v1.BindDeviceToGatewayRequest;
+import com.google.cloud.iot.v1.BindDeviceToGatewayResponse;
 import com.google.cloud.iot.v1.CreateDeviceRegistryRequest;
 import com.google.cloud.iot.v1.CreateDeviceRequest;
 import com.google.cloud.iot.v1.DeleteDeviceRegistryRequest;
@@ -44,6 +46,10 @@ import com.google.cloud.iot.v1.ListDeviceStatesResponse;
 import com.google.cloud.iot.v1.ListDevicesRequest;
 import com.google.cloud.iot.v1.ListDevicesResponse;
 import com.google.cloud.iot.v1.ModifyCloudToDeviceConfigRequest;
+import com.google.cloud.iot.v1.SendCommandToDeviceRequest;
+import com.google.cloud.iot.v1.SendCommandToDeviceResponse;
+import com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest;
+import com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse;
 import com.google.cloud.iot.v1.UpdateDeviceRegistryRequest;
 import com.google.cloud.iot.v1.UpdateDeviceRequest;
 import com.google.common.collect.ImmutableMap;
@@ -208,6 +214,38 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+      sendCommandToDeviceMethodDescriptor =
+          MethodDescriptor.<SendCommandToDeviceRequest, SendCommandToDeviceResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.iot.v1.DeviceManager/SendCommandToDevice")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SendCommandToDeviceRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SendCommandToDeviceResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
+      bindDeviceToGatewayMethodDescriptor =
+          MethodDescriptor.<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.iot.v1.DeviceManager/BindDeviceToGateway")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BindDeviceToGatewayRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BindDeviceToGatewayResponse.getDefaultInstance()))
+              .build();
+  private static final MethodDescriptor<
+          UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
+      unbindDeviceFromGatewayMethodDescriptor =
+          MethodDescriptor
+              .<UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.iot.v1.DeviceManager/UnbindDeviceFromGateway")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UnbindDeviceFromGatewayRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(UnbindDeviceFromGatewayResponse.getDefaultInstance()))
+              .build();
 
   private final BackgroundResource backgroundResources;
 
@@ -238,6 +276,12 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+      sendCommandToDeviceCallable;
+  private final UnaryCallable<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
+      bindDeviceToGatewayCallable;
+  private final UnaryCallable<UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
+      unbindDeviceFromGatewayCallable;
 
   private final GrpcStubCallableFactory callableFactory;
 
@@ -496,6 +540,49 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+        sendCommandToDeviceTransportSettings =
+            GrpcCallSettings.<SendCommandToDeviceRequest, SendCommandToDeviceResponse>newBuilder()
+                .setMethodDescriptor(sendCommandToDeviceMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<SendCommandToDeviceRequest>() {
+                      @Override
+                      public Map<String, String> extract(SendCommandToDeviceRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
+        bindDeviceToGatewayTransportSettings =
+            GrpcCallSettings.<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>newBuilder()
+                .setMethodDescriptor(bindDeviceToGatewayMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<BindDeviceToGatewayRequest>() {
+                      @Override
+                      public Map<String, String> extract(BindDeviceToGatewayRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
+        unbindDeviceFromGatewayTransportSettings =
+            GrpcCallSettings
+                .<UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>newBuilder()
+                .setMethodDescriptor(unbindDeviceFromGatewayMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<UnbindDeviceFromGatewayRequest>() {
+                      @Override
+                      public Map<String, String> extract(UnbindDeviceFromGatewayRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("parent", String.valueOf(request.getParent()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.createDeviceRegistryCallable =
         callableFactory.createUnaryCallable(
@@ -568,6 +655,21 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
+            clientContext);
+    this.sendCommandToDeviceCallable =
+        callableFactory.createUnaryCallable(
+            sendCommandToDeviceTransportSettings,
+            settings.sendCommandToDeviceSettings(),
+            clientContext);
+    this.bindDeviceToGatewayCallable =
+        callableFactory.createUnaryCallable(
+            bindDeviceToGatewayTransportSettings,
+            settings.bindDeviceToGatewaySettings(),
+            clientContext);
+    this.unbindDeviceFromGatewayCallable =
+        callableFactory.createUnaryCallable(
+            unbindDeviceFromGatewayTransportSettings,
+            settings.unbindDeviceFromGatewaySettings(),
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -649,6 +751,21 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  public UnaryCallable<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+      sendCommandToDeviceCallable() {
+    return sendCommandToDeviceCallable;
+  }
+
+  public UnaryCallable<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
+      bindDeviceToGatewayCallable() {
+    return bindDeviceToGatewayCallable;
+  }
+
+  public UnaryCallable<UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
+      unbindDeviceFromGatewayCallable() {
+    return unbindDeviceFromGatewayCallable;
   }
 
   @Override

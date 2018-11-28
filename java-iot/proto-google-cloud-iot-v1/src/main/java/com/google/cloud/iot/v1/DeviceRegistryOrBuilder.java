@@ -221,6 +221,27 @@ public interface DeviceRegistryOrBuilder extends
 
   /**
    * <pre>
+   * **Beta Feature**
+   * The default logging verbosity for activity from devices in this registry.
+   * The verbosity level can be overridden by Device.log_level.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.LogLevel log_level = 11;</code>
+   */
+  int getLogLevelValue();
+  /**
+   * <pre>
+   * **Beta Feature**
+   * The default logging verbosity for activity from devices in this registry.
+   * The verbosity level can be overridden by Device.log_level.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.LogLevel log_level = 11;</code>
+   */
+  com.google.cloud.iot.v1.LogLevel getLogLevel();
+
+  /**
+   * <pre>
    * The credentials used to verify the device credentials. No more than 10
    * credentials can be bound to a single registry at a time. The verification
    * process occurs at the time of device creation or update. If this field is

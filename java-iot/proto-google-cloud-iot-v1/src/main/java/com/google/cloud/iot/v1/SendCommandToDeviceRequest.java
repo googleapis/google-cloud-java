@@ -5,24 +5,24 @@ package com.google.cloud.iot.v1;
 
 /**
  * <pre>
- * Request for `ListDeviceRegistries`.
+ * Request for `SendCommandToDevice`.
  * </pre>
  *
- * Protobuf type {@code google.cloud.iot.v1.ListDeviceRegistriesRequest}
+ * Protobuf type {@code google.cloud.iot.v1.SendCommandToDeviceRequest}
  */
-public  final class ListDeviceRegistriesRequest extends
+public  final class SendCommandToDeviceRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.ListDeviceRegistriesRequest)
-    ListDeviceRegistriesRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.SendCommandToDeviceRequest)
+    SendCommandToDeviceRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ListDeviceRegistriesRequest.newBuilder() to construct.
-  private ListDeviceRegistriesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use SendCommandToDeviceRequest.newBuilder() to construct.
+  private SendCommandToDeviceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ListDeviceRegistriesRequest() {
-    parent_ = "";
-    pageSize_ = 0;
-    pageToken_ = "";
+  private SendCommandToDeviceRequest() {
+    name_ = "";
+    binaryData_ = com.google.protobuf.ByteString.EMPTY;
+    subfolder_ = "";
   }
 
   @java.lang.Override
@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ListDeviceRegistriesRequest(
+  private SendCommandToDeviceRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -52,18 +52,18 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            parent_ = s;
+            name_ = s;
             break;
           }
-          case 16: {
+          case 18: {
 
-            pageSize_ = input.readInt32();
+            binaryData_ = input.readBytes();
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            pageToken_ = s;
+            subfolder_ = s;
             break;
           }
           default: {
@@ -87,117 +87,120 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_ListDeviceRegistriesRequest_descriptor;
+    return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_SendCommandToDeviceRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_ListDeviceRegistriesRequest_fieldAccessorTable
+    return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_SendCommandToDeviceRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.iot.v1.ListDeviceRegistriesRequest.class, com.google.cloud.iot.v1.ListDeviceRegistriesRequest.Builder.class);
+            com.google.cloud.iot.v1.SendCommandToDeviceRequest.class, com.google.cloud.iot.v1.SendCommandToDeviceRequest.Builder.class);
   }
 
-  public static final int PARENT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object parent_;
+  public static final int NAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The project and cloud region path. For example,
-   * `projects/example-project/locations/us-central1`.
+   * The name of the device. For example,
+   * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+   * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string name = 1;</code>
    */
-  public java.lang.String getParent() {
-    java.lang.Object ref = parent_;
+  public java.lang.String getName() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      parent_ = s;
+      name_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * The project and cloud region path. For example,
-   * `projects/example-project/locations/us-central1`.
+   * The name of the device. For example,
+   * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+   * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string name = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getParentBytes() {
-    java.lang.Object ref = parent_;
+      getNameBytes() {
+    java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      parent_ = b;
+      name_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int PAGE_SIZE_FIELD_NUMBER = 2;
-  private int pageSize_;
+  public static final int BINARY_DATA_FIELD_NUMBER = 2;
+  private com.google.protobuf.ByteString binaryData_;
   /**
    * <pre>
-   * The maximum number of registries to return in the response. If this value
-   * is zero, the service will select a default size. A call may return fewer
-   * objects than requested. A non-empty `next_page_token` in the response
-   * indicates that more data is available.
+   * The command data to send to the device.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>bytes binary_data = 2;</code>
    */
-  public int getPageSize() {
-    return pageSize_;
+  public com.google.protobuf.ByteString getBinaryData() {
+    return binaryData_;
   }
 
-  public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
-  private volatile java.lang.Object pageToken_;
+  public static final int SUBFOLDER_FIELD_NUMBER = 3;
+  private volatile java.lang.Object subfolder_;
   /**
    * <pre>
-   * The value returned by the last `ListDeviceRegistriesResponse`; indicates
-   * that this is a continuation of a prior `ListDeviceRegistries` call and
-   * the system should return the next page of data.
+   * Optional subfolder for the command. If empty, the command will be delivered
+   * to the /devices/{device-id}/commands topic, otherwise it will be delivered
+   * to the /devices/{device-id}/commands/{subfolder} topic. Multi-level
+   * subfolders are allowed. This field must not have more than 256 characters,
+   * and must not contain any MQTT wildcards ("+" or "#") or null characters.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string subfolder = 3;</code>
    */
-  public java.lang.String getPageToken() {
-    java.lang.Object ref = pageToken_;
+  public java.lang.String getSubfolder() {
+    java.lang.Object ref = subfolder_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      pageToken_ = s;
+      subfolder_ = s;
       return s;
     }
   }
   /**
    * <pre>
-   * The value returned by the last `ListDeviceRegistriesResponse`; indicates
-   * that this is a continuation of a prior `ListDeviceRegistries` call and
-   * the system should return the next page of data.
+   * Optional subfolder for the command. If empty, the command will be delivered
+   * to the /devices/{device-id}/commands topic, otherwise it will be delivered
+   * to the /devices/{device-id}/commands/{subfolder} topic. Multi-level
+   * subfolders are allowed. This field must not have more than 256 characters,
+   * and must not contain any MQTT wildcards ("+" or "#") or null characters.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string subfolder = 3;</code>
    */
   public com.google.protobuf.ByteString
-      getPageTokenBytes() {
-    java.lang.Object ref = pageToken_;
+      getSubfolderBytes() {
+    java.lang.Object ref = subfolder_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      pageToken_ = b;
+      subfolder_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -218,14 +221,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getParentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
+    if (!getNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (pageSize_ != 0) {
-      output.writeInt32(2, pageSize_);
+    if (!binaryData_.isEmpty()) {
+      output.writeBytes(2, binaryData_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
+    if (!getSubfolderBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, subfolder_);
     }
     unknownFields.writeTo(output);
   }
@@ -236,15 +239,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getParentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
+    if (!getNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (pageSize_ != 0) {
+    if (!binaryData_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, pageSize_);
+        .computeBytesSize(2, binaryData_);
     }
-    if (!getPageTokenBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
+    if (!getSubfolderBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, subfolder_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -256,18 +259,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.google.cloud.iot.v1.ListDeviceRegistriesRequest)) {
+    if (!(obj instanceof com.google.cloud.iot.v1.SendCommandToDeviceRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.iot.v1.ListDeviceRegistriesRequest other = (com.google.cloud.iot.v1.ListDeviceRegistriesRequest) obj;
+    com.google.cloud.iot.v1.SendCommandToDeviceRequest other = (com.google.cloud.iot.v1.SendCommandToDeviceRequest) obj;
 
     boolean result = true;
-    result = result && getParent()
-        .equals(other.getParent());
-    result = result && (getPageSize()
-        == other.getPageSize());
-    result = result && getPageToken()
-        .equals(other.getPageToken());
+    result = result && getName()
+        .equals(other.getName());
+    result = result && getBinaryData()
+        .equals(other.getBinaryData());
+    result = result && getSubfolder()
+        .equals(other.getSubfolder());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -279,80 +282,80 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PARENT_FIELD_NUMBER;
-    hash = (53 * hash) + getParent().hashCode();
-    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
-    hash = (53 * hash) + getPageSize();
-    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getPageToken().hashCode();
+    hash = (37 * hash) + NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + BINARY_DATA_FIELD_NUMBER;
+    hash = (53 * hash) + getBinaryData().hashCode();
+    hash = (37 * hash) + SUBFOLDER_FIELD_NUMBER;
+    hash = (53 * hash) + getSubfolder().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.iot.v1.ListDeviceRegistriesRequest parseFrom(
+  public static com.google.cloud.iot.v1.SendCommandToDeviceRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.iot.v1.ListDeviceRegistriesRequest parseFrom(
+  public static com.google.cloud.iot.v1.SendCommandToDeviceRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.iot.v1.ListDeviceRegistriesRequest parseFrom(
+  public static com.google.cloud.iot.v1.SendCommandToDeviceRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.iot.v1.ListDeviceRegistriesRequest parseFrom(
+  public static com.google.cloud.iot.v1.SendCommandToDeviceRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.iot.v1.ListDeviceRegistriesRequest parseFrom(byte[] data)
+  public static com.google.cloud.iot.v1.SendCommandToDeviceRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.google.cloud.iot.v1.ListDeviceRegistriesRequest parseFrom(
+  public static com.google.cloud.iot.v1.SendCommandToDeviceRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.iot.v1.ListDeviceRegistriesRequest parseFrom(java.io.InputStream input)
+  public static com.google.cloud.iot.v1.SendCommandToDeviceRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.iot.v1.ListDeviceRegistriesRequest parseFrom(
+  public static com.google.cloud.iot.v1.SendCommandToDeviceRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.iot.v1.ListDeviceRegistriesRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.google.cloud.iot.v1.SendCommandToDeviceRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.google.cloud.iot.v1.ListDeviceRegistriesRequest parseDelimitedFrom(
+  public static com.google.cloud.iot.v1.SendCommandToDeviceRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.iot.v1.ListDeviceRegistriesRequest parseFrom(
+  public static com.google.cloud.iot.v1.SendCommandToDeviceRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.iot.v1.ListDeviceRegistriesRequest parseFrom(
+  public static com.google.cloud.iot.v1.SendCommandToDeviceRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -365,7 +368,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.iot.v1.ListDeviceRegistriesRequest prototype) {
+  public static Builder newBuilder(com.google.cloud.iot.v1.SendCommandToDeviceRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -382,29 +385,29 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request for `ListDeviceRegistries`.
+   * Request for `SendCommandToDevice`.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.iot.v1.ListDeviceRegistriesRequest}
+   * Protobuf type {@code google.cloud.iot.v1.SendCommandToDeviceRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.iot.v1.ListDeviceRegistriesRequest)
-      com.google.cloud.iot.v1.ListDeviceRegistriesRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.iot.v1.SendCommandToDeviceRequest)
+      com.google.cloud.iot.v1.SendCommandToDeviceRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_ListDeviceRegistriesRequest_descriptor;
+      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_SendCommandToDeviceRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_ListDeviceRegistriesRequest_fieldAccessorTable
+      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_SendCommandToDeviceRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.iot.v1.ListDeviceRegistriesRequest.class, com.google.cloud.iot.v1.ListDeviceRegistriesRequest.Builder.class);
+              com.google.cloud.iot.v1.SendCommandToDeviceRequest.class, com.google.cloud.iot.v1.SendCommandToDeviceRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.iot.v1.ListDeviceRegistriesRequest.newBuilder()
+    // Construct using com.google.cloud.iot.v1.SendCommandToDeviceRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -422,11 +425,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      parent_ = "";
+      name_ = "";
 
-      pageSize_ = 0;
+      binaryData_ = com.google.protobuf.ByteString.EMPTY;
 
-      pageToken_ = "";
+      subfolder_ = "";
 
       return this;
     }
@@ -434,17 +437,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_ListDeviceRegistriesRequest_descriptor;
+      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_SendCommandToDeviceRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.iot.v1.ListDeviceRegistriesRequest getDefaultInstanceForType() {
-      return com.google.cloud.iot.v1.ListDeviceRegistriesRequest.getDefaultInstance();
+    public com.google.cloud.iot.v1.SendCommandToDeviceRequest getDefaultInstanceForType() {
+      return com.google.cloud.iot.v1.SendCommandToDeviceRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.iot.v1.ListDeviceRegistriesRequest build() {
-      com.google.cloud.iot.v1.ListDeviceRegistriesRequest result = buildPartial();
+    public com.google.cloud.iot.v1.SendCommandToDeviceRequest build() {
+      com.google.cloud.iot.v1.SendCommandToDeviceRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -452,11 +455,11 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.cloud.iot.v1.ListDeviceRegistriesRequest buildPartial() {
-      com.google.cloud.iot.v1.ListDeviceRegistriesRequest result = new com.google.cloud.iot.v1.ListDeviceRegistriesRequest(this);
-      result.parent_ = parent_;
-      result.pageSize_ = pageSize_;
-      result.pageToken_ = pageToken_;
+    public com.google.cloud.iot.v1.SendCommandToDeviceRequest buildPartial() {
+      com.google.cloud.iot.v1.SendCommandToDeviceRequest result = new com.google.cloud.iot.v1.SendCommandToDeviceRequest(this);
+      result.name_ = name_;
+      result.binaryData_ = binaryData_;
+      result.subfolder_ = subfolder_;
       onBuilt();
       return result;
     }
@@ -495,25 +498,25 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.iot.v1.ListDeviceRegistriesRequest) {
-        return mergeFrom((com.google.cloud.iot.v1.ListDeviceRegistriesRequest)other);
+      if (other instanceof com.google.cloud.iot.v1.SendCommandToDeviceRequest) {
+        return mergeFrom((com.google.cloud.iot.v1.SendCommandToDeviceRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.iot.v1.ListDeviceRegistriesRequest other) {
-      if (other == com.google.cloud.iot.v1.ListDeviceRegistriesRequest.getDefaultInstance()) return this;
-      if (!other.getParent().isEmpty()) {
-        parent_ = other.parent_;
+    public Builder mergeFrom(com.google.cloud.iot.v1.SendCommandToDeviceRequest other) {
+      if (other == com.google.cloud.iot.v1.SendCommandToDeviceRequest.getDefaultInstance()) return this;
+      if (!other.getName().isEmpty()) {
+        name_ = other.name_;
         onChanged();
       }
-      if (other.getPageSize() != 0) {
-        setPageSize(other.getPageSize());
+      if (other.getBinaryData() != com.google.protobuf.ByteString.EMPTY) {
+        setBinaryData(other.getBinaryData());
       }
-      if (!other.getPageToken().isEmpty()) {
-        pageToken_ = other.pageToken_;
+      if (!other.getSubfolder().isEmpty()) {
+        subfolder_ = other.subfolder_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -531,11 +534,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.iot.v1.ListDeviceRegistriesRequest parsedMessage = null;
+      com.google.cloud.iot.v1.SendCommandToDeviceRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.iot.v1.ListDeviceRegistriesRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.google.cloud.iot.v1.SendCommandToDeviceRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -545,22 +548,23 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object parent_ = "";
+    private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The project and cloud region path. For example,
-     * `projects/example-project/locations/us-central1`.
+     * The name of the device. For example,
+     * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+     * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string name = 1;</code>
      */
-    public java.lang.String getParent() {
-      java.lang.Object ref = parent_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        parent_ = s;
+        name_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -568,20 +572,21 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The project and cloud region path. For example,
-     * `projects/example-project/locations/us-central1`.
+     * The name of the device. For example,
+     * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+     * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string name = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getParentBytes() {
-      java.lang.Object ref = parent_;
+        getNameBytes() {
+      java.lang.Object ref = name_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        parent_ = b;
+        name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -589,120 +594,119 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The project and cloud region path. For example,
-     * `projects/example-project/locations/us-central1`.
+     * The name of the device. For example,
+     * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+     * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string name = 1;</code>
      */
-    public Builder setParent(
+    public Builder setName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      parent_ = value;
+      name_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The project and cloud region path. For example,
-     * `projects/example-project/locations/us-central1`.
+     * The name of the device. For example,
+     * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+     * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string name = 1;</code>
      */
-    public Builder clearParent() {
+    public Builder clearName() {
       
-      parent_ = getDefaultInstance().getParent();
+      name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The project and cloud region path. For example,
-     * `projects/example-project/locations/us-central1`.
+     * The name of the device. For example,
+     * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+     * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string name = 1;</code>
      */
-    public Builder setParentBytes(
+    public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      parent_ = value;
+      name_ = value;
       onChanged();
       return this;
     }
 
-    private int pageSize_ ;
+    private com.google.protobuf.ByteString binaryData_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <pre>
-     * The maximum number of registries to return in the response. If this value
-     * is zero, the service will select a default size. A call may return fewer
-     * objects than requested. A non-empty `next_page_token` in the response
-     * indicates that more data is available.
+     * The command data to send to the device.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>bytes binary_data = 2;</code>
      */
-    public int getPageSize() {
-      return pageSize_;
+    public com.google.protobuf.ByteString getBinaryData() {
+      return binaryData_;
     }
     /**
      * <pre>
-     * The maximum number of registries to return in the response. If this value
-     * is zero, the service will select a default size. A call may return fewer
-     * objects than requested. A non-empty `next_page_token` in the response
-     * indicates that more data is available.
+     * The command data to send to the device.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>bytes binary_data = 2;</code>
      */
-    public Builder setPageSize(int value) {
-      
-      pageSize_ = value;
+    public Builder setBinaryData(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      binaryData_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The maximum number of registries to return in the response. If this value
-     * is zero, the service will select a default size. A call may return fewer
-     * objects than requested. A non-empty `next_page_token` in the response
-     * indicates that more data is available.
+     * The command data to send to the device.
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>bytes binary_data = 2;</code>
      */
-    public Builder clearPageSize() {
+    public Builder clearBinaryData() {
       
-      pageSize_ = 0;
+      binaryData_ = getDefaultInstance().getBinaryData();
       onChanged();
       return this;
     }
 
-    private java.lang.Object pageToken_ = "";
+    private java.lang.Object subfolder_ = "";
     /**
      * <pre>
-     * The value returned by the last `ListDeviceRegistriesResponse`; indicates
-     * that this is a continuation of a prior `ListDeviceRegistries` call and
-     * the system should return the next page of data.
+     * Optional subfolder for the command. If empty, the command will be delivered
+     * to the /devices/{device-id}/commands topic, otherwise it will be delivered
+     * to the /devices/{device-id}/commands/{subfolder} topic. Multi-level
+     * subfolders are allowed. This field must not have more than 256 characters,
+     * and must not contain any MQTT wildcards ("+" or "#") or null characters.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string subfolder = 3;</code>
      */
-    public java.lang.String getPageToken() {
-      java.lang.Object ref = pageToken_;
+    public java.lang.String getSubfolder() {
+      java.lang.Object ref = subfolder_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        pageToken_ = s;
+        subfolder_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -710,21 +714,23 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The value returned by the last `ListDeviceRegistriesResponse`; indicates
-     * that this is a continuation of a prior `ListDeviceRegistries` call and
-     * the system should return the next page of data.
+     * Optional subfolder for the command. If empty, the command will be delivered
+     * to the /devices/{device-id}/commands topic, otherwise it will be delivered
+     * to the /devices/{device-id}/commands/{subfolder} topic. Multi-level
+     * subfolders are allowed. This field must not have more than 256 characters,
+     * and must not contain any MQTT wildcards ("+" or "#") or null characters.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string subfolder = 3;</code>
      */
     public com.google.protobuf.ByteString
-        getPageTokenBytes() {
-      java.lang.Object ref = pageToken_;
+        getSubfolderBytes() {
+      java.lang.Object ref = subfolder_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        pageToken_ = b;
+        subfolder_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -732,55 +738,61 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The value returned by the last `ListDeviceRegistriesResponse`; indicates
-     * that this is a continuation of a prior `ListDeviceRegistries` call and
-     * the system should return the next page of data.
+     * Optional subfolder for the command. If empty, the command will be delivered
+     * to the /devices/{device-id}/commands topic, otherwise it will be delivered
+     * to the /devices/{device-id}/commands/{subfolder} topic. Multi-level
+     * subfolders are allowed. This field must not have more than 256 characters,
+     * and must not contain any MQTT wildcards ("+" or "#") or null characters.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string subfolder = 3;</code>
      */
-    public Builder setPageToken(
+    public Builder setSubfolder(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      pageToken_ = value;
+      subfolder_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The value returned by the last `ListDeviceRegistriesResponse`; indicates
-     * that this is a continuation of a prior `ListDeviceRegistries` call and
-     * the system should return the next page of data.
+     * Optional subfolder for the command. If empty, the command will be delivered
+     * to the /devices/{device-id}/commands topic, otherwise it will be delivered
+     * to the /devices/{device-id}/commands/{subfolder} topic. Multi-level
+     * subfolders are allowed. This field must not have more than 256 characters,
+     * and must not contain any MQTT wildcards ("+" or "#") or null characters.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string subfolder = 3;</code>
      */
-    public Builder clearPageToken() {
+    public Builder clearSubfolder() {
       
-      pageToken_ = getDefaultInstance().getPageToken();
+      subfolder_ = getDefaultInstance().getSubfolder();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The value returned by the last `ListDeviceRegistriesResponse`; indicates
-     * that this is a continuation of a prior `ListDeviceRegistries` call and
-     * the system should return the next page of data.
+     * Optional subfolder for the command. If empty, the command will be delivered
+     * to the /devices/{device-id}/commands topic, otherwise it will be delivered
+     * to the /devices/{device-id}/commands/{subfolder} topic. Multi-level
+     * subfolders are allowed. This field must not have more than 256 characters,
+     * and must not contain any MQTT wildcards ("+" or "#") or null characters.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string subfolder = 3;</code>
      */
-    public Builder setPageTokenBytes(
+    public Builder setSubfolderBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      pageToken_ = value;
+      subfolder_ = value;
       onChanged();
       return this;
     }
@@ -797,41 +809,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.iot.v1.ListDeviceRegistriesRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.iot.v1.SendCommandToDeviceRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.iot.v1.ListDeviceRegistriesRequest)
-  private static final com.google.cloud.iot.v1.ListDeviceRegistriesRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.iot.v1.SendCommandToDeviceRequest)
+  private static final com.google.cloud.iot.v1.SendCommandToDeviceRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.iot.v1.ListDeviceRegistriesRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.iot.v1.SendCommandToDeviceRequest();
   }
 
-  public static com.google.cloud.iot.v1.ListDeviceRegistriesRequest getDefaultInstance() {
+  public static com.google.cloud.iot.v1.SendCommandToDeviceRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListDeviceRegistriesRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ListDeviceRegistriesRequest>() {
+  private static final com.google.protobuf.Parser<SendCommandToDeviceRequest>
+      PARSER = new com.google.protobuf.AbstractParser<SendCommandToDeviceRequest>() {
     @java.lang.Override
-    public ListDeviceRegistriesRequest parsePartialFrom(
+    public SendCommandToDeviceRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListDeviceRegistriesRequest(input, extensionRegistry);
+      return new SendCommandToDeviceRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ListDeviceRegistriesRequest> parser() {
+  public static com.google.protobuf.Parser<SendCommandToDeviceRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ListDeviceRegistriesRequest> getParserForType() {
+  public com.google.protobuf.Parser<SendCommandToDeviceRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.iot.v1.ListDeviceRegistriesRequest getDefaultInstanceForType() {
+  public com.google.cloud.iot.v1.SendCommandToDeviceRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
