@@ -223,6 +223,14 @@ public class LogEntry implements Serializable {
       return this;
     }
 
+    /**
+     * Sets the resource name of the trace associated with the log entry, if any. If it contains a
+     * relative resource name, the name is assumed to be relative to `//tracing.googleapis.com`.
+     */
+    public Builder setTrace(String trace) {
+      this.trace = trace;
+      return this;
+    }
 
     /**
      * Sets the resource name of the trace associated with the log entry, if any. If it contains a
@@ -233,6 +241,13 @@ public class LogEntry implements Serializable {
       return this;
     }
 
+    /**
+     * Sets the ID of the trace span associated with the log entry, if any.
+     */
+    public Builder setSpanId(String spanId) {
+      this.spanId = spanId;
+      return this;
+    }
 
     /**
      * Sets the ID of the trace span associated with the log entry, if any.
@@ -431,7 +446,7 @@ public class LogEntry implements Serializable {
   @Override
   public int hashCode() {
     return Objects.hash(logName, resource, timestamp, receiveTimestamp, severity, insertId,
-        httpRequest, labels, operation, getTrace(), getSpanId, traceSampled, sourceLocation, payload);
+        httpRequest, labels, operation, getTrace(), getSpanId(), traceSampled, sourceLocation, payload);
   }
 
   @Override
