@@ -154,7 +154,7 @@ public interface ClusterOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. Cluster status.
+   * Output only. Cluster status.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -162,7 +162,7 @@ public interface ClusterOrBuilder extends
   boolean hasStatus();
   /**
    * <pre>
-   * Output-only. Cluster status.
+   * Output only. Cluster status.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -170,7 +170,7 @@ public interface ClusterOrBuilder extends
   com.google.cloud.dataproc.v1.ClusterStatus getStatus();
   /**
    * <pre>
-   * Output-only. Cluster status.
+   * Output only. Cluster status.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -179,7 +179,7 @@ public interface ClusterOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. The previous cluster status.
+   * Output only. The previous cluster status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -188,7 +188,7 @@ public interface ClusterOrBuilder extends
       getStatusHistoryList();
   /**
    * <pre>
-   * Output-only. The previous cluster status.
+   * Output only. The previous cluster status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -196,7 +196,7 @@ public interface ClusterOrBuilder extends
   com.google.cloud.dataproc.v1.ClusterStatus getStatusHistory(int index);
   /**
    * <pre>
-   * Output-only. The previous cluster status.
+   * Output only. The previous cluster status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -204,7 +204,7 @@ public interface ClusterOrBuilder extends
   int getStatusHistoryCount();
   /**
    * <pre>
-   * Output-only. The previous cluster status.
+   * Output only. The previous cluster status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -213,7 +213,7 @@ public interface ClusterOrBuilder extends
       getStatusHistoryOrBuilderList();
   /**
    * <pre>
-   * Output-only. The previous cluster status.
+   * Output only. The previous cluster status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -223,7 +223,7 @@ public interface ClusterOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+   * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
    * generates this value when it creates the cluster.
    * </pre>
    *
@@ -232,7 +232,7 @@ public interface ClusterOrBuilder extends
   java.lang.String getClusterUuid();
   /**
    * <pre>
-   * Output-only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+   * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
    * generates this value when it creates the cluster.
    * </pre>
    *

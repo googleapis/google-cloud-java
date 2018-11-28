@@ -22,8 +22,10 @@ private static final long serialVersionUID = 0L;
   private Job() {
     statusHistory_ = java.util.Collections.emptyList();
     yarnApplications_ = java.util.Collections.emptyList();
+    submittedBy_ = "";
     driverOutputResourceUri_ = "";
     driverControlFilesUri_ = "";
+    jobUuid_ = "";
   }
 
   @java.lang.Override
@@ -168,6 +170,12 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.google.cloud.dataproc.v1beta2.YarnApplication.parser(), extensionRegistry));
             break;
           }
+          case 82: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            submittedBy_ = s;
+            break;
+          }
           case 98: {
             com.google.cloud.dataproc.v1beta2.SparkSqlJob.Builder subBuilder = null;
             if (typeJobCase_ == 12) {
@@ -204,10 +212,10 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 146: {
-            if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+            if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
               labels_ = com.google.protobuf.MapField.newMapField(
                   LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00002000;
+              mutable_bitField0_ |= 0x00004000;
             }
             com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
             labels__ = input.readMessage(
@@ -227,6 +235,12 @@ private static final long serialVersionUID = 0L;
               scheduling_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 178: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            jobUuid_ = s;
             break;
           }
           default: {
@@ -791,6 +805,50 @@ private static final long serialVersionUID = 0L;
     return yarnApplications_.get(index);
   }
 
+  public static final int SUBMITTED_BY_FIELD_NUMBER = 10;
+  private volatile java.lang.Object submittedBy_;
+  /**
+   * <pre>
+   * Output only. The email address of the user submitting the job. For jobs
+   * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
+   * </pre>
+   *
+   * <code>string submitted_by = 10;</code>
+   */
+  public java.lang.String getSubmittedBy() {
+    java.lang.Object ref = submittedBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      submittedBy_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Output only. The email address of the user submitting the job. For jobs
+   * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
+   * </pre>
+   *
+   * <code>string submitted_by = 10;</code>
+   */
+  public com.google.protobuf.ByteString
+      getSubmittedByBytes() {
+    java.lang.Object ref = submittedBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      submittedBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int DRIVER_OUTPUT_RESOURCE_URI_FIELD_NUMBER = 17;
   private volatile java.lang.Object driverOutputResourceUri_;
   /**
@@ -1026,6 +1084,52 @@ private static final long serialVersionUID = 0L;
     return getScheduling();
   }
 
+  public static final int JOB_UUID_FIELD_NUMBER = 22;
+  private volatile java.lang.Object jobUuid_;
+  /**
+   * <pre>
+   * Output only. A UUID that uniquely identifies a job within the project
+   * over time. This is in contrast to a user-settable reference.job_id that
+   * may be reused over time.
+   * </pre>
+   *
+   * <code>string job_uuid = 22;</code>
+   */
+  public java.lang.String getJobUuid() {
+    java.lang.Object ref = jobUuid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      jobUuid_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Output only. A UUID that uniquely identifies a job within the project
+   * over time. This is in contrast to a user-settable reference.job_id that
+   * may be reused over time.
+   * </pre>
+   *
+   * <code>string job_uuid = 22;</code>
+   */
+  public com.google.protobuf.ByteString
+      getJobUuidBytes() {
+    java.lang.Object ref = jobUuid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      jobUuid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1067,6 +1171,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < yarnApplications_.size(); i++) {
       output.writeMessage(9, yarnApplications_.get(i));
     }
+    if (!getSubmittedByBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, submittedBy_);
+    }
     if (typeJobCase_ == 12) {
       output.writeMessage(12, (com.google.cloud.dataproc.v1beta2.SparkSqlJob) typeJob_);
     }
@@ -1087,6 +1194,9 @@ private static final long serialVersionUID = 0L;
         18);
     if (scheduling_ != null) {
       output.writeMessage(20, getScheduling());
+    }
+    if (!getJobUuidBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 22, jobUuid_);
     }
     unknownFields.writeTo(output);
   }
@@ -1133,6 +1243,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, yarnApplications_.get(i));
     }
+    if (!getSubmittedByBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, submittedBy_);
+    }
     if (typeJobCase_ == 12) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, (com.google.cloud.dataproc.v1beta2.SparkSqlJob) typeJob_);
@@ -1160,6 +1273,9 @@ private static final long serialVersionUID = 0L;
     if (scheduling_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(20, getScheduling());
+    }
+    if (!getJobUuidBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, jobUuid_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1196,6 +1312,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getStatusHistoryList());
     result = result && getYarnApplicationsList()
         .equals(other.getYarnApplicationsList());
+    result = result && getSubmittedBy()
+        .equals(other.getSubmittedBy());
     result = result && getDriverOutputResourceUri()
         .equals(other.getDriverOutputResourceUri());
     result = result && getDriverControlFilesUri()
@@ -1207,6 +1325,8 @@ private static final long serialVersionUID = 0L;
       result = result && getScheduling()
           .equals(other.getScheduling());
     }
+    result = result && getJobUuid()
+        .equals(other.getJobUuid());
     result = result && getTypeJobCase().equals(
         other.getTypeJobCase());
     if (!result) return false;
@@ -1269,6 +1389,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + YARN_APPLICATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getYarnApplicationsList().hashCode();
     }
+    hash = (37 * hash) + SUBMITTED_BY_FIELD_NUMBER;
+    hash = (53 * hash) + getSubmittedBy().hashCode();
     hash = (37 * hash) + DRIVER_OUTPUT_RESOURCE_URI_FIELD_NUMBER;
     hash = (53 * hash) + getDriverOutputResourceUri().hashCode();
     hash = (37 * hash) + DRIVER_CONTROL_FILES_URI_FIELD_NUMBER;
@@ -1281,6 +1403,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SCHEDULING_FIELD_NUMBER;
       hash = (53 * hash) + getScheduling().hashCode();
     }
+    hash = (37 * hash) + JOB_UUID_FIELD_NUMBER;
+    hash = (53 * hash) + getJobUuid().hashCode();
     switch (typeJobCase_) {
       case 3:
         hash = (37 * hash) + HADOOP_JOB_FIELD_NUMBER;
@@ -1500,6 +1624,8 @@ private static final long serialVersionUID = 0L;
       } else {
         yarnApplicationsBuilder_.clear();
       }
+      submittedBy_ = "";
+
       driverOutputResourceUri_ = "";
 
       driverControlFilesUri_ = "";
@@ -1511,6 +1637,8 @@ private static final long serialVersionUID = 0L;
         scheduling_ = null;
         schedulingBuilder_ = null;
       }
+      jobUuid_ = "";
+
       typeJobCase_ = 0;
       typeJob_ = null;
       return this;
@@ -1616,6 +1744,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.yarnApplications_ = yarnApplicationsBuilder_.build();
       }
+      result.submittedBy_ = submittedBy_;
       result.driverOutputResourceUri_ = driverOutputResourceUri_;
       result.driverControlFilesUri_ = driverControlFilesUri_;
       result.labels_ = internalGetLabels();
@@ -1625,6 +1754,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.scheduling_ = schedulingBuilder_.build();
       }
+      result.jobUuid_ = jobUuid_;
       result.bitField0_ = to_bitField0_;
       result.typeJobCase_ = typeJobCase_;
       onBuilt();
@@ -1736,6 +1866,10 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (!other.getSubmittedBy().isEmpty()) {
+        submittedBy_ = other.submittedBy_;
+        onChanged();
+      }
       if (!other.getDriverOutputResourceUri().isEmpty()) {
         driverOutputResourceUri_ = other.driverOutputResourceUri_;
         onChanged();
@@ -1748,6 +1882,10 @@ private static final long serialVersionUID = 0L;
           other.internalGetLabels());
       if (other.hasScheduling()) {
         mergeScheduling(other.getScheduling());
+      }
+      if (!other.getJobUuid().isEmpty()) {
+        jobUuid_ = other.jobUuid_;
+        onChanged();
       }
       switch (other.getTypeJobCase()) {
         case HADOOP_JOB: {
@@ -4028,6 +4166,100 @@ private static final long serialVersionUID = 0L;
       return yarnApplicationsBuilder_;
     }
 
+    private java.lang.Object submittedBy_ = "";
+    /**
+     * <pre>
+     * Output only. The email address of the user submitting the job. For jobs
+     * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
+     * </pre>
+     *
+     * <code>string submitted_by = 10;</code>
+     */
+    public java.lang.String getSubmittedBy() {
+      java.lang.Object ref = submittedBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        submittedBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The email address of the user submitting the job. For jobs
+     * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
+     * </pre>
+     *
+     * <code>string submitted_by = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSubmittedByBytes() {
+      java.lang.Object ref = submittedBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        submittedBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The email address of the user submitting the job. For jobs
+     * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
+     * </pre>
+     *
+     * <code>string submitted_by = 10;</code>
+     */
+    public Builder setSubmittedBy(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      submittedBy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The email address of the user submitting the job. For jobs
+     * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
+     * </pre>
+     *
+     * <code>string submitted_by = 10;</code>
+     */
+    public Builder clearSubmittedBy() {
+      
+      submittedBy_ = getDefaultInstance().getSubmittedBy();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The email address of the user submitting the job. For jobs
+     * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
+     * </pre>
+     *
+     * <code>string submitted_by = 10;</code>
+     */
+    public Builder setSubmittedByBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      submittedBy_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object driverOutputResourceUri_ = "";
     /**
      * <pre>
@@ -4558,6 +4790,105 @@ private static final long serialVersionUID = 0L;
         scheduling_ = null;
       }
       return schedulingBuilder_;
+    }
+
+    private java.lang.Object jobUuid_ = "";
+    /**
+     * <pre>
+     * Output only. A UUID that uniquely identifies a job within the project
+     * over time. This is in contrast to a user-settable reference.job_id that
+     * may be reused over time.
+     * </pre>
+     *
+     * <code>string job_uuid = 22;</code>
+     */
+    public java.lang.String getJobUuid() {
+      java.lang.Object ref = jobUuid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jobUuid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. A UUID that uniquely identifies a job within the project
+     * over time. This is in contrast to a user-settable reference.job_id that
+     * may be reused over time.
+     * </pre>
+     *
+     * <code>string job_uuid = 22;</code>
+     */
+    public com.google.protobuf.ByteString
+        getJobUuidBytes() {
+      java.lang.Object ref = jobUuid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        jobUuid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. A UUID that uniquely identifies a job within the project
+     * over time. This is in contrast to a user-settable reference.job_id that
+     * may be reused over time.
+     * </pre>
+     *
+     * <code>string job_uuid = 22;</code>
+     */
+    public Builder setJobUuid(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      jobUuid_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. A UUID that uniquely identifies a job within the project
+     * over time. This is in contrast to a user-settable reference.job_id that
+     * may be reused over time.
+     * </pre>
+     *
+     * <code>string job_uuid = 22;</code>
+     */
+    public Builder clearJobUuid() {
+      
+      jobUuid_ = getDefaultInstance().getJobUuid();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. A UUID that uniquely identifies a job within the project
+     * over time. This is in contrast to a user-settable reference.job_id that
+     * may be reused over time.
+     * </pre>
+     *
+     * <code>string job_uuid = 22;</code>
+     */
+    public Builder setJobUuidBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      jobUuid_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

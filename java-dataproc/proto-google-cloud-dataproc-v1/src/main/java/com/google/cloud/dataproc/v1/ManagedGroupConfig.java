@@ -96,7 +96,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object instanceTemplateName_;
   /**
    * <pre>
-   * Output-only. The name of the Instance Template used for the Managed
+   * Output only. The name of the Instance Template used for the Managed
    * Instance Group.
    * </pre>
    *
@@ -116,7 +116,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The name of the Instance Template used for the Managed
+   * Output only. The name of the Instance Template used for the Managed
    * Instance Group.
    * </pre>
    *
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object instanceGroupManagerName_;
   /**
    * <pre>
-   * Output-only. The name of the Instance Group Manager for this group.
+   * Output only. The name of the Instance Group Manager for this group.
    * </pre>
    *
    * <code>string instance_group_manager_name = 2;</code>
@@ -159,7 +159,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The name of the Instance Group Manager for this group.
+   * Output only. The name of the Instance Group Manager for this group.
    * </pre>
    *
    * <code>string instance_group_manager_name = 2;</code>
@@ -505,7 +505,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object instanceTemplateName_ = "";
     /**
      * <pre>
-     * Output-only. The name of the Instance Template used for the Managed
+     * Output only. The name of the Instance Template used for the Managed
      * Instance Group.
      * </pre>
      *
@@ -525,7 +525,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The name of the Instance Template used for the Managed
+     * Output only. The name of the Instance Template used for the Managed
      * Instance Group.
      * </pre>
      *
@@ -546,7 +546,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The name of the Instance Template used for the Managed
+     * Output only. The name of the Instance Template used for the Managed
      * Instance Group.
      * </pre>
      *
@@ -564,7 +564,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The name of the Instance Template used for the Managed
+     * Output only. The name of the Instance Template used for the Managed
      * Instance Group.
      * </pre>
      *
@@ -578,7 +578,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The name of the Instance Template used for the Managed
+     * Output only. The name of the Instance Template used for the Managed
      * Instance Group.
      * </pre>
      *
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object instanceGroupManagerName_ = "";
     /**
      * <pre>
-     * Output-only. The name of the Instance Group Manager for this group.
+     * Output only. The name of the Instance Group Manager for this group.
      * </pre>
      *
      * <code>string instance_group_manager_name = 2;</code>
@@ -618,7 +618,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The name of the Instance Group Manager for this group.
+     * Output only. The name of the Instance Group Manager for this group.
      * </pre>
      *
      * <code>string instance_group_manager_name = 2;</code>
@@ -638,7 +638,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The name of the Instance Group Manager for this group.
+     * Output only. The name of the Instance Group Manager for this group.
      * </pre>
      *
      * <code>string instance_group_manager_name = 2;</code>
@@ -655,7 +655,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The name of the Instance Group Manager for this group.
+     * Output only. The name of the Instance Group Manager for this group.
      * </pre>
      *
      * <code>string instance_group_manager_name = 2;</code>
@@ -668,7 +668,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The name of the Instance Group Manager for this group.
+     * Output only. The name of the Instance Group Manager for this group.
      * </pre>
      *
      * <code>string instance_group_manager_name = 2;</code>

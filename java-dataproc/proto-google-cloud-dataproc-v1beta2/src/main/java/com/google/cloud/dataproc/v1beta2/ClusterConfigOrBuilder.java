@@ -285,4 +285,29 @@ public interface ClusterConfigOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.NodeInitializationActionOrBuilder getInitializationActionsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Optional. Encryption settings for the cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.EncryptionConfig encryption_config = 15;</code>
+   */
+  boolean hasEncryptionConfig();
+  /**
+   * <pre>
+   * Optional. Encryption settings for the cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.EncryptionConfig encryption_config = 15;</code>
+   */
+  com.google.cloud.dataproc.v1beta2.EncryptionConfig getEncryptionConfig();
+  /**
+   * <pre>
+   * Optional. Encryption settings for the cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1beta2.EncryptionConfig encryption_config = 15;</code>
+   */
+  com.google.cloud.dataproc.v1beta2.EncryptionConfigOrBuilder getEncryptionConfigOrBuilder();
 }

@@ -23,6 +23,8 @@ private static final long serialVersionUID = 0L;
     projectId_ = "";
     region_ = "";
     clusterName_ = "";
+    clusterUuid_ = "";
+    requestId_ = "";
   }
 
   @java.lang.Override
@@ -65,6 +67,18 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             region_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            clusterUuid_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            requestId_ = s;
             break;
           }
           default: {
@@ -227,6 +241,108 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CLUSTER_UUID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object clusterUuid_;
+  /**
+   * <pre>
+   * Optional. Specifying the `cluster_uuid` means the RPC should fail
+   * (with error NOT_FOUND) if cluster with specified UUID does not exist.
+   * </pre>
+   *
+   * <code>string cluster_uuid = 4;</code>
+   */
+  public java.lang.String getClusterUuid() {
+    java.lang.Object ref = clusterUuid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      clusterUuid_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. Specifying the `cluster_uuid` means the RPC should fail
+   * (with error NOT_FOUND) if cluster with specified UUID does not exist.
+   * </pre>
+   *
+   * <code>string cluster_uuid = 4;</code>
+   */
+  public com.google.protobuf.ByteString
+      getClusterUuidBytes() {
+    java.lang.Object ref = clusterUuid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      clusterUuid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REQUEST_ID_FIELD_NUMBER = 5;
+  private volatile java.lang.Object requestId_;
+  /**
+   * <pre>
+   * Optional. A unique id used to identify the request. If the server
+   * receives two [DeleteClusterRequest][google.cloud.dataproc.v1.DeleteClusterRequest] requests  with the same
+   * id, then the second request will be ignored and the
+   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
+   * backend is returned.
+   * It is recommended to always set this value to a
+   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   * The id must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), and hyphens (-). The maximum length is 40 characters.
+   * </pre>
+   *
+   * <code>string request_id = 5;</code>
+   */
+  public java.lang.String getRequestId() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. A unique id used to identify the request. If the server
+   * receives two [DeleteClusterRequest][google.cloud.dataproc.v1.DeleteClusterRequest] requests  with the same
+   * id, then the second request will be ignored and the
+   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
+   * backend is returned.
+   * It is recommended to always set this value to a
+   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   * The id must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), and hyphens (-). The maximum length is 40 characters.
+   * </pre>
+   *
+   * <code>string request_id = 5;</code>
+   */
+  public com.google.protobuf.ByteString
+      getRequestIdBytes() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      requestId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -250,6 +366,12 @@ private static final long serialVersionUID = 0L;
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, region_);
     }
+    if (!getClusterUuidBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, clusterUuid_);
+    }
+    if (!getRequestIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, requestId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -267,6 +389,12 @@ private static final long serialVersionUID = 0L;
     }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, region_);
+    }
+    if (!getClusterUuidBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, clusterUuid_);
+    }
+    if (!getRequestIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, requestId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -290,6 +418,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getRegion());
     result = result && getClusterName()
         .equals(other.getClusterName());
+    result = result && getClusterUuid()
+        .equals(other.getClusterUuid());
+    result = result && getRequestId()
+        .equals(other.getRequestId());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -307,6 +439,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getRegion().hashCode();
     hash = (37 * hash) + CLUSTER_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getClusterName().hashCode();
+    hash = (37 * hash) + CLUSTER_UUID_FIELD_NUMBER;
+    hash = (53 * hash) + getClusterUuid().hashCode();
+    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -450,6 +586,10 @@ private static final long serialVersionUID = 0L;
 
       clusterName_ = "";
 
+      clusterUuid_ = "";
+
+      requestId_ = "";
+
       return this;
     }
 
@@ -479,6 +619,8 @@ private static final long serialVersionUID = 0L;
       result.projectId_ = projectId_;
       result.region_ = region_;
       result.clusterName_ = clusterName_;
+      result.clusterUuid_ = clusterUuid_;
+      result.requestId_ = requestId_;
       onBuilt();
       return result;
     }
@@ -537,6 +679,14 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getClusterName().isEmpty()) {
         clusterName_ = other.clusterName_;
+        onChanged();
+      }
+      if (!other.getClusterUuid().isEmpty()) {
+        clusterUuid_ = other.clusterUuid_;
+        onChanged();
+      }
+      if (!other.getRequestId().isEmpty()) {
+        requestId_ = other.requestId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -836,6 +986,229 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       clusterName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object clusterUuid_ = "";
+    /**
+     * <pre>
+     * Optional. Specifying the `cluster_uuid` means the RPC should fail
+     * (with error NOT_FOUND) if cluster with specified UUID does not exist.
+     * </pre>
+     *
+     * <code>string cluster_uuid = 4;</code>
+     */
+    public java.lang.String getClusterUuid() {
+      java.lang.Object ref = clusterUuid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clusterUuid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Specifying the `cluster_uuid` means the RPC should fail
+     * (with error NOT_FOUND) if cluster with specified UUID does not exist.
+     * </pre>
+     *
+     * <code>string cluster_uuid = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClusterUuidBytes() {
+      java.lang.Object ref = clusterUuid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clusterUuid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Specifying the `cluster_uuid` means the RPC should fail
+     * (with error NOT_FOUND) if cluster with specified UUID does not exist.
+     * </pre>
+     *
+     * <code>string cluster_uuid = 4;</code>
+     */
+    public Builder setClusterUuid(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      clusterUuid_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specifying the `cluster_uuid` means the RPC should fail
+     * (with error NOT_FOUND) if cluster with specified UUID does not exist.
+     * </pre>
+     *
+     * <code>string cluster_uuid = 4;</code>
+     */
+    public Builder clearClusterUuid() {
+      
+      clusterUuid_ = getDefaultInstance().getClusterUuid();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Specifying the `cluster_uuid` means the RPC should fail
+     * (with error NOT_FOUND) if cluster with specified UUID does not exist.
+     * </pre>
+     *
+     * <code>string cluster_uuid = 4;</code>
+     */
+    public Builder setClusterUuidBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      clusterUuid_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object requestId_ = "";
+    /**
+     * <pre>
+     * Optional. A unique id used to identify the request. If the server
+     * receives two [DeleteClusterRequest][google.cloud.dataproc.v1.DeleteClusterRequest] requests  with the same
+     * id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
+     * backend is returned.
+     * It is recommended to always set this value to a
+     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     * The id must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * </pre>
+     *
+     * <code>string request_id = 5;</code>
+     */
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. A unique id used to identify the request. If the server
+     * receives two [DeleteClusterRequest][google.cloud.dataproc.v1.DeleteClusterRequest] requests  with the same
+     * id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
+     * backend is returned.
+     * It is recommended to always set this value to a
+     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     * The id must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * </pre>
+     *
+     * <code>string request_id = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRequestIdBytes() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        requestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. A unique id used to identify the request. If the server
+     * receives two [DeleteClusterRequest][google.cloud.dataproc.v1.DeleteClusterRequest] requests  with the same
+     * id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
+     * backend is returned.
+     * It is recommended to always set this value to a
+     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     * The id must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * </pre>
+     *
+     * <code>string request_id = 5;</code>
+     */
+    public Builder setRequestId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      requestId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A unique id used to identify the request. If the server
+     * receives two [DeleteClusterRequest][google.cloud.dataproc.v1.DeleteClusterRequest] requests  with the same
+     * id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
+     * backend is returned.
+     * It is recommended to always set this value to a
+     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     * The id must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * </pre>
+     *
+     * <code>string request_id = 5;</code>
+     */
+    public Builder clearRequestId() {
+      
+      requestId_ = getDefaultInstance().getRequestId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A unique id used to identify the request. If the server
+     * receives two [DeleteClusterRequest][google.cloud.dataproc.v1.DeleteClusterRequest] requests  with the same
+     * id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
+     * backend is returned.
+     * It is recommended to always set this value to a
+     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     * The id must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * </pre>
+     *
+     * <code>string request_id = 5;</code>
+     */
+    public Builder setRequestIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      requestId_ = value;
       onChanged();
       return this;
     }

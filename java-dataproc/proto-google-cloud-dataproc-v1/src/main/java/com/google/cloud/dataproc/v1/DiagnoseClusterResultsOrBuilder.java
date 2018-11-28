@@ -9,7 +9,7 @@ public interface DiagnoseClusterResultsOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. The Google Cloud Storage URI of the diagnostic output.
+   * Output only. The Cloud Storage URI of the diagnostic output.
    * The output report is a plain text file with a summary of collected
    * diagnostics.
    * </pre>
@@ -19,7 +19,7 @@ public interface DiagnoseClusterResultsOrBuilder extends
   java.lang.String getOutputUri();
   /**
    * <pre>
-   * Output-only. The Google Cloud Storage URI of the diagnostic output.
+   * Output only. The Cloud Storage URI of the diagnostic output.
    * The output report is a plain text file with a summary of collected
    * diagnostics.
    * </pre>
