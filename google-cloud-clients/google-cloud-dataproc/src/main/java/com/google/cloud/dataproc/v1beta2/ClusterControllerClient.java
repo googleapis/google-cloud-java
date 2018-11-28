@@ -32,6 +32,7 @@ import com.google.cloud.dataproc.v1beta2.stub.ClusterControllerStubSettings;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -291,6 +292,69 @@ public class ClusterControllerClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable() {
     return stub.createClusterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a cluster in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   String projectId = "";
+   *   String region = "";
+   *   String clusterName = "";
+   *   Cluster cluster = Cluster.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Cluster response = clusterControllerClient.updateClusterAsync(projectId, region, clusterName, cluster, updateMask).get();
+   * }
+   * </code></pre>
+   *
+   * @param projectId Required. The ID of the Google Cloud Platform project the cluster belongs to.
+   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param clusterName Required. The cluster name.
+   * @param cluster Required. The changes to the cluster.
+   * @param updateMask Required. Specifies the path, relative to `Cluster`, of the field to update.
+   *     For example, to change the number of workers in a cluster to 5, the `update_mask` parameter
+   *     would be specified as `config.worker_config.num_instances`, and the `PATCH` request body
+   *     would specify the new value, as follows:
+   *     <p>{ "config":{ "workerConfig":{ "numInstances":"5" } } }
+   *     <p>Similarly, to change the number of preemptible workers in a cluster to 5, the
+   *     `update_mask` parameter would be `config.secondary_worker_config.num_instances`, and the
+   *     `PATCH` request body would be set as follows:
+   *     <p>{ "config":{ "secondaryWorkerConfig":{ "numInstances":"5" } } }
+   *     &lt;strong&gt;Note:&lt;/strong&gt; currently only the following fields can be updated:
+   *     <p>&lt;table&gt; &lt;tr&gt;
+   *     &lt;td&gt;&lt;strong&gt;Mask&lt;/strong&gt;&lt;/td&gt;&lt;td&gt;&lt;strong&gt;Purpose&lt;/strong&gt;&lt;/td&gt;
+   *     &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;labels&lt;/td&gt;&lt;td&gt;Updates labels&lt;/td&gt;
+   *     &lt;/tr&gt; &lt;tr&gt;
+   *     &lt;td&gt;config.worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize primary worker
+   *     group&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
+   *     &lt;td&gt;config.secondary_worker_config.num_instances&lt;/td&gt;&lt;td&gt;Resize secondary
+   *     worker group&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
+   *     &lt;td&gt;config.lifecycle_config.auto_delete_ttl&lt;/td&gt;&lt;td&gt;Reset MAX TTL
+   *     duration&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
+   *     &lt;td&gt;config.lifecycle_config.auto_delete_time&lt;/td&gt;&lt;td&gt;Update MAX TTL
+   *     deletion timestamp&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt;
+   *     &lt;td&gt;config.lifecycle_config.idle_delete_ttl&lt;/td&gt;&lt;td&gt;Update Idle TTL
+   *     duration&lt;/td&gt; &lt;/tr&gt; &lt;/table&gt;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Cluster, ClusterOperationMetadata> updateClusterAsync(
+      String projectId, String region, String clusterName, Cluster cluster, FieldMask updateMask) {
+
+    UpdateClusterRequest request =
+        UpdateClusterRequest.newBuilder()
+            .setProjectId(projectId)
+            .setRegion(region)
+            .setClusterName(clusterName)
+            .setCluster(cluster)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateClusterAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -617,6 +681,53 @@ public class ClusterControllerClient implements BackgroundResource {
   public final ListClustersPagedResponse listClusters(String projectId, String region) {
     ListClustersRequest request =
         ListClustersRequest.newBuilder().setProjectId(projectId).setRegion(region).build();
+    return listClusters(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists all regions/{region}/clusters in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   String projectId = "";
+   *   String region = "";
+   *   String filter = "";
+   *   for (Cluster element : clusterControllerClient.listClusters(projectId, region, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
+   *     to.
+   * @param region Required. The Cloud Dataproc region in which to handle the request.
+   * @param filter Optional. A filter constraining the clusters to list. Filters are case-sensitive
+   *     and have the following syntax:
+   *     <p>field = value [AND [field = value]] ...
+   *     <p>where &#42;&#42;field&#42;&#42; is one of `status.state`, `clusterName`, or
+   *     `labels.[KEY]`, and `[KEY]` is a label key. &#42;&#42;value&#42;&#42; can be `&#42;` to
+   *     match all values. `status.state` can be one of the following: `ACTIVE`, `INACTIVE`,
+   *     `CREATING`, `RUNNING`, `ERROR`, `DELETING`, or `UPDATING`. `ACTIVE` contains the
+   *     `CREATING`, `UPDATING`, and `RUNNING` states. `INACTIVE` contains the `DELETING` and
+   *     `ERROR` states. `clusterName` is the name of the cluster provided at creation time. Only
+   *     the logical `AND` operator is supported; space-separated items are treated as having an
+   *     implicit `AND` operator.
+   *     <p>Example filter:
+   *     <p>status.state = ACTIVE AND clusterName = mycluster AND labels.env = staging AND
+   *     labels.starred = &#42;
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListClustersPagedResponse listClusters(
+      String projectId, String region, String filter) {
+    ListClustersRequest request =
+        ListClustersRequest.newBuilder()
+            .setProjectId(projectId)
+            .setRegion(region)
+            .setFilter(filter)
+            .build();
     return listClusters(request);
   }
 

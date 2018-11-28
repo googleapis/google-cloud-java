@@ -69,4 +69,38 @@ public interface SubmitJobRequestOrBuilder extends
    * <code>.google.cloud.dataproc.v1.Job job = 2;</code>
    */
   com.google.cloud.dataproc.v1.JobOrBuilder getJobOrBuilder();
+
+  /**
+   * <pre>
+   * Optional. A unique id used to identify the request. If the server
+   * receives two [SubmitJobRequest][google.cloud.dataproc.v1.SubmitJobRequest] requests  with the same
+   * id, then the second request will be ignored and the
+   * first [Job][google.cloud.dataproc.v1.Job] created and stored in the backend
+   * is returned.
+   * It is recommended to always set this value to a
+   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   * The id must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), and hyphens (-). The maximum length is 40 characters.
+   * </pre>
+   *
+   * <code>string request_id = 4;</code>
+   */
+  java.lang.String getRequestId();
+  /**
+   * <pre>
+   * Optional. A unique id used to identify the request. If the server
+   * receives two [SubmitJobRequest][google.cloud.dataproc.v1.SubmitJobRequest] requests  with the same
+   * id, then the second request will be ignored and the
+   * first [Job][google.cloud.dataproc.v1.Job] created and stored in the backend
+   * is returned.
+   * It is recommended to always set this value to a
+   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   * The id must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), and hyphens (-). The maximum length is 40 characters.
+   * </pre>
+   *
+   * <code>string request_id = 4;</code>
+   */
+  com.google.protobuf.ByteString
+      getRequestIdBytes();
 }

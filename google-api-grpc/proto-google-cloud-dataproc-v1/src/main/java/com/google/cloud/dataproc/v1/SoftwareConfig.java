@@ -115,9 +115,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object imageVersion_;
   /**
    * <pre>
-   * Optional. The version of software inside the cluster. It must match the
-   * regular expression `[0-9]+&#92;.[0-9]+`. If unspecified, it defaults to the
-   * latest version (see [Cloud Dataproc Versioning](/dataproc/versioning)).
+   * Optional. The version of software inside the cluster. It must be one of the supported
+   * [Cloud Dataproc Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
+   * such as "1.2" (including a subminor version, such as "1.2.29"), or the
+   * ["preview" version](/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
+   * If unspecified, it defaults to the latest version.
    * </pre>
    *
    * <code>string image_version = 1;</code>
@@ -136,9 +138,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The version of software inside the cluster. It must match the
-   * regular expression `[0-9]+&#92;.[0-9]+`. If unspecified, it defaults to the
-   * latest version (see [Cloud Dataproc Versioning](/dataproc/versioning)).
+   * Optional. The version of software inside the cluster. It must be one of the supported
+   * [Cloud Dataproc Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
+   * such as "1.2" (including a subminor version, such as "1.2.29"), or the
+   * ["preview" version](/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
+   * If unspecified, it defaults to the latest version.
    * </pre>
    *
    * <code>string image_version = 1;</code>
@@ -668,9 +672,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object imageVersion_ = "";
     /**
      * <pre>
-     * Optional. The version of software inside the cluster. It must match the
-     * regular expression `[0-9]+&#92;.[0-9]+`. If unspecified, it defaults to the
-     * latest version (see [Cloud Dataproc Versioning](/dataproc/versioning)).
+     * Optional. The version of software inside the cluster. It must be one of the supported
+     * [Cloud Dataproc Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
+     * such as "1.2" (including a subminor version, such as "1.2.29"), or the
+     * ["preview" version](/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
+     * If unspecified, it defaults to the latest version.
      * </pre>
      *
      * <code>string image_version = 1;</code>
@@ -689,9 +695,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The version of software inside the cluster. It must match the
-     * regular expression `[0-9]+&#92;.[0-9]+`. If unspecified, it defaults to the
-     * latest version (see [Cloud Dataproc Versioning](/dataproc/versioning)).
+     * Optional. The version of software inside the cluster. It must be one of the supported
+     * [Cloud Dataproc Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
+     * such as "1.2" (including a subminor version, such as "1.2.29"), or the
+     * ["preview" version](/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
+     * If unspecified, it defaults to the latest version.
      * </pre>
      *
      * <code>string image_version = 1;</code>
@@ -711,9 +719,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The version of software inside the cluster. It must match the
-     * regular expression `[0-9]+&#92;.[0-9]+`. If unspecified, it defaults to the
-     * latest version (see [Cloud Dataproc Versioning](/dataproc/versioning)).
+     * Optional. The version of software inside the cluster. It must be one of the supported
+     * [Cloud Dataproc Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
+     * such as "1.2" (including a subminor version, such as "1.2.29"), or the
+     * ["preview" version](/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
+     * If unspecified, it defaults to the latest version.
      * </pre>
      *
      * <code>string image_version = 1;</code>
@@ -730,9 +740,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The version of software inside the cluster. It must match the
-     * regular expression `[0-9]+&#92;.[0-9]+`. If unspecified, it defaults to the
-     * latest version (see [Cloud Dataproc Versioning](/dataproc/versioning)).
+     * Optional. The version of software inside the cluster. It must be one of the supported
+     * [Cloud Dataproc Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
+     * such as "1.2" (including a subminor version, such as "1.2.29"), or the
+     * ["preview" version](/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
+     * If unspecified, it defaults to the latest version.
      * </pre>
      *
      * <code>string image_version = 1;</code>
@@ -745,9 +757,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The version of software inside the cluster. It must match the
-     * regular expression `[0-9]+&#92;.[0-9]+`. If unspecified, it defaults to the
-     * latest version (see [Cloud Dataproc Versioning](/dataproc/versioning)).
+     * Optional. The version of software inside the cluster. It must be one of the supported
+     * [Cloud Dataproc Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
+     * such as "1.2" (including a subminor version, such as "1.2.29"), or the
+     * ["preview" version](/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
+     * If unspecified, it defaults to the latest version.
      * </pre>
      *
      * <code>string image_version = 1;</code>

@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     yarnApplications_ = java.util.Collections.emptyList();
     driverOutputResourceUri_ = "";
     driverControlFilesUri_ = "";
+    jobUuid_ = "";
   }
 
   @java.lang.Override
@@ -227,6 +228,12 @@ private static final long serialVersionUID = 0L;
               scheduling_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 178: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            jobUuid_ = s;
             break;
           }
           default: {
@@ -636,7 +643,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.dataproc.v1.JobStatus status_;
   /**
    * <pre>
-   * Output-only. The job status. Additional application-specific
+   * Output only. The job status. Additional application-specific
    * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
    * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
    * </pre>
@@ -648,7 +655,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The job status. Additional application-specific
+   * Output only. The job status. Additional application-specific
    * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
    * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
    * </pre>
@@ -660,7 +667,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The job status. Additional application-specific
+   * Output only. The job status. Additional application-specific
    * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
    * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
    * </pre>
@@ -675,7 +682,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.dataproc.v1.JobStatus> statusHistory_;
   /**
    * <pre>
-   * Output-only. The previous job status.
+   * Output only. The previous job status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -685,7 +692,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The previous job status.
+   * Output only. The previous job status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -696,7 +703,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The previous job status.
+   * Output only. The previous job status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -706,7 +713,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The previous job status.
+   * Output only. The previous job status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -716,7 +723,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The previous job status.
+   * Output only. The previous job status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -730,7 +737,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.dataproc.v1.YarnApplication> yarnApplications_;
   /**
    * <pre>
-   * Output-only. The collection of YARN applications spun up by this job.
+   * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
    * be changed before final release.
    * </pre>
@@ -742,7 +749,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The collection of YARN applications spun up by this job.
+   * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
    * be changed before final release.
    * </pre>
@@ -755,7 +762,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The collection of YARN applications spun up by this job.
+   * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
    * be changed before final release.
    * </pre>
@@ -767,7 +774,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The collection of YARN applications spun up by this job.
+   * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
    * be changed before final release.
    * </pre>
@@ -779,7 +786,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The collection of YARN applications spun up by this job.
+   * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
    * be changed before final release.
    * </pre>
@@ -795,7 +802,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object driverOutputResourceUri_;
   /**
    * <pre>
-   * Output-only. A URI pointing to the location of the stdout of the job's
+   * Output only. A URI pointing to the location of the stdout of the job's
    * driver program.
    * </pre>
    *
@@ -815,7 +822,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. A URI pointing to the location of the stdout of the job's
+   * Output only. A URI pointing to the location of the stdout of the job's
    * driver program.
    * </pre>
    *
@@ -839,7 +846,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object driverControlFilesUri_;
   /**
    * <pre>
-   * Output-only. If present, the location of miscellaneous control files
+   * Output only. If present, the location of miscellaneous control files
    * which may be used as part of job setup and handling. If not present,
    * control files may be placed in the same location as `driver_output_uri`.
    * </pre>
@@ -860,7 +867,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. If present, the location of miscellaneous control files
+   * Output only. If present, the location of miscellaneous control files
    * which may be used as part of job setup and handling. If not present,
    * control files may be placed in the same location as `driver_output_uri`.
    * </pre>
@@ -1026,6 +1033,52 @@ private static final long serialVersionUID = 0L;
     return getScheduling();
   }
 
+  public static final int JOB_UUID_FIELD_NUMBER = 22;
+  private volatile java.lang.Object jobUuid_;
+  /**
+   * <pre>
+   * Output only. A UUID that uniquely identifies a job within the project
+   * over time. This is in contrast to a user-settable reference.job_id that
+   * may be reused over time.
+   * </pre>
+   *
+   * <code>string job_uuid = 22;</code>
+   */
+  public java.lang.String getJobUuid() {
+    java.lang.Object ref = jobUuid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      jobUuid_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Output only. A UUID that uniquely identifies a job within the project
+   * over time. This is in contrast to a user-settable reference.job_id that
+   * may be reused over time.
+   * </pre>
+   *
+   * <code>string job_uuid = 22;</code>
+   */
+  public com.google.protobuf.ByteString
+      getJobUuidBytes() {
+    java.lang.Object ref = jobUuid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      jobUuid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1087,6 +1140,9 @@ private static final long serialVersionUID = 0L;
         18);
     if (scheduling_ != null) {
       output.writeMessage(20, getScheduling());
+    }
+    if (!getJobUuidBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 22, jobUuid_);
     }
     unknownFields.writeTo(output);
   }
@@ -1161,6 +1217,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(20, getScheduling());
     }
+    if (!getJobUuidBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, jobUuid_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1207,6 +1266,8 @@ private static final long serialVersionUID = 0L;
       result = result && getScheduling()
           .equals(other.getScheduling());
     }
+    result = result && getJobUuid()
+        .equals(other.getJobUuid());
     result = result && getTypeJobCase().equals(
         other.getTypeJobCase());
     if (!result) return false;
@@ -1281,6 +1342,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SCHEDULING_FIELD_NUMBER;
       hash = (53 * hash) + getScheduling().hashCode();
     }
+    hash = (37 * hash) + JOB_UUID_FIELD_NUMBER;
+    hash = (53 * hash) + getJobUuid().hashCode();
     switch (typeJobCase_) {
       case 3:
         hash = (37 * hash) + HADOOP_JOB_FIELD_NUMBER;
@@ -1511,6 +1574,8 @@ private static final long serialVersionUID = 0L;
         scheduling_ = null;
         schedulingBuilder_ = null;
       }
+      jobUuid_ = "";
+
       typeJobCase_ = 0;
       typeJob_ = null;
       return this;
@@ -1625,6 +1690,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.scheduling_ = schedulingBuilder_.build();
       }
+      result.jobUuid_ = jobUuid_;
       result.bitField0_ = to_bitField0_;
       result.typeJobCase_ = typeJobCase_;
       onBuilt();
@@ -1748,6 +1814,10 @@ private static final long serialVersionUID = 0L;
           other.internalGetLabels());
       if (other.hasScheduling()) {
         mergeScheduling(other.getScheduling());
+      }
+      if (!other.getJobUuid().isEmpty()) {
+        jobUuid_ = other.jobUuid_;
+        onChanged();
       }
       switch (other.getTypeJobCase()) {
         case HADOOP_JOB: {
@@ -3202,7 +3272,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.dataproc.v1.JobStatus, com.google.cloud.dataproc.v1.JobStatus.Builder, com.google.cloud.dataproc.v1.JobStatusOrBuilder> statusBuilder_;
     /**
      * <pre>
-     * Output-only. The job status. Additional application-specific
+     * Output only. The job status. Additional application-specific
      * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
@@ -3214,7 +3284,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The job status. Additional application-specific
+     * Output only. The job status. Additional application-specific
      * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
@@ -3230,7 +3300,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The job status. Additional application-specific
+     * Output only. The job status. Additional application-specific
      * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
@@ -3252,7 +3322,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The job status. Additional application-specific
+     * Output only. The job status. Additional application-specific
      * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
@@ -3272,7 +3342,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The job status. Additional application-specific
+     * Output only. The job status. Additional application-specific
      * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
@@ -3296,7 +3366,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The job status. Additional application-specific
+     * Output only. The job status. Additional application-specific
      * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
@@ -3316,7 +3386,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The job status. Additional application-specific
+     * Output only. The job status. Additional application-specific
      * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
@@ -3330,7 +3400,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The job status. Additional application-specific
+     * Output only. The job status. Additional application-specific
      * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
@@ -3347,7 +3417,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The job status. Additional application-specific
+     * Output only. The job status. Additional application-specific
      * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
      * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
      * </pre>
@@ -3382,7 +3452,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Output-only. The previous job status.
+     * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -3396,7 +3466,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous job status.
+     * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -3410,7 +3480,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous job status.
+     * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -3424,7 +3494,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous job status.
+     * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -3445,7 +3515,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous job status.
+     * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -3463,7 +3533,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous job status.
+     * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -3483,7 +3553,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous job status.
+     * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -3504,7 +3574,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous job status.
+     * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -3522,7 +3592,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous job status.
+     * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -3540,7 +3610,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous job status.
+     * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -3559,7 +3629,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous job status.
+     * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -3576,7 +3646,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous job status.
+     * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -3593,7 +3663,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous job status.
+     * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -3604,7 +3674,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous job status.
+     * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -3618,7 +3688,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous job status.
+     * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -3633,7 +3703,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous job status.
+     * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -3644,7 +3714,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous job status.
+     * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -3656,7 +3726,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous job status.
+     * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -3694,7 +3764,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Output-only. The collection of YARN applications spun up by this job.
+     * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
      * be changed before final release.
      * </pre>
@@ -3710,7 +3780,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The collection of YARN applications spun up by this job.
+     * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
      * be changed before final release.
      * </pre>
@@ -3726,7 +3796,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The collection of YARN applications spun up by this job.
+     * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
      * be changed before final release.
      * </pre>
@@ -3742,7 +3812,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The collection of YARN applications spun up by this job.
+     * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
      * be changed before final release.
      * </pre>
@@ -3765,7 +3835,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The collection of YARN applications spun up by this job.
+     * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
      * be changed before final release.
      * </pre>
@@ -3785,7 +3855,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The collection of YARN applications spun up by this job.
+     * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
      * be changed before final release.
      * </pre>
@@ -3807,7 +3877,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The collection of YARN applications spun up by this job.
+     * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
      * be changed before final release.
      * </pre>
@@ -3830,7 +3900,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The collection of YARN applications spun up by this job.
+     * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
      * be changed before final release.
      * </pre>
@@ -3850,7 +3920,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The collection of YARN applications spun up by this job.
+     * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
      * be changed before final release.
      * </pre>
@@ -3870,7 +3940,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The collection of YARN applications spun up by this job.
+     * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
      * be changed before final release.
      * </pre>
@@ -3891,7 +3961,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The collection of YARN applications spun up by this job.
+     * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
      * be changed before final release.
      * </pre>
@@ -3910,7 +3980,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The collection of YARN applications spun up by this job.
+     * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
      * be changed before final release.
      * </pre>
@@ -3929,7 +3999,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The collection of YARN applications spun up by this job.
+     * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
      * be changed before final release.
      * </pre>
@@ -3942,7 +4012,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The collection of YARN applications spun up by this job.
+     * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
      * be changed before final release.
      * </pre>
@@ -3958,7 +4028,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The collection of YARN applications spun up by this job.
+     * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
      * be changed before final release.
      * </pre>
@@ -3975,7 +4045,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The collection of YARN applications spun up by this job.
+     * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
      * be changed before final release.
      * </pre>
@@ -3988,7 +4058,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The collection of YARN applications spun up by this job.
+     * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
      * be changed before final release.
      * </pre>
@@ -4002,7 +4072,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The collection of YARN applications spun up by this job.
+     * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
      * be changed before final release.
      * </pre>
@@ -4031,7 +4101,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object driverOutputResourceUri_ = "";
     /**
      * <pre>
-     * Output-only. A URI pointing to the location of the stdout of the job's
+     * Output only. A URI pointing to the location of the stdout of the job's
      * driver program.
      * </pre>
      *
@@ -4051,7 +4121,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A URI pointing to the location of the stdout of the job's
+     * Output only. A URI pointing to the location of the stdout of the job's
      * driver program.
      * </pre>
      *
@@ -4072,7 +4142,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A URI pointing to the location of the stdout of the job's
+     * Output only. A URI pointing to the location of the stdout of the job's
      * driver program.
      * </pre>
      *
@@ -4090,7 +4160,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A URI pointing to the location of the stdout of the job's
+     * Output only. A URI pointing to the location of the stdout of the job's
      * driver program.
      * </pre>
      *
@@ -4104,7 +4174,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A URI pointing to the location of the stdout of the job's
+     * Output only. A URI pointing to the location of the stdout of the job's
      * driver program.
      * </pre>
      *
@@ -4125,7 +4195,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object driverControlFilesUri_ = "";
     /**
      * <pre>
-     * Output-only. If present, the location of miscellaneous control files
+     * Output only. If present, the location of miscellaneous control files
      * which may be used as part of job setup and handling. If not present,
      * control files may be placed in the same location as `driver_output_uri`.
      * </pre>
@@ -4146,7 +4216,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. If present, the location of miscellaneous control files
+     * Output only. If present, the location of miscellaneous control files
      * which may be used as part of job setup and handling. If not present,
      * control files may be placed in the same location as `driver_output_uri`.
      * </pre>
@@ -4168,7 +4238,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. If present, the location of miscellaneous control files
+     * Output only. If present, the location of miscellaneous control files
      * which may be used as part of job setup and handling. If not present,
      * control files may be placed in the same location as `driver_output_uri`.
      * </pre>
@@ -4187,7 +4257,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. If present, the location of miscellaneous control files
+     * Output only. If present, the location of miscellaneous control files
      * which may be used as part of job setup and handling. If not present,
      * control files may be placed in the same location as `driver_output_uri`.
      * </pre>
@@ -4202,7 +4272,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. If present, the location of miscellaneous control files
+     * Output only. If present, the location of miscellaneous control files
      * which may be used as part of job setup and handling. If not present,
      * control files may be placed in the same location as `driver_output_uri`.
      * </pre>
@@ -4558,6 +4628,105 @@ private static final long serialVersionUID = 0L;
         scheduling_ = null;
       }
       return schedulingBuilder_;
+    }
+
+    private java.lang.Object jobUuid_ = "";
+    /**
+     * <pre>
+     * Output only. A UUID that uniquely identifies a job within the project
+     * over time. This is in contrast to a user-settable reference.job_id that
+     * may be reused over time.
+     * </pre>
+     *
+     * <code>string job_uuid = 22;</code>
+     */
+    public java.lang.String getJobUuid() {
+      java.lang.Object ref = jobUuid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jobUuid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. A UUID that uniquely identifies a job within the project
+     * over time. This is in contrast to a user-settable reference.job_id that
+     * may be reused over time.
+     * </pre>
+     *
+     * <code>string job_uuid = 22;</code>
+     */
+    public com.google.protobuf.ByteString
+        getJobUuidBytes() {
+      java.lang.Object ref = jobUuid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        jobUuid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. A UUID that uniquely identifies a job within the project
+     * over time. This is in contrast to a user-settable reference.job_id that
+     * may be reused over time.
+     * </pre>
+     *
+     * <code>string job_uuid = 22;</code>
+     */
+    public Builder setJobUuid(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      jobUuid_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. A UUID that uniquely identifies a job within the project
+     * over time. This is in contrast to a user-settable reference.job_id that
+     * may be reused over time.
+     * </pre>
+     *
+     * <code>string job_uuid = 22;</code>
+     */
+    public Builder clearJobUuid() {
+      
+      jobUuid_ = getDefaultInstance().getJobUuid();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. A UUID that uniquely identifies a job within the project
+     * over time. This is in contrast to a user-settable reference.job_id that
+     * may be reused over time.
+     * </pre>
+     *
+     * <code>string job_uuid = 22;</code>
+     */
+    public Builder setJobUuidBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      jobUuid_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

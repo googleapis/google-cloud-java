@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private InstantiateInlineWorkflowTemplateRequest() {
     parent_ = "";
     instanceId_ = "";
+    requestId_ = "";
   }
 
   @java.lang.Override
@@ -71,6 +72,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             instanceId_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            requestId_ = s;
             break;
           }
           default: {
@@ -188,13 +195,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object instanceId_;
   /**
    * <pre>
-   * Optional. A tag that prevents multiple concurrent workflow
-   * instances with the same tag from running. This mitigates risk of
-   * concurrent instances started due to retries.
-   * It is recommended to always set this value to a
-   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
-   * The tag must contain only letters (a-z, A-Z), numbers (0-9),
-   * underscores (_), and hyphens (-). The maximum length is 40 characters.
+   * Deprecated. Please use `request_id` field instead.
    * </pre>
    *
    * <code>string instance_id = 3;</code>
@@ -213,13 +214,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. A tag that prevents multiple concurrent workflow
-   * instances with the same tag from running. This mitigates risk of
-   * concurrent instances started due to retries.
-   * It is recommended to always set this value to a
-   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
-   * The tag must contain only letters (a-z, A-Z), numbers (0-9),
-   * underscores (_), and hyphens (-). The maximum length is 40 characters.
+   * Deprecated. Please use `request_id` field instead.
    * </pre>
    *
    * <code>string instance_id = 3;</code>
@@ -232,6 +227,60 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       instanceId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REQUEST_ID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object requestId_;
+  /**
+   * <pre>
+   * Optional. A tag that prevents multiple concurrent workflow
+   * instances with the same tag from running. This mitigates risk of
+   * concurrent instances started due to retries.
+   * It is recommended to always set this value to a
+   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   * The tag must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), and hyphens (-). The maximum length is 40 characters.
+   * </pre>
+   *
+   * <code>string request_id = 4;</code>
+   */
+  public java.lang.String getRequestId() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. A tag that prevents multiple concurrent workflow
+   * instances with the same tag from running. This mitigates risk of
+   * concurrent instances started due to retries.
+   * It is recommended to always set this value to a
+   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   * The tag must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), and hyphens (-). The maximum length is 40 characters.
+   * </pre>
+   *
+   * <code>string request_id = 4;</code>
+   */
+  public com.google.protobuf.ByteString
+      getRequestIdBytes() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      requestId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -261,6 +310,9 @@ private static final long serialVersionUID = 0L;
     if (!getInstanceIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, instanceId_);
     }
+    if (!getRequestIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, requestId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -279,6 +331,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getInstanceIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, instanceId_);
+    }
+    if (!getRequestIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, requestId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -305,6 +360,8 @@ private static final long serialVersionUID = 0L;
     }
     result = result && getInstanceId()
         .equals(other.getInstanceId());
+    result = result && getRequestId()
+        .equals(other.getRequestId());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -324,6 +381,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + INSTANCE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getInstanceId().hashCode();
+    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -471,6 +530,8 @@ private static final long serialVersionUID = 0L;
       }
       instanceId_ = "";
 
+      requestId_ = "";
+
       return this;
     }
 
@@ -504,6 +565,7 @@ private static final long serialVersionUID = 0L;
         result.template_ = templateBuilder_.build();
       }
       result.instanceId_ = instanceId_;
+      result.requestId_ = requestId_;
       onBuilt();
       return result;
     }
@@ -561,6 +623,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getInstanceId().isEmpty()) {
         instanceId_ = other.instanceId_;
+        onChanged();
+      }
+      if (!other.getRequestId().isEmpty()) {
+        requestId_ = other.requestId_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -847,13 +913,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object instanceId_ = "";
     /**
      * <pre>
-     * Optional. A tag that prevents multiple concurrent workflow
-     * instances with the same tag from running. This mitigates risk of
-     * concurrent instances started due to retries.
-     * It is recommended to always set this value to a
-     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
-     * The tag must contain only letters (a-z, A-Z), numbers (0-9),
-     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * Deprecated. Please use `request_id` field instead.
      * </pre>
      *
      * <code>string instance_id = 3;</code>
@@ -872,13 +932,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A tag that prevents multiple concurrent workflow
-     * instances with the same tag from running. This mitigates risk of
-     * concurrent instances started due to retries.
-     * It is recommended to always set this value to a
-     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
-     * The tag must contain only letters (a-z, A-Z), numbers (0-9),
-     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * Deprecated. Please use `request_id` field instead.
      * </pre>
      *
      * <code>string instance_id = 3;</code>
@@ -898,13 +952,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A tag that prevents multiple concurrent workflow
-     * instances with the same tag from running. This mitigates risk of
-     * concurrent instances started due to retries.
-     * It is recommended to always set this value to a
-     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
-     * The tag must contain only letters (a-z, A-Z), numbers (0-9),
-     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * Deprecated. Please use `request_id` field instead.
      * </pre>
      *
      * <code>string instance_id = 3;</code>
@@ -921,6 +969,39 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Deprecated. Please use `request_id` field instead.
+     * </pre>
+     *
+     * <code>string instance_id = 3;</code>
+     */
+    public Builder clearInstanceId() {
+      
+      instanceId_ = getDefaultInstance().getInstanceId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Deprecated. Please use `request_id` field instead.
+     * </pre>
+     *
+     * <code>string instance_id = 3;</code>
+     */
+    public Builder setInstanceIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      instanceId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object requestId_ = "";
+    /**
+     * <pre>
      * Optional. A tag that prevents multiple concurrent workflow
      * instances with the same tag from running. This mitigates risk of
      * concurrent instances started due to retries.
@@ -930,11 +1011,66 @@ private static final long serialVersionUID = 0L;
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string instance_id = 3;</code>
+     * <code>string request_id = 4;</code>
      */
-    public Builder clearInstanceId() {
-      
-      instanceId_ = getDefaultInstance().getInstanceId();
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. A tag that prevents multiple concurrent workflow
+     * instances with the same tag from running. This mitigates risk of
+     * concurrent instances started due to retries.
+     * It is recommended to always set this value to a
+     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     * The tag must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * </pre>
+     *
+     * <code>string request_id = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRequestIdBytes() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        requestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. A tag that prevents multiple concurrent workflow
+     * instances with the same tag from running. This mitigates risk of
+     * concurrent instances started due to retries.
+     * It is recommended to always set this value to a
+     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     * The tag must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * </pre>
+     *
+     * <code>string request_id = 4;</code>
+     */
+    public Builder setRequestId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      requestId_ = value;
       onChanged();
       return this;
     }
@@ -949,16 +1085,35 @@ private static final long serialVersionUID = 0L;
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string instance_id = 3;</code>
+     * <code>string request_id = 4;</code>
      */
-    public Builder setInstanceIdBytes(
+    public Builder clearRequestId() {
+      
+      requestId_ = getDefaultInstance().getRequestId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A tag that prevents multiple concurrent workflow
+     * instances with the same tag from running. This mitigates risk of
+     * concurrent instances started due to retries.
+     * It is recommended to always set this value to a
+     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     * The tag must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * </pre>
+     *
+     * <code>string request_id = 4;</code>
+     */
+    public Builder setRequestIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      instanceId_ = value;
+      requestId_ = value;
       onChanged();
       return this;
     }

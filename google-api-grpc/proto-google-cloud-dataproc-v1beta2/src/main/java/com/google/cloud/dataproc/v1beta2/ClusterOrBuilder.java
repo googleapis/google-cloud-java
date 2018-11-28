@@ -243,7 +243,7 @@ public interface ClusterOrBuilder extends
 
   /**
    * <pre>
-   * Contains cluster daemon metrics such as HDFS and YARN stats.
+   * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
    * **Beta Feature**: This report is available for testing purposes only. It may
    * be changed before final release.
    * </pre>
@@ -253,7 +253,7 @@ public interface ClusterOrBuilder extends
   boolean hasMetrics();
   /**
    * <pre>
-   * Contains cluster daemon metrics such as HDFS and YARN stats.
+   * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
    * **Beta Feature**: This report is available for testing purposes only. It may
    * be changed before final release.
    * </pre>
@@ -263,7 +263,7 @@ public interface ClusterOrBuilder extends
   com.google.cloud.dataproc.v1beta2.ClusterMetrics getMetrics();
   /**
    * <pre>
-   * Contains cluster daemon metrics such as HDFS and YARN stats.
+   * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
    * **Beta Feature**: This report is available for testing purposes only. It may
    * be changed before final release.
    * </pre>

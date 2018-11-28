@@ -9,9 +9,11 @@ public interface SoftwareConfigOrBuilder extends
 
   /**
    * <pre>
-   * Optional. The version of software inside the cluster. It must match the
-   * regular expression `[0-9]+&#92;.[0-9]+`. If unspecified, it defaults to the
-   * latest version (see [Cloud Dataproc Versioning](/dataproc/versioning)).
+   * Optional. The version of software inside the cluster. It must be one of the supported
+   * [Cloud Dataproc Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
+   * such as "1.2" (including a subminor version, such as "1.2.29"), or the
+   * ["preview" version](/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
+   * If unspecified, it defaults to the latest version.
    * </pre>
    *
    * <code>string image_version = 1;</code>
@@ -19,9 +21,11 @@ public interface SoftwareConfigOrBuilder extends
   java.lang.String getImageVersion();
   /**
    * <pre>
-   * Optional. The version of software inside the cluster. It must match the
-   * regular expression `[0-9]+&#92;.[0-9]+`. If unspecified, it defaults to the
-   * latest version (see [Cloud Dataproc Versioning](/dataproc/versioning)).
+   * Optional. The version of software inside the cluster. It must be one of the supported
+   * [Cloud Dataproc Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
+   * such as "1.2" (including a subminor version, such as "1.2.29"), or the
+   * ["preview" version](/dataproc/docs/concepts/versioning/dataproc-versions#other_versions).
+   * If unspecified, it defaults to the latest version.
    * </pre>
    *
    * <code>string image_version = 1;</code>

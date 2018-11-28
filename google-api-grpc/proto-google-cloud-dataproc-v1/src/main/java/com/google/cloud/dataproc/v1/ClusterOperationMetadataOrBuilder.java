@@ -9,7 +9,7 @@ public interface ClusterOperationMetadataOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. Name of the cluster for the operation.
+   * Output only. Name of the cluster for the operation.
    * </pre>
    *
    * <code>string cluster_name = 7;</code>
@@ -17,7 +17,7 @@ public interface ClusterOperationMetadataOrBuilder extends
   java.lang.String getClusterName();
   /**
    * <pre>
-   * Output-only. Name of the cluster for the operation.
+   * Output only. Name of the cluster for the operation.
    * </pre>
    *
    * <code>string cluster_name = 7;</code>
@@ -27,7 +27,7 @@ public interface ClusterOperationMetadataOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. Cluster UUID for the operation.
+   * Output only. Cluster UUID for the operation.
    * </pre>
    *
    * <code>string cluster_uuid = 8;</code>
@@ -35,7 +35,7 @@ public interface ClusterOperationMetadataOrBuilder extends
   java.lang.String getClusterUuid();
   /**
    * <pre>
-   * Output-only. Cluster UUID for the operation.
+   * Output only. Cluster UUID for the operation.
    * </pre>
    *
    * <code>string cluster_uuid = 8;</code>
@@ -45,7 +45,7 @@ public interface ClusterOperationMetadataOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. Current operation status.
+   * Output only. Current operation status.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9;</code>
@@ -53,7 +53,7 @@ public interface ClusterOperationMetadataOrBuilder extends
   boolean hasStatus();
   /**
    * <pre>
-   * Output-only. Current operation status.
+   * Output only. Current operation status.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9;</code>
@@ -61,7 +61,7 @@ public interface ClusterOperationMetadataOrBuilder extends
   com.google.cloud.dataproc.v1.ClusterOperationStatus getStatus();
   /**
    * <pre>
-   * Output-only. Current operation status.
+   * Output only. Current operation status.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9;</code>
@@ -70,7 +70,7 @@ public interface ClusterOperationMetadataOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. The previous operation status.
+   * Output only. The previous operation status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -79,7 +79,7 @@ public interface ClusterOperationMetadataOrBuilder extends
       getStatusHistoryList();
   /**
    * <pre>
-   * Output-only. The previous operation status.
+   * Output only. The previous operation status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -87,7 +87,7 @@ public interface ClusterOperationMetadataOrBuilder extends
   com.google.cloud.dataproc.v1.ClusterOperationStatus getStatusHistory(int index);
   /**
    * <pre>
-   * Output-only. The previous operation status.
+   * Output only. The previous operation status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -95,7 +95,7 @@ public interface ClusterOperationMetadataOrBuilder extends
   int getStatusHistoryCount();
   /**
    * <pre>
-   * Output-only. The previous operation status.
+   * Output only. The previous operation status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -104,7 +104,7 @@ public interface ClusterOperationMetadataOrBuilder extends
       getStatusHistoryOrBuilderList();
   /**
    * <pre>
-   * Output-only. The previous operation status.
+   * Output only. The previous operation status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -114,7 +114,7 @@ public interface ClusterOperationMetadataOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. The operation type.
+   * Output only. The operation type.
    * </pre>
    *
    * <code>string operation_type = 11;</code>
@@ -122,7 +122,7 @@ public interface ClusterOperationMetadataOrBuilder extends
   java.lang.String getOperationType();
   /**
    * <pre>
-   * Output-only. The operation type.
+   * Output only. The operation type.
    * </pre>
    *
    * <code>string operation_type = 11;</code>
@@ -132,7 +132,7 @@ public interface ClusterOperationMetadataOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. Short description of operation.
+   * Output only. Short description of operation.
    * </pre>
    *
    * <code>string description = 12;</code>
@@ -140,7 +140,7 @@ public interface ClusterOperationMetadataOrBuilder extends
   java.lang.String getDescription();
   /**
    * <pre>
-   * Output-only. Short description of operation.
+   * Output only. Short description of operation.
    * </pre>
    *
    * <code>string description = 12;</code>
@@ -150,7 +150,7 @@ public interface ClusterOperationMetadataOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. Labels associated with the operation
+   * Output only. Labels associated with the operation
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 13;</code>
@@ -158,7 +158,7 @@ public interface ClusterOperationMetadataOrBuilder extends
   int getLabelsCount();
   /**
    * <pre>
-   * Output-only. Labels associated with the operation
+   * Output only. Labels associated with the operation
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 13;</code>
@@ -173,7 +173,7 @@ public interface ClusterOperationMetadataOrBuilder extends
   getLabels();
   /**
    * <pre>
-   * Output-only. Labels associated with the operation
+   * Output only. Labels associated with the operation
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 13;</code>
@@ -182,7 +182,7 @@ public interface ClusterOperationMetadataOrBuilder extends
   getLabelsMap();
   /**
    * <pre>
-   * Output-only. Labels associated with the operation
+   * Output only. Labels associated with the operation
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 13;</code>
@@ -193,7 +193,7 @@ public interface ClusterOperationMetadataOrBuilder extends
       java.lang.String defaultValue);
   /**
    * <pre>
-   * Output-only. Labels associated with the operation
+   * Output only. Labels associated with the operation
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 13;</code>
@@ -204,7 +204,7 @@ public interface ClusterOperationMetadataOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. Errors encountered during operation execution.
+   * Output only. Errors encountered during operation execution.
    * </pre>
    *
    * <code>repeated string warnings = 14;</code>
@@ -213,7 +213,7 @@ public interface ClusterOperationMetadataOrBuilder extends
       getWarningsList();
   /**
    * <pre>
-   * Output-only. Errors encountered during operation execution.
+   * Output only. Errors encountered during operation execution.
    * </pre>
    *
    * <code>repeated string warnings = 14;</code>
@@ -221,7 +221,7 @@ public interface ClusterOperationMetadataOrBuilder extends
   int getWarningsCount();
   /**
    * <pre>
-   * Output-only. Errors encountered during operation execution.
+   * Output only. Errors encountered during operation execution.
    * </pre>
    *
    * <code>repeated string warnings = 14;</code>
@@ -229,7 +229,7 @@ public interface ClusterOperationMetadataOrBuilder extends
   java.lang.String getWarnings(int index);
   /**
    * <pre>
-   * Output-only. Errors encountered during operation execution.
+   * Output only. Errors encountered during operation execution.
    * </pre>
    *
    * <code>repeated string warnings = 14;</code>

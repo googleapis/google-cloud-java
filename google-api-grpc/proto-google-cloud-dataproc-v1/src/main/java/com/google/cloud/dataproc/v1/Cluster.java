@@ -6,7 +6,7 @@ package com.google.cloud.dataproc.v1;
 /**
  * <pre>
  * Describes the identifying information, config, and status of
- * a cluster of Google Compute Engine instances.
+ * a cluster of Compute Engine instances.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.Cluster}
@@ -416,7 +416,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.dataproc.v1.ClusterStatus status_;
   /**
    * <pre>
-   * Output-only. Cluster status.
+   * Output only. Cluster status.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -426,7 +426,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Cluster status.
+   * Output only. Cluster status.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -436,7 +436,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Cluster status.
+   * Output only. Cluster status.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -449,7 +449,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.dataproc.v1.ClusterStatus> statusHistory_;
   /**
    * <pre>
-   * Output-only. The previous cluster status.
+   * Output only. The previous cluster status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -459,7 +459,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The previous cluster status.
+   * Output only. The previous cluster status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -470,7 +470,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The previous cluster status.
+   * Output only. The previous cluster status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -480,7 +480,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The previous cluster status.
+   * Output only. The previous cluster status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -490,7 +490,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The previous cluster status.
+   * Output only. The previous cluster status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -504,7 +504,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object clusterUuid_;
   /**
    * <pre>
-   * Output-only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+   * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
    * generates this value when it creates the cluster.
    * </pre>
    *
@@ -524,7 +524,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+   * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
    * generates this value when it creates the cluster.
    * </pre>
    *
@@ -844,7 +844,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Describes the identifying information, config, and status of
-   * a cluster of Google Compute Engine instances.
+   * a cluster of Compute Engine instances.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.Cluster}
@@ -1659,7 +1659,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.dataproc.v1.ClusterStatus, com.google.cloud.dataproc.v1.ClusterStatus.Builder, com.google.cloud.dataproc.v1.ClusterStatusOrBuilder> statusBuilder_;
     /**
      * <pre>
-     * Output-only. Cluster status.
+     * Output only. Cluster status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -1669,7 +1669,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Cluster status.
+     * Output only. Cluster status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -1683,7 +1683,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Cluster status.
+     * Output only. Cluster status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -1703,7 +1703,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Cluster status.
+     * Output only. Cluster status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -1721,7 +1721,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Cluster status.
+     * Output only. Cluster status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -1743,7 +1743,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Cluster status.
+     * Output only. Cluster status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -1761,7 +1761,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Cluster status.
+     * Output only. Cluster status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -1773,7 +1773,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Cluster status.
+     * Output only. Cluster status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -1788,7 +1788,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Cluster status.
+     * Output only. Cluster status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -1821,7 +1821,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -1835,7 +1835,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -1849,7 +1849,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -1863,7 +1863,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -1884,7 +1884,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -1902,7 +1902,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -1922,7 +1922,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -1943,7 +1943,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -1961,7 +1961,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -1979,7 +1979,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -1998,7 +1998,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -2015,7 +2015,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -2032,7 +2032,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -2043,7 +2043,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -2057,7 +2057,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -2072,7 +2072,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -2083,7 +2083,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -2095,7 +2095,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -2122,7 +2122,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object clusterUuid_ = "";
     /**
      * <pre>
-     * Output-only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
@@ -2142,7 +2142,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
@@ -2163,7 +2163,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
@@ -2181,7 +2181,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
@@ -2195,7 +2195,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *

@@ -5,7 +5,7 @@ package com.google.cloud.dataproc.v1beta2;
 
 /**
  * <pre>
- * Specifies the cluster auto delete related schedule configuration.
+ * Specifies the cluster auto-delete schedule configuration.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.LifecycleConfig}
@@ -161,8 +161,11 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Duration idleDeleteTtl_;
   /**
    * <pre>
-   * Optional. The longest duration that cluster would keep alive while staying
-   *  idle; passing this threshold will cause cluster to be auto-deleted.
+   * Optional. The duration to keep the cluster alive while idling.
+   * Passing this threshold will cause the cluster to be
+   * deleted. Valid range: **[10m, 14d]**.
+   * Example: **"10m"**, the minimum value, to delete the
+   * cluster when it has had no jobs running for 10 minutes.
    * </pre>
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -172,8 +175,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The longest duration that cluster would keep alive while staying
-   *  idle; passing this threshold will cause cluster to be auto-deleted.
+   * Optional. The duration to keep the cluster alive while idling.
+   * Passing this threshold will cause the cluster to be
+   * deleted. Valid range: **[10m, 14d]**.
+   * Example: **"10m"**, the minimum value, to delete the
+   * cluster when it has had no jobs running for 10 minutes.
    * </pre>
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -183,8 +189,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The longest duration that cluster would keep alive while staying
-   *  idle; passing this threshold will cause cluster to be auto-deleted.
+   * Optional. The duration to keep the cluster alive while idling.
+   * Passing this threshold will cause the cluster to be
+   * deleted. Valid range: **[10m, 14d]**.
+   * Example: **"10m"**, the minimum value, to delete the
+   * cluster when it has had no jobs running for 10 minutes.
    * </pre>
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -234,8 +243,9 @@ private static final long serialVersionUID = 0L;
   public static final int AUTO_DELETE_TTL_FIELD_NUMBER = 3;
   /**
    * <pre>
-   * Optional. The life duration of cluster, the cluster will be auto-deleted
-   * at the end of this duration.
+   * Optional. The lifetime duration of cluster. The cluster will be
+   * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+   * Example: **"1d"**, to delete the cluster 1 day after its creation..
    * </pre>
    *
    * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
@@ -245,8 +255,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The life duration of cluster, the cluster will be auto-deleted
-   * at the end of this duration.
+   * Optional. The lifetime duration of cluster. The cluster will be
+   * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+   * Example: **"1d"**, to delete the cluster 1 day after its creation..
    * </pre>
    *
    * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
@@ -259,8 +270,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. The life duration of cluster, the cluster will be auto-deleted
-   * at the end of this duration.
+   * Optional. The lifetime duration of cluster. The cluster will be
+   * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+   * Example: **"1d"**, to delete the cluster 1 day after its creation..
    * </pre>
    *
    * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
@@ -476,7 +488,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Specifies the cluster auto delete related schedule configuration.
+   * Specifies the cluster auto-delete schedule configuration.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.LifecycleConfig}
@@ -683,8 +695,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> idleDeleteTtlBuilder_;
     /**
      * <pre>
-     * Optional. The longest duration that cluster would keep alive while staying
-     *  idle; passing this threshold will cause cluster to be auto-deleted.
+     * Optional. The duration to keep the cluster alive while idling.
+     * Passing this threshold will cause the cluster to be
+     * deleted. Valid range: **[10m, 14d]**.
+     * Example: **"10m"**, the minimum value, to delete the
+     * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -694,8 +709,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The longest duration that cluster would keep alive while staying
-     *  idle; passing this threshold will cause cluster to be auto-deleted.
+     * Optional. The duration to keep the cluster alive while idling.
+     * Passing this threshold will cause the cluster to be
+     * deleted. Valid range: **[10m, 14d]**.
+     * Example: **"10m"**, the minimum value, to delete the
+     * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -709,8 +727,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The longest duration that cluster would keep alive while staying
-     *  idle; passing this threshold will cause cluster to be auto-deleted.
+     * Optional. The duration to keep the cluster alive while idling.
+     * Passing this threshold will cause the cluster to be
+     * deleted. Valid range: **[10m, 14d]**.
+     * Example: **"10m"**, the minimum value, to delete the
+     * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -730,8 +751,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The longest duration that cluster would keep alive while staying
-     *  idle; passing this threshold will cause cluster to be auto-deleted.
+     * Optional. The duration to keep the cluster alive while idling.
+     * Passing this threshold will cause the cluster to be
+     * deleted. Valid range: **[10m, 14d]**.
+     * Example: **"10m"**, the minimum value, to delete the
+     * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -749,8 +773,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The longest duration that cluster would keep alive while staying
-     *  idle; passing this threshold will cause cluster to be auto-deleted.
+     * Optional. The duration to keep the cluster alive while idling.
+     * Passing this threshold will cause the cluster to be
+     * deleted. Valid range: **[10m, 14d]**.
+     * Example: **"10m"**, the minimum value, to delete the
+     * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -772,8 +799,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The longest duration that cluster would keep alive while staying
-     *  idle; passing this threshold will cause cluster to be auto-deleted.
+     * Optional. The duration to keep the cluster alive while idling.
+     * Passing this threshold will cause the cluster to be
+     * deleted. Valid range: **[10m, 14d]**.
+     * Example: **"10m"**, the minimum value, to delete the
+     * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -791,8 +821,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The longest duration that cluster would keep alive while staying
-     *  idle; passing this threshold will cause cluster to be auto-deleted.
+     * Optional. The duration to keep the cluster alive while idling.
+     * Passing this threshold will cause the cluster to be
+     * deleted. Valid range: **[10m, 14d]**.
+     * Example: **"10m"**, the minimum value, to delete the
+     * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -804,8 +837,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The longest duration that cluster would keep alive while staying
-     *  idle; passing this threshold will cause cluster to be auto-deleted.
+     * Optional. The duration to keep the cluster alive while idling.
+     * Passing this threshold will cause the cluster to be
+     * deleted. Valid range: **[10m, 14d]**.
+     * Example: **"10m"**, the minimum value, to delete the
+     * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -820,8 +856,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The longest duration that cluster would keep alive while staying
-     *  idle; passing this threshold will cause cluster to be auto-deleted.
+     * Optional. The duration to keep the cluster alive while idling.
+     * Passing this threshold will cause the cluster to be
+     * deleted. Valid range: **[10m, 14d]**.
+     * Example: **"10m"**, the minimum value, to delete the
+     * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -1016,8 +1055,9 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> autoDeleteTtlBuilder_;
     /**
      * <pre>
-     * Optional. The life duration of cluster, the cluster will be auto-deleted
-     * at the end of this duration.
+     * Optional. The lifetime duration of cluster. The cluster will be
+     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+     * Example: **"1d"**, to delete the cluster 1 day after its creation..
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
@@ -1027,8 +1067,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The life duration of cluster, the cluster will be auto-deleted
-     * at the end of this duration.
+     * Optional. The lifetime duration of cluster. The cluster will be
+     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+     * Example: **"1d"**, to delete the cluster 1 day after its creation..
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
@@ -1048,8 +1089,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The life duration of cluster, the cluster will be auto-deleted
-     * at the end of this duration.
+     * Optional. The lifetime duration of cluster. The cluster will be
+     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+     * Example: **"1d"**, to delete the cluster 1 day after its creation..
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
@@ -1069,8 +1111,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The life duration of cluster, the cluster will be auto-deleted
-     * at the end of this duration.
+     * Optional. The lifetime duration of cluster. The cluster will be
+     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+     * Example: **"1d"**, to delete the cluster 1 day after its creation..
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
@@ -1088,8 +1131,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The life duration of cluster, the cluster will be auto-deleted
-     * at the end of this duration.
+     * Optional. The lifetime duration of cluster. The cluster will be
+     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+     * Example: **"1d"**, to delete the cluster 1 day after its creation..
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
@@ -1115,8 +1159,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The life duration of cluster, the cluster will be auto-deleted
-     * at the end of this duration.
+     * Optional. The lifetime duration of cluster. The cluster will be
+     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+     * Example: **"1d"**, to delete the cluster 1 day after its creation..
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
@@ -1139,8 +1184,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The life duration of cluster, the cluster will be auto-deleted
-     * at the end of this duration.
+     * Optional. The lifetime duration of cluster. The cluster will be
+     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+     * Example: **"1d"**, to delete the cluster 1 day after its creation..
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
@@ -1150,8 +1196,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The life duration of cluster, the cluster will be auto-deleted
-     * at the end of this duration.
+     * Optional. The lifetime duration of cluster. The cluster will be
+     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+     * Example: **"1d"**, to delete the cluster 1 day after its creation..
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
@@ -1168,8 +1215,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. The life duration of cluster, the cluster will be auto-deleted
-     * at the end of this duration.
+     * Optional. The lifetime duration of cluster. The cluster will be
+     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+     * Example: **"1d"**, to delete the cluster 1 day after its creation..
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>

@@ -64,9 +64,9 @@
  * <pre>
  * <code>
  * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
- *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
+ *   String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
  *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
- *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(parent, template);
+ *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(formattedParent, template);
  * }
  * </code>
  * </pre>
