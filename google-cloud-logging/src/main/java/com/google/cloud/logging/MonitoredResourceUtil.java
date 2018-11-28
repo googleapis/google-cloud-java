@@ -38,9 +38,11 @@ public class MonitoredResourceUtil {
   private enum Label {
     AppId("app_id"),
     ClusterName("cluster_name"),
+    ContainerName("container_name"), 
     InstanceId("instance_id"),
     InstanceName("instance_name"),
     ModuleId("module_id"),
+    NamespaceId("namespace_id"),
     PodId("pod_id"),
     ProjectId("project_id"),
     VersionId("version_id"),
@@ -84,7 +86,9 @@ public class MonitoredResourceUtil {
           .putAll(
               Resource.Container.getKey(),
               Label.ClusterName,
+              Label.ContainerName,
               Label.InstanceId,
+              Label.NamespaceId,
               Label.PodId,
               Label.Zone)
           .putAll(Resource.GceInstance.getKey(), Label.InstanceId, Label.Zone)
@@ -135,6 +139,9 @@ public class MonitoredResourceUtil {
       case ClusterName:
         value = MetadataConfig.getClusterName();
         break;
+      case ContainerName:
+        value = MetadataConfig.getContainerName();
+        break;
       case InstanceId:
         value = MetadataConfig.getInstanceId();
         break;
@@ -143,6 +150,9 @@ public class MonitoredResourceUtil {
         break;
       case ModuleId:
         value = getAppEngineModuleId();
+        break;
+      case NamespaceId:
+        value = MetadataConfig.getNamespaceId();
         break;
       case PodId:
         value = System.getenv("HOSTNAME");
