@@ -51,6 +51,7 @@ import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.spi.v1.StorageRpc.RewriteResponse;
 import com.google.common.base.Function;
+import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -62,6 +63,9 @@ import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
 import com.google.common.net.UrlEscapers;
 import com.google.common.primitives.Ints;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -71,6 +75,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Date;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
@@ -548,6 +553,38 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       throw new IllegalStateException(ex);
     }
   }
+
+  public String constructV4QueryString(ServiceAccount account, long expiration, Map<String,String> signedHeadersMap) {
+    long date = System.currentTimeMillis();
+
+    StringBuilder signedHeaders = new StringBuilder();
+
+    for(String header : signedHeadersMap.keySet()) {
+      signedHeaders.append(header.toLowerCase() + ";");
+    }
+    signedHeaders.setLength(Math.max(signedHeaders.length() - 1, 0));
+    StringBuilder queryString = new StringBuilder();
+    queryString.append("X-Goog-Algorithm=GOOG4-RSA-SHA256&");
+    queryString.append("X-Goog-Credential=" + UrlEscapers.urlFormParameterEscaper().escape(account.getEmail() + "/" +
+            ISODateTimeFormat.basicDate().print(date) + "/auto/storage/goog4_request") + "&");
+    queryString.append("X-Goog-Date=" + ISODateTimeFormat.basicDateTimeNoMillis().withZoneUTC().print(date).replace("\'", "") + "&");
+    queryString.append("X-Goog-Expires=" + expiration + "&");
+    queryString.append("X-Goog-SignedHeaders=" + signedHeaders.toString());
+
+    return queryString.toString();
+  }
+
+  private String constructCanonicalRequest(HttpMethod httpMethod, URI path) {
+    StringBuilder canonicalRequest = new StringBuilder();
+    canonicalRequest.append(httpMethod.toString() + "\n");
+    canonicalRequest.append(path.toString() + "\n");
+    return null;
+  }
+
+  private String constructV4StringToSign() {
+    return null;
+  }
+
   
   /**
    * Builds signature info.

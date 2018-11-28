@@ -1791,6 +1791,7 @@ public class StorageImplTest {
     Map<String, String> extHeaders = new HashMap<String, String>();
     extHeaders.put("x-goog-acl", "public-read");
     extHeaders.put("x-goog-meta-owner", "myself");
+    System.out.println(((StorageImpl)storage).constructV4QueryString(SERVICE_ACCOUNT, 2L + 1209600, extHeaders));
     URL url =
         storage.signUrl(
             BLOB_INFO1,

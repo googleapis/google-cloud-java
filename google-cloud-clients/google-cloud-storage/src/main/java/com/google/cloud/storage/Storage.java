@@ -892,7 +892,11 @@ public interface Storage extends Service<StorageOptions> {
     private final Object value;
 
     enum Option {
-      HTTP_METHOD, CONTENT_TYPE, MD5, EXT_HEADERS, SERVICE_ACCOUNT_CRED
+      HTTP_METHOD, CONTENT_TYPE, MD5, EXT_HEADERS, SERVICE_ACCOUNT_CRED, SIGNATURE_VERSION
+    }
+
+    enum SignatureVersion {
+      V2, V4
     }
 
     private SignUrlOption(Option option, Object value) {
@@ -941,6 +945,14 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static SignUrlOption withExtHeaders(Map<String, String> extHeaders) {
       return new SignUrlOption(Option.EXT_HEADERS, extHeaders);
+    }
+
+    public static SignUrlOption withV2Signature() {
+      return new SignUrlOption(Option.SIGNATURE_VERSION, SignatureVersion.V2);
+    }
+
+    public static SignUrlOption withV4Signature() {
+      return new SignUrlOption(Option.SIGNATURE_VERSION, SignatureVersion.V4);
     }
 
     /**
