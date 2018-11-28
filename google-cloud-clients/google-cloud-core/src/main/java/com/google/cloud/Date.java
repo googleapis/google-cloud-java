@@ -71,7 +71,7 @@ public final class Date implements Comparable<Date>, Serializable {
   }
 
   /**
-   * Set the Google Date.
+   * Convert a Google Date to a Java Util Date.
    *
    * @param date the date of the Google Date.
    * @return java.util.Date
@@ -88,7 +88,7 @@ public final class Date implements Comparable<Date>, Serializable {
   }
 
   /**
-   * Set the Java Util Date.
+   * Convert a Java Util Date to a Google Date.
    *
    * @param date the date of the java.util.Date
    * @return Google Java Date
