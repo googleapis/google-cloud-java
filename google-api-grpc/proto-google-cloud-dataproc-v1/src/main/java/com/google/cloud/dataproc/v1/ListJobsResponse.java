@@ -103,7 +103,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.dataproc.v1.Job> jobs_;
   /**
    * <pre>
-   * Output-only. Jobs list.
+   * Output only. Jobs list.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -113,7 +113,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Jobs list.
+   * Output only. Jobs list.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -124,7 +124,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Jobs list.
+   * Output only. Jobs list.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -134,7 +134,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Jobs list.
+   * Output only. Jobs list.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -144,7 +144,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Jobs list.
+   * Output only. Jobs list.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -580,7 +580,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Output-only. Jobs list.
+     * Output only. Jobs list.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -594,7 +594,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Jobs list.
+     * Output only. Jobs list.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -608,7 +608,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Jobs list.
+     * Output only. Jobs list.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -622,7 +622,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Jobs list.
+     * Output only. Jobs list.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -643,7 +643,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Jobs list.
+     * Output only. Jobs list.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -661,7 +661,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Jobs list.
+     * Output only. Jobs list.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -681,7 +681,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Jobs list.
+     * Output only. Jobs list.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -702,7 +702,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Jobs list.
+     * Output only. Jobs list.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -720,7 +720,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Jobs list.
+     * Output only. Jobs list.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -738,7 +738,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Jobs list.
+     * Output only. Jobs list.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -757,7 +757,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Jobs list.
+     * Output only. Jobs list.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -774,7 +774,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Jobs list.
+     * Output only. Jobs list.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -791,7 +791,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Jobs list.
+     * Output only. Jobs list.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -802,7 +802,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Jobs list.
+     * Output only. Jobs list.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -816,7 +816,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Jobs list.
+     * Output only. Jobs list.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -831,7 +831,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Jobs list.
+     * Output only. Jobs list.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -842,7 +842,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Jobs list.
+     * Output only. Jobs list.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -854,7 +854,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Jobs list.
+     * Output only. Jobs list.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>

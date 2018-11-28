@@ -9,7 +9,7 @@ public interface ClusterStatusOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. The cluster's state.
+   * Output only. The cluster's state.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterStatus.State state = 1;</code>
@@ -17,7 +17,7 @@ public interface ClusterStatusOrBuilder extends
   int getStateValue();
   /**
    * <pre>
-   * Output-only. The cluster's state.
+   * Output only. The cluster's state.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterStatus.State state = 1;</code>
@@ -26,7 +26,7 @@ public interface ClusterStatusOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. Optional details of cluster's state.
+   * Output only. Optional details of cluster's state.
    * </pre>
    *
    * <code>string detail = 2;</code>
@@ -34,7 +34,7 @@ public interface ClusterStatusOrBuilder extends
   java.lang.String getDetail();
   /**
    * <pre>
-   * Output-only. Optional details of cluster's state.
+   * Output only. Optional details of cluster's state.
    * </pre>
    *
    * <code>string detail = 2;</code>
@@ -44,7 +44,7 @@ public interface ClusterStatusOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. Time when this state was entered.
+   * Output only. Time when this state was entered.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
@@ -52,7 +52,7 @@ public interface ClusterStatusOrBuilder extends
   boolean hasStateStartTime();
   /**
    * <pre>
-   * Output-only. Time when this state was entered.
+   * Output only. Time when this state was entered.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
@@ -60,7 +60,7 @@ public interface ClusterStatusOrBuilder extends
   com.google.protobuf.Timestamp getStateStartTime();
   /**
    * <pre>
-   * Output-only. Time when this state was entered.
+   * Output only. Time when this state was entered.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
@@ -69,7 +69,7 @@ public interface ClusterStatusOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. Additional state information that includes
+   * Output only. Additional state information that includes
    * status reported by the agent.
    * </pre>
    *
@@ -78,7 +78,7 @@ public interface ClusterStatusOrBuilder extends
   int getSubstateValue();
   /**
    * <pre>
-   * Output-only. Additional state information that includes
+   * Output only. Additional state information that includes
    * status reported by the agent.
    * </pre>
    *

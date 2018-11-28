@@ -350,6 +350,26 @@ public interface JobOrBuilder extends
 
   /**
    * <pre>
+   * Output only. The email address of the user submitting the job. For jobs
+   * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
+   * </pre>
+   *
+   * <code>string submitted_by = 10;</code>
+   */
+  java.lang.String getSubmittedBy();
+  /**
+   * <pre>
+   * Output only. The email address of the user submitting the job. For jobs
+   * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
+   * </pre>
+   *
+   * <code>string submitted_by = 10;</code>
+   */
+  com.google.protobuf.ByteString
+      getSubmittedByBytes();
+
+  /**
+   * <pre>
    * Output only. A URI pointing to the location of the stdout of the job's
    * driver program.
    * </pre>
@@ -493,6 +513,28 @@ public interface JobOrBuilder extends
    * <code>.google.cloud.dataproc.v1beta2.JobScheduling scheduling = 20;</code>
    */
   com.google.cloud.dataproc.v1beta2.JobSchedulingOrBuilder getSchedulingOrBuilder();
+
+  /**
+   * <pre>
+   * Output only. A UUID that uniquely identifies a job within the project
+   * over time. This is in contrast to a user-settable reference.job_id that
+   * may be reused over time.
+   * </pre>
+   *
+   * <code>string job_uuid = 22;</code>
+   */
+  java.lang.String getJobUuid();
+  /**
+   * <pre>
+   * Output only. A UUID that uniquely identifies a job within the project
+   * over time. This is in contrast to a user-settable reference.job_id that
+   * may be reused over time.
+   * </pre>
+   *
+   * <code>string job_uuid = 22;</code>
+   */
+  com.google.protobuf.ByteString
+      getJobUuidBytes();
 
   public com.google.cloud.dataproc.v1beta2.Job.TypeJobCase getTypeJobCase();
 }

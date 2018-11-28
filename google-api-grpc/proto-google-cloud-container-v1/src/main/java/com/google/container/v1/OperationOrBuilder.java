@@ -30,21 +30,23 @@ public interface OperationOrBuilder extends
    * The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the operation
    * is taking place.
+   * This field is deprecated, use location instead.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  java.lang.String getZone();
+  @java.lang.Deprecated java.lang.String getZone();
   /**
    * <pre>
    * The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the operation
    * is taking place.
+   * This field is deprecated, use location instead.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getZoneBytes();
 
   /**
@@ -152,6 +154,30 @@ public interface OperationOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTargetLinkBytes();
+
+  /**
+   * <pre>
+   * [Output only] The name of the Google Compute Engine
+   * [zone](/compute/docs/regions-zones/regions-zones#available) or
+   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * the cluster resides.
+   * </pre>
+   *
+   * <code>string location = 9;</code>
+   */
+  java.lang.String getLocation();
+  /**
+   * <pre>
+   * [Output only] The name of the Google Compute Engine
+   * [zone](/compute/docs/regions-zones/regions-zones#available) or
+   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * the cluster resides.
+   * </pre>
+   *
+   * <code>string location = 9;</code>
+   */
+  com.google.protobuf.ByteString
+      getLocationBytes();
 
   /**
    * <pre>

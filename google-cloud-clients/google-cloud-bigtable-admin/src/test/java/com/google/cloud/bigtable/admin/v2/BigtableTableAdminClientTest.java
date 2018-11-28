@@ -248,12 +248,12 @@ public class BigtableTableAdminClientTest {
     );
 
     // Execute
-    List<TableName> actualResults = adminClient.listTables();
+    List<String> actualResults = adminClient.listTables();
 
     // Verify
-    List<TableName> expectedResults = Lists.newArrayList();
+    List<String> expectedResults = Lists.newArrayList();
     for (com.google.bigtable.admin.v2.Table expectedProto : expectedProtos) {
-      expectedResults.add(TableName.parse(expectedProto.getName()));
+      expectedResults.add(TableName.parse(expectedProto.getName()).getTable());
     }
 
     assertThat(actualResults).containsExactlyElementsIn(expectedResults);

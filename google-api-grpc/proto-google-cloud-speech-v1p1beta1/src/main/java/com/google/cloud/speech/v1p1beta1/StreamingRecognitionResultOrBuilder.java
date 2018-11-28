@@ -94,6 +94,34 @@ public interface StreamingRecognitionResultOrBuilder extends
 
   /**
    * <pre>
+   * Output only. Time offset of the end of this result relative to the
+   * beginning of the audio.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration result_end_time = 4;</code>
+   */
+  boolean hasResultEndTime();
+  /**
+   * <pre>
+   * Output only. Time offset of the end of this result relative to the
+   * beginning of the audio.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration result_end_time = 4;</code>
+   */
+  com.google.protobuf.Duration getResultEndTime();
+  /**
+   * <pre>
+   * Output only. Time offset of the end of this result relative to the
+   * beginning of the audio.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration result_end_time = 4;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getResultEndTimeOrBuilder();
+
+  /**
+   * <pre>
    * For multi-channel audio, this is the channel number corresponding to the
    * recognized result for the audio from that channel.
    * For audio_channel_count = N, its output values can range from '1' to 'N'.

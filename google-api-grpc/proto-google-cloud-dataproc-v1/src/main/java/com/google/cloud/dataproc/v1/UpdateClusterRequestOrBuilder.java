@@ -90,6 +90,49 @@ public interface UpdateClusterRequestOrBuilder extends
 
   /**
    * <pre>
+   * Optional. Timeout for graceful YARN decomissioning. Graceful
+   * decommissioning allows removing nodes from the cluster without
+   * interrupting jobs in progress. Timeout specifies how long to wait for jobs
+   * in progress to finish before forcefully removing nodes (and potentially
+   * interrupting jobs). Default timeout is 0 (for forceful decommission), and
+   * the maximum allowed timeout is 1 day.
+   * Only supported on Dataproc image versions 1.2 and higher.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
+   */
+  boolean hasGracefulDecommissionTimeout();
+  /**
+   * <pre>
+   * Optional. Timeout for graceful YARN decomissioning. Graceful
+   * decommissioning allows removing nodes from the cluster without
+   * interrupting jobs in progress. Timeout specifies how long to wait for jobs
+   * in progress to finish before forcefully removing nodes (and potentially
+   * interrupting jobs). Default timeout is 0 (for forceful decommission), and
+   * the maximum allowed timeout is 1 day.
+   * Only supported on Dataproc image versions 1.2 and higher.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
+   */
+  com.google.protobuf.Duration getGracefulDecommissionTimeout();
+  /**
+   * <pre>
+   * Optional. Timeout for graceful YARN decomissioning. Graceful
+   * decommissioning allows removing nodes from the cluster without
+   * interrupting jobs in progress. Timeout specifies how long to wait for jobs
+   * in progress to finish before forcefully removing nodes (and potentially
+   * interrupting jobs). Default timeout is 0 (for forceful decommission), and
+   * the maximum allowed timeout is 1 day.
+   * Only supported on Dataproc image versions 1.2 and higher.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getGracefulDecommissionTimeoutOrBuilder();
+
+  /**
+   * <pre>
    * Required. Specifies the path, relative to `Cluster`, of
    * the field to update. For example, to change the number of workers
    * in a cluster to 5, the `update_mask` parameter would be
@@ -241,4 +284,38 @@ public interface UpdateClusterRequestOrBuilder extends
    * <code>.google.protobuf.FieldMask update_mask = 4;</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+
+  /**
+   * <pre>
+   * Optional. A unique id used to identify the request. If the server
+   * receives two [UpdateClusterRequest][google.cloud.dataproc.v1.UpdateClusterRequest] requests  with the same
+   * id, then the second request will be ignored and the
+   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
+   * backend is returned.
+   * It is recommended to always set this value to a
+   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   * The id must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), and hyphens (-). The maximum length is 40 characters.
+   * </pre>
+   *
+   * <code>string request_id = 7;</code>
+   */
+  java.lang.String getRequestId();
+  /**
+   * <pre>
+   * Optional. A unique id used to identify the request. If the server
+   * receives two [UpdateClusterRequest][google.cloud.dataproc.v1.UpdateClusterRequest] requests  with the same
+   * id, then the second request will be ignored and the
+   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
+   * backend is returned.
+   * It is recommended to always set this value to a
+   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   * The id must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), and hyphens (-). The maximum length is 40 characters.
+   * </pre>
+   *
+   * <code>string request_id = 7;</code>
+   */
+  com.google.protobuf.ByteString
+      getRequestIdBytes();
 }

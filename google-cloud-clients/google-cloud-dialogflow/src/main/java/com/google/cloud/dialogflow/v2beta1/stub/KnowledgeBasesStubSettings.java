@@ -227,7 +227,9 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
 
             @Override
             public Iterable<KnowledgeBase> extractResources(ListKnowledgeBasesResponse payload) {
-              return payload.getKnowledgeBasesList();
+              return payload.getKnowledgeBasesList() != null
+                  ? payload.getKnowledgeBasesList()
+                  : ImmutableList.<KnowledgeBase>of();
             }
           };
 

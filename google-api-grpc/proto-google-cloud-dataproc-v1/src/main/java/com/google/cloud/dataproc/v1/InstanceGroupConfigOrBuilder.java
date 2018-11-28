@@ -19,9 +19,8 @@ public interface InstanceGroupConfigOrBuilder extends
 
   /**
    * <pre>
-   * Optional. The list of instance names. Cloud Dataproc derives the names from
-   * `cluster_name`, `num_instances`, and the instance group if not set by user
-   * (recommended practice is to let Cloud Dataproc derive the name).
+   * Output only. The list of instance names. Cloud Dataproc derives the names
+   * from `cluster_name`, `num_instances`, and the instance group.
    * </pre>
    *
    * <code>repeated string instance_names = 2;</code>
@@ -30,9 +29,8 @@ public interface InstanceGroupConfigOrBuilder extends
       getInstanceNamesList();
   /**
    * <pre>
-   * Optional. The list of instance names. Cloud Dataproc derives the names from
-   * `cluster_name`, `num_instances`, and the instance group if not set by user
-   * (recommended practice is to let Cloud Dataproc derive the name).
+   * Output only. The list of instance names. Cloud Dataproc derives the names
+   * from `cluster_name`, `num_instances`, and the instance group.
    * </pre>
    *
    * <code>repeated string instance_names = 2;</code>
@@ -40,9 +38,8 @@ public interface InstanceGroupConfigOrBuilder extends
   int getInstanceNamesCount();
   /**
    * <pre>
-   * Optional. The list of instance names. Cloud Dataproc derives the names from
-   * `cluster_name`, `num_instances`, and the instance group if not set by user
-   * (recommended practice is to let Cloud Dataproc derive the name).
+   * Output only. The list of instance names. Cloud Dataproc derives the names
+   * from `cluster_name`, `num_instances`, and the instance group.
    * </pre>
    *
    * <code>repeated string instance_names = 2;</code>
@@ -50,9 +47,8 @@ public interface InstanceGroupConfigOrBuilder extends
   java.lang.String getInstanceNames(int index);
   /**
    * <pre>
-   * Optional. The list of instance names. Cloud Dataproc derives the names from
-   * `cluster_name`, `num_instances`, and the instance group if not set by user
-   * (recommended practice is to let Cloud Dataproc derive the name).
+   * Output only. The list of instance names. Cloud Dataproc derives the names
+   * from `cluster_name`, `num_instances`, and the instance group.
    * </pre>
    *
    * <code>repeated string instance_names = 2;</code>
@@ -62,8 +58,9 @@ public interface InstanceGroupConfigOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. The Google Compute Engine image resource used for cluster
-   * instances. Inferred from `SoftwareConfig.image_version`.
+   * Optional. The Compute Engine image resource used for cluster
+   * instances. It can be specified or may be inferred from
+   * `SoftwareConfig.image_version`.
    * </pre>
    *
    * <code>string image_uri = 3;</code>
@@ -71,8 +68,9 @@ public interface InstanceGroupConfigOrBuilder extends
   java.lang.String getImageUri();
   /**
    * <pre>
-   * Output-only. The Google Compute Engine image resource used for cluster
-   * instances. Inferred from `SoftwareConfig.image_version`.
+   * Optional. The Compute Engine image resource used for cluster
+   * instances. It can be specified or may be inferred from
+   * `SoftwareConfig.image_version`.
    * </pre>
    *
    * <code>string image_uri = 3;</code>
@@ -82,11 +80,15 @@ public interface InstanceGroupConfigOrBuilder extends
 
   /**
    * <pre>
-   * Optional. The Google Compute Engine machine type used for cluster instances.
+   * Optional. The Compute Engine machine type used for cluster instances.
    * A full URL, partial URI, or short name are valid. Examples:
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
    * * `projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
    * * `n1-standard-2`
+   * **Auto Zone Exception**: If you are using the Cloud Dataproc
+   * [Auto Zone Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
+   * feature, you must use the short name of the machine type
+   * resource, for example, `n1-standard-2`.
    * </pre>
    *
    * <code>string machine_type_uri = 4;</code>
@@ -94,11 +96,15 @@ public interface InstanceGroupConfigOrBuilder extends
   java.lang.String getMachineTypeUri();
   /**
    * <pre>
-   * Optional. The Google Compute Engine machine type used for cluster instances.
+   * Optional. The Compute Engine machine type used for cluster instances.
    * A full URL, partial URI, or short name are valid. Examples:
    * * `https://www.googleapis.com/compute/v1/projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
    * * `projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2`
    * * `n1-standard-2`
+   * **Auto Zone Exception**: If you are using the Cloud Dataproc
+   * [Auto Zone Placement](/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement)
+   * feature, you must use the short name of the machine type
+   * resource, for example, `n1-standard-2`.
    * </pre>
    *
    * <code>string machine_type_uri = 4;</code>
@@ -142,7 +148,7 @@ public interface InstanceGroupConfigOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. The config for Google Compute Engine Instance Group
+   * Output only. The config for Compute Engine Instance Group
    * Manager that manages this group.
    * This is only used for preemptible instance groups.
    * </pre>
@@ -152,7 +158,7 @@ public interface InstanceGroupConfigOrBuilder extends
   boolean hasManagedGroupConfig();
   /**
    * <pre>
-   * Output-only. The config for Google Compute Engine Instance Group
+   * Output only. The config for Compute Engine Instance Group
    * Manager that manages this group.
    * This is only used for preemptible instance groups.
    * </pre>
@@ -162,7 +168,7 @@ public interface InstanceGroupConfigOrBuilder extends
   com.google.cloud.dataproc.v1.ManagedGroupConfig getManagedGroupConfig();
   /**
    * <pre>
-   * Output-only. The config for Google Compute Engine Instance Group
+   * Output only. The config for Compute Engine Instance Group
    * Manager that manages this group.
    * This is only used for preemptible instance groups.
    * </pre>
@@ -173,7 +179,7 @@ public interface InstanceGroupConfigOrBuilder extends
 
   /**
    * <pre>
-   * Optional. The Google Compute Engine accelerator configuration for these
+   * Optional. The Compute Engine accelerator configuration for these
    * instances.
    * **Beta Feature**: This feature is still under development. It may be
    * changed before final release.
@@ -185,7 +191,7 @@ public interface InstanceGroupConfigOrBuilder extends
       getAcceleratorsList();
   /**
    * <pre>
-   * Optional. The Google Compute Engine accelerator configuration for these
+   * Optional. The Compute Engine accelerator configuration for these
    * instances.
    * **Beta Feature**: This feature is still under development. It may be
    * changed before final release.
@@ -196,7 +202,7 @@ public interface InstanceGroupConfigOrBuilder extends
   com.google.cloud.dataproc.v1.AcceleratorConfig getAccelerators(int index);
   /**
    * <pre>
-   * Optional. The Google Compute Engine accelerator configuration for these
+   * Optional. The Compute Engine accelerator configuration for these
    * instances.
    * **Beta Feature**: This feature is still under development. It may be
    * changed before final release.
@@ -207,7 +213,7 @@ public interface InstanceGroupConfigOrBuilder extends
   int getAcceleratorsCount();
   /**
    * <pre>
-   * Optional. The Google Compute Engine accelerator configuration for these
+   * Optional. The Compute Engine accelerator configuration for these
    * instances.
    * **Beta Feature**: This feature is still under development. It may be
    * changed before final release.
@@ -219,7 +225,7 @@ public interface InstanceGroupConfigOrBuilder extends
       getAcceleratorsOrBuilderList();
   /**
    * <pre>
-   * Optional. The Google Compute Engine accelerator configuration for these
+   * Optional. The Compute Engine accelerator configuration for these
    * instances.
    * **Beta Feature**: This feature is still under development. It may be
    * changed before final release.

@@ -175,7 +175,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object clusterName_;
   /**
    * <pre>
-   * Output-only. Name of the cluster for the operation.
+   * Output only. Name of the cluster for the operation.
    * </pre>
    *
    * <code>string cluster_name = 7;</code>
@@ -194,7 +194,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Name of the cluster for the operation.
+   * Output only. Name of the cluster for the operation.
    * </pre>
    *
    * <code>string cluster_name = 7;</code>
@@ -217,7 +217,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object clusterUuid_;
   /**
    * <pre>
-   * Output-only. Cluster UUID for the operation.
+   * Output only. Cluster UUID for the operation.
    * </pre>
    *
    * <code>string cluster_uuid = 8;</code>
@@ -236,7 +236,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Cluster UUID for the operation.
+   * Output only. Cluster UUID for the operation.
    * </pre>
    *
    * <code>string cluster_uuid = 8;</code>
@@ -259,7 +259,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.dataproc.v1.ClusterOperationStatus status_;
   /**
    * <pre>
-   * Output-only. Current operation status.
+   * Output only. Current operation status.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9;</code>
@@ -269,7 +269,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Current operation status.
+   * Output only. Current operation status.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9;</code>
@@ -279,7 +279,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Current operation status.
+   * Output only. Current operation status.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9;</code>
@@ -292,7 +292,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.dataproc.v1.ClusterOperationStatus> statusHistory_;
   /**
    * <pre>
-   * Output-only. The previous operation status.
+   * Output only. The previous operation status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -302,7 +302,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The previous operation status.
+   * Output only. The previous operation status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -313,7 +313,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The previous operation status.
+   * Output only. The previous operation status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -323,7 +323,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The previous operation status.
+   * Output only. The previous operation status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -333,7 +333,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The previous operation status.
+   * Output only. The previous operation status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -347,7 +347,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object operationType_;
   /**
    * <pre>
-   * Output-only. The operation type.
+   * Output only. The operation type.
    * </pre>
    *
    * <code>string operation_type = 11;</code>
@@ -366,7 +366,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The operation type.
+   * Output only. The operation type.
    * </pre>
    *
    * <code>string operation_type = 11;</code>
@@ -389,7 +389,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object description_;
   /**
    * <pre>
-   * Output-only. Short description of operation.
+   * Output only. Short description of operation.
    * </pre>
    *
    * <code>string description = 12;</code>
@@ -408,7 +408,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Short description of operation.
+   * Output only. Short description of operation.
    * </pre>
    *
    * <code>string description = 12;</code>
@@ -455,7 +455,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Labels associated with the operation
+   * Output only. Labels associated with the operation
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 13;</code>
@@ -475,7 +475,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Labels associated with the operation
+   * Output only. Labels associated with the operation
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 13;</code>
@@ -486,7 +486,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Labels associated with the operation
+   * Output only. Labels associated with the operation
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 13;</code>
@@ -502,7 +502,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Labels associated with the operation
+   * Output only. Labels associated with the operation
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 13;</code>
@@ -523,7 +523,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList warnings_;
   /**
    * <pre>
-   * Output-only. Errors encountered during operation execution.
+   * Output only. Errors encountered during operation execution.
    * </pre>
    *
    * <code>repeated string warnings = 14;</code>
@@ -534,7 +534,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Errors encountered during operation execution.
+   * Output only. Errors encountered during operation execution.
    * </pre>
    *
    * <code>repeated string warnings = 14;</code>
@@ -544,7 +544,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Errors encountered during operation execution.
+   * Output only. Errors encountered during operation execution.
    * </pre>
    *
    * <code>repeated string warnings = 14;</code>
@@ -554,7 +554,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Errors encountered during operation execution.
+   * Output only. Errors encountered during operation execution.
    * </pre>
    *
    * <code>repeated string warnings = 14;</code>
@@ -1097,7 +1097,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object clusterName_ = "";
     /**
      * <pre>
-     * Output-only. Name of the cluster for the operation.
+     * Output only. Name of the cluster for the operation.
      * </pre>
      *
      * <code>string cluster_name = 7;</code>
@@ -1116,7 +1116,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Name of the cluster for the operation.
+     * Output only. Name of the cluster for the operation.
      * </pre>
      *
      * <code>string cluster_name = 7;</code>
@@ -1136,7 +1136,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Name of the cluster for the operation.
+     * Output only. Name of the cluster for the operation.
      * </pre>
      *
      * <code>string cluster_name = 7;</code>
@@ -1153,7 +1153,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Name of the cluster for the operation.
+     * Output only. Name of the cluster for the operation.
      * </pre>
      *
      * <code>string cluster_name = 7;</code>
@@ -1166,7 +1166,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Name of the cluster for the operation.
+     * Output only. Name of the cluster for the operation.
      * </pre>
      *
      * <code>string cluster_name = 7;</code>
@@ -1186,7 +1186,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object clusterUuid_ = "";
     /**
      * <pre>
-     * Output-only. Cluster UUID for the operation.
+     * Output only. Cluster UUID for the operation.
      * </pre>
      *
      * <code>string cluster_uuid = 8;</code>
@@ -1205,7 +1205,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Cluster UUID for the operation.
+     * Output only. Cluster UUID for the operation.
      * </pre>
      *
      * <code>string cluster_uuid = 8;</code>
@@ -1225,7 +1225,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Cluster UUID for the operation.
+     * Output only. Cluster UUID for the operation.
      * </pre>
      *
      * <code>string cluster_uuid = 8;</code>
@@ -1242,7 +1242,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Cluster UUID for the operation.
+     * Output only. Cluster UUID for the operation.
      * </pre>
      *
      * <code>string cluster_uuid = 8;</code>
@@ -1255,7 +1255,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Cluster UUID for the operation.
+     * Output only. Cluster UUID for the operation.
      * </pre>
      *
      * <code>string cluster_uuid = 8;</code>
@@ -1277,7 +1277,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.dataproc.v1.ClusterOperationStatus, com.google.cloud.dataproc.v1.ClusterOperationStatus.Builder, com.google.cloud.dataproc.v1.ClusterOperationStatusOrBuilder> statusBuilder_;
     /**
      * <pre>
-     * Output-only. Current operation status.
+     * Output only. Current operation status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9;</code>
@@ -1287,7 +1287,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Current operation status.
+     * Output only. Current operation status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9;</code>
@@ -1301,7 +1301,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Current operation status.
+     * Output only. Current operation status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9;</code>
@@ -1321,7 +1321,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Current operation status.
+     * Output only. Current operation status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9;</code>
@@ -1339,7 +1339,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Current operation status.
+     * Output only. Current operation status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9;</code>
@@ -1361,7 +1361,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Current operation status.
+     * Output only. Current operation status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9;</code>
@@ -1379,7 +1379,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Current operation status.
+     * Output only. Current operation status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9;</code>
@@ -1391,7 +1391,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Current operation status.
+     * Output only. Current operation status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9;</code>
@@ -1406,7 +1406,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Current operation status.
+     * Output only. Current operation status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterOperationStatus status = 9;</code>
@@ -1439,7 +1439,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Output-only. The previous operation status.
+     * Output only. The previous operation status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -1453,7 +1453,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous operation status.
+     * Output only. The previous operation status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -1467,7 +1467,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous operation status.
+     * Output only. The previous operation status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -1481,7 +1481,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous operation status.
+     * Output only. The previous operation status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -1502,7 +1502,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous operation status.
+     * Output only. The previous operation status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -1520,7 +1520,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous operation status.
+     * Output only. The previous operation status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -1540,7 +1540,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous operation status.
+     * Output only. The previous operation status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -1561,7 +1561,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous operation status.
+     * Output only. The previous operation status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -1579,7 +1579,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous operation status.
+     * Output only. The previous operation status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -1597,7 +1597,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous operation status.
+     * Output only. The previous operation status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -1616,7 +1616,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous operation status.
+     * Output only. The previous operation status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -1633,7 +1633,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous operation status.
+     * Output only. The previous operation status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -1650,7 +1650,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous operation status.
+     * Output only. The previous operation status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -1661,7 +1661,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous operation status.
+     * Output only. The previous operation status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -1675,7 +1675,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous operation status.
+     * Output only. The previous operation status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -1690,7 +1690,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous operation status.
+     * Output only. The previous operation status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -1701,7 +1701,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous operation status.
+     * Output only. The previous operation status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -1713,7 +1713,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The previous operation status.
+     * Output only. The previous operation status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterOperationStatus status_history = 10;</code>
@@ -1740,7 +1740,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object operationType_ = "";
     /**
      * <pre>
-     * Output-only. The operation type.
+     * Output only. The operation type.
      * </pre>
      *
      * <code>string operation_type = 11;</code>
@@ -1759,7 +1759,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The operation type.
+     * Output only. The operation type.
      * </pre>
      *
      * <code>string operation_type = 11;</code>
@@ -1779,7 +1779,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The operation type.
+     * Output only. The operation type.
      * </pre>
      *
      * <code>string operation_type = 11;</code>
@@ -1796,7 +1796,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The operation type.
+     * Output only. The operation type.
      * </pre>
      *
      * <code>string operation_type = 11;</code>
@@ -1809,7 +1809,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The operation type.
+     * Output only. The operation type.
      * </pre>
      *
      * <code>string operation_type = 11;</code>
@@ -1829,7 +1829,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object description_ = "";
     /**
      * <pre>
-     * Output-only. Short description of operation.
+     * Output only. Short description of operation.
      * </pre>
      *
      * <code>string description = 12;</code>
@@ -1848,7 +1848,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Short description of operation.
+     * Output only. Short description of operation.
      * </pre>
      *
      * <code>string description = 12;</code>
@@ -1868,7 +1868,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Short description of operation.
+     * Output only. Short description of operation.
      * </pre>
      *
      * <code>string description = 12;</code>
@@ -1885,7 +1885,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Short description of operation.
+     * Output only. Short description of operation.
      * </pre>
      *
      * <code>string description = 12;</code>
@@ -1898,7 +1898,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Short description of operation.
+     * Output only. Short description of operation.
      * </pre>
      *
      * <code>string description = 12;</code>
@@ -1943,7 +1943,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Labels associated with the operation
+     * Output only. Labels associated with the operation
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 13;</code>
@@ -1963,7 +1963,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Labels associated with the operation
+     * Output only. Labels associated with the operation
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 13;</code>
@@ -1974,7 +1974,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Labels associated with the operation
+     * Output only. Labels associated with the operation
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 13;</code>
@@ -1990,7 +1990,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Labels associated with the operation
+     * Output only. Labels associated with the operation
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 13;</code>
@@ -2014,7 +2014,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Labels associated with the operation
+     * Output only. Labels associated with the operation
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 13;</code>
@@ -2037,7 +2037,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Labels associated with the operation
+     * Output only. Labels associated with the operation
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 13;</code>
@@ -2053,7 +2053,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Labels associated with the operation
+     * Output only. Labels associated with the operation
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 13;</code>
@@ -2075,7 +2075,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Errors encountered during operation execution.
+     * Output only. Errors encountered during operation execution.
      * </pre>
      *
      * <code>repeated string warnings = 14;</code>
@@ -2086,7 +2086,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Errors encountered during operation execution.
+     * Output only. Errors encountered during operation execution.
      * </pre>
      *
      * <code>repeated string warnings = 14;</code>
@@ -2096,7 +2096,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Errors encountered during operation execution.
+     * Output only. Errors encountered during operation execution.
      * </pre>
      *
      * <code>repeated string warnings = 14;</code>
@@ -2106,7 +2106,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Errors encountered during operation execution.
+     * Output only. Errors encountered during operation execution.
      * </pre>
      *
      * <code>repeated string warnings = 14;</code>
@@ -2117,7 +2117,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Errors encountered during operation execution.
+     * Output only. Errors encountered during operation execution.
      * </pre>
      *
      * <code>repeated string warnings = 14;</code>
@@ -2134,7 +2134,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Errors encountered during operation execution.
+     * Output only. Errors encountered during operation execution.
      * </pre>
      *
      * <code>repeated string warnings = 14;</code>
@@ -2151,7 +2151,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Errors encountered during operation execution.
+     * Output only. Errors encountered during operation execution.
      * </pre>
      *
      * <code>repeated string warnings = 14;</code>
@@ -2166,7 +2166,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Errors encountered during operation execution.
+     * Output only. Errors encountered during operation execution.
      * </pre>
      *
      * <code>repeated string warnings = 14;</code>
@@ -2179,7 +2179,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Errors encountered during operation execution.
+     * Output only. Errors encountered during operation execution.
      * </pre>
      *
      * <code>repeated string warnings = 14;</code>

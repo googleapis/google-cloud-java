@@ -29,6 +29,7 @@ private static final long serialVersionUID = 0L;
     statusMessage_ = "";
     selfLink_ = "";
     targetLink_ = "";
+    location_ = "";
     startTime_ = "";
     endTime_ = "";
   }
@@ -103,6 +104,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             detail_ = s;
+            break;
+          }
+          case 74: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            location_ = s;
             break;
           }
           case 82: {
@@ -740,11 +747,12 @@ private static final long serialVersionUID = 0L;
    * The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the operation
    * is taking place.
+   * This field is deprecated, use location instead.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  public java.lang.String getZone() {
+  @java.lang.Deprecated public java.lang.String getZone() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -761,11 +769,12 @@ private static final long serialVersionUID = 0L;
    * The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the operation
    * is taking place.
+   * This field is deprecated, use location instead.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getZoneBytes() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
@@ -997,6 +1006,54 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int LOCATION_FIELD_NUMBER = 9;
+  private volatile java.lang.Object location_;
+  /**
+   * <pre>
+   * [Output only] The name of the Google Compute Engine
+   * [zone](/compute/docs/regions-zones/regions-zones#available) or
+   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * the cluster resides.
+   * </pre>
+   *
+   * <code>string location = 9;</code>
+   */
+  public java.lang.String getLocation() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      location_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * [Output only] The name of the Google Compute Engine
+   * [zone](/compute/docs/regions-zones/regions-zones#available) or
+   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * the cluster resides.
+   * </pre>
+   *
+   * <code>string location = 9;</code>
+   */
+  public com.google.protobuf.ByteString
+      getLocationBytes() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      location_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int START_TIME_FIELD_NUMBER = 10;
   private volatile java.lang.Object startTime_;
   /**
@@ -1123,6 +1180,9 @@ private static final long serialVersionUID = 0L;
     if (!getDetailBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, detail_);
     }
+    if (!getLocationBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, location_);
+    }
     if (!getStartTimeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, startTime_);
     }
@@ -1164,6 +1224,9 @@ private static final long serialVersionUID = 0L;
     if (!getDetailBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, detail_);
     }
+    if (!getLocationBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, location_);
+    }
     if (!getStartTimeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, startTime_);
     }
@@ -1200,6 +1263,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSelfLink());
     result = result && getTargetLink()
         .equals(other.getTargetLink());
+    result = result && getLocation()
+        .equals(other.getLocation());
     result = result && getStartTime()
         .equals(other.getStartTime());
     result = result && getEndTime()
@@ -1231,6 +1296,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getSelfLink().hashCode();
     hash = (37 * hash) + TARGET_LINK_FIELD_NUMBER;
     hash = (53 * hash) + getTargetLink().hashCode();
+    hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+    hash = (53 * hash) + getLocation().hashCode();
     hash = (37 * hash) + START_TIME_FIELD_NUMBER;
     hash = (53 * hash) + getStartTime().hashCode();
     hash = (37 * hash) + END_TIME_FIELD_NUMBER;
@@ -1389,6 +1456,8 @@ private static final long serialVersionUID = 0L;
 
       targetLink_ = "";
 
+      location_ = "";
+
       startTime_ = "";
 
       endTime_ = "";
@@ -1427,6 +1496,7 @@ private static final long serialVersionUID = 0L;
       result.statusMessage_ = statusMessage_;
       result.selfLink_ = selfLink_;
       result.targetLink_ = targetLink_;
+      result.location_ = location_;
       result.startTime_ = startTime_;
       result.endTime_ = endTime_;
       onBuilt();
@@ -1505,6 +1575,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getTargetLink().isEmpty()) {
         targetLink_ = other.targetLink_;
+        onChanged();
+      }
+      if (!other.getLocation().isEmpty()) {
+        location_ = other.location_;
         onChanged();
       }
       if (!other.getStartTime().isEmpty()) {
@@ -1639,11 +1713,12 @@ private static final long serialVersionUID = 0L;
      * The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the operation
      * is taking place.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public java.lang.String getZone() {
+    @java.lang.Deprecated public java.lang.String getZone() {
       java.lang.Object ref = zone_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -1660,11 +1735,12 @@ private static final long serialVersionUID = 0L;
      * The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the operation
      * is taking place.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getZoneBytes() {
       java.lang.Object ref = zone_;
       if (ref instanceof String) {
@@ -1682,11 +1758,12 @@ private static final long serialVersionUID = 0L;
      * The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the operation
      * is taking place.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public Builder setZone(
+    @java.lang.Deprecated public Builder setZone(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -1701,11 +1778,12 @@ private static final long serialVersionUID = 0L;
      * The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the operation
      * is taking place.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public Builder clearZone() {
+    @java.lang.Deprecated public Builder clearZone() {
       
       zone_ = getDefaultInstance().getZone();
       onChanged();
@@ -1716,11 +1794,12 @@ private static final long serialVersionUID = 0L;
      * The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the operation
      * is taking place.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public Builder setZoneBytes(
+    @java.lang.Deprecated public Builder setZoneBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
@@ -2214,6 +2293,110 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       targetLink_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object location_ = "";
+    /**
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 9;</code>
+     */
+    public java.lang.String getLocation() {
+      java.lang.Object ref = location_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        location_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLocationBytes() {
+      java.lang.Object ref = location_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        location_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 9;</code>
+     */
+    public Builder setLocation(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      location_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 9;</code>
+     */
+    public Builder clearLocation() {
+      
+      location_ = getDefaultInstance().getLocation();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 9;</code>
+     */
+    public Builder setLocationBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      location_ = value;
       onChanged();
       return this;
     }

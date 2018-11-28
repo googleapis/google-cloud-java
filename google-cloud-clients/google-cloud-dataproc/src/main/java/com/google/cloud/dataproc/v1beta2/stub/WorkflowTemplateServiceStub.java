@@ -24,6 +24,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataproc.v1beta2.CreateWorkflowTemplateRequest;
 import com.google.cloud.dataproc.v1beta2.DeleteWorkflowTemplateRequest;
 import com.google.cloud.dataproc.v1beta2.GetWorkflowTemplateRequest;
+import com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest;
 import com.google.cloud.dataproc.v1beta2.InstantiateWorkflowTemplateRequest;
 import com.google.cloud.dataproc.v1beta2.ListWorkflowTemplatesRequest;
 import com.google.cloud.dataproc.v1beta2.ListWorkflowTemplatesResponse;
@@ -70,6 +71,19 @@ public abstract class WorkflowTemplateServiceStub implements BackgroundResource 
       instantiateWorkflowTemplateCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: instantiateWorkflowTemplateCallable()");
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<InstantiateInlineWorkflowTemplateRequest, Empty, WorkflowMetadata>
+      instantiateInlineWorkflowTemplateOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: instantiateInlineWorkflowTemplateOperationCallable()");
+  }
+
+  public UnaryCallable<InstantiateInlineWorkflowTemplateRequest, Operation>
+      instantiateInlineWorkflowTemplateCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: instantiateInlineWorkflowTemplateCallable()");
   }
 
   public UnaryCallable<UpdateWorkflowTemplateRequest, WorkflowTemplate>

@@ -280,7 +280,7 @@ public final class JobsProto {
       "\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\007\n\003NEW\020\001\022" +
       "\016\n\nNEW_SAVING\020\002\022\r\n\tSUBMITTED\020\003\022\014\n\010ACCEPT" +
       "ED\020\004\022\013\n\007RUNNING\020\005\022\014\n\010FINISHED\020\006\022\n\n\006FAILE" +
-      "D\020\007\022\n\n\006KILLED\020\010\"\312\007\n\003Job\022>\n\treference\030\001 \001" +
+      "D\020\007\022\n\n\006KILLED\020\010\"\362\007\n\003Job\022>\n\treference\030\001 \001" +
       "(\0132+.google.cloud.dataproc.v1beta2.JobRe" +
       "ference\022>\n\tplacement\030\002 \001(\0132+.google.clou" +
       "d.dataproc.v1beta2.JobPlacement\022>\n\nhadoo" +
@@ -298,12 +298,13 @@ public final class JobsProto {
       "istory\030\r \003(\0132(.google.cloud.dataproc.v1b" +
       "eta2.JobStatus\022I\n\021yarn_applications\030\t \003(" +
       "\0132..google.cloud.dataproc.v1beta2.YarnAp" +
-      "plication\022\"\n\032driver_output_resource_uri\030" +
-      "\021 \001(\t\022 \n\030driver_control_files_uri\030\017 \001(\t\022" +
-      ">\n\006labels\030\022 \003(\0132..google.cloud.dataproc." +
-      "v1beta2.Job.LabelsEntry\022@\n\nscheduling\030\024 " +
-      "\001(\0132,.google.cloud.dataproc.v1beta2.JobS" +
-      "cheduling\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "plication\022\024\n\014submitted_by\030\n \001(\t\022\"\n\032drive" +
+      "r_output_resource_uri\030\021 \001(\t\022 \n\030driver_co" +
+      "ntrol_files_uri\030\017 \001(\t\022>\n\006labels\030\022 \003(\0132.." +
+      "google.cloud.dataproc.v1beta2.Job.Labels" +
+      "Entry\022@\n\nscheduling\030\024 \001(\0132,.google.cloud" +
+      ".dataproc.v1beta2.JobScheduling\022\020\n\010job_u" +
+      "uid\030\026 \001(\t\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
       "\005value\030\002 \001(\t:\0028\001B\n\n\010type_job\".\n\rJobSched" +
       "uling\022\035\n\025max_failures_per_hour\030\001 \001(\005\"{\n\020" +
       "SubmitJobRequest\022\022\n\nproject_id\030\001 \001(\t\022\016\n\006" +
@@ -512,7 +513,7 @@ public final class JobsProto {
     internal_static_google_cloud_dataproc_v1beta2_Job_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_dataproc_v1beta2_Job_descriptor,
-        new java.lang.String[] { "Reference", "Placement", "HadoopJob", "SparkJob", "PysparkJob", "HiveJob", "PigJob", "SparkSqlJob", "Status", "StatusHistory", "YarnApplications", "DriverOutputResourceUri", "DriverControlFilesUri", "Labels", "Scheduling", "TypeJob", });
+        new java.lang.String[] { "Reference", "Placement", "HadoopJob", "SparkJob", "PysparkJob", "HiveJob", "PigJob", "SparkSqlJob", "Status", "StatusHistory", "YarnApplications", "SubmittedBy", "DriverOutputResourceUri", "DriverControlFilesUri", "Labels", "Scheduling", "JobUuid", "TypeJob", });
     internal_static_google_cloud_dataproc_v1beta2_Job_LabelsEntry_descriptor =
       internal_static_google_cloud_dataproc_v1beta2_Job_descriptor.getNestedTypes().get(0);
     internal_static_google_cloud_dataproc_v1beta2_Job_LabelsEntry_fieldAccessorTable = new

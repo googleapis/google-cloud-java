@@ -222,7 +222,9 @@ public class ErrorStatsServiceStubSettings extends StubSettings<ErrorStatsServic
 
             @Override
             public Iterable<ErrorGroupStats> extractResources(ListGroupStatsResponse payload) {
-              return payload.getErrorGroupStatsList();
+              return payload.getErrorGroupStatsList() != null
+                  ? payload.getErrorGroupStatsList()
+                  : ImmutableList.<ErrorGroupStats>of();
             }
           };
 
@@ -256,7 +258,9 @@ public class ErrorStatsServiceStubSettings extends StubSettings<ErrorStatsServic
 
             @Override
             public Iterable<ErrorEvent> extractResources(ListEventsResponse payload) {
-              return payload.getErrorEventsList();
+              return payload.getErrorEventsList() != null
+                  ? payload.getErrorEventsList()
+                  : ImmutableList.<ErrorEvent>of();
             }
           };
 

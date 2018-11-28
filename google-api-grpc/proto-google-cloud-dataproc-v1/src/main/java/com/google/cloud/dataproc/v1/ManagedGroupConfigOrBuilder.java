@@ -9,7 +9,7 @@ public interface ManagedGroupConfigOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. The name of the Instance Template used for the Managed
+   * Output only. The name of the Instance Template used for the Managed
    * Instance Group.
    * </pre>
    *
@@ -18,7 +18,7 @@ public interface ManagedGroupConfigOrBuilder extends
   java.lang.String getInstanceTemplateName();
   /**
    * <pre>
-   * Output-only. The name of the Instance Template used for the Managed
+   * Output only. The name of the Instance Template used for the Managed
    * Instance Group.
    * </pre>
    *
@@ -29,7 +29,7 @@ public interface ManagedGroupConfigOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. The name of the Instance Group Manager for this group.
+   * Output only. The name of the Instance Group Manager for this group.
    * </pre>
    *
    * <code>string instance_group_manager_name = 2;</code>
@@ -37,7 +37,7 @@ public interface ManagedGroupConfigOrBuilder extends
   java.lang.String getInstanceGroupManagerName();
   /**
    * <pre>
-   * Output-only. The name of the Instance Group Manager for this group.
+   * Output only. The name of the Instance Group Manager for this group.
    * </pre>
    *
    * <code>string instance_group_manager_name = 2;</code>

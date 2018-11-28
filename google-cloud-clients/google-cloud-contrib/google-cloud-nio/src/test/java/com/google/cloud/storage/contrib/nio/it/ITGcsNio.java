@@ -127,9 +127,13 @@ public class ITGcsNio {
 
   @AfterClass
   public static void afterClass() throws ExecutionException, InterruptedException {
-    if (storage != null && !RemoteStorageHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS) &&
-      log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
+    if (storage != null) {
+      for (String bucket : new String[]{BUCKET, REQUESTER_PAYS_BUCKET}) {
+        if (!RemoteStorageHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS, project) &&
+            log.isLoggable(Level.WARNING)) {
+          log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", bucket);
+        }
+      }
     }
   }
 
@@ -632,11 +636,17 @@ public class ITGcsNio {
     // test absolute path, relative path.
     for (String check : new String[]{".", "/", ""}) {
       Path rootPath = fs.getPath(check);
-      List<String> objectNames = new ArrayList<>();
+      List<Path> pathsFound = new ArrayList<>();
       for (Path path : Files.newDirectoryStream(rootPath)) {
-        objectNames.add(path.toString());
+        // The returned paths will match the absolute-ness of the root path
+        // (this matches the behavior of the built-in UNIX file system).
+        assertWithMessage("Absolute/relative for " + check + ": ")
+            .that(path.isAbsolute()).isEqualTo(rootPath.isAbsolute());
+        // To simplify the check that we found our files, we normalize here.
+        pathsFound.add(path.toAbsolutePath());
       }
-      assertWithMessage("Listing " + check + ": ").that(objectNames).containsExactly(BIG_FILE, SML_FILE);
+      assertWithMessage("Listing " + check + ": ").that(pathsFound).containsExactly(
+          fs.getPath(BIG_FILE).toAbsolutePath(), fs.getPath(SML_FILE).toAbsolutePath());
     }
   }
 

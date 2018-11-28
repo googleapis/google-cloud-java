@@ -349,6 +349,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         cloudPath.getBlobId(),
         0,
         maxChannelReopens,
+        cloudPath.getFileSystem().config(),
         userProject,
         blobSourceOptions.toArray(new BlobSourceOption[blobSourceOptions.size()]));
   }
@@ -461,7 +462,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       throw new CloudStoragePseudoDirectoryException(cloudPath);
     }
 
-    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(CloudStorageUtil.getMaxChannelReopensFromPath(path));
+    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(
+        cloudPath.getFileSystem().config());
     // Loop will terminate via an exception if all retries are exhausted
     while (true) {
       try {
@@ -586,7 +588,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       throw new CloudStoragePseudoDirectoryException(toPath);
     }
 
-    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(CloudStorageUtil.getMaxChannelReopensFromPath(source));
+    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(
+        fromPath.getFileSystem().config());
     // Loop will terminate via an exception if all retries are exhausted
     while (true) {
       try {
@@ -672,11 +675,12 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       }
     }
 
-    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(CloudStorageUtil.getMaxChannelReopensFromPath(path));
+    final CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
+    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(
+        cloudPath.getFileSystem().config());
     // Loop will terminate via an exception if all retries are exhausted
     while (true) {
       try {
-        CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
         boolean nullId;
         if (isNullOrEmpty(userProject)) {
           nullId = storage.get(
@@ -725,11 +729,12 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     }
     initStorage();
 
-    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(CloudStorageUtil.getMaxChannelReopensFromPath(path));
+    final CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
+    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(
+        cloudPath.getFileSystem().config());
     // Loop will terminate via an exception if all retries are exhausted
     while (true) {
       try {
-        CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
         BlobInfo blobInfo = null;
         try {
           BlobId blobId = cloudPath.getBlobId();
@@ -811,7 +816,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     checkNotNull(filter);
     initStorage();
 
-    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(CloudStorageUtil.getMaxChannelReopensFromPath(dir));
+    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(
+        cloudPath.getFileSystem().config());
     // Loop will terminate via an exception if all retries are exhausted
     while (true) {
       try {

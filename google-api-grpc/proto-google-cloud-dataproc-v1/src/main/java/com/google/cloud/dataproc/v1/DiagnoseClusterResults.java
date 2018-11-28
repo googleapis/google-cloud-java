@@ -89,7 +89,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object outputUri_;
   /**
    * <pre>
-   * Output-only. The Google Cloud Storage URI of the diagnostic output.
+   * Output only. The Cloud Storage URI of the diagnostic output.
    * The output report is a plain text file with a summary of collected
    * diagnostics.
    * </pre>
@@ -110,7 +110,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The Google Cloud Storage URI of the diagnostic output.
+   * Output only. The Cloud Storage URI of the diagnostic output.
    * The output report is a plain text file with a summary of collected
    * diagnostics.
    * </pre>
@@ -441,7 +441,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object outputUri_ = "";
     /**
      * <pre>
-     * Output-only. The Google Cloud Storage URI of the diagnostic output.
+     * Output only. The Cloud Storage URI of the diagnostic output.
      * The output report is a plain text file with a summary of collected
      * diagnostics.
      * </pre>
@@ -462,7 +462,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The Google Cloud Storage URI of the diagnostic output.
+     * Output only. The Cloud Storage URI of the diagnostic output.
      * The output report is a plain text file with a summary of collected
      * diagnostics.
      * </pre>
@@ -484,7 +484,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The Google Cloud Storage URI of the diagnostic output.
+     * Output only. The Cloud Storage URI of the diagnostic output.
      * The output report is a plain text file with a summary of collected
      * diagnostics.
      * </pre>
@@ -503,7 +503,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The Google Cloud Storage URI of the diagnostic output.
+     * Output only. The Cloud Storage URI of the diagnostic output.
      * The output report is a plain text file with a summary of collected
      * diagnostics.
      * </pre>
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The Google Cloud Storage URI of the diagnostic output.
+     * Output only. The Cloud Storage URI of the diagnostic output.
      * The output report is a plain text file with a summary of collected
      * diagnostics.
      * </pre>

@@ -17,6 +17,7 @@
 package com.google.cloud.logging;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 
 import com.google.cloud.MonitoredResource;
@@ -63,6 +64,7 @@ public class LogEntryTest {
       return SPAN_ID;
     }
   };
+  private static final boolean TRACE_SAMPLED = true;
   private static final SourceLocation SOURCE_LOCATION = new SourceLocation.Builder()
       .setFile("file")
       .setLine(42L)
@@ -85,6 +87,7 @@ public class LogEntryTest {
       .setOperation(OPERATION)
       .setTrace(TRACE_FORMATTER)
       .setSpanId(SPAN_ID_FORMATTER)
+      .setTraceSampled(TRACE_SAMPLED)
       .setSourceLocation(SOURCE_LOCATION)
       .build();
   private static final LogEntry JSON_ENTRY = LogEntry.newBuilder(JSON_PAYLOAD)
@@ -99,6 +102,7 @@ public class LogEntryTest {
       .setOperation(OPERATION)
       .setTrace(TRACE_FORMATTER)
       .setSpanId(SPAN_ID_FORMATTER)
+      .setTraceSampled(TRACE_SAMPLED)
       .setSourceLocation(SOURCE_LOCATION)
       .build();
   private static final LogEntry PROTO_ENTRY = LogEntry.newBuilder(PROTO_PAYLOAD)
@@ -113,6 +117,7 @@ public class LogEntryTest {
       .setOperation(OPERATION)
       .setTrace(TRACE_FORMATTER)
       .setSpanId(SPAN_ID_FORMATTER)
+      .setTraceSampled(TRACE_SAMPLED)
       .setSourceLocation(SOURCE_LOCATION)
       .build();
 
@@ -131,6 +136,7 @@ public class LogEntryTest {
     assertNull(logEntry.getOperation());
     assertNull(logEntry.getTrace());
     assertNull(logEntry.getSpanId());
+    assertFalse(logEntry.getTraceSampled());
     assertNull(logEntry.getSourceLocation());
     logEntry = LogEntry.of(LOG_NAME, RESOURCE, STRING_PAYLOAD);
     assertEquals(STRING_PAYLOAD, logEntry.getPayload());
@@ -146,6 +152,7 @@ public class LogEntryTest {
     assertNull(logEntry.getOperation());
     assertNull(logEntry.getTrace());
     assertNull(logEntry.getSpanId());
+    assertFalse(logEntry.getTraceSampled());
     assertNull(logEntry.getSourceLocation());
   }
 
@@ -162,6 +169,7 @@ public class LogEntryTest {
     assertEquals(OPERATION, STRING_ENTRY.getOperation());
     assertEquals(TRACE, STRING_ENTRY.getTrace());
     assertEquals(SPAN_ID, STRING_ENTRY.getSpanId());
+    assertEquals(TRACE_SAMPLED, STRING_ENTRY.getTraceSampled());
     assertEquals(SOURCE_LOCATION, STRING_ENTRY.getSourceLocation());
     assertEquals(STRING_PAYLOAD, STRING_ENTRY.getPayload());
     assertEquals(LOG_NAME, JSON_ENTRY.getLogName());
@@ -175,6 +183,7 @@ public class LogEntryTest {
     assertEquals(OPERATION, JSON_ENTRY.getOperation());
     assertEquals(TRACE, JSON_ENTRY.getTrace());
     assertEquals(SPAN_ID, JSON_ENTRY.getSpanId());
+    assertEquals(TRACE_SAMPLED, JSON_ENTRY.getTraceSampled());
     assertEquals(SOURCE_LOCATION, JSON_ENTRY.getSourceLocation());
     assertEquals(JSON_PAYLOAD, JSON_ENTRY.getPayload());
     assertEquals(LOG_NAME, PROTO_ENTRY.getLogName());
@@ -188,6 +197,7 @@ public class LogEntryTest {
     assertEquals(OPERATION, PROTO_ENTRY.getOperation());
     assertEquals(TRACE, PROTO_ENTRY.getTrace());
     assertEquals(SPAN_ID, PROTO_ENTRY.getSpanId());
+    assertEquals(TRACE_SAMPLED, PROTO_ENTRY.getTraceSampled());
     assertEquals(SOURCE_LOCATION, PROTO_ENTRY.getSourceLocation());
     assertEquals(PROTO_PAYLOAD, PROTO_ENTRY.getPayload());
     LogEntry logEntry = LogEntry.newBuilder(STRING_PAYLOAD)
@@ -204,6 +214,7 @@ public class LogEntryTest {
         .setOperation(OPERATION)
         .setTrace(TRACE)
         .setSpanId(SPAN_ID)
+        .setTraceSampled(TRACE_SAMPLED)
         .setSourceLocation(SOURCE_LOCATION)
         .build();
     assertEquals(LOG_NAME, logEntry.getLogName());
@@ -217,6 +228,7 @@ public class LogEntryTest {
     assertEquals(OPERATION, logEntry.getOperation());
     assertEquals(TRACE, logEntry.getTrace());
     assertEquals(SPAN_ID, logEntry.getSpanId());
+    assertEquals(TRACE_SAMPLED, logEntry.getTraceSampled());
     assertEquals(SOURCE_LOCATION, logEntry.getSourceLocation());
     assertEquals(StringPayload.of("otherPayload"), logEntry.getPayload());
   }
@@ -243,6 +255,7 @@ public class LogEntryTest {
         .setOperation(Operation.of("otherId", "otherProducer"))
         .setTrace("otherTrace")
         .setSpanId("otherSpanId")
+        .setTraceSampled(false)
         .setSourceLocation(new SourceLocation.Builder().setFile("hey.java").build())
         .build();
     assertEquals("otherLogName", logEntry.getLogName());
@@ -256,6 +269,7 @@ public class LogEntryTest {
     assertEquals(Operation.of("otherId", "otherProducer"), logEntry.getOperation());
     assertEquals("otherTrace", logEntry.getTrace());
     assertEquals("otherSpanId", logEntry.getSpanId());
+    assertFalse(logEntry.getTraceSampled());
     assertEquals(new SourceLocation.Builder().setFile("hey.java").build(),
         logEntry.getSourceLocation());
     assertEquals(StringPayload.of("otherPayload"), logEntry.getPayload());
@@ -272,6 +286,7 @@ public class LogEntryTest {
         .setOperation(OPERATION)
         .setTrace(TRACE)
         .setSpanId(SPAN_ID)
+        .setTraceSampled(TRACE_SAMPLED)
         .setSourceLocation(SOURCE_LOCATION)
         .build();
     compareLogEntry(STRING_ENTRY, logEntry);
@@ -301,6 +316,7 @@ public class LogEntryTest {
     assertEquals(expected.getOperation(), value.getOperation());
     assertEquals(expected.getTrace(), value.getTrace());
     assertEquals(expected.getSpanId(), value.getSpanId());
+    assertEquals(expected.getTraceSampled(), value.getTraceSampled());
     assertEquals(expected.getSourceLocation(), value.getSourceLocation());
     assertEquals(expected.getPayload(), value.getPayload());
     assertEquals(expected.hashCode(), value.hashCode());

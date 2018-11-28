@@ -58,8 +58,9 @@ public interface InstanceGroupConfigOrBuilder extends
 
   /**
    * <pre>
-   * Output only. The Compute Engine image resource used for cluster
-   * instances. Inferred from `SoftwareConfig.image_version`.
+   * Optional. The Compute Engine image resource used for cluster
+   * instances. It can be specified or may be inferred from
+   * `SoftwareConfig.image_version`.
    * </pre>
    *
    * <code>string image_uri = 3;</code>
@@ -67,8 +68,9 @@ public interface InstanceGroupConfigOrBuilder extends
   java.lang.String getImageUri();
   /**
    * <pre>
-   * Output only. The Compute Engine image resource used for cluster
-   * instances. Inferred from `SoftwareConfig.image_version`.
+   * Optional. The Compute Engine image resource used for cluster
+   * instances. It can be specified or may be inferred from
+   * `SoftwareConfig.image_version`.
    * </pre>
    *
    * <code>string image_uri = 3;</code>

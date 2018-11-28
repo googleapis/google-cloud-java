@@ -108,7 +108,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.iot.v1.Device device_;
   /**
    * <pre>
-   * The new values for the device registry. The `id` and `num_id` fields must
+   * The new values for the device. The `id` and `num_id` fields must
    * be empty, and the field `name` must specify the name path. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
    * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
@@ -121,7 +121,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The new values for the device registry. The `id` and `num_id` fields must
+   * The new values for the device. The `id` and `num_id` fields must
    * be empty, and the field `name` must specify the name path. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
    * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
@@ -134,7 +134,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The new values for the device registry. The `id` and `num_id` fields must
+   * The new values for the device. The `id` and `num_id` fields must
    * be empty, and the field `name` must specify the name path. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
    * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
@@ -543,7 +543,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.iot.v1.Device, com.google.cloud.iot.v1.Device.Builder, com.google.cloud.iot.v1.DeviceOrBuilder> deviceBuilder_;
     /**
      * <pre>
-     * The new values for the device registry. The `id` and `num_id` fields must
+     * The new values for the device. The `id` and `num_id` fields must
      * be empty, and the field `name` must specify the name path. For example,
      * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
      * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
@@ -556,7 +556,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The new values for the device registry. The `id` and `num_id` fields must
+     * The new values for the device. The `id` and `num_id` fields must
      * be empty, and the field `name` must specify the name path. For example,
      * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
      * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
@@ -573,7 +573,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The new values for the device registry. The `id` and `num_id` fields must
+     * The new values for the device. The `id` and `num_id` fields must
      * be empty, and the field `name` must specify the name path. For example,
      * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
      * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
@@ -596,7 +596,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The new values for the device registry. The `id` and `num_id` fields must
+     * The new values for the device. The `id` and `num_id` fields must
      * be empty, and the field `name` must specify the name path. For example,
      * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
      * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
@@ -617,7 +617,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The new values for the device registry. The `id` and `num_id` fields must
+     * The new values for the device. The `id` and `num_id` fields must
      * be empty, and the field `name` must specify the name path. For example,
      * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
      * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
@@ -642,7 +642,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The new values for the device registry. The `id` and `num_id` fields must
+     * The new values for the device. The `id` and `num_id` fields must
      * be empty, and the field `name` must specify the name path. For example,
      * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
      * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
@@ -663,7 +663,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The new values for the device registry. The `id` and `num_id` fields must
+     * The new values for the device. The `id` and `num_id` fields must
      * be empty, and the field `name` must specify the name path. For example,
      * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
      * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The new values for the device registry. The `id` and `num_id` fields must
+     * The new values for the device. The `id` and `num_id` fields must
      * be empty, and the field `name` must specify the name path. For example,
      * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
      * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
@@ -696,7 +696,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The new values for the device registry. The `id` and `num_id` fields must
+     * The new values for the device. The `id` and `num_id` fields must
      * be empty, and the field `name` must specify the name path. For example,
      * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
      * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.

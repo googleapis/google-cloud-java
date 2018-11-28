@@ -277,7 +277,9 @@ public class RegionDiskStubSettings extends StubSettings<RegionDiskStubSettings>
 
             @Override
             public Iterable<Disk> extractResources(DiskList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Disk>of();
             }
           };
 

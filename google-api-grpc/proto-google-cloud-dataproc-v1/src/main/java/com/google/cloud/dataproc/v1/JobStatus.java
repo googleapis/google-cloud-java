@@ -375,11 +375,19 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   * <pre>
+   * The job substate.
+   * </pre>
+   *
    * Protobuf enum {@code google.cloud.dataproc.v1.JobStatus.Substate}
    */
   public enum Substate
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     * <pre>
+     * The job substate is unknown.
+     * </pre>
+     *
      * <code>UNSPECIFIED = 0;</code>
      */
     UNSPECIFIED(0),
@@ -418,6 +426,10 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     * <pre>
+     * The job substate is unknown.
+     * </pre>
+     *
      * <code>UNSPECIFIED = 0;</code>
      */
     public static final int UNSPECIFIED_VALUE = 0;
@@ -532,7 +544,7 @@ private static final long serialVersionUID = 0L;
   private int state_;
   /**
    * <pre>
-   * Output-only. A state message specifying the overall job state.
+   * Output only. A state message specifying the overall job state.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.JobStatus.State state = 1;</code>
@@ -542,7 +554,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. A state message specifying the overall job state.
+   * Output only. A state message specifying the overall job state.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.JobStatus.State state = 1;</code>
@@ -557,7 +569,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object details_;
   /**
    * <pre>
-   * Output-only. Optional job state details, such as an error
+   * Output only. Optional job state details, such as an error
    * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
    * </pre>
    *
@@ -577,7 +589,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Optional job state details, such as an error
+   * Output only. Optional job state details, such as an error
    * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
    * </pre>
    *
@@ -601,7 +613,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp stateStartTime_;
   /**
    * <pre>
-   * Output-only. The time when this state was entered.
+   * Output only. The time when this state was entered.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
@@ -611,7 +623,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The time when this state was entered.
+   * Output only. The time when this state was entered.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
@@ -621,7 +633,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. The time when this state was entered.
+   * Output only. The time when this state was entered.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
@@ -634,7 +646,7 @@ private static final long serialVersionUID = 0L;
   private int substate_;
   /**
    * <pre>
-   * Output-only. Additional state information, which includes
+   * Output only. Additional state information, which includes
    * status reported by the agent.
    * </pre>
    *
@@ -645,7 +657,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output-only. Additional state information, which includes
+   * Output only. Additional state information, which includes
    * status reported by the agent.
    * </pre>
    *
@@ -1029,7 +1041,7 @@ private static final long serialVersionUID = 0L;
     private int state_ = 0;
     /**
      * <pre>
-     * Output-only. A state message specifying the overall job state.
+     * Output only. A state message specifying the overall job state.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.JobStatus.State state = 1;</code>
@@ -1039,7 +1051,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A state message specifying the overall job state.
+     * Output only. A state message specifying the overall job state.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.JobStatus.State state = 1;</code>
@@ -1051,7 +1063,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A state message specifying the overall job state.
+     * Output only. A state message specifying the overall job state.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.JobStatus.State state = 1;</code>
@@ -1063,7 +1075,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A state message specifying the overall job state.
+     * Output only. A state message specifying the overall job state.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.JobStatus.State state = 1;</code>
@@ -1079,7 +1091,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. A state message specifying the overall job state.
+     * Output only. A state message specifying the overall job state.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.JobStatus.State state = 1;</code>
@@ -1094,7 +1106,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object details_ = "";
     /**
      * <pre>
-     * Output-only. Optional job state details, such as an error
+     * Output only. Optional job state details, such as an error
      * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
      * </pre>
      *
@@ -1114,7 +1126,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Optional job state details, such as an error
+     * Output only. Optional job state details, such as an error
      * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
      * </pre>
      *
@@ -1135,7 +1147,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Optional job state details, such as an error
+     * Output only. Optional job state details, such as an error
      * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
      * </pre>
      *
@@ -1153,7 +1165,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Optional job state details, such as an error
+     * Output only. Optional job state details, such as an error
      * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
      * </pre>
      *
@@ -1167,7 +1179,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Optional job state details, such as an error
+     * Output only. Optional job state details, such as an error
      * description if the state is &lt;code&gt;ERROR&lt;/code&gt;.
      * </pre>
      *
@@ -1190,7 +1202,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> stateStartTimeBuilder_;
     /**
      * <pre>
-     * Output-only. The time when this state was entered.
+     * Output only. The time when this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
@@ -1200,7 +1212,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The time when this state was entered.
+     * Output only. The time when this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
@@ -1214,7 +1226,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The time when this state was entered.
+     * Output only. The time when this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
@@ -1234,7 +1246,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The time when this state was entered.
+     * Output only. The time when this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
@@ -1252,7 +1264,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The time when this state was entered.
+     * Output only. The time when this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
@@ -1274,7 +1286,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The time when this state was entered.
+     * Output only. The time when this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
@@ -1292,7 +1304,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The time when this state was entered.
+     * Output only. The time when this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
@@ -1304,7 +1316,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The time when this state was entered.
+     * Output only. The time when this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
@@ -1319,7 +1331,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. The time when this state was entered.
+     * Output only. The time when this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 6;</code>
@@ -1341,7 +1353,7 @@ private static final long serialVersionUID = 0L;
     private int substate_ = 0;
     /**
      * <pre>
-     * Output-only. Additional state information, which includes
+     * Output only. Additional state information, which includes
      * status reported by the agent.
      * </pre>
      *
@@ -1352,7 +1364,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Additional state information, which includes
+     * Output only. Additional state information, which includes
      * status reported by the agent.
      * </pre>
      *
@@ -1365,7 +1377,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Additional state information, which includes
+     * Output only. Additional state information, which includes
      * status reported by the agent.
      * </pre>
      *
@@ -1378,7 +1390,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Additional state information, which includes
+     * Output only. Additional state information, which includes
      * status reported by the agent.
      * </pre>
      *
@@ -1395,7 +1407,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output-only. Additional state information, which includes
+     * Output only. Additional state information, which includes
      * status reported by the agent.
      * </pre>
      *

@@ -246,7 +246,9 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
             @Override
             public Iterable<SessionEntityType> extractResources(
                 ListSessionEntityTypesResponse payload) {
-              return payload.getSessionEntityTypesList();
+              return payload.getSessionEntityTypesList() != null
+                  ? payload.getSessionEntityTypesList()
+                  : ImmutableList.<SessionEntityType>of();
             }
           };
 

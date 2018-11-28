@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     version_ = 0;
     jobs_ = java.util.Collections.emptyList();
+    parameters_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -128,6 +129,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.google.cloud.dataproc.v1beta2.OrderedJob.parser(), extensionRegistry));
             break;
           }
+          case 74: {
+            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              parameters_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.TemplateParameter>();
+              mutable_bitField0_ |= 0x00000100;
+            }
+            parameters_.add(
+                input.readMessage(com.google.cloud.dataproc.v1beta2.TemplateParameter.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -145,6 +155,9 @@ private static final long serialVersionUID = 0L;
     } finally {
       if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
         jobs_ = java.util.Collections.unmodifiableList(jobs_);
+      }
+      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+        parameters_ = java.util.Collections.unmodifiableList(parameters_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -568,6 +581,71 @@ private static final long serialVersionUID = 0L;
     return jobs_.get(index);
   }
 
+  public static final int PARAMETERS_FIELD_NUMBER = 9;
+  private java.util.List<com.google.cloud.dataproc.v1beta2.TemplateParameter> parameters_;
+  /**
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  public java.util.List<com.google.cloud.dataproc.v1beta2.TemplateParameter> getParametersList() {
+    return parameters_;
+  }
+  /**
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  public java.util.List<? extends com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder> 
+      getParametersOrBuilderList() {
+    return parameters_;
+  }
+  /**
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  public int getParametersCount() {
+    return parameters_.size();
+  }
+  /**
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  public com.google.cloud.dataproc.v1beta2.TemplateParameter getParameters(int index) {
+    return parameters_.get(index);
+  }
+  /**
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  public com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder getParametersOrBuilder(
+      int index) {
+    return parameters_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -608,6 +686,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < jobs_.size(); i++) {
       output.writeMessage(8, jobs_.get(i));
+    }
+    for (int i = 0; i < parameters_.size(); i++) {
+      output.writeMessage(9, parameters_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -654,6 +735,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, jobs_.get(i));
     }
+    for (int i = 0; i < parameters_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, parameters_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -695,6 +780,8 @@ private static final long serialVersionUID = 0L;
     }
     result = result && getJobsList()
         .equals(other.getJobsList());
+    result = result && getParametersList()
+        .equals(other.getParametersList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -731,6 +818,10 @@ private static final long serialVersionUID = 0L;
     if (getJobsCount() > 0) {
       hash = (37 * hash) + JOBS_FIELD_NUMBER;
       hash = (53 * hash) + getJobsList().hashCode();
+    }
+    if (getParametersCount() > 0) {
+      hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + getParametersList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -887,6 +978,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getJobsFieldBuilder();
+        getParametersFieldBuilder();
       }
     }
     @java.lang.Override
@@ -922,6 +1014,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000080);
       } else {
         jobsBuilder_.clear();
+      }
+      if (parametersBuilder_ == null) {
+        parameters_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      } else {
+        parametersBuilder_.clear();
       }
       return this;
     }
@@ -979,6 +1077,15 @@ private static final long serialVersionUID = 0L;
         result.jobs_ = jobs_;
       } else {
         result.jobs_ = jobsBuilder_.build();
+      }
+      if (parametersBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) == 0x00000100)) {
+          parameters_ = java.util.Collections.unmodifiableList(parameters_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.parameters_ = parameters_;
+      } else {
+        result.parameters_ = parametersBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -1074,6 +1181,32 @@ private static final long serialVersionUID = 0L;
                  getJobsFieldBuilder() : null;
           } else {
             jobsBuilder_.addAllMessages(other.jobs_);
+          }
+        }
+      }
+      if (parametersBuilder_ == null) {
+        if (!other.parameters_.isEmpty()) {
+          if (parameters_.isEmpty()) {
+            parameters_ = other.parameters_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureParametersIsMutable();
+            parameters_.addAll(other.parameters_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.parameters_.isEmpty()) {
+          if (parametersBuilder_.isEmpty()) {
+            parametersBuilder_.dispose();
+            parametersBuilder_ = null;
+            parameters_ = other.parameters_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            parametersBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getParametersFieldBuilder() : null;
+          } else {
+            parametersBuilder_.addAllMessages(other.parameters_);
           }
         }
       }
@@ -2345,6 +2478,354 @@ private static final long serialVersionUID = 0L;
         jobs_ = null;
       }
       return jobsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.dataproc.v1beta2.TemplateParameter> parameters_ =
+      java.util.Collections.emptyList();
+    private void ensureParametersIsMutable() {
+      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+        parameters_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.TemplateParameter>(parameters_);
+        bitField0_ |= 0x00000100;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.dataproc.v1beta2.TemplateParameter, com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder, com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder> parametersBuilder_;
+
+    /**
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public java.util.List<com.google.cloud.dataproc.v1beta2.TemplateParameter> getParametersList() {
+      if (parametersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(parameters_);
+      } else {
+        return parametersBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public int getParametersCount() {
+      if (parametersBuilder_ == null) {
+        return parameters_.size();
+      } else {
+        return parametersBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public com.google.cloud.dataproc.v1beta2.TemplateParameter getParameters(int index) {
+      if (parametersBuilder_ == null) {
+        return parameters_.get(index);
+      } else {
+        return parametersBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public Builder setParameters(
+        int index, com.google.cloud.dataproc.v1beta2.TemplateParameter value) {
+      if (parametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParametersIsMutable();
+        parameters_.set(index, value);
+        onChanged();
+      } else {
+        parametersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public Builder setParameters(
+        int index, com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder builderForValue) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        parameters_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        parametersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public Builder addParameters(com.google.cloud.dataproc.v1beta2.TemplateParameter value) {
+      if (parametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParametersIsMutable();
+        parameters_.add(value);
+        onChanged();
+      } else {
+        parametersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public Builder addParameters(
+        int index, com.google.cloud.dataproc.v1beta2.TemplateParameter value) {
+      if (parametersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureParametersIsMutable();
+        parameters_.add(index, value);
+        onChanged();
+      } else {
+        parametersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public Builder addParameters(
+        com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder builderForValue) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        parameters_.add(builderForValue.build());
+        onChanged();
+      } else {
+        parametersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public Builder addParameters(
+        int index, com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder builderForValue) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        parameters_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        parametersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public Builder addAllParameters(
+        java.lang.Iterable<? extends com.google.cloud.dataproc.v1beta2.TemplateParameter> values) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, parameters_);
+        onChanged();
+      } else {
+        parametersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public Builder clearParameters() {
+      if (parametersBuilder_ == null) {
+        parameters_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        parametersBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public Builder removeParameters(int index) {
+      if (parametersBuilder_ == null) {
+        ensureParametersIsMutable();
+        parameters_.remove(index);
+        onChanged();
+      } else {
+        parametersBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder getParametersBuilder(
+        int index) {
+      return getParametersFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder getParametersOrBuilder(
+        int index) {
+      if (parametersBuilder_ == null) {
+        return parameters_.get(index);  } else {
+        return parametersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public java.util.List<? extends com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder> 
+         getParametersOrBuilderList() {
+      if (parametersBuilder_ != null) {
+        return parametersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(parameters_);
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder addParametersBuilder() {
+      return getParametersFieldBuilder().addBuilder(
+          com.google.cloud.dataproc.v1beta2.TemplateParameter.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder addParametersBuilder(
+        int index) {
+      return getParametersFieldBuilder().addBuilder(
+          index, com.google.cloud.dataproc.v1beta2.TemplateParameter.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Optional. Template parameters whose values are substituted into the
+     * template. Values for parameters must be provided when the template is
+     * instantiated.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+     */
+    public java.util.List<com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder> 
+         getParametersBuilderList() {
+      return getParametersFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.google.cloud.dataproc.v1beta2.TemplateParameter, com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder, com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder> 
+        getParametersFieldBuilder() {
+      if (parametersBuilder_ == null) {
+        parametersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dataproc.v1beta2.TemplateParameter, com.google.cloud.dataproc.v1beta2.TemplateParameter.Builder, com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder>(
+                parameters_,
+                ((bitField0_ & 0x00000100) == 0x00000100),
+                getParentForChildren(),
+                isClean());
+        parameters_ = null;
+      }
+      return parametersBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

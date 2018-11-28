@@ -281,7 +281,9 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
             @Override
             public Iterable<ForwardingRulesScopedList> extractResources(
                 ForwardingRuleAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<ForwardingRulesScopedList>of();
             }
           };
 
@@ -321,7 +323,9 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
 
             @Override
             public Iterable<ForwardingRule> extractResources(ForwardingRuleList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<ForwardingRule>of();
             }
           };
 

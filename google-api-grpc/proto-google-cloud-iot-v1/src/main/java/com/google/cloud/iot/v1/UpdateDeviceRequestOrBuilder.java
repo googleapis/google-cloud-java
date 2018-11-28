@@ -9,7 +9,7 @@ public interface UpdateDeviceRequestOrBuilder extends
 
   /**
    * <pre>
-   * The new values for the device registry. The `id` and `num_id` fields must
+   * The new values for the device. The `id` and `num_id` fields must
    * be empty, and the field `name` must specify the name path. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
    * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
@@ -20,7 +20,7 @@ public interface UpdateDeviceRequestOrBuilder extends
   boolean hasDevice();
   /**
    * <pre>
-   * The new values for the device registry. The `id` and `num_id` fields must
+   * The new values for the device. The `id` and `num_id` fields must
    * be empty, and the field `name` must specify the name path. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
    * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
@@ -31,7 +31,7 @@ public interface UpdateDeviceRequestOrBuilder extends
   com.google.cloud.iot.v1.Device getDevice();
   /**
    * <pre>
-   * The new values for the device registry. The `id` and `num_id` fields must
+   * The new values for the device. The `id` and `num_id` fields must
    * be empty, and the field `name` must specify the name path. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
    * `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.

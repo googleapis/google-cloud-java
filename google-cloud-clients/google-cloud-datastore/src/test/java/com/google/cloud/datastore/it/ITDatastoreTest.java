@@ -851,4 +851,11 @@ public class ITDatastoreTest {
       assertEquals(3, ((DatastoreException) expected.getCause()).getCode());
     }
   }
+
+  @Test
+  public void testSkippedResults() {
+    Query<Key> query = Query.newKeyQueryBuilder().setOffset(Integer.MAX_VALUE).build();
+    int numberOfEntities = DATASTORE.run(query).getSkippedResults();
+    assertEquals(2, numberOfEntities);
+  }
 }
