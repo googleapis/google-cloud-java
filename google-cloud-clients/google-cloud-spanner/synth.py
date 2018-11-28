@@ -16,9 +16,9 @@
 
 import synthtool as s
 import synthtool.gcp as gcp
+import synthtool.languages.java as java
 
 gapic = gcp.GAPICGenerator()
-common_templates = gcp.CommonTemplates()
 
 library = gapic.java_library(
     service='spanner',
@@ -29,7 +29,6 @@ library = gapic.java_library(
 s.copy(library / 'gapic-google-cloud-spanner-v1/src', 'src')
 s.copy(library / 'grpc-google-cloud-spanner-v1/src', '../../google-api-grpc/grpc-google-cloud-spanner-v1/src')
 s.copy(library / 'proto-google-cloud-spanner-v1/src', '../../google-api-grpc/proto-google-cloud-spanner-v1/src')
-
 
 library = gapic.java_library(
     service='spanner',
@@ -50,3 +49,11 @@ library = gapic.java_library(
 s.copy(library / 'gapic-google-cloud-spanner-admin-instance-v1/src', 'src')
 s.copy(library / 'grpc-google-cloud-spanner-admin-instance-v1/src', '../../google-api-grpc/grpc-google-cloud-spanner-admin-instance-v1/src')
 s.copy(library / 'proto-google-cloud-spanner-admin-instance-v1/src', '../../google-api-grpc/proto-google-cloud-spanner-admin-instance-v1/src')
+
+java.format_code('./src')
+java.format_code(f'../../google-api-grpc/grpc-google-cloud-spanner-v1/src')
+java.format_code(f'../../google-api-grpc/proto-google-cloud-spanner-v1/src')
+java.format_code(f'../../google-api-grpc/grpc-google-cloud-spanner-admin-database-v1/src')
+java.format_code(f'../../google-api-grpc/proto-google-cloud-spanner-admin-database-v1/src')
+java.format_code(f'../../google-api-grpc/grpc-google-cloud-spanner-admin-instance-v1/src')
+java.format_code(f'../../google-api-grpc/proto-google-cloud-spanner-admin-instance-v1/src')
