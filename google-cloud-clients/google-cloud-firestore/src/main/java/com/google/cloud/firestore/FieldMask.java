@@ -17,29 +17,57 @@
 package com.google.cloud.firestore;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.SortedSet;
 import java.util.TreeSet;
+import javax.annotation.Nonnull;
 
-/** A DocumentMask contains the field paths affected by an update. */
-final class DocumentMask {
-  static final DocumentMask EMPTY_MASK = new DocumentMask(new TreeSet<FieldPath>());
+/** A FieldMask can be used to limit the number of fields returned by a `getAll()` call. */
+public final class FieldMask {
+  static final FieldMask EMPTY_MASK = new FieldMask(new TreeSet<FieldPath>());
 
   private final SortedSet<FieldPath> fieldPaths; // Sorted for testing.
 
-  DocumentMask(Collection<FieldPath> fieldPaths) {
+  FieldMask(Collection<FieldPath> fieldPaths) {
     this(new TreeSet<>(fieldPaths));
   }
 
-  private DocumentMask(SortedSet<FieldPath> fieldPaths) {
+  private FieldMask(SortedSet<FieldPath> fieldPaths) {
     this.fieldPaths = fieldPaths;
   }
 
-  static DocumentMask fromObject(Map<String, Object> values) {
+  /**
+   * Creates a FieldMask from the provided field paths.
+   *
+   * @param fieldPaths A list of field paths.
+   * @return A {@code FieldMask} that describes a subset of fields.
+   */
+  @Nonnull
+  public static FieldMask of(String... fieldPaths) {
+    List<FieldPath> paths = new ArrayList<>();
+    for (String fieldPath : fieldPaths) {
+      paths.add(FieldPath.fromDotSeparatedString(fieldPath));
+    }
+    return new FieldMask(paths);
+  }
+
+  /**
+   * Creates a FieldMask from the provided field paths.
+   *
+   * @param fieldPaths A list of field paths.
+   * @return A {@code FieldMask} that describes a subset of fields.
+   */
+  @Nonnull
+  public static FieldMask of(FieldPath... fieldPaths) {
+    return new FieldMask(Arrays.asList(fieldPaths));
+  }
+
+  static FieldMask fromObject(Map<String, Object> values) {
     List<FieldPath> fieldPaths = extractFromMap(values, FieldPath.empty());
-    return new DocumentMask(fieldPaths);
+    return new FieldMask(fieldPaths);
   }
 
   private static List<FieldPath> extractFromMap(Map<String, Object> values, FieldPath path) {
