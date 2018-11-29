@@ -180,7 +180,7 @@ public class ServiceOptionsTest {
     }
   }
 
-  private interface TestServiceFactory extends ServiceFactory<TestService, TestServiceOptions> {}
+  public interface TestServiceFactory extends ServiceFactory<TestService, TestServiceOptions> {}
 
   private static class DefaultTestServiceFactory implements TestServiceFactory {
     private static final TestServiceFactory INSTANCE = new DefaultTestServiceFactory();
@@ -191,7 +191,7 @@ public class ServiceOptionsTest {
     }
   }
 
-  private interface TestServiceRpcFactory
+  public interface TestServiceRpcFactory
       extends ServiceRpcFactory<TestServiceOptions> {}
 
   private static class DefaultTestServiceRpcFactory implements TestServiceRpcFactory {
