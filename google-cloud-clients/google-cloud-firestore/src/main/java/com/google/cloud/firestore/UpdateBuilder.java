@@ -243,7 +243,7 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
     DocumentSnapshot documentSnapshot =
         DocumentSnapshot.fromObject(
             firestore, documentReference, expandObject(documentData), options.getEncodingOptions());
-    DocumentMask documentMask = DocumentMask.EMPTY_MASK;
+    FieldMask documentMask = FieldMask.EMPTY_MASK;
     DocumentTransform documentTransform =
         DocumentTransform.fromFieldPathMap(documentReference, documentData);
 
@@ -251,9 +251,9 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
       if (options.getFieldMask() != null) {
         List<FieldPath> fieldMask = new ArrayList<>(options.getFieldMask());
         fieldMask.removeAll(documentTransform.getFields());
-        documentMask = new DocumentMask(fieldMask);
+        documentMask = new FieldMask(fieldMask);
       } else {
-        documentMask = DocumentMask.fromObject(fields);
+        documentMask = FieldMask.fromObject(fields);
       }
     }
 
@@ -528,14 +528,14 @@ abstract class UpdateBuilder<T extends UpdateBuilder> {
     DocumentTransform documentTransform =
         DocumentTransform.fromFieldPathMap(documentReference, fields);
     fieldPaths.removeAll(documentTransform.getFields());
-    DocumentMask documentMask = new DocumentMask(fieldPaths);
+    FieldMask fieldMask = new FieldMask(fieldPaths);
 
     Mutation mutation = addMutation();
     mutation.precondition = precondition.toPb();
 
-    if (!documentSnapshot.isEmpty() || !documentMask.isEmpty()) {
+    if (!documentSnapshot.isEmpty() || !fieldMask.isEmpty()) {
       mutation.document = documentSnapshot.toPb();
-      mutation.document.setUpdateMask(documentMask.toPb());
+      mutation.document.setUpdateMask(fieldMask.toPb());
     }
 
     if (!documentTransform.isEmpty()) {

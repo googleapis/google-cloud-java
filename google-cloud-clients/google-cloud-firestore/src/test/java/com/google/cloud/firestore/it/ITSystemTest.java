@@ -32,6 +32,7 @@ import com.google.cloud.firestore.DocumentChange.Type;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.EventListener;
+import com.google.cloud.firestore.FieldMask;
 import com.google.cloud.firestore.FieldValue;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.FirestoreException;
@@ -120,6 +121,15 @@ public class ITSystemTest {
     assertEquals(SINGLE_FIELD_OBJECT, documentSnapshots.get(0).toObject(SingleField.class));
     assertEquals("doc2", documentSnapshots.get(1).getId());
     assertEquals(SINGLE_FIELD_OBJECT, documentSnapshots.get(1).toObject(SingleField.class));
+  }
+
+  @Test
+  public void getAllWithFieldMask() throws Exception {
+    DocumentReference ref = randomColl.document("doc1");
+    ref.set(ALL_SUPPORTED_TYPES_MAP).get();
+    List<DocumentSnapshot> documentSnapshots =
+        firestore.getAll(new DocumentReference[] {ref}, FieldMask.of("foo")).get();
+    assertEquals(map("foo", "bar"), documentSnapshots.get(0).getData());
   }
 
   @Test
