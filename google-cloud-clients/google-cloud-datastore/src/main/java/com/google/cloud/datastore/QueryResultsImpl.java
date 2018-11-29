@@ -114,4 +114,9 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   public Cursor getCursorAfter() {
     return new Cursor(cursor);
   }
+
+  @Override
+  public int getSkippedResults() {
+    return runQueryResponsePb.getBatch().getSkippedResults();
+  }
 }

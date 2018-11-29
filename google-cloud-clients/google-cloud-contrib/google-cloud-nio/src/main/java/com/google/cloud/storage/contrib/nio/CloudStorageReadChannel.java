@@ -57,6 +57,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   final int maxRetries;
   // open options, we keep them around for reopens.
   final BlobSourceOption[] blobSourceOptions;
+  final CloudStorageConfiguration config;
   private ReadChannel channel;
   private long position;
   private long size;
@@ -67,6 +68,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   /**
    * @param maxChannelReopens max number of times to try re-opening the channel if it closes on us
    *    unexpectedly.
+   * @param config configuration for what to retry on.
    * @param blobSourceOptions BlobSourceOption.userProject if you want to pay the charges (required
    *    for requester-pays buckets). Note:
    *      Buckets that have Requester Pays disabled still accept requests that include a billing
@@ -79,17 +81,18 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
    */
   @CheckReturnValue
   @SuppressWarnings("resource")
-  static CloudStorageReadChannel create(Storage gcsStorage, BlobId file, long position, int maxChannelReopens, @Nullable String userProject, BlobSourceOption... blobSourceOptions)
+  static CloudStorageReadChannel create(Storage gcsStorage, BlobId file, long position, int maxChannelReopens, final CloudStorageConfiguration config, @Nullable String userProject, BlobSourceOption... blobSourceOptions)
       throws IOException {
-    return new CloudStorageReadChannel(gcsStorage, file, position, maxChannelReopens, userProject, blobSourceOptions);
+    return new CloudStorageReadChannel(gcsStorage, file, position, maxChannelReopens, config, userProject, blobSourceOptions);
   }
 
-  private CloudStorageReadChannel(Storage gcsStorage, BlobId file, long position, int maxChannelReopens, @Nullable String userProject, BlobSourceOption... blobSourceOptions) throws IOException {
+  private CloudStorageReadChannel(Storage gcsStorage, BlobId file, long position, int maxChannelReopens, final CloudStorageConfiguration config, @Nullable String userProject, BlobSourceOption... blobSourceOptions) throws IOException {
     this.gcsStorage = gcsStorage;
     this.file = file;
     this.position = position;
     this.maxChannelReopens = maxChannelReopens;
     this.maxRetries = Math.max(3, maxChannelReopens);
+    this.config = config;
     // get the generation, enshrine that in our options
     fetchSize(gcsStorage, userProject, file);
     List options = Lists.newArrayList(blobSourceOptions);
@@ -133,7 +136,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     synchronized (this) {
       checkOpen();
       int amt;
-      final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(maxRetries, maxChannelReopens);
+      final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(maxRetries, maxChannelReopens, config);
       dst.mark();
       while (true) {
         try {
@@ -203,7 +206,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   }
 
   private long fetchSize(Storage gcsStorage, @Nullable String userProject, BlobId file) throws IOException {
-    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(maxRetries, maxChannelReopens);
+    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(maxRetries, maxChannelReopens, config);
 
     while (true) {
       try {

@@ -149,7 +149,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The device registration details. The field `name` must be empty. The server
-   * will generate that field from the device registry `id` provided and the
+   * generates `name` from the device registry `id` and the
    * `parent` field.
    * </pre>
    *
@@ -161,7 +161,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The device registration details. The field `name` must be empty. The server
-   * will generate that field from the device registry `id` provided and the
+   * generates `name` from the device registry `id` and the
    * `parent` field.
    * </pre>
    *
@@ -173,7 +173,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The device registration details. The field `name` must be empty. The server
-   * will generate that field from the device registry `id` provided and the
+   * generates `name` from the device registry `id` and the
    * `parent` field.
    * </pre>
    *
@@ -625,7 +625,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The device registration details. The field `name` must be empty. The server
-     * will generate that field from the device registry `id` provided and the
+     * generates `name` from the device registry `id` and the
      * `parent` field.
      * </pre>
      *
@@ -637,7 +637,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The device registration details. The field `name` must be empty. The server
-     * will generate that field from the device registry `id` provided and the
+     * generates `name` from the device registry `id` and the
      * `parent` field.
      * </pre>
      *
@@ -653,7 +653,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The device registration details. The field `name` must be empty. The server
-     * will generate that field from the device registry `id` provided and the
+     * generates `name` from the device registry `id` and the
      * `parent` field.
      * </pre>
      *
@@ -675,7 +675,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The device registration details. The field `name` must be empty. The server
-     * will generate that field from the device registry `id` provided and the
+     * generates `name` from the device registry `id` and the
      * `parent` field.
      * </pre>
      *
@@ -695,7 +695,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The device registration details. The field `name` must be empty. The server
-     * will generate that field from the device registry `id` provided and the
+     * generates `name` from the device registry `id` and the
      * `parent` field.
      * </pre>
      *
@@ -719,7 +719,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The device registration details. The field `name` must be empty. The server
-     * will generate that field from the device registry `id` provided and the
+     * generates `name` from the device registry `id` and the
      * `parent` field.
      * </pre>
      *
@@ -739,7 +739,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The device registration details. The field `name` must be empty. The server
-     * will generate that field from the device registry `id` provided and the
+     * generates `name` from the device registry `id` and the
      * `parent` field.
      * </pre>
      *
@@ -753,7 +753,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The device registration details. The field `name` must be empty. The server
-     * will generate that field from the device registry `id` provided and the
+     * generates `name` from the device registry `id` and the
      * `parent` field.
      * </pre>
      *
@@ -770,7 +770,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The device registration details. The field `name` must be empty. The server
-     * will generate that field from the device registry `id` provided and the
+     * generates `name` from the device registry `id` and the
      * `parent` field.
      * </pre>
      *

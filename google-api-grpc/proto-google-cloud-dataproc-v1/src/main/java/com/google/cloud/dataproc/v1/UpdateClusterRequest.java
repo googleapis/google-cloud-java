@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     projectId_ = "";
     region_ = "";
     clusterName_ = "";
+    requestId_ = "";
   }
 
   @java.lang.Override
@@ -91,6 +92,25 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             region_ = s;
+            break;
+          }
+          case 50: {
+            com.google.protobuf.Duration.Builder subBuilder = null;
+            if (gracefulDecommissionTimeout_ != null) {
+              subBuilder = gracefulDecommissionTimeout_.toBuilder();
+            }
+            gracefulDecommissionTimeout_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(gracefulDecommissionTimeout_);
+              gracefulDecommissionTimeout_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            requestId_ = s;
             break;
           }
           default: {
@@ -286,6 +306,57 @@ private static final long serialVersionUID = 0L;
     return getCluster();
   }
 
+  public static final int GRACEFUL_DECOMMISSION_TIMEOUT_FIELD_NUMBER = 6;
+  private com.google.protobuf.Duration gracefulDecommissionTimeout_;
+  /**
+   * <pre>
+   * Optional. Timeout for graceful YARN decomissioning. Graceful
+   * decommissioning allows removing nodes from the cluster without
+   * interrupting jobs in progress. Timeout specifies how long to wait for jobs
+   * in progress to finish before forcefully removing nodes (and potentially
+   * interrupting jobs). Default timeout is 0 (for forceful decommission), and
+   * the maximum allowed timeout is 1 day.
+   * Only supported on Dataproc image versions 1.2 and higher.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
+   */
+  public boolean hasGracefulDecommissionTimeout() {
+    return gracefulDecommissionTimeout_ != null;
+  }
+  /**
+   * <pre>
+   * Optional. Timeout for graceful YARN decomissioning. Graceful
+   * decommissioning allows removing nodes from the cluster without
+   * interrupting jobs in progress. Timeout specifies how long to wait for jobs
+   * in progress to finish before forcefully removing nodes (and potentially
+   * interrupting jobs). Default timeout is 0 (for forceful decommission), and
+   * the maximum allowed timeout is 1 day.
+   * Only supported on Dataproc image versions 1.2 and higher.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
+   */
+  public com.google.protobuf.Duration getGracefulDecommissionTimeout() {
+    return gracefulDecommissionTimeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : gracefulDecommissionTimeout_;
+  }
+  /**
+   * <pre>
+   * Optional. Timeout for graceful YARN decomissioning. Graceful
+   * decommissioning allows removing nodes from the cluster without
+   * interrupting jobs in progress. Timeout specifies how long to wait for jobs
+   * in progress to finish before forcefully removing nodes (and potentially
+   * interrupting jobs). Default timeout is 0 (for forceful decommission), and
+   * the maximum allowed timeout is 1 day.
+   * Only supported on Dataproc image versions 1.2 and higher.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
+   */
+  public com.google.protobuf.DurationOrBuilder getGracefulDecommissionTimeoutOrBuilder() {
+    return getGracefulDecommissionTimeout();
+  }
+
   public static final int UPDATE_MASK_FIELD_NUMBER = 4;
   private com.google.protobuf.FieldMask updateMask_;
   /**
@@ -448,6 +519,64 @@ private static final long serialVersionUID = 0L;
     return getUpdateMask();
   }
 
+  public static final int REQUEST_ID_FIELD_NUMBER = 7;
+  private volatile java.lang.Object requestId_;
+  /**
+   * <pre>
+   * Optional. A unique id used to identify the request. If the server
+   * receives two [UpdateClusterRequest][google.cloud.dataproc.v1.UpdateClusterRequest] requests  with the same
+   * id, then the second request will be ignored and the
+   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
+   * backend is returned.
+   * It is recommended to always set this value to a
+   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   * The id must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), and hyphens (-). The maximum length is 40 characters.
+   * </pre>
+   *
+   * <code>string request_id = 7;</code>
+   */
+  public java.lang.String getRequestId() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. A unique id used to identify the request. If the server
+   * receives two [UpdateClusterRequest][google.cloud.dataproc.v1.UpdateClusterRequest] requests  with the same
+   * id, then the second request will be ignored and the
+   * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
+   * backend is returned.
+   * It is recommended to always set this value to a
+   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   * The id must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), and hyphens (-). The maximum length is 40 characters.
+   * </pre>
+   *
+   * <code>string request_id = 7;</code>
+   */
+  public com.google.protobuf.ByteString
+      getRequestIdBytes() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      requestId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -477,6 +606,12 @@ private static final long serialVersionUID = 0L;
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, region_);
     }
+    if (gracefulDecommissionTimeout_ != null) {
+      output.writeMessage(6, getGracefulDecommissionTimeout());
+    }
+    if (!getRequestIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, requestId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -502,6 +637,13 @@ private static final long serialVersionUID = 0L;
     }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, region_);
+    }
+    if (gracefulDecommissionTimeout_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getGracefulDecommissionTimeout());
+    }
+    if (!getRequestIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, requestId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -530,11 +672,18 @@ private static final long serialVersionUID = 0L;
       result = result && getCluster()
           .equals(other.getCluster());
     }
+    result = result && (hasGracefulDecommissionTimeout() == other.hasGracefulDecommissionTimeout());
+    if (hasGracefulDecommissionTimeout()) {
+      result = result && getGracefulDecommissionTimeout()
+          .equals(other.getGracefulDecommissionTimeout());
+    }
     result = result && (hasUpdateMask() == other.hasUpdateMask());
     if (hasUpdateMask()) {
       result = result && getUpdateMask()
           .equals(other.getUpdateMask());
     }
+    result = result && getRequestId()
+        .equals(other.getRequestId());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -556,10 +705,16 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CLUSTER_FIELD_NUMBER;
       hash = (53 * hash) + getCluster().hashCode();
     }
+    if (hasGracefulDecommissionTimeout()) {
+      hash = (37 * hash) + GRACEFUL_DECOMMISSION_TIMEOUT_FIELD_NUMBER;
+      hash = (53 * hash) + getGracefulDecommissionTimeout().hashCode();
+    }
     if (hasUpdateMask()) {
       hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateMask().hashCode();
     }
+    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -709,12 +864,20 @@ private static final long serialVersionUID = 0L;
         cluster_ = null;
         clusterBuilder_ = null;
       }
+      if (gracefulDecommissionTimeoutBuilder_ == null) {
+        gracefulDecommissionTimeout_ = null;
+      } else {
+        gracefulDecommissionTimeout_ = null;
+        gracefulDecommissionTimeoutBuilder_ = null;
+      }
       if (updateMaskBuilder_ == null) {
         updateMask_ = null;
       } else {
         updateMask_ = null;
         updateMaskBuilder_ = null;
       }
+      requestId_ = "";
+
       return this;
     }
 
@@ -749,11 +912,17 @@ private static final long serialVersionUID = 0L;
       } else {
         result.cluster_ = clusterBuilder_.build();
       }
+      if (gracefulDecommissionTimeoutBuilder_ == null) {
+        result.gracefulDecommissionTimeout_ = gracefulDecommissionTimeout_;
+      } else {
+        result.gracefulDecommissionTimeout_ = gracefulDecommissionTimeoutBuilder_.build();
+      }
       if (updateMaskBuilder_ == null) {
         result.updateMask_ = updateMask_;
       } else {
         result.updateMask_ = updateMaskBuilder_.build();
       }
+      result.requestId_ = requestId_;
       onBuilt();
       return result;
     }
@@ -817,8 +986,15 @@ private static final long serialVersionUID = 0L;
       if (other.hasCluster()) {
         mergeCluster(other.getCluster());
       }
+      if (other.hasGracefulDecommissionTimeout()) {
+        mergeGracefulDecommissionTimeout(other.getGracefulDecommissionTimeout());
+      }
       if (other.hasUpdateMask()) {
         mergeUpdateMask(other.getUpdateMask());
+      }
+      if (!other.getRequestId().isEmpty()) {
+        requestId_ = other.requestId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1272,6 +1448,213 @@ private static final long serialVersionUID = 0L;
         cluster_ = null;
       }
       return clusterBuilder_;
+    }
+
+    private com.google.protobuf.Duration gracefulDecommissionTimeout_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> gracefulDecommissionTimeoutBuilder_;
+    /**
+     * <pre>
+     * Optional. Timeout for graceful YARN decomissioning. Graceful
+     * decommissioning allows removing nodes from the cluster without
+     * interrupting jobs in progress. Timeout specifies how long to wait for jobs
+     * in progress to finish before forcefully removing nodes (and potentially
+     * interrupting jobs). Default timeout is 0 (for forceful decommission), and
+     * the maximum allowed timeout is 1 day.
+     * Only supported on Dataproc image versions 1.2 and higher.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
+     */
+    public boolean hasGracefulDecommissionTimeout() {
+      return gracefulDecommissionTimeoutBuilder_ != null || gracefulDecommissionTimeout_ != null;
+    }
+    /**
+     * <pre>
+     * Optional. Timeout for graceful YARN decomissioning. Graceful
+     * decommissioning allows removing nodes from the cluster without
+     * interrupting jobs in progress. Timeout specifies how long to wait for jobs
+     * in progress to finish before forcefully removing nodes (and potentially
+     * interrupting jobs). Default timeout is 0 (for forceful decommission), and
+     * the maximum allowed timeout is 1 day.
+     * Only supported on Dataproc image versions 1.2 and higher.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
+     */
+    public com.google.protobuf.Duration getGracefulDecommissionTimeout() {
+      if (gracefulDecommissionTimeoutBuilder_ == null) {
+        return gracefulDecommissionTimeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : gracefulDecommissionTimeout_;
+      } else {
+        return gracefulDecommissionTimeoutBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Timeout for graceful YARN decomissioning. Graceful
+     * decommissioning allows removing nodes from the cluster without
+     * interrupting jobs in progress. Timeout specifies how long to wait for jobs
+     * in progress to finish before forcefully removing nodes (and potentially
+     * interrupting jobs). Default timeout is 0 (for forceful decommission), and
+     * the maximum allowed timeout is 1 day.
+     * Only supported on Dataproc image versions 1.2 and higher.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
+     */
+    public Builder setGracefulDecommissionTimeout(com.google.protobuf.Duration value) {
+      if (gracefulDecommissionTimeoutBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gracefulDecommissionTimeout_ = value;
+        onChanged();
+      } else {
+        gracefulDecommissionTimeoutBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Timeout for graceful YARN decomissioning. Graceful
+     * decommissioning allows removing nodes from the cluster without
+     * interrupting jobs in progress. Timeout specifies how long to wait for jobs
+     * in progress to finish before forcefully removing nodes (and potentially
+     * interrupting jobs). Default timeout is 0 (for forceful decommission), and
+     * the maximum allowed timeout is 1 day.
+     * Only supported on Dataproc image versions 1.2 and higher.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
+     */
+    public Builder setGracefulDecommissionTimeout(
+        com.google.protobuf.Duration.Builder builderForValue) {
+      if (gracefulDecommissionTimeoutBuilder_ == null) {
+        gracefulDecommissionTimeout_ = builderForValue.build();
+        onChanged();
+      } else {
+        gracefulDecommissionTimeoutBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Timeout for graceful YARN decomissioning. Graceful
+     * decommissioning allows removing nodes from the cluster without
+     * interrupting jobs in progress. Timeout specifies how long to wait for jobs
+     * in progress to finish before forcefully removing nodes (and potentially
+     * interrupting jobs). Default timeout is 0 (for forceful decommission), and
+     * the maximum allowed timeout is 1 day.
+     * Only supported on Dataproc image versions 1.2 and higher.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
+     */
+    public Builder mergeGracefulDecommissionTimeout(com.google.protobuf.Duration value) {
+      if (gracefulDecommissionTimeoutBuilder_ == null) {
+        if (gracefulDecommissionTimeout_ != null) {
+          gracefulDecommissionTimeout_ =
+            com.google.protobuf.Duration.newBuilder(gracefulDecommissionTimeout_).mergeFrom(value).buildPartial();
+        } else {
+          gracefulDecommissionTimeout_ = value;
+        }
+        onChanged();
+      } else {
+        gracefulDecommissionTimeoutBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Timeout for graceful YARN decomissioning. Graceful
+     * decommissioning allows removing nodes from the cluster without
+     * interrupting jobs in progress. Timeout specifies how long to wait for jobs
+     * in progress to finish before forcefully removing nodes (and potentially
+     * interrupting jobs). Default timeout is 0 (for forceful decommission), and
+     * the maximum allowed timeout is 1 day.
+     * Only supported on Dataproc image versions 1.2 and higher.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
+     */
+    public Builder clearGracefulDecommissionTimeout() {
+      if (gracefulDecommissionTimeoutBuilder_ == null) {
+        gracefulDecommissionTimeout_ = null;
+        onChanged();
+      } else {
+        gracefulDecommissionTimeout_ = null;
+        gracefulDecommissionTimeoutBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Timeout for graceful YARN decomissioning. Graceful
+     * decommissioning allows removing nodes from the cluster without
+     * interrupting jobs in progress. Timeout specifies how long to wait for jobs
+     * in progress to finish before forcefully removing nodes (and potentially
+     * interrupting jobs). Default timeout is 0 (for forceful decommission), and
+     * the maximum allowed timeout is 1 day.
+     * Only supported on Dataproc image versions 1.2 and higher.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
+     */
+    public com.google.protobuf.Duration.Builder getGracefulDecommissionTimeoutBuilder() {
+      
+      onChanged();
+      return getGracefulDecommissionTimeoutFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Optional. Timeout for graceful YARN decomissioning. Graceful
+     * decommissioning allows removing nodes from the cluster without
+     * interrupting jobs in progress. Timeout specifies how long to wait for jobs
+     * in progress to finish before forcefully removing nodes (and potentially
+     * interrupting jobs). Default timeout is 0 (for forceful decommission), and
+     * the maximum allowed timeout is 1 day.
+     * Only supported on Dataproc image versions 1.2 and higher.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getGracefulDecommissionTimeoutOrBuilder() {
+      if (gracefulDecommissionTimeoutBuilder_ != null) {
+        return gracefulDecommissionTimeoutBuilder_.getMessageOrBuilder();
+      } else {
+        return gracefulDecommissionTimeout_ == null ?
+            com.google.protobuf.Duration.getDefaultInstance() : gracefulDecommissionTimeout_;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Timeout for graceful YARN decomissioning. Graceful
+     * decommissioning allows removing nodes from the cluster without
+     * interrupting jobs in progress. Timeout specifies how long to wait for jobs
+     * in progress to finish before forcefully removing nodes (and potentially
+     * interrupting jobs). Default timeout is 0 (for forceful decommission), and
+     * the maximum allowed timeout is 1 day.
+     * Only supported on Dataproc image versions 1.2 and higher.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+        getGracefulDecommissionTimeoutFieldBuilder() {
+      if (gracefulDecommissionTimeoutBuilder_ == null) {
+        gracefulDecommissionTimeoutBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                getGracefulDecommissionTimeout(),
+                getParentForChildren(),
+                isClean());
+        gracefulDecommissionTimeout_ = null;
+      }
+      return gracefulDecommissionTimeoutBuilder_;
     }
 
     private com.google.protobuf.FieldMask updateMask_ = null;
@@ -1812,6 +2195,135 @@ private static final long serialVersionUID = 0L;
         updateMask_ = null;
       }
       return updateMaskBuilder_;
+    }
+
+    private java.lang.Object requestId_ = "";
+    /**
+     * <pre>
+     * Optional. A unique id used to identify the request. If the server
+     * receives two [UpdateClusterRequest][google.cloud.dataproc.v1.UpdateClusterRequest] requests  with the same
+     * id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
+     * backend is returned.
+     * It is recommended to always set this value to a
+     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     * The id must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * </pre>
+     *
+     * <code>string request_id = 7;</code>
+     */
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. A unique id used to identify the request. If the server
+     * receives two [UpdateClusterRequest][google.cloud.dataproc.v1.UpdateClusterRequest] requests  with the same
+     * id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
+     * backend is returned.
+     * It is recommended to always set this value to a
+     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     * The id must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * </pre>
+     *
+     * <code>string request_id = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRequestIdBytes() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        requestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. A unique id used to identify the request. If the server
+     * receives two [UpdateClusterRequest][google.cloud.dataproc.v1.UpdateClusterRequest] requests  with the same
+     * id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
+     * backend is returned.
+     * It is recommended to always set this value to a
+     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     * The id must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * </pre>
+     *
+     * <code>string request_id = 7;</code>
+     */
+    public Builder setRequestId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      requestId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A unique id used to identify the request. If the server
+     * receives two [UpdateClusterRequest][google.cloud.dataproc.v1.UpdateClusterRequest] requests  with the same
+     * id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
+     * backend is returned.
+     * It is recommended to always set this value to a
+     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     * The id must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * </pre>
+     *
+     * <code>string request_id = 7;</code>
+     */
+    public Builder clearRequestId() {
+      
+      requestId_ = getDefaultInstance().getRequestId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. A unique id used to identify the request. If the server
+     * receives two [UpdateClusterRequest][google.cloud.dataproc.v1.UpdateClusterRequest] requests  with the same
+     * id, then the second request will be ignored and the
+     * first [google.longrunning.Operation][google.longrunning.Operation] created and stored in the
+     * backend is returned.
+     * It is recommended to always set this value to a
+     * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+     * The id must contain only letters (a-z, A-Z), numbers (0-9),
+     * underscores (_), and hyphens (-). The maximum length is 40 characters.
+     * </pre>
+     *
+     * <code>string request_id = 7;</code>
+     */
+    public Builder setRequestIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      requestId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

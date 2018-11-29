@@ -129,7 +129,7 @@ public interface WorkflowMetadataOrBuilder extends
 
   /**
    * <pre>
-   * Output only. The name of the managed cluster.
+   * Output only. The name of the target cluster.
    * </pre>
    *
    * <code>string cluster_name = 7;</code>
@@ -137,7 +137,7 @@ public interface WorkflowMetadataOrBuilder extends
   java.lang.String getClusterName();
   /**
    * <pre>
-   * Output only. The name of the managed cluster.
+   * Output only. The name of the target cluster.
    * </pre>
    *
    * <code>string cluster_name = 7;</code>
@@ -198,4 +198,72 @@ public interface WorkflowMetadataOrBuilder extends
 
   java.lang.String getParametersOrThrow(
       java.lang.String key);
+
+  /**
+   * <pre>
+   * Output only. Workflow start time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 9;</code>
+   */
+  boolean hasStartTime();
+  /**
+   * <pre>
+   * Output only. Workflow start time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 9;</code>
+   */
+  com.google.protobuf.Timestamp getStartTime();
+  /**
+   * <pre>
+   * Output only. Workflow start time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 9;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
+
+  /**
+   * <pre>
+   * Output only. Workflow end time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 10;</code>
+   */
+  boolean hasEndTime();
+  /**
+   * <pre>
+   * Output only. Workflow end time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 10;</code>
+   */
+  com.google.protobuf.Timestamp getEndTime();
+  /**
+   * <pre>
+   * Output only. Workflow end time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 10;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+
+  /**
+   * <pre>
+   * Output only. The UUID of target cluster.
+   * </pre>
+   *
+   * <code>string cluster_uuid = 11;</code>
+   */
+  java.lang.String getClusterUuid();
+  /**
+   * <pre>
+   * Output only. The UUID of target cluster.
+   * </pre>
+   *
+   * <code>string cluster_uuid = 11;</code>
+   */
+  com.google.protobuf.ByteString
+      getClusterUuidBytes();
 }

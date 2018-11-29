@@ -252,7 +252,9 @@ public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubS
 
             @Override
             public Iterable<Job> extractResources(ListJobsResponse payload) {
-              return payload.getJobsList();
+              return payload.getJobsList() != null
+                  ? payload.getJobsList()
+                  : ImmutableList.<Job>of();
             }
           };
 

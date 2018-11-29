@@ -258,7 +258,9 @@ public class AddressStubSettings extends StubSettings<AddressStubSettings> {
 
             @Override
             public Iterable<AddressesScopedList> extractResources(AddressAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<AddressesScopedList>of();
             }
           };
 
@@ -294,7 +296,9 @@ public class AddressStubSettings extends StubSettings<AddressStubSettings> {
 
             @Override
             public Iterable<Address> extractResources(AddressList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Address>of();
             }
           };
 

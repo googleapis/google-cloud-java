@@ -17,7 +17,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
- * Google Container Engine Cluster Manager v1
+ * Google Kubernetes Engine Cluster Manager v1
  * </pre>
  */
 @javax.annotation.Generated(
@@ -1166,7 +1166,7 @@ public final class ClusterManagerGrpc {
 
   /**
    * <pre>
-   * Google Container Engine Cluster Manager v1
+   * Google Kubernetes Engine Cluster Manager v1
    * </pre>
    */
   public static abstract class ClusterManagerImplBase implements io.grpc.BindableService {
@@ -1223,7 +1223,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Updates the version and/or image type of a specific node pool.
+     * Updates the version and/or image type for a specific node pool.
      * </pre>
      */
     public void updateNodePool(com.google.container.v1.UpdateNodePoolRequest request,
@@ -1233,7 +1233,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the autoscaling settings of a specific node pool.
+     * Sets the autoscaling settings for a specific node pool.
      * </pre>
      */
     public void setNodePoolAutoscaling(com.google.container.v1.SetNodePoolAutoscalingRequest request,
@@ -1243,7 +1243,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the logging service of a specific cluster.
+     * Sets the logging service for a specific cluster.
      * </pre>
      */
     public void setLoggingService(com.google.container.v1.SetLoggingServiceRequest request,
@@ -1253,7 +1253,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the monitoring service of a specific cluster.
+     * Sets the monitoring service for a specific cluster.
      * </pre>
      */
     public void setMonitoringService(com.google.container.v1.SetMonitoringServiceRequest request,
@@ -1263,7 +1263,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the addons of a specific cluster.
+     * Sets the addons for a specific cluster.
      * </pre>
      */
     public void setAddonsConfig(com.google.container.v1.SetAddonsConfigRequest request,
@@ -1273,7 +1273,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the locations of a specific cluster.
+     * Sets the locations for a specific cluster.
      * </pre>
      */
     public void setLocations(com.google.container.v1.SetLocationsRequest request,
@@ -1283,7 +1283,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Updates the master of a specific cluster.
+     * Updates the master for a specific cluster.
      * </pre>
      */
     public void updateMaster(com.google.container.v1.UpdateMasterRequest request,
@@ -1294,7 +1294,7 @@ public final class ClusterManagerGrpc {
     /**
      * <pre>
      * Used to set master auth materials. Currently supports :-
-     * Changing the admin password of a specific cluster.
+     * Changing the admin password for a specific cluster.
      * This can be either via password generation or explicitly set the password.
      * </pre>
      */
@@ -1351,7 +1351,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Returns configuration info about the Container Engine service.
+     * Returns configuration info about the Kubernetes Engine service.
      * </pre>
      */
     public void getServerConfig(com.google.container.v1.GetServerConfigRequest request,
@@ -1462,7 +1462,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the size of a specific node pool.
+     * Sets the size for a specific node pool.
      * </pre>
      */
     public void setNodePoolSize(com.google.container.v1.SetNodePoolSizeRequest request,
@@ -1708,7 +1708,7 @@ public final class ClusterManagerGrpc {
 
   /**
    * <pre>
-   * Google Container Engine Cluster Manager v1
+   * Google Kubernetes Engine Cluster Manager v1
    * </pre>
    */
   public static final class ClusterManagerStub extends io.grpc.stub.AbstractStub<ClusterManagerStub> {
@@ -1783,7 +1783,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Updates the version and/or image type of a specific node pool.
+     * Updates the version and/or image type for a specific node pool.
      * </pre>
      */
     public void updateNodePool(com.google.container.v1.UpdateNodePoolRequest request,
@@ -1794,7 +1794,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the autoscaling settings of a specific node pool.
+     * Sets the autoscaling settings for a specific node pool.
      * </pre>
      */
     public void setNodePoolAutoscaling(com.google.container.v1.SetNodePoolAutoscalingRequest request,
@@ -1805,7 +1805,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the logging service of a specific cluster.
+     * Sets the logging service for a specific cluster.
      * </pre>
      */
     public void setLoggingService(com.google.container.v1.SetLoggingServiceRequest request,
@@ -1816,7 +1816,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the monitoring service of a specific cluster.
+     * Sets the monitoring service for a specific cluster.
      * </pre>
      */
     public void setMonitoringService(com.google.container.v1.SetMonitoringServiceRequest request,
@@ -1827,7 +1827,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the addons of a specific cluster.
+     * Sets the addons for a specific cluster.
      * </pre>
      */
     public void setAddonsConfig(com.google.container.v1.SetAddonsConfigRequest request,
@@ -1838,7 +1838,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the locations of a specific cluster.
+     * Sets the locations for a specific cluster.
      * </pre>
      */
     public void setLocations(com.google.container.v1.SetLocationsRequest request,
@@ -1849,7 +1849,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Updates the master of a specific cluster.
+     * Updates the master for a specific cluster.
      * </pre>
      */
     public void updateMaster(com.google.container.v1.UpdateMasterRequest request,
@@ -1861,7 +1861,7 @@ public final class ClusterManagerGrpc {
     /**
      * <pre>
      * Used to set master auth materials. Currently supports :-
-     * Changing the admin password of a specific cluster.
+     * Changing the admin password for a specific cluster.
      * This can be either via password generation or explicitly set the password.
      * </pre>
      */
@@ -1923,7 +1923,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Returns configuration info about the Container Engine service.
+     * Returns configuration info about the Kubernetes Engine service.
      * </pre>
      */
     public void getServerConfig(com.google.container.v1.GetServerConfigRequest request,
@@ -2045,7 +2045,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the size of a specific node pool.
+     * Sets the size for a specific node pool.
      * </pre>
      */
     public void setNodePoolSize(com.google.container.v1.SetNodePoolSizeRequest request,
@@ -2079,7 +2079,7 @@ public final class ClusterManagerGrpc {
 
   /**
    * <pre>
-   * Google Container Engine Cluster Manager v1
+   * Google Kubernetes Engine Cluster Manager v1
    * </pre>
    */
   public static final class ClusterManagerBlockingStub extends io.grpc.stub.AbstractStub<ClusterManagerBlockingStub> {
@@ -2150,7 +2150,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Updates the version and/or image type of a specific node pool.
+     * Updates the version and/or image type for a specific node pool.
      * </pre>
      */
     public com.google.container.v1.Operation updateNodePool(com.google.container.v1.UpdateNodePoolRequest request) {
@@ -2160,7 +2160,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the autoscaling settings of a specific node pool.
+     * Sets the autoscaling settings for a specific node pool.
      * </pre>
      */
     public com.google.container.v1.Operation setNodePoolAutoscaling(com.google.container.v1.SetNodePoolAutoscalingRequest request) {
@@ -2170,7 +2170,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the logging service of a specific cluster.
+     * Sets the logging service for a specific cluster.
      * </pre>
      */
     public com.google.container.v1.Operation setLoggingService(com.google.container.v1.SetLoggingServiceRequest request) {
@@ -2180,7 +2180,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the monitoring service of a specific cluster.
+     * Sets the monitoring service for a specific cluster.
      * </pre>
      */
     public com.google.container.v1.Operation setMonitoringService(com.google.container.v1.SetMonitoringServiceRequest request) {
@@ -2190,7 +2190,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the addons of a specific cluster.
+     * Sets the addons for a specific cluster.
      * </pre>
      */
     public com.google.container.v1.Operation setAddonsConfig(com.google.container.v1.SetAddonsConfigRequest request) {
@@ -2200,7 +2200,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the locations of a specific cluster.
+     * Sets the locations for a specific cluster.
      * </pre>
      */
     public com.google.container.v1.Operation setLocations(com.google.container.v1.SetLocationsRequest request) {
@@ -2210,7 +2210,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Updates the master of a specific cluster.
+     * Updates the master for a specific cluster.
      * </pre>
      */
     public com.google.container.v1.Operation updateMaster(com.google.container.v1.UpdateMasterRequest request) {
@@ -2221,7 +2221,7 @@ public final class ClusterManagerGrpc {
     /**
      * <pre>
      * Used to set master auth materials. Currently supports :-
-     * Changing the admin password of a specific cluster.
+     * Changing the admin password for a specific cluster.
      * This can be either via password generation or explicitly set the password.
      * </pre>
      */
@@ -2278,7 +2278,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Returns configuration info about the Container Engine service.
+     * Returns configuration info about the Kubernetes Engine service.
      * </pre>
      */
     public com.google.container.v1.ServerConfig getServerConfig(com.google.container.v1.GetServerConfigRequest request) {
@@ -2389,7 +2389,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the size of a specific node pool.
+     * Sets the size for a specific node pool.
      * </pre>
      */
     public com.google.container.v1.Operation setNodePoolSize(com.google.container.v1.SetNodePoolSizeRequest request) {
@@ -2420,7 +2420,7 @@ public final class ClusterManagerGrpc {
 
   /**
    * <pre>
-   * Google Container Engine Cluster Manager v1
+   * Google Kubernetes Engine Cluster Manager v1
    * </pre>
    */
   public static final class ClusterManagerFutureStub extends io.grpc.stub.AbstractStub<ClusterManagerFutureStub> {
@@ -2495,7 +2495,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Updates the version and/or image type of a specific node pool.
+     * Updates the version and/or image type for a specific node pool.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation> updateNodePool(
@@ -2506,7 +2506,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the autoscaling settings of a specific node pool.
+     * Sets the autoscaling settings for a specific node pool.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation> setNodePoolAutoscaling(
@@ -2517,7 +2517,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the logging service of a specific cluster.
+     * Sets the logging service for a specific cluster.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation> setLoggingService(
@@ -2528,7 +2528,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the monitoring service of a specific cluster.
+     * Sets the monitoring service for a specific cluster.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation> setMonitoringService(
@@ -2539,7 +2539,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the addons of a specific cluster.
+     * Sets the addons for a specific cluster.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation> setAddonsConfig(
@@ -2550,7 +2550,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the locations of a specific cluster.
+     * Sets the locations for a specific cluster.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation> setLocations(
@@ -2561,7 +2561,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Updates the master of a specific cluster.
+     * Updates the master for a specific cluster.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation> updateMaster(
@@ -2573,7 +2573,7 @@ public final class ClusterManagerGrpc {
     /**
      * <pre>
      * Used to set master auth materials. Currently supports :-
-     * Changing the admin password of a specific cluster.
+     * Changing the admin password for a specific cluster.
      * This can be either via password generation or explicitly set the password.
      * </pre>
      */
@@ -2635,7 +2635,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Returns configuration info about the Container Engine service.
+     * Returns configuration info about the Kubernetes Engine service.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.ServerConfig> getServerConfig(
@@ -2757,7 +2757,7 @@ public final class ClusterManagerGrpc {
 
     /**
      * <pre>
-     * Sets the size of a specific node pool.
+     * Sets the size for a specific node pool.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.container.v1.Operation> setNodePoolSize(

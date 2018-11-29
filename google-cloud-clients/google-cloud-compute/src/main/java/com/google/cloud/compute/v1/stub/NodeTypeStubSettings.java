@@ -242,7 +242,9 @@ public class NodeTypeStubSettings extends StubSettings<NodeTypeStubSettings> {
 
             @Override
             public Iterable<NodeTypesScopedList> extractResources(NodeTypeAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<NodeTypesScopedList>of();
             }
           };
 
@@ -278,7 +280,9 @@ public class NodeTypeStubSettings extends StubSettings<NodeTypeStubSettings> {
 
             @Override
             public Iterable<NodeType> extractResources(NodeTypeList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<NodeType>of();
             }
           };
 

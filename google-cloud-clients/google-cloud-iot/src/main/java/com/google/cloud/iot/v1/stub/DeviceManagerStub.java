@@ -21,6 +21,8 @@ import static com.google.cloud.iot.v1.DeviceManagerClient.ListDevicesPagedRespon
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.iot.v1.BindDeviceToGatewayRequest;
+import com.google.cloud.iot.v1.BindDeviceToGatewayResponse;
 import com.google.cloud.iot.v1.CreateDeviceRegistryRequest;
 import com.google.cloud.iot.v1.CreateDeviceRequest;
 import com.google.cloud.iot.v1.DeleteDeviceRegistryRequest;
@@ -39,6 +41,10 @@ import com.google.cloud.iot.v1.ListDeviceStatesResponse;
 import com.google.cloud.iot.v1.ListDevicesRequest;
 import com.google.cloud.iot.v1.ListDevicesResponse;
 import com.google.cloud.iot.v1.ModifyCloudToDeviceConfigRequest;
+import com.google.cloud.iot.v1.SendCommandToDeviceRequest;
+import com.google.cloud.iot.v1.SendCommandToDeviceResponse;
+import com.google.cloud.iot.v1.UnbindDeviceFromGatewayRequest;
+import com.google.cloud.iot.v1.UnbindDeviceFromGatewayResponse;
 import com.google.cloud.iot.v1.UpdateDeviceRegistryRequest;
 import com.google.cloud.iot.v1.UpdateDeviceRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -135,6 +141,21 @@ public abstract class DeviceManagerStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public UnaryCallable<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+      sendCommandToDeviceCallable() {
+    throw new UnsupportedOperationException("Not implemented: sendCommandToDeviceCallable()");
+  }
+
+  public UnaryCallable<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
+      bindDeviceToGatewayCallable() {
+    throw new UnsupportedOperationException("Not implemented: bindDeviceToGatewayCallable()");
+  }
+
+  public UnaryCallable<UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
+      unbindDeviceFromGatewayCallable() {
+    throw new UnsupportedOperationException("Not implemented: unbindDeviceFromGatewayCallable()");
   }
 
   @Override

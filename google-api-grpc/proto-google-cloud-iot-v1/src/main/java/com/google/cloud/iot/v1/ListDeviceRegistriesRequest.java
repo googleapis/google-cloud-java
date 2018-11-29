@@ -148,8 +148,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The maximum number of registries to return in the response. If this value
    * is zero, the service will select a default size. A call may return fewer
-   * objects than requested, but if there is a non-empty `page_token`, it
-   * indicates that more entries are available.
+   * objects than requested. A non-empty `next_page_token` in the response
+   * indicates that more data is available.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -163,8 +163,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The value returned by the last `ListDeviceRegistriesResponse`; indicates
-   * that this is a continuation of a prior `ListDeviceRegistries` call, and
-   * that the system should return the next page of data.
+   * that this is a continuation of a prior `ListDeviceRegistries` call and
+   * the system should return the next page of data.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -184,8 +184,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The value returned by the last `ListDeviceRegistriesResponse`; indicates
-   * that this is a continuation of a prior `ListDeviceRegistries` call, and
-   * that the system should return the next page of data.
+   * that this is a continuation of a prior `ListDeviceRegistries` call and
+   * the system should return the next page of data.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -644,8 +644,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The maximum number of registries to return in the response. If this value
      * is zero, the service will select a default size. A call may return fewer
-     * objects than requested, but if there is a non-empty `page_token`, it
-     * indicates that more entries are available.
+     * objects than requested. A non-empty `next_page_token` in the response
+     * indicates that more data is available.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -657,8 +657,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The maximum number of registries to return in the response. If this value
      * is zero, the service will select a default size. A call may return fewer
-     * objects than requested, but if there is a non-empty `page_token`, it
-     * indicates that more entries are available.
+     * objects than requested. A non-empty `next_page_token` in the response
+     * indicates that more data is available.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -673,8 +673,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The maximum number of registries to return in the response. If this value
      * is zero, the service will select a default size. A call may return fewer
-     * objects than requested, but if there is a non-empty `page_token`, it
-     * indicates that more entries are available.
+     * objects than requested. A non-empty `next_page_token` in the response
+     * indicates that more data is available.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -690,8 +690,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The value returned by the last `ListDeviceRegistriesResponse`; indicates
-     * that this is a continuation of a prior `ListDeviceRegistries` call, and
-     * that the system should return the next page of data.
+     * that this is a continuation of a prior `ListDeviceRegistries` call and
+     * the system should return the next page of data.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -711,8 +711,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The value returned by the last `ListDeviceRegistriesResponse`; indicates
-     * that this is a continuation of a prior `ListDeviceRegistries` call, and
-     * that the system should return the next page of data.
+     * that this is a continuation of a prior `ListDeviceRegistries` call and
+     * the system should return the next page of data.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -733,8 +733,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The value returned by the last `ListDeviceRegistriesResponse`; indicates
-     * that this is a continuation of a prior `ListDeviceRegistries` call, and
-     * that the system should return the next page of data.
+     * that this is a continuation of a prior `ListDeviceRegistries` call and
+     * the system should return the next page of data.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -752,8 +752,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The value returned by the last `ListDeviceRegistriesResponse`; indicates
-     * that this is a continuation of a prior `ListDeviceRegistries` call, and
-     * that the system should return the next page of data.
+     * that this is a continuation of a prior `ListDeviceRegistries` call and
+     * the system should return the next page of data.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -767,8 +767,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The value returned by the last `ListDeviceRegistriesResponse`; indicates
-     * that this is a continuation of a prior `ListDeviceRegistries` call, and
-     * that the system should return the next page of data.
+     * that this is a continuation of a prior `ListDeviceRegistries` call and
+     * the system should return the next page of data.
      * </pre>
      *
      * <code>string page_token = 3;</code>

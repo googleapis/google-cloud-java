@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     id_ = "";
     name_ = "";
     eventNotificationConfigs_ = java.util.Collections.emptyList();
+    logLevel_ = 0;
     credentials_ = java.util.Collections.emptyList();
   }
 
@@ -89,9 +90,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 66: {
-            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
               credentials_ = new java.util.ArrayList<com.google.cloud.iot.v1.RegistryCredential>();
-              mutable_bitField0_ |= 0x00000040;
+              mutable_bitField0_ |= 0x00000080;
             }
             credentials_.add(
                 input.readMessage(com.google.cloud.iot.v1.RegistryCredential.parser(), extensionRegistry));
@@ -119,6 +120,12 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.google.cloud.iot.v1.EventNotificationConfig.parser(), extensionRegistry));
             break;
           }
+          case 88: {
+            int rawValue = input.readEnum();
+
+            logLevel_ = rawValue;
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -134,7 +141,7 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
         credentials_ = java.util.Collections.unmodifiableList(credentials_);
       }
       if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
@@ -453,6 +460,35 @@ private static final long serialVersionUID = 0L;
     return getHttpConfig();
   }
 
+  public static final int LOG_LEVEL_FIELD_NUMBER = 11;
+  private int logLevel_;
+  /**
+   * <pre>
+   * **Beta Feature**
+   * The default logging verbosity for activity from devices in this registry.
+   * The verbosity level can be overridden by Device.log_level.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.LogLevel log_level = 11;</code>
+   */
+  public int getLogLevelValue() {
+    return logLevel_;
+  }
+  /**
+   * <pre>
+   * **Beta Feature**
+   * The default logging verbosity for activity from devices in this registry.
+   * The verbosity level can be overridden by Device.log_level.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.LogLevel log_level = 11;</code>
+   */
+  public com.google.cloud.iot.v1.LogLevel getLogLevel() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.iot.v1.LogLevel result = com.google.cloud.iot.v1.LogLevel.valueOf(logLevel_);
+    return result == null ? com.google.cloud.iot.v1.LogLevel.UNRECOGNIZED : result;
+  }
+
   public static final int CREDENTIALS_FIELD_NUMBER = 8;
   private java.util.List<com.google.cloud.iot.v1.RegistryCredential> credentials_;
   /**
@@ -588,6 +624,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < eventNotificationConfigs_.size(); i++) {
       output.writeMessage(10, eventNotificationConfigs_.get(i));
     }
+    if (logLevel_ != com.google.cloud.iot.v1.LogLevel.LOG_LEVEL_UNSPECIFIED.getNumber()) {
+      output.writeEnum(11, logLevel_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -622,6 +661,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < eventNotificationConfigs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, eventNotificationConfigs_.get(i));
+    }
+    if (logLevel_ != com.google.cloud.iot.v1.LogLevel.LOG_LEVEL_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(11, logLevel_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -660,6 +703,7 @@ private static final long serialVersionUID = 0L;
       result = result && getHttpConfig()
           .equals(other.getHttpConfig());
     }
+    result = result && logLevel_ == other.logLevel_;
     result = result && getCredentialsList()
         .equals(other.getCredentialsList());
     result = result && unknownFields.equals(other.unknownFields);
@@ -693,6 +737,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + HTTP_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getHttpConfig().hashCode();
     }
+    hash = (37 * hash) + LOG_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + logLevel_;
     if (getCredentialsCount() > 0) {
       hash = (37 * hash) + CREDENTIALS_FIELD_NUMBER;
       hash = (53 * hash) + getCredentialsList().hashCode();
@@ -864,9 +910,11 @@ private static final long serialVersionUID = 0L;
         httpConfig_ = null;
         httpConfigBuilder_ = null;
       }
+      logLevel_ = 0;
+
       if (credentialsBuilder_ == null) {
         credentials_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
       } else {
         credentialsBuilder_.clear();
       }
@@ -924,10 +972,11 @@ private static final long serialVersionUID = 0L;
       } else {
         result.httpConfig_ = httpConfigBuilder_.build();
       }
+      result.logLevel_ = logLevel_;
       if (credentialsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
           credentials_ = java.util.Collections.unmodifiableList(credentials_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.credentials_ = credentials_;
       } else {
@@ -1025,11 +1074,14 @@ private static final long serialVersionUID = 0L;
       if (other.hasHttpConfig()) {
         mergeHttpConfig(other.getHttpConfig());
       }
+      if (other.logLevel_ != 0) {
+        setLogLevelValue(other.getLogLevelValue());
+      }
       if (credentialsBuilder_ == null) {
         if (!other.credentials_.isEmpty()) {
           if (credentials_.isEmpty()) {
             credentials_ = other.credentials_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureCredentialsIsMutable();
             credentials_.addAll(other.credentials_);
@@ -1042,7 +1094,7 @@ private static final long serialVersionUID = 0L;
             credentialsBuilder_.dispose();
             credentialsBuilder_ = null;
             credentials_ = other.credentials_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             credentialsBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getCredentialsFieldBuilder() : null;
@@ -2224,12 +2276,87 @@ private static final long serialVersionUID = 0L;
       return httpConfigBuilder_;
     }
 
+    private int logLevel_ = 0;
+    /**
+     * <pre>
+     * **Beta Feature**
+     * The default logging verbosity for activity from devices in this registry.
+     * The verbosity level can be overridden by Device.log_level.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.LogLevel log_level = 11;</code>
+     */
+    public int getLogLevelValue() {
+      return logLevel_;
+    }
+    /**
+     * <pre>
+     * **Beta Feature**
+     * The default logging verbosity for activity from devices in this registry.
+     * The verbosity level can be overridden by Device.log_level.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.LogLevel log_level = 11;</code>
+     */
+    public Builder setLogLevelValue(int value) {
+      logLevel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * **Beta Feature**
+     * The default logging verbosity for activity from devices in this registry.
+     * The verbosity level can be overridden by Device.log_level.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.LogLevel log_level = 11;</code>
+     */
+    public com.google.cloud.iot.v1.LogLevel getLogLevel() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.iot.v1.LogLevel result = com.google.cloud.iot.v1.LogLevel.valueOf(logLevel_);
+      return result == null ? com.google.cloud.iot.v1.LogLevel.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * **Beta Feature**
+     * The default logging verbosity for activity from devices in this registry.
+     * The verbosity level can be overridden by Device.log_level.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.LogLevel log_level = 11;</code>
+     */
+    public Builder setLogLevel(com.google.cloud.iot.v1.LogLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      logLevel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * **Beta Feature**
+     * The default logging verbosity for activity from devices in this registry.
+     * The verbosity level can be overridden by Device.log_level.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.LogLevel log_level = 11;</code>
+     */
+    public Builder clearLogLevel() {
+      
+      logLevel_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.iot.v1.RegistryCredential> credentials_ =
       java.util.Collections.emptyList();
     private void ensureCredentialsIsMutable() {
-      if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
         credentials_ = new java.util.ArrayList<com.google.cloud.iot.v1.RegistryCredential>(credentials_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
        }
     }
 
@@ -2522,7 +2649,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearCredentials() {
       if (credentialsBuilder_ == null) {
         credentials_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         credentialsBuilder_.clear();
@@ -2690,7 +2817,7 @@ private static final long serialVersionUID = 0L;
         credentialsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.cloud.iot.v1.RegistryCredential, com.google.cloud.iot.v1.RegistryCredential.Builder, com.google.cloud.iot.v1.RegistryCredentialOrBuilder>(
                 credentials_,
-                ((bitField0_ & 0x00000040) == 0x00000040),
+                ((bitField0_ & 0x00000080) == 0x00000080),
                 getParentForChildren(),
                 isClean());
         credentials_ = null;

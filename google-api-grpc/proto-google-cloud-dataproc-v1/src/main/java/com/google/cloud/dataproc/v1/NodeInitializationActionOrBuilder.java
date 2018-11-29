@@ -9,7 +9,7 @@ public interface NodeInitializationActionOrBuilder extends
 
   /**
    * <pre>
-   * Required. Google Cloud Storage URI of executable file.
+   * Required. Cloud Storage URI of executable file.
    * </pre>
    *
    * <code>string executable_file = 1;</code>
@@ -17,7 +17,7 @@ public interface NodeInitializationActionOrBuilder extends
   java.lang.String getExecutableFile();
   /**
    * <pre>
-   * Required. Google Cloud Storage URI of executable file.
+   * Required. Cloud Storage URI of executable file.
    * </pre>
    *
    * <code>string executable_file = 1;</code>
