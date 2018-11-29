@@ -24,9 +24,10 @@ import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
+import com.google.cloud.bigtable.data.v2.models.Filters.Filter;
+import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
@@ -37,6 +38,7 @@ import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStub;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.util.List;
+import javax.annotation.Nullable;
 
 /**
  * Client for reading from and writing to existing Bigtable tables.
@@ -210,10 +212,12 @@ public class BigtableDataClient implements AutoCloseable {
    * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
    *   String tableId = "[TABLE]";
    *
-   * Query query = Query.create(tableId)
-   *         .rowKey("key");
+   *  // Build the filter expression
+   *  Filter filter = FILTERS.chain()
+   *         .filter(FILTERS.qualifier().regex("prefix.*"))
+   *         .filter(FILTERS.limit().cellsPerRow(10));
    *
-   *   Row row = bigtableDataClient.readRow(query);
+   *   Row row = bigtableDataClient.readRow(tableId, "key", filter);
    *   // Do something with row, for example, display all cells
    *   if(row != null) {
    *     System.out.println(row.getKey().toStringUtf8());
@@ -229,8 +233,44 @@ public class BigtableDataClient implements AutoCloseable {
    *
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
    */
-  public Row readRow(Query query) {
-    return ApiExceptions.callAndTranslateApiException(readRowAsync(query));
+  public Row readRow(String tableId, String rowKey, @Nullable Filter filter) {
+    return readRow(tableId, ByteString.copyFromUtf8(rowKey), filter);
+  }
+
+  /**
+   * Convenience method for synchronously reading a single row. If the row does not exist, the
+   * value will be null.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   *   String tableId = "[TABLE]";
+   *
+   *  // Build the filter expression
+   *  Filter filter = FILTERS.chain()
+   *         .filter(FILTERS.qualifier().regex("prefix.*"))
+   *         .filter(FILTERS.limit().cellsPerRow(10));
+   *
+   *   Row row = bigtableDataClient.readRow(tableId, ByteString.copyFromUtf8("key"), filter);
+   *   // Do something with row, for example, display all cells
+   *   if(row != null) {
+   *     System.out.println(row.getKey().toStringUtf8());
+   *      for(RowCell cell : row.getCells()) {
+   *        System.out.printf("Family: %s   Qualifier: %s   Value: %s", cell.getFamily(),
+   *           cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
+   *      }
+   *   }
+   * } catch(ApiException e) {
+   *   e.printStackTrace();
+   * }
+   * }</pre>
+   *
+   * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
+   */
+  public Row readRow(String tableId, ByteString rowKey, @Nullable Filter filter) {
+    return ApiExceptions.callAndTranslateApiException(readRowAsync(tableId, rowKey, filter));
   }
 
   /**
@@ -312,10 +352,12 @@ public class BigtableDataClient implements AutoCloseable {
    * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
    *   String tableId = "[TABLE]";
    *
-   *   Query query = Query.create(tableId)
-   *          .rowKey("key");
+   *  // Build the filter expression
+   *   Filters.Filter filter = FILTERS.chain()
+   *         .filter(FILTERS.qualifier().regex("prefix.*"))
+   *         .filter(FILTERS.limit().cellsPerRow(10));
    *
-   *   ApiFuture<Row> futureResult = bigtableDataClient.readRowAsync(query);
+   *   ApiFuture<Row> futureResult = bigtableDataClient.readRowAsync(tableId, "key", filter);
    *
    *   ApiFutures.addCallback(futureResult, new ApiFutureCallback<Row>() {
    *     public void onFailure(Throwable t) {
@@ -334,9 +376,49 @@ public class BigtableDataClient implements AutoCloseable {
    * }
    * }</pre>
    */
-  public ApiFuture<Row> readRowAsync(Query query) {
-    return readRowsCallable().first().futureCall(query);
+  public ApiFuture<Row> readRowAsync(String tableId, String rowKey, @Nullable Filter filter) {
+    return readRowAsync(tableId, ByteString.copyFromUtf8(rowKey), filter);
   }
+
+  /**
+   * Convenience method for asynchronously reading a single row. If the row does not exist, the
+   * future's value will be null.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   *   String tableId = "[TABLE]";
+   *
+   *  // Build the filter expression
+   *  Filters.Filter filter = FILTERS.chain()
+   *         .filter(FILTERS.qualifier().regex("prefix.*"))
+   *         .filter(FILTERS.limit().cellsPerRow(10));
+   *
+   *   ApiFuture<Row> futureResult = bigtableDataClient.readRowAsync(tableId, ByteString.copyFromUtf8("key"), filter);
+   *
+   *   ApiFutures.addCallback(futureResult, new ApiFutureCallback<Row>() {
+   *     public void onFailure(Throwable t) {
+   *       if (t instanceof NotFoundException) {
+   *         System.out.println("Tried to read a non-existent table");
+   *       } else {
+   *         t.printStackTrace();
+   *       }
+   *     }
+   *     public void onSuccess(Row row) {
+   *       if (result != null) {
+   *          System.out.println("Got row: " + result);
+   *       }
+   *     }
+   *   }, MoreExecutors.directExecutor());
+   * }
+   * }</pre>
+   */
+  public ApiFuture<Row> readRowAsync(String tableId, ByteString rowKey, @Nullable Filter filter) {
+    return readRowsCallable().first().futureCall(Query.create(tableId).rowKey(rowKey).filter(filter));
+  }
+
 
   /**
    * Convenience method for synchronous streaming the results of a {@link Query}.
