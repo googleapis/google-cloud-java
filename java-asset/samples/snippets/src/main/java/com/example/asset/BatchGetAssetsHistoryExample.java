@@ -16,18 +16,19 @@
 
 package com.example.asset;
 
-// [START asset_quickstart_export_assets]
+// [START asset_quickstart_batch_get_assets_history]
 // Imports the Google Cloud client library
 
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.asset.v1beta1.AssetServiceClient;
-import com.google.cloud.asset.v1beta1.ExportAssetsRequest;
-import com.google.cloud.asset.v1beta1.ExportAssetsResponse;
-import com.google.cloud.asset.v1beta1.GcsDestination;
-import com.google.cloud.asset.v1beta1.OutputConfig;
+import com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest;
+import com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryResponse;
+import com.google.cloud.asset.v1beta1.ContentType;
 import com.google.cloud.asset.v1beta1.ProjectName;
+import com.google.cloud.asset.v1beta1.TimeWindow;
+import java.util.Arrays;
 
-public class ExportAssetsExample {
+public class BatchGetAssetsHistoryExample {
 
   // Use the default project Id.
   private static final String projectId = ServiceOptions.getDefaultProjectId();
@@ -35,22 +36,21 @@ public class ExportAssetsExample {
   // Export assets for a project.
   // @param args path where the results will be exported to.
   public static void main(String... args) throws Exception {
-    // Gcs path, e.g.: "gs://<my_asset_bucket>/<my_asset_dump_file>"
-    String exportPath = args[0];
+    // Asset names, e.g.: "//storage.googleapis.com/[BUCKET_NAME]"
+    String[] assetNames = args[0].split(",");
     try (AssetServiceClient client = AssetServiceClient.create()) {
       ProjectName parent = ProjectName.of(projectId);
-      OutputConfig outputConfig =
-          OutputConfig.newBuilder()
-              .setGcsDestination(GcsDestination.newBuilder().setUri(exportPath).build())
-              .build();
-      ExportAssetsRequest request =
-          ExportAssetsRequest.newBuilder()
-              .setParent(parent.toString())
-              .setOutputConfig(outputConfig)
-              .build();
-      ExportAssetsResponse response = client.exportAssetsAsync(request).get();
+      ContentType contentType = ContentType.CONTENT_TYPE_UNSPECIFIED;
+      TimeWindow readTimeWindow = TimeWindow.newBuilder().build();
+      BatchGetAssetsHistoryRequest request = BatchGetAssetsHistoryRequest.newBuilder()
+          .setParent(parent.toString())
+          .addAllAssetNames(Arrays.asList(assetNames))
+          .setContentType(contentType)
+          .setReadTimeWindow(readTimeWindow)
+          .build();
+      BatchGetAssetsHistoryResponse response = client.batchGetAssetsHistory(request);
       System.out.println(response);
     }
   }
 }
-// [END asset_quickstart]
+// [END asset_quickstart_batch_get_assets_history]

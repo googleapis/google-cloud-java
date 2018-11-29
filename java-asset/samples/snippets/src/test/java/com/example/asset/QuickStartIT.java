@@ -81,4 +81,14 @@ public class QuickStartIT {
     String got = bout.toString();
     assertThat(got).contains(String.format("uri: \"%s\"", assetDumpPath));
   }
+
+  @Test
+  public void testBatchGetAssetsHistory() throws Exception {
+    String bucketAssetName = String.format("//storage.googleapis.com/%s", bucketName);
+    BatchGetAssetsHistoryExample.main(bucketAssetName);
+    String got = bout.toString();
+    if (!got.isEmpty()) {
+      assertThat(got).contains(bucketAssetName);
+    }
+  }
 }
