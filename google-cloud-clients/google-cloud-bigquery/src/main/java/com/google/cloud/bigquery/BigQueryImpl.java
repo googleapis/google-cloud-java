@@ -160,7 +160,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   @Override
   public Table create(TableInfo tableInfo, TableOption... options) {
-    // More context about why this: https://github.com/googleapis/google-cloud-java/issues/3808
     final com.google.api.services.bigquery.model.Table tablePb =
         tableInfo
             .setProjectId(
@@ -390,7 +389,6 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   @Override
   public Table update(TableInfo tableInfo, TableOption... options) {
-    // More context about why this: https://github.com/googleapis/google-cloud-java/issues/3808
     final com.google.api.services.bigquery.model.Table tablePb =
         tableInfo
             .setProjectId(
