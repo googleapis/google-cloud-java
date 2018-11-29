@@ -9,7 +9,7 @@ public interface ClusterConfigOrBuilder extends
 
   /**
    * <pre>
-   * Optional. A Google Cloud Storage staging bucket used for sharing generated
+   * Optional. A Cloud Storage staging bucket used for sharing generated
    * SSH keys and config. If you do not specify a staging bucket, Cloud
    * Dataproc will determine an appropriate Cloud Storage location (US,
    * ASIA, or EU) for your cluster's staging bucket according to the Google
@@ -22,7 +22,7 @@ public interface ClusterConfigOrBuilder extends
   java.lang.String getConfigBucket();
   /**
    * <pre>
-   * Optional. A Google Cloud Storage staging bucket used for sharing generated
+   * Optional. A Cloud Storage staging bucket used for sharing generated
    * SSH keys and config. If you do not specify a staging bucket, Cloud
    * Dataproc will determine an appropriate Cloud Storage location (US,
    * ASIA, or EU) for your cluster's staging bucket according to the Google
@@ -37,7 +37,7 @@ public interface ClusterConfigOrBuilder extends
 
   /**
    * <pre>
-   * Required. The shared Google Compute Engine config settings for
+   * Required. The shared Compute Engine config settings for
    * all instances in a cluster.
    * </pre>
    *
@@ -46,7 +46,7 @@ public interface ClusterConfigOrBuilder extends
   boolean hasGceClusterConfig();
   /**
    * <pre>
-   * Required. The shared Google Compute Engine config settings for
+   * Required. The shared Compute Engine config settings for
    * all instances in a cluster.
    * </pre>
    *
@@ -55,7 +55,7 @@ public interface ClusterConfigOrBuilder extends
   com.google.cloud.dataproc.v1.GceClusterConfig getGceClusterConfig();
   /**
    * <pre>
-   * Required. The shared Google Compute Engine config settings for
+   * Required. The shared Compute Engine config settings for
    * all instances in a cluster.
    * </pre>
    *
@@ -65,7 +65,7 @@ public interface ClusterConfigOrBuilder extends
 
   /**
    * <pre>
-   * Optional. The Google Compute Engine config settings for
+   * Optional. The Compute Engine config settings for
    * the master instance in a cluster.
    * </pre>
    *
@@ -74,7 +74,7 @@ public interface ClusterConfigOrBuilder extends
   boolean hasMasterConfig();
   /**
    * <pre>
-   * Optional. The Google Compute Engine config settings for
+   * Optional. The Compute Engine config settings for
    * the master instance in a cluster.
    * </pre>
    *
@@ -83,7 +83,7 @@ public interface ClusterConfigOrBuilder extends
   com.google.cloud.dataproc.v1.InstanceGroupConfig getMasterConfig();
   /**
    * <pre>
-   * Optional. The Google Compute Engine config settings for
+   * Optional. The Compute Engine config settings for
    * the master instance in a cluster.
    * </pre>
    *
@@ -93,7 +93,7 @@ public interface ClusterConfigOrBuilder extends
 
   /**
    * <pre>
-   * Optional. The Google Compute Engine config settings for
+   * Optional. The Compute Engine config settings for
    * worker instances in a cluster.
    * </pre>
    *
@@ -102,7 +102,7 @@ public interface ClusterConfigOrBuilder extends
   boolean hasWorkerConfig();
   /**
    * <pre>
-   * Optional. The Google Compute Engine config settings for
+   * Optional. The Compute Engine config settings for
    * worker instances in a cluster.
    * </pre>
    *
@@ -111,7 +111,7 @@ public interface ClusterConfigOrBuilder extends
   com.google.cloud.dataproc.v1.InstanceGroupConfig getWorkerConfig();
   /**
    * <pre>
-   * Optional. The Google Compute Engine config settings for
+   * Optional. The Compute Engine config settings for
    * worker instances in a cluster.
    * </pre>
    *
@@ -121,7 +121,7 @@ public interface ClusterConfigOrBuilder extends
 
   /**
    * <pre>
-   * Optional. The Google Compute Engine config settings for
+   * Optional. The Compute Engine config settings for
    * additional worker instances in a cluster.
    * </pre>
    *
@@ -130,7 +130,7 @@ public interface ClusterConfigOrBuilder extends
   boolean hasSecondaryWorkerConfig();
   /**
    * <pre>
-   * Optional. The Google Compute Engine config settings for
+   * Optional. The Compute Engine config settings for
    * additional worker instances in a cluster.
    * </pre>
    *
@@ -139,7 +139,7 @@ public interface ClusterConfigOrBuilder extends
   com.google.cloud.dataproc.v1.InstanceGroupConfig getSecondaryWorkerConfig();
   /**
    * <pre>
-   * Optional. The Google Compute Engine config settings for
+   * Optional. The Compute Engine config settings for
    * additional worker instances in a cluster.
    * </pre>
    *
@@ -260,4 +260,29 @@ public interface ClusterConfigOrBuilder extends
    */
   com.google.cloud.dataproc.v1.NodeInitializationActionOrBuilder getInitializationActionsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Optional. Encryption settings for the cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15;</code>
+   */
+  boolean hasEncryptionConfig();
+  /**
+   * <pre>
+   * Optional. Encryption settings for the cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15;</code>
+   */
+  com.google.cloud.dataproc.v1.EncryptionConfig getEncryptionConfig();
+  /**
+   * <pre>
+   * Optional. Encryption settings for the cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.dataproc.v1.EncryptionConfig encryption_config = 15;</code>
+   */
+  com.google.cloud.dataproc.v1.EncryptionConfigOrBuilder getEncryptionConfigOrBuilder();
 }

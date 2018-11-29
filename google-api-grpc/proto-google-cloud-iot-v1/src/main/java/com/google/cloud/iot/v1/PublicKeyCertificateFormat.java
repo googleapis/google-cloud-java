@@ -101,7 +101,7 @@ public enum PublicKeyCertificateFormat
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.google.cloud.iot.v1.ResourcesProto.getDescriptor().getEnumTypes().get(2);
+    return com.google.cloud.iot.v1.ResourcesProto.getDescriptor().getEnumTypes().get(5);
   }
 
   private static final PublicKeyCertificateFormat[] VALUES = values();

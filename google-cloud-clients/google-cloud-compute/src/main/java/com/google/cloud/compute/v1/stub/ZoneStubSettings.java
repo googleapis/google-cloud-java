@@ -216,7 +216,9 @@ public class ZoneStubSettings extends StubSettings<ZoneStubSettings> {
 
             @Override
             public Iterable<Zone> extractResources(ZoneList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Zone>of();
             }
           };
 

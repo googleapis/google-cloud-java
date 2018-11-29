@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     version_ = 0;
     instanceId_ = "";
+    requestId_ = "";
   }
 
   @java.lang.Override
@@ -66,6 +67,25 @@ private static final long serialVersionUID = 0L;
             instanceId_ = s;
             break;
           }
+          case 34: {
+            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+              parameters_ = com.google.protobuf.MapField.newMapField(
+                  ParametersDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000010;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+            parameters__ = input.readMessage(
+                ParametersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            parameters_.getMutableMap().put(
+                parameters__.getKey(), parameters__.getValue());
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            requestId_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -90,6 +110,18 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_InstantiateWorkflowTemplateRequest_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(
+      int number) {
+    switch (number) {
+      case 4:
+        return internalGetParameters();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -98,6 +130,7 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.dataproc.v1beta2.InstantiateWorkflowTemplateRequest.class, com.google.cloud.dataproc.v1beta2.InstantiateWorkflowTemplateRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -165,6 +198,48 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object instanceId_;
   /**
    * <pre>
+   * Deprecated. Please use `request_id` field instead.
+   * </pre>
+   *
+   * <code>string instance_id = 3 [deprecated = true];</code>
+   */
+  @java.lang.Deprecated public java.lang.String getInstanceId() {
+    java.lang.Object ref = instanceId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      instanceId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Deprecated. Please use `request_id` field instead.
+   * </pre>
+   *
+   * <code>string instance_id = 3 [deprecated = true];</code>
+   */
+  @java.lang.Deprecated public com.google.protobuf.ByteString
+      getInstanceIdBytes() {
+    java.lang.Object ref = instanceId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      instanceId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REQUEST_ID_FIELD_NUMBER = 5;
+  private volatile java.lang.Object requestId_;
+  /**
+   * <pre>
    * Optional. A tag that prevents multiple concurrent workflow
    * instances with the same tag from running. This mitigates risk of
    * concurrent instances started due to retries.
@@ -174,17 +249,17 @@ private static final long serialVersionUID = 0L;
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string instance_id = 3;</code>
+   * <code>string request_id = 5;</code>
    */
-  public java.lang.String getInstanceId() {
-    java.lang.Object ref = instanceId_;
+  public java.lang.String getRequestId() {
+    java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      instanceId_ = s;
+      requestId_ = s;
       return s;
     }
   }
@@ -199,20 +274,116 @@ private static final long serialVersionUID = 0L;
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string instance_id = 3;</code>
+   * <code>string request_id = 5;</code>
    */
   public com.google.protobuf.ByteString
-      getInstanceIdBytes() {
-    java.lang.Object ref = instanceId_;
+      getRequestIdBytes() {
+    java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      instanceId_ = b;
+      requestId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int PARAMETERS_FIELD_NUMBER = 4;
+  private static final class ParametersDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_InstantiateWorkflowTemplateRequest_ParametersEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> parameters_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetParameters() {
+    if (parameters_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ParametersDefaultEntryHolder.defaultEntry);
+    }
+    return parameters_;
+  }
+
+  public int getParametersCount() {
+    return internalGetParameters().getMap().size();
+  }
+  /**
+   * <pre>
+   * Optional. Map from parameter names to values that should be used for those
+   * parameters. Values may not exceed 100 characters.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; parameters = 4;</code>
+   */
+
+  public boolean containsParameters(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetParameters().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getParametersMap()} instead.
+   */
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getParameters() {
+    return getParametersMap();
+  }
+  /**
+   * <pre>
+   * Optional. Map from parameter names to values that should be used for those
+   * parameters. Values may not exceed 100 characters.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; parameters = 4;</code>
+   */
+
+  public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
+    return internalGetParameters().getMap();
+  }
+  /**
+   * <pre>
+   * Optional. Map from parameter names to values that should be used for those
+   * parameters. Values may not exceed 100 characters.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; parameters = 4;</code>
+   */
+
+  public java.lang.String getParametersOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetParameters().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <pre>
+   * Optional. Map from parameter names to values that should be used for those
+   * parameters. Values may not exceed 100 characters.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; parameters = 4;</code>
+   */
+
+  public java.lang.String getParametersOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetParameters().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -238,6 +409,15 @@ private static final long serialVersionUID = 0L;
     if (!getInstanceIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, instanceId_);
     }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetParameters(),
+        ParametersDefaultEntryHolder.defaultEntry,
+        4);
+    if (!getRequestIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, requestId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -256,6 +436,19 @@ private static final long serialVersionUID = 0L;
     }
     if (!getInstanceIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, instanceId_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetParameters().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      parameters__ = ParametersDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, parameters__);
+    }
+    if (!getRequestIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, requestId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -279,6 +472,10 @@ private static final long serialVersionUID = 0L;
         == other.getVersion());
     result = result && getInstanceId()
         .equals(other.getInstanceId());
+    result = result && getRequestId()
+        .equals(other.getRequestId());
+    result = result && internalGetParameters().equals(
+        other.internalGetParameters());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -296,6 +493,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getVersion();
     hash = (37 * hash) + INSTANCE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getInstanceId().hashCode();
+    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestId().hashCode();
+    if (!internalGetParameters().getMap().isEmpty()) {
+      hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetParameters().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -407,6 +610,28 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_InstantiateWorkflowTemplateRequest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetParameters();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetMutableParameters();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -439,6 +664,9 @@ private static final long serialVersionUID = 0L;
 
       instanceId_ = "";
 
+      requestId_ = "";
+
+      internalGetMutableParameters().clear();
       return this;
     }
 
@@ -465,9 +693,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.InstantiateWorkflowTemplateRequest buildPartial() {
       com.google.cloud.dataproc.v1beta2.InstantiateWorkflowTemplateRequest result = new com.google.cloud.dataproc.v1beta2.InstantiateWorkflowTemplateRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.name_ = name_;
       result.version_ = version_;
       result.instanceId_ = instanceId_;
+      result.requestId_ = requestId_;
+      result.parameters_ = internalGetParameters();
+      result.parameters_.makeImmutable();
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -527,6 +761,12 @@ private static final long serialVersionUID = 0L;
         instanceId_ = other.instanceId_;
         onChanged();
       }
+      if (!other.getRequestId().isEmpty()) {
+        requestId_ = other.requestId_;
+        onChanged();
+      }
+      internalGetMutableParameters().mergeFrom(
+          other.internalGetParameters());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -555,6 +795,7 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -708,6 +949,95 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object instanceId_ = "";
     /**
      * <pre>
+     * Deprecated. Please use `request_id` field instead.
+     * </pre>
+     *
+     * <code>string instance_id = 3 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public java.lang.String getInstanceId() {
+      java.lang.Object ref = instanceId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instanceId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Deprecated. Please use `request_id` field instead.
+     * </pre>
+     *
+     * <code>string instance_id = 3 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public com.google.protobuf.ByteString
+        getInstanceIdBytes() {
+      java.lang.Object ref = instanceId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        instanceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Deprecated. Please use `request_id` field instead.
+     * </pre>
+     *
+     * <code>string instance_id = 3 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public Builder setInstanceId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      instanceId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Deprecated. Please use `request_id` field instead.
+     * </pre>
+     *
+     * <code>string instance_id = 3 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public Builder clearInstanceId() {
+      
+      instanceId_ = getDefaultInstance().getInstanceId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Deprecated. Please use `request_id` field instead.
+     * </pre>
+     *
+     * <code>string instance_id = 3 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public Builder setInstanceIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      instanceId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object requestId_ = "";
+    /**
+     * <pre>
      * Optional. A tag that prevents multiple concurrent workflow
      * instances with the same tag from running. This mitigates risk of
      * concurrent instances started due to retries.
@@ -717,15 +1047,15 @@ private static final long serialVersionUID = 0L;
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string instance_id = 3;</code>
+     * <code>string request_id = 5;</code>
      */
-    public java.lang.String getInstanceId() {
-      java.lang.Object ref = instanceId_;
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        instanceId_ = s;
+        requestId_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -742,16 +1072,16 @@ private static final long serialVersionUID = 0L;
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string instance_id = 3;</code>
+     * <code>string request_id = 5;</code>
      */
     public com.google.protobuf.ByteString
-        getInstanceIdBytes() {
-      java.lang.Object ref = instanceId_;
+        getRequestIdBytes() {
+      java.lang.Object ref = requestId_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        instanceId_ = b;
+        requestId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -768,15 +1098,15 @@ private static final long serialVersionUID = 0L;
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string instance_id = 3;</code>
+     * <code>string request_id = 5;</code>
      */
-    public Builder setInstanceId(
+    public Builder setRequestId(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      instanceId_ = value;
+      requestId_ = value;
       onChanged();
       return this;
     }
@@ -791,11 +1121,11 @@ private static final long serialVersionUID = 0L;
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string instance_id = 3;</code>
+     * <code>string request_id = 5;</code>
      */
-    public Builder clearInstanceId() {
+    public Builder clearRequestId() {
       
-      instanceId_ = getDefaultInstance().getInstanceId();
+      requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
     }
@@ -810,17 +1140,175 @@ private static final long serialVersionUID = 0L;
      * underscores (_), and hyphens (-). The maximum length is 40 characters.
      * </pre>
      *
-     * <code>string instance_id = 3;</code>
+     * <code>string request_id = 5;</code>
      */
-    public Builder setInstanceIdBytes(
+    public Builder setRequestIdBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      instanceId_ = value;
+      requestId_ = value;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> parameters_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetParameters() {
+      if (parameters_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ParametersDefaultEntryHolder.defaultEntry);
+      }
+      return parameters_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMutableParameters() {
+      onChanged();;
+      if (parameters_ == null) {
+        parameters_ = com.google.protobuf.MapField.newMapField(
+            ParametersDefaultEntryHolder.defaultEntry);
+      }
+      if (!parameters_.isMutable()) {
+        parameters_ = parameters_.copy();
+      }
+      return parameters_;
+    }
+
+    public int getParametersCount() {
+      return internalGetParameters().getMap().size();
+    }
+    /**
+     * <pre>
+     * Optional. Map from parameter names to values that should be used for those
+     * parameters. Values may not exceed 100 characters.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; parameters = 4;</code>
+     */
+
+    public boolean containsParameters(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetParameters().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getParametersMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getParameters() {
+      return getParametersMap();
+    }
+    /**
+     * <pre>
+     * Optional. Map from parameter names to values that should be used for those
+     * parameters. Values may not exceed 100 characters.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; parameters = 4;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
+      return internalGetParameters().getMap();
+    }
+    /**
+     * <pre>
+     * Optional. Map from parameter names to values that should be used for those
+     * parameters. Values may not exceed 100 characters.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; parameters = 4;</code>
+     */
+
+    public java.lang.String getParametersOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetParameters().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Optional. Map from parameter names to values that should be used for those
+     * parameters. Values may not exceed 100 characters.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; parameters = 4;</code>
+     */
+
+    public java.lang.String getParametersOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetParameters().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearParameters() {
+      internalGetMutableParameters().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Map from parameter names to values that should be used for those
+     * parameters. Values may not exceed 100 characters.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; parameters = 4;</code>
+     */
+
+    public Builder removeParameters(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableParameters().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+    getMutableParameters() {
+      return internalGetMutableParameters().getMutableMap();
+    }
+    /**
+     * <pre>
+     * Optional. Map from parameter names to values that should be used for those
+     * parameters. Values may not exceed 100 characters.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; parameters = 4;</code>
+     */
+    public Builder putParameters(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableParameters().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Map from parameter names to values that should be used for those
+     * parameters. Values may not exceed 100 characters.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; parameters = 4;</code>
+     */
+
+    public Builder putAllParameters(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableParameters().getMutableMap()
+          .putAll(values);
       return this;
     }
     @java.lang.Override

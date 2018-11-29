@@ -42,8 +42,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Internet of things (IoT) service. Allows to manipulate device registry
- * instances and the registration of devices (Things) to the cloud.
+ * Service Description: Internet of Things (IoT) service. Securely connect and manage IoT devices.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -697,8 +696,8 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * @param parent The name of the device registry where this device should be created. For example,
    *     `projects/example-project/locations/us-central1/registries/my-registry`.
-   * @param device The device registration details. The field `name` must be empty. The server will
-   *     generate that field from the device registry `id` provided and the `parent` field.
+   * @param device The device registration details. The field `name` must be empty. The server
+   *     generates `name` from the device registry `id` and the `parent` field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Device createDevice(RegistryName parent, Device device) {
@@ -727,8 +726,8 @@ public class DeviceManagerClient implements BackgroundResource {
    *
    * @param parent The name of the device registry where this device should be created. For example,
    *     `projects/example-project/locations/us-central1/registries/my-registry`.
-   * @param device The device registration details. The field `name` must be empty. The server will
-   *     generate that field from the device registry `id` provided and the `parent` field.
+   * @param device The device registration details. The field `name` must be empty. The server
+   *     generates `name` from the device registry `id` and the `parent` field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Device createDevice(String parent, Device device) {
@@ -895,8 +894,8 @@ public class DeviceManagerClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param device The new values for the device registry. The `id` and `num_id` fields must be
-   *     empty, and the field `name` must specify the name path. For example,
+   * @param device The new values for the device. The `id` and `num_id` fields must be empty, and
+   *     the field `name` must specify the name path. For example,
    *     `projects/p0/locations/us-central1/registries/registry0/devices/device0`or
    *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
    * @param updateMask Only updates the `device` fields indicated by this mask. The field mask must
@@ -1826,6 +1825,417 @@ public class DeviceManagerClient implements BackgroundResource {
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return stub.testIamPermissionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sends a command to the specified device. In order for a device to be able to receive commands,
+   * it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the
+   * group of MQTT topics specified by /devices/{device-id}/commands/#. This subscription will
+   * receive commands at the top-level topic /devices/{device-id}/commands as well as commands for
+   * subfolders, like /devices/{device-id}/commands/subfolder. Note that subscribing to specific
+   * subfolders is not supported. If the command could not be delivered to the device, this method
+   * will return an error; in particular, if the device is not subscribed, this method will return
+   * FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at
+   * least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the
+   * device.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   ByteString binaryData = ByteString.copyFromUtf8("");
+   *   String subfolder = "";
+   *   SendCommandToDeviceResponse response = deviceManagerClient.sendCommandToDevice(name, binaryData, subfolder);
+   * }
+   * </code></pre>
+   *
+   * @param name The name of the device. For example,
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+   * @param binaryData The command data to send to the device.
+   * @param subfolder Optional subfolder for the command. If empty, the command will be delivered to
+   *     the /devices/{device-id}/commands topic, otherwise it will be delivered to the
+   *     /devices/{device-id}/commands/{subfolder} topic. Multi-level subfolders are allowed. This
+   *     field must not have more than 256 characters, and must not contain any MQTT wildcards ("+"
+   *     or "#") or null characters.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SendCommandToDeviceResponse sendCommandToDevice(
+      DeviceName name, ByteString binaryData, String subfolder) {
+
+    SendCommandToDeviceRequest request =
+        SendCommandToDeviceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setBinaryData(binaryData)
+            .setSubfolder(subfolder)
+            .build();
+    return sendCommandToDevice(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sends a command to the specified device. In order for a device to be able to receive commands,
+   * it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the
+   * group of MQTT topics specified by /devices/{device-id}/commands/#. This subscription will
+   * receive commands at the top-level topic /devices/{device-id}/commands as well as commands for
+   * subfolders, like /devices/{device-id}/commands/subfolder. Note that subscribing to specific
+   * subfolders is not supported. If the command could not be delivered to the device, this method
+   * will return an error; in particular, if the device is not subscribed, this method will return
+   * FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at
+   * least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the
+   * device.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   ByteString binaryData = ByteString.copyFromUtf8("");
+   *   String subfolder = "";
+   *   SendCommandToDeviceResponse response = deviceManagerClient.sendCommandToDevice(name.toString(), binaryData, subfolder);
+   * }
+   * </code></pre>
+   *
+   * @param name The name of the device. For example,
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
+   *     `projects/p0/locations/us-central1/registries/registry0/devices/{num_id}`.
+   * @param binaryData The command data to send to the device.
+   * @param subfolder Optional subfolder for the command. If empty, the command will be delivered to
+   *     the /devices/{device-id}/commands topic, otherwise it will be delivered to the
+   *     /devices/{device-id}/commands/{subfolder} topic. Multi-level subfolders are allowed. This
+   *     field must not have more than 256 characters, and must not contain any MQTT wildcards ("+"
+   *     or "#") or null characters.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SendCommandToDeviceResponse sendCommandToDevice(
+      String name, ByteString binaryData, String subfolder) {
+
+    SendCommandToDeviceRequest request =
+        SendCommandToDeviceRequest.newBuilder()
+            .setName(name)
+            .setBinaryData(binaryData)
+            .setSubfolder(subfolder)
+            .build();
+    return sendCommandToDevice(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sends a command to the specified device. In order for a device to be able to receive commands,
+   * it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the
+   * group of MQTT topics specified by /devices/{device-id}/commands/#. This subscription will
+   * receive commands at the top-level topic /devices/{device-id}/commands as well as commands for
+   * subfolders, like /devices/{device-id}/commands/subfolder. Note that subscribing to specific
+   * subfolders is not supported. If the command could not be delivered to the device, this method
+   * will return an error; in particular, if the device is not subscribed, this method will return
+   * FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at
+   * least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the
+   * device.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   ByteString binaryData = ByteString.copyFromUtf8("");
+   *   SendCommandToDeviceRequest request = SendCommandToDeviceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setBinaryData(binaryData)
+   *     .build();
+   *   SendCommandToDeviceResponse response = deviceManagerClient.sendCommandToDevice(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SendCommandToDeviceResponse sendCommandToDevice(SendCommandToDeviceRequest request) {
+    return sendCommandToDeviceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sends a command to the specified device. In order for a device to be able to receive commands,
+   * it must: 1) be connected to Cloud IoT Core using the MQTT protocol, and 2) be subscribed to the
+   * group of MQTT topics specified by /devices/{device-id}/commands/#. This subscription will
+   * receive commands at the top-level topic /devices/{device-id}/commands as well as commands for
+   * subfolders, like /devices/{device-id}/commands/subfolder. Note that subscribing to specific
+   * subfolders is not supported. If the command could not be delivered to the device, this method
+   * will return an error; in particular, if the device is not subscribed, this method will return
+   * FAILED_PRECONDITION. Otherwise, this method will return OK. If the subscription is QoS 1, at
+   * least once delivery will be guaranteed; for QoS 0, no acknowledgment will be expected from the
+   * device.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   DeviceName name = DeviceName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]", "[DEVICE]");
+   *   ByteString binaryData = ByteString.copyFromUtf8("");
+   *   SendCommandToDeviceRequest request = SendCommandToDeviceRequest.newBuilder()
+   *     .setName(name.toString())
+   *     .setBinaryData(binaryData)
+   *     .build();
+   *   ApiFuture&lt;SendCommandToDeviceResponse&gt; future = deviceManagerClient.sendCommandToDeviceCallable().futureCall(request);
+   *   // Do something
+   *   SendCommandToDeviceResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
+      sendCommandToDeviceCallable() {
+    return stub.sendCommandToDeviceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Associates the device with the gateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   String gatewayId = "";
+   *   String deviceId = "";
+   *   BindDeviceToGatewayResponse response = deviceManagerClient.bindDeviceToGateway(parent, gatewayId, deviceId);
+   * }
+   * </code></pre>
+   *
+   * @param parent The name of the registry. For example,
+   *     `projects/example-project/locations/us-central1/registries/my-registry`.
+   * @param gatewayId The value of `gateway_id` can be either the device numeric ID or the
+   *     user-defined device identifier.
+   * @param deviceId The device to associate with the specified gateway. The value of `device_id`
+   *     can be either the device numeric ID or the user-defined device identifier.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BindDeviceToGatewayResponse bindDeviceToGateway(
+      RegistryName parent, String gatewayId, String deviceId) {
+
+    BindDeviceToGatewayRequest request =
+        BindDeviceToGatewayRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setGatewayId(gatewayId)
+            .setDeviceId(deviceId)
+            .build();
+    return bindDeviceToGateway(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Associates the device with the gateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   String gatewayId = "";
+   *   String deviceId = "";
+   *   BindDeviceToGatewayResponse response = deviceManagerClient.bindDeviceToGateway(parent.toString(), gatewayId, deviceId);
+   * }
+   * </code></pre>
+   *
+   * @param parent The name of the registry. For example,
+   *     `projects/example-project/locations/us-central1/registries/my-registry`.
+   * @param gatewayId The value of `gateway_id` can be either the device numeric ID or the
+   *     user-defined device identifier.
+   * @param deviceId The device to associate with the specified gateway. The value of `device_id`
+   *     can be either the device numeric ID or the user-defined device identifier.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BindDeviceToGatewayResponse bindDeviceToGateway(
+      String parent, String gatewayId, String deviceId) {
+
+    BindDeviceToGatewayRequest request =
+        BindDeviceToGatewayRequest.newBuilder()
+            .setParent(parent)
+            .setGatewayId(gatewayId)
+            .setDeviceId(deviceId)
+            .build();
+    return bindDeviceToGateway(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Associates the device with the gateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   String gatewayId = "";
+   *   String deviceId = "";
+   *   BindDeviceToGatewayRequest request = BindDeviceToGatewayRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setGatewayId(gatewayId)
+   *     .setDeviceId(deviceId)
+   *     .build();
+   *   BindDeviceToGatewayResponse response = deviceManagerClient.bindDeviceToGateway(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BindDeviceToGatewayResponse bindDeviceToGateway(BindDeviceToGatewayRequest request) {
+    return bindDeviceToGatewayCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Associates the device with the gateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   String gatewayId = "";
+   *   String deviceId = "";
+   *   BindDeviceToGatewayRequest request = BindDeviceToGatewayRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setGatewayId(gatewayId)
+   *     .setDeviceId(deviceId)
+   *     .build();
+   *   ApiFuture&lt;BindDeviceToGatewayResponse&gt; future = deviceManagerClient.bindDeviceToGatewayCallable().futureCall(request);
+   *   // Do something
+   *   BindDeviceToGatewayResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
+      bindDeviceToGatewayCallable() {
+    return stub.bindDeviceToGatewayCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the association between the device and the gateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   String gatewayId = "";
+   *   String deviceId = "";
+   *   UnbindDeviceFromGatewayResponse response = deviceManagerClient.unbindDeviceFromGateway(parent, gatewayId, deviceId);
+   * }
+   * </code></pre>
+   *
+   * @param parent The name of the registry. For example,
+   *     `projects/example-project/locations/us-central1/registries/my-registry`.
+   * @param gatewayId The value of `gateway_id` can be either the device numeric ID or the
+   *     user-defined device identifier.
+   * @param deviceId The device to disassociate from the specified gateway. The value of `device_id`
+   *     can be either the device numeric ID or the user-defined device identifier.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UnbindDeviceFromGatewayResponse unbindDeviceFromGateway(
+      RegistryName parent, String gatewayId, String deviceId) {
+
+    UnbindDeviceFromGatewayRequest request =
+        UnbindDeviceFromGatewayRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setGatewayId(gatewayId)
+            .setDeviceId(deviceId)
+            .build();
+    return unbindDeviceFromGateway(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the association between the device and the gateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   String gatewayId = "";
+   *   String deviceId = "";
+   *   UnbindDeviceFromGatewayResponse response = deviceManagerClient.unbindDeviceFromGateway(parent.toString(), gatewayId, deviceId);
+   * }
+   * </code></pre>
+   *
+   * @param parent The name of the registry. For example,
+   *     `projects/example-project/locations/us-central1/registries/my-registry`.
+   * @param gatewayId The value of `gateway_id` can be either the device numeric ID or the
+   *     user-defined device identifier.
+   * @param deviceId The device to disassociate from the specified gateway. The value of `device_id`
+   *     can be either the device numeric ID or the user-defined device identifier.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UnbindDeviceFromGatewayResponse unbindDeviceFromGateway(
+      String parent, String gatewayId, String deviceId) {
+
+    UnbindDeviceFromGatewayRequest request =
+        UnbindDeviceFromGatewayRequest.newBuilder()
+            .setParent(parent)
+            .setGatewayId(gatewayId)
+            .setDeviceId(deviceId)
+            .build();
+    return unbindDeviceFromGateway(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the association between the device and the gateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   String gatewayId = "";
+   *   String deviceId = "";
+   *   UnbindDeviceFromGatewayRequest request = UnbindDeviceFromGatewayRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setGatewayId(gatewayId)
+   *     .setDeviceId(deviceId)
+   *     .build();
+   *   UnbindDeviceFromGatewayResponse response = deviceManagerClient.unbindDeviceFromGateway(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UnbindDeviceFromGatewayResponse unbindDeviceFromGateway(
+      UnbindDeviceFromGatewayRequest request) {
+    return unbindDeviceFromGatewayCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes the association between the device and the gateway.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+   *   RegistryName parent = RegistryName.of("[PROJECT]", "[LOCATION]", "[REGISTRY]");
+   *   String gatewayId = "";
+   *   String deviceId = "";
+   *   UnbindDeviceFromGatewayRequest request = UnbindDeviceFromGatewayRequest.newBuilder()
+   *     .setParent(parent.toString())
+   *     .setGatewayId(gatewayId)
+   *     .setDeviceId(deviceId)
+   *     .build();
+   *   ApiFuture&lt;UnbindDeviceFromGatewayResponse&gt; future = deviceManagerClient.unbindDeviceFromGatewayCallable().futureCall(request);
+   *   // Do something
+   *   UnbindDeviceFromGatewayResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
+      unbindDeviceFromGatewayCallable() {
+    return stub.unbindDeviceFromGatewayCallable();
   }
 
   @Override

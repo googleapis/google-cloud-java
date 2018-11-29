@@ -9,6 +9,28 @@ public interface DiskConfigOrBuilder extends
 
   /**
    * <pre>
+   * Optional. Type of the boot disk (default is "pd-standard").
+   * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
+   * "pd-standard" (Persistent Disk Hard Disk Drive).
+   * </pre>
+   *
+   * <code>string boot_disk_type = 3;</code>
+   */
+  java.lang.String getBootDiskType();
+  /**
+   * <pre>
+   * Optional. Type of the boot disk (default is "pd-standard").
+   * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
+   * "pd-standard" (Persistent Disk Hard Disk Drive).
+   * </pre>
+   *
+   * <code>string boot_disk_type = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getBootDiskTypeBytes();
+
+  /**
+   * <pre>
    * Optional. Size in GB of the boot disk (default is 500GB).
    * </pre>
    *

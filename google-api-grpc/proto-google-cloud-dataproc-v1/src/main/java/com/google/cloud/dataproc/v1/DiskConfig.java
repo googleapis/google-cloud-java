@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DiskConfig() {
+    bootDiskType_ = "";
     bootDiskSizeGb_ = 0;
     numLocalSsds_ = 0;
   }
@@ -58,6 +59,12 @@ private static final long serialVersionUID = 0L;
             numLocalSsds_ = input.readInt32();
             break;
           }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            bootDiskType_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -88,6 +95,52 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.dataproc.v1.ClustersProto.internal_static_google_cloud_dataproc_v1_DiskConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.dataproc.v1.DiskConfig.class, com.google.cloud.dataproc.v1.DiskConfig.Builder.class);
+  }
+
+  public static final int BOOT_DISK_TYPE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object bootDiskType_;
+  /**
+   * <pre>
+   * Optional. Type of the boot disk (default is "pd-standard").
+   * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
+   * "pd-standard" (Persistent Disk Hard Disk Drive).
+   * </pre>
+   *
+   * <code>string boot_disk_type = 3;</code>
+   */
+  public java.lang.String getBootDiskType() {
+    java.lang.Object ref = bootDiskType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      bootDiskType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. Type of the boot disk (default is "pd-standard").
+   * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
+   * "pd-standard" (Persistent Disk Hard Disk Drive).
+   * </pre>
+   *
+   * <code>string boot_disk_type = 3;</code>
+   */
+  public com.google.protobuf.ByteString
+      getBootDiskTypeBytes() {
+    java.lang.Object ref = bootDiskType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      bootDiskType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int BOOT_DISK_SIZE_GB_FIELD_NUMBER = 1;
@@ -141,6 +194,9 @@ private static final long serialVersionUID = 0L;
     if (numLocalSsds_ != 0) {
       output.writeInt32(2, numLocalSsds_);
     }
+    if (!getBootDiskTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, bootDiskType_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -158,6 +214,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, numLocalSsds_);
     }
+    if (!getBootDiskTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, bootDiskType_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -174,6 +233,8 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.dataproc.v1.DiskConfig other = (com.google.cloud.dataproc.v1.DiskConfig) obj;
 
     boolean result = true;
+    result = result && getBootDiskType()
+        .equals(other.getBootDiskType());
     result = result && (getBootDiskSizeGb()
         == other.getBootDiskSizeGb());
     result = result && (getNumLocalSsds()
@@ -189,6 +250,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + BOOT_DISK_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getBootDiskType().hashCode();
     hash = (37 * hash) + BOOT_DISK_SIZE_GB_FIELD_NUMBER;
     hash = (53 * hash) + getBootDiskSizeGb();
     hash = (37 * hash) + NUM_LOCAL_SSDS_FIELD_NUMBER;
@@ -330,6 +393,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bootDiskType_ = "";
+
       bootDiskSizeGb_ = 0;
 
       numLocalSsds_ = 0;
@@ -360,6 +425,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.cloud.dataproc.v1.DiskConfig buildPartial() {
       com.google.cloud.dataproc.v1.DiskConfig result = new com.google.cloud.dataproc.v1.DiskConfig(this);
+      result.bootDiskType_ = bootDiskType_;
       result.bootDiskSizeGb_ = bootDiskSizeGb_;
       result.numLocalSsds_ = numLocalSsds_;
       onBuilt();
@@ -410,6 +476,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.google.cloud.dataproc.v1.DiskConfig other) {
       if (other == com.google.cloud.dataproc.v1.DiskConfig.getDefaultInstance()) return this;
+      if (!other.getBootDiskType().isEmpty()) {
+        bootDiskType_ = other.bootDiskType_;
+        onChanged();
+      }
       if (other.getBootDiskSizeGb() != 0) {
         setBootDiskSizeGb(other.getBootDiskSizeGb());
       }
@@ -442,6 +512,105 @@ private static final long serialVersionUID = 0L;
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private java.lang.Object bootDiskType_ = "";
+    /**
+     * <pre>
+     * Optional. Type of the boot disk (default is "pd-standard").
+     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
+     * "pd-standard" (Persistent Disk Hard Disk Drive).
+     * </pre>
+     *
+     * <code>string boot_disk_type = 3;</code>
+     */
+    public java.lang.String getBootDiskType() {
+      java.lang.Object ref = bootDiskType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        bootDiskType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Type of the boot disk (default is "pd-standard").
+     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
+     * "pd-standard" (Persistent Disk Hard Disk Drive).
+     * </pre>
+     *
+     * <code>string boot_disk_type = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getBootDiskTypeBytes() {
+      java.lang.Object ref = bootDiskType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        bootDiskType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Type of the boot disk (default is "pd-standard").
+     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
+     * "pd-standard" (Persistent Disk Hard Disk Drive).
+     * </pre>
+     *
+     * <code>string boot_disk_type = 3;</code>
+     */
+    public Builder setBootDiskType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      bootDiskType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Type of the boot disk (default is "pd-standard").
+     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
+     * "pd-standard" (Persistent Disk Hard Disk Drive).
+     * </pre>
+     *
+     * <code>string boot_disk_type = 3;</code>
+     */
+    public Builder clearBootDiskType() {
+      
+      bootDiskType_ = getDefaultInstance().getBootDiskType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Type of the boot disk (default is "pd-standard").
+     * Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or
+     * "pd-standard" (Persistent Disk Hard Disk Drive).
+     * </pre>
+     *
+     * <code>string boot_disk_type = 3;</code>
+     */
+    public Builder setBootDiskTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      bootDiskType_ = value;
+      onChanged();
       return this;
     }
 

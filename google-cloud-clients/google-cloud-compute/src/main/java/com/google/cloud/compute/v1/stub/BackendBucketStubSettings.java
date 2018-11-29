@@ -288,7 +288,9 @@ public class BackendBucketStubSettings extends StubSettings<BackendBucketStubSet
 
             @Override
             public Iterable<BackendBucket> extractResources(BackendBucketList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<BackendBucket>of();
             }
           };
 

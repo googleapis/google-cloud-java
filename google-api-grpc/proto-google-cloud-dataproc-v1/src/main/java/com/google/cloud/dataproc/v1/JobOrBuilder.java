@@ -221,7 +221,7 @@ public interface JobOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. The job status. Additional application-specific
+   * Output only. The job status. Additional application-specific
    * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
    * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
    * </pre>
@@ -231,7 +231,7 @@ public interface JobOrBuilder extends
   boolean hasStatus();
   /**
    * <pre>
-   * Output-only. The job status. Additional application-specific
+   * Output only. The job status. Additional application-specific
    * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
    * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
    * </pre>
@@ -241,7 +241,7 @@ public interface JobOrBuilder extends
   com.google.cloud.dataproc.v1.JobStatus getStatus();
   /**
    * <pre>
-   * Output-only. The job status. Additional application-specific
+   * Output only. The job status. Additional application-specific
    * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
    * and &lt;code&gt;yarn_applications&lt;/code&gt; fields.
    * </pre>
@@ -252,7 +252,7 @@ public interface JobOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. The previous job status.
+   * Output only. The previous job status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -261,7 +261,7 @@ public interface JobOrBuilder extends
       getStatusHistoryList();
   /**
    * <pre>
-   * Output-only. The previous job status.
+   * Output only. The previous job status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -269,7 +269,7 @@ public interface JobOrBuilder extends
   com.google.cloud.dataproc.v1.JobStatus getStatusHistory(int index);
   /**
    * <pre>
-   * Output-only. The previous job status.
+   * Output only. The previous job status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -277,7 +277,7 @@ public interface JobOrBuilder extends
   int getStatusHistoryCount();
   /**
    * <pre>
-   * Output-only. The previous job status.
+   * Output only. The previous job status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -286,7 +286,7 @@ public interface JobOrBuilder extends
       getStatusHistoryOrBuilderList();
   /**
    * <pre>
-   * Output-only. The previous job status.
+   * Output only. The previous job status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.JobStatus status_history = 13;</code>
@@ -296,7 +296,7 @@ public interface JobOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. The collection of YARN applications spun up by this job.
+   * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
    * be changed before final release.
    * </pre>
@@ -307,7 +307,7 @@ public interface JobOrBuilder extends
       getYarnApplicationsList();
   /**
    * <pre>
-   * Output-only. The collection of YARN applications spun up by this job.
+   * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
    * be changed before final release.
    * </pre>
@@ -317,7 +317,7 @@ public interface JobOrBuilder extends
   com.google.cloud.dataproc.v1.YarnApplication getYarnApplications(int index);
   /**
    * <pre>
-   * Output-only. The collection of YARN applications spun up by this job.
+   * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
    * be changed before final release.
    * </pre>
@@ -327,7 +327,7 @@ public interface JobOrBuilder extends
   int getYarnApplicationsCount();
   /**
    * <pre>
-   * Output-only. The collection of YARN applications spun up by this job.
+   * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
    * be changed before final release.
    * </pre>
@@ -338,7 +338,7 @@ public interface JobOrBuilder extends
       getYarnApplicationsOrBuilderList();
   /**
    * <pre>
-   * Output-only. The collection of YARN applications spun up by this job.
+   * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
    * be changed before final release.
    * </pre>
@@ -350,7 +350,7 @@ public interface JobOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. A URI pointing to the location of the stdout of the job's
+   * Output only. A URI pointing to the location of the stdout of the job's
    * driver program.
    * </pre>
    *
@@ -359,7 +359,7 @@ public interface JobOrBuilder extends
   java.lang.String getDriverOutputResourceUri();
   /**
    * <pre>
-   * Output-only. A URI pointing to the location of the stdout of the job's
+   * Output only. A URI pointing to the location of the stdout of the job's
    * driver program.
    * </pre>
    *
@@ -370,7 +370,7 @@ public interface JobOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. If present, the location of miscellaneous control files
+   * Output only. If present, the location of miscellaneous control files
    * which may be used as part of job setup and handling. If not present,
    * control files may be placed in the same location as `driver_output_uri`.
    * </pre>
@@ -380,7 +380,7 @@ public interface JobOrBuilder extends
   java.lang.String getDriverControlFilesUri();
   /**
    * <pre>
-   * Output-only. If present, the location of miscellaneous control files
+   * Output only. If present, the location of miscellaneous control files
    * which may be used as part of job setup and handling. If not present,
    * control files may be placed in the same location as `driver_output_uri`.
    * </pre>
@@ -493,6 +493,28 @@ public interface JobOrBuilder extends
    * <code>.google.cloud.dataproc.v1.JobScheduling scheduling = 20;</code>
    */
   com.google.cloud.dataproc.v1.JobSchedulingOrBuilder getSchedulingOrBuilder();
+
+  /**
+   * <pre>
+   * Output only. A UUID that uniquely identifies a job within the project
+   * over time. This is in contrast to a user-settable reference.job_id that
+   * may be reused over time.
+   * </pre>
+   *
+   * <code>string job_uuid = 22;</code>
+   */
+  java.lang.String getJobUuid();
+  /**
+   * <pre>
+   * Output only. A UUID that uniquely identifies a job within the project
+   * over time. This is in contrast to a user-settable reference.job_id that
+   * may be reused over time.
+   * </pre>
+   *
+   * <code>string job_uuid = 22;</code>
+   */
+  com.google.protobuf.ByteString
+      getJobUuidBytes();
 
   public com.google.cloud.dataproc.v1.Job.TypeJobCase getTypeJobCase();
 }

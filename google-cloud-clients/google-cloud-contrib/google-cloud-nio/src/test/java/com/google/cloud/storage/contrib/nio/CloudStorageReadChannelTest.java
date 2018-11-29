@@ -67,7 +67,7 @@ public class CloudStorageReadChannelTest {
     when(gcsStorage.get(file, Storage.BlobGetOption.fields(Storage.BlobField.GENERATION, Storage.BlobField.SIZE))).thenReturn(metadata);
     when(gcsStorage.reader(file, Storage.BlobSourceOption.generationMatch(2L))).thenReturn(gcsChannel);
     when(gcsChannel.isOpen()).thenReturn(true);
-    chan = CloudStorageReadChannel.create(gcsStorage, file, 0, 1, "");
+    chan = CloudStorageReadChannel.create(gcsStorage, file, 0, 1, CloudStorageConfiguration.DEFAULT, "");
     verify(gcsStorage).get(eq(file), eq(Storage.BlobGetOption.fields(Storage.BlobField.GENERATION, Storage.BlobField.SIZE)));
     verify(gcsStorage).reader(eq(file), eq(Storage.BlobSourceOption.generationMatch(2L)));
   }
@@ -208,7 +208,7 @@ public class CloudStorageReadChannelTest {
 
     // Invoke CloudStorageReadChannel.create() to trigger a call to the private
     // CloudStorageReadChannel.innerOpen() method, which does a seek on our gcsChannel.
-    CloudStorageReadChannel.create(gcsStorage, file, startPosition, 1, "");
+    CloudStorageReadChannel.create(gcsStorage, file, startPosition, 1, CloudStorageConfiguration.DEFAULT, "");
 
     // Confirm that our position did not overflow during the seek in CloudStorageReadChannel.innerOpen()
     verify(gcsChannel).seek(captor.capture());

@@ -23,12 +23,14 @@ import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.longrunning.OperationFutures;
 import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.rpc.testing.FakeOperationSnapshot;
 import com.google.bigtable.admin.v2.AppProfileName;
 import com.google.bigtable.admin.v2.ClusterName;
 import com.google.bigtable.admin.v2.CreateInstanceMetadata;
+import com.google.bigtable.admin.v2.GetInstanceRequest;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.LocationName;
 import com.google.bigtable.admin.v2.ProjectName;
@@ -57,12 +59,14 @@ import com.google.common.io.BaseEncoding;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import io.grpc.Status;
 import io.grpc.Status.Code;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Matchers;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
@@ -841,5 +845,37 @@ public class BigtableInstanceAdminClientTest {
 
     // Verify
     assertThat(actualResult).containsExactly("bigtable.tables.readRows");
+  }
+
+  @Test
+  public void testExistsTrue() {
+    // Setup
+    com.google.bigtable.admin.v2.Instance expectedResponse = com.google.bigtable.admin.v2.Instance
+        .newBuilder().setName(INSTANCE_NAME.toString()).build();
+
+    Mockito.when(mockGetInstanceCallable.futureCall(Matchers.any(GetInstanceRequest.class)))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
+
+    // Execute
+    boolean found = adminClient.exists(INSTANCE_NAME.getInstance());
+
+    // Verify
+    assertThat(found).isTrue();
+  }
+
+  @Test
+  public void testExistsFalse() {
+    // Setup
+    NotFoundException exception =
+        new NotFoundException("fake-error", null, GrpcStatusCode.of(Status.Code.NOT_FOUND), false);
+
+    Mockito.when(mockGetInstanceCallable.futureCall(Matchers.any(GetInstanceRequest.class)))
+        .thenReturn(ApiFutures.<com.google.bigtable.admin.v2.Instance>immediateFailedFuture(exception));
+
+    // Execute
+    boolean found = adminClient.exists(INSTANCE_NAME.getInstance());
+
+    // Verify
+    assertThat(found).isFalse();
   }
 }

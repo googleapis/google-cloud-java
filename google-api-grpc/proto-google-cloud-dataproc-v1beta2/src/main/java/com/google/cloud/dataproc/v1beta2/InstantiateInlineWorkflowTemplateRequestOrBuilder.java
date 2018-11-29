@@ -56,18 +56,22 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional. A tag that prevents multiple concurrent workflow
-   * instances with the same tag from running. This mitigates risk of
-   * concurrent instances started due to retries.
-   * It is recommended to always set this value to a
-   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
-   * The tag must contain only letters (a-z, A-Z), numbers (0-9),
-   * underscores (_), and hyphens (-). The maximum length is 40 characters.
+   * Deprecated. Please use `request_id` field instead.
    * </pre>
    *
    * <code>string instance_id = 3;</code>
    */
   java.lang.String getInstanceId();
+  /**
+   * <pre>
+   * Deprecated. Please use `request_id` field instead.
+   * </pre>
+   *
+   * <code>string instance_id = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getInstanceIdBytes();
+
   /**
    * <pre>
    * Optional. A tag that prevents multiple concurrent workflow
@@ -79,8 +83,22 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder extends
    * underscores (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string instance_id = 3;</code>
+   * <code>string request_id = 4;</code>
+   */
+  java.lang.String getRequestId();
+  /**
+   * <pre>
+   * Optional. A tag that prevents multiple concurrent workflow
+   * instances with the same tag from running. This mitigates risk of
+   * concurrent instances started due to retries.
+   * It is recommended to always set this value to a
+   * [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+   * The tag must contain only letters (a-z, A-Z), numbers (0-9),
+   * underscores (_), and hyphens (-). The maximum length is 40 characters.
+   * </pre>
+   *
+   * <code>string request_id = 4;</code>
    */
   com.google.protobuf.ByteString
-      getInstanceIdBytes();
+      getRequestIdBytes();
 }

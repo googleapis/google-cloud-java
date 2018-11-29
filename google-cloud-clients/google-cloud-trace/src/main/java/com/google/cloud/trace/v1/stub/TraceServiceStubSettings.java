@@ -217,7 +217,9 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
 
             @Override
             public Iterable<Trace> extractResources(ListTracesResponse payload) {
-              return payload.getTracesList();
+              return payload.getTracesList() != null
+                  ? payload.getTracesList()
+                  : ImmutableList.<Trace>of();
             }
           };
 

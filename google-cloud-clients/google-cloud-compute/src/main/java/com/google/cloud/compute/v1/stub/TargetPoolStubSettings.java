@@ -324,7 +324,9 @@ public class TargetPoolStubSettings extends StubSettings<TargetPoolStubSettings>
             @Override
             public Iterable<TargetPoolsScopedList> extractResources(
                 TargetPoolAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<TargetPoolsScopedList>of();
             }
           };
 
@@ -360,7 +362,9 @@ public class TargetPoolStubSettings extends StubSettings<TargetPoolStubSettings>
 
             @Override
             public Iterable<TargetPool> extractResources(TargetPoolList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<TargetPool>of();
             }
           };
 

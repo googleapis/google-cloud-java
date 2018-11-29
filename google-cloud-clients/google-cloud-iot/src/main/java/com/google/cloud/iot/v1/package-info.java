@@ -21,8 +21,8 @@
  *
  * <p>=================== DeviceManagerClient ===================
  *
- * <p>Service Description: Internet of things (IoT) service. Allows to manipulate device registry
- * instances and the registration of devices (Things) to the cloud.
+ * <p>Service Description: Internet of Things (IoT) service. Securely connect and manage IoT
+ * devices.
  *
  * <p>Sample for DeviceManagerClient:
  *

@@ -9,7 +9,7 @@ public interface ListJobsResponseOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. Jobs list.
+   * Output only. Jobs list.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -18,7 +18,7 @@ public interface ListJobsResponseOrBuilder extends
       getJobsList();
   /**
    * <pre>
-   * Output-only. Jobs list.
+   * Output only. Jobs list.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -26,7 +26,7 @@ public interface ListJobsResponseOrBuilder extends
   com.google.cloud.dataproc.v1.Job getJobs(int index);
   /**
    * <pre>
-   * Output-only. Jobs list.
+   * Output only. Jobs list.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -34,7 +34,7 @@ public interface ListJobsResponseOrBuilder extends
   int getJobsCount();
   /**
    * <pre>
-   * Output-only. Jobs list.
+   * Output only. Jobs list.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>
@@ -43,7 +43,7 @@ public interface ListJobsResponseOrBuilder extends
       getJobsOrBuilderList();
   /**
    * <pre>
-   * Output-only. Jobs list.
+   * Output only. Jobs list.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.Job jobs = 1;</code>

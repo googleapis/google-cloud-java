@@ -283,7 +283,9 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
 
             @Override
             public Iterable<Cluster> extractResources(ListClustersResponse payload) {
-              return payload.getClustersList();
+              return payload.getClustersList() != null
+                  ? payload.getClustersList()
+                  : ImmutableList.<Cluster>of();
             }
           };
 
@@ -340,8 +342,12 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
           "idempotent",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+                  StatusCode.Code.DEADLINE_EXCEEDED,
+                  StatusCode.Code.INTERNAL,
+                  StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "non_idempotent",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -426,7 +432,7 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
 
       builder
           .deleteClusterSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -464,7 +470,7 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(900000L))
                       .build()));
       builder
           .updateClusterOperationSettings()
@@ -487,7 +493,7 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(900000L))
                       .build()));
       builder
           .deleteClusterOperationSettings()
@@ -510,7 +516,7 @@ public class ClusterControllerStubSettings extends StubSettings<ClusterControlle
                       .setInitialRpcTimeout(Duration.ZERO) // ignored
                       .setRpcTimeoutMultiplier(1.0) // ignored
                       .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .setTotalTimeout(Duration.ofMillis(900000L))
                       .build()));
       builder
           .diagnoseClusterOperationSettings()

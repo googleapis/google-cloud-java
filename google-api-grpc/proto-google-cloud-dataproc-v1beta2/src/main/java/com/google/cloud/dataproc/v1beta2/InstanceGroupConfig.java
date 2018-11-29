@@ -232,8 +232,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object imageUri_;
   /**
    * <pre>
-   * Output only. The Compute Engine image resource used for cluster
-   * instances. Inferred from `SoftwareConfig.image_version`.
+   * Optional. The Compute Engine image resource used for cluster
+   * instances. It can be specified or may be inferred from
+   * `SoftwareConfig.image_version`.
    * </pre>
    *
    * <code>string image_uri = 3;</code>
@@ -252,8 +253,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The Compute Engine image resource used for cluster
-   * instances. Inferred from `SoftwareConfig.image_version`.
+   * Optional. The Compute Engine image resource used for cluster
+   * instances. It can be specified or may be inferred from
+   * `SoftwareConfig.image_version`.
    * </pre>
    *
    * <code>string image_uri = 3;</code>
@@ -1244,8 +1246,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object imageUri_ = "";
     /**
      * <pre>
-     * Output only. The Compute Engine image resource used for cluster
-     * instances. Inferred from `SoftwareConfig.image_version`.
+     * Optional. The Compute Engine image resource used for cluster
+     * instances. It can be specified or may be inferred from
+     * `SoftwareConfig.image_version`.
      * </pre>
      *
      * <code>string image_uri = 3;</code>
@@ -1264,8 +1267,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The Compute Engine image resource used for cluster
-     * instances. Inferred from `SoftwareConfig.image_version`.
+     * Optional. The Compute Engine image resource used for cluster
+     * instances. It can be specified or may be inferred from
+     * `SoftwareConfig.image_version`.
      * </pre>
      *
      * <code>string image_uri = 3;</code>
@@ -1285,8 +1289,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The Compute Engine image resource used for cluster
-     * instances. Inferred from `SoftwareConfig.image_version`.
+     * Optional. The Compute Engine image resource used for cluster
+     * instances. It can be specified or may be inferred from
+     * `SoftwareConfig.image_version`.
      * </pre>
      *
      * <code>string image_uri = 3;</code>
@@ -1303,8 +1308,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The Compute Engine image resource used for cluster
-     * instances. Inferred from `SoftwareConfig.image_version`.
+     * Optional. The Compute Engine image resource used for cluster
+     * instances. It can be specified or may be inferred from
+     * `SoftwareConfig.image_version`.
      * </pre>
      *
      * <code>string image_uri = 3;</code>
@@ -1317,8 +1323,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The Compute Engine image resource used for cluster
-     * instances. Inferred from `SoftwareConfig.image_version`.
+     * Optional. The Compute Engine image resource used for cluster
+     * instances. It can be specified or may be inferred from
+     * `SoftwareConfig.image_version`.
      * </pre>
      *
      * <code>string image_uri = 3;</code>

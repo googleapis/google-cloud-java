@@ -266,7 +266,9 @@ public class GlobalForwardingRuleStubSettings
 
             @Override
             public Iterable<ForwardingRule> extractResources(ForwardingRuleList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<ForwardingRule>of();
             }
           };
 

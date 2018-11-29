@@ -6,8 +6,6 @@ package com.google.cloud.dataproc.v1;
 /**
  * <pre>
  * Job scheduling options.
- * **Beta Feature**: These options are available for testing purposes only.
- * They may be changed before final release.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.JobScheduling}
@@ -263,8 +261,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Job scheduling options.
-   * **Beta Feature**: These options are available for testing purposes only.
-   * They may be changed before final release.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.JobScheduling}

@@ -9,7 +9,7 @@ public interface ClusterOperationStatusOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. A message containing the operation state.
+   * Output only. A message containing the operation state.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1;</code>
@@ -17,7 +17,7 @@ public interface ClusterOperationStatusOrBuilder extends
   int getStateValue();
   /**
    * <pre>
-   * Output-only. A message containing the operation state.
+   * Output only. A message containing the operation state.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterOperationStatus.State state = 1;</code>
@@ -26,7 +26,7 @@ public interface ClusterOperationStatusOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. A message containing the detailed operation state.
+   * Output only. A message containing the detailed operation state.
    * </pre>
    *
    * <code>string inner_state = 2;</code>
@@ -34,7 +34,7 @@ public interface ClusterOperationStatusOrBuilder extends
   java.lang.String getInnerState();
   /**
    * <pre>
-   * Output-only. A message containing the detailed operation state.
+   * Output only. A message containing the detailed operation state.
    * </pre>
    *
    * <code>string inner_state = 2;</code>
@@ -44,7 +44,7 @@ public interface ClusterOperationStatusOrBuilder extends
 
   /**
    * <pre>
-   * Output-only.A message containing any operation metadata details.
+   * Output only. A message containing any operation metadata details.
    * </pre>
    *
    * <code>string details = 3;</code>
@@ -52,7 +52,7 @@ public interface ClusterOperationStatusOrBuilder extends
   java.lang.String getDetails();
   /**
    * <pre>
-   * Output-only.A message containing any operation metadata details.
+   * Output only. A message containing any operation metadata details.
    * </pre>
    *
    * <code>string details = 3;</code>
@@ -62,7 +62,7 @@ public interface ClusterOperationStatusOrBuilder extends
 
   /**
    * <pre>
-   * Output-only. The time this state was entered.
+   * Output only. The time this state was entered.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
@@ -70,7 +70,7 @@ public interface ClusterOperationStatusOrBuilder extends
   boolean hasStateStartTime();
   /**
    * <pre>
-   * Output-only. The time this state was entered.
+   * Output only. The time this state was entered.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 4;</code>
@@ -78,7 +78,7 @@ public interface ClusterOperationStatusOrBuilder extends
   com.google.protobuf.Timestamp getStateStartTime();
   /**
    * <pre>
-   * Output-only. The time this state was entered.
+   * Output only. The time this state was entered.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 4;</code>

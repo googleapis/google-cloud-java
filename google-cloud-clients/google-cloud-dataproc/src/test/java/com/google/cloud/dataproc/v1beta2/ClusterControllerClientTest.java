@@ -29,6 +29,7 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
+import com.google.protobuf.FieldMask;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -139,6 +140,73 @@ public class ClusterControllerClientTest {
       Cluster cluster = Cluster.newBuilder().build();
 
       client.createClusterAsync(projectId, region, cluster).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateClusterTest() throws Exception {
+    String projectId2 = "projectId2939242356";
+    String clusterName2 = "clusterName2875867491";
+    String clusterUuid = "clusterUuid-1017854240";
+    Cluster expectedResponse =
+        Cluster.newBuilder()
+            .setProjectId(projectId2)
+            .setClusterName(clusterName2)
+            .setClusterUuid(clusterUuid)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateClusterTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockClusterController.addResponse(resultOperation);
+
+    String projectId = "projectId-1969970175";
+    String region = "region-934795532";
+    String clusterName = "clusterName-1018081872";
+    Cluster cluster = Cluster.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Cluster actualResponse =
+        client.updateClusterAsync(projectId, region, clusterName, cluster, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockClusterController.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateClusterRequest actualRequest = (UpdateClusterRequest) actualRequests.get(0);
+
+    Assert.assertEquals(projectId, actualRequest.getProjectId());
+    Assert.assertEquals(region, actualRequest.getRegion());
+    Assert.assertEquals(clusterName, actualRequest.getClusterName());
+    Assert.assertEquals(cluster, actualRequest.getCluster());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateClusterExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockClusterController.addException(exception);
+
+    try {
+      String projectId = "projectId-1969970175";
+      String region = "region-934795532";
+      String clusterName = "clusterName-1018081872";
+      Cluster cluster = Cluster.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+
+      client.updateClusterAsync(projectId, region, clusterName, cluster, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -296,6 +364,60 @@ public class ClusterControllerClientTest {
       String region = "region-934795532";
 
       client.listClusters(projectId, region);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listClustersTest2() {
+    String nextPageToken = "";
+    Cluster clustersElement = Cluster.newBuilder().build();
+    List<Cluster> clusters = Arrays.asList(clustersElement);
+    ListClustersResponse expectedResponse =
+        ListClustersResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllClusters(clusters)
+            .build();
+    mockClusterController.addResponse(expectedResponse);
+
+    String projectId = "projectId-1969970175";
+    String region = "region-934795532";
+    String filter = "filter-1274492040";
+
+    ListClustersPagedResponse pagedListResponse = client.listClusters(projectId, region, filter);
+
+    List<Cluster> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getClustersList().get(0), resources.get(0));
+
+    List<GeneratedMessageV3> actualRequests = mockClusterController.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListClustersRequest actualRequest = (ListClustersRequest) actualRequests.get(0);
+
+    Assert.assertEquals(projectId, actualRequest.getProjectId());
+    Assert.assertEquals(region, actualRequest.getRegion());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listClustersExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockClusterController.addException(exception);
+
+    try {
+      String projectId = "projectId-1969970175";
+      String region = "region-934795532";
+      String filter = "filter-1274492040";
+
+      client.listClusters(projectId, region, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -250,7 +250,9 @@ public class AcceleratorTypeStubSettings extends StubSettings<AcceleratorTypeStu
             @Override
             public Iterable<AcceleratorTypesScopedList> extractResources(
                 AcceleratorTypeAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<AcceleratorTypesScopedList>of();
             }
           };
 
@@ -292,7 +294,9 @@ public class AcceleratorTypeStubSettings extends StubSettings<AcceleratorTypeStu
 
             @Override
             public Iterable<AcceleratorType> extractResources(AcceleratorTypeList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<AcceleratorType>of();
             }
           };
 

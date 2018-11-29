@@ -261,7 +261,9 @@ public class RegionInstanceGroupStubSettings extends StubSettings<RegionInstance
 
             @Override
             public Iterable<InstanceGroup> extractResources(RegionInstanceGroupList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<InstanceGroup>of();
             }
           };
 
@@ -306,7 +308,9 @@ public class RegionInstanceGroupStubSettings extends StubSettings<RegionInstance
             @Override
             public Iterable<InstanceWithNamedPorts> extractResources(
                 RegionInstanceGroupsListInstances payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<InstanceWithNamedPorts>of();
             }
           };
 

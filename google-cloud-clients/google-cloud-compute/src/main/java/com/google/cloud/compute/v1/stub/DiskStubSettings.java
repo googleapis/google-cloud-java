@@ -279,7 +279,9 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
 
             @Override
             public Iterable<DisksScopedList> extractResources(DiskAggregatedList payload) {
-              return payload.getItemsMap().values();
+              return payload.getItemsMap() != null
+                  ? payload.getItemsMap().values()
+                  : ImmutableList.<DisksScopedList>of();
             }
           };
 
@@ -313,7 +315,9 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
 
             @Override
             public Iterable<Disk> extractResources(DiskList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Disk>of();
             }
           };
 

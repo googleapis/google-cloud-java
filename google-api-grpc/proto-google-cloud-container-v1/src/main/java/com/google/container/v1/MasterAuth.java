@@ -226,8 +226,9 @@ private static final long serialVersionUID = 0L;
   private com.google.container.v1.ClientCertificateConfig clientCertificateConfig_;
   /**
    * <pre>
-   * Configuration for client certificate authentication on the cluster.  If no
-   * configuration is specified, a client certificate is issued.
+   * Configuration for client certificate authentication on the cluster. For
+   * clusters before v1.12, if no configuration is specified, a client
+   * certificate is issued.
    * </pre>
    *
    * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
@@ -237,8 +238,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Configuration for client certificate authentication on the cluster.  If no
-   * configuration is specified, a client certificate is issued.
+   * Configuration for client certificate authentication on the cluster. For
+   * clusters before v1.12, if no configuration is specified, a client
+   * certificate is issued.
    * </pre>
    *
    * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
@@ -248,8 +250,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Configuration for client certificate authentication on the cluster.  If no
-   * configuration is specified, a client certificate is issued.
+   * Configuration for client certificate authentication on the cluster. For
+   * clusters before v1.12, if no configuration is specified, a client
+   * certificate is issued.
    * </pre>
    *
    * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
@@ -1005,8 +1008,9 @@ private static final long serialVersionUID = 0L;
         com.google.container.v1.ClientCertificateConfig, com.google.container.v1.ClientCertificateConfig.Builder, com.google.container.v1.ClientCertificateConfigOrBuilder> clientCertificateConfigBuilder_;
     /**
      * <pre>
-     * Configuration for client certificate authentication on the cluster.  If no
-     * configuration is specified, a client certificate is issued.
+     * Configuration for client certificate authentication on the cluster. For
+     * clusters before v1.12, if no configuration is specified, a client
+     * certificate is issued.
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
@@ -1016,8 +1020,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Configuration for client certificate authentication on the cluster.  If no
-     * configuration is specified, a client certificate is issued.
+     * Configuration for client certificate authentication on the cluster. For
+     * clusters before v1.12, if no configuration is specified, a client
+     * certificate is issued.
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
@@ -1031,8 +1036,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Configuration for client certificate authentication on the cluster.  If no
-     * configuration is specified, a client certificate is issued.
+     * Configuration for client certificate authentication on the cluster. For
+     * clusters before v1.12, if no configuration is specified, a client
+     * certificate is issued.
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
@@ -1052,8 +1058,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Configuration for client certificate authentication on the cluster.  If no
-     * configuration is specified, a client certificate is issued.
+     * Configuration for client certificate authentication on the cluster. For
+     * clusters before v1.12, if no configuration is specified, a client
+     * certificate is issued.
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
@@ -1071,8 +1078,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Configuration for client certificate authentication on the cluster.  If no
-     * configuration is specified, a client certificate is issued.
+     * Configuration for client certificate authentication on the cluster. For
+     * clusters before v1.12, if no configuration is specified, a client
+     * certificate is issued.
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
@@ -1094,8 +1102,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Configuration for client certificate authentication on the cluster.  If no
-     * configuration is specified, a client certificate is issued.
+     * Configuration for client certificate authentication on the cluster. For
+     * clusters before v1.12, if no configuration is specified, a client
+     * certificate is issued.
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
@@ -1113,8 +1122,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Configuration for client certificate authentication on the cluster.  If no
-     * configuration is specified, a client certificate is issued.
+     * Configuration for client certificate authentication on the cluster. For
+     * clusters before v1.12, if no configuration is specified, a client
+     * certificate is issued.
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
@@ -1126,8 +1136,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Configuration for client certificate authentication on the cluster.  If no
-     * configuration is specified, a client certificate is issued.
+     * Configuration for client certificate authentication on the cluster. For
+     * clusters before v1.12, if no configuration is specified, a client
+     * certificate is issued.
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
@@ -1142,8 +1153,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Configuration for client certificate authentication on the cluster.  If no
-     * configuration is specified, a client certificate is issued.
+     * Configuration for client certificate authentication on the cluster. For
+     * clusters before v1.12, if no configuration is specified, a client
+     * certificate is issued.
      * </pre>
      *
      * <code>.google.container.v1.ClientCertificateConfig client_certificate_config = 3;</code>
