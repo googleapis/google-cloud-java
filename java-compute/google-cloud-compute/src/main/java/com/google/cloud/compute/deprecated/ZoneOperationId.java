@@ -19,15 +19,12 @@ package com.google.cloud.compute.deprecated;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Identity for a Google Compute Engine zone operation.
- */
-public final class ZoneOperationId extends OperationId  {
+/** Identity for a Google Compute Engine zone operation. */
+public final class ZoneOperationId extends OperationId {
 
   private static final String REGEX = ResourceId.REGEX + "zones/([^/]+)/operations/([^/]+)";
   private static final Pattern PATTERN = Pattern.compile(REGEX);
@@ -45,16 +42,12 @@ public final class ZoneOperationId extends OperationId  {
     return Type.ZONE;
   }
 
-  /**
-   * Returns the name of the zone this operation belongs to.
-   */
+  /** Returns the name of the zone this operation belongs to. */
   public String getZone() {
     return zone;
   }
 
-  /**
-   * Returns the identity of the zone this address belongs to.
-   */
+  /** Returns the identity of the zone this address belongs to. */
   public ZoneId getZoneId() {
     return ZoneId.of(getProject(), zone);
   }
@@ -94,23 +87,17 @@ public final class ZoneOperationId extends OperationId  {
     return ZoneOperationId.of(projectId, zone, getOperation());
   }
 
-  /**
-   * Returns a zone operation identity given the zone identity and the operation name.
-   */
+  /** Returns a zone operation identity given the zone identity and the operation name. */
   public static ZoneOperationId of(ZoneId zoneId, String operation) {
     return new ZoneOperationId(zoneId.getProject(), zoneId.getZone(), operation);
   }
 
-  /**
-   * Returns a zone operation identity given the zone and operation names.
-   */
+  /** Returns a zone operation identity given the zone and operation names. */
   public static ZoneOperationId of(String zone, String operation) {
     return new ZoneOperationId(null, zone, operation);
   }
 
-  /**
-   * Returns a zone operation identity given project, zone and operation names.
-   */
+  /** Returns a zone operation identity given project, zone and operation names. */
   public static ZoneOperationId of(String project, String zone, String operation) {
     return new ZoneOperationId(project, zone, operation);
   }

@@ -20,12 +20,14 @@
  * <p>A simple usage example:
  *
  * <p>Before the test:
- * <pre> {@code
+ *
+ * <pre>{@code
  * RemoteComputeHelper computeHelper = RemoteComputeHelper.create();
  * Compute compute = computeHelper.getOptions().getService();
- * } </pre>
+ * }</pre>
  *
- * @see <a href="https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-compute">
+ * @see <a
+ *     href="https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-compute">
  *     Google Cloud Java tools for testing</a>
  */
 package com.google.cloud.compute.deprecated.testing;

@@ -66,7 +66,8 @@ import javax.annotation.Generated;
 public class TargetInstanceSettings extends ClientSettings<TargetInstanceSettings> {
   /** Returns the object with the settings used for calls to aggregatedListTargetInstances. */
   public PagedCallSettings<
-          AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
+          AggregatedListTargetInstancesHttpRequest,
+          TargetInstanceAggregatedList,
           AggregatedListTargetInstancesPagedResponse>
       aggregatedListTargetInstancesSettings() {
     return ((TargetInstanceStubSettings) getStubSettings()).aggregatedListTargetInstancesSettings();
@@ -201,7 +202,8 @@ public class TargetInstanceSettings extends ClientSettings<TargetInstanceSetting
 
     /** Returns the builder for the settings used for calls to aggregatedListTargetInstances. */
     public PagedCallSettings.Builder<
-            AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
+            AggregatedListTargetInstancesHttpRequest,
+            TargetInstanceAggregatedList,
             AggregatedListTargetInstancesPagedResponse>
         aggregatedListTargetInstancesSettings() {
       return getStubSettingsBuilder().aggregatedListTargetInstancesSettings();

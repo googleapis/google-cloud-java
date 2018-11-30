@@ -35,13 +35,11 @@ import com.google.cloud.compute.deprecated.Operation.OperationError;
 import com.google.cloud.compute.deprecated.Operation.OperationWarning;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
+import java.util.List;
 import org.junit.After;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
-import java.util.List;
 import org.threeten.bp.Duration;
 
 public class OperationTest {
@@ -80,8 +78,7 @@ public class OperationTest {
   private static final RegionOperationId REGION_OPERATION_ID =
       RegionOperationId.of("project", "region", "op");
 
-  @Rule
-  public final ExpectedException thrown = ExpectedException.none();
+  @Rule public final ExpectedException thrown = ExpectedException.none();
 
   private final Compute serviceMockReturnsOptions = createStrictMock(Compute.class);
   private final ComputeOptions mockOptions = createMock(ComputeOptions.class);
@@ -94,90 +91,94 @@ public class OperationTest {
   private void initializeExpectedOperation(int optionsCalls) {
     expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
-    globalOperation = new Operation.Builder(serviceMockReturnsOptions)
-        .getGeneratedId(GENERATED_ID)
-        .setOperationId(GLOBAL_OPERATION_ID)
-        .setClientOperationId(CLIENT_OPERATION_ID)
-        .setOperationType(OPERATION_TYPE)
-        .setTargetLink(TARGET_LINK)
-        .setTargetId(TARGET_ID)
-        .setStatus(STATUS)
-        .setStatusMessage(STATUS_MESSAGE)
-        .setUser(USER)
-        .setProgress(PROGRESS)
-        .setInsertTime(INSERT_TIME)
-        .setStartTime(START_TIME)
-        .setEndTime(END_TIME)
-        .setErrors(ERRORS)
-        .setWarnings(WARNINGS)
-        .setHttpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
-        .setHttpErrorMessage(HTTP_ERROR_MESSAGE)
-        .setDescription(DESCRIPTION)
-        .build();
-    zoneOperation = new Operation.Builder(serviceMockReturnsOptions)
-        .getGeneratedId(GENERATED_ID)
-        .setOperationId(ZONE_OPERATION_ID)
-        .setClientOperationId(CLIENT_OPERATION_ID)
-        .setOperationType(OPERATION_TYPE)
-        .setTargetLink(TARGET_LINK)
-        .setTargetId(TARGET_ID)
-        .setStatus(STATUS)
-        .setStatusMessage(STATUS_MESSAGE)
-        .setUser(USER)
-        .setProgress(PROGRESS)
-        .setInsertTime(INSERT_TIME)
-        .setStartTime(START_TIME)
-        .setEndTime(END_TIME)
-        .setErrors(ERRORS)
-        .setWarnings(WARNINGS)
-        .setHttpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
-        .setHttpErrorMessage(HTTP_ERROR_MESSAGE)
-        .setDescription(DESCRIPTION)
-        .build();
-    regionOperation = new Operation.Builder(serviceMockReturnsOptions)
-        .getGeneratedId(GENERATED_ID)
-        .setOperationId(REGION_OPERATION_ID)
-        .setClientOperationId(CLIENT_OPERATION_ID)
-        .setOperationType(OPERATION_TYPE)
-        .setTargetLink(TARGET_LINK)
-        .setTargetId(TARGET_ID)
-        .setStatus(STATUS)
-        .setStatusMessage(STATUS_MESSAGE)
-        .setUser(USER)
-        .setProgress(PROGRESS)
-        .setInsertTime(INSERT_TIME)
-        .setStartTime(START_TIME)
-        .setEndTime(END_TIME)
-        .setErrors(ERRORS)
-        .setWarnings(WARNINGS)
-        .setHttpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
-        .setHttpErrorMessage(HTTP_ERROR_MESSAGE)
-        .setDescription(DESCRIPTION)
-        .build();
+    globalOperation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .getGeneratedId(GENERATED_ID)
+            .setOperationId(GLOBAL_OPERATION_ID)
+            .setClientOperationId(CLIENT_OPERATION_ID)
+            .setOperationType(OPERATION_TYPE)
+            .setTargetLink(TARGET_LINK)
+            .setTargetId(TARGET_ID)
+            .setStatus(STATUS)
+            .setStatusMessage(STATUS_MESSAGE)
+            .setUser(USER)
+            .setProgress(PROGRESS)
+            .setInsertTime(INSERT_TIME)
+            .setStartTime(START_TIME)
+            .setEndTime(END_TIME)
+            .setErrors(ERRORS)
+            .setWarnings(WARNINGS)
+            .setHttpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
+            .setHttpErrorMessage(HTTP_ERROR_MESSAGE)
+            .setDescription(DESCRIPTION)
+            .build();
+    zoneOperation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .getGeneratedId(GENERATED_ID)
+            .setOperationId(ZONE_OPERATION_ID)
+            .setClientOperationId(CLIENT_OPERATION_ID)
+            .setOperationType(OPERATION_TYPE)
+            .setTargetLink(TARGET_LINK)
+            .setTargetId(TARGET_ID)
+            .setStatus(STATUS)
+            .setStatusMessage(STATUS_MESSAGE)
+            .setUser(USER)
+            .setProgress(PROGRESS)
+            .setInsertTime(INSERT_TIME)
+            .setStartTime(START_TIME)
+            .setEndTime(END_TIME)
+            .setErrors(ERRORS)
+            .setWarnings(WARNINGS)
+            .setHttpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
+            .setHttpErrorMessage(HTTP_ERROR_MESSAGE)
+            .setDescription(DESCRIPTION)
+            .build();
+    regionOperation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .getGeneratedId(GENERATED_ID)
+            .setOperationId(REGION_OPERATION_ID)
+            .setClientOperationId(CLIENT_OPERATION_ID)
+            .setOperationType(OPERATION_TYPE)
+            .setTargetLink(TARGET_LINK)
+            .setTargetId(TARGET_ID)
+            .setStatus(STATUS)
+            .setStatusMessage(STATUS_MESSAGE)
+            .setUser(USER)
+            .setProgress(PROGRESS)
+            .setInsertTime(INSERT_TIME)
+            .setStartTime(START_TIME)
+            .setEndTime(END_TIME)
+            .setErrors(ERRORS)
+            .setWarnings(WARNINGS)
+            .setHttpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
+            .setHttpErrorMessage(HTTP_ERROR_MESSAGE)
+            .setDescription(DESCRIPTION)
+            .build();
     compute = createStrictMock(Compute.class);
   }
 
   private void initializeOperation() {
-    operation = new Operation.Builder(compute)
-        .getGeneratedId(GENERATED_ID)
-        .setOperationId(GLOBAL_OPERATION_ID)
-        .setClientOperationId(CLIENT_OPERATION_ID)
-        .setOperationType(OPERATION_TYPE)
-        .setTargetLink(TARGET_LINK)
-        .setTargetId(TARGET_ID)
-        .setStatus(STATUS)
-        .setStatusMessage(STATUS_MESSAGE)
-        .setUser(USER)
-        .setProgress(PROGRESS)
-        .setInsertTime(INSERT_TIME)
-        .setStartTime(START_TIME)
-        .setEndTime(END_TIME)
-        .setErrors(ERRORS)
-        .setWarnings(WARNINGS)
-        .setHttpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
-        .setHttpErrorMessage(HTTP_ERROR_MESSAGE)
-        .setDescription(DESCRIPTION)
-        .build();
+    operation =
+        new Operation.Builder(compute)
+            .getGeneratedId(GENERATED_ID)
+            .setOperationId(GLOBAL_OPERATION_ID)
+            .setClientOperationId(CLIENT_OPERATION_ID)
+            .setOperationType(OPERATION_TYPE)
+            .setTargetLink(TARGET_LINK)
+            .setTargetId(TARGET_ID)
+            .setStatus(STATUS)
+            .setStatusMessage(STATUS_MESSAGE)
+            .setUser(USER)
+            .setProgress(PROGRESS)
+            .setInsertTime(INSERT_TIME)
+            .setStartTime(START_TIME)
+            .setEndTime(END_TIME)
+            .setErrors(ERRORS)
+            .setWarnings(WARNINGS)
+            .setHttpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
+            .setHttpErrorMessage(HTTP_ERROR_MESSAGE)
+            .setDescription(DESCRIPTION)
+            .build();
   }
 
   @After
@@ -236,19 +237,20 @@ public class OperationTest {
     assertEquals(REGION_OPERATION_ID, regionOperation.getOperationId());
     assertEqualsCommonFields(zoneOperation);
     assertEquals(ZONE_OPERATION_ID, zoneOperation.getOperationId());
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(GLOBAL_OPERATION_ID)
-        .build();
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(GLOBAL_OPERATION_ID)
+            .build();
     assertNullCommonFields(operation);
     assertEquals(GLOBAL_OPERATION_ID, operation.getOperationId());
-    operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(ZONE_OPERATION_ID)
-        .build();
+    operation =
+        new Operation.Builder(serviceMockReturnsOptions).setOperationId(ZONE_OPERATION_ID).build();
     assertNullCommonFields(operation);
     assertEquals(ZONE_OPERATION_ID, operation.getOperationId());
-    operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(REGION_OPERATION_ID)
-        .build();
+    operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(REGION_OPERATION_ID)
+            .build();
     assertNullCommonFields(operation);
     assertEquals(REGION_OPERATION_ID, operation.getOperationId());
   }
@@ -256,25 +258,26 @@ public class OperationTest {
   @Test
   public void testToAndFromPb() {
     initializeExpectedOperation(24);
-    compareOperation(globalOperation,
-        Operation.fromPb(serviceMockReturnsOptions, globalOperation.toPb()));
+    compareOperation(
+        globalOperation, Operation.fromPb(serviceMockReturnsOptions, globalOperation.toPb()));
     assertNotNull(regionOperation.toPb().getRegion());
-    compareOperation(regionOperation,
-        Operation.fromPb(serviceMockReturnsOptions, regionOperation.toPb()));
+    compareOperation(
+        regionOperation, Operation.fromPb(serviceMockReturnsOptions, regionOperation.toPb()));
     assertNotNull(zoneOperation.toPb().getZone());
-    compareOperation(zoneOperation,
-        Operation.fromPb(serviceMockReturnsOptions, zoneOperation.toPb()));
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(GLOBAL_OPERATION_ID)
-        .build();
+    compareOperation(
+        zoneOperation, Operation.fromPb(serviceMockReturnsOptions, zoneOperation.toPb()));
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(GLOBAL_OPERATION_ID)
+            .build();
     compareOperation(operation, Operation.fromPb(serviceMockReturnsOptions, operation.toPb()));
-    operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(ZONE_OPERATION_ID)
-        .build();
+    operation =
+        new Operation.Builder(serviceMockReturnsOptions).setOperationId(ZONE_OPERATION_ID).build();
     compareOperation(operation, Operation.fromPb(serviceMockReturnsOptions, operation.toPb()));
-    operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(REGION_OPERATION_ID)
-        .build();
+    operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(REGION_OPERATION_ID)
+            .build();
     compareOperation(operation, Operation.fromPb(serviceMockReturnsOptions, operation.toPb()));
   }
 
@@ -327,8 +330,9 @@ public class OperationTest {
   @Test
   public void testIsDone_True() throws Exception {
     initializeExpectedOperation(3);
-    Compute.OperationOption[] expectedOptions =
-        {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
+    Compute.OperationOption[] expectedOptions = {
+      Compute.OperationOption.fields(Compute.OperationField.STATUS)
+    };
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(globalOperation);
     replay(compute);
@@ -340,21 +344,26 @@ public class OperationTest {
   @Test
   public void testIsDone_False() throws Exception {
     initializeExpectedOperation(4);
-    Compute.OperationOption[] expectedOptions =
-        {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
+    Compute.OperationOption[] expectedOptions = {
+      Compute.OperationOption.fields(Compute.OperationField.STATUS)
+    };
     expect(compute.getOptions()).andReturn(mockOptions);
-    expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(
-        Operation.fromPb(serviceMockReturnsOptions, globalOperation.toPb().setStatus("PENDING")));
+    expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions))
+        .andReturn(
+            Operation.fromPb(
+                serviceMockReturnsOptions, globalOperation.toPb().setStatus("PENDING")));
     replay(compute);
     initializeOperation();
     assertFalse(operation.isDone());
     verify(compute);
   }
+
   @Test
   public void testIsDone_NotExists() throws Exception {
     initializeExpectedOperation(3);
-    Compute.OperationOption[] expectedOptions =
-        {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
+    Compute.OperationOption[] expectedOptions = {
+      Compute.OperationOption.fields(Compute.OperationField.STATUS)
+    };
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(null);
     replay(compute);
@@ -366,8 +375,9 @@ public class OperationTest {
   @Test
   public void testWaitFor() throws InterruptedException {
     initializeExpectedOperation(4);
-    Compute.OperationOption[] expectedOptions =
-        {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
+    Compute.OperationOption[] expectedOptions = {
+      Compute.OperationOption.fields(Compute.OperationField.STATUS)
+    };
     Operation successOperation =
         Operation.fromPb(serviceMockReturnsOptions, globalOperation.toPb().setError(null));
     expect(compute.getOptions()).andReturn(mockOptions);
@@ -383,8 +393,9 @@ public class OperationTest {
   @Test
   public void testWaitFor_Null() throws InterruptedException {
     initializeExpectedOperation(3);
-    Compute.OperationOption[] expectedOptions =
-        {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
+    Compute.OperationOption[] expectedOptions = {
+      Compute.OperationOption.fields(Compute.OperationField.STATUS)
+    };
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock());
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(null);
@@ -398,10 +409,12 @@ public class OperationTest {
   @Test
   public void testWaitForCheckingPeriod() throws InterruptedException {
     initializeExpectedOperation(5);
-    Compute.OperationOption[] expectedOptions =
-        {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
-    Operation runningOperation = Operation.fromPb(serviceMockReturnsOptions,
-        globalOperation.toPb().setError(null).setStatus("RUNNING"));
+    Compute.OperationOption[] expectedOptions = {
+      Compute.OperationOption.fields(Compute.OperationField.STATUS)
+    };
+    Operation runningOperation =
+        Operation.fromPb(
+            serviceMockReturnsOptions, globalOperation.toPb().setError(null).setStatus("RUNNING"));
     Operation completedOperation =
         Operation.fromPb(serviceMockReturnsOptions, globalOperation.toPb().setError(null));
     expect(compute.getOptions()).andReturn(mockOptions);
@@ -420,10 +433,12 @@ public class OperationTest {
   @Test
   public void testWaitForCheckingPeriod_Null() throws InterruptedException {
     initializeExpectedOperation(4);
-    Compute.OperationOption[] expectedOptions =
-        {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
-    Operation runningOperation = Operation.fromPb(serviceMockReturnsOptions,
-        globalOperation.toPb().setError(null).setStatus("RUNNING"));
+    Compute.OperationOption[] expectedOptions = {
+      Compute.OperationOption.fields(Compute.OperationField.STATUS)
+    };
+    Operation runningOperation =
+        Operation.fromPb(
+            serviceMockReturnsOptions, globalOperation.toPb().setError(null).setStatus("RUNNING"));
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(mockOptions.getClock()).andReturn(CurrentMillisClock.getDefaultClock());
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(runningOperation);
@@ -437,14 +452,16 @@ public class OperationTest {
   @Test
   public void testWaitForWithTimeout() throws InterruptedException {
     initializeExpectedOperation(4);
-    Compute.OperationOption[] expectedOptions =
-        {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
+    Compute.OperationOption[] expectedOptions = {
+      Compute.OperationOption.fields(Compute.OperationField.STATUS)
+    };
     ApiClock clock = createStrictMock(ApiClock.class);
     expect(clock.nanoTime()).andReturn(0L);
     expect(clock.nanoTime()).andReturn(1_000_000L);
     expect(clock.nanoTime()).andReturn(3_000_000L);
-    Operation runningOperation = Operation.fromPb(serviceMockReturnsOptions,
-        globalOperation.toPb().setError(null).setStatus("RUNNING"));
+    Operation runningOperation =
+        Operation.fromPb(
+            serviceMockReturnsOptions, globalOperation.toPb().setError(null).setStatus("RUNNING"));
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(mockOptions.getClock()).andReturn(clock);
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(runningOperation);
@@ -452,7 +469,8 @@ public class OperationTest {
     replay(compute, clock, mockOptions);
     initializeOperation();
     thrown.expect(ComputeException.class);
-    operation.waitFor(RetryOption.initialRetryDelay(Duration.ofMillis(1L)),
+    operation.waitFor(
+        RetryOption.initialRetryDelay(Duration.ofMillis(1L)),
         RetryOption.totalTimeout(Duration.ofMillis(3L)));
     verify(compute, clock, mockOptions);
   }

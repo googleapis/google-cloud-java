@@ -20,28 +20,27 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects.ToStringHelper;
-
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * A Google Compute Engine zone identity.
- */
+/** A Google Compute Engine zone identity. */
 public final class ZoneId extends ResourceId {
 
-  static final Function<String, ZoneId> FROM_URL_FUNCTION = new Function<String, ZoneId>() {
-    @Override
-    public ZoneId apply(String pb) {
-      return ZoneId.fromUrl(pb);
-    }
-  };
-  static final Function<ZoneId, String> TO_URL_FUNCTION = new Function<ZoneId, String>() {
-    @Override
-    public String apply(ZoneId zoneId) {
-      return zoneId.getSelfLink();
-    }
-  };
+  static final Function<String, ZoneId> FROM_URL_FUNCTION =
+      new Function<String, ZoneId>() {
+        @Override
+        public ZoneId apply(String pb) {
+          return ZoneId.fromUrl(pb);
+        }
+      };
+  static final Function<ZoneId, String> TO_URL_FUNCTION =
+      new Function<ZoneId, String>() {
+        @Override
+        public String apply(ZoneId zoneId) {
+          return zoneId.getSelfLink();
+        }
+      };
 
   private static final String REGEX = ResourceId.REGEX + "zones/([^/]+)";
   private static final Pattern PATTERN = Pattern.compile(REGEX);
@@ -54,9 +53,7 @@ public final class ZoneId extends ResourceId {
     this.zone = checkNotNull(zone);
   }
 
-  /**
-   * Returns the name of the zone.
-   */
+  /** Returns the name of the zone. */
   public String getZone() {
     return zone;
   }
@@ -96,23 +93,19 @@ public final class ZoneId extends ResourceId {
     return ZoneId.of(projectId, zone);
   }
 
-  /**
-   * Returns a new zone identity given project and zone names.
-   */
+  /** Returns a new zone identity given project and zone names. */
   public static ZoneId of(String project, String zone) {
     return new ZoneId(project, zone);
   }
 
-  /**
-   * Returns a new zone identity given zone name.
-   */
+  /** Returns a new zone identity given zone name. */
   public static ZoneId of(String zone) {
     return ZoneId.of(null, zone);
   }
 
   /**
-   * Returns {@code true} if the provided string matches the expected format of a zone URL.
-   * Returns {@code false} otherwise.
+   * Returns {@code true} if the provided string matches the expected format of a zone URL. Returns
+   * {@code false} otherwise.
    */
   static boolean matchesUrl(String url) {
     return url.matches(REGEX);

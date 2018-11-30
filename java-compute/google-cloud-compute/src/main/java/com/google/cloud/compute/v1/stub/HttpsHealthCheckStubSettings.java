@@ -105,7 +105,8 @@ public class HttpsHealthCheckStubSettings extends StubSettings<HttpsHealthCheckS
   private final UnaryCallSettings<InsertHttpsHealthCheckHttpRequest, Operation>
       insertHttpsHealthCheckSettings;
   private final PagedCallSettings<
-          ListHttpsHealthChecksHttpRequest, HttpsHealthCheckList,
+          ListHttpsHealthChecksHttpRequest,
+          HttpsHealthCheckList,
           ListHttpsHealthChecksPagedResponse>
       listHttpsHealthChecksSettings;
   private final UnaryCallSettings<PatchHttpsHealthCheckHttpRequest, Operation>
@@ -133,7 +134,8 @@ public class HttpsHealthCheckStubSettings extends StubSettings<HttpsHealthCheckS
 
   /** Returns the object with the settings used for calls to listHttpsHealthChecks. */
   public PagedCallSettings<
-          ListHttpsHealthChecksHttpRequest, HttpsHealthCheckList,
+          ListHttpsHealthChecksHttpRequest,
+          HttpsHealthCheckList,
           ListHttpsHealthChecksPagedResponse>
       listHttpsHealthChecksSettings() {
     return listHttpsHealthChecksSettings;
@@ -279,11 +281,13 @@ public class HttpsHealthCheckStubSettings extends StubSettings<HttpsHealthCheckS
           };
 
   private static final PagedListResponseFactory<
-          ListHttpsHealthChecksHttpRequest, HttpsHealthCheckList,
+          ListHttpsHealthChecksHttpRequest,
+          HttpsHealthCheckList,
           ListHttpsHealthChecksPagedResponse>
       LIST_HTTPS_HEALTH_CHECKS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListHttpsHealthChecksHttpRequest, HttpsHealthCheckList,
+              ListHttpsHealthChecksHttpRequest,
+              HttpsHealthCheckList,
               ListHttpsHealthChecksPagedResponse>() {
             @Override
             public ApiFuture<ListHttpsHealthChecksPagedResponse> getFuturePagedResponse(
@@ -310,7 +314,8 @@ public class HttpsHealthCheckStubSettings extends StubSettings<HttpsHealthCheckS
     private final UnaryCallSettings.Builder<InsertHttpsHealthCheckHttpRequest, Operation>
         insertHttpsHealthCheckSettings;
     private final PagedCallSettings.Builder<
-            ListHttpsHealthChecksHttpRequest, HttpsHealthCheckList,
+            ListHttpsHealthChecksHttpRequest,
+            HttpsHealthCheckList,
             ListHttpsHealthChecksPagedResponse>
         listHttpsHealthChecksSettings;
     private final UnaryCallSettings.Builder<PatchHttpsHealthCheckHttpRequest, Operation>
@@ -484,7 +489,8 @@ public class HttpsHealthCheckStubSettings extends StubSettings<HttpsHealthCheckS
 
     /** Returns the builder for the settings used for calls to listHttpsHealthChecks. */
     public PagedCallSettings.Builder<
-            ListHttpsHealthChecksHttpRequest, HttpsHealthCheckList,
+            ListHttpsHealthChecksHttpRequest,
+            HttpsHealthCheckList,
             ListHttpsHealthChecksPagedResponse>
         listHttpsHealthChecksSettings() {
       return listHttpsHealthChecksSettings;

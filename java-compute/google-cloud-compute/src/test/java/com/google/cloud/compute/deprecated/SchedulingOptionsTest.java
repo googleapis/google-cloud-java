@@ -40,8 +40,8 @@ public class SchedulingOptionsTest {
 
   @Test
   public void testToAndFromPb() {
-    compareSchedulingOptions(SCHEDULING_OPTIONS,
-        SchedulingOptions.fromPb(SCHEDULING_OPTIONS.toPb()));
+    compareSchedulingOptions(
+        SCHEDULING_OPTIONS, SchedulingOptions.fromPb(SCHEDULING_OPTIONS.toPb()));
     SchedulingOptions schedulingOptions =
         SchedulingOptions.standard(true, SchedulingOptions.Maintenance.MIGRATE);
     compareSchedulingOptions(schedulingOptions, SchedulingOptions.fromPb(schedulingOptions.toPb()));

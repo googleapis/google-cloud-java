@@ -57,13 +57,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -3488,8 +3488,11 @@ public class InstanceClient implements BackgroundResource {
 
   public static class AggregatedListInstancesPagedResponse
       extends AbstractPagedListResponse<
-          AggregatedListInstancesHttpRequest, InstanceAggregatedList, InstancesScopedList,
-          AggregatedListInstancesPage, AggregatedListInstancesFixedSizeCollection> {
+          AggregatedListInstancesHttpRequest,
+          InstanceAggregatedList,
+          InstancesScopedList,
+          AggregatedListInstancesPage,
+          AggregatedListInstancesFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListInstancesPagedResponse> createAsync(
         PageContext<AggregatedListInstancesHttpRequest, InstanceAggregatedList, InstancesScopedList>
@@ -3514,7 +3517,9 @@ public class InstanceClient implements BackgroundResource {
 
   public static class AggregatedListInstancesPage
       extends AbstractPage<
-          AggregatedListInstancesHttpRequest, InstanceAggregatedList, InstancesScopedList,
+          AggregatedListInstancesHttpRequest,
+          InstanceAggregatedList,
+          InstancesScopedList,
           AggregatedListInstancesPage> {
 
     private AggregatedListInstancesPage(
@@ -3547,8 +3552,11 @@ public class InstanceClient implements BackgroundResource {
 
   public static class AggregatedListInstancesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AggregatedListInstancesHttpRequest, InstanceAggregatedList, InstancesScopedList,
-          AggregatedListInstancesPage, AggregatedListInstancesFixedSizeCollection> {
+          AggregatedListInstancesHttpRequest,
+          InstanceAggregatedList,
+          InstancesScopedList,
+          AggregatedListInstancesPage,
+          AggregatedListInstancesFixedSizeCollection> {
 
     private AggregatedListInstancesFixedSizeCollection(
         List<AggregatedListInstancesPage> pages, int collectionSize) {
@@ -3568,7 +3576,10 @@ public class InstanceClient implements BackgroundResource {
 
   public static class ListInstancesPagedResponse
       extends AbstractPagedListResponse<
-          ListInstancesHttpRequest, InstanceList, Instance, ListInstancesPage,
+          ListInstancesHttpRequest,
+          InstanceList,
+          Instance,
+          ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
     public static ApiFuture<ListInstancesPagedResponse> createAsync(
@@ -3621,7 +3632,10 @@ public class InstanceClient implements BackgroundResource {
 
   public static class ListInstancesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListInstancesHttpRequest, InstanceList, Instance, ListInstancesPage,
+          ListInstancesHttpRequest,
+          InstanceList,
+          Instance,
+          ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
     private ListInstancesFixedSizeCollection(List<ListInstancesPage> pages, int collectionSize) {
@@ -3641,8 +3655,11 @@ public class InstanceClient implements BackgroundResource {
 
   public static class ListReferrersInstancesPagedResponse
       extends AbstractPagedListResponse<
-          ListReferrersInstancesHttpRequest, InstanceListReferrers, Reference,
-          ListReferrersInstancesPage, ListReferrersInstancesFixedSizeCollection> {
+          ListReferrersInstancesHttpRequest,
+          InstanceListReferrers,
+          Reference,
+          ListReferrersInstancesPage,
+          ListReferrersInstancesFixedSizeCollection> {
 
     public static ApiFuture<ListReferrersInstancesPagedResponse> createAsync(
         PageContext<ListReferrersInstancesHttpRequest, InstanceListReferrers, Reference> context,
@@ -3666,7 +3683,9 @@ public class InstanceClient implements BackgroundResource {
 
   public static class ListReferrersInstancesPage
       extends AbstractPage<
-          ListReferrersInstancesHttpRequest, InstanceListReferrers, Reference,
+          ListReferrersInstancesHttpRequest,
+          InstanceListReferrers,
+          Reference,
           ListReferrersInstancesPage> {
 
     private ListReferrersInstancesPage(
@@ -3696,8 +3715,11 @@ public class InstanceClient implements BackgroundResource {
 
   public static class ListReferrersInstancesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListReferrersInstancesHttpRequest, InstanceListReferrers, Reference,
-          ListReferrersInstancesPage, ListReferrersInstancesFixedSizeCollection> {
+          ListReferrersInstancesHttpRequest,
+          InstanceListReferrers,
+          Reference,
+          ListReferrersInstancesPage,
+          ListReferrersInstancesFixedSizeCollection> {
 
     private ListReferrersInstancesFixedSizeCollection(
         List<ListReferrersInstancesPage> pages, int collectionSize) {

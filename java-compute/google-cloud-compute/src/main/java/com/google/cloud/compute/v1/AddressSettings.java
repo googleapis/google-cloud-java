@@ -66,7 +66,8 @@ import javax.annotation.Generated;
 public class AddressSettings extends ClientSettings<AddressSettings> {
   /** Returns the object with the settings used for calls to aggregatedListAddresses. */
   public PagedCallSettings<
-          AggregatedListAddressesHttpRequest, AddressAggregatedList,
+          AggregatedListAddressesHttpRequest,
+          AddressAggregatedList,
           AggregatedListAddressesPagedResponse>
       aggregatedListAddressesSettings() {
     return ((AddressStubSettings) getStubSettings()).aggregatedListAddressesSettings();
@@ -196,7 +197,8 @@ public class AddressSettings extends ClientSettings<AddressSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListAddresses. */
     public PagedCallSettings.Builder<
-            AggregatedListAddressesHttpRequest, AddressAggregatedList,
+            AggregatedListAddressesHttpRequest,
+            AddressAggregatedList,
             AggregatedListAddressesPagedResponse>
         aggregatedListAddressesSettings() {
       return getStubSettingsBuilder().aggregatedListAddressesSettings();

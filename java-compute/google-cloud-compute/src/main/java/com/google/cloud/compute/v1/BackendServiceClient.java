@@ -56,13 +56,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1532,13 +1532,16 @@ public class BackendServiceClient implements BackgroundResource {
 
   public static class AggregatedListBackendServicesPagedResponse
       extends AbstractPagedListResponse<
-          AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
-          BackendServicesScopedList, AggregatedListBackendServicesPage,
+          AggregatedListBackendServicesHttpRequest,
+          BackendServiceAggregatedList,
+          BackendServicesScopedList,
+          AggregatedListBackendServicesPage,
           AggregatedListBackendServicesFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListBackendServicesPagedResponse> createAsync(
         PageContext<
-                AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
+                AggregatedListBackendServicesHttpRequest,
+                BackendServiceAggregatedList,
                 BackendServicesScopedList>
             context,
         ApiFuture<BackendServiceAggregatedList> futureResponse) {
@@ -1564,12 +1567,15 @@ public class BackendServiceClient implements BackgroundResource {
 
   public static class AggregatedListBackendServicesPage
       extends AbstractPage<
-          AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
-          BackendServicesScopedList, AggregatedListBackendServicesPage> {
+          AggregatedListBackendServicesHttpRequest,
+          BackendServiceAggregatedList,
+          BackendServicesScopedList,
+          AggregatedListBackendServicesPage> {
 
     private AggregatedListBackendServicesPage(
         PageContext<
-                AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
+                AggregatedListBackendServicesHttpRequest,
+                BackendServiceAggregatedList,
                 BackendServicesScopedList>
             context,
         BackendServiceAggregatedList response) {
@@ -1583,7 +1589,8 @@ public class BackendServiceClient implements BackgroundResource {
     @Override
     protected AggregatedListBackendServicesPage createPage(
         PageContext<
-                AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
+                AggregatedListBackendServicesHttpRequest,
+                BackendServiceAggregatedList,
                 BackendServicesScopedList>
             context,
         BackendServiceAggregatedList response) {
@@ -1593,7 +1600,8 @@ public class BackendServiceClient implements BackgroundResource {
     @Override
     public ApiFuture<AggregatedListBackendServicesPage> createPageAsync(
         PageContext<
-                AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
+                AggregatedListBackendServicesHttpRequest,
+                BackendServiceAggregatedList,
                 BackendServicesScopedList>
             context,
         ApiFuture<BackendServiceAggregatedList> futureResponse) {
@@ -1603,8 +1611,10 @@ public class BackendServiceClient implements BackgroundResource {
 
   public static class AggregatedListBackendServicesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
-          BackendServicesScopedList, AggregatedListBackendServicesPage,
+          AggregatedListBackendServicesHttpRequest,
+          BackendServiceAggregatedList,
+          BackendServicesScopedList,
+          AggregatedListBackendServicesPage,
           AggregatedListBackendServicesFixedSizeCollection> {
 
     private AggregatedListBackendServicesFixedSizeCollection(
@@ -1625,8 +1635,11 @@ public class BackendServiceClient implements BackgroundResource {
 
   public static class ListBackendServicesPagedResponse
       extends AbstractPagedListResponse<
-          ListBackendServicesHttpRequest, BackendServiceList, BackendService,
-          ListBackendServicesPage, ListBackendServicesFixedSizeCollection> {
+          ListBackendServicesHttpRequest,
+          BackendServiceList,
+          BackendService,
+          ListBackendServicesPage,
+          ListBackendServicesFixedSizeCollection> {
 
     public static ApiFuture<ListBackendServicesPagedResponse> createAsync(
         PageContext<ListBackendServicesHttpRequest, BackendServiceList, BackendService> context,
@@ -1650,7 +1663,9 @@ public class BackendServiceClient implements BackgroundResource {
 
   public static class ListBackendServicesPage
       extends AbstractPage<
-          ListBackendServicesHttpRequest, BackendServiceList, BackendService,
+          ListBackendServicesHttpRequest,
+          BackendServiceList,
+          BackendService,
           ListBackendServicesPage> {
 
     private ListBackendServicesPage(
@@ -1680,8 +1695,11 @@ public class BackendServiceClient implements BackgroundResource {
 
   public static class ListBackendServicesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListBackendServicesHttpRequest, BackendServiceList, BackendService,
-          ListBackendServicesPage, ListBackendServicesFixedSizeCollection> {
+          ListBackendServicesHttpRequest,
+          BackendServiceList,
+          BackendService,
+          ListBackendServicesPage,
+          ListBackendServicesFixedSizeCollection> {
 
     private ListBackendServicesFixedSizeCollection(
         List<ListBackendServicesPage> pages, int collectionSize) {
