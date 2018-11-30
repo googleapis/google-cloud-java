@@ -3,11 +3,14 @@
 
 package com.google.devtools.clouderrorreporting.v1beta1;
 
-public interface UpdateGroupRequestOrBuilder extends
+public interface UpdateGroupRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * [Required] The group which replaces the resource on the server.
    * </pre>
@@ -16,6 +19,8 @@ public interface UpdateGroupRequestOrBuilder extends
    */
   boolean hasGroup();
   /**
+   *
+   *
    * <pre>
    * [Required] The group which replaces the resource on the server.
    * </pre>
@@ -24,6 +29,8 @@ public interface UpdateGroupRequestOrBuilder extends
    */
   com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup getGroup();
   /**
+   *
+   *
    * <pre>
    * [Required] The group which replaces the resource on the server.
    * </pre>

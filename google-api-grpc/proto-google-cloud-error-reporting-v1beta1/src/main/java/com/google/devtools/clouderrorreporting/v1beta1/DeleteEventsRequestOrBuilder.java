@@ -3,11 +3,14 @@
 
 package com.google.devtools.clouderrorreporting.v1beta1;
 
-public interface DeleteEventsRequestOrBuilder extends
+public interface DeleteEventsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * [Required] The resource name of the Google Cloud Platform project. Written
    * as `projects/` plus the
@@ -20,6 +23,8 @@ public interface DeleteEventsRequestOrBuilder extends
    */
   java.lang.String getProjectName();
   /**
+   *
+   *
    * <pre>
    * [Required] The resource name of the Google Cloud Platform project. Written
    * as `projects/` plus the
@@ -30,6 +35,5 @@ public interface DeleteEventsRequestOrBuilder extends
    *
    * <code>string project_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectNameBytes();
+  com.google.protobuf.ByteString getProjectNameBytes();
 }
