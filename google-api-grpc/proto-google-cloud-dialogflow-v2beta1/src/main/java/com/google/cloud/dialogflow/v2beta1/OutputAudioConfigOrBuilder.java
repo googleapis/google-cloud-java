@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface OutputAudioConfigOrBuilder extends
+public interface OutputAudioConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.OutputAudioConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. Audio encoding of the synthesized audio content.
    * </pre>
@@ -16,6 +19,8 @@ public interface OutputAudioConfigOrBuilder extends
    */
   int getAudioEncodingValue();
   /**
+   *
+   *
    * <pre>
    * Required. Audio encoding of the synthesized audio content.
    * </pre>
@@ -25,6 +30,8 @@ public interface OutputAudioConfigOrBuilder extends
   com.google.cloud.dialogflow.v2beta1.OutputAudioEncoding getAudioEncoding();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The synthesis sample rate (in hertz) for this audio. If not
    * provided, then the synthesizer will use the default sample rate based on
@@ -38,27 +45,37 @@ public interface OutputAudioConfigOrBuilder extends
   int getSampleRateHertz();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Configuration of how speech should be synthesized.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
+   * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
+   * </code>
    */
   boolean hasSynthesizeSpeechConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. Configuration of how speech should be synthesized.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
+   * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig getSynthesizeSpeechConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. Configuration of how speech should be synthesized.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;</code>
+   * <code>.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig synthesize_speech_config = 3;
+   * </code>
    */
-  com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder getSynthesizeSpeechConfigOrBuilder();
+  com.google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfigOrBuilder
+      getSynthesizeSpeechConfigOrBuilder();
 }

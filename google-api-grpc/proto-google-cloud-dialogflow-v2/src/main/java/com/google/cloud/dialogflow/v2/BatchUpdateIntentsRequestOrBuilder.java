@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface BatchUpdateIntentsRequestOrBuilder extends
+public interface BatchUpdateIntentsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.BatchUpdateIntentsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the agent to update or create intents in.
    * Format: `projects/&lt;Project ID&gt;/agent`.
@@ -17,6 +20,8 @@ public interface BatchUpdateIntentsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the agent to update or create intents in.
    * Format: `projects/&lt;Project ID&gt;/agent`.
@@ -24,10 +29,11 @@ public interface BatchUpdateIntentsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The URI to a Google Cloud Storage file containing intents to update or
    * create. The file format can either be a serialized proto (of IntentBatch
@@ -38,6 +44,8 @@ public interface BatchUpdateIntentsRequestOrBuilder extends
    */
   java.lang.String getIntentBatchUri();
   /**
+   *
+   *
    * <pre>
    * The URI to a Google Cloud Storage file containing intents to update or
    * create. The file format can either be a serialized proto (of IntentBatch
@@ -46,10 +54,11 @@ public interface BatchUpdateIntentsRequestOrBuilder extends
    *
    * <code>string intent_batch_uri = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getIntentBatchUriBytes();
+  com.google.protobuf.ByteString getIntentBatchUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * The collection of intents to update or create.
    * </pre>
@@ -58,6 +67,8 @@ public interface BatchUpdateIntentsRequestOrBuilder extends
    */
   boolean hasIntentBatchInline();
   /**
+   *
+   *
    * <pre>
    * The collection of intents to update or create.
    * </pre>
@@ -66,6 +77,8 @@ public interface BatchUpdateIntentsRequestOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.IntentBatch getIntentBatchInline();
   /**
+   *
+   *
    * <pre>
    * The collection of intents to update or create.
    * </pre>
@@ -75,6 +88,8 @@ public interface BatchUpdateIntentsRequestOrBuilder extends
   com.google.cloud.dialogflow.v2.IntentBatchOrBuilder getIntentBatchInlineOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The language of training phrases, parameters and rich messages
    * defined in `intents`. If not specified, the agent's default language is
@@ -87,6 +102,8 @@ public interface BatchUpdateIntentsRequestOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Optional. The language of training phrases, parameters and rich messages
    * defined in `intents`. If not specified, the agent's default language is
@@ -97,10 +114,11 @@ public interface BatchUpdateIntentsRequestOrBuilder extends
    *
    * <code>string language_code = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -109,6 +127,8 @@ public interface BatchUpdateIntentsRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -117,6 +137,8 @@ public interface BatchUpdateIntentsRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -126,6 +148,8 @@ public interface BatchUpdateIntentsRequestOrBuilder extends
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The resource view to apply to the returned intent.
    * </pre>
@@ -134,6 +158,8 @@ public interface BatchUpdateIntentsRequestOrBuilder extends
    */
   int getIntentViewValue();
   /**
+   *
+   *
    * <pre>
    * Optional. The resource view to apply to the returned intent.
    * </pre>
@@ -142,5 +168,6 @@ public interface BatchUpdateIntentsRequestOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.IntentView getIntentView();
 
-  public com.google.cloud.dialogflow.v2.BatchUpdateIntentsRequest.IntentBatchCase getIntentBatchCase();
+  public com.google.cloud.dialogflow.v2.BatchUpdateIntentsRequest.IntentBatchCase
+      getIntentBatchCase();
 }

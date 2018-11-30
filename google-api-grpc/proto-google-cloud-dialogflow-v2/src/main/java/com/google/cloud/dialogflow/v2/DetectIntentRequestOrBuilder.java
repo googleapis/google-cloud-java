@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface DetectIntentRequestOrBuilder extends
+public interface DetectIntentRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.DetectIntentRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the session this query is sent to. Format:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API
@@ -20,6 +23,8 @@ public interface DetectIntentRequestOrBuilder extends
    */
   java.lang.String getSession();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the session this query is sent to. Format:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;`. It's up to the API
@@ -30,10 +35,11 @@ public interface DetectIntentRequestOrBuilder extends
    *
    * <code>string session = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSessionBytes();
+  com.google.protobuf.ByteString getSessionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The parameters of this query.
    * </pre>
@@ -42,6 +48,8 @@ public interface DetectIntentRequestOrBuilder extends
    */
   boolean hasQueryParams();
   /**
+   *
+   *
    * <pre>
    * Optional. The parameters of this query.
    * </pre>
@@ -50,6 +58,8 @@ public interface DetectIntentRequestOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.QueryParameters getQueryParams();
   /**
+   *
+   *
    * <pre>
    * Optional. The parameters of this query.
    * </pre>
@@ -59,6 +69,8 @@ public interface DetectIntentRequestOrBuilder extends
   com.google.cloud.dialogflow.v2.QueryParametersOrBuilder getQueryParamsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required. The input specification. It can be set to:
    * 1.  an audio config
@@ -71,6 +83,8 @@ public interface DetectIntentRequestOrBuilder extends
    */
   boolean hasQueryInput();
   /**
+   *
+   *
    * <pre>
    * Required. The input specification. It can be set to:
    * 1.  an audio config
@@ -83,6 +97,8 @@ public interface DetectIntentRequestOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.QueryInput getQueryInput();
   /**
+   *
+   *
    * <pre>
    * Required. The input specification. It can be set to:
    * 1.  an audio config
@@ -96,6 +112,8 @@ public interface DetectIntentRequestOrBuilder extends
   com.google.cloud.dialogflow.v2.QueryInputOrBuilder getQueryInputOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The natural language speech audio to be processed. This field
    * should be populated iff `query_input` is set to an input audio config.

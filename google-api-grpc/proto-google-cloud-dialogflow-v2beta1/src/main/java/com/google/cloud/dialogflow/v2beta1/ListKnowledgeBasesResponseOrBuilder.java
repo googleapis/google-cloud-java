@@ -3,20 +3,24 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface ListKnowledgeBasesResponseOrBuilder extends
+public interface ListKnowledgeBasesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.ListKnowledgeBasesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of knowledge bases.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_bases = 1;</code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeBase> 
-      getKnowledgeBasesList();
+  java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeBase> getKnowledgeBasesList();
   /**
+   *
+   *
    * <pre>
    * The list of knowledge bases.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListKnowledgeBasesResponseOrBuilder extends
    */
   com.google.cloud.dialogflow.v2beta1.KnowledgeBase getKnowledgeBases(int index);
   /**
+   *
+   *
    * <pre>
    * The list of knowledge bases.
    * </pre>
@@ -33,25 +39,30 @@ public interface ListKnowledgeBasesResponseOrBuilder extends
    */
   int getKnowledgeBasesCount();
   /**
+   *
+   *
    * <pre>
    * The list of knowledge bases.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_bases = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.KnowledgeBaseOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.KnowledgeBaseOrBuilder>
       getKnowledgeBasesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of knowledge bases.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeBase knowledge_bases = 1;</code>
    */
-  com.google.cloud.dialogflow.v2beta1.KnowledgeBaseOrBuilder getKnowledgeBasesOrBuilder(
-      int index);
+  com.google.cloud.dialogflow.v2beta1.KnowledgeBaseOrBuilder getKnowledgeBasesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no
    * more results in the list.
@@ -61,6 +72,8 @@ public interface ListKnowledgeBasesResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no
    * more results in the list.
@@ -68,6 +81,5 @@ public interface ListKnowledgeBasesResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }
