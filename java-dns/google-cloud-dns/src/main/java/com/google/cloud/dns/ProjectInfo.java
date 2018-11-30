@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.dns.model.Project;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Objects;
@@ -43,7 +42,7 @@ public class ProjectInfo implements Serializable {
    * This class represents quotas assigned to the {@code ProjectInfo}.
    *
    * @see <a href="https://cloud.google.com/dns/api/v1/projects#quota">Google Cloud DNS
-   * documentation</a>
+   *     documentation</a>
    */
   public static class Quota implements Serializable {
 
@@ -62,7 +61,8 @@ public class ProjectInfo implements Serializable {
      * allow for specifying options, quota is an "all-or-nothing object" and we do not need a
      * builder.
      */
-    Quota(int zones,
+    Quota(
+        int zones,
         int resourceRecordsPerRrset,
         int rrsetAdditionsPerChange,
         int rrsetDeletionsPerChange,
@@ -76,53 +76,38 @@ public class ProjectInfo implements Serializable {
       this.totalRrdataSizePerChange = totalRrdataSizePerChange;
     }
 
-
-    /**
-     * Returns the maximum allowed number of zones in the project.
-     */
+    /** Returns the maximum allowed number of zones in the project. */
     public int getZones() {
       return zones;
     }
 
-
-    /**
-     * Returns the maximum allowed number of records per {@link RecordSet}.
-     */
+    /** Returns the maximum allowed number of records per {@link RecordSet}. */
     public int getResourceRecordsPerRrset() {
       return resourceRecordsPerRrset;
     }
 
-
     /**
-     * Returns the maximum allowed number of {@link RecordSet}s to add per {@link
-     * ChangeRequest}.
+     * Returns the maximum allowed number of {@link RecordSet}s to add per {@link ChangeRequest}.
      */
     public int getRrsetAdditionsPerChange() {
       return rrsetAdditionsPerChange;
     }
 
-
     /**
-     * Returns the maximum allowed number of {@link RecordSet}s to delete per {@link
-     * ChangeRequest}.
+     * Returns the maximum allowed number of {@link RecordSet}s to delete per {@link ChangeRequest}.
      */
     public int getRrsetDeletionsPerChange() {
       return rrsetDeletionsPerChange;
     }
 
-
     /**
-     * Returns the maximum allowed number of {@link RecordSet}s per {@link ZoneInfo} in the
-     * project.
+     * Returns the maximum allowed number of {@link RecordSet}s per {@link ZoneInfo} in the project.
      */
     public int getRrsetsPerZone() {
       return rrsetsPerZone;
     }
 
-
-    /**
-     * Returns the maximum allowed size for total records in one ChangesRequest in bytes.
-     */
+    /** Returns the maximum allowed size for total records in one ChangesRequest in bytes. */
     public int getTotalRrdataSizePerChange() {
       return totalRrdataSizePerChange;
     }
@@ -134,8 +119,13 @@ public class ProjectInfo implements Serializable {
 
     @Override
     public int hashCode() {
-      return Objects.hash(zones, resourceRecordsPerRrset, rrsetAdditionsPerChange,
-          rrsetDeletionsPerChange, rrsetsPerZone, totalRrdataSizePerChange);
+      return Objects.hash(
+          zones,
+          resourceRecordsPerRrset,
+          rrsetAdditionsPerChange,
+          rrsetDeletionsPerChange,
+          rrsetsPerZone,
+          totalRrdataSizePerChange);
     }
 
     com.google.api.services.dns.model.Quota toPb() {
@@ -150,13 +140,13 @@ public class ProjectInfo implements Serializable {
     }
 
     static Quota fromPb(com.google.api.services.dns.model.Quota pb) {
-      return new Quota(pb.getManagedZones(),
+      return new Quota(
+          pb.getManagedZones(),
           pb.getResourceRecordsPerRrset(),
           pb.getRrsetAdditionsPerChange(),
           pb.getRrsetDeletionsPerChange(),
           pb.getRrsetsPerManagedZone(),
-          pb.getTotalRrdataSizePerChange()
-      );
+          pb.getTotalRrdataSizePerChange());
     }
 
     @Override
@@ -172,44 +162,33 @@ public class ProjectInfo implements Serializable {
     }
   }
 
-  /**
-   * A builder for {@code ProjectInfo}.
-   */
+  /** A builder for {@code ProjectInfo}. */
   static class Builder {
     private String id;
     private BigInteger number;
     private Quota quota;
 
-    private Builder() {
-    }
+    private Builder() {}
 
-    /**
-     * Sets an id of the project.
-     */
+    /** Sets an id of the project. */
     Builder setId(String id) {
       this.id = checkNotNull(id);
       return this;
     }
 
-    /**
-     * Sets a number of the project.
-     */
+    /** Sets a number of the project. */
     Builder setNumber(BigInteger number) {
       this.number = checkNotNull(number);
       return this;
     }
 
-    /**
-     * Sets quotas assigned to the project.
-     */
+    /** Sets quotas assigned to the project. */
     Builder setQuota(Quota quota) {
       this.quota = checkNotNull(quota);
       return this;
     }
 
-    /**
-     * Builds an instance of the {@code ProjectInfo}.
-     */
+    /** Builds an instance of the {@code ProjectInfo}. */
     ProjectInfo build() {
       return new ProjectInfo(this);
     }
@@ -221,32 +200,22 @@ public class ProjectInfo implements Serializable {
     this.quota = builder.quota;
   }
 
-  /**
-   * Returns a builder for {@code ProjectInfo}.
-   */
+  /** Returns a builder for {@code ProjectInfo}. */
   static Builder newBuilder() {
     return new Builder();
   }
 
-
-  /**
-   * Returns the {@code Quota} object which contains quotas assigned to this project.
-   */
+  /** Returns the {@code Quota} object which contains quotas assigned to this project. */
   public Quota getQuota() {
     return quota;
   }
 
-  /**
-   * Returns project number. For internal use only.
-   */
+  /** Returns project number. For internal use only. */
   BigInteger getNumber() {
     return number;
   }
 
-
-  /**
-   * Returns project id. For internal use only.
-   */
+  /** Returns project id. For internal use only. */
   String getId() {
     return id;
   }
@@ -279,8 +248,8 @@ public class ProjectInfo implements Serializable {
   public final boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(ProjectInfo.class)
-        && toPb().equals(((ProjectInfo) obj).toPb());
+            && obj.getClass().equals(ProjectInfo.class)
+            && toPb().equals(((ProjectInfo) obj).toPb());
   }
 
   @Override
