@@ -14,20 +14,21 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class QueueName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}/queues/{queue}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/queues/{queue}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -62,20 +63,16 @@ public class QueueName implements ResourceName {
   }
 
   public static QueueName of(String project, String location, String queue) {
-    return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setQueue(queue)
-      .build();
+    return newBuilder().setProject(project).setLocation(location).setQueue(queue).build();
   }
 
   public static String format(String project, String location, String queue) {
     return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setQueue(queue)
-      .build()
-      .toString();
+        .setProject(project)
+        .setLocation(location)
+        .setQueue(queue)
+        .build()
+        .toString();
   }
 
   public static QueueName parse(String formattedString) {
@@ -83,7 +80,8 @@ public class QueueName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "QueueName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "QueueName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("queue"));
   }
 
@@ -169,8 +167,7 @@ public class QueueName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(QueueName queueName) {
       project = queueName.project;
@@ -209,4 +206,3 @@ public class QueueName implements ResourceName {
     return h;
   }
 }
-
