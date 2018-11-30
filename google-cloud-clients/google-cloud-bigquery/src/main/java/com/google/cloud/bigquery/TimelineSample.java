@@ -16,12 +16,12 @@
 package com.google.cloud.bigquery;
 
 import com.google.api.services.bigquery.model.QueryTimelineSample;
-import com.google.common.base.Function;
 import com.google.auto.value.AutoValue;
+import com.google.common.base.Function;
 import javax.annotation.Nullable;
 
 /**
- * A specific timeline sample.  This instruments work progress at a given point in time, providing
+ * A specific timeline sample. This instruments work progress at a given point in time, providing
  * information about work units active/pending/completed as well as cumulative slot-milliseconds.
  */
 @AutoValue
@@ -43,42 +43,29 @@ public abstract class TimelineSample {
     public abstract Builder setSlotMillis(Long slotMillis);
 
     public abstract TimelineSample build();
-
   }
 
-  /**
-   * Returns the sample time as milliseconds elapsed since the start of query execution.
-   */
+  /** Returns the sample time as milliseconds elapsed since the start of query execution. */
   @Nullable
   public abstract Long getElapsedMs();
 
-  /**
-   * Returns the total number of work units currently being processed.
-   */
+  /** Returns the total number of work units currently being processed. */
   @Nullable
   public abstract Long getActiveUnits();
 
-  /**
-   * Returns the total number of work units completed by this query.
-   */
+  /** Returns the total number of work units completed by this query. */
   @Nullable
   public abstract Long getCompletedUnits();
 
-  /**
-   * Returns the number of work units remaining for the currently active stages.
-   */
+  /** Returns the number of work units remaining for the currently active stages. */
   @Nullable
   public abstract Long getPendingUnits();
 
-  /**
-   * Returns the cumulative slot-milliseconds consumed by the query.
-   */
+  /** Returns the cumulative slot-milliseconds consumed by the query. */
   @Nullable
   public abstract Long getSlotMillis();
 
-  /**
-   * return a builder for the {@code TimelineSample} object.
-   */
+  /** return a builder for the {@code TimelineSample} object. */
   public abstract Builder toBuilder();
 
   static Builder newBuilder() {
@@ -96,12 +83,13 @@ public abstract class TimelineSample {
   }
 
   QueryTimelineSample toPb() {
-    QueryTimelineSample sample = new QueryTimelineSample()
-        .setElapsedMs(getElapsedMs())
-        .setActiveUnits(getActiveUnits())
-        .setCompletedUnits(getCompletedUnits())
-        .setPendingUnits(getPendingUnits())
-        .setTotalSlotMs(getSlotMillis());
+    QueryTimelineSample sample =
+        new QueryTimelineSample()
+            .setElapsedMs(getElapsedMs())
+            .setActiveUnits(getActiveUnits())
+            .setCompletedUnits(getCompletedUnits())
+            .setPendingUnits(getPendingUnits())
+            .setTotalSlotMs(getSlotMillis());
     return sample;
   }
 
@@ -120,5 +108,4 @@ public abstract class TimelineSample {
           return sample.toPb();
         }
       };
-
 }

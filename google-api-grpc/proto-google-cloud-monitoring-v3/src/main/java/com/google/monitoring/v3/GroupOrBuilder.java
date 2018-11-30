@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface GroupOrBuilder extends
+public interface GroupOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.Group)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. The name of this group. The format is
    * `"projects/{project_id_or_number}/groups/{group_id}"`.
@@ -20,6 +23,8 @@ public interface GroupOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Output only. The name of this group. The format is
    * `"projects/{project_id_or_number}/groups/{group_id}"`.
@@ -30,10 +35,11 @@ public interface GroupOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * A user-assigned name for this group, used only for display purposes.
    * </pre>
@@ -42,16 +48,19 @@ public interface GroupOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * A user-assigned name for this group, used only for display purposes.
    * </pre>
    *
    * <code>string display_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The name of the group's parent, if it has one.
    * The format is `"projects/{project_id_or_number}/groups/{group_id}"`.
@@ -62,6 +71,8 @@ public interface GroupOrBuilder extends
    */
   java.lang.String getParentName();
   /**
+   *
+   *
    * <pre>
    * The name of the group's parent, if it has one.
    * The format is `"projects/{project_id_or_number}/groups/{group_id}"`.
@@ -70,10 +81,11 @@ public interface GroupOrBuilder extends
    *
    * <code>string parent_name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getParentNameBytes();
+  com.google.protobuf.ByteString getParentNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The filter used to determine which monitored resources belong to this group.
    * </pre>
@@ -82,16 +94,19 @@ public interface GroupOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * The filter used to determine which monitored resources belong to this group.
    * </pre>
    *
    * <code>string filter = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * If true, the members of this group are considered to be a cluster.
    * The system can perform additional analysis on groups that are clusters.

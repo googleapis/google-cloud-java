@@ -258,7 +258,8 @@ public class SslCertificateStubSettings extends StubSettings<SslCertificateStubS
           ListSslCertificatesHttpRequest, SslCertificateList, ListSslCertificatesPagedResponse>
       LIST_SSL_CERTIFICATES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListSslCertificatesHttpRequest, SslCertificateList,
+              ListSslCertificatesHttpRequest,
+              SslCertificateList,
               ListSslCertificatesPagedResponse>() {
             @Override
             public ApiFuture<ListSslCertificatesPagedResponse> getFuturePagedResponse(

@@ -14,20 +14,21 @@
 
 package com.google.cloud.iot.v1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class DeviceName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}/registries/{registry}/devices/{device}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/registries/{registry}/devices/{device}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -69,21 +70,21 @@ public class DeviceName implements ResourceName {
 
   public static DeviceName of(String project, String location, String registry, String device) {
     return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setRegistry(registry)
-      .setDevice(device)
-      .build();
+        .setProject(project)
+        .setLocation(location)
+        .setRegistry(registry)
+        .setDevice(device)
+        .build();
   }
 
   public static String format(String project, String location, String registry, String device) {
     return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setRegistry(registry)
-      .setDevice(device)
-      .build()
-      .toString();
+        .setProject(project)
+        .setLocation(location)
+        .setRegistry(registry)
+        .setDevice(device)
+        .build()
+        .toString();
   }
 
   public static DeviceName parse(String formattedString) {
@@ -91,8 +92,13 @@ public class DeviceName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "DeviceName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("registry"), matchMap.get("device"));
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "DeviceName.parse: formattedString not in valid format");
+    return of(
+        matchMap.get("project"),
+        matchMap.get("location"),
+        matchMap.get("registry"),
+        matchMap.get("device"));
   }
 
   public static List<DeviceName> parseList(List<String> formattedStrings) {
@@ -141,7 +147,8 @@ public class DeviceName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "location", location, "registry", registry, "device", device);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "location", location, "registry", registry, "device", device);
   }
 
   /** Builder for DeviceName. */
@@ -188,8 +195,7 @@ public class DeviceName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(DeviceName deviceName) {
       project = deviceName.project;
@@ -232,4 +238,3 @@ public class DeviceName implements ResourceName {
     return h;
   }
 }
-

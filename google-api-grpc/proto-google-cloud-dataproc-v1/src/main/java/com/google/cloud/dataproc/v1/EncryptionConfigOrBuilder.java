@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1;
 
-public interface EncryptionConfigOrBuilder extends
+public interface EncryptionConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1.EncryptionConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional. The Cloud KMS key name to use for PD disk encryption for all
    * instances in the cluster.
@@ -17,6 +20,8 @@ public interface EncryptionConfigOrBuilder extends
    */
   java.lang.String getGcePdKmsKeyName();
   /**
+   *
+   *
    * <pre>
    * Optional. The Cloud KMS key name to use for PD disk encryption for all
    * instances in the cluster.
@@ -24,6 +29,5 @@ public interface EncryptionConfigOrBuilder extends
    *
    * <code>string gce_pd_kms_key_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getGcePdKmsKeyNameBytes();
+  com.google.protobuf.ByteString getGcePdKmsKeyNameBytes();
 }

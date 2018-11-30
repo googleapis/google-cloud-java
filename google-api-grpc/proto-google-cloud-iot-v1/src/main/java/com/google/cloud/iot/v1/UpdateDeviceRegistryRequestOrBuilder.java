@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface UpdateDeviceRegistryRequestOrBuilder extends
+public interface UpdateDeviceRegistryRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.UpdateDeviceRegistryRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The new values for the device registry. The `id` field must be empty, and
    * the `name` field must indicate the path of the resource. For example,
@@ -18,6 +21,8 @@ public interface UpdateDeviceRegistryRequestOrBuilder extends
    */
   boolean hasDeviceRegistry();
   /**
+   *
+   *
    * <pre>
    * The new values for the device registry. The `id` field must be empty, and
    * the `name` field must indicate the path of the resource. For example,
@@ -28,6 +33,8 @@ public interface UpdateDeviceRegistryRequestOrBuilder extends
    */
   com.google.cloud.iot.v1.DeviceRegistry getDeviceRegistry();
   /**
+   *
+   *
    * <pre>
    * The new values for the device registry. The `id` field must be empty, and
    * the `name` field must indicate the path of the resource. For example,
@@ -39,6 +46,8 @@ public interface UpdateDeviceRegistryRequestOrBuilder extends
   com.google.cloud.iot.v1.DeviceRegistryOrBuilder getDeviceRegistryOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Only updates the `device_registry` fields indicated by this mask.
    * The field mask must not be empty, and it must not contain fields that
@@ -51,6 +60,8 @@ public interface UpdateDeviceRegistryRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Only updates the `device_registry` fields indicated by this mask.
    * The field mask must not be empty, and it must not contain fields that
@@ -63,6 +74,8 @@ public interface UpdateDeviceRegistryRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Only updates the `device_registry` fields indicated by this mask.
    * The field mask must not be empty, and it must not contain fields that

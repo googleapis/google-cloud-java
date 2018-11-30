@@ -20,14 +20,12 @@ import com.google.api.services.compute.model.MachineType.ScratchDisks;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Lists;
-
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
-
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 
 /**
  * A Google Compute Engine machine type. A machine type determine the virtualized hardware
@@ -40,20 +38,20 @@ public class MachineType implements Serializable {
 
   static final Function<com.google.api.services.compute.model.MachineType, MachineType>
       FROM_PB_FUNCTION =
-      new Function<com.google.api.services.compute.model.MachineType, MachineType>() {
-        @Override
-        public MachineType apply(com.google.api.services.compute.model.MachineType pb) {
-          return MachineType.fromPb(pb);
-        }
-      };
+          new Function<com.google.api.services.compute.model.MachineType, MachineType>() {
+            @Override
+            public MachineType apply(com.google.api.services.compute.model.MachineType pb) {
+              return MachineType.fromPb(pb);
+            }
+          };
   static final Function<MachineType, com.google.api.services.compute.model.MachineType>
       TO_PB_FUNCTION =
-      new Function<MachineType, com.google.api.services.compute.model.MachineType>() {
-        @Override
-        public com.google.api.services.compute.model.MachineType apply(MachineType type) {
-          return type.toPb();
-        }
-      };
+          new Function<MachineType, com.google.api.services.compute.model.MachineType>() {
+            @Override
+            public com.google.api.services.compute.model.MachineType apply(MachineType type) {
+              return type.toPb();
+            }
+          };
   private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
 
   private static final long serialVersionUID = -4210962597502860450L;
@@ -152,65 +150,47 @@ public class MachineType implements Serializable {
     this.deprecationStatus = builder.deprecationStatus;
   }
 
-  /**
-   * Returns the machine type's identity.
-   */
+  /** Returns the machine type's identity. */
   public MachineTypeId getMachineTypeId() {
     return machineTypeId;
   }
 
-  /**
-   * Returns the service-generated unique identifier for the machine type.
-   */
+  /** Returns the service-generated unique identifier for the machine type. */
   public String getGeneratedId() {
     return generatedId;
   }
 
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
+  /** Returns the creation timestamp in milliseconds since epoch. */
   public Long getCreationTimestamp() {
     return creationTimestamp;
   }
 
-  /**
-   * Returns an optional textual description of the machine type.
-   */
+  /** Returns an optional textual description of the machine type. */
   public String getDescription() {
     return description;
   }
 
-  /**
-   * Returns the number of virtual CPUs that are available to the instance.
-   */
+  /** Returns the number of virtual CPUs that are available to the instance. */
   public Integer getCpus() {
     return cpus;
   }
 
-  /**
-   * Returns the amount of physical memory available to the instance, defined in MB.
-   */
+  /** Returns the amount of physical memory available to the instance, defined in MB. */
   public Integer getMemoryMb() {
     return memoryMb;
   }
 
-  /**
-   * Returns the size of all extended scratch disks assigned to the instance, defined in GB.
-   */
+  /** Returns the size of all extended scratch disks assigned to the instance, defined in GB. */
   public List<Integer> getScratchDisksSizeGb() {
     return scratchDisksSizeGb;
   }
 
-  /**
-   * Returns the maximum number of persistent disks allowed by this instance type.
-   */
+  /** Returns the maximum number of persistent disks allowed by this instance type. */
   public Integer getMaximumPersistentDisks() {
     return maximumPersistentDisks;
   }
 
-  /**
-   * Returns the maximum total persistent disks size allowed, defined in GB.
-   */
+  /** Returns the maximum total persistent disks size allowed, defined in GB. */
   public Long getMaximumPersistentDisksSizeGb() {
     return maximumPersistentDisksSizeGb;
   }
@@ -250,8 +230,8 @@ public class MachineType implements Serializable {
   public final boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(MachineType.class)
-        && Objects.equals(toPb(), ((MachineType) obj).toPb());
+            && obj.getClass().equals(MachineType.class)
+            && Objects.equals(toPb(), ((MachineType) obj).toPb());
   }
 
   com.google.api.services.compute.model.MachineType toPb() {
@@ -269,13 +249,15 @@ public class MachineType implements Serializable {
     machineTypePb.setGuestCpus(cpus);
     machineTypePb.setMemoryMb(memoryMb);
     if (scratchDisksSizeGb != null) {
-      machineTypePb.setScratchDisks(Lists.transform(scratchDisksSizeGb,
-          new Function<Integer, ScratchDisks>() {
-            @Override
-            public ScratchDisks apply(Integer diskSize) {
-              return new ScratchDisks().setDiskGb(diskSize);
-            }
-          }));
+      machineTypePb.setScratchDisks(
+          Lists.transform(
+              scratchDisksSizeGb,
+              new Function<Integer, ScratchDisks>() {
+                @Override
+                public ScratchDisks apply(Integer diskSize) {
+                  return new ScratchDisks().setDiskGb(diskSize);
+                }
+              }));
     }
     machineTypePb.setMaximumPersistentDisks(maximumPersistentDisks);
     machineTypePb.setMaximumPersistentDisksSizeGb(maximumPersistentDisksSizeGb);
@@ -305,12 +287,14 @@ public class MachineType implements Serializable {
     builder.setMemoryMb(machineTypePb.getMemoryMb());
     if (machineTypePb.getScratchDisks() != null) {
       builder.setScratchDisksSizeGb(
-          Lists.transform(machineTypePb.getScratchDisks(), new Function<ScratchDisks, Integer>() {
-            @Override
-            public Integer apply(ScratchDisks scratchDiskPb) {
-              return scratchDiskPb.getDiskGb();
-            }
-          }));
+          Lists.transform(
+              machineTypePb.getScratchDisks(),
+              new Function<ScratchDisks, Integer>() {
+                @Override
+                public Integer apply(ScratchDisks scratchDiskPb) {
+                  return scratchDiskPb.getDiskGb();
+                }
+              }));
     }
     builder.setMaximumPersistentDisks(machineTypePb.getMaximumPersistentDisks());
     builder.setMaximumPersistentDisksSizeGb(machineTypePb.getMaximumPersistentDisksSizeGb());

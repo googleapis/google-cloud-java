@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface DeviceRegistryOrBuilder extends
+public interface DeviceRegistryOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.DeviceRegistry)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The identifier of this device registry. For example, `myRegistry`.
    * </pre>
@@ -16,16 +19,19 @@ public interface DeviceRegistryOrBuilder extends
    */
   java.lang.String getId();
   /**
+   *
+   *
    * <pre>
    * The identifier of this device registry. For example, `myRegistry`.
    * </pre>
    *
    * <code>string id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getIdBytes();
+  com.google.protobuf.ByteString getIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The resource path name. For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
@@ -35,6 +41,8 @@ public interface DeviceRegistryOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The resource path name. For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
@@ -42,10 +50,11 @@ public interface DeviceRegistryOrBuilder extends
    *
    * <code>string name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The configuration for notification of telemetry events received from the
    * device. All telemetry events that were successfully published by the
@@ -58,11 +67,13 @@ public interface DeviceRegistryOrBuilder extends
    * configurations may be provided.
    * </pre>
    *
-   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+   * </code>
    */
-  java.util.List<com.google.cloud.iot.v1.EventNotificationConfig> 
-      getEventNotificationConfigsList();
+  java.util.List<com.google.cloud.iot.v1.EventNotificationConfig> getEventNotificationConfigsList();
   /**
+   *
+   *
    * <pre>
    * The configuration for notification of telemetry events received from the
    * device. All telemetry events that were successfully published by the
@@ -75,10 +86,13 @@ public interface DeviceRegistryOrBuilder extends
    * configurations may be provided.
    * </pre>
    *
-   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+   * </code>
    */
   com.google.cloud.iot.v1.EventNotificationConfig getEventNotificationConfigs(int index);
   /**
+   *
+   *
    * <pre>
    * The configuration for notification of telemetry events received from the
    * device. All telemetry events that were successfully published by the
@@ -91,10 +105,13 @@ public interface DeviceRegistryOrBuilder extends
    * configurations may be provided.
    * </pre>
    *
-   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+   * </code>
    */
   int getEventNotificationConfigsCount();
   /**
+   *
+   *
    * <pre>
    * The configuration for notification of telemetry events received from the
    * device. All telemetry events that were successfully published by the
@@ -107,11 +124,14 @@ public interface DeviceRegistryOrBuilder extends
    * configurations may be provided.
    * </pre>
    *
-   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.iot.v1.EventNotificationConfigOrBuilder> 
+  java.util.List<? extends com.google.cloud.iot.v1.EventNotificationConfigOrBuilder>
       getEventNotificationConfigsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The configuration for notification of telemetry events received from the
    * device. All telemetry events that were successfully published by the
@@ -124,12 +144,15 @@ public interface DeviceRegistryOrBuilder extends
    * configurations may be provided.
    * </pre>
    *
-   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+   * </code>
    */
   com.google.cloud.iot.v1.EventNotificationConfigOrBuilder getEventNotificationConfigsOrBuilder(
       int index);
 
   /**
+   *
+   *
    * <pre>
    * The configuration for notification of new states received from the device.
    * State updates are guaranteed to be stored in the state history, but
@@ -143,6 +166,8 @@ public interface DeviceRegistryOrBuilder extends
    */
   boolean hasStateNotificationConfig();
   /**
+   *
+   *
    * <pre>
    * The configuration for notification of new states received from the device.
    * State updates are guaranteed to be stored in the state history, but
@@ -156,6 +181,8 @@ public interface DeviceRegistryOrBuilder extends
    */
   com.google.cloud.iot.v1.StateNotificationConfig getStateNotificationConfig();
   /**
+   *
+   *
    * <pre>
    * The configuration for notification of new states received from the device.
    * State updates are guaranteed to be stored in the state history, but
@@ -170,6 +197,8 @@ public interface DeviceRegistryOrBuilder extends
   com.google.cloud.iot.v1.StateNotificationConfigOrBuilder getStateNotificationConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The MQTT configuration for this device registry.
    * </pre>
@@ -178,6 +207,8 @@ public interface DeviceRegistryOrBuilder extends
    */
   boolean hasMqttConfig();
   /**
+   *
+   *
    * <pre>
    * The MQTT configuration for this device registry.
    * </pre>
@@ -186,6 +217,8 @@ public interface DeviceRegistryOrBuilder extends
    */
   com.google.cloud.iot.v1.MqttConfig getMqttConfig();
   /**
+   *
+   *
    * <pre>
    * The MQTT configuration for this device registry.
    * </pre>
@@ -195,6 +228,8 @@ public interface DeviceRegistryOrBuilder extends
   com.google.cloud.iot.v1.MqttConfigOrBuilder getMqttConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The DeviceService (HTTP) configuration for this device registry.
    * </pre>
@@ -203,6 +238,8 @@ public interface DeviceRegistryOrBuilder extends
    */
   boolean hasHttpConfig();
   /**
+   *
+   *
    * <pre>
    * The DeviceService (HTTP) configuration for this device registry.
    * </pre>
@@ -211,6 +248,8 @@ public interface DeviceRegistryOrBuilder extends
    */
   com.google.cloud.iot.v1.HttpConfig getHttpConfig();
   /**
+   *
+   *
    * <pre>
    * The DeviceService (HTTP) configuration for this device registry.
    * </pre>
@@ -220,6 +259,8 @@ public interface DeviceRegistryOrBuilder extends
   com.google.cloud.iot.v1.HttpConfigOrBuilder getHttpConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * **Beta Feature**
    * The default logging verbosity for activity from devices in this registry.
@@ -230,6 +271,8 @@ public interface DeviceRegistryOrBuilder extends
    */
   int getLogLevelValue();
   /**
+   *
+   *
    * <pre>
    * **Beta Feature**
    * The default logging verbosity for activity from devices in this registry.
@@ -241,6 +284,8 @@ public interface DeviceRegistryOrBuilder extends
   com.google.cloud.iot.v1.LogLevel getLogLevel();
 
   /**
+   *
+   *
    * <pre>
    * The credentials used to verify the device credentials. No more than 10
    * credentials can be bound to a single registry at a time. The verification
@@ -256,9 +301,10 @@ public interface DeviceRegistryOrBuilder extends
    *
    * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
    */
-  java.util.List<com.google.cloud.iot.v1.RegistryCredential> 
-      getCredentialsList();
+  java.util.List<com.google.cloud.iot.v1.RegistryCredential> getCredentialsList();
   /**
+   *
+   *
    * <pre>
    * The credentials used to verify the device credentials. No more than 10
    * credentials can be bound to a single registry at a time. The verification
@@ -276,6 +322,8 @@ public interface DeviceRegistryOrBuilder extends
    */
   com.google.cloud.iot.v1.RegistryCredential getCredentials(int index);
   /**
+   *
+   *
    * <pre>
    * The credentials used to verify the device credentials. No more than 10
    * credentials can be bound to a single registry at a time. The verification
@@ -293,6 +341,8 @@ public interface DeviceRegistryOrBuilder extends
    */
   int getCredentialsCount();
   /**
+   *
+   *
    * <pre>
    * The credentials used to verify the device credentials. No more than 10
    * credentials can be bound to a single registry at a time. The verification
@@ -308,9 +358,11 @@ public interface DeviceRegistryOrBuilder extends
    *
    * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
    */
-  java.util.List<? extends com.google.cloud.iot.v1.RegistryCredentialOrBuilder> 
+  java.util.List<? extends com.google.cloud.iot.v1.RegistryCredentialOrBuilder>
       getCredentialsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The credentials used to verify the device credentials. No more than 10
    * credentials can be bound to a single registry at a time. The verification
@@ -326,6 +378,5 @@ public interface DeviceRegistryOrBuilder extends
    *
    * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
    */
-  com.google.cloud.iot.v1.RegistryCredentialOrBuilder getCredentialsOrBuilder(
-      int index);
+  com.google.cloud.iot.v1.RegistryCredentialOrBuilder getCredentialsOrBuilder(int index);
 }

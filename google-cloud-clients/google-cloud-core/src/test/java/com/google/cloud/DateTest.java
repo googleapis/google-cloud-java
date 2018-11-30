@@ -19,14 +19,12 @@ package com.google.cloud;
 import static com.google.common.testing.SerializableTester.reserializeAndAssert;
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.common.testing.EqualsTester;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-
-import com.google.common.testing.EqualsTester;
 
 /** Unit tests for {@link Date}. */
 @RunWith(JUnit4.class)

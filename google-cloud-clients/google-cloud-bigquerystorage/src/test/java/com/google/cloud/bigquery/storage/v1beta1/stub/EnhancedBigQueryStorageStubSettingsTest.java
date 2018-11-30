@@ -60,19 +60,10 @@ public class EnhancedBigQueryStorageStubSettingsTest {
             .setStreamWatchdogCheckInterval(watchdogInterval)
             .setStreamWatchdogProvider(watchdogProvider);
 
-    verifyBuilder(
-        builder,
-        endpoint,
-        credentialsProvider,
-        watchdogInterval,
-        watchdogProvider);
+    verifyBuilder(builder, endpoint, credentialsProvider, watchdogInterval, watchdogProvider);
 
     verifySettings(
-        builder.build(),
-        endpoint,
-        credentialsProvider,
-        watchdogInterval,
-        watchdogProvider);
+        builder.build(), endpoint, credentialsProvider, watchdogInterval, watchdogProvider);
 
     verifyBuilder(
         builder.build().toBuilder(),
@@ -146,7 +137,8 @@ public class EnhancedBigQueryStorageStubSettingsTest {
     UnaryCallSettings.Builder<
             BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
         builder =
-        EnhancedBigQueryStorageStubSettings.newBuilder().batchCreateReadSessionStreamsSettings();
+            EnhancedBigQueryStorageStubSettings.newBuilder()
+                .batchCreateReadSessionStreamsSettings();
     verifyRetrySettings(builder.getRetryableCodes(), builder.getRetrySettings());
   }
 

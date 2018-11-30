@@ -34,10 +34,12 @@ public class CreateSubscriptionAndConsumeMessages {
 
   public static void main(String... args) throws Exception {
     ProjectTopicName topic = ProjectTopicName.of("my-project-id", "my-topic-id");
-    ProjectSubscriptionName subscription = ProjectSubscriptionName.of("my-project-id", "my-subscription-id");
+    ProjectSubscriptionName subscription =
+        ProjectSubscriptionName.of("my-project-id", "my-subscription-id");
 
     try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
-      subscriptionAdminClient.createSubscription(subscription, topic, PushConfig.getDefaultInstance(), 0);
+      subscriptionAdminClient.createSubscription(
+          subscription, topic, PushConfig.getDefaultInstance(), 0);
     }
 
     MessageReceiver receiver =
@@ -55,7 +57,8 @@ public class CreateSubscriptionAndConsumeMessages {
           new Subscriber.Listener() {
             @Override
             public void failed(Subscriber.State from, Throwable failure) {
-              // Handle failure. This is called when the Subscriber encountered a fatal error and is shutting down.
+              // Handle failure. This is called when the Subscriber encountered a fatal error and is
+              // shutting down.
               System.err.println(failure);
             }
           },

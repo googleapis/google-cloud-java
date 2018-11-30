@@ -125,9 +125,7 @@ public class ReadRowsRetryTest {
             .respondWithStatus(Code.UNAVAILABLE));
 
     service.expectations.add(
-        RpcExpectation.create()
-            .expectRequest("fake-stream", 22)
-            .respondWithNumberOfRows(6));
+        RpcExpectation.create().expectRequest("fake-stream", 22).respondWithNumberOfRows(6));
 
     Assert.assertEquals(28, getRowCount(request));
   }
@@ -154,9 +152,7 @@ public class ReadRowsRetryTest {
             .respondWithStatus(Code.UNAVAILABLE));
 
     service.expectations.add(
-        RpcExpectation.create()
-            .expectRequest("fake-stream", 39)
-            .respondWithNumberOfRows(3));
+        RpcExpectation.create().expectRequest("fake-stream", 39).respondWithNumberOfRows(3));
 
     Assert.assertEquals(25, getRowCount(request));
   }
@@ -172,9 +168,7 @@ public class ReadRowsRetryTest {
             .respondWithStatus(Code.UNAVAILABLE));
 
     service.expectations.add(
-        RpcExpectation.create()
-            .expectRequest("fake-stream", 17)
-            .respondWithNumberOfRows(0));
+        RpcExpectation.create().expectRequest("fake-stream", 17).respondWithNumberOfRows(0));
 
     Assert.assertEquals(17, getRowCount(request));
   }
@@ -200,13 +194,16 @@ public class ReadRowsRetryTest {
       RpcExpectation expectedRpc = expectations.poll();
       currentRequestIndex++;
 
-      Assert.assertNotNull("Unexpected request #" + currentRequestIndex + ": " + request.toString(),
-          expectedRpc);
+      Assert.assertNotNull(
+          "Unexpected request #" + currentRequestIndex + ": " + request.toString(), expectedRpc);
 
       Assert.assertEquals(
-          "Expected request #" + currentRequestIndex + " does not match actual request: "
+          "Expected request #"
+              + currentRequestIndex
+              + " does not match actual request: "
               + request.toString(),
-          expectedRpc.expectedRequest, request);
+          expectedRpc.expectedRequest,
+          request);
 
       for (ReadRowsResponse response : expectedRpc.responses) {
         responseObserver.onNext(response);

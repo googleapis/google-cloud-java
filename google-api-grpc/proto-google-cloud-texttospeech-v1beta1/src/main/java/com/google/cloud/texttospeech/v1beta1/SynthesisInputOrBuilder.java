@@ -3,11 +3,14 @@
 
 package com.google.cloud.texttospeech.v1beta1;
 
-public interface SynthesisInputOrBuilder extends
+public interface SynthesisInputOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.texttospeech.v1beta1.SynthesisInput)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The raw text to be synthesized.
    * </pre>
@@ -16,16 +19,19 @@ public interface SynthesisInputOrBuilder extends
    */
   java.lang.String getText();
   /**
+   *
+   *
    * <pre>
    * The raw text to be synthesized.
    * </pre>
    *
    * <code>string text = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getTextBytes();
+  com.google.protobuf.ByteString getTextBytes();
 
   /**
+   *
+   *
    * <pre>
    * The SSML document to be synthesized. The SSML document must be valid
    * and well-formed. Otherwise the RPC will fail and return
@@ -37,6 +43,8 @@ public interface SynthesisInputOrBuilder extends
    */
   java.lang.String getSsml();
   /**
+   *
+   *
    * <pre>
    * The SSML document to be synthesized. The SSML document must be valid
    * and well-formed. Otherwise the RPC will fail and return
@@ -46,8 +54,7 @@ public interface SynthesisInputOrBuilder extends
    *
    * <code>string ssml = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getSsmlBytes();
+  com.google.protobuf.ByteString getSsmlBytes();
 
   public com.google.cloud.texttospeech.v1beta1.SynthesisInput.InputSourceCase getInputSourceCase();
 }

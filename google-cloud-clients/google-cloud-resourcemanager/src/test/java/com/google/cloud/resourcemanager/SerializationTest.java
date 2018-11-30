@@ -20,22 +20,22 @@ import com.google.cloud.BaseSerializationTest;
 import com.google.cloud.PageImpl;
 import com.google.cloud.Restorable;
 import com.google.common.collect.ImmutableMap;
-
 import java.io.Serializable;
 import java.util.Collections;
 
 public class SerializationTest extends BaseSerializationTest {
 
-private static final ResourceManager RESOURCE_MANAGER =
+  private static final ResourceManager RESOURCE_MANAGER =
       ResourceManagerOptions.getDefaultInstance().getService();
   private static final ProjectInfo PARTIAL_PROJECT_INFO = ProjectInfo.newBuilder("id1").build();
-  private static final ProjectInfo FULL_PROJECT_INFO = ProjectInfo.newBuilder("id")
-      .setName("name")
-      .setLabels(ImmutableMap.of("key", "value"))
-      .setProjectNumber(123L)
-      .setState(ProjectInfo.State.ACTIVE)
-      .setCreateTimeMillis(1234L)
-      .build();
+  private static final ProjectInfo FULL_PROJECT_INFO =
+      ProjectInfo.newBuilder("id")
+          .setName("name")
+          .setLabels(ImmutableMap.of("key", "value"))
+          .setProjectNumber(123L)
+          .setState(ProjectInfo.State.ACTIVE)
+          .setCreateTimeMillis(1234L)
+          .build();
   private static final Project PROJECT =
       new Project(RESOURCE_MANAGER, new ProjectInfo.BuilderImpl(FULL_PROJECT_INFO));
   private static final PageImpl<Project> PAGE_RESULT =
@@ -50,11 +50,19 @@ private static final ResourceManager RESOURCE_MANAGER =
   @Override
   protected Serializable[] serializableObjects() {
     ResourceManagerOptions options = ResourceManagerOptions.newBuilder().build();
-    ResourceManagerOptions otherOptions = options.toBuilder()
-        .setProjectId("some-unnecessary-project-ID")
-        .build();
-    return new Serializable[]{PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, PROJECT, PAGE_RESULT,
-        PROJECT_GET_OPTION, PROJECT_LIST_OPTION, RESOURCE_MANAGER_EXCEPTION, options, otherOptions};
+    ResourceManagerOptions otherOptions =
+        options.toBuilder().setProjectId("some-unnecessary-project-ID").build();
+    return new Serializable[] {
+      PARTIAL_PROJECT_INFO,
+      FULL_PROJECT_INFO,
+      PROJECT,
+      PAGE_RESULT,
+      PROJECT_GET_OPTION,
+      PROJECT_LIST_OPTION,
+      RESOURCE_MANAGER_EXCEPTION,
+      options,
+      otherOptions
+    };
   }
 
   @Override

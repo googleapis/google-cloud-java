@@ -295,8 +295,8 @@ public interface ComputeRpc extends ServiceRpc {
    * @return a zone operation for snapshot creation
    * @throws ComputeException upon failure
    */
-  Operation createSnapshot(String zone, String disk, String snapshot, String description,
-      Map<Option, ?> options);
+  Operation createSnapshot(
+      String zone, String disk, String snapshot, String description, Map<Option, ?> options);
 
   /**
    * Returns the requested snapshot or {@code null} if not found.
@@ -361,8 +361,8 @@ public interface ComputeRpc extends ServiceRpc {
    *     image was not found
    * @throws ComputeException upon failure
    */
-  Operation deprecateImage(String project, String image, DeprecationStatus deprecationStatus,
-      Map<Option, ?> options);
+  Operation deprecateImage(
+      String project, String image, DeprecationStatus deprecationStatus, Map<Option, ?> options);
 
   /**
    * Returns the requested disk or {@code null} if not found.
@@ -526,8 +526,12 @@ public interface ComputeRpc extends ServiceRpc {
    *     was not found
    * @throws ComputeException upon failure
    */
-  Operation addAccessConfig(String zone, String instance, String networkInterface,
-      AccessConfig accessConfig, Map<Option, ?> options);
+  Operation addAccessConfig(
+      String zone,
+      String instance,
+      String networkInterface,
+      AccessConfig accessConfig,
+      Map<Option, ?> options);
 
   /**
    * Attaches a disk to an instance.
@@ -536,8 +540,8 @@ public interface ComputeRpc extends ServiceRpc {
    *     instance was not found
    * @throws ComputeException upon failure
    */
-  Operation attachDisk(String zone, String instance, AttachedDisk attachedDisk,
-      Map<Option, ?> options);
+  Operation attachDisk(
+      String zone, String instance, AttachedDisk attachedDisk, Map<Option, ?> options);
 
   /**
    * Deletes an access configuration from an instance's network interface.
@@ -546,8 +550,12 @@ public interface ComputeRpc extends ServiceRpc {
    *     instance was not found
    * @throws ComputeException upon failure
    */
-  Operation deleteAccessConfig(String zone, String instance, String networkInterface,
-      String accessConfig, Map<Option, ?> options);
+  Operation deleteAccessConfig(
+      String zone,
+      String instance,
+      String networkInterface,
+      String accessConfig,
+      Map<Option, ?> options);
 
   /**
    * Detaches a disk from an instance.
@@ -584,8 +592,8 @@ public interface ComputeRpc extends ServiceRpc {
    *     instance was not found
    * @throws ComputeException upon failure
    */
-  Operation setDiskAutoDelete(String zone, String instance, String deviceName, boolean autoDelete,
-      Map<Option, ?> options);
+  Operation setDiskAutoDelete(
+      String zone, String instance, String deviceName, boolean autoDelete, Map<Option, ?> options);
 
   /**
    * Sets the machine type for the provided instance. Instance must be in {@code TERMINATED} state
@@ -593,14 +601,14 @@ public interface ComputeRpc extends ServiceRpc {
    *
    * @param zone name of the zone in which the instance resides
    * @param instance name of the instance
-   * @param machineTypeUrl full or partial URL of the machine type resource. For example
-   *     {@code zones/us-central1-f/machineTypes/n1-standard-1}.
+   * @param machineTypeUrl full or partial URL of the machine type resource. For example {@code
+   *     zones/us-central1-f/machineTypes/n1-standard-1}.
    * @return a zone operation if the set request was issued correctly, {@code null} if the instance
    *     was not found
    * @throws ComputeException upon failure
    */
-  Operation setMachineType(String zone, String instance, String machineTypeUrl,
-      Map<Option, ?> options);
+  Operation setMachineType(
+      String zone, String instance, String machineTypeUrl, Map<Option, ?> options);
 
   /**
    * Sets the metadata for the provided instance.
@@ -618,8 +626,8 @@ public interface ComputeRpc extends ServiceRpc {
    *     was not found
    * @throws ComputeException upon failure
    */
-  Operation setScheduling(String zone, String instance, Scheduling scheduling,
-      Map<Option, ?> options);
+  Operation setScheduling(
+      String zone, String instance, Scheduling scheduling, Map<Option, ?> options);
 
   /**
    * Sets the tags for the provided instance.

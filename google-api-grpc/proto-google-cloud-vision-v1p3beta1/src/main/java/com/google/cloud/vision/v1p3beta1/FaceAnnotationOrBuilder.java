@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface FaceAnnotationOrBuilder extends
+public interface FaceAnnotationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.FaceAnnotation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The bounding polygon around the face. The coordinates of the bounding box
    * are in the original image's scale, as returned in `ImageParams`.
@@ -22,6 +25,8 @@ public interface FaceAnnotationOrBuilder extends
    */
   boolean hasBoundingPoly();
   /**
+   *
+   *
    * <pre>
    * The bounding polygon around the face. The coordinates of the bounding box
    * are in the original image's scale, as returned in `ImageParams`.
@@ -36,6 +41,8 @@ public interface FaceAnnotationOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.BoundingPoly getBoundingPoly();
   /**
+   *
+   *
    * <pre>
    * The bounding polygon around the face. The coordinates of the bounding box
    * are in the original image's scale, as returned in `ImageParams`.
@@ -51,6 +58,8 @@ public interface FaceAnnotationOrBuilder extends
   com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The `fd_bounding_poly` bounding polygon is tighter than the
    * `boundingPoly`, and encloses only the skin part of the face. Typically, it
@@ -64,6 +73,8 @@ public interface FaceAnnotationOrBuilder extends
    */
   boolean hasFdBoundingPoly();
   /**
+   *
+   *
    * <pre>
    * The `fd_bounding_poly` bounding polygon is tighter than the
    * `boundingPoly`, and encloses only the skin part of the face. Typically, it
@@ -77,6 +88,8 @@ public interface FaceAnnotationOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.BoundingPoly getFdBoundingPoly();
   /**
+   *
+   *
    * <pre>
    * The `fd_bounding_poly` bounding polygon is tighter than the
    * `boundingPoly`, and encloses only the skin part of the face. Typically, it
@@ -91,15 +104,18 @@ public interface FaceAnnotationOrBuilder extends
   com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder getFdBoundingPolyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Detected face landmarks.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark landmarks = 3;</code>
    */
-  java.util.List<com.google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark> 
-      getLandmarksList();
+  java.util.List<com.google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark> getLandmarksList();
   /**
+   *
+   *
    * <pre>
    * Detected face landmarks.
    * </pre>
@@ -108,6 +124,8 @@ public interface FaceAnnotationOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark getLandmarks(int index);
   /**
+   *
+   *
    * <pre>
    * Detected face landmarks.
    * </pre>
@@ -116,15 +134,19 @@ public interface FaceAnnotationOrBuilder extends
    */
   int getLandmarksCount();
   /**
+   *
+   *
    * <pre>
    * Detected face landmarks.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark landmarks = 3;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1p3beta1.FaceAnnotation.LandmarkOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1p3beta1.FaceAnnotation.LandmarkOrBuilder>
       getLandmarksOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Detected face landmarks.
    * </pre>
@@ -135,6 +157,8 @@ public interface FaceAnnotationOrBuilder extends
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Roll angle, which indicates the amount of clockwise/anti-clockwise rotation
    * of the face relative to the image vertical about the axis perpendicular to
@@ -146,6 +170,8 @@ public interface FaceAnnotationOrBuilder extends
   float getRollAngle();
 
   /**
+   *
+   *
    * <pre>
    * Yaw angle, which indicates the leftward/rightward angle that the face is
    * pointing relative to the vertical plane perpendicular to the image. Range
@@ -157,6 +183,8 @@ public interface FaceAnnotationOrBuilder extends
   float getPanAngle();
 
   /**
+   *
+   *
    * <pre>
    * Pitch angle, which indicates the upwards/downwards angle that the face is
    * pointing relative to the image's horizontal plane. Range [-180,180].
@@ -167,6 +195,8 @@ public interface FaceAnnotationOrBuilder extends
   float getTiltAngle();
 
   /**
+   *
+   *
    * <pre>
    * Detection confidence. Range [0, 1].
    * </pre>
@@ -176,6 +206,8 @@ public interface FaceAnnotationOrBuilder extends
   float getDetectionConfidence();
 
   /**
+   *
+   *
    * <pre>
    * Face landmarking confidence. Range [0, 1].
    * </pre>
@@ -185,6 +217,8 @@ public interface FaceAnnotationOrBuilder extends
   float getLandmarkingConfidence();
 
   /**
+   *
+   *
    * <pre>
    * Joy likelihood.
    * </pre>
@@ -193,6 +227,8 @@ public interface FaceAnnotationOrBuilder extends
    */
   int getJoyLikelihoodValue();
   /**
+   *
+   *
    * <pre>
    * Joy likelihood.
    * </pre>
@@ -202,6 +238,8 @@ public interface FaceAnnotationOrBuilder extends
   com.google.cloud.vision.v1p3beta1.Likelihood getJoyLikelihood();
 
   /**
+   *
+   *
    * <pre>
    * Sorrow likelihood.
    * </pre>
@@ -210,6 +248,8 @@ public interface FaceAnnotationOrBuilder extends
    */
   int getSorrowLikelihoodValue();
   /**
+   *
+   *
    * <pre>
    * Sorrow likelihood.
    * </pre>
@@ -219,6 +259,8 @@ public interface FaceAnnotationOrBuilder extends
   com.google.cloud.vision.v1p3beta1.Likelihood getSorrowLikelihood();
 
   /**
+   *
+   *
    * <pre>
    * Anger likelihood.
    * </pre>
@@ -227,6 +269,8 @@ public interface FaceAnnotationOrBuilder extends
    */
   int getAngerLikelihoodValue();
   /**
+   *
+   *
    * <pre>
    * Anger likelihood.
    * </pre>
@@ -236,6 +280,8 @@ public interface FaceAnnotationOrBuilder extends
   com.google.cloud.vision.v1p3beta1.Likelihood getAngerLikelihood();
 
   /**
+   *
+   *
    * <pre>
    * Surprise likelihood.
    * </pre>
@@ -244,6 +290,8 @@ public interface FaceAnnotationOrBuilder extends
    */
   int getSurpriseLikelihoodValue();
   /**
+   *
+   *
    * <pre>
    * Surprise likelihood.
    * </pre>
@@ -253,6 +301,8 @@ public interface FaceAnnotationOrBuilder extends
   com.google.cloud.vision.v1p3beta1.Likelihood getSurpriseLikelihood();
 
   /**
+   *
+   *
    * <pre>
    * Under-exposed likelihood.
    * </pre>
@@ -261,6 +311,8 @@ public interface FaceAnnotationOrBuilder extends
    */
   int getUnderExposedLikelihoodValue();
   /**
+   *
+   *
    * <pre>
    * Under-exposed likelihood.
    * </pre>
@@ -270,6 +322,8 @@ public interface FaceAnnotationOrBuilder extends
   com.google.cloud.vision.v1p3beta1.Likelihood getUnderExposedLikelihood();
 
   /**
+   *
+   *
    * <pre>
    * Blurred likelihood.
    * </pre>
@@ -278,6 +332,8 @@ public interface FaceAnnotationOrBuilder extends
    */
   int getBlurredLikelihoodValue();
   /**
+   *
+   *
    * <pre>
    * Blurred likelihood.
    * </pre>
@@ -287,6 +343,8 @@ public interface FaceAnnotationOrBuilder extends
   com.google.cloud.vision.v1p3beta1.Likelihood getBlurredLikelihood();
 
   /**
+   *
+   *
    * <pre>
    * Headwear likelihood.
    * </pre>
@@ -295,6 +353,8 @@ public interface FaceAnnotationOrBuilder extends
    */
   int getHeadwearLikelihoodValue();
   /**
+   *
+   *
    * <pre>
    * Headwear likelihood.
    * </pre>

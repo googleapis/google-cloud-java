@@ -4,31 +4,34 @@
 package com.google.devtools.clouderrorreporting.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Contains a set of requested error group stats.
  * </pre>
  *
  * Protobuf type {@code google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse}
  */
-public  final class ListGroupStatsResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListGroupStatsResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse)
     ListGroupStatsResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListGroupStatsResponse.newBuilder() to construct.
   private ListGroupStatsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListGroupStatsResponse() {
     errorGroupStats_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListGroupStatsResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,48 +51,55 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              errorGroupStats_ = new java.util.ArrayList<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                errorGroupStats_ =
+                    new java.util.ArrayList<
+                        com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              errorGroupStats_.add(
+                  input.readMessage(
+                      com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.parser(),
+                      extensionRegistry));
+              break;
             }
-            errorGroupStats_.add(
-                input.readMessage(com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.parser(), extensionRegistry));
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            nextPageToken_ = s;
-            break;
-          }
-          case 34: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (timeRangeBegin_ != null) {
-              subBuilder = timeRangeBegin_.toBuilder();
+              nextPageToken_ = s;
+              break;
             }
-            timeRangeBegin_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(timeRangeBegin_);
-              timeRangeBegin_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (timeRangeBegin_ != null) {
+                subBuilder = timeRangeBegin_.toBuilder();
+              }
+              timeRangeBegin_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(timeRangeBegin_);
+                timeRangeBegin_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         errorGroupStats_ = java.util.Collections.unmodifiableList(errorGroupStats_);
@@ -98,78 +108,107 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ListGroupStatsResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto
+        .internal_static_google_devtools_clouderrorreporting_v1beta1_ListGroupStatsResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ListGroupStatsResponse_fieldAccessorTable
+    return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto
+        .internal_static_google_devtools_clouderrorreporting_v1beta1_ListGroupStatsResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse.class, com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse.Builder.class);
+            com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse.class,
+            com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse.Builder.class);
   }
 
   private int bitField0_;
   public static final int ERROR_GROUP_STATS_FIELD_NUMBER = 1;
-  private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats> errorGroupStats_;
+  private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats>
+      errorGroupStats_;
   /**
+   *
+   *
    * <pre>
    * The error group stats which match the given request.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+   * </code>
    */
-  public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats> getErrorGroupStatsList() {
+  public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats>
+      getErrorGroupStatsList() {
     return errorGroupStats_;
   }
   /**
+   *
+   *
    * <pre>
    * The error group stats which match the given request.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+   * </code>
    */
-  public java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder> 
+  public java.util.List<
+          ? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder>
       getErrorGroupStatsOrBuilderList() {
     return errorGroupStats_;
   }
   /**
+   *
+   *
    * <pre>
    * The error group stats which match the given request.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+   * </code>
    */
   public int getErrorGroupStatsCount() {
     return errorGroupStats_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The error group stats which match the given request.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+   * </code>
    */
-  public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats getErrorGroupStats(int index) {
+  public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats getErrorGroupStats(
+      int index) {
     return errorGroupStats_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The error group stats which match the given request.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+   * </code>
    */
-  public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder getErrorGroupStatsOrBuilder(
-      int index) {
+  public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder
+      getErrorGroupStatsOrBuilder(int index) {
     return errorGroupStats_.get(index);
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
   private volatile java.lang.Object nextPageToken_;
   /**
+   *
+   *
    * <pre>
    * If non-empty, more results are available.
    * Pass this token, along with the same query parameters as the first
@@ -183,14 +222,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       nextPageToken_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * If non-empty, more results are available.
    * Pass this token, along with the same query parameters as the first
@@ -199,13 +239,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string next_page_token = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getNextPageTokenBytes() {
+  public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       nextPageToken_ = b;
       return b;
     } else {
@@ -216,6 +254,8 @@ private static final long serialVersionUID = 0L;
   public static final int TIME_RANGE_BEGIN_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp timeRangeBegin_;
   /**
+   *
+   *
    * <pre>
    * The timestamp specifies the start time to which the request was restricted.
    * The start time is set based on the requested time range. It may be adjusted
@@ -229,6 +269,8 @@ private static final long serialVersionUID = 0L;
     return timeRangeBegin_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The timestamp specifies the start time to which the request was restricted.
    * The start time is set based on the requested time range. It may be adjusted
@@ -239,9 +281,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp time_range_begin = 4;</code>
    */
   public com.google.protobuf.Timestamp getTimeRangeBegin() {
-    return timeRangeBegin_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timeRangeBegin_;
+    return timeRangeBegin_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : timeRangeBegin_;
   }
   /**
+   *
+   *
    * <pre>
    * The timestamp specifies the start time to which the request was restricted.
    * The start time is set based on the requested time range. It may be adjusted
@@ -256,6 +302,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -267,8 +314,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < errorGroupStats_.size(); i++) {
       output.writeMessage(1, errorGroupStats_.get(i));
     }
@@ -288,15 +334,13 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < errorGroupStats_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, errorGroupStats_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, errorGroupStats_.get(i));
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     if (timeRangeBegin_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getTimeRangeBegin());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTimeRangeBegin());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -306,22 +350,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse)) {
       return super.equals(obj);
     }
-    com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse other = (com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse) obj;
+    com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse other =
+        (com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse) obj;
 
     boolean result = true;
-    result = result && getErrorGroupStatsList()
-        .equals(other.getErrorGroupStatsList());
-    result = result && getNextPageToken()
-        .equals(other.getNextPageToken());
+    result = result && getErrorGroupStatsList().equals(other.getErrorGroupStatsList());
+    result = result && getNextPageToken().equals(other.getNextPageToken());
     result = result && (hasTimeRangeBegin() == other.hasTimeRangeBegin());
     if (hasTimeRangeBegin()) {
-      result = result && getTimeRangeBegin()
-          .equals(other.getTimeRangeBegin());
+      result = result && getTimeRangeBegin().equals(other.getTimeRangeBegin());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -350,135 +392,147 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+  }
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse parseFrom(
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse prototype) {
+
+  public static Builder newBuilder(
+      com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Contains a set of requested error group stats.
    * </pre>
    *
    * Protobuf type {@code google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse)
       com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ListGroupStatsResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ListGroupStatsResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ListGroupStatsResponse_fieldAccessorTable
+      return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ListGroupStatsResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse.class, com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse.Builder.class);
+              com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse.class,
+              com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse.Builder.class);
     }
 
-    // Construct using com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse.newBuilder()
+    // Construct using
+    // com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getErrorGroupStatsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -500,19 +554,22 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ListGroupStatsResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ListGroupStatsResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse getDefaultInstanceForType() {
-      return com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse.getDefaultInstance();
+    public com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse
+        getDefaultInstanceForType() {
+      return com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse
+          .getDefaultInstance();
     }
 
     @java.lang.Override
     public com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse build() {
-      com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse result = buildPartial();
+      com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse result =
+          buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -521,7 +578,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse buildPartial() {
-      com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse result = new com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse(this);
+      com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse result =
+          new com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (errorGroupStatsBuilder_ == null) {
@@ -548,46 +606,51 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse) {
-        return mergeFrom((com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse)other);
+        return mergeFrom(
+            (com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse other) {
-      if (other == com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse other) {
+      if (other
+          == com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse
+              .getDefaultInstance()) return this;
       if (errorGroupStatsBuilder_ == null) {
         if (!other.errorGroupStats_.isEmpty()) {
           if (errorGroupStats_.isEmpty()) {
@@ -606,9 +669,10 @@ private static final long serialVersionUID = 0L;
             errorGroupStatsBuilder_ = null;
             errorGroupStats_ = other.errorGroupStats_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            errorGroupStatsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getErrorGroupStatsFieldBuilder() : null;
+            errorGroupStatsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getErrorGroupStatsFieldBuilder()
+                    : null;
           } else {
             errorGroupStatsBuilder_.addAllMessages(other.errorGroupStats_);
           }
@@ -640,7 +704,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -649,28 +715,40 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
-    private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats> errorGroupStats_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats>
+        errorGroupStats_ = java.util.Collections.emptyList();
+
     private void ensureErrorGroupStatsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        errorGroupStats_ = new java.util.ArrayList<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats>(errorGroupStats_);
+        errorGroupStats_ =
+            new java.util.ArrayList<
+                com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats>(errorGroupStats_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder> errorGroupStatsBuilder_;
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats,
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder,
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder>
+        errorGroupStatsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The error group stats which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+     * </code>
      */
-    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats> getErrorGroupStatsList() {
+    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats>
+        getErrorGroupStatsList() {
       if (errorGroupStatsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(errorGroupStats_);
       } else {
@@ -678,11 +756,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The error group stats which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+     * </code>
      */
     public int getErrorGroupStatsCount() {
       if (errorGroupStatsBuilder_ == null) {
@@ -692,13 +774,18 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The error group stats which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+     * </code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats getErrorGroupStats(int index) {
+    public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats getErrorGroupStats(
+        int index) {
       if (errorGroupStatsBuilder_ == null) {
         return errorGroupStats_.get(index);
       } else {
@@ -706,11 +793,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The error group stats which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+     * </code>
      */
     public Builder setErrorGroupStats(
         int index, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats value) {
@@ -727,14 +818,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The error group stats which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+     * </code>
      */
     public Builder setErrorGroupStats(
-        int index, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder builderForValue) {
+        int index,
+        com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder builderForValue) {
       if (errorGroupStatsBuilder_ == null) {
         ensureErrorGroupStatsIsMutable();
         errorGroupStats_.set(index, builderForValue.build());
@@ -745,13 +841,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The error group stats which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+     * </code>
      */
-    public Builder addErrorGroupStats(com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats value) {
+    public Builder addErrorGroupStats(
+        com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats value) {
       if (errorGroupStatsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -765,11 +866,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The error group stats which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+     * </code>
      */
     public Builder addErrorGroupStats(
         int index, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats value) {
@@ -786,11 +891,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The error group stats which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+     * </code>
      */
     public Builder addErrorGroupStats(
         com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder builderForValue) {
@@ -804,14 +913,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The error group stats which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+     * </code>
      */
     public Builder addErrorGroupStats(
-        int index, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder builderForValue) {
+        int index,
+        com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder builderForValue) {
       if (errorGroupStatsBuilder_ == null) {
         ensureErrorGroupStatsIsMutable();
         errorGroupStats_.add(index, builderForValue.build());
@@ -822,18 +936,23 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The error group stats which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+     * </code>
      */
     public Builder addAllErrorGroupStats(
-        java.lang.Iterable<? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats> values) {
+        java.lang.Iterable<
+                ? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats>
+            values) {
       if (errorGroupStatsBuilder_ == null) {
         ensureErrorGroupStatsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, errorGroupStats_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, errorGroupStats_);
         onChanged();
       } else {
         errorGroupStatsBuilder_.addAllMessages(values);
@@ -841,11 +960,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The error group stats which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+     * </code>
      */
     public Builder clearErrorGroupStats() {
       if (errorGroupStatsBuilder_ == null) {
@@ -858,11 +981,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The error group stats which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+     * </code>
      */
     public Builder removeErrorGroupStats(int index) {
       if (errorGroupStatsBuilder_ == null) {
@@ -875,39 +1002,53 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The error group stats which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+     * </code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder getErrorGroupStatsBuilder(
-        int index) {
+    public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder
+        getErrorGroupStatsBuilder(int index) {
       return getErrorGroupStatsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The error group stats which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+     * </code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder getErrorGroupStatsOrBuilder(
-        int index) {
+    public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder
+        getErrorGroupStatsOrBuilder(int index) {
       if (errorGroupStatsBuilder_ == null) {
-        return errorGroupStats_.get(index);  } else {
+        return errorGroupStats_.get(index);
+      } else {
         return errorGroupStatsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The error group stats which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+     * </code>
      */
-    public java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder> 
-         getErrorGroupStatsOrBuilderList() {
+    public java.util.List<
+            ? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder>
+        getErrorGroupStatsOrBuilderList() {
       if (errorGroupStatsBuilder_ != null) {
         return errorGroupStatsBuilder_.getMessageOrBuilderList();
       } else {
@@ -915,45 +1056,67 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The error group stats which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+     * </code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder addErrorGroupStatsBuilder() {
-      return getErrorGroupStatsFieldBuilder().addBuilder(
-          com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.getDefaultInstance());
+    public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder
+        addErrorGroupStatsBuilder() {
+      return getErrorGroupStatsFieldBuilder()
+          .addBuilder(
+              com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The error group stats which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+     * </code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder addErrorGroupStatsBuilder(
-        int index) {
-      return getErrorGroupStatsFieldBuilder().addBuilder(
-          index, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.getDefaultInstance());
+    public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder
+        addErrorGroupStatsBuilder(int index) {
+      return getErrorGroupStatsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The error group stats which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+     * </code>
      */
-    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder> 
-         getErrorGroupStatsBuilderList() {
+    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder>
+        getErrorGroupStatsBuilderList() {
       return getErrorGroupStatsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder> 
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats,
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder,
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder>
         getErrorGroupStatsFieldBuilder() {
       if (errorGroupStatsBuilder_ == null) {
-        errorGroupStatsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder>(
+        errorGroupStatsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats,
+                com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats.Builder,
+                com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder>(
                 errorGroupStats_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -965,6 +1128,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nextPageToken_ = "";
     /**
+     *
+     *
      * <pre>
      * If non-empty, more results are available.
      * Pass this token, along with the same query parameters as the first
@@ -976,8 +1141,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         nextPageToken_ = s;
         return s;
@@ -986,6 +1150,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If non-empty, more results are available.
      * Pass this token, along with the same query parameters as the first
@@ -994,13 +1160,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getNextPageTokenBytes() {
+    public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         nextPageToken_ = b;
         return b;
       } else {
@@ -1008,6 +1172,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If non-empty, more results are available.
      * Pass this token, along with the same query parameters as the first
@@ -1016,17 +1182,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public Builder setNextPageToken(
-        java.lang.String value) {
+    public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       nextPageToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If non-empty, more results are available.
      * Pass this token, along with the same query parameters as the first
@@ -1036,12 +1203,14 @@ private static final long serialVersionUID = 0L;
      * <code>string next_page_token = 2;</code>
      */
     public Builder clearNextPageToken() {
-      
+
       nextPageToken_ = getDefaultInstance().getNextPageToken();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If non-empty, more results are available.
      * Pass this token, along with the same query parameters as the first
@@ -1050,13 +1219,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public Builder setNextPageTokenBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       nextPageToken_ = value;
       onChanged();
       return this;
@@ -1064,8 +1232,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp timeRangeBegin_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timeRangeBeginBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        timeRangeBeginBuilder_;
     /**
+     *
+     *
      * <pre>
      * The timestamp specifies the start time to which the request was restricted.
      * The start time is set based on the requested time range. It may be adjusted
@@ -1079,6 +1252,8 @@ private static final long serialVersionUID = 0L;
       return timeRangeBeginBuilder_ != null || timeRangeBegin_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp specifies the start time to which the request was restricted.
      * The start time is set based on the requested time range. It may be adjusted
@@ -1090,12 +1265,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getTimeRangeBegin() {
       if (timeRangeBeginBuilder_ == null) {
-        return timeRangeBegin_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timeRangeBegin_;
+        return timeRangeBegin_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : timeRangeBegin_;
       } else {
         return timeRangeBeginBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp specifies the start time to which the request was restricted.
      * The start time is set based on the requested time range. It may be adjusted
@@ -1119,6 +1298,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp specifies the start time to which the request was restricted.
      * The start time is set based on the requested time range. It may be adjusted
@@ -1128,8 +1309,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp time_range_begin = 4;</code>
      */
-    public Builder setTimeRangeBegin(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setTimeRangeBegin(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (timeRangeBeginBuilder_ == null) {
         timeRangeBegin_ = builderForValue.build();
         onChanged();
@@ -1140,6 +1320,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp specifies the start time to which the request was restricted.
      * The start time is set based on the requested time range. It may be adjusted
@@ -1153,7 +1335,9 @@ private static final long serialVersionUID = 0L;
       if (timeRangeBeginBuilder_ == null) {
         if (timeRangeBegin_ != null) {
           timeRangeBegin_ =
-            com.google.protobuf.Timestamp.newBuilder(timeRangeBegin_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(timeRangeBegin_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           timeRangeBegin_ = value;
         }
@@ -1165,6 +1349,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp specifies the start time to which the request was restricted.
      * The start time is set based on the requested time range. It may be adjusted
@@ -1186,6 +1372,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp specifies the start time to which the request was restricted.
      * The start time is set based on the requested time range. It may be adjusted
@@ -1196,11 +1384,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp time_range_begin = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getTimeRangeBeginBuilder() {
-      
+
       onChanged();
       return getTimeRangeBeginFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp specifies the start time to which the request was restricted.
      * The start time is set based on the requested time range. It may be adjusted
@@ -1214,11 +1404,14 @@ private static final long serialVersionUID = 0L;
       if (timeRangeBeginBuilder_ != null) {
         return timeRangeBeginBuilder_.getMessageOrBuilder();
       } else {
-        return timeRangeBegin_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : timeRangeBegin_;
+        return timeRangeBegin_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : timeRangeBegin_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp specifies the start time to which the request was restricted.
      * The start time is set based on the requested time range. It may be adjusted
@@ -1229,21 +1422,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp time_range_begin = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getTimeRangeBeginFieldBuilder() {
       if (timeRangeBeginBuilder_ == null) {
-        timeRangeBeginBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getTimeRangeBegin(),
-                getParentForChildren(),
-                isClean());
+        timeRangeBeginBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getTimeRangeBegin(), getParentForChildren(), isClean());
         timeRangeBegin_ = null;
       }
       return timeRangeBeginBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1253,30 +1449,32 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse)
-  private static final com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse DEFAULT_INSTANCE;
+  private static final com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse();
   }
 
-  public static com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse getDefaultInstance() {
+  public static com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListGroupStatsResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ListGroupStatsResponse>() {
-    @java.lang.Override
-    public ListGroupStatsResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListGroupStatsResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListGroupStatsResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ListGroupStatsResponse>() {
+        @java.lang.Override
+        public ListGroupStatsResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListGroupStatsResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListGroupStatsResponse> parser() {
     return PARSER;
@@ -1288,9 +1486,8 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse getDefaultInstanceForType() {
+  public com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

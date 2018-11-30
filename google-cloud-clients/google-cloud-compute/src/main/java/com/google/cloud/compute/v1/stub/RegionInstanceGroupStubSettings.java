@@ -102,11 +102,13 @@ public class RegionInstanceGroupStubSettings extends StubSettings<RegionInstance
   private final UnaryCallSettings<GetRegionInstanceGroupHttpRequest, InstanceGroup>
       getRegionInstanceGroupSettings;
   private final PagedCallSettings<
-          ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList,
+          ListRegionInstanceGroupsHttpRequest,
+          RegionInstanceGroupList,
           ListRegionInstanceGroupsPagedResponse>
       listRegionInstanceGroupsSettings;
   private final PagedCallSettings<
-          ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
+          ListInstancesRegionInstanceGroupsHttpRequest,
+          RegionInstanceGroupsListInstances,
           ListInstancesRegionInstanceGroupsPagedResponse>
       listInstancesRegionInstanceGroupsSettings;
   private final UnaryCallSettings<SetNamedPortsRegionInstanceGroupHttpRequest, Operation>
@@ -120,7 +122,8 @@ public class RegionInstanceGroupStubSettings extends StubSettings<RegionInstance
 
   /** Returns the object with the settings used for calls to listRegionInstanceGroups. */
   public PagedCallSettings<
-          ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList,
+          ListRegionInstanceGroupsHttpRequest,
+          RegionInstanceGroupList,
           ListRegionInstanceGroupsPagedResponse>
       listRegionInstanceGroupsSettings() {
     return listRegionInstanceGroupsSettings;
@@ -128,7 +131,8 @@ public class RegionInstanceGroupStubSettings extends StubSettings<RegionInstance
 
   /** Returns the object with the settings used for calls to listInstancesRegionInstanceGroups. */
   public PagedCallSettings<
-          ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
+          ListInstancesRegionInstanceGroupsHttpRequest,
+          RegionInstanceGroupsListInstances,
           ListInstancesRegionInstanceGroupsPagedResponse>
       listInstancesRegionInstanceGroupsSettings() {
     return listInstancesRegionInstanceGroupsSettings;
@@ -268,11 +272,13 @@ public class RegionInstanceGroupStubSettings extends StubSettings<RegionInstance
           };
 
   private static final PagedListDescriptor<
-          ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
+          ListInstancesRegionInstanceGroupsHttpRequest,
+          RegionInstanceGroupsListInstances,
           InstanceWithNamedPorts>
       LIST_INSTANCES_REGION_INSTANCE_GROUPS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
+              ListInstancesRegionInstanceGroupsHttpRequest,
+              RegionInstanceGroupsListInstances,
               InstanceWithNamedPorts>() {
             @Override
             public String emptyToken() {
@@ -315,11 +321,13 @@ public class RegionInstanceGroupStubSettings extends StubSettings<RegionInstance
           };
 
   private static final PagedListResponseFactory<
-          ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList,
+          ListRegionInstanceGroupsHttpRequest,
+          RegionInstanceGroupList,
           ListRegionInstanceGroupsPagedResponse>
       LIST_REGION_INSTANCE_GROUPS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList,
+              ListRegionInstanceGroupsHttpRequest,
+              RegionInstanceGroupList,
               ListRegionInstanceGroupsPagedResponse>() {
             @Override
             public ApiFuture<ListRegionInstanceGroupsPagedResponse> getFuturePagedResponse(
@@ -338,11 +346,13 @@ public class RegionInstanceGroupStubSettings extends StubSettings<RegionInstance
           };
 
   private static final PagedListResponseFactory<
-          ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
+          ListInstancesRegionInstanceGroupsHttpRequest,
+          RegionInstanceGroupsListInstances,
           ListInstancesRegionInstanceGroupsPagedResponse>
       LIST_INSTANCES_REGION_INSTANCE_GROUPS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
+              ListInstancesRegionInstanceGroupsHttpRequest,
+              RegionInstanceGroupsListInstances,
               ListInstancesRegionInstanceGroupsPagedResponse>() {
             @Override
             public ApiFuture<ListInstancesRegionInstanceGroupsPagedResponse> getFuturePagedResponse(
@@ -355,7 +365,8 @@ public class RegionInstanceGroupStubSettings extends StubSettings<RegionInstance
                 ApiFuture<RegionInstanceGroupsListInstances> futureResponse) {
               PageContext<
                       ListInstancesRegionInstanceGroupsHttpRequest,
-                      RegionInstanceGroupsListInstances, InstanceWithNamedPorts>
+                      RegionInstanceGroupsListInstances,
+                      InstanceWithNamedPorts>
                   pageContext =
                       PageContext.create(
                           callable,
@@ -375,11 +386,13 @@ public class RegionInstanceGroupStubSettings extends StubSettings<RegionInstance
     private final UnaryCallSettings.Builder<GetRegionInstanceGroupHttpRequest, InstanceGroup>
         getRegionInstanceGroupSettings;
     private final PagedCallSettings.Builder<
-            ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList,
+            ListRegionInstanceGroupsHttpRequest,
+            RegionInstanceGroupList,
             ListRegionInstanceGroupsPagedResponse>
         listRegionInstanceGroupsSettings;
     private final PagedCallSettings.Builder<
-            ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
+            ListInstancesRegionInstanceGroupsHttpRequest,
+            RegionInstanceGroupsListInstances,
             ListInstancesRegionInstanceGroupsPagedResponse>
         listInstancesRegionInstanceGroupsSettings;
     private final UnaryCallSettings.Builder<SetNamedPortsRegionInstanceGroupHttpRequest, Operation>
@@ -522,7 +535,8 @@ public class RegionInstanceGroupStubSettings extends StubSettings<RegionInstance
 
     /** Returns the builder for the settings used for calls to listRegionInstanceGroups. */
     public PagedCallSettings.Builder<
-            ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList,
+            ListRegionInstanceGroupsHttpRequest,
+            RegionInstanceGroupList,
             ListRegionInstanceGroupsPagedResponse>
         listRegionInstanceGroupsSettings() {
       return listRegionInstanceGroupsSettings;
@@ -530,7 +544,8 @@ public class RegionInstanceGroupStubSettings extends StubSettings<RegionInstance
 
     /** Returns the builder for the settings used for calls to listInstancesRegionInstanceGroups. */
     public PagedCallSettings.Builder<
-            ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
+            ListInstancesRegionInstanceGroupsHttpRequest,
+            RegionInstanceGroupsListInstances,
             ListInstancesRegionInstanceGroupsPagedResponse>
         listInstancesRegionInstanceGroupsSettings() {
       return listInstancesRegionInstanceGroupsSettings;

@@ -4,29 +4,31 @@
 package com.google.cloud.asset.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Output configuration for export assets destination.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1beta1.OutputConfig}
  */
-public  final class OutputConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1beta1.OutputConfig)
     OutputConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use OutputConfig.newBuilder() to construct.
   private OutputConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private OutputConfig() {
-  }
+
+  private OutputConfig() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private OutputConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46,65 +48,69 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.cloud.asset.v1beta1.GcsDestination.Builder subBuilder = null;
-            if (destinationCase_ == 1) {
-              subBuilder = ((com.google.cloud.asset.v1beta1.GcsDestination) destination_).toBuilder();
+          case 10:
+            {
+              com.google.cloud.asset.v1beta1.GcsDestination.Builder subBuilder = null;
+              if (destinationCase_ == 1) {
+                subBuilder =
+                    ((com.google.cloud.asset.v1beta1.GcsDestination) destination_).toBuilder();
+              }
+              destination_ =
+                  input.readMessage(
+                      com.google.cloud.asset.v1beta1.GcsDestination.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.asset.v1beta1.GcsDestination) destination_);
+                destination_ = subBuilder.buildPartial();
+              }
+              destinationCase_ = 1;
+              break;
             }
-            destination_ =
-                input.readMessage(com.google.cloud.asset.v1beta1.GcsDestination.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.asset.v1beta1.GcsDestination) destination_);
-              destination_ = subBuilder.buildPartial();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            destinationCase_ = 1;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.asset.v1beta1.AssetServiceProto.internal_static_google_cloud_asset_v1beta1_OutputConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.asset.v1beta1.AssetServiceProto
+        .internal_static_google_cloud_asset_v1beta1_OutputConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.asset.v1beta1.AssetServiceProto.internal_static_google_cloud_asset_v1beta1_OutputConfig_fieldAccessorTable
+    return com.google.cloud.asset.v1beta1.AssetServiceProto
+        .internal_static_google_cloud_asset_v1beta1_OutputConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.asset.v1beta1.OutputConfig.class, com.google.cloud.asset.v1beta1.OutputConfig.Builder.class);
+            com.google.cloud.asset.v1beta1.OutputConfig.class,
+            com.google.cloud.asset.v1beta1.OutputConfig.Builder.class);
   }
 
   private int destinationCase_ = 0;
   private java.lang.Object destination_;
-  public enum DestinationCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum DestinationCase implements com.google.protobuf.Internal.EnumLite {
     GCS_DESTINATION(1),
     DESTINATION_NOT_SET(0);
     private final int value;
+
     private DestinationCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static DestinationCase valueOf(int value) {
       return forNumber(value);
@@ -112,24 +118,28 @@ private static final long serialVersionUID = 0L;
 
     public static DestinationCase forNumber(int value) {
       switch (value) {
-        case 1: return GCS_DESTINATION;
-        case 0: return DESTINATION_NOT_SET;
-        default: return null;
+        case 1:
+          return GCS_DESTINATION;
+        case 0:
+          return DESTINATION_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public DestinationCase
-  getDestinationCase() {
-    return DestinationCase.forNumber(
-        destinationCase_);
+  public DestinationCase getDestinationCase() {
+    return DestinationCase.forNumber(destinationCase_);
   }
 
   public static final int GCS_DESTINATION_FIELD_NUMBER = 1;
   /**
+   *
+   *
    * <pre>
    * Destination on Cloud Storage.
    * </pre>
@@ -140,6 +150,8 @@ private static final long serialVersionUID = 0L;
     return destinationCase_ == 1;
   }
   /**
+   *
+   *
    * <pre>
    * Destination on Cloud Storage.
    * </pre>
@@ -148,11 +160,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.asset.v1beta1.GcsDestination getGcsDestination() {
     if (destinationCase_ == 1) {
-       return (com.google.cloud.asset.v1beta1.GcsDestination) destination_;
+      return (com.google.cloud.asset.v1beta1.GcsDestination) destination_;
     }
     return com.google.cloud.asset.v1beta1.GcsDestination.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Destination on Cloud Storage.
    * </pre>
@@ -161,12 +175,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.asset.v1beta1.GcsDestinationOrBuilder getGcsDestinationOrBuilder() {
     if (destinationCase_ == 1) {
-       return (com.google.cloud.asset.v1beta1.GcsDestination) destination_;
+      return (com.google.cloud.asset.v1beta1.GcsDestination) destination_;
     }
     return com.google.cloud.asset.v1beta1.GcsDestination.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -178,8 +193,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (destinationCase_ == 1) {
       output.writeMessage(1, (com.google.cloud.asset.v1beta1.GcsDestination) destination_);
     }
@@ -193,8 +207,9 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (destinationCase_ == 1) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, (com.google.cloud.asset.v1beta1.GcsDestination) destination_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              1, (com.google.cloud.asset.v1beta1.GcsDestination) destination_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -204,21 +219,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.asset.v1beta1.OutputConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.asset.v1beta1.OutputConfig other = (com.google.cloud.asset.v1beta1.OutputConfig) obj;
+    com.google.cloud.asset.v1beta1.OutputConfig other =
+        (com.google.cloud.asset.v1beta1.OutputConfig) obj;
 
     boolean result = true;
-    result = result && getDestinationCase().equals(
-        other.getDestinationCase());
+    result = result && getDestinationCase().equals(other.getDestinationCase());
     if (!result) return false;
     switch (destinationCase_) {
       case 1:
-        result = result && getGcsDestination()
-            .equals(other.getGcsDestination());
+        result = result && getGcsDestination().equals(other.getGcsDestination());
         break;
       case 0:
       default:
@@ -247,118 +261,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.asset.v1beta1.OutputConfig parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.asset.v1beta1.OutputConfig parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.asset.v1beta1.OutputConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.asset.v1beta1.OutputConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.asset.v1beta1.OutputConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.asset.v1beta1.OutputConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.asset.v1beta1.OutputConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.asset.v1beta1.OutputConfig parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.asset.v1beta1.OutputConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.asset.v1beta1.OutputConfig parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.asset.v1beta1.OutputConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.asset.v1beta1.OutputConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.asset.v1beta1.OutputConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.asset.v1beta1.OutputConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.asset.v1beta1.OutputConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Output configuration for export assets destination.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1beta1.OutputConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.asset.v1beta1.OutputConfig)
       com.google.cloud.asset.v1beta1.OutputConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.asset.v1beta1.AssetServiceProto.internal_static_google_cloud_asset_v1beta1_OutputConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.asset.v1beta1.AssetServiceProto
+          .internal_static_google_cloud_asset_v1beta1_OutputConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.asset.v1beta1.AssetServiceProto.internal_static_google_cloud_asset_v1beta1_OutputConfig_fieldAccessorTable
+      return com.google.cloud.asset.v1beta1.AssetServiceProto
+          .internal_static_google_cloud_asset_v1beta1_OutputConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.asset.v1beta1.OutputConfig.class, com.google.cloud.asset.v1beta1.OutputConfig.Builder.class);
+              com.google.cloud.asset.v1beta1.OutputConfig.class,
+              com.google.cloud.asset.v1beta1.OutputConfig.Builder.class);
     }
 
     // Construct using com.google.cloud.asset.v1beta1.OutputConfig.newBuilder()
@@ -366,16 +389,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -385,9 +407,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.asset.v1beta1.AssetServiceProto.internal_static_google_cloud_asset_v1beta1_OutputConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.asset.v1beta1.AssetServiceProto
+          .internal_static_google_cloud_asset_v1beta1_OutputConfig_descriptor;
     }
 
     @java.lang.Override
@@ -406,7 +428,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.asset.v1beta1.OutputConfig buildPartial() {
-      com.google.cloud.asset.v1beta1.OutputConfig result = new com.google.cloud.asset.v1beta1.OutputConfig(this);
+      com.google.cloud.asset.v1beta1.OutputConfig result =
+          new com.google.cloud.asset.v1beta1.OutputConfig(this);
       if (destinationCase_ == 1) {
         if (gcsDestinationBuilder_ == null) {
           result.destination_ = destination_;
@@ -423,38 +446,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.asset.v1beta1.OutputConfig) {
-        return mergeFrom((com.google.cloud.asset.v1beta1.OutputConfig)other);
+        return mergeFrom((com.google.cloud.asset.v1beta1.OutputConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -464,13 +488,15 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.asset.v1beta1.OutputConfig other) {
       if (other == com.google.cloud.asset.v1beta1.OutputConfig.getDefaultInstance()) return this;
       switch (other.getDestinationCase()) {
-        case GCS_DESTINATION: {
-          mergeGcsDestination(other.getGcsDestination());
-          break;
-        }
-        case DESTINATION_NOT_SET: {
-          break;
-        }
+        case GCS_DESTINATION:
+          {
+            mergeGcsDestination(other.getGcsDestination());
+            break;
+          }
+        case DESTINATION_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -500,12 +526,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int destinationCase_ = 0;
     private java.lang.Object destination_;
-    public DestinationCase
-        getDestinationCase() {
-      return DestinationCase.forNumber(
-          destinationCase_);
+
+    public DestinationCase getDestinationCase() {
+      return DestinationCase.forNumber(destinationCase_);
     }
 
     public Builder clearDestination() {
@@ -515,10 +541,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.asset.v1beta1.GcsDestination, com.google.cloud.asset.v1beta1.GcsDestination.Builder, com.google.cloud.asset.v1beta1.GcsDestinationOrBuilder> gcsDestinationBuilder_;
+            com.google.cloud.asset.v1beta1.GcsDestination,
+            com.google.cloud.asset.v1beta1.GcsDestination.Builder,
+            com.google.cloud.asset.v1beta1.GcsDestinationOrBuilder>
+        gcsDestinationBuilder_;
     /**
+     *
+     *
      * <pre>
      * Destination on Cloud Storage.
      * </pre>
@@ -529,6 +559,8 @@ private static final long serialVersionUID = 0L;
       return destinationCase_ == 1;
     }
     /**
+     *
+     *
      * <pre>
      * Destination on Cloud Storage.
      * </pre>
@@ -549,6 +581,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Destination on Cloud Storage.
      * </pre>
@@ -569,6 +603,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Destination on Cloud Storage.
      * </pre>
@@ -587,6 +623,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Destination on Cloud Storage.
      * </pre>
@@ -595,10 +633,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeGcsDestination(com.google.cloud.asset.v1beta1.GcsDestination value) {
       if (gcsDestinationBuilder_ == null) {
-        if (destinationCase_ == 1 &&
-            destination_ != com.google.cloud.asset.v1beta1.GcsDestination.getDefaultInstance()) {
-          destination_ = com.google.cloud.asset.v1beta1.GcsDestination.newBuilder((com.google.cloud.asset.v1beta1.GcsDestination) destination_)
-              .mergeFrom(value).buildPartial();
+        if (destinationCase_ == 1
+            && destination_ != com.google.cloud.asset.v1beta1.GcsDestination.getDefaultInstance()) {
+          destination_ =
+              com.google.cloud.asset.v1beta1.GcsDestination.newBuilder(
+                      (com.google.cloud.asset.v1beta1.GcsDestination) destination_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           destination_ = value;
         }
@@ -613,6 +654,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Destination on Cloud Storage.
      * </pre>
@@ -636,6 +679,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Destination on Cloud Storage.
      * </pre>
@@ -646,6 +691,8 @@ private static final long serialVersionUID = 0L;
       return getGcsDestinationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Destination on Cloud Storage.
      * </pre>
@@ -663,6 +710,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Destination on Cloud Storage.
      * </pre>
@@ -670,26 +719,32 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.asset.v1beta1.GcsDestination gcs_destination = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.asset.v1beta1.GcsDestination, com.google.cloud.asset.v1beta1.GcsDestination.Builder, com.google.cloud.asset.v1beta1.GcsDestinationOrBuilder> 
+            com.google.cloud.asset.v1beta1.GcsDestination,
+            com.google.cloud.asset.v1beta1.GcsDestination.Builder,
+            com.google.cloud.asset.v1beta1.GcsDestinationOrBuilder>
         getGcsDestinationFieldBuilder() {
       if (gcsDestinationBuilder_ == null) {
         if (!(destinationCase_ == 1)) {
           destination_ = com.google.cloud.asset.v1beta1.GcsDestination.getDefaultInstance();
         }
-        gcsDestinationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.asset.v1beta1.GcsDestination, com.google.cloud.asset.v1beta1.GcsDestination.Builder, com.google.cloud.asset.v1beta1.GcsDestinationOrBuilder>(
+        gcsDestinationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.asset.v1beta1.GcsDestination,
+                com.google.cloud.asset.v1beta1.GcsDestination.Builder,
+                com.google.cloud.asset.v1beta1.GcsDestinationOrBuilder>(
                 (com.google.cloud.asset.v1beta1.GcsDestination) destination_,
                 getParentForChildren(),
                 isClean());
         destination_ = null;
       }
       destinationCase_ = 1;
-      onChanged();;
+      onChanged();
+      ;
       return gcsDestinationBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -699,12 +754,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.asset.v1beta1.OutputConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.asset.v1beta1.OutputConfig)
   private static final com.google.cloud.asset.v1beta1.OutputConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.asset.v1beta1.OutputConfig();
   }
@@ -713,16 +768,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<OutputConfig>
-      PARSER = new com.google.protobuf.AbstractParser<OutputConfig>() {
-    @java.lang.Override
-    public OutputConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new OutputConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<OutputConfig> PARSER =
+      new com.google.protobuf.AbstractParser<OutputConfig>() {
+        @java.lang.Override
+        public OutputConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new OutputConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<OutputConfig> parser() {
     return PARSER;
@@ -737,6 +792,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.asset.v1beta1.OutputConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

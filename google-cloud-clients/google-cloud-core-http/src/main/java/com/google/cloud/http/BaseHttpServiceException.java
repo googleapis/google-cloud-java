@@ -25,22 +25,20 @@ import com.google.common.base.MoreObjects;
 import java.io.IOException;
 import java.util.Set;
 
-/**
- * Base class for all exceptions from http-based services.
- */
+/** Base class for all exceptions from http-based services. */
 public class BaseHttpServiceException extends BaseServiceException {
 
   private static final long serialVersionUID = -5793034110344127954L;
   public static final int UNKNOWN_CODE = 0;
 
   @InternalApi("This class should only be extended within google-cloud-java")
-  protected BaseHttpServiceException(IOException exception, boolean idempotent,
-      Set<BaseServiceException.Error> retryableErrors) {
+  protected BaseHttpServiceException(
+      IOException exception, boolean idempotent, Set<BaseServiceException.Error> retryableErrors) {
     super(makeExceptionData(exception, idempotent, retryableErrors));
   }
 
-  private static ExceptionData makeExceptionData(IOException exception, boolean idempotent,
-      Set<BaseServiceException.Error> retryableErrors) {
+  private static ExceptionData makeExceptionData(
+      IOException exception, boolean idempotent, Set<BaseServiceException.Error> retryableErrors) {
     int code = UNKNOWN_CODE;
     String reason = null;
     String location = null;
@@ -50,8 +48,8 @@ public class BaseHttpServiceException extends BaseServiceException {
       if (exception instanceof GoogleJsonResponseException) {
         GoogleJsonError jsonError = ((GoogleJsonResponseException) exception).getDetails();
         if (jsonError != null) {
-          BaseServiceException.Error error = new BaseServiceException.Error(jsonError.getCode(),
-              reason(jsonError));
+          BaseServiceException.Error error =
+              new BaseServiceException.Error(jsonError.getCode(), reason(jsonError));
           code = error.getCode();
           reason = error.getReason();
           retryable = error.isRetryable(idempotent, retryableErrors);
@@ -66,7 +64,8 @@ public class BaseHttpServiceException extends BaseServiceException {
         }
       } else {
         // In cases where an exception is an instance of HttpResponseException but not
-        // an instance of GoogleJsonResponseException, check the status code to determine whether it's retryable
+        // an instance of GoogleJsonResponseException, check the status code to determine whether
+        // it's retryable
         code = ((HttpResponseException) exception).getStatusCode();
         retryable = BaseServiceException.isRetryable(code, null, idempotent, retryableErrors);
       }
@@ -74,8 +73,9 @@ public class BaseHttpServiceException extends BaseServiceException {
     return ExceptionData.newBuilder()
         .setMessage(message(exception))
         .setCause(exception)
-        .setRetryable(MoreObjects
-            .firstNonNull(retryable, BaseServiceException.isRetryable(idempotent, exception)))
+        .setRetryable(
+            MoreObjects.firstNonNull(
+                retryable, BaseServiceException.isRetryable(idempotent, exception)))
         .setCode(code)
         .setReason(reason)
         .setLocation(location)
@@ -84,12 +84,16 @@ public class BaseHttpServiceException extends BaseServiceException {
   }
 
   @InternalApi("This class should only be extended within google-cloud-java")
-  protected BaseHttpServiceException(GoogleJsonError googleJsonError, boolean idempotent,
+  protected BaseHttpServiceException(
+      GoogleJsonError googleJsonError,
+      boolean idempotent,
       Set<BaseServiceException.Error> retryableErrors) {
     super(makeExceptionData(googleJsonError, idempotent, retryableErrors));
   }
 
-  private static ExceptionData makeExceptionData(GoogleJsonError googleJsonError, boolean idempotent,
+  private static ExceptionData makeExceptionData(
+      GoogleJsonError googleJsonError,
+      boolean idempotent,
       Set<BaseServiceException.Error> retryableErrors) {
     int code = googleJsonError.getCode();
     String reason = reason(googleJsonError);
@@ -113,23 +117,34 @@ public class BaseHttpServiceException extends BaseServiceException {
   }
 
   @InternalApi("This class should only be extended within google-cloud-java")
-  protected BaseHttpServiceException(int code, String message, String reason, boolean idempotent,
+  protected BaseHttpServiceException(
+      int code,
+      String message,
+      String reason,
+      boolean idempotent,
       Set<BaseServiceException.Error> retryableErrors) {
     this(code, message, reason, idempotent, retryableErrors, null);
   }
 
   @InternalApi("This class should only be extended within google-cloud-java")
-  protected BaseHttpServiceException(int code, String message, String reason, boolean idempotent,
-      Set<BaseServiceException.Error> retryableErrors, Throwable cause) {
-    super(ExceptionData.newBuilder()
-        .setMessage(message)
-        .setCause(cause)
-        .setRetryable(BaseServiceException.isRetryable(code, reason, idempotent, retryableErrors))
-        .setCode(code)
-        .setReason(reason)
-        .setLocation(null)
-        .setDebugInfo(null)
-        .build());
+  protected BaseHttpServiceException(
+      int code,
+      String message,
+      String reason,
+      boolean idempotent,
+      Set<BaseServiceException.Error> retryableErrors,
+      Throwable cause) {
+    super(
+        ExceptionData.newBuilder()
+            .setMessage(message)
+            .setCause(cause)
+            .setRetryable(
+                BaseServiceException.isRetryable(code, reason, idempotent, retryableErrors))
+            .setCode(code)
+            .setReason(reason)
+            .setLocation(null)
+            .setDebugInfo(null)
+            .build());
   }
 
   private static String reason(GoogleJsonError error) {
@@ -148,5 +163,4 @@ public class BaseHttpServiceException extends BaseServiceException {
     }
     return exception.getMessage();
   }
-
 }

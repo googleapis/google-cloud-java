@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface InstantiateInlineWorkflowTemplateRequestOrBuilder extends
+public interface InstantiateInlineWorkflowTemplateRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The "resource name" of the workflow template region, as described
    * in https://cloud.google.com/apis/design/resource_names of the form
@@ -18,6 +21,8 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The "resource name" of the workflow template region, as described
    * in https://cloud.google.com/apis/design/resource_names of the form
@@ -26,10 +31,11 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The workflow template to instantiate.
    * </pre>
@@ -38,6 +44,8 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder extends
    */
   boolean hasTemplate();
   /**
+   *
+   *
    * <pre>
    * Required. The workflow template to instantiate.
    * </pre>
@@ -46,6 +54,8 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.WorkflowTemplate getTemplate();
   /**
+   *
+   *
    * <pre>
    * Required. The workflow template to instantiate.
    * </pre>
@@ -55,6 +65,8 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder extends
   com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder getTemplateOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. Please use `request_id` field instead.
    * </pre>
@@ -63,16 +75,19 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder extends
    */
   java.lang.String getInstanceId();
   /**
+   *
+   *
    * <pre>
    * Deprecated. Please use `request_id` field instead.
    * </pre>
    *
    * <code>string instance_id = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getInstanceIdBytes();
+  com.google.protobuf.ByteString getInstanceIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. A tag that prevents multiple concurrent workflow
    * instances with the same tag from running. This mitigates risk of
@@ -87,6 +102,8 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder extends
    */
   java.lang.String getRequestId();
   /**
+   *
+   *
    * <pre>
    * Optional. A tag that prevents multiple concurrent workflow
    * instances with the same tag from running. This mitigates risk of
@@ -99,6 +116,5 @@ public interface InstantiateInlineWorkflowTemplateRequestOrBuilder extends
    *
    * <code>string request_id = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getRequestIdBytes();
+  com.google.protobuf.ByteString getRequestIdBytes();
 }

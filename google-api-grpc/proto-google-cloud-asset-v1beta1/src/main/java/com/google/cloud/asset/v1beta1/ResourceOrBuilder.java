@@ -3,11 +3,14 @@
 
 package com.google.cloud.asset.v1beta1;
 
-public interface ResourceOrBuilder extends
+public interface ResourceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.asset.v1beta1.Resource)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The API version. Example: "v1".
    * </pre>
@@ -16,16 +19,19 @@ public interface ResourceOrBuilder extends
    */
   java.lang.String getVersion();
   /**
+   *
+   *
    * <pre>
    * The API version. Example: "v1".
    * </pre>
    *
    * <code>string version = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getVersionBytes();
+  com.google.protobuf.ByteString getVersionBytes();
 
   /**
+   *
+   *
    * <pre>
    * The URL of the discovery document containing the resource's JSON schema.
    * For example:
@@ -38,6 +44,8 @@ public interface ResourceOrBuilder extends
    */
   java.lang.String getDiscoveryDocumentUri();
   /**
+   *
+   *
    * <pre>
    * The URL of the discovery document containing the resource's JSON schema.
    * For example:
@@ -48,10 +56,11 @@ public interface ResourceOrBuilder extends
    *
    * <code>string discovery_document_uri = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDiscoveryDocumentUriBytes();
+  com.google.protobuf.ByteString getDiscoveryDocumentUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * The JSON schema name listed in the discovery document.
    * Example: "Project". It will be left unspecified for resources (such as
@@ -62,6 +71,8 @@ public interface ResourceOrBuilder extends
    */
   java.lang.String getDiscoveryName();
   /**
+   *
+   *
    * <pre>
    * The JSON schema name listed in the discovery document.
    * Example: "Project". It will be left unspecified for resources (such as
@@ -70,10 +81,11 @@ public interface ResourceOrBuilder extends
    *
    * <code>string discovery_name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDiscoveryNameBytes();
+  com.google.protobuf.ByteString getDiscoveryNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The REST URL for accessing the resource. An HTTP GET operation using this
    * URL returns the resource itself.
@@ -86,6 +98,8 @@ public interface ResourceOrBuilder extends
    */
   java.lang.String getResourceUrl();
   /**
+   *
+   *
    * <pre>
    * The REST URL for accessing the resource. An HTTP GET operation using this
    * URL returns the resource itself.
@@ -96,10 +110,11 @@ public interface ResourceOrBuilder extends
    *
    * <code>string resource_url = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getResourceUrlBytes();
+  com.google.protobuf.ByteString getResourceUrlBytes();
 
   /**
+   *
+   *
    * <pre>
    * The full name of the immediate parent of this resource. See
    * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -114,6 +129,8 @@ public interface ResourceOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The full name of the immediate parent of this resource. See
    * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
@@ -126,10 +143,11 @@ public interface ResourceOrBuilder extends
    *
    * <code>string parent = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The content of the resource, in which some sensitive fields are scrubbed
    * away and may not be present.
@@ -139,6 +157,8 @@ public interface ResourceOrBuilder extends
    */
   boolean hasData();
   /**
+   *
+   *
    * <pre>
    * The content of the resource, in which some sensitive fields are scrubbed
    * away and may not be present.
@@ -148,6 +168,8 @@ public interface ResourceOrBuilder extends
    */
   com.google.protobuf.Struct getData();
   /**
+   *
+   *
    * <pre>
    * The content of the resource, in which some sensitive fields are scrubbed
    * away and may not be present.

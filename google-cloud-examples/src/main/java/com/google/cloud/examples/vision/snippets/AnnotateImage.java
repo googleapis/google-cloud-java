@@ -21,7 +21,7 @@
  */
 
 package com.google.cloud.examples.vision.snippets;
-import com.google.cloud.vision.v1.ImageAnnotatorClient;
+
 import com.google.cloud.vision.v1.AnnotateImageRequest;
 import com.google.cloud.vision.v1.AnnotateImageResponse;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
@@ -29,6 +29,7 @@ import com.google.cloud.vision.v1.EntityAnnotation;
 import com.google.cloud.vision.v1.Feature;
 import com.google.cloud.vision.v1.Feature.Type;
 import com.google.cloud.vision.v1.Image;
+import com.google.cloud.vision.v1.ImageAnnotatorClient;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import java.nio.file.Files;
@@ -58,10 +59,8 @@ public class AnnotateImage {
     List<AnnotateImageRequest> requests = new ArrayList<>();
     Image img = Image.newBuilder().setContent(imgBytes).build();
     Feature feat = Feature.newBuilder().setType(Type.LABEL_DETECTION).build();
-    AnnotateImageRequest request = AnnotateImageRequest.newBuilder()
-        .addFeatures(feat)
-        .setImage(img)
-        .build();
+    AnnotateImageRequest request =
+        AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
     requests.add(request);
 
     // Performs label detection on the image file

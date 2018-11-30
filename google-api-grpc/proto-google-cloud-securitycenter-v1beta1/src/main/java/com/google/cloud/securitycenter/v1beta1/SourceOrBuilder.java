@@ -3,11 +3,14 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-public interface SourceOrBuilder extends
+public interface SourceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.Source)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The relative resource name of this source. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -19,6 +22,8 @@ public interface SourceOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The relative resource name of this source. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -28,10 +33,11 @@ public interface SourceOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The source’s display name.
    * A source’s display name must be unique amongst its siblings, for example,
@@ -46,6 +52,8 @@ public interface SourceOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * The source’s display name.
    * A source’s display name must be unique amongst its siblings, for example,
@@ -58,10 +66,11 @@ public interface SourceOrBuilder extends
    *
    * <code>string display_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The description of the source (max of 1024 characters).
    * Example:
@@ -76,6 +85,8 @@ public interface SourceOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * The description of the source (max of 1024 characters).
    * Example:
@@ -88,6 +99,5 @@ public interface SourceOrBuilder extends
    *
    * <code>string description = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 }

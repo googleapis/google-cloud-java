@@ -3,11 +3,14 @@
 
 package com.google.devtools.clouderrorreporting.v1beta1;
 
-public interface TrackingIssueOrBuilder extends
+public interface TrackingIssueOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.clouderrorreporting.v1beta1.TrackingIssue)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A URL pointing to a related entry in an issue tracking system.
    * Example: https://github.com/user/project/issues/4
@@ -17,6 +20,8 @@ public interface TrackingIssueOrBuilder extends
    */
   java.lang.String getUrl();
   /**
+   *
+   *
    * <pre>
    * A URL pointing to a related entry in an issue tracking system.
    * Example: https://github.com/user/project/issues/4
@@ -24,6 +29,5 @@ public interface TrackingIssueOrBuilder extends
    *
    * <code>string url = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getUrlBytes();
+  com.google.protobuf.ByteString getUrlBytes();
 }

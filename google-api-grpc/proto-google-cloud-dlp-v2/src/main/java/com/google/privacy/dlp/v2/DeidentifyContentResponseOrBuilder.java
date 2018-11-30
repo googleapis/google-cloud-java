@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface DeidentifyContentResponseOrBuilder extends
+public interface DeidentifyContentResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DeidentifyContentResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The de-identified item.
    * </pre>
@@ -16,6 +19,8 @@ public interface DeidentifyContentResponseOrBuilder extends
    */
   boolean hasItem();
   /**
+   *
+   *
    * <pre>
    * The de-identified item.
    * </pre>
@@ -24,6 +29,8 @@ public interface DeidentifyContentResponseOrBuilder extends
    */
   com.google.privacy.dlp.v2.ContentItem getItem();
   /**
+   *
+   *
    * <pre>
    * The de-identified item.
    * </pre>
@@ -33,6 +40,8 @@ public interface DeidentifyContentResponseOrBuilder extends
   com.google.privacy.dlp.v2.ContentItemOrBuilder getItemOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * An overview of the changes that were made on the `item`.
    * </pre>
@@ -41,6 +50,8 @@ public interface DeidentifyContentResponseOrBuilder extends
    */
   boolean hasOverview();
   /**
+   *
+   *
    * <pre>
    * An overview of the changes that were made on the `item`.
    * </pre>
@@ -49,6 +60,8 @@ public interface DeidentifyContentResponseOrBuilder extends
    */
   com.google.privacy.dlp.v2.TransformationOverview getOverview();
   /**
+   *
+   *
    * <pre>
    * An overview of the changes that were made on the `item`.
    * </pre>

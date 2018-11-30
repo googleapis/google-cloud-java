@@ -20,28 +20,27 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Identity for a Google Compute Engine virtual machine instance.
- */
-public final class InstanceId extends ResourceId  {
+/** Identity for a Google Compute Engine virtual machine instance. */
+public final class InstanceId extends ResourceId {
 
-  static final Function<String, InstanceId> FROM_URL_FUNCTION = new Function<String, InstanceId>() {
-    @Override
-    public InstanceId apply(String pb) {
-      return InstanceId.fromUrl(pb);
-    }
-  };
-  static final Function<InstanceId, String> TO_URL_FUNCTION = new Function<InstanceId, String>() {
-    @Override
-    public String apply(InstanceId instanceId) {
-      return instanceId.getSelfLink();
-    }
-  };
+  static final Function<String, InstanceId> FROM_URL_FUNCTION =
+      new Function<String, InstanceId>() {
+        @Override
+        public InstanceId apply(String pb) {
+          return InstanceId.fromUrl(pb);
+        }
+      };
+  static final Function<InstanceId, String> TO_URL_FUNCTION =
+      new Function<InstanceId, String>() {
+        @Override
+        public String apply(InstanceId instanceId) {
+          return instanceId.getSelfLink();
+        }
+      };
 
   private static final String REGEX = ResourceId.REGEX + "zones/([^/]+)/instances/([^/]+)";
   private static final Pattern PATTERN = Pattern.compile(REGEX);
@@ -58,10 +57,10 @@ public final class InstanceId extends ResourceId  {
 
   /**
    * Returns the name of the instance. The name must be 1-63 characters long and comply with
-   * RFC1035. Specifically, the name must match the regular expression
-   * {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter,
-   * and all following characters must be a dash, lowercase letter, or digit, except the last
-   * character, which cannot be a dash.
+   * RFC1035. Specifically, the name must match the regular expression {@code
+   * [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter, and all
+   * following characters must be a dash, lowercase letter, or digit, except the last character,
+   * which cannot be a dash.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
@@ -69,16 +68,12 @@ public final class InstanceId extends ResourceId  {
     return instance;
   }
 
-  /**
-   * Returns the name of the zone this instance belongs to.
-   */
+  /** Returns the name of the zone this instance belongs to. */
   public String getZone() {
     return zone;
   }
 
-  /**
-   * Returns the identity of the zone this instance belongs to.
-   */
+  /** Returns the identity of the zone this instance belongs to. */
   public ZoneId getZoneId() {
     return ZoneId.of(getProject(), zone);
   }

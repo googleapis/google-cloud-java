@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface CryptoReplaceFfxFpeConfigOrBuilder extends
+public interface CryptoReplaceFfxFpeConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The key used by the encryption algorithm. [required]
    * </pre>
@@ -16,6 +19,8 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
    */
   boolean hasCryptoKey();
   /**
+   *
+   *
    * <pre>
    * The key used by the encryption algorithm. [required]
    * </pre>
@@ -24,6 +29,8 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.CryptoKey getCryptoKey();
   /**
+   *
+   *
    * <pre>
    * The key used by the encryption algorithm. [required]
    * </pre>
@@ -33,6 +40,8 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
   com.google.privacy.dlp.v2.CryptoKeyOrBuilder getCryptoKeyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The 'tweak', a context may be used for higher security since the same
    * identifier in two different contexts won't be given the same surrogate. If
@@ -54,6 +63,8 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
    */
   boolean hasContext();
   /**
+   *
+   *
    * <pre>
    * The 'tweak', a context may be used for higher security since the same
    * identifier in two different contexts won't be given the same surrogate. If
@@ -75,6 +86,8 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.FieldId getContext();
   /**
+   *
+   *
    * <pre>
    * The 'tweak', a context may be used for higher security since the same
    * identifier in two different contexts won't be given the same surrogate. If
@@ -97,15 +110,21 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
   com.google.privacy.dlp.v2.FieldIdOrBuilder getContextOrBuilder();
 
   /**
-   * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
+   * <code>
+   * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
+   * </code>
    */
   int getCommonAlphabetValue();
   /**
-   * <code>.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;</code>
+   * <code>
+   * .google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet common_alphabet = 4;
+   * </code>
    */
   com.google.privacy.dlp.v2.CryptoReplaceFfxFpeConfig.FfxCommonNativeAlphabet getCommonAlphabet();
 
   /**
+   *
+   *
    * <pre>
    * This is supported by mapping these to the alphanumeric characters
    * that the FFX mode natively supports. This happens before/after
@@ -120,6 +139,8 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
    */
   java.lang.String getCustomAlphabet();
   /**
+   *
+   *
    * <pre>
    * This is supported by mapping these to the alphanumeric characters
    * that the FFX mode natively supports. This happens before/after
@@ -132,10 +153,11 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
    *
    * <code>string custom_alphabet = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getCustomAlphabetBytes();
+  com.google.protobuf.ByteString getCustomAlphabetBytes();
 
   /**
+   *
+   *
    * <pre>
    * The native way to select the alphabet. Must be in the range [2, 62].
    * </pre>
@@ -145,6 +167,8 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
   int getRadix();
 
   /**
+   *
+   *
    * <pre>
    * The custom infoType to annotate the surrogate with.
    * This annotation will be applied to the surrogate by prefixing it with
@@ -174,6 +198,8 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
    */
   boolean hasSurrogateInfoType();
   /**
+   *
+   *
    * <pre>
    * The custom infoType to annotate the surrogate with.
    * This annotation will be applied to the surrogate by prefixing it with
@@ -203,6 +229,8 @@ public interface CryptoReplaceFfxFpeConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.InfoType getSurrogateInfoType();
   /**
+   *
+   *
    * <pre>
    * The custom infoType to annotate the surrogate with.
    * This annotation will be applied to the surrogate by prefixing it with

@@ -37,20 +37,20 @@ public abstract class ExternalTableDefinition extends TableDefinition {
 
   static final Function<ExternalDataConfiguration, ExternalTableDefinition>
       FROM_EXTERNAL_DATA_FUNCTION =
-      new Function<ExternalDataConfiguration, ExternalTableDefinition>() {
-        @Override
-        public ExternalTableDefinition apply(ExternalDataConfiguration pb) {
-          return ExternalTableDefinition.fromExternalDataConfiguration(pb);
-        }
-      };
+          new Function<ExternalDataConfiguration, ExternalTableDefinition>() {
+            @Override
+            public ExternalTableDefinition apply(ExternalDataConfiguration pb) {
+              return ExternalTableDefinition.fromExternalDataConfiguration(pb);
+            }
+          };
   static final Function<ExternalTableDefinition, ExternalDataConfiguration>
       TO_EXTERNAL_DATA_FUNCTION =
-      new Function<ExternalTableDefinition, ExternalDataConfiguration>() {
-        @Override
-        public ExternalDataConfiguration apply(ExternalTableDefinition tableInfo) {
-          return tableInfo.toExternalDataConfigurationPb();
-        }
-      };
+          new Function<ExternalTableDefinition, ExternalDataConfiguration>() {
+            @Override
+            public ExternalDataConfiguration apply(ExternalTableDefinition tableInfo) {
+              return tableInfo.toExternalDataConfigurationPb();
+            }
+          };
 
   private static final long serialVersionUID = -5951580238459622025L;
 
@@ -64,15 +64,13 @@ public abstract class ExternalTableDefinition extends TableDefinition {
      * bucket's name. Size limits related to load jobs apply to external data sources, plus an
      * additional limit of 10 GB maximum size across all URIs.
      *
-     * For Google Cloud Bigtable URIs:
-     *   Exactly one URI can be specified and it has be a fully specified and valid
-     *   HTTPS URL for a Google Cloud Bigtable table.
+     * <p>For Google Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully
+     * specified and valid HTTPS URL for a Google Cloud Bigtable table.
      *
-     * For Google Cloud Datastore backup URIs:
-     *   Exactly one URI can be specified. Also, the '*' wildcard character is not allowed.
+     * <p>For Google Cloud Datastore backup URIs: Exactly one URI can be specified. Also, the '*'
+     * wildcard character is not allowed.
      *
      * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
-     *
      */
     public Builder setSourceUris(List<String> sourceUris) {
       return setSourceUrisImmut(ImmutableList.copyOf(sourceUris));
@@ -84,8 +82,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
      * Sets the source format, and possibly some parsing options, of the external data. Supported
      * formats are {@code CSV} and {@code NEWLINE_DELIMITED_JSON}.
      *
-     * <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
-     *     Source Format</a>
+     * <p><a
+     * href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+     * Source Format</a>
      */
     public Builder setFormatOptions(FormatOptions formatOptions) {
       return setFormatOptionsInner(formatOptions);
@@ -244,8 +243,10 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     if (getFormatOptions() != null && FormatOptions.CSV.equals(getFormatOptions().getType())) {
       externalConfigurationPb.setCsvOptions(((CsvOptions) getFormatOptions()).toPb());
     }
-    if (getFormatOptions() != null && FormatOptions.GOOGLE_SHEETS.equals(getFormatOptions().getType())) {
-      externalConfigurationPb.setGoogleSheetsOptions(((GoogleSheetsOptions) getFormatOptions()).toPb());
+    if (getFormatOptions() != null
+        && FormatOptions.GOOGLE_SHEETS.equals(getFormatOptions().getType())) {
+      externalConfigurationPb.setGoogleSheetsOptions(
+          ((GoogleSheetsOptions) getFormatOptions()).toPb());
     }
     if (getFormatOptions() != null && FormatOptions.BIGTABLE.equals(getFormatOptions().getType())) {
       externalConfigurationPb.setBigtableOptions(((BigtableOptions) getFormatOptions()).toPb());
@@ -270,15 +271,14 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    * @param schema the schema for the external data
    * @param format the source format of the external data
    * @return a builder for an ExternalTableDefinition object given source URIs, schema and format
-   *
    * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+   * @see <a
+   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
    *     Source Format</a>
    */
   public static Builder newBuilder(List<String> sourceUris, Schema schema, FormatOptions format) {
     return newBuilder().setSourceUris(sourceUris).setSchema(schema).setFormatOptions(format);
   }
-
 
   /**
    * Creates a builder for an ExternalTableDefinition object.
@@ -289,9 +289,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    * @param schema the schema for the external data
    * @param format the source format of the external data
    * @return a builder for an ExternalTableDefinition object given source URI, schema and format
-   *
    * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+   * @see <a
+   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
    *     Source Format</a>
    */
   public static Builder newBuilder(String sourceUri, Schema schema, FormatOptions format) {
@@ -308,13 +308,13 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    * @param schema the schema for the external data
    * @param format the source format of the external data
    * @return an ExternalTableDefinition object given source URIs, schema and format
-   *
    * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+   * @see <a
+   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
    *     Source Format</a>
    */
-  public static ExternalTableDefinition of(List<String> sourceUris, Schema schema,
-      FormatOptions format) {
+  public static ExternalTableDefinition of(
+      List<String> sourceUris, Schema schema, FormatOptions format) {
     return newBuilder(sourceUris, schema, format).build();
   }
 
@@ -327,9 +327,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
    * @param schema the schema for the external data
    * @param format the source format of the external data
    * @return an ExternalTableDefinition object given source URIs, schema and format
-   *
    * @see <a href="https://cloud.google.com/bigquery/loading-data-into-bigquery#quota">Quota</a>
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
+   * @see <a
+   *     href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
    *     Source Format</a>
    */
   public static ExternalTableDefinition of(String sourceUri, Schema schema, FormatOptions format) {
@@ -355,10 +355,12 @@ public abstract class ExternalTableDefinition extends TableDefinition {
         builder.setFormatOptions(CsvOptions.fromPb(externalDataConfiguration.getCsvOptions()));
       }
       if (externalDataConfiguration.getGoogleSheetsOptions() != null) {
-        builder.setFormatOptions(GoogleSheetsOptions.fromPb(externalDataConfiguration.getGoogleSheetsOptions()));
+        builder.setFormatOptions(
+            GoogleSheetsOptions.fromPb(externalDataConfiguration.getGoogleSheetsOptions()));
       }
       if (externalDataConfiguration.getBigtableOptions() != null) {
-        builder.setFormatOptions(BigtableOptions.fromPb(externalDataConfiguration.getBigtableOptions()));
+        builder.setFormatOptions(
+            BigtableOptions.fromPb(externalDataConfiguration.getBigtableOptions()));
       }
       builder.setMaxBadRecords(externalDataConfiguration.getMaxBadRecords());
       builder.setAutodetect(externalDataConfiguration.getAutodetect());
@@ -388,10 +390,12 @@ public abstract class ExternalTableDefinition extends TableDefinition {
       builder.setFormatOptions(CsvOptions.fromPb(externalDataConfiguration.getCsvOptions()));
     }
     if (externalDataConfiguration.getGoogleSheetsOptions() != null) {
-      builder.setFormatOptions(GoogleSheetsOptions.fromPb(externalDataConfiguration.getGoogleSheetsOptions()));
+      builder.setFormatOptions(
+          GoogleSheetsOptions.fromPb(externalDataConfiguration.getGoogleSheetsOptions()));
     }
     if (externalDataConfiguration.getBigtableOptions() != null) {
-      builder.setFormatOptions(BigtableOptions.fromPb(externalDataConfiguration.getBigtableOptions()));
+      builder.setFormatOptions(
+          BigtableOptions.fromPb(externalDataConfiguration.getBigtableOptions()));
     }
     if (externalDataConfiguration.getMaxBadRecords() != null) {
       builder.setMaxBadRecords(externalDataConfiguration.getMaxBadRecords());

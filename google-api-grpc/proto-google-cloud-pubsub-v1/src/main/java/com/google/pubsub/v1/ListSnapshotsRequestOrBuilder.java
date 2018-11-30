@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface ListSnapshotsRequestOrBuilder extends
+public interface ListSnapshotsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.ListSnapshotsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the project in which to list snapshots.
    * Format is `projects/{project-id}`.
@@ -17,6 +20,8 @@ public interface ListSnapshotsRequestOrBuilder extends
    */
   java.lang.String getProject();
   /**
+   *
+   *
    * <pre>
    * The name of the project in which to list snapshots.
    * Format is `projects/{project-id}`.
@@ -24,10 +29,11 @@ public interface ListSnapshotsRequestOrBuilder extends
    *
    * <code>string project = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectBytes();
+  com.google.protobuf.ByteString getProjectBytes();
 
   /**
+   *
+   *
    * <pre>
    * Maximum number of snapshots to return.
    * </pre>
@@ -37,6 +43,8 @@ public interface ListSnapshotsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `ListSnapshotsResponse`; indicates that this
    * is a continuation of a prior `ListSnapshots` call, and that the system
@@ -47,6 +55,8 @@ public interface ListSnapshotsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `ListSnapshotsResponse`; indicates that this
    * is a continuation of a prior `ListSnapshots` call, and that the system
@@ -55,6 +65,5 @@ public interface ListSnapshotsRequestOrBuilder extends
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

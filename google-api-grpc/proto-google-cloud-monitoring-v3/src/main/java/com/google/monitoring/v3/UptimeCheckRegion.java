@@ -4,15 +4,18 @@
 package com.google.monitoring.v3;
 
 /**
+ *
+ *
  * <pre>
  * The regions from which an uptime check can be run.
  * </pre>
  *
  * Protobuf enum {@code google.monitoring.v3.UptimeCheckRegion}
  */
-public enum UptimeCheckRegion
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum UptimeCheckRegion implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * Default value if no region is specified. Will result in uptime checks
    * running from all regions.
@@ -22,6 +25,8 @@ public enum UptimeCheckRegion
    */
   REGION_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * Allows checks to run from locations within the United States of America.
    * </pre>
@@ -30,6 +35,8 @@ public enum UptimeCheckRegion
    */
   USA(1),
   /**
+   *
+   *
    * <pre>
    * Allows checks to run from locations within the continent of Europe.
    * </pre>
@@ -38,6 +45,8 @@ public enum UptimeCheckRegion
    */
   EUROPE(2),
   /**
+   *
+   *
    * <pre>
    * Allows checks to run from locations within the continent of South
    * America.
@@ -47,6 +56,8 @@ public enum UptimeCheckRegion
    */
   SOUTH_AMERICA(3),
   /**
+   *
+   *
    * <pre>
    * Allows checks to run from locations within the Asia Pacific area (ex:
    * Singapore).
@@ -59,6 +70,8 @@ public enum UptimeCheckRegion
   ;
 
   /**
+   *
+   *
    * <pre>
    * Default value if no region is specified. Will result in uptime checks
    * running from all regions.
@@ -68,6 +81,8 @@ public enum UptimeCheckRegion
    */
   public static final int REGION_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * Allows checks to run from locations within the United States of America.
    * </pre>
@@ -76,6 +91,8 @@ public enum UptimeCheckRegion
    */
   public static final int USA_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * Allows checks to run from locations within the continent of Europe.
    * </pre>
@@ -84,6 +101,8 @@ public enum UptimeCheckRegion
    */
   public static final int EUROPE_VALUE = 2;
   /**
+   *
+   *
    * <pre>
    * Allows checks to run from locations within the continent of South
    * America.
@@ -93,6 +112,8 @@ public enum UptimeCheckRegion
    */
   public static final int SOUTH_AMERICA_VALUE = 3;
   /**
+   *
+   *
    * <pre>
    * Allows checks to run from locations within the Asia Pacific area (ex:
    * Singapore).
@@ -102,7 +123,6 @@ public enum UptimeCheckRegion
    */
   public static final int ASIA_PACIFIC_VALUE = 4;
 
-
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -111,9 +131,7 @@ public enum UptimeCheckRegion
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static UptimeCheckRegion valueOf(int value) {
     return forNumber(value);
@@ -121,37 +139,42 @@ public enum UptimeCheckRegion
 
   public static UptimeCheckRegion forNumber(int value) {
     switch (value) {
-      case 0: return REGION_UNSPECIFIED;
-      case 1: return USA;
-      case 2: return EUROPE;
-      case 3: return SOUTH_AMERICA;
-      case 4: return ASIA_PACIFIC;
-      default: return null;
+      case 0:
+        return REGION_UNSPECIFIED;
+      case 1:
+        return USA;
+      case 2:
+        return EUROPE;
+      case 3:
+        return SOUTH_AMERICA;
+      case 4:
+        return ASIA_PACIFIC;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<UptimeCheckRegion>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<UptimeCheckRegion> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      UptimeCheckRegion> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<UptimeCheckRegion>() {
-          public UptimeCheckRegion findValueByNumber(int number) {
-            return UptimeCheckRegion.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<UptimeCheckRegion>
+      internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<UptimeCheckRegion>() {
+            public UptimeCheckRegion findValueByNumber(int number) {
+              return UptimeCheckRegion.forNumber(number);
+            }
+          };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.monitoring.v3.UptimeProto.getDescriptor().getEnumTypes().get(0);
   }
 
@@ -160,8 +183,7 @@ public enum UptimeCheckRegion
   public static UptimeCheckRegion valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -177,4 +199,3 @@ public enum UptimeCheckRegion
 
   // @@protoc_insertion_point(enum_scope:google.monitoring.v3.UptimeCheckRegion)
 }
-

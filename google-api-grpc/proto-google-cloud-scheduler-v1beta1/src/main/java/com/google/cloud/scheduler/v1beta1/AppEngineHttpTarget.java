@@ -4,6 +4,8 @@
 package com.google.cloud.scheduler.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * App Engine target. The job will be pushed to a job handler by means
  * of an HTTP request via an [http_method][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.http_method] such
@@ -18,15 +20,16 @@ package com.google.cloud.scheduler.v1beta1;
  *
  * Protobuf type {@code google.cloud.scheduler.v1beta1.AppEngineHttpTarget}
  */
-public  final class AppEngineHttpTarget extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class AppEngineHttpTarget extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.scheduler.v1beta1.AppEngineHttpTarget)
     AppEngineHttpTargetOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use AppEngineHttpTarget.newBuilder() to construct.
   private AppEngineHttpTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private AppEngineHttpTarget() {
     httpMethod_ = 0;
     relativeUri_ = "";
@@ -34,10 +37,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private AppEngineHttpTarget(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -57,97 +60,107 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
+          case 8:
+            {
+              int rawValue = input.readEnum();
 
-            httpMethod_ = rawValue;
-            break;
-          }
-          case 18: {
-            com.google.cloud.scheduler.v1beta1.AppEngineRouting.Builder subBuilder = null;
-            if (appEngineRouting_ != null) {
-              subBuilder = appEngineRouting_.toBuilder();
+              httpMethod_ = rawValue;
+              break;
             }
-            appEngineRouting_ = input.readMessage(com.google.cloud.scheduler.v1beta1.AppEngineRouting.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(appEngineRouting_);
-              appEngineRouting_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.cloud.scheduler.v1beta1.AppEngineRouting.Builder subBuilder = null;
+              if (appEngineRouting_ != null) {
+                subBuilder = appEngineRouting_.toBuilder();
+              }
+              appEngineRouting_ =
+                  input.readMessage(
+                      com.google.cloud.scheduler.v1beta1.AppEngineRouting.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(appEngineRouting_);
+                appEngineRouting_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            relativeUri_ = s;
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              headers_ = com.google.protobuf.MapField.newMapField(
-                  HeadersDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000008;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            headers__ = input.readMessage(
-                HeadersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            headers_.getMutableMap().put(
-                headers__.getKey(), headers__.getValue());
-            break;
-          }
-          case 42: {
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            body_ = input.readBytes();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              relativeUri_ = s;
+              break;
             }
-            break;
-          }
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                headers_ =
+                    com.google.protobuf.MapField.newMapField(
+                        HeadersDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> headers__ =
+                  input.readMessage(
+                      HeadersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              headers_.getMutableMap().put(headers__.getKey(), headers__.getValue());
+              break;
+            }
+          case 42:
+            {
+              body_ = input.readBytes();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.scheduler.v1beta1.TargetProto.internal_static_google_cloud_scheduler_v1beta1_AppEngineHttpTarget_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.scheduler.v1beta1.TargetProto
+        .internal_static_google_cloud_scheduler_v1beta1_AppEngineHttpTarget_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 4:
         return internalGetHeaders();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.scheduler.v1beta1.TargetProto.internal_static_google_cloud_scheduler_v1beta1_AppEngineHttpTarget_fieldAccessorTable
+    return com.google.cloud.scheduler.v1beta1.TargetProto
+        .internal_static_google_cloud_scheduler_v1beta1_AppEngineHttpTarget_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.class, com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.Builder.class);
+            com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.class,
+            com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.Builder.class);
   }
 
   private int bitField0_;
   public static final int HTTP_METHOD_FIELD_NUMBER = 1;
   private int httpMethod_;
   /**
+   *
+   *
    * <pre>
    * The HTTP method to use for the request. PATCH and OPTIONS are not
    * permitted.
@@ -159,6 +172,8 @@ private static final long serialVersionUID = 0L;
     return httpMethod_;
   }
   /**
+   *
+   *
    * <pre>
    * The HTTP method to use for the request. PATCH and OPTIONS are not
    * permitted.
@@ -168,13 +183,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.scheduler.v1beta1.HttpMethod getHttpMethod() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.scheduler.v1beta1.HttpMethod result = com.google.cloud.scheduler.v1beta1.HttpMethod.valueOf(httpMethod_);
+    com.google.cloud.scheduler.v1beta1.HttpMethod result =
+        com.google.cloud.scheduler.v1beta1.HttpMethod.valueOf(httpMethod_);
     return result == null ? com.google.cloud.scheduler.v1beta1.HttpMethod.UNRECOGNIZED : result;
   }
 
   public static final int APP_ENGINE_ROUTING_FIELD_NUMBER = 2;
   private com.google.cloud.scheduler.v1beta1.AppEngineRouting appEngineRouting_;
   /**
+   *
+   *
    * <pre>
    * App Engine Routing setting for the job.
    * </pre>
@@ -185,6 +203,8 @@ private static final long serialVersionUID = 0L;
     return appEngineRouting_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * App Engine Routing setting for the job.
    * </pre>
@@ -192,22 +212,29 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.scheduler.v1beta1.AppEngineRouting app_engine_routing = 2;</code>
    */
   public com.google.cloud.scheduler.v1beta1.AppEngineRouting getAppEngineRouting() {
-    return appEngineRouting_ == null ? com.google.cloud.scheduler.v1beta1.AppEngineRouting.getDefaultInstance() : appEngineRouting_;
+    return appEngineRouting_ == null
+        ? com.google.cloud.scheduler.v1beta1.AppEngineRouting.getDefaultInstance()
+        : appEngineRouting_;
   }
   /**
+   *
+   *
    * <pre>
    * App Engine Routing setting for the job.
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.AppEngineRouting app_engine_routing = 2;</code>
    */
-  public com.google.cloud.scheduler.v1beta1.AppEngineRoutingOrBuilder getAppEngineRoutingOrBuilder() {
+  public com.google.cloud.scheduler.v1beta1.AppEngineRoutingOrBuilder
+      getAppEngineRoutingOrBuilder() {
     return getAppEngineRouting();
   }
 
   public static final int RELATIVE_URI_FIELD_NUMBER = 3;
   private volatile java.lang.Object relativeUri_;
   /**
+   *
+   *
    * <pre>
    * The relative URI.
    * The relative URL must begin with "/" and must be a valid HTTP relative URL.
@@ -223,14 +250,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       relativeUri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The relative URI.
    * The relative URL must begin with "/" and must be a valid HTTP relative URL.
@@ -241,13 +269,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string relative_uri = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getRelativeUriBytes() {
+  public com.google.protobuf.ByteString getRelativeUriBytes() {
     java.lang.Object ref = relativeUri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       relativeUri_ = b;
       return b;
     } else {
@@ -256,24 +282,23 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int HEADERS_FIELD_NUMBER = 4;
+
   private static final class HeadersDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.cloud.scheduler.v1beta1.TargetProto.internal_static_google_cloud_scheduler_v1beta1_AppEngineHttpTarget_HeadersEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.scheduler.v1beta1.TargetProto
+                .internal_static_google_cloud_scheduler_v1beta1_AppEngineHttpTarget_HeadersEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> headers_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetHeaders() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> headers_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetHeaders() {
     if (headers_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          HeadersDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(HeadersDefaultEntryHolder.defaultEntry);
     }
     return headers_;
   }
@@ -282,6 +307,8 @@ private static final long serialVersionUID = 0L;
     return internalGetHeaders().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * HTTP request headers.
    * This map contains the header field names and values. Headers can be set
@@ -312,20 +339,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
-
-  public boolean containsHeaders(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsHeaders(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetHeaders().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getHeadersMap()} instead.
-   */
+  /** Use {@link #getHeadersMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
     return getHeadersMap();
   }
   /**
+   *
+   *
    * <pre>
    * HTTP request headers.
    * This map contains the header field names and values. Headers can be set
@@ -356,11 +383,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
     return internalGetHeaders().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * HTTP request headers.
    * This map contains the header field names and values. Headers can be set
@@ -391,16 +419,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
-
-  public java.lang.String getHeadersOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetHeaders().getMap();
+  public java.lang.String getHeadersOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * HTTP request headers.
    * This map contains the header field names and values. Headers can be set
@@ -431,12 +459,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; headers = 4;</code>
    */
-
-  public java.lang.String getHeadersOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetHeaders().getMap();
+  public java.lang.String getHeadersOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -446,6 +473,8 @@ private static final long serialVersionUID = 0L;
   public static final int BODY_FIELD_NUMBER = 5;
   private com.google.protobuf.ByteString body_;
   /**
+   *
+   *
    * <pre>
    * Body.
    * HTTP request body. A request body is allowed only if the HTTP method is
@@ -460,6 +489,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -471,9 +501,9 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    if (httpMethod_ != com.google.cloud.scheduler.v1beta1.HttpMethod.HTTP_METHOD_UNSPECIFIED.getNumber()) {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (httpMethod_
+        != com.google.cloud.scheduler.v1beta1.HttpMethod.HTTP_METHOD_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, httpMethod_);
     }
     if (appEngineRouting_ != null) {
@@ -482,12 +512,8 @@ private static final long serialVersionUID = 0L;
     if (!getRelativeUriBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, relativeUri_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetHeaders(),
-        HeadersDefaultEntryHolder.defaultEntry,
-        4);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetHeaders(), HeadersDefaultEntryHolder.defaultEntry, 4);
     if (!body_.isEmpty()) {
       output.writeBytes(5, body_);
     }
@@ -500,30 +526,28 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (httpMethod_ != com.google.cloud.scheduler.v1beta1.HttpMethod.HTTP_METHOD_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, httpMethod_);
+    if (httpMethod_
+        != com.google.cloud.scheduler.v1beta1.HttpMethod.HTTP_METHOD_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, httpMethod_);
     }
     if (appEngineRouting_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getAppEngineRouting());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getAppEngineRouting());
     }
     if (!getRelativeUriBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, relativeUri_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetHeaders().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      headers__ = HeadersDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, headers__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetHeaders().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> headers__ =
+          HeadersDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, headers__);
     }
     if (!body_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(5, body_);
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(5, body_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -533,26 +557,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget)) {
       return super.equals(obj);
     }
-    com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget other = (com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget) obj;
+    com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget other =
+        (com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget) obj;
 
     boolean result = true;
     result = result && httpMethod_ == other.httpMethod_;
     result = result && (hasAppEngineRouting() == other.hasAppEngineRouting());
     if (hasAppEngineRouting()) {
-      result = result && getAppEngineRouting()
-          .equals(other.getAppEngineRouting());
+      result = result && getAppEngineRouting().equals(other.getAppEngineRouting());
     }
-    result = result && getRelativeUri()
-        .equals(other.getRelativeUri());
-    result = result && internalGetHeaders().equals(
-        other.internalGetHeaders());
-    result = result && getBody()
-        .equals(other.getBody());
+    result = result && getRelativeUri().equals(other.getRelativeUri());
+    result = result && internalGetHeaders().equals(other.internalGetHeaders());
+    result = result && getBody().equals(other.getBody());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -584,96 +605,104 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * App Engine target. The job will be pushed to a job handler by means
    * of an HTTP request via an [http_method][google.cloud.scheduler.v1beta1.AppEngineHttpTarget.http_method] such
@@ -688,43 +717,43 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.scheduler.v1beta1.AppEngineHttpTarget}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.scheduler.v1beta1.AppEngineHttpTarget)
       com.google.cloud.scheduler.v1beta1.AppEngineHttpTargetOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.scheduler.v1beta1.TargetProto.internal_static_google_cloud_scheduler_v1beta1_AppEngineHttpTarget_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.scheduler.v1beta1.TargetProto
+          .internal_static_google_cloud_scheduler_v1beta1_AppEngineHttpTarget_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 4:
           return internalGetHeaders();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 4:
           return internalGetMutableHeaders();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.scheduler.v1beta1.TargetProto.internal_static_google_cloud_scheduler_v1beta1_AppEngineHttpTarget_fieldAccessorTable
+      return com.google.cloud.scheduler.v1beta1.TargetProto
+          .internal_static_google_cloud_scheduler_v1beta1_AppEngineHttpTarget_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.class, com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.Builder.class);
+              com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.class,
+              com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.Builder.class);
     }
 
     // Construct using com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.newBuilder()
@@ -732,16 +761,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -762,9 +790,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.scheduler.v1beta1.TargetProto.internal_static_google_cloud_scheduler_v1beta1_AppEngineHttpTarget_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.scheduler.v1beta1.TargetProto
+          .internal_static_google_cloud_scheduler_v1beta1_AppEngineHttpTarget_descriptor;
     }
 
     @java.lang.Override
@@ -783,7 +811,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget buildPartial() {
-      com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget result = new com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget(this);
+      com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget result =
+          new com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.httpMethod_ = httpMethod_;
@@ -805,38 +834,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget) {
-        return mergeFrom((com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget)other);
+        return mergeFrom((com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -844,7 +874,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget other) {
-      if (other == com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.getDefaultInstance()) return this;
+      if (other == com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.getDefaultInstance())
+        return this;
       if (other.httpMethod_ != 0) {
         setHttpMethodValue(other.getHttpMethodValue());
       }
@@ -855,8 +886,7 @@ private static final long serialVersionUID = 0L;
         relativeUri_ = other.relativeUri_;
         onChanged();
       }
-      internalGetMutableHeaders().mergeFrom(
-          other.internalGetHeaders());
+      internalGetMutableHeaders().mergeFrom(other.internalGetHeaders());
       if (other.getBody() != com.google.protobuf.ByteString.EMPTY) {
         setBody(other.getBody());
       }
@@ -879,7 +909,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -888,10 +919,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private int httpMethod_ = 0;
     /**
+     *
+     *
      * <pre>
      * The HTTP method to use for the request. PATCH and OPTIONS are not
      * permitted.
@@ -903,6 +937,8 @@ private static final long serialVersionUID = 0L;
       return httpMethod_;
     }
     /**
+     *
+     *
      * <pre>
      * The HTTP method to use for the request. PATCH and OPTIONS are not
      * permitted.
@@ -916,6 +952,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The HTTP method to use for the request. PATCH and OPTIONS are not
      * permitted.
@@ -925,10 +963,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.scheduler.v1beta1.HttpMethod getHttpMethod() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.scheduler.v1beta1.HttpMethod result = com.google.cloud.scheduler.v1beta1.HttpMethod.valueOf(httpMethod_);
+      com.google.cloud.scheduler.v1beta1.HttpMethod result =
+          com.google.cloud.scheduler.v1beta1.HttpMethod.valueOf(httpMethod_);
       return result == null ? com.google.cloud.scheduler.v1beta1.HttpMethod.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * The HTTP method to use for the request. PATCH and OPTIONS are not
      * permitted.
@@ -940,12 +981,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       httpMethod_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The HTTP method to use for the request. PATCH and OPTIONS are not
      * permitted.
@@ -954,7 +997,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.scheduler.v1beta1.HttpMethod http_method = 1;</code>
      */
     public Builder clearHttpMethod() {
-      
+
       httpMethod_ = 0;
       onChanged();
       return this;
@@ -962,8 +1005,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.scheduler.v1beta1.AppEngineRouting appEngineRouting_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.scheduler.v1beta1.AppEngineRouting, com.google.cloud.scheduler.v1beta1.AppEngineRouting.Builder, com.google.cloud.scheduler.v1beta1.AppEngineRoutingOrBuilder> appEngineRoutingBuilder_;
+            com.google.cloud.scheduler.v1beta1.AppEngineRouting,
+            com.google.cloud.scheduler.v1beta1.AppEngineRouting.Builder,
+            com.google.cloud.scheduler.v1beta1.AppEngineRoutingOrBuilder>
+        appEngineRoutingBuilder_;
     /**
+     *
+     *
      * <pre>
      * App Engine Routing setting for the job.
      * </pre>
@@ -974,6 +1022,8 @@ private static final long serialVersionUID = 0L;
       return appEngineRoutingBuilder_ != null || appEngineRouting_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * App Engine Routing setting for the job.
      * </pre>
@@ -982,12 +1032,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.scheduler.v1beta1.AppEngineRouting getAppEngineRouting() {
       if (appEngineRoutingBuilder_ == null) {
-        return appEngineRouting_ == null ? com.google.cloud.scheduler.v1beta1.AppEngineRouting.getDefaultInstance() : appEngineRouting_;
+        return appEngineRouting_ == null
+            ? com.google.cloud.scheduler.v1beta1.AppEngineRouting.getDefaultInstance()
+            : appEngineRouting_;
       } else {
         return appEngineRoutingBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * App Engine Routing setting for the job.
      * </pre>
@@ -1008,6 +1062,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * App Engine Routing setting for the job.
      * </pre>
@@ -1026,17 +1082,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * App Engine Routing setting for the job.
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.AppEngineRouting app_engine_routing = 2;</code>
      */
-    public Builder mergeAppEngineRouting(com.google.cloud.scheduler.v1beta1.AppEngineRouting value) {
+    public Builder mergeAppEngineRouting(
+        com.google.cloud.scheduler.v1beta1.AppEngineRouting value) {
       if (appEngineRoutingBuilder_ == null) {
         if (appEngineRouting_ != null) {
           appEngineRouting_ =
-            com.google.cloud.scheduler.v1beta1.AppEngineRouting.newBuilder(appEngineRouting_).mergeFrom(value).buildPartial();
+              com.google.cloud.scheduler.v1beta1.AppEngineRouting.newBuilder(appEngineRouting_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           appEngineRouting_ = value;
         }
@@ -1048,6 +1109,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * App Engine Routing setting for the job.
      * </pre>
@@ -1066,33 +1129,42 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * App Engine Routing setting for the job.
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.AppEngineRouting app_engine_routing = 2;</code>
      */
-    public com.google.cloud.scheduler.v1beta1.AppEngineRouting.Builder getAppEngineRoutingBuilder() {
-      
+    public com.google.cloud.scheduler.v1beta1.AppEngineRouting.Builder
+        getAppEngineRoutingBuilder() {
+
       onChanged();
       return getAppEngineRoutingFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * App Engine Routing setting for the job.
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.AppEngineRouting app_engine_routing = 2;</code>
      */
-    public com.google.cloud.scheduler.v1beta1.AppEngineRoutingOrBuilder getAppEngineRoutingOrBuilder() {
+    public com.google.cloud.scheduler.v1beta1.AppEngineRoutingOrBuilder
+        getAppEngineRoutingOrBuilder() {
       if (appEngineRoutingBuilder_ != null) {
         return appEngineRoutingBuilder_.getMessageOrBuilder();
       } else {
-        return appEngineRouting_ == null ?
-            com.google.cloud.scheduler.v1beta1.AppEngineRouting.getDefaultInstance() : appEngineRouting_;
+        return appEngineRouting_ == null
+            ? com.google.cloud.scheduler.v1beta1.AppEngineRouting.getDefaultInstance()
+            : appEngineRouting_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * App Engine Routing setting for the job.
      * </pre>
@@ -1100,14 +1172,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.scheduler.v1beta1.AppEngineRouting app_engine_routing = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.scheduler.v1beta1.AppEngineRouting, com.google.cloud.scheduler.v1beta1.AppEngineRouting.Builder, com.google.cloud.scheduler.v1beta1.AppEngineRoutingOrBuilder> 
+            com.google.cloud.scheduler.v1beta1.AppEngineRouting,
+            com.google.cloud.scheduler.v1beta1.AppEngineRouting.Builder,
+            com.google.cloud.scheduler.v1beta1.AppEngineRoutingOrBuilder>
         getAppEngineRoutingFieldBuilder() {
       if (appEngineRoutingBuilder_ == null) {
-        appEngineRoutingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.scheduler.v1beta1.AppEngineRouting, com.google.cloud.scheduler.v1beta1.AppEngineRouting.Builder, com.google.cloud.scheduler.v1beta1.AppEngineRoutingOrBuilder>(
-                getAppEngineRouting(),
-                getParentForChildren(),
-                isClean());
+        appEngineRoutingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.scheduler.v1beta1.AppEngineRouting,
+                com.google.cloud.scheduler.v1beta1.AppEngineRouting.Builder,
+                com.google.cloud.scheduler.v1beta1.AppEngineRoutingOrBuilder>(
+                getAppEngineRouting(), getParentForChildren(), isClean());
         appEngineRouting_ = null;
       }
       return appEngineRoutingBuilder_;
@@ -1115,6 +1190,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object relativeUri_ = "";
     /**
+     *
+     *
      * <pre>
      * The relative URI.
      * The relative URL must begin with "/" and must be a valid HTTP relative URL.
@@ -1128,8 +1205,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getRelativeUri() {
       java.lang.Object ref = relativeUri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         relativeUri_ = s;
         return s;
@@ -1138,6 +1214,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The relative URI.
      * The relative URL must begin with "/" and must be a valid HTTP relative URL.
@@ -1148,13 +1226,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string relative_uri = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getRelativeUriBytes() {
+    public com.google.protobuf.ByteString getRelativeUriBytes() {
       java.lang.Object ref = relativeUri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         relativeUri_ = b;
         return b;
       } else {
@@ -1162,6 +1238,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The relative URI.
      * The relative URL must begin with "/" and must be a valid HTTP relative URL.
@@ -1172,17 +1250,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string relative_uri = 3;</code>
      */
-    public Builder setRelativeUri(
-        java.lang.String value) {
+    public Builder setRelativeUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       relativeUri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The relative URI.
      * The relative URL must begin with "/" and must be a valid HTTP relative URL.
@@ -1194,12 +1273,14 @@ private static final long serialVersionUID = 0L;
      * <code>string relative_uri = 3;</code>
      */
     public Builder clearRelativeUri() {
-      
+
       relativeUri_ = getDefaultInstance().getRelativeUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The relative URI.
      * The relative URL must begin with "/" and must be a valid HTTP relative URL.
@@ -1210,34 +1291,32 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string relative_uri = 3;</code>
      */
-    public Builder setRelativeUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setRelativeUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       relativeUri_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> headers_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetHeaders() {
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> headers_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetHeaders() {
       if (headers_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            HeadersDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(HeadersDefaultEntryHolder.defaultEntry);
       }
       return headers_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableHeaders() {
-      onChanged();;
+        internalGetMutableHeaders() {
+      onChanged();
+      ;
       if (headers_ == null) {
-        headers_ = com.google.protobuf.MapField.newMapField(
-            HeadersDefaultEntryHolder.defaultEntry);
+        headers_ = com.google.protobuf.MapField.newMapField(HeadersDefaultEntryHolder.defaultEntry);
       }
       if (!headers_.isMutable()) {
         headers_ = headers_.copy();
@@ -1249,6 +1328,8 @@ private static final long serialVersionUID = 0L;
       return internalGetHeaders().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * HTTP request headers.
      * This map contains the header field names and values. Headers can be set
@@ -1279,20 +1360,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
      */
-
-    public boolean containsHeaders(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsHeaders(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetHeaders().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getHeadersMap()} instead.
-     */
+    /** Use {@link #getHeadersMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
       return getHeadersMap();
     }
     /**
+     *
+     *
      * <pre>
      * HTTP request headers.
      * This map contains the header field names and values. Headers can be set
@@ -1323,11 +1404,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
       return internalGetHeaders().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * HTTP request headers.
      * This map contains the header field names and values. Headers can be set
@@ -1358,16 +1440,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
      */
-
     public java.lang.String getHeadersOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetHeaders().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * HTTP request headers.
      * This map contains the header field names and values. Headers can be set
@@ -1398,12 +1481,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
      */
-
-    public java.lang.String getHeadersOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetHeaders().getMap();
+    public java.lang.String getHeadersOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1411,11 +1493,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearHeaders() {
-      internalGetMutableHeaders().getMutableMap()
-          .clear();
+      internalGetMutableHeaders().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * HTTP request headers.
      * This map contains the header field names and values. Headers can be set
@@ -1446,23 +1529,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
      */
-
-    public Builder removeHeaders(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableHeaders().getMutableMap()
-          .remove(key);
+    public Builder removeHeaders(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableHeaders().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableHeaders() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableHeaders() {
       return internalGetMutableHeaders().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * HTTP request headers.
      * This map contains the header field names and values. Headers can be set
@@ -1493,16 +1574,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
      */
-    public Builder putHeaders(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableHeaders().getMutableMap()
-          .put(key, value);
+    public Builder putHeaders(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableHeaders().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * HTTP request headers.
      * This map contains the header field names and values. Headers can be set
@@ -1533,16 +1617,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; headers = 4;</code>
      */
-
-    public Builder putAllHeaders(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableHeaders().getMutableMap()
-          .putAll(values);
+    public Builder putAllHeaders(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableHeaders().getMutableMap().putAll(values);
       return this;
     }
 
     private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
     /**
+     *
+     *
      * <pre>
      * Body.
      * HTTP request body. A request body is allowed only if the HTTP method is
@@ -1556,6 +1639,8 @@ private static final long serialVersionUID = 0L;
       return body_;
     }
     /**
+     *
+     *
      * <pre>
      * Body.
      * HTTP request body. A request body is allowed only if the HTTP method is
@@ -1567,14 +1652,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setBody(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       body_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Body.
      * HTTP request body. A request body is allowed only if the HTTP method is
@@ -1585,14 +1672,14 @@ private static final long serialVersionUID = 0L;
      * <code>bytes body = 5;</code>
      */
     public Builder clearBody() {
-      
+
       body_ = getDefaultInstance().getBody();
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1602,12 +1689,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.scheduler.v1beta1.AppEngineHttpTarget)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1beta1.AppEngineHttpTarget)
   private static final com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget();
   }
@@ -1616,16 +1703,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AppEngineHttpTarget>
-      PARSER = new com.google.protobuf.AbstractParser<AppEngineHttpTarget>() {
-    @java.lang.Override
-    public AppEngineHttpTarget parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new AppEngineHttpTarget(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<AppEngineHttpTarget> PARSER =
+      new com.google.protobuf.AbstractParser<AppEngineHttpTarget>() {
+        @java.lang.Override
+        public AppEngineHttpTarget parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AppEngineHttpTarget(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<AppEngineHttpTarget> parser() {
     return PARSER;
@@ -1640,6 +1727,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1;
 
-public interface TemplateParameterOrBuilder extends
+public interface TemplateParameterOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1.TemplateParameter)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.  Parameter name.
    * The parameter name is used as the key, and paired with the
@@ -22,6 +25,8 @@ public interface TemplateParameterOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required.  Parameter name.
    * The parameter name is used as the key, and paired with the
@@ -34,10 +39,11 @@ public interface TemplateParameterOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. Paths to all fields that the parameter replaces.
    * A field is allowed to appear in at most one parameter's list of field
@@ -79,9 +85,10 @@ public interface TemplateParameterOrBuilder extends
    *
    * <code>repeated string fields = 2;</code>
    */
-  java.util.List<java.lang.String>
-      getFieldsList();
+  java.util.List<java.lang.String> getFieldsList();
   /**
+   *
+   *
    * <pre>
    * Required. Paths to all fields that the parameter replaces.
    * A field is allowed to appear in at most one parameter's list of field
@@ -125,6 +132,8 @@ public interface TemplateParameterOrBuilder extends
    */
   int getFieldsCount();
   /**
+   *
+   *
    * <pre>
    * Required. Paths to all fields that the parameter replaces.
    * A field is allowed to appear in at most one parameter's list of field
@@ -168,6 +177,8 @@ public interface TemplateParameterOrBuilder extends
    */
   java.lang.String getFields(int index);
   /**
+   *
+   *
    * <pre>
    * Required. Paths to all fields that the parameter replaces.
    * A field is allowed to appear in at most one parameter's list of field
@@ -209,10 +220,11 @@ public interface TemplateParameterOrBuilder extends
    *
    * <code>repeated string fields = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getFieldsBytes(int index);
+  com.google.protobuf.ByteString getFieldsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. Brief description of the parameter.
    * Must not exceed 1024 characters.
@@ -222,6 +234,8 @@ public interface TemplateParameterOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * Optional. Brief description of the parameter.
    * Must not exceed 1024 characters.
@@ -229,10 +243,11 @@ public interface TemplateParameterOrBuilder extends
    *
    * <code>string description = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Validation rules to be applied to this parameter's value.
    * </pre>
@@ -241,6 +256,8 @@ public interface TemplateParameterOrBuilder extends
    */
   boolean hasValidation();
   /**
+   *
+   *
    * <pre>
    * Optional. Validation rules to be applied to this parameter's value.
    * </pre>
@@ -249,6 +266,8 @@ public interface TemplateParameterOrBuilder extends
    */
   com.google.cloud.dataproc.v1.ParameterValidation getValidation();
   /**
+   *
+   *
    * <pre>
    * Optional. Validation rules to be applied to this parameter's value.
    * </pre>

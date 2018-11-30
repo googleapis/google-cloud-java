@@ -78,7 +78,6 @@ public final class LatLngValue extends Value<LatLng> {
     return new LatLngValue(value);
   }
 
-
   public static Builder newBuilder(LatLng value) {
     return new Builder().set(value);
   }

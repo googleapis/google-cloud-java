@@ -56,13 +56,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -691,13 +691,16 @@ public class RegionCommitmentClient implements BackgroundResource {
 
   public static class AggregatedListRegionCommitmentsPagedResponse
       extends AbstractPagedListResponse<
-          AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList,
-          CommitmentsScopedList, AggregatedListRegionCommitmentsPage,
+          AggregatedListRegionCommitmentsHttpRequest,
+          CommitmentAggregatedList,
+          CommitmentsScopedList,
+          AggregatedListRegionCommitmentsPage,
           AggregatedListRegionCommitmentsFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListRegionCommitmentsPagedResponse> createAsync(
         PageContext<
-                AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList,
+                AggregatedListRegionCommitmentsHttpRequest,
+                CommitmentAggregatedList,
                 CommitmentsScopedList>
             context,
         ApiFuture<CommitmentAggregatedList> futureResponse) {
@@ -723,12 +726,15 @@ public class RegionCommitmentClient implements BackgroundResource {
 
   public static class AggregatedListRegionCommitmentsPage
       extends AbstractPage<
-          AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList,
-          CommitmentsScopedList, AggregatedListRegionCommitmentsPage> {
+          AggregatedListRegionCommitmentsHttpRequest,
+          CommitmentAggregatedList,
+          CommitmentsScopedList,
+          AggregatedListRegionCommitmentsPage> {
 
     private AggregatedListRegionCommitmentsPage(
         PageContext<
-                AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList,
+                AggregatedListRegionCommitmentsHttpRequest,
+                CommitmentAggregatedList,
                 CommitmentsScopedList>
             context,
         CommitmentAggregatedList response) {
@@ -742,7 +748,8 @@ public class RegionCommitmentClient implements BackgroundResource {
     @Override
     protected AggregatedListRegionCommitmentsPage createPage(
         PageContext<
-                AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList,
+                AggregatedListRegionCommitmentsHttpRequest,
+                CommitmentAggregatedList,
                 CommitmentsScopedList>
             context,
         CommitmentAggregatedList response) {
@@ -752,7 +759,8 @@ public class RegionCommitmentClient implements BackgroundResource {
     @Override
     public ApiFuture<AggregatedListRegionCommitmentsPage> createPageAsync(
         PageContext<
-                AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList,
+                AggregatedListRegionCommitmentsHttpRequest,
+                CommitmentAggregatedList,
                 CommitmentsScopedList>
             context,
         ApiFuture<CommitmentAggregatedList> futureResponse) {
@@ -762,8 +770,10 @@ public class RegionCommitmentClient implements BackgroundResource {
 
   public static class AggregatedListRegionCommitmentsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList,
-          CommitmentsScopedList, AggregatedListRegionCommitmentsPage,
+          AggregatedListRegionCommitmentsHttpRequest,
+          CommitmentAggregatedList,
+          CommitmentsScopedList,
+          AggregatedListRegionCommitmentsPage,
           AggregatedListRegionCommitmentsFixedSizeCollection> {
 
     private AggregatedListRegionCommitmentsFixedSizeCollection(
@@ -784,7 +794,10 @@ public class RegionCommitmentClient implements BackgroundResource {
 
   public static class ListRegionCommitmentsPagedResponse
       extends AbstractPagedListResponse<
-          ListRegionCommitmentsHttpRequest, CommitmentList, Commitment, ListRegionCommitmentsPage,
+          ListRegionCommitmentsHttpRequest,
+          CommitmentList,
+          Commitment,
+          ListRegionCommitmentsPage,
           ListRegionCommitmentsFixedSizeCollection> {
 
     public static ApiFuture<ListRegionCommitmentsPagedResponse> createAsync(
@@ -838,7 +851,10 @@ public class RegionCommitmentClient implements BackgroundResource {
 
   public static class ListRegionCommitmentsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListRegionCommitmentsHttpRequest, CommitmentList, Commitment, ListRegionCommitmentsPage,
+          ListRegionCommitmentsHttpRequest,
+          CommitmentList,
+          Commitment,
+          ListRegionCommitmentsPage,
           ListRegionCommitmentsFixedSizeCollection> {
 
     private ListRegionCommitmentsFixedSizeCollection(

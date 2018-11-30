@@ -4,30 +4,33 @@
 package com.google.cloud.videointelligence.v1;
 
 /**
+ *
+ *
  * <pre>
  * Video context and/or feature-specific parameters.
  * </pre>
  *
  * Protobuf type {@code google.cloud.videointelligence.v1.VideoContext}
  */
-public  final class VideoContext extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.VideoContext)
     VideoContextOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use VideoContext.newBuilder() to construct.
   private VideoContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private VideoContext() {
     segments_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private VideoContext(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,94 +50,120 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              segments_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1.VideoSegment>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                segments_ =
+                    new java.util.ArrayList<com.google.cloud.videointelligence.v1.VideoSegment>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              segments_.add(
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1.VideoSegment.parser(),
+                      extensionRegistry));
+              break;
             }
-            segments_.add(
-                input.readMessage(com.google.cloud.videointelligence.v1.VideoSegment.parser(), extensionRegistry));
-            break;
-          }
-          case 18: {
-            com.google.cloud.videointelligence.v1.LabelDetectionConfig.Builder subBuilder = null;
-            if (labelDetectionConfig_ != null) {
-              subBuilder = labelDetectionConfig_.toBuilder();
-            }
-            labelDetectionConfig_ = input.readMessage(com.google.cloud.videointelligence.v1.LabelDetectionConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(labelDetectionConfig_);
-              labelDetectionConfig_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.cloud.videointelligence.v1.LabelDetectionConfig.Builder subBuilder = null;
+              if (labelDetectionConfig_ != null) {
+                subBuilder = labelDetectionConfig_.toBuilder();
+              }
+              labelDetectionConfig_ =
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1.LabelDetectionConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(labelDetectionConfig_);
+                labelDetectionConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.Builder subBuilder = null;
-            if (shotChangeDetectionConfig_ != null) {
-              subBuilder = shotChangeDetectionConfig_.toBuilder();
+              break;
             }
-            shotChangeDetectionConfig_ = input.readMessage(com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(shotChangeDetectionConfig_);
-              shotChangeDetectionConfig_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.Builder subBuilder =
+                  null;
+              if (shotChangeDetectionConfig_ != null) {
+                subBuilder = shotChangeDetectionConfig_.toBuilder();
+              }
+              shotChangeDetectionConfig_ =
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(shotChangeDetectionConfig_);
+                shotChangeDetectionConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 34: {
-            com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.Builder subBuilder = null;
-            if (explicitContentDetectionConfig_ != null) {
-              subBuilder = explicitContentDetectionConfig_.toBuilder();
+              break;
             }
-            explicitContentDetectionConfig_ = input.readMessage(com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(explicitContentDetectionConfig_);
-              explicitContentDetectionConfig_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.Builder
+                  subBuilder = null;
+              if (explicitContentDetectionConfig_ != null) {
+                subBuilder = explicitContentDetectionConfig_.toBuilder();
+              }
+              explicitContentDetectionConfig_ =
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(explicitContentDetectionConfig_);
+                explicitContentDetectionConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 42: {
-            com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder subBuilder = null;
-            if (faceDetectionConfig_ != null) {
-              subBuilder = faceDetectionConfig_.toBuilder();
+              break;
             }
-            faceDetectionConfig_ = input.readMessage(com.google.cloud.videointelligence.v1.FaceDetectionConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(faceDetectionConfig_);
-              faceDetectionConfig_ = subBuilder.buildPartial();
-            }
+          case 42:
+            {
+              com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder subBuilder = null;
+              if (faceDetectionConfig_ != null) {
+                subBuilder = faceDetectionConfig_.toBuilder();
+              }
+              faceDetectionConfig_ =
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1.FaceDetectionConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(faceDetectionConfig_);
+                faceDetectionConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 50: {
-            com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder subBuilder = null;
-            if (speechTranscriptionConfig_ != null) {
-              subBuilder = speechTranscriptionConfig_.toBuilder();
+              break;
             }
-            speechTranscriptionConfig_ = input.readMessage(com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(speechTranscriptionConfig_);
-              speechTranscriptionConfig_ = subBuilder.buildPartial();
-            }
+          case 50:
+            {
+              com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder subBuilder =
+                  null;
+              if (speechTranscriptionConfig_ != null) {
+                subBuilder = speechTranscriptionConfig_.toBuilder();
+              }
+              speechTranscriptionConfig_ =
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(speechTranscriptionConfig_);
+                speechTranscriptionConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         segments_ = java.util.Collections.unmodifiableList(segments_);
@@ -143,23 +172,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1_VideoContext_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1_VideoContext_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1_VideoContext_fieldAccessorTable
+    return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1_VideoContext_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.videointelligence.v1.VideoContext.class, com.google.cloud.videointelligence.v1.VideoContext.Builder.class);
+            com.google.cloud.videointelligence.v1.VideoContext.class,
+            com.google.cloud.videointelligence.v1.VideoContext.Builder.class);
   }
 
   private int bitField0_;
   public static final int SEGMENTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.videointelligence.v1.VideoSegment> segments_;
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video is
@@ -172,6 +206,8 @@ private static final long serialVersionUID = 0L;
     return segments_;
   }
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video is
@@ -180,11 +216,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
    */
-  public java.util.List<? extends com.google.cloud.videointelligence.v1.VideoSegmentOrBuilder> 
+  public java.util.List<? extends com.google.cloud.videointelligence.v1.VideoSegmentOrBuilder>
       getSegmentsOrBuilderList() {
     return segments_;
   }
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video is
@@ -197,6 +235,8 @@ private static final long serialVersionUID = 0L;
     return segments_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video is
@@ -209,6 +249,8 @@ private static final long serialVersionUID = 0L;
     return segments_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video is
@@ -225,105 +267,153 @@ private static final long serialVersionUID = 0L;
   public static final int LABEL_DETECTION_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.videointelligence.v1.LabelDetectionConfig labelDetectionConfig_;
   /**
+   *
+   *
    * <pre>
    * Config for LABEL_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;</code>
+   * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;
+   * </code>
    */
   public boolean hasLabelDetectionConfig() {
     return labelDetectionConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Config for LABEL_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;</code>
+   * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;
+   * </code>
    */
   public com.google.cloud.videointelligence.v1.LabelDetectionConfig getLabelDetectionConfig() {
-    return labelDetectionConfig_ == null ? com.google.cloud.videointelligence.v1.LabelDetectionConfig.getDefaultInstance() : labelDetectionConfig_;
+    return labelDetectionConfig_ == null
+        ? com.google.cloud.videointelligence.v1.LabelDetectionConfig.getDefaultInstance()
+        : labelDetectionConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Config for LABEL_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;</code>
+   * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;
+   * </code>
    */
-  public com.google.cloud.videointelligence.v1.LabelDetectionConfigOrBuilder getLabelDetectionConfigOrBuilder() {
+  public com.google.cloud.videointelligence.v1.LabelDetectionConfigOrBuilder
+      getLabelDetectionConfigOrBuilder() {
     return getLabelDetectionConfig();
   }
 
   public static final int SHOT_CHANGE_DETECTION_CONFIG_FIELD_NUMBER = 3;
-  private com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig shotChangeDetectionConfig_;
+  private com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig
+      shotChangeDetectionConfig_;
   /**
+   *
+   *
    * <pre>
    * Config for SHOT_CHANGE_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;
+   * </code>
    */
   public boolean hasShotChangeDetectionConfig() {
     return shotChangeDetectionConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Config for SHOT_CHANGE_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;
+   * </code>
    */
-  public com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig getShotChangeDetectionConfig() {
-    return shotChangeDetectionConfig_ == null ? com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.getDefaultInstance() : shotChangeDetectionConfig_;
+  public com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig
+      getShotChangeDetectionConfig() {
+    return shotChangeDetectionConfig_ == null
+        ? com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.getDefaultInstance()
+        : shotChangeDetectionConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Config for SHOT_CHANGE_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;
+   * </code>
    */
-  public com.google.cloud.videointelligence.v1.ShotChangeDetectionConfigOrBuilder getShotChangeDetectionConfigOrBuilder() {
+  public com.google.cloud.videointelligence.v1.ShotChangeDetectionConfigOrBuilder
+      getShotChangeDetectionConfigOrBuilder() {
     return getShotChangeDetectionConfig();
   }
 
   public static final int EXPLICIT_CONTENT_DETECTION_CONFIG_FIELD_NUMBER = 4;
-  private com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicitContentDetectionConfig_;
+  private com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig
+      explicitContentDetectionConfig_;
   /**
+   *
+   *
    * <pre>
    * Config for EXPLICIT_CONTENT_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
+   * </code>
    */
   public boolean hasExplicitContentDetectionConfig() {
     return explicitContentDetectionConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Config for EXPLICIT_CONTENT_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
+   * </code>
    */
-  public com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig getExplicitContentDetectionConfig() {
-    return explicitContentDetectionConfig_ == null ? com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.getDefaultInstance() : explicitContentDetectionConfig_;
+  public com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig
+      getExplicitContentDetectionConfig() {
+    return explicitContentDetectionConfig_ == null
+        ? com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.getDefaultInstance()
+        : explicitContentDetectionConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Config for EXPLICIT_CONTENT_DETECTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
+   * </code>
    */
-  public com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfigOrBuilder getExplicitContentDetectionConfigOrBuilder() {
+  public com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfigOrBuilder
+      getExplicitContentDetectionConfigOrBuilder() {
     return getExplicitContentDetectionConfig();
   }
 
   public static final int FACE_DETECTION_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.videointelligence.v1.FaceDetectionConfig faceDetectionConfig_;
   /**
+   *
+   *
    * <pre>
    * Config for FACE_DETECTION.
    * </pre>
@@ -334,6 +424,8 @@ private static final long serialVersionUID = 0L;
     return faceDetectionConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Config for FACE_DETECTION.
    * </pre>
@@ -341,53 +433,76 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
    */
   public com.google.cloud.videointelligence.v1.FaceDetectionConfig getFaceDetectionConfig() {
-    return faceDetectionConfig_ == null ? com.google.cloud.videointelligence.v1.FaceDetectionConfig.getDefaultInstance() : faceDetectionConfig_;
+    return faceDetectionConfig_ == null
+        ? com.google.cloud.videointelligence.v1.FaceDetectionConfig.getDefaultInstance()
+        : faceDetectionConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Config for FACE_DETECTION.
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
    */
-  public com.google.cloud.videointelligence.v1.FaceDetectionConfigOrBuilder getFaceDetectionConfigOrBuilder() {
+  public com.google.cloud.videointelligence.v1.FaceDetectionConfigOrBuilder
+      getFaceDetectionConfigOrBuilder() {
     return getFaceDetectionConfig();
   }
 
   public static final int SPEECH_TRANSCRIPTION_CONFIG_FIELD_NUMBER = 6;
-  private com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speechTranscriptionConfig_;
+  private com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig
+      speechTranscriptionConfig_;
   /**
+   *
+   *
    * <pre>
    * Config for SPEECH_TRANSCRIPTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;
+   * </code>
    */
   public boolean hasSpeechTranscriptionConfig() {
     return speechTranscriptionConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Config for SPEECH_TRANSCRIPTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;
+   * </code>
    */
-  public com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig getSpeechTranscriptionConfig() {
-    return speechTranscriptionConfig_ == null ? com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.getDefaultInstance() : speechTranscriptionConfig_;
+  public com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig
+      getSpeechTranscriptionConfig() {
+    return speechTranscriptionConfig_ == null
+        ? com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.getDefaultInstance()
+        : speechTranscriptionConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Config for SPEECH_TRANSCRIPTION.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;
+   * </code>
    */
-  public com.google.cloud.videointelligence.v1.SpeechTranscriptionConfigOrBuilder getSpeechTranscriptionConfigOrBuilder() {
+  public com.google.cloud.videointelligence.v1.SpeechTranscriptionConfigOrBuilder
+      getSpeechTranscriptionConfigOrBuilder() {
     return getSpeechTranscriptionConfig();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -399,8 +514,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < segments_.size(); i++) {
       output.writeMessage(1, segments_.get(i));
     }
@@ -429,28 +543,29 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < segments_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, segments_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, segments_.get(i));
     }
     if (labelDetectionConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getLabelDetectionConfig());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(2, getLabelDetectionConfig());
     }
     if (shotChangeDetectionConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getShotChangeDetectionConfig());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, getShotChangeDetectionConfig());
     }
     if (explicitContentDetectionConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getExplicitContentDetectionConfig());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, getExplicitContentDetectionConfig());
     }
     if (faceDetectionConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getFaceDetectionConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getFaceDetectionConfig());
     }
     if (speechTranscriptionConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getSpeechTranscriptionConfig());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, getSpeechTranscriptionConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -460,40 +575,42 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.videointelligence.v1.VideoContext)) {
       return super.equals(obj);
     }
-    com.google.cloud.videointelligence.v1.VideoContext other = (com.google.cloud.videointelligence.v1.VideoContext) obj;
+    com.google.cloud.videointelligence.v1.VideoContext other =
+        (com.google.cloud.videointelligence.v1.VideoContext) obj;
 
     boolean result = true;
-    result = result && getSegmentsList()
-        .equals(other.getSegmentsList());
+    result = result && getSegmentsList().equals(other.getSegmentsList());
     result = result && (hasLabelDetectionConfig() == other.hasLabelDetectionConfig());
     if (hasLabelDetectionConfig()) {
-      result = result && getLabelDetectionConfig()
-          .equals(other.getLabelDetectionConfig());
+      result = result && getLabelDetectionConfig().equals(other.getLabelDetectionConfig());
     }
     result = result && (hasShotChangeDetectionConfig() == other.hasShotChangeDetectionConfig());
     if (hasShotChangeDetectionConfig()) {
-      result = result && getShotChangeDetectionConfig()
-          .equals(other.getShotChangeDetectionConfig());
+      result =
+          result && getShotChangeDetectionConfig().equals(other.getShotChangeDetectionConfig());
     }
-    result = result && (hasExplicitContentDetectionConfig() == other.hasExplicitContentDetectionConfig());
+    result =
+        result
+            && (hasExplicitContentDetectionConfig() == other.hasExplicitContentDetectionConfig());
     if (hasExplicitContentDetectionConfig()) {
-      result = result && getExplicitContentDetectionConfig()
-          .equals(other.getExplicitContentDetectionConfig());
+      result =
+          result
+              && getExplicitContentDetectionConfig()
+                  .equals(other.getExplicitContentDetectionConfig());
     }
     result = result && (hasFaceDetectionConfig() == other.hasFaceDetectionConfig());
     if (hasFaceDetectionConfig()) {
-      result = result && getFaceDetectionConfig()
-          .equals(other.getFaceDetectionConfig());
+      result = result && getFaceDetectionConfig().equals(other.getFaceDetectionConfig());
     }
     result = result && (hasSpeechTranscriptionConfig() == other.hasSpeechTranscriptionConfig());
     if (hasSpeechTranscriptionConfig()) {
-      result = result && getSpeechTranscriptionConfig()
-          .equals(other.getSpeechTranscriptionConfig());
+      result =
+          result && getSpeechTranscriptionConfig().equals(other.getSpeechTranscriptionConfig());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -536,117 +653,126 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.videointelligence.v1.VideoContext parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1.VideoContext parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1.VideoContext parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1.VideoContext parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1.VideoContext parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1.VideoContext parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.videointelligence.v1.VideoContext parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.videointelligence.v1.VideoContext parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.videointelligence.v1.VideoContext parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.videointelligence.v1.VideoContext parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1.VideoContext parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.videointelligence.v1.VideoContext parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.videointelligence.v1.VideoContext parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.videointelligence.v1.VideoContext parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.videointelligence.v1.VideoContext prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Video context and/or feature-specific parameters.
    * </pre>
    *
    * Protobuf type {@code google.cloud.videointelligence.v1.VideoContext}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.videointelligence.v1.VideoContext)
       com.google.cloud.videointelligence.v1.VideoContextOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1_VideoContext_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1_VideoContext_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1_VideoContext_fieldAccessorTable
+      return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1_VideoContext_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.videointelligence.v1.VideoContext.class, com.google.cloud.videointelligence.v1.VideoContext.Builder.class);
+              com.google.cloud.videointelligence.v1.VideoContext.class,
+              com.google.cloud.videointelligence.v1.VideoContext.Builder.class);
     }
 
     // Construct using com.google.cloud.videointelligence.v1.VideoContext.newBuilder()
@@ -654,17 +780,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getSegmentsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -708,9 +834,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1_VideoContext_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1_VideoContext_descriptor;
     }
 
     @java.lang.Override
@@ -729,7 +855,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.videointelligence.v1.VideoContext buildPartial() {
-      com.google.cloud.videointelligence.v1.VideoContext result = new com.google.cloud.videointelligence.v1.VideoContext(this);
+      com.google.cloud.videointelligence.v1.VideoContext result =
+          new com.google.cloud.videointelligence.v1.VideoContext(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (segmentsBuilder_ == null) {
@@ -775,38 +902,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.videointelligence.v1.VideoContext) {
-        return mergeFrom((com.google.cloud.videointelligence.v1.VideoContext)other);
+        return mergeFrom((com.google.cloud.videointelligence.v1.VideoContext) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -814,7 +942,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.videointelligence.v1.VideoContext other) {
-      if (other == com.google.cloud.videointelligence.v1.VideoContext.getDefaultInstance()) return this;
+      if (other == com.google.cloud.videointelligence.v1.VideoContext.getDefaultInstance())
+        return this;
       if (segmentsBuilder_ == null) {
         if (!other.segments_.isEmpty()) {
           if (segments_.isEmpty()) {
@@ -833,9 +962,10 @@ private static final long serialVersionUID = 0L;
             segmentsBuilder_ = null;
             segments_ = other.segments_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            segmentsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getSegmentsFieldBuilder() : null;
+            segmentsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSegmentsFieldBuilder()
+                    : null;
           } else {
             segmentsBuilder_.addAllMessages(other.segments_);
           }
@@ -875,7 +1005,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.videointelligence.v1.VideoContext) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.videointelligence.v1.VideoContext) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -884,21 +1015,29 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.cloud.videointelligence.v1.VideoSegment> segments_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureSegmentsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        segments_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1.VideoSegment>(segments_);
+        segments_ =
+            new java.util.ArrayList<com.google.cloud.videointelligence.v1.VideoSegment>(segments_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.videointelligence.v1.VideoSegment, com.google.cloud.videointelligence.v1.VideoSegment.Builder, com.google.cloud.videointelligence.v1.VideoSegmentOrBuilder> segmentsBuilder_;
+            com.google.cloud.videointelligence.v1.VideoSegment,
+            com.google.cloud.videointelligence.v1.VideoSegment.Builder,
+            com.google.cloud.videointelligence.v1.VideoSegmentOrBuilder>
+        segmentsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video is
@@ -915,6 +1054,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video is
@@ -931,6 +1072,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video is
@@ -947,6 +1090,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video is
@@ -970,6 +1115,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video is
@@ -990,6 +1137,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video is
@@ -1012,6 +1161,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video is
@@ -1035,6 +1186,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video is
@@ -1055,6 +1208,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video is
@@ -1075,6 +1230,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video is
@@ -1087,8 +1244,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.videointelligence.v1.VideoSegment> values) {
       if (segmentsBuilder_ == null) {
         ensureSegmentsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, segments_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, segments_);
         onChanged();
       } else {
         segmentsBuilder_.addAllMessages(values);
@@ -1096,6 +1252,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video is
@@ -1115,6 +1273,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video is
@@ -1134,6 +1294,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video is
@@ -1147,6 +1309,8 @@ private static final long serialVersionUID = 0L;
       return getSegmentsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video is
@@ -1158,11 +1322,14 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.videointelligence.v1.VideoSegmentOrBuilder getSegmentsOrBuilder(
         int index) {
       if (segmentsBuilder_ == null) {
-        return segments_.get(index);  } else {
+        return segments_.get(index);
+      } else {
         return segmentsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video is
@@ -1171,8 +1338,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
      */
-    public java.util.List<? extends com.google.cloud.videointelligence.v1.VideoSegmentOrBuilder> 
-         getSegmentsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.videointelligence.v1.VideoSegmentOrBuilder>
+        getSegmentsOrBuilderList() {
       if (segmentsBuilder_ != null) {
         return segmentsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1180,6 +1347,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video is
@@ -1189,10 +1358,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
      */
     public com.google.cloud.videointelligence.v1.VideoSegment.Builder addSegmentsBuilder() {
-      return getSegmentsFieldBuilder().addBuilder(
-          com.google.cloud.videointelligence.v1.VideoSegment.getDefaultInstance());
+      return getSegmentsFieldBuilder()
+          .addBuilder(com.google.cloud.videointelligence.v1.VideoSegment.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video is
@@ -1203,10 +1374,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.videointelligence.v1.VideoSegment.Builder addSegmentsBuilder(
         int index) {
-      return getSegmentsFieldBuilder().addBuilder(
-          index, com.google.cloud.videointelligence.v1.VideoSegment.getDefaultInstance());
+      return getSegmentsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.videointelligence.v1.VideoSegment.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video is
@@ -1215,16 +1389,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.videointelligence.v1.VideoSegment segments = 1;</code>
      */
-    public java.util.List<com.google.cloud.videointelligence.v1.VideoSegment.Builder> 
-         getSegmentsBuilderList() {
+    public java.util.List<com.google.cloud.videointelligence.v1.VideoSegment.Builder>
+        getSegmentsBuilderList() {
       return getSegmentsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.videointelligence.v1.VideoSegment, com.google.cloud.videointelligence.v1.VideoSegment.Builder, com.google.cloud.videointelligence.v1.VideoSegmentOrBuilder> 
+            com.google.cloud.videointelligence.v1.VideoSegment,
+            com.google.cloud.videointelligence.v1.VideoSegment.Builder,
+            com.google.cloud.videointelligence.v1.VideoSegmentOrBuilder>
         getSegmentsFieldBuilder() {
       if (segmentsBuilder_ == null) {
-        segmentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.videointelligence.v1.VideoSegment, com.google.cloud.videointelligence.v1.VideoSegment.Builder, com.google.cloud.videointelligence.v1.VideoSegmentOrBuilder>(
+        segmentsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.videointelligence.v1.VideoSegment,
+                com.google.cloud.videointelligence.v1.VideoSegment.Builder,
+                com.google.cloud.videointelligence.v1.VideoSegmentOrBuilder>(
                 segments_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -1236,39 +1416,54 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.videointelligence.v1.LabelDetectionConfig labelDetectionConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.videointelligence.v1.LabelDetectionConfig, com.google.cloud.videointelligence.v1.LabelDetectionConfig.Builder, com.google.cloud.videointelligence.v1.LabelDetectionConfigOrBuilder> labelDetectionConfigBuilder_;
+            com.google.cloud.videointelligence.v1.LabelDetectionConfig,
+            com.google.cloud.videointelligence.v1.LabelDetectionConfig.Builder,
+            com.google.cloud.videointelligence.v1.LabelDetectionConfigOrBuilder>
+        labelDetectionConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Config for LABEL_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;</code>
+     * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;
+     * </code>
      */
     public boolean hasLabelDetectionConfig() {
       return labelDetectionConfigBuilder_ != null || labelDetectionConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Config for LABEL_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;</code>
+     * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;
+     * </code>
      */
     public com.google.cloud.videointelligence.v1.LabelDetectionConfig getLabelDetectionConfig() {
       if (labelDetectionConfigBuilder_ == null) {
-        return labelDetectionConfig_ == null ? com.google.cloud.videointelligence.v1.LabelDetectionConfig.getDefaultInstance() : labelDetectionConfig_;
+        return labelDetectionConfig_ == null
+            ? com.google.cloud.videointelligence.v1.LabelDetectionConfig.getDefaultInstance()
+            : labelDetectionConfig_;
       } else {
         return labelDetectionConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Config for LABEL_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;</code>
+     * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;
+     * </code>
      */
-    public Builder setLabelDetectionConfig(com.google.cloud.videointelligence.v1.LabelDetectionConfig value) {
+    public Builder setLabelDetectionConfig(
+        com.google.cloud.videointelligence.v1.LabelDetectionConfig value) {
       if (labelDetectionConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1282,11 +1477,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for LABEL_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;</code>
+     * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;
+     * </code>
      */
     public Builder setLabelDetectionConfig(
         com.google.cloud.videointelligence.v1.LabelDetectionConfig.Builder builderForValue) {
@@ -1300,17 +1498,24 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for LABEL_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;</code>
+     * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;
+     * </code>
      */
-    public Builder mergeLabelDetectionConfig(com.google.cloud.videointelligence.v1.LabelDetectionConfig value) {
+    public Builder mergeLabelDetectionConfig(
+        com.google.cloud.videointelligence.v1.LabelDetectionConfig value) {
       if (labelDetectionConfigBuilder_ == null) {
         if (labelDetectionConfig_ != null) {
           labelDetectionConfig_ =
-            com.google.cloud.videointelligence.v1.LabelDetectionConfig.newBuilder(labelDetectionConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.videointelligence.v1.LabelDetectionConfig.newBuilder(
+                      labelDetectionConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           labelDetectionConfig_ = value;
         }
@@ -1322,11 +1527,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for LABEL_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;</code>
+     * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;
+     * </code>
      */
     public Builder clearLabelDetectionConfig() {
       if (labelDetectionConfigBuilder_ == null) {
@@ -1340,88 +1548,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for LABEL_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;</code>
+     * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1.LabelDetectionConfig.Builder getLabelDetectionConfigBuilder() {
-      
+    public com.google.cloud.videointelligence.v1.LabelDetectionConfig.Builder
+        getLabelDetectionConfigBuilder() {
+
       onChanged();
       return getLabelDetectionConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Config for LABEL_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;</code>
+     * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1.LabelDetectionConfigOrBuilder getLabelDetectionConfigOrBuilder() {
+    public com.google.cloud.videointelligence.v1.LabelDetectionConfigOrBuilder
+        getLabelDetectionConfigOrBuilder() {
       if (labelDetectionConfigBuilder_ != null) {
         return labelDetectionConfigBuilder_.getMessageOrBuilder();
       } else {
-        return labelDetectionConfig_ == null ?
-            com.google.cloud.videointelligence.v1.LabelDetectionConfig.getDefaultInstance() : labelDetectionConfig_;
+        return labelDetectionConfig_ == null
+            ? com.google.cloud.videointelligence.v1.LabelDetectionConfig.getDefaultInstance()
+            : labelDetectionConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Config for LABEL_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;</code>
+     * <code>.google.cloud.videointelligence.v1.LabelDetectionConfig label_detection_config = 2;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.videointelligence.v1.LabelDetectionConfig, com.google.cloud.videointelligence.v1.LabelDetectionConfig.Builder, com.google.cloud.videointelligence.v1.LabelDetectionConfigOrBuilder> 
+            com.google.cloud.videointelligence.v1.LabelDetectionConfig,
+            com.google.cloud.videointelligence.v1.LabelDetectionConfig.Builder,
+            com.google.cloud.videointelligence.v1.LabelDetectionConfigOrBuilder>
         getLabelDetectionConfigFieldBuilder() {
       if (labelDetectionConfigBuilder_ == null) {
-        labelDetectionConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.videointelligence.v1.LabelDetectionConfig, com.google.cloud.videointelligence.v1.LabelDetectionConfig.Builder, com.google.cloud.videointelligence.v1.LabelDetectionConfigOrBuilder>(
-                getLabelDetectionConfig(),
-                getParentForChildren(),
-                isClean());
+        labelDetectionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.videointelligence.v1.LabelDetectionConfig,
+                com.google.cloud.videointelligence.v1.LabelDetectionConfig.Builder,
+                com.google.cloud.videointelligence.v1.LabelDetectionConfigOrBuilder>(
+                getLabelDetectionConfig(), getParentForChildren(), isClean());
         labelDetectionConfig_ = null;
       }
       return labelDetectionConfigBuilder_;
     }
 
-    private com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig shotChangeDetectionConfig_ = null;
+    private com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig
+        shotChangeDetectionConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig, com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.Builder, com.google.cloud.videointelligence.v1.ShotChangeDetectionConfigOrBuilder> shotChangeDetectionConfigBuilder_;
+            com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig,
+            com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.Builder,
+            com.google.cloud.videointelligence.v1.ShotChangeDetectionConfigOrBuilder>
+        shotChangeDetectionConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Config for SHOT_CHANGE_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;
+     * </code>
      */
     public boolean hasShotChangeDetectionConfig() {
       return shotChangeDetectionConfigBuilder_ != null || shotChangeDetectionConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Config for SHOT_CHANGE_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig getShotChangeDetectionConfig() {
+    public com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig
+        getShotChangeDetectionConfig() {
       if (shotChangeDetectionConfigBuilder_ == null) {
-        return shotChangeDetectionConfig_ == null ? com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.getDefaultInstance() : shotChangeDetectionConfig_;
+        return shotChangeDetectionConfig_ == null
+            ? com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.getDefaultInstance()
+            : shotChangeDetectionConfig_;
       } else {
         return shotChangeDetectionConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Config for SHOT_CHANGE_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;
+     * </code>
      */
-    public Builder setShotChangeDetectionConfig(com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig value) {
+    public Builder setShotChangeDetectionConfig(
+        com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig value) {
       if (shotChangeDetectionConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1435,11 +1678,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for SHOT_CHANGE_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;
+     * </code>
      */
     public Builder setShotChangeDetectionConfig(
         com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.Builder builderForValue) {
@@ -1453,17 +1700,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for SHOT_CHANGE_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;
+     * </code>
      */
-    public Builder mergeShotChangeDetectionConfig(com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig value) {
+    public Builder mergeShotChangeDetectionConfig(
+        com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig value) {
       if (shotChangeDetectionConfigBuilder_ == null) {
         if (shotChangeDetectionConfig_ != null) {
           shotChangeDetectionConfig_ =
-            com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.newBuilder(shotChangeDetectionConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.newBuilder(
+                      shotChangeDetectionConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           shotChangeDetectionConfig_ = value;
         }
@@ -1475,11 +1730,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for SHOT_CHANGE_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;
+     * </code>
      */
     public Builder clearShotChangeDetectionConfig() {
       if (shotChangeDetectionConfigBuilder_ == null) {
@@ -1493,88 +1752,128 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for SHOT_CHANGE_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.Builder getShotChangeDetectionConfigBuilder() {
-      
+    public com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.Builder
+        getShotChangeDetectionConfigBuilder() {
+
       onChanged();
       return getShotChangeDetectionConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Config for SHOT_CHANGE_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1.ShotChangeDetectionConfigOrBuilder getShotChangeDetectionConfigOrBuilder() {
+    public com.google.cloud.videointelligence.v1.ShotChangeDetectionConfigOrBuilder
+        getShotChangeDetectionConfigOrBuilder() {
       if (shotChangeDetectionConfigBuilder_ != null) {
         return shotChangeDetectionConfigBuilder_.getMessageOrBuilder();
       } else {
-        return shotChangeDetectionConfig_ == null ?
-            com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.getDefaultInstance() : shotChangeDetectionConfig_;
+        return shotChangeDetectionConfig_ == null
+            ? com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.getDefaultInstance()
+            : shotChangeDetectionConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Config for SHOT_CHANGE_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.ShotChangeDetectionConfig shot_change_detection_config = 3;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig, com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.Builder, com.google.cloud.videointelligence.v1.ShotChangeDetectionConfigOrBuilder> 
+            com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig,
+            com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.Builder,
+            com.google.cloud.videointelligence.v1.ShotChangeDetectionConfigOrBuilder>
         getShotChangeDetectionConfigFieldBuilder() {
       if (shotChangeDetectionConfigBuilder_ == null) {
-        shotChangeDetectionConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig, com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.Builder, com.google.cloud.videointelligence.v1.ShotChangeDetectionConfigOrBuilder>(
-                getShotChangeDetectionConfig(),
-                getParentForChildren(),
-                isClean());
+        shotChangeDetectionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig,
+                com.google.cloud.videointelligence.v1.ShotChangeDetectionConfig.Builder,
+                com.google.cloud.videointelligence.v1.ShotChangeDetectionConfigOrBuilder>(
+                getShotChangeDetectionConfig(), getParentForChildren(), isClean());
         shotChangeDetectionConfig_ = null;
       }
       return shotChangeDetectionConfigBuilder_;
     }
 
-    private com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicitContentDetectionConfig_ = null;
+    private com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig
+        explicitContentDetectionConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig, com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.Builder, com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfigOrBuilder> explicitContentDetectionConfigBuilder_;
+            com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig,
+            com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.Builder,
+            com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfigOrBuilder>
+        explicitContentDetectionConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Config for EXPLICIT_CONTENT_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
+     * </code>
      */
     public boolean hasExplicitContentDetectionConfig() {
-      return explicitContentDetectionConfigBuilder_ != null || explicitContentDetectionConfig_ != null;
+      return explicitContentDetectionConfigBuilder_ != null
+          || explicitContentDetectionConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Config for EXPLICIT_CONTENT_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig getExplicitContentDetectionConfig() {
+    public com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig
+        getExplicitContentDetectionConfig() {
       if (explicitContentDetectionConfigBuilder_ == null) {
-        return explicitContentDetectionConfig_ == null ? com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.getDefaultInstance() : explicitContentDetectionConfig_;
+        return explicitContentDetectionConfig_ == null
+            ? com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig
+                .getDefaultInstance()
+            : explicitContentDetectionConfig_;
       } else {
         return explicitContentDetectionConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Config for EXPLICIT_CONTENT_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
+     * </code>
      */
-    public Builder setExplicitContentDetectionConfig(com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig value) {
+    public Builder setExplicitContentDetectionConfig(
+        com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig value) {
       if (explicitContentDetectionConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1588,14 +1887,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for EXPLICIT_CONTENT_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
+     * </code>
      */
     public Builder setExplicitContentDetectionConfig(
-        com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.Builder builderForValue) {
+        com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.Builder
+            builderForValue) {
       if (explicitContentDetectionConfigBuilder_ == null) {
         explicitContentDetectionConfig_ = builderForValue.build();
         onChanged();
@@ -1606,17 +1910,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for EXPLICIT_CONTENT_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
+     * </code>
      */
-    public Builder mergeExplicitContentDetectionConfig(com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig value) {
+    public Builder mergeExplicitContentDetectionConfig(
+        com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig value) {
       if (explicitContentDetectionConfigBuilder_ == null) {
         if (explicitContentDetectionConfig_ != null) {
           explicitContentDetectionConfig_ =
-            com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.newBuilder(explicitContentDetectionConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.newBuilder(
+                      explicitContentDetectionConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           explicitContentDetectionConfig_ = value;
         }
@@ -1628,11 +1940,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for EXPLICIT_CONTENT_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
+     * </code>
      */
     public Builder clearExplicitContentDetectionConfig() {
       if (explicitContentDetectionConfigBuilder_ == null) {
@@ -1646,48 +1962,67 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for EXPLICIT_CONTENT_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.Builder getExplicitContentDetectionConfigBuilder() {
-      
+    public com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.Builder
+        getExplicitContentDetectionConfigBuilder() {
+
       onChanged();
       return getExplicitContentDetectionConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Config for EXPLICIT_CONTENT_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfigOrBuilder getExplicitContentDetectionConfigOrBuilder() {
+    public com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfigOrBuilder
+        getExplicitContentDetectionConfigOrBuilder() {
       if (explicitContentDetectionConfigBuilder_ != null) {
         return explicitContentDetectionConfigBuilder_.getMessageOrBuilder();
       } else {
-        return explicitContentDetectionConfig_ == null ?
-            com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.getDefaultInstance() : explicitContentDetectionConfig_;
+        return explicitContentDetectionConfig_ == null
+            ? com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig
+                .getDefaultInstance()
+            : explicitContentDetectionConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Config for EXPLICIT_CONTENT_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.ExplicitContentDetectionConfig explicit_content_detection_config = 4;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig, com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.Builder, com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfigOrBuilder> 
+            com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig,
+            com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.Builder,
+            com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfigOrBuilder>
         getExplicitContentDetectionConfigFieldBuilder() {
       if (explicitContentDetectionConfigBuilder_ == null) {
-        explicitContentDetectionConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig, com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.Builder, com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfigOrBuilder>(
-                getExplicitContentDetectionConfig(),
-                getParentForChildren(),
-                isClean());
+        explicitContentDetectionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig,
+                com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfig.Builder,
+                com.google.cloud.videointelligence.v1.ExplicitContentDetectionConfigOrBuilder>(
+                getExplicitContentDetectionConfig(), getParentForChildren(), isClean());
         explicitContentDetectionConfig_ = null;
       }
       return explicitContentDetectionConfigBuilder_;
@@ -1695,39 +2030,54 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.videointelligence.v1.FaceDetectionConfig faceDetectionConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.videointelligence.v1.FaceDetectionConfig, com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder, com.google.cloud.videointelligence.v1.FaceDetectionConfigOrBuilder> faceDetectionConfigBuilder_;
+            com.google.cloud.videointelligence.v1.FaceDetectionConfig,
+            com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder,
+            com.google.cloud.videointelligence.v1.FaceDetectionConfigOrBuilder>
+        faceDetectionConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Config for FACE_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
+     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
+     * </code>
      */
     public boolean hasFaceDetectionConfig() {
       return faceDetectionConfigBuilder_ != null || faceDetectionConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Config for FACE_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
+     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
+     * </code>
      */
     public com.google.cloud.videointelligence.v1.FaceDetectionConfig getFaceDetectionConfig() {
       if (faceDetectionConfigBuilder_ == null) {
-        return faceDetectionConfig_ == null ? com.google.cloud.videointelligence.v1.FaceDetectionConfig.getDefaultInstance() : faceDetectionConfig_;
+        return faceDetectionConfig_ == null
+            ? com.google.cloud.videointelligence.v1.FaceDetectionConfig.getDefaultInstance()
+            : faceDetectionConfig_;
       } else {
         return faceDetectionConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Config for FACE_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
+     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
+     * </code>
      */
-    public Builder setFaceDetectionConfig(com.google.cloud.videointelligence.v1.FaceDetectionConfig value) {
+    public Builder setFaceDetectionConfig(
+        com.google.cloud.videointelligence.v1.FaceDetectionConfig value) {
       if (faceDetectionConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1741,11 +2091,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for FACE_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
+     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
+     * </code>
      */
     public Builder setFaceDetectionConfig(
         com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder builderForValue) {
@@ -1759,17 +2112,24 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for FACE_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
+     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
+     * </code>
      */
-    public Builder mergeFaceDetectionConfig(com.google.cloud.videointelligence.v1.FaceDetectionConfig value) {
+    public Builder mergeFaceDetectionConfig(
+        com.google.cloud.videointelligence.v1.FaceDetectionConfig value) {
       if (faceDetectionConfigBuilder_ == null) {
         if (faceDetectionConfig_ != null) {
           faceDetectionConfig_ =
-            com.google.cloud.videointelligence.v1.FaceDetectionConfig.newBuilder(faceDetectionConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.videointelligence.v1.FaceDetectionConfig.newBuilder(
+                      faceDetectionConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           faceDetectionConfig_ = value;
         }
@@ -1781,11 +2141,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for FACE_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
+     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
+     * </code>
      */
     public Builder clearFaceDetectionConfig() {
       if (faceDetectionConfigBuilder_ == null) {
@@ -1799,88 +2162,123 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for FACE_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
+     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder getFaceDetectionConfigBuilder() {
-      
+    public com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder
+        getFaceDetectionConfigBuilder() {
+
       onChanged();
       return getFaceDetectionConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Config for FACE_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
+     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1.FaceDetectionConfigOrBuilder getFaceDetectionConfigOrBuilder() {
+    public com.google.cloud.videointelligence.v1.FaceDetectionConfigOrBuilder
+        getFaceDetectionConfigOrBuilder() {
       if (faceDetectionConfigBuilder_ != null) {
         return faceDetectionConfigBuilder_.getMessageOrBuilder();
       } else {
-        return faceDetectionConfig_ == null ?
-            com.google.cloud.videointelligence.v1.FaceDetectionConfig.getDefaultInstance() : faceDetectionConfig_;
+        return faceDetectionConfig_ == null
+            ? com.google.cloud.videointelligence.v1.FaceDetectionConfig.getDefaultInstance()
+            : faceDetectionConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Config for FACE_DETECTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;</code>
+     * <code>.google.cloud.videointelligence.v1.FaceDetectionConfig face_detection_config = 5;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.videointelligence.v1.FaceDetectionConfig, com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder, com.google.cloud.videointelligence.v1.FaceDetectionConfigOrBuilder> 
+            com.google.cloud.videointelligence.v1.FaceDetectionConfig,
+            com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder,
+            com.google.cloud.videointelligence.v1.FaceDetectionConfigOrBuilder>
         getFaceDetectionConfigFieldBuilder() {
       if (faceDetectionConfigBuilder_ == null) {
-        faceDetectionConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.videointelligence.v1.FaceDetectionConfig, com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder, com.google.cloud.videointelligence.v1.FaceDetectionConfigOrBuilder>(
-                getFaceDetectionConfig(),
-                getParentForChildren(),
-                isClean());
+        faceDetectionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.videointelligence.v1.FaceDetectionConfig,
+                com.google.cloud.videointelligence.v1.FaceDetectionConfig.Builder,
+                com.google.cloud.videointelligence.v1.FaceDetectionConfigOrBuilder>(
+                getFaceDetectionConfig(), getParentForChildren(), isClean());
         faceDetectionConfig_ = null;
       }
       return faceDetectionConfigBuilder_;
     }
 
-    private com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speechTranscriptionConfig_ = null;
+    private com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig
+        speechTranscriptionConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig, com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder, com.google.cloud.videointelligence.v1.SpeechTranscriptionConfigOrBuilder> speechTranscriptionConfigBuilder_;
+            com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig,
+            com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder,
+            com.google.cloud.videointelligence.v1.SpeechTranscriptionConfigOrBuilder>
+        speechTranscriptionConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Config for SPEECH_TRANSCRIPTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;
+     * </code>
      */
     public boolean hasSpeechTranscriptionConfig() {
       return speechTranscriptionConfigBuilder_ != null || speechTranscriptionConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Config for SPEECH_TRANSCRIPTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig getSpeechTranscriptionConfig() {
+    public com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig
+        getSpeechTranscriptionConfig() {
       if (speechTranscriptionConfigBuilder_ == null) {
-        return speechTranscriptionConfig_ == null ? com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.getDefaultInstance() : speechTranscriptionConfig_;
+        return speechTranscriptionConfig_ == null
+            ? com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.getDefaultInstance()
+            : speechTranscriptionConfig_;
       } else {
         return speechTranscriptionConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Config for SPEECH_TRANSCRIPTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;
+     * </code>
      */
-    public Builder setSpeechTranscriptionConfig(com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig value) {
+    public Builder setSpeechTranscriptionConfig(
+        com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig value) {
       if (speechTranscriptionConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1894,11 +2292,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for SPEECH_TRANSCRIPTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;
+     * </code>
      */
     public Builder setSpeechTranscriptionConfig(
         com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder builderForValue) {
@@ -1912,17 +2314,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for SPEECH_TRANSCRIPTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;
+     * </code>
      */
-    public Builder mergeSpeechTranscriptionConfig(com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig value) {
+    public Builder mergeSpeechTranscriptionConfig(
+        com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig value) {
       if (speechTranscriptionConfigBuilder_ == null) {
         if (speechTranscriptionConfig_ != null) {
           speechTranscriptionConfig_ =
-            com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.newBuilder(speechTranscriptionConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.newBuilder(
+                      speechTranscriptionConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           speechTranscriptionConfig_ = value;
         }
@@ -1934,11 +2344,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for SPEECH_TRANSCRIPTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;
+     * </code>
      */
     public Builder clearSpeechTranscriptionConfig() {
       if (speechTranscriptionConfigBuilder_ == null) {
@@ -1952,55 +2366,73 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Config for SPEECH_TRANSCRIPTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder getSpeechTranscriptionConfigBuilder() {
-      
+    public com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder
+        getSpeechTranscriptionConfigBuilder() {
+
       onChanged();
       return getSpeechTranscriptionConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Config for SPEECH_TRANSCRIPTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1.SpeechTranscriptionConfigOrBuilder getSpeechTranscriptionConfigOrBuilder() {
+    public com.google.cloud.videointelligence.v1.SpeechTranscriptionConfigOrBuilder
+        getSpeechTranscriptionConfigOrBuilder() {
       if (speechTranscriptionConfigBuilder_ != null) {
         return speechTranscriptionConfigBuilder_.getMessageOrBuilder();
       } else {
-        return speechTranscriptionConfig_ == null ?
-            com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.getDefaultInstance() : speechTranscriptionConfig_;
+        return speechTranscriptionConfig_ == null
+            ? com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.getDefaultInstance()
+            : speechTranscriptionConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Config for SPEECH_TRANSCRIPTION.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1.SpeechTranscriptionConfig speech_transcription_config = 6;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig, com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder, com.google.cloud.videointelligence.v1.SpeechTranscriptionConfigOrBuilder> 
+            com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig,
+            com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder,
+            com.google.cloud.videointelligence.v1.SpeechTranscriptionConfigOrBuilder>
         getSpeechTranscriptionConfigFieldBuilder() {
       if (speechTranscriptionConfigBuilder_ == null) {
-        speechTranscriptionConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig, com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder, com.google.cloud.videointelligence.v1.SpeechTranscriptionConfigOrBuilder>(
-                getSpeechTranscriptionConfig(),
-                getParentForChildren(),
-                isClean());
+        speechTranscriptionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig,
+                com.google.cloud.videointelligence.v1.SpeechTranscriptionConfig.Builder,
+                com.google.cloud.videointelligence.v1.SpeechTranscriptionConfigOrBuilder>(
+                getSpeechTranscriptionConfig(), getParentForChildren(), isClean());
         speechTranscriptionConfig_ = null;
       }
       return speechTranscriptionConfigBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2010,12 +2442,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.videointelligence.v1.VideoContext)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.videointelligence.v1.VideoContext)
   private static final com.google.cloud.videointelligence.v1.VideoContext DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.videointelligence.v1.VideoContext();
   }
@@ -2024,16 +2456,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<VideoContext>
-      PARSER = new com.google.protobuf.AbstractParser<VideoContext>() {
-    @java.lang.Override
-    public VideoContext parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new VideoContext(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<VideoContext> PARSER =
+      new com.google.protobuf.AbstractParser<VideoContext>() {
+        @java.lang.Override
+        public VideoContext parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new VideoContext(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<VideoContext> parser() {
     return PARSER;
@@ -2048,6 +2480,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.videointelligence.v1.VideoContext getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

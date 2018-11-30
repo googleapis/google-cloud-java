@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface ReidentifyContentRequestOrBuilder extends
+public interface ReidentifyContentRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ReidentifyContentRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The parent resource name.
    * </pre>
@@ -16,16 +19,19 @@ public interface ReidentifyContentRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The parent resource name.
    * </pre>
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Configuration for the re-identification of the content item.
    * This field shares the same proto message type that is used for
@@ -41,6 +47,8 @@ public interface ReidentifyContentRequestOrBuilder extends
    */
   boolean hasReidentifyConfig();
   /**
+   *
+   *
    * <pre>
    * Configuration for the re-identification of the content item.
    * This field shares the same proto message type that is used for
@@ -56,6 +64,8 @@ public interface ReidentifyContentRequestOrBuilder extends
    */
   com.google.privacy.dlp.v2.DeidentifyConfig getReidentifyConfig();
   /**
+   *
+   *
    * <pre>
    * Configuration for the re-identification of the content item.
    * This field shares the same proto message type that is used for
@@ -72,6 +82,8 @@ public interface ReidentifyContentRequestOrBuilder extends
   com.google.privacy.dlp.v2.DeidentifyConfigOrBuilder getReidentifyConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Configuration for the inspector.
    * </pre>
@@ -80,6 +92,8 @@ public interface ReidentifyContentRequestOrBuilder extends
    */
   boolean hasInspectConfig();
   /**
+   *
+   *
    * <pre>
    * Configuration for the inspector.
    * </pre>
@@ -88,6 +102,8 @@ public interface ReidentifyContentRequestOrBuilder extends
    */
   com.google.privacy.dlp.v2.InspectConfig getInspectConfig();
   /**
+   *
+   *
    * <pre>
    * Configuration for the inspector.
    * </pre>
@@ -97,6 +113,8 @@ public interface ReidentifyContentRequestOrBuilder extends
   com.google.privacy.dlp.v2.InspectConfigOrBuilder getInspectConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The item to re-identify. Will be treated as text.
    * </pre>
@@ -105,6 +123,8 @@ public interface ReidentifyContentRequestOrBuilder extends
    */
   boolean hasItem();
   /**
+   *
+   *
    * <pre>
    * The item to re-identify. Will be treated as text.
    * </pre>
@@ -113,6 +133,8 @@ public interface ReidentifyContentRequestOrBuilder extends
    */
   com.google.privacy.dlp.v2.ContentItem getItem();
   /**
+   *
+   *
    * <pre>
    * The item to re-identify. Will be treated as text.
    * </pre>
@@ -122,6 +144,8 @@ public interface ReidentifyContentRequestOrBuilder extends
   com.google.privacy.dlp.v2.ContentItemOrBuilder getItemOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional template to use. Any configuration directly specified in
    * `inspect_config` will override those set in the template. Singular fields
@@ -134,6 +158,8 @@ public interface ReidentifyContentRequestOrBuilder extends
    */
   java.lang.String getInspectTemplateName();
   /**
+   *
+   *
    * <pre>
    * Optional template to use. Any configuration directly specified in
    * `inspect_config` will override those set in the template. Singular fields
@@ -144,10 +170,11 @@ public interface ReidentifyContentRequestOrBuilder extends
    *
    * <code>string inspect_template_name = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getInspectTemplateNameBytes();
+  com.google.protobuf.ByteString getInspectTemplateNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional template to use. References an instance of `DeidentifyTemplate`.
    * Any configuration directly specified in `reidentify_config` or
@@ -161,6 +188,8 @@ public interface ReidentifyContentRequestOrBuilder extends
    */
   java.lang.String getReidentifyTemplateName();
   /**
+   *
+   *
    * <pre>
    * Optional template to use. References an instance of `DeidentifyTemplate`.
    * Any configuration directly specified in `reidentify_config` or
@@ -172,6 +201,5 @@ public interface ReidentifyContentRequestOrBuilder extends
    *
    * <code>string reidentify_template_name = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getReidentifyTemplateNameBytes();
+  com.google.protobuf.ByteString getReidentifyTemplateNameBytes();
 }

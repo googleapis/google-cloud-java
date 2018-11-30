@@ -3,11 +3,14 @@
 
 package com.google.cloud.kms.v1;
 
-public interface ListCryptoKeyVersionsRequestOrBuilder extends
+public interface ListCryptoKeyVersionsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.ListCryptoKeyVersionsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to list, in the format
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
@@ -17,6 +20,8 @@ public interface ListCryptoKeyVersionsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to list, in the format
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
@@ -24,10 +29,11 @@ public interface ListCryptoKeyVersionsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional limit on the number of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] to
    * include in the response. Further [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] can
@@ -41,6 +47,8 @@ public interface ListCryptoKeyVersionsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * Optional pagination token, returned earlier via
    * [ListCryptoKeyVersionsResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeyVersionsResponse.next_page_token].
@@ -50,6 +58,8 @@ public interface ListCryptoKeyVersionsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * Optional pagination token, returned earlier via
    * [ListCryptoKeyVersionsResponse.next_page_token][google.cloud.kms.v1.ListCryptoKeyVersionsResponse.next_page_token].
@@ -57,10 +67,11 @@ public interface ListCryptoKeyVersionsRequestOrBuilder extends
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * The fields to include in the response.
    * </pre>
@@ -69,6 +80,8 @@ public interface ListCryptoKeyVersionsRequestOrBuilder extends
    */
   int getViewValue();
   /**
+   *
+   *
    * <pre>
    * The fields to include in the response.
    * </pre>

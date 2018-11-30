@@ -3,11 +3,14 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface TranslationDatasetMetadataOrBuilder extends
+public interface TranslationDatasetMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.TranslationDatasetMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The BCP-47 language code of the source language.
    * </pre>
@@ -16,16 +19,19 @@ public interface TranslationDatasetMetadataOrBuilder extends
    */
   java.lang.String getSourceLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Required. The BCP-47 language code of the source language.
    * </pre>
    *
    * <code>string source_language_code = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSourceLanguageCodeBytes();
+  com.google.protobuf.ByteString getSourceLanguageCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The BCP-47 language code of the target language.
    * </pre>
@@ -34,12 +40,13 @@ public interface TranslationDatasetMetadataOrBuilder extends
    */
   java.lang.String getTargetLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Required. The BCP-47 language code of the target language.
    * </pre>
    *
    * <code>string target_language_code = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getTargetLanguageCodeBytes();
+  com.google.protobuf.ByteString getTargetLanguageCodeBytes();
 }

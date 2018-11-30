@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface UpdateStoredInfoTypeRequestOrBuilder extends
+public interface UpdateStoredInfoTypeRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.UpdateStoredInfoTypeRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Resource name of organization and storedInfoType to be updated, for
    * example `organizations/433245324/storedInfoTypes/432452342` or
@@ -18,6 +21,8 @@ public interface UpdateStoredInfoTypeRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Resource name of organization and storedInfoType to be updated, for
    * example `organizations/433245324/storedInfoTypes/432452342` or
@@ -26,10 +31,11 @@ public interface UpdateStoredInfoTypeRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Updated configuration for the storedInfoType. If not provided, a new
    * version of the storedInfoType will be created with the existing
@@ -40,6 +46,8 @@ public interface UpdateStoredInfoTypeRequestOrBuilder extends
    */
   boolean hasConfig();
   /**
+   *
+   *
    * <pre>
    * Updated configuration for the storedInfoType. If not provided, a new
    * version of the storedInfoType will be created with the existing
@@ -50,6 +58,8 @@ public interface UpdateStoredInfoTypeRequestOrBuilder extends
    */
   com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig();
   /**
+   *
+   *
    * <pre>
    * Updated configuration for the storedInfoType. If not provided, a new
    * version of the storedInfoType will be created with the existing
@@ -61,6 +71,8 @@ public interface UpdateStoredInfoTypeRequestOrBuilder extends
   com.google.privacy.dlp.v2.StoredInfoTypeConfigOrBuilder getConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Mask to control which fields get updated.
    * </pre>
@@ -69,6 +81,8 @@ public interface UpdateStoredInfoTypeRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Mask to control which fields get updated.
    * </pre>
@@ -77,6 +91,8 @@ public interface UpdateStoredInfoTypeRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Mask to control which fields get updated.
    * </pre>

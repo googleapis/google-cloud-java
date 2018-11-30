@@ -28,16 +28,14 @@ import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
-
-import org.threeten.bp.Duration;
+import java.io.IOException;
+import java.util.concurrent.TimeoutException;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-
-import java.io.IOException;
-import java.util.concurrent.TimeoutException;
+import org.threeten.bp.Duration;
 
 @RunWith(JUnit4.class)
 public class LocalDatastoreHelperTest {
@@ -46,8 +44,7 @@ public class LocalDatastoreHelperTest {
   private static final String PROJECT_ID_PREFIX = "test-project-";
   private static final String NAMESPACE = "namespace";
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testCreate() {
@@ -58,7 +55,6 @@ public class LocalDatastoreHelperTest {
     assertTrue(Math.abs(0.9 - helper.getConsistency()) < TOLERANCE);
     assertTrue(helper.getProjectId().startsWith(PROJECT_ID_PREFIX));
   }
-
 
   @Test
   public void testOptions() {

@@ -101,6 +101,7 @@ public class CreateTopicAndPublishMessages {
         ApiFuture<String> future = publisher.publish(pubsubMessage);
 
         // Add an asynchronous callback to handle success / failure
+
         ApiFutures.addCallback(future, new ApiFutureCallback<String>() {
 
           @Override
@@ -120,6 +121,29 @@ public class CreateTopicAndPublishMessages {
             System.out.println(messageId);
           }
         }, MoreExecutors.newDirectExecutorService());
+
+        ApiFutures.addCallback(
+            future,
+            new ApiFutureCallback<String>() {
+
+              @Override
+              public void onFailure(Throwable throwable) {
+                if (throwable instanceof ApiException) {
+                  ApiException apiException = ((ApiException) throwable);
+                  // details on the API exception
+                  System.out.println(apiException.getStatusCode().getCode());
+                  System.out.println(apiException.isRetryable());
+                }
+                System.out.println("Error publishing message : " + message);
+              }
+
+              @Override
+              public void onSuccess(String messageId) {
+                // Once published, returns server-assigned message ids (unique within the topic)
+                System.out.println(messageId);
+              }
+            }, Executors.newSingleThreadExecutor());
+>>>>>>> 2069f80fc168c010f1ba3a41899b3732e2e01754
       }
     } finally {
       if (publisher != null) {

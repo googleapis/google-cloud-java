@@ -3,11 +3,14 @@
 
 package com.google.cloud.kms.v1;
 
-public interface AsymmetricDecryptResponseOrBuilder extends
+public interface AsymmetricDecryptResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.AsymmetricDecryptResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The decrypted data originally encrypted with the matching public key.
    * </pre>

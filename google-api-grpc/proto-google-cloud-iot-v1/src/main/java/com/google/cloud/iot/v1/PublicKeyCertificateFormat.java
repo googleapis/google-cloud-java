@@ -4,15 +4,18 @@
 package com.google.cloud.iot.v1;
 
 /**
+ *
+ *
  * <pre>
  * The supported formats for the public key.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.iot.v1.PublicKeyCertificateFormat}
  */
-public enum PublicKeyCertificateFormat
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum PublicKeyCertificateFormat implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * The format has not been specified. This is an invalid default value and
    * must not be used.
@@ -22,6 +25,8 @@ public enum PublicKeyCertificateFormat
    */
   UNSPECIFIED_PUBLIC_KEY_CERTIFICATE_FORMAT(0),
   /**
+   *
+   *
    * <pre>
    * An X.509v3 certificate ([RFC5280](https://www.ietf.org/rfc/rfc5280.txt)),
    * encoded in base64, and wrapped by `-----BEGIN CERTIFICATE-----` and
@@ -35,6 +40,8 @@ public enum PublicKeyCertificateFormat
   ;
 
   /**
+   *
+   *
    * <pre>
    * The format has not been specified. This is an invalid default value and
    * must not be used.
@@ -44,6 +51,8 @@ public enum PublicKeyCertificateFormat
    */
   public static final int UNSPECIFIED_PUBLIC_KEY_CERTIFICATE_FORMAT_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * An X.509v3 certificate ([RFC5280](https://www.ietf.org/rfc/rfc5280.txt)),
    * encoded in base64, and wrapped by `-----BEGIN CERTIFICATE-----` and
@@ -54,7 +63,6 @@ public enum PublicKeyCertificateFormat
    */
   public static final int X509_CERTIFICATE_PEM_VALUE = 1;
 
-
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -63,9 +71,7 @@ public enum PublicKeyCertificateFormat
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static PublicKeyCertificateFormat valueOf(int value) {
     return forNumber(value);
@@ -73,9 +79,12 @@ public enum PublicKeyCertificateFormat
 
   public static PublicKeyCertificateFormat forNumber(int value) {
     switch (value) {
-      case 0: return UNSPECIFIED_PUBLIC_KEY_CERTIFICATE_FORMAT;
-      case 1: return X509_CERTIFICATE_PEM;
-      default: return null;
+      case 0:
+        return UNSPECIFIED_PUBLIC_KEY_CERTIFICATE_FORMAT;
+      case 1:
+        return X509_CERTIFICATE_PEM;
+      default:
+        return null;
     }
   }
 
@@ -83,24 +92,24 @@ public enum PublicKeyCertificateFormat
       internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      PublicKeyCertificateFormat> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<PublicKeyCertificateFormat>() {
-          public PublicKeyCertificateFormat findValueByNumber(int number) {
-            return PublicKeyCertificateFormat.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<PublicKeyCertificateFormat>
+      internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PublicKeyCertificateFormat>() {
+            public PublicKeyCertificateFormat findValueByNumber(int number) {
+              return PublicKeyCertificateFormat.forNumber(number);
+            }
+          };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.iot.v1.ResourcesProto.getDescriptor().getEnumTypes().get(5);
   }
 
@@ -109,8 +118,7 @@ public enum PublicKeyCertificateFormat
   public static PublicKeyCertificateFormat valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -126,4 +134,3 @@ public enum PublicKeyCertificateFormat
 
   // @@protoc_insertion_point(enum_scope:google.cloud.iot.v1.PublicKeyCertificateFormat)
 }
-

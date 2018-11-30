@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1;
 
-public interface ProductSearchParamsOrBuilder extends
+public interface ProductSearchParamsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.ProductSearchParams)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The bounding polygon around the area of interest in the image.
    * Optional. If it is not specified, system discretion will be applied.
@@ -17,6 +20,8 @@ public interface ProductSearchParamsOrBuilder extends
    */
   boolean hasBoundingPoly();
   /**
+   *
+   *
    * <pre>
    * The bounding polygon around the area of interest in the image.
    * Optional. If it is not specified, system discretion will be applied.
@@ -26,6 +31,8 @@ public interface ProductSearchParamsOrBuilder extends
    */
   com.google.cloud.vision.v1.BoundingPoly getBoundingPoly();
   /**
+   *
+   *
    * <pre>
    * The bounding polygon around the area of interest in the image.
    * Optional. If it is not specified, system discretion will be applied.
@@ -36,6 +43,8 @@ public interface ProductSearchParamsOrBuilder extends
   com.google.cloud.vision.v1.BoundingPolyOrBuilder getBoundingPolyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The resource name of a [ProductSet][google.cloud.vision.v1.ProductSet] to be searched for similar images.
    * Format is:
@@ -46,6 +55,8 @@ public interface ProductSearchParamsOrBuilder extends
    */
   java.lang.String getProductSet();
   /**
+   *
+   *
    * <pre>
    * The resource name of a [ProductSet][google.cloud.vision.v1.ProductSet] to be searched for similar images.
    * Format is:
@@ -54,10 +65,11 @@ public interface ProductSearchParamsOrBuilder extends
    *
    * <code>string product_set = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getProductSetBytes();
+  com.google.protobuf.ByteString getProductSetBytes();
 
   /**
+   *
+   *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
    * the first category, and either "homegoods", "apparel", or "toys" should be
@@ -66,9 +78,10 @@ public interface ProductSearchParamsOrBuilder extends
    *
    * <code>repeated string product_categories = 7;</code>
    */
-  java.util.List<java.lang.String>
-      getProductCategoriesList();
+  java.util.List<java.lang.String> getProductCategoriesList();
   /**
+   *
+   *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
    * the first category, and either "homegoods", "apparel", or "toys" should be
@@ -79,6 +92,8 @@ public interface ProductSearchParamsOrBuilder extends
    */
   int getProductCategoriesCount();
   /**
+   *
+   *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
    * the first category, and either "homegoods", "apparel", or "toys" should be
@@ -89,6 +104,8 @@ public interface ProductSearchParamsOrBuilder extends
    */
   java.lang.String getProductCategories(int index);
   /**
+   *
+   *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
    * the first category, and either "homegoods", "apparel", or "toys" should be
@@ -97,10 +114,11 @@ public interface ProductSearchParamsOrBuilder extends
    *
    * <code>repeated string product_categories = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getProductCategoriesBytes(int index);
+  com.google.protobuf.ByteString getProductCategoriesBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * The filtering expression. This can be used to restrict search results based
    * on Product labels. We currently support an AND of OR of key-value
@@ -113,6 +131,8 @@ public interface ProductSearchParamsOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * The filtering expression. This can be used to restrict search results based
    * on Product labels. We currently support an AND of OR of key-value
@@ -123,6 +143,5 @@ public interface ProductSearchParamsOrBuilder extends
    *
    * <code>string filter = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 }

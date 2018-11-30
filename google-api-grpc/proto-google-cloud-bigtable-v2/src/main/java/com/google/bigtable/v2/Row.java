@@ -4,6 +4,8 @@
 package com.google.bigtable.v2;
 
 /**
+ *
+ *
  * <pre>
  * Specifies the complete (requested) contents of a single row of a table.
  * Rows which exceed 256MiB in size cannot be read in full.
@@ -11,25 +13,26 @@ package com.google.bigtable.v2;
  *
  * Protobuf type {@code google.bigtable.v2.Row}
  */
-public  final class Row extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Row extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.Row)
     RowOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Row.newBuilder() to construct.
   private Row(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Row() {
     key_ = com.google.protobuf.ByteString.EMPTY;
     families_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Row(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,34 +52,34 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-
-            key_ = input.readBytes();
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              families_ = new java.util.ArrayList<com.google.bigtable.v2.Family>();
-              mutable_bitField0_ |= 0x00000002;
+          case 10:
+            {
+              key_ = input.readBytes();
+              break;
             }
-            families_.add(
-                input.readMessage(com.google.bigtable.v2.Family.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                families_ = new java.util.ArrayList<com.google.bigtable.v2.Family>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              families_.add(
+                  input.readMessage(com.google.bigtable.v2.Family.parser(), extensionRegistry));
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         families_ = java.util.Collections.unmodifiableList(families_);
@@ -85,23 +88,25 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.bigtable.v2.DataProto.internal_static_google_bigtable_v2_Row_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.bigtable.v2.DataProto.internal_static_google_bigtable_v2_Row_fieldAccessorTable
-        .ensureFieldAccessorsInitialized(
-            com.google.bigtable.v2.Row.class, com.google.bigtable.v2.Row.Builder.class);
+    return com.google.bigtable.v2.DataProto
+        .internal_static_google_bigtable_v2_Row_fieldAccessorTable.ensureFieldAccessorsInitialized(
+        com.google.bigtable.v2.Row.class, com.google.bigtable.v2.Row.Builder.class);
   }
 
   private int bitField0_;
   public static final int KEY_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString key_;
   /**
+   *
+   *
    * <pre>
    * The unique key which identifies this row within its table. This is the same
    * key that's used to identify the row in, for example, a MutateRowRequest.
@@ -117,6 +122,8 @@ private static final long serialVersionUID = 0L;
   public static final int FAMILIES_FIELD_NUMBER = 2;
   private java.util.List<com.google.bigtable.v2.Family> families_;
   /**
+   *
+   *
    * <pre>
    * May be empty, but only if the entire row is empty.
    * The mutual ordering of column families is not specified.
@@ -128,6 +135,8 @@ private static final long serialVersionUID = 0L;
     return families_;
   }
   /**
+   *
+   *
    * <pre>
    * May be empty, but only if the entire row is empty.
    * The mutual ordering of column families is not specified.
@@ -135,11 +144,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.bigtable.v2.Family families = 2;</code>
    */
-  public java.util.List<? extends com.google.bigtable.v2.FamilyOrBuilder> 
+  public java.util.List<? extends com.google.bigtable.v2.FamilyOrBuilder>
       getFamiliesOrBuilderList() {
     return families_;
   }
   /**
+   *
+   *
    * <pre>
    * May be empty, but only if the entire row is empty.
    * The mutual ordering of column families is not specified.
@@ -151,6 +162,8 @@ private static final long serialVersionUID = 0L;
     return families_.size();
   }
   /**
+   *
+   *
    * <pre>
    * May be empty, but only if the entire row is empty.
    * The mutual ordering of column families is not specified.
@@ -162,6 +175,8 @@ private static final long serialVersionUID = 0L;
     return families_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * May be empty, but only if the entire row is empty.
    * The mutual ordering of column families is not specified.
@@ -169,12 +184,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.bigtable.v2.Family families = 2;</code>
    */
-  public com.google.bigtable.v2.FamilyOrBuilder getFamiliesOrBuilder(
-      int index) {
+  public com.google.bigtable.v2.FamilyOrBuilder getFamiliesOrBuilder(int index) {
     return families_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -186,8 +201,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!key_.isEmpty()) {
       output.writeBytes(1, key_);
     }
@@ -204,12 +218,10 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (!key_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(1, key_);
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(1, key_);
     }
     for (int i = 0; i < families_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, families_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, families_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -219,7 +231,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.bigtable.v2.Row)) {
       return super.equals(obj);
@@ -227,10 +239,8 @@ private static final long serialVersionUID = 0L;
     com.google.bigtable.v2.Row other = (com.google.bigtable.v2.Row) obj;
 
     boolean result = true;
-    result = result && getKey()
-        .equals(other.getKey());
-    result = result && getFamiliesList()
-        .equals(other.getFamiliesList());
+    result = result && getKey().equals(other.getKey());
+    result = result && getFamiliesList().equals(other.getFamiliesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -253,97 +263,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.bigtable.v2.Row parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.bigtable.v2.Row parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.v2.Row parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.bigtable.v2.Row parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.bigtable.v2.Row parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.v2.Row parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.bigtable.v2.Row parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.v2.Row parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.bigtable.v2.Row parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.bigtable.v2.Row parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.bigtable.v2.Row parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.bigtable.v2.Row parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.bigtable.v2.Row parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static com.google.bigtable.v2.Row parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.bigtable.v2.Row parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.bigtable.v2.Row prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Specifies the complete (requested) contents of a single row of a table.
    * Rows which exceed 256MiB in size cannot be read in full.
@@ -351,19 +367,19 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.bigtable.v2.Row}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.bigtable.v2.Row)
       com.google.bigtable.v2.RowOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.bigtable.v2.DataProto.internal_static_google_bigtable_v2_Row_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.bigtable.v2.DataProto.internal_static_google_bigtable_v2_Row_fieldAccessorTable
+      return com.google.bigtable.v2.DataProto
+          .internal_static_google_bigtable_v2_Row_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.bigtable.v2.Row.class, com.google.bigtable.v2.Row.Builder.class);
     }
@@ -373,17 +389,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getFamiliesFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -399,8 +415,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.bigtable.v2.DataProto.internal_static_google_bigtable_v2_Row_descriptor;
     }
 
@@ -442,38 +457,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.bigtable.v2.Row) {
-        return mergeFrom((com.google.bigtable.v2.Row)other);
+        return mergeFrom((com.google.bigtable.v2.Row) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -503,9 +519,10 @@ private static final long serialVersionUID = 0L;
             familiesBuilder_ = null;
             families_ = other.families_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            familiesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getFamiliesFieldBuilder() : null;
+            familiesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getFamiliesFieldBuilder()
+                    : null;
           } else {
             familiesBuilder_.addAllMessages(other.families_);
           }
@@ -539,10 +556,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private com.google.protobuf.ByteString key_ = com.google.protobuf.ByteString.EMPTY;
     /**
+     *
+     *
      * <pre>
      * The unique key which identifies this row within its table. This is the same
      * key that's used to identify the row in, for example, a MutateRowRequest.
@@ -555,6 +575,8 @@ private static final long serialVersionUID = 0L;
       return key_;
     }
     /**
+     *
+     *
      * <pre>
      * The unique key which identifies this row within its table. This is the same
      * key that's used to identify the row in, for example, a MutateRowRequest.
@@ -565,14 +587,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setKey(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       key_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The unique key which identifies this row within its table. This is the same
      * key that's used to identify the row in, for example, a MutateRowRequest.
@@ -582,25 +606,31 @@ private static final long serialVersionUID = 0L;
      * <code>bytes key = 1;</code>
      */
     public Builder clearKey() {
-      
+
       key_ = getDefaultInstance().getKey();
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.bigtable.v2.Family> families_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureFamiliesIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         families_ = new java.util.ArrayList<com.google.bigtable.v2.Family>(families_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.bigtable.v2.Family, com.google.bigtable.v2.Family.Builder, com.google.bigtable.v2.FamilyOrBuilder> familiesBuilder_;
+            com.google.bigtable.v2.Family,
+            com.google.bigtable.v2.Family.Builder,
+            com.google.bigtable.v2.FamilyOrBuilder>
+        familiesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * May be empty, but only if the entire row is empty.
      * The mutual ordering of column families is not specified.
@@ -616,6 +646,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * May be empty, but only if the entire row is empty.
      * The mutual ordering of column families is not specified.
@@ -631,6 +663,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * May be empty, but only if the entire row is empty.
      * The mutual ordering of column families is not specified.
@@ -646,6 +680,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * May be empty, but only if the entire row is empty.
      * The mutual ordering of column families is not specified.
@@ -653,8 +689,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.bigtable.v2.Family families = 2;</code>
      */
-    public Builder setFamilies(
-        int index, com.google.bigtable.v2.Family value) {
+    public Builder setFamilies(int index, com.google.bigtable.v2.Family value) {
       if (familiesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -668,6 +703,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * May be empty, but only if the entire row is empty.
      * The mutual ordering of column families is not specified.
@@ -675,8 +712,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.bigtable.v2.Family families = 2;</code>
      */
-    public Builder setFamilies(
-        int index, com.google.bigtable.v2.Family.Builder builderForValue) {
+    public Builder setFamilies(int index, com.google.bigtable.v2.Family.Builder builderForValue) {
       if (familiesBuilder_ == null) {
         ensureFamiliesIsMutable();
         families_.set(index, builderForValue.build());
@@ -687,6 +723,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * May be empty, but only if the entire row is empty.
      * The mutual ordering of column families is not specified.
@@ -708,6 +746,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * May be empty, but only if the entire row is empty.
      * The mutual ordering of column families is not specified.
@@ -715,8 +755,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.bigtable.v2.Family families = 2;</code>
      */
-    public Builder addFamilies(
-        int index, com.google.bigtable.v2.Family value) {
+    public Builder addFamilies(int index, com.google.bigtable.v2.Family value) {
       if (familiesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -730,6 +769,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * May be empty, but only if the entire row is empty.
      * The mutual ordering of column families is not specified.
@@ -737,8 +778,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.bigtable.v2.Family families = 2;</code>
      */
-    public Builder addFamilies(
-        com.google.bigtable.v2.Family.Builder builderForValue) {
+    public Builder addFamilies(com.google.bigtable.v2.Family.Builder builderForValue) {
       if (familiesBuilder_ == null) {
         ensureFamiliesIsMutable();
         families_.add(builderForValue.build());
@@ -749,6 +789,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * May be empty, but only if the entire row is empty.
      * The mutual ordering of column families is not specified.
@@ -756,8 +798,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.bigtable.v2.Family families = 2;</code>
      */
-    public Builder addFamilies(
-        int index, com.google.bigtable.v2.Family.Builder builderForValue) {
+    public Builder addFamilies(int index, com.google.bigtable.v2.Family.Builder builderForValue) {
       if (familiesBuilder_ == null) {
         ensureFamiliesIsMutable();
         families_.add(index, builderForValue.build());
@@ -768,6 +809,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * May be empty, but only if the entire row is empty.
      * The mutual ordering of column families is not specified.
@@ -779,8 +822,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.bigtable.v2.Family> values) {
       if (familiesBuilder_ == null) {
         ensureFamiliesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, families_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, families_);
         onChanged();
       } else {
         familiesBuilder_.addAllMessages(values);
@@ -788,6 +830,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * May be empty, but only if the entire row is empty.
      * The mutual ordering of column families is not specified.
@@ -806,6 +850,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * May be empty, but only if the entire row is empty.
      * The mutual ordering of column families is not specified.
@@ -824,6 +870,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * May be empty, but only if the entire row is empty.
      * The mutual ordering of column families is not specified.
@@ -831,11 +879,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.bigtable.v2.Family families = 2;</code>
      */
-    public com.google.bigtable.v2.Family.Builder getFamiliesBuilder(
-        int index) {
+    public com.google.bigtable.v2.Family.Builder getFamiliesBuilder(int index) {
       return getFamiliesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * May be empty, but only if the entire row is empty.
      * The mutual ordering of column families is not specified.
@@ -843,14 +892,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.bigtable.v2.Family families = 2;</code>
      */
-    public com.google.bigtable.v2.FamilyOrBuilder getFamiliesOrBuilder(
-        int index) {
+    public com.google.bigtable.v2.FamilyOrBuilder getFamiliesOrBuilder(int index) {
       if (familiesBuilder_ == null) {
-        return families_.get(index);  } else {
+        return families_.get(index);
+      } else {
         return familiesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * May be empty, but only if the entire row is empty.
      * The mutual ordering of column families is not specified.
@@ -858,8 +909,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.bigtable.v2.Family families = 2;</code>
      */
-    public java.util.List<? extends com.google.bigtable.v2.FamilyOrBuilder> 
-         getFamiliesOrBuilderList() {
+    public java.util.List<? extends com.google.bigtable.v2.FamilyOrBuilder>
+        getFamiliesOrBuilderList() {
       if (familiesBuilder_ != null) {
         return familiesBuilder_.getMessageOrBuilderList();
       } else {
@@ -867,6 +918,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * May be empty, but only if the entire row is empty.
      * The mutual ordering of column families is not specified.
@@ -875,10 +928,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.bigtable.v2.Family families = 2;</code>
      */
     public com.google.bigtable.v2.Family.Builder addFamiliesBuilder() {
-      return getFamiliesFieldBuilder().addBuilder(
-          com.google.bigtable.v2.Family.getDefaultInstance());
+      return getFamiliesFieldBuilder()
+          .addBuilder(com.google.bigtable.v2.Family.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * May be empty, but only if the entire row is empty.
      * The mutual ordering of column families is not specified.
@@ -886,12 +941,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.bigtable.v2.Family families = 2;</code>
      */
-    public com.google.bigtable.v2.Family.Builder addFamiliesBuilder(
-        int index) {
-      return getFamiliesFieldBuilder().addBuilder(
-          index, com.google.bigtable.v2.Family.getDefaultInstance());
+    public com.google.bigtable.v2.Family.Builder addFamiliesBuilder(int index) {
+      return getFamiliesFieldBuilder()
+          .addBuilder(index, com.google.bigtable.v2.Family.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * May be empty, but only if the entire row is empty.
      * The mutual ordering of column families is not specified.
@@ -899,16 +955,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.bigtable.v2.Family families = 2;</code>
      */
-    public java.util.List<com.google.bigtable.v2.Family.Builder> 
-         getFamiliesBuilderList() {
+    public java.util.List<com.google.bigtable.v2.Family.Builder> getFamiliesBuilderList() {
       return getFamiliesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.bigtable.v2.Family, com.google.bigtable.v2.Family.Builder, com.google.bigtable.v2.FamilyOrBuilder> 
+            com.google.bigtable.v2.Family,
+            com.google.bigtable.v2.Family.Builder,
+            com.google.bigtable.v2.FamilyOrBuilder>
         getFamiliesFieldBuilder() {
       if (familiesBuilder_ == null) {
-        familiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.bigtable.v2.Family, com.google.bigtable.v2.Family.Builder, com.google.bigtable.v2.FamilyOrBuilder>(
+        familiesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.bigtable.v2.Family,
+                com.google.bigtable.v2.Family.Builder,
+                com.google.bigtable.v2.FamilyOrBuilder>(
                 families_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
@@ -917,9 +978,9 @@ private static final long serialVersionUID = 0L;
       }
       return familiesBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -929,12 +990,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.bigtable.v2.Row)
   }
 
   // @@protoc_insertion_point(class_scope:google.bigtable.v2.Row)
   private static final com.google.bigtable.v2.Row DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.bigtable.v2.Row();
   }
@@ -943,16 +1004,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Row>
-      PARSER = new com.google.protobuf.AbstractParser<Row>() {
-    @java.lang.Override
-    public Row parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Row(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Row> PARSER =
+      new com.google.protobuf.AbstractParser<Row>() {
+        @java.lang.Override
+        public Row parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Row(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Row> parser() {
     return PARSER;
@@ -967,6 +1028,4 @@ private static final long serialVersionUID = 0L;
   public com.google.bigtable.v2.Row getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

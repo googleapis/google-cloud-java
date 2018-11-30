@@ -105,9 +105,9 @@ public class MessageDispatcherTest {
     flowController =
         new FlowController(
             FlowControlSettings.newBuilder()
-              .setMaxOutstandingElementCount(1L)
-              .setLimitExceededBehavior(FlowController.LimitExceededBehavior.ThrowException)
-              .build());
+                .setMaxOutstandingElementCount(1L)
+                .setLimitExceededBehavior(FlowController.LimitExceededBehavior.ThrowException)
+                .build());
 
     dispatcher =
         new MessageDispatcher(

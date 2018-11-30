@@ -24,7 +24,7 @@ import org.junit.Test;
 
 public class LatLngValueTest {
 
-private static final LatLng CONTENT = new LatLng(37.4, -122.1);
+  private static final LatLng CONTENT = new LatLng(37.4, -122.1);
 
   @Test
   public void testToBuilder() throws Exception {

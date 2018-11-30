@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface ByteContentItemOrBuilder extends
+public interface ByteContentItemOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ByteContentItem)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The type of data stored in the bytes string. Default will be TEXT_UTF8.
    * </pre>
@@ -16,6 +19,8 @@ public interface ByteContentItemOrBuilder extends
    */
   int getTypeValue();
   /**
+   *
+   *
    * <pre>
    * The type of data stored in the bytes string. Default will be TEXT_UTF8.
    * </pre>
@@ -25,6 +30,8 @@ public interface ByteContentItemOrBuilder extends
   com.google.privacy.dlp.v2.ByteContentItem.BytesType getType();
 
   /**
+   *
+   *
    * <pre>
    * Content data to inspect or redact.
    * </pre>

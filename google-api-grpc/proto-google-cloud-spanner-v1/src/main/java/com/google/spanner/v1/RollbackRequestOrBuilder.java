@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface RollbackRequestOrBuilder extends
+public interface RollbackRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.RollbackRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The session in which the transaction to roll back is running.
    * </pre>
@@ -16,16 +19,19 @@ public interface RollbackRequestOrBuilder extends
    */
   java.lang.String getSession();
   /**
+   *
+   *
    * <pre>
    * Required. The session in which the transaction to roll back is running.
    * </pre>
    *
    * <code>string session = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSessionBytes();
+  com.google.protobuf.ByteString getSessionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The transaction to roll back.
    * </pre>

@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface ModifyAckDeadlineRequestOrBuilder extends
+public interface ModifyAckDeadlineRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.ModifyAckDeadlineRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the subscription.
    * Format is `projects/{project}/subscriptions/{sub}`.
@@ -17,6 +20,8 @@ public interface ModifyAckDeadlineRequestOrBuilder extends
    */
   java.lang.String getSubscription();
   /**
+   *
+   *
    * <pre>
    * The name of the subscription.
    * Format is `projects/{project}/subscriptions/{sub}`.
@@ -24,19 +29,21 @@ public interface ModifyAckDeadlineRequestOrBuilder extends
    *
    * <code>string subscription = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSubscriptionBytes();
+  com.google.protobuf.ByteString getSubscriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * List of acknowledgment IDs.
    * </pre>
    *
    * <code>repeated string ack_ids = 4;</code>
    */
-  java.util.List<java.lang.String>
-      getAckIdsList();
+  java.util.List<java.lang.String> getAckIdsList();
   /**
+   *
+   *
    * <pre>
    * List of acknowledgment IDs.
    * </pre>
@@ -45,6 +52,8 @@ public interface ModifyAckDeadlineRequestOrBuilder extends
    */
   int getAckIdsCount();
   /**
+   *
+   *
    * <pre>
    * List of acknowledgment IDs.
    * </pre>
@@ -53,16 +62,19 @@ public interface ModifyAckDeadlineRequestOrBuilder extends
    */
   java.lang.String getAckIds(int index);
   /**
+   *
+   *
    * <pre>
    * List of acknowledgment IDs.
    * </pre>
    *
    * <code>repeated string ack_ids = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getAckIdsBytes(int index);
+  com.google.protobuf.ByteString getAckIdsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * The new ack deadline with respect to the time this request was sent to
    * the Pub/Sub system. For example, if the value is 10, the new

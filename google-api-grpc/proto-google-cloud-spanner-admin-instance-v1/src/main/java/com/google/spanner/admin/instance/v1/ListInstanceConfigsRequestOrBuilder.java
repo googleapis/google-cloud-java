@@ -3,11 +3,14 @@
 
 package com.google.spanner.admin.instance.v1;
 
-public interface ListInstanceConfigsRequestOrBuilder extends
+public interface ListInstanceConfigsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.admin.instance.v1.ListInstanceConfigsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the project for which a list of supported instance
    * configurations is requested. Values are of the form
@@ -18,6 +21,8 @@ public interface ListInstanceConfigsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the project for which a list of supported instance
    * configurations is requested. Values are of the form
@@ -26,10 +31,11 @@ public interface ListInstanceConfigsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Number of instance configurations to be returned in the response. If 0 or
    * less, defaults to the server's maximum allowed page size.
@@ -40,6 +46,8 @@ public interface ListInstanceConfigsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * If non-empty, `page_token` should contain a
    * [next_page_token][google.spanner.admin.instance.v1.ListInstanceConfigsResponse.next_page_token]
@@ -50,6 +58,8 @@ public interface ListInstanceConfigsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * If non-empty, `page_token` should contain a
    * [next_page_token][google.spanner.admin.instance.v1.ListInstanceConfigsResponse.next_page_token]
@@ -58,6 +68,5 @@ public interface ListInstanceConfigsRequestOrBuilder extends
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

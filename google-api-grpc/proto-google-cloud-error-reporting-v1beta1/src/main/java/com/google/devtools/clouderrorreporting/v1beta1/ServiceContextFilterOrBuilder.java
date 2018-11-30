@@ -3,11 +3,14 @@
 
 package com.google.devtools.clouderrorreporting.v1beta1;
 
-public interface ServiceContextFilterOrBuilder extends
+public interface ServiceContextFilterOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.clouderrorreporting.v1beta1.ServiceContextFilter)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * [Optional] The exact value to match against
    * [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
@@ -17,6 +20,8 @@ public interface ServiceContextFilterOrBuilder extends
    */
   java.lang.String getService();
   /**
+   *
+   *
    * <pre>
    * [Optional] The exact value to match against
    * [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
@@ -24,10 +29,11 @@ public interface ServiceContextFilterOrBuilder extends
    *
    * <code>string service = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getServiceBytes();
+  com.google.protobuf.ByteString getServiceBytes();
 
   /**
+   *
+   *
    * <pre>
    * [Optional] The exact value to match against
    * [`ServiceContext.version`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
@@ -37,6 +43,8 @@ public interface ServiceContextFilterOrBuilder extends
    */
   java.lang.String getVersion();
   /**
+   *
+   *
    * <pre>
    * [Optional] The exact value to match against
    * [`ServiceContext.version`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.version).
@@ -44,10 +52,11 @@ public interface ServiceContextFilterOrBuilder extends
    *
    * <code>string version = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getVersionBytes();
+  com.google.protobuf.ByteString getVersionBytes();
 
   /**
+   *
+   *
    * <pre>
    * [Optional] The exact value to match against
    * [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
@@ -57,6 +66,8 @@ public interface ServiceContextFilterOrBuilder extends
    */
   java.lang.String getResourceType();
   /**
+   *
+   *
    * <pre>
    * [Optional] The exact value to match against
    * [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
@@ -64,6 +75,5 @@ public interface ServiceContextFilterOrBuilder extends
    *
    * <code>string resource_type = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getResourceTypeBytes();
+  com.google.protobuf.ByteString getResourceTypeBytes();
 }

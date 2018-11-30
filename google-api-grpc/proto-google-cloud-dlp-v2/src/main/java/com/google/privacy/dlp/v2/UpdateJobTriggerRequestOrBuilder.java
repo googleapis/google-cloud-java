@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface UpdateJobTriggerRequestOrBuilder extends
+public interface UpdateJobTriggerRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.UpdateJobTriggerRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Resource name of the project and the triggeredJob, for example
    * `projects/dlp-test-project/jobTriggers/53234423`.
@@ -17,6 +20,8 @@ public interface UpdateJobTriggerRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Resource name of the project and the triggeredJob, for example
    * `projects/dlp-test-project/jobTriggers/53234423`.
@@ -24,10 +29,11 @@ public interface UpdateJobTriggerRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * New JobTrigger value.
    * </pre>
@@ -36,6 +42,8 @@ public interface UpdateJobTriggerRequestOrBuilder extends
    */
   boolean hasJobTrigger();
   /**
+   *
+   *
    * <pre>
    * New JobTrigger value.
    * </pre>
@@ -44,6 +52,8 @@ public interface UpdateJobTriggerRequestOrBuilder extends
    */
   com.google.privacy.dlp.v2.JobTrigger getJobTrigger();
   /**
+   *
+   *
    * <pre>
    * New JobTrigger value.
    * </pre>
@@ -53,6 +63,8 @@ public interface UpdateJobTriggerRequestOrBuilder extends
   com.google.privacy.dlp.v2.JobTriggerOrBuilder getJobTriggerOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Mask to control which fields get updated.
    * </pre>
@@ -61,6 +73,8 @@ public interface UpdateJobTriggerRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Mask to control which fields get updated.
    * </pre>
@@ -69,6 +83,8 @@ public interface UpdateJobTriggerRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Mask to control which fields get updated.
    * </pre>

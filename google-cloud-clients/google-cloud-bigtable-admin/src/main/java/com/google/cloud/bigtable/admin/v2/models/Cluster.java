@@ -85,8 +85,7 @@ public class Cluster {
     }
   }
 
-  @Nonnull
-  private final com.google.bigtable.admin.v2.Cluster stateProto;
+  @Nonnull private final com.google.bigtable.admin.v2.Cluster stateProto;
 
   /**
    * Wraps a protobuf response.
@@ -105,14 +104,12 @@ public class Cluster {
     this.stateProto = proto;
   }
 
-
   /** Gets the cluster's id. */
   @SuppressWarnings("WeakerAccess")
   public String getId() {
     // Constructor ensures that name is not null
-    ClusterName fullName = Verify.verifyNotNull(
-        ClusterName.parse(stateProto.getName()),
-        "Name can never be null");
+    ClusterName fullName =
+        Verify.verifyNotNull(ClusterName.parse(stateProto.getName()), "Name can never be null");
     //noinspection ConstantConditions
     return fullName.getCluster();
   }
@@ -121,14 +118,11 @@ public class Cluster {
   @SuppressWarnings("WeakerAccess")
   public String getInstanceId() {
     // Constructor ensures that name is not null
-    ClusterName fullName = Verify.verifyNotNull(
-        ClusterName.parse(stateProto.getName()),
-        "Name can never be null");
+    ClusterName fullName =
+        Verify.verifyNotNull(ClusterName.parse(stateProto.getName()), "Name can never be null");
     //noinspection ConstantConditions
     return fullName.getInstance();
-
   }
-
 
   /** Get the zone where this cluster is located. */
   @SuppressWarnings("WeakerAccess")

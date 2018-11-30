@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface ColorOrBuilder extends
+public interface ColorOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Color)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The amount of red in the color as a value in the interval [0, 1].
    * </pre>
@@ -17,6 +20,8 @@ public interface ColorOrBuilder extends
   float getRed();
 
   /**
+   *
+   *
    * <pre>
    * The amount of green in the color as a value in the interval [0, 1].
    * </pre>
@@ -26,6 +31,8 @@ public interface ColorOrBuilder extends
   float getGreen();
 
   /**
+   *
+   *
    * <pre>
    * The amount of blue in the color as a value in the interval [0, 1].
    * </pre>

@@ -3,11 +3,14 @@
 
 package com.google.devtools.cloudtrace.v2;
 
-public interface ModuleOrBuilder extends
+public interface ModuleOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.cloudtrace.v2.Module)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * For example: main binary, kernel modules, and dynamic libraries
    * such as libc.so, sharedlib.so (up to 256 bytes).
@@ -17,6 +20,8 @@ public interface ModuleOrBuilder extends
    */
   boolean hasModule();
   /**
+   *
+   *
    * <pre>
    * For example: main binary, kernel modules, and dynamic libraries
    * such as libc.so, sharedlib.so (up to 256 bytes).
@@ -26,6 +31,8 @@ public interface ModuleOrBuilder extends
    */
   com.google.devtools.cloudtrace.v2.TruncatableString getModule();
   /**
+   *
+   *
    * <pre>
    * For example: main binary, kernel modules, and dynamic libraries
    * such as libc.so, sharedlib.so (up to 256 bytes).
@@ -36,6 +43,8 @@ public interface ModuleOrBuilder extends
   com.google.devtools.cloudtrace.v2.TruncatableStringOrBuilder getModuleOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A unique identifier for the module, usually a hash of its
    * contents (up to 128 bytes).
@@ -45,6 +54,8 @@ public interface ModuleOrBuilder extends
    */
   boolean hasBuildId();
   /**
+   *
+   *
    * <pre>
    * A unique identifier for the module, usually a hash of its
    * contents (up to 128 bytes).
@@ -54,6 +65,8 @@ public interface ModuleOrBuilder extends
    */
   com.google.devtools.cloudtrace.v2.TruncatableString getBuildId();
   /**
+   *
+   *
    * <pre>
    * A unique identifier for the module, usually a hash of its
    * contents (up to 128 bytes).

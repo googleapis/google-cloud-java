@@ -3,11 +3,14 @@
 
 package com.google.datastore.v1;
 
-public interface PropertyReferenceOrBuilder extends
+public interface PropertyReferenceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.datastore.v1.PropertyReference)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the property.
    * If name includes "."s, it may be interpreted as a property name path.
@@ -17,6 +20,8 @@ public interface PropertyReferenceOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the property.
    * If name includes "."s, it may be interpreted as a property name path.
@@ -24,6 +29,5 @@ public interface PropertyReferenceOrBuilder extends
    *
    * <code>string name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

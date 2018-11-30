@@ -3,11 +3,14 @@
 
 package com.google.cloud.texttospeech.v1;
 
-public interface AudioConfigOrBuilder extends
+public interface AudioConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.texttospeech.v1.AudioConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The format of the requested audio byte stream.
    * </pre>
@@ -16,6 +19,8 @@ public interface AudioConfigOrBuilder extends
    */
   int getAudioEncodingValue();
   /**
+   *
+   *
    * <pre>
    * Required. The format of the requested audio byte stream.
    * </pre>
@@ -25,6 +30,8 @@ public interface AudioConfigOrBuilder extends
   com.google.cloud.texttospeech.v1.AudioEncoding getAudioEncoding();
 
   /**
+   *
+   *
    * <pre>
    * Optional speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal
    * native speed supported by the specific voice. 2.0 is twice as fast, and
@@ -37,6 +44,8 @@ public interface AudioConfigOrBuilder extends
   double getSpeakingRate();
 
   /**
+   *
+   *
    * <pre>
    * Optional speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20
    * semitones from the original pitch. -20 means decrease 20 semitones from the
@@ -48,6 +57,8 @@ public interface AudioConfigOrBuilder extends
   double getPitch();
 
   /**
+   *
+   *
    * <pre>
    * Optional volume gain (in dB) of the normal native volume supported by the
    * specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of
@@ -64,6 +75,8 @@ public interface AudioConfigOrBuilder extends
   double getVolumeGainDb();
 
   /**
+   *
+   *
    * <pre>
    * The synthesis sample rate (in hertz) for this audio. Optional.  If this is
    * different from the voice's natural sample rate, then the synthesizer will

@@ -3,11 +3,14 @@
 
 package com.google.cloud.websecurityscanner.v1alpha;
 
-public interface StartScanRunRequestOrBuilder extends
+public interface StartScanRunRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1alpha.StartScanRunRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The resource name of the ScanConfig to be used. The name follows the
@@ -18,6 +21,8 @@ public interface StartScanRunRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The resource name of the ScanConfig to be used. The name follows the
@@ -26,6 +31,5 @@ public interface StartScanRunRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

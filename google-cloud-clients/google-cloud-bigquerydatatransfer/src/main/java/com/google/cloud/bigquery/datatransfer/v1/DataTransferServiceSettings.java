@@ -279,7 +279,8 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
 
     /** Returns the builder for the settings used for calls to listTransferConfigs. */
     public PagedCallSettings.Builder<
-            ListTransferConfigsRequest, ListTransferConfigsResponse,
+            ListTransferConfigsRequest,
+            ListTransferConfigsResponse,
             ListTransferConfigsPagedResponse>
         listTransferConfigsSettings() {
       return getStubSettingsBuilder().listTransferConfigsSettings();

@@ -16,18 +16,15 @@
 
 package com.google.cloud;
 
+import com.google.api.core.BetaApi;
+import com.google.common.base.Preconditions;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.google.api.core.BetaApi;
-import com.google.common.base.Preconditions;
-
-/**
- * Represents a Date without time, such as 2017-03-17. Date is timezone independent.
- */
+/** Represents a Date without time, such as 2017-03-17. Date is timezone independent. */
 @BetaApi("This is going to be replaced with LocalDate from threetenbp")
 public final class Date implements Comparable<Date>, Serializable {
 
@@ -101,7 +98,8 @@ public final class Date implements Comparable<Date>, Serializable {
     cal.set(Calendar.SECOND, 0);
     cal.set(Calendar.MILLISECOND, 0);
     // Calender.MONTH starts from 0 while G C date starts from 1
-    return new Date(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) + 1, cal.get(Calendar.DAY_OF_MONTH));
+    return new Date(
+        cal.get(Calendar.YEAR), cal.get(Calendar.MONTH) + 1, cal.get(Calendar.DAY_OF_MONTH));
   }
 
   /** Returns the year. */

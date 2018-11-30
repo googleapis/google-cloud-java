@@ -20,10 +20,7 @@ import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.spi.ServiceRpcFactory;
 
 /**
- * An interface for Datastore RPC factory.
- * Implementation will be loaded via {@link java.util.ServiceLoader}.
+ * An interface for Datastore RPC factory. Implementation will be loaded via {@link
+ * java.util.ServiceLoader}.
  */
-public interface DatastoreRpcFactory extends
-    ServiceRpcFactory<DatastoreOptions> {
-}
-
+public interface DatastoreRpcFactory extends ServiceRpcFactory<DatastoreOptions> {}

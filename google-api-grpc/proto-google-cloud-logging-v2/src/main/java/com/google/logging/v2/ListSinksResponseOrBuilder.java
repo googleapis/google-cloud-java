@@ -3,20 +3,24 @@
 
 package com.google.logging.v2;
 
-public interface ListSinksResponseOrBuilder extends
+public interface ListSinksResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.ListSinksResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A list of sinks.
    * </pre>
    *
    * <code>repeated .google.logging.v2.LogSink sinks = 1;</code>
    */
-  java.util.List<com.google.logging.v2.LogSink> 
-      getSinksList();
+  java.util.List<com.google.logging.v2.LogSink> getSinksList();
   /**
+   *
+   *
    * <pre>
    * A list of sinks.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListSinksResponseOrBuilder extends
    */
   com.google.logging.v2.LogSink getSinks(int index);
   /**
+   *
+   *
    * <pre>
    * A list of sinks.
    * </pre>
@@ -33,25 +39,29 @@ public interface ListSinksResponseOrBuilder extends
    */
   int getSinksCount();
   /**
+   *
+   *
    * <pre>
    * A list of sinks.
    * </pre>
    *
    * <code>repeated .google.logging.v2.LogSink sinks = 1;</code>
    */
-  java.util.List<? extends com.google.logging.v2.LogSinkOrBuilder> 
-      getSinksOrBuilderList();
+  java.util.List<? extends com.google.logging.v2.LogSinkOrBuilder> getSinksOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A list of sinks.
    * </pre>
    *
    * <code>repeated .google.logging.v2.LogSink sinks = 1;</code>
    */
-  com.google.logging.v2.LogSinkOrBuilder getSinksOrBuilder(
-      int index);
+  com.google.logging.v2.LogSinkOrBuilder getSinksOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If there might be more results than appear in this response, then
    * `nextPageToken` is included.  To get the next set of results, call the same
@@ -62,6 +72,8 @@ public interface ListSinksResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If there might be more results than appear in this response, then
    * `nextPageToken` is included.  To get the next set of results, call the same
@@ -70,6 +82,5 @@ public interface ListSinksResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

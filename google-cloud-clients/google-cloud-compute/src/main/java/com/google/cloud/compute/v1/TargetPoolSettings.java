@@ -78,7 +78,8 @@ public class TargetPoolSettings extends ClientSettings<TargetPoolSettings> {
 
   /** Returns the object with the settings used for calls to aggregatedListTargetPools. */
   public PagedCallSettings<
-          AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
+          AggregatedListTargetPoolsHttpRequest,
+          TargetPoolAggregatedList,
           AggregatedListTargetPoolsPagedResponse>
       aggregatedListTargetPoolsSettings() {
     return ((TargetPoolStubSettings) getStubSettings()).aggregatedListTargetPoolsSettings();
@@ -244,7 +245,8 @@ public class TargetPoolSettings extends ClientSettings<TargetPoolSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListTargetPools. */
     public PagedCallSettings.Builder<
-            AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
+            AggregatedListTargetPoolsHttpRequest,
+            TargetPoolAggregatedList,
             AggregatedListTargetPoolsPagedResponse>
         aggregatedListTargetPoolsSettings() {
       return getStubSettingsBuilder().aggregatedListTargetPoolsSettings();

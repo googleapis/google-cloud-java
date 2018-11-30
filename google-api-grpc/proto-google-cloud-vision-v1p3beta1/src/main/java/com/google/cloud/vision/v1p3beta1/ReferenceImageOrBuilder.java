@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface ReferenceImageOrBuilder extends
+public interface ReferenceImageOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.ReferenceImage)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resource name of the reference image.
    * Format is:
@@ -19,6 +22,8 @@ public interface ReferenceImageOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The resource name of the reference image.
    * Format is:
@@ -28,10 +33,11 @@ public interface ReferenceImageOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage URI of the reference image.
    * The URI must start with `gs://`.
@@ -42,6 +48,8 @@ public interface ReferenceImageOrBuilder extends
    */
   java.lang.String getUri();
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage URI of the reference image.
    * The URI must start with `gs://`.
@@ -50,10 +58,11 @@ public interface ReferenceImageOrBuilder extends
    *
    * <code>string uri = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getUriBytes();
+  com.google.protobuf.ByteString getUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * Bounding polygons around the areas of interest in the reference image.
    * Optional. If this field is empty, the system will try to detect regions of
@@ -66,9 +75,10 @@ public interface ReferenceImageOrBuilder extends
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.BoundingPoly bounding_polys = 3;</code>
    */
-  java.util.List<com.google.cloud.vision.v1p3beta1.BoundingPoly> 
-      getBoundingPolysList();
+  java.util.List<com.google.cloud.vision.v1p3beta1.BoundingPoly> getBoundingPolysList();
   /**
+   *
+   *
    * <pre>
    * Bounding polygons around the areas of interest in the reference image.
    * Optional. If this field is empty, the system will try to detect regions of
@@ -83,6 +93,8 @@ public interface ReferenceImageOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.BoundingPoly getBoundingPolys(int index);
   /**
+   *
+   *
    * <pre>
    * Bounding polygons around the areas of interest in the reference image.
    * Optional. If this field is empty, the system will try to detect regions of
@@ -97,6 +109,8 @@ public interface ReferenceImageOrBuilder extends
    */
   int getBoundingPolysCount();
   /**
+   *
+   *
    * <pre>
    * Bounding polygons around the areas of interest in the reference image.
    * Optional. If this field is empty, the system will try to detect regions of
@@ -109,9 +123,11 @@ public interface ReferenceImageOrBuilder extends
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.BoundingPoly bounding_polys = 3;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder>
       getBoundingPolysOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Bounding polygons around the areas of interest in the reference image.
    * Optional. If this field is empty, the system will try to detect regions of
@@ -124,6 +140,5 @@ public interface ReferenceImageOrBuilder extends
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.BoundingPoly bounding_polys = 3;</code>
    */
-  com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder getBoundingPolysOrBuilder(
-      int index);
+  com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder getBoundingPolysOrBuilder(int index);
 }

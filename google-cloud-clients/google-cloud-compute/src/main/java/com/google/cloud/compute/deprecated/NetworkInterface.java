@@ -25,15 +25,14 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
 /**
- * A network interface for a Google Compute Engine instance. Network interfaces specify how
- * the instance is configured to interact with other network services, such as connecting to the
+ * A network interface for a Google Compute Engine instance. Network interfaces specify how the
+ * instance is configured to interact with other network services, such as connecting to the
  * internet.
  *
  * @see <a href="https://cloud.google.com/compute/docs/instances-and-network">Configuring an
@@ -43,24 +42,22 @@ public class NetworkInterface implements Serializable {
 
   static final Function<com.google.api.services.compute.model.NetworkInterface, NetworkInterface>
       FROM_PB_FUNCTION =
-      new Function<com.google.api.services.compute.model.NetworkInterface,
-          NetworkInterface>() {
-        @Override
-        public NetworkInterface apply(
-            com.google.api.services.compute.model.NetworkInterface pb) {
-          return NetworkInterface.fromPb(pb);
-        }
-      };
+          new Function<com.google.api.services.compute.model.NetworkInterface, NetworkInterface>() {
+            @Override
+            public NetworkInterface apply(
+                com.google.api.services.compute.model.NetworkInterface pb) {
+              return NetworkInterface.fromPb(pb);
+            }
+          };
   static final Function<NetworkInterface, com.google.api.services.compute.model.NetworkInterface>
       TO_PB_FUNCTION =
-      new Function<NetworkInterface,
-          com.google.api.services.compute.model.NetworkInterface>() {
-        @Override
-        public com.google.api.services.compute.model.NetworkInterface apply(
-            NetworkInterface networkInterface) {
-          return networkInterface.toPb();
-        }
-      };
+          new Function<NetworkInterface, com.google.api.services.compute.model.NetworkInterface>() {
+            @Override
+            public com.google.api.services.compute.model.NetworkInterface apply(
+                NetworkInterface networkInterface) {
+              return networkInterface.toPb();
+            }
+          };
 
   private static final long serialVersionUID = 936741262053605581L;
 
@@ -84,21 +81,21 @@ public class NetworkInterface implements Serializable {
 
     static final Function<com.google.api.services.compute.model.AccessConfig, AccessConfig>
         FROM_PB_FUNCTION =
-        new Function<com.google.api.services.compute.model.AccessConfig, AccessConfig>() {
-          @Override
-          public AccessConfig apply(com.google.api.services.compute.model.AccessConfig pb) {
-            return AccessConfig.fromPb(pb);
-          }
-        };
+            new Function<com.google.api.services.compute.model.AccessConfig, AccessConfig>() {
+              @Override
+              public AccessConfig apply(com.google.api.services.compute.model.AccessConfig pb) {
+                return AccessConfig.fromPb(pb);
+              }
+            };
     static final Function<AccessConfig, com.google.api.services.compute.model.AccessConfig>
         TO_PB_FUNCTION =
-        new Function<AccessConfig, com.google.api.services.compute.model.AccessConfig>() {
-          @Override
-          public com.google.api.services.compute.model.AccessConfig apply(
-              AccessConfig instance) {
-            return instance.toPb();
-          }
-        };
+            new Function<AccessConfig, com.google.api.services.compute.model.AccessConfig>() {
+              @Override
+              public com.google.api.services.compute.model.AccessConfig apply(
+                  AccessConfig instance) {
+                return instance.toPb();
+              }
+            };
 
     private static final long serialVersionUID = -5438060668934041567L;
 
@@ -120,9 +117,7 @@ public class NetworkInterface implements Serializable {
             }
           };
 
-      private static final StringEnumType<Type> type = new StringEnumType(
-          Type.class,
-          CONSTRUCTOR);
+      private static final StringEnumType<Type> type = new StringEnumType(Type.class, CONSTRUCTOR);
 
       public static final Type ONE_TO_ONE_NAT = type.createAndRegister("ONE_TO_ONE_NAT");
 
@@ -131,23 +126,19 @@ public class NetworkInterface implements Serializable {
       }
 
       /**
-       * Get the Type for the given String constant, and throw an exception if the constant is
-       * not recognized.
+       * Get the Type for the given String constant, and throw an exception if the constant is not
+       * recognized.
        */
       public static Type valueOfStrict(String constant) {
         return type.valueOfStrict(constant);
       }
 
-      /**
-       * Get the Type for the given String constant, and allow unrecognized values.
-       */
+      /** Get the Type for the given String constant, and allow unrecognized values. */
       public static Type valueOf(String constant) {
         return type.valueOf(constant);
       }
 
-      /**
-       * Return the known values for Type.
-       */
+      /** Return the known values for Type. */
       public static Type[] values() {
         return type.values();
       }
@@ -167,9 +158,7 @@ public class NetworkInterface implements Serializable {
         this.type = accessConfig.type;
       }
 
-      /**
-       * Sets the name of the access configuration.
-       */
+      /** Sets the name of the access configuration. */
       public Builder setName(String name) {
         this.name = name;
         return this;
@@ -193,17 +182,15 @@ public class NetworkInterface implements Serializable {
       }
 
       /**
-       * Sets the type of the access configuration. The only supported value is
-       * {@link Type#ONE_TO_ONE_NAT}.
+       * Sets the type of the access configuration. The only supported value is {@link
+       * Type#ONE_TO_ONE_NAT}.
        */
       public Builder setType(Type type) {
         this.type = type;
         return this;
       }
 
-      /**
-       * Creates an {@code AccessConfig} object.
-       */
+      /** Creates an {@code AccessConfig} object. */
       public AccessConfig build() {
         return new AccessConfig(this);
       }
@@ -215,31 +202,25 @@ public class NetworkInterface implements Serializable {
       this.type = builder.type;
     }
 
-    /**
-     * Returns the name of the access configuration.
-     */
+    /** Returns the name of the access configuration. */
     public String getName() {
       return name;
     }
 
-    /**
-     * Returns an external IP address associated with this instance.
-     */
+    /** Returns an external IP address associated with this instance. */
     public String getNatIp() {
       return natIp;
     }
 
     /**
-     * Returns the type of network access configuration. The only supported value is
-     * {@link Type#ONE_TO_ONE_NAT}.
+     * Returns the type of network access configuration. The only supported value is {@link
+     * Type#ONE_TO_ONE_NAT}.
      */
     public Type getType() {
       return type;
     }
 
-    /**
-     * Returns a builder for the current access configuration.
-     */
+    /** Returns a builder for the current access configuration. */
     public Builder toBuilder() {
       return new Builder(this);
     }
@@ -261,8 +242,7 @@ public class NetworkInterface implements Serializable {
     @Override
     public boolean equals(Object obj) {
       return obj == this
-          || obj instanceof AccessConfig
-          && Objects.equals(toPb(), ((AccessConfig) obj).toPb());
+          || obj instanceof AccessConfig && Objects.equals(toPb(), ((AccessConfig) obj).toPb());
     }
 
     com.google.api.services.compute.model.AccessConfig toPb() {
@@ -276,9 +256,7 @@ public class NetworkInterface implements Serializable {
       return accessConfigPb;
     }
 
-    /**
-     * Returns a builder for an {@code AccessConfig} object.
-     */
+    /** Returns a builder for an {@code AccessConfig} object. */
     public static Builder newBuilder() {
       return new Builder();
     }
@@ -342,9 +320,7 @@ public class NetworkInterface implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the identity of the network this interface applies to.
-     */
+    /** Sets the identity of the network this interface applies to. */
     public Builder setNetwork(NetworkId network) {
       this.network = checkNotNull(network);
       return this;
@@ -356,8 +332,8 @@ public class NetworkInterface implements Serializable {
     }
 
     /**
-     * Sets the identity of the subnetwork this interface applies to. Setting the subnetwork is
-     * not necessary when the network is in "automatic subnet mode".
+     * Sets the identity of the subnetwork this interface applies to. Setting the subnetwork is not
+     * necessary when the network is in "automatic subnet mode".
      */
     public Builder setSubnetwork(SubnetworkId subnetwork) {
       this.subnetwork = subnetwork;
@@ -394,9 +370,7 @@ public class NetworkInterface implements Serializable {
       return this;
     }
 
-    /**
-     * Creates a {@code NetworkInterface} object.
-     */
+    /** Creates a {@code NetworkInterface} object. */
     public NetworkInterface build() {
       return new NetworkInterface(this);
     }
@@ -407,21 +381,21 @@ public class NetworkInterface implements Serializable {
     this.network = builder.network;
     this.networkIp = builder.networkIp;
     this.subnetwork = builder.subnetwork;
-    this.accessConfigurations = builder.accessConfigurations != null
-        ? builder.accessConfigurations : ImmutableList.<AccessConfig>of();
+    this.accessConfigurations =
+        builder.accessConfigurations != null
+            ? builder.accessConfigurations
+            : ImmutableList.<AccessConfig>of();
   }
 
   /**
-   * Returns the name of the network interface, generated by the service. For network devices,
-   * these are {@code eth0}, {@code eth1}, etc.
+   * Returns the name of the network interface, generated by the service. For network devices, these
+   * are {@code eth0}, {@code eth1}, etc.
    */
   public String getName() {
     return name;
   }
 
-  /**
-   * Returns the identity of the network this interface applies to.
-   */
+  /** Returns the identity of the network this interface applies to. */
   public NetworkId getNetwork() {
     return network;
   }
@@ -434,23 +408,17 @@ public class NetworkInterface implements Serializable {
     return networkIp;
   }
 
-  /**
-   * Returns the identity of the subnetwork this interface applies to.
-   */
+  /** Returns the identity of the subnetwork this interface applies to. */
   public SubnetworkId getSubnetwork() {
     return subnetwork;
   }
 
-  /**
-   * Returns a list of access configurations for the network interface.
-   */
+  /** Returns a list of access configurations for the network interface. */
   public List<AccessConfig> getAccessConfigurations() {
     return accessConfigurations;
   }
 
-  /**
-   * Returns a builder for the current network interface.
-   */
+  /** Returns a builder for the current network interface. */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -475,8 +443,8 @@ public class NetworkInterface implements Serializable {
   public final boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(NetworkInterface.class)
-        && Objects.equals(toPb(), ((NetworkInterface) obj).toPb());
+            && obj.getClass().equals(NetworkInterface.class)
+            && Objects.equals(toPb(), ((NetworkInterface) obj).toPb());
   }
 
   com.google.api.services.compute.model.NetworkInterface toPb() {
@@ -504,45 +472,38 @@ public class NetworkInterface implements Serializable {
     return builder.build();
   }
 
-  /**
-   * Returns a builder for a {@code NetworkInterface} object given the network's identity.
-   */
+  /** Returns a builder for a {@code NetworkInterface} object given the network's identity. */
   public static Builder newBuilder(NetworkId networkId) {
     return new Builder(networkId);
   }
 
-  /**
-   * Returns a builder for a {@code NetworkInterface} object given the network's name.
-   */
+  /** Returns a builder for a {@code NetworkInterface} object given the network's name. */
   public static Builder newBuilder(String network) {
     return newBuilder(NetworkId.of(network));
   }
 
-  /**
-   * Returns a {@code NetworkInterface} object given the network's identity.
-   */
+  /** Returns a {@code NetworkInterface} object given the network's identity. */
   public static NetworkInterface of(NetworkId networkId) {
     return newBuilder(networkId).build();
   }
 
-  /**
-   * Returns a {@code NetworkInterface} object given the network's name.
-   */
+  /** Returns a {@code NetworkInterface} object given the network's name. */
   public static NetworkInterface of(String network) {
     return newBuilder(network).build();
   }
 
   static NetworkInterface fromPb(
       com.google.api.services.compute.model.NetworkInterface interfacePb) {
-    Builder builder = newBuilder(NetworkId.fromUrl(interfacePb.getNetwork()))
-        .setName(interfacePb.getName());
+    Builder builder =
+        newBuilder(NetworkId.fromUrl(interfacePb.getNetwork())).setName(interfacePb.getName());
     if (interfacePb.getSubnetwork() != null) {
       builder.setSubnetwork(SubnetworkId.fromUrl(interfacePb.getSubnetwork()));
     }
     builder.setNetworkIp(interfacePb.getNetworkIP());
-    builder.setAccessConfigurations(interfacePb.getAccessConfigs() != null
-        ? Lists.transform(interfacePb.getAccessConfigs(), AccessConfig.FROM_PB_FUNCTION) :
-        ImmutableList.<AccessConfig>of());
+    builder.setAccessConfigurations(
+        interfacePb.getAccessConfigs() != null
+            ? Lists.transform(interfacePb.getAccessConfigs(), AccessConfig.FROM_PB_FUNCTION)
+            : ImmutableList.<AccessConfig>of());
     return builder.build();
   }
 }

@@ -3,11 +3,14 @@
 
 package com.google.cloud.asset.v1beta1;
 
-public interface ExportAssetsRequestOrBuilder extends
+public interface ExportAssetsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.asset.v1beta1.ExportAssetsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The relative name of the root asset. This can only be an organization
    * number (such as "organizations/123"), a project ID (such as
@@ -18,6 +21,8 @@ public interface ExportAssetsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The relative name of the root asset. This can only be an organization
    * number (such as "organizations/123"), a project ID (such as
@@ -26,10 +31,11 @@ public interface ExportAssetsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Timestamp to take an asset snapshot. This can only be set to a timestamp in
    * the past or of the current time. If not specified, the current time will be
@@ -42,6 +48,8 @@ public interface ExportAssetsRequestOrBuilder extends
    */
   boolean hasReadTime();
   /**
+   *
+   *
    * <pre>
    * Timestamp to take an asset snapshot. This can only be set to a timestamp in
    * the past or of the current time. If not specified, the current time will be
@@ -54,6 +62,8 @@ public interface ExportAssetsRequestOrBuilder extends
    */
   com.google.protobuf.Timestamp getReadTime();
   /**
+   *
+   *
    * <pre>
    * Timestamp to take an asset snapshot. This can only be set to a timestamp in
    * the past or of the current time. If not specified, the current time will be
@@ -67,6 +77,8 @@ public interface ExportAssetsRequestOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A list of asset types of which to take a snapshot for. For example:
    * "google.compute.disk". If specified, only matching assets will be returned.
@@ -74,9 +86,10 @@ public interface ExportAssetsRequestOrBuilder extends
    *
    * <code>repeated string asset_types = 3;</code>
    */
-  java.util.List<java.lang.String>
-      getAssetTypesList();
+  java.util.List<java.lang.String> getAssetTypesList();
   /**
+   *
+   *
    * <pre>
    * A list of asset types of which to take a snapshot for. For example:
    * "google.compute.disk". If specified, only matching assets will be returned.
@@ -86,6 +99,8 @@ public interface ExportAssetsRequestOrBuilder extends
    */
   int getAssetTypesCount();
   /**
+   *
+   *
    * <pre>
    * A list of asset types of which to take a snapshot for. For example:
    * "google.compute.disk". If specified, only matching assets will be returned.
@@ -95,6 +110,8 @@ public interface ExportAssetsRequestOrBuilder extends
    */
   java.lang.String getAssetTypes(int index);
   /**
+   *
+   *
    * <pre>
    * A list of asset types of which to take a snapshot for. For example:
    * "google.compute.disk". If specified, only matching assets will be returned.
@@ -102,10 +119,11 @@ public interface ExportAssetsRequestOrBuilder extends
    *
    * <code>repeated string asset_types = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getAssetTypesBytes(int index);
+  com.google.protobuf.ByteString getAssetTypesBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Asset content type. If not specified, no content but the asset name will be
    * returned.
@@ -115,6 +133,8 @@ public interface ExportAssetsRequestOrBuilder extends
    */
   int getContentTypeValue();
   /**
+   *
+   *
    * <pre>
    * Asset content type. If not specified, no content but the asset name will be
    * returned.
@@ -125,6 +145,8 @@ public interface ExportAssetsRequestOrBuilder extends
   com.google.cloud.asset.v1beta1.ContentType getContentType();
 
   /**
+   *
+   *
    * <pre>
    * Required. Output configuration indicating where the results will be output
    * to. All results will be in newline delimited JSON format.
@@ -134,6 +156,8 @@ public interface ExportAssetsRequestOrBuilder extends
    */
   boolean hasOutputConfig();
   /**
+   *
+   *
    * <pre>
    * Required. Output configuration indicating where the results will be output
    * to. All results will be in newline delimited JSON format.
@@ -143,6 +167,8 @@ public interface ExportAssetsRequestOrBuilder extends
    */
   com.google.cloud.asset.v1beta1.OutputConfig getOutputConfig();
   /**
+   *
+   *
    * <pre>
    * Required. Output configuration indicating where the results will be output
    * to. All results will be in newline delimited JSON format.

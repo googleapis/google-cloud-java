@@ -3,11 +3,14 @@
 
 package com.google.spanner.admin.instance.v1;
 
-public interface CreateInstanceRequestOrBuilder extends
+public interface CreateInstanceRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.admin.instance.v1.CreateInstanceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the project in which to create the instance. Values
    * are of the form `projects/&lt;project&gt;`.
@@ -17,6 +20,8 @@ public interface CreateInstanceRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the project in which to create the instance. Values
    * are of the form `projects/&lt;project&gt;`.
@@ -24,10 +29,11 @@ public interface CreateInstanceRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The ID of the instance to create.  Valid identifiers are of the
    * form `[a-z][-a-z0-9]*[a-z0-9]` and must be between 6 and 30 characters in
@@ -38,6 +44,8 @@ public interface CreateInstanceRequestOrBuilder extends
    */
   java.lang.String getInstanceId();
   /**
+   *
+   *
    * <pre>
    * Required. The ID of the instance to create.  Valid identifiers are of the
    * form `[a-z][-a-z0-9]*[a-z0-9]` and must be between 6 and 30 characters in
@@ -46,10 +54,11 @@ public interface CreateInstanceRequestOrBuilder extends
    *
    * <code>string instance_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getInstanceIdBytes();
+  com.google.protobuf.ByteString getInstanceIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The instance to create.  The name may be omitted, but if
    * specified must be `&lt;parent&gt;/instances/&lt;instance_id&gt;`.
@@ -59,6 +68,8 @@ public interface CreateInstanceRequestOrBuilder extends
    */
   boolean hasInstance();
   /**
+   *
+   *
    * <pre>
    * Required. The instance to create.  The name may be omitted, but if
    * specified must be `&lt;parent&gt;/instances/&lt;instance_id&gt;`.
@@ -68,6 +79,8 @@ public interface CreateInstanceRequestOrBuilder extends
    */
   com.google.spanner.admin.instance.v1.Instance getInstance();
   /**
+   *
+   *
    * <pre>
    * Required. The instance to create.  The name may be omitted, but if
    * specified must be `&lt;parent&gt;/instances/&lt;instance_id&gt;`.

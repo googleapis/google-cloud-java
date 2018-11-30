@@ -24,10 +24,10 @@ import java.util.Objects;
 
 /**
  * Google BigQuery Job information. Jobs are objects that manage asynchronous tasks such as running
- * queries, loading data, and exporting data. Use {@link CopyJobConfiguration} for a job that
- * copies an existing table. Use {@link ExtractJobConfiguration} for a job that exports a table to
- * Google Cloud Storage. Use {@link LoadJobConfiguration} for a job that loads data from Google
- * Cloud Storage into a table. Use {@link QueryJobConfiguration} for a job that runs a query.
+ * queries, loading data, and exporting data. Use {@link CopyJobConfiguration} for a job that copies
+ * an existing table. Use {@link ExtractJobConfiguration} for a job that exports a table to Google
+ * Cloud Storage. Use {@link LoadJobConfiguration} for a job that loads data from Google Cloud
+ * Storage into a table. Use {@link QueryJobConfiguration} for a job that runs a query.
  *
  * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs">Jobs</a>
  */
@@ -52,70 +52,47 @@ public class JobInfo implements Serializable {
   private final String userEmail;
   private final JobConfiguration configuration;
 
-  /**
-   * Specifies whether the job is allowed to create new tables.
-   */
+  /** Specifies whether the job is allowed to create new tables. */
   public enum CreateDisposition {
-    /**
-     * Configures the job to create the table if it does not exist.
-     */
+    /** Configures the job to create the table if it does not exist. */
     CREATE_IF_NEEDED,
 
-    /**
-     * Configures the job to fail with a not-found error if the table does not exist.
-     */
+    /** Configures the job to fail with a not-found error if the table does not exist. */
     CREATE_NEVER
   }
 
-  /**
-   * Specifies the action that occurs if the destination table already exists.
-   */
+  /** Specifies the action that occurs if the destination table already exists. */
   public enum WriteDisposition {
-    /**
-     * Configures the job to overwrite the table data if table already exists.
-     */
+    /** Configures the job to overwrite the table data if table already exists. */
     WRITE_TRUNCATE,
 
-    /**
-     * Configures the job to append data to the table if it already exists.
-     */
+    /** Configures the job to append data to the table if it already exists. */
     WRITE_APPEND,
 
-    /**
-     * Configures the job to fail with a duplicate error if the table already exists.
-     */
+    /** Configures the job to fail with a duplicate error if the table already exists. */
     WRITE_EMPTY
   }
 
   /**
-   *  Specifies options relating to allowing the schema of the destination table to be updated as a side effect of the
-   *  load or query job.
+   * Specifies options relating to allowing the schema of the destination table to be updated as a
+   * side effect of the load or query job.
    */
   public enum SchemaUpdateOption {
-    /**
-     * Allow adding a nullable field to the schema.
-     */
+    /** Allow adding a nullable field to the schema. */
     ALLOW_FIELD_ADDITION,
 
-    /**
-     * Allow relaxing a required field in the original schema to nullable.
-     */
+    /** Allow relaxing a required field in the original schema to nullable. */
     ALLOW_FIELD_RELAXATION
   }
 
-  /**
-   * A builder for {@code JobInfo} objects.
-   */
+  /** A builder for {@code JobInfo} objects. */
   public abstract static class Builder {
 
     abstract Builder setEtag(String etag);
 
     abstract Builder setGeneratedId(String generatedId);
 
-
-    /**
-     * Sets the job identity.
-     */
+    /** Sets the job identity. */
     public abstract Builder setJobId(JobId jobId);
 
     abstract Builder setSelfLink(String selfLink);
@@ -126,7 +103,6 @@ public class JobInfo implements Serializable {
 
     abstract Builder setUserEmail(String userEmail);
 
-
     /**
      * Sets a configuration for the {@code JobInfo} object. Use {@link CopyJobConfiguration} for a
      * job that copies an existing table. Use {@link ExtractJobConfiguration} for a job that exports
@@ -136,9 +112,7 @@ public class JobInfo implements Serializable {
      */
     public abstract Builder setConfiguration(JobConfiguration configuration);
 
-    /**
-     * Creates a {@code JobInfo} object.
-     */
+    /** Creates a {@code JobInfo} object. */
     public abstract JobInfo build();
   }
 
@@ -197,7 +171,6 @@ public class JobInfo implements Serializable {
       return this;
     }
 
-
     @Override
     public Builder setJobId(JobId jobId) {
       this.jobId = jobId;
@@ -228,7 +201,6 @@ public class JobInfo implements Serializable {
       return this;
     }
 
-
     @Override
     public Builder setConfiguration(JobConfiguration configuration) {
       this.configuration = configuration;
@@ -252,30 +224,20 @@ public class JobInfo implements Serializable {
     this.configuration = builder.configuration;
   }
 
-
-  /**
-   * Returns the hash of the job resource.
-   */
+  /** Returns the hash of the job resource. */
   public String getEtag() {
     return etag;
   }
 
-
-  /**
-   * Returns the service-generated id for the job.
-   */
+  /** Returns the service-generated id for the job. */
   public String getGeneratedId() {
     return generatedId;
   }
 
-
-  /**
-   * Returns the job identity.
-   */
+  /** Returns the job identity. */
   public JobId getJobId() {
     return jobId;
   }
-
 
   /**
    * Returns an URL that can be used to access the resource again. The returned URL can be used for
@@ -285,7 +247,6 @@ public class JobInfo implements Serializable {
     return selfLink;
   }
 
-
   /**
    * Returns the status of this job. Examine this value when polling an asynchronous job to see if
    * the job is complete.
@@ -294,35 +255,24 @@ public class JobInfo implements Serializable {
     return status;
   }
 
-
-  /**
-   * Returns information about the job, including starting time and ending time of the job.
-   */
+  /** Returns information about the job, including starting time and ending time of the job. */
   @SuppressWarnings("unchecked")
   public <S extends JobStatistics> S getStatistics() {
     return (S) statistics;
   }
 
-
-  /**
-   * Returns the email address of the user who ran the job.
-   */
+  /** Returns the email address of the user who ran the job. */
   public String getUserEmail() {
     return userEmail;
   }
 
-
-  /**
-   * Returns the job's configuration.
-   */
+  /** Returns the job's configuration. */
   @SuppressWarnings("unchecked")
   public <C extends JobConfiguration> C getConfiguration() {
     return (C) configuration;
   }
 
-  /**
-   * Returns a builder for the job object.
-   */
+  /** Returns a builder for the job object. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
   }
@@ -350,8 +300,8 @@ public class JobInfo implements Serializable {
   public boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(JobInfo.class)
-        && Objects.equals(toPb(), ((JobInfo) obj).toPb());
+            && obj.getClass().equals(JobInfo.class)
+            && Objects.equals(toPb(), ((JobInfo) obj).toPb());
   }
 
   JobInfo setProjectId(String projectId) {
@@ -377,19 +327,18 @@ public class JobInfo implements Serializable {
     if (statistics != null) {
       jobPb.setStatistics(statistics.toPb());
     }
-    if(configuration != null){
+    if (configuration != null) {
       jobPb.setConfiguration(configuration.toPb());
     }
     return jobPb;
   }
 
-
   /**
-   * Returns a builder for a {@code JobInfo} object given the job configuration. Use
-   * {@link CopyJobConfiguration} for a job that copies an existing table. Use
-   * {@link ExtractJobConfiguration} for a job that exports a table to Google Cloud Storage. Use
-   * {@link LoadJobConfiguration} for a job that loads data from Google Cloud Storage into a table.
-   * Use {@link QueryJobConfiguration} for a job that runs a query.
+   * Returns a builder for a {@code JobInfo} object given the job configuration. Use {@link
+   * CopyJobConfiguration} for a job that copies an existing table. Use {@link
+   * ExtractJobConfiguration} for a job that exports a table to Google Cloud Storage. Use {@link
+   * LoadJobConfiguration} for a job that loads data from Google Cloud Storage into a table. Use
+   * {@link QueryJobConfiguration} for a job that runs a query.
    */
   public static Builder newBuilder(JobConfiguration configuration) {
     return new BuilderImpl().setConfiguration(configuration);
@@ -408,10 +357,10 @@ public class JobInfo implements Serializable {
 
   /**
    * Returns a builder for a {@code JobInfo} object given the job identity and configuration. Use
-   * {@link CopyJobConfiguration} for a job that copies an existing table. Use
-   * {@link ExtractJobConfiguration} for a job that exports a table to Google Cloud Storage. Use
-   * {@link LoadJobConfiguration} for a job that loads data from Google Cloud Storage into a table.
-   * Use {@link QueryJobConfiguration} for a job that runs a query.
+   * {@link CopyJobConfiguration} for a job that copies an existing table. Use {@link
+   * ExtractJobConfiguration} for a job that exports a table to Google Cloud Storage. Use {@link
+   * LoadJobConfiguration} for a job that loads data from Google Cloud Storage into a table. Use
+   * {@link QueryJobConfiguration} for a job that runs a query.
    */
   public static JobInfo of(JobId jobId, JobConfiguration configuration) {
     return newBuilder(configuration).setJobId(jobId).build();
