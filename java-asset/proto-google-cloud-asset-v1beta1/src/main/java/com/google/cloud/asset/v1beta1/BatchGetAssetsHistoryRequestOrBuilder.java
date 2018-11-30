@@ -3,11 +3,14 @@
 
 package com.google.cloud.asset.v1beta1;
 
-public interface BatchGetAssetsHistoryRequestOrBuilder extends
+public interface BatchGetAssetsHistoryRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The relative name of the root asset. It can only be an
    * organization number (such as "organizations/123"), a project ID (such as
@@ -18,6 +21,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The relative name of the root asset. It can only be an
    * organization number (such as "organizations/123"), a project ID (such as
@@ -26,10 +31,11 @@ public interface BatchGetAssetsHistoryRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * A list of the full names of the assets. For example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
@@ -41,9 +47,10 @@ public interface BatchGetAssetsHistoryRequestOrBuilder extends
    *
    * <code>repeated string asset_names = 2;</code>
    */
-  java.util.List<java.lang.String>
-      getAssetNamesList();
+  java.util.List<java.lang.String> getAssetNamesList();
   /**
+   *
+   *
    * <pre>
    * A list of the full names of the assets. For example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
@@ -57,6 +64,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder extends
    */
   int getAssetNamesCount();
   /**
+   *
+   *
    * <pre>
    * A list of the full names of the assets. For example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
@@ -70,6 +79,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder extends
    */
   java.lang.String getAssetNames(int index);
   /**
+   *
+   *
    * <pre>
    * A list of the full names of the assets. For example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
@@ -81,10 +92,11 @@ public interface BatchGetAssetsHistoryRequestOrBuilder extends
    *
    * <code>repeated string asset_names = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getAssetNamesBytes(int index);
+  com.google.protobuf.ByteString getAssetNamesBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Required. The content type.
    * </pre>
@@ -93,6 +105,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder extends
    */
   int getContentTypeValue();
   /**
+   *
+   *
    * <pre>
    * Required. The content type.
    * </pre>
@@ -102,6 +116,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder extends
   com.google.cloud.asset.v1beta1.ContentType getContentType();
 
   /**
+   *
+   *
    * <pre>
    * Required. The time window for the asset history. The start time is
    * required. The returned results contain all temporal assets whose time
@@ -112,6 +128,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder extends
    */
   boolean hasReadTimeWindow();
   /**
+   *
+   *
    * <pre>
    * Required. The time window for the asset history. The start time is
    * required. The returned results contain all temporal assets whose time
@@ -122,6 +140,8 @@ public interface BatchGetAssetsHistoryRequestOrBuilder extends
    */
   com.google.cloud.asset.v1beta1.TimeWindow getReadTimeWindow();
   /**
+   *
+   *
    * <pre>
    * Required. The time window for the asset history. The start time is
    * required. The returned results contain all temporal assets whose time
