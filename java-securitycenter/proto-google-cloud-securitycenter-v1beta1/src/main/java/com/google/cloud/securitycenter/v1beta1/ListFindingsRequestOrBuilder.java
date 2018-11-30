@@ -3,11 +3,14 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-public interface ListFindingsRequestOrBuilder extends
+public interface ListFindingsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.ListFindingsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Name of the source the findings belong to. Its format is
    * "organizations/[organization_id]/sources/[source_id]". To list across all
@@ -19,6 +22,8 @@ public interface ListFindingsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Name of the source the findings belong to. Its format is
    * "organizations/[organization_id]/sources/[source_id]". To list across all
@@ -28,10 +33,11 @@ public interface ListFindingsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Expression that defines the filter to apply across findings.
    * The expression is a list of one or more restrictions combined via logical
@@ -57,6 +63,8 @@ public interface ListFindingsRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * Expression that defines the filter to apply across findings.
    * The expression is a list of one or more restrictions combined via logical
@@ -80,10 +88,11 @@ public interface ListFindingsRequestOrBuilder extends
    *
    * <code>string filter = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * Expression that defines what fields and order to use for sorting. The
    * string value should follow SQL syntax: comma separated list of fields. For
@@ -99,6 +108,8 @@ public interface ListFindingsRequestOrBuilder extends
    */
   java.lang.String getOrderBy();
   /**
+   *
+   *
    * <pre>
    * Expression that defines what fields and order to use for sorting. The
    * string value should follow SQL syntax: comma separated list of fields. For
@@ -112,10 +123,11 @@ public interface ListFindingsRequestOrBuilder extends
    *
    * <code>string order_by = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getOrderByBytes();
+  com.google.protobuf.ByteString getOrderByBytes();
 
   /**
+   *
+   *
    * <pre>
    * Time used as a reference point when filtering findings. The filter is
    * limited to findings existing at the supplied time and their values are
@@ -127,6 +139,8 @@ public interface ListFindingsRequestOrBuilder extends
    */
   boolean hasReadTime();
   /**
+   *
+   *
    * <pre>
    * Time used as a reference point when filtering findings. The filter is
    * limited to findings existing at the supplied time and their values are
@@ -138,6 +152,8 @@ public interface ListFindingsRequestOrBuilder extends
    */
   com.google.protobuf.Timestamp getReadTime();
   /**
+   *
+   *
    * <pre>
    * Time used as a reference point when filtering findings. The filter is
    * limited to findings existing at the supplied time and their values are
@@ -150,6 +166,8 @@ public interface ListFindingsRequestOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional.
    * A field mask to specify the Finding fields to be listed in the response.
@@ -160,6 +178,8 @@ public interface ListFindingsRequestOrBuilder extends
    */
   boolean hasFieldMask();
   /**
+   *
+   *
    * <pre>
    * Optional.
    * A field mask to specify the Finding fields to be listed in the response.
@@ -170,6 +190,8 @@ public interface ListFindingsRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getFieldMask();
   /**
+   *
+   *
    * <pre>
    * Optional.
    * A field mask to specify the Finding fields to be listed in the response.
@@ -181,6 +203,8 @@ public interface ListFindingsRequestOrBuilder extends
   com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `ListFindingsResponse`; indicates
    * that this is a continuation of a prior `ListFindings` call, and
@@ -191,6 +215,8 @@ public interface ListFindingsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `ListFindingsResponse`; indicates
    * that this is a continuation of a prior `ListFindings` call, and
@@ -199,10 +225,11 @@ public interface ListFindingsRequestOrBuilder extends
    *
    * <code>string page_token = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of results to return in a single response. Default is
    * 10, minimum is 1, maximum is 1000.
