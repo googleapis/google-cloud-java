@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface DeviceOrBuilder extends
+public interface DeviceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.Device)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The user-defined device identifier. The device ID must be unique
    * within a device registry.
@@ -17,6 +20,8 @@ public interface DeviceOrBuilder extends
    */
   java.lang.String getId();
   /**
+   *
+   *
    * <pre>
    * The user-defined device identifier. The device ID must be unique
    * within a device registry.
@@ -24,10 +29,11 @@ public interface DeviceOrBuilder extends
    *
    * <code>string id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getIdBytes();
+  com.google.protobuf.ByteString getIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The resource path name. For example,
    * `projects/p1/locations/us-central1/registries/registry0/devices/dev0` or
@@ -40,6 +46,8 @@ public interface DeviceOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The resource path name. For example,
    * `projects/p1/locations/us-central1/registries/registry0/devices/dev0` or
@@ -50,10 +58,11 @@ public interface DeviceOrBuilder extends
    *
    * <code>string name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] A server-defined unique numeric ID for the device. This is a
    * more compact way to identify devices, and it is globally unique.
@@ -64,6 +73,8 @@ public interface DeviceOrBuilder extends
   long getNumId();
 
   /**
+   *
+   *
    * <pre>
    * The credentials used to authenticate this device. To allow credential
    * rotation without interruption, multiple device credentials can be bound to
@@ -75,9 +86,10 @@ public interface DeviceOrBuilder extends
    *
    * <code>repeated .google.cloud.iot.v1.DeviceCredential credentials = 12;</code>
    */
-  java.util.List<com.google.cloud.iot.v1.DeviceCredential> 
-      getCredentialsList();
+  java.util.List<com.google.cloud.iot.v1.DeviceCredential> getCredentialsList();
   /**
+   *
+   *
    * <pre>
    * The credentials used to authenticate this device. To allow credential
    * rotation without interruption, multiple device credentials can be bound to
@@ -91,6 +103,8 @@ public interface DeviceOrBuilder extends
    */
   com.google.cloud.iot.v1.DeviceCredential getCredentials(int index);
   /**
+   *
+   *
    * <pre>
    * The credentials used to authenticate this device. To allow credential
    * rotation without interruption, multiple device credentials can be bound to
@@ -104,6 +118,8 @@ public interface DeviceOrBuilder extends
    */
   int getCredentialsCount();
   /**
+   *
+   *
    * <pre>
    * The credentials used to authenticate this device. To allow credential
    * rotation without interruption, multiple device credentials can be bound to
@@ -115,9 +131,11 @@ public interface DeviceOrBuilder extends
    *
    * <code>repeated .google.cloud.iot.v1.DeviceCredential credentials = 12;</code>
    */
-  java.util.List<? extends com.google.cloud.iot.v1.DeviceCredentialOrBuilder> 
+  java.util.List<? extends com.google.cloud.iot.v1.DeviceCredentialOrBuilder>
       getCredentialsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The credentials used to authenticate this device. To allow credential
    * rotation without interruption, multiple device credentials can be bound to
@@ -129,10 +147,11 @@ public interface DeviceOrBuilder extends
    *
    * <code>repeated .google.cloud.iot.v1.DeviceCredential credentials = 12;</code>
    */
-  com.google.cloud.iot.v1.DeviceCredentialOrBuilder getCredentialsOrBuilder(
-      int index);
+  com.google.cloud.iot.v1.DeviceCredentialOrBuilder getCredentialsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time an MQTT `PINGREQ` was received. This field
    * applies only to devices connecting through MQTT. MQTT clients usually only
@@ -145,6 +164,8 @@ public interface DeviceOrBuilder extends
    */
   boolean hasLastHeartbeatTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time an MQTT `PINGREQ` was received. This field
    * applies only to devices connecting through MQTT. MQTT clients usually only
@@ -157,6 +178,8 @@ public interface DeviceOrBuilder extends
    */
   com.google.protobuf.Timestamp getLastHeartbeatTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time an MQTT `PINGREQ` was received. This field
    * applies only to devices connecting through MQTT. MQTT clients usually only
@@ -170,6 +193,8 @@ public interface DeviceOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getLastHeartbeatTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a telemetry event was received. Timestamps are
    * periodically collected and written to storage; they may be stale by a few
@@ -180,6 +205,8 @@ public interface DeviceOrBuilder extends
    */
   boolean hasLastEventTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a telemetry event was received. Timestamps are
    * periodically collected and written to storage; they may be stale by a few
@@ -190,6 +217,8 @@ public interface DeviceOrBuilder extends
    */
   com.google.protobuf.Timestamp getLastEventTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a telemetry event was received. Timestamps are
    * periodically collected and written to storage; they may be stale by a few
@@ -201,6 +230,8 @@ public interface DeviceOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getLastEventTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a state event was received. Timestamps are
    * periodically collected and written to storage; they may be stale by a few
@@ -211,6 +242,8 @@ public interface DeviceOrBuilder extends
    */
   boolean hasLastStateTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a state event was received. Timestamps are
    * periodically collected and written to storage; they may be stale by a few
@@ -221,6 +254,8 @@ public interface DeviceOrBuilder extends
    */
   com.google.protobuf.Timestamp getLastStateTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a state event was received. Timestamps are
    * periodically collected and written to storage; they may be stale by a few
@@ -232,6 +267,8 @@ public interface DeviceOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getLastStateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a cloud-to-device config version acknowledgment
    * was received from the device. This field is only for configurations
@@ -242,6 +279,8 @@ public interface DeviceOrBuilder extends
    */
   boolean hasLastConfigAckTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a cloud-to-device config version acknowledgment
    * was received from the device. This field is only for configurations
@@ -252,6 +291,8 @@ public interface DeviceOrBuilder extends
    */
   com.google.protobuf.Timestamp getLastConfigAckTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a cloud-to-device config version acknowledgment
    * was received from the device. This field is only for configurations
@@ -263,6 +304,8 @@ public interface DeviceOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getLastConfigAckTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a cloud-to-device config version was sent to
    * the device.
@@ -272,6 +315,8 @@ public interface DeviceOrBuilder extends
    */
   boolean hasLastConfigSendTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a cloud-to-device config version was sent to
    * the device.
@@ -281,6 +326,8 @@ public interface DeviceOrBuilder extends
    */
   com.google.protobuf.Timestamp getLastConfigSendTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a cloud-to-device config version was sent to
    * the device.
@@ -291,6 +338,8 @@ public interface DeviceOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getLastConfigSendTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * If a device is blocked, connections or requests from this device will fail.
    * Can be used to temporarily prevent the device from connecting if, for
@@ -302,6 +351,8 @@ public interface DeviceOrBuilder extends
   boolean getBlocked();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the most recent error occurred, such as a failure to
    * publish to Cloud Pub/Sub. This field is the timestamp of
@@ -312,6 +363,8 @@ public interface DeviceOrBuilder extends
    */
   boolean hasLastErrorTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the most recent error occurred, such as a failure to
    * publish to Cloud Pub/Sub. This field is the timestamp of
@@ -322,6 +375,8 @@ public interface DeviceOrBuilder extends
    */
   com.google.protobuf.Timestamp getLastErrorTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the most recent error occurred, such as a failure to
    * publish to Cloud Pub/Sub. This field is the timestamp of
@@ -333,6 +388,8 @@ public interface DeviceOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getLastErrorTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The error message of the most recent error, such as a failure
    * to publish to Cloud Pub/Sub. 'last_error_time' is the timestamp of this
@@ -345,6 +402,8 @@ public interface DeviceOrBuilder extends
    */
   boolean hasLastErrorStatus();
   /**
+   *
+   *
    * <pre>
    * [Output only] The error message of the most recent error, such as a failure
    * to publish to Cloud Pub/Sub. 'last_error_time' is the timestamp of this
@@ -357,6 +416,8 @@ public interface DeviceOrBuilder extends
    */
   com.google.rpc.Status getLastErrorStatus();
   /**
+   *
+   *
    * <pre>
    * [Output only] The error message of the most recent error, such as a failure
    * to publish to Cloud Pub/Sub. 'last_error_time' is the timestamp of this
@@ -370,6 +431,8 @@ public interface DeviceOrBuilder extends
   com.google.rpc.StatusOrBuilder getLastErrorStatusOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The most recent device configuration, which is eventually sent from
    * Cloud IoT Core to the device. If not present on creation, the
@@ -382,6 +445,8 @@ public interface DeviceOrBuilder extends
    */
   boolean hasConfig();
   /**
+   *
+   *
    * <pre>
    * The most recent device configuration, which is eventually sent from
    * Cloud IoT Core to the device. If not present on creation, the
@@ -394,6 +459,8 @@ public interface DeviceOrBuilder extends
    */
   com.google.cloud.iot.v1.DeviceConfig getConfig();
   /**
+   *
+   *
    * <pre>
    * The most recent device configuration, which is eventually sent from
    * Cloud IoT Core to the device. If not present on creation, the
@@ -407,6 +474,8 @@ public interface DeviceOrBuilder extends
   com.google.cloud.iot.v1.DeviceConfigOrBuilder getConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The state most recently received from the device. If no state
    * has been reported, this field is not present.
@@ -416,6 +485,8 @@ public interface DeviceOrBuilder extends
    */
   boolean hasState();
   /**
+   *
+   *
    * <pre>
    * [Output only] The state most recently received from the device. If no state
    * has been reported, this field is not present.
@@ -425,6 +496,8 @@ public interface DeviceOrBuilder extends
    */
   com.google.cloud.iot.v1.DeviceState getState();
   /**
+   *
+   *
    * <pre>
    * [Output only] The state most recently received from the device. If no state
    * has been reported, this field is not present.
@@ -435,6 +508,8 @@ public interface DeviceOrBuilder extends
   com.google.cloud.iot.v1.DeviceStateOrBuilder getStateOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * **Beta Feature**
    * The logging verbosity for device activity. If unspecified,
@@ -445,6 +520,8 @@ public interface DeviceOrBuilder extends
    */
   int getLogLevelValue();
   /**
+   *
+   *
    * <pre>
    * **Beta Feature**
    * The logging verbosity for device activity. If unspecified,
@@ -456,6 +533,8 @@ public interface DeviceOrBuilder extends
   com.google.cloud.iot.v1.LogLevel getLogLevel();
 
   /**
+   *
+   *
    * <pre>
    * The metadata key-value pairs assigned to the device. This metadata is not
    * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
@@ -472,6 +551,8 @@ public interface DeviceOrBuilder extends
    */
   int getMetadataCount();
   /**
+   *
+   *
    * <pre>
    * The metadata key-value pairs assigned to the device. This metadata is not
    * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
@@ -486,15 +567,13 @@ public interface DeviceOrBuilder extends
    *
    * <code>map&lt;string, string&gt; metadata = 17;</code>
    */
-  boolean containsMetadata(
-      java.lang.String key);
-  /**
-   * Use {@link #getMetadataMap()} instead.
-   */
+  boolean containsMetadata(java.lang.String key);
+  /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getMetadata();
+  java.util.Map<java.lang.String, java.lang.String> getMetadata();
   /**
+   *
+   *
    * <pre>
    * The metadata key-value pairs assigned to the device. This metadata is not
    * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
@@ -509,9 +588,10 @@ public interface DeviceOrBuilder extends
    *
    * <code>map&lt;string, string&gt; metadata = 17;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getMetadataMap();
+  java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
   /**
+   *
+   *
    * <pre>
    * The metadata key-value pairs assigned to the device. This metadata is not
    * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
@@ -526,11 +606,10 @@ public interface DeviceOrBuilder extends
    *
    * <code>map&lt;string, string&gt; metadata = 17;</code>
    */
-
-  java.lang.String getMetadataOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getMetadataOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * The metadata key-value pairs assigned to the device. This metadata is not
    * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
@@ -545,11 +624,11 @@ public interface DeviceOrBuilder extends
    *
    * <code>map&lt;string, string&gt; metadata = 17;</code>
    */
-
-  java.lang.String getMetadataOrThrow(
-      java.lang.String key);
+  java.lang.String getMetadataOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Gateway-related configuration and state.
    * </pre>
@@ -558,6 +637,8 @@ public interface DeviceOrBuilder extends
    */
   boolean hasGatewayConfig();
   /**
+   *
+   *
    * <pre>
    * Gateway-related configuration and state.
    * </pre>
@@ -566,6 +647,8 @@ public interface DeviceOrBuilder extends
    */
   com.google.cloud.iot.v1.GatewayConfig getGatewayConfig();
   /**
+   *
+   *
    * <pre>
    * Gateway-related configuration and state.
    * </pre>

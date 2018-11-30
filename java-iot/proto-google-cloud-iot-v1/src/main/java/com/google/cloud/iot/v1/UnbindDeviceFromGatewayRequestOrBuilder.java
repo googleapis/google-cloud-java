@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface UnbindDeviceFromGatewayRequestOrBuilder extends
+public interface UnbindDeviceFromGatewayRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.UnbindDeviceFromGatewayRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the registry. For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
@@ -17,6 +20,8 @@ public interface UnbindDeviceFromGatewayRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The name of the registry. For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
@@ -24,10 +29,11 @@ public interface UnbindDeviceFromGatewayRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The value of `gateway_id` can be either the device numeric ID or the
    * user-defined device identifier.
@@ -37,6 +43,8 @@ public interface UnbindDeviceFromGatewayRequestOrBuilder extends
    */
   java.lang.String getGatewayId();
   /**
+   *
+   *
    * <pre>
    * The value of `gateway_id` can be either the device numeric ID or the
    * user-defined device identifier.
@@ -44,10 +52,11 @@ public interface UnbindDeviceFromGatewayRequestOrBuilder extends
    *
    * <code>string gateway_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getGatewayIdBytes();
+  com.google.protobuf.ByteString getGatewayIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The device to disassociate from the specified gateway. The value of
    * `device_id` can be either the device numeric ID or the user-defined device
@@ -58,6 +67,8 @@ public interface UnbindDeviceFromGatewayRequestOrBuilder extends
    */
   java.lang.String getDeviceId();
   /**
+   *
+   *
    * <pre>
    * The device to disassociate from the specified gateway. The value of
    * `device_id` can be either the device numeric ID or the user-defined device
@@ -66,6 +77,5 @@ public interface UnbindDeviceFromGatewayRequestOrBuilder extends
    *
    * <code>string device_id = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDeviceIdBytes();
+  com.google.protobuf.ByteString getDeviceIdBytes();
 }

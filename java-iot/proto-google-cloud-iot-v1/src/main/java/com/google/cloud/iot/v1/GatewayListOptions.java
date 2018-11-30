@@ -4,29 +4,31 @@
 package com.google.cloud.iot.v1;
 
 /**
+ *
+ *
  * <pre>
  * Options for limiting the list based on gateway type and associations.
  * </pre>
  *
  * Protobuf type {@code google.cloud.iot.v1.GatewayListOptions}
  */
-public  final class GatewayListOptions extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class GatewayListOptions extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.GatewayListOptions)
     GatewayListOptionsOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use GatewayListOptions.newBuilder() to construct.
   private GatewayListOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private GatewayListOptions() {
-  }
+
+  private GatewayListOptions() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private GatewayListOptions(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46,71 +48,75 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
-            filterCase_ = 1;
-            filter_ = rawValue;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-            filterCase_ = 2;
-            filter_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-            filterCase_ = 3;
-            filter_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 8:
+            {
+              int rawValue = input.readEnum();
+              filterCase_ = 1;
+              filter_ = rawValue;
+              break;
             }
-            break;
-          }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              filterCase_ = 2;
+              filter_ = s;
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              filterCase_ = 3;
+              filter_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_GatewayListOptions_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.iot.v1.DeviceManagerProto
+        .internal_static_google_cloud_iot_v1_GatewayListOptions_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_GatewayListOptions_fieldAccessorTable
+    return com.google.cloud.iot.v1.DeviceManagerProto
+        .internal_static_google_cloud_iot_v1_GatewayListOptions_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.iot.v1.GatewayListOptions.class, com.google.cloud.iot.v1.GatewayListOptions.Builder.class);
+            com.google.cloud.iot.v1.GatewayListOptions.class,
+            com.google.cloud.iot.v1.GatewayListOptions.Builder.class);
   }
 
   private int filterCase_ = 0;
   private java.lang.Object filter_;
-  public enum FilterCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum FilterCase implements com.google.protobuf.Internal.EnumLite {
     GATEWAY_TYPE(1),
     ASSOCIATIONS_GATEWAY_ID(2),
     ASSOCIATIONS_DEVICE_ID(3),
     FILTER_NOT_SET(0);
     private final int value;
+
     private FilterCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static FilterCase valueOf(int value) {
       return forNumber(value);
@@ -118,26 +124,32 @@ private static final long serialVersionUID = 0L;
 
     public static FilterCase forNumber(int value) {
       switch (value) {
-        case 1: return GATEWAY_TYPE;
-        case 2: return ASSOCIATIONS_GATEWAY_ID;
-        case 3: return ASSOCIATIONS_DEVICE_ID;
-        case 0: return FILTER_NOT_SET;
-        default: return null;
+        case 1:
+          return GATEWAY_TYPE;
+        case 2:
+          return ASSOCIATIONS_GATEWAY_ID;
+        case 3:
+          return ASSOCIATIONS_DEVICE_ID;
+        case 0:
+          return FILTER_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public FilterCase
-  getFilterCase() {
-    return FilterCase.forNumber(
-        filterCase_);
+  public FilterCase getFilterCase() {
+    return FilterCase.forNumber(filterCase_);
   }
 
   public static final int GATEWAY_TYPE_FIELD_NUMBER = 1;
   /**
+   *
+   *
    * <pre>
    * If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY`
    * is specified, only non-gateway devices are returned. If
@@ -153,6 +165,8 @@ private static final long serialVersionUID = 0L;
     return 0;
   }
   /**
+   *
+   *
    * <pre>
    * If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY`
    * is specified, only non-gateway devices are returned. If
@@ -164,8 +178,8 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.iot.v1.GatewayType getGatewayType() {
     if (filterCase_ == 1) {
       @SuppressWarnings("deprecation")
-      com.google.cloud.iot.v1.GatewayType result = com.google.cloud.iot.v1.GatewayType.valueOf(
-          (java.lang.Integer) filter_);
+      com.google.cloud.iot.v1.GatewayType result =
+          com.google.cloud.iot.v1.GatewayType.valueOf((java.lang.Integer) filter_);
       return result == null ? com.google.cloud.iot.v1.GatewayType.UNRECOGNIZED : result;
     }
     return com.google.cloud.iot.v1.GatewayType.GATEWAY_TYPE_UNSPECIFIED;
@@ -173,6 +187,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int ASSOCIATIONS_GATEWAY_ID_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * If set, only devices associated with the specified gateway are returned.
    * The gateway ID can be numeric (`num_id`) or the user-defined string
@@ -190,8 +206,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       if (filterCase_ == 2) {
         filter_ = s;
@@ -200,6 +215,8 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   *
+   *
    * <pre>
    * If set, only devices associated with the specified gateway are returned.
    * The gateway ID can be numeric (`num_id`) or the user-defined string
@@ -209,16 +226,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string associations_gateway_id = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getAssociationsGatewayIdBytes() {
+  public com.google.protobuf.ByteString getAssociationsGatewayIdBytes() {
     java.lang.Object ref = "";
     if (filterCase_ == 2) {
       ref = filter_;
     }
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (filterCase_ == 2) {
         filter_ = b;
       }
@@ -230,6 +245,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int ASSOCIATIONS_DEVICE_ID_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * If set, returns only the gateways with which the specified device is
    * associated. The device ID can be numeric (`num_id`) or the user-defined
@@ -247,8 +264,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       if (filterCase_ == 3) {
         filter_ = s;
@@ -257,6 +273,8 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   *
+   *
    * <pre>
    * If set, returns only the gateways with which the specified device is
    * associated. The device ID can be numeric (`num_id`) or the user-defined
@@ -266,16 +284,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string associations_device_id = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getAssociationsDeviceIdBytes() {
+  public com.google.protobuf.ByteString getAssociationsDeviceIdBytes() {
     java.lang.Object ref = "";
     if (filterCase_ == 3) {
       ref = filter_;
     }
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (filterCase_ == 3) {
         filter_ = b;
       }
@@ -286,6 +302,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -297,8 +314,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (filterCase_ == 1) {
       output.writeEnum(1, ((java.lang.Integer) filter_));
     }
@@ -318,8 +334,8 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (filterCase_ == 1) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, ((java.lang.Integer) filter_));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(1, ((java.lang.Integer) filter_));
     }
     if (filterCase_ == 2) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, filter_);
@@ -335,29 +351,26 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.iot.v1.GatewayListOptions)) {
       return super.equals(obj);
     }
-    com.google.cloud.iot.v1.GatewayListOptions other = (com.google.cloud.iot.v1.GatewayListOptions) obj;
+    com.google.cloud.iot.v1.GatewayListOptions other =
+        (com.google.cloud.iot.v1.GatewayListOptions) obj;
 
     boolean result = true;
-    result = result && getFilterCase().equals(
-        other.getFilterCase());
+    result = result && getFilterCase().equals(other.getFilterCase());
     if (!result) return false;
     switch (filterCase_) {
       case 1:
-        result = result && getGatewayTypeValue()
-            == other.getGatewayTypeValue();
+        result = result && getGatewayTypeValue() == other.getGatewayTypeValue();
         break;
       case 2:
-        result = result && getAssociationsGatewayId()
-            .equals(other.getAssociationsGatewayId());
+        result = result && getAssociationsGatewayId().equals(other.getAssociationsGatewayId());
         break;
       case 3:
-        result = result && getAssociationsDeviceId()
-            .equals(other.getAssociationsDeviceId());
+        result = result && getAssociationsDeviceId().equals(other.getAssociationsDeviceId());
         break;
       case 0:
       default:
@@ -394,118 +407,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.iot.v1.GatewayListOptions parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.iot.v1.GatewayListOptions parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.GatewayListOptions parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.GatewayListOptions parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.GatewayListOptions parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.GatewayListOptions parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.GatewayListOptions parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.GatewayListOptions parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.iot.v1.GatewayListOptions parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.iot.v1.GatewayListOptions parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.iot.v1.GatewayListOptions parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.iot.v1.GatewayListOptions parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.iot.v1.GatewayListOptions parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.iot.v1.GatewayListOptions parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.iot.v1.GatewayListOptions prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Options for limiting the list based on gateway type and associations.
    * </pre>
    *
    * Protobuf type {@code google.cloud.iot.v1.GatewayListOptions}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.iot.v1.GatewayListOptions)
       com.google.cloud.iot.v1.GatewayListOptionsOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_GatewayListOptions_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.iot.v1.DeviceManagerProto
+          .internal_static_google_cloud_iot_v1_GatewayListOptions_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_GatewayListOptions_fieldAccessorTable
+      return com.google.cloud.iot.v1.DeviceManagerProto
+          .internal_static_google_cloud_iot_v1_GatewayListOptions_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.iot.v1.GatewayListOptions.class, com.google.cloud.iot.v1.GatewayListOptions.Builder.class);
+              com.google.cloud.iot.v1.GatewayListOptions.class,
+              com.google.cloud.iot.v1.GatewayListOptions.Builder.class);
     }
 
     // Construct using com.google.cloud.iot.v1.GatewayListOptions.newBuilder()
@@ -513,16 +535,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -532,9 +553,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_GatewayListOptions_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.iot.v1.DeviceManagerProto
+          .internal_static_google_cloud_iot_v1_GatewayListOptions_descriptor;
     }
 
     @java.lang.Override
@@ -553,7 +574,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.iot.v1.GatewayListOptions buildPartial() {
-      com.google.cloud.iot.v1.GatewayListOptions result = new com.google.cloud.iot.v1.GatewayListOptions(this);
+      com.google.cloud.iot.v1.GatewayListOptions result =
+          new com.google.cloud.iot.v1.GatewayListOptions(this);
       if (filterCase_ == 1) {
         result.filter_ = filter_;
       }
@@ -572,38 +594,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.iot.v1.GatewayListOptions) {
-        return mergeFrom((com.google.cloud.iot.v1.GatewayListOptions)other);
+        return mergeFrom((com.google.cloud.iot.v1.GatewayListOptions) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -613,25 +636,29 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.iot.v1.GatewayListOptions other) {
       if (other == com.google.cloud.iot.v1.GatewayListOptions.getDefaultInstance()) return this;
       switch (other.getFilterCase()) {
-        case GATEWAY_TYPE: {
-          setGatewayTypeValue(other.getGatewayTypeValue());
-          break;
-        }
-        case ASSOCIATIONS_GATEWAY_ID: {
-          filterCase_ = 2;
-          filter_ = other.filter_;
-          onChanged();
-          break;
-        }
-        case ASSOCIATIONS_DEVICE_ID: {
-          filterCase_ = 3;
-          filter_ = other.filter_;
-          onChanged();
-          break;
-        }
-        case FILTER_NOT_SET: {
-          break;
-        }
+        case GATEWAY_TYPE:
+          {
+            setGatewayTypeValue(other.getGatewayTypeValue());
+            break;
+          }
+        case ASSOCIATIONS_GATEWAY_ID:
+          {
+            filterCase_ = 2;
+            filter_ = other.filter_;
+            onChanged();
+            break;
+          }
+        case ASSOCIATIONS_DEVICE_ID:
+          {
+            filterCase_ = 3;
+            filter_ = other.filter_;
+            onChanged();
+            break;
+          }
+        case FILTER_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -661,12 +688,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int filterCase_ = 0;
     private java.lang.Object filter_;
-    public FilterCase
-        getFilterCase() {
-      return FilterCase.forNumber(
-          filterCase_);
+
+    public FilterCase getFilterCase() {
+      return FilterCase.forNumber(filterCase_);
     }
 
     public Builder clearFilter() {
@@ -676,8 +703,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     /**
+     *
+     *
      * <pre>
      * If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY`
      * is specified, only non-gateway devices are returned. If
@@ -693,6 +721,8 @@ private static final long serialVersionUID = 0L;
       return 0;
     }
     /**
+     *
+     *
      * <pre>
      * If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY`
      * is specified, only non-gateway devices are returned. If
@@ -708,6 +738,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY`
      * is specified, only non-gateway devices are returned. If
@@ -719,13 +751,15 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.iot.v1.GatewayType getGatewayType() {
       if (filterCase_ == 1) {
         @SuppressWarnings("deprecation")
-        com.google.cloud.iot.v1.GatewayType result = com.google.cloud.iot.v1.GatewayType.valueOf(
-            (java.lang.Integer) filter_);
+        com.google.cloud.iot.v1.GatewayType result =
+            com.google.cloud.iot.v1.GatewayType.valueOf((java.lang.Integer) filter_);
         return result == null ? com.google.cloud.iot.v1.GatewayType.UNRECOGNIZED : result;
       }
       return com.google.cloud.iot.v1.GatewayType.GATEWAY_TYPE_UNSPECIFIED;
     }
     /**
+     *
+     *
      * <pre>
      * If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY`
      * is specified, only non-gateway devices are returned. If
@@ -744,6 +778,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY`
      * is specified, only non-gateway devices are returned. If
@@ -762,6 +798,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     *
+     *
      * <pre>
      * If set, only devices associated with the specified gateway are returned.
      * The gateway ID can be numeric (`num_id`) or the user-defined string
@@ -777,8 +815,7 @@ private static final long serialVersionUID = 0L;
         ref = filter_;
       }
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (filterCase_ == 2) {
           filter_ = s;
@@ -789,6 +826,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If set, only devices associated with the specified gateway are returned.
      * The gateway ID can be numeric (`num_id`) or the user-defined string
@@ -798,16 +837,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string associations_gateway_id = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getAssociationsGatewayIdBytes() {
+    public com.google.protobuf.ByteString getAssociationsGatewayIdBytes() {
       java.lang.Object ref = "";
       if (filterCase_ == 2) {
         ref = filter_;
       }
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (filterCase_ == 2) {
           filter_ = b;
         }
@@ -817,6 +854,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If set, only devices associated with the specified gateway are returned.
      * The gateway ID can be numeric (`num_id`) or the user-defined string
@@ -826,17 +865,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string associations_gateway_id = 2;</code>
      */
-    public Builder setAssociationsGatewayId(
-        java.lang.String value) {
+    public Builder setAssociationsGatewayId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  filterCase_ = 2;
+        throw new NullPointerException();
+      }
+      filterCase_ = 2;
       filter_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If set, only devices associated with the specified gateway are returned.
      * The gateway ID can be numeric (`num_id`) or the user-defined string
@@ -855,6 +895,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If set, only devices associated with the specified gateway are returned.
      * The gateway ID can be numeric (`num_id`) or the user-defined string
@@ -864,12 +906,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string associations_gateway_id = 2;</code>
      */
-    public Builder setAssociationsGatewayIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setAssociationsGatewayIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       filterCase_ = 2;
       filter_ = value;
       onChanged();
@@ -877,6 +918,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     *
+     *
      * <pre>
      * If set, returns only the gateways with which the specified device is
      * associated. The device ID can be numeric (`num_id`) or the user-defined
@@ -892,8 +935,7 @@ private static final long serialVersionUID = 0L;
         ref = filter_;
       }
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (filterCase_ == 3) {
           filter_ = s;
@@ -904,6 +946,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If set, returns only the gateways with which the specified device is
      * associated. The device ID can be numeric (`num_id`) or the user-defined
@@ -913,16 +957,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string associations_device_id = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getAssociationsDeviceIdBytes() {
+    public com.google.protobuf.ByteString getAssociationsDeviceIdBytes() {
       java.lang.Object ref = "";
       if (filterCase_ == 3) {
         ref = filter_;
       }
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (filterCase_ == 3) {
           filter_ = b;
         }
@@ -932,6 +974,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If set, returns only the gateways with which the specified device is
      * associated. The device ID can be numeric (`num_id`) or the user-defined
@@ -941,17 +985,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string associations_device_id = 3;</code>
      */
-    public Builder setAssociationsDeviceId(
-        java.lang.String value) {
+    public Builder setAssociationsDeviceId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  filterCase_ = 3;
+        throw new NullPointerException();
+      }
+      filterCase_ = 3;
       filter_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If set, returns only the gateways with which the specified device is
      * associated. The device ID can be numeric (`num_id`) or the user-defined
@@ -970,6 +1015,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If set, returns only the gateways with which the specified device is
      * associated. The device ID can be numeric (`num_id`) or the user-defined
@@ -979,20 +1026,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string associations_device_id = 3;</code>
      */
-    public Builder setAssociationsDeviceIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setAssociationsDeviceIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       filterCase_ = 3;
       filter_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1002,12 +1048,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.iot.v1.GatewayListOptions)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.iot.v1.GatewayListOptions)
   private static final com.google.cloud.iot.v1.GatewayListOptions DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.iot.v1.GatewayListOptions();
   }
@@ -1016,16 +1062,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GatewayListOptions>
-      PARSER = new com.google.protobuf.AbstractParser<GatewayListOptions>() {
-    @java.lang.Override
-    public GatewayListOptions parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GatewayListOptions(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<GatewayListOptions> PARSER =
+      new com.google.protobuf.AbstractParser<GatewayListOptions>() {
+        @java.lang.Override
+        public GatewayListOptions parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new GatewayListOptions(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<GatewayListOptions> parser() {
     return PARSER;
@@ -1040,6 +1086,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.iot.v1.GatewayListOptions getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

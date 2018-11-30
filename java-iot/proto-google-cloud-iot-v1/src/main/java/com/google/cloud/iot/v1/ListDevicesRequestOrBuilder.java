@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface ListDevicesRequestOrBuilder extends
+public interface ListDevicesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.ListDevicesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The device registry path. Required. For example,
    * `projects/my-project/locations/us-central1/registries/my-registry`.
@@ -17,6 +20,8 @@ public interface ListDevicesRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The device registry path. Required. For example,
    * `projects/my-project/locations/us-central1/registries/my-registry`.
@@ -24,10 +29,11 @@ public interface ListDevicesRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * A list of device numeric IDs. If empty, this field is ignored. Maximum
    * IDs: 10,000.
@@ -37,6 +43,8 @@ public interface ListDevicesRequestOrBuilder extends
    */
   java.util.List<java.lang.Long> getDeviceNumIdsList();
   /**
+   *
+   *
    * <pre>
    * A list of device numeric IDs. If empty, this field is ignored. Maximum
    * IDs: 10,000.
@@ -46,6 +54,8 @@ public interface ListDevicesRequestOrBuilder extends
    */
   int getDeviceNumIdsCount();
   /**
+   *
+   *
    * <pre>
    * A list of device numeric IDs. If empty, this field is ignored. Maximum
    * IDs: 10,000.
@@ -56,6 +66,8 @@ public interface ListDevicesRequestOrBuilder extends
   long getDeviceNumIds(int index);
 
   /**
+   *
+   *
    * <pre>
    * A list of device string IDs. For example, `['device0', 'device12']`.
    * If empty, this field is ignored. Maximum IDs: 10,000
@@ -63,9 +75,10 @@ public interface ListDevicesRequestOrBuilder extends
    *
    * <code>repeated string device_ids = 3;</code>
    */
-  java.util.List<java.lang.String>
-      getDeviceIdsList();
+  java.util.List<java.lang.String> getDeviceIdsList();
   /**
+   *
+   *
    * <pre>
    * A list of device string IDs. For example, `['device0', 'device12']`.
    * If empty, this field is ignored. Maximum IDs: 10,000
@@ -75,6 +88,8 @@ public interface ListDevicesRequestOrBuilder extends
    */
   int getDeviceIdsCount();
   /**
+   *
+   *
    * <pre>
    * A list of device string IDs. For example, `['device0', 'device12']`.
    * If empty, this field is ignored. Maximum IDs: 10,000
@@ -84,6 +99,8 @@ public interface ListDevicesRequestOrBuilder extends
    */
   java.lang.String getDeviceIds(int index);
   /**
+   *
+   *
    * <pre>
    * A list of device string IDs. For example, `['device0', 'device12']`.
    * If empty, this field is ignored. Maximum IDs: 10,000
@@ -91,10 +108,11 @@ public interface ListDevicesRequestOrBuilder extends
    *
    * <code>repeated string device_ids = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDeviceIdsBytes(int index);
+  com.google.protobuf.ByteString getDeviceIdsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * The fields of the `Device` resource to be returned in the response. The
    * fields `id` and `num_id` are always returned, along with any
@@ -105,6 +123,8 @@ public interface ListDevicesRequestOrBuilder extends
    */
   boolean hasFieldMask();
   /**
+   *
+   *
    * <pre>
    * The fields of the `Device` resource to be returned in the response. The
    * fields `id` and `num_id` are always returned, along with any
@@ -115,6 +135,8 @@ public interface ListDevicesRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getFieldMask();
   /**
+   *
+   *
    * <pre>
    * The fields of the `Device` resource to be returned in the response. The
    * fields `id` and `num_id` are always returned, along with any
@@ -126,6 +148,8 @@ public interface ListDevicesRequestOrBuilder extends
   com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Options related to gateways.
    * </pre>
@@ -134,6 +158,8 @@ public interface ListDevicesRequestOrBuilder extends
    */
   boolean hasGatewayListOptions();
   /**
+   *
+   *
    * <pre>
    * Options related to gateways.
    * </pre>
@@ -142,6 +168,8 @@ public interface ListDevicesRequestOrBuilder extends
    */
   com.google.cloud.iot.v1.GatewayListOptions getGatewayListOptions();
   /**
+   *
+   *
    * <pre>
    * Options related to gateways.
    * </pre>
@@ -151,6 +179,8 @@ public interface ListDevicesRequestOrBuilder extends
   com.google.cloud.iot.v1.GatewayListOptionsOrBuilder getGatewayListOptionsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of devices to return in the response. If this value
    * is zero, the service will select a default size. A call may return fewer
@@ -163,6 +193,8 @@ public interface ListDevicesRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `ListDevicesResponse`; indicates
    * that this is a continuation of a prior `ListDevices` call and
@@ -173,6 +205,8 @@ public interface ListDevicesRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `ListDevicesResponse`; indicates
    * that this is a continuation of a prior `ListDevices` call and
@@ -181,6 +215,5 @@ public interface ListDevicesRequestOrBuilder extends
    *
    * <code>string page_token = 101;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }
