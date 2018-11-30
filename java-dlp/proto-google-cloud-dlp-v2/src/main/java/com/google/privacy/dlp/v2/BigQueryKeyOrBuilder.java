@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface BigQueryKeyOrBuilder extends
+public interface BigQueryKeyOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.BigQueryKey)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Complete BigQuery table reference.
    * </pre>
@@ -16,6 +19,8 @@ public interface BigQueryKeyOrBuilder extends
    */
   boolean hasTableReference();
   /**
+   *
+   *
    * <pre>
    * Complete BigQuery table reference.
    * </pre>
@@ -24,6 +29,8 @@ public interface BigQueryKeyOrBuilder extends
    */
   com.google.privacy.dlp.v2.BigQueryTable getTableReference();
   /**
+   *
+   *
    * <pre>
    * Complete BigQuery table reference.
    * </pre>
@@ -33,6 +40,8 @@ public interface BigQueryKeyOrBuilder extends
   com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableReferenceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Absolute number of the row from the beginning of the table at the time
    * of scanning.

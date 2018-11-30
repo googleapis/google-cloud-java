@@ -3,20 +3,24 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface RecordTransformationsOrBuilder extends
+public interface RecordTransformationsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.RecordTransformations)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Transform the record by applying various field transformations.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldTransformation field_transformations = 1;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.FieldTransformation> 
-      getFieldTransformationsList();
+  java.util.List<com.google.privacy.dlp.v2.FieldTransformation> getFieldTransformationsList();
   /**
+   *
+   *
    * <pre>
    * Transform the record by applying various field transformations.
    * </pre>
@@ -25,6 +29,8 @@ public interface RecordTransformationsOrBuilder extends
    */
   com.google.privacy.dlp.v2.FieldTransformation getFieldTransformations(int index);
   /**
+   *
+   *
    * <pre>
    * Transform the record by applying various field transformations.
    * </pre>
@@ -33,15 +39,19 @@ public interface RecordTransformationsOrBuilder extends
    */
   int getFieldTransformationsCount();
   /**
+   *
+   *
    * <pre>
    * Transform the record by applying various field transformations.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldTransformation field_transformations = 1;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.FieldTransformationOrBuilder> 
+  java.util.List<? extends com.google.privacy.dlp.v2.FieldTransformationOrBuilder>
       getFieldTransformationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Transform the record by applying various field transformations.
    * </pre>
@@ -52,6 +62,8 @@ public interface RecordTransformationsOrBuilder extends
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
    * match any suppression rule are omitted from the output [optional].
@@ -59,9 +71,10 @@ public interface RecordTransformationsOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.RecordSuppression> 
-      getRecordSuppressionsList();
+  java.util.List<com.google.privacy.dlp.v2.RecordSuppression> getRecordSuppressionsList();
   /**
+   *
+   *
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
    * match any suppression rule are omitted from the output [optional].
@@ -71,6 +84,8 @@ public interface RecordTransformationsOrBuilder extends
    */
   com.google.privacy.dlp.v2.RecordSuppression getRecordSuppressions(int index);
   /**
+   *
+   *
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
    * match any suppression rule are omitted from the output [optional].
@@ -80,6 +95,8 @@ public interface RecordTransformationsOrBuilder extends
    */
   int getRecordSuppressionsCount();
   /**
+   *
+   *
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
    * match any suppression rule are omitted from the output [optional].
@@ -87,9 +104,11 @@ public interface RecordTransformationsOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.RecordSuppressionOrBuilder> 
+  java.util.List<? extends com.google.privacy.dlp.v2.RecordSuppressionOrBuilder>
       getRecordSuppressionsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Configuration defining which records get suppressed entirely. Records that
    * match any suppression rule are omitted from the output [optional].
@@ -97,6 +116,5 @@ public interface RecordTransformationsOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.RecordSuppression record_suppressions = 2;</code>
    */
-  com.google.privacy.dlp.v2.RecordSuppressionOrBuilder getRecordSuppressionsOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.RecordSuppressionOrBuilder getRecordSuppressionsOrBuilder(int index);
 }

@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface DatastoreOptionsOrBuilder extends
+public interface DatastoreOptionsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DatastoreOptions)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A partition ID identifies a grouping of entities. The grouping is always
    * by project and namespace, however the namespace ID may be empty.
@@ -17,6 +20,8 @@ public interface DatastoreOptionsOrBuilder extends
    */
   boolean hasPartitionId();
   /**
+   *
+   *
    * <pre>
    * A partition ID identifies a grouping of entities. The grouping is always
    * by project and namespace, however the namespace ID may be empty.
@@ -26,6 +31,8 @@ public interface DatastoreOptionsOrBuilder extends
    */
   com.google.privacy.dlp.v2.PartitionId getPartitionId();
   /**
+   *
+   *
    * <pre>
    * A partition ID identifies a grouping of entities. The grouping is always
    * by project and namespace, however the namespace ID may be empty.
@@ -36,6 +43,8 @@ public interface DatastoreOptionsOrBuilder extends
   com.google.privacy.dlp.v2.PartitionIdOrBuilder getPartitionIdOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The kind to process.
    * </pre>
@@ -44,6 +53,8 @@ public interface DatastoreOptionsOrBuilder extends
    */
   boolean hasKind();
   /**
+   *
+   *
    * <pre>
    * The kind to process.
    * </pre>
@@ -52,6 +63,8 @@ public interface DatastoreOptionsOrBuilder extends
    */
   com.google.privacy.dlp.v2.KindExpression getKind();
   /**
+   *
+   *
    * <pre>
    * The kind to process.
    * </pre>
