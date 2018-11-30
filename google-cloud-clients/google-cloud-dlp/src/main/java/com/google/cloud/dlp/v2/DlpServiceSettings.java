@@ -159,7 +159,8 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
 
   /** Returns the object with the settings used for calls to listInspectTemplates. */
   public PagedCallSettings<
-          ListInspectTemplatesRequest, ListInspectTemplatesResponse,
+          ListInspectTemplatesRequest,
+          ListInspectTemplatesResponse,
           ListInspectTemplatesPagedResponse>
       listInspectTemplatesSettings() {
     return ((DlpServiceStubSettings) getStubSettings()).listInspectTemplatesSettings();
@@ -190,7 +191,8 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
 
   /** Returns the object with the settings used for calls to listDeidentifyTemplates. */
   public PagedCallSettings<
-          ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse,
+          ListDeidentifyTemplatesRequest,
+          ListDeidentifyTemplatesResponse,
           ListDeidentifyTemplatesPagedResponse>
       listDeidentifyTemplatesSettings() {
     return ((DlpServiceStubSettings) getStubSettings()).listDeidentifyTemplatesSettings();
@@ -430,7 +432,8 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
 
     /** Returns the builder for the settings used for calls to listInspectTemplates. */
     public PagedCallSettings.Builder<
-            ListInspectTemplatesRequest, ListInspectTemplatesResponse,
+            ListInspectTemplatesRequest,
+            ListInspectTemplatesResponse,
             ListInspectTemplatesPagedResponse>
         listInspectTemplatesSettings() {
       return getStubSettingsBuilder().listInspectTemplatesSettings();
@@ -462,7 +465,8 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
 
     /** Returns the builder for the settings used for calls to listDeidentifyTemplates. */
     public PagedCallSettings.Builder<
-            ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse,
+            ListDeidentifyTemplatesRequest,
+            ListDeidentifyTemplatesResponse,
             ListDeidentifyTemplatesPagedResponse>
         listDeidentifyTemplatesSettings() {
       return getStubSettingsBuilder().listDeidentifyTemplatesSettings();
@@ -550,7 +554,8 @@ public class DlpServiceSettings extends ClientSettings<DlpServiceSettings> {
 
     /** Returns the builder for the settings used for calls to listStoredInfoTypes. */
     public PagedCallSettings.Builder<
-            ListStoredInfoTypesRequest, ListStoredInfoTypesResponse,
+            ListStoredInfoTypesRequest,
+            ListStoredInfoTypesResponse,
             ListStoredInfoTypesPagedResponse>
         listStoredInfoTypesSettings() {
       return getStubSettingsBuilder().listStoredInfoTypesSettings();

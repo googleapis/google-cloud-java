@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface CustomInfoTypeOrBuilder extends
+public interface CustomInfoTypeOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CustomInfoType)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * CustomInfoType can either be a new infoType, or an extension of built-in
    * infoType, when the name matches one of existing infoTypes and that infoType
@@ -21,6 +24,8 @@ public interface CustomInfoTypeOrBuilder extends
    */
   boolean hasInfoType();
   /**
+   *
+   *
    * <pre>
    * CustomInfoType can either be a new infoType, or an extension of built-in
    * infoType, when the name matches one of existing infoTypes and that infoType
@@ -34,6 +39,8 @@ public interface CustomInfoTypeOrBuilder extends
    */
   com.google.privacy.dlp.v2.InfoType getInfoType();
   /**
+   *
+   *
    * <pre>
    * CustomInfoType can either be a new infoType, or an extension of built-in
    * infoType, when the name matches one of existing infoTypes and that infoType
@@ -48,6 +55,8 @@ public interface CustomInfoTypeOrBuilder extends
   com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Likelihood to return for this CustomInfoType. This base value can be
    * altered by a detection rule if the finding meets the criteria specified by
@@ -58,6 +67,8 @@ public interface CustomInfoTypeOrBuilder extends
    */
   int getLikelihoodValue();
   /**
+   *
+   *
    * <pre>
    * Likelihood to return for this CustomInfoType. This base value can be
    * altered by a detection rule if the finding meets the criteria specified by
@@ -69,6 +80,8 @@ public interface CustomInfoTypeOrBuilder extends
   com.google.privacy.dlp.v2.Likelihood getLikelihood();
 
   /**
+   *
+   *
    * <pre>
    * A list of phrases to detect as a CustomInfoType.
    * </pre>
@@ -77,6 +90,8 @@ public interface CustomInfoTypeOrBuilder extends
    */
   boolean hasDictionary();
   /**
+   *
+   *
    * <pre>
    * A list of phrases to detect as a CustomInfoType.
    * </pre>
@@ -85,6 +100,8 @@ public interface CustomInfoTypeOrBuilder extends
    */
   com.google.privacy.dlp.v2.CustomInfoType.Dictionary getDictionary();
   /**
+   *
+   *
    * <pre>
    * A list of phrases to detect as a CustomInfoType.
    * </pre>
@@ -94,6 +111,8 @@ public interface CustomInfoTypeOrBuilder extends
   com.google.privacy.dlp.v2.CustomInfoType.DictionaryOrBuilder getDictionaryOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Regular expression based CustomInfoType.
    * </pre>
@@ -102,6 +121,8 @@ public interface CustomInfoTypeOrBuilder extends
    */
   boolean hasRegex();
   /**
+   *
+   *
    * <pre>
    * Regular expression based CustomInfoType.
    * </pre>
@@ -110,6 +131,8 @@ public interface CustomInfoTypeOrBuilder extends
    */
   com.google.privacy.dlp.v2.CustomInfoType.Regex getRegex();
   /**
+   *
+   *
    * <pre>
    * Regular expression based CustomInfoType.
    * </pre>
@@ -119,6 +142,8 @@ public interface CustomInfoTypeOrBuilder extends
   com.google.privacy.dlp.v2.CustomInfoType.RegexOrBuilder getRegexOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Message for detecting output from deidentification transformations that
    * support reversing.
@@ -128,6 +153,8 @@ public interface CustomInfoTypeOrBuilder extends
    */
   boolean hasSurrogateType();
   /**
+   *
+   *
    * <pre>
    * Message for detecting output from deidentification transformations that
    * support reversing.
@@ -137,6 +164,8 @@ public interface CustomInfoTypeOrBuilder extends
    */
   com.google.privacy.dlp.v2.CustomInfoType.SurrogateType getSurrogateType();
   /**
+   *
+   *
    * <pre>
    * Message for detecting output from deidentification transformations that
    * support reversing.
@@ -147,6 +176,8 @@ public interface CustomInfoTypeOrBuilder extends
   com.google.privacy.dlp.v2.CustomInfoType.SurrogateTypeOrBuilder getSurrogateTypeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Load an existing `StoredInfoType` resource for use in
    * `InspectDataSource`. Not currently supported in `InspectContent`.
@@ -156,6 +187,8 @@ public interface CustomInfoTypeOrBuilder extends
    */
   boolean hasStoredType();
   /**
+   *
+   *
    * <pre>
    * Load an existing `StoredInfoType` resource for use in
    * `InspectDataSource`. Not currently supported in `InspectContent`.
@@ -165,6 +198,8 @@ public interface CustomInfoTypeOrBuilder extends
    */
   com.google.privacy.dlp.v2.StoredType getStoredType();
   /**
+   *
+   *
    * <pre>
    * Load an existing `StoredInfoType` resource for use in
    * `InspectDataSource`. Not currently supported in `InspectContent`.
@@ -175,6 +210,8 @@ public interface CustomInfoTypeOrBuilder extends
   com.google.privacy.dlp.v2.StoredTypeOrBuilder getStoredTypeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
    * Rules are applied in order that they are specified. Not supported for the
@@ -183,9 +220,10 @@ public interface CustomInfoTypeOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule> 
-      getDetectionRulesList();
+  java.util.List<com.google.privacy.dlp.v2.CustomInfoType.DetectionRule> getDetectionRulesList();
   /**
+   *
+   *
    * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
    * Rules are applied in order that they are specified. Not supported for the
@@ -196,6 +234,8 @@ public interface CustomInfoTypeOrBuilder extends
    */
   com.google.privacy.dlp.v2.CustomInfoType.DetectionRule getDetectionRules(int index);
   /**
+   *
+   *
    * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
    * Rules are applied in order that they are specified. Not supported for the
@@ -206,6 +246,8 @@ public interface CustomInfoTypeOrBuilder extends
    */
   int getDetectionRulesCount();
   /**
+   *
+   *
    * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
    * Rules are applied in order that they are specified. Not supported for the
@@ -214,9 +256,11 @@ public interface CustomInfoTypeOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.CustomInfoType.DetectionRule detection_rules = 7;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder> 
+  java.util.List<? extends com.google.privacy.dlp.v2.CustomInfoType.DetectionRuleOrBuilder>
       getDetectionRulesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Set of detection rules to apply to all findings of this CustomInfoType.
    * Rules are applied in order that they are specified. Not supported for the
@@ -229,6 +273,8 @@ public interface CustomInfoTypeOrBuilder extends
       int index);
 
   /**
+   *
+   *
    * <pre>
    * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
    * to be returned. It still can be used for rules matching.
@@ -238,6 +284,8 @@ public interface CustomInfoTypeOrBuilder extends
    */
   int getExclusionTypeValue();
   /**
+   *
+   *
    * <pre>
    * If set to EXCLUSION_TYPE_EXCLUDE this infoType will not cause a finding
    * to be returned. It still can be used for rules matching.

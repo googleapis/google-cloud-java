@@ -4,6 +4,8 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Contains a configuration to make dlp api calls on a repeating basis.
  * See https://cloud.google.com/dlp/docs/concepts-job-triggers to learn more.
@@ -11,15 +13,16 @@ package com.google.privacy.dlp.v2;
  *
  * Protobuf type {@code google.privacy.dlp.v2.JobTrigger}
  */
-public  final class JobTrigger extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class JobTrigger extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.JobTrigger)
     JobTriggerOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use JobTrigger.newBuilder() to construct.
   private JobTrigger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private JobTrigger() {
     name_ = "";
     displayName_ = "";
@@ -30,10 +33,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private JobTrigger(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -53,115 +56,129 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+              name_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            displayName_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+              displayName_ = s;
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            description_ = s;
-            break;
-          }
-          case 34: {
-            com.google.privacy.dlp.v2.InspectJobConfig.Builder subBuilder = null;
-            if (jobCase_ == 4) {
-              subBuilder = ((com.google.privacy.dlp.v2.InspectJobConfig) job_).toBuilder();
+              description_ = s;
+              break;
             }
-            job_ =
-                input.readMessage(com.google.privacy.dlp.v2.InspectJobConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.InspectJobConfig) job_);
-              job_ = subBuilder.buildPartial();
+          case 34:
+            {
+              com.google.privacy.dlp.v2.InspectJobConfig.Builder subBuilder = null;
+              if (jobCase_ == 4) {
+                subBuilder = ((com.google.privacy.dlp.v2.InspectJobConfig) job_).toBuilder();
+              }
+              job_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.InspectJobConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.InspectJobConfig) job_);
+                job_ = subBuilder.buildPartial();
+              }
+              jobCase_ = 4;
+              break;
             }
-            jobCase_ = 4;
-            break;
-          }
-          case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-              triggers_ = new java.util.ArrayList<com.google.privacy.dlp.v2.JobTrigger.Trigger>();
-              mutable_bitField0_ |= 0x00000010;
+          case 42:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                triggers_ = new java.util.ArrayList<com.google.privacy.dlp.v2.JobTrigger.Trigger>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              triggers_.add(
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.JobTrigger.Trigger.parser(), extensionRegistry));
+              break;
             }
-            triggers_.add(
-                input.readMessage(com.google.privacy.dlp.v2.JobTrigger.Trigger.parser(), extensionRegistry));
-            break;
-          }
-          case 50: {
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-              errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>();
-              mutable_bitField0_ |= 0x00000020;
+          case 50:
+            {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              errors_.add(
+                  input.readMessage(com.google.privacy.dlp.v2.Error.parser(), extensionRegistry));
+              break;
             }
-            errors_.add(
-                input.readMessage(com.google.privacy.dlp.v2.Error.parser(), extensionRegistry));
-            break;
-          }
-          case 58: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (createTime_ != null) {
-              subBuilder = createTime_.toBuilder();
-            }
-            createTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(createTime_);
-              createTime_ = subBuilder.buildPartial();
-            }
+          case 58:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 66: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (updateTime_ != null) {
-              subBuilder = updateTime_.toBuilder();
+              break;
             }
-            updateTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(updateTime_);
-              updateTime_ = subBuilder.buildPartial();
-            }
+          case 66:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (updateTime_ != null) {
+                subBuilder = updateTime_.toBuilder();
+              }
+              updateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateTime_);
+                updateTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 74: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (lastRunTime_ != null) {
-              subBuilder = lastRunTime_.toBuilder();
+              break;
             }
-            lastRunTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(lastRunTime_);
-              lastRunTime_ = subBuilder.buildPartial();
-            }
+          case 74:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (lastRunTime_ != null) {
+                subBuilder = lastRunTime_.toBuilder();
+              }
+              lastRunTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lastRunTime_);
+                lastRunTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 80: {
-            int rawValue = input.readEnum();
-
-            status_ = rawValue;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 80:
+            {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
         triggers_ = java.util.Collections.unmodifiableList(triggers_);
@@ -173,20 +190,25 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_JobTrigger_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_JobTrigger_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_JobTrigger_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_JobTrigger_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.JobTrigger.class, com.google.privacy.dlp.v2.JobTrigger.Builder.class);
+            com.google.privacy.dlp.v2.JobTrigger.class,
+            com.google.privacy.dlp.v2.JobTrigger.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Whether the trigger is currently active. If PAUSED or CANCELLED, no jobs
    * will be created with this configuration. The service may automatically
@@ -196,13 +218,12 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf enum {@code google.privacy.dlp.v2.JobTrigger.Status}
    */
-  public enum Status
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>STATUS_UNSPECIFIED = 0;</code>
-     */
+  public enum Status implements com.google.protobuf.ProtocolMessageEnum {
+    /** <code>STATUS_UNSPECIFIED = 0;</code> */
     STATUS_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Trigger is healthy.
      * </pre>
@@ -211,6 +232,8 @@ private static final long serialVersionUID = 0L;
      */
     HEALTHY(1),
     /**
+     *
+     *
      * <pre>
      * Trigger is temporarily paused.
      * </pre>
@@ -219,6 +242,8 @@ private static final long serialVersionUID = 0L;
      */
     PAUSED(2),
     /**
+     *
+     *
      * <pre>
      * Trigger is cancelled and can not be resumed.
      * </pre>
@@ -229,11 +254,11 @@ private static final long serialVersionUID = 0L;
     UNRECOGNIZED(-1),
     ;
 
-    /**
-     * <code>STATUS_UNSPECIFIED = 0;</code>
-     */
+    /** <code>STATUS_UNSPECIFIED = 0;</code> */
     public static final int STATUS_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Trigger is healthy.
      * </pre>
@@ -242,6 +267,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int HEALTHY_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Trigger is temporarily paused.
      * </pre>
@@ -250,6 +277,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PAUSED_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Trigger is cancelled and can not be resumed.
      * </pre>
@@ -257,7 +286,6 @@ private static final long serialVersionUID = 0L;
      * <code>CANCELLED = 3;</code>
      */
     public static final int CANCELLED_VALUE = 3;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -267,9 +295,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Status valueOf(int value) {
       return forNumber(value);
@@ -277,46 +303,47 @@ private static final long serialVersionUID = 0L;
 
     public static Status forNumber(int value) {
       switch (value) {
-        case 0: return STATUS_UNSPECIFIED;
-        case 1: return HEALTHY;
-        case 2: return PAUSED;
-        case 3: return CANCELLED;
-        default: return null;
+        case 0:
+          return STATUS_UNSPECIFIED;
+        case 1:
+          return HEALTHY;
+        case 2:
+          return PAUSED;
+        case 3:
+          return CANCELLED;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Status>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Status> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Status> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Status>() {
-            public Status findValueByNumber(int number) {
-              return Status.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Status> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Status>() {
+          public Status findValueByNumber(int number) {
+            return Status.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.privacy.dlp.v2.JobTrigger.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final Status[] VALUES = values();
 
-    public static Status valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Status valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -333,11 +360,14 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.privacy.dlp.v2.JobTrigger.Status)
   }
 
-  public interface TriggerOrBuilder extends
+  public interface TriggerOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.JobTrigger.Trigger)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Create a job on a repeating basis based on the elapse of time.
      * </pre>
@@ -346,6 +376,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasSchedule();
     /**
+     *
+     *
      * <pre>
      * Create a job on a repeating basis based on the elapse of time.
      * </pre>
@@ -354,6 +386,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.privacy.dlp.v2.Schedule getSchedule();
     /**
+     *
+     *
      * <pre>
      * Create a job on a repeating basis based on the elapse of time.
      * </pre>
@@ -365,29 +399,31 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.JobTrigger.Trigger.TriggerCase getTriggerCase();
   }
   /**
+   *
+   *
    * <pre>
    * What event needs to occur for a new job to be started.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.JobTrigger.Trigger}
    */
-  public  static final class Trigger extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class Trigger extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.JobTrigger.Trigger)
       TriggerOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use Trigger.newBuilder() to construct.
     private Trigger(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Trigger() {
-    }
+
+    private Trigger() {}
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private Trigger(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -407,65 +443,68 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              com.google.privacy.dlp.v2.Schedule.Builder subBuilder = null;
-              if (triggerCase_ == 1) {
-                subBuilder = ((com.google.privacy.dlp.v2.Schedule) trigger_).toBuilder();
+            case 10:
+              {
+                com.google.privacy.dlp.v2.Schedule.Builder subBuilder = null;
+                if (triggerCase_ == 1) {
+                  subBuilder = ((com.google.privacy.dlp.v2.Schedule) trigger_).toBuilder();
+                }
+                trigger_ =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.Schedule.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom((com.google.privacy.dlp.v2.Schedule) trigger_);
+                  trigger_ = subBuilder.buildPartial();
+                }
+                triggerCase_ = 1;
+                break;
               }
-              trigger_ =
-                  input.readMessage(com.google.privacy.dlp.v2.Schedule.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.privacy.dlp.v2.Schedule) trigger_);
-                trigger_ = subBuilder.buildPartial();
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
               }
-              triggerCase_ = 1;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_JobTrigger_Trigger_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_JobTrigger_Trigger_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_JobTrigger_Trigger_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_JobTrigger_Trigger_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.JobTrigger.Trigger.class, com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder.class);
+              com.google.privacy.dlp.v2.JobTrigger.Trigger.class,
+              com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder.class);
     }
 
     private int triggerCase_ = 0;
     private java.lang.Object trigger_;
-    public enum TriggerCase
-        implements com.google.protobuf.Internal.EnumLite {
+
+    public enum TriggerCase implements com.google.protobuf.Internal.EnumLite {
       SCHEDULE(1),
       TRIGGER_NOT_SET(0);
       private final int value;
+
       private TriggerCase(int value) {
         this.value = value;
       }
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
+      /** @deprecated Use {@link #forNumber(int)} instead. */
       @java.lang.Deprecated
       public static TriggerCase valueOf(int value) {
         return forNumber(value);
@@ -473,24 +512,28 @@ private static final long serialVersionUID = 0L;
 
       public static TriggerCase forNumber(int value) {
         switch (value) {
-          case 1: return SCHEDULE;
-          case 0: return TRIGGER_NOT_SET;
-          default: return null;
+          case 1:
+            return SCHEDULE;
+          case 0:
+            return TRIGGER_NOT_SET;
+          default:
+            return null;
         }
       }
+
       public int getNumber() {
         return this.value;
       }
     };
 
-    public TriggerCase
-    getTriggerCase() {
-      return TriggerCase.forNumber(
-          triggerCase_);
+    public TriggerCase getTriggerCase() {
+      return TriggerCase.forNumber(triggerCase_);
     }
 
     public static final int SCHEDULE_FIELD_NUMBER = 1;
     /**
+     *
+     *
      * <pre>
      * Create a job on a repeating basis based on the elapse of time.
      * </pre>
@@ -501,6 +544,8 @@ private static final long serialVersionUID = 0L;
       return triggerCase_ == 1;
     }
     /**
+     *
+     *
      * <pre>
      * Create a job on a repeating basis based on the elapse of time.
      * </pre>
@@ -509,11 +554,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.Schedule getSchedule() {
       if (triggerCase_ == 1) {
-         return (com.google.privacy.dlp.v2.Schedule) trigger_;
+        return (com.google.privacy.dlp.v2.Schedule) trigger_;
       }
       return com.google.privacy.dlp.v2.Schedule.getDefaultInstance();
     }
     /**
+     *
+     *
      * <pre>
      * Create a job on a repeating basis based on the elapse of time.
      * </pre>
@@ -522,12 +569,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.ScheduleOrBuilder getScheduleOrBuilder() {
       if (triggerCase_ == 1) {
-         return (com.google.privacy.dlp.v2.Schedule) trigger_;
+        return (com.google.privacy.dlp.v2.Schedule) trigger_;
       }
       return com.google.privacy.dlp.v2.Schedule.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -539,8 +587,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (triggerCase_ == 1) {
         output.writeMessage(1, (com.google.privacy.dlp.v2.Schedule) trigger_);
       }
@@ -554,8 +601,9 @@ private static final long serialVersionUID = 0L;
 
       size = 0;
       if (triggerCase_ == 1) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (com.google.privacy.dlp.v2.Schedule) trigger_);
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1, (com.google.privacy.dlp.v2.Schedule) trigger_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -565,21 +613,20 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.privacy.dlp.v2.JobTrigger.Trigger)) {
         return super.equals(obj);
       }
-      com.google.privacy.dlp.v2.JobTrigger.Trigger other = (com.google.privacy.dlp.v2.JobTrigger.Trigger) obj;
+      com.google.privacy.dlp.v2.JobTrigger.Trigger other =
+          (com.google.privacy.dlp.v2.JobTrigger.Trigger) obj;
 
       boolean result = true;
-      result = result && getTriggerCase().equals(
-          other.getTriggerCase());
+      result = result && getTriggerCase().equals(other.getTriggerCase());
       if (!result) return false;
       switch (triggerCase_) {
         case 1:
-          result = result && getSchedule()
-              .equals(other.getSchedule());
+          result = result && getSchedule().equals(other.getSchedule());
           break;
         case 0:
         default:
@@ -608,88 +655,94 @@ private static final long serialVersionUID = 0L;
       return hash;
     }
 
-    public static com.google.privacy.dlp.v2.JobTrigger.Trigger parseFrom(
-        java.nio.ByteBuffer data)
+    public static com.google.privacy.dlp.v2.JobTrigger.Trigger parseFrom(java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.JobTrigger.Trigger parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.JobTrigger.Trigger parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.JobTrigger.Trigger parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.JobTrigger.Trigger parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.JobTrigger.Trigger parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.JobTrigger.Trigger parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.privacy.dlp.v2.JobTrigger.Trigger parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.JobTrigger.Trigger parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
+
     public static com.google.privacy.dlp.v2.JobTrigger.Trigger parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.privacy.dlp.v2.JobTrigger.Trigger parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.privacy.dlp.v2.JobTrigger.Trigger parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.privacy.dlp.v2.JobTrigger.Trigger parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(com.google.privacy.dlp.v2.JobTrigger.Trigger prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -699,27 +752,32 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * What event needs to occur for a new job to be started.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.JobTrigger.Trigger}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.JobTrigger.Trigger)
         com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_JobTrigger_Trigger_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_JobTrigger_Trigger_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_JobTrigger_Trigger_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_JobTrigger_Trigger_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.JobTrigger.Trigger.class, com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder.class);
+                com.google.privacy.dlp.v2.JobTrigger.Trigger.class,
+                com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder.class);
       }
 
       // Construct using com.google.privacy.dlp.v2.JobTrigger.Trigger.newBuilder()
@@ -727,16 +785,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -746,9 +803,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_JobTrigger_Trigger_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_JobTrigger_Trigger_descriptor;
       }
 
       @java.lang.Override
@@ -767,7 +824,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.privacy.dlp.v2.JobTrigger.Trigger buildPartial() {
-        com.google.privacy.dlp.v2.JobTrigger.Trigger result = new com.google.privacy.dlp.v2.JobTrigger.Trigger(this);
+        com.google.privacy.dlp.v2.JobTrigger.Trigger result =
+            new com.google.privacy.dlp.v2.JobTrigger.Trigger(this);
         if (triggerCase_ == 1) {
           if (scheduleBuilder_ == null) {
             result.trigger_ = trigger_;
@@ -784,38 +842,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.privacy.dlp.v2.JobTrigger.Trigger) {
-          return mergeFrom((com.google.privacy.dlp.v2.JobTrigger.Trigger)other);
+          return mergeFrom((com.google.privacy.dlp.v2.JobTrigger.Trigger) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -825,13 +886,15 @@ private static final long serialVersionUID = 0L;
       public Builder mergeFrom(com.google.privacy.dlp.v2.JobTrigger.Trigger other) {
         if (other == com.google.privacy.dlp.v2.JobTrigger.Trigger.getDefaultInstance()) return this;
         switch (other.getTriggerCase()) {
-          case SCHEDULE: {
-            mergeSchedule(other.getSchedule());
-            break;
-          }
-          case TRIGGER_NOT_SET: {
-            break;
-          }
+          case SCHEDULE:
+            {
+              mergeSchedule(other.getSchedule());
+              break;
+            }
+          case TRIGGER_NOT_SET:
+            {
+              break;
+            }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -861,12 +924,12 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+
       private int triggerCase_ = 0;
       private java.lang.Object trigger_;
-      public TriggerCase
-          getTriggerCase() {
-        return TriggerCase.forNumber(
-            triggerCase_);
+
+      public TriggerCase getTriggerCase() {
+        return TriggerCase.forNumber(triggerCase_);
       }
 
       public Builder clearTrigger() {
@@ -876,10 +939,14 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.Schedule, com.google.privacy.dlp.v2.Schedule.Builder, com.google.privacy.dlp.v2.ScheduleOrBuilder> scheduleBuilder_;
+              com.google.privacy.dlp.v2.Schedule,
+              com.google.privacy.dlp.v2.Schedule.Builder,
+              com.google.privacy.dlp.v2.ScheduleOrBuilder>
+          scheduleBuilder_;
       /**
+       *
+       *
        * <pre>
        * Create a job on a repeating basis based on the elapse of time.
        * </pre>
@@ -890,6 +957,8 @@ private static final long serialVersionUID = 0L;
         return triggerCase_ == 1;
       }
       /**
+       *
+       *
        * <pre>
        * Create a job on a repeating basis based on the elapse of time.
        * </pre>
@@ -910,6 +979,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Create a job on a repeating basis based on the elapse of time.
        * </pre>
@@ -930,14 +1001,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Create a job on a repeating basis based on the elapse of time.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.Schedule schedule = 1;</code>
        */
-      public Builder setSchedule(
-          com.google.privacy.dlp.v2.Schedule.Builder builderForValue) {
+      public Builder setSchedule(com.google.privacy.dlp.v2.Schedule.Builder builderForValue) {
         if (scheduleBuilder_ == null) {
           trigger_ = builderForValue.build();
           onChanged();
@@ -948,6 +1020,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Create a job on a repeating basis based on the elapse of time.
        * </pre>
@@ -956,10 +1030,13 @@ private static final long serialVersionUID = 0L;
        */
       public Builder mergeSchedule(com.google.privacy.dlp.v2.Schedule value) {
         if (scheduleBuilder_ == null) {
-          if (triggerCase_ == 1 &&
-              trigger_ != com.google.privacy.dlp.v2.Schedule.getDefaultInstance()) {
-            trigger_ = com.google.privacy.dlp.v2.Schedule.newBuilder((com.google.privacy.dlp.v2.Schedule) trigger_)
-                .mergeFrom(value).buildPartial();
+          if (triggerCase_ == 1
+              && trigger_ != com.google.privacy.dlp.v2.Schedule.getDefaultInstance()) {
+            trigger_ =
+                com.google.privacy.dlp.v2.Schedule.newBuilder(
+                        (com.google.privacy.dlp.v2.Schedule) trigger_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             trigger_ = value;
           }
@@ -974,6 +1051,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Create a job on a repeating basis based on the elapse of time.
        * </pre>
@@ -997,6 +1076,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Create a job on a repeating basis based on the elapse of time.
        * </pre>
@@ -1007,6 +1088,8 @@ private static final long serialVersionUID = 0L;
         return getScheduleFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Create a job on a repeating basis based on the elapse of time.
        * </pre>
@@ -1024,6 +1107,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Create a job on a repeating basis based on the elapse of time.
        * </pre>
@@ -1031,23 +1116,28 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.Schedule schedule = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.Schedule, com.google.privacy.dlp.v2.Schedule.Builder, com.google.privacy.dlp.v2.ScheduleOrBuilder> 
+              com.google.privacy.dlp.v2.Schedule,
+              com.google.privacy.dlp.v2.Schedule.Builder,
+              com.google.privacy.dlp.v2.ScheduleOrBuilder>
           getScheduleFieldBuilder() {
         if (scheduleBuilder_ == null) {
           if (!(triggerCase_ == 1)) {
             trigger_ = com.google.privacy.dlp.v2.Schedule.getDefaultInstance();
           }
-          scheduleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.privacy.dlp.v2.Schedule, com.google.privacy.dlp.v2.Schedule.Builder, com.google.privacy.dlp.v2.ScheduleOrBuilder>(
-                  (com.google.privacy.dlp.v2.Schedule) trigger_,
-                  getParentForChildren(),
-                  isClean());
+          scheduleBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.Schedule,
+                  com.google.privacy.dlp.v2.Schedule.Builder,
+                  com.google.privacy.dlp.v2.ScheduleOrBuilder>(
+                  (com.google.privacy.dlp.v2.Schedule) trigger_, getParentForChildren(), isClean());
           trigger_ = null;
         }
         triggerCase_ = 1;
-        onChanged();;
+        onChanged();
+        ;
         return scheduleBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1060,12 +1150,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.JobTrigger.Trigger)
     }
 
     // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.JobTrigger.Trigger)
     private static final com.google.privacy.dlp.v2.JobTrigger.Trigger DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.JobTrigger.Trigger();
     }
@@ -1074,16 +1164,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Trigger>
-        PARSER = new com.google.protobuf.AbstractParser<Trigger>() {
-      @java.lang.Override
-      public Trigger parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Trigger(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<Trigger> PARSER =
+        new com.google.protobuf.AbstractParser<Trigger>() {
+          @java.lang.Override
+          public Trigger parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Trigger(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<Trigger> parser() {
       return PARSER;
@@ -1098,23 +1188,21 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.JobTrigger.Trigger getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private int bitField0_;
   private int jobCase_ = 0;
   private java.lang.Object job_;
-  public enum JobCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum JobCase implements com.google.protobuf.Internal.EnumLite {
     INSPECT_JOB(4),
     JOB_NOT_SET(0);
     private final int value;
+
     private JobCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static JobCase valueOf(int value) {
       return forNumber(value);
@@ -1122,25 +1210,29 @@ private static final long serialVersionUID = 0L;
 
     public static JobCase forNumber(int value) {
       switch (value) {
-        case 4: return INSPECT_JOB;
-        case 0: return JOB_NOT_SET;
-        default: return null;
+        case 4:
+          return INSPECT_JOB;
+        case 0:
+          return JOB_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public JobCase
-  getJobCase() {
-    return JobCase.forNumber(
-        jobCase_);
+  public JobCase getJobCase() {
+    return JobCase.forNumber(jobCase_);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * Unique resource name for the triggeredJob, assigned by the service when the
    * triggeredJob is created, for example
@@ -1154,14 +1246,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Unique resource name for the triggeredJob, assigned by the service when the
    * triggeredJob is created, for example
@@ -1170,13 +1263,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -1187,6 +1278,8 @@ private static final long serialVersionUID = 0L;
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object displayName_;
   /**
+   *
+   *
    * <pre>
    * Display name (max 100 chars)
    * </pre>
@@ -1198,27 +1291,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       displayName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Display name (max 100 chars)
    * </pre>
    *
    * <code>string display_name = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getDisplayNameBytes() {
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       displayName_ = b;
       return b;
     } else {
@@ -1229,6 +1321,8 @@ private static final long serialVersionUID = 0L;
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
   private volatile java.lang.Object description_;
   /**
+   *
+   *
    * <pre>
    * User provided description (max 256 chars)
    * </pre>
@@ -1240,27 +1334,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       description_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * User provided description (max 256 chars)
    * </pre>
    *
    * <code>string description = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getDescriptionBytes() {
+  public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       description_ = b;
       return b;
     } else {
@@ -1269,27 +1362,21 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int INSPECT_JOB_FIELD_NUMBER = 4;
-  /**
-   * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
   public boolean hasInspectJob() {
     return jobCase_ == 4;
   }
-  /**
-   * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
   public com.google.privacy.dlp.v2.InspectJobConfig getInspectJob() {
     if (jobCase_ == 4) {
-       return (com.google.privacy.dlp.v2.InspectJobConfig) job_;
+      return (com.google.privacy.dlp.v2.InspectJobConfig) job_;
     }
     return com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance();
   }
-  /**
-   * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
   public com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getInspectJobOrBuilder() {
     if (jobCase_ == 4) {
-       return (com.google.privacy.dlp.v2.InspectJobConfig) job_;
+      return (com.google.privacy.dlp.v2.InspectJobConfig) job_;
     }
     return com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance();
   }
@@ -1297,6 +1384,8 @@ private static final long serialVersionUID = 0L;
   public static final int TRIGGERS_FIELD_NUMBER = 5;
   private java.util.List<com.google.privacy.dlp.v2.JobTrigger.Trigger> triggers_;
   /**
+   *
+   *
    * <pre>
    * A list of triggers which will be OR'ed together. Only one in the list
    * needs to trigger for a job to be started. The list may contain only
@@ -1309,6 +1398,8 @@ private static final long serialVersionUID = 0L;
     return triggers_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of triggers which will be OR'ed together. Only one in the list
    * needs to trigger for a job to be started. The list may contain only
@@ -1317,11 +1408,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
    */
-  public java.util.List<? extends com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder> 
+  public java.util.List<? extends com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder>
       getTriggersOrBuilderList() {
     return triggers_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of triggers which will be OR'ed together. Only one in the list
    * needs to trigger for a job to be started. The list may contain only
@@ -1334,6 +1427,8 @@ private static final long serialVersionUID = 0L;
     return triggers_.size();
   }
   /**
+   *
+   *
    * <pre>
    * A list of triggers which will be OR'ed together. Only one in the list
    * needs to trigger for a job to be started. The list may contain only
@@ -1346,6 +1441,8 @@ private static final long serialVersionUID = 0L;
     return triggers_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * A list of triggers which will be OR'ed together. Only one in the list
    * needs to trigger for a job to be started. The list may contain only
@@ -1354,14 +1451,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
    */
-  public com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder getTriggersOrBuilder(
-      int index) {
+  public com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder getTriggersOrBuilder(int index) {
     return triggers_.get(index);
   }
 
   public static final int ERRORS_FIELD_NUMBER = 6;
   private java.util.List<com.google.privacy.dlp.v2.Error> errors_;
   /**
+   *
+   *
    * <pre>
    * A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
@@ -1375,6 +1473,8 @@ private static final long serialVersionUID = 0L;
     return errors_;
   }
   /**
+   *
+   *
    * <pre>
    * A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
@@ -1384,11 +1484,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
    */
-  public java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder> 
+  public java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder>
       getErrorsOrBuilderList() {
     return errors_;
   }
   /**
+   *
+   *
    * <pre>
    * A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
@@ -1402,6 +1504,8 @@ private static final long serialVersionUID = 0L;
     return errors_.size();
   }
   /**
+   *
+   *
    * <pre>
    * A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
@@ -1415,6 +1519,8 @@ private static final long serialVersionUID = 0L;
     return errors_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * A stream of errors encountered when the trigger was activated. Repeated
    * errors may result in the JobTrigger automatically being paused.
@@ -1424,14 +1530,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
    */
-  public com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(
-      int index) {
+  public com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(int index) {
     return errors_.get(index);
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp createTime_;
   /**
+   *
+   *
    * <pre>
    * The creation timestamp of a triggeredJob, output only field.
    * </pre>
@@ -1442,6 +1549,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The creation timestamp of a triggeredJob, output only field.
    * </pre>
@@ -1452,6 +1561,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
+   *
+   *
    * <pre>
    * The creation timestamp of a triggeredJob, output only field.
    * </pre>
@@ -1465,6 +1576,8 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp updateTime_;
   /**
+   *
+   *
    * <pre>
    * The last update timestamp of a triggeredJob, output only field.
    * </pre>
@@ -1475,6 +1588,8 @@ private static final long serialVersionUID = 0L;
     return updateTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The last update timestamp of a triggeredJob, output only field.
    * </pre>
@@ -1485,6 +1600,8 @@ private static final long serialVersionUID = 0L;
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
   /**
+   *
+   *
    * <pre>
    * The last update timestamp of a triggeredJob, output only field.
    * </pre>
@@ -1498,6 +1615,8 @@ private static final long serialVersionUID = 0L;
   public static final int LAST_RUN_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp lastRunTime_;
   /**
+   *
+   *
    * <pre>
    * The timestamp of the last time this trigger executed, output only field.
    * </pre>
@@ -1508,6 +1627,8 @@ private static final long serialVersionUID = 0L;
     return lastRunTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The timestamp of the last time this trigger executed, output only field.
    * </pre>
@@ -1518,6 +1639,8 @@ private static final long serialVersionUID = 0L;
     return lastRunTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastRunTime_;
   }
   /**
+   *
+   *
    * <pre>
    * The timestamp of the last time this trigger executed, output only field.
    * </pre>
@@ -1531,6 +1654,8 @@ private static final long serialVersionUID = 0L;
   public static final int STATUS_FIELD_NUMBER = 10;
   private int status_;
   /**
+   *
+   *
    * <pre>
    * A status for this trigger. [required]
    * </pre>
@@ -1541,6 +1666,8 @@ private static final long serialVersionUID = 0L;
     return status_;
   }
   /**
+   *
+   *
    * <pre>
    * A status for this trigger. [required]
    * </pre>
@@ -1549,11 +1676,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.JobTrigger.Status getStatus() {
     @SuppressWarnings("deprecation")
-    com.google.privacy.dlp.v2.JobTrigger.Status result = com.google.privacy.dlp.v2.JobTrigger.Status.valueOf(status_);
+    com.google.privacy.dlp.v2.JobTrigger.Status result =
+        com.google.privacy.dlp.v2.JobTrigger.Status.valueOf(status_);
     return result == null ? com.google.privacy.dlp.v2.JobTrigger.Status.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1565,8 +1694,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -1616,32 +1744,27 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
     }
     if (jobCase_ == 4) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (com.google.privacy.dlp.v2.InspectJobConfig) job_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.privacy.dlp.v2.InspectJobConfig) job_);
     }
     for (int i = 0; i < triggers_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, triggers_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, triggers_.get(i));
     }
     for (int i = 0; i < errors_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, errors_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, errors_.get(i));
     }
     if (createTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getCreateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCreateTime());
     }
     if (updateTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getUpdateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getUpdateTime());
     }
     if (lastRunTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getLastRunTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getLastRunTime());
     }
     if (status_ != com.google.privacy.dlp.v2.JobTrigger.Status.STATUS_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(10, status_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, status_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1651,7 +1774,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.JobTrigger)) {
       return super.equals(obj);
@@ -1659,39 +1782,29 @@ private static final long serialVersionUID = 0L;
     com.google.privacy.dlp.v2.JobTrigger other = (com.google.privacy.dlp.v2.JobTrigger) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getDisplayName()
-        .equals(other.getDisplayName());
-    result = result && getDescription()
-        .equals(other.getDescription());
-    result = result && getTriggersList()
-        .equals(other.getTriggersList());
-    result = result && getErrorsList()
-        .equals(other.getErrorsList());
+    result = result && getName().equals(other.getName());
+    result = result && getDisplayName().equals(other.getDisplayName());
+    result = result && getDescription().equals(other.getDescription());
+    result = result && getTriggersList().equals(other.getTriggersList());
+    result = result && getErrorsList().equals(other.getErrorsList());
     result = result && (hasCreateTime() == other.hasCreateTime());
     if (hasCreateTime()) {
-      result = result && getCreateTime()
-          .equals(other.getCreateTime());
+      result = result && getCreateTime().equals(other.getCreateTime());
     }
     result = result && (hasUpdateTime() == other.hasUpdateTime());
     if (hasUpdateTime()) {
-      result = result && getUpdateTime()
-          .equals(other.getUpdateTime());
+      result = result && getUpdateTime().equals(other.getUpdateTime());
     }
     result = result && (hasLastRunTime() == other.hasLastRunTime());
     if (hasLastRunTime()) {
-      result = result && getLastRunTime()
-          .equals(other.getLastRunTime());
+      result = result && getLastRunTime().equals(other.getLastRunTime());
     }
     result = result && status_ == other.status_;
-    result = result && getJobCase().equals(
-        other.getJobCase());
+    result = result && getJobCase().equals(other.getJobCase());
     if (!result) return false;
     switch (jobCase_) {
       case 4:
-        result = result && getInspectJob()
-            .equals(other.getInspectJob());
+        result = result && getInspectJob().equals(other.getInspectJob());
         break;
       case 0:
       default:
@@ -1748,97 +1861,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.privacy.dlp.v2.JobTrigger parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.privacy.dlp.v2.JobTrigger parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.JobTrigger parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.JobTrigger parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.privacy.dlp.v2.JobTrigger parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.JobTrigger parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.JobTrigger parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.JobTrigger parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.JobTrigger parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.JobTrigger parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.JobTrigger parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.JobTrigger parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.JobTrigger parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.JobTrigger parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.privacy.dlp.v2.JobTrigger prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Contains a configuration to make dlp api calls on a repeating basis.
    * See https://cloud.google.com/dlp/docs/concepts-job-triggers to learn more.
@@ -1846,21 +1965,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.JobTrigger}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.JobTrigger)
       com.google.privacy.dlp.v2.JobTriggerOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_JobTrigger_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_JobTrigger_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_JobTrigger_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_JobTrigger_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.JobTrigger.class, com.google.privacy.dlp.v2.JobTrigger.Builder.class);
+              com.google.privacy.dlp.v2.JobTrigger.class,
+              com.google.privacy.dlp.v2.JobTrigger.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.JobTrigger.newBuilder()
@@ -1868,18 +1989,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getTriggersFieldBuilder();
         getErrorsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1927,9 +2048,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_JobTrigger_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_JobTrigger_descriptor;
     }
 
     @java.lang.Override
@@ -2005,38 +2126,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.JobTrigger) {
-        return mergeFrom((com.google.privacy.dlp.v2.JobTrigger)other);
+        return mergeFrom((com.google.privacy.dlp.v2.JobTrigger) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -2075,9 +2197,10 @@ private static final long serialVersionUID = 0L;
             triggersBuilder_ = null;
             triggers_ = other.triggers_;
             bitField0_ = (bitField0_ & ~0x00000010);
-            triggersBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getTriggersFieldBuilder() : null;
+            triggersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getTriggersFieldBuilder()
+                    : null;
           } else {
             triggersBuilder_.addAllMessages(other.triggers_);
           }
@@ -2101,9 +2224,10 @@ private static final long serialVersionUID = 0L;
             errorsBuilder_ = null;
             errors_ = other.errors_;
             bitField0_ = (bitField0_ & ~0x00000020);
-            errorsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getErrorsFieldBuilder() : null;
+            errorsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getErrorsFieldBuilder()
+                    : null;
           } else {
             errorsBuilder_.addAllMessages(other.errors_);
           }
@@ -2122,13 +2246,15 @@ private static final long serialVersionUID = 0L;
         setStatusValue(other.getStatusValue());
       }
       switch (other.getJobCase()) {
-        case INSPECT_JOB: {
-          mergeInspectJob(other.getInspectJob());
-          break;
-        }
-        case JOB_NOT_SET: {
-          break;
-        }
+        case INSPECT_JOB:
+          {
+            mergeInspectJob(other.getInspectJob());
+            break;
+          }
+        case JOB_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2158,12 +2284,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int jobCase_ = 0;
     private java.lang.Object job_;
-    public JobCase
-        getJobCase() {
-      return JobCase.forNumber(
-          jobCase_);
+
+    public JobCase getJobCase() {
+      return JobCase.forNumber(jobCase_);
     }
 
     public Builder clearJob() {
@@ -2177,6 +2303,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * Unique resource name for the triggeredJob, assigned by the service when the
      * triggeredJob is created, for example
@@ -2188,8 +2316,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -2198,6 +2325,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Unique resource name for the triggeredJob, assigned by the service when the
      * triggeredJob is created, for example
@@ -2206,13 +2335,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -2220,6 +2347,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Unique resource name for the triggeredJob, assigned by the service when the
      * triggeredJob is created, for example
@@ -2228,17 +2357,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Unique resource name for the triggeredJob, assigned by the service when the
      * triggeredJob is created, for example
@@ -2248,12 +2378,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Unique resource name for the triggeredJob, assigned by the service when the
      * triggeredJob is created, for example
@@ -2262,13 +2394,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -2276,6 +2407,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object displayName_ = "";
     /**
+     *
+     *
      * <pre>
      * Display name (max 100 chars)
      * </pre>
@@ -2285,8 +2418,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         displayName_ = s;
         return s;
@@ -2295,19 +2427,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Display name (max 100 chars)
      * </pre>
      *
      * <code>string display_name = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getDisplayNameBytes() {
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         displayName_ = b;
         return b;
       } else {
@@ -2315,23 +2447,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Display name (max 100 chars)
      * </pre>
      *
      * <code>string display_name = 2;</code>
      */
-    public Builder setDisplayName(
-        java.lang.String value) {
+    public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       displayName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Display name (max 100 chars)
      * </pre>
@@ -2339,25 +2474,26 @@ private static final long serialVersionUID = 0L;
      * <code>string display_name = 2;</code>
      */
     public Builder clearDisplayName() {
-      
+
       displayName_ = getDefaultInstance().getDisplayName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Display name (max 100 chars)
      * </pre>
      *
      * <code>string display_name = 2;</code>
      */
-    public Builder setDisplayNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       displayName_ = value;
       onChanged();
       return this;
@@ -2365,6 +2501,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
+     *
+     *
      * <pre>
      * User provided description (max 256 chars)
      * </pre>
@@ -2374,8 +2512,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         description_ = s;
         return s;
@@ -2384,19 +2521,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * User provided description (max 256 chars)
      * </pre>
      *
      * <code>string description = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
+    public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         description_ = b;
         return b;
       } else {
@@ -2404,23 +2541,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * User provided description (max 256 chars)
      * </pre>
      *
      * <code>string description = 3;</code>
      */
-    public Builder setDescription(
-        java.lang.String value) {
+    public Builder setDescription(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       description_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * User provided description (max 256 chars)
      * </pre>
@@ -2428,41 +2568,41 @@ private static final long serialVersionUID = 0L;
      * <code>string description = 3;</code>
      */
     public Builder clearDescription() {
-      
+
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * User provided description (max 256 chars)
      * </pre>
      *
      * <code>string description = 3;</code>
      */
-    public Builder setDescriptionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       description_ = value;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.InspectJobConfig, com.google.privacy.dlp.v2.InspectJobConfig.Builder, com.google.privacy.dlp.v2.InspectJobConfigOrBuilder> inspectJobBuilder_;
-    /**
-     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
-     */
+            com.google.privacy.dlp.v2.InspectJobConfig,
+            com.google.privacy.dlp.v2.InspectJobConfig.Builder,
+            com.google.privacy.dlp.v2.InspectJobConfigOrBuilder>
+        inspectJobBuilder_;
+    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
     public boolean hasInspectJob() {
       return jobCase_ == 4;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
     public com.google.privacy.dlp.v2.InspectJobConfig getInspectJob() {
       if (inspectJobBuilder_ == null) {
         if (jobCase_ == 4) {
@@ -2476,9 +2616,7 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance();
       }
     }
-    /**
-     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
     public Builder setInspectJob(com.google.privacy.dlp.v2.InspectJobConfig value) {
       if (inspectJobBuilder_ == null) {
         if (value == null) {
@@ -2492,9 +2630,7 @@ private static final long serialVersionUID = 0L;
       jobCase_ = 4;
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
     public Builder setInspectJob(
         com.google.privacy.dlp.v2.InspectJobConfig.Builder builderForValue) {
       if (inspectJobBuilder_ == null) {
@@ -2506,15 +2642,16 @@ private static final long serialVersionUID = 0L;
       jobCase_ = 4;
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
     public Builder mergeInspectJob(com.google.privacy.dlp.v2.InspectJobConfig value) {
       if (inspectJobBuilder_ == null) {
-        if (jobCase_ == 4 &&
-            job_ != com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance()) {
-          job_ = com.google.privacy.dlp.v2.InspectJobConfig.newBuilder((com.google.privacy.dlp.v2.InspectJobConfig) job_)
-              .mergeFrom(value).buildPartial();
+        if (jobCase_ == 4
+            && job_ != com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance()) {
+          job_ =
+              com.google.privacy.dlp.v2.InspectJobConfig.newBuilder(
+                      (com.google.privacy.dlp.v2.InspectJobConfig) job_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           job_ = value;
         }
@@ -2528,9 +2665,7 @@ private static final long serialVersionUID = 0L;
       jobCase_ = 4;
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
     public Builder clearInspectJob() {
       if (inspectJobBuilder_ == null) {
         if (jobCase_ == 4) {
@@ -2547,15 +2682,11 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
     public com.google.privacy.dlp.v2.InspectJobConfig.Builder getInspectJobBuilder() {
       return getInspectJobFieldBuilder().getBuilder();
     }
-    /**
-     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
     public com.google.privacy.dlp.v2.InspectJobConfigOrBuilder getInspectJobOrBuilder() {
       if ((jobCase_ == 4) && (inspectJobBuilder_ != null)) {
         return inspectJobBuilder_.getMessageOrBuilder();
@@ -2566,41 +2697,52 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance();
       }
     }
-    /**
-     * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 4;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.InspectJobConfig, com.google.privacy.dlp.v2.InspectJobConfig.Builder, com.google.privacy.dlp.v2.InspectJobConfigOrBuilder> 
+            com.google.privacy.dlp.v2.InspectJobConfig,
+            com.google.privacy.dlp.v2.InspectJobConfig.Builder,
+            com.google.privacy.dlp.v2.InspectJobConfigOrBuilder>
         getInspectJobFieldBuilder() {
       if (inspectJobBuilder_ == null) {
         if (!(jobCase_ == 4)) {
           job_ = com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance();
         }
-        inspectJobBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.InspectJobConfig, com.google.privacy.dlp.v2.InspectJobConfig.Builder, com.google.privacy.dlp.v2.InspectJobConfigOrBuilder>(
+        inspectJobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.InspectJobConfig,
+                com.google.privacy.dlp.v2.InspectJobConfig.Builder,
+                com.google.privacy.dlp.v2.InspectJobConfigOrBuilder>(
                 (com.google.privacy.dlp.v2.InspectJobConfig) job_,
                 getParentForChildren(),
                 isClean());
         job_ = null;
       }
       jobCase_ = 4;
-      onChanged();;
+      onChanged();
+      ;
       return inspectJobBuilder_;
     }
 
     private java.util.List<com.google.privacy.dlp.v2.JobTrigger.Trigger> triggers_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureTriggersIsMutable() {
       if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-        triggers_ = new java.util.ArrayList<com.google.privacy.dlp.v2.JobTrigger.Trigger>(triggers_);
+        triggers_ =
+            new java.util.ArrayList<com.google.privacy.dlp.v2.JobTrigger.Trigger>(triggers_);
         bitField0_ |= 0x00000010;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.JobTrigger.Trigger, com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder, com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder> triggersBuilder_;
+            com.google.privacy.dlp.v2.JobTrigger.Trigger,
+            com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder,
+            com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder>
+        triggersBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * A list of triggers which will be OR'ed together. Only one in the list
      * needs to trigger for a job to be started. The list may contain only
@@ -2617,6 +2759,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of triggers which will be OR'ed together. Only one in the list
      * needs to trigger for a job to be started. The list may contain only
@@ -2633,6 +2777,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of triggers which will be OR'ed together. Only one in the list
      * needs to trigger for a job to be started. The list may contain only
@@ -2649,6 +2795,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of triggers which will be OR'ed together. Only one in the list
      * needs to trigger for a job to be started. The list may contain only
@@ -2657,8 +2805,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
      */
-    public Builder setTriggers(
-        int index, com.google.privacy.dlp.v2.JobTrigger.Trigger value) {
+    public Builder setTriggers(int index, com.google.privacy.dlp.v2.JobTrigger.Trigger value) {
       if (triggersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2672,6 +2819,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of triggers which will be OR'ed together. Only one in the list
      * needs to trigger for a job to be started. The list may contain only
@@ -2692,6 +2841,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of triggers which will be OR'ed together. Only one in the list
      * needs to trigger for a job to be started. The list may contain only
@@ -2714,6 +2865,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of triggers which will be OR'ed together. Only one in the list
      * needs to trigger for a job to be started. The list may contain only
@@ -2722,8 +2875,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
      */
-    public Builder addTriggers(
-        int index, com.google.privacy.dlp.v2.JobTrigger.Trigger value) {
+    public Builder addTriggers(int index, com.google.privacy.dlp.v2.JobTrigger.Trigger value) {
       if (triggersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2737,6 +2889,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of triggers which will be OR'ed together. Only one in the list
      * needs to trigger for a job to be started. The list may contain only
@@ -2757,6 +2911,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of triggers which will be OR'ed together. Only one in the list
      * needs to trigger for a job to be started. The list may contain only
@@ -2777,6 +2933,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of triggers which will be OR'ed together. Only one in the list
      * needs to trigger for a job to be started. The list may contain only
@@ -2789,8 +2947,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.privacy.dlp.v2.JobTrigger.Trigger> values) {
       if (triggersBuilder_ == null) {
         ensureTriggersIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, triggers_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, triggers_);
         onChanged();
       } else {
         triggersBuilder_.addAllMessages(values);
@@ -2798,6 +2955,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of triggers which will be OR'ed together. Only one in the list
      * needs to trigger for a job to be started. The list may contain only
@@ -2817,6 +2976,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of triggers which will be OR'ed together. Only one in the list
      * needs to trigger for a job to be started. The list may contain only
@@ -2836,6 +2997,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of triggers which will be OR'ed together. Only one in the list
      * needs to trigger for a job to be started. The list may contain only
@@ -2844,11 +3007,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
      */
-    public com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder getTriggersBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder getTriggersBuilder(int index) {
       return getTriggersFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * A list of triggers which will be OR'ed together. Only one in the list
      * needs to trigger for a job to be started. The list may contain only
@@ -2857,14 +3021,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
      */
-    public com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder getTriggersOrBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder getTriggersOrBuilder(int index) {
       if (triggersBuilder_ == null) {
-        return triggers_.get(index);  } else {
+        return triggers_.get(index);
+      } else {
         return triggersBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of triggers which will be OR'ed together. Only one in the list
      * needs to trigger for a job to be started. The list may contain only
@@ -2873,8 +3039,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
      */
-    public java.util.List<? extends com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder> 
-         getTriggersOrBuilderList() {
+    public java.util.List<? extends com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder>
+        getTriggersOrBuilderList() {
       if (triggersBuilder_ != null) {
         return triggersBuilder_.getMessageOrBuilderList();
       } else {
@@ -2882,6 +3048,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of triggers which will be OR'ed together. Only one in the list
      * needs to trigger for a job to be started. The list may contain only
@@ -2891,10 +3059,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
      */
     public com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder addTriggersBuilder() {
-      return getTriggersFieldBuilder().addBuilder(
-          com.google.privacy.dlp.v2.JobTrigger.Trigger.getDefaultInstance());
+      return getTriggersFieldBuilder()
+          .addBuilder(com.google.privacy.dlp.v2.JobTrigger.Trigger.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of triggers which will be OR'ed together. Only one in the list
      * needs to trigger for a job to be started. The list may contain only
@@ -2903,12 +3073,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
      */
-    public com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder addTriggersBuilder(
-        int index) {
-      return getTriggersFieldBuilder().addBuilder(
-          index, com.google.privacy.dlp.v2.JobTrigger.Trigger.getDefaultInstance());
+    public com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder addTriggersBuilder(int index) {
+      return getTriggersFieldBuilder()
+          .addBuilder(index, com.google.privacy.dlp.v2.JobTrigger.Trigger.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of triggers which will be OR'ed together. Only one in the list
      * needs to trigger for a job to be started. The list may contain only
@@ -2917,16 +3088,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.JobTrigger.Trigger triggers = 5;</code>
      */
-    public java.util.List<com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder> 
-         getTriggersBuilderList() {
+    public java.util.List<com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder>
+        getTriggersBuilderList() {
       return getTriggersFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.JobTrigger.Trigger, com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder, com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder> 
+            com.google.privacy.dlp.v2.JobTrigger.Trigger,
+            com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder,
+            com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder>
         getTriggersFieldBuilder() {
       if (triggersBuilder_ == null) {
-        triggersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.privacy.dlp.v2.JobTrigger.Trigger, com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder, com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder>(
+        triggersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.privacy.dlp.v2.JobTrigger.Trigger,
+                com.google.privacy.dlp.v2.JobTrigger.Trigger.Builder,
+                com.google.privacy.dlp.v2.JobTrigger.TriggerOrBuilder>(
                 triggers_,
                 ((bitField0_ & 0x00000010) == 0x00000010),
                 getParentForChildren(),
@@ -2937,18 +3114,24 @@ private static final long serialVersionUID = 0L;
     }
 
     private java.util.List<com.google.privacy.dlp.v2.Error> errors_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureErrorsIsMutable() {
       if (!((bitField0_ & 0x00000020) == 0x00000020)) {
         errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>(errors_);
         bitField0_ |= 0x00000020;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.Error, com.google.privacy.dlp.v2.Error.Builder, com.google.privacy.dlp.v2.ErrorOrBuilder> errorsBuilder_;
+            com.google.privacy.dlp.v2.Error,
+            com.google.privacy.dlp.v2.Error.Builder,
+            com.google.privacy.dlp.v2.ErrorOrBuilder>
+        errorsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
@@ -2966,6 +3149,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
@@ -2983,6 +3168,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
@@ -3000,6 +3187,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
@@ -3009,8 +3198,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
      */
-    public Builder setErrors(
-        int index, com.google.privacy.dlp.v2.Error value) {
+    public Builder setErrors(int index, com.google.privacy.dlp.v2.Error value) {
       if (errorsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3024,6 +3212,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
@@ -3033,8 +3223,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
      */
-    public Builder setErrors(
-        int index, com.google.privacy.dlp.v2.Error.Builder builderForValue) {
+    public Builder setErrors(int index, com.google.privacy.dlp.v2.Error.Builder builderForValue) {
       if (errorsBuilder_ == null) {
         ensureErrorsIsMutable();
         errors_.set(index, builderForValue.build());
@@ -3045,6 +3234,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
@@ -3068,6 +3259,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
@@ -3077,8 +3270,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
      */
-    public Builder addErrors(
-        int index, com.google.privacy.dlp.v2.Error value) {
+    public Builder addErrors(int index, com.google.privacy.dlp.v2.Error value) {
       if (errorsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3092,6 +3284,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
@@ -3101,8 +3295,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
      */
-    public Builder addErrors(
-        com.google.privacy.dlp.v2.Error.Builder builderForValue) {
+    public Builder addErrors(com.google.privacy.dlp.v2.Error.Builder builderForValue) {
       if (errorsBuilder_ == null) {
         ensureErrorsIsMutable();
         errors_.add(builderForValue.build());
@@ -3113,6 +3306,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
@@ -3122,8 +3317,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
      */
-    public Builder addErrors(
-        int index, com.google.privacy.dlp.v2.Error.Builder builderForValue) {
+    public Builder addErrors(int index, com.google.privacy.dlp.v2.Error.Builder builderForValue) {
       if (errorsBuilder_ == null) {
         ensureErrorsIsMutable();
         errors_.add(index, builderForValue.build());
@@ -3134,6 +3328,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
@@ -3147,8 +3343,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.privacy.dlp.v2.Error> values) {
       if (errorsBuilder_ == null) {
         ensureErrorsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, errors_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, errors_);
         onChanged();
       } else {
         errorsBuilder_.addAllMessages(values);
@@ -3156,6 +3351,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
@@ -3176,6 +3373,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
@@ -3196,6 +3395,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
@@ -3205,11 +3406,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
      */
-    public com.google.privacy.dlp.v2.Error.Builder getErrorsBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.Error.Builder getErrorsBuilder(int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
@@ -3219,14 +3421,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
      */
-    public com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(int index) {
       if (errorsBuilder_ == null) {
-        return errors_.get(index);  } else {
+        return errors_.get(index);
+      } else {
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
@@ -3236,8 +3440,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
      */
-    public java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder> 
-         getErrorsOrBuilderList() {
+    public java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder>
+        getErrorsOrBuilderList() {
       if (errorsBuilder_ != null) {
         return errorsBuilder_.getMessageOrBuilderList();
       } else {
@@ -3245,6 +3449,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
@@ -3255,10 +3461,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
      */
     public com.google.privacy.dlp.v2.Error.Builder addErrorsBuilder() {
-      return getErrorsFieldBuilder().addBuilder(
-          com.google.privacy.dlp.v2.Error.getDefaultInstance());
+      return getErrorsFieldBuilder()
+          .addBuilder(com.google.privacy.dlp.v2.Error.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
@@ -3268,12 +3476,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
      */
-    public com.google.privacy.dlp.v2.Error.Builder addErrorsBuilder(
-        int index) {
-      return getErrorsFieldBuilder().addBuilder(
-          index, com.google.privacy.dlp.v2.Error.getDefaultInstance());
+    public com.google.privacy.dlp.v2.Error.Builder addErrorsBuilder(int index) {
+      return getErrorsFieldBuilder()
+          .addBuilder(index, com.google.privacy.dlp.v2.Error.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A stream of errors encountered when the trigger was activated. Repeated
      * errors may result in the JobTrigger automatically being paused.
@@ -3283,16 +3492,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 6;</code>
      */
-    public java.util.List<com.google.privacy.dlp.v2.Error.Builder> 
-         getErrorsBuilderList() {
+    public java.util.List<com.google.privacy.dlp.v2.Error.Builder> getErrorsBuilderList() {
       return getErrorsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.Error, com.google.privacy.dlp.v2.Error.Builder, com.google.privacy.dlp.v2.ErrorOrBuilder> 
+            com.google.privacy.dlp.v2.Error,
+            com.google.privacy.dlp.v2.Error.Builder,
+            com.google.privacy.dlp.v2.ErrorOrBuilder>
         getErrorsFieldBuilder() {
       if (errorsBuilder_ == null) {
-        errorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.privacy.dlp.v2.Error, com.google.privacy.dlp.v2.Error.Builder, com.google.privacy.dlp.v2.ErrorOrBuilder>(
+        errorsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.privacy.dlp.v2.Error,
+                com.google.privacy.dlp.v2.Error.Builder,
+                com.google.privacy.dlp.v2.ErrorOrBuilder>(
                 errors_,
                 ((bitField0_ & 0x00000020) == 0x00000020),
                 getParentForChildren(),
@@ -3304,8 +3518,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp createTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The creation timestamp of a triggeredJob, output only field.
      * </pre>
@@ -3316,6 +3535,8 @@ private static final long serialVersionUID = 0L;
       return createTimeBuilder_ != null || createTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The creation timestamp of a triggeredJob, output only field.
      * </pre>
@@ -3324,12 +3545,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
-        return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       } else {
         return createTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The creation timestamp of a triggeredJob, output only field.
      * </pre>
@@ -3350,14 +3575,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The creation timestamp of a triggeredJob, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
      */
-    public Builder setCreateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
         onChanged();
@@ -3368,6 +3594,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The creation timestamp of a triggeredJob, output only field.
      * </pre>
@@ -3378,7 +3606,7 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ == null) {
         if (createTime_ != null) {
           createTime_ =
-            com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
         } else {
           createTime_ = value;
         }
@@ -3390,6 +3618,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The creation timestamp of a triggeredJob, output only field.
      * </pre>
@@ -3408,6 +3638,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The creation timestamp of a triggeredJob, output only field.
      * </pre>
@@ -3415,11 +3647,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      
+
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The creation timestamp of a triggeredJob, output only field.
      * </pre>
@@ -3430,11 +3664,14 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ != null) {
         return createTimeBuilder_.getMessageOrBuilder();
       } else {
-        return createTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The creation timestamp of a triggeredJob, output only field.
      * </pre>
@@ -3442,14 +3679,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getCreateTimeFieldBuilder() {
       if (createTimeBuilder_ == null) {
-        createTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getCreateTime(),
-                getParentForChildren(),
-                isClean());
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
         createTime_ = null;
       }
       return createTimeBuilder_;
@@ -3457,8 +3697,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp updateTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The last update timestamp of a triggeredJob, output only field.
      * </pre>
@@ -3469,6 +3714,8 @@ private static final long serialVersionUID = 0L;
       return updateTimeBuilder_ != null || updateTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The last update timestamp of a triggeredJob, output only field.
      * </pre>
@@ -3477,12 +3724,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
-        return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
       } else {
         return updateTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The last update timestamp of a triggeredJob, output only field.
      * </pre>
@@ -3503,14 +3754,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The last update timestamp of a triggeredJob, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 8;</code>
      */
-    public Builder setUpdateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
         onChanged();
@@ -3521,6 +3773,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The last update timestamp of a triggeredJob, output only field.
      * </pre>
@@ -3531,7 +3785,7 @@ private static final long serialVersionUID = 0L;
       if (updateTimeBuilder_ == null) {
         if (updateTime_ != null) {
           updateTime_ =
-            com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
         } else {
           updateTime_ = value;
         }
@@ -3543,6 +3797,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The last update timestamp of a triggeredJob, output only field.
      * </pre>
@@ -3561,6 +3817,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The last update timestamp of a triggeredJob, output only field.
      * </pre>
@@ -3568,11 +3826,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 8;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      
+
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The last update timestamp of a triggeredJob, output only field.
      * </pre>
@@ -3583,11 +3843,14 @@ private static final long serialVersionUID = 0L;
       if (updateTimeBuilder_ != null) {
         return updateTimeBuilder_.getMessageOrBuilder();
       } else {
-        return updateTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The last update timestamp of a triggeredJob, output only field.
      * </pre>
@@ -3595,14 +3858,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getUpdateTimeFieldBuilder() {
       if (updateTimeBuilder_ == null) {
-        updateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getUpdateTime(),
-                getParentForChildren(),
-                isClean());
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
         updateTime_ = null;
       }
       return updateTimeBuilder_;
@@ -3610,8 +3876,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp lastRunTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastRunTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        lastRunTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The timestamp of the last time this trigger executed, output only field.
      * </pre>
@@ -3622,6 +3893,8 @@ private static final long serialVersionUID = 0L;
       return lastRunTimeBuilder_ != null || lastRunTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of the last time this trigger executed, output only field.
      * </pre>
@@ -3630,12 +3903,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getLastRunTime() {
       if (lastRunTimeBuilder_ == null) {
-        return lastRunTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastRunTime_;
+        return lastRunTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastRunTime_;
       } else {
         return lastRunTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of the last time this trigger executed, output only field.
      * </pre>
@@ -3656,14 +3933,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of the last time this trigger executed, output only field.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
      */
-    public Builder setLastRunTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setLastRunTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastRunTimeBuilder_ == null) {
         lastRunTime_ = builderForValue.build();
         onChanged();
@@ -3674,6 +3952,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of the last time this trigger executed, output only field.
      * </pre>
@@ -3684,7 +3964,9 @@ private static final long serialVersionUID = 0L;
       if (lastRunTimeBuilder_ == null) {
         if (lastRunTime_ != null) {
           lastRunTime_ =
-            com.google.protobuf.Timestamp.newBuilder(lastRunTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(lastRunTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           lastRunTime_ = value;
         }
@@ -3696,6 +3978,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of the last time this trigger executed, output only field.
      * </pre>
@@ -3714,6 +3998,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of the last time this trigger executed, output only field.
      * </pre>
@@ -3721,11 +4007,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastRunTimeBuilder() {
-      
+
       onChanged();
       return getLastRunTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of the last time this trigger executed, output only field.
      * </pre>
@@ -3736,11 +4024,14 @@ private static final long serialVersionUID = 0L;
       if (lastRunTimeBuilder_ != null) {
         return lastRunTimeBuilder_.getMessageOrBuilder();
       } else {
-        return lastRunTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : lastRunTime_;
+        return lastRunTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastRunTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of the last time this trigger executed, output only field.
      * </pre>
@@ -3748,14 +4039,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_run_time = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getLastRunTimeFieldBuilder() {
       if (lastRunTimeBuilder_ == null) {
-        lastRunTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getLastRunTime(),
-                getParentForChildren(),
-                isClean());
+        lastRunTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getLastRunTime(), getParentForChildren(), isClean());
         lastRunTime_ = null;
       }
       return lastRunTimeBuilder_;
@@ -3763,6 +4057,8 @@ private static final long serialVersionUID = 0L;
 
     private int status_ = 0;
     /**
+     *
+     *
      * <pre>
      * A status for this trigger. [required]
      * </pre>
@@ -3773,6 +4069,8 @@ private static final long serialVersionUID = 0L;
       return status_;
     }
     /**
+     *
+     *
      * <pre>
      * A status for this trigger. [required]
      * </pre>
@@ -3785,6 +4083,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A status for this trigger. [required]
      * </pre>
@@ -3793,10 +4093,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.JobTrigger.Status getStatus() {
       @SuppressWarnings("deprecation")
-      com.google.privacy.dlp.v2.JobTrigger.Status result = com.google.privacy.dlp.v2.JobTrigger.Status.valueOf(status_);
+      com.google.privacy.dlp.v2.JobTrigger.Status result =
+          com.google.privacy.dlp.v2.JobTrigger.Status.valueOf(status_);
       return result == null ? com.google.privacy.dlp.v2.JobTrigger.Status.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * A status for this trigger. [required]
      * </pre>
@@ -3807,12 +4110,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       status_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A status for this trigger. [required]
      * </pre>
@@ -3820,14 +4125,14 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.JobTrigger.Status status = 10;</code>
      */
     public Builder clearStatus() {
-      
+
       status_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -3837,12 +4142,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.JobTrigger)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.JobTrigger)
   private static final com.google.privacy.dlp.v2.JobTrigger DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.JobTrigger();
   }
@@ -3851,16 +4156,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<JobTrigger>
-      PARSER = new com.google.protobuf.AbstractParser<JobTrigger>() {
-    @java.lang.Override
-    public JobTrigger parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new JobTrigger(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<JobTrigger> PARSER =
+      new com.google.protobuf.AbstractParser<JobTrigger>() {
+        @java.lang.Override
+        public JobTrigger parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new JobTrigger(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<JobTrigger> parser() {
     return PARSER;
@@ -3875,6 +4180,4 @@ private static final long serialVersionUID = 0L;
   public com.google.privacy.dlp.v2.JobTrigger getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

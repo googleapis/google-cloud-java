@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface ActionOrBuilder extends
+public interface ActionOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Action)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Save resulting findings in a provided location.
    * </pre>
@@ -16,6 +19,8 @@ public interface ActionOrBuilder extends
    */
   boolean hasSaveFindings();
   /**
+   *
+   *
    * <pre>
    * Save resulting findings in a provided location.
    * </pre>
@@ -24,6 +29,8 @@ public interface ActionOrBuilder extends
    */
   com.google.privacy.dlp.v2.Action.SaveFindings getSaveFindings();
   /**
+   *
+   *
    * <pre>
    * Save resulting findings in a provided location.
    * </pre>
@@ -33,6 +40,8 @@ public interface ActionOrBuilder extends
   com.google.privacy.dlp.v2.Action.SaveFindingsOrBuilder getSaveFindingsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Publish a notification to a pubsub topic.
    * </pre>
@@ -41,6 +50,8 @@ public interface ActionOrBuilder extends
    */
   boolean hasPubSub();
   /**
+   *
+   *
    * <pre>
    * Publish a notification to a pubsub topic.
    * </pre>
@@ -49,6 +60,8 @@ public interface ActionOrBuilder extends
    */
   com.google.privacy.dlp.v2.Action.PublishToPubSub getPubSub();
   /**
+   *
+   *
    * <pre>
    * Publish a notification to a pubsub topic.
    * </pre>
@@ -58,6 +71,8 @@ public interface ActionOrBuilder extends
   com.google.privacy.dlp.v2.Action.PublishToPubSubOrBuilder getPubSubOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Publish summary to Cloud Security Command Center (Alpha).
    * </pre>
@@ -66,6 +81,8 @@ public interface ActionOrBuilder extends
    */
   boolean hasPublishSummaryToCscc();
   /**
+   *
+   *
    * <pre>
    * Publish summary to Cloud Security Command Center (Alpha).
    * </pre>
@@ -74,6 +91,8 @@ public interface ActionOrBuilder extends
    */
   com.google.privacy.dlp.v2.Action.PublishSummaryToCscc getPublishSummaryToCscc();
   /**
+   *
+   *
    * <pre>
    * Publish summary to Cloud Security Command Center (Alpha).
    * </pre>

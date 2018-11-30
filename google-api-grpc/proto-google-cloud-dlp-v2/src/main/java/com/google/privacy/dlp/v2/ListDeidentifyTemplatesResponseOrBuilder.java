@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface ListDeidentifyTemplatesResponseOrBuilder extends
+public interface ListDeidentifyTemplatesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ListDeidentifyTemplatesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * List of deidentify templates, up to page_size in
    * ListDeidentifyTemplatesRequest.
@@ -15,9 +18,10 @@ public interface ListDeidentifyTemplatesResponseOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.DeidentifyTemplate deidentify_templates = 1;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.DeidentifyTemplate> 
-      getDeidentifyTemplatesList();
+  java.util.List<com.google.privacy.dlp.v2.DeidentifyTemplate> getDeidentifyTemplatesList();
   /**
+   *
+   *
    * <pre>
    * List of deidentify templates, up to page_size in
    * ListDeidentifyTemplatesRequest.
@@ -27,6 +31,8 @@ public interface ListDeidentifyTemplatesResponseOrBuilder extends
    */
   com.google.privacy.dlp.v2.DeidentifyTemplate getDeidentifyTemplates(int index);
   /**
+   *
+   *
    * <pre>
    * List of deidentify templates, up to page_size in
    * ListDeidentifyTemplatesRequest.
@@ -36,6 +42,8 @@ public interface ListDeidentifyTemplatesResponseOrBuilder extends
    */
   int getDeidentifyTemplatesCount();
   /**
+   *
+   *
    * <pre>
    * List of deidentify templates, up to page_size in
    * ListDeidentifyTemplatesRequest.
@@ -43,9 +51,11 @@ public interface ListDeidentifyTemplatesResponseOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.DeidentifyTemplate deidentify_templates = 1;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder> 
+  java.util.List<? extends com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder>
       getDeidentifyTemplatesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * List of deidentify templates, up to page_size in
    * ListDeidentifyTemplatesRequest.
@@ -53,10 +63,11 @@ public interface ListDeidentifyTemplatesResponseOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.DeidentifyTemplate deidentify_templates = 1;</code>
    */
-  com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder getDeidentifyTemplatesOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.DeidentifyTemplateOrBuilder getDeidentifyTemplatesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If the next page is available then the next page token to be used
    * in following ListDeidentifyTemplates request.
@@ -66,6 +77,8 @@ public interface ListDeidentifyTemplatesResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If the next page is available then the next page token to be used
    * in following ListDeidentifyTemplates request.
@@ -73,6 +86,5 @@ public interface ListDeidentifyTemplatesResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

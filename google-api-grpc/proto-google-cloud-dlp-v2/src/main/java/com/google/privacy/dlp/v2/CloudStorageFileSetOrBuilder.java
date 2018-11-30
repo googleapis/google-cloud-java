@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface CloudStorageFileSetOrBuilder extends
+public interface CloudStorageFileSetOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CloudStorageFileSet)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The url, in the format `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the
    * path is allowed.
@@ -17,6 +20,8 @@ public interface CloudStorageFileSetOrBuilder extends
    */
   java.lang.String getUrl();
   /**
+   *
+   *
    * <pre>
    * The url, in the format `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the
    * path is allowed.
@@ -24,6 +29,5 @@ public interface CloudStorageFileSetOrBuilder extends
    *
    * <code>string url = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getUrlBytes();
+  com.google.protobuf.ByteString getUrlBytes();
 }
