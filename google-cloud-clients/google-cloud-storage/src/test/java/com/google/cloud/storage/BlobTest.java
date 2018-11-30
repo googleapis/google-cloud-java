@@ -44,13 +44,6 @@ import com.google.cloud.storage.Storage.CopyRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.io.BaseEncoding;
-
-import org.easymock.Capture;
-import org.easymock.IAnswer;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
 import java.io.File;
 import java.net.URL;
 import java.nio.ByteBuffer;
@@ -59,8 +52,12 @@ import java.security.Key;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-
 import javax.crypto.spec.SecretKeySpec;
+import org.easymock.Capture;
+import org.easymock.IAnswer;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 public class BlobTest {
 
@@ -91,44 +88,43 @@ public class BlobTest {
   private static final String KEY_SHA256 = "keySha";
   private static final BlobInfo.CustomerEncryption CUSTOMER_ENCRYPTION =
       new BlobInfo.CustomerEncryption(ENCRYPTION_ALGORITHM, KEY_SHA256);
-  private static final String KMS_KEY_NAME = "projects/p/locations/kr-loc/keyRings/kr/cryptoKeys/key";
+  private static final String KMS_KEY_NAME =
+      "projects/p/locations/kr-loc/keyRings/kr/cryptoKeys/key";
   private static final Boolean EVENT_BASED_HOLD = true;
   private static final Boolean TEMPORARY_HOLD = true;
   private static final Long RETENTION_EXPIRATION_TIME = 10L;
-  private static final BlobInfo FULL_BLOB_INFO = BlobInfo.newBuilder("b", "n", GENERATION)
-      .setAcl(ACLS)
-      .setComponentCount(COMPONENT_COUNT)
-      .setContentType(CONTENT_TYPE)
-      .setCacheControl(CACHE_CONTROL)
-      .setContentDisposition(CONTENT_DISPOSITION)
-      .setContentEncoding(CONTENT_ENCODING)
-      .setContentLanguage(CONTENT_LANGUAGE)
-      .setCrc32c(CRC32)
-      .setDeleteTime(DELETE_TIME)
-      .setEtag(ETAG)
-      .setGeneratedId(GENERATED_ID)
-      .setMd5(MD5)
-      .setMediaLink(MEDIA_LINK)
-      .setMetadata(METADATA)
-      .setMetageneration(META_GENERATION)
-      .setOwner(OWNER)
-      .setSelfLink(SELF_LINK)
-      .setSize(SIZE)
-      .setUpdateTime(UPDATE_TIME)
-      .setCreateTime(CREATE_TIME)
-      .setCustomerEncryption(CUSTOMER_ENCRYPTION)
-      .setKmsKeyName(KMS_KEY_NAME)
-      .setEventBasedHold(EVENT_BASED_HOLD)
-      .setTemporaryHold(TEMPORARY_HOLD)
-      .setRetentionExpirationTime(RETENTION_EXPIRATION_TIME)
-      .build();
-  private static final BlobInfo BLOB_INFO = BlobInfo.newBuilder("b", "n")
-      .setMetageneration(42L)
-      .build();
-  private static final BlobInfo DIRECTORY_INFO = BlobInfo.newBuilder("b", "n/")
-      .setSize(0L)
-      .setIsDirectory(true)
-      .build();
+  private static final BlobInfo FULL_BLOB_INFO =
+      BlobInfo.newBuilder("b", "n", GENERATION)
+          .setAcl(ACLS)
+          .setComponentCount(COMPONENT_COUNT)
+          .setContentType(CONTENT_TYPE)
+          .setCacheControl(CACHE_CONTROL)
+          .setContentDisposition(CONTENT_DISPOSITION)
+          .setContentEncoding(CONTENT_ENCODING)
+          .setContentLanguage(CONTENT_LANGUAGE)
+          .setCrc32c(CRC32)
+          .setDeleteTime(DELETE_TIME)
+          .setEtag(ETAG)
+          .setGeneratedId(GENERATED_ID)
+          .setMd5(MD5)
+          .setMediaLink(MEDIA_LINK)
+          .setMetadata(METADATA)
+          .setMetageneration(META_GENERATION)
+          .setOwner(OWNER)
+          .setSelfLink(SELF_LINK)
+          .setSize(SIZE)
+          .setUpdateTime(UPDATE_TIME)
+          .setCreateTime(CREATE_TIME)
+          .setCustomerEncryption(CUSTOMER_ENCRYPTION)
+          .setKmsKeyName(KMS_KEY_NAME)
+          .setEventBasedHold(EVENT_BASED_HOLD)
+          .setTemporaryHold(TEMPORARY_HOLD)
+          .setRetentionExpirationTime(RETENTION_EXPIRATION_TIME)
+          .build();
+  private static final BlobInfo BLOB_INFO =
+      BlobInfo.newBuilder("b", "n").setMetageneration(42L).build();
+  private static final BlobInfo DIRECTORY_INFO =
+      BlobInfo.newBuilder("b", "n/").setSize(0L).setIsDirectory(true).build();
   private static final String BASE64_KEY = "JVzfVl8NLD9FjedFuStegjRfES5ll5zc59CIXw572OA=";
   private static final Key KEY =
       new SecretKeySpec(BaseEncoding.base64().decode(BASE64_KEY), "AES256");
@@ -196,9 +192,11 @@ public class BlobTest {
     initializeExpectedBlob(2);
     byte[] content = {1, 2};
     expect(storage.getOptions()).andReturn(mockOptions);
-    expect(storage.readAllBytes(BLOB_INFO.getBlobId(),
-        Storage.BlobSourceOption.decryptionKey(BASE64_KEY)))
-        .andReturn(content).times(2);
+    expect(
+            storage.readAllBytes(
+                BLOB_INFO.getBlobId(), Storage.BlobSourceOption.decryptionKey(BASE64_KEY)))
+        .andReturn(content)
+        .times(2);
     replay(storage);
     initializeBlob();
     assertArrayEquals(content, blob.getContent(BlobSourceOption.decryptionKey(BASE64_KEY)));
@@ -340,9 +338,11 @@ public class BlobTest {
     initializeExpectedBlob(2);
     ReadChannel channel = createMock(ReadChannel.class);
     expect(storage.getOptions()).andReturn(mockOptions);
-    expect(storage.reader(BLOB_INFO.getBlobId(),
-        Storage.BlobSourceOption.decryptionKey(BASE64_KEY)))
-        .andReturn(channel).times(2);
+    expect(
+            storage.reader(
+                BLOB_INFO.getBlobId(), Storage.BlobSourceOption.decryptionKey(BASE64_KEY)))
+        .andReturn(channel)
+        .times(2);
     replay(storage);
     initializeBlob();
     assertSame(channel, blob.reader(BlobSourceOption.decryptionKey(BASE64_KEY)));
@@ -366,7 +366,8 @@ public class BlobTest {
     BlobWriteChannel channel = createMock(BlobWriteChannel.class);
     expect(storage.getOptions()).andReturn(mockOptions);
     expect(storage.writer(eq(expectedBlob), eq(BlobWriteOption.encryptionKey(BASE64_KEY))))
-        .andReturn(channel).times(2);
+        .andReturn(channel)
+        .times(2);
     replay(storage);
     initializeBlob();
     assertSame(channel, blob.writer(BlobWriteOption.encryptionKey(BASE64_KEY)));
@@ -379,7 +380,7 @@ public class BlobTest {
     BlobWriteChannel channel = createMock(BlobWriteChannel.class);
     expect(storage.getOptions()).andReturn(mockOptions);
     expect(storage.writer(eq(expectedBlob), eq(BlobWriteOption.kmsKeyName(KMS_KEY_NAME))))
-            .andReturn(channel);
+        .andReturn(channel);
     replay(storage);
     initializeBlob();
     assertSame(channel, blob.writer(BlobWriteOption.kmsKeyName(KMS_KEY_NAME)));
@@ -410,8 +411,8 @@ public class BlobTest {
   public void testDeleteAcl() throws Exception {
     initializeExpectedBlob(1);
     expect(storage.getOptions()).andReturn(mockOptions);
-    expect(storage.deleteAcl(BLOB_INFO.getBlobId(),
-        User.ofAllAuthenticatedUsers())).andReturn(true);
+    expect(storage.deleteAcl(BLOB_INFO.getBlobId(), User.ofAllAuthenticatedUsers()))
+        .andReturn(true);
     replay(storage);
     initializeBlob();
     assertTrue(blob.deleteAcl(User.ofAllAuthenticatedUsers()));
@@ -467,32 +468,34 @@ public class BlobTest {
     expect(storage.getOptions()).andReturn(mockOptions).times(6);
     replay(storage);
     Blob.Builder builder = new Blob.Builder(new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO)));
-    Blob blob = builder.setAcl(ACLS)
-        .setComponentCount(COMPONENT_COUNT)
-        .setContentType(CONTENT_TYPE)
-        .setCacheControl(CACHE_CONTROL)
-        .setContentDisposition(CONTENT_DISPOSITION)
-        .setContentEncoding(CONTENT_ENCODING)
-        .setContentLanguage(CONTENT_LANGUAGE)
-        .setCrc32c(CRC32)
-        .setCreateTime(CREATE_TIME)
-        .setCustomerEncryption(CUSTOMER_ENCRYPTION)
-        .setKmsKeyName(KMS_KEY_NAME)
-        .setEventBasedHold(EVENT_BASED_HOLD)
-        .setTemporaryHold(TEMPORARY_HOLD)
-        .setRetentionExpirationTime(RETENTION_EXPIRATION_TIME)
-        .setDeleteTime(DELETE_TIME)
-        .setEtag(ETAG)
-        .setGeneratedId(GENERATED_ID)
-        .setMd5(MD5)
-        .setMediaLink(MEDIA_LINK)
-        .setMetadata(METADATA)
-        .setMetageneration(META_GENERATION)
-        .setOwner(OWNER)
-        .setSelfLink(SELF_LINK)
-        .setSize(SIZE)
-        .setUpdateTime(UPDATE_TIME)
-        .build();
+    Blob blob =
+        builder
+            .setAcl(ACLS)
+            .setComponentCount(COMPONENT_COUNT)
+            .setContentType(CONTENT_TYPE)
+            .setCacheControl(CACHE_CONTROL)
+            .setContentDisposition(CONTENT_DISPOSITION)
+            .setContentEncoding(CONTENT_ENCODING)
+            .setContentLanguage(CONTENT_LANGUAGE)
+            .setCrc32c(CRC32)
+            .setCreateTime(CREATE_TIME)
+            .setCustomerEncryption(CUSTOMER_ENCRYPTION)
+            .setKmsKeyName(KMS_KEY_NAME)
+            .setEventBasedHold(EVENT_BASED_HOLD)
+            .setTemporaryHold(TEMPORARY_HOLD)
+            .setRetentionExpirationTime(RETENTION_EXPIRATION_TIME)
+            .setDeleteTime(DELETE_TIME)
+            .setEtag(ETAG)
+            .setGeneratedId(GENERATED_ID)
+            .setMd5(MD5)
+            .setMediaLink(MEDIA_LINK)
+            .setMetadata(METADATA)
+            .setMetageneration(META_GENERATION)
+            .setOwner(OWNER)
+            .setSelfLink(SELF_LINK)
+            .setSize(SIZE)
+            .setUpdateTime(UPDATE_TIME)
+            .build();
     assertEquals("b", blob.getBucket());
     assertEquals("n", blob.getName());
     assertEquals(ACLS, blob.getAcl());
@@ -523,10 +526,7 @@ public class BlobTest {
     assertEquals(storage.getOptions(), blob.getStorage().getOptions());
     assertFalse(blob.isDirectory());
     builder = new Blob.Builder(new Blob(storage, new BlobInfo.BuilderImpl(DIRECTORY_INFO)));
-    blob = builder.setBlobId(BlobId.of("b", "n/"))
-        .setIsDirectory(true)
-        .setSize(0L)
-        .build();
+    blob = builder.setBlobId(BlobId.of("b", "n/")).setIsDirectory(true).setSize(0L).build();
     assertEquals("b", blob.getBucket());
     assertEquals("n/", blob.getName());
     assertNull(blob.getAcl());
@@ -568,14 +568,15 @@ public class BlobTest {
     replay(storage);
     // First read should return 2 bytes.
     expect(channel.read(anyObject(ByteBuffer.class)))
-        .andAnswer(new IAnswer<Integer>() {
-          @Override
-          public Integer answer() throws Throwable {
-            // Modify the argument to match the expected behavior of `read`.
-            ((ByteBuffer) getCurrentArguments()[0]).put(expected);
-            return 2;
-          }
-        });
+        .andAnswer(
+            new IAnswer<Integer>() {
+              @Override
+              public Integer answer() throws Throwable {
+                // Modify the argument to match the expected behavior of `read`.
+                ((ByteBuffer) getCurrentArguments()[0]).put(expected);
+                return 2;
+              }
+            });
     // Second read should return 0 bytes.
     expect(channel.read(anyObject(ByteBuffer.class))).andReturn(0);
     replay(channel);

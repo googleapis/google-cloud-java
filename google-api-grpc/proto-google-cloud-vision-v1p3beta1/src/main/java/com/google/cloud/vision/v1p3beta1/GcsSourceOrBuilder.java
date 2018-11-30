@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface GcsSourceOrBuilder extends
+public interface GcsSourceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.GcsSource)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Google Cloud Storage URI for the input file. This must only be a
    * Google Cloud Storage object. Wildcards are not currently supported.
@@ -17,6 +20,8 @@ public interface GcsSourceOrBuilder extends
    */
   java.lang.String getUri();
   /**
+   *
+   *
    * <pre>
    * Google Cloud Storage URI for the input file. This must only be a
    * Google Cloud Storage object. Wildcards are not currently supported.
@@ -24,6 +29,5 @@ public interface GcsSourceOrBuilder extends
    *
    * <code>string uri = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getUriBytes();
+  com.google.protobuf.ByteString getUriBytes();
 }

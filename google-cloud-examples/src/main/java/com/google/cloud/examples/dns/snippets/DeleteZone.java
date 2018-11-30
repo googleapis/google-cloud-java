@@ -28,7 +28,6 @@ import com.google.cloud.dns.Dns;
 import com.google.cloud.dns.DnsOptions;
 import com.google.cloud.dns.RecordSet;
 
-
 /**
  * A snippet for Google Cloud DNS showing how to delete a zone. It also shows how to list and delete
  * DNS records.
@@ -67,8 +66,8 @@ public class DeleteZone {
         try {
           Thread.sleep(500);
         } catch (InterruptedException e) {
-          System.err.println("The thread was interrupted while waiting for change request to be "
-              + "processed.");
+          System.err.println(
+              "The thread was interrupted while waiting for change request to be " + "processed.");
         }
       }
     }

@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface ResultSetOrBuilder extends
+public interface ResultSetOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.ResultSet)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Metadata about the result set, such as row type information.
    * </pre>
@@ -16,6 +19,8 @@ public interface ResultSetOrBuilder extends
    */
   boolean hasMetadata();
   /**
+   *
+   *
    * <pre>
    * Metadata about the result set, such as row type information.
    * </pre>
@@ -24,6 +29,8 @@ public interface ResultSetOrBuilder extends
    */
   com.google.spanner.v1.ResultSetMetadata getMetadata();
   /**
+   *
+   *
    * <pre>
    * Metadata about the result set, such as row type information.
    * </pre>
@@ -33,6 +40,8 @@ public interface ResultSetOrBuilder extends
   com.google.spanner.v1.ResultSetMetadataOrBuilder getMetadataOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Each element in `rows` is a row whose format is defined by
    * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
@@ -44,9 +53,10 @@ public interface ResultSetOrBuilder extends
    *
    * <code>repeated .google.protobuf.ListValue rows = 2;</code>
    */
-  java.util.List<com.google.protobuf.ListValue> 
-      getRowsList();
+  java.util.List<com.google.protobuf.ListValue> getRowsList();
   /**
+   *
+   *
    * <pre>
    * Each element in `rows` is a row whose format is defined by
    * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
@@ -60,6 +70,8 @@ public interface ResultSetOrBuilder extends
    */
   com.google.protobuf.ListValue getRows(int index);
   /**
+   *
+   *
    * <pre>
    * Each element in `rows` is a row whose format is defined by
    * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
@@ -73,6 +85,8 @@ public interface ResultSetOrBuilder extends
    */
   int getRowsCount();
   /**
+   *
+   *
    * <pre>
    * Each element in `rows` is a row whose format is defined by
    * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
@@ -84,9 +98,10 @@ public interface ResultSetOrBuilder extends
    *
    * <code>repeated .google.protobuf.ListValue rows = 2;</code>
    */
-  java.util.List<? extends com.google.protobuf.ListValueOrBuilder> 
-      getRowsOrBuilderList();
+  java.util.List<? extends com.google.protobuf.ListValueOrBuilder> getRowsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Each element in `rows` is a row whose format is defined by
    * [metadata.row_type][google.spanner.v1.ResultSetMetadata.row_type]. The ith element
@@ -98,10 +113,11 @@ public interface ResultSetOrBuilder extends
    *
    * <code>repeated .google.protobuf.ListValue rows = 2;</code>
    */
-  com.google.protobuf.ListValueOrBuilder getRowsOrBuilder(
-      int index);
+  com.google.protobuf.ListValueOrBuilder getRowsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Query plan and execution statistics for the SQL statement that
    * produced this result set. These can be requested by setting
@@ -117,6 +133,8 @@ public interface ResultSetOrBuilder extends
    */
   boolean hasStats();
   /**
+   *
+   *
    * <pre>
    * Query plan and execution statistics for the SQL statement that
    * produced this result set. These can be requested by setting
@@ -132,6 +150,8 @@ public interface ResultSetOrBuilder extends
    */
   com.google.spanner.v1.ResultSetStats getStats();
   /**
+   *
+   *
    * <pre>
    * Query plan and execution statistics for the SQL statement that
    * produced this result set. These can be requested by setting

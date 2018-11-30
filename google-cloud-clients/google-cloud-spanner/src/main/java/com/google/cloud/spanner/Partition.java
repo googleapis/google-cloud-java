@@ -17,7 +17,6 @@
 package com.google.cloud.spanner;
 
 import com.google.protobuf.ByteString;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -135,7 +134,8 @@ public class Partition implements Serializable {
     b.append("partitionToken: ")
         .append(partitionToken.toStringUtf8())
         .append(" partitionOptions: ")
-        .append(partitionOptions).append(' ');
+        .append(partitionOptions)
+        .append(' ');
     if (table != null) {
       b.append("table: ").append(table).append(' ');
     }

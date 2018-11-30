@@ -21,31 +21,32 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.FieldSelector.Helper;
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class FieldSelectorHelperTest {
 
-  private static final FieldSelector FIELD1 = new FieldSelector() {
-    @Override
-    public String getSelector() {
-      return "field1";
-    }
-  };
-  private static final FieldSelector FIELD2 = new FieldSelector() {
-    @Override
-    public String getSelector() {
-      return "field2";
-    }
-  };
-  private static final FieldSelector FIELD3 = new FieldSelector() {
-    @Override
-    public String getSelector() {
-      return "field3";
-    }
-  };
+  private static final FieldSelector FIELD1 =
+      new FieldSelector() {
+        @Override
+        public String getSelector() {
+          return "field1";
+        }
+      };
+  private static final FieldSelector FIELD2 =
+      new FieldSelector() {
+        @Override
+        public String getSelector() {
+          return "field2";
+        }
+      };
+  private static final FieldSelector FIELD3 =
+      new FieldSelector() {
+        @Override
+        public String getSelector() {
+          return "field3";
+        }
+      };
   private static final String[] FIRST_LEVEL_FIELDS = {"firstLevel1", "firstLevel2"};
   private static final List<FieldSelector> REQUIRED_FIELDS = ImmutableList.of(FIELD1, FIELD2);
   private static final String CONTAINER = "container";
@@ -72,8 +73,8 @@ public class FieldSelectorHelperTest {
 
   @Test
   public void testListSelectorWithExtraFields() {
-    String selector = Helper.listSelector(CONTAINER, REQUIRED_FIELDS,
-        new FieldSelector[]{FIELD3}, "field4");
+    String selector =
+        Helper.listSelector(CONTAINER, REQUIRED_FIELDS, new FieldSelector[] {FIELD3}, "field4");
     assertTrue(selector.startsWith("nextPageToken,container("));
     assertTrue(selector.contains("field1"));
     assertTrue(selector.contains("field2"));
@@ -85,8 +86,9 @@ public class FieldSelectorHelperTest {
 
   @Test
   public void testListSelectorWithFirstLevelFields() {
-    String selector = Helper.listSelector(FIRST_LEVEL_FIELDS, CONTAINER, REQUIRED_FIELDS,
-        new FieldSelector[]{FIELD3}, "field4");
+    String selector =
+        Helper.listSelector(
+            FIRST_LEVEL_FIELDS, CONTAINER, REQUIRED_FIELDS, new FieldSelector[] {FIELD3}, "field4");
     assertTrue(selector.contains("firstLevel1"));
     assertTrue(selector.contains("firstLevel2"));
     assertTrue(selector.contains("nextPageToken"));

@@ -24,7 +24,6 @@ import com.google.cloud.Timestamp;
 import com.google.protobuf.Duration;
 import com.google.protobuf.util.Durations;
 import com.google.spanner.v1.TransactionOptions;
-
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;

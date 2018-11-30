@@ -19,7 +19,6 @@ package com.google.cloud.compute.deprecated;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -41,9 +40,7 @@ public class License implements Serializable {
     this.chargesUseFee = chargesUseFee;
   }
 
-  /**
-   * Returns the identity of the license.
-   */
+  /** Returns the identity of the license. */
   public LicenseId getLicenseId() {
     return licenseId;
   }
@@ -73,8 +70,8 @@ public class License implements Serializable {
   public final boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(License.class)
-        && Objects.equals(toPb(), ((License) obj).toPb());
+            && obj.getClass().equals(License.class)
+            && Objects.equals(toPb(), ((License) obj).toPb());
   }
 
   com.google.api.services.compute.model.License toPb() {

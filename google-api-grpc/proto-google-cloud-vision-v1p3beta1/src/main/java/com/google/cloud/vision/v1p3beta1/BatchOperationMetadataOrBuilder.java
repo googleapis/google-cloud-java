@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface BatchOperationMetadataOrBuilder extends
+public interface BatchOperationMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.BatchOperationMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The current state of the batch operation.
    * </pre>
@@ -16,6 +19,8 @@ public interface BatchOperationMetadataOrBuilder extends
    */
   int getStateValue();
   /**
+   *
+   *
    * <pre>
    * The current state of the batch operation.
    * </pre>
@@ -25,6 +30,8 @@ public interface BatchOperationMetadataOrBuilder extends
   com.google.cloud.vision.v1p3beta1.BatchOperationMetadata.State getState();
 
   /**
+   *
+   *
    * <pre>
    * The time when the batch request was submitted to the server.
    * </pre>
@@ -33,6 +40,8 @@ public interface BatchOperationMetadataOrBuilder extends
    */
   boolean hasSubmitTime();
   /**
+   *
+   *
    * <pre>
    * The time when the batch request was submitted to the server.
    * </pre>
@@ -41,6 +50,8 @@ public interface BatchOperationMetadataOrBuilder extends
    */
   com.google.protobuf.Timestamp getSubmitTime();
   /**
+   *
+   *
    * <pre>
    * The time when the batch request was submitted to the server.
    * </pre>
@@ -50,6 +61,8 @@ public interface BatchOperationMetadataOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getSubmitTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time when the batch request is finished and
    * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
@@ -59,6 +72,8 @@ public interface BatchOperationMetadataOrBuilder extends
    */
   boolean hasEndTime();
   /**
+   *
+   *
    * <pre>
    * The time when the batch request is finished and
    * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.
@@ -68,6 +83,8 @@ public interface BatchOperationMetadataOrBuilder extends
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
+   *
+   *
    * <pre>
    * The time when the batch request is finished and
    * [google.longrunning.Operation.done][google.longrunning.Operation.done] is set to true.

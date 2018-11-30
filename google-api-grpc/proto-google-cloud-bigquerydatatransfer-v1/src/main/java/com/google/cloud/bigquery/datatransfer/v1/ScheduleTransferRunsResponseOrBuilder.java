@@ -3,20 +3,24 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-public interface ScheduleTransferRunsResponseOrBuilder extends
+public interface ScheduleTransferRunsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The transfer runs that were scheduled.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun runs = 1;</code>
    */
-  java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferRun> 
-      getRunsList();
+  java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferRun> getRunsList();
   /**
+   *
+   *
    * <pre>
    * The transfer runs that were scheduled.
    * </pre>
@@ -25,6 +29,8 @@ public interface ScheduleTransferRunsResponseOrBuilder extends
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferRun getRuns(int index);
   /**
+   *
+   *
    * <pre>
    * The transfer runs that were scheduled.
    * </pre>
@@ -33,21 +39,24 @@ public interface ScheduleTransferRunsResponseOrBuilder extends
    */
   int getRunsCount();
   /**
+   *
+   *
    * <pre>
    * The transfer runs that were scheduled.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun runs = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.TransferRunOrBuilder> 
+  java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.TransferRunOrBuilder>
       getRunsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The transfer runs that were scheduled.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferRun runs = 1;</code>
    */
-  com.google.cloud.bigquery.datatransfer.v1.TransferRunOrBuilder getRunsOrBuilder(
-      int index);
+  com.google.cloud.bigquery.datatransfer.v1.TransferRunOrBuilder getRunsOrBuilder(int index);
 }

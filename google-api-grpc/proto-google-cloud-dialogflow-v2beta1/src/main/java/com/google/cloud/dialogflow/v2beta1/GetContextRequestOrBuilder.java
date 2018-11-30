@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface GetContextRequestOrBuilder extends
+public interface GetContextRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.GetContextRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the context. Format:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`
@@ -21,6 +24,8 @@ public interface GetContextRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the context. Format:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`
@@ -32,6 +37,5 @@ public interface GetContextRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

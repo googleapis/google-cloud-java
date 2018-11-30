@@ -3,20 +3,24 @@
 
 package com.google.cloud.language.v1;
 
-public interface AnalyzeEntitiesResponseOrBuilder extends
+public interface AnalyzeEntitiesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.language.v1.AnalyzeEntitiesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The recognized entities in the input document.
    * </pre>
    *
    * <code>repeated .google.cloud.language.v1.Entity entities = 1;</code>
    */
-  java.util.List<com.google.cloud.language.v1.Entity> 
-      getEntitiesList();
+  java.util.List<com.google.cloud.language.v1.Entity> getEntitiesList();
   /**
+   *
+   *
    * <pre>
    * The recognized entities in the input document.
    * </pre>
@@ -25,6 +29,8 @@ public interface AnalyzeEntitiesResponseOrBuilder extends
    */
   com.google.cloud.language.v1.Entity getEntities(int index);
   /**
+   *
+   *
    * <pre>
    * The recognized entities in the input document.
    * </pre>
@@ -33,25 +39,29 @@ public interface AnalyzeEntitiesResponseOrBuilder extends
    */
   int getEntitiesCount();
   /**
+   *
+   *
    * <pre>
    * The recognized entities in the input document.
    * </pre>
    *
    * <code>repeated .google.cloud.language.v1.Entity entities = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.language.v1.EntityOrBuilder> 
-      getEntitiesOrBuilderList();
+  java.util.List<? extends com.google.cloud.language.v1.EntityOrBuilder> getEntitiesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The recognized entities in the input document.
    * </pre>
    *
    * <code>repeated .google.cloud.language.v1.Entity entities = 1;</code>
    */
-  com.google.cloud.language.v1.EntityOrBuilder getEntitiesOrBuilder(
-      int index);
+  com.google.cloud.language.v1.EntityOrBuilder getEntitiesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * The language of the text, which will be the same as the language specified
    * in the request or, if not specified, the automatically-detected language.
@@ -62,6 +72,8 @@ public interface AnalyzeEntitiesResponseOrBuilder extends
    */
   java.lang.String getLanguage();
   /**
+   *
+   *
    * <pre>
    * The language of the text, which will be the same as the language specified
    * in the request or, if not specified, the automatically-detected language.
@@ -70,6 +82,5 @@ public interface AnalyzeEntitiesResponseOrBuilder extends
    *
    * <code>string language = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageBytes();
+  com.google.protobuf.ByteString getLanguageBytes();
 }

@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1beta1;
 
-public interface BoundingBoxOrBuilder extends
+public interface BoundingBoxOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1beta1.BoundingBox)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Left X coordinate.
    * </pre>
@@ -17,6 +20,8 @@ public interface BoundingBoxOrBuilder extends
   int getLeft();
 
   /**
+   *
+   *
    * <pre>
    * Right X coordinate.
    * </pre>
@@ -26,6 +31,8 @@ public interface BoundingBoxOrBuilder extends
   int getRight();
 
   /**
+   *
+   *
    * <pre>
    * Bottom Y coordinate.
    * </pre>
@@ -35,6 +42,8 @@ public interface BoundingBoxOrBuilder extends
   int getBottom();
 
   /**
+   *
+   *
    * <pre>
    * Top Y coordinate.
    * </pre>

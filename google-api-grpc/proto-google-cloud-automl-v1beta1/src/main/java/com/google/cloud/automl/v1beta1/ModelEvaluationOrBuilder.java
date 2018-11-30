@@ -3,61 +3,91 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface ModelEvaluationOrBuilder extends
+public interface ModelEvaluationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.ModelEvaluation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Evaluation metrics for models on classification problems models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+   * </code>
    */
   boolean hasClassificationEvaluationMetrics();
   /**
+   *
+   *
    * <pre>
    * Evaluation metrics for models on classification problems models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+   * </code>
    */
-  com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics getClassificationEvaluationMetrics();
+  com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+      getClassificationEvaluationMetrics();
   /**
+   *
+   *
    * <pre>
    * Evaluation metrics for models on classification problems models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics classification_evaluation_metrics = 8;
+   * </code>
    */
-  com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetricsOrBuilder getClassificationEvaluationMetricsOrBuilder();
+  com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetricsOrBuilder
+      getClassificationEvaluationMetricsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Evaluation metrics for models on translation models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;
+   * </code>
    */
   boolean hasTranslationEvaluationMetrics();
   /**
+   *
+   *
    * <pre>
    * Evaluation metrics for models on translation models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;
+   * </code>
    */
   com.google.cloud.automl.v1beta1.TranslationEvaluationMetrics getTranslationEvaluationMetrics();
   /**
+   *
+   *
    * <pre>
    * Evaluation metrics for models on translation models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.TranslationEvaluationMetrics translation_evaluation_metrics = 9;
+   * </code>
    */
-  com.google.cloud.automl.v1beta1.TranslationEvaluationMetricsOrBuilder getTranslationEvaluationMetricsOrBuilder();
+  com.google.cloud.automl.v1beta1.TranslationEvaluationMetricsOrBuilder
+      getTranslationEvaluationMetricsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Resource name of the model evaluation.
@@ -69,6 +99,8 @@ public interface ModelEvaluationOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Resource name of the model evaluation.
@@ -78,10 +110,11 @@ public interface ModelEvaluationOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The ID of the annotation spec that the model evaluation applies to. The
@@ -95,6 +128,8 @@ public interface ModelEvaluationOrBuilder extends
    */
   java.lang.String getAnnotationSpecId();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The ID of the annotation spec that the model evaluation applies to. The
@@ -106,10 +141,11 @@ public interface ModelEvaluationOrBuilder extends
    *
    * <code>string annotation_spec_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getAnnotationSpecIdBytes();
+  com.google.protobuf.ByteString getAnnotationSpecIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Timestamp when this model evaluation was created.
@@ -119,6 +155,8 @@ public interface ModelEvaluationOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Timestamp when this model evaluation was created.
@@ -128,6 +166,8 @@ public interface ModelEvaluationOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Timestamp when this model evaluation was created.
@@ -138,6 +178,8 @@ public interface ModelEvaluationOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The number of examples used for model evaluation.
    * </pre>

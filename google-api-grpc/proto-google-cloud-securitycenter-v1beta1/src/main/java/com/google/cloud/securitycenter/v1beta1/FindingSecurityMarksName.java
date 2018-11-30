@@ -14,20 +14,20 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class FindingSecurityMarksName extends SecuritymarksName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("organizations/{organization}/sources/{source}/findings/{finding}/securityMarks");
+      PathTemplate.createWithoutUrlEncoding(
+          "organizations/{organization}/sources/{source}/findings/{finding}/securityMarks");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -62,20 +62,16 @@ public class FindingSecurityMarksName extends SecuritymarksName {
   }
 
   public static FindingSecurityMarksName of(String organization, String source, String finding) {
-    return newBuilder()
-      .setOrganization(organization)
-      .setSource(source)
-      .setFinding(finding)
-      .build();
+    return newBuilder().setOrganization(organization).setSource(source).setFinding(finding).build();
   }
 
   public static String format(String organization, String source, String finding) {
     return newBuilder()
-      .setOrganization(organization)
-      .setSource(source)
-      .setFinding(finding)
-      .build()
-      .toString();
+        .setOrganization(organization)
+        .setSource(source)
+        .setFinding(finding)
+        .build()
+        .toString();
   }
 
   public static FindingSecurityMarksName parse(String formattedString) {
@@ -83,7 +79,8 @@ public class FindingSecurityMarksName extends SecuritymarksName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "FindingSecurityMarksName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "FindingSecurityMarksName.parse: formattedString not in valid format");
     return of(matchMap.get("organization"), matchMap.get("source"), matchMap.get("finding"));
   }
 
@@ -132,7 +129,8 @@ public class FindingSecurityMarksName extends SecuritymarksName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("organization", organization, "source", source, "finding", finding);
+    return PATH_TEMPLATE.instantiate(
+        "organization", organization, "source", source, "finding", finding);
   }
 
   /** Builder for FindingSecurityMarksName. */
@@ -169,8 +167,7 @@ public class FindingSecurityMarksName extends SecuritymarksName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(FindingSecurityMarksName findingSecurityMarksName) {
       organization = findingSecurityMarksName.organization;
@@ -209,4 +206,3 @@ public class FindingSecurityMarksName extends SecuritymarksName {
     return h;
   }
 }
-

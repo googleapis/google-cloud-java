@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p1beta1;
 
-public interface LatLongRectOrBuilder extends
+public interface LatLongRectOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p1beta1.LatLongRect)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Min lat/long pair.
    * </pre>
@@ -16,6 +19,8 @@ public interface LatLongRectOrBuilder extends
    */
   boolean hasMinLatLng();
   /**
+   *
+   *
    * <pre>
    * Min lat/long pair.
    * </pre>
@@ -24,6 +29,8 @@ public interface LatLongRectOrBuilder extends
    */
   com.google.type.LatLng getMinLatLng();
   /**
+   *
+   *
    * <pre>
    * Min lat/long pair.
    * </pre>
@@ -33,6 +40,8 @@ public interface LatLongRectOrBuilder extends
   com.google.type.LatLngOrBuilder getMinLatLngOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Max lat/long pair.
    * </pre>
@@ -41,6 +50,8 @@ public interface LatLongRectOrBuilder extends
    */
   boolean hasMaxLatLng();
   /**
+   *
+   *
    * <pre>
    * Max lat/long pair.
    * </pre>
@@ -49,6 +60,8 @@ public interface LatLongRectOrBuilder extends
    */
   com.google.type.LatLng getMaxLatLng();
   /**
+   *
+   *
    * <pre>
    * Max lat/long pair.
    * </pre>

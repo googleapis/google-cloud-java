@@ -4,6 +4,8 @@
 package com.google.cloud.videointelligence.v1p2beta1;
 
 /**
+ *
+ *
  * <pre>
  * Video frame level annotations for object detection and tracking. This field
  * stores per frame location, time offset, and confidence.
@@ -11,23 +13,23 @@ package com.google.cloud.videointelligence.v1p2beta1;
  *
  * Protobuf type {@code google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame}
  */
-public  final class ObjectTrackingFrame extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ObjectTrackingFrame extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame)
     ObjectTrackingFrameOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ObjectTrackingFrame.newBuilder() to construct.
   private ObjectTrackingFrame(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ObjectTrackingFrame() {
-  }
+
+  private ObjectTrackingFrame() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ObjectTrackingFrame(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,100 +49,127 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.Builder subBuilder = null;
-            if (normalizedBoundingBox_ != null) {
-              subBuilder = normalizedBoundingBox_.toBuilder();
-            }
-            normalizedBoundingBox_ = input.readMessage(com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(normalizedBoundingBox_);
-              normalizedBoundingBox_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.Builder
+                  subBuilder = null;
+              if (normalizedBoundingBox_ != null) {
+                subBuilder = normalizedBoundingBox_.toBuilder();
+              }
+              normalizedBoundingBox_ =
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(normalizedBoundingBox_);
+                normalizedBoundingBox_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (timeOffset_ != null) {
-              subBuilder = timeOffset_.toBuilder();
+              break;
             }
-            timeOffset_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(timeOffset_);
-              timeOffset_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (timeOffset_ != null) {
+                subBuilder = timeOffset_.toBuilder();
+              }
+              timeOffset_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(timeOffset_);
+                timeOffset_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p2beta1_ObjectTrackingFrame_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1p2beta1_ObjectTrackingFrame_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p2beta1_ObjectTrackingFrame_fieldAccessorTable
+    return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1p2beta1_ObjectTrackingFrame_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame.class, com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame.Builder.class);
+            com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame.class,
+            com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame.Builder.class);
   }
 
   public static final int NORMALIZED_BOUNDING_BOX_FIELD_NUMBER = 1;
   private com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalizedBoundingBox_;
   /**
+   *
+   *
    * <pre>
    * The normalized bounding box location of this object track for the frame.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;
+   * </code>
    */
   public boolean hasNormalizedBoundingBox() {
     return normalizedBoundingBox_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The normalized bounding box location of this object track for the frame.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;
+   * </code>
    */
-  public com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox getNormalizedBoundingBox() {
-    return normalizedBoundingBox_ == null ? com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.getDefaultInstance() : normalizedBoundingBox_;
+  public com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox
+      getNormalizedBoundingBox() {
+    return normalizedBoundingBox_ == null
+        ? com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.getDefaultInstance()
+        : normalizedBoundingBox_;
   }
   /**
+   *
+   *
    * <pre>
    * The normalized bounding box location of this object track for the frame.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;
+   * </code>
    */
-  public com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBoxOrBuilder getNormalizedBoundingBoxOrBuilder() {
+  public com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBoxOrBuilder
+      getNormalizedBoundingBoxOrBuilder() {
     return getNormalizedBoundingBox();
   }
 
   public static final int TIME_OFFSET_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration timeOffset_;
   /**
+   *
+   *
    * <pre>
    * The timestamp of the frame in microseconds.
    * </pre>
@@ -151,6 +180,8 @@ private static final long serialVersionUID = 0L;
     return timeOffset_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The timestamp of the frame in microseconds.
    * </pre>
@@ -161,6 +192,8 @@ private static final long serialVersionUID = 0L;
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
   /**
+   *
+   *
    * <pre>
    * The timestamp of the frame in microseconds.
    * </pre>
@@ -172,6 +205,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -183,8 +217,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (normalizedBoundingBox_ != null) {
       output.writeMessage(1, getNormalizedBoundingBox());
     }
@@ -201,12 +234,11 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (normalizedBoundingBox_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getNormalizedBoundingBox());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(1, getNormalizedBoundingBox());
     }
     if (timeOffset_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getTimeOffset());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getTimeOffset());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -216,23 +248,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame)) {
       return super.equals(obj);
     }
-    com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame other = (com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame) obj;
+    com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame other =
+        (com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame) obj;
 
     boolean result = true;
     result = result && (hasNormalizedBoundingBox() == other.hasNormalizedBoundingBox());
     if (hasNormalizedBoundingBox()) {
-      result = result && getNormalizedBoundingBox()
-          .equals(other.getNormalizedBoundingBox());
+      result = result && getNormalizedBoundingBox().equals(other.getNormalizedBoundingBox());
     }
     result = result && (hasTimeOffset() == other.hasTimeOffset());
     if (hasTimeOffset()) {
-      result = result && getTimeOffset()
-          .equals(other.getTimeOffset());
+      result = result && getTimeOffset().equals(other.getTimeOffset());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -259,96 +290,104 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Video frame level annotations for object detection and tracking. This field
    * stores per frame location, time offset, and confidence.
@@ -356,21 +395,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame)
       com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrameOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p2beta1_ObjectTrackingFrame_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1p2beta1_ObjectTrackingFrame_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p2beta1_ObjectTrackingFrame_fieldAccessorTable
+      return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1p2beta1_ObjectTrackingFrame_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame.class, com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame.Builder.class);
+              com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame.class,
+              com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame.Builder.class);
     }
 
     // Construct using com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame.newBuilder()
@@ -378,16 +419,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -407,13 +447,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p2beta1_ObjectTrackingFrame_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1p2beta1_ObjectTrackingFrame_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame getDefaultInstanceForType() {
+    public com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame
+        getDefaultInstanceForType() {
       return com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame.getDefaultInstance();
     }
 
@@ -428,7 +469,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame buildPartial() {
-      com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame result = new com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame(this);
+      com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame result =
+          new com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame(this);
       if (normalizedBoundingBoxBuilder_ == null) {
         result.normalizedBoundingBox_ = normalizedBoundingBox_;
       } else {
@@ -447,46 +489,50 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame) {
-        return mergeFrom((com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame)other);
+        return mergeFrom((com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame other) {
-      if (other == com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame other) {
+      if (other
+          == com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame.getDefaultInstance())
+        return this;
       if (other.hasNormalizedBoundingBox()) {
         mergeNormalizedBoundingBox(other.getNormalizedBoundingBox());
       }
@@ -512,7 +558,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -522,41 +570,62 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalizedBoundingBox_ = null;
+    private com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox
+        normalizedBoundingBox_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox, com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.Builder, com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBoxOrBuilder> normalizedBoundingBoxBuilder_;
+            com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox,
+            com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.Builder,
+            com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBoxOrBuilder>
+        normalizedBoundingBoxBuilder_;
     /**
+     *
+     *
      * <pre>
      * The normalized bounding box location of this object track for the frame.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;
+     * </code>
      */
     public boolean hasNormalizedBoundingBox() {
       return normalizedBoundingBoxBuilder_ != null || normalizedBoundingBox_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The normalized bounding box location of this object track for the frame.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox getNormalizedBoundingBox() {
+    public com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox
+        getNormalizedBoundingBox() {
       if (normalizedBoundingBoxBuilder_ == null) {
-        return normalizedBoundingBox_ == null ? com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.getDefaultInstance() : normalizedBoundingBox_;
+        return normalizedBoundingBox_ == null
+            ? com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox
+                .getDefaultInstance()
+            : normalizedBoundingBox_;
       } else {
         return normalizedBoundingBoxBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The normalized bounding box location of this object track for the frame.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;
+     * </code>
      */
-    public Builder setNormalizedBoundingBox(com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox value) {
+    public Builder setNormalizedBoundingBox(
+        com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox value) {
       if (normalizedBoundingBoxBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -570,14 +639,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The normalized bounding box location of this object track for the frame.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;
+     * </code>
      */
     public Builder setNormalizedBoundingBox(
-        com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.Builder builderForValue) {
+        com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.Builder
+            builderForValue) {
       if (normalizedBoundingBoxBuilder_ == null) {
         normalizedBoundingBox_ = builderForValue.build();
         onChanged();
@@ -588,17 +662,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The normalized bounding box location of this object track for the frame.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;
+     * </code>
      */
-    public Builder mergeNormalizedBoundingBox(com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox value) {
+    public Builder mergeNormalizedBoundingBox(
+        com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox value) {
       if (normalizedBoundingBoxBuilder_ == null) {
         if (normalizedBoundingBox_ != null) {
           normalizedBoundingBox_ =
-            com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.newBuilder(normalizedBoundingBox_).mergeFrom(value).buildPartial();
+              com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.newBuilder(
+                      normalizedBoundingBox_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           normalizedBoundingBox_ = value;
         }
@@ -610,11 +692,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The normalized bounding box location of this object track for the frame.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;
+     * </code>
      */
     public Builder clearNormalizedBoundingBox() {
       if (normalizedBoundingBoxBuilder_ == null) {
@@ -628,48 +714,67 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The normalized bounding box location of this object track for the frame.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.Builder getNormalizedBoundingBoxBuilder() {
-      
+    public com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.Builder
+        getNormalizedBoundingBoxBuilder() {
+
       onChanged();
       return getNormalizedBoundingBoxFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The normalized bounding box location of this object track for the frame.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBoxOrBuilder getNormalizedBoundingBoxOrBuilder() {
+    public com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBoxOrBuilder
+        getNormalizedBoundingBoxOrBuilder() {
       if (normalizedBoundingBoxBuilder_ != null) {
         return normalizedBoundingBoxBuilder_.getMessageOrBuilder();
       } else {
-        return normalizedBoundingBox_ == null ?
-            com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.getDefaultInstance() : normalizedBoundingBox_;
+        return normalizedBoundingBox_ == null
+            ? com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox
+                .getDefaultInstance()
+            : normalizedBoundingBox_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The normalized bounding box location of this object track for the frame.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;</code>
+     * <code>
+     * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox, com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.Builder, com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBoxOrBuilder> 
+            com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox,
+            com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.Builder,
+            com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBoxOrBuilder>
         getNormalizedBoundingBoxFieldBuilder() {
       if (normalizedBoundingBoxBuilder_ == null) {
-        normalizedBoundingBoxBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox, com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.Builder, com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBoxOrBuilder>(
-                getNormalizedBoundingBox(),
-                getParentForChildren(),
-                isClean());
+        normalizedBoundingBoxBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox,
+                com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox.Builder,
+                com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBoxOrBuilder>(
+                getNormalizedBoundingBox(), getParentForChildren(), isClean());
         normalizedBoundingBox_ = null;
       }
       return normalizedBoundingBoxBuilder_;
@@ -677,8 +782,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Duration timeOffset_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> timeOffsetBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        timeOffsetBuilder_;
     /**
+     *
+     *
      * <pre>
      * The timestamp of the frame in microseconds.
      * </pre>
@@ -689,6 +799,8 @@ private static final long serialVersionUID = 0L;
       return timeOffsetBuilder_ != null || timeOffset_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of the frame in microseconds.
      * </pre>
@@ -697,12 +809,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Duration getTimeOffset() {
       if (timeOffsetBuilder_ == null) {
-        return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
+        return timeOffset_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : timeOffset_;
       } else {
         return timeOffsetBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of the frame in microseconds.
      * </pre>
@@ -723,14 +839,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of the frame in microseconds.
      * </pre>
      *
      * <code>.google.protobuf.Duration time_offset = 2;</code>
      */
-    public Builder setTimeOffset(
-        com.google.protobuf.Duration.Builder builderForValue) {
+    public Builder setTimeOffset(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeOffsetBuilder_ == null) {
         timeOffset_ = builderForValue.build();
         onChanged();
@@ -741,6 +858,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of the frame in microseconds.
      * </pre>
@@ -751,7 +870,7 @@ private static final long serialVersionUID = 0L;
       if (timeOffsetBuilder_ == null) {
         if (timeOffset_ != null) {
           timeOffset_ =
-            com.google.protobuf.Duration.newBuilder(timeOffset_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(timeOffset_).mergeFrom(value).buildPartial();
         } else {
           timeOffset_ = value;
         }
@@ -763,6 +882,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of the frame in microseconds.
      * </pre>
@@ -781,6 +902,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of the frame in microseconds.
      * </pre>
@@ -788,11 +911,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration time_offset = 2;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeOffsetBuilder() {
-      
+
       onChanged();
       return getTimeOffsetFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of the frame in microseconds.
      * </pre>
@@ -803,11 +928,14 @@ private static final long serialVersionUID = 0L;
       if (timeOffsetBuilder_ != null) {
         return timeOffsetBuilder_.getMessageOrBuilder();
       } else {
-        return timeOffset_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
+        return timeOffset_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : timeOffset_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp of the frame in microseconds.
      * </pre>
@@ -815,21 +943,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration time_offset = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getTimeOffsetFieldBuilder() {
       if (timeOffsetBuilder_ == null) {
-        timeOffsetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                getTimeOffset(),
-                getParentForChildren(),
-                isClean());
+        timeOffsetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getTimeOffset(), getParentForChildren(), isClean());
         timeOffset_ = null;
       }
       return timeOffsetBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -839,30 +970,32 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame)
-  private static final com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame DEFAULT_INSTANCE;
+  private static final com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame();
   }
 
-  public static com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame getDefaultInstance() {
+  public static com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ObjectTrackingFrame>
-      PARSER = new com.google.protobuf.AbstractParser<ObjectTrackingFrame>() {
-    @java.lang.Override
-    public ObjectTrackingFrame parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ObjectTrackingFrame(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ObjectTrackingFrame> PARSER =
+      new com.google.protobuf.AbstractParser<ObjectTrackingFrame>() {
+        @java.lang.Override
+        public ObjectTrackingFrame parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ObjectTrackingFrame(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ObjectTrackingFrame> parser() {
     return PARSER;
@@ -874,9 +1007,8 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame getDefaultInstanceForType() {
+  public com.google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

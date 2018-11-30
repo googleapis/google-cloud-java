@@ -16,8 +16,8 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
-import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
+import com.google.cloud.pubsub.v1.TopicAdminClient;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.ProjectTopicName;
 
@@ -36,7 +36,7 @@ class Cleanup {
           topicAdminClient.deleteTopic(ProjectTopicName.of(projectId, topicId));
           System.out.println("Topic deleted : " + topicId);
         } catch (Exception e) {
-          //do nothing catch clause
+          // do nothing catch clause
         }
       }
     }
@@ -51,7 +51,7 @@ class Cleanup {
               ProjectSubscriptionName.of(projectId, subscriptionId));
           System.out.println("Subscription deleted : " + subscriptionId);
         } catch (Exception e) {
-          //do nothing catch clause
+          // do nothing catch clause
         }
       }
     }

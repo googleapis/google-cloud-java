@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface StorageConfigOrBuilder extends
+public interface StorageConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.StorageConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Google Cloud Datastore options specification.
    * </pre>
@@ -16,6 +19,8 @@ public interface StorageConfigOrBuilder extends
    */
   boolean hasDatastoreOptions();
   /**
+   *
+   *
    * <pre>
    * Google Cloud Datastore options specification.
    * </pre>
@@ -24,6 +29,8 @@ public interface StorageConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.DatastoreOptions getDatastoreOptions();
   /**
+   *
+   *
    * <pre>
    * Google Cloud Datastore options specification.
    * </pre>
@@ -33,6 +40,8 @@ public interface StorageConfigOrBuilder extends
   com.google.privacy.dlp.v2.DatastoreOptionsOrBuilder getDatastoreOptionsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Google Cloud Storage options specification.
    * </pre>
@@ -41,6 +50,8 @@ public interface StorageConfigOrBuilder extends
    */
   boolean hasCloudStorageOptions();
   /**
+   *
+   *
    * <pre>
    * Google Cloud Storage options specification.
    * </pre>
@@ -49,6 +60,8 @@ public interface StorageConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.CloudStorageOptions getCloudStorageOptions();
   /**
+   *
+   *
    * <pre>
    * Google Cloud Storage options specification.
    * </pre>
@@ -58,6 +71,8 @@ public interface StorageConfigOrBuilder extends
   com.google.privacy.dlp.v2.CloudStorageOptionsOrBuilder getCloudStorageOptionsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * BigQuery options specification.
    * </pre>
@@ -66,6 +81,8 @@ public interface StorageConfigOrBuilder extends
    */
   boolean hasBigQueryOptions();
   /**
+   *
+   *
    * <pre>
    * BigQuery options specification.
    * </pre>
@@ -74,6 +91,8 @@ public interface StorageConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.BigQueryOptions getBigQueryOptions();
   /**
+   *
+   *
    * <pre>
    * BigQuery options specification.
    * </pre>
@@ -82,17 +101,11 @@ public interface StorageConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.BigQueryOptionsOrBuilder getBigQueryOptionsOrBuilder();
 
-  /**
-   * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
   boolean hasTimespanConfig();
-  /**
-   * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
   com.google.privacy.dlp.v2.StorageConfig.TimespanConfig getTimespanConfig();
-  /**
-   * <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.StorageConfig.TimespanConfig timespan_config = 6;</code> */
   com.google.privacy.dlp.v2.StorageConfig.TimespanConfigOrBuilder getTimespanConfigOrBuilder();
 
   public com.google.privacy.dlp.v2.StorageConfig.TypeCase getTypeCase();

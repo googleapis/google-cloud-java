@@ -4,6 +4,8 @@
 package com.google.cloud.asset.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Temporal asset. In addition to the asset, the temporal asset includes the
  * status of the asset and valid from and to time of it.
@@ -11,24 +13,25 @@ package com.google.cloud.asset.v1beta1;
  *
  * Protobuf type {@code google.cloud.asset.v1beta1.TemporalAsset}
  */
-public  final class TemporalAsset extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class TemporalAsset extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1beta1.TemporalAsset)
     TemporalAssetOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use TemporalAsset.newBuilder() to construct.
   private TemporalAsset(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private TemporalAsset() {
     deleted_ = false;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private TemporalAsset(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,72 +51,82 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.cloud.asset.v1beta1.TimeWindow.Builder subBuilder = null;
-            if (window_ != null) {
-              subBuilder = window_.toBuilder();
-            }
-            window_ = input.readMessage(com.google.cloud.asset.v1beta1.TimeWindow.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(window_);
-              window_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.cloud.asset.v1beta1.TimeWindow.Builder subBuilder = null;
+              if (window_ != null) {
+                subBuilder = window_.toBuilder();
+              }
+              window_ =
+                  input.readMessage(
+                      com.google.cloud.asset.v1beta1.TimeWindow.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(window_);
+                window_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 16: {
+              break;
+            }
+          case 16:
+            {
+              deleted_ = input.readBool();
+              break;
+            }
+          case 26:
+            {
+              com.google.cloud.asset.v1beta1.Asset.Builder subBuilder = null;
+              if (asset_ != null) {
+                subBuilder = asset_.toBuilder();
+              }
+              asset_ =
+                  input.readMessage(
+                      com.google.cloud.asset.v1beta1.Asset.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(asset_);
+                asset_ = subBuilder.buildPartial();
+              }
 
-            deleted_ = input.readBool();
-            break;
-          }
-          case 26: {
-            com.google.cloud.asset.v1beta1.Asset.Builder subBuilder = null;
-            if (asset_ != null) {
-              subBuilder = asset_.toBuilder();
+              break;
             }
-            asset_ = input.readMessage(com.google.cloud.asset.v1beta1.Asset.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(asset_);
-              asset_ = subBuilder.buildPartial();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.asset.v1beta1.AssetProto.internal_static_google_cloud_asset_v1beta1_TemporalAsset_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.asset.v1beta1.AssetProto
+        .internal_static_google_cloud_asset_v1beta1_TemporalAsset_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.asset.v1beta1.AssetProto.internal_static_google_cloud_asset_v1beta1_TemporalAsset_fieldAccessorTable
+    return com.google.cloud.asset.v1beta1.AssetProto
+        .internal_static_google_cloud_asset_v1beta1_TemporalAsset_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.asset.v1beta1.TemporalAsset.class, com.google.cloud.asset.v1beta1.TemporalAsset.Builder.class);
+            com.google.cloud.asset.v1beta1.TemporalAsset.class,
+            com.google.cloud.asset.v1beta1.TemporalAsset.Builder.class);
   }
 
   public static final int WINDOW_FIELD_NUMBER = 1;
   private com.google.cloud.asset.v1beta1.TimeWindow window_;
   /**
+   *
+   *
    * <pre>
    * The time window when the asset data and state was observed.
    * </pre>
@@ -124,6 +137,8 @@ private static final long serialVersionUID = 0L;
     return window_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The time window when the asset data and state was observed.
    * </pre>
@@ -131,9 +146,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.asset.v1beta1.TimeWindow window = 1;</code>
    */
   public com.google.cloud.asset.v1beta1.TimeWindow getWindow() {
-    return window_ == null ? com.google.cloud.asset.v1beta1.TimeWindow.getDefaultInstance() : window_;
+    return window_ == null
+        ? com.google.cloud.asset.v1beta1.TimeWindow.getDefaultInstance()
+        : window_;
   }
   /**
+   *
+   *
    * <pre>
    * The time window when the asset data and state was observed.
    * </pre>
@@ -147,6 +166,8 @@ private static final long serialVersionUID = 0L;
   public static final int DELETED_FIELD_NUMBER = 2;
   private boolean deleted_;
   /**
+   *
+   *
    * <pre>
    * If the asset is deleted or not.
    * </pre>
@@ -160,6 +181,8 @@ private static final long serialVersionUID = 0L;
   public static final int ASSET_FIELD_NUMBER = 3;
   private com.google.cloud.asset.v1beta1.Asset asset_;
   /**
+   *
+   *
    * <pre>
    * Asset.
    * </pre>
@@ -170,6 +193,8 @@ private static final long serialVersionUID = 0L;
     return asset_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Asset.
    * </pre>
@@ -180,6 +205,8 @@ private static final long serialVersionUID = 0L;
     return asset_ == null ? com.google.cloud.asset.v1beta1.Asset.getDefaultInstance() : asset_;
   }
   /**
+   *
+   *
    * <pre>
    * Asset.
    * </pre>
@@ -191,6 +218,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -202,8 +230,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (window_ != null) {
       output.writeMessage(1, getWindow());
     }
@@ -223,16 +250,13 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (window_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getWindow());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getWindow());
     }
     if (deleted_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(2, deleted_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, deleted_);
     }
     if (asset_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getAsset());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAsset());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -242,25 +266,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.asset.v1beta1.TemporalAsset)) {
       return super.equals(obj);
     }
-    com.google.cloud.asset.v1beta1.TemporalAsset other = (com.google.cloud.asset.v1beta1.TemporalAsset) obj;
+    com.google.cloud.asset.v1beta1.TemporalAsset other =
+        (com.google.cloud.asset.v1beta1.TemporalAsset) obj;
 
     boolean result = true;
     result = result && (hasWindow() == other.hasWindow());
     if (hasWindow()) {
-      result = result && getWindow()
-          .equals(other.getWindow());
+      result = result && getWindow().equals(other.getWindow());
     }
-    result = result && (getDeleted()
-        == other.getDeleted());
+    result = result && (getDeleted() == other.getDeleted());
     result = result && (hasAsset() == other.hasAsset());
     if (hasAsset()) {
-      result = result && getAsset()
-          .equals(other.getAsset());
+      result = result && getAsset().equals(other.getAsset());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -278,8 +300,7 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getWindow().hashCode();
     }
     hash = (37 * hash) + DELETED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getDeleted());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDeleted());
     if (hasAsset()) {
       hash = (37 * hash) + ASSET_FIELD_NUMBER;
       hash = (53 * hash) + getAsset().hashCode();
@@ -289,97 +310,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.asset.v1beta1.TemporalAsset parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.asset.v1beta1.TemporalAsset parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.asset.v1beta1.TemporalAsset parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.asset.v1beta1.TemporalAsset parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.asset.v1beta1.TemporalAsset parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.asset.v1beta1.TemporalAsset parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.asset.v1beta1.TemporalAsset parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.asset.v1beta1.TemporalAsset parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.asset.v1beta1.TemporalAsset parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.asset.v1beta1.TemporalAsset parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.asset.v1beta1.TemporalAsset parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.asset.v1beta1.TemporalAsset parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.asset.v1beta1.TemporalAsset parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.asset.v1beta1.TemporalAsset parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.asset.v1beta1.TemporalAsset prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Temporal asset. In addition to the asset, the temporal asset includes the
    * status of the asset and valid from and to time of it.
@@ -387,21 +415,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.asset.v1beta1.TemporalAsset}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.asset.v1beta1.TemporalAsset)
       com.google.cloud.asset.v1beta1.TemporalAssetOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.asset.v1beta1.AssetProto.internal_static_google_cloud_asset_v1beta1_TemporalAsset_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.asset.v1beta1.AssetProto
+          .internal_static_google_cloud_asset_v1beta1_TemporalAsset_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.asset.v1beta1.AssetProto.internal_static_google_cloud_asset_v1beta1_TemporalAsset_fieldAccessorTable
+      return com.google.cloud.asset.v1beta1.AssetProto
+          .internal_static_google_cloud_asset_v1beta1_TemporalAsset_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.asset.v1beta1.TemporalAsset.class, com.google.cloud.asset.v1beta1.TemporalAsset.Builder.class);
+              com.google.cloud.asset.v1beta1.TemporalAsset.class,
+              com.google.cloud.asset.v1beta1.TemporalAsset.Builder.class);
     }
 
     // Construct using com.google.cloud.asset.v1beta1.TemporalAsset.newBuilder()
@@ -409,16 +439,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -440,9 +469,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.asset.v1beta1.AssetProto.internal_static_google_cloud_asset_v1beta1_TemporalAsset_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.asset.v1beta1.AssetProto
+          .internal_static_google_cloud_asset_v1beta1_TemporalAsset_descriptor;
     }
 
     @java.lang.Override
@@ -461,7 +490,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.asset.v1beta1.TemporalAsset buildPartial() {
-      com.google.cloud.asset.v1beta1.TemporalAsset result = new com.google.cloud.asset.v1beta1.TemporalAsset(this);
+      com.google.cloud.asset.v1beta1.TemporalAsset result =
+          new com.google.cloud.asset.v1beta1.TemporalAsset(this);
       if (windowBuilder_ == null) {
         result.window_ = window_;
       } else {
@@ -481,38 +511,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.asset.v1beta1.TemporalAsset) {
-        return mergeFrom((com.google.cloud.asset.v1beta1.TemporalAsset)other);
+        return mergeFrom((com.google.cloud.asset.v1beta1.TemporalAsset) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -561,8 +592,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.asset.v1beta1.TimeWindow window_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.asset.v1beta1.TimeWindow, com.google.cloud.asset.v1beta1.TimeWindow.Builder, com.google.cloud.asset.v1beta1.TimeWindowOrBuilder> windowBuilder_;
+            com.google.cloud.asset.v1beta1.TimeWindow,
+            com.google.cloud.asset.v1beta1.TimeWindow.Builder,
+            com.google.cloud.asset.v1beta1.TimeWindowOrBuilder>
+        windowBuilder_;
     /**
+     *
+     *
      * <pre>
      * The time window when the asset data and state was observed.
      * </pre>
@@ -573,6 +609,8 @@ private static final long serialVersionUID = 0L;
       return windowBuilder_ != null || window_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The time window when the asset data and state was observed.
      * </pre>
@@ -581,12 +619,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.asset.v1beta1.TimeWindow getWindow() {
       if (windowBuilder_ == null) {
-        return window_ == null ? com.google.cloud.asset.v1beta1.TimeWindow.getDefaultInstance() : window_;
+        return window_ == null
+            ? com.google.cloud.asset.v1beta1.TimeWindow.getDefaultInstance()
+            : window_;
       } else {
         return windowBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time window when the asset data and state was observed.
      * </pre>
@@ -607,14 +649,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time window when the asset data and state was observed.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.TimeWindow window = 1;</code>
      */
-    public Builder setWindow(
-        com.google.cloud.asset.v1beta1.TimeWindow.Builder builderForValue) {
+    public Builder setWindow(com.google.cloud.asset.v1beta1.TimeWindow.Builder builderForValue) {
       if (windowBuilder_ == null) {
         window_ = builderForValue.build();
         onChanged();
@@ -625,6 +668,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time window when the asset data and state was observed.
      * </pre>
@@ -635,7 +680,9 @@ private static final long serialVersionUID = 0L;
       if (windowBuilder_ == null) {
         if (window_ != null) {
           window_ =
-            com.google.cloud.asset.v1beta1.TimeWindow.newBuilder(window_).mergeFrom(value).buildPartial();
+              com.google.cloud.asset.v1beta1.TimeWindow.newBuilder(window_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           window_ = value;
         }
@@ -647,6 +694,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time window when the asset data and state was observed.
      * </pre>
@@ -665,6 +714,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time window when the asset data and state was observed.
      * </pre>
@@ -672,11 +723,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.asset.v1beta1.TimeWindow window = 1;</code>
      */
     public com.google.cloud.asset.v1beta1.TimeWindow.Builder getWindowBuilder() {
-      
+
       onChanged();
       return getWindowFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The time window when the asset data and state was observed.
      * </pre>
@@ -687,11 +740,14 @@ private static final long serialVersionUID = 0L;
       if (windowBuilder_ != null) {
         return windowBuilder_.getMessageOrBuilder();
       } else {
-        return window_ == null ?
-            com.google.cloud.asset.v1beta1.TimeWindow.getDefaultInstance() : window_;
+        return window_ == null
+            ? com.google.cloud.asset.v1beta1.TimeWindow.getDefaultInstance()
+            : window_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time window when the asset data and state was observed.
      * </pre>
@@ -699,21 +755,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.asset.v1beta1.TimeWindow window = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.asset.v1beta1.TimeWindow, com.google.cloud.asset.v1beta1.TimeWindow.Builder, com.google.cloud.asset.v1beta1.TimeWindowOrBuilder> 
+            com.google.cloud.asset.v1beta1.TimeWindow,
+            com.google.cloud.asset.v1beta1.TimeWindow.Builder,
+            com.google.cloud.asset.v1beta1.TimeWindowOrBuilder>
         getWindowFieldBuilder() {
       if (windowBuilder_ == null) {
-        windowBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.asset.v1beta1.TimeWindow, com.google.cloud.asset.v1beta1.TimeWindow.Builder, com.google.cloud.asset.v1beta1.TimeWindowOrBuilder>(
-                getWindow(),
-                getParentForChildren(),
-                isClean());
+        windowBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.asset.v1beta1.TimeWindow,
+                com.google.cloud.asset.v1beta1.TimeWindow.Builder,
+                com.google.cloud.asset.v1beta1.TimeWindowOrBuilder>(
+                getWindow(), getParentForChildren(), isClean());
         window_ = null;
       }
       return windowBuilder_;
     }
 
-    private boolean deleted_ ;
+    private boolean deleted_;
     /**
+     *
+     *
      * <pre>
      * If the asset is deleted or not.
      * </pre>
@@ -724,6 +785,8 @@ private static final long serialVersionUID = 0L;
       return deleted_;
     }
     /**
+     *
+     *
      * <pre>
      * If the asset is deleted or not.
      * </pre>
@@ -731,12 +794,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool deleted = 2;</code>
      */
     public Builder setDeleted(boolean value) {
-      
+
       deleted_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If the asset is deleted or not.
      * </pre>
@@ -744,7 +809,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool deleted = 2;</code>
      */
     public Builder clearDeleted() {
-      
+
       deleted_ = false;
       onChanged();
       return this;
@@ -752,8 +817,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.asset.v1beta1.Asset asset_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.asset.v1beta1.Asset, com.google.cloud.asset.v1beta1.Asset.Builder, com.google.cloud.asset.v1beta1.AssetOrBuilder> assetBuilder_;
+            com.google.cloud.asset.v1beta1.Asset,
+            com.google.cloud.asset.v1beta1.Asset.Builder,
+            com.google.cloud.asset.v1beta1.AssetOrBuilder>
+        assetBuilder_;
     /**
+     *
+     *
      * <pre>
      * Asset.
      * </pre>
@@ -764,6 +834,8 @@ private static final long serialVersionUID = 0L;
       return assetBuilder_ != null || asset_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Asset.
      * </pre>
@@ -778,6 +850,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Asset.
      * </pre>
@@ -798,14 +872,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Asset.
      * </pre>
      *
      * <code>.google.cloud.asset.v1beta1.Asset asset = 3;</code>
      */
-    public Builder setAsset(
-        com.google.cloud.asset.v1beta1.Asset.Builder builderForValue) {
+    public Builder setAsset(com.google.cloud.asset.v1beta1.Asset.Builder builderForValue) {
       if (assetBuilder_ == null) {
         asset_ = builderForValue.build();
         onChanged();
@@ -816,6 +891,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Asset.
      * </pre>
@@ -826,7 +903,9 @@ private static final long serialVersionUID = 0L;
       if (assetBuilder_ == null) {
         if (asset_ != null) {
           asset_ =
-            com.google.cloud.asset.v1beta1.Asset.newBuilder(asset_).mergeFrom(value).buildPartial();
+              com.google.cloud.asset.v1beta1.Asset.newBuilder(asset_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           asset_ = value;
         }
@@ -838,6 +917,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Asset.
      * </pre>
@@ -856,6 +937,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Asset.
      * </pre>
@@ -863,11 +946,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.asset.v1beta1.Asset asset = 3;</code>
      */
     public com.google.cloud.asset.v1beta1.Asset.Builder getAssetBuilder() {
-      
+
       onChanged();
       return getAssetFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Asset.
      * </pre>
@@ -878,11 +963,12 @@ private static final long serialVersionUID = 0L;
       if (assetBuilder_ != null) {
         return assetBuilder_.getMessageOrBuilder();
       } else {
-        return asset_ == null ?
-            com.google.cloud.asset.v1beta1.Asset.getDefaultInstance() : asset_;
+        return asset_ == null ? com.google.cloud.asset.v1beta1.Asset.getDefaultInstance() : asset_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Asset.
      * </pre>
@@ -890,21 +976,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.asset.v1beta1.Asset asset = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.asset.v1beta1.Asset, com.google.cloud.asset.v1beta1.Asset.Builder, com.google.cloud.asset.v1beta1.AssetOrBuilder> 
+            com.google.cloud.asset.v1beta1.Asset,
+            com.google.cloud.asset.v1beta1.Asset.Builder,
+            com.google.cloud.asset.v1beta1.AssetOrBuilder>
         getAssetFieldBuilder() {
       if (assetBuilder_ == null) {
-        assetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.asset.v1beta1.Asset, com.google.cloud.asset.v1beta1.Asset.Builder, com.google.cloud.asset.v1beta1.AssetOrBuilder>(
-                getAsset(),
-                getParentForChildren(),
-                isClean());
+        assetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.asset.v1beta1.Asset,
+                com.google.cloud.asset.v1beta1.Asset.Builder,
+                com.google.cloud.asset.v1beta1.AssetOrBuilder>(
+                getAsset(), getParentForChildren(), isClean());
         asset_ = null;
       }
       return assetBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -914,12 +1003,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.asset.v1beta1.TemporalAsset)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.asset.v1beta1.TemporalAsset)
   private static final com.google.cloud.asset.v1beta1.TemporalAsset DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.asset.v1beta1.TemporalAsset();
   }
@@ -928,16 +1017,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<TemporalAsset>
-      PARSER = new com.google.protobuf.AbstractParser<TemporalAsset>() {
-    @java.lang.Override
-    public TemporalAsset parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new TemporalAsset(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<TemporalAsset> PARSER =
+      new com.google.protobuf.AbstractParser<TemporalAsset>() {
+        @java.lang.Override
+        public TemporalAsset parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TemporalAsset(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<TemporalAsset> parser() {
     return PARSER;
@@ -952,6 +1041,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.asset.v1beta1.TemporalAsset getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

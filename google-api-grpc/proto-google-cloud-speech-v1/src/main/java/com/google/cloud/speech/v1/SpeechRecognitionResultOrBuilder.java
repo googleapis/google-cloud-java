@@ -3,11 +3,14 @@
 
 package com.google.cloud.speech.v1;
 
-public interface SpeechRecognitionResultOrBuilder extends
+public interface SpeechRecognitionResultOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1.SpeechRecognitionResult)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
@@ -17,9 +20,10 @@ public interface SpeechRecognitionResultOrBuilder extends
    *
    * <code>repeated .google.cloud.speech.v1.SpeechRecognitionAlternative alternatives = 1;</code>
    */
-  java.util.List<com.google.cloud.speech.v1.SpeechRecognitionAlternative> 
-      getAlternativesList();
+  java.util.List<com.google.cloud.speech.v1.SpeechRecognitionAlternative> getAlternativesList();
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
@@ -31,6 +35,8 @@ public interface SpeechRecognitionResultOrBuilder extends
    */
   com.google.cloud.speech.v1.SpeechRecognitionAlternative getAlternatives(int index);
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
@@ -42,6 +48,8 @@ public interface SpeechRecognitionResultOrBuilder extends
    */
   int getAlternativesCount();
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
@@ -51,9 +59,11 @@ public interface SpeechRecognitionResultOrBuilder extends
    *
    * <code>repeated .google.cloud.speech.v1.SpeechRecognitionAlternative alternatives = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.speech.v1.SpeechRecognitionAlternativeOrBuilder> 
+  java.util.List<? extends com.google.cloud.speech.v1.SpeechRecognitionAlternativeOrBuilder>
       getAlternativesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).

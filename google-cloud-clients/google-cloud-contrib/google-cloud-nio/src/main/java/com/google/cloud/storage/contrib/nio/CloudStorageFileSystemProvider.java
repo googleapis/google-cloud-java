@@ -38,7 +38,6 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.AbstractIterator;
 import com.google.common.net.UrlEscapers;
 import com.google.common.primitives.Ints;
-
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -72,7 +71,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.ThreadSafe;
 import javax.inject.Singleton;
@@ -91,9 +89,9 @@ import javax.inject.Singleton;
 public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   private Storage storage;
-  final private StorageOptions storageOptions;
+  private final StorageOptions storageOptions;
   // if non-null, we pay via this project.
-  final private @Nullable String userProject;
+  private final @Nullable String userProject;
 
   // used only when we create a new instance of CloudStorageFileSystemProvider.
   private static StorageOptions futureStorageOptions;
@@ -106,11 +104,12 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     // whether to make the paths absolute before returning them.
     private final boolean absolutePaths;
 
-    LazyPathIterator(CloudStorageFileSystem fileSystem,
-                     String prefix,
-                     Iterator<Blob> blobIterator,
-                     Filter<? super Path> filter,
-                     boolean absolutePaths) {
+    LazyPathIterator(
+        CloudStorageFileSystem fileSystem,
+        String prefix,
+        Iterator<Blob> blobIterator,
+        Filter<? super Path> filter,
+        boolean absolutePaths) {
       this.prefix = prefix;
       this.blobIterator = blobIterator;
       this.filter = filter;
@@ -141,35 +140,32 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     }
   }
 
-  /**
-   * Sets options that are only used by the constructor.
-   */
+  /** Sets options that are only used by the constructor. */
   @VisibleForTesting
   public static void setStorageOptions(@Nullable StorageOptions newStorageOptions) {
     futureStorageOptions = newStorageOptions;
   }
 
   /**
-   * Changes the default configuration for every filesystem object created
-   * from here on, including via SPI. If null then future filesystem objects
-   * will have the factory default configuration.
+   * Changes the default configuration for every filesystem object created from here on, including
+   * via SPI. If null then future filesystem objects will have the factory default configuration.
    *
-   * <p>If options are specified later then they override the defaults.
-   * Methods that take a whole CloudStorageConfiguration (eg.
-   * CloudStorageFileSystem.forBucket) will completely override the defaults.
-   * Methods that take individual options (eg.
-   * CloudStorageFileSystemProvier.newFileSystem) will override only these options;
-   * the rest will be taken from the defaults specified here.
+   * <p>If options are specified later then they override the defaults. Methods that take a whole
+   * CloudStorageConfiguration (eg. CloudStorageFileSystem.forBucket) will completely override the
+   * defaults. Methods that take individual options (eg.
+   * CloudStorageFileSystemProvier.newFileSystem) will override only these options; the rest will be
+   * taken from the defaults specified here.
    *
-   * <p>This is meant to be done only once, at the beginning of some main program,
-   * in order to force all libraries to use some settings we like.
+   * <p>This is meant to be done only once, at the beginning of some main program, in order to force
+   * all libraries to use some settings we like.
    *
    * <p>Libraries should never call this. If you're a library then, instead, create your own
    * filesystem object with the right configuration and pass it along.
    *
    * @param newDefault new default CloudStorageConfiguration
    */
-  public static void setDefaultCloudStorageConfiguration(@Nullable CloudStorageConfiguration newDefault) {
+  public static void setDefaultCloudStorageConfiguration(
+      @Nullable CloudStorageConfiguration newDefault) {
     CloudStorageFileSystem.setDefaultCloudStorageConfiguration(newDefault);
   }
 
@@ -181,11 +177,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    */
   public CloudStorageFileSystemProvider() {
     this(
-        CloudStorageFileSystem
-            .getDefaultCloudStorageConfiguration()
-            .userProject(),
-        futureStorageOptions
-    );
+        CloudStorageFileSystem.getDefaultCloudStorageConfiguration().userProject(),
+        futureStorageOptions);
   }
 
   /**
@@ -196,10 +189,11 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   /**
-   * Internal constructor, fully configurable. Note that null options means
-   * to use the system defaults (NOT the user-provided ones).
+   * Internal constructor, fully configurable. Note that null options means to use the system
+   * defaults (NOT the user-provided ones).
    */
-  CloudStorageFileSystemProvider(@Nullable String userProject, @Nullable StorageOptions gcsStorageOptions) {
+  CloudStorageFileSystemProvider(
+      @Nullable String userProject, @Nullable StorageOptions gcsStorageOptions) {
     this.storageOptions = gcsStorageOptions;
     this.userProject = userProject;
   }
@@ -222,9 +216,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     return CloudStorageFileSystem.URI_SCHEME;
   }
 
-  /**
-   * Returns Cloud Storage file system, provided a URI with no path, e.g. {@code gs://bucket}.
-   */
+  /** Returns Cloud Storage file system, provided a URI with no path, e.g. {@code gs://bucket}. */
   @Override
   public CloudStorageFileSystem getFileSystem(URI uri) {
     initStorage();
@@ -232,12 +224,12 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   /**
-   * Returns Cloud Storage file system, provided a URI, e.g. {@code gs://bucket}.
-   * The URI can include a path component (that will be ignored).
+   * Returns Cloud Storage file system, provided a URI, e.g. {@code gs://bucket}. The URI can
+   * include a path component (that will be ignored).
    *
    * @param uri bucket and current working directory, e.g. {@code gs://bucket}
-   * @param env map of configuration options, whose keys correspond to the method names of
-   *     {@link CloudStorageConfiguration.Builder}. However you are not allowed to set the working
+   * @param env map of configuration options, whose keys correspond to the method names of {@link
+   *     CloudStorageConfiguration.Builder}. However you are not allowed to set the working
    *     directory, as that should be provided in the {@code uri}
    * @throws IllegalArgumentException if {@code uri} specifies a port, user, query, or fragment, or
    *     if scheme is not {@value CloudStorageFileSystem#URI_SCHEME}
@@ -250,8 +242,10 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         CloudStorageFileSystem.URI_SCHEME,
         uri);
     checkArgument(
-        !isNullOrEmpty(uri.getHost()), "%s:// URIs must have a host: %s",
-        CloudStorageFileSystem.URI_SCHEME, uri);
+        !isNullOrEmpty(uri.getHost()),
+        "%s:// URIs must have a host: %s",
+        CloudStorageFileSystem.URI_SCHEME,
+        uri);
     checkArgument(
         uri.getPort() == -1
             && isNullOrEmpty(uri.getQuery())
@@ -282,11 +276,12 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   /**
-   * Open a file for reading or writing.
-   * To read receiver-pays buckets, specify the BlobSourceOption.userProject option.
+   * Open a file for reading or writing. To read receiver-pays buckets, specify the
+   * BlobSourceOption.userProject option.
    *
    * @param path: the path to the file to open or create
-   * @param options: options specifying how the file is opened, e.g. StandardOpenOption.WRITE or BlobSourceOption.userProject
+   * @param options: options specifying how the file is opened, e.g. StandardOpenOption.WRITE or
+   *     BlobSourceOption.userProject
    * @param attrs: (not supported, values will be ignored)
    * @return
    * @throws IOException
@@ -334,7 +329,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       } else if (option instanceof OptionMaxChannelReopens) {
         maxChannelReopens = ((OptionMaxChannelReopens) option).maxChannelReopens();
       } else if (option instanceof BlobSourceOption) {
-          blobSourceOptions.add((BlobSourceOption)option);
+        blobSourceOptions.add((BlobSourceOption) option);
       } else {
         throw new UnsupportedOperationException(option.toString());
       }
@@ -424,7 +419,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
     try {
       return new CloudStorageWriteChannel(
-          storage.writer(infoBuilder.build(),
+          storage.writer(
+              infoBuilder.build(),
               writeOptions.toArray(new Storage.BlobWriteOption[writeOptions.size()])));
     } catch (StorageException oops) {
       throw asIoException(oops);
@@ -462,15 +458,16 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       throw new CloudStoragePseudoDirectoryException(cloudPath);
     }
 
-    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(
-        cloudPath.getFileSystem().config());
+    final CloudStorageRetryHandler retryHandler =
+        new CloudStorageRetryHandler(cloudPath.getFileSystem().config());
     // Loop will terminate via an exception if all retries are exhausted
     while (true) {
       try {
         if (isNullOrEmpty(userProject)) {
           return storage.delete(cloudPath.getBlobId());
         } else {
-          return storage.delete(cloudPath.getBlobId(), Storage.BlobSourceOption.userProject(userProject));
+          return storage.delete(
+              cloudPath.getBlobId(), Storage.BlobSourceOption.userProject(userProject));
         }
       } catch (StorageException exs) {
         // Will rethrow a StorageException if all retries/reopens are exhausted
@@ -588,31 +585,31 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       throw new CloudStoragePseudoDirectoryException(toPath);
     }
 
-    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(
-        fromPath.getFileSystem().config());
+    final CloudStorageRetryHandler retryHandler =
+        new CloudStorageRetryHandler(fromPath.getFileSystem().config());
     // Loop will terminate via an exception if all retries are exhausted
     while (true) {
       try {
-        if ( wantCopyAttributes ) {
+        if (wantCopyAttributes) {
           BlobInfo blobInfo;
           if (isNullOrEmpty(userProject)) {
             blobInfo = storage.get(fromPath.getBlobId());
           } else {
             blobInfo = storage.get(fromPath.getBlobId(), BlobGetOption.userProject(userProject));
           }
-          if ( null == blobInfo ) {
+          if (null == blobInfo) {
             throw new NoSuchFileException(fromPath.toString());
           }
-          if ( !overrideCacheControl ) {
+          if (!overrideCacheControl) {
             tgtInfoBuilder.setCacheControl(blobInfo.getCacheControl());
           }
-          if ( !overrideContentType ) {
+          if (!overrideContentType) {
             tgtInfoBuilder.setContentType(blobInfo.getContentType());
           }
-          if ( !overrideContentEncoding ) {
+          if (!overrideContentEncoding) {
             tgtInfoBuilder.setContentEncoding(blobInfo.getContentEncoding());
           }
-          if ( !overrideContentDisposition ) {
+          if (!overrideContentDisposition) {
             tgtInfoBuilder.setContentDisposition(blobInfo.getContentDisposition());
           }
           tgtInfoBuilder.setAcl(blobInfo.getAcl());
@@ -621,21 +618,26 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
         BlobInfo tgtInfo = tgtInfoBuilder.build();
         Storage.CopyRequest.Builder copyReqBuilder =
-                Storage.CopyRequest.newBuilder().setSource(fromPath.getBlobId());
+            Storage.CopyRequest.newBuilder().setSource(fromPath.getBlobId());
         if (wantReplaceExisting) {
           copyReqBuilder = copyReqBuilder.setTarget(tgtInfo);
         } else {
-          copyReqBuilder = copyReqBuilder.setTarget(tgtInfo, Storage.BlobTargetOption.doesNotExist());
+          copyReqBuilder =
+              copyReqBuilder.setTarget(tgtInfo, Storage.BlobTargetOption.doesNotExist());
         }
         if (!isNullOrEmpty(fromPath.getFileSystem().config().userProject())) {
-          copyReqBuilder = copyReqBuilder.setSourceOptions(BlobSourceOption.userProject(fromPath.getFileSystem().config().userProject()));
+          copyReqBuilder =
+              copyReqBuilder.setSourceOptions(
+                  BlobSourceOption.userProject(fromPath.getFileSystem().config().userProject()));
         } else if (!isNullOrEmpty(toPath.getFileSystem().config().userProject())) {
-          copyReqBuilder = copyReqBuilder.setSourceOptions(BlobSourceOption.userProject(toPath.getFileSystem().config().userProject()));
+          copyReqBuilder =
+              copyReqBuilder.setSourceOptions(
+                  BlobSourceOption.userProject(toPath.getFileSystem().config().userProject()));
         }
         CopyWriter copyWriter = storage.copy(copyReqBuilder.build());
         copyWriter.getResult();
         break;
-      } catch ( StorageException oops ) {
+      } catch (StorageException oops) {
         try {
           // Will rethrow a StorageException if all retries/reopens are exhausted
           retryHandler.handleStorageException(oops);
@@ -652,9 +654,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     return CloudStorageUtil.checkPath(path).equals(CloudStorageUtil.checkPath(path2));
   }
 
-  /**
-   * Always returns {@code false}, because Google Cloud Storage doesn't support hidden files.
-   */
+  /** Always returns {@code false}, because Google Cloud Storage doesn't support hidden files. */
   @Override
   public boolean isHidden(Path path) {
     CloudStorageUtil.checkPath(path);
@@ -676,26 +676,26 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     }
 
     final CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
-    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(
-        cloudPath.getFileSystem().config());
+    final CloudStorageRetryHandler retryHandler =
+        new CloudStorageRetryHandler(cloudPath.getFileSystem().config());
     // Loop will terminate via an exception if all retries are exhausted
     while (true) {
       try {
         boolean nullId;
         if (isNullOrEmpty(userProject)) {
-          nullId = storage.get(
-              cloudPath.getBlobId(),
-              Storage.BlobGetOption.fields(Storage.BlobField.ID))
-              == null;
+          nullId =
+              storage.get(cloudPath.getBlobId(), Storage.BlobGetOption.fields(Storage.BlobField.ID))
+                  == null;
         } else {
-          nullId = storage.get(
-              cloudPath.getBlobId(),
-              Storage.BlobGetOption.fields(Storage.BlobField.ID),
-              Storage.BlobGetOption.userProject(userProject))
-              == null;
+          nullId =
+              storage.get(
+                      cloudPath.getBlobId(),
+                      Storage.BlobGetOption.fields(Storage.BlobField.ID),
+                      Storage.BlobGetOption.userProject(userProject))
+                  == null;
         }
         if (nullId) {
-          if ( cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage) ) {
+          if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage)) {
             // there is no such file, but we're not signalling error because the
             // path is a pseudo-directory.
             return;
@@ -708,7 +708,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         retryHandler.handleStorageException(exs);
         // we're being aggressive by retrying even on scenarios where we'd normally reopen.
       } catch (IllegalArgumentException exs) {
-        if ( CloudStorageUtil.checkPath(path).seemsLikeADirectoryAndUsePseudoDirectories(storage) ) {
+        if (CloudStorageUtil.checkPath(path).seemsLikeADirectoryAndUsePseudoDirectories(storage)) {
           // there is no such file, but we're not signalling error because the
           // path is a pseudo-directory.
           return;
@@ -730,8 +730,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     initStorage();
 
     final CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
-    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(
-        cloudPath.getFileSystem().config());
+    final CloudStorageRetryHandler retryHandler =
+        new CloudStorageRetryHandler(cloudPath.getFileSystem().config());
     // Loop will terminate via an exception if all retries are exhausted
     while (true) {
       try {
@@ -757,7 +757,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
           throw ex;
         }
         // null size indicate a file that we haven't closed yet, so GCS treats it as not there yet.
-        if ( null == blobInfo || blobInfo.getSize() == null ) {
+        if (null == blobInfo || blobInfo.getSize() == null) {
           if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories(storage)) {
             @SuppressWarnings("unchecked")
             A result = (A) new CloudStoragePseudoDirectoryAttributes(cloudPath);
@@ -801,9 +801,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     return result;
   }
 
-  /**
-   * Does nothing since Google Cloud Storage uses fake directories.
-   */
+  /** Does nothing since Google Cloud Storage uses fake directories. */
   @Override
   public void createDirectory(Path dir, FileAttribute<?>... attrs) {
     CloudStorageUtil.checkPath(dir);
@@ -811,13 +809,14 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   @Override
-  public DirectoryStream<Path> newDirectoryStream(final Path dir, final Filter<? super Path> filter) {
+  public DirectoryStream<Path> newDirectoryStream(
+      final Path dir, final Filter<? super Path> filter) {
     final CloudStoragePath cloudPath = CloudStorageUtil.checkPath(dir);
     checkNotNull(filter);
     initStorage();
 
-    final CloudStorageRetryHandler retryHandler = new CloudStorageRetryHandler(
-        cloudPath.getFileSystem().config());
+    final CloudStorageRetryHandler retryHandler =
+        new CloudStorageRetryHandler(cloudPath.getFileSystem().config());
     // Loop will terminate via an exception if all retries are exhausted
     while (true) {
       try {
@@ -830,19 +829,27 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         final String prefix = prePrefix;
         Page<Blob> dirList;
         if (isNullOrEmpty(userProject)) {
-          dirList = storage.list(cloudPath.bucket(),
-              Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.currentDirectory(),
-              Storage.BlobListOption.fields());
+          dirList =
+              storage.list(
+                  cloudPath.bucket(),
+                  Storage.BlobListOption.prefix(prefix),
+                  Storage.BlobListOption.currentDirectory(),
+                  Storage.BlobListOption.fields());
         } else {
-          dirList = storage.list(cloudPath.bucket(),
-              Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.currentDirectory(),
-              Storage.BlobListOption.fields(), Storage.BlobListOption.userProject(userProject));
+          dirList =
+              storage.list(
+                  cloudPath.bucket(),
+                  Storage.BlobListOption.prefix(prefix),
+                  Storage.BlobListOption.currentDirectory(),
+                  Storage.BlobListOption.fields(),
+                  Storage.BlobListOption.userProject(userProject));
         }
         final Iterator<Blob> blobIterator = dirList.iterateAll().iterator();
         return new DirectoryStream<Path>() {
           @Override
           public Iterator<Path> iterator() {
-            return new LazyPathIterator(cloudPath.getFileSystem(), prefix, blobIterator, filter, dir.isAbsolute());
+            return new LazyPathIterator(
+                cloudPath.getFileSystem(), prefix, blobIterator, filter, dir.isAbsolute());
           }
 
           @Override
@@ -858,9 +865,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     }
   }
 
-  /**
-   * Throws {@link UnsupportedOperationException} because Cloud Storage objects are immutable.
-   */
+  /** Throws {@link UnsupportedOperationException} because Cloud Storage objects are immutable. */
   @Override
   public void setAttribute(Path path, String attribute, Object value, LinkOption... options) {
     throw new CloudStorageObjectImmutableException();
@@ -911,19 +916,17 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   /**
-   * Returns a NEW CloudStorageFileSystemProvider identical to this one, but with
-   * userProject removed.
+   * Returns a NEW CloudStorageFileSystemProvider identical to this one, but with userProject
+   * removed.
    *
-   * Perhaps you want to call this is you realize you'll be working on a bucket that is
-   * not requester-pays.
+   * <p>Perhaps you want to call this is you realize you'll be working on a bucket that is not
+   * requester-pays.
    */
   public CloudStorageFileSystemProvider withNoUserProject() {
     return new CloudStorageFileSystemProvider("", this.storageOptions);
   }
 
-  /**
-   * Returns the project that is assigned to this provider.
-   */
+  /** Returns the project that is assigned to this provider. */
   public String getProject() {
     initStorage();
     return storage.getOptions().getProjectId();
@@ -933,7 +936,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    * Lists the project's buckets. But use the one in CloudStorageFileSystem.
    *
    * <p>Example of listing buckets, specifying the page size and a name prefix.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String prefix = "bucket_";
    * Page<Bucket> buckets = provider.listBuckets(BucketListOption.prefix(prefix));
    * Iterator<Bucket> bucketIterator = buckets.iterateAll();
@@ -965,7 +969,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       }
       // fallback
       if (cause != null && cause instanceof IOException) {
-        return (IOException)cause;
+        return (IOException) cause;
       }
     } catch (IOException okEx) {
       return okEx;

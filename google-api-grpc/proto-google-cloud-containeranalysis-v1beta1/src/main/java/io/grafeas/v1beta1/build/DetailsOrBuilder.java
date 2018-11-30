@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.build;
 
-public interface DetailsOrBuilder extends
+public interface DetailsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.build.Details)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The actual provenance for the build.
    * </pre>
@@ -16,6 +19,8 @@ public interface DetailsOrBuilder extends
    */
   boolean hasProvenance();
   /**
+   *
+   *
    * <pre>
    * The actual provenance for the build.
    * </pre>
@@ -24,6 +29,8 @@ public interface DetailsOrBuilder extends
    */
   io.grafeas.v1beta1.provenance.BuildProvenance getProvenance();
   /**
+   *
+   *
    * <pre>
    * The actual provenance for the build.
    * </pre>
@@ -33,6 +40,8 @@ public interface DetailsOrBuilder extends
   io.grafeas.v1beta1.provenance.BuildProvenanceOrBuilder getProvenanceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Serialized JSON representation of the provenance, used in generating the
    * `BuildSignature` in the corresponding Result. After verifying the
@@ -50,6 +59,8 @@ public interface DetailsOrBuilder extends
    */
   java.lang.String getProvenanceBytes();
   /**
+   *
+   *
    * <pre>
    * Serialized JSON representation of the provenance, used in generating the
    * `BuildSignature` in the corresponding Result. After verifying the
@@ -65,6 +76,5 @@ public interface DetailsOrBuilder extends
    *
    * <code>string provenance_bytes = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getProvenanceBytesBytes();
+  com.google.protobuf.ByteString getProvenanceBytesBytes();
 }

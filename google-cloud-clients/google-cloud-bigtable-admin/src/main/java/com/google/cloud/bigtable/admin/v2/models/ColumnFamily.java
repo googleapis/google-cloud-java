@@ -42,23 +42,17 @@ public final class ColumnFamily {
     this.rule = rule;
   }
 
-  /**
-   * Gets the column family's id.
-   */
+  /** Gets the column family's id. */
   public String getId() {
     return id;
   }
 
-  /**
-   * Get's the GCRule configured for the column family.
-   */
+  /** Get's the GCRule configured for the column family. */
   public GCRule getGCRule() {
     return rule;
   }
 
-  /**
-   * Returns true if a GCRule has been configured for the family.
-   */
+  /** Returns true if a GCRule has been configured for the family. */
   public boolean hasGCRule() {
     return !RuleCase.RULE_NOT_SET.equals(rule.toProto().getRuleCase());
   }
@@ -72,8 +66,7 @@ public final class ColumnFamily {
       return false;
     }
     ColumnFamily that = (ColumnFamily) o;
-    return Objects.equal(id, that.id) &&
-        Objects.equal(rule, that.rule);
+    return Objects.equal(id, that.id) && Objects.equal(rule, that.rule);
   }
 
   @Override

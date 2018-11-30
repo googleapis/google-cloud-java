@@ -27,15 +27,15 @@ import java.net.URL;
 
 /**
  * Retrieves Google Cloud project-id and a limited set of instance attributes from Metadata server.
+ *
  * @see <a href="https://cloud.google.com/compute/docs/storing-retrieving-metadata">
- *   https://cloud.google.com/compute/docs/storing-retrieving-metadata</a>
+ *     https://cloud.google.com/compute/docs/storing-retrieving-metadata</a>
  */
 public class MetadataConfig {
 
   private static final String METADATA_URL = "http://metadata/computeMetadata/v1/";
 
-  private MetadataConfig() {
-  }
+  private MetadataConfig() {}
 
   public static String getProjectId() {
     return getAttribute("project/project-id");
@@ -57,12 +57,12 @@ public class MetadataConfig {
     return getAttribute("instance/attributes/cluster-name");
   }
 
-  public static String getContainerName(){
-	return getAttribute("instance/attributes/container-name");
+  public static String getContainerName() {
+    return getAttribute("instance/attributes/container-name");
   }
 
-  public static String getNamespaceId(){
-	return getAttribute("instance/attributes/namespace-id");  
+  public static String getNamespaceId() {
+    return getAttribute("instance/attributes/namespace-id");
   }
 
   public static String getAttribute(String attributeName) {

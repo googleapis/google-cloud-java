@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta3;
 
-public interface TaskOrBuilder extends
+public interface TaskOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta3.Task)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
    * The task name.
@@ -31,6 +34,8 @@ public interface TaskOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta3.CloudTasks.CreateTask].
    * The task name.
@@ -52,10 +57,11 @@ public interface TaskOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * App Engine HTTP request that is sent to the task's target. Can
    * be set only if
@@ -68,6 +74,8 @@ public interface TaskOrBuilder extends
    */
   boolean hasAppEngineHttpRequest();
   /**
+   *
+   *
    * <pre>
    * App Engine HTTP request that is sent to the task's target. Can
    * be set only if
@@ -80,6 +88,8 @@ public interface TaskOrBuilder extends
    */
   com.google.cloud.tasks.v2beta3.AppEngineHttpRequest getAppEngineHttpRequest();
   /**
+   *
+   *
    * <pre>
    * App Engine HTTP request that is sent to the task's target. Can
    * be set only if
@@ -93,6 +103,8 @@ public interface TaskOrBuilder extends
   com.google.cloud.tasks.v2beta3.AppEngineHttpRequestOrBuilder getAppEngineHttpRequestOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time when the task is scheduled to be attempted.
    * For App Engine queues, this is when the task will be attempted or retried.
@@ -103,6 +115,8 @@ public interface TaskOrBuilder extends
    */
   boolean hasScheduleTime();
   /**
+   *
+   *
    * <pre>
    * The time when the task is scheduled to be attempted.
    * For App Engine queues, this is when the task will be attempted or retried.
@@ -113,6 +127,8 @@ public interface TaskOrBuilder extends
    */
   com.google.protobuf.Timestamp getScheduleTime();
   /**
+   *
+   *
    * <pre>
    * The time when the task is scheduled to be attempted.
    * For App Engine queues, this is when the task will be attempted or retried.
@@ -124,6 +140,8 @@ public interface TaskOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getScheduleTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time that the task was created.
    * `create_time` will be truncated to the nearest second.
@@ -133,6 +151,8 @@ public interface TaskOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time that the task was created.
    * `create_time` will be truncated to the nearest second.
@@ -142,6 +162,8 @@ public interface TaskOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time that the task was created.
    * `create_time` will be truncated to the nearest second.
@@ -152,6 +174,8 @@ public interface TaskOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The number of attempts dispatched.
    * This count includes tasks which have been dispatched but haven't
@@ -163,6 +187,8 @@ public interface TaskOrBuilder extends
   int getDispatchCount();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The number of attempts which have received a response.
    * </pre>
@@ -172,6 +198,8 @@ public interface TaskOrBuilder extends
   int getResponseCount();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's first attempt.
    * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will be set.
@@ -182,6 +210,8 @@ public interface TaskOrBuilder extends
    */
   boolean hasFirstAttempt();
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's first attempt.
    * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will be set.
@@ -192,6 +222,8 @@ public interface TaskOrBuilder extends
    */
   com.google.cloud.tasks.v2beta3.Attempt getFirstAttempt();
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's first attempt.
    * Only [dispatch_time][google.cloud.tasks.v2beta3.Attempt.dispatch_time] will be set.
@@ -203,6 +235,8 @@ public interface TaskOrBuilder extends
   com.google.cloud.tasks.v2beta3.AttemptOrBuilder getFirstAttemptOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's last attempt.
    * </pre>
@@ -211,6 +245,8 @@ public interface TaskOrBuilder extends
    */
   boolean hasLastAttempt();
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's last attempt.
    * </pre>
@@ -219,6 +255,8 @@ public interface TaskOrBuilder extends
    */
   com.google.cloud.tasks.v2beta3.Attempt getLastAttempt();
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's last attempt.
    * </pre>
@@ -228,6 +266,8 @@ public interface TaskOrBuilder extends
   com.google.cloud.tasks.v2beta3.AttemptOrBuilder getLastAttemptOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] has
    * been returned.
@@ -237,6 +277,8 @@ public interface TaskOrBuilder extends
    */
   int getViewValue();
   /**
+   *
+   *
    * <pre>
    * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] has
    * been returned.

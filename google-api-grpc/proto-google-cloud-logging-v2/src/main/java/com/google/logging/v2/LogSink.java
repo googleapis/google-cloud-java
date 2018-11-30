@@ -4,6 +4,8 @@
 package com.google.logging.v2;
 
 /**
+ *
+ *
  * <pre>
  * Describes a sink used to export log entries to one of the following
  * destinations in any project: a Cloud Storage bucket, a BigQuery dataset, or a
@@ -14,15 +16,16 @@ package com.google.logging.v2;
  *
  * Protobuf type {@code google.logging.v2.LogSink}
  */
-public  final class LogSink extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class LogSink extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.logging.v2.LogSink)
     LogSinkOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use LogSink.newBuilder() to construct.
   private LogSink(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private LogSink() {
     name_ = "";
     destination_ = "";
@@ -33,10 +36,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private LogSink(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -56,100 +59,112 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            destination_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            filter_ = s;
-            break;
-          }
-          case 48: {
-            int rawValue = input.readEnum();
-
-            outputVersionFormat_ = rawValue;
-            break;
-          }
-          case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            writerIdentity_ = s;
-            break;
-          }
-          case 72: {
-
-            includeChildren_ = input.readBool();
-            break;
-          }
-          case 82: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (startTime_ != null) {
-              subBuilder = startTime_.toBuilder();
+              name_ = s;
+              break;
             }
-            startTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(startTime_);
-              startTime_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 90: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (endTime_ != null) {
-              subBuilder = endTime_.toBuilder();
+              destination_ = s;
+              break;
             }
-            endTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(endTime_);
-              endTime_ = subBuilder.buildPartial();
-            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              filter_ = s;
+              break;
             }
-            break;
-          }
+          case 48:
+            {
+              int rawValue = input.readEnum();
+
+              outputVersionFormat_ = rawValue;
+              break;
+            }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              writerIdentity_ = s;
+              break;
+            }
+          case 72:
+            {
+              includeChildren_ = input.readBool();
+              break;
+            }
+          case 82:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (startTime_ != null) {
+                subBuilder = startTime_.toBuilder();
+              }
+              startTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(startTime_);
+                startTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 90:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (endTime_ != null) {
+                subBuilder = endTime_.toBuilder();
+              }
+              endTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(endTime_);
+                endTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.logging.v2.LoggingConfigProto.internal_static_google_logging_v2_LogSink_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.logging.v2.LoggingConfigProto
+        .internal_static_google_logging_v2_LogSink_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.logging.v2.LoggingConfigProto.internal_static_google_logging_v2_LogSink_fieldAccessorTable
+    return com.google.logging.v2.LoggingConfigProto
+        .internal_static_google_logging_v2_LogSink_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.logging.v2.LogSink.class, com.google.logging.v2.LogSink.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Available log entry formats. Log entries can be written to
    * Logging in either format and can be exported in either format.
@@ -158,9 +173,10 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf enum {@code google.logging.v2.LogSink.VersionFormat}
    */
-  public enum VersionFormat
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum VersionFormat implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * An unspecified format version that will default to V2.
      * </pre>
@@ -169,6 +185,8 @@ private static final long serialVersionUID = 0L;
      */
     VERSION_FORMAT_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * `LogEntry` version 2 format.
      * </pre>
@@ -177,6 +195,8 @@ private static final long serialVersionUID = 0L;
      */
     V2(1),
     /**
+     *
+     *
      * <pre>
      * `LogEntry` version 1 format.
      * </pre>
@@ -188,6 +208,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * An unspecified format version that will default to V2.
      * </pre>
@@ -196,6 +218,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int VERSION_FORMAT_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * `LogEntry` version 2 format.
      * </pre>
@@ -204,6 +228,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int V2_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * `LogEntry` version 1 format.
      * </pre>
@@ -211,7 +237,6 @@ private static final long serialVersionUID = 0L;
      * <code>V1 = 2;</code>
      */
     public static final int V1_VALUE = 2;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -221,9 +246,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static VersionFormat valueOf(int value) {
       return forNumber(value);
@@ -231,45 +254,45 @@ private static final long serialVersionUID = 0L;
 
     public static VersionFormat forNumber(int value) {
       switch (value) {
-        case 0: return VERSION_FORMAT_UNSPECIFIED;
-        case 1: return V2;
-        case 2: return V1;
-        default: return null;
+        case 0:
+          return VERSION_FORMAT_UNSPECIFIED;
+        case 1:
+          return V2;
+        case 2:
+          return V1;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<VersionFormat>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<VersionFormat> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        VersionFormat> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<VersionFormat>() {
-            public VersionFormat findValueByNumber(int number) {
-              return VersionFormat.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<VersionFormat> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<VersionFormat>() {
+          public VersionFormat findValueByNumber(int number) {
+            return VersionFormat.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.logging.v2.LogSink.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final VersionFormat[] VALUES = values();
 
-    public static VersionFormat valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static VersionFormat valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -289,6 +312,8 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * Required. The client-assigned sink identifier, unique within the
    * project. Example: `"my-syslog-errors-to-pubsub"`.  Sink identifiers are
@@ -304,14 +329,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The client-assigned sink identifier, unique within the
    * project. Example: `"my-syslog-errors-to-pubsub"`.  Sink identifiers are
@@ -322,13 +348,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -339,6 +363,8 @@ private static final long serialVersionUID = 0L;
   public static final int DESTINATION_FIELD_NUMBER = 3;
   private volatile java.lang.Object destination_;
   /**
+   *
+   *
    * <pre>
    * Required. The export destination:
    *     "storage.googleapis.com/[GCS_BUCKET]"
@@ -357,14 +383,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       destination_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The export destination:
    *     "storage.googleapis.com/[GCS_BUCKET]"
@@ -378,13 +405,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string destination = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getDestinationBytes() {
+  public com.google.protobuf.ByteString getDestinationBytes() {
     java.lang.Object ref = destination_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       destination_ = b;
       return b;
     } else {
@@ -395,6 +420,8 @@ private static final long serialVersionUID = 0L;
   public static final int FILTER_FIELD_NUMBER = 5;
   private volatile java.lang.Object filter_;
   /**
+   *
+   *
    * <pre>
    * Optional.
    * An [advanced logs filter](/logging/docs/view/advanced_filters).  The only
@@ -410,14 +437,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       filter_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional.
    * An [advanced logs filter](/logging/docs/view/advanced_filters).  The only
@@ -428,13 +456,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string filter = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getFilterBytes() {
+  public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       filter_ = b;
       return b;
     } else {
@@ -445,33 +471,44 @@ private static final long serialVersionUID = 0L;
   public static final int OUTPUT_VERSION_FORMAT_FIELD_NUMBER = 6;
   private int outputVersionFormat_;
   /**
+   *
+   *
    * <pre>
    * Deprecated. The log entry format to use for this sink's exported log
    * entries.  The v2 format is used by default and cannot be changed.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
+   * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
+   * </code>
    */
-  @java.lang.Deprecated public int getOutputVersionFormatValue() {
+  @java.lang.Deprecated
+  public int getOutputVersionFormatValue() {
     return outputVersionFormat_;
   }
   /**
+   *
+   *
    * <pre>
    * Deprecated. The log entry format to use for this sink's exported log
    * entries.  The v2 format is used by default and cannot be changed.
    * </pre>
    *
-   * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
+   * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
+   * </code>
    */
-  @java.lang.Deprecated public com.google.logging.v2.LogSink.VersionFormat getOutputVersionFormat() {
+  @java.lang.Deprecated
+  public com.google.logging.v2.LogSink.VersionFormat getOutputVersionFormat() {
     @SuppressWarnings("deprecation")
-    com.google.logging.v2.LogSink.VersionFormat result = com.google.logging.v2.LogSink.VersionFormat.valueOf(outputVersionFormat_);
+    com.google.logging.v2.LogSink.VersionFormat result =
+        com.google.logging.v2.LogSink.VersionFormat.valueOf(outputVersionFormat_);
     return result == null ? com.google.logging.v2.LogSink.VersionFormat.UNRECOGNIZED : result;
   }
 
   public static final int WRITER_IDENTITY_FIELD_NUMBER = 8;
   private volatile java.lang.Object writerIdentity_;
   /**
+   *
+   *
    * <pre>
    * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
    * which Logging writes the exported log entries to the sink's
@@ -495,14 +532,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       writerIdentity_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
    * which Logging writes the exported log entries to the sink's
@@ -521,13 +559,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string writer_identity = 8;</code>
    */
-  public com.google.protobuf.ByteString
-      getWriterIdentityBytes() {
+  public com.google.protobuf.ByteString getWriterIdentityBytes() {
     java.lang.Object ref = writerIdentity_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       writerIdentity_ = b;
       return b;
     } else {
@@ -538,6 +574,8 @@ private static final long serialVersionUID = 0L;
   public static final int INCLUDE_CHILDREN_FIELD_NUMBER = 9;
   private boolean includeChildren_;
   /**
+   *
+   *
    * <pre>
    * Optional. This field applies only to sinks owned by organizations and
    * folders. If the field is false, the default, only the logs owned by the
@@ -562,70 +600,89 @@ private static final long serialVersionUID = 0L;
   public static final int START_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp startTime_;
   /**
+   *
+   *
    * <pre>
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
    */
-  @java.lang.Deprecated public boolean hasStartTime() {
+  @java.lang.Deprecated
+  public boolean hasStartTime() {
     return startTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
    */
-  @java.lang.Deprecated public com.google.protobuf.Timestamp getStartTime() {
+  @java.lang.Deprecated
+  public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
    */
-  @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+  @java.lang.Deprecated
+  public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
     return getStartTime();
   }
 
   public static final int END_TIME_FIELD_NUMBER = 11;
   private com.google.protobuf.Timestamp endTime_;
   /**
+   *
+   *
    * <pre>
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
    */
-  @java.lang.Deprecated public boolean hasEndTime() {
+  @java.lang.Deprecated
+  public boolean hasEndTime() {
     return endTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
    */
-  @java.lang.Deprecated public com.google.protobuf.Timestamp getEndTime() {
+  @java.lang.Deprecated
+  public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Deprecated. This field is ignored when creating or updating sinks.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
    */
-  @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+  @java.lang.Deprecated
+  public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
     return getEndTime();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -637,8 +694,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -648,7 +704,8 @@ private static final long serialVersionUID = 0L;
     if (!getFilterBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, filter_);
     }
-    if (outputVersionFormat_ != com.google.logging.v2.LogSink.VersionFormat.VERSION_FORMAT_UNSPECIFIED.getNumber()) {
+    if (outputVersionFormat_
+        != com.google.logging.v2.LogSink.VersionFormat.VERSION_FORMAT_UNSPECIFIED.getNumber()) {
       output.writeEnum(6, outputVersionFormat_);
     }
     if (!getWriterIdentityBytes().isEmpty()) {
@@ -681,24 +738,21 @@ private static final long serialVersionUID = 0L;
     if (!getFilterBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filter_);
     }
-    if (outputVersionFormat_ != com.google.logging.v2.LogSink.VersionFormat.VERSION_FORMAT_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(6, outputVersionFormat_);
+    if (outputVersionFormat_
+        != com.google.logging.v2.LogSink.VersionFormat.VERSION_FORMAT_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, outputVersionFormat_);
     }
     if (!getWriterIdentityBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, writerIdentity_);
     }
     if (includeChildren_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(9, includeChildren_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, includeChildren_);
     }
     if (startTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getStartTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getStartTime());
     }
     if (endTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getEndTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getEndTime());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -708,7 +762,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.logging.v2.LogSink)) {
       return super.equals(obj);
@@ -716,26 +770,19 @@ private static final long serialVersionUID = 0L;
     com.google.logging.v2.LogSink other = (com.google.logging.v2.LogSink) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getDestination()
-        .equals(other.getDestination());
-    result = result && getFilter()
-        .equals(other.getFilter());
+    result = result && getName().equals(other.getName());
+    result = result && getDestination().equals(other.getDestination());
+    result = result && getFilter().equals(other.getFilter());
     result = result && outputVersionFormat_ == other.outputVersionFormat_;
-    result = result && getWriterIdentity()
-        .equals(other.getWriterIdentity());
-    result = result && (getIncludeChildren()
-        == other.getIncludeChildren());
+    result = result && getWriterIdentity().equals(other.getWriterIdentity());
+    result = result && (getIncludeChildren() == other.getIncludeChildren());
     result = result && (hasStartTime() == other.hasStartTime());
     if (hasStartTime()) {
-      result = result && getStartTime()
-          .equals(other.getStartTime());
+      result = result && getStartTime().equals(other.getStartTime());
     }
     result = result && (hasEndTime() == other.hasEndTime());
     if (hasEndTime()) {
-      result = result && getEndTime()
-          .equals(other.getEndTime());
+      result = result && getEndTime().equals(other.getEndTime());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -759,8 +806,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + WRITER_IDENTITY_FIELD_NUMBER;
     hash = (53 * hash) + getWriterIdentity().hashCode();
     hash = (37 * hash) + INCLUDE_CHILDREN_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIncludeChildren());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeChildren());
     if (hasStartTime()) {
       hash = (37 * hash) + START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getStartTime().hashCode();
@@ -774,97 +820,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.logging.v2.LogSink parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.logging.v2.LogSink parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.LogSink parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.logging.v2.LogSink parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.logging.v2.LogSink parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.LogSink parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.logging.v2.LogSink parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.LogSink parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.logging.v2.LogSink parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.logging.v2.LogSink parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.logging.v2.LogSink parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.logging.v2.LogSink parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.logging.v2.LogSink parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static com.google.logging.v2.LogSink parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.logging.v2.LogSink parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.logging.v2.LogSink prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Describes a sink used to export log entries to one of the following
    * destinations in any project: a Cloud Storage bucket, a BigQuery dataset, or a
@@ -875,19 +927,20 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.logging.v2.LogSink}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.logging.v2.LogSink)
       com.google.logging.v2.LogSinkOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.logging.v2.LoggingConfigProto.internal_static_google_logging_v2_LogSink_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.logging.v2.LoggingConfigProto
+          .internal_static_google_logging_v2_LogSink_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.logging.v2.LoggingConfigProto.internal_static_google_logging_v2_LogSink_fieldAccessorTable
+      return com.google.logging.v2.LoggingConfigProto
+          .internal_static_google_logging_v2_LogSink_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.logging.v2.LogSink.class, com.google.logging.v2.LogSink.Builder.class);
     }
@@ -897,16 +950,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -938,9 +990,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.logging.v2.LoggingConfigProto.internal_static_google_logging_v2_LogSink_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.logging.v2.LoggingConfigProto
+          .internal_static_google_logging_v2_LogSink_descriptor;
     }
 
     @java.lang.Override
@@ -984,38 +1036,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.logging.v2.LogSink) {
-        return mergeFrom((com.google.logging.v2.LogSink)other);
+        return mergeFrom((com.google.logging.v2.LogSink) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1083,6 +1136,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The client-assigned sink identifier, unique within the
      * project. Example: `"my-syslog-errors-to-pubsub"`.  Sink identifiers are
@@ -1096,8 +1151,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1106,6 +1160,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The client-assigned sink identifier, unique within the
      * project. Example: `"my-syslog-errors-to-pubsub"`.  Sink identifiers are
@@ -1116,13 +1172,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1130,6 +1184,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The client-assigned sink identifier, unique within the
      * project. Example: `"my-syslog-errors-to-pubsub"`.  Sink identifiers are
@@ -1140,17 +1196,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The client-assigned sink identifier, unique within the
      * project. Example: `"my-syslog-errors-to-pubsub"`.  Sink identifiers are
@@ -1162,12 +1219,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The client-assigned sink identifier, unique within the
      * project. Example: `"my-syslog-errors-to-pubsub"`.  Sink identifiers are
@@ -1178,13 +1237,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1192,6 +1250,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object destination_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The export destination:
      *     "storage.googleapis.com/[GCS_BUCKET]"
@@ -1208,8 +1268,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDestination() {
       java.lang.Object ref = destination_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         destination_ = s;
         return s;
@@ -1218,6 +1277,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The export destination:
      *     "storage.googleapis.com/[GCS_BUCKET]"
@@ -1231,13 +1292,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string destination = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getDestinationBytes() {
+    public com.google.protobuf.ByteString getDestinationBytes() {
       java.lang.Object ref = destination_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         destination_ = b;
         return b;
       } else {
@@ -1245,6 +1304,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The export destination:
      *     "storage.googleapis.com/[GCS_BUCKET]"
@@ -1258,17 +1319,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string destination = 3;</code>
      */
-    public Builder setDestination(
-        java.lang.String value) {
+    public Builder setDestination(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       destination_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The export destination:
      *     "storage.googleapis.com/[GCS_BUCKET]"
@@ -1283,12 +1345,14 @@ private static final long serialVersionUID = 0L;
      * <code>string destination = 3;</code>
      */
     public Builder clearDestination() {
-      
+
       destination_ = getDefaultInstance().getDestination();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The export destination:
      *     "storage.googleapis.com/[GCS_BUCKET]"
@@ -1302,13 +1366,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string destination = 3;</code>
      */
-    public Builder setDestinationBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDestinationBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       destination_ = value;
       onChanged();
       return this;
@@ -1316,6 +1379,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object filter_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional.
      * An [advanced logs filter](/logging/docs/view/advanced_filters).  The only
@@ -1329,8 +1394,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         filter_ = s;
         return s;
@@ -1339,6 +1403,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional.
      * An [advanced logs filter](/logging/docs/view/advanced_filters).  The only
@@ -1349,13 +1415,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string filter = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getFilterBytes() {
+    public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         filter_ = b;
         return b;
       } else {
@@ -1363,6 +1427,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional.
      * An [advanced logs filter](/logging/docs/view/advanced_filters).  The only
@@ -1373,17 +1439,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string filter = 5;</code>
      */
-    public Builder setFilter(
-        java.lang.String value) {
+    public Builder setFilter(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       filter_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional.
      * An [advanced logs filter](/logging/docs/view/advanced_filters).  The only
@@ -1395,12 +1462,14 @@ private static final long serialVersionUID = 0L;
      * <code>string filter = 5;</code>
      */
     public Builder clearFilter() {
-      
+
       filter_ = getDefaultInstance().getFilter();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional.
      * An [advanced logs filter](/logging/docs/view/advanced_filters).  The only
@@ -1411,13 +1480,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string filter = 5;</code>
      */
-    public Builder setFilterBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       filter_ = value;
       onChanged();
       return this;
@@ -1425,69 +1493,90 @@ private static final long serialVersionUID = 0L;
 
     private int outputVersionFormat_ = 0;
     /**
+     *
+     *
      * <pre>
      * Deprecated. The log entry format to use for this sink's exported log
      * entries.  The v2 format is used by default and cannot be changed.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
+     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
+     * </code>
      */
-    @java.lang.Deprecated public int getOutputVersionFormatValue() {
+    @java.lang.Deprecated
+    public int getOutputVersionFormatValue() {
       return outputVersionFormat_;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. The log entry format to use for this sink's exported log
      * entries.  The v2 format is used by default and cannot be changed.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
+     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
+     * </code>
      */
-    @java.lang.Deprecated public Builder setOutputVersionFormatValue(int value) {
+    @java.lang.Deprecated
+    public Builder setOutputVersionFormatValue(int value) {
       outputVersionFormat_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. The log entry format to use for this sink's exported log
      * entries.  The v2 format is used by default and cannot be changed.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
+     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
+     * </code>
      */
-    @java.lang.Deprecated public com.google.logging.v2.LogSink.VersionFormat getOutputVersionFormat() {
+    @java.lang.Deprecated
+    public com.google.logging.v2.LogSink.VersionFormat getOutputVersionFormat() {
       @SuppressWarnings("deprecation")
-      com.google.logging.v2.LogSink.VersionFormat result = com.google.logging.v2.LogSink.VersionFormat.valueOf(outputVersionFormat_);
+      com.google.logging.v2.LogSink.VersionFormat result =
+          com.google.logging.v2.LogSink.VersionFormat.valueOf(outputVersionFormat_);
       return result == null ? com.google.logging.v2.LogSink.VersionFormat.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. The log entry format to use for this sink's exported log
      * entries.  The v2 format is used by default and cannot be changed.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
+     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
+     * </code>
      */
-    @java.lang.Deprecated public Builder setOutputVersionFormat(com.google.logging.v2.LogSink.VersionFormat value) {
+    @java.lang.Deprecated
+    public Builder setOutputVersionFormat(com.google.logging.v2.LogSink.VersionFormat value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       outputVersionFormat_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. The log entry format to use for this sink's exported log
      * entries.  The v2 format is used by default and cannot be changed.
      * </pre>
      *
-     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];</code>
+     * <code>.google.logging.v2.LogSink.VersionFormat output_version_format = 6 [deprecated = true];
+     * </code>
      */
-    @java.lang.Deprecated public Builder clearOutputVersionFormat() {
-      
+    @java.lang.Deprecated
+    public Builder clearOutputVersionFormat() {
+
       outputVersionFormat_ = 0;
       onChanged();
       return this;
@@ -1495,6 +1584,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object writerIdentity_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
      * which Logging writes the exported log entries to the sink's
@@ -1516,8 +1607,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getWriterIdentity() {
       java.lang.Object ref = writerIdentity_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         writerIdentity_ = s;
         return s;
@@ -1526,6 +1616,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
      * which Logging writes the exported log entries to the sink's
@@ -1544,13 +1636,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string writer_identity = 8;</code>
      */
-    public com.google.protobuf.ByteString
-        getWriterIdentityBytes() {
+    public com.google.protobuf.ByteString getWriterIdentityBytes() {
       java.lang.Object ref = writerIdentity_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         writerIdentity_ = b;
         return b;
       } else {
@@ -1558,6 +1648,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
      * which Logging writes the exported log entries to the sink's
@@ -1576,17 +1668,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string writer_identity = 8;</code>
      */
-    public Builder setWriterIdentity(
-        java.lang.String value) {
+    public Builder setWriterIdentity(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       writerIdentity_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
      * which Logging writes the exported log entries to the sink's
@@ -1606,12 +1699,14 @@ private static final long serialVersionUID = 0L;
      * <code>string writer_identity = 8;</code>
      */
     public Builder clearWriterIdentity() {
-      
+
       writerIdentity_ = getDefaultInstance().getWriterIdentity();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. An IAM identity&amp;mdash;a service account or group&amp;mdash;under
      * which Logging writes the exported log entries to the sink's
@@ -1630,20 +1725,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string writer_identity = 8;</code>
      */
-    public Builder setWriterIdentityBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setWriterIdentityBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       writerIdentity_ = value;
       onChanged();
       return this;
     }
 
-    private boolean includeChildren_ ;
+    private boolean includeChildren_;
     /**
+     *
+     *
      * <pre>
      * Optional. This field applies only to sinks owned by organizations and
      * folders. If the field is false, the default, only the logs owned by the
@@ -1665,6 +1761,8 @@ private static final long serialVersionUID = 0L;
       return includeChildren_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. This field applies only to sinks owned by organizations and
      * folders. If the field is false, the default, only the logs owned by the
@@ -1683,12 +1781,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool include_children = 9;</code>
      */
     public Builder setIncludeChildren(boolean value) {
-      
+
       includeChildren_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. This field applies only to sinks owned by organizations and
      * folders. If the field is false, the default, only the logs owned by the
@@ -1707,7 +1807,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool include_children = 9;</code>
      */
     public Builder clearIncludeChildren() {
-      
+
       includeChildren_ = false;
       onChanged();
       return this;
@@ -1715,25 +1815,34 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp startTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        startTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public boolean hasStartTime() {
+    @java.lang.Deprecated
+    public boolean hasStartTime() {
       return startTimeBuilder_ != null || startTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public com.google.protobuf.Timestamp getStartTime() {
+    @java.lang.Deprecated
+    public com.google.protobuf.Timestamp getStartTime() {
       if (startTimeBuilder_ == null) {
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       } else {
@@ -1741,13 +1850,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder setStartTime(com.google.protobuf.Timestamp value) {
+    @java.lang.Deprecated
+    public Builder setStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1761,14 +1873,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder setStartTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    @java.lang.Deprecated
+    public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
         onChanged();
@@ -1779,17 +1893,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
+    @java.lang.Deprecated
+    public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
         if (startTime_ != null) {
           startTime_ =
-            com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
         } else {
           startTime_ = value;
         }
@@ -1801,13 +1918,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder clearStartTime() {
+    @java.lang.Deprecated
+    public Builder clearStartTime() {
       if (startTimeBuilder_ == null) {
         startTime_ = null;
         onChanged();
@@ -1819,33 +1939,40 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-      
+    @java.lang.Deprecated
+    public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
+
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+    @java.lang.Deprecated
+    public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
       if (startTimeBuilder_ != null) {
         return startTimeBuilder_.getMessageOrBuilder();
       } else {
-        return startTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
@@ -1853,14 +1980,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp start_time = 10 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getStartTimeFieldBuilder() {
       if (startTimeBuilder_ == null) {
-        startTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getStartTime(),
-                getParentForChildren(),
-                isClean());
+        startTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getStartTime(), getParentForChildren(), isClean());
         startTime_ = null;
       }
       return startTimeBuilder_;
@@ -1868,25 +1998,34 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp endTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> endTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        endTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public boolean hasEndTime() {
+    @java.lang.Deprecated
+    public boolean hasEndTime() {
       return endTimeBuilder_ != null || endTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public com.google.protobuf.Timestamp getEndTime() {
+    @java.lang.Deprecated
+    public com.google.protobuf.Timestamp getEndTime() {
       if (endTimeBuilder_ == null) {
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       } else {
@@ -1894,13 +2033,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder setEndTime(com.google.protobuf.Timestamp value) {
+    @java.lang.Deprecated
+    public Builder setEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1914,14 +2056,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder setEndTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    @java.lang.Deprecated
+    public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
         onChanged();
@@ -1932,17 +2076,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
+    @java.lang.Deprecated
+    public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
         if (endTime_ != null) {
           endTime_ =
-            com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
         } else {
           endTime_ = value;
         }
@@ -1954,13 +2101,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder clearEndTime() {
+    @java.lang.Deprecated
+    public Builder clearEndTime() {
       if (endTimeBuilder_ == null) {
         endTime_ = null;
         onChanged();
@@ -1972,33 +2122,40 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      
+    @java.lang.Deprecated
+    public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
+
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+    @java.lang.Deprecated
+    public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
       if (endTimeBuilder_ != null) {
         return endTimeBuilder_.getMessageOrBuilder();
       } else {
-        return endTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field is ignored when creating or updating sinks.
      * </pre>
@@ -2006,21 +2163,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp end_time = 11 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getEndTimeFieldBuilder() {
       if (endTimeBuilder_ == null) {
-        endTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getEndTime(),
-                getParentForChildren(),
-                isClean());
+        endTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getEndTime(), getParentForChildren(), isClean());
         endTime_ = null;
       }
       return endTimeBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2030,12 +2190,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.logging.v2.LogSink)
   }
 
   // @@protoc_insertion_point(class_scope:google.logging.v2.LogSink)
   private static final com.google.logging.v2.LogSink DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.logging.v2.LogSink();
   }
@@ -2044,16 +2204,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LogSink>
-      PARSER = new com.google.protobuf.AbstractParser<LogSink>() {
-    @java.lang.Override
-    public LogSink parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new LogSink(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<LogSink> PARSER =
+      new com.google.protobuf.AbstractParser<LogSink>() {
+        @java.lang.Override
+        public LogSink parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new LogSink(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<LogSink> parser() {
     return PARSER;
@@ -2068,6 +2228,4 @@ private static final long serialVersionUID = 0L;
   public com.google.logging.v2.LogSink getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

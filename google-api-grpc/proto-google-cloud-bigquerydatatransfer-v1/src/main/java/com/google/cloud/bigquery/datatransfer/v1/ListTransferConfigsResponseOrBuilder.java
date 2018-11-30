@@ -3,55 +3,72 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-public interface ListTransferConfigsResponseOrBuilder extends
+public interface ListTransferConfigsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.datatransfer.v1.ListTransferConfigsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. The stored pipeline transfer configurations.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+   * </code>
    */
-  java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferConfig> 
-      getTransferConfigsList();
+  java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferConfig> getTransferConfigsList();
   /**
+   *
+   *
    * <pre>
    * Output only. The stored pipeline transfer configurations.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+   * </code>
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfigs(int index);
   /**
+   *
+   *
    * <pre>
    * Output only. The stored pipeline transfer configurations.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+   * </code>
    */
   int getTransferConfigsCount();
   /**
+   *
+   *
    * <pre>
    * Output only. The stored pipeline transfer configurations.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder> 
+  java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder>
       getTransferConfigsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Output only. The stored pipeline transfer configurations.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_configs = 1;
+   * </code>
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder getTransferConfigsOrBuilder(
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Output only. The next-pagination token. For multiple-page list results,
    * this token can be used as the
@@ -63,6 +80,8 @@ public interface ListTransferConfigsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * Output only. The next-pagination token. For multiple-page list results,
    * this token can be used as the
@@ -72,6 +91,5 @@ public interface ListTransferConfigsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

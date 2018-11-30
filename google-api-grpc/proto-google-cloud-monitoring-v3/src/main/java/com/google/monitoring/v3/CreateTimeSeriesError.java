@@ -4,29 +4,31 @@
 package com.google.monitoring.v3;
 
 /**
+ *
+ *
  * <pre>
  * Describes the result of a failed request to write data to a time series.
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.CreateTimeSeriesError}
  */
-public  final class CreateTimeSeriesError extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class CreateTimeSeriesError extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.CreateTimeSeriesError)
     CreateTimeSeriesErrorOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use CreateTimeSeriesError.newBuilder() to construct.
   private CreateTimeSeriesError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CreateTimeSeriesError() {
-  }
+
+  private CreateTimeSeriesError() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private CreateTimeSeriesError(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46,67 +48,75 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.monitoring.v3.TimeSeries.Builder subBuilder = null;
-            if (timeSeries_ != null) {
-              subBuilder = timeSeries_.toBuilder();
-            }
-            timeSeries_ = input.readMessage(com.google.monitoring.v3.TimeSeries.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(timeSeries_);
-              timeSeries_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.monitoring.v3.TimeSeries.Builder subBuilder = null;
+              if (timeSeries_ != null) {
+                subBuilder = timeSeries_.toBuilder();
+              }
+              timeSeries_ =
+                  input.readMessage(
+                      com.google.monitoring.v3.TimeSeries.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(timeSeries_);
+                timeSeries_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.rpc.Status.Builder subBuilder = null;
-            if (status_ != null) {
-              subBuilder = status_.toBuilder();
+              break;
             }
-            status_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(status_);
-              status_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.rpc.Status.Builder subBuilder = null;
+              if (status_ != null) {
+                subBuilder = status_.toBuilder();
+              }
+              status_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(status_);
+                status_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.monitoring.v3.MetricServiceProto.internal_static_google_monitoring_v3_CreateTimeSeriesError_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.monitoring.v3.MetricServiceProto
+        .internal_static_google_monitoring_v3_CreateTimeSeriesError_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.monitoring.v3.MetricServiceProto.internal_static_google_monitoring_v3_CreateTimeSeriesError_fieldAccessorTable
+    return com.google.monitoring.v3.MetricServiceProto
+        .internal_static_google_monitoring_v3_CreateTimeSeriesError_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.monitoring.v3.CreateTimeSeriesError.class, com.google.monitoring.v3.CreateTimeSeriesError.Builder.class);
+            com.google.monitoring.v3.CreateTimeSeriesError.class,
+            com.google.monitoring.v3.CreateTimeSeriesError.Builder.class);
   }
 
   public static final int TIME_SERIES_FIELD_NUMBER = 1;
   private com.google.monitoring.v3.TimeSeries timeSeries_;
   /**
+   *
+   *
    * <pre>
    * The time series, including the `Metric`, `MonitoredResource`,
    * and `Point`s (including timestamp and value) that resulted
@@ -120,6 +130,8 @@ private static final long serialVersionUID = 0L;
     return timeSeries_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The time series, including the `Metric`, `MonitoredResource`,
    * and `Point`s (including timestamp and value) that resulted
@@ -130,9 +142,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.monitoring.v3.TimeSeries time_series = 1;</code>
    */
   public com.google.monitoring.v3.TimeSeries getTimeSeries() {
-    return timeSeries_ == null ? com.google.monitoring.v3.TimeSeries.getDefaultInstance() : timeSeries_;
+    return timeSeries_ == null
+        ? com.google.monitoring.v3.TimeSeries.getDefaultInstance()
+        : timeSeries_;
   }
   /**
+   *
+   *
    * <pre>
    * The time series, including the `Metric`, `MonitoredResource`,
    * and `Point`s (including timestamp and value) that resulted
@@ -149,6 +165,8 @@ private static final long serialVersionUID = 0L;
   public static final int STATUS_FIELD_NUMBER = 2;
   private com.google.rpc.Status status_;
   /**
+   *
+   *
    * <pre>
    * The status of the requested write operation.
    * </pre>
@@ -159,6 +177,8 @@ private static final long serialVersionUID = 0L;
     return status_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The status of the requested write operation.
    * </pre>
@@ -169,6 +189,8 @@ private static final long serialVersionUID = 0L;
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
   /**
+   *
+   *
    * <pre>
    * The status of the requested write operation.
    * </pre>
@@ -180,6 +202,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -191,8 +214,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (timeSeries_ != null) {
       output.writeMessage(1, getTimeSeries());
     }
@@ -209,12 +231,10 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (timeSeries_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getTimeSeries());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getTimeSeries());
     }
     if (status_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getStatus());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getStatus());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -224,23 +244,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.monitoring.v3.CreateTimeSeriesError)) {
       return super.equals(obj);
     }
-    com.google.monitoring.v3.CreateTimeSeriesError other = (com.google.monitoring.v3.CreateTimeSeriesError) obj;
+    com.google.monitoring.v3.CreateTimeSeriesError other =
+        (com.google.monitoring.v3.CreateTimeSeriesError) obj;
 
     boolean result = true;
     result = result && (hasTimeSeries() == other.hasTimeSeries());
     if (hasTimeSeries()) {
-      result = result && getTimeSeries()
-          .equals(other.getTimeSeries());
+      result = result && getTimeSeries().equals(other.getTimeSeries());
     }
     result = result && (hasStatus() == other.hasStatus());
     if (hasStatus()) {
-      result = result && getStatus()
-          .equals(other.getStatus());
+      result = result && getStatus().equals(other.getStatus());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -266,118 +285,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.monitoring.v3.CreateTimeSeriesError parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.monitoring.v3.CreateTimeSeriesError parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.CreateTimeSeriesError parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.CreateTimeSeriesError parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.CreateTimeSeriesError parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.CreateTimeSeriesError parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.CreateTimeSeriesError parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.CreateTimeSeriesError parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.monitoring.v3.CreateTimeSeriesError parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.monitoring.v3.CreateTimeSeriesError parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.monitoring.v3.CreateTimeSeriesError parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.monitoring.v3.CreateTimeSeriesError parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.monitoring.v3.CreateTimeSeriesError parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.monitoring.v3.CreateTimeSeriesError parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.monitoring.v3.CreateTimeSeriesError prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Describes the result of a failed request to write data to a time series.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.CreateTimeSeriesError}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.monitoring.v3.CreateTimeSeriesError)
       com.google.monitoring.v3.CreateTimeSeriesErrorOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.monitoring.v3.MetricServiceProto.internal_static_google_monitoring_v3_CreateTimeSeriesError_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.MetricServiceProto
+          .internal_static_google_monitoring_v3_CreateTimeSeriesError_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.monitoring.v3.MetricServiceProto.internal_static_google_monitoring_v3_CreateTimeSeriesError_fieldAccessorTable
+      return com.google.monitoring.v3.MetricServiceProto
+          .internal_static_google_monitoring_v3_CreateTimeSeriesError_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.monitoring.v3.CreateTimeSeriesError.class, com.google.monitoring.v3.CreateTimeSeriesError.Builder.class);
+              com.google.monitoring.v3.CreateTimeSeriesError.class,
+              com.google.monitoring.v3.CreateTimeSeriesError.Builder.class);
     }
 
     // Construct using com.google.monitoring.v3.CreateTimeSeriesError.newBuilder()
@@ -385,16 +413,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -414,9 +441,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.monitoring.v3.MetricServiceProto.internal_static_google_monitoring_v3_CreateTimeSeriesError_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.monitoring.v3.MetricServiceProto
+          .internal_static_google_monitoring_v3_CreateTimeSeriesError_descriptor;
     }
 
     @java.lang.Override
@@ -435,7 +462,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.monitoring.v3.CreateTimeSeriesError buildPartial() {
-      com.google.monitoring.v3.CreateTimeSeriesError result = new com.google.monitoring.v3.CreateTimeSeriesError(this);
+      com.google.monitoring.v3.CreateTimeSeriesError result =
+          new com.google.monitoring.v3.CreateTimeSeriesError(this);
       if (timeSeriesBuilder_ == null) {
         result.timeSeries_ = timeSeries_;
       } else {
@@ -454,38 +482,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.monitoring.v3.CreateTimeSeriesError) {
-        return mergeFrom((com.google.monitoring.v3.CreateTimeSeriesError)other);
+        return mergeFrom((com.google.monitoring.v3.CreateTimeSeriesError) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -531,8 +560,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.monitoring.v3.TimeSeries timeSeries_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.monitoring.v3.TimeSeries, com.google.monitoring.v3.TimeSeries.Builder, com.google.monitoring.v3.TimeSeriesOrBuilder> timeSeriesBuilder_;
+            com.google.monitoring.v3.TimeSeries,
+            com.google.monitoring.v3.TimeSeries.Builder,
+            com.google.monitoring.v3.TimeSeriesOrBuilder>
+        timeSeriesBuilder_;
     /**
+     *
+     *
      * <pre>
      * The time series, including the `Metric`, `MonitoredResource`,
      * and `Point`s (including timestamp and value) that resulted
@@ -546,6 +580,8 @@ private static final long serialVersionUID = 0L;
       return timeSeriesBuilder_ != null || timeSeries_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The time series, including the `Metric`, `MonitoredResource`,
      * and `Point`s (including timestamp and value) that resulted
@@ -557,12 +593,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.monitoring.v3.TimeSeries getTimeSeries() {
       if (timeSeriesBuilder_ == null) {
-        return timeSeries_ == null ? com.google.monitoring.v3.TimeSeries.getDefaultInstance() : timeSeries_;
+        return timeSeries_ == null
+            ? com.google.monitoring.v3.TimeSeries.getDefaultInstance()
+            : timeSeries_;
       } else {
         return timeSeriesBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time series, including the `Metric`, `MonitoredResource`,
      * and `Point`s (including timestamp and value) that resulted
@@ -586,6 +626,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time series, including the `Metric`, `MonitoredResource`,
      * and `Point`s (including timestamp and value) that resulted
@@ -595,8 +637,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.monitoring.v3.TimeSeries time_series = 1;</code>
      */
-    public Builder setTimeSeries(
-        com.google.monitoring.v3.TimeSeries.Builder builderForValue) {
+    public Builder setTimeSeries(com.google.monitoring.v3.TimeSeries.Builder builderForValue) {
       if (timeSeriesBuilder_ == null) {
         timeSeries_ = builderForValue.build();
         onChanged();
@@ -607,6 +648,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time series, including the `Metric`, `MonitoredResource`,
      * and `Point`s (including timestamp and value) that resulted
@@ -620,7 +663,9 @@ private static final long serialVersionUID = 0L;
       if (timeSeriesBuilder_ == null) {
         if (timeSeries_ != null) {
           timeSeries_ =
-            com.google.monitoring.v3.TimeSeries.newBuilder(timeSeries_).mergeFrom(value).buildPartial();
+              com.google.monitoring.v3.TimeSeries.newBuilder(timeSeries_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           timeSeries_ = value;
         }
@@ -632,6 +677,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time series, including the `Metric`, `MonitoredResource`,
      * and `Point`s (including timestamp and value) that resulted
@@ -653,6 +700,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time series, including the `Metric`, `MonitoredResource`,
      * and `Point`s (including timestamp and value) that resulted
@@ -663,11 +712,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.monitoring.v3.TimeSeries time_series = 1;</code>
      */
     public com.google.monitoring.v3.TimeSeries.Builder getTimeSeriesBuilder() {
-      
+
       onChanged();
       return getTimeSeriesFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The time series, including the `Metric`, `MonitoredResource`,
      * and `Point`s (including timestamp and value) that resulted
@@ -681,11 +732,14 @@ private static final long serialVersionUID = 0L;
       if (timeSeriesBuilder_ != null) {
         return timeSeriesBuilder_.getMessageOrBuilder();
       } else {
-        return timeSeries_ == null ?
-            com.google.monitoring.v3.TimeSeries.getDefaultInstance() : timeSeries_;
+        return timeSeries_ == null
+            ? com.google.monitoring.v3.TimeSeries.getDefaultInstance()
+            : timeSeries_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time series, including the `Metric`, `MonitoredResource`,
      * and `Point`s (including timestamp and value) that resulted
@@ -696,14 +750,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.monitoring.v3.TimeSeries time_series = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.monitoring.v3.TimeSeries, com.google.monitoring.v3.TimeSeries.Builder, com.google.monitoring.v3.TimeSeriesOrBuilder> 
+            com.google.monitoring.v3.TimeSeries,
+            com.google.monitoring.v3.TimeSeries.Builder,
+            com.google.monitoring.v3.TimeSeriesOrBuilder>
         getTimeSeriesFieldBuilder() {
       if (timeSeriesBuilder_ == null) {
-        timeSeriesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.monitoring.v3.TimeSeries, com.google.monitoring.v3.TimeSeries.Builder, com.google.monitoring.v3.TimeSeriesOrBuilder>(
-                getTimeSeries(),
-                getParentForChildren(),
-                isClean());
+        timeSeriesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.TimeSeries,
+                com.google.monitoring.v3.TimeSeries.Builder,
+                com.google.monitoring.v3.TimeSeriesOrBuilder>(
+                getTimeSeries(), getParentForChildren(), isClean());
         timeSeries_ = null;
       }
       return timeSeriesBuilder_;
@@ -711,8 +768,11 @@ private static final long serialVersionUID = 0L;
 
     private com.google.rpc.Status status_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> statusBuilder_;
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        statusBuilder_;
     /**
+     *
+     *
      * <pre>
      * The status of the requested write operation.
      * </pre>
@@ -723,6 +783,8 @@ private static final long serialVersionUID = 0L;
       return statusBuilder_ != null || status_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The status of the requested write operation.
      * </pre>
@@ -737,6 +799,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The status of the requested write operation.
      * </pre>
@@ -757,14 +821,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The status of the requested write operation.
      * </pre>
      *
      * <code>.google.rpc.Status status = 2;</code>
      */
-    public Builder setStatus(
-        com.google.rpc.Status.Builder builderForValue) {
+    public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
       if (statusBuilder_ == null) {
         status_ = builderForValue.build();
         onChanged();
@@ -775,6 +840,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The status of the requested write operation.
      * </pre>
@@ -784,8 +851,7 @@ private static final long serialVersionUID = 0L;
     public Builder mergeStatus(com.google.rpc.Status value) {
       if (statusBuilder_ == null) {
         if (status_ != null) {
-          status_ =
-            com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+          status_ = com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
         } else {
           status_ = value;
         }
@@ -797,6 +863,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The status of the requested write operation.
      * </pre>
@@ -815,6 +883,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The status of the requested write operation.
      * </pre>
@@ -822,11 +892,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status status = 2;</code>
      */
     public com.google.rpc.Status.Builder getStatusBuilder() {
-      
+
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The status of the requested write operation.
      * </pre>
@@ -837,11 +909,12 @@ private static final long serialVersionUID = 0L;
       if (statusBuilder_ != null) {
         return statusBuilder_.getMessageOrBuilder();
       } else {
-        return status_ == null ?
-            com.google.rpc.Status.getDefaultInstance() : status_;
+        return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The status of the requested write operation.
      * </pre>
@@ -849,21 +922,21 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status status = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> 
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         getStatusFieldBuilder() {
       if (statusBuilder_ == null) {
-        statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>(
-                getStatus(),
-                getParentForChildren(),
-                isClean());
+        statusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(getStatus(), getParentForChildren(), isClean());
         status_ = null;
       }
       return statusBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -873,12 +946,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.monitoring.v3.CreateTimeSeriesError)
   }
 
   // @@protoc_insertion_point(class_scope:google.monitoring.v3.CreateTimeSeriesError)
   private static final com.google.monitoring.v3.CreateTimeSeriesError DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.monitoring.v3.CreateTimeSeriesError();
   }
@@ -887,16 +960,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CreateTimeSeriesError>
-      PARSER = new com.google.protobuf.AbstractParser<CreateTimeSeriesError>() {
-    @java.lang.Override
-    public CreateTimeSeriesError parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CreateTimeSeriesError(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<CreateTimeSeriesError> PARSER =
+      new com.google.protobuf.AbstractParser<CreateTimeSeriesError>() {
+        @java.lang.Override
+        public CreateTimeSeriesError parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CreateTimeSeriesError(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<CreateTimeSeriesError> parser() {
     return PARSER;
@@ -911,6 +984,4 @@ private static final long serialVersionUID = 0L;
   public com.google.monitoring.v3.CreateTimeSeriesError getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

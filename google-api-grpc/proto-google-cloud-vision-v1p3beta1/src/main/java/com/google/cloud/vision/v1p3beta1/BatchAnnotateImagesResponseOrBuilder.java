@@ -3,20 +3,24 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface BatchAnnotateImagesResponseOrBuilder extends
+public interface BatchAnnotateImagesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.BatchAnnotateImagesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Individual responses to image annotation requests within the batch.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageResponse responses = 1;</code>
    */
-  java.util.List<com.google.cloud.vision.v1p3beta1.AnnotateImageResponse> 
-      getResponsesList();
+  java.util.List<com.google.cloud.vision.v1p3beta1.AnnotateImageResponse> getResponsesList();
   /**
+   *
+   *
    * <pre>
    * Individual responses to image annotation requests within the batch.
    * </pre>
@@ -25,6 +29,8 @@ public interface BatchAnnotateImagesResponseOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.AnnotateImageResponse getResponses(int index);
   /**
+   *
+   *
    * <pre>
    * Individual responses to image annotation requests within the batch.
    * </pre>
@@ -33,21 +39,24 @@ public interface BatchAnnotateImagesResponseOrBuilder extends
    */
   int getResponsesCount();
   /**
+   *
+   *
    * <pre>
    * Individual responses to image annotation requests within the batch.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageResponse responses = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1p3beta1.AnnotateImageResponseOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1p3beta1.AnnotateImageResponseOrBuilder>
       getResponsesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Individual responses to image annotation requests within the batch.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageResponse responses = 1;</code>
    */
-  com.google.cloud.vision.v1p3beta1.AnnotateImageResponseOrBuilder getResponsesOrBuilder(
-      int index);
+  com.google.cloud.vision.v1p3beta1.AnnotateImageResponseOrBuilder getResponsesOrBuilder(int index);
 }

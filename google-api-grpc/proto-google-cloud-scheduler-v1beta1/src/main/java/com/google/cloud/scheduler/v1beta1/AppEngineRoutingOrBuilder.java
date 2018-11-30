@@ -3,11 +3,14 @@
 
 package com.google.cloud.scheduler.v1beta1;
 
-public interface AppEngineRoutingOrBuilder extends
+public interface AppEngineRoutingOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.scheduler.v1beta1.AppEngineRouting)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * App service.
    * By default, the job is sent to the service which is the default
@@ -18,6 +21,8 @@ public interface AppEngineRoutingOrBuilder extends
    */
   java.lang.String getService();
   /**
+   *
+   *
    * <pre>
    * App service.
    * By default, the job is sent to the service which is the default
@@ -26,10 +31,11 @@ public interface AppEngineRoutingOrBuilder extends
    *
    * <code>string service = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getServiceBytes();
+  com.google.protobuf.ByteString getServiceBytes();
 
   /**
+   *
+   *
    * <pre>
    * App version.
    * By default, the job is sent to the version which is the default
@@ -40,6 +46,8 @@ public interface AppEngineRoutingOrBuilder extends
    */
   java.lang.String getVersion();
   /**
+   *
+   *
    * <pre>
    * App version.
    * By default, the job is sent to the version which is the default
@@ -48,10 +56,11 @@ public interface AppEngineRoutingOrBuilder extends
    *
    * <code>string version = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getVersionBytes();
+  com.google.protobuf.ByteString getVersionBytes();
 
   /**
+   *
+   *
    * <pre>
    * App instance.
    * By default, the job is sent to an instance which is available when
@@ -67,6 +76,8 @@ public interface AppEngineRoutingOrBuilder extends
    */
   java.lang.String getInstance();
   /**
+   *
+   *
    * <pre>
    * App instance.
    * By default, the job is sent to an instance which is available when
@@ -80,10 +91,11 @@ public interface AppEngineRoutingOrBuilder extends
    *
    * <code>string instance = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getInstanceBytes();
+  com.google.protobuf.ByteString getInstanceBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The host that the job is sent to.
    * For more information about how App Engine requests are routed, see
@@ -132,6 +144,8 @@ public interface AppEngineRoutingOrBuilder extends
    */
   java.lang.String getHost();
   /**
+   *
+   *
    * <pre>
    * Output only. The host that the job is sent to.
    * For more information about how App Engine requests are routed, see
@@ -178,6 +192,5 @@ public interface AppEngineRoutingOrBuilder extends
    *
    * <code>string host = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getHostBytes();
+  com.google.protobuf.ByteString getHostBytes();
 }

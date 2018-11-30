@@ -23,7 +23,6 @@ import com.google.cloud.compute.deprecated.Compute.InstanceOption;
 import com.google.cloud.compute.deprecated.Compute.OperationOption;
 import com.google.cloud.compute.deprecated.NetworkInterface.AccessConfig;
 import com.google.common.collect.ImmutableList;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
@@ -47,16 +46,18 @@ public class Instance extends InstanceInfo {
   private final ComputeOptions options;
   private transient Compute compute;
 
-  /**
-   * A builder for {@code Instance} objects.
-   */
+  /** A builder for {@code Instance} objects. */
   public static class Builder extends InstanceInfo.Builder {
 
     private final Compute compute;
     private final InstanceInfo.BuilderImpl infoBuilder;
 
-    Builder(Compute compute, InstanceId instanceId, MachineTypeId machineType,
-        AttachedDisk attachedDisk, NetworkInterface networkInterface) {
+    Builder(
+        Compute compute,
+        InstanceId instanceId,
+        MachineTypeId machineType,
+        AttachedDisk attachedDisk,
+        NetworkInterface networkInterface) {
       this.compute = compute;
       this.infoBuilder = new InstanceInfo.BuilderImpl(instanceId);
       this.infoBuilder.setMachineType(machineType);
@@ -223,8 +224,8 @@ public class Instance extends InstanceInfo {
    *     was not found
    * @throws ComputeException upon failure
    */
-  public Operation addAccessConfig(String networkInterface, AccessConfig accessConfig,
-      OperationOption... options) {
+  public Operation addAccessConfig(
+      String networkInterface, AccessConfig accessConfig, OperationOption... options) {
     return compute.addAccessConfig(getInstanceId(), networkInterface, accessConfig, options);
   }
 
@@ -235,8 +236,8 @@ public class Instance extends InstanceInfo {
    *     instance was not found
    * @throws ComputeException upon failure
    */
-  public Operation attachDisk(PersistentDiskConfiguration configuration,
-      OperationOption... options) {
+  public Operation attachDisk(
+      PersistentDiskConfiguration configuration, OperationOption... options) {
     return compute.attachDisk(getInstanceId(), configuration, options);
   }
 
@@ -247,8 +248,8 @@ public class Instance extends InstanceInfo {
    *     instance was not found
    * @throws ComputeException upon failure
    */
-  public Operation attachDisk(String deviceName, PersistentDiskConfiguration configuration,
-      OperationOption... options) {
+  public Operation attachDisk(
+      String deviceName, PersistentDiskConfiguration configuration, OperationOption... options) {
     return compute.attachDisk(getInstanceId(), deviceName, configuration, options);
   }
 
@@ -260,8 +261,11 @@ public class Instance extends InstanceInfo {
    *     instance was not found
    * @throws ComputeException upon failure
    */
-  public Operation attachDisk(String deviceName, PersistentDiskConfiguration configuration,
-      int index, OperationOption... options) {
+  public Operation attachDisk(
+      String deviceName,
+      PersistentDiskConfiguration configuration,
+      int index,
+      OperationOption... options) {
     return compute.attachDisk(getInstanceId(), deviceName, configuration, index, options);
   }
 
@@ -272,8 +276,8 @@ public class Instance extends InstanceInfo {
    *     instance was not found
    * @throws ComputeException upon failure
    */
-  public Operation deleteAccessConfig(String networkInterface, String accessConfig,
-      OperationOption... options) {
+  public Operation deleteAccessConfig(
+      String networkInterface, String accessConfig, OperationOption... options) {
     return compute.deleteAccessConfig(getInstanceId(), networkInterface, accessConfig, options);
   }
 
@@ -328,14 +332,14 @@ public class Instance extends InstanceInfo {
    *     instance was not found
    * @throws ComputeException upon failure
    */
-  public Operation setDiskAutoDelete(String deviceName, boolean autoDelete,
-      OperationOption... options) {
+  public Operation setDiskAutoDelete(
+      String deviceName, boolean autoDelete, OperationOption... options) {
     return compute.setDiskAutoDelete(getInstanceId(), deviceName, autoDelete, options);
   }
 
   /**
-   * Sets the machine type for this instance. The instance must be in
-   * {@link InstanceInfo.Status#TERMINATED} state to be able to set its machine type.
+   * Sets the machine type for this instance. The instance must be in {@link
+   * InstanceInfo.Status#TERMINATED} state to be able to set its machine type.
    *
    * @return a zone operation if the set request was issued correctly, {@code null} if the instance
    *     was not found
@@ -357,8 +361,8 @@ public class Instance extends InstanceInfo {
   }
 
   /**
-   * Sets the metadata for this instance, fingerprint value is taken from this instance's
-   * {@code tags().fingerprint()}.
+   * Sets the metadata for this instance, fingerprint value is taken from this instance's {@code
+   * tags().fingerprint()}.
    *
    * @return a zone operation if the set request was issued correctly, {@code null} if the instance
    *     was not found
@@ -391,8 +395,8 @@ public class Instance extends InstanceInfo {
   }
 
   /**
-   * Sets the tags for this instance, fingerprint value is taken from this instance's
-   * {@code tags().fingerprint()}.
+   * Sets the tags for this instance, fingerprint value is taken from this instance's {@code
+   * tags().fingerprint()}.
    *
    * @return a zone operation if the set request was issued correctly, {@code null} if the instance
    *     was not found
@@ -416,17 +420,15 @@ public class Instance extends InstanceInfo {
   /**
    * Stops this instance.
    *
-   * @return a zone operation if the stop request was issued correctly, {@code null} if the
-   *     instance was not found
+   * @return a zone operation if the stop request was issued correctly, {@code null} if the instance
+   *     was not found
    * @throws ComputeException upon failure
    */
   public Operation stop(OperationOption... options) {
     return compute.stop(getInstanceId(), options);
   }
 
-  /**
-   * Returns the snapshot's {@code Compute} object used to issue requests.
-   */
+  /** Returns the snapshot's {@code Compute} object used to issue requests. */
   public Compute getCompute() {
     return compute;
   }
@@ -458,8 +460,8 @@ public class Instance extends InstanceInfo {
     this.compute = options.getService();
   }
 
-  static Instance fromPb(Compute compute,
-      com.google.api.services.compute.model.Instance instancePb) {
+  static Instance fromPb(
+      Compute compute, com.google.api.services.compute.model.Instance instancePb) {
     return new Instance(compute, new InstanceInfo.BuilderImpl(instancePb));
   }
 }

@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p2beta1;
 
-public interface AsyncAnnotateFileResponseOrBuilder extends
+public interface AsyncAnnotateFileResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p2beta1.AsyncAnnotateFileResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The output location and metadata from AsyncAnnotateFileRequest.
    * </pre>
@@ -16,6 +19,8 @@ public interface AsyncAnnotateFileResponseOrBuilder extends
    */
   boolean hasOutputConfig();
   /**
+   *
+   *
    * <pre>
    * The output location and metadata from AsyncAnnotateFileRequest.
    * </pre>
@@ -24,6 +29,8 @@ public interface AsyncAnnotateFileResponseOrBuilder extends
    */
   com.google.cloud.vision.v1p2beta1.OutputConfig getOutputConfig();
   /**
+   *
+   *
    * <pre>
    * The output location and metadata from AsyncAnnotateFileRequest.
    * </pre>

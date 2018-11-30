@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-public interface CreateTaskRequestOrBuilder extends
+public interface CreateTaskRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta2.CreateTaskRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue name. For example:
@@ -19,6 +22,8 @@ public interface CreateTaskRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue name. For example:
@@ -28,10 +33,11 @@ public interface CreateTaskRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task to add.
@@ -68,6 +74,8 @@ public interface CreateTaskRequestOrBuilder extends
    */
   boolean hasTask();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task to add.
@@ -104,6 +112,8 @@ public interface CreateTaskRequestOrBuilder extends
    */
   com.google.cloud.tasks.v2beta2.Task getTask();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task to add.
@@ -141,6 +151,8 @@ public interface CreateTaskRequestOrBuilder extends
   com.google.cloud.tasks.v2beta2.TaskOrBuilder getTaskOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
    * returned.
@@ -158,6 +170,8 @@ public interface CreateTaskRequestOrBuilder extends
    */
   int getResponseViewValue();
   /**
+   *
+   *
    * <pre>
    * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
    * returned.

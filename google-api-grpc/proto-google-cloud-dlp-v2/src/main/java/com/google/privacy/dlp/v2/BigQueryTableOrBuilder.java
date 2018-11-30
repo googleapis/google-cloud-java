@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface BigQueryTableOrBuilder extends
+public interface BigQueryTableOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.BigQueryTable)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Platform project ID of the project containing the table.
    * If omitted, project ID is inferred from the API call.
@@ -17,6 +20,8 @@ public interface BigQueryTableOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Platform project ID of the project containing the table.
    * If omitted, project ID is inferred from the API call.
@@ -24,10 +29,11 @@ public interface BigQueryTableOrBuilder extends
    *
    * <code>string project_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Dataset ID of the table.
    * </pre>
@@ -36,16 +42,19 @@ public interface BigQueryTableOrBuilder extends
    */
   java.lang.String getDatasetId();
   /**
+   *
+   *
    * <pre>
    * Dataset ID of the table.
    * </pre>
    *
    * <code>string dataset_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDatasetIdBytes();
+  com.google.protobuf.ByteString getDatasetIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Name of the table.
    * </pre>
@@ -54,12 +63,13 @@ public interface BigQueryTableOrBuilder extends
    */
   java.lang.String getTableId();
   /**
+   *
+   *
    * <pre>
    * Name of the table.
    * </pre>
    *
    * <code>string table_id = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getTableIdBytes();
+  com.google.protobuf.ByteString getTableIdBytes();
 }

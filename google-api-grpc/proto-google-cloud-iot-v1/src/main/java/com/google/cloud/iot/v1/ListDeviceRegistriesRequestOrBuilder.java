@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface ListDeviceRegistriesRequestOrBuilder extends
+public interface ListDeviceRegistriesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.ListDeviceRegistriesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The project and cloud region path. For example,
    * `projects/example-project/locations/us-central1`.
@@ -17,6 +20,8 @@ public interface ListDeviceRegistriesRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The project and cloud region path. For example,
    * `projects/example-project/locations/us-central1`.
@@ -24,10 +29,11 @@ public interface ListDeviceRegistriesRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of registries to return in the response. If this value
    * is zero, the service will select a default size. A call may return fewer
@@ -40,6 +46,8 @@ public interface ListDeviceRegistriesRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `ListDeviceRegistriesResponse`; indicates
    * that this is a continuation of a prior `ListDeviceRegistries` call and
@@ -50,6 +58,8 @@ public interface ListDeviceRegistriesRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `ListDeviceRegistriesResponse`; indicates
    * that this is a continuation of a prior `ListDeviceRegistries` call and
@@ -58,6 +68,5 @@ public interface ListDeviceRegistriesRequestOrBuilder extends
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

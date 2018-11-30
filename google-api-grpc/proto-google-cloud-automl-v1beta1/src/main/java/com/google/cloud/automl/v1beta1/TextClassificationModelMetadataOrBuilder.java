@@ -3,7 +3,7 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface TextClassificationModelMetadataOrBuilder extends
+public interface TextClassificationModelMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.TextClassificationModelMetadata)
-    com.google.protobuf.MessageOrBuilder {
-}
+    com.google.protobuf.MessageOrBuilder {}

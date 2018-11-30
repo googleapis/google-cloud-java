@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface GetServerConfigRequestOrBuilder extends
+public interface GetServerConfigRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.GetServerConfigRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
@@ -16,8 +19,11 @@ public interface GetServerConfigRequestOrBuilder extends
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getProjectId();
+  @java.lang.Deprecated
+  java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
@@ -26,10 +32,12 @@ public interface GetServerConfigRequestOrBuilder extends
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getProjectIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) to return operations for.
@@ -38,8 +46,11 @@ public interface GetServerConfigRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getZone();
+  @java.lang.Deprecated
+  java.lang.String getZone();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) to return operations for.
@@ -48,10 +59,12 @@ public interface GetServerConfigRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getZoneBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getZoneBytes();
 
   /**
+   *
+   *
    * <pre>
    * The name (project and location) of the server config to get
    * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
@@ -61,6 +74,8 @@ public interface GetServerConfigRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name (project and location) of the server config to get
    * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
@@ -68,6 +83,5 @@ public interface GetServerConfigRequestOrBuilder extends
    *
    * <code>string name = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

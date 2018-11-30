@@ -3,11 +3,14 @@
 
 package com.google.cloud.websecurityscanner.v1alpha;
 
-public interface FindingTypeStatsOrBuilder extends
+public interface FindingTypeStatsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1alpha.FindingTypeStats)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The finding type associated with the stats.
@@ -17,6 +20,8 @@ public interface FindingTypeStatsOrBuilder extends
    */
   int getFindingTypeValue();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The finding type associated with the stats.
@@ -27,6 +32,8 @@ public interface FindingTypeStatsOrBuilder extends
   com.google.cloud.websecurityscanner.v1alpha.Finding.FindingType getFindingType();
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The count of findings belonging to this finding type.

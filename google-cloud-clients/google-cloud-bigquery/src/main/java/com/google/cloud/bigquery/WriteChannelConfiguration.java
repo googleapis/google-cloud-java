@@ -20,20 +20,19 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.bigquery.model.JobConfigurationLoad;
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
-import com.google.cloud.bigquery.JobInfo.WriteDisposition;
 import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
+import com.google.cloud.bigquery.JobInfo.WriteDisposition;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Ints;
-
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
 /**
  * Google BigQuery Configuration for a load operation. A load configuration can be used to load data
- * into a table with a {@link com.google.cloud.WriteChannel}
- * ({@link BigQuery#writer(WriteChannelConfiguration)}).
+ * into a table with a {@link com.google.cloud.WriteChannel} ({@link
+ * BigQuery#writer(WriteChannelConfiguration)}).
  */
 public final class WriteChannelConfiguration implements LoadConfiguration, Serializable {
 
@@ -82,7 +81,8 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       this.ignoreUnknownValues = writeChannelConfiguration.ignoreUnknownValues;
       this.schemaUpdateOptions = writeChannelConfiguration.schemaUpdateOptions;
       this.autodetect = writeChannelConfiguration.autodetect;
-      this.destinationEncryptionConfiguration = writeChannelConfiguration.destinationEncryptionConfiguration;
+      this.destinationEncryptionConfiguration =
+          writeChannelConfiguration.destinationEncryptionConfiguration;
       this.timePartitioning = writeChannelConfiguration.timePartitioning;
       this.clustering = writeChannelConfiguration.clustering;
     }
@@ -109,10 +109,11 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
           || loadConfigurationPb.getFieldDelimiter() != null
           || loadConfigurationPb.getQuote() != null
           || loadConfigurationPb.getSkipLeadingRows() != null) {
-        CsvOptions.Builder builder = CsvOptions.newBuilder()
-            .setEncoding(loadConfigurationPb.getEncoding())
-            .setFieldDelimiter(loadConfigurationPb.getFieldDelimiter())
-            .setQuote(loadConfigurationPb.getQuote());
+        CsvOptions.Builder builder =
+            CsvOptions.newBuilder()
+                .setEncoding(loadConfigurationPb.getEncoding())
+                .setFieldDelimiter(loadConfigurationPb.getFieldDelimiter())
+                .setQuote(loadConfigurationPb.getQuote());
         if (loadConfigurationPb.getAllowJaggedRows() != null) {
           builder.setAllowJaggedRows(loadConfigurationPb.getAllowJaggedRows());
         }
@@ -130,12 +131,14 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       }
       this.ignoreUnknownValues = loadConfigurationPb.getIgnoreUnknownValues();
       if (loadConfigurationPb.getProjectionFields() != null) {
-        this.formatOptions = DatastoreBackupOptions.newBuilder()
-            .setProjectionFields(loadConfigurationPb.getProjectionFields())
-            .build();
+        this.formatOptions =
+            DatastoreBackupOptions.newBuilder()
+                .setProjectionFields(loadConfigurationPb.getProjectionFields())
+                .build();
       }
       if (loadConfigurationPb.getSchemaUpdateOptions() != null) {
-        ImmutableList.Builder<JobInfo.SchemaUpdateOption> schemaUpdateOptionsBuilder = new ImmutableList.Builder<>();
+        ImmutableList.Builder<JobInfo.SchemaUpdateOption> schemaUpdateOptionsBuilder =
+            new ImmutableList.Builder<>();
         for (String rawSchemaUpdateOption : loadConfigurationPb.getSchemaUpdateOptions()) {
           schemaUpdateOptionsBuilder.add(JobInfo.SchemaUpdateOption.valueOf(rawSchemaUpdateOption));
         }
@@ -143,8 +146,10 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       }
       this.autodetect = loadConfigurationPb.getAutodetect();
       if (loadConfigurationPb.getDestinationEncryptionConfiguration() != null) {
-        this.destinationEncryptionConfiguration = new EncryptionConfiguration.Builder(
-            configurationPb.getLoad().getDestinationEncryptionConfiguration()).build();
+        this.destinationEncryptionConfiguration =
+            new EncryptionConfiguration.Builder(
+                    configurationPb.getLoad().getDestinationEncryptionConfiguration())
+                .build();
       }
       if (loadConfigurationPb.getTimePartitioning() != null) {
         this.timePartitioning = TimePartitioning.fromPb(loadConfigurationPb.getTimePartitioning());
@@ -153,7 +158,6 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
         this.clustering = Clustering.fromPb(loadConfigurationPb.getClustering());
       }
     }
-
 
     @Override
     public Builder setDestinationTable(TableId destinationTable) {
@@ -168,13 +172,11 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       return this;
     }
 
-
     @Override
     public Builder setCreateDisposition(CreateDisposition createDisposition) {
       this.createDisposition = createDisposition;
       return this;
     }
-
 
     @Override
     public Builder setWriteDisposition(WriteDisposition writeDisposition) {
@@ -182,13 +184,11 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       return this;
     }
 
-
     @Override
     public Builder setFormatOptions(FormatOptions formatOptions) {
       this.formatOptions = formatOptions;
       return this;
     }
-
 
     @Override
     public Builder setNullMarker(String nullMarker) {
@@ -196,20 +196,17 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       return this;
     }
 
-
     @Override
     public Builder setMaxBadRecords(Integer maxBadRecords) {
       this.maxBadRecords = maxBadRecords;
       return this;
     }
 
-
     @Override
     public Builder setSchema(Schema schema) {
       this.schema = schema;
       return this;
     }
-
 
     @Override
     public Builder setIgnoreUnknownValues(Boolean ignoreUnknownValues) {
@@ -220,7 +217,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     @Override
     public Builder setSchemaUpdateOptions(List<SchemaUpdateOption> schemaUpdateOptions) {
       this.schemaUpdateOptions =
-              schemaUpdateOptions != null ? ImmutableList.copyOf(schemaUpdateOptions) : null;
+          schemaUpdateOptions != null ? ImmutableList.copyOf(schemaUpdateOptions) : null;
       return this;
     }
 
@@ -264,7 +261,6 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     this.clustering = builder.clustering;
   }
 
-
   @Override
   public TableId getDestinationTable() {
     return destinationTable;
@@ -275,42 +271,35 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     return destinationEncryptionConfiguration;
   }
 
-
   @Override
   public CreateDisposition getCreateDisposition() {
     return this.createDisposition;
   }
-
 
   @Override
   public WriteDisposition getWriteDisposition() {
     return writeDisposition;
   }
 
-
   @Override
   public String getNullMarker() {
     return nullMarker;
   }
-
 
   @Override
   public CsvOptions getCsvOptions() {
     return formatOptions instanceof CsvOptions ? (CsvOptions) formatOptions : null;
   }
 
-
   @Override
   public Integer getMaxBadRecords() {
     return maxBadRecords;
   }
 
-
   @Override
   public Schema getSchema() {
     return schema;
   }
-
 
   @Override
   public String getFormat() {
@@ -322,11 +311,11 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     return ignoreUnknownValues;
   }
 
-
   @Override
   public DatastoreBackupOptions getDatastoreBackupOptions() {
-    return formatOptions instanceof DatastoreBackupOptions ?
-        (DatastoreBackupOptions) formatOptions : null;
+    return formatOptions instanceof DatastoreBackupOptions
+        ? (DatastoreBackupOptions) formatOptions
+        : null;
   }
 
   @Override
@@ -340,10 +329,14 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   }
 
   @Override
-  public TimePartitioning getTimePartitioning() { return timePartitioning; }
+  public TimePartitioning getTimePartitioning() {
+    return timePartitioning;
+  }
 
   @Override
-  public Clustering getClustering() { return clustering; }
+  public Clustering getClustering() {
+    return clustering;
+  }
 
   @Override
   public Builder toBuilder() {
@@ -376,13 +369,24 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   public boolean equals(Object obj) {
     return obj == this
         || obj instanceof WriteChannelConfiguration
-        && Objects.equals(toPb(), ((WriteChannelConfiguration) obj).toPb());
+            && Objects.equals(toPb(), ((WriteChannelConfiguration) obj).toPb());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(destinationTable, createDisposition, writeDisposition, formatOptions,
-        nullMarker, maxBadRecords, schema, ignoreUnknownValues, schemaUpdateOptions, autodetect, timePartitioning, clustering);
+    return Objects.hash(
+        destinationTable,
+        createDisposition,
+        writeDisposition,
+        formatOptions,
+        nullMarker,
+        maxBadRecords,
+        schema,
+        ignoreUnknownValues,
+        schemaUpdateOptions,
+        autodetect,
+        timePartitioning,
+        clustering);
   }
 
   WriteChannelConfiguration setProjectId(String projectId) {
@@ -403,7 +407,8 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     }
     if (getCsvOptions() != null) {
       CsvOptions csvOptions = getCsvOptions();
-      loadConfigurationPb.setFieldDelimiter(csvOptions.getFieldDelimiter())
+      loadConfigurationPb
+          .setFieldDelimiter(csvOptions.getFieldDelimiter())
           .setAllowJaggedRows(csvOptions.allowJaggedRows())
           .setAllowQuotedNewlines(csvOptions.allowQuotedNewLines())
           .setEncoding(csvOptions.getEncoding())
@@ -452,32 +457,22 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     return new Builder(configurationPb).build();
   }
 
-
-  /**
-   * Creates a builder for a BigQuery Load Configuration given the destination table.
-   */
+  /** Creates a builder for a BigQuery Load Configuration given the destination table. */
   public static Builder newBuilder(TableId destinationTable) {
     return new Builder().setDestinationTable(destinationTable);
   }
 
-
-  /**
-   * Creates a builder for a BigQuery Load Configuration given the destination table and format.
-   */
+  /** Creates a builder for a BigQuery Load Configuration given the destination table and format. */
   public static Builder newBuilder(TableId destinationTable, FormatOptions format) {
     return newBuilder(destinationTable).setFormatOptions(format);
   }
 
-  /**
-   * Returns a BigQuery Load Configuration for the given destination table.
-   */
+  /** Returns a BigQuery Load Configuration for the given destination table. */
   public static WriteChannelConfiguration of(TableId destinationTable) {
     return newBuilder(destinationTable).build();
   }
 
-  /**
-   * Returns a BigQuery Load Configuration for the given destination table and format.
-   */
+  /** Returns a BigQuery Load Configuration for the given destination table and format. */
   public static WriteChannelConfiguration of(TableId destinationTable, FormatOptions format) {
     return newBuilder(destinationTable).setFormatOptions(format).build();
   }

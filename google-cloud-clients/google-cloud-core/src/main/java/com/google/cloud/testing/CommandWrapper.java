@@ -22,9 +22,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Utility class that executes system commands on both Windows and Unix.
- */
+/** Utility class that executes system commands on both Windows and Unix. */
 class CommandWrapper {
 
   private final List<String> prefix;

@@ -29,19 +29,15 @@ import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.TableId;
-
 import java.util.Arrays;
 import java.util.concurrent.TimeoutException;
-
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.Instant;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
 
-/**
- * This class contains snippets for cloud.google.com documentation.
- */
+/** This class contains snippets for cloud.google.com documentation. */
 public class CloudSnippets {
 
   private final BigQuery bigquery;
@@ -50,9 +46,7 @@ public class CloudSnippets {
     this.bigquery = bigquery;
   }
 
-  /**
-   * Example of running a Legacy SQL query.
-   */
+  /** Example of running a Legacy SQL query. */
   public void runLegacySqlQuery() throws InterruptedException {
     // [START bigquery_query_legacy]
     // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
@@ -71,9 +65,7 @@ public class CloudSnippets {
     // [END bigquery_query_legacy]
   }
 
-  /**
-   * Example of running a query and saving the results to a table.
-   */
+  /** Example of running a query and saving the results to a table. */
   public void runQueryPermanentTable(String destinationDataset, String destinationTable)
       throws InterruptedException {
     // [START bigquery_query_destination_table]
@@ -98,9 +90,7 @@ public class CloudSnippets {
     // [END bigquery_query_destination_table]
   }
 
-  /**
-   * Example of running a query and saving the results to a table.
-   */
+  /** Example of running a query and saving the results to a table. */
   public void runQueryLargeResults(String destinationDataset, String destinationTable)
       throws InterruptedException {
     // [START bigquery_query_legacy_large_results]
@@ -129,9 +119,7 @@ public class CloudSnippets {
     // [END bigquery_query_legacy_large_results]
   }
 
-  /**
-   * Example of running a query with the cache disabled.
-   */
+  /** Example of running a query with the cache disabled. */
   public void runUncachedQuery() throws TimeoutException, InterruptedException {
     // [START bigquery_query_no_cache]
     // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
@@ -152,9 +140,7 @@ public class CloudSnippets {
     // [END bigquery_query_no_cache]
   }
 
-  /**
-   * Example of running a batch query.
-   */
+  /** Example of running a batch query. */
   public void runBatchQuery() throws TimeoutException, InterruptedException {
     // [START bigquery_query_batch]
     // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
@@ -175,8 +161,8 @@ public class CloudSnippets {
 
     // Check on the progress by getting the job's updated state. Once the state
     // is `DONE`, the results are ready.
-    Job queryJob = bigquery.getJob(
-        JobId.newBuilder().setJob(jobIdString).setLocation("US").build());
+    Job queryJob =
+        bigquery.getJob(JobId.newBuilder().setJob(jobIdString).setLocation("US").build());
     System.out.printf(
         "Job %s in location %s currently in state: %s%n",
         queryJob.getJobId().getJob(),
@@ -185,9 +171,7 @@ public class CloudSnippets {
     // [END bigquery_query_batch]
   }
 
-  /**
-   * Example of running a query with named query parameters.
-   */
+  /** Example of running a query with named query parameters. */
   public void runQueryWithNamedParameters() throws InterruptedException {
     // [START bigquery_query_params_named]
     // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
@@ -216,9 +200,7 @@ public class CloudSnippets {
     // [END bigquery_query_params_named]
   }
 
-  /**
-   * Example of running a query with array query parameters.
-   */
+  /** Example of running a query with array query parameters. */
   public void runQueryWithArrayParameters() throws InterruptedException {
     // [START bigquery_query_params_arrays]
     // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
@@ -249,9 +231,7 @@ public class CloudSnippets {
     // [END bigquery_query_params_arrays]
   }
 
-  /**
-   * Example of running a query with timestamp query parameters.
-   */
+  /** Example of running a query with timestamp query parameters. */
   public void runQueryWithTimestampParameters() throws InterruptedException {
     // [START bigquery_query_params_timestamps]
     // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
@@ -282,17 +262,15 @@ public class CloudSnippets {
     // [END bigquery_query_params_timestamps]
   }
 
-  /**
-   * Example of loading a parquet file from GCS to a table.
-   */
+  /** Example of loading a parquet file from GCS to a table. */
   public void loadTableGcsParquet(String datasetName) throws InterruptedException {
     // [START bigquery_load_table_gcs_parquet]
     String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.parquet";
     TableId tableId = TableId.of(datasetName, "us_states");
     LoadJobConfiguration configuration =
-            LoadJobConfiguration.builder(tableId, sourceUri)
-                    .setFormatOptions(FormatOptions.parquet())
-                    .build();
+        LoadJobConfiguration.builder(tableId, sourceUri)
+            .setFormatOptions(FormatOptions.parquet())
+            .build();
     // Load the table
     Job loadJob = bigquery.create(JobInfo.of(configuration));
     loadJob = loadJob.waitFor();
@@ -304,21 +282,21 @@ public class CloudSnippets {
   }
 
   private void generateTableWithDdl(String datasetId, String tableId) throws InterruptedException {
-    String sql = String.format(
-        "CREATE TABLE %s.%s " +
-        "AS " +
-        "SELECT " +
-        "2000 + CAST(18 * RAND() as INT64) AS year, " +
-        "IF(RAND() > 0.5,\"foo\",\"bar\") AS token " +
-        "FROM " +
-        "UNNEST(GENERATE_ARRAY(0,5,1)) AS r", datasetId, tableId);
+    String sql =
+        String.format(
+            "CREATE TABLE %s.%s "
+                + "AS "
+                + "SELECT "
+                + "2000 + CAST(18 * RAND() as INT64) AS year, "
+                + "IF(RAND() > 0.5,\"foo\",\"bar\") AS token "
+                + "FROM "
+                + "UNNEST(GENERATE_ARRAY(0,5,1)) AS r",
+            datasetId, tableId);
     Job job = bigquery.create(JobInfo.of(QueryJobConfiguration.newBuilder(sql).build()));
     job.waitFor();
   }
 
-  /**
-   * Example of copying multiple tables to a destination.
-   */
+  /** Example of copying multiple tables to a destination. */
   public void copyTables(String datasetId, String destinationTableId) throws InterruptedException {
     generateTableWithDdl(datasetId, "table1");
     generateTableWithDdl(datasetId, "table2");
@@ -327,11 +305,9 @@ public class CloudSnippets {
     TableId destinationTable = TableId.of(datasetId, destinationTableId);
     CopyJobConfiguration configuration =
         CopyJobConfiguration.newBuilder(
-            destinationTable,
-            Arrays.asList(
-                TableId.of(datasetId, "table1"),
-                TableId.of(datasetId, "table2")))
-        .build();
+                destinationTable,
+                Arrays.asList(TableId.of(datasetId, "table1"), TableId.of(datasetId, "table2")))
+            .build();
 
     // Copy the tables.
     Job job = bigquery.create(JobInfo.of(configuration));
@@ -344,9 +320,7 @@ public class CloudSnippets {
     // [END bigquery_copy_table_multiple_source]
   }
 
-  /**
-   * Example of undeleting a table.
-   */
+  /** Example of undeleting a table. */
   public void undeleteTable(String datasetId) throws InterruptedException {
     generateTableWithDdl(datasetId, "oops_undelete_me");
 
@@ -369,15 +343,14 @@ public class CloudSnippets {
     // Construct and run a copy job.
     CopyJobConfiguration configuration =
         CopyJobConfiguration.newBuilder(
-            TableId.of(datasetId, recoverTableId),
-            TableId.of(datasetId, snapshotTableId))
-        .build();
+                TableId.of(datasetId, recoverTableId), TableId.of(datasetId, snapshotTableId))
+            .build();
     Job job = bigquery.create(JobInfo.of(configuration));
     job = job.waitFor();
 
     // Check the table
-    StandardTableDefinition table = bigquery.getTable(
-            TableId.of(datasetId, recoverTableId)).getDefinition();
+    StandardTableDefinition table =
+        bigquery.getTable(TableId.of(datasetId, recoverTableId)).getDefinition();
     System.out.println("State: " + job.getStatus().getState());
     System.out.printf("Recovered %d rows.\n", table.getNumRows());
     // [END bigquery_undelete_table]

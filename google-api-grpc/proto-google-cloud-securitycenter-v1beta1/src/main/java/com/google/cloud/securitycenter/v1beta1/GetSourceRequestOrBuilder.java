@@ -3,11 +3,14 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-public interface GetSourceRequestOrBuilder extends
+public interface GetSourceRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.GetSourceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Relative resource name of the source. Its format is
    * "organizations/[organization_id]/source/[source_id]".
@@ -17,6 +20,8 @@ public interface GetSourceRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Relative resource name of the source. Its format is
    * "organizations/[organization_id]/source/[source_id]".
@@ -24,6 +29,5 @@ public interface GetSourceRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

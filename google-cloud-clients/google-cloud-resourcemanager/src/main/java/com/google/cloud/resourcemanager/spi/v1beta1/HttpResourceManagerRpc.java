@@ -57,8 +57,7 @@ import org.threeten.bp.Duration;
 
 public class HttpResourceManagerRpc implements ResourceManagerRpc {
 
-  private static final JsonFactory JSON_FACTORY =
-      new JacksonFactory();
+  private static final JsonFactory JSON_FACTORY = new JacksonFactory();
 
   // See doc of create() for more details:
   // https://developers.google.com/resources/api-libraries/documentation/cloudresourcemanager/v1/java/latest/com/google/api/services/cloudresourcemanager/CloudResourceManager.Projects.html#create(com.google.api.services.cloudresourcemanager.model.Project)
@@ -168,9 +167,9 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
             CREATE_RETRY_SETTINGS,
             OPERATION_HANDLER,
             clock);
-      if (finishedOp.getError() != null) {
-        throw translate(finishedOp.getError());
-      }
+    if (finishedOp.getError() != null) {
+      throw translate(finishedOp.getError());
+    }
 
     // NOTE(pongad): Operation.getResponse() returns a Map<String, Object>.
     // 1. `(Project) finishedOp.getResponse()` doesn't work,
@@ -198,7 +197,8 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
   @Override
   public Project get(String projectId, Map<Option, ?> options) {
     try {
-      return resourceManager.projects()
+      return resourceManager
+          .projects()
           .get(projectId)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -216,13 +216,15 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
   @Override
   public Tuple<String, Iterable<Project>> list(Map<Option, ?> options) {
     try {
-      ListProjectsResponse response = resourceManager.projects()
-          .list()
-          .setFields(Option.FIELDS.getString(options))
-          .setFilter(Option.FILTER.getString(options))
-          .setPageSize(Option.PAGE_SIZE.getInt(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .execute();
+      ListProjectsResponse response =
+          resourceManager
+              .projects()
+              .list()
+              .setFields(Option.FIELDS.getString(options))
+              .setFilter(Option.FILTER.getString(options))
+              .setPageSize(Option.PAGE_SIZE.getInt(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .execute();
       return Tuple.<String, Iterable<Project>>of(
           response.getNextPageToken(), response.getProjects());
     } catch (IOException ex) {
@@ -251,7 +253,8 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
   @Override
   public Policy getPolicy(String projectId) throws ResourceManagerException {
     try {
-      return resourceManager.projects()
+      return resourceManager
+          .projects()
           .getIamPolicy(projectId, new GetIamPolicyRequest())
           .execute();
     } catch (IOException ex) {
@@ -268,8 +271,10 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
   @Override
   public Policy replacePolicy(String projectId, Policy newPolicy) throws ResourceManagerException {
     try {
-      return resourceManager.projects()
-          .setIamPolicy(projectId, new SetIamPolicyRequest().setPolicy(newPolicy)).execute();
+      return resourceManager
+          .projects()
+          .setIamPolicy(projectId, new SetIamPolicyRequest().setPolicy(newPolicy))
+          .execute();
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -279,10 +284,12 @@ public class HttpResourceManagerRpc implements ResourceManagerRpc {
   public List<Boolean> testPermissions(String projectId, List<String> permissions)
       throws ResourceManagerException {
     try {
-      TestIamPermissionsResponse response = resourceManager.projects()
-          .testIamPermissions(
-              projectId, new TestIamPermissionsRequest().setPermissions(permissions))
-          .execute();
+      TestIamPermissionsResponse response =
+          resourceManager
+              .projects()
+              .testIamPermissions(
+                  projectId, new TestIamPermissionsRequest().setPermissions(permissions))
+              .execute();
       Set<String> permissionsOwned =
           ImmutableSet.copyOf(firstNonNull(response.getPermissions(), ImmutableList.<String>of()));
       ImmutableList.Builder<Boolean> answer = ImmutableList.builder();

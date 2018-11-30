@@ -4,21 +4,24 @@
 package com.google.cloud.iot.v1;
 
 /**
+ *
+ *
  * <pre>
  * Request for `ListDevices`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.iot.v1.ListDevicesRequest}
  */
-public  final class ListDevicesRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListDevicesRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.ListDevicesRequest)
     ListDevicesRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListDevicesRequest.newBuilder() to construct.
   private ListDevicesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListDevicesRequest() {
     parent_ = "";
     deviceNumIds_ = java.util.Collections.emptyList();
@@ -28,10 +31,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListDevicesRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -51,93 +54,103 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            parent_ = s;
-            break;
-          }
-          case 16: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              deviceNumIds_ = new java.util.ArrayList<java.lang.Long>();
-              mutable_bitField0_ |= 0x00000002;
+              parent_ = s;
+              break;
             }
-            deviceNumIds_.add(input.readUInt64());
-            break;
-          }
-          case 18: {
-            int length = input.readRawVarint32();
-            int limit = input.pushLimit(length);
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002) && input.getBytesUntilLimit() > 0) {
-              deviceNumIds_ = new java.util.ArrayList<java.lang.Long>();
-              mutable_bitField0_ |= 0x00000002;
-            }
-            while (input.getBytesUntilLimit() > 0) {
+          case 16:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                deviceNumIds_ = new java.util.ArrayList<java.lang.Long>();
+                mutable_bitField0_ |= 0x00000002;
+              }
               deviceNumIds_.add(input.readUInt64());
+              break;
             }
-            input.popLimit(limit);
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              deviceIds_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000004;
+          case 18:
+            {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)
+                  && input.getBytesUntilLimit() > 0) {
+                deviceNumIds_ = new java.util.ArrayList<java.lang.Long>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                deviceNumIds_.add(input.readUInt64());
+              }
+              input.popLimit(limit);
+              break;
             }
-            deviceIds_.add(s);
-            break;
-          }
-          case 34: {
-            com.google.protobuf.FieldMask.Builder subBuilder = null;
-            if (fieldMask_ != null) {
-              subBuilder = fieldMask_.toBuilder();
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                deviceIds_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              deviceIds_.add(s);
+              break;
             }
-            fieldMask_ = input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(fieldMask_);
-              fieldMask_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (fieldMask_ != null) {
+                subBuilder = fieldMask_.toBuilder();
+              }
+              fieldMask_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(fieldMask_);
+                fieldMask_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 50: {
-            com.google.cloud.iot.v1.GatewayListOptions.Builder subBuilder = null;
-            if (gatewayListOptions_ != null) {
-              subBuilder = gatewayListOptions_.toBuilder();
+              break;
             }
-            gatewayListOptions_ = input.readMessage(com.google.cloud.iot.v1.GatewayListOptions.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(gatewayListOptions_);
-              gatewayListOptions_ = subBuilder.buildPartial();
+          case 50:
+            {
+              com.google.cloud.iot.v1.GatewayListOptions.Builder subBuilder = null;
+              if (gatewayListOptions_ != null) {
+                subBuilder = gatewayListOptions_.toBuilder();
+              }
+              gatewayListOptions_ =
+                  input.readMessage(
+                      com.google.cloud.iot.v1.GatewayListOptions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(gatewayListOptions_);
+                gatewayListOptions_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
-
-            break;
-          }
-          case 800: {
-
-            pageSize_ = input.readInt32();
-            break;
-          }
-          case 810: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            pageToken_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 800:
+            {
+              pageSize_ = input.readInt32();
+              break;
             }
-            break;
-          }
+          case 810:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pageToken_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         deviceNumIds_ = java.util.Collections.unmodifiableList(deviceNumIds_);
@@ -149,23 +162,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_ListDevicesRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.iot.v1.DeviceManagerProto
+        .internal_static_google_cloud_iot_v1_ListDevicesRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_ListDevicesRequest_fieldAccessorTable
+    return com.google.cloud.iot.v1.DeviceManagerProto
+        .internal_static_google_cloud_iot_v1_ListDevicesRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.iot.v1.ListDevicesRequest.class, com.google.cloud.iot.v1.ListDevicesRequest.Builder.class);
+            com.google.cloud.iot.v1.ListDevicesRequest.class,
+            com.google.cloud.iot.v1.ListDevicesRequest.Builder.class);
   }
 
   private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
+   *
+   *
    * <pre>
    * The device registry path. Required. For example,
    * `projects/my-project/locations/us-central1/registries/my-registry`.
@@ -178,14 +196,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       parent_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The device registry path. Required. For example,
    * `projects/my-project/locations/us-central1/registries/my-registry`.
@@ -193,13 +212,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string parent = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getParentBytes() {
+  public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
       return b;
     } else {
@@ -210,6 +227,8 @@ private static final long serialVersionUID = 0L;
   public static final int DEVICE_NUM_IDS_FIELD_NUMBER = 2;
   private java.util.List<java.lang.Long> deviceNumIds_;
   /**
+   *
+   *
    * <pre>
    * A list of device numeric IDs. If empty, this field is ignored. Maximum
    * IDs: 10,000.
@@ -217,11 +236,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated uint64 device_num_ids = 2;</code>
    */
-  public java.util.List<java.lang.Long>
-      getDeviceNumIdsList() {
+  public java.util.List<java.lang.Long> getDeviceNumIdsList() {
     return deviceNumIds_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of device numeric IDs. If empty, this field is ignored. Maximum
    * IDs: 10,000.
@@ -233,6 +253,8 @@ private static final long serialVersionUID = 0L;
     return deviceNumIds_.size();
   }
   /**
+   *
+   *
    * <pre>
    * A list of device numeric IDs. If empty, this field is ignored. Maximum
    * IDs: 10,000.
@@ -243,11 +265,14 @@ private static final long serialVersionUID = 0L;
   public long getDeviceNumIds(int index) {
     return deviceNumIds_.get(index);
   }
+
   private int deviceNumIdsMemoizedSerializedSize = -1;
 
   public static final int DEVICE_IDS_FIELD_NUMBER = 3;
   private com.google.protobuf.LazyStringList deviceIds_;
   /**
+   *
+   *
    * <pre>
    * A list of device string IDs. For example, `['device0', 'device12']`.
    * If empty, this field is ignored. Maximum IDs: 10,000
@@ -255,11 +280,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string device_ids = 3;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getDeviceIdsList() {
+  public com.google.protobuf.ProtocolStringList getDeviceIdsList() {
     return deviceIds_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of device string IDs. For example, `['device0', 'device12']`.
    * If empty, this field is ignored. Maximum IDs: 10,000
@@ -271,6 +297,8 @@ private static final long serialVersionUID = 0L;
     return deviceIds_.size();
   }
   /**
+   *
+   *
    * <pre>
    * A list of device string IDs. For example, `['device0', 'device12']`.
    * If empty, this field is ignored. Maximum IDs: 10,000
@@ -282,6 +310,8 @@ private static final long serialVersionUID = 0L;
     return deviceIds_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * A list of device string IDs. For example, `['device0', 'device12']`.
    * If empty, this field is ignored. Maximum IDs: 10,000
@@ -289,14 +319,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string device_ids = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getDeviceIdsBytes(int index) {
+  public com.google.protobuf.ByteString getDeviceIdsBytes(int index) {
     return deviceIds_.getByteString(index);
   }
 
   public static final int FIELD_MASK_FIELD_NUMBER = 4;
   private com.google.protobuf.FieldMask fieldMask_;
   /**
+   *
+   *
    * <pre>
    * The fields of the `Device` resource to be returned in the response. The
    * fields `id` and `num_id` are always returned, along with any
@@ -309,6 +340,8 @@ private static final long serialVersionUID = 0L;
     return fieldMask_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The fields of the `Device` resource to be returned in the response. The
    * fields `id` and `num_id` are always returned, along with any
@@ -321,6 +354,8 @@ private static final long serialVersionUID = 0L;
     return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
   }
   /**
+   *
+   *
    * <pre>
    * The fields of the `Device` resource to be returned in the response. The
    * fields `id` and `num_id` are always returned, along with any
@@ -336,6 +371,8 @@ private static final long serialVersionUID = 0L;
   public static final int GATEWAY_LIST_OPTIONS_FIELD_NUMBER = 6;
   private com.google.cloud.iot.v1.GatewayListOptions gatewayListOptions_;
   /**
+   *
+   *
    * <pre>
    * Options related to gateways.
    * </pre>
@@ -346,6 +383,8 @@ private static final long serialVersionUID = 0L;
     return gatewayListOptions_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Options related to gateways.
    * </pre>
@@ -353,9 +392,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
    */
   public com.google.cloud.iot.v1.GatewayListOptions getGatewayListOptions() {
-    return gatewayListOptions_ == null ? com.google.cloud.iot.v1.GatewayListOptions.getDefaultInstance() : gatewayListOptions_;
+    return gatewayListOptions_ == null
+        ? com.google.cloud.iot.v1.GatewayListOptions.getDefaultInstance()
+        : gatewayListOptions_;
   }
   /**
+   *
+   *
    * <pre>
    * Options related to gateways.
    * </pre>
@@ -369,6 +412,8 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_SIZE_FIELD_NUMBER = 100;
   private int pageSize_;
   /**
+   *
+   *
    * <pre>
    * The maximum number of devices to return in the response. If this value
    * is zero, the service will select a default size. A call may return fewer
@@ -385,6 +430,8 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_TOKEN_FIELD_NUMBER = 101;
   private volatile java.lang.Object pageToken_;
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `ListDevicesResponse`; indicates
    * that this is a continuation of a prior `ListDevices` call and
@@ -398,14 +445,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       pageToken_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `ListDevicesResponse`; indicates
    * that this is a continuation of a prior `ListDevices` call and
@@ -414,13 +462,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string page_token = 101;</code>
    */
-  public com.google.protobuf.ByteString
-      getPageTokenBytes() {
+  public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       pageToken_ = b;
       return b;
     } else {
@@ -429,6 +475,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -440,8 +487,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
@@ -483,14 +529,13 @@ private static final long serialVersionUID = 0L;
     {
       int dataSize = 0;
       for (int i = 0; i < deviceNumIds_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeUInt64SizeNoTag(deviceNumIds_.get(i));
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeUInt64SizeNoTag(deviceNumIds_.get(i));
       }
       size += dataSize;
       if (!getDeviceNumIdsList().isEmpty()) {
         size += 1;
-        size += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(dataSize);
+        size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
       }
       deviceNumIdsMemoizedSerializedSize = dataSize;
     }
@@ -503,16 +548,13 @@ private static final long serialVersionUID = 0L;
       size += 1 * getDeviceIdsList().size();
     }
     if (fieldMask_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getFieldMask());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getFieldMask());
     }
     if (gatewayListOptions_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getGatewayListOptions());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getGatewayListOptions());
     }
     if (pageSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(100, pageSize_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(100, pageSize_);
     }
     if (!getPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(101, pageToken_);
@@ -525,34 +567,28 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.iot.v1.ListDevicesRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.iot.v1.ListDevicesRequest other = (com.google.cloud.iot.v1.ListDevicesRequest) obj;
+    com.google.cloud.iot.v1.ListDevicesRequest other =
+        (com.google.cloud.iot.v1.ListDevicesRequest) obj;
 
     boolean result = true;
-    result = result && getParent()
-        .equals(other.getParent());
-    result = result && getDeviceNumIdsList()
-        .equals(other.getDeviceNumIdsList());
-    result = result && getDeviceIdsList()
-        .equals(other.getDeviceIdsList());
+    result = result && getParent().equals(other.getParent());
+    result = result && getDeviceNumIdsList().equals(other.getDeviceNumIdsList());
+    result = result && getDeviceIdsList().equals(other.getDeviceIdsList());
     result = result && (hasFieldMask() == other.hasFieldMask());
     if (hasFieldMask()) {
-      result = result && getFieldMask()
-          .equals(other.getFieldMask());
+      result = result && getFieldMask().equals(other.getFieldMask());
     }
     result = result && (hasGatewayListOptions() == other.hasGatewayListOptions());
     if (hasGatewayListOptions()) {
-      result = result && getGatewayListOptions()
-          .equals(other.getGatewayListOptions());
+      result = result && getGatewayListOptions().equals(other.getGatewayListOptions());
     }
-    result = result && (getPageSize()
-        == other.getPageSize());
-    result = result && getPageToken()
-        .equals(other.getPageToken());
+    result = result && (getPageSize() == other.getPageSize());
+    result = result && getPageToken().equals(other.getPageToken());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -591,118 +627,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.iot.v1.ListDevicesRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.iot.v1.ListDevicesRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.ListDevicesRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.ListDevicesRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.ListDevicesRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.ListDevicesRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.ListDevicesRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.ListDevicesRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.iot.v1.ListDevicesRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.iot.v1.ListDevicesRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.iot.v1.ListDevicesRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.iot.v1.ListDevicesRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.iot.v1.ListDevicesRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.iot.v1.ListDevicesRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.iot.v1.ListDevicesRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Request for `ListDevices`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.iot.v1.ListDevicesRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.iot.v1.ListDevicesRequest)
       com.google.cloud.iot.v1.ListDevicesRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_ListDevicesRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.iot.v1.DeviceManagerProto
+          .internal_static_google_cloud_iot_v1_ListDevicesRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_ListDevicesRequest_fieldAccessorTable
+      return com.google.cloud.iot.v1.DeviceManagerProto
+          .internal_static_google_cloud_iot_v1_ListDevicesRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.iot.v1.ListDevicesRequest.class, com.google.cloud.iot.v1.ListDevicesRequest.Builder.class);
+              com.google.cloud.iot.v1.ListDevicesRequest.class,
+              com.google.cloud.iot.v1.ListDevicesRequest.Builder.class);
     }
 
     // Construct using com.google.cloud.iot.v1.ListDevicesRequest.newBuilder()
@@ -710,16 +755,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -749,9 +793,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_ListDevicesRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.iot.v1.DeviceManagerProto
+          .internal_static_google_cloud_iot_v1_ListDevicesRequest_descriptor;
     }
 
     @java.lang.Override
@@ -770,7 +814,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.iot.v1.ListDevicesRequest buildPartial() {
-      com.google.cloud.iot.v1.ListDevicesRequest result = new com.google.cloud.iot.v1.ListDevicesRequest(this);
+      com.google.cloud.iot.v1.ListDevicesRequest result =
+          new com.google.cloud.iot.v1.ListDevicesRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.parent_ = parent_;
@@ -805,38 +850,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.iot.v1.ListDevicesRequest) {
-        return mergeFrom((com.google.cloud.iot.v1.ListDevicesRequest)other);
+        return mergeFrom((com.google.cloud.iot.v1.ListDevicesRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -910,10 +956,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
+     *
+     *
      * <pre>
      * The device registry path. Required. For example,
      * `projects/my-project/locations/us-central1/registries/my-registry`.
@@ -924,8 +973,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         parent_ = s;
         return s;
@@ -934,6 +982,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The device registry path. Required. For example,
      * `projects/my-project/locations/us-central1/registries/my-registry`.
@@ -941,13 +991,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
+    public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         parent_ = b;
         return b;
       } else {
@@ -955,6 +1003,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The device registry path. Required. For example,
      * `projects/my-project/locations/us-central1/registries/my-registry`.
@@ -962,17 +1012,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParent(
-        java.lang.String value) {
+    public Builder setParent(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       parent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The device registry path. Required. For example,
      * `projects/my-project/locations/us-central1/registries/my-registry`.
@@ -981,12 +1032,14 @@ private static final long serialVersionUID = 0L;
      * <code>string parent = 1;</code>
      */
     public Builder clearParent() {
-      
+
       parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The device registry path. Required. For example,
      * `projects/my-project/locations/us-central1/registries/my-registry`.
@@ -994,26 +1047,28 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       parent_ = value;
       onChanged();
       return this;
     }
 
     private java.util.List<java.lang.Long> deviceNumIds_ = java.util.Collections.emptyList();
+
     private void ensureDeviceNumIdsIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         deviceNumIds_ = new java.util.ArrayList<java.lang.Long>(deviceNumIds_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * A list of device numeric IDs. If empty, this field is ignored. Maximum
      * IDs: 10,000.
@@ -1021,11 +1076,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated uint64 device_num_ids = 2;</code>
      */
-    public java.util.List<java.lang.Long>
-        getDeviceNumIdsList() {
+    public java.util.List<java.lang.Long> getDeviceNumIdsList() {
       return java.util.Collections.unmodifiableList(deviceNumIds_);
     }
     /**
+     *
+     *
      * <pre>
      * A list of device numeric IDs. If empty, this field is ignored. Maximum
      * IDs: 10,000.
@@ -1037,6 +1093,8 @@ private static final long serialVersionUID = 0L;
       return deviceNumIds_.size();
     }
     /**
+     *
+     *
      * <pre>
      * A list of device numeric IDs. If empty, this field is ignored. Maximum
      * IDs: 10,000.
@@ -1048,6 +1106,8 @@ private static final long serialVersionUID = 0L;
       return deviceNumIds_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * A list of device numeric IDs. If empty, this field is ignored. Maximum
      * IDs: 10,000.
@@ -1055,14 +1115,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated uint64 device_num_ids = 2;</code>
      */
-    public Builder setDeviceNumIds(
-        int index, long value) {
+    public Builder setDeviceNumIds(int index, long value) {
       ensureDeviceNumIdsIsMutable();
       deviceNumIds_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of device numeric IDs. If empty, this field is ignored. Maximum
      * IDs: 10,000.
@@ -1077,6 +1138,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of device numeric IDs. If empty, this field is ignored. Maximum
      * IDs: 10,000.
@@ -1084,15 +1147,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated uint64 device_num_ids = 2;</code>
      */
-    public Builder addAllDeviceNumIds(
-        java.lang.Iterable<? extends java.lang.Long> values) {
+    public Builder addAllDeviceNumIds(java.lang.Iterable<? extends java.lang.Long> values) {
       ensureDeviceNumIdsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, deviceNumIds_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, deviceNumIds_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of device numeric IDs. If empty, this field is ignored. Maximum
      * IDs: 10,000.
@@ -1107,14 +1170,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.LazyStringList deviceIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList deviceIds_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureDeviceIdsIsMutable() {
       if (!((bitField0_ & 0x00000004) == 0x00000004)) {
         deviceIds_ = new com.google.protobuf.LazyStringArrayList(deviceIds_);
         bitField0_ |= 0x00000004;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * A list of device string IDs. For example, `['device0', 'device12']`.
      * If empty, this field is ignored. Maximum IDs: 10,000
@@ -1122,11 +1189,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string device_ids = 3;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getDeviceIdsList() {
+    public com.google.protobuf.ProtocolStringList getDeviceIdsList() {
       return deviceIds_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * A list of device string IDs. For example, `['device0', 'device12']`.
      * If empty, this field is ignored. Maximum IDs: 10,000
@@ -1138,6 +1206,8 @@ private static final long serialVersionUID = 0L;
       return deviceIds_.size();
     }
     /**
+     *
+     *
      * <pre>
      * A list of device string IDs. For example, `['device0', 'device12']`.
      * If empty, this field is ignored. Maximum IDs: 10,000
@@ -1149,6 +1219,8 @@ private static final long serialVersionUID = 0L;
       return deviceIds_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * A list of device string IDs. For example, `['device0', 'device12']`.
      * If empty, this field is ignored. Maximum IDs: 10,000
@@ -1156,11 +1228,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string device_ids = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getDeviceIdsBytes(int index) {
+    public com.google.protobuf.ByteString getDeviceIdsBytes(int index) {
       return deviceIds_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * A list of device string IDs. For example, `['device0', 'device12']`.
      * If empty, this field is ignored. Maximum IDs: 10,000
@@ -1168,17 +1241,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string device_ids = 3;</code>
      */
-    public Builder setDeviceIds(
-        int index, java.lang.String value) {
+    public Builder setDeviceIds(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureDeviceIdsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureDeviceIdsIsMutable();
       deviceIds_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of device string IDs. For example, `['device0', 'device12']`.
      * If empty, this field is ignored. Maximum IDs: 10,000
@@ -1186,17 +1260,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string device_ids = 3;</code>
      */
-    public Builder addDeviceIds(
-        java.lang.String value) {
+    public Builder addDeviceIds(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureDeviceIdsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureDeviceIdsIsMutable();
       deviceIds_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of device string IDs. For example, `['device0', 'device12']`.
      * If empty, this field is ignored. Maximum IDs: 10,000
@@ -1204,15 +1279,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string device_ids = 3;</code>
      */
-    public Builder addAllDeviceIds(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllDeviceIds(java.lang.Iterable<java.lang.String> values) {
       ensureDeviceIdsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, deviceIds_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, deviceIds_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of device string IDs. For example, `['device0', 'device12']`.
      * If empty, this field is ignored. Maximum IDs: 10,000
@@ -1227,6 +1302,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of device string IDs. For example, `['device0', 'device12']`.
      * If empty, this field is ignored. Maximum IDs: 10,000
@@ -1234,12 +1311,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string device_ids = 3;</code>
      */
-    public Builder addDeviceIdsBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addDeviceIdsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureDeviceIdsIsMutable();
       deviceIds_.add(value);
       onChanged();
@@ -1248,8 +1324,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.FieldMask fieldMask_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> fieldMaskBuilder_;
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        fieldMaskBuilder_;
     /**
+     *
+     *
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
      * fields `id` and `num_id` are always returned, along with any
@@ -1262,6 +1343,8 @@ private static final long serialVersionUID = 0L;
       return fieldMaskBuilder_ != null || fieldMask_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
      * fields `id` and `num_id` are always returned, along with any
@@ -1278,6 +1361,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
      * fields `id` and `num_id` are always returned, along with any
@@ -1300,6 +1385,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
      * fields `id` and `num_id` are always returned, along with any
@@ -1308,8 +1395,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.FieldMask field_mask = 4;</code>
      */
-    public Builder setFieldMask(
-        com.google.protobuf.FieldMask.Builder builderForValue) {
+    public Builder setFieldMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (fieldMaskBuilder_ == null) {
         fieldMask_ = builderForValue.build();
         onChanged();
@@ -1320,6 +1406,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
      * fields `id` and `num_id` are always returned, along with any
@@ -1332,7 +1420,7 @@ private static final long serialVersionUID = 0L;
       if (fieldMaskBuilder_ == null) {
         if (fieldMask_ != null) {
           fieldMask_ =
-            com.google.protobuf.FieldMask.newBuilder(fieldMask_).mergeFrom(value).buildPartial();
+              com.google.protobuf.FieldMask.newBuilder(fieldMask_).mergeFrom(value).buildPartial();
         } else {
           fieldMask_ = value;
         }
@@ -1344,6 +1432,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
      * fields `id` and `num_id` are always returned, along with any
@@ -1364,6 +1454,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
      * fields `id` and `num_id` are always returned, along with any
@@ -1373,11 +1465,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask field_mask = 4;</code>
      */
     public com.google.protobuf.FieldMask.Builder getFieldMaskBuilder() {
-      
+
       onChanged();
       return getFieldMaskFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
      * fields `id` and `num_id` are always returned, along with any
@@ -1390,11 +1484,12 @@ private static final long serialVersionUID = 0L;
       if (fieldMaskBuilder_ != null) {
         return fieldMaskBuilder_.getMessageOrBuilder();
       } else {
-        return fieldMask_ == null ?
-            com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
+        return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The fields of the `Device` resource to be returned in the response. The
      * fields `id` and `num_id` are always returned, along with any
@@ -1404,14 +1499,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask field_mask = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
         getFieldMaskFieldBuilder() {
       if (fieldMaskBuilder_ == null) {
-        fieldMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
-                getFieldMask(),
-                getParentForChildren(),
-                isClean());
+        fieldMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getFieldMask(), getParentForChildren(), isClean());
         fieldMask_ = null;
       }
       return fieldMaskBuilder_;
@@ -1419,8 +1517,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.iot.v1.GatewayListOptions gatewayListOptions_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.iot.v1.GatewayListOptions, com.google.cloud.iot.v1.GatewayListOptions.Builder, com.google.cloud.iot.v1.GatewayListOptionsOrBuilder> gatewayListOptionsBuilder_;
+            com.google.cloud.iot.v1.GatewayListOptions,
+            com.google.cloud.iot.v1.GatewayListOptions.Builder,
+            com.google.cloud.iot.v1.GatewayListOptionsOrBuilder>
+        gatewayListOptionsBuilder_;
     /**
+     *
+     *
      * <pre>
      * Options related to gateways.
      * </pre>
@@ -1431,6 +1534,8 @@ private static final long serialVersionUID = 0L;
       return gatewayListOptionsBuilder_ != null || gatewayListOptions_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Options related to gateways.
      * </pre>
@@ -1439,12 +1544,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.iot.v1.GatewayListOptions getGatewayListOptions() {
       if (gatewayListOptionsBuilder_ == null) {
-        return gatewayListOptions_ == null ? com.google.cloud.iot.v1.GatewayListOptions.getDefaultInstance() : gatewayListOptions_;
+        return gatewayListOptions_ == null
+            ? com.google.cloud.iot.v1.GatewayListOptions.getDefaultInstance()
+            : gatewayListOptions_;
       } else {
         return gatewayListOptionsBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Options related to gateways.
      * </pre>
@@ -1465,6 +1574,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Options related to gateways.
      * </pre>
@@ -1483,6 +1594,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Options related to gateways.
      * </pre>
@@ -1493,7 +1606,9 @@ private static final long serialVersionUID = 0L;
       if (gatewayListOptionsBuilder_ == null) {
         if (gatewayListOptions_ != null) {
           gatewayListOptions_ =
-            com.google.cloud.iot.v1.GatewayListOptions.newBuilder(gatewayListOptions_).mergeFrom(value).buildPartial();
+              com.google.cloud.iot.v1.GatewayListOptions.newBuilder(gatewayListOptions_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           gatewayListOptions_ = value;
         }
@@ -1505,6 +1620,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Options related to gateways.
      * </pre>
@@ -1523,6 +1640,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Options related to gateways.
      * </pre>
@@ -1530,11 +1649,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
      */
     public com.google.cloud.iot.v1.GatewayListOptions.Builder getGatewayListOptionsBuilder() {
-      
+
       onChanged();
       return getGatewayListOptionsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Options related to gateways.
      * </pre>
@@ -1545,11 +1666,14 @@ private static final long serialVersionUID = 0L;
       if (gatewayListOptionsBuilder_ != null) {
         return gatewayListOptionsBuilder_.getMessageOrBuilder();
       } else {
-        return gatewayListOptions_ == null ?
-            com.google.cloud.iot.v1.GatewayListOptions.getDefaultInstance() : gatewayListOptions_;
+        return gatewayListOptions_ == null
+            ? com.google.cloud.iot.v1.GatewayListOptions.getDefaultInstance()
+            : gatewayListOptions_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Options related to gateways.
      * </pre>
@@ -1557,21 +1681,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.iot.v1.GatewayListOptions gateway_list_options = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.iot.v1.GatewayListOptions, com.google.cloud.iot.v1.GatewayListOptions.Builder, com.google.cloud.iot.v1.GatewayListOptionsOrBuilder> 
+            com.google.cloud.iot.v1.GatewayListOptions,
+            com.google.cloud.iot.v1.GatewayListOptions.Builder,
+            com.google.cloud.iot.v1.GatewayListOptionsOrBuilder>
         getGatewayListOptionsFieldBuilder() {
       if (gatewayListOptionsBuilder_ == null) {
-        gatewayListOptionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.iot.v1.GatewayListOptions, com.google.cloud.iot.v1.GatewayListOptions.Builder, com.google.cloud.iot.v1.GatewayListOptionsOrBuilder>(
-                getGatewayListOptions(),
-                getParentForChildren(),
-                isClean());
+        gatewayListOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.iot.v1.GatewayListOptions,
+                com.google.cloud.iot.v1.GatewayListOptions.Builder,
+                com.google.cloud.iot.v1.GatewayListOptionsOrBuilder>(
+                getGatewayListOptions(), getParentForChildren(), isClean());
         gatewayListOptions_ = null;
       }
       return gatewayListOptionsBuilder_;
     }
 
-    private int pageSize_ ;
+    private int pageSize_;
     /**
+     *
+     *
      * <pre>
      * The maximum number of devices to return in the response. If this value
      * is zero, the service will select a default size. A call may return fewer
@@ -1585,6 +1714,8 @@ private static final long serialVersionUID = 0L;
       return pageSize_;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of devices to return in the response. If this value
      * is zero, the service will select a default size. A call may return fewer
@@ -1595,12 +1726,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 page_size = 100;</code>
      */
     public Builder setPageSize(int value) {
-      
+
       pageSize_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of devices to return in the response. If this value
      * is zero, the service will select a default size. A call may return fewer
@@ -1611,7 +1744,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 page_size = 100;</code>
      */
     public Builder clearPageSize() {
-      
+
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1619,6 +1752,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object pageToken_ = "";
     /**
+     *
+     *
      * <pre>
      * The value returned by the last `ListDevicesResponse`; indicates
      * that this is a continuation of a prior `ListDevices` call and
@@ -1630,8 +1765,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         pageToken_ = s;
         return s;
@@ -1640,6 +1774,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The value returned by the last `ListDevicesResponse`; indicates
      * that this is a continuation of a prior `ListDevices` call and
@@ -1648,13 +1784,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string page_token = 101;</code>
      */
-    public com.google.protobuf.ByteString
-        getPageTokenBytes() {
+    public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         pageToken_ = b;
         return b;
       } else {
@@ -1662,6 +1796,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The value returned by the last `ListDevicesResponse`; indicates
      * that this is a continuation of a prior `ListDevices` call and
@@ -1670,17 +1806,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string page_token = 101;</code>
      */
-    public Builder setPageToken(
-        java.lang.String value) {
+    public Builder setPageToken(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       pageToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The value returned by the last `ListDevicesResponse`; indicates
      * that this is a continuation of a prior `ListDevices` call and
@@ -1690,12 +1827,14 @@ private static final long serialVersionUID = 0L;
      * <code>string page_token = 101;</code>
      */
     public Builder clearPageToken() {
-      
+
       pageToken_ = getDefaultInstance().getPageToken();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The value returned by the last `ListDevicesResponse`; indicates
      * that this is a continuation of a prior `ListDevices` call and
@@ -1704,20 +1843,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string page_token = 101;</code>
      */
-    public Builder setPageTokenBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       pageToken_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1727,12 +1865,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.iot.v1.ListDevicesRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.iot.v1.ListDevicesRequest)
   private static final com.google.cloud.iot.v1.ListDevicesRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.iot.v1.ListDevicesRequest();
   }
@@ -1741,16 +1879,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListDevicesRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ListDevicesRequest>() {
-    @java.lang.Override
-    public ListDevicesRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListDevicesRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListDevicesRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ListDevicesRequest>() {
+        @java.lang.Override
+        public ListDevicesRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListDevicesRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListDevicesRequest> parser() {
     return PARSER;
@@ -1765,6 +1903,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.iot.v1.ListDevicesRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

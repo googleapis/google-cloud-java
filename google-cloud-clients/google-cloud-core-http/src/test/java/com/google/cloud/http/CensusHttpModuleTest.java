@@ -17,19 +17,17 @@
 package com.google.cloud.http;
 
 import static com.google.common.truth.Truth.assertThat;
-
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.createMockBuilder;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 
-import com.google.api.client.http.HttpExecuteInterceptor;
 import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpExecuteInterceptor;
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.javanet.NetHttpTransport;
-
 import io.opencensus.common.Scope;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.SpanContext;
@@ -39,11 +37,9 @@ import io.opencensus.trace.TraceOptions;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
 import io.opencensus.trace.propagation.TextFormat;
-
 import java.io.IOException;
 import java.util.EnumSet;
 import java.util.Random;
-
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -63,8 +59,10 @@ public class CensusHttpModuleTest {
 
   @Before
   public void setUp() throws IOException {
-    httpRequest = new NetHttpTransport().createRequestFactory().buildRequest(
-      "GET", new GenericUrl("https://www.google.com"), null);
+    httpRequest =
+        new NetHttpTransport()
+            .createRequestFactory()
+            .buildRequest("GET", new GenericUrl("https://www.google.com"), null);
   }
 
   @Test
@@ -103,8 +101,8 @@ public class CensusHttpModuleTest {
   @Test
   public void censusHttpExecuteInterceptorShouldExecuteOriginal() throws IOException {
     HttpExecuteInterceptor mockInterceptor = createMock(HttpExecuteInterceptor.class);
-    HttpExecuteInterceptor censusInterceptor = censusHttpModule.new CensusHttpExecuteInterceptor(
-        mockInterceptor);
+    HttpExecuteInterceptor censusInterceptor =
+        censusHttpModule.new CensusHttpExecuteInterceptor(mockInterceptor);
     mockInterceptor.intercept(httpRequest);
     replay(mockInterceptor);
     censusInterceptor.intercept(httpRequest);
@@ -114,14 +112,16 @@ public class CensusHttpModuleTest {
   @Test
   public void censusHttpExecuteInterceptorShouldInjectHeader() throws IOException {
     Random random = new Random();
-    SpanContext spanContext = SpanContext.create(
-        TraceId.generateRandomId(random),
-        SpanId.generateRandomId(random),
-        TraceOptions.DEFAULT);
-    Span mockSpan = createMockBuilder(Span.class)
-        .withConstructor(SpanContext.class, EnumSet.class)
-        .withArgs(spanContext, null)
-        .createMock();
+    SpanContext spanContext =
+        SpanContext.create(
+            TraceId.generateRandomId(random),
+            SpanId.generateRandomId(random),
+            TraceOptions.DEFAULT);
+    Span mockSpan =
+        createMockBuilder(Span.class)
+            .withConstructor(SpanContext.class, EnumSet.class)
+            .withArgs(spanContext, null)
+            .createMock();
     Scope scope = tracer.withSpan(mockSpan);
     try {
       HttpExecuteInterceptor interceptor = censusHttpModule.new CensusHttpExecuteInterceptor(null);
@@ -142,8 +142,8 @@ public class CensusHttpModuleTest {
   @Test
   public void censusHttpRequestInitializerShouldExecuteOriginal() throws IOException {
     HttpRequestInitializer mockOriginalInitializer = createMock(HttpRequestInitializer.class);
-    HttpRequestInitializer censusInitializer = censusHttpModule.getHttpRequestInitializer(
-        mockOriginalInitializer);
+    HttpRequestInitializer censusInitializer =
+        censusHttpModule.getHttpRequestInitializer(mockOriginalInitializer);
     mockOriginalInitializer.initialize(httpRequest);
     replay(mockOriginalInitializer);
     censusInitializer.initialize(httpRequest);
@@ -153,7 +153,7 @@ public class CensusHttpModuleTest {
   @Test
   public void censusHttpRequestInitializerShouldSetInterceptor() throws IOException {
     censusHttpModule.getHttpRequestInitializer(null).initialize(httpRequest);
-    assertThat(httpRequest.getInterceptor()).isInstanceOf(
-        CensusHttpModule.CensusHttpExecuteInterceptor.class);
+    assertThat(httpRequest.getInterceptor())
+        .isInstanceOf(CensusHttpModule.CensusHttpExecuteInterceptor.class);
   }
 }

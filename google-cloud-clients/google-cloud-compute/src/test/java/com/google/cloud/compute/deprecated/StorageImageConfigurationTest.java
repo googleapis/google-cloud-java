@@ -44,7 +44,8 @@ public class StorageImageConfigurationTest {
   public void testToBuilder() {
     compareRawImageConfiguration(CONFIGURATION, CONFIGURATION.toBuilder().build());
     String newSource = "newSource";
-    StorageImageConfiguration configuration = CONFIGURATION.toBuilder().setSource(newSource).build();
+    StorageImageConfiguration configuration =
+        CONFIGURATION.toBuilder().setSource(newSource).build();
     assertEquals(newSource, configuration.getSource());
     configuration = configuration.toBuilder().setSource(SOURCE).build();
     compareRawImageConfiguration(CONFIGURATION, configuration);
@@ -68,12 +69,13 @@ public class StorageImageConfigurationTest {
 
   @Test
   public void testToAndFromPb() {
-    assertTrue(ImageConfiguration.fromPb(CONFIGURATION.toPb()) instanceof StorageImageConfiguration);
-    compareRawImageConfiguration(CONFIGURATION,
-        ImageConfiguration.<StorageImageConfiguration>fromPb(CONFIGURATION.toPb()));
+    assertTrue(
+        ImageConfiguration.fromPb(CONFIGURATION.toPb()) instanceof StorageImageConfiguration);
+    compareRawImageConfiguration(
+        CONFIGURATION, ImageConfiguration.<StorageImageConfiguration>fromPb(CONFIGURATION.toPb()));
     StorageImageConfiguration configuration = StorageImageConfiguration.of(SOURCE);
-    compareRawImageConfiguration(configuration,
-        StorageImageConfiguration.fromPb(configuration.toPb()));
+    compareRawImageConfiguration(
+        configuration, StorageImageConfiguration.fromPb(configuration.toPb()));
   }
 
   @Test
@@ -92,8 +94,8 @@ public class StorageImageConfigurationTest {
     assertSame(CONFIGURATION, CONFIGURATION.setProjectId("project"));
   }
 
-  private void compareRawImageConfiguration(StorageImageConfiguration expected,
-      StorageImageConfiguration value) {
+  private void compareRawImageConfiguration(
+      StorageImageConfiguration expected, StorageImageConfiguration value) {
     assertEquals(expected, value);
     assertEquals(expected.getType(), value.getType());
     assertEquals(expected.getSource(), value.getSource());

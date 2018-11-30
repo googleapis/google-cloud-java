@@ -29,15 +29,15 @@ import java.nio.channels.WritableByteChannel;
 public interface WriteChannel extends WritableByteChannel, Closeable, Restorable<WriteChannel> {
 
   /**
-   * Sets the minimum size that will be written by a single RPC.
-   * Written data will be buffered and only flushed upon reaching this size or closing the channel.
+   * Sets the minimum size that will be written by a single RPC. Written data will be buffered and
+   * only flushed upon reaching this size or closing the channel.
    */
   void setChunkSize(int chunkSize);
 
   /**
    * Captures the write channel state so that it can be saved and restored afterwards. The original
-   * {@code WriteChannel} and the restored one should not both be used. Closing one channel
-   * causes the other channel to close; subsequent writes will fail.
+   * {@code WriteChannel} and the restored one should not both be used. Closing one channel causes
+   * the other channel to close; subsequent writes will fail.
    *
    * @return a {@link RestorableState} object that contains the write channel state and can restore
    *     it afterwards.

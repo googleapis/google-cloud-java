@@ -4,21 +4,24 @@
 package com.google.cloud.dataproc.v1beta2;
 
 /**
+ *
+ *
  * <pre>
  * A Cloud Dataproc job resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.Job}
  */
-public  final class Job extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Job extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1beta2.Job)
     JobOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Job.newBuilder() to construct.
   private Job(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Job() {
     statusHistory_ = java.util.Collections.emptyList();
     yarnApplications_ = java.util.Collections.emptyList();
@@ -29,10 +32,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Job(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -52,211 +55,245 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.cloud.dataproc.v1beta2.JobReference.Builder subBuilder = null;
-            if (reference_ != null) {
-              subBuilder = reference_.toBuilder();
-            }
-            reference_ = input.readMessage(com.google.cloud.dataproc.v1beta2.JobReference.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(reference_);
-              reference_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.cloud.dataproc.v1beta2.JobReference.Builder subBuilder = null;
+              if (reference_ != null) {
+                subBuilder = reference_.toBuilder();
+              }
+              reference_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.JobReference.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(reference_);
+                reference_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.cloud.dataproc.v1beta2.JobPlacement.Builder subBuilder = null;
-            if (placement_ != null) {
-              subBuilder = placement_.toBuilder();
+              break;
             }
-            placement_ = input.readMessage(com.google.cloud.dataproc.v1beta2.JobPlacement.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(placement_);
-              placement_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.cloud.dataproc.v1beta2.JobPlacement.Builder subBuilder = null;
+              if (placement_ != null) {
+                subBuilder = placement_.toBuilder();
+              }
+              placement_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.JobPlacement.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(placement_);
+                placement_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            com.google.cloud.dataproc.v1beta2.HadoopJob.Builder subBuilder = null;
-            if (typeJobCase_ == 3) {
-              subBuilder = ((com.google.cloud.dataproc.v1beta2.HadoopJob) typeJob_).toBuilder();
+              break;
             }
-            typeJob_ =
-                input.readMessage(com.google.cloud.dataproc.v1beta2.HadoopJob.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.dataproc.v1beta2.HadoopJob) typeJob_);
-              typeJob_ = subBuilder.buildPartial();
+          case 26:
+            {
+              com.google.cloud.dataproc.v1beta2.HadoopJob.Builder subBuilder = null;
+              if (typeJobCase_ == 3) {
+                subBuilder = ((com.google.cloud.dataproc.v1beta2.HadoopJob) typeJob_).toBuilder();
+              }
+              typeJob_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.HadoopJob.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dataproc.v1beta2.HadoopJob) typeJob_);
+                typeJob_ = subBuilder.buildPartial();
+              }
+              typeJobCase_ = 3;
+              break;
             }
-            typeJobCase_ = 3;
-            break;
-          }
-          case 34: {
-            com.google.cloud.dataproc.v1beta2.SparkJob.Builder subBuilder = null;
-            if (typeJobCase_ == 4) {
-              subBuilder = ((com.google.cloud.dataproc.v1beta2.SparkJob) typeJob_).toBuilder();
+          case 34:
+            {
+              com.google.cloud.dataproc.v1beta2.SparkJob.Builder subBuilder = null;
+              if (typeJobCase_ == 4) {
+                subBuilder = ((com.google.cloud.dataproc.v1beta2.SparkJob) typeJob_).toBuilder();
+              }
+              typeJob_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.SparkJob.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dataproc.v1beta2.SparkJob) typeJob_);
+                typeJob_ = subBuilder.buildPartial();
+              }
+              typeJobCase_ = 4;
+              break;
             }
-            typeJob_ =
-                input.readMessage(com.google.cloud.dataproc.v1beta2.SparkJob.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.dataproc.v1beta2.SparkJob) typeJob_);
-              typeJob_ = subBuilder.buildPartial();
+          case 42:
+            {
+              com.google.cloud.dataproc.v1beta2.PySparkJob.Builder subBuilder = null;
+              if (typeJobCase_ == 5) {
+                subBuilder = ((com.google.cloud.dataproc.v1beta2.PySparkJob) typeJob_).toBuilder();
+              }
+              typeJob_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.PySparkJob.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dataproc.v1beta2.PySparkJob) typeJob_);
+                typeJob_ = subBuilder.buildPartial();
+              }
+              typeJobCase_ = 5;
+              break;
             }
-            typeJobCase_ = 4;
-            break;
-          }
-          case 42: {
-            com.google.cloud.dataproc.v1beta2.PySparkJob.Builder subBuilder = null;
-            if (typeJobCase_ == 5) {
-              subBuilder = ((com.google.cloud.dataproc.v1beta2.PySparkJob) typeJob_).toBuilder();
+          case 50:
+            {
+              com.google.cloud.dataproc.v1beta2.HiveJob.Builder subBuilder = null;
+              if (typeJobCase_ == 6) {
+                subBuilder = ((com.google.cloud.dataproc.v1beta2.HiveJob) typeJob_).toBuilder();
+              }
+              typeJob_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.HiveJob.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dataproc.v1beta2.HiveJob) typeJob_);
+                typeJob_ = subBuilder.buildPartial();
+              }
+              typeJobCase_ = 6;
+              break;
             }
-            typeJob_ =
-                input.readMessage(com.google.cloud.dataproc.v1beta2.PySparkJob.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.dataproc.v1beta2.PySparkJob) typeJob_);
-              typeJob_ = subBuilder.buildPartial();
+          case 58:
+            {
+              com.google.cloud.dataproc.v1beta2.PigJob.Builder subBuilder = null;
+              if (typeJobCase_ == 7) {
+                subBuilder = ((com.google.cloud.dataproc.v1beta2.PigJob) typeJob_).toBuilder();
+              }
+              typeJob_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.PigJob.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dataproc.v1beta2.PigJob) typeJob_);
+                typeJob_ = subBuilder.buildPartial();
+              }
+              typeJobCase_ = 7;
+              break;
             }
-            typeJobCase_ = 5;
-            break;
-          }
-          case 50: {
-            com.google.cloud.dataproc.v1beta2.HiveJob.Builder subBuilder = null;
-            if (typeJobCase_ == 6) {
-              subBuilder = ((com.google.cloud.dataproc.v1beta2.HiveJob) typeJob_).toBuilder();
-            }
-            typeJob_ =
-                input.readMessage(com.google.cloud.dataproc.v1beta2.HiveJob.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.dataproc.v1beta2.HiveJob) typeJob_);
-              typeJob_ = subBuilder.buildPartial();
-            }
-            typeJobCase_ = 6;
-            break;
-          }
-          case 58: {
-            com.google.cloud.dataproc.v1beta2.PigJob.Builder subBuilder = null;
-            if (typeJobCase_ == 7) {
-              subBuilder = ((com.google.cloud.dataproc.v1beta2.PigJob) typeJob_).toBuilder();
-            }
-            typeJob_ =
-                input.readMessage(com.google.cloud.dataproc.v1beta2.PigJob.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.dataproc.v1beta2.PigJob) typeJob_);
-              typeJob_ = subBuilder.buildPartial();
-            }
-            typeJobCase_ = 7;
-            break;
-          }
-          case 66: {
-            com.google.cloud.dataproc.v1beta2.JobStatus.Builder subBuilder = null;
-            if (status_ != null) {
-              subBuilder = status_.toBuilder();
-            }
-            status_ = input.readMessage(com.google.cloud.dataproc.v1beta2.JobStatus.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(status_);
-              status_ = subBuilder.buildPartial();
-            }
+          case 66:
+            {
+              com.google.cloud.dataproc.v1beta2.JobStatus.Builder subBuilder = null;
+              if (status_ != null) {
+                subBuilder = status_.toBuilder();
+              }
+              status_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.JobStatus.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(status_);
+                status_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 74: {
-            if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
-              yarnApplications_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.YarnApplication>();
-              mutable_bitField0_ |= 0x00000400;
+              break;
             }
-            yarnApplications_.add(
-                input.readMessage(com.google.cloud.dataproc.v1beta2.YarnApplication.parser(), extensionRegistry));
-            break;
-          }
-          case 82: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 74:
+            {
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+                yarnApplications_ =
+                    new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.YarnApplication>();
+                mutable_bitField0_ |= 0x00000400;
+              }
+              yarnApplications_.add(
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.YarnApplication.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            submittedBy_ = s;
-            break;
-          }
-          case 98: {
-            com.google.cloud.dataproc.v1beta2.SparkSqlJob.Builder subBuilder = null;
-            if (typeJobCase_ == 12) {
-              subBuilder = ((com.google.cloud.dataproc.v1beta2.SparkSqlJob) typeJob_).toBuilder();
+              submittedBy_ = s;
+              break;
             }
-            typeJob_ =
-                input.readMessage(com.google.cloud.dataproc.v1beta2.SparkSqlJob.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.dataproc.v1beta2.SparkSqlJob) typeJob_);
-              typeJob_ = subBuilder.buildPartial();
+          case 98:
+            {
+              com.google.cloud.dataproc.v1beta2.SparkSqlJob.Builder subBuilder = null;
+              if (typeJobCase_ == 12) {
+                subBuilder = ((com.google.cloud.dataproc.v1beta2.SparkSqlJob) typeJob_).toBuilder();
+              }
+              typeJob_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.SparkSqlJob.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dataproc.v1beta2.SparkSqlJob) typeJob_);
+                typeJob_ = subBuilder.buildPartial();
+              }
+              typeJobCase_ = 12;
+              break;
             }
-            typeJobCase_ = 12;
-            break;
-          }
-          case 106: {
-            if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
-              statusHistory_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.JobStatus>();
-              mutable_bitField0_ |= 0x00000200;
+          case 106:
+            {
+              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+                statusHistory_ =
+                    new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.JobStatus>();
+                mutable_bitField0_ |= 0x00000200;
+              }
+              statusHistory_.add(
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.JobStatus.parser(), extensionRegistry));
+              break;
             }
-            statusHistory_.add(
-                input.readMessage(com.google.cloud.dataproc.v1beta2.JobStatus.parser(), extensionRegistry));
-            break;
-          }
-          case 122: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            driverControlFilesUri_ = s;
-            break;
-          }
-          case 138: {
-            java.lang.String s = input.readStringRequireUtf8();
+              driverControlFilesUri_ = s;
+              break;
+            }
+          case 138:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            driverOutputResourceUri_ = s;
-            break;
-          }
-          case 146: {
-            if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
-              labels_ = com.google.protobuf.MapField.newMapField(
-                  LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00004000;
+              driverOutputResourceUri_ = s;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            labels__ = input.readMessage(
-                LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            labels_.getMutableMap().put(
-                labels__.getKey(), labels__.getValue());
-            break;
-          }
-          case 162: {
-            com.google.cloud.dataproc.v1beta2.JobScheduling.Builder subBuilder = null;
-            if (scheduling_ != null) {
-              subBuilder = scheduling_.toBuilder();
+          case 146:
+            {
+              if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00004000;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                  input.readMessage(
+                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
             }
-            scheduling_ = input.readMessage(com.google.cloud.dataproc.v1beta2.JobScheduling.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(scheduling_);
-              scheduling_ = subBuilder.buildPartial();
-            }
+          case 162:
+            {
+              com.google.cloud.dataproc.v1beta2.JobScheduling.Builder subBuilder = null;
+              if (scheduling_ != null) {
+                subBuilder = scheduling_.toBuilder();
+              }
+              scheduling_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.JobScheduling.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(scheduling_);
+                scheduling_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 178: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            jobUuid_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 178:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              jobUuid_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
         yarnApplications_ = java.util.Collections.unmodifiableList(yarnApplications_);
@@ -268,36 +305,38 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_Job_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1beta2.JobsProto
+        .internal_static_google_cloud_dataproc_v1beta2_Job_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 18:
         return internalGetLabels();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_Job_fieldAccessorTable
+    return com.google.cloud.dataproc.v1beta2.JobsProto
+        .internal_static_google_cloud_dataproc_v1beta2_Job_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1beta2.Job.class, com.google.cloud.dataproc.v1beta2.Job.Builder.class);
+            com.google.cloud.dataproc.v1beta2.Job.class,
+            com.google.cloud.dataproc.v1beta2.Job.Builder.class);
   }
 
   private int bitField0_;
   private int typeJobCase_ = 0;
   private java.lang.Object typeJob_;
-  public enum TypeJobCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum TypeJobCase implements com.google.protobuf.Internal.EnumLite {
     HADOOP_JOB(3),
     SPARK_JOB(4),
     PYSPARK_JOB(5),
@@ -306,12 +345,11 @@ private static final long serialVersionUID = 0L;
     SPARK_SQL_JOB(12),
     TYPEJOB_NOT_SET(0);
     private final int value;
+
     private TypeJobCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static TypeJobCase valueOf(int value) {
       return forNumber(value);
@@ -319,30 +357,39 @@ private static final long serialVersionUID = 0L;
 
     public static TypeJobCase forNumber(int value) {
       switch (value) {
-        case 3: return HADOOP_JOB;
-        case 4: return SPARK_JOB;
-        case 5: return PYSPARK_JOB;
-        case 6: return HIVE_JOB;
-        case 7: return PIG_JOB;
-        case 12: return SPARK_SQL_JOB;
-        case 0: return TYPEJOB_NOT_SET;
-        default: return null;
+        case 3:
+          return HADOOP_JOB;
+        case 4:
+          return SPARK_JOB;
+        case 5:
+          return PYSPARK_JOB;
+        case 6:
+          return HIVE_JOB;
+        case 7:
+          return PIG_JOB;
+        case 12:
+          return SPARK_SQL_JOB;
+        case 0:
+          return TYPEJOB_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public TypeJobCase
-  getTypeJobCase() {
-    return TypeJobCase.forNumber(
-        typeJobCase_);
+  public TypeJobCase getTypeJobCase() {
+    return TypeJobCase.forNumber(typeJobCase_);
   }
 
   public static final int REFERENCE_FIELD_NUMBER = 1;
   private com.google.cloud.dataproc.v1beta2.JobReference reference_;
   /**
+   *
+   *
    * <pre>
    * Optional. The fully qualified reference to the job, which can be used to
    * obtain the equivalent REST path of the job resource. If this property
@@ -356,6 +403,8 @@ private static final long serialVersionUID = 0L;
     return reference_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The fully qualified reference to the job, which can be used to
    * obtain the equivalent REST path of the job resource. If this property
@@ -366,9 +415,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1beta2.JobReference reference = 1;</code>
    */
   public com.google.cloud.dataproc.v1beta2.JobReference getReference() {
-    return reference_ == null ? com.google.cloud.dataproc.v1beta2.JobReference.getDefaultInstance() : reference_;
+    return reference_ == null
+        ? com.google.cloud.dataproc.v1beta2.JobReference.getDefaultInstance()
+        : reference_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The fully qualified reference to the job, which can be used to
    * obtain the equivalent REST path of the job resource. If this property
@@ -385,6 +438,8 @@ private static final long serialVersionUID = 0L;
   public static final int PLACEMENT_FIELD_NUMBER = 2;
   private com.google.cloud.dataproc.v1beta2.JobPlacement placement_;
   /**
+   *
+   *
    * <pre>
    * Required. Job information, including how, when, and where to
    * run the job.
@@ -396,6 +451,8 @@ private static final long serialVersionUID = 0L;
     return placement_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required. Job information, including how, when, and where to
    * run the job.
@@ -404,9 +461,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1beta2.JobPlacement placement = 2;</code>
    */
   public com.google.cloud.dataproc.v1beta2.JobPlacement getPlacement() {
-    return placement_ == null ? com.google.cloud.dataproc.v1beta2.JobPlacement.getDefaultInstance() : placement_;
+    return placement_ == null
+        ? com.google.cloud.dataproc.v1beta2.JobPlacement.getDefaultInstance()
+        : placement_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. Job information, including how, when, and where to
    * run the job.
@@ -420,6 +481,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int HADOOP_JOB_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * Job is a Hadoop job.
    * </pre>
@@ -430,6 +493,8 @@ private static final long serialVersionUID = 0L;
     return typeJobCase_ == 3;
   }
   /**
+   *
+   *
    * <pre>
    * Job is a Hadoop job.
    * </pre>
@@ -438,11 +503,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1beta2.HadoopJob getHadoopJob() {
     if (typeJobCase_ == 3) {
-       return (com.google.cloud.dataproc.v1beta2.HadoopJob) typeJob_;
+      return (com.google.cloud.dataproc.v1beta2.HadoopJob) typeJob_;
     }
     return com.google.cloud.dataproc.v1beta2.HadoopJob.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Job is a Hadoop job.
    * </pre>
@@ -451,13 +518,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1beta2.HadoopJobOrBuilder getHadoopJobOrBuilder() {
     if (typeJobCase_ == 3) {
-       return (com.google.cloud.dataproc.v1beta2.HadoopJob) typeJob_;
+      return (com.google.cloud.dataproc.v1beta2.HadoopJob) typeJob_;
     }
     return com.google.cloud.dataproc.v1beta2.HadoopJob.getDefaultInstance();
   }
 
   public static final int SPARK_JOB_FIELD_NUMBER = 4;
   /**
+   *
+   *
    * <pre>
    * Job is a Spark job.
    * </pre>
@@ -468,6 +537,8 @@ private static final long serialVersionUID = 0L;
     return typeJobCase_ == 4;
   }
   /**
+   *
+   *
    * <pre>
    * Job is a Spark job.
    * </pre>
@@ -476,11 +547,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1beta2.SparkJob getSparkJob() {
     if (typeJobCase_ == 4) {
-       return (com.google.cloud.dataproc.v1beta2.SparkJob) typeJob_;
+      return (com.google.cloud.dataproc.v1beta2.SparkJob) typeJob_;
     }
     return com.google.cloud.dataproc.v1beta2.SparkJob.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Job is a Spark job.
    * </pre>
@@ -489,13 +562,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1beta2.SparkJobOrBuilder getSparkJobOrBuilder() {
     if (typeJobCase_ == 4) {
-       return (com.google.cloud.dataproc.v1beta2.SparkJob) typeJob_;
+      return (com.google.cloud.dataproc.v1beta2.SparkJob) typeJob_;
     }
     return com.google.cloud.dataproc.v1beta2.SparkJob.getDefaultInstance();
   }
 
   public static final int PYSPARK_JOB_FIELD_NUMBER = 5;
   /**
+   *
+   *
    * <pre>
    * Job is a Pyspark job.
    * </pre>
@@ -506,6 +581,8 @@ private static final long serialVersionUID = 0L;
     return typeJobCase_ == 5;
   }
   /**
+   *
+   *
    * <pre>
    * Job is a Pyspark job.
    * </pre>
@@ -514,11 +591,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1beta2.PySparkJob getPysparkJob() {
     if (typeJobCase_ == 5) {
-       return (com.google.cloud.dataproc.v1beta2.PySparkJob) typeJob_;
+      return (com.google.cloud.dataproc.v1beta2.PySparkJob) typeJob_;
     }
     return com.google.cloud.dataproc.v1beta2.PySparkJob.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Job is a Pyspark job.
    * </pre>
@@ -527,13 +606,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1beta2.PySparkJobOrBuilder getPysparkJobOrBuilder() {
     if (typeJobCase_ == 5) {
-       return (com.google.cloud.dataproc.v1beta2.PySparkJob) typeJob_;
+      return (com.google.cloud.dataproc.v1beta2.PySparkJob) typeJob_;
     }
     return com.google.cloud.dataproc.v1beta2.PySparkJob.getDefaultInstance();
   }
 
   public static final int HIVE_JOB_FIELD_NUMBER = 6;
   /**
+   *
+   *
    * <pre>
    * Job is a Hive job.
    * </pre>
@@ -544,6 +625,8 @@ private static final long serialVersionUID = 0L;
     return typeJobCase_ == 6;
   }
   /**
+   *
+   *
    * <pre>
    * Job is a Hive job.
    * </pre>
@@ -552,11 +635,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1beta2.HiveJob getHiveJob() {
     if (typeJobCase_ == 6) {
-       return (com.google.cloud.dataproc.v1beta2.HiveJob) typeJob_;
+      return (com.google.cloud.dataproc.v1beta2.HiveJob) typeJob_;
     }
     return com.google.cloud.dataproc.v1beta2.HiveJob.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Job is a Hive job.
    * </pre>
@@ -565,13 +650,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1beta2.HiveJobOrBuilder getHiveJobOrBuilder() {
     if (typeJobCase_ == 6) {
-       return (com.google.cloud.dataproc.v1beta2.HiveJob) typeJob_;
+      return (com.google.cloud.dataproc.v1beta2.HiveJob) typeJob_;
     }
     return com.google.cloud.dataproc.v1beta2.HiveJob.getDefaultInstance();
   }
 
   public static final int PIG_JOB_FIELD_NUMBER = 7;
   /**
+   *
+   *
    * <pre>
    * Job is a Pig job.
    * </pre>
@@ -582,6 +669,8 @@ private static final long serialVersionUID = 0L;
     return typeJobCase_ == 7;
   }
   /**
+   *
+   *
    * <pre>
    * Job is a Pig job.
    * </pre>
@@ -590,11 +679,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1beta2.PigJob getPigJob() {
     if (typeJobCase_ == 7) {
-       return (com.google.cloud.dataproc.v1beta2.PigJob) typeJob_;
+      return (com.google.cloud.dataproc.v1beta2.PigJob) typeJob_;
     }
     return com.google.cloud.dataproc.v1beta2.PigJob.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Job is a Pig job.
    * </pre>
@@ -603,13 +694,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1beta2.PigJobOrBuilder getPigJobOrBuilder() {
     if (typeJobCase_ == 7) {
-       return (com.google.cloud.dataproc.v1beta2.PigJob) typeJob_;
+      return (com.google.cloud.dataproc.v1beta2.PigJob) typeJob_;
     }
     return com.google.cloud.dataproc.v1beta2.PigJob.getDefaultInstance();
   }
 
   public static final int SPARK_SQL_JOB_FIELD_NUMBER = 12;
   /**
+   *
+   *
    * <pre>
    * Job is a SparkSql job.
    * </pre>
@@ -620,6 +713,8 @@ private static final long serialVersionUID = 0L;
     return typeJobCase_ == 12;
   }
   /**
+   *
+   *
    * <pre>
    * Job is a SparkSql job.
    * </pre>
@@ -628,11 +723,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1beta2.SparkSqlJob getSparkSqlJob() {
     if (typeJobCase_ == 12) {
-       return (com.google.cloud.dataproc.v1beta2.SparkSqlJob) typeJob_;
+      return (com.google.cloud.dataproc.v1beta2.SparkSqlJob) typeJob_;
     }
     return com.google.cloud.dataproc.v1beta2.SparkSqlJob.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Job is a SparkSql job.
    * </pre>
@@ -641,7 +738,7 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1beta2.SparkSqlJobOrBuilder getSparkSqlJobOrBuilder() {
     if (typeJobCase_ == 12) {
-       return (com.google.cloud.dataproc.v1beta2.SparkSqlJob) typeJob_;
+      return (com.google.cloud.dataproc.v1beta2.SparkSqlJob) typeJob_;
     }
     return com.google.cloud.dataproc.v1beta2.SparkSqlJob.getDefaultInstance();
   }
@@ -649,6 +746,8 @@ private static final long serialVersionUID = 0L;
   public static final int STATUS_FIELD_NUMBER = 8;
   private com.google.cloud.dataproc.v1beta2.JobStatus status_;
   /**
+   *
+   *
    * <pre>
    * Output only. The job status. Additional application-specific
    * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
@@ -661,6 +760,8 @@ private static final long serialVersionUID = 0L;
     return status_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The job status. Additional application-specific
    * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
@@ -670,9 +771,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1beta2.JobStatus status = 8;</code>
    */
   public com.google.cloud.dataproc.v1beta2.JobStatus getStatus() {
-    return status_ == null ? com.google.cloud.dataproc.v1beta2.JobStatus.getDefaultInstance() : status_;
+    return status_ == null
+        ? com.google.cloud.dataproc.v1beta2.JobStatus.getDefaultInstance()
+        : status_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The job status. Additional application-specific
    * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
@@ -688,6 +793,8 @@ private static final long serialVersionUID = 0L;
   public static final int STATUS_HISTORY_FIELD_NUMBER = 13;
   private java.util.List<com.google.cloud.dataproc.v1beta2.JobStatus> statusHistory_;
   /**
+   *
+   *
    * <pre>
    * Output only. The previous job status.
    * </pre>
@@ -698,17 +805,21 @@ private static final long serialVersionUID = 0L;
     return statusHistory_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The previous job status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13;</code>
    */
-  public java.util.List<? extends com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder> 
+  public java.util.List<? extends com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder>
       getStatusHistoryOrBuilderList() {
     return statusHistory_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The previous job status.
    * </pre>
@@ -719,6 +830,8 @@ private static final long serialVersionUID = 0L;
     return statusHistory_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The previous job status.
    * </pre>
@@ -729,20 +842,23 @@ private static final long serialVersionUID = 0L;
     return statusHistory_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The previous job status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13;</code>
    */
-  public com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder getStatusHistoryOrBuilder(
-      int index) {
+  public com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder getStatusHistoryOrBuilder(int index) {
     return statusHistory_.get(index);
   }
 
   public static final int YARN_APPLICATIONS_FIELD_NUMBER = 9;
   private java.util.List<com.google.cloud.dataproc.v1beta2.YarnApplication> yarnApplications_;
   /**
+   *
+   *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
@@ -751,10 +867,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
    */
-  public java.util.List<com.google.cloud.dataproc.v1beta2.YarnApplication> getYarnApplicationsList() {
+  public java.util.List<com.google.cloud.dataproc.v1beta2.YarnApplication>
+      getYarnApplicationsList() {
     return yarnApplications_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
@@ -763,11 +882,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
    */
-  public java.util.List<? extends com.google.cloud.dataproc.v1beta2.YarnApplicationOrBuilder> 
+  public java.util.List<? extends com.google.cloud.dataproc.v1beta2.YarnApplicationOrBuilder>
       getYarnApplicationsOrBuilderList() {
     return yarnApplications_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
@@ -780,6 +901,8 @@ private static final long serialVersionUID = 0L;
     return yarnApplications_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
@@ -792,6 +915,8 @@ private static final long serialVersionUID = 0L;
     return yarnApplications_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The collection of YARN applications spun up by this job.
    * **Beta** Feature: This report is available for testing purposes only. It may
@@ -808,6 +933,8 @@ private static final long serialVersionUID = 0L;
   public static final int SUBMITTED_BY_FIELD_NUMBER = 10;
   private volatile java.lang.Object submittedBy_;
   /**
+   *
+   *
    * <pre>
    * Output only. The email address of the user submitting the job. For jobs
    * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
@@ -820,14 +947,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       submittedBy_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The email address of the user submitting the job. For jobs
    * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
@@ -835,13 +963,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string submitted_by = 10;</code>
    */
-  public com.google.protobuf.ByteString
-      getSubmittedByBytes() {
+  public com.google.protobuf.ByteString getSubmittedByBytes() {
     java.lang.Object ref = submittedBy_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       submittedBy_ = b;
       return b;
     } else {
@@ -852,6 +978,8 @@ private static final long serialVersionUID = 0L;
   public static final int DRIVER_OUTPUT_RESOURCE_URI_FIELD_NUMBER = 17;
   private volatile java.lang.Object driverOutputResourceUri_;
   /**
+   *
+   *
    * <pre>
    * Output only. A URI pointing to the location of the stdout of the job's
    * driver program.
@@ -864,14 +992,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       driverOutputResourceUri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. A URI pointing to the location of the stdout of the job's
    * driver program.
@@ -879,13 +1008,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string driver_output_resource_uri = 17;</code>
    */
-  public com.google.protobuf.ByteString
-      getDriverOutputResourceUriBytes() {
+  public com.google.protobuf.ByteString getDriverOutputResourceUriBytes() {
     java.lang.Object ref = driverOutputResourceUri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       driverOutputResourceUri_ = b;
       return b;
     } else {
@@ -896,6 +1023,8 @@ private static final long serialVersionUID = 0L;
   public static final int DRIVER_CONTROL_FILES_URI_FIELD_NUMBER = 15;
   private volatile java.lang.Object driverControlFilesUri_;
   /**
+   *
+   *
    * <pre>
    * Output only. If present, the location of miscellaneous control files
    * which may be used as part of job setup and handling. If not present,
@@ -909,14 +1038,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       driverControlFilesUri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. If present, the location of miscellaneous control files
    * which may be used as part of job setup and handling. If not present,
@@ -925,13 +1055,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string driver_control_files_uri = 15;</code>
    */
-  public com.google.protobuf.ByteString
-      getDriverControlFilesUriBytes() {
+  public com.google.protobuf.ByteString getDriverControlFilesUriBytes() {
     java.lang.Object ref = driverControlFilesUri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       driverControlFilesUri_ = b;
       return b;
     } else {
@@ -940,24 +1068,23 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LABELS_FIELD_NUMBER = 18;
+
   private static final class LabelsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_Job_LabelsEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dataproc.v1beta2.JobsProto
+                .internal_static_google_cloud_dataproc_v1beta2_Job_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> labels_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetLabels() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
     if (labels_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          LabelsDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
     }
     return labels_;
   }
@@ -966,6 +1093,8 @@ private static final long serialVersionUID = 0L;
     return internalGetLabels().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this job.
    * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -977,20 +1106,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 18;</code>
    */
-
-  public boolean containsLabels(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetLabels().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this job.
    * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -1002,11 +1131,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 18;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this job.
    * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -1018,16 +1148,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 18;</code>
    */
-
-  public java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this job.
    * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -1039,12 +1169,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 18;</code>
    */
-
-  public java.lang.String getLabelsOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -1054,6 +1183,8 @@ private static final long serialVersionUID = 0L;
   public static final int SCHEDULING_FIELD_NUMBER = 20;
   private com.google.cloud.dataproc.v1beta2.JobScheduling scheduling_;
   /**
+   *
+   *
    * <pre>
    * Optional. Job scheduling configuration.
    * </pre>
@@ -1064,6 +1195,8 @@ private static final long serialVersionUID = 0L;
     return scheduling_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Job scheduling configuration.
    * </pre>
@@ -1071,9 +1204,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1beta2.JobScheduling scheduling = 20;</code>
    */
   public com.google.cloud.dataproc.v1beta2.JobScheduling getScheduling() {
-    return scheduling_ == null ? com.google.cloud.dataproc.v1beta2.JobScheduling.getDefaultInstance() : scheduling_;
+    return scheduling_ == null
+        ? com.google.cloud.dataproc.v1beta2.JobScheduling.getDefaultInstance()
+        : scheduling_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Job scheduling configuration.
    * </pre>
@@ -1087,6 +1224,8 @@ private static final long serialVersionUID = 0L;
   public static final int JOB_UUID_FIELD_NUMBER = 22;
   private volatile java.lang.Object jobUuid_;
   /**
+   *
+   *
    * <pre>
    * Output only. A UUID that uniquely identifies a job within the project
    * over time. This is in contrast to a user-settable reference.job_id that
@@ -1100,14 +1239,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       jobUuid_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. A UUID that uniquely identifies a job within the project
    * over time. This is in contrast to a user-settable reference.job_id that
@@ -1116,13 +1256,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string job_uuid = 22;</code>
    */
-  public com.google.protobuf.ByteString
-      getJobUuidBytes() {
+  public com.google.protobuf.ByteString getJobUuidBytes() {
     java.lang.Object ref = jobUuid_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       jobUuid_ = b;
       return b;
     } else {
@@ -1131,6 +1269,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1142,8 +1281,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (reference_ != null) {
       output.writeMessage(1, getReference());
     }
@@ -1186,12 +1324,8 @@ private static final long serialVersionUID = 0L;
     if (!getDriverOutputResourceUriBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, driverOutputResourceUri_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetLabels(),
-        LabelsDefaultEntryHolder.defaultEntry,
-        18);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 18);
     if (scheduling_ != null) {
       output.writeMessage(20, getScheduling());
     }
@@ -1208,71 +1342,72 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (reference_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getReference());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getReference());
     }
     if (placement_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getPlacement());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getPlacement());
     }
     if (typeJobCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.cloud.dataproc.v1beta2.HadoopJob) typeJob_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.dataproc.v1beta2.HadoopJob) typeJob_);
     }
     if (typeJobCase_ == 4) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (com.google.cloud.dataproc.v1beta2.SparkJob) typeJob_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.dataproc.v1beta2.SparkJob) typeJob_);
     }
     if (typeJobCase_ == 5) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, (com.google.cloud.dataproc.v1beta2.PySparkJob) typeJob_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.dataproc.v1beta2.PySparkJob) typeJob_);
     }
     if (typeJobCase_ == 6) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, (com.google.cloud.dataproc.v1beta2.HiveJob) typeJob_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.cloud.dataproc.v1beta2.HiveJob) typeJob_);
     }
     if (typeJobCase_ == 7) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, (com.google.cloud.dataproc.v1beta2.PigJob) typeJob_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.dataproc.v1beta2.PigJob) typeJob_);
     }
     if (status_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getStatus());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getStatus());
     }
     for (int i = 0; i < yarnApplications_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, yarnApplications_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, yarnApplications_.get(i));
     }
     if (!getSubmittedByBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, submittedBy_);
     }
     if (typeJobCase_ == 12) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, (com.google.cloud.dataproc.v1beta2.SparkSqlJob) typeJob_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (com.google.cloud.dataproc.v1beta2.SparkSqlJob) typeJob_);
     }
     for (int i = 0; i < statusHistory_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, statusHistory_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, statusHistory_.get(i));
     }
     if (!getDriverControlFilesUriBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, driverControlFilesUri_);
     }
     if (!getDriverOutputResourceUriBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, driverOutputResourceUri_);
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(17, driverOutputResourceUri_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetLabels().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      labels__ = LabelsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(18, labels__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, labels__);
     }
     if (scheduling_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(20, getScheduling());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getScheduling());
     }
     if (!getJobUuidBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, jobUuid_);
@@ -1285,7 +1420,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dataproc.v1beta2.Job)) {
       return super.equals(obj);
@@ -1295,65 +1430,47 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (hasReference() == other.hasReference());
     if (hasReference()) {
-      result = result && getReference()
-          .equals(other.getReference());
+      result = result && getReference().equals(other.getReference());
     }
     result = result && (hasPlacement() == other.hasPlacement());
     if (hasPlacement()) {
-      result = result && getPlacement()
-          .equals(other.getPlacement());
+      result = result && getPlacement().equals(other.getPlacement());
     }
     result = result && (hasStatus() == other.hasStatus());
     if (hasStatus()) {
-      result = result && getStatus()
-          .equals(other.getStatus());
+      result = result && getStatus().equals(other.getStatus());
     }
-    result = result && getStatusHistoryList()
-        .equals(other.getStatusHistoryList());
-    result = result && getYarnApplicationsList()
-        .equals(other.getYarnApplicationsList());
-    result = result && getSubmittedBy()
-        .equals(other.getSubmittedBy());
-    result = result && getDriverOutputResourceUri()
-        .equals(other.getDriverOutputResourceUri());
-    result = result && getDriverControlFilesUri()
-        .equals(other.getDriverControlFilesUri());
-    result = result && internalGetLabels().equals(
-        other.internalGetLabels());
+    result = result && getStatusHistoryList().equals(other.getStatusHistoryList());
+    result = result && getYarnApplicationsList().equals(other.getYarnApplicationsList());
+    result = result && getSubmittedBy().equals(other.getSubmittedBy());
+    result = result && getDriverOutputResourceUri().equals(other.getDriverOutputResourceUri());
+    result = result && getDriverControlFilesUri().equals(other.getDriverControlFilesUri());
+    result = result && internalGetLabels().equals(other.internalGetLabels());
     result = result && (hasScheduling() == other.hasScheduling());
     if (hasScheduling()) {
-      result = result && getScheduling()
-          .equals(other.getScheduling());
+      result = result && getScheduling().equals(other.getScheduling());
     }
-    result = result && getJobUuid()
-        .equals(other.getJobUuid());
-    result = result && getTypeJobCase().equals(
-        other.getTypeJobCase());
+    result = result && getJobUuid().equals(other.getJobUuid());
+    result = result && getTypeJobCase().equals(other.getTypeJobCase());
     if (!result) return false;
     switch (typeJobCase_) {
       case 3:
-        result = result && getHadoopJob()
-            .equals(other.getHadoopJob());
+        result = result && getHadoopJob().equals(other.getHadoopJob());
         break;
       case 4:
-        result = result && getSparkJob()
-            .equals(other.getSparkJob());
+        result = result && getSparkJob().equals(other.getSparkJob());
         break;
       case 5:
-        result = result && getPysparkJob()
-            .equals(other.getPysparkJob());
+        result = result && getPysparkJob().equals(other.getPysparkJob());
         break;
       case 6:
-        result = result && getHiveJob()
-            .equals(other.getHiveJob());
+        result = result && getHiveJob().equals(other.getHiveJob());
         break;
       case 7:
-        result = result && getPigJob()
-            .equals(other.getPigJob());
+        result = result && getPigJob().equals(other.getPigJob());
         break;
       case 12:
-        result = result && getSparkSqlJob()
-            .equals(other.getSparkSqlJob());
+        result = result && getSparkSqlJob().equals(other.getSparkSqlJob());
         break;
       case 0:
       default:
@@ -1438,140 +1555,146 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.dataproc.v1beta2.Job parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.dataproc.v1beta2.Job parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.Job parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1beta2.Job parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.cloud.dataproc.v1beta2.Job parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.Job parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.Job parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.Job parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.Job parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1beta2.Job parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.Job parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1beta2.Job parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.Job parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1beta2.Job parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.dataproc.v1beta2.Job prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A Cloud Dataproc job resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.Job}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1beta2.Job)
       com.google.cloud.dataproc.v1beta2.JobOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_Job_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1beta2.JobsProto
+          .internal_static_google_cloud_dataproc_v1beta2_Job_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 18:
           return internalGetLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 18:
           return internalGetMutableLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_Job_fieldAccessorTable
+      return com.google.cloud.dataproc.v1beta2.JobsProto
+          .internal_static_google_cloud_dataproc_v1beta2_Job_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1beta2.Job.class, com.google.cloud.dataproc.v1beta2.Job.Builder.class);
+              com.google.cloud.dataproc.v1beta2.Job.class,
+              com.google.cloud.dataproc.v1beta2.Job.Builder.class);
     }
 
     // Construct using com.google.cloud.dataproc.v1beta2.Job.newBuilder()
@@ -1579,18 +1702,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getStatusHistoryFieldBuilder();
         getYarnApplicationsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1645,9 +1768,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_Job_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1beta2.JobsProto
+          .internal_static_google_cloud_dataproc_v1beta2_Job_descriptor;
     }
 
     @java.lang.Override
@@ -1666,7 +1789,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.Job buildPartial() {
-      com.google.cloud.dataproc.v1beta2.Job result = new com.google.cloud.dataproc.v1beta2.Job(this);
+      com.google.cloud.dataproc.v1beta2.Job result =
+          new com.google.cloud.dataproc.v1beta2.Job(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (referenceBuilder_ == null) {
@@ -1765,38 +1889,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dataproc.v1beta2.Job) {
-        return mergeFrom((com.google.cloud.dataproc.v1beta2.Job)other);
+        return mergeFrom((com.google.cloud.dataproc.v1beta2.Job) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1832,9 +1957,10 @@ private static final long serialVersionUID = 0L;
             statusHistoryBuilder_ = null;
             statusHistory_ = other.statusHistory_;
             bitField0_ = (bitField0_ & ~0x00000200);
-            statusHistoryBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getStatusHistoryFieldBuilder() : null;
+            statusHistoryBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getStatusHistoryFieldBuilder()
+                    : null;
           } else {
             statusHistoryBuilder_.addAllMessages(other.statusHistory_);
           }
@@ -1858,9 +1984,10 @@ private static final long serialVersionUID = 0L;
             yarnApplicationsBuilder_ = null;
             yarnApplications_ = other.yarnApplications_;
             bitField0_ = (bitField0_ & ~0x00000400);
-            yarnApplicationsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getYarnApplicationsFieldBuilder() : null;
+            yarnApplicationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getYarnApplicationsFieldBuilder()
+                    : null;
           } else {
             yarnApplicationsBuilder_.addAllMessages(other.yarnApplications_);
           }
@@ -1878,8 +2005,7 @@ private static final long serialVersionUID = 0L;
         driverControlFilesUri_ = other.driverControlFilesUri_;
         onChanged();
       }
-      internalGetMutableLabels().mergeFrom(
-          other.internalGetLabels());
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (other.hasScheduling()) {
         mergeScheduling(other.getScheduling());
       }
@@ -1888,33 +2014,40 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       switch (other.getTypeJobCase()) {
-        case HADOOP_JOB: {
-          mergeHadoopJob(other.getHadoopJob());
-          break;
-        }
-        case SPARK_JOB: {
-          mergeSparkJob(other.getSparkJob());
-          break;
-        }
-        case PYSPARK_JOB: {
-          mergePysparkJob(other.getPysparkJob());
-          break;
-        }
-        case HIVE_JOB: {
-          mergeHiveJob(other.getHiveJob());
-          break;
-        }
-        case PIG_JOB: {
-          mergePigJob(other.getPigJob());
-          break;
-        }
-        case SPARK_SQL_JOB: {
-          mergeSparkSqlJob(other.getSparkSqlJob());
-          break;
-        }
-        case TYPEJOB_NOT_SET: {
-          break;
-        }
+        case HADOOP_JOB:
+          {
+            mergeHadoopJob(other.getHadoopJob());
+            break;
+          }
+        case SPARK_JOB:
+          {
+            mergeSparkJob(other.getSparkJob());
+            break;
+          }
+        case PYSPARK_JOB:
+          {
+            mergePysparkJob(other.getPysparkJob());
+            break;
+          }
+        case HIVE_JOB:
+          {
+            mergeHiveJob(other.getHiveJob());
+            break;
+          }
+        case PIG_JOB:
+          {
+            mergePigJob(other.getPigJob());
+            break;
+          }
+        case SPARK_SQL_JOB:
+          {
+            mergeSparkSqlJob(other.getSparkSqlJob());
+            break;
+          }
+        case TYPEJOB_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1944,12 +2077,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int typeJobCase_ = 0;
     private java.lang.Object typeJob_;
-    public TypeJobCase
-        getTypeJobCase() {
-      return TypeJobCase.forNumber(
-          typeJobCase_);
+
+    public TypeJobCase getTypeJobCase() {
+      return TypeJobCase.forNumber(typeJobCase_);
     }
 
     public Builder clearTypeJob() {
@@ -1963,8 +2096,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dataproc.v1beta2.JobReference reference_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.JobReference, com.google.cloud.dataproc.v1beta2.JobReference.Builder, com.google.cloud.dataproc.v1beta2.JobReferenceOrBuilder> referenceBuilder_;
+            com.google.cloud.dataproc.v1beta2.JobReference,
+            com.google.cloud.dataproc.v1beta2.JobReference.Builder,
+            com.google.cloud.dataproc.v1beta2.JobReferenceOrBuilder>
+        referenceBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. The fully qualified reference to the job, which can be used to
      * obtain the equivalent REST path of the job resource. If this property
@@ -1978,6 +2116,8 @@ private static final long serialVersionUID = 0L;
       return referenceBuilder_ != null || reference_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The fully qualified reference to the job, which can be used to
      * obtain the equivalent REST path of the job resource. If this property
@@ -1989,12 +2129,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.JobReference getReference() {
       if (referenceBuilder_ == null) {
-        return reference_ == null ? com.google.cloud.dataproc.v1beta2.JobReference.getDefaultInstance() : reference_;
+        return reference_ == null
+            ? com.google.cloud.dataproc.v1beta2.JobReference.getDefaultInstance()
+            : reference_;
       } else {
         return referenceBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The fully qualified reference to the job, which can be used to
      * obtain the equivalent REST path of the job resource. If this property
@@ -2018,6 +2162,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The fully qualified reference to the job, which can be used to
      * obtain the equivalent REST path of the job resource. If this property
@@ -2039,6 +2185,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The fully qualified reference to the job, which can be used to
      * obtain the equivalent REST path of the job resource. If this property
@@ -2052,7 +2200,9 @@ private static final long serialVersionUID = 0L;
       if (referenceBuilder_ == null) {
         if (reference_ != null) {
           reference_ =
-            com.google.cloud.dataproc.v1beta2.JobReference.newBuilder(reference_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1beta2.JobReference.newBuilder(reference_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           reference_ = value;
         }
@@ -2064,6 +2214,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The fully qualified reference to the job, which can be used to
      * obtain the equivalent REST path of the job resource. If this property
@@ -2085,6 +2237,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The fully qualified reference to the job, which can be used to
      * obtain the equivalent REST path of the job resource. If this property
@@ -2095,11 +2249,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.JobReference reference = 1;</code>
      */
     public com.google.cloud.dataproc.v1beta2.JobReference.Builder getReferenceBuilder() {
-      
+
       onChanged();
       return getReferenceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The fully qualified reference to the job, which can be used to
      * obtain the equivalent REST path of the job resource. If this property
@@ -2113,11 +2269,14 @@ private static final long serialVersionUID = 0L;
       if (referenceBuilder_ != null) {
         return referenceBuilder_.getMessageOrBuilder();
       } else {
-        return reference_ == null ?
-            com.google.cloud.dataproc.v1beta2.JobReference.getDefaultInstance() : reference_;
+        return reference_ == null
+            ? com.google.cloud.dataproc.v1beta2.JobReference.getDefaultInstance()
+            : reference_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The fully qualified reference to the job, which can be used to
      * obtain the equivalent REST path of the job resource. If this property
@@ -2128,14 +2287,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.JobReference reference = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.JobReference, com.google.cloud.dataproc.v1beta2.JobReference.Builder, com.google.cloud.dataproc.v1beta2.JobReferenceOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.JobReference,
+            com.google.cloud.dataproc.v1beta2.JobReference.Builder,
+            com.google.cloud.dataproc.v1beta2.JobReferenceOrBuilder>
         getReferenceFieldBuilder() {
       if (referenceBuilder_ == null) {
-        referenceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.JobReference, com.google.cloud.dataproc.v1beta2.JobReference.Builder, com.google.cloud.dataproc.v1beta2.JobReferenceOrBuilder>(
-                getReference(),
-                getParentForChildren(),
-                isClean());
+        referenceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.JobReference,
+                com.google.cloud.dataproc.v1beta2.JobReference.Builder,
+                com.google.cloud.dataproc.v1beta2.JobReferenceOrBuilder>(
+                getReference(), getParentForChildren(), isClean());
         reference_ = null;
       }
       return referenceBuilder_;
@@ -2143,8 +2305,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dataproc.v1beta2.JobPlacement placement_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.JobPlacement, com.google.cloud.dataproc.v1beta2.JobPlacement.Builder, com.google.cloud.dataproc.v1beta2.JobPlacementOrBuilder> placementBuilder_;
+            com.google.cloud.dataproc.v1beta2.JobPlacement,
+            com.google.cloud.dataproc.v1beta2.JobPlacement.Builder,
+            com.google.cloud.dataproc.v1beta2.JobPlacementOrBuilder>
+        placementBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required. Job information, including how, when, and where to
      * run the job.
@@ -2156,6 +2323,8 @@ private static final long serialVersionUID = 0L;
       return placementBuilder_ != null || placement_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Job information, including how, when, and where to
      * run the job.
@@ -2165,12 +2334,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.JobPlacement getPlacement() {
       if (placementBuilder_ == null) {
-        return placement_ == null ? com.google.cloud.dataproc.v1beta2.JobPlacement.getDefaultInstance() : placement_;
+        return placement_ == null
+            ? com.google.cloud.dataproc.v1beta2.JobPlacement.getDefaultInstance()
+            : placement_;
       } else {
         return placementBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. Job information, including how, when, and where to
      * run the job.
@@ -2192,6 +2365,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Job information, including how, when, and where to
      * run the job.
@@ -2211,6 +2386,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Job information, including how, when, and where to
      * run the job.
@@ -2222,7 +2399,9 @@ private static final long serialVersionUID = 0L;
       if (placementBuilder_ == null) {
         if (placement_ != null) {
           placement_ =
-            com.google.cloud.dataproc.v1beta2.JobPlacement.newBuilder(placement_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1beta2.JobPlacement.newBuilder(placement_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           placement_ = value;
         }
@@ -2234,6 +2413,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Job information, including how, when, and where to
      * run the job.
@@ -2253,6 +2434,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Job information, including how, when, and where to
      * run the job.
@@ -2261,11 +2444,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.JobPlacement placement = 2;</code>
      */
     public com.google.cloud.dataproc.v1beta2.JobPlacement.Builder getPlacementBuilder() {
-      
+
       onChanged();
       return getPlacementFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required. Job information, including how, when, and where to
      * run the job.
@@ -2277,11 +2462,14 @@ private static final long serialVersionUID = 0L;
       if (placementBuilder_ != null) {
         return placementBuilder_.getMessageOrBuilder();
       } else {
-        return placement_ == null ?
-            com.google.cloud.dataproc.v1beta2.JobPlacement.getDefaultInstance() : placement_;
+        return placement_ == null
+            ? com.google.cloud.dataproc.v1beta2.JobPlacement.getDefaultInstance()
+            : placement_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. Job information, including how, when, and where to
      * run the job.
@@ -2290,22 +2478,30 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.JobPlacement placement = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.JobPlacement, com.google.cloud.dataproc.v1beta2.JobPlacement.Builder, com.google.cloud.dataproc.v1beta2.JobPlacementOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.JobPlacement,
+            com.google.cloud.dataproc.v1beta2.JobPlacement.Builder,
+            com.google.cloud.dataproc.v1beta2.JobPlacementOrBuilder>
         getPlacementFieldBuilder() {
       if (placementBuilder_ == null) {
-        placementBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.JobPlacement, com.google.cloud.dataproc.v1beta2.JobPlacement.Builder, com.google.cloud.dataproc.v1beta2.JobPlacementOrBuilder>(
-                getPlacement(),
-                getParentForChildren(),
-                isClean());
+        placementBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.JobPlacement,
+                com.google.cloud.dataproc.v1beta2.JobPlacement.Builder,
+                com.google.cloud.dataproc.v1beta2.JobPlacementOrBuilder>(
+                getPlacement(), getParentForChildren(), isClean());
         placement_ = null;
       }
       return placementBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.HadoopJob, com.google.cloud.dataproc.v1beta2.HadoopJob.Builder, com.google.cloud.dataproc.v1beta2.HadoopJobOrBuilder> hadoopJobBuilder_;
+            com.google.cloud.dataproc.v1beta2.HadoopJob,
+            com.google.cloud.dataproc.v1beta2.HadoopJob.Builder,
+            com.google.cloud.dataproc.v1beta2.HadoopJobOrBuilder>
+        hadoopJobBuilder_;
     /**
+     *
+     *
      * <pre>
      * Job is a Hadoop job.
      * </pre>
@@ -2316,6 +2512,8 @@ private static final long serialVersionUID = 0L;
       return typeJobCase_ == 3;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Hadoop job.
      * </pre>
@@ -2336,6 +2534,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Hadoop job.
      * </pre>
@@ -2356,6 +2556,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Hadoop job.
      * </pre>
@@ -2374,6 +2576,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Hadoop job.
      * </pre>
@@ -2382,10 +2586,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeHadoopJob(com.google.cloud.dataproc.v1beta2.HadoopJob value) {
       if (hadoopJobBuilder_ == null) {
-        if (typeJobCase_ == 3 &&
-            typeJob_ != com.google.cloud.dataproc.v1beta2.HadoopJob.getDefaultInstance()) {
-          typeJob_ = com.google.cloud.dataproc.v1beta2.HadoopJob.newBuilder((com.google.cloud.dataproc.v1beta2.HadoopJob) typeJob_)
-              .mergeFrom(value).buildPartial();
+        if (typeJobCase_ == 3
+            && typeJob_ != com.google.cloud.dataproc.v1beta2.HadoopJob.getDefaultInstance()) {
+          typeJob_ =
+              com.google.cloud.dataproc.v1beta2.HadoopJob.newBuilder(
+                      (com.google.cloud.dataproc.v1beta2.HadoopJob) typeJob_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           typeJob_ = value;
         }
@@ -2400,6 +2607,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Hadoop job.
      * </pre>
@@ -2423,6 +2632,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Hadoop job.
      * </pre>
@@ -2433,6 +2644,8 @@ private static final long serialVersionUID = 0L;
       return getHadoopJobFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Hadoop job.
      * </pre>
@@ -2450,6 +2663,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Hadoop job.
      * </pre>
@@ -2457,27 +2672,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.HadoopJob hadoop_job = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.HadoopJob, com.google.cloud.dataproc.v1beta2.HadoopJob.Builder, com.google.cloud.dataproc.v1beta2.HadoopJobOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.HadoopJob,
+            com.google.cloud.dataproc.v1beta2.HadoopJob.Builder,
+            com.google.cloud.dataproc.v1beta2.HadoopJobOrBuilder>
         getHadoopJobFieldBuilder() {
       if (hadoopJobBuilder_ == null) {
         if (!(typeJobCase_ == 3)) {
           typeJob_ = com.google.cloud.dataproc.v1beta2.HadoopJob.getDefaultInstance();
         }
-        hadoopJobBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.HadoopJob, com.google.cloud.dataproc.v1beta2.HadoopJob.Builder, com.google.cloud.dataproc.v1beta2.HadoopJobOrBuilder>(
+        hadoopJobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.HadoopJob,
+                com.google.cloud.dataproc.v1beta2.HadoopJob.Builder,
+                com.google.cloud.dataproc.v1beta2.HadoopJobOrBuilder>(
                 (com.google.cloud.dataproc.v1beta2.HadoopJob) typeJob_,
                 getParentForChildren(),
                 isClean());
         typeJob_ = null;
       }
       typeJobCase_ = 3;
-      onChanged();;
+      onChanged();
+      ;
       return hadoopJobBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.SparkJob, com.google.cloud.dataproc.v1beta2.SparkJob.Builder, com.google.cloud.dataproc.v1beta2.SparkJobOrBuilder> sparkJobBuilder_;
+            com.google.cloud.dataproc.v1beta2.SparkJob,
+            com.google.cloud.dataproc.v1beta2.SparkJob.Builder,
+            com.google.cloud.dataproc.v1beta2.SparkJobOrBuilder>
+        sparkJobBuilder_;
     /**
+     *
+     *
      * <pre>
      * Job is a Spark job.
      * </pre>
@@ -2488,6 +2714,8 @@ private static final long serialVersionUID = 0L;
       return typeJobCase_ == 4;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Spark job.
      * </pre>
@@ -2508,6 +2736,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Spark job.
      * </pre>
@@ -2528,14 +2758,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Spark job.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 4;</code>
      */
-    public Builder setSparkJob(
-        com.google.cloud.dataproc.v1beta2.SparkJob.Builder builderForValue) {
+    public Builder setSparkJob(com.google.cloud.dataproc.v1beta2.SparkJob.Builder builderForValue) {
       if (sparkJobBuilder_ == null) {
         typeJob_ = builderForValue.build();
         onChanged();
@@ -2546,6 +2777,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Spark job.
      * </pre>
@@ -2554,10 +2787,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeSparkJob(com.google.cloud.dataproc.v1beta2.SparkJob value) {
       if (sparkJobBuilder_ == null) {
-        if (typeJobCase_ == 4 &&
-            typeJob_ != com.google.cloud.dataproc.v1beta2.SparkJob.getDefaultInstance()) {
-          typeJob_ = com.google.cloud.dataproc.v1beta2.SparkJob.newBuilder((com.google.cloud.dataproc.v1beta2.SparkJob) typeJob_)
-              .mergeFrom(value).buildPartial();
+        if (typeJobCase_ == 4
+            && typeJob_ != com.google.cloud.dataproc.v1beta2.SparkJob.getDefaultInstance()) {
+          typeJob_ =
+              com.google.cloud.dataproc.v1beta2.SparkJob.newBuilder(
+                      (com.google.cloud.dataproc.v1beta2.SparkJob) typeJob_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           typeJob_ = value;
         }
@@ -2572,6 +2808,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Spark job.
      * </pre>
@@ -2595,6 +2833,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Spark job.
      * </pre>
@@ -2605,6 +2845,8 @@ private static final long serialVersionUID = 0L;
       return getSparkJobFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Spark job.
      * </pre>
@@ -2622,6 +2864,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Spark job.
      * </pre>
@@ -2629,27 +2873,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.SparkJob spark_job = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.SparkJob, com.google.cloud.dataproc.v1beta2.SparkJob.Builder, com.google.cloud.dataproc.v1beta2.SparkJobOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.SparkJob,
+            com.google.cloud.dataproc.v1beta2.SparkJob.Builder,
+            com.google.cloud.dataproc.v1beta2.SparkJobOrBuilder>
         getSparkJobFieldBuilder() {
       if (sparkJobBuilder_ == null) {
         if (!(typeJobCase_ == 4)) {
           typeJob_ = com.google.cloud.dataproc.v1beta2.SparkJob.getDefaultInstance();
         }
-        sparkJobBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.SparkJob, com.google.cloud.dataproc.v1beta2.SparkJob.Builder, com.google.cloud.dataproc.v1beta2.SparkJobOrBuilder>(
+        sparkJobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.SparkJob,
+                com.google.cloud.dataproc.v1beta2.SparkJob.Builder,
+                com.google.cloud.dataproc.v1beta2.SparkJobOrBuilder>(
                 (com.google.cloud.dataproc.v1beta2.SparkJob) typeJob_,
                 getParentForChildren(),
                 isClean());
         typeJob_ = null;
       }
       typeJobCase_ = 4;
-      onChanged();;
+      onChanged();
+      ;
       return sparkJobBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.PySparkJob, com.google.cloud.dataproc.v1beta2.PySparkJob.Builder, com.google.cloud.dataproc.v1beta2.PySparkJobOrBuilder> pysparkJobBuilder_;
+            com.google.cloud.dataproc.v1beta2.PySparkJob,
+            com.google.cloud.dataproc.v1beta2.PySparkJob.Builder,
+            com.google.cloud.dataproc.v1beta2.PySparkJobOrBuilder>
+        pysparkJobBuilder_;
     /**
+     *
+     *
      * <pre>
      * Job is a Pyspark job.
      * </pre>
@@ -2660,6 +2915,8 @@ private static final long serialVersionUID = 0L;
       return typeJobCase_ == 5;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Pyspark job.
      * </pre>
@@ -2680,6 +2937,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Pyspark job.
      * </pre>
@@ -2700,6 +2959,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Pyspark job.
      * </pre>
@@ -2718,6 +2979,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Pyspark job.
      * </pre>
@@ -2726,10 +2989,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergePysparkJob(com.google.cloud.dataproc.v1beta2.PySparkJob value) {
       if (pysparkJobBuilder_ == null) {
-        if (typeJobCase_ == 5 &&
-            typeJob_ != com.google.cloud.dataproc.v1beta2.PySparkJob.getDefaultInstance()) {
-          typeJob_ = com.google.cloud.dataproc.v1beta2.PySparkJob.newBuilder((com.google.cloud.dataproc.v1beta2.PySparkJob) typeJob_)
-              .mergeFrom(value).buildPartial();
+        if (typeJobCase_ == 5
+            && typeJob_ != com.google.cloud.dataproc.v1beta2.PySparkJob.getDefaultInstance()) {
+          typeJob_ =
+              com.google.cloud.dataproc.v1beta2.PySparkJob.newBuilder(
+                      (com.google.cloud.dataproc.v1beta2.PySparkJob) typeJob_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           typeJob_ = value;
         }
@@ -2744,6 +3010,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Pyspark job.
      * </pre>
@@ -2767,6 +3035,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Pyspark job.
      * </pre>
@@ -2777,6 +3047,8 @@ private static final long serialVersionUID = 0L;
       return getPysparkJobFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Pyspark job.
      * </pre>
@@ -2794,6 +3066,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Pyspark job.
      * </pre>
@@ -2801,27 +3075,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.PySparkJob pyspark_job = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.PySparkJob, com.google.cloud.dataproc.v1beta2.PySparkJob.Builder, com.google.cloud.dataproc.v1beta2.PySparkJobOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.PySparkJob,
+            com.google.cloud.dataproc.v1beta2.PySparkJob.Builder,
+            com.google.cloud.dataproc.v1beta2.PySparkJobOrBuilder>
         getPysparkJobFieldBuilder() {
       if (pysparkJobBuilder_ == null) {
         if (!(typeJobCase_ == 5)) {
           typeJob_ = com.google.cloud.dataproc.v1beta2.PySparkJob.getDefaultInstance();
         }
-        pysparkJobBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.PySparkJob, com.google.cloud.dataproc.v1beta2.PySparkJob.Builder, com.google.cloud.dataproc.v1beta2.PySparkJobOrBuilder>(
+        pysparkJobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.PySparkJob,
+                com.google.cloud.dataproc.v1beta2.PySparkJob.Builder,
+                com.google.cloud.dataproc.v1beta2.PySparkJobOrBuilder>(
                 (com.google.cloud.dataproc.v1beta2.PySparkJob) typeJob_,
                 getParentForChildren(),
                 isClean());
         typeJob_ = null;
       }
       typeJobCase_ = 5;
-      onChanged();;
+      onChanged();
+      ;
       return pysparkJobBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.HiveJob, com.google.cloud.dataproc.v1beta2.HiveJob.Builder, com.google.cloud.dataproc.v1beta2.HiveJobOrBuilder> hiveJobBuilder_;
+            com.google.cloud.dataproc.v1beta2.HiveJob,
+            com.google.cloud.dataproc.v1beta2.HiveJob.Builder,
+            com.google.cloud.dataproc.v1beta2.HiveJobOrBuilder>
+        hiveJobBuilder_;
     /**
+     *
+     *
      * <pre>
      * Job is a Hive job.
      * </pre>
@@ -2832,6 +3117,8 @@ private static final long serialVersionUID = 0L;
       return typeJobCase_ == 6;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Hive job.
      * </pre>
@@ -2852,6 +3139,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Hive job.
      * </pre>
@@ -2872,14 +3161,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Hive job.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 6;</code>
      */
-    public Builder setHiveJob(
-        com.google.cloud.dataproc.v1beta2.HiveJob.Builder builderForValue) {
+    public Builder setHiveJob(com.google.cloud.dataproc.v1beta2.HiveJob.Builder builderForValue) {
       if (hiveJobBuilder_ == null) {
         typeJob_ = builderForValue.build();
         onChanged();
@@ -2890,6 +3180,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Hive job.
      * </pre>
@@ -2898,10 +3190,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeHiveJob(com.google.cloud.dataproc.v1beta2.HiveJob value) {
       if (hiveJobBuilder_ == null) {
-        if (typeJobCase_ == 6 &&
-            typeJob_ != com.google.cloud.dataproc.v1beta2.HiveJob.getDefaultInstance()) {
-          typeJob_ = com.google.cloud.dataproc.v1beta2.HiveJob.newBuilder((com.google.cloud.dataproc.v1beta2.HiveJob) typeJob_)
-              .mergeFrom(value).buildPartial();
+        if (typeJobCase_ == 6
+            && typeJob_ != com.google.cloud.dataproc.v1beta2.HiveJob.getDefaultInstance()) {
+          typeJob_ =
+              com.google.cloud.dataproc.v1beta2.HiveJob.newBuilder(
+                      (com.google.cloud.dataproc.v1beta2.HiveJob) typeJob_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           typeJob_ = value;
         }
@@ -2916,6 +3211,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Hive job.
      * </pre>
@@ -2939,6 +3236,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Hive job.
      * </pre>
@@ -2949,6 +3248,8 @@ private static final long serialVersionUID = 0L;
       return getHiveJobFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Hive job.
      * </pre>
@@ -2966,6 +3267,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Hive job.
      * </pre>
@@ -2973,27 +3276,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.HiveJob hive_job = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.HiveJob, com.google.cloud.dataproc.v1beta2.HiveJob.Builder, com.google.cloud.dataproc.v1beta2.HiveJobOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.HiveJob,
+            com.google.cloud.dataproc.v1beta2.HiveJob.Builder,
+            com.google.cloud.dataproc.v1beta2.HiveJobOrBuilder>
         getHiveJobFieldBuilder() {
       if (hiveJobBuilder_ == null) {
         if (!(typeJobCase_ == 6)) {
           typeJob_ = com.google.cloud.dataproc.v1beta2.HiveJob.getDefaultInstance();
         }
-        hiveJobBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.HiveJob, com.google.cloud.dataproc.v1beta2.HiveJob.Builder, com.google.cloud.dataproc.v1beta2.HiveJobOrBuilder>(
+        hiveJobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.HiveJob,
+                com.google.cloud.dataproc.v1beta2.HiveJob.Builder,
+                com.google.cloud.dataproc.v1beta2.HiveJobOrBuilder>(
                 (com.google.cloud.dataproc.v1beta2.HiveJob) typeJob_,
                 getParentForChildren(),
                 isClean());
         typeJob_ = null;
       }
       typeJobCase_ = 6;
-      onChanged();;
+      onChanged();
+      ;
       return hiveJobBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.PigJob, com.google.cloud.dataproc.v1beta2.PigJob.Builder, com.google.cloud.dataproc.v1beta2.PigJobOrBuilder> pigJobBuilder_;
+            com.google.cloud.dataproc.v1beta2.PigJob,
+            com.google.cloud.dataproc.v1beta2.PigJob.Builder,
+            com.google.cloud.dataproc.v1beta2.PigJobOrBuilder>
+        pigJobBuilder_;
     /**
+     *
+     *
      * <pre>
      * Job is a Pig job.
      * </pre>
@@ -3004,6 +3318,8 @@ private static final long serialVersionUID = 0L;
       return typeJobCase_ == 7;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Pig job.
      * </pre>
@@ -3024,6 +3340,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Pig job.
      * </pre>
@@ -3044,14 +3362,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Pig job.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 7;</code>
      */
-    public Builder setPigJob(
-        com.google.cloud.dataproc.v1beta2.PigJob.Builder builderForValue) {
+    public Builder setPigJob(com.google.cloud.dataproc.v1beta2.PigJob.Builder builderForValue) {
       if (pigJobBuilder_ == null) {
         typeJob_ = builderForValue.build();
         onChanged();
@@ -3062,6 +3381,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Pig job.
      * </pre>
@@ -3070,10 +3391,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergePigJob(com.google.cloud.dataproc.v1beta2.PigJob value) {
       if (pigJobBuilder_ == null) {
-        if (typeJobCase_ == 7 &&
-            typeJob_ != com.google.cloud.dataproc.v1beta2.PigJob.getDefaultInstance()) {
-          typeJob_ = com.google.cloud.dataproc.v1beta2.PigJob.newBuilder((com.google.cloud.dataproc.v1beta2.PigJob) typeJob_)
-              .mergeFrom(value).buildPartial();
+        if (typeJobCase_ == 7
+            && typeJob_ != com.google.cloud.dataproc.v1beta2.PigJob.getDefaultInstance()) {
+          typeJob_ =
+              com.google.cloud.dataproc.v1beta2.PigJob.newBuilder(
+                      (com.google.cloud.dataproc.v1beta2.PigJob) typeJob_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           typeJob_ = value;
         }
@@ -3088,6 +3412,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Pig job.
      * </pre>
@@ -3111,6 +3437,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Pig job.
      * </pre>
@@ -3121,6 +3449,8 @@ private static final long serialVersionUID = 0L;
       return getPigJobFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Pig job.
      * </pre>
@@ -3138,6 +3468,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Job is a Pig job.
      * </pre>
@@ -3145,27 +3477,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.PigJob pig_job = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.PigJob, com.google.cloud.dataproc.v1beta2.PigJob.Builder, com.google.cloud.dataproc.v1beta2.PigJobOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.PigJob,
+            com.google.cloud.dataproc.v1beta2.PigJob.Builder,
+            com.google.cloud.dataproc.v1beta2.PigJobOrBuilder>
         getPigJobFieldBuilder() {
       if (pigJobBuilder_ == null) {
         if (!(typeJobCase_ == 7)) {
           typeJob_ = com.google.cloud.dataproc.v1beta2.PigJob.getDefaultInstance();
         }
-        pigJobBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.PigJob, com.google.cloud.dataproc.v1beta2.PigJob.Builder, com.google.cloud.dataproc.v1beta2.PigJobOrBuilder>(
+        pigJobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.PigJob,
+                com.google.cloud.dataproc.v1beta2.PigJob.Builder,
+                com.google.cloud.dataproc.v1beta2.PigJobOrBuilder>(
                 (com.google.cloud.dataproc.v1beta2.PigJob) typeJob_,
                 getParentForChildren(),
                 isClean());
         typeJob_ = null;
       }
       typeJobCase_ = 7;
-      onChanged();;
+      onChanged();
+      ;
       return pigJobBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.SparkSqlJob, com.google.cloud.dataproc.v1beta2.SparkSqlJob.Builder, com.google.cloud.dataproc.v1beta2.SparkSqlJobOrBuilder> sparkSqlJobBuilder_;
+            com.google.cloud.dataproc.v1beta2.SparkSqlJob,
+            com.google.cloud.dataproc.v1beta2.SparkSqlJob.Builder,
+            com.google.cloud.dataproc.v1beta2.SparkSqlJobOrBuilder>
+        sparkSqlJobBuilder_;
     /**
+     *
+     *
      * <pre>
      * Job is a SparkSql job.
      * </pre>
@@ -3176,6 +3519,8 @@ private static final long serialVersionUID = 0L;
       return typeJobCase_ == 12;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a SparkSql job.
      * </pre>
@@ -3196,6 +3541,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Job is a SparkSql job.
      * </pre>
@@ -3216,6 +3563,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a SparkSql job.
      * </pre>
@@ -3234,6 +3583,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a SparkSql job.
      * </pre>
@@ -3242,10 +3593,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeSparkSqlJob(com.google.cloud.dataproc.v1beta2.SparkSqlJob value) {
       if (sparkSqlJobBuilder_ == null) {
-        if (typeJobCase_ == 12 &&
-            typeJob_ != com.google.cloud.dataproc.v1beta2.SparkSqlJob.getDefaultInstance()) {
-          typeJob_ = com.google.cloud.dataproc.v1beta2.SparkSqlJob.newBuilder((com.google.cloud.dataproc.v1beta2.SparkSqlJob) typeJob_)
-              .mergeFrom(value).buildPartial();
+        if (typeJobCase_ == 12
+            && typeJob_ != com.google.cloud.dataproc.v1beta2.SparkSqlJob.getDefaultInstance()) {
+          typeJob_ =
+              com.google.cloud.dataproc.v1beta2.SparkSqlJob.newBuilder(
+                      (com.google.cloud.dataproc.v1beta2.SparkSqlJob) typeJob_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           typeJob_ = value;
         }
@@ -3260,6 +3614,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a SparkSql job.
      * </pre>
@@ -3283,6 +3639,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Job is a SparkSql job.
      * </pre>
@@ -3293,6 +3651,8 @@ private static final long serialVersionUID = 0L;
       return getSparkSqlJobFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Job is a SparkSql job.
      * </pre>
@@ -3310,6 +3670,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Job is a SparkSql job.
      * </pre>
@@ -3317,28 +3679,39 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.SparkSqlJob spark_sql_job = 12;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.SparkSqlJob, com.google.cloud.dataproc.v1beta2.SparkSqlJob.Builder, com.google.cloud.dataproc.v1beta2.SparkSqlJobOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.SparkSqlJob,
+            com.google.cloud.dataproc.v1beta2.SparkSqlJob.Builder,
+            com.google.cloud.dataproc.v1beta2.SparkSqlJobOrBuilder>
         getSparkSqlJobFieldBuilder() {
       if (sparkSqlJobBuilder_ == null) {
         if (!(typeJobCase_ == 12)) {
           typeJob_ = com.google.cloud.dataproc.v1beta2.SparkSqlJob.getDefaultInstance();
         }
-        sparkSqlJobBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.SparkSqlJob, com.google.cloud.dataproc.v1beta2.SparkSqlJob.Builder, com.google.cloud.dataproc.v1beta2.SparkSqlJobOrBuilder>(
+        sparkSqlJobBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.SparkSqlJob,
+                com.google.cloud.dataproc.v1beta2.SparkSqlJob.Builder,
+                com.google.cloud.dataproc.v1beta2.SparkSqlJobOrBuilder>(
                 (com.google.cloud.dataproc.v1beta2.SparkSqlJob) typeJob_,
                 getParentForChildren(),
                 isClean());
         typeJob_ = null;
       }
       typeJobCase_ = 12;
-      onChanged();;
+      onChanged();
+      ;
       return sparkSqlJobBuilder_;
     }
 
     private com.google.cloud.dataproc.v1beta2.JobStatus status_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.JobStatus, com.google.cloud.dataproc.v1beta2.JobStatus.Builder, com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder> statusBuilder_;
+            com.google.cloud.dataproc.v1beta2.JobStatus,
+            com.google.cloud.dataproc.v1beta2.JobStatus.Builder,
+            com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder>
+        statusBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The job status. Additional application-specific
      * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
@@ -3351,6 +3724,8 @@ private static final long serialVersionUID = 0L;
       return statusBuilder_ != null || status_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The job status. Additional application-specific
      * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
@@ -3361,12 +3736,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.JobStatus getStatus() {
       if (statusBuilder_ == null) {
-        return status_ == null ? com.google.cloud.dataproc.v1beta2.JobStatus.getDefaultInstance() : status_;
+        return status_ == null
+            ? com.google.cloud.dataproc.v1beta2.JobStatus.getDefaultInstance()
+            : status_;
       } else {
         return statusBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The job status. Additional application-specific
      * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
@@ -3389,6 +3768,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The job status. Additional application-specific
      * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
@@ -3397,8 +3778,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dataproc.v1beta2.JobStatus status = 8;</code>
      */
-    public Builder setStatus(
-        com.google.cloud.dataproc.v1beta2.JobStatus.Builder builderForValue) {
+    public Builder setStatus(com.google.cloud.dataproc.v1beta2.JobStatus.Builder builderForValue) {
       if (statusBuilder_ == null) {
         status_ = builderForValue.build();
         onChanged();
@@ -3409,6 +3789,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The job status. Additional application-specific
      * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
@@ -3421,7 +3803,9 @@ private static final long serialVersionUID = 0L;
       if (statusBuilder_ == null) {
         if (status_ != null) {
           status_ =
-            com.google.cloud.dataproc.v1beta2.JobStatus.newBuilder(status_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1beta2.JobStatus.newBuilder(status_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           status_ = value;
         }
@@ -3433,6 +3817,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The job status. Additional application-specific
      * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
@@ -3453,6 +3839,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The job status. Additional application-specific
      * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
@@ -3462,11 +3850,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.JobStatus status = 8;</code>
      */
     public com.google.cloud.dataproc.v1beta2.JobStatus.Builder getStatusBuilder() {
-      
+
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The job status. Additional application-specific
      * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
@@ -3479,11 +3869,14 @@ private static final long serialVersionUID = 0L;
       if (statusBuilder_ != null) {
         return statusBuilder_.getMessageOrBuilder();
       } else {
-        return status_ == null ?
-            com.google.cloud.dataproc.v1beta2.JobStatus.getDefaultInstance() : status_;
+        return status_ == null
+            ? com.google.cloud.dataproc.v1beta2.JobStatus.getDefaultInstance()
+            : status_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The job status. Additional application-specific
      * status information may be contained in the &lt;code&gt;type_job&lt;/code&gt;
@@ -3493,32 +3886,42 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.JobStatus status = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.JobStatus, com.google.cloud.dataproc.v1beta2.JobStatus.Builder, com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.JobStatus,
+            com.google.cloud.dataproc.v1beta2.JobStatus.Builder,
+            com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder>
         getStatusFieldBuilder() {
       if (statusBuilder_ == null) {
-        statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.JobStatus, com.google.cloud.dataproc.v1beta2.JobStatus.Builder, com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder>(
-                getStatus(),
-                getParentForChildren(),
-                isClean());
+        statusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.JobStatus,
+                com.google.cloud.dataproc.v1beta2.JobStatus.Builder,
+                com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder>(
+                getStatus(), getParentForChildren(), isClean());
         status_ = null;
       }
       return statusBuilder_;
     }
 
     private java.util.List<com.google.cloud.dataproc.v1beta2.JobStatus> statusHistory_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureStatusHistoryIsMutable() {
       if (!((bitField0_ & 0x00000200) == 0x00000200)) {
-        statusHistory_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.JobStatus>(statusHistory_);
+        statusHistory_ =
+            new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.JobStatus>(statusHistory_);
         bitField0_ |= 0x00000200;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.JobStatus, com.google.cloud.dataproc.v1beta2.JobStatus.Builder, com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder> statusHistoryBuilder_;
+            com.google.cloud.dataproc.v1beta2.JobStatus,
+            com.google.cloud.dataproc.v1beta2.JobStatus.Builder,
+            com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder>
+        statusHistoryBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Output only. The previous job status.
      * </pre>
@@ -3533,6 +3936,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The previous job status.
      * </pre>
@@ -3547,6 +3952,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The previous job status.
      * </pre>
@@ -3561,14 +3968,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13;</code>
      */
-    public Builder setStatusHistory(
-        int index, com.google.cloud.dataproc.v1beta2.JobStatus value) {
+    public Builder setStatusHistory(int index, com.google.cloud.dataproc.v1beta2.JobStatus value) {
       if (statusHistoryBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3582,6 +3990,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The previous job status.
      * </pre>
@@ -3600,6 +4010,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The previous job status.
      * </pre>
@@ -3620,14 +4032,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13;</code>
      */
-    public Builder addStatusHistory(
-        int index, com.google.cloud.dataproc.v1beta2.JobStatus value) {
+    public Builder addStatusHistory(int index, com.google.cloud.dataproc.v1beta2.JobStatus value) {
       if (statusHistoryBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3641,6 +4054,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The previous job status.
      * </pre>
@@ -3659,6 +4074,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The previous job status.
      * </pre>
@@ -3677,6 +4094,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The previous job status.
      * </pre>
@@ -3687,8 +4106,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.dataproc.v1beta2.JobStatus> values) {
       if (statusHistoryBuilder_ == null) {
         ensureStatusHistoryIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, statusHistory_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, statusHistory_);
         onChanged();
       } else {
         statusHistoryBuilder_.addAllMessages(values);
@@ -3696,6 +4114,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The previous job status.
      * </pre>
@@ -3713,6 +4133,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The previous job status.
      * </pre>
@@ -3730,17 +4152,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13;</code>
      */
-    public com.google.cloud.dataproc.v1beta2.JobStatus.Builder getStatusHistoryBuilder(
-        int index) {
+    public com.google.cloud.dataproc.v1beta2.JobStatus.Builder getStatusHistoryBuilder(int index) {
       return getStatusHistoryFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The previous job status.
      * </pre>
@@ -3750,19 +4175,22 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder getStatusHistoryOrBuilder(
         int index) {
       if (statusHistoryBuilder_ == null) {
-        return statusHistory_.get(index);  } else {
+        return statusHistory_.get(index);
+      } else {
         return statusHistoryBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13;</code>
      */
-    public java.util.List<? extends com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder> 
-         getStatusHistoryOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder>
+        getStatusHistoryOrBuilderList() {
       if (statusHistoryBuilder_ != null) {
         return statusHistoryBuilder_.getMessageOrBuilderList();
       } else {
@@ -3770,6 +4198,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The previous job status.
      * </pre>
@@ -3777,38 +4207,47 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13;</code>
      */
     public com.google.cloud.dataproc.v1beta2.JobStatus.Builder addStatusHistoryBuilder() {
-      return getStatusHistoryFieldBuilder().addBuilder(
-          com.google.cloud.dataproc.v1beta2.JobStatus.getDefaultInstance());
+      return getStatusHistoryFieldBuilder()
+          .addBuilder(com.google.cloud.dataproc.v1beta2.JobStatus.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13;</code>
      */
-    public com.google.cloud.dataproc.v1beta2.JobStatus.Builder addStatusHistoryBuilder(
-        int index) {
-      return getStatusHistoryFieldBuilder().addBuilder(
-          index, com.google.cloud.dataproc.v1beta2.JobStatus.getDefaultInstance());
+    public com.google.cloud.dataproc.v1beta2.JobStatus.Builder addStatusHistoryBuilder(int index) {
+      return getStatusHistoryFieldBuilder()
+          .addBuilder(index, com.google.cloud.dataproc.v1beta2.JobStatus.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The previous job status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.JobStatus status_history = 13;</code>
      */
-    public java.util.List<com.google.cloud.dataproc.v1beta2.JobStatus.Builder> 
-         getStatusHistoryBuilderList() {
+    public java.util.List<com.google.cloud.dataproc.v1beta2.JobStatus.Builder>
+        getStatusHistoryBuilderList() {
       return getStatusHistoryFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.JobStatus, com.google.cloud.dataproc.v1beta2.JobStatus.Builder, com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.JobStatus,
+            com.google.cloud.dataproc.v1beta2.JobStatus.Builder,
+            com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder>
         getStatusHistoryFieldBuilder() {
       if (statusHistoryBuilder_ == null) {
-        statusHistoryBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.JobStatus, com.google.cloud.dataproc.v1beta2.JobStatus.Builder, com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder>(
+        statusHistoryBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.JobStatus,
+                com.google.cloud.dataproc.v1beta2.JobStatus.Builder,
+                com.google.cloud.dataproc.v1beta2.JobStatusOrBuilder>(
                 statusHistory_,
                 ((bitField0_ & 0x00000200) == 0x00000200),
                 getParentForChildren(),
@@ -3819,18 +4258,26 @@ private static final long serialVersionUID = 0L;
     }
 
     private java.util.List<com.google.cloud.dataproc.v1beta2.YarnApplication> yarnApplications_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureYarnApplicationsIsMutable() {
       if (!((bitField0_ & 0x00000400) == 0x00000400)) {
-        yarnApplications_ = new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.YarnApplication>(yarnApplications_);
+        yarnApplications_ =
+            new java.util.ArrayList<com.google.cloud.dataproc.v1beta2.YarnApplication>(
+                yarnApplications_);
         bitField0_ |= 0x00000400;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.YarnApplication, com.google.cloud.dataproc.v1beta2.YarnApplication.Builder, com.google.cloud.dataproc.v1beta2.YarnApplicationOrBuilder> yarnApplicationsBuilder_;
+            com.google.cloud.dataproc.v1beta2.YarnApplication,
+            com.google.cloud.dataproc.v1beta2.YarnApplication.Builder,
+            com.google.cloud.dataproc.v1beta2.YarnApplicationOrBuilder>
+        yarnApplicationsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
@@ -3839,7 +4286,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
      */
-    public java.util.List<com.google.cloud.dataproc.v1beta2.YarnApplication> getYarnApplicationsList() {
+    public java.util.List<com.google.cloud.dataproc.v1beta2.YarnApplication>
+        getYarnApplicationsList() {
       if (yarnApplicationsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(yarnApplications_);
       } else {
@@ -3847,6 +4295,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
@@ -3863,6 +4313,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
@@ -3879,6 +4331,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
@@ -3902,6 +4356,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
@@ -3922,6 +4378,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
@@ -3944,6 +4402,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
@@ -3967,6 +4427,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
@@ -3987,6 +4449,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
@@ -4007,6 +4471,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
@@ -4019,8 +4485,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.dataproc.v1beta2.YarnApplication> values) {
       if (yarnApplicationsBuilder_ == null) {
         ensureYarnApplicationsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, yarnApplications_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, yarnApplications_);
         onChanged();
       } else {
         yarnApplicationsBuilder_.addAllMessages(values);
@@ -4028,6 +4493,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
@@ -4047,6 +4514,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
@@ -4066,6 +4535,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
@@ -4079,6 +4550,8 @@ private static final long serialVersionUID = 0L;
       return getYarnApplicationsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
@@ -4090,11 +4563,14 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dataproc.v1beta2.YarnApplicationOrBuilder getYarnApplicationsOrBuilder(
         int index) {
       if (yarnApplicationsBuilder_ == null) {
-        return yarnApplications_.get(index);  } else {
+        return yarnApplications_.get(index);
+      } else {
         return yarnApplicationsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
@@ -4103,8 +4579,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
      */
-    public java.util.List<? extends com.google.cloud.dataproc.v1beta2.YarnApplicationOrBuilder> 
-         getYarnApplicationsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.dataproc.v1beta2.YarnApplicationOrBuilder>
+        getYarnApplicationsOrBuilderList() {
       if (yarnApplicationsBuilder_ != null) {
         return yarnApplicationsBuilder_.getMessageOrBuilderList();
       } else {
@@ -4112,6 +4588,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
@@ -4121,10 +4599,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
      */
     public com.google.cloud.dataproc.v1beta2.YarnApplication.Builder addYarnApplicationsBuilder() {
-      return getYarnApplicationsFieldBuilder().addBuilder(
-          com.google.cloud.dataproc.v1beta2.YarnApplication.getDefaultInstance());
+      return getYarnApplicationsFieldBuilder()
+          .addBuilder(com.google.cloud.dataproc.v1beta2.YarnApplication.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
@@ -4135,10 +4615,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.YarnApplication.Builder addYarnApplicationsBuilder(
         int index) {
-      return getYarnApplicationsFieldBuilder().addBuilder(
-          index, com.google.cloud.dataproc.v1beta2.YarnApplication.getDefaultInstance());
+      return getYarnApplicationsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.dataproc.v1beta2.YarnApplication.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The collection of YARN applications spun up by this job.
      * **Beta** Feature: This report is available for testing purposes only. It may
@@ -4147,16 +4630,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dataproc.v1beta2.YarnApplication yarn_applications = 9;</code>
      */
-    public java.util.List<com.google.cloud.dataproc.v1beta2.YarnApplication.Builder> 
-         getYarnApplicationsBuilderList() {
+    public java.util.List<com.google.cloud.dataproc.v1beta2.YarnApplication.Builder>
+        getYarnApplicationsBuilderList() {
       return getYarnApplicationsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.YarnApplication, com.google.cloud.dataproc.v1beta2.YarnApplication.Builder, com.google.cloud.dataproc.v1beta2.YarnApplicationOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.YarnApplication,
+            com.google.cloud.dataproc.v1beta2.YarnApplication.Builder,
+            com.google.cloud.dataproc.v1beta2.YarnApplicationOrBuilder>
         getYarnApplicationsFieldBuilder() {
       if (yarnApplicationsBuilder_ == null) {
-        yarnApplicationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.YarnApplication, com.google.cloud.dataproc.v1beta2.YarnApplication.Builder, com.google.cloud.dataproc.v1beta2.YarnApplicationOrBuilder>(
+        yarnApplicationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.YarnApplication,
+                com.google.cloud.dataproc.v1beta2.YarnApplication.Builder,
+                com.google.cloud.dataproc.v1beta2.YarnApplicationOrBuilder>(
                 yarnApplications_,
                 ((bitField0_ & 0x00000400) == 0x00000400),
                 getParentForChildren(),
@@ -4168,6 +4657,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object submittedBy_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. The email address of the user submitting the job. For jobs
      * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
@@ -4178,8 +4669,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSubmittedBy() {
       java.lang.Object ref = submittedBy_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         submittedBy_ = s;
         return s;
@@ -4188,6 +4678,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The email address of the user submitting the job. For jobs
      * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
@@ -4195,13 +4687,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string submitted_by = 10;</code>
      */
-    public com.google.protobuf.ByteString
-        getSubmittedByBytes() {
+    public com.google.protobuf.ByteString getSubmittedByBytes() {
       java.lang.Object ref = submittedBy_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         submittedBy_ = b;
         return b;
       } else {
@@ -4209,6 +4699,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The email address of the user submitting the job. For jobs
      * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
@@ -4216,17 +4708,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string submitted_by = 10;</code>
      */
-    public Builder setSubmittedBy(
-        java.lang.String value) {
+    public Builder setSubmittedBy(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       submittedBy_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The email address of the user submitting the job. For jobs
      * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
@@ -4235,12 +4728,14 @@ private static final long serialVersionUID = 0L;
      * <code>string submitted_by = 10;</code>
      */
     public Builder clearSubmittedBy() {
-      
+
       submittedBy_ = getDefaultInstance().getSubmittedBy();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The email address of the user submitting the job. For jobs
      * submitted on the cluster, the address is &lt;code&gt;username&#64;hostname&lt;/code&gt;.
@@ -4248,13 +4743,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string submitted_by = 10;</code>
      */
-    public Builder setSubmittedByBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setSubmittedByBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       submittedBy_ = value;
       onChanged();
       return this;
@@ -4262,6 +4756,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object driverOutputResourceUri_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. A URI pointing to the location of the stdout of the job's
      * driver program.
@@ -4272,8 +4768,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDriverOutputResourceUri() {
       java.lang.Object ref = driverOutputResourceUri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         driverOutputResourceUri_ = s;
         return s;
@@ -4282,6 +4777,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A URI pointing to the location of the stdout of the job's
      * driver program.
@@ -4289,13 +4786,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string driver_output_resource_uri = 17;</code>
      */
-    public com.google.protobuf.ByteString
-        getDriverOutputResourceUriBytes() {
+    public com.google.protobuf.ByteString getDriverOutputResourceUriBytes() {
       java.lang.Object ref = driverOutputResourceUri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         driverOutputResourceUri_ = b;
         return b;
       } else {
@@ -4303,6 +4798,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A URI pointing to the location of the stdout of the job's
      * driver program.
@@ -4310,17 +4807,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string driver_output_resource_uri = 17;</code>
      */
-    public Builder setDriverOutputResourceUri(
-        java.lang.String value) {
+    public Builder setDriverOutputResourceUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       driverOutputResourceUri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A URI pointing to the location of the stdout of the job's
      * driver program.
@@ -4329,12 +4827,14 @@ private static final long serialVersionUID = 0L;
      * <code>string driver_output_resource_uri = 17;</code>
      */
     public Builder clearDriverOutputResourceUri() {
-      
+
       driverOutputResourceUri_ = getDefaultInstance().getDriverOutputResourceUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A URI pointing to the location of the stdout of the job's
      * driver program.
@@ -4342,13 +4842,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string driver_output_resource_uri = 17;</code>
      */
-    public Builder setDriverOutputResourceUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDriverOutputResourceUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       driverOutputResourceUri_ = value;
       onChanged();
       return this;
@@ -4356,6 +4855,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object driverControlFilesUri_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. If present, the location of miscellaneous control files
      * which may be used as part of job setup and handling. If not present,
@@ -4367,8 +4868,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDriverControlFilesUri() {
       java.lang.Object ref = driverControlFilesUri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         driverControlFilesUri_ = s;
         return s;
@@ -4377,6 +4877,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. If present, the location of miscellaneous control files
      * which may be used as part of job setup and handling. If not present,
@@ -4385,13 +4887,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string driver_control_files_uri = 15;</code>
      */
-    public com.google.protobuf.ByteString
-        getDriverControlFilesUriBytes() {
+    public com.google.protobuf.ByteString getDriverControlFilesUriBytes() {
       java.lang.Object ref = driverControlFilesUri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         driverControlFilesUri_ = b;
         return b;
       } else {
@@ -4399,6 +4899,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. If present, the location of miscellaneous control files
      * which may be used as part of job setup and handling. If not present,
@@ -4407,17 +4909,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string driver_control_files_uri = 15;</code>
      */
-    public Builder setDriverControlFilesUri(
-        java.lang.String value) {
+    public Builder setDriverControlFilesUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       driverControlFilesUri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. If present, the location of miscellaneous control files
      * which may be used as part of job setup and handling. If not present,
@@ -4427,12 +4930,14 @@ private static final long serialVersionUID = 0L;
      * <code>string driver_control_files_uri = 15;</code>
      */
     public Builder clearDriverControlFilesUri() {
-      
+
       driverControlFilesUri_ = getDefaultInstance().getDriverControlFilesUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. If present, the location of miscellaneous control files
      * which may be used as part of job setup and handling. If not present,
@@ -4441,34 +4946,32 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string driver_control_files_uri = 15;</code>
      */
-    public Builder setDriverControlFilesUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDriverControlFilesUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       driverControlFilesUri_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> labels_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetLabels() {
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
       if (labels_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       return labels_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableLabels() {
-      onChanged();;
+        internalGetMutableLabels() {
+      onChanged();
+      ;
       if (labels_ == null) {
-        labels_ = com.google.protobuf.MapField.newMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
@@ -4480,6 +4983,8 @@ private static final long serialVersionUID = 0L;
       return internalGetLabels().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this job.
      * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -4491,20 +4996,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 18;</code>
      */
-
-    public boolean containsLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetLabels().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getLabelsMap()} instead.
-     */
+    /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this job.
      * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -4516,11 +5021,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 18;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this job.
      * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -4532,16 +5038,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 18;</code>
      */
-
     public java.lang.String getLabelsOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this job.
      * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -4553,12 +5060,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 18;</code>
      */
-
-    public java.lang.String getLabelsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -4566,11 +5072,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearLabels() {
-      internalGetMutableLabels().getMutableMap()
-          .clear();
+      internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this job.
      * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -4582,23 +5089,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 18;</code>
      */
-
-    public Builder removeLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .remove(key);
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableLabels() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       return internalGetMutableLabels().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this job.
      * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -4610,16 +5115,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 18;</code>
      */
-    public Builder putLabels(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .put(key, value);
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this job.
      * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -4631,18 +5139,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 18;</code>
      */
-
-    public Builder putAllLabels(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableLabels().getMutableMap()
-          .putAll(values);
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
     }
 
     private com.google.cloud.dataproc.v1beta2.JobScheduling scheduling_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.JobScheduling, com.google.cloud.dataproc.v1beta2.JobScheduling.Builder, com.google.cloud.dataproc.v1beta2.JobSchedulingOrBuilder> schedulingBuilder_;
+            com.google.cloud.dataproc.v1beta2.JobScheduling,
+            com.google.cloud.dataproc.v1beta2.JobScheduling.Builder,
+            com.google.cloud.dataproc.v1beta2.JobSchedulingOrBuilder>
+        schedulingBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. Job scheduling configuration.
      * </pre>
@@ -4653,6 +5163,8 @@ private static final long serialVersionUID = 0L;
       return schedulingBuilder_ != null || scheduling_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Job scheduling configuration.
      * </pre>
@@ -4661,12 +5173,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.JobScheduling getScheduling() {
       if (schedulingBuilder_ == null) {
-        return scheduling_ == null ? com.google.cloud.dataproc.v1beta2.JobScheduling.getDefaultInstance() : scheduling_;
+        return scheduling_ == null
+            ? com.google.cloud.dataproc.v1beta2.JobScheduling.getDefaultInstance()
+            : scheduling_;
       } else {
         return schedulingBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Job scheduling configuration.
      * </pre>
@@ -4687,6 +5203,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Job scheduling configuration.
      * </pre>
@@ -4705,6 +5223,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Job scheduling configuration.
      * </pre>
@@ -4715,7 +5235,9 @@ private static final long serialVersionUID = 0L;
       if (schedulingBuilder_ == null) {
         if (scheduling_ != null) {
           scheduling_ =
-            com.google.cloud.dataproc.v1beta2.JobScheduling.newBuilder(scheduling_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1beta2.JobScheduling.newBuilder(scheduling_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           scheduling_ = value;
         }
@@ -4727,6 +5249,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Job scheduling configuration.
      * </pre>
@@ -4745,6 +5269,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Job scheduling configuration.
      * </pre>
@@ -4752,11 +5278,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.JobScheduling scheduling = 20;</code>
      */
     public com.google.cloud.dataproc.v1beta2.JobScheduling.Builder getSchedulingBuilder() {
-      
+
       onChanged();
       return getSchedulingFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Job scheduling configuration.
      * </pre>
@@ -4767,11 +5295,14 @@ private static final long serialVersionUID = 0L;
       if (schedulingBuilder_ != null) {
         return schedulingBuilder_.getMessageOrBuilder();
       } else {
-        return scheduling_ == null ?
-            com.google.cloud.dataproc.v1beta2.JobScheduling.getDefaultInstance() : scheduling_;
+        return scheduling_ == null
+            ? com.google.cloud.dataproc.v1beta2.JobScheduling.getDefaultInstance()
+            : scheduling_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Job scheduling configuration.
      * </pre>
@@ -4779,14 +5310,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.JobScheduling scheduling = 20;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.JobScheduling, com.google.cloud.dataproc.v1beta2.JobScheduling.Builder, com.google.cloud.dataproc.v1beta2.JobSchedulingOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.JobScheduling,
+            com.google.cloud.dataproc.v1beta2.JobScheduling.Builder,
+            com.google.cloud.dataproc.v1beta2.JobSchedulingOrBuilder>
         getSchedulingFieldBuilder() {
       if (schedulingBuilder_ == null) {
-        schedulingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.JobScheduling, com.google.cloud.dataproc.v1beta2.JobScheduling.Builder, com.google.cloud.dataproc.v1beta2.JobSchedulingOrBuilder>(
-                getScheduling(),
-                getParentForChildren(),
-                isClean());
+        schedulingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.JobScheduling,
+                com.google.cloud.dataproc.v1beta2.JobScheduling.Builder,
+                com.google.cloud.dataproc.v1beta2.JobSchedulingOrBuilder>(
+                getScheduling(), getParentForChildren(), isClean());
         scheduling_ = null;
       }
       return schedulingBuilder_;
@@ -4794,6 +5328,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object jobUuid_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. A UUID that uniquely identifies a job within the project
      * over time. This is in contrast to a user-settable reference.job_id that
@@ -4805,8 +5341,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getJobUuid() {
       java.lang.Object ref = jobUuid_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         jobUuid_ = s;
         return s;
@@ -4815,6 +5350,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A UUID that uniquely identifies a job within the project
      * over time. This is in contrast to a user-settable reference.job_id that
@@ -4823,13 +5360,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string job_uuid = 22;</code>
      */
-    public com.google.protobuf.ByteString
-        getJobUuidBytes() {
+    public com.google.protobuf.ByteString getJobUuidBytes() {
       java.lang.Object ref = jobUuid_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         jobUuid_ = b;
         return b;
       } else {
@@ -4837,6 +5372,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A UUID that uniquely identifies a job within the project
      * over time. This is in contrast to a user-settable reference.job_id that
@@ -4845,17 +5382,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string job_uuid = 22;</code>
      */
-    public Builder setJobUuid(
-        java.lang.String value) {
+    public Builder setJobUuid(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       jobUuid_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A UUID that uniquely identifies a job within the project
      * over time. This is in contrast to a user-settable reference.job_id that
@@ -4865,12 +5403,14 @@ private static final long serialVersionUID = 0L;
      * <code>string job_uuid = 22;</code>
      */
     public Builder clearJobUuid() {
-      
+
       jobUuid_ = getDefaultInstance().getJobUuid();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A UUID that uniquely identifies a job within the project
      * over time. This is in contrast to a user-settable reference.job_id that
@@ -4879,20 +5419,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string job_uuid = 22;</code>
      */
-    public Builder setJobUuidBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setJobUuidBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       jobUuid_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -4902,12 +5441,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1beta2.Job)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1beta2.Job)
   private static final com.google.cloud.dataproc.v1beta2.Job DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1beta2.Job();
   }
@@ -4916,16 +5455,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Job>
-      PARSER = new com.google.protobuf.AbstractParser<Job>() {
-    @java.lang.Override
-    public Job parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Job(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Job> PARSER =
+      new com.google.protobuf.AbstractParser<Job>() {
+        @java.lang.Override
+        public Job parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Job(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Job> parser() {
     return PARSER;
@@ -4940,6 +5479,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dataproc.v1beta2.Job getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

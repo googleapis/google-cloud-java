@@ -189,8 +189,8 @@ class MutateRowsAttemptCallable implements Callable<Void> {
 
       // Inspect the results and either propagate the success, or prepare to retry the failed
       // mutations
-      ApiFuture<Void> transformed = ApiFutures.transform(catching, attemptSuccessfulCallback,
-          MoreExecutors.directExecutor());
+      ApiFuture<Void> transformed =
+          ApiFutures.transform(catching, attemptSuccessfulCallback, MoreExecutors.directExecutor());
 
       // Notify the parent of the attempt
       externalFuture.setAttemptFuture(transformed);

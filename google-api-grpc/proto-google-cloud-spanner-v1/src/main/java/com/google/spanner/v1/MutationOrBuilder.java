@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface MutationOrBuilder extends
+public interface MutationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.Mutation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Insert new rows in a table. If any of the rows already exist,
    * the write or transaction fails with error `ALREADY_EXISTS`.
@@ -17,6 +20,8 @@ public interface MutationOrBuilder extends
    */
   boolean hasInsert();
   /**
+   *
+   *
    * <pre>
    * Insert new rows in a table. If any of the rows already exist,
    * the write or transaction fails with error `ALREADY_EXISTS`.
@@ -26,6 +31,8 @@ public interface MutationOrBuilder extends
    */
   com.google.spanner.v1.Mutation.Write getInsert();
   /**
+   *
+   *
    * <pre>
    * Insert new rows in a table. If any of the rows already exist,
    * the write or transaction fails with error `ALREADY_EXISTS`.
@@ -36,6 +43,8 @@ public interface MutationOrBuilder extends
   com.google.spanner.v1.Mutation.WriteOrBuilder getInsertOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Update existing rows in a table. If any of the rows does not
    * already exist, the transaction fails with error `NOT_FOUND`.
@@ -45,6 +54,8 @@ public interface MutationOrBuilder extends
    */
   boolean hasUpdate();
   /**
+   *
+   *
    * <pre>
    * Update existing rows in a table. If any of the rows does not
    * already exist, the transaction fails with error `NOT_FOUND`.
@@ -54,6 +65,8 @@ public interface MutationOrBuilder extends
    */
   com.google.spanner.v1.Mutation.Write getUpdate();
   /**
+   *
+   *
    * <pre>
    * Update existing rows in a table. If any of the rows does not
    * already exist, the transaction fails with error `NOT_FOUND`.
@@ -64,6 +77,8 @@ public interface MutationOrBuilder extends
   com.google.spanner.v1.Mutation.WriteOrBuilder getUpdateOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
    * its column values are overwritten with the ones provided. Any
@@ -74,6 +89,8 @@ public interface MutationOrBuilder extends
    */
   boolean hasInsertOrUpdate();
   /**
+   *
+   *
    * <pre>
    * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
    * its column values are overwritten with the ones provided. Any
@@ -84,6 +101,8 @@ public interface MutationOrBuilder extends
    */
   com.google.spanner.v1.Mutation.Write getInsertOrUpdate();
   /**
+   *
+   *
    * <pre>
    * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
    * its column values are overwritten with the ones provided. Any
@@ -95,6 +114,8 @@ public interface MutationOrBuilder extends
   com.google.spanner.v1.Mutation.WriteOrBuilder getInsertOrUpdateOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
    * deleted, and the column values provided are inserted
@@ -106,6 +127,8 @@ public interface MutationOrBuilder extends
    */
   boolean hasReplace();
   /**
+   *
+   *
    * <pre>
    * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
    * deleted, and the column values provided are inserted
@@ -117,6 +140,8 @@ public interface MutationOrBuilder extends
    */
   com.google.spanner.v1.Mutation.Write getReplace();
   /**
+   *
+   *
    * <pre>
    * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
    * deleted, and the column values provided are inserted
@@ -129,6 +154,8 @@ public interface MutationOrBuilder extends
   com.google.spanner.v1.Mutation.WriteOrBuilder getReplaceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Delete rows from a table. Succeeds whether or not the named
    * rows were present.
@@ -138,6 +165,8 @@ public interface MutationOrBuilder extends
    */
   boolean hasDelete();
   /**
+   *
+   *
    * <pre>
    * Delete rows from a table. Succeeds whether or not the named
    * rows were present.
@@ -147,6 +176,8 @@ public interface MutationOrBuilder extends
    */
   com.google.spanner.v1.Mutation.Delete getDelete();
   /**
+   *
+   *
    * <pre>
    * Delete rows from a table. Succeeds whether or not the named
    * rows were present.

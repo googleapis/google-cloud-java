@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface UpdateEntityTypeRequestOrBuilder extends
+public interface UpdateEntityTypeRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.UpdateEntityTypeRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The entity type to update.
    * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
@@ -17,6 +20,8 @@ public interface UpdateEntityTypeRequestOrBuilder extends
    */
   boolean hasEntityType();
   /**
+   *
+   *
    * <pre>
    * Required. The entity type to update.
    * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
@@ -26,6 +31,8 @@ public interface UpdateEntityTypeRequestOrBuilder extends
    */
   com.google.cloud.dialogflow.v2beta1.EntityType getEntityType();
   /**
+   *
+   *
    * <pre>
    * Required. The entity type to update.
    * Format: `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;EntityType ID&gt;`.
@@ -36,6 +43,8 @@ public interface UpdateEntityTypeRequestOrBuilder extends
   com.google.cloud.dialogflow.v2beta1.EntityTypeOrBuilder getEntityTypeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The language of entity synonyms defined in `entity_type`. If not
    * specified, the agent's default language is used.
@@ -48,6 +57,8 @@ public interface UpdateEntityTypeRequestOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Optional. The language of entity synonyms defined in `entity_type`. If not
    * specified, the agent's default language is used.
@@ -58,10 +69,11 @@ public interface UpdateEntityTypeRequestOrBuilder extends
    *
    * <code>string language_code = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -70,6 +82,8 @@ public interface UpdateEntityTypeRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -78,6 +92,8 @@ public interface UpdateEntityTypeRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>

@@ -3,11 +3,14 @@
 
 package com.google.datastore.v1;
 
-public interface KeyOrBuilder extends
+public interface KeyOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.datastore.v1.Key)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Entities are partitioned into subsets, currently identified by a project
    * ID and namespace ID.
@@ -18,6 +21,8 @@ public interface KeyOrBuilder extends
    */
   boolean hasPartitionId();
   /**
+   *
+   *
    * <pre>
    * Entities are partitioned into subsets, currently identified by a project
    * ID and namespace ID.
@@ -28,6 +33,8 @@ public interface KeyOrBuilder extends
    */
   com.google.datastore.v1.PartitionId getPartitionId();
   /**
+   *
+   *
    * <pre>
    * Entities are partitioned into subsets, currently identified by a project
    * ID and namespace ID.
@@ -39,6 +46,8 @@ public interface KeyOrBuilder extends
   com.google.datastore.v1.PartitionIdOrBuilder getPartitionIdOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The entity path.
    * An entity path consists of one or more elements composed of a kind and a
@@ -58,9 +67,10 @@ public interface KeyOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.Key.PathElement path = 2;</code>
    */
-  java.util.List<com.google.datastore.v1.Key.PathElement> 
-      getPathList();
+  java.util.List<com.google.datastore.v1.Key.PathElement> getPathList();
   /**
+   *
+   *
    * <pre>
    * The entity path.
    * An entity path consists of one or more elements composed of a kind and a
@@ -82,6 +92,8 @@ public interface KeyOrBuilder extends
    */
   com.google.datastore.v1.Key.PathElement getPath(int index);
   /**
+   *
+   *
    * <pre>
    * The entity path.
    * An entity path consists of one or more elements composed of a kind and a
@@ -103,6 +115,8 @@ public interface KeyOrBuilder extends
    */
   int getPathCount();
   /**
+   *
+   *
    * <pre>
    * The entity path.
    * An entity path consists of one or more elements composed of a kind and a
@@ -122,9 +136,10 @@ public interface KeyOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.Key.PathElement path = 2;</code>
    */
-  java.util.List<? extends com.google.datastore.v1.Key.PathElementOrBuilder> 
-      getPathOrBuilderList();
+  java.util.List<? extends com.google.datastore.v1.Key.PathElementOrBuilder> getPathOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The entity path.
    * An entity path consists of one or more elements composed of a kind and a
@@ -144,6 +159,5 @@ public interface KeyOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.Key.PathElement path = 2;</code>
    */
-  com.google.datastore.v1.Key.PathElementOrBuilder getPathOrBuilder(
-      int index);
+  com.google.datastore.v1.Key.PathElementOrBuilder getPathOrBuilder(int index);
 }

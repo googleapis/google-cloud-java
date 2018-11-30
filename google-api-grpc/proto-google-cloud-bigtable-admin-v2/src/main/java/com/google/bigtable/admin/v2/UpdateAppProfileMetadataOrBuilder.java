@@ -3,7 +3,7 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface UpdateAppProfileMetadataOrBuilder extends
+public interface UpdateAppProfileMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.UpdateAppProfileMetadata)
-    com.google.protobuf.MessageOrBuilder {
-}
+    com.google.protobuf.MessageOrBuilder {}

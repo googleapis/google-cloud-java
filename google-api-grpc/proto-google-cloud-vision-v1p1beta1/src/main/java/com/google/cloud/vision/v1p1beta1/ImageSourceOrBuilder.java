@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p1beta1;
 
-public interface ImageSourceOrBuilder extends
+public interface ImageSourceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p1beta1.ImageSource)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * NOTE: For new code `image_uri` below is preferred.
    * Google Cloud Storage image URI, which must be in the following form:
@@ -21,6 +24,8 @@ public interface ImageSourceOrBuilder extends
    */
   java.lang.String getGcsImageUri();
   /**
+   *
+   *
    * <pre>
    * NOTE: For new code `image_uri` below is preferred.
    * Google Cloud Storage image URI, which must be in the following form:
@@ -32,10 +37,11 @@ public interface ImageSourceOrBuilder extends
    *
    * <code>string gcs_image_uri = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getGcsImageUriBytes();
+  com.google.protobuf.ByteString getGcsImageUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * Image URI which supports:
    * 1) Google Cloud Storage image URI, which must be in the following form:
@@ -53,6 +59,8 @@ public interface ImageSourceOrBuilder extends
    */
   java.lang.String getImageUri();
   /**
+   *
+   *
    * <pre>
    * Image URI which supports:
    * 1) Google Cloud Storage image URI, which must be in the following form:
@@ -68,6 +76,5 @@ public interface ImageSourceOrBuilder extends
    *
    * <code>string image_uri = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getImageUriBytes();
+  com.google.protobuf.ByteString getImageUriBytes();
 }

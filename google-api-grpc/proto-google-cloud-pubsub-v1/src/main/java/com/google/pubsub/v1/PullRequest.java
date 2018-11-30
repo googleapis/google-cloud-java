@@ -4,21 +4,24 @@
 package com.google.pubsub.v1;
 
 /**
+ *
+ *
  * <pre>
  * Request for the `Pull` method.
  * </pre>
  *
  * Protobuf type {@code google.pubsub.v1.PullRequest}
  */
-public  final class PullRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class PullRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.PullRequest)
     PullRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use PullRequest.newBuilder() to construct.
   private PullRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private PullRequest() {
     subscription_ = "";
     returnImmediately_ = false;
@@ -26,10 +29,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private PullRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,50 +52,51 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            subscription_ = s;
-            break;
-          }
-          case 16: {
-
-            returnImmediately_ = input.readBool();
-            break;
-          }
-          case 24: {
-
-            maxMessages_ = input.readInt32();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              subscription_ = s;
+              break;
             }
-            break;
-          }
+          case 16:
+            {
+              returnImmediately_ = input.readBool();
+              break;
+            }
+          case 24:
+            {
+              maxMessages_ = input.readInt32();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_PullRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_PullRequest_fieldAccessorTable
+    return com.google.pubsub.v1.PubsubProto
+        .internal_static_google_pubsub_v1_PullRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.pubsub.v1.PullRequest.class, com.google.pubsub.v1.PullRequest.Builder.class);
   }
@@ -100,6 +104,8 @@ private static final long serialVersionUID = 0L;
   public static final int SUBSCRIPTION_FIELD_NUMBER = 1;
   private volatile java.lang.Object subscription_;
   /**
+   *
+   *
    * <pre>
    * The subscription from which messages should be pulled.
    * Format is `projects/{project}/subscriptions/{sub}`.
@@ -112,14 +118,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       subscription_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The subscription from which messages should be pulled.
    * Format is `projects/{project}/subscriptions/{sub}`.
@@ -127,13 +134,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string subscription = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getSubscriptionBytes() {
+  public com.google.protobuf.ByteString getSubscriptionBytes() {
     java.lang.Object ref = subscription_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       subscription_ = b;
       return b;
     } else {
@@ -144,6 +149,8 @@ private static final long serialVersionUID = 0L;
   public static final int RETURN_IMMEDIATELY_FIELD_NUMBER = 2;
   private boolean returnImmediately_;
   /**
+   *
+   *
    * <pre>
    * If this field set to true, the system will respond immediately even if
    * it there are no messages available to return in the `Pull` response.
@@ -160,6 +167,8 @@ private static final long serialVersionUID = 0L;
   public static final int MAX_MESSAGES_FIELD_NUMBER = 3;
   private int maxMessages_;
   /**
+   *
+   *
    * <pre>
    * The maximum number of messages returned for this request. The Pub/Sub
    * system may return fewer than the number specified.
@@ -172,6 +181,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -183,8 +193,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getSubscriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, subscription_);
     }
@@ -207,12 +216,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, subscription_);
     }
     if (returnImmediately_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(2, returnImmediately_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, returnImmediately_);
     }
     if (maxMessages_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, maxMessages_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, maxMessages_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -222,7 +229,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.pubsub.v1.PullRequest)) {
       return super.equals(obj);
@@ -230,12 +237,9 @@ private static final long serialVersionUID = 0L;
     com.google.pubsub.v1.PullRequest other = (com.google.pubsub.v1.PullRequest) obj;
 
     boolean result = true;
-    result = result && getSubscription()
-        .equals(other.getSubscription());
-    result = result && (getReturnImmediately()
-        == other.getReturnImmediately());
-    result = result && (getMaxMessages()
-        == other.getMaxMessages());
+    result = result && getSubscription().equals(other.getSubscription());
+    result = result && (getReturnImmediately() == other.getReturnImmediately());
+    result = result && (getMaxMessages() == other.getMaxMessages());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -250,8 +254,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SUBSCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getSubscription().hashCode();
     hash = (37 * hash) + RETURN_IMMEDIATELY_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getReturnImmediately());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReturnImmediately());
     hash = (37 * hash) + MAX_MESSAGES_FIELD_NUMBER;
     hash = (53 * hash) + getMaxMessages();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -259,118 +262,126 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.pubsub.v1.PullRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.pubsub.v1.PullRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.PullRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.pubsub.v1.PullRequest parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.pubsub.v1.PullRequest parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.PullRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.PullRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.PullRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.PullRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.PullRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.PullRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.PullRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.PullRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.PullRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.pubsub.v1.PullRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Request for the `Pull` method.
    * </pre>
    *
    * Protobuf type {@code google.pubsub.v1.PullRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.pubsub.v1.PullRequest)
       com.google.pubsub.v1.PullRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_PullRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_PullRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_PullRequest_fieldAccessorTable
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_PullRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.pubsub.v1.PullRequest.class, com.google.pubsub.v1.PullRequest.Builder.class);
+              com.google.pubsub.v1.PullRequest.class,
+              com.google.pubsub.v1.PullRequest.Builder.class);
     }
 
     // Construct using com.google.pubsub.v1.PullRequest.newBuilder()
@@ -378,16 +389,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -401,9 +411,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_PullRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_PullRequest_descriptor;
     }
 
     @java.lang.Override
@@ -434,38 +444,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.pubsub.v1.PullRequest) {
-        return mergeFrom((com.google.pubsub.v1.PullRequest)other);
+        return mergeFrom((com.google.pubsub.v1.PullRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -515,6 +526,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object subscription_ = "";
     /**
+     *
+     *
      * <pre>
      * The subscription from which messages should be pulled.
      * Format is `projects/{project}/subscriptions/{sub}`.
@@ -525,8 +538,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSubscription() {
       java.lang.Object ref = subscription_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         subscription_ = s;
         return s;
@@ -535,6 +547,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The subscription from which messages should be pulled.
      * Format is `projects/{project}/subscriptions/{sub}`.
@@ -542,13 +556,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string subscription = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getSubscriptionBytes() {
+    public com.google.protobuf.ByteString getSubscriptionBytes() {
       java.lang.Object ref = subscription_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         subscription_ = b;
         return b;
       } else {
@@ -556,6 +568,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The subscription from which messages should be pulled.
      * Format is `projects/{project}/subscriptions/{sub}`.
@@ -563,17 +577,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string subscription = 1;</code>
      */
-    public Builder setSubscription(
-        java.lang.String value) {
+    public Builder setSubscription(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       subscription_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The subscription from which messages should be pulled.
      * Format is `projects/{project}/subscriptions/{sub}`.
@@ -582,12 +597,14 @@ private static final long serialVersionUID = 0L;
      * <code>string subscription = 1;</code>
      */
     public Builder clearSubscription() {
-      
+
       subscription_ = getDefaultInstance().getSubscription();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The subscription from which messages should be pulled.
      * Format is `projects/{project}/subscriptions/{sub}`.
@@ -595,20 +612,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string subscription = 1;</code>
      */
-    public Builder setSubscriptionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setSubscriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       subscription_ = value;
       onChanged();
       return this;
     }
 
-    private boolean returnImmediately_ ;
+    private boolean returnImmediately_;
     /**
+     *
+     *
      * <pre>
      * If this field set to true, the system will respond immediately even if
      * it there are no messages available to return in the `Pull` response.
@@ -622,6 +640,8 @@ private static final long serialVersionUID = 0L;
       return returnImmediately_;
     }
     /**
+     *
+     *
      * <pre>
      * If this field set to true, the system will respond immediately even if
      * it there are no messages available to return in the `Pull` response.
@@ -632,12 +652,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool return_immediately = 2;</code>
      */
     public Builder setReturnImmediately(boolean value) {
-      
+
       returnImmediately_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If this field set to true, the system will respond immediately even if
      * it there are no messages available to return in the `Pull` response.
@@ -648,14 +670,16 @@ private static final long serialVersionUID = 0L;
      * <code>bool return_immediately = 2;</code>
      */
     public Builder clearReturnImmediately() {
-      
+
       returnImmediately_ = false;
       onChanged();
       return this;
     }
 
-    private int maxMessages_ ;
+    private int maxMessages_;
     /**
+     *
+     *
      * <pre>
      * The maximum number of messages returned for this request. The Pub/Sub
      * system may return fewer than the number specified.
@@ -667,6 +691,8 @@ private static final long serialVersionUID = 0L;
       return maxMessages_;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of messages returned for this request. The Pub/Sub
      * system may return fewer than the number specified.
@@ -675,12 +701,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 max_messages = 3;</code>
      */
     public Builder setMaxMessages(int value) {
-      
+
       maxMessages_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of messages returned for this request. The Pub/Sub
      * system may return fewer than the number specified.
@@ -689,14 +717,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 max_messages = 3;</code>
      */
     public Builder clearMaxMessages() {
-      
+
       maxMessages_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -706,12 +734,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.pubsub.v1.PullRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.pubsub.v1.PullRequest)
   private static final com.google.pubsub.v1.PullRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.pubsub.v1.PullRequest();
   }
@@ -720,16 +748,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<PullRequest>
-      PARSER = new com.google.protobuf.AbstractParser<PullRequest>() {
-    @java.lang.Override
-    public PullRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new PullRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<PullRequest> PARSER =
+      new com.google.protobuf.AbstractParser<PullRequest>() {
+        @java.lang.Override
+        public PullRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new PullRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<PullRequest> parser() {
     return PARSER;
@@ -744,6 +772,4 @@ private static final long serialVersionUID = 0L;
   public com.google.pubsub.v1.PullRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

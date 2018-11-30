@@ -5,25 +5,25 @@ package com.google.cloud.automl.v1beta1;
 
 public final class ClassificationProto {
   private ClassificationProto() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
-  }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   *
+   *
    * <pre>
    * Type of the classification problem.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.automl.v1beta1.ClassificationType}
    */
-  public enum ClassificationType
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum ClassificationType implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Should not be used, an un-set enum has this value by default.
      * </pre>
@@ -32,6 +32,8 @@ public final class ClassificationProto {
      */
     CLASSIFICATION_TYPE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * At most one label is allowed per example.
      * </pre>
@@ -40,6 +42,8 @@ public final class ClassificationProto {
      */
     MULTICLASS(1),
     /**
+     *
+     *
      * <pre>
      * Multiple labels are allowed for one example.
      * </pre>
@@ -51,6 +55,8 @@ public final class ClassificationProto {
     ;
 
     /**
+     *
+     *
      * <pre>
      * Should not be used, an un-set enum has this value by default.
      * </pre>
@@ -59,6 +65,8 @@ public final class ClassificationProto {
      */
     public static final int CLASSIFICATION_TYPE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * At most one label is allowed per example.
      * </pre>
@@ -67,6 +75,8 @@ public final class ClassificationProto {
      */
     public static final int MULTICLASS_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Multiple labels are allowed for one example.
      * </pre>
@@ -74,7 +84,6 @@ public final class ClassificationProto {
      * <code>MULTILABEL = 2;</code>
      */
     public static final int MULTILABEL_VALUE = 2;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -84,9 +93,7 @@ public final class ClassificationProto {
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static ClassificationType valueOf(int value) {
       return forNumber(value);
@@ -94,10 +101,14 @@ public final class ClassificationProto {
 
     public static ClassificationType forNumber(int value) {
       switch (value) {
-        case 0: return CLASSIFICATION_TYPE_UNSPECIFIED;
-        case 1: return MULTICLASS;
-        case 2: return MULTILABEL;
-        default: return null;
+        case 0:
+          return CLASSIFICATION_TYPE_UNSPECIFIED;
+        case 1:
+          return MULTICLASS;
+        case 2:
+          return MULTILABEL;
+        default:
+          return null;
       }
     }
 
@@ -105,25 +116,27 @@ public final class ClassificationProto {
         internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        ClassificationType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ClassificationType>() {
-            public ClassificationType findValueByNumber(int number) {
-              return ClassificationType.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<ClassificationType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ClassificationType>() {
+              public ClassificationType findValueByNumber(int number) {
+                return ClassificationType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor().getEnumTypes().get(0);
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.automl.v1beta1.ClassificationProto.getDescriptor()
+          .getEnumTypes()
+          .get(0);
     }
 
     private static final ClassificationType[] VALUES = values();
@@ -131,8 +144,7 @@ public final class ClassificationProto {
     public static ClassificationType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -149,11 +161,14 @@ public final class ClassificationProto {
     // @@protoc_insertion_point(enum_scope:google.cloud.automl.v1beta1.ClassificationType)
   }
 
-  public interface ClassificationAnnotationOrBuilder extends
+  public interface ClassificationAnnotationOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.ClassificationAnnotation)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Output only. A confidence estimate between 0.0 and 1.0. A higher value
      * means greater confidence that the annotation is positive. If a user
@@ -167,30 +182,33 @@ public final class ClassificationProto {
     float getScore();
   }
   /**
+   *
+   *
    * <pre>
    * Contains annotation details specific to classification.
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.ClassificationAnnotation}
    */
-  public  static final class ClassificationAnnotation extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class ClassificationAnnotation extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ClassificationAnnotation)
       ClassificationAnnotationOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use ClassificationAnnotation.newBuilder() to construct.
     private ClassificationAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private ClassificationAnnotation() {
       score_ = 0F;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private ClassificationAnnotation(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -210,46 +228,51 @@ public final class ClassificationProto {
             case 0:
               done = true;
               break;
-            case 13: {
-
-              score_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 13:
+              {
+                score_ = input.readFloat();
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.automl.v1beta1.ClassificationProto
+          .internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_fieldAccessorTable
+      return com.google.cloud.automl.v1beta1.ClassificationProto
+          .internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.class, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder.class);
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.class,
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder
+                  .class);
     }
 
     public static final int SCORE_FIELD_NUMBER = 1;
     private float score_;
     /**
+     *
+     *
      * <pre>
      * Output only. A confidence estimate between 0.0 and 1.0. A higher value
      * means greater confidence that the annotation is positive. If a user
@@ -265,6 +288,7 @@ public final class ClassificationProto {
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -276,8 +300,7 @@ public final class ClassificationProto {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (score_ != 0F) {
         output.writeFloat(1, score_);
       }
@@ -291,8 +314,7 @@ public final class ClassificationProto {
 
       size = 0;
       if (score_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(1, score_);
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, score_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -302,18 +324,21 @@ public final class ClassificationProto {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
-      if (!(obj instanceof com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation)) {
+      if (!(obj
+          instanceof
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation)) {
         return super.equals(obj);
       }
-      com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation other = (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) obj;
+      com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation other =
+          (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) obj;
 
       boolean result = true;
-      result = result && (
-          java.lang.Float.floatToIntBits(getScore())
-          == java.lang.Float.floatToIntBits(
-              other.getScore()));
+      result =
+          result
+              && (java.lang.Float.floatToIntBits(getScore())
+                  == java.lang.Float.floatToIntBits(other.getScore()));
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -326,95 +351,107 @@ public final class ClassificationProto {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getScore());
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getScore());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation prototype) {
+
+    public static Builder newBuilder(
+        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -424,44 +461,50 @@ public final class ClassificationProto {
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Contains annotation details specific to classification.
      * </pre>
      *
      * Protobuf type {@code google.cloud.automl.v1beta1.ClassificationAnnotation}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.automl.v1beta1.ClassificationAnnotation)
         com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotationOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.automl.v1beta1.ClassificationProto
+            .internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_fieldAccessorTable
+        return com.google.cloud.automl.v1beta1.ClassificationProto
+            .internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.class, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder.class);
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.class,
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder
+                    .class);
       }
 
-      // Construct using com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.newBuilder()
+      // Construct using
+      // com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -471,19 +514,22 @@ public final class ClassificationProto {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.automl.v1beta1.ClassificationProto
+            .internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor;
       }
 
       @java.lang.Override
-      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation getDefaultInstanceForType() {
-        return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.getDefaultInstance();
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+          getDefaultInstanceForType() {
+        return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+            .getDefaultInstance();
       }
 
       @java.lang.Override
       public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation build() {
-        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation result = buildPartial();
+        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation result =
+            buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -491,8 +537,10 @@ public final class ClassificationProto {
       }
 
       @java.lang.Override
-      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation buildPartial() {
-        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation result = new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation(this);
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+          buildPartial() {
+        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation result =
+            new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation(this);
         result.score_ = score_;
         onBuilt();
         return result;
@@ -502,46 +550,55 @@ public final class ClassificationProto {
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) {
-          return mergeFrom((com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation)other);
+        if (other
+            instanceof
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) {
+          return mergeFrom(
+              (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation other) {
-        if (other == com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.getDefaultInstance()) return this;
+      public Builder mergeFrom(
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation other) {
+        if (other
+            == com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+                .getDefaultInstance()) return this;
         if (other.getScore() != 0F) {
           setScore(other.getScore());
         }
@@ -560,11 +617,14 @@ public final class ClassificationProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation parsedMessage = null;
+        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation parsedMessage =
+            null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -574,8 +634,10 @@ public final class ClassificationProto {
         return this;
       }
 
-      private float score_ ;
+      private float score_;
       /**
+       *
+       *
        * <pre>
        * Output only. A confidence estimate between 0.0 and 1.0. A higher value
        * means greater confidence that the annotation is positive. If a user
@@ -590,6 +652,8 @@ public final class ClassificationProto {
         return score_;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. A confidence estimate between 0.0 and 1.0. A higher value
        * means greater confidence that the annotation is positive. If a user
@@ -601,12 +665,14 @@ public final class ClassificationProto {
        * <code>float score = 1;</code>
        */
       public Builder setScore(float value) {
-        
+
         score_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. A confidence estimate between 0.0 and 1.0. A higher value
        * means greater confidence that the annotation is positive. If a user
@@ -618,11 +684,12 @@ public final class ClassificationProto {
        * <code>float score = 1;</code>
        */
       public Builder clearScore() {
-        
+
         score_ = 0F;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -635,30 +702,34 @@ public final class ClassificationProto {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.cloud.automl.v1beta1.ClassificationAnnotation)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.automl.v1beta1.ClassificationAnnotation)
-    private static final com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation DEFAULT_INSTANCE;
+    private static final com.google.cloud.automl.v1beta1.ClassificationProto
+            .ClassificationAnnotation
+        DEFAULT_INSTANCE;
+
     static {
-      DEFAULT_INSTANCE = new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation();
+      DEFAULT_INSTANCE =
+          new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation();
     }
 
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation getDefaultInstance() {
+    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ClassificationAnnotation>
-        PARSER = new com.google.protobuf.AbstractParser<ClassificationAnnotation>() {
-      @java.lang.Override
-      public ClassificationAnnotation parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ClassificationAnnotation(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<ClassificationAnnotation> PARSER =
+        new com.google.protobuf.AbstractParser<ClassificationAnnotation>() {
+          @java.lang.Override
+          public ClassificationAnnotation parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ClassificationAnnotation(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<ClassificationAnnotation> parser() {
       return PARSER;
@@ -670,17 +741,20 @@ public final class ClassificationProto {
     }
 
     @java.lang.Override
-    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation getDefaultInstanceForType() {
+    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface ClassificationEvaluationMetricsOrBuilder extends
+  public interface ClassificationEvaluationMetricsOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Output only. The Area under precision recall curve metric.
      * </pre>
@@ -690,6 +764,8 @@ public final class ClassificationProto {
     float getAuPrc();
 
     /**
+     *
+     *
      * <pre>
      * Output only. The Area under precision recall curve metric based on priors.
      * </pre>
@@ -699,55 +775,85 @@ public final class ClassificationProto {
     float getBaseAuPrc();
 
     /**
+     *
+     *
      * <pre>
      * Output only. Metrics that have confidence thresholds.
      * Precision-recall curve can be derived from it.
      * </pre>
      *
-     * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+     * <code>
+     * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+     * </code>
      */
-    java.util.List<com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry> 
+    java.util.List<
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfidenceMetricsEntry>
         getConfidenceMetricsEntryList();
     /**
+     *
+     *
      * <pre>
      * Output only. Metrics that have confidence thresholds.
      * Precision-recall curve can be derived from it.
      * </pre>
      *
-     * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+     * <code>
+     * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+     * </code>
      */
-    com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry getConfidenceMetricsEntry(int index);
+    com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+            .ConfidenceMetricsEntry
+        getConfidenceMetricsEntry(int index);
     /**
+     *
+     *
      * <pre>
      * Output only. Metrics that have confidence thresholds.
      * Precision-recall curve can be derived from it.
      * </pre>
      *
-     * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+     * <code>
+     * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+     * </code>
      */
     int getConfidenceMetricsEntryCount();
     /**
+     *
+     *
      * <pre>
      * Output only. Metrics that have confidence thresholds.
      * Precision-recall curve can be derived from it.
      * </pre>
      *
-     * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+     * <code>
+     * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+     * </code>
      */
-    java.util.List<? extends com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntryOrBuilder> 
+    java.util.List<
+            ? extends
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfidenceMetricsEntryOrBuilder>
         getConfidenceMetricsEntryOrBuilderList();
     /**
+     *
+     *
      * <pre>
      * Output only. Metrics that have confidence thresholds.
      * Precision-recall curve can be derived from it.
      * </pre>
      *
-     * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+     * <code>
+     * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+     * </code>
      */
-    com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntryOrBuilder getConfidenceMetricsEntryOrBuilder(
-        int index);
+    com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+            .ConfidenceMetricsEntryOrBuilder
+        getConfidenceMetricsEntryOrBuilder(int index);
 
     /**
+     *
+     *
      * <pre>
      * Output only. Confusion matrix of the evaluation.
      * Only set for MULTICLASS classification problems where number
@@ -755,10 +861,14 @@ public final class ClassificationProto {
      * Only set for model level evaluation, not for evaluation per label.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
+     * </code>
      */
     boolean hasConfusionMatrix();
     /**
+     *
+     *
      * <pre>
      * Output only. Confusion matrix of the evaluation.
      * Only set for MULTICLASS classification problems where number
@@ -766,10 +876,16 @@ public final class ClassificationProto {
      * Only set for model level evaluation, not for evaluation per label.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
+     * </code>
      */
-    com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix getConfusionMatrix();
+    com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+            .ConfusionMatrix
+        getConfusionMatrix();
     /**
+     *
+     *
      * <pre>
      * Output only. Confusion matrix of the evaluation.
      * Only set for MULTICLASS classification problems where number
@@ -777,20 +893,27 @@ public final class ClassificationProto {
      * Only set for model level evaluation, not for evaluation per label.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
+     * </code>
      */
-    com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrixOrBuilder getConfusionMatrixOrBuilder();
+    com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+            .ConfusionMatrixOrBuilder
+        getConfusionMatrixOrBuilder();
 
     /**
+     *
+     *
      * <pre>
      * Output only. The annotation spec ids used for this evaluation.
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 5;</code>
      */
-    java.util.List<java.lang.String>
-        getAnnotationSpecIdList();
+    java.util.List<java.lang.String> getAnnotationSpecIdList();
     /**
+     *
+     *
      * <pre>
      * Output only. The annotation spec ids used for this evaluation.
      * </pre>
@@ -799,6 +922,8 @@ public final class ClassificationProto {
      */
     int getAnnotationSpecIdCount();
     /**
+     *
+     *
      * <pre>
      * Output only. The annotation spec ids used for this evaluation.
      * </pre>
@@ -807,16 +932,19 @@ public final class ClassificationProto {
      */
     java.lang.String getAnnotationSpecId(int index);
     /**
+     *
+     *
      * <pre>
      * Output only. The annotation spec ids used for this evaluation.
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 5;</code>
      */
-    com.google.protobuf.ByteString
-        getAnnotationSpecIdBytes(int index);
+    com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index);
   }
   /**
+   *
+   *
    * <pre>
    * Model evaluation metrics for classification problems.
    * Visible only to v1beta1
@@ -824,15 +952,18 @@ public final class ClassificationProto {
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.ClassificationEvaluationMetrics}
    */
-  public  static final class ClassificationEvaluationMetrics extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class ClassificationEvaluationMetrics
+      extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics)
       ClassificationEvaluationMetricsOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use ClassificationEvaluationMetrics.newBuilder() to construct.
-    private ClassificationEvaluationMetrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    private ClassificationEvaluationMetrics(
+        com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private ClassificationEvaluationMetrics() {
       auPrc_ = 0F;
       baseAuPrc_ = 0F;
@@ -841,10 +972,10 @@ public final class ClassificationProto {
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private ClassificationEvaluationMetrics(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -864,61 +995,75 @@ public final class ClassificationProto {
             case 0:
               done = true;
               break;
-            case 13: {
+            case 13:
+              {
+                auPrc_ = input.readFloat();
+                break;
+              }
+            case 21:
+              {
+                baseAuPrc_ = input.readFloat();
+                break;
+              }
+            case 26:
+              {
+                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                  confidenceMetricsEntry_ =
+                      new java.util.ArrayList<
+                          com.google.cloud.automl.v1beta1.ClassificationProto
+                              .ClassificationEvaluationMetrics.ConfidenceMetricsEntry>();
+                  mutable_bitField0_ |= 0x00000004;
+                }
+                confidenceMetricsEntry_.add(
+                    input.readMessage(
+                        com.google.cloud.automl.v1beta1.ClassificationProto
+                            .ClassificationEvaluationMetrics.ConfidenceMetricsEntry.parser(),
+                        extensionRegistry));
+                break;
+              }
+            case 34:
+              {
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                        .ConfusionMatrix.Builder
+                    subBuilder = null;
+                if (confusionMatrix_ != null) {
+                  subBuilder = confusionMatrix_.toBuilder();
+                }
+                confusionMatrix_ =
+                    input.readMessage(
+                        com.google.cloud.automl.v1beta1.ClassificationProto
+                            .ClassificationEvaluationMetrics.ConfusionMatrix.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(confusionMatrix_);
+                  confusionMatrix_ = subBuilder.buildPartial();
+                }
 
-              auPrc_ = input.readFloat();
-              break;
-            }
-            case 21: {
-
-              baseAuPrc_ = input.readFloat();
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                confidenceMetricsEntry_ = new java.util.ArrayList<com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry>();
-                mutable_bitField0_ |= 0x00000004;
+                break;
               }
-              confidenceMetricsEntry_.add(
-                  input.readMessage(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Builder subBuilder = null;
-              if (confusionMatrix_ != null) {
-                subBuilder = confusionMatrix_.toBuilder();
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                  annotationSpecId_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000010;
+                }
+                annotationSpecId_.add(s);
+                break;
               }
-              confusionMatrix_ = input.readMessage(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(confusionMatrix_);
-                confusionMatrix_ = subBuilder.buildPartial();
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
               }
-
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                annotationSpecId_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              annotationSpecId_.add(s);
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           confidenceMetricsEntry_ = java.util.Collections.unmodifiableList(confidenceMetricsEntry_);
@@ -930,24 +1075,32 @@ public final class ClassificationProto {
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.automl.v1beta1.ClassificationProto
+          .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_fieldAccessorTable
+      return com.google.cloud.automl.v1beta1.ClassificationProto
+          .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.class, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.Builder.class);
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .class,
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .Builder.class);
     }
 
-    public interface ConfidenceMetricsEntryOrBuilder extends
+    public interface ConfidenceMetricsEntryOrBuilder
+        extends
         // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry)
         com.google.protobuf.MessageOrBuilder {
 
       /**
+       *
+       *
        * <pre>
        * Output only. The confidence threshold value used to compute the metrics.
        * </pre>
@@ -957,6 +1110,8 @@ public final class ClassificationProto {
       float getConfidenceThreshold();
 
       /**
+       *
+       *
        * <pre>
        * Output only. Recall under the given confidence threshold.
        * </pre>
@@ -966,6 +1121,8 @@ public final class ClassificationProto {
       float getRecall();
 
       /**
+       *
+       *
        * <pre>
        * Output only. Precision under the given confidence threshold.
        * </pre>
@@ -975,6 +1132,8 @@ public final class ClassificationProto {
       float getPrecision();
 
       /**
+       *
+       *
        * <pre>
        * Output only. The harmonic mean of recall and precision.
        * </pre>
@@ -984,6 +1143,8 @@ public final class ClassificationProto {
       float getF1Score();
 
       /**
+       *
+       *
        * <pre>
        * Output only. The recall when only considering the label that has the
        * highest prediction score and not below the confidence threshold for each
@@ -995,6 +1156,8 @@ public final class ClassificationProto {
       float getRecallAt1();
 
       /**
+       *
+       *
        * <pre>
        * Output only. The precision when only considering the label that has the
        * highest predictionscore and not below the confidence threshold for each
@@ -1006,6 +1169,8 @@ public final class ClassificationProto {
       float getPrecisionAt1();
 
       /**
+       *
+       *
        * <pre>
        * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
        * </pre>
@@ -1015,21 +1180,25 @@ public final class ClassificationProto {
       float getF1ScoreAt1();
     }
     /**
+     *
+     *
      * <pre>
      * Metrics for a single confidence threshold.
      * </pre>
      *
-     * Protobuf type {@code google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry}
+     * Protobuf type {@code
+     * google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry}
      */
-    public  static final class ConfidenceMetricsEntry extends
-        com.google.protobuf.GeneratedMessageV3 implements
+    public static final class ConfidenceMetricsEntry extends com.google.protobuf.GeneratedMessageV3
+        implements
         // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry)
         ConfidenceMetricsEntryOrBuilder {
-    private static final long serialVersionUID = 0L;
+      private static final long serialVersionUID = 0L;
       // Use ConfidenceMetricsEntry.newBuilder() to construct.
       private ConfidenceMetricsEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
+
       private ConfidenceMetricsEntry() {
         confidenceThreshold_ = 0F;
         recall_ = 0F;
@@ -1041,10 +1210,10 @@ public final class ClassificationProto {
       }
 
       @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
+
       private ConfidenceMetricsEntry(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1064,76 +1233,83 @@ public final class ClassificationProto {
               case 0:
                 done = true;
                 break;
-              case 13: {
-
-                confidenceThreshold_ = input.readFloat();
-                break;
-              }
-              case 21: {
-
-                recall_ = input.readFloat();
-                break;
-              }
-              case 29: {
-
-                precision_ = input.readFloat();
-                break;
-              }
-              case 37: {
-
-                f1Score_ = input.readFloat();
-                break;
-              }
-              case 45: {
-
-                recallAt1_ = input.readFloat();
-                break;
-              }
-              case 53: {
-
-                precisionAt1_ = input.readFloat();
-                break;
-              }
-              case 61: {
-
-                f1ScoreAt1_ = input.readFloat();
-                break;
-              }
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
+              case 13:
+                {
+                  confidenceThreshold_ = input.readFloat();
+                  break;
                 }
-                break;
-              }
+              case 21:
+                {
+                  recall_ = input.readFloat();
+                  break;
+                }
+              case 29:
+                {
+                  precision_ = input.readFloat();
+                  break;
+                }
+              case 37:
+                {
+                  f1Score_ = input.readFloat();
+                  break;
+                }
+              case 45:
+                {
+                  recallAt1_ = input.readFloat();
+                  break;
+                }
+              case 53:
+                {
+                  precisionAt1_ = input.readFloat();
+                  break;
+                }
+              case 61:
+                {
+                  f1ScoreAt1_ = input.readFloat();
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
         } finally {
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_descriptor;
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.automl.v1beta1.ClassificationProto
+            .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_fieldAccessorTable
+        return com.google.cloud.automl.v1beta1.ClassificationProto
+            .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.class, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.Builder.class);
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfidenceMetricsEntry.class,
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfidenceMetricsEntry.Builder.class);
       }
 
       public static final int CONFIDENCE_THRESHOLD_FIELD_NUMBER = 1;
       private float confidenceThreshold_;
       /**
+       *
+       *
        * <pre>
        * Output only. The confidence threshold value used to compute the metrics.
        * </pre>
@@ -1147,6 +1323,8 @@ public final class ClassificationProto {
       public static final int RECALL_FIELD_NUMBER = 2;
       private float recall_;
       /**
+       *
+       *
        * <pre>
        * Output only. Recall under the given confidence threshold.
        * </pre>
@@ -1160,6 +1338,8 @@ public final class ClassificationProto {
       public static final int PRECISION_FIELD_NUMBER = 3;
       private float precision_;
       /**
+       *
+       *
        * <pre>
        * Output only. Precision under the given confidence threshold.
        * </pre>
@@ -1173,6 +1353,8 @@ public final class ClassificationProto {
       public static final int F1_SCORE_FIELD_NUMBER = 4;
       private float f1Score_;
       /**
+       *
+       *
        * <pre>
        * Output only. The harmonic mean of recall and precision.
        * </pre>
@@ -1186,6 +1368,8 @@ public final class ClassificationProto {
       public static final int RECALL_AT1_FIELD_NUMBER = 5;
       private float recallAt1_;
       /**
+       *
+       *
        * <pre>
        * Output only. The recall when only considering the label that has the
        * highest prediction score and not below the confidence threshold for each
@@ -1201,6 +1385,8 @@ public final class ClassificationProto {
       public static final int PRECISION_AT1_FIELD_NUMBER = 6;
       private float precisionAt1_;
       /**
+       *
+       *
        * <pre>
        * Output only. The precision when only considering the label that has the
        * highest predictionscore and not below the confidence threshold for each
@@ -1216,6 +1402,8 @@ public final class ClassificationProto {
       public static final int F1_SCORE_AT1_FIELD_NUMBER = 7;
       private float f1ScoreAt1_;
       /**
+       *
+       *
        * <pre>
        * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
        * </pre>
@@ -1227,6 +1415,7 @@ public final class ClassificationProto {
       }
 
       private byte memoizedIsInitialized = -1;
+
       @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -1238,8 +1427,7 @@ public final class ClassificationProto {
       }
 
       @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
         if (confidenceThreshold_ != 0F) {
           output.writeFloat(1, confidenceThreshold_);
         }
@@ -1271,32 +1459,25 @@ public final class ClassificationProto {
 
         size = 0;
         if (confidenceThreshold_ != 0F) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeFloatSize(1, confidenceThreshold_);
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, confidenceThreshold_);
         }
         if (recall_ != 0F) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeFloatSize(2, recall_);
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, recall_);
         }
         if (precision_ != 0F) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeFloatSize(3, precision_);
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(3, precision_);
         }
         if (f1Score_ != 0F) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeFloatSize(4, f1Score_);
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, f1Score_);
         }
         if (recallAt1_ != 0F) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeFloatSize(5, recallAt1_);
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, recallAt1_);
         }
         if (precisionAt1_ != 0F) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeFloatSize(6, precisionAt1_);
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(6, precisionAt1_);
         }
         if (f1ScoreAt1_ != 0F) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeFloatSize(7, f1ScoreAt1_);
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(7, f1ScoreAt1_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -1306,42 +1487,50 @@ public final class ClassificationProto {
       @java.lang.Override
       public boolean equals(final java.lang.Object obj) {
         if (obj == this) {
-         return true;
+          return true;
         }
-        if (!(obj instanceof com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry)) {
+        if (!(obj
+            instanceof
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfidenceMetricsEntry)) {
           return super.equals(obj);
         }
-        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry other = (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry) obj;
+        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfidenceMetricsEntry
+            other =
+                (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                        .ConfidenceMetricsEntry)
+                    obj;
 
         boolean result = true;
-        result = result && (
-            java.lang.Float.floatToIntBits(getConfidenceThreshold())
-            == java.lang.Float.floatToIntBits(
-                other.getConfidenceThreshold()));
-        result = result && (
-            java.lang.Float.floatToIntBits(getRecall())
-            == java.lang.Float.floatToIntBits(
-                other.getRecall()));
-        result = result && (
-            java.lang.Float.floatToIntBits(getPrecision())
-            == java.lang.Float.floatToIntBits(
-                other.getPrecision()));
-        result = result && (
-            java.lang.Float.floatToIntBits(getF1Score())
-            == java.lang.Float.floatToIntBits(
-                other.getF1Score()));
-        result = result && (
-            java.lang.Float.floatToIntBits(getRecallAt1())
-            == java.lang.Float.floatToIntBits(
-                other.getRecallAt1()));
-        result = result && (
-            java.lang.Float.floatToIntBits(getPrecisionAt1())
-            == java.lang.Float.floatToIntBits(
-                other.getPrecisionAt1()));
-        result = result && (
-            java.lang.Float.floatToIntBits(getF1ScoreAt1())
-            == java.lang.Float.floatToIntBits(
-                other.getF1ScoreAt1()));
+        result =
+            result
+                && (java.lang.Float.floatToIntBits(getConfidenceThreshold())
+                    == java.lang.Float.floatToIntBits(other.getConfidenceThreshold()));
+        result =
+            result
+                && (java.lang.Float.floatToIntBits(getRecall())
+                    == java.lang.Float.floatToIntBits(other.getRecall()));
+        result =
+            result
+                && (java.lang.Float.floatToIntBits(getPrecision())
+                    == java.lang.Float.floatToIntBits(other.getPrecision()));
+        result =
+            result
+                && (java.lang.Float.floatToIntBits(getF1Score())
+                    == java.lang.Float.floatToIntBits(other.getF1Score()));
+        result =
+            result
+                && (java.lang.Float.floatToIntBits(getRecallAt1())
+                    == java.lang.Float.floatToIntBits(other.getRecallAt1()));
+        result =
+            result
+                && (java.lang.Float.floatToIntBits(getPrecisionAt1())
+                    == java.lang.Float.floatToIntBits(other.getPrecisionAt1()));
+        result =
+            result
+                && (java.lang.Float.floatToIntBits(getF1ScoreAt1())
+                    == java.lang.Float.floatToIntBits(other.getF1ScoreAt1()));
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -1354,113 +1543,135 @@ public final class ClassificationProto {
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + CONFIDENCE_THRESHOLD_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getConfidenceThreshold());
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getConfidenceThreshold());
         hash = (37 * hash) + RECALL_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getRecall());
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getRecall());
         hash = (37 * hash) + PRECISION_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getPrecision());
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getPrecision());
         hash = (37 * hash) + F1_SCORE_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getF1Score());
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getF1Score());
         hash = (37 * hash) + RECALL_AT1_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getRecallAt1());
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getRecallAt1());
         hash = (37 * hash) + PRECISION_AT1_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getPrecisionAt1());
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getPrecisionAt1());
         hash = (37 * hash) + F1_SCORE_AT1_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getF1ScoreAt1());
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getF1ScoreAt1());
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
       }
 
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfidenceMetricsEntry
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfidenceMetricsEntry
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfidenceMetricsEntry
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfidenceMetricsEntry
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfidenceMetricsEntry
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfidenceMetricsEntry
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfidenceMetricsEntry
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfidenceMetricsEntry
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfidenceMetricsEntry
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfidenceMetricsEntry
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfidenceMetricsEntry
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfidenceMetricsEntry
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
       }
 
       @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry prototype) {
+
+      public static Builder newBuilder(
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntry
+              prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+
       @java.lang.Override
       public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
       }
 
       @java.lang.Override
@@ -1470,44 +1681,53 @@ public final class ClassificationProto {
         return builder;
       }
       /**
+       *
+       *
        * <pre>
        * Metrics for a single confidence threshold.
        * </pre>
        *
-       * Protobuf type {@code google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry}
+       * Protobuf type {@code
+       * google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry}
        */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
           // @@protoc_insertion_point(builder_implements:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry)
-          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntryOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_descriptor;
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfidenceMetricsEntryOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.automl.v1beta1.ClassificationProto
+              .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_fieldAccessorTable
+          return com.google.cloud.automl.v1beta1.ClassificationProto
+              .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.class, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.Builder.class);
+                  com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfidenceMetricsEntry.class,
+                  com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfidenceMetricsEntry.Builder.class);
         }
 
-        // Construct using com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.newBuilder()
+        // Construct using
+        // com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
+
         private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
+
         @java.lang.Override
         public Builder clear() {
           super.clear();
@@ -1529,19 +1749,26 @@ public final class ClassificationProto {
         }
 
         @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_descriptor;
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.automl.v1beta1.ClassificationProto
+              .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_descriptor;
         }
 
         @java.lang.Override
-        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry getDefaultInstanceForType() {
-          return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.getDefaultInstance();
+        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfidenceMetricsEntry
+            getDefaultInstanceForType() {
+          return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfidenceMetricsEntry.getDefaultInstance();
         }
 
         @java.lang.Override
-        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry build() {
-          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry result = buildPartial();
+        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfidenceMetricsEntry
+            build() {
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntry
+              result = buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
@@ -1549,8 +1776,14 @@ public final class ClassificationProto {
         }
 
         @java.lang.Override
-        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry buildPartial() {
-          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry result = new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry(this);
+        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfidenceMetricsEntry
+            buildPartial() {
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntry
+              result =
+                  new com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfidenceMetricsEntry(this);
           result.confidenceThreshold_ = confidenceThreshold_;
           result.recall_ = recall_;
           result.precision_ = precision_;
@@ -1566,46 +1799,60 @@ public final class ClassificationProto {
         public Builder clone() {
           return (Builder) super.clone();
         }
+
         @java.lang.Override
         public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+
         @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+
         @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+
         @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
+            int index,
+            java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+
         @java.lang.Override
         public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry) {
-            return mergeFrom((com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry)other);
+          if (other
+              instanceof
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntry) {
+            return mergeFrom(
+                (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                        .ConfidenceMetricsEntry)
+                    other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry other) {
-          if (other == com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.getDefaultInstance()) return this;
+        public Builder mergeFrom(
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfidenceMetricsEntry
+                other) {
+          if (other
+              == com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntry.getDefaultInstance()) return this;
           if (other.getConfidenceThreshold() != 0F) {
             setConfidenceThreshold(other.getConfidenceThreshold());
           }
@@ -1642,11 +1889,16 @@ public final class ClassificationProto {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry parsedMessage = null;
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntry
+              parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry) e.getUnfinishedMessage();
+            parsedMessage =
+                (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                        .ConfidenceMetricsEntry)
+                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
@@ -1656,8 +1908,10 @@ public final class ClassificationProto {
           return this;
         }
 
-        private float confidenceThreshold_ ;
+        private float confidenceThreshold_;
         /**
+         *
+         *
          * <pre>
          * Output only. The confidence threshold value used to compute the metrics.
          * </pre>
@@ -1668,6 +1922,8 @@ public final class ClassificationProto {
           return confidenceThreshold_;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. The confidence threshold value used to compute the metrics.
          * </pre>
@@ -1675,12 +1931,14 @@ public final class ClassificationProto {
          * <code>float confidence_threshold = 1;</code>
          */
         public Builder setConfidenceThreshold(float value) {
-          
+
           confidenceThreshold_ = value;
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. The confidence threshold value used to compute the metrics.
          * </pre>
@@ -1688,14 +1946,16 @@ public final class ClassificationProto {
          * <code>float confidence_threshold = 1;</code>
          */
         public Builder clearConfidenceThreshold() {
-          
+
           confidenceThreshold_ = 0F;
           onChanged();
           return this;
         }
 
-        private float recall_ ;
+        private float recall_;
         /**
+         *
+         *
          * <pre>
          * Output only. Recall under the given confidence threshold.
          * </pre>
@@ -1706,6 +1966,8 @@ public final class ClassificationProto {
           return recall_;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Recall under the given confidence threshold.
          * </pre>
@@ -1713,12 +1975,14 @@ public final class ClassificationProto {
          * <code>float recall = 2;</code>
          */
         public Builder setRecall(float value) {
-          
+
           recall_ = value;
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Recall under the given confidence threshold.
          * </pre>
@@ -1726,14 +1990,16 @@ public final class ClassificationProto {
          * <code>float recall = 2;</code>
          */
         public Builder clearRecall() {
-          
+
           recall_ = 0F;
           onChanged();
           return this;
         }
 
-        private float precision_ ;
+        private float precision_;
         /**
+         *
+         *
          * <pre>
          * Output only. Precision under the given confidence threshold.
          * </pre>
@@ -1744,6 +2010,8 @@ public final class ClassificationProto {
           return precision_;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Precision under the given confidence threshold.
          * </pre>
@@ -1751,12 +2019,14 @@ public final class ClassificationProto {
          * <code>float precision = 3;</code>
          */
         public Builder setPrecision(float value) {
-          
+
           precision_ = value;
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Precision under the given confidence threshold.
          * </pre>
@@ -1764,14 +2034,16 @@ public final class ClassificationProto {
          * <code>float precision = 3;</code>
          */
         public Builder clearPrecision() {
-          
+
           precision_ = 0F;
           onChanged();
           return this;
         }
 
-        private float f1Score_ ;
+        private float f1Score_;
         /**
+         *
+         *
          * <pre>
          * Output only. The harmonic mean of recall and precision.
          * </pre>
@@ -1782,6 +2054,8 @@ public final class ClassificationProto {
           return f1Score_;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. The harmonic mean of recall and precision.
          * </pre>
@@ -1789,12 +2063,14 @@ public final class ClassificationProto {
          * <code>float f1_score = 4;</code>
          */
         public Builder setF1Score(float value) {
-          
+
           f1Score_ = value;
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. The harmonic mean of recall and precision.
          * </pre>
@@ -1802,14 +2078,16 @@ public final class ClassificationProto {
          * <code>float f1_score = 4;</code>
          */
         public Builder clearF1Score() {
-          
+
           f1Score_ = 0F;
           onChanged();
           return this;
         }
 
-        private float recallAt1_ ;
+        private float recallAt1_;
         /**
+         *
+         *
          * <pre>
          * Output only. The recall when only considering the label that has the
          * highest prediction score and not below the confidence threshold for each
@@ -1822,6 +2100,8 @@ public final class ClassificationProto {
           return recallAt1_;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. The recall when only considering the label that has the
          * highest prediction score and not below the confidence threshold for each
@@ -1831,12 +2111,14 @@ public final class ClassificationProto {
          * <code>float recall_at1 = 5;</code>
          */
         public Builder setRecallAt1(float value) {
-          
+
           recallAt1_ = value;
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. The recall when only considering the label that has the
          * highest prediction score and not below the confidence threshold for each
@@ -1846,14 +2128,16 @@ public final class ClassificationProto {
          * <code>float recall_at1 = 5;</code>
          */
         public Builder clearRecallAt1() {
-          
+
           recallAt1_ = 0F;
           onChanged();
           return this;
         }
 
-        private float precisionAt1_ ;
+        private float precisionAt1_;
         /**
+         *
+         *
          * <pre>
          * Output only. The precision when only considering the label that has the
          * highest predictionscore and not below the confidence threshold for each
@@ -1866,6 +2150,8 @@ public final class ClassificationProto {
           return precisionAt1_;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. The precision when only considering the label that has the
          * highest predictionscore and not below the confidence threshold for each
@@ -1875,12 +2161,14 @@ public final class ClassificationProto {
          * <code>float precision_at1 = 6;</code>
          */
         public Builder setPrecisionAt1(float value) {
-          
+
           precisionAt1_ = value;
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. The precision when only considering the label that has the
          * highest predictionscore and not below the confidence threshold for each
@@ -1890,14 +2178,16 @@ public final class ClassificationProto {
          * <code>float precision_at1 = 6;</code>
          */
         public Builder clearPrecisionAt1() {
-          
+
           precisionAt1_ = 0F;
           onChanged();
           return this;
         }
 
-        private float f1ScoreAt1_ ;
+        private float f1ScoreAt1_;
         /**
+         *
+         *
          * <pre>
          * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
          * </pre>
@@ -1908,6 +2198,8 @@ public final class ClassificationProto {
           return f1ScoreAt1_;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
          * </pre>
@@ -1915,12 +2207,14 @@ public final class ClassificationProto {
          * <code>float f1_score_at1 = 7;</code>
          */
         public Builder setF1ScoreAt1(float value) {
-          
+
           f1ScoreAt1_ = value;
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
          * </pre>
@@ -1928,11 +2222,12 @@ public final class ClassificationProto {
          * <code>float f1_score_at1 = 7;</code>
          */
         public Builder clearF1ScoreAt1() {
-          
+
           f1ScoreAt1_ = 0F;
           onChanged();
           return this;
         }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1945,30 +2240,36 @@ public final class ClassificationProto {
           return super.mergeUnknownFields(unknownFields);
         }
 
-
         // @@protoc_insertion_point(builder_scope:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry)
       }
 
       // @@protoc_insertion_point(class_scope:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry)
-      private static final com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry DEFAULT_INSTANCE;
+      private static final com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfidenceMetricsEntry
+          DEFAULT_INSTANCE;
+
       static {
-        DEFAULT_INSTANCE = new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry();
+        DEFAULT_INSTANCE =
+            new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfidenceMetricsEntry();
       }
 
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry getDefaultInstance() {
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfidenceMetricsEntry
+          getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<ConfidenceMetricsEntry>
-          PARSER = new com.google.protobuf.AbstractParser<ConfidenceMetricsEntry>() {
-        @java.lang.Override
-        public ConfidenceMetricsEntry parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ConfidenceMetricsEntry(input, extensionRegistry);
-        }
-      };
+      private static final com.google.protobuf.Parser<ConfidenceMetricsEntry> PARSER =
+          new com.google.protobuf.AbstractParser<ConfidenceMetricsEntry>() {
+            @java.lang.Override
+            public ConfidenceMetricsEntry parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new ConfidenceMetricsEntry(input, extensionRegistry);
+            }
+          };
 
       public static com.google.protobuf.Parser<ConfidenceMetricsEntry> parser() {
         return PARSER;
@@ -1980,26 +2281,31 @@ public final class ClassificationProto {
       }
 
       @java.lang.Override
-      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry getDefaultInstanceForType() {
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfidenceMetricsEntry
+          getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
-
     }
 
-    public interface ConfusionMatrixOrBuilder extends
+    public interface ConfusionMatrixOrBuilder
+        extends
         // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix)
         com.google.protobuf.MessageOrBuilder {
 
       /**
+       *
+       *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
        */
-      java.util.List<java.lang.String>
-          getAnnotationSpecIdList();
+      java.util.List<java.lang.String> getAnnotationSpecIdList();
       /**
+       *
+       *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
        * </pre>
@@ -2008,6 +2314,8 @@ public final class ClassificationProto {
        */
       int getAnnotationSpecIdCount();
       /**
+       *
+       *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
        * </pre>
@@ -2016,16 +2324,19 @@ public final class ClassificationProto {
        */
       java.lang.String getAnnotationSpecId(int index);
       /**
+       *
+       *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
        */
-      com.google.protobuf.ByteString
-          getAnnotationSpecIdBytes(int index);
+      com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index);
 
       /**
+       *
+       *
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
@@ -2034,11 +2345,17 @@ public final class ClassificationProto {
        * the model being evaluated.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+       * </code>
        */
-      java.util.List<com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row> 
+      java.util.List<
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix.Row>
           getRowList();
       /**
+       *
+       *
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
@@ -2047,10 +2364,16 @@ public final class ClassificationProto {
        * the model being evaluated.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+       * </code>
        */
-      com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row getRow(int index);
+      com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfusionMatrix.Row
+          getRow(int index);
       /**
+       *
+       *
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
@@ -2059,10 +2382,14 @@ public final class ClassificationProto {
        * the model being evaluated.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+       * </code>
        */
       int getRowCount();
       /**
+       *
+       *
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
@@ -2071,11 +2398,18 @@ public final class ClassificationProto {
        * the model being evaluated.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+       * </code>
        */
-      java.util.List<? extends com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.RowOrBuilder> 
+      java.util.List<
+              ? extends
+                  com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfusionMatrix.RowOrBuilder>
           getRowOrBuilderList();
       /**
+       *
+       *
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
@@ -2084,37 +2418,44 @@ public final class ClassificationProto {
        * the model being evaluated.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+       * </code>
        */
-      com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.RowOrBuilder getRowOrBuilder(
-          int index);
+      com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfusionMatrix.RowOrBuilder
+          getRowOrBuilder(int index);
     }
     /**
+     *
+     *
      * <pre>
      * Confusion matrix of the model running the classification.
      * </pre>
      *
-     * Protobuf type {@code google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix}
+     * Protobuf type {@code
+     * google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix}
      */
-    public  static final class ConfusionMatrix extends
-        com.google.protobuf.GeneratedMessageV3 implements
+    public static final class ConfusionMatrix extends com.google.protobuf.GeneratedMessageV3
+        implements
         // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix)
         ConfusionMatrixOrBuilder {
-    private static final long serialVersionUID = 0L;
+      private static final long serialVersionUID = 0L;
       // Use ConfusionMatrix.newBuilder() to construct.
       private ConfusionMatrix(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
+
       private ConfusionMatrix() {
         annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         row_ = java.util.Collections.emptyList();
       }
 
       @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
+
       private ConfusionMatrix(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2134,38 +2475,46 @@ public final class ClassificationProto {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                  annotationSpecId_ = new com.google.protobuf.LazyStringArrayList();
-                  mutable_bitField0_ |= 0x00000001;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                    annotationSpecId_ = new com.google.protobuf.LazyStringArrayList();
+                    mutable_bitField0_ |= 0x00000001;
+                  }
+                  annotationSpecId_.add(s);
+                  break;
                 }
-                annotationSpecId_.add(s);
-                break;
-              }
-              case 18: {
-                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                  row_ = new java.util.ArrayList<com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row>();
-                  mutable_bitField0_ |= 0x00000002;
+              case 18:
+                {
+                  if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                    row_ =
+                        new java.util.ArrayList<
+                            com.google.cloud.automl.v1beta1.ClassificationProto
+                                .ClassificationEvaluationMetrics.ConfusionMatrix.Row>();
+                    mutable_bitField0_ |= 0x00000002;
+                  }
+                  row_.add(
+                      input.readMessage(
+                          com.google.cloud.automl.v1beta1.ClassificationProto
+                              .ClassificationEvaluationMetrics.ConfusionMatrix.Row.parser(),
+                          extensionRegistry));
+                  break;
                 }
-                row_.add(
-                    input.readMessage(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.parser(), extensionRegistry));
-                break;
-              }
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
+              default:
+                {
+                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
                 }
-                break;
-              }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
         } finally {
           if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
             annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
@@ -2177,24 +2526,32 @@ public final class ClassificationProto {
           makeExtensionsImmutable();
         }
       }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor;
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.automl.v1beta1.ClassificationProto
+            .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_fieldAccessorTable
+        return com.google.cloud.automl.v1beta1.ClassificationProto
+            .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.class, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Builder.class);
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.class,
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.Builder.class);
       }
 
-      public interface RowOrBuilder extends
+      public interface RowOrBuilder
+          extends
           // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row)
           com.google.protobuf.MessageOrBuilder {
 
         /**
+         *
+         *
          * <pre>
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row is equal to the size of
@@ -2205,6 +2562,8 @@ public final class ClassificationProto {
          */
         java.util.List<java.lang.Integer> getExampleCountList();
         /**
+         *
+         *
          * <pre>
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row is equal to the size of
@@ -2215,6 +2574,8 @@ public final class ClassificationProto {
          */
         int getExampleCountCount();
         /**
+         *
+         *
          * <pre>
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row is equal to the size of
@@ -2226,30 +2587,34 @@ public final class ClassificationProto {
         int getExampleCount(int index);
       }
       /**
+       *
+       *
        * <pre>
        * Output only. A row in the confusion matrix.
        * </pre>
        *
-       * Protobuf type {@code google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row}
+       * Protobuf type {@code
+       * google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row}
        */
-      public  static final class Row extends
-          com.google.protobuf.GeneratedMessageV3 implements
+      public static final class Row extends com.google.protobuf.GeneratedMessageV3
+          implements
           // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row)
           RowOrBuilder {
-      private static final long serialVersionUID = 0L;
+        private static final long serialVersionUID = 0L;
         // Use Row.newBuilder() to construct.
         private Row(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
         }
+
         private Row() {
           exampleCount_ = java.util.Collections.emptyList();
         }
 
         @java.lang.Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
           return this.unknownFields;
         }
+
         private Row(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2269,41 +2634,44 @@ public final class ClassificationProto {
                 case 0:
                   done = true;
                   break;
-                case 8: {
-                  if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                    exampleCount_ = new java.util.ArrayList<java.lang.Integer>();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  exampleCount_.add(input.readInt32());
-                  break;
-                }
-                case 10: {
-                  int length = input.readRawVarint32();
-                  int limit = input.pushLimit(length);
-                  if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
-                    exampleCount_ = new java.util.ArrayList<java.lang.Integer>();
-                    mutable_bitField0_ |= 0x00000001;
-                  }
-                  while (input.getBytesUntilLimit() > 0) {
+                case 8:
+                  {
+                    if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                      exampleCount_ = new java.util.ArrayList<java.lang.Integer>();
+                      mutable_bitField0_ |= 0x00000001;
+                    }
                     exampleCount_.add(input.readInt32());
+                    break;
                   }
-                  input.popLimit(limit);
-                  break;
-                }
-                default: {
-                  if (!parseUnknownFieldProto3(
-                      input, unknownFields, extensionRegistry, tag)) {
-                    done = true;
+                case 10:
+                  {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)
+                        && input.getBytesUntilLimit() > 0) {
+                      exampleCount_ = new java.util.ArrayList<java.lang.Integer>();
+                      mutable_bitField0_ |= 0x00000001;
+                    }
+                    while (input.getBytesUntilLimit() > 0) {
+                      exampleCount_.add(input.readInt32());
+                    }
+                    input.popLimit(limit);
+                    break;
                   }
-                  break;
-                }
+                default:
+                  {
+                    if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                      done = true;
+                    }
+                    break;
+                  }
               }
             }
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             throw e.setUnfinishedMessage(this);
           } catch (java.io.IOException e) {
-            throw new com.google.protobuf.InvalidProtocolBufferException(
-                e).setUnfinishedMessage(this);
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(this);
           } finally {
             if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
               exampleCount_ = java.util.Collections.unmodifiableList(exampleCount_);
@@ -2312,22 +2680,29 @@ public final class ClassificationProto {
             makeExtensionsImmutable();
           }
         }
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_descriptor;
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.automl.v1beta1.ClassificationProto
+              .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_fieldAccessorTable
+          return com.google.cloud.automl.v1beta1.ClassificationProto
+              .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.class, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.Builder.class);
+                  com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfusionMatrix.Row.class,
+                  com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfusionMatrix.Row.Builder.class);
         }
 
         public static final int EXAMPLE_COUNT_FIELD_NUMBER = 1;
         private java.util.List<java.lang.Integer> exampleCount_;
         /**
+         *
+         *
          * <pre>
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row is equal to the size of
@@ -2336,11 +2711,12 @@ public final class ClassificationProto {
          *
          * <code>repeated int32 example_count = 1;</code>
          */
-        public java.util.List<java.lang.Integer>
-            getExampleCountList() {
+        public java.util.List<java.lang.Integer> getExampleCountList() {
           return exampleCount_;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row is equal to the size of
@@ -2353,6 +2729,8 @@ public final class ClassificationProto {
           return exampleCount_.size();
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Value of the specific cell in the confusion matrix.
          * The number of values each row is equal to the size of
@@ -2364,9 +2742,11 @@ public final class ClassificationProto {
         public int getExampleCount(int index) {
           return exampleCount_.get(index);
         }
+
         private int exampleCountMemoizedSerializedSize = -1;
 
         private byte memoizedIsInitialized = -1;
+
         @java.lang.Override
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
@@ -2379,7 +2759,7 @@ public final class ClassificationProto {
 
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output)
-                            throws java.io.IOException {
+            throws java.io.IOException {
           getSerializedSize();
           if (getExampleCountList().size() > 0) {
             output.writeUInt32NoTag(10);
@@ -2400,14 +2780,13 @@ public final class ClassificationProto {
           {
             int dataSize = 0;
             for (int i = 0; i < exampleCount_.size(); i++) {
-              dataSize += com.google.protobuf.CodedOutputStream
-                .computeInt32SizeNoTag(exampleCount_.get(i));
+              dataSize +=
+                  com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(exampleCount_.get(i));
             }
             size += dataSize;
             if (!getExampleCountList().isEmpty()) {
               size += 1;
-              size += com.google.protobuf.CodedOutputStream
-                  .computeInt32SizeNoTag(dataSize);
+              size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
             }
             exampleCountMemoizedSerializedSize = dataSize;
           }
@@ -2419,16 +2798,23 @@ public final class ClassificationProto {
         @java.lang.Override
         public boolean equals(final java.lang.Object obj) {
           if (obj == this) {
-           return true;
+            return true;
           }
-          if (!(obj instanceof com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row)) {
+          if (!(obj
+              instanceof
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix.Row)) {
             return super.equals(obj);
           }
-          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row other = (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row) obj;
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix.Row
+              other =
+                  (com.google.cloud.automl.v1beta1.ClassificationProto
+                          .ClassificationEvaluationMetrics.ConfusionMatrix.Row)
+                      obj;
 
           boolean result = true;
-          result = result && getExampleCountList()
-              .equals(other.getExampleCountList());
+          result = result && getExampleCountList().equals(other.getExampleCountList());
           result = result && unknownFields.equals(other.unknownFields);
           return result;
         }
@@ -2449,88 +2835,119 @@ public final class ClassificationProto {
           return hash;
         }
 
-        public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row parseFrom(
-            java.nio.ByteBuffer data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+        public static com.google.cloud.automl.v1beta1.ClassificationProto
+                .ClassificationEvaluationMetrics.ConfusionMatrix.Row
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data);
         }
-        public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row parseFrom(
-            java.nio.ByteBuffer data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+
+        public static com.google.cloud.automl.v1beta1.ClassificationProto
+                .ClassificationEvaluationMetrics.ConfusionMatrix.Row
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data, extensionRegistry);
         }
-        public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row parseFrom(
-            com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+
+        public static com.google.cloud.automl.v1beta1.ClassificationProto
+                .ClassificationEvaluationMetrics.ConfusionMatrix.Row
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data);
         }
-        public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+
+        public static com.google.cloud.automl.v1beta1.ClassificationProto
+                .ClassificationEvaluationMetrics.ConfusionMatrix.Row
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data, extensionRegistry);
         }
-        public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row parseFrom(byte[] data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+
+        public static com.google.cloud.automl.v1beta1.ClassificationProto
+                .ClassificationEvaluationMetrics.ConfusionMatrix.Row
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data);
         }
-        public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row parseFrom(
-            byte[] data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
+
+        public static com.google.cloud.automl.v1beta1.ClassificationProto
+                .ClassificationEvaluationMetrics.ConfusionMatrix.Row
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
           return PARSER.parseFrom(data, extensionRegistry);
         }
-        public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row parseFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input);
+
+        public static com.google.cloud.automl.v1beta1.ClassificationProto
+                .ClassificationEvaluationMetrics.ConfusionMatrix.Row
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
         }
-        public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row parseFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input, extensionRegistry);
+
+        public static com.google.cloud.automl.v1beta1.ClassificationProto
+                .ClassificationEvaluationMetrics.ConfusionMatrix.Row
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
         }
-        public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row parseDelimitedFrom(java.io.InputStream input)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseDelimitedWithIOException(PARSER, input);
+
+        public static com.google.cloud.automl.v1beta1.ClassificationProto
+                .ClassificationEvaluationMetrics.ConfusionMatrix.Row
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
         }
-        public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row parseDelimitedFrom(
-            java.io.InputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+
+        public static com.google.cloud.automl.v1beta1.ClassificationProto
+                .ClassificationEvaluationMetrics.ConfusionMatrix.Row
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
         }
-        public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row parseFrom(
-            com.google.protobuf.CodedInputStream input)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input);
+
+        public static com.google.cloud.automl.v1beta1.ClassificationProto
+                .ClassificationEvaluationMetrics.ConfusionMatrix.Row
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
         }
-        public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          return com.google.protobuf.GeneratedMessageV3
-              .parseWithIOException(PARSER, input, extensionRegistry);
+
+        public static com.google.cloud.automl.v1beta1.ClassificationProto
+                .ClassificationEvaluationMetrics.ConfusionMatrix.Row
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
         }
 
         @java.lang.Override
-        public Builder newBuilderForType() { return newBuilder(); }
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
         public static Builder newBuilder() {
           return DEFAULT_INSTANCE.toBuilder();
         }
-        public static Builder newBuilder(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row prototype) {
+
+        public static Builder newBuilder(
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.Row
+                prototype) {
           return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
         }
+
         @java.lang.Override
         public Builder toBuilder() {
-          return this == DEFAULT_INSTANCE
-              ? new Builder() : new Builder().mergeFrom(this);
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
         @java.lang.Override
@@ -2540,44 +2957,53 @@ public final class ClassificationProto {
           return builder;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. A row in the confusion matrix.
          * </pre>
          *
-         * Protobuf type {@code google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row}
+         * Protobuf type {@code
+         * google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row}
          */
-        public static final class Builder extends
-            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
             // @@protoc_insertion_point(builder_implements:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row)
-            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.RowOrBuilder {
-          public static final com.google.protobuf.Descriptors.Descriptor
-              getDescriptor() {
-            return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_descriptor;
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfusionMatrix.RowOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.automl.v1beta1.ClassificationProto
+                .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_descriptor;
           }
 
           @java.lang.Override
           protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
               internalGetFieldAccessorTable() {
-            return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_fieldAccessorTable
+            return com.google.cloud.automl.v1beta1.ClassificationProto
+                .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_fieldAccessorTable
                 .ensureFieldAccessorsInitialized(
-                    com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.class, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.Builder.class);
+                    com.google.cloud.automl.v1beta1.ClassificationProto
+                        .ClassificationEvaluationMetrics.ConfusionMatrix.Row.class,
+                    com.google.cloud.automl.v1beta1.ClassificationProto
+                        .ClassificationEvaluationMetrics.ConfusionMatrix.Row.Builder.class);
           }
 
-          // Construct using com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.newBuilder()
+          // Construct using
+          // com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.newBuilder()
           private Builder() {
             maybeForceBuilderInitialization();
           }
 
-          private Builder(
-              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
             super(parent);
             maybeForceBuilderInitialization();
           }
+
           private void maybeForceBuilderInitialization() {
-            if (com.google.protobuf.GeneratedMessageV3
-                    .alwaysUseFieldBuilders) {
-            }
+            if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
           }
+
           @java.lang.Override
           public Builder clear() {
             super.clear();
@@ -2587,19 +3013,26 @@ public final class ClassificationProto {
           }
 
           @java.lang.Override
-          public com.google.protobuf.Descriptors.Descriptor
-              getDescriptorForType() {
-            return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_descriptor;
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.automl.v1beta1.ClassificationProto
+                .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_descriptor;
           }
 
           @java.lang.Override
-          public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row getDefaultInstanceForType() {
-            return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.getDefaultInstance();
+          public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix.Row
+              getDefaultInstanceForType() {
+            return com.google.cloud.automl.v1beta1.ClassificationProto
+                .ClassificationEvaluationMetrics.ConfusionMatrix.Row.getDefaultInstance();
           }
 
           @java.lang.Override
-          public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row build() {
-            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row result = buildPartial();
+          public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix.Row
+              build() {
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.Row
+                result = buildPartial();
             if (!result.isInitialized()) {
               throw newUninitializedMessageException(result);
             }
@@ -2607,8 +3040,14 @@ public final class ClassificationProto {
           }
 
           @java.lang.Override
-          public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row buildPartial() {
-            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row result = new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row(this);
+          public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix.Row
+              buildPartial() {
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.Row
+                result =
+                    new com.google.cloud.automl.v1beta1.ClassificationProto
+                        .ClassificationEvaluationMetrics.ConfusionMatrix.Row(this);
             int from_bitField0_ = bitField0_;
             if (((bitField0_ & 0x00000001) == 0x00000001)) {
               exampleCount_ = java.util.Collections.unmodifiableList(exampleCount_);
@@ -2623,46 +3062,61 @@ public final class ClassificationProto {
           public Builder clone() {
             return (Builder) super.clone();
           }
+
           @java.lang.Override
           public Builder setField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
             return (Builder) super.setField(field, value);
           }
+
           @java.lang.Override
-          public Builder clearField(
-              com.google.protobuf.Descriptors.FieldDescriptor field) {
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
             return (Builder) super.clearField(field);
           }
+
           @java.lang.Override
-          public Builder clearOneof(
-              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
             return (Builder) super.clearOneof(oneof);
           }
+
           @java.lang.Override
           public Builder setRepeatedField(
               com.google.protobuf.Descriptors.FieldDescriptor field,
-              int index, java.lang.Object value) {
+              int index,
+              java.lang.Object value) {
             return (Builder) super.setRepeatedField(field, index, value);
           }
+
           @java.lang.Override
           public Builder addRepeatedField(
-              com.google.protobuf.Descriptors.FieldDescriptor field,
-              java.lang.Object value) {
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
             return (Builder) super.addRepeatedField(field, value);
           }
+
           @java.lang.Override
           public Builder mergeFrom(com.google.protobuf.Message other) {
-            if (other instanceof com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row) {
-              return mergeFrom((com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row)other);
+            if (other
+                instanceof
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.Row) {
+              return mergeFrom(
+                  (com.google.cloud.automl.v1beta1.ClassificationProto
+                          .ClassificationEvaluationMetrics.ConfusionMatrix.Row)
+                      other);
             } else {
               super.mergeFrom(other);
               return this;
             }
           }
 
-          public Builder mergeFrom(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row other) {
-            if (other == com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.getDefaultInstance()) return this;
+          public Builder mergeFrom(
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                      .ConfusionMatrix.Row
+                  other) {
+            if (other
+                == com.google.cloud.automl.v1beta1.ClassificationProto
+                    .ClassificationEvaluationMetrics.ConfusionMatrix.Row.getDefaultInstance())
+              return this;
             if (!other.exampleCount_.isEmpty()) {
               if (exampleCount_.isEmpty()) {
                 exampleCount_ = other.exampleCount_;
@@ -2688,11 +3142,16 @@ public final class ClassificationProto {
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row parsedMessage = null;
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.Row
+                parsedMessage = null;
             try {
               parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
             } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              parsedMessage = (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row) e.getUnfinishedMessage();
+              parsedMessage =
+                  (com.google.cloud.automl.v1beta1.ClassificationProto
+                          .ClassificationEvaluationMetrics.ConfusionMatrix.Row)
+                      e.getUnfinishedMessage();
               throw e.unwrapIOException();
             } finally {
               if (parsedMessage != null) {
@@ -2701,16 +3160,21 @@ public final class ClassificationProto {
             }
             return this;
           }
+
           private int bitField0_;
 
-          private java.util.List<java.lang.Integer> exampleCount_ = java.util.Collections.emptyList();
+          private java.util.List<java.lang.Integer> exampleCount_ =
+              java.util.Collections.emptyList();
+
           private void ensureExampleCountIsMutable() {
             if (!((bitField0_ & 0x00000001) == 0x00000001)) {
               exampleCount_ = new java.util.ArrayList<java.lang.Integer>(exampleCount_);
               bitField0_ |= 0x00000001;
-             }
+            }
           }
           /**
+           *
+           *
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row is equal to the size of
@@ -2719,11 +3183,12 @@ public final class ClassificationProto {
            *
            * <code>repeated int32 example_count = 1;</code>
            */
-          public java.util.List<java.lang.Integer>
-              getExampleCountList() {
+          public java.util.List<java.lang.Integer> getExampleCountList() {
             return java.util.Collections.unmodifiableList(exampleCount_);
           }
           /**
+           *
+           *
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row is equal to the size of
@@ -2736,6 +3201,8 @@ public final class ClassificationProto {
             return exampleCount_.size();
           }
           /**
+           *
+           *
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row is equal to the size of
@@ -2748,6 +3215,8 @@ public final class ClassificationProto {
             return exampleCount_.get(index);
           }
           /**
+           *
+           *
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row is equal to the size of
@@ -2756,14 +3225,15 @@ public final class ClassificationProto {
            *
            * <code>repeated int32 example_count = 1;</code>
            */
-          public Builder setExampleCount(
-              int index, int value) {
+          public Builder setExampleCount(int index, int value) {
             ensureExampleCountIsMutable();
             exampleCount_.set(index, value);
             onChanged();
             return this;
           }
           /**
+           *
+           *
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row is equal to the size of
@@ -2779,6 +3249,8 @@ public final class ClassificationProto {
             return this;
           }
           /**
+           *
+           *
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row is equal to the size of
@@ -2790,12 +3262,13 @@ public final class ClassificationProto {
           public Builder addAllExampleCount(
               java.lang.Iterable<? extends java.lang.Integer> values) {
             ensureExampleCountIsMutable();
-            com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                values, exampleCount_);
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, exampleCount_);
             onChanged();
             return this;
           }
           /**
+           *
+           *
            * <pre>
            * Output only. Value of the specific cell in the confusion matrix.
            * The number of values each row is equal to the size of
@@ -2810,6 +3283,7 @@ public final class ClassificationProto {
             onChanged();
             return this;
           }
+
           @java.lang.Override
           public final Builder setUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2822,30 +3296,36 @@ public final class ClassificationProto {
             return super.mergeUnknownFields(unknownFields);
           }
 
-
           // @@protoc_insertion_point(builder_scope:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row)
         }
 
         // @@protoc_insertion_point(class_scope:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row)
-        private static final com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row DEFAULT_INSTANCE;
+        private static final com.google.cloud.automl.v1beta1.ClassificationProto
+                .ClassificationEvaluationMetrics.ConfusionMatrix.Row
+            DEFAULT_INSTANCE;
+
         static {
-          DEFAULT_INSTANCE = new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row();
+          DEFAULT_INSTANCE =
+              new com.google.cloud.automl.v1beta1.ClassificationProto
+                  .ClassificationEvaluationMetrics.ConfusionMatrix.Row();
         }
 
-        public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row getDefaultInstance() {
+        public static com.google.cloud.automl.v1beta1.ClassificationProto
+                .ClassificationEvaluationMetrics.ConfusionMatrix.Row
+            getDefaultInstance() {
           return DEFAULT_INSTANCE;
         }
 
-        private static final com.google.protobuf.Parser<Row>
-            PARSER = new com.google.protobuf.AbstractParser<Row>() {
-          @java.lang.Override
-          public Row parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Row(input, extensionRegistry);
-          }
-        };
+        private static final com.google.protobuf.Parser<Row> PARSER =
+            new com.google.protobuf.AbstractParser<Row>() {
+              @java.lang.Override
+              public Row parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                return new Row(input, extensionRegistry);
+              }
+            };
 
         public static com.google.protobuf.Parser<Row> parser() {
           return PARSER;
@@ -2857,26 +3337,30 @@ public final class ClassificationProto {
         }
 
         @java.lang.Override
-        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row getDefaultInstanceForType() {
+        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfusionMatrix.Row
+            getDefaultInstanceForType() {
           return DEFAULT_INSTANCE;
         }
-
       }
 
       public static final int ANNOTATION_SPEC_ID_FIELD_NUMBER = 1;
       private com.google.protobuf.LazyStringList annotationSpecId_;
       /**
+       *
+       *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getAnnotationSpecIdList() {
+      public com.google.protobuf.ProtocolStringList getAnnotationSpecIdList() {
         return annotationSpecId_;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
        * </pre>
@@ -2887,6 +3371,8 @@ public final class ClassificationProto {
         return annotationSpecId_.size();
       }
       /**
+       *
+       *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
        * </pre>
@@ -2897,20 +3383,26 @@ public final class ClassificationProto {
         return annotationSpecId_.get(index);
       }
       /**
+       *
+       *
        * <pre>
        * Output only. IDs of the annotation specs used in the confusion matrix.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getAnnotationSpecIdBytes(int index) {
+      public com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index) {
         return annotationSpecId_.getByteString(index);
       }
 
       public static final int ROW_FIELD_NUMBER = 2;
-      private java.util.List<com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row> row_;
+      private java.util.List<
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix.Row>
+          row_;
       /**
+       *
+       *
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
@@ -2919,12 +3411,19 @@ public final class ClassificationProto {
        * the model being evaluated.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+       * </code>
        */
-      public java.util.List<com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row> getRowList() {
+      public java.util.List<
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix.Row>
+          getRowList() {
         return row_;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
@@ -2933,13 +3432,20 @@ public final class ClassificationProto {
        * the model being evaluated.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+       * </code>
        */
-      public java.util.List<? extends com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.RowOrBuilder> 
+      public java.util.List<
+              ? extends
+                  com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfusionMatrix.RowOrBuilder>
           getRowOrBuilderList() {
         return row_;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
@@ -2948,12 +3454,16 @@ public final class ClassificationProto {
        * the model being evaluated.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+       * </code>
        */
       public int getRowCount() {
         return row_.size();
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
@@ -2962,12 +3472,18 @@ public final class ClassificationProto {
        * the model being evaluated.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+       * </code>
        */
-      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row getRow(int index) {
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfusionMatrix.Row
+          getRow(int index) {
         return row_.get(index);
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Rows in the confusion matrix. The number of rows is equal to
        * the size of `annotation_spec_id`.
@@ -2976,14 +3492,18 @@ public final class ClassificationProto {
        * the model being evaluated.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+       * </code>
        */
-      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.RowOrBuilder getRowOrBuilder(
-          int index) {
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfusionMatrix.RowOrBuilder
+          getRowOrBuilder(int index) {
         return row_.get(index);
       }
 
       private byte memoizedIsInitialized = -1;
+
       @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -2995,10 +3515,10 @@ public final class ClassificationProto {
       }
 
       @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
         for (int i = 0; i < annotationSpecId_.size(); i++) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, annotationSpecId_.getRaw(i));
+          com.google.protobuf.GeneratedMessageV3.writeString(
+              output, 1, annotationSpecId_.getRaw(i));
         }
         for (int i = 0; i < row_.size(); i++) {
           output.writeMessage(2, row_.get(i));
@@ -3021,8 +3541,7 @@ public final class ClassificationProto {
           size += 1 * getAnnotationSpecIdList().size();
         }
         for (int i = 0; i < row_.size(); i++) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, row_.get(i));
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, row_.get(i));
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -3032,18 +3551,24 @@ public final class ClassificationProto {
       @java.lang.Override
       public boolean equals(final java.lang.Object obj) {
         if (obj == this) {
-         return true;
+          return true;
         }
-        if (!(obj instanceof com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix)) {
+        if (!(obj
+            instanceof
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfusionMatrix)) {
           return super.equals(obj);
         }
-        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix other = (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix) obj;
+        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfusionMatrix
+            other =
+                (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                        .ConfusionMatrix)
+                    obj;
 
         boolean result = true;
-        result = result && getAnnotationSpecIdList()
-            .equals(other.getAnnotationSpecIdList());
-        result = result && getRowList()
-            .equals(other.getRowList());
+        result = result && getAnnotationSpecIdList().equals(other.getAnnotationSpecIdList());
+        result = result && getRowList().equals(other.getRowList());
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -3068,88 +3593,117 @@ public final class ClassificationProto {
         return hash;
       }
 
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfusionMatrix
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfusionMatrix
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfusionMatrix
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfusionMatrix
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfusionMatrix
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfusionMatrix
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfusionMatrix
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfusionMatrix
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfusionMatrix
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfusionMatrix
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfusionMatrix
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
       }
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfusionMatrix
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
       }
 
       @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix prototype) {
+
+      public static Builder newBuilder(
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix
+              prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+
       @java.lang.Override
       public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
       }
 
       @java.lang.Override
@@ -3159,45 +3713,55 @@ public final class ClassificationProto {
         return builder;
       }
       /**
+       *
+       *
        * <pre>
        * Confusion matrix of the model running the classification.
        * </pre>
        *
-       * Protobuf type {@code google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix}
+       * Protobuf type {@code
+       * google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix}
        */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
           // @@protoc_insertion_point(builder_implements:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix)
-          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrixOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor;
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfusionMatrixOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.automl.v1beta1.ClassificationProto
+              .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_fieldAccessorTable
+          return com.google.cloud.automl.v1beta1.ClassificationProto
+              .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.class, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Builder.class);
+                  com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfusionMatrix.class,
+                  com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfusionMatrix.Builder.class);
         }
 
-        // Construct using com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.newBuilder()
+        // Construct using
+        // com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
+
         private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
             getRowFieldBuilder();
           }
         }
+
         @java.lang.Override
         public Builder clear() {
           super.clear();
@@ -3213,19 +3777,26 @@ public final class ClassificationProto {
         }
 
         @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor;
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.automl.v1beta1.ClassificationProto
+              .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor;
         }
 
         @java.lang.Override
-        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix getDefaultInstanceForType() {
-          return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.getDefaultInstance();
+        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfusionMatrix
+            getDefaultInstanceForType() {
+          return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfusionMatrix.getDefaultInstance();
         }
 
         @java.lang.Override
-        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix build() {
-          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix result = buildPartial();
+        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfusionMatrix
+            build() {
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix
+              result = buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
@@ -3233,8 +3804,14 @@ public final class ClassificationProto {
         }
 
         @java.lang.Override
-        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix buildPartial() {
-          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix result = new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix(this);
+        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfusionMatrix
+            buildPartial() {
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix
+              result =
+                  new com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfusionMatrix(this);
           int from_bitField0_ = bitField0_;
           if (((bitField0_ & 0x00000001) == 0x00000001)) {
             annotationSpecId_ = annotationSpecId_.getUnmodifiableView();
@@ -3258,46 +3835,60 @@ public final class ClassificationProto {
         public Builder clone() {
           return (Builder) super.clone();
         }
+
         @java.lang.Override
         public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+
         @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+
         @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+
         @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
+            int index,
+            java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+
         @java.lang.Override
         public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix) {
-            return mergeFrom((com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix)other);
+          if (other
+              instanceof
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix) {
+            return mergeFrom(
+                (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                        .ConfusionMatrix)
+                    other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix other) {
-          if (other == com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.getDefaultInstance()) return this;
+        public Builder mergeFrom(
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix
+                other) {
+          if (other
+              == com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix.getDefaultInstance()) return this;
           if (!other.annotationSpecId_.isEmpty()) {
             if (annotationSpecId_.isEmpty()) {
               annotationSpecId_ = other.annotationSpecId_;
@@ -3326,9 +3917,10 @@ public final class ClassificationProto {
                 rowBuilder_ = null;
                 row_ = other.row_;
                 bitField0_ = (bitField0_ & ~0x00000002);
-                rowBuilder_ = 
-                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                     getRowFieldBuilder() : null;
+                rowBuilder_ =
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                        ? getRowFieldBuilder()
+                        : null;
               } else {
                 rowBuilder_.addAllMessages(other.row_);
               }
@@ -3349,11 +3941,16 @@ public final class ClassificationProto {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix parsedMessage = null;
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix
+              parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix) e.getUnfinishedMessage();
+            parsedMessage =
+                (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                        .ConfusionMatrix)
+                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
@@ -3362,27 +3959,33 @@ public final class ClassificationProto {
           }
           return this;
         }
+
         private int bitField0_;
 
-        private com.google.protobuf.LazyStringList annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        private com.google.protobuf.LazyStringList annotationSpecId_ =
+            com.google.protobuf.LazyStringArrayList.EMPTY;
+
         private void ensureAnnotationSpecIdIsMutable() {
           if (!((bitField0_ & 0x00000001) == 0x00000001)) {
             annotationSpecId_ = new com.google.protobuf.LazyStringArrayList(annotationSpecId_);
             bitField0_ |= 0x00000001;
-           }
+          }
         }
         /**
+         *
+         *
          * <pre>
          * Output only. IDs of the annotation specs used in the confusion matrix.
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
          */
-        public com.google.protobuf.ProtocolStringList
-            getAnnotationSpecIdList() {
+        public com.google.protobuf.ProtocolStringList getAnnotationSpecIdList() {
           return annotationSpecId_.getUnmodifiableView();
         }
         /**
+         *
+         *
          * <pre>
          * Output only. IDs of the annotation specs used in the confusion matrix.
          * </pre>
@@ -3393,6 +3996,8 @@ public final class ClassificationProto {
           return annotationSpecId_.size();
         }
         /**
+         *
+         *
          * <pre>
          * Output only. IDs of the annotation specs used in the confusion matrix.
          * </pre>
@@ -3403,66 +4008,71 @@ public final class ClassificationProto {
           return annotationSpecId_.get(index);
         }
         /**
+         *
+         *
          * <pre>
          * Output only. IDs of the annotation specs used in the confusion matrix.
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
          */
-        public com.google.protobuf.ByteString
-            getAnnotationSpecIdBytes(int index) {
+        public com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index) {
           return annotationSpecId_.getByteString(index);
         }
         /**
+         *
+         *
          * <pre>
          * Output only. IDs of the annotation specs used in the confusion matrix.
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
          */
-        public Builder setAnnotationSpecId(
-            int index, java.lang.String value) {
+        public Builder setAnnotationSpecId(int index, java.lang.String value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureAnnotationSpecIdIsMutable();
+            throw new NullPointerException();
+          }
+          ensureAnnotationSpecIdIsMutable();
           annotationSpecId_.set(index, value);
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. IDs of the annotation specs used in the confusion matrix.
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
          */
-        public Builder addAnnotationSpecId(
-            java.lang.String value) {
+        public Builder addAnnotationSpecId(java.lang.String value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureAnnotationSpecIdIsMutable();
+            throw new NullPointerException();
+          }
+          ensureAnnotationSpecIdIsMutable();
           annotationSpecId_.add(value);
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. IDs of the annotation specs used in the confusion matrix.
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
          */
-        public Builder addAllAnnotationSpecId(
-            java.lang.Iterable<java.lang.String> values) {
+        public Builder addAllAnnotationSpecId(java.lang.Iterable<java.lang.String> values) {
           ensureAnnotationSpecIdIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, annotationSpecId_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, annotationSpecId_);
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. IDs of the annotation specs used in the confusion matrix.
          * </pre>
@@ -3476,37 +4086,52 @@ public final class ClassificationProto {
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. IDs of the annotation specs used in the confusion matrix.
          * </pre>
          *
          * <code>repeated string annotation_spec_id = 1;</code>
          */
-        public Builder addAnnotationSpecIdBytes(
-            com.google.protobuf.ByteString value) {
+        public Builder addAnnotationSpecIdBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
           ensureAnnotationSpecIdIsMutable();
           annotationSpecId_.add(value);
           onChanged();
           return this;
         }
 
-        private java.util.List<com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row> row_ =
-          java.util.Collections.emptyList();
+        private java.util.List<
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.Row>
+            row_ = java.util.Collections.emptyList();
+
         private void ensureRowIsMutable() {
           if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-            row_ = new java.util.ArrayList<com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row>(row_);
+            row_ =
+                new java.util.ArrayList<
+                    com.google.cloud.automl.v1beta1.ClassificationProto
+                        .ClassificationEvaluationMetrics.ConfusionMatrix.Row>(row_);
             bitField0_ |= 0x00000002;
-           }
+          }
         }
 
         private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.Builder, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.RowOrBuilder> rowBuilder_;
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.Row,
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.Row.Builder,
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.RowOrBuilder>
+            rowBuilder_;
 
         /**
+         *
+         *
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
@@ -3515,9 +4140,14 @@ public final class ClassificationProto {
          * the model being evaluated.
          * </pre>
          *
-         * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+         * <code>
+         * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+         * </code>
          */
-        public java.util.List<com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row> getRowList() {
+        public java.util.List<
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.Row>
+            getRowList() {
           if (rowBuilder_ == null) {
             return java.util.Collections.unmodifiableList(row_);
           } else {
@@ -3525,6 +4155,8 @@ public final class ClassificationProto {
           }
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
@@ -3533,7 +4165,9 @@ public final class ClassificationProto {
          * the model being evaluated.
          * </pre>
          *
-         * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+         * <code>
+         * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+         * </code>
          */
         public int getRowCount() {
           if (rowBuilder_ == null) {
@@ -3543,6 +4177,8 @@ public final class ClassificationProto {
           }
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
@@ -3551,9 +4187,13 @@ public final class ClassificationProto {
          * the model being evaluated.
          * </pre>
          *
-         * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+         * <code>
+         * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+         * </code>
          */
-        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row getRow(int index) {
+        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfusionMatrix.Row
+            getRow(int index) {
           if (rowBuilder_ == null) {
             return row_.get(index);
           } else {
@@ -3561,6 +4201,8 @@ public final class ClassificationProto {
           }
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
@@ -3569,10 +4211,15 @@ public final class ClassificationProto {
          * the model being evaluated.
          * </pre>
          *
-         * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+         * <code>
+         * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+         * </code>
          */
         public Builder setRow(
-            int index, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row value) {
+            int index,
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.Row
+                value) {
           if (rowBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
@@ -3586,6 +4233,8 @@ public final class ClassificationProto {
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
@@ -3594,10 +4243,15 @@ public final class ClassificationProto {
          * the model being evaluated.
          * </pre>
          *
-         * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+         * <code>
+         * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+         * </code>
          */
         public Builder setRow(
-            int index, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.Builder builderForValue) {
+            int index,
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.Row.Builder
+                builderForValue) {
           if (rowBuilder_ == null) {
             ensureRowIsMutable();
             row_.set(index, builderForValue.build());
@@ -3608,6 +4262,8 @@ public final class ClassificationProto {
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
@@ -3616,9 +4272,14 @@ public final class ClassificationProto {
          * the model being evaluated.
          * </pre>
          *
-         * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+         * <code>
+         * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+         * </code>
          */
-        public Builder addRow(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row value) {
+        public Builder addRow(
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.Row
+                value) {
           if (rowBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
@@ -3632,6 +4293,8 @@ public final class ClassificationProto {
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
@@ -3640,10 +4303,15 @@ public final class ClassificationProto {
          * the model being evaluated.
          * </pre>
          *
-         * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+         * <code>
+         * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+         * </code>
          */
         public Builder addRow(
-            int index, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row value) {
+            int index,
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.Row
+                value) {
           if (rowBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
@@ -3657,6 +4325,8 @@ public final class ClassificationProto {
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
@@ -3665,10 +4335,14 @@ public final class ClassificationProto {
          * the model being evaluated.
          * </pre>
          *
-         * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+         * <code>
+         * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+         * </code>
          */
         public Builder addRow(
-            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.Builder builderForValue) {
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.Row.Builder
+                builderForValue) {
           if (rowBuilder_ == null) {
             ensureRowIsMutable();
             row_.add(builderForValue.build());
@@ -3679,6 +4353,8 @@ public final class ClassificationProto {
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
@@ -3687,10 +4363,15 @@ public final class ClassificationProto {
          * the model being evaluated.
          * </pre>
          *
-         * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+         * <code>
+         * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+         * </code>
          */
         public Builder addRow(
-            int index, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.Builder builderForValue) {
+            int index,
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.Row.Builder
+                builderForValue) {
           if (rowBuilder_ == null) {
             ensureRowIsMutable();
             row_.add(index, builderForValue.build());
@@ -3701,6 +4382,8 @@ public final class ClassificationProto {
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
@@ -3709,14 +4392,19 @@ public final class ClassificationProto {
          * the model being evaluated.
          * </pre>
          *
-         * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+         * <code>
+         * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+         * </code>
          */
         public Builder addAllRow(
-            java.lang.Iterable<? extends com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row> values) {
+            java.lang.Iterable<
+                    ? extends
+                        com.google.cloud.automl.v1beta1.ClassificationProto
+                            .ClassificationEvaluationMetrics.ConfusionMatrix.Row>
+                values) {
           if (rowBuilder_ == null) {
             ensureRowIsMutable();
-            com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                values, row_);
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, row_);
             onChanged();
           } else {
             rowBuilder_.addAllMessages(values);
@@ -3724,6 +4412,8 @@ public final class ClassificationProto {
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
@@ -3732,7 +4422,9 @@ public final class ClassificationProto {
          * the model being evaluated.
          * </pre>
          *
-         * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+         * <code>
+         * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+         * </code>
          */
         public Builder clearRow() {
           if (rowBuilder_ == null) {
@@ -3745,6 +4437,8 @@ public final class ClassificationProto {
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
@@ -3753,7 +4447,9 @@ public final class ClassificationProto {
          * the model being evaluated.
          * </pre>
          *
-         * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+         * <code>
+         * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+         * </code>
          */
         public Builder removeRow(int index) {
           if (rowBuilder_ == null) {
@@ -3766,6 +4462,8 @@ public final class ClassificationProto {
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
@@ -3774,13 +4472,18 @@ public final class ClassificationProto {
          * the model being evaluated.
          * </pre>
          *
-         * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+         * <code>
+         * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+         * </code>
          */
-        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.Builder getRowBuilder(
-            int index) {
+        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfusionMatrix.Row.Builder
+            getRowBuilder(int index) {
           return getRowFieldBuilder().getBuilder(index);
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
@@ -3789,16 +4492,22 @@ public final class ClassificationProto {
          * the model being evaluated.
          * </pre>
          *
-         * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+         * <code>
+         * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+         * </code>
          */
-        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.RowOrBuilder getRowOrBuilder(
-            int index) {
+        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfusionMatrix.RowOrBuilder
+            getRowOrBuilder(int index) {
           if (rowBuilder_ == null) {
-            return row_.get(index);  } else {
+            return row_.get(index);
+          } else {
             return rowBuilder_.getMessageOrBuilder(index);
           }
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
@@ -3807,10 +4516,15 @@ public final class ClassificationProto {
          * the model being evaluated.
          * </pre>
          *
-         * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+         * <code>
+         * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+         * </code>
          */
-        public java.util.List<? extends com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.RowOrBuilder> 
-             getRowOrBuilderList() {
+        public java.util.List<
+                ? extends
+                    com.google.cloud.automl.v1beta1.ClassificationProto
+                        .ClassificationEvaluationMetrics.ConfusionMatrix.RowOrBuilder>
+            getRowOrBuilderList() {
           if (rowBuilder_ != null) {
             return rowBuilder_.getMessageOrBuilderList();
           } else {
@@ -3818,6 +4532,8 @@ public final class ClassificationProto {
           }
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
@@ -3826,13 +4542,21 @@ public final class ClassificationProto {
          * the model being evaluated.
          * </pre>
          *
-         * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+         * <code>
+         * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+         * </code>
          */
-        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.Builder addRowBuilder() {
-          return getRowFieldBuilder().addBuilder(
-              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.getDefaultInstance());
+        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfusionMatrix.Row.Builder
+            addRowBuilder() {
+          return getRowFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfusionMatrix.Row.getDefaultInstance());
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
@@ -3841,14 +4565,22 @@ public final class ClassificationProto {
          * the model being evaluated.
          * </pre>
          *
-         * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+         * <code>
+         * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+         * </code>
          */
-        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.Builder addRowBuilder(
-            int index) {
-          return getRowFieldBuilder().addBuilder(
-              index, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.getDefaultInstance());
+        public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfusionMatrix.Row.Builder
+            addRowBuilder(int index) {
+          return getRowFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfusionMatrix.Row.getDefaultInstance());
         }
         /**
+         *
+         *
          * <pre>
          * Output only. Rows in the confusion matrix. The number of rows is equal to
          * the size of `annotation_spec_id`.
@@ -3857,18 +4589,34 @@ public final class ClassificationProto {
          * the model being evaluated.
          * </pre>
          *
-         * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;</code>
+         * <code>
+         * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix.Row row = 2;
+         * </code>
          */
-        public java.util.List<com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.Builder> 
-             getRowBuilderList() {
+        public java.util.List<
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.Row.Builder>
+            getRowBuilderList() {
           return getRowFieldBuilder().getBuilderList();
         }
+
         private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.Builder, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.RowOrBuilder> 
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.Row,
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.Row.Builder,
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.RowOrBuilder>
             getRowFieldBuilder() {
           if (rowBuilder_ == null) {
-            rowBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Row.Builder, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.RowOrBuilder>(
+            rowBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.google.cloud.automl.v1beta1.ClassificationProto
+                        .ClassificationEvaluationMetrics.ConfusionMatrix.Row,
+                    com.google.cloud.automl.v1beta1.ClassificationProto
+                        .ClassificationEvaluationMetrics.ConfusionMatrix.Row.Builder,
+                    com.google.cloud.automl.v1beta1.ClassificationProto
+                        .ClassificationEvaluationMetrics.ConfusionMatrix.RowOrBuilder>(
                     row_,
                     ((bitField0_ & 0x00000002) == 0x00000002),
                     getParentForChildren(),
@@ -3877,6 +4625,7 @@ public final class ClassificationProto {
           }
           return rowBuilder_;
         }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3889,30 +4638,36 @@ public final class ClassificationProto {
           return super.mergeUnknownFields(unknownFields);
         }
 
-
         // @@protoc_insertion_point(builder_scope:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix)
       }
 
       // @@protoc_insertion_point(class_scope:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix)
-      private static final com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix DEFAULT_INSTANCE;
+      private static final com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfusionMatrix
+          DEFAULT_INSTANCE;
+
       static {
-        DEFAULT_INSTANCE = new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix();
+        DEFAULT_INSTANCE =
+            new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfusionMatrix();
       }
 
-      public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix getDefaultInstance() {
+      public static com.google.cloud.automl.v1beta1.ClassificationProto
+              .ClassificationEvaluationMetrics.ConfusionMatrix
+          getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<ConfusionMatrix>
-          PARSER = new com.google.protobuf.AbstractParser<ConfusionMatrix>() {
-        @java.lang.Override
-        public ConfusionMatrix parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ConfusionMatrix(input, extensionRegistry);
-        }
-      };
+      private static final com.google.protobuf.Parser<ConfusionMatrix> PARSER =
+          new com.google.protobuf.AbstractParser<ConfusionMatrix>() {
+            @java.lang.Override
+            public ConfusionMatrix parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new ConfusionMatrix(input, extensionRegistry);
+            }
+          };
 
       public static com.google.protobuf.Parser<ConfusionMatrix> parser() {
         return PARSER;
@@ -3924,16 +4679,19 @@ public final class ClassificationProto {
       }
 
       @java.lang.Override
-      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix getDefaultInstanceForType() {
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfusionMatrix
+          getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
-
     }
 
     private int bitField0_;
     public static final int AU_PRC_FIELD_NUMBER = 1;
     private float auPrc_;
     /**
+     *
+     *
      * <pre>
      * Output only. The Area under precision recall curve metric.
      * </pre>
@@ -3947,6 +4705,8 @@ public final class ClassificationProto {
     public static final int BASE_AU_PRC_FIELD_NUMBER = 2;
     private float baseAuPrc_;
     /**
+     *
+     *
      * <pre>
      * Output only. The Area under precision recall curve metric based on priors.
      * </pre>
@@ -3958,68 +4718,104 @@ public final class ClassificationProto {
     }
 
     public static final int CONFIDENCE_METRICS_ENTRY_FIELD_NUMBER = 3;
-    private java.util.List<com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry> confidenceMetricsEntry_;
+    private java.util.List<
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfidenceMetricsEntry>
+        confidenceMetricsEntry_;
     /**
+     *
+     *
      * <pre>
      * Output only. Metrics that have confidence thresholds.
      * Precision-recall curve can be derived from it.
      * </pre>
      *
-     * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+     * <code>
+     * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+     * </code>
      */
-    public java.util.List<com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry> getConfidenceMetricsEntryList() {
+    public java.util.List<
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .ConfidenceMetricsEntry>
+        getConfidenceMetricsEntryList() {
       return confidenceMetricsEntry_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Metrics that have confidence thresholds.
      * Precision-recall curve can be derived from it.
      * </pre>
      *
-     * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+     * <code>
+     * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+     * </code>
      */
-    public java.util.List<? extends com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntryOrBuilder> 
+    public java.util.List<
+            ? extends
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfidenceMetricsEntryOrBuilder>
         getConfidenceMetricsEntryOrBuilderList() {
       return confidenceMetricsEntry_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Metrics that have confidence thresholds.
      * Precision-recall curve can be derived from it.
      * </pre>
      *
-     * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+     * <code>
+     * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+     * </code>
      */
     public int getConfidenceMetricsEntryCount() {
       return confidenceMetricsEntry_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Metrics that have confidence thresholds.
      * Precision-recall curve can be derived from it.
      * </pre>
      *
-     * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+     * <code>
+     * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry getConfidenceMetricsEntry(int index) {
+    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+            .ConfidenceMetricsEntry
+        getConfidenceMetricsEntry(int index) {
       return confidenceMetricsEntry_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Metrics that have confidence thresholds.
      * Precision-recall curve can be derived from it.
      * </pre>
      *
-     * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+     * <code>
+     * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntryOrBuilder getConfidenceMetricsEntryOrBuilder(
-        int index) {
+    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+            .ConfidenceMetricsEntryOrBuilder
+        getConfidenceMetricsEntryOrBuilder(int index) {
       return confidenceMetricsEntry_.get(index);
     }
 
     public static final int CONFUSION_MATRIX_FIELD_NUMBER = 4;
-    private com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix confusionMatrix_;
+    private com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+            .ConfusionMatrix
+        confusionMatrix_;
     /**
+     *
+     *
      * <pre>
      * Output only. Confusion matrix of the evaluation.
      * Only set for MULTICLASS classification problems where number
@@ -4027,12 +4823,16 @@ public final class ClassificationProto {
      * Only set for model level evaluation, not for evaluation per label.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
+     * </code>
      */
     public boolean hasConfusionMatrix() {
       return confusionMatrix_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Confusion matrix of the evaluation.
      * Only set for MULTICLASS classification problems where number
@@ -4040,12 +4840,21 @@ public final class ClassificationProto {
      * Only set for model level evaluation, not for evaluation per label.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix getConfusionMatrix() {
-      return confusionMatrix_ == null ? com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.getDefaultInstance() : confusionMatrix_;
+    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+            .ConfusionMatrix
+        getConfusionMatrix() {
+      return confusionMatrix_ == null
+          ? com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfusionMatrix.getDefaultInstance()
+          : confusionMatrix_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Confusion matrix of the evaluation.
      * Only set for MULTICLASS classification problems where number
@@ -4053,26 +4862,33 @@ public final class ClassificationProto {
      * Only set for model level evaluation, not for evaluation per label.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrixOrBuilder getConfusionMatrixOrBuilder() {
+    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+            .ConfusionMatrixOrBuilder
+        getConfusionMatrixOrBuilder() {
       return getConfusionMatrix();
     }
 
     public static final int ANNOTATION_SPEC_ID_FIELD_NUMBER = 5;
     private com.google.protobuf.LazyStringList annotationSpecId_;
     /**
+     *
+     *
      * <pre>
      * Output only. The annotation spec ids used for this evaluation.
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 5;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getAnnotationSpecIdList() {
+    public com.google.protobuf.ProtocolStringList getAnnotationSpecIdList() {
       return annotationSpecId_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The annotation spec ids used for this evaluation.
      * </pre>
@@ -4083,6 +4899,8 @@ public final class ClassificationProto {
       return annotationSpecId_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The annotation spec ids used for this evaluation.
      * </pre>
@@ -4093,18 +4911,20 @@ public final class ClassificationProto {
       return annotationSpecId_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The annotation spec ids used for this evaluation.
      * </pre>
      *
      * <code>repeated string annotation_spec_id = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getAnnotationSpecIdBytes(int index) {
+    public com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index) {
       return annotationSpecId_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -4116,8 +4936,7 @@ public final class ClassificationProto {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (auPrc_ != 0F) {
         output.writeFloat(1, auPrc_);
       }
@@ -4143,20 +4962,18 @@ public final class ClassificationProto {
 
       size = 0;
       if (auPrc_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(1, auPrc_);
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, auPrc_);
       }
       if (baseAuPrc_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, baseAuPrc_);
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, baseAuPrc_);
       }
       for (int i = 0; i < confidenceMetricsEntry_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, confidenceMetricsEntry_.get(i));
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3, confidenceMetricsEntry_.get(i));
       }
       if (confusionMatrix_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getConfusionMatrix());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getConfusionMatrix());
       }
       {
         int dataSize = 0;
@@ -4174,31 +4991,32 @@ public final class ClassificationProto {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
-      if (!(obj instanceof com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics)) {
+      if (!(obj
+          instanceof
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics)) {
         return super.equals(obj);
       }
-      com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics other = (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics) obj;
+      com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics other =
+          (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics) obj;
 
       boolean result = true;
-      result = result && (
-          java.lang.Float.floatToIntBits(getAuPrc())
-          == java.lang.Float.floatToIntBits(
-              other.getAuPrc()));
-      result = result && (
-          java.lang.Float.floatToIntBits(getBaseAuPrc())
-          == java.lang.Float.floatToIntBits(
-              other.getBaseAuPrc()));
-      result = result && getConfidenceMetricsEntryList()
-          .equals(other.getConfidenceMetricsEntryList());
+      result =
+          result
+              && (java.lang.Float.floatToIntBits(getAuPrc())
+                  == java.lang.Float.floatToIntBits(other.getAuPrc()));
+      result =
+          result
+              && (java.lang.Float.floatToIntBits(getBaseAuPrc())
+                  == java.lang.Float.floatToIntBits(other.getBaseAuPrc()));
+      result =
+          result && getConfidenceMetricsEntryList().equals(other.getConfidenceMetricsEntryList());
       result = result && (hasConfusionMatrix() == other.hasConfusionMatrix());
       if (hasConfusionMatrix()) {
-        result = result && getConfusionMatrix()
-            .equals(other.getConfusionMatrix());
+        result = result && getConfusionMatrix().equals(other.getConfusionMatrix());
       }
-      result = result && getAnnotationSpecIdList()
-          .equals(other.getAnnotationSpecIdList());
+      result = result && getAnnotationSpecIdList().equals(other.getAnnotationSpecIdList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -4211,11 +5029,9 @@ public final class ClassificationProto {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + AU_PRC_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getAuPrc());
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getAuPrc());
       hash = (37 * hash) + BASE_AU_PRC_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getBaseAuPrc());
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getBaseAuPrc());
       if (getConfidenceMetricsEntryCount() > 0) {
         hash = (37 * hash) + CONFIDENCE_METRICS_ENTRY_FIELD_NUMBER;
         hash = (53 * hash) + getConfidenceMetricsEntryList().hashCode();
@@ -4233,88 +5049,114 @@ public final class ClassificationProto {
       return hash;
     }
 
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static com.google.cloud.automl.v1beta1.ClassificationProto
+            .ClassificationEvaluationMetrics
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto
+            .ClassificationEvaluationMetrics
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto
+            .ClassificationEvaluationMetrics
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto
+            .ClassificationEvaluationMetrics
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto
+            .ClassificationEvaluationMetrics
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto
+            .ClassificationEvaluationMetrics
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto
+            .ClassificationEvaluationMetrics
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto
+            .ClassificationEvaluationMetrics
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto
+            .ClassificationEvaluationMetrics
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto
+            .ClassificationEvaluationMetrics
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto
+            .ClassificationEvaluationMetrics
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.cloud.automl.v1beta1.ClassificationProto
+            .ClassificationEvaluationMetrics
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics prototype) {
+
+    public static Builder newBuilder(
+        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+            prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -4324,6 +5166,8 @@ public final class ClassificationProto {
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Model evaluation metrics for classification problems.
      * Visible only to v1beta1
@@ -4331,39 +5175,46 @@ public final class ClassificationProto {
      *
      * Protobuf type {@code google.cloud.automl.v1beta1.ClassificationEvaluationMetrics}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics)
-        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetricsOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor;
+        com.google.cloud.automl.v1beta1.ClassificationProto
+            .ClassificationEvaluationMetricsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.automl.v1beta1.ClassificationProto
+            .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_fieldAccessorTable
+        return com.google.cloud.automl.v1beta1.ClassificationProto
+            .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.class, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.Builder.class);
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .class,
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .Builder.class);
       }
 
-      // Construct using com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.newBuilder()
+      // Construct using
+      // com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getConfidenceMetricsEntryFieldBuilder();
         }
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -4389,19 +5240,23 @@ public final class ClassificationProto {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.automl.v1beta1.ClassificationProto.internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.automl.v1beta1.ClassificationProto
+            .internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor;
       }
 
       @java.lang.Override
-      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics getDefaultInstanceForType() {
-        return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.getDefaultInstance();
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+          getDefaultInstanceForType() {
+        return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+            .getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics build() {
-        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics result = buildPartial();
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+          build() {
+        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics result =
+            buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -4409,15 +5264,19 @@ public final class ClassificationProto {
       }
 
       @java.lang.Override
-      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics buildPartial() {
-        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics result = new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics(this);
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+          buildPartial() {
+        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics result =
+            new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics(
+                this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.auPrc_ = auPrc_;
         result.baseAuPrc_ = baseAuPrc_;
         if (confidenceMetricsEntryBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            confidenceMetricsEntry_ = java.util.Collections.unmodifiableList(confidenceMetricsEntry_);
+            confidenceMetricsEntry_ =
+                java.util.Collections.unmodifiableList(confidenceMetricsEntry_);
             bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.confidenceMetricsEntry_ = confidenceMetricsEntry_;
@@ -4443,46 +5302,57 @@ public final class ClassificationProto {
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics) {
-          return mergeFrom((com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics)other);
+        if (other
+            instanceof
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics) {
+          return mergeFrom(
+              (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics)
+                  other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics other) {
-        if (other == com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.getDefaultInstance()) return this;
+      public Builder mergeFrom(
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              other) {
+        if (other
+            == com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                .getDefaultInstance()) return this;
         if (other.getAuPrc() != 0F) {
           setAuPrc(other.getAuPrc());
         }
@@ -4507,9 +5377,10 @@ public final class ClassificationProto {
               confidenceMetricsEntryBuilder_ = null;
               confidenceMetricsEntry_ = other.confidenceMetricsEntry_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              confidenceMetricsEntryBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getConfidenceMetricsEntryFieldBuilder() : null;
+              confidenceMetricsEntryBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getConfidenceMetricsEntryFieldBuilder()
+                      : null;
             } else {
               confidenceMetricsEntryBuilder_.addAllMessages(other.confidenceMetricsEntry_);
             }
@@ -4543,11 +5414,14 @@ public final class ClassificationProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics parsedMessage = null;
+        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+            parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4556,10 +5430,13 @@ public final class ClassificationProto {
         }
         return this;
       }
+
       private int bitField0_;
 
-      private float auPrc_ ;
+      private float auPrc_;
       /**
+       *
+       *
        * <pre>
        * Output only. The Area under precision recall curve metric.
        * </pre>
@@ -4570,6 +5447,8 @@ public final class ClassificationProto {
         return auPrc_;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. The Area under precision recall curve metric.
        * </pre>
@@ -4577,12 +5456,14 @@ public final class ClassificationProto {
        * <code>float au_prc = 1;</code>
        */
       public Builder setAuPrc(float value) {
-        
+
         auPrc_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. The Area under precision recall curve metric.
        * </pre>
@@ -4590,14 +5471,16 @@ public final class ClassificationProto {
        * <code>float au_prc = 1;</code>
        */
       public Builder clearAuPrc() {
-        
+
         auPrc_ = 0F;
         onChanged();
         return this;
       }
 
-      private float baseAuPrc_ ;
+      private float baseAuPrc_;
       /**
+       *
+       *
        * <pre>
        * Output only. The Area under precision recall curve metric based on priors.
        * </pre>
@@ -4608,6 +5491,8 @@ public final class ClassificationProto {
         return baseAuPrc_;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. The Area under precision recall curve metric based on priors.
        * </pre>
@@ -4615,12 +5500,14 @@ public final class ClassificationProto {
        * <code>float base_au_prc = 2;</code>
        */
       public Builder setBaseAuPrc(float value) {
-        
+
         baseAuPrc_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. The Area under precision recall curve metric based on priors.
        * </pre>
@@ -4628,33 +5515,53 @@ public final class ClassificationProto {
        * <code>float base_au_prc = 2;</code>
        */
       public Builder clearBaseAuPrc() {
-        
+
         baseAuPrc_ = 0F;
         onChanged();
         return this;
       }
 
-      private java.util.List<com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry> confidenceMetricsEntry_ =
-        java.util.Collections.emptyList();
+      private java.util.List<
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntry>
+          confidenceMetricsEntry_ = java.util.Collections.emptyList();
+
       private void ensureConfidenceMetricsEntryIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          confidenceMetricsEntry_ = new java.util.ArrayList<com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry>(confidenceMetricsEntry_);
+          confidenceMetricsEntry_ =
+              new java.util.ArrayList<
+                  com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfidenceMetricsEntry>(
+                  confidenceMetricsEntry_);
           bitField0_ |= 0x00000004;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.Builder, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntryOrBuilder> confidenceMetricsEntryBuilder_;
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntry,
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntry.Builder,
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntryOrBuilder>
+          confidenceMetricsEntryBuilder_;
 
       /**
+       *
+       *
        * <pre>
        * Output only. Metrics that have confidence thresholds.
        * Precision-recall curve can be derived from it.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+       * </code>
        */
-      public java.util.List<com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry> getConfidenceMetricsEntryList() {
+      public java.util.List<
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntry>
+          getConfidenceMetricsEntryList() {
         if (confidenceMetricsEntryBuilder_ == null) {
           return java.util.Collections.unmodifiableList(confidenceMetricsEntry_);
         } else {
@@ -4662,12 +5569,16 @@ public final class ClassificationProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Metrics that have confidence thresholds.
        * Precision-recall curve can be derived from it.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+       * </code>
        */
       public int getConfidenceMetricsEntryCount() {
         if (confidenceMetricsEntryBuilder_ == null) {
@@ -4677,14 +5588,20 @@ public final class ClassificationProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Metrics that have confidence thresholds.
        * Precision-recall curve can be derived from it.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+       * </code>
        */
-      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry getConfidenceMetricsEntry(int index) {
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfidenceMetricsEntry
+          getConfidenceMetricsEntry(int index) {
         if (confidenceMetricsEntryBuilder_ == null) {
           return confidenceMetricsEntry_.get(index);
         } else {
@@ -4692,15 +5609,22 @@ public final class ClassificationProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Metrics that have confidence thresholds.
        * Precision-recall curve can be derived from it.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+       * </code>
        */
       public Builder setConfidenceMetricsEntry(
-          int index, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry value) {
+          int index,
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntry
+              value) {
         if (confidenceMetricsEntryBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4714,15 +5638,22 @@ public final class ClassificationProto {
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Metrics that have confidence thresholds.
        * Precision-recall curve can be derived from it.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+       * </code>
        */
       public Builder setConfidenceMetricsEntry(
-          int index, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.Builder builderForValue) {
+          int index,
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntry.Builder
+              builderForValue) {
         if (confidenceMetricsEntryBuilder_ == null) {
           ensureConfidenceMetricsEntryIsMutable();
           confidenceMetricsEntry_.set(index, builderForValue.build());
@@ -4733,14 +5664,21 @@ public final class ClassificationProto {
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Metrics that have confidence thresholds.
        * Precision-recall curve can be derived from it.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+       * </code>
        */
-      public Builder addConfidenceMetricsEntry(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry value) {
+      public Builder addConfidenceMetricsEntry(
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntry
+              value) {
         if (confidenceMetricsEntryBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4754,15 +5692,22 @@ public final class ClassificationProto {
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Metrics that have confidence thresholds.
        * Precision-recall curve can be derived from it.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+       * </code>
        */
       public Builder addConfidenceMetricsEntry(
-          int index, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry value) {
+          int index,
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntry
+              value) {
         if (confidenceMetricsEntryBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4776,15 +5721,21 @@ public final class ClassificationProto {
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Metrics that have confidence thresholds.
        * Precision-recall curve can be derived from it.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+       * </code>
        */
       public Builder addConfidenceMetricsEntry(
-          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.Builder builderForValue) {
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntry.Builder
+              builderForValue) {
         if (confidenceMetricsEntryBuilder_ == null) {
           ensureConfidenceMetricsEntryIsMutable();
           confidenceMetricsEntry_.add(builderForValue.build());
@@ -4795,15 +5746,22 @@ public final class ClassificationProto {
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Metrics that have confidence thresholds.
        * Precision-recall curve can be derived from it.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+       * </code>
        */
       public Builder addConfidenceMetricsEntry(
-          int index, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.Builder builderForValue) {
+          int index,
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntry.Builder
+              builderForValue) {
         if (confidenceMetricsEntryBuilder_ == null) {
           ensureConfidenceMetricsEntryIsMutable();
           confidenceMetricsEntry_.add(index, builderForValue.build());
@@ -4814,19 +5772,26 @@ public final class ClassificationProto {
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Metrics that have confidence thresholds.
        * Precision-recall curve can be derived from it.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+       * </code>
        */
       public Builder addAllConfidenceMetricsEntry(
-          java.lang.Iterable<? extends com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry> values) {
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.automl.v1beta1.ClassificationProto
+                          .ClassificationEvaluationMetrics.ConfidenceMetricsEntry>
+              values) {
         if (confidenceMetricsEntryBuilder_ == null) {
           ensureConfidenceMetricsEntryIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, confidenceMetricsEntry_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, confidenceMetricsEntry_);
           onChanged();
         } else {
           confidenceMetricsEntryBuilder_.addAllMessages(values);
@@ -4834,12 +5799,16 @@ public final class ClassificationProto {
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Metrics that have confidence thresholds.
        * Precision-recall curve can be derived from it.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+       * </code>
        */
       public Builder clearConfidenceMetricsEntry() {
         if (confidenceMetricsEntryBuilder_ == null) {
@@ -4852,12 +5821,16 @@ public final class ClassificationProto {
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Metrics that have confidence thresholds.
        * Precision-recall curve can be derived from it.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+       * </code>
        */
       public Builder removeConfidenceMetricsEntry(int index) {
         if (confidenceMetricsEntryBuilder_ == null) {
@@ -4870,42 +5843,60 @@ public final class ClassificationProto {
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Metrics that have confidence thresholds.
        * Precision-recall curve can be derived from it.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+       * </code>
        */
-      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.Builder getConfidenceMetricsEntryBuilder(
-          int index) {
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfidenceMetricsEntry.Builder
+          getConfidenceMetricsEntryBuilder(int index) {
         return getConfidenceMetricsEntryFieldBuilder().getBuilder(index);
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Metrics that have confidence thresholds.
        * Precision-recall curve can be derived from it.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+       * </code>
        */
-      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntryOrBuilder getConfidenceMetricsEntryOrBuilder(
-          int index) {
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfidenceMetricsEntryOrBuilder
+          getConfidenceMetricsEntryOrBuilder(int index) {
         if (confidenceMetricsEntryBuilder_ == null) {
-          return confidenceMetricsEntry_.get(index);  } else {
+          return confidenceMetricsEntry_.get(index);
+        } else {
           return confidenceMetricsEntryBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Metrics that have confidence thresholds.
        * Precision-recall curve can be derived from it.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+       * </code>
        */
-      public java.util.List<? extends com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntryOrBuilder> 
-           getConfidenceMetricsEntryOrBuilderList() {
+      public java.util.List<
+              ? extends
+                  com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfidenceMetricsEntryOrBuilder>
+          getConfidenceMetricsEntryOrBuilderList() {
         if (confidenceMetricsEntryBuilder_ != null) {
           return confidenceMetricsEntryBuilder_.getMessageOrBuilderList();
         } else {
@@ -4913,48 +5904,82 @@ public final class ClassificationProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Metrics that have confidence thresholds.
        * Precision-recall curve can be derived from it.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+       * </code>
        */
-      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.Builder addConfidenceMetricsEntryBuilder() {
-        return getConfidenceMetricsEntryFieldBuilder().addBuilder(
-            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.getDefaultInstance());
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfidenceMetricsEntry.Builder
+          addConfidenceMetricsEntryBuilder() {
+        return getConfidenceMetricsEntryFieldBuilder()
+            .addBuilder(
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfidenceMetricsEntry.getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Metrics that have confidence thresholds.
        * Precision-recall curve can be derived from it.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+       * </code>
        */
-      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.Builder addConfidenceMetricsEntryBuilder(
-          int index) {
-        return getConfidenceMetricsEntryFieldBuilder().addBuilder(
-            index, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.getDefaultInstance());
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfidenceMetricsEntry.Builder
+          addConfidenceMetricsEntryBuilder(int index) {
+        return getConfidenceMetricsEntryFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfidenceMetricsEntry.getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Metrics that have confidence thresholds.
        * Precision-recall curve can be derived from it.
        * </pre>
        *
-       * <code>repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;</code>
+       * <code>
+       * repeated .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry confidence_metrics_entry = 3;
+       * </code>
        */
-      public java.util.List<com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.Builder> 
-           getConfidenceMetricsEntryBuilderList() {
+      public java.util.List<
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntry.Builder>
+          getConfidenceMetricsEntryBuilderList() {
         return getConfidenceMetricsEntryFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.Builder, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntryOrBuilder> 
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntry,
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntry.Builder,
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfidenceMetricsEntryOrBuilder>
           getConfidenceMetricsEntryFieldBuilder() {
         if (confidenceMetricsEntryBuilder_ == null) {
-          confidenceMetricsEntryBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.Builder, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfidenceMetricsEntryOrBuilder>(
+          confidenceMetricsEntryBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfidenceMetricsEntry,
+                  com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfidenceMetricsEntry.Builder,
+                  com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfidenceMetricsEntryOrBuilder>(
                   confidenceMetricsEntry_,
                   ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
@@ -4964,10 +5989,20 @@ public final class ClassificationProto {
         return confidenceMetricsEntryBuilder_;
       }
 
-      private com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix confusionMatrix_ = null;
+      private com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfusionMatrix
+          confusionMatrix_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Builder, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrixOrBuilder> confusionMatrixBuilder_;
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix,
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix.Builder,
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrixOrBuilder>
+          confusionMatrixBuilder_;
       /**
+       *
+       *
        * <pre>
        * Output only. Confusion matrix of the evaluation.
        * Only set for MULTICLASS classification problems where number
@@ -4975,12 +6010,16 @@ public final class ClassificationProto {
        * Only set for model level evaluation, not for evaluation per label.
        * </pre>
        *
-       * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;</code>
+       * <code>
+       * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
+       * </code>
        */
       public boolean hasConfusionMatrix() {
         return confusionMatrixBuilder_ != null || confusionMatrix_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Confusion matrix of the evaluation.
        * Only set for MULTICLASS classification problems where number
@@ -4988,16 +6027,25 @@ public final class ClassificationProto {
        * Only set for model level evaluation, not for evaluation per label.
        * </pre>
        *
-       * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;</code>
+       * <code>
+       * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
+       * </code>
        */
-      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix getConfusionMatrix() {
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfusionMatrix
+          getConfusionMatrix() {
         if (confusionMatrixBuilder_ == null) {
-          return confusionMatrix_ == null ? com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.getDefaultInstance() : confusionMatrix_;
+          return confusionMatrix_ == null
+              ? com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix.getDefaultInstance()
+              : confusionMatrix_;
         } else {
           return confusionMatrixBuilder_.getMessage();
         }
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Confusion matrix of the evaluation.
        * Only set for MULTICLASS classification problems where number
@@ -5005,9 +6053,14 @@ public final class ClassificationProto {
        * Only set for model level evaluation, not for evaluation per label.
        * </pre>
        *
-       * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;</code>
+       * <code>
+       * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
+       * </code>
        */
-      public Builder setConfusionMatrix(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix value) {
+      public Builder setConfusionMatrix(
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix
+              value) {
         if (confusionMatrixBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5021,6 +6074,8 @@ public final class ClassificationProto {
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Confusion matrix of the evaluation.
        * Only set for MULTICLASS classification problems where number
@@ -5028,10 +6083,14 @@ public final class ClassificationProto {
        * Only set for model level evaluation, not for evaluation per label.
        * </pre>
        *
-       * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;</code>
+       * <code>
+       * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
+       * </code>
        */
       public Builder setConfusionMatrix(
-          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Builder builderForValue) {
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix.Builder
+              builderForValue) {
         if (confusionMatrixBuilder_ == null) {
           confusionMatrix_ = builderForValue.build();
           onChanged();
@@ -5042,6 +6101,8 @@ public final class ClassificationProto {
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Confusion matrix of the evaluation.
        * Only set for MULTICLASS classification problems where number
@@ -5049,13 +6110,21 @@ public final class ClassificationProto {
        * Only set for model level evaluation, not for evaluation per label.
        * </pre>
        *
-       * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;</code>
+       * <code>
+       * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
+       * </code>
        */
-      public Builder mergeConfusionMatrix(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix value) {
+      public Builder mergeConfusionMatrix(
+          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix
+              value) {
         if (confusionMatrixBuilder_ == null) {
           if (confusionMatrix_ != null) {
             confusionMatrix_ =
-              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.newBuilder(confusionMatrix_).mergeFrom(value).buildPartial();
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                    .ConfusionMatrix.newBuilder(confusionMatrix_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             confusionMatrix_ = value;
           }
@@ -5067,6 +6136,8 @@ public final class ClassificationProto {
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Confusion matrix of the evaluation.
        * Only set for MULTICLASS classification problems where number
@@ -5074,7 +6145,9 @@ public final class ClassificationProto {
        * Only set for model level evaluation, not for evaluation per label.
        * </pre>
        *
-       * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;</code>
+       * <code>
+       * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
+       * </code>
        */
       public Builder clearConfusionMatrix() {
         if (confusionMatrixBuilder_ == null) {
@@ -5088,6 +6161,8 @@ public final class ClassificationProto {
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Confusion matrix of the evaluation.
        * Only set for MULTICLASS classification problems where number
@@ -5095,14 +6170,20 @@ public final class ClassificationProto {
        * Only set for model level evaluation, not for evaluation per label.
        * </pre>
        *
-       * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;</code>
+       * <code>
+       * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
+       * </code>
        */
-      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Builder getConfusionMatrixBuilder() {
-        
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfusionMatrix.Builder
+          getConfusionMatrixBuilder() {
+
         onChanged();
         return getConfusionMatrixFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Confusion matrix of the evaluation.
        * Only set for MULTICLASS classification problems where number
@@ -5110,17 +6191,25 @@ public final class ClassificationProto {
        * Only set for model level evaluation, not for evaluation per label.
        * </pre>
        *
-       * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;</code>
+       * <code>
+       * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
+       * </code>
        */
-      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrixOrBuilder getConfusionMatrixOrBuilder() {
+      public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+              .ConfusionMatrixOrBuilder
+          getConfusionMatrixOrBuilder() {
         if (confusionMatrixBuilder_ != null) {
           return confusionMatrixBuilder_.getMessageOrBuilder();
         } else {
-          return confusionMatrix_ == null ?
-              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.getDefaultInstance() : confusionMatrix_;
+          return confusionMatrix_ == null
+              ? com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix.getDefaultInstance()
+              : confusionMatrix_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Output only. Confusion matrix of the evaluation.
        * Only set for MULTICLASS classification problems where number
@@ -5128,41 +6217,57 @@ public final class ClassificationProto {
        * Only set for model level evaluation, not for evaluation per label.
        * </pre>
        *
-       * <code>.google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;</code>
+       * <code>
+       * .google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfusionMatrix confusion_matrix = 4;
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Builder, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrixOrBuilder> 
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix,
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrix.Builder,
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+                  .ConfusionMatrixOrBuilder>
           getConfusionMatrixFieldBuilder() {
         if (confusionMatrixBuilder_ == null) {
-          confusionMatrixBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrix.Builder, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics.ConfusionMatrixOrBuilder>(
-                  getConfusionMatrix(),
-                  getParentForChildren(),
-                  isClean());
+          confusionMatrixBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfusionMatrix,
+                  com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfusionMatrix.Builder,
+                  com.google.cloud.automl.v1beta1.ClassificationProto
+                      .ClassificationEvaluationMetrics.ConfusionMatrixOrBuilder>(
+                  getConfusionMatrix(), getParentForChildren(), isClean());
           confusionMatrix_ = null;
         }
         return confusionMatrixBuilder_;
       }
 
-      private com.google.protobuf.LazyStringList annotationSpecId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringList annotationSpecId_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
       private void ensureAnnotationSpecIdIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
           annotationSpecId_ = new com.google.protobuf.LazyStringArrayList(annotationSpecId_);
           bitField0_ |= 0x00000010;
-         }
+        }
       }
       /**
+       *
+       *
        * <pre>
        * Output only. The annotation spec ids used for this evaluation.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 5;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getAnnotationSpecIdList() {
+      public com.google.protobuf.ProtocolStringList getAnnotationSpecIdList() {
         return annotationSpecId_.getUnmodifiableView();
       }
       /**
+       *
+       *
        * <pre>
        * Output only. The annotation spec ids used for this evaluation.
        * </pre>
@@ -5173,6 +6278,8 @@ public final class ClassificationProto {
         return annotationSpecId_.size();
       }
       /**
+       *
+       *
        * <pre>
        * Output only. The annotation spec ids used for this evaluation.
        * </pre>
@@ -5183,66 +6290,71 @@ public final class ClassificationProto {
         return annotationSpecId_.get(index);
       }
       /**
+       *
+       *
        * <pre>
        * Output only. The annotation spec ids used for this evaluation.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 5;</code>
        */
-      public com.google.protobuf.ByteString
-          getAnnotationSpecIdBytes(int index) {
+      public com.google.protobuf.ByteString getAnnotationSpecIdBytes(int index) {
         return annotationSpecId_.getByteString(index);
       }
       /**
+       *
+       *
        * <pre>
        * Output only. The annotation spec ids used for this evaluation.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 5;</code>
        */
-      public Builder setAnnotationSpecId(
-          int index, java.lang.String value) {
+      public Builder setAnnotationSpecId(int index, java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureAnnotationSpecIdIsMutable();
+          throw new NullPointerException();
+        }
+        ensureAnnotationSpecIdIsMutable();
         annotationSpecId_.set(index, value);
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. The annotation spec ids used for this evaluation.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 5;</code>
        */
-      public Builder addAnnotationSpecId(
-          java.lang.String value) {
+      public Builder addAnnotationSpecId(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureAnnotationSpecIdIsMutable();
+          throw new NullPointerException();
+        }
+        ensureAnnotationSpecIdIsMutable();
         annotationSpecId_.add(value);
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. The annotation spec ids used for this evaluation.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 5;</code>
        */
-      public Builder addAllAnnotationSpecId(
-          java.lang.Iterable<java.lang.String> values) {
+      public Builder addAllAnnotationSpecId(java.lang.Iterable<java.lang.String> values) {
         ensureAnnotationSpecIdIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, annotationSpecId_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, annotationSpecId_);
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. The annotation spec ids used for this evaluation.
        * </pre>
@@ -5256,23 +6368,25 @@ public final class ClassificationProto {
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. The annotation spec ids used for this evaluation.
        * </pre>
        *
        * <code>repeated string annotation_spec_id = 5;</code>
        */
-      public Builder addAnnotationSpecIdBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder addAnnotationSpecIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
         ensureAnnotationSpecIdIsMutable();
         annotationSpecId_.add(value);
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5285,30 +6399,35 @@ public final class ClassificationProto {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.automl.v1beta1.ClassificationEvaluationMetrics)
-    private static final com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics DEFAULT_INSTANCE;
+    private static final com.google.cloud.automl.v1beta1.ClassificationProto
+            .ClassificationEvaluationMetrics
+        DEFAULT_INSTANCE;
+
     static {
-      DEFAULT_INSTANCE = new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics();
+      DEFAULT_INSTANCE =
+          new com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics();
     }
 
-    public static com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics getDefaultInstance() {
+    public static com.google.cloud.automl.v1beta1.ClassificationProto
+            .ClassificationEvaluationMetrics
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ClassificationEvaluationMetrics>
-        PARSER = new com.google.protobuf.AbstractParser<ClassificationEvaluationMetrics>() {
-      @java.lang.Override
-      public ClassificationEvaluationMetrics parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ClassificationEvaluationMetrics(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<ClassificationEvaluationMetrics> PARSER =
+        new com.google.protobuf.AbstractParser<ClassificationEvaluationMetrics>() {
+          @java.lang.Override
+          public ClassificationEvaluationMetrics parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ClassificationEvaluationMetrics(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<ClassificationEvaluationMetrics> parser() {
       return PARSER;
@@ -5320,117 +6439,135 @@ public final class ClassificationProto {
     }
 
     @java.lang.Override
-    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics getDefaultInstanceForType() {
+    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationEvaluationMetrics
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+  public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+
+  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
   static {
     java.lang.String[] descriptorData = {
-      "\n0google/cloud/automl/v1beta1/classifica" +
-      "tion.proto\022\033google.cloud.automl.v1beta1\032" +
-      "\034google/api/annotations.proto\")\n\030Classif" +
-      "icationAnnotation\022\r\n\005score\030\001 \001(\002\"\235\005\n\037Cla" +
-      "ssificationEvaluationMetrics\022\016\n\006au_prc\030\001" +
-      " \001(\002\022\023\n\013base_au_prc\030\002 \001(\002\022u\n\030confidence_" +
-      "metrics_entry\030\003 \003(\0132S.google.cloud.autom" +
-      "l.v1beta1.ClassificationEvaluationMetric" +
-      "s.ConfidenceMetricsEntry\022f\n\020confusion_ma" +
-      "trix\030\004 \001(\0132L.google.cloud.automl.v1beta1" +
-      ".ClassificationEvaluationMetrics.Confusi" +
-      "onMatrix\022\032\n\022annotation_spec_id\030\005 \003(\t\032\254\001\n" +
-      "\026ConfidenceMetricsEntry\022\034\n\024confidence_th" +
-      "reshold\030\001 \001(\002\022\016\n\006recall\030\002 \001(\002\022\021\n\tprecisi" +
-      "on\030\003 \001(\002\022\020\n\010f1_score\030\004 \001(\002\022\022\n\nrecall_at1" +
-      "\030\005 \001(\002\022\025\n\rprecision_at1\030\006 \001(\002\022\024\n\014f1_scor" +
-      "e_at1\030\007 \001(\002\032\252\001\n\017ConfusionMatrix\022\032\n\022annot" +
-      "ation_spec_id\030\001 \003(\t\022]\n\003row\030\002 \003(\0132P.googl" +
-      "e.cloud.automl.v1beta1.ClassificationEva" +
-      "luationMetrics.ConfusionMatrix.Row\032\034\n\003Ro" +
-      "w\022\025\n\rexample_count\030\001 \003(\005*Y\n\022Classificati" +
-      "onType\022#\n\037CLASSIFICATION_TYPE_UNSPECIFIE" +
-      "D\020\000\022\016\n\nMULTICLASS\020\001\022\016\n\nMULTILABEL\020\002By\n\037c" +
-      "om.google.cloud.automl.v1beta1B\023Classifi" +
-      "cationProtoZAgoogle.golang.org/genproto/" +
-      "googleapis/cloud/automl/v1beta1;automlb\006" +
-      "proto3"
+      "\n0google/cloud/automl/v1beta1/classifica"
+          + "tion.proto\022\033google.cloud.automl.v1beta1\032"
+          + "\034google/api/annotations.proto\")\n\030Classif"
+          + "icationAnnotation\022\r\n\005score\030\001 \001(\002\"\235\005\n\037Cla"
+          + "ssificationEvaluationMetrics\022\016\n\006au_prc\030\001"
+          + " \001(\002\022\023\n\013base_au_prc\030\002 \001(\002\022u\n\030confidence_"
+          + "metrics_entry\030\003 \003(\0132S.google.cloud.autom"
+          + "l.v1beta1.ClassificationEvaluationMetric"
+          + "s.ConfidenceMetricsEntry\022f\n\020confusion_ma"
+          + "trix\030\004 \001(\0132L.google.cloud.automl.v1beta1"
+          + ".ClassificationEvaluationMetrics.Confusi"
+          + "onMatrix\022\032\n\022annotation_spec_id\030\005 \003(\t\032\254\001\n"
+          + "\026ConfidenceMetricsEntry\022\034\n\024confidence_th"
+          + "reshold\030\001 \001(\002\022\016\n\006recall\030\002 \001(\002\022\021\n\tprecisi"
+          + "on\030\003 \001(\002\022\020\n\010f1_score\030\004 \001(\002\022\022\n\nrecall_at1"
+          + "\030\005 \001(\002\022\025\n\rprecision_at1\030\006 \001(\002\022\024\n\014f1_scor"
+          + "e_at1\030\007 \001(\002\032\252\001\n\017ConfusionMatrix\022\032\n\022annot"
+          + "ation_spec_id\030\001 \003(\t\022]\n\003row\030\002 \003(\0132P.googl"
+          + "e.cloud.automl.v1beta1.ClassificationEva"
+          + "luationMetrics.ConfusionMatrix.Row\032\034\n\003Ro"
+          + "w\022\025\n\rexample_count\030\001 \003(\005*Y\n\022Classificati"
+          + "onType\022#\n\037CLASSIFICATION_TYPE_UNSPECIFIE"
+          + "D\020\000\022\016\n\nMULTICLASS\020\001\022\016\n\nMULTILABEL\020\002By\n\037c"
+          + "om.google.cloud.automl.v1beta1B\023Classifi"
+          + "cationProtoZAgoogle.golang.org/genproto/"
+          + "googleapis/cloud/automl/v1beta1;automlb\006"
+          + "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
           public com.google.protobuf.ExtensionRegistry assignDescriptors(
               com.google.protobuf.Descriptors.FileDescriptor root) {
             descriptor = root;
             return null;
           }
         };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
+    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+        descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
-        }, assigner);
+        },
+        assigner);
     internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor,
-        new java.lang.String[] { "Score", });
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1beta1_ClassificationAnnotation_descriptor,
+            new java.lang.String[] {
+              "Score",
+            });
     internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor,
-        new java.lang.String[] { "AuPrc", "BaseAuPrc", "ConfidenceMetricsEntry", "ConfusionMatrix", "AnnotationSpecId", });
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor,
+            new java.lang.String[] {
+              "AuPrc", "BaseAuPrc", "ConfidenceMetricsEntry", "ConfusionMatrix", "AnnotationSpecId",
+            });
     internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_descriptor =
-      internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor.getNestedTypes().get(0);
-    internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_descriptor,
-        new java.lang.String[] { "ConfidenceThreshold", "Recall", "Precision", "F1Score", "RecallAt1", "PrecisionAt1", "F1ScoreAt1", });
+        internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfidenceMetricsEntry_descriptor,
+            new java.lang.String[] {
+              "ConfidenceThreshold",
+              "Recall",
+              "Precision",
+              "F1Score",
+              "RecallAt1",
+              "PrecisionAt1",
+              "F1ScoreAt1",
+            });
     internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor =
-      internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor.getNestedTypes().get(1);
-    internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor,
-        new java.lang.String[] { "AnnotationSpecId", "Row", });
+        internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor,
+            new java.lang.String[] {
+              "AnnotationSpecId", "Row",
+            });
     internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_descriptor =
-      internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor.getNestedTypes().get(0);
-    internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_descriptor,
-        new java.lang.String[] { "ExampleCount", });
+        internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_automl_v1beta1_ClassificationEvaluationMetrics_ConfusionMatrix_Row_descriptor,
+            new java.lang.String[] {
+              "ExampleCount",
+            });
     com.google.api.AnnotationsProto.getDescriptor();
   }
 

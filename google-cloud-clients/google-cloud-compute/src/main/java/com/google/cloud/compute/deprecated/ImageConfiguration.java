@@ -18,14 +18,13 @@ package com.google.cloud.compute.deprecated;
 
 import com.google.api.services.compute.model.Image;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Base class for Google Compute Engine image configuration. Use {@link DiskImageConfiguration} to
- * create an image from an existing Google Compute Engine disk. Use
- * {@link StorageImageConfiguration} to create an image from a file stored in Google Cloud Storage.
+ * create an image from an existing Google Compute Engine disk. Use {@link
+ * StorageImageConfiguration} to create an image from a file stored in Google Cloud Storage.
  */
 public abstract class ImageConfiguration implements Serializable {
 
@@ -35,24 +34,16 @@ public abstract class ImageConfiguration implements Serializable {
   private final SourceType sourceType;
   private final Long archiveSizeBytes;
 
-  /**
-   * Type of a Google Compute Engine image.
-   */
+  /** Type of a Google Compute Engine image. */
   public enum Type {
-    /**
-     * A Google Compute Engine image created from a Google Compute Engine disk.
-     */
+    /** A Google Compute Engine image created from a Google Compute Engine disk. */
     DISK,
 
-    /**
-     * A Google Compute Engine image created from a file saved in Google Cloud Storage.
-     */
+    /** A Google Compute Engine image created from a file saved in Google Cloud Storage. */
     STORAGE
   }
 
-  /**
-   * Image source type. The only admissible value is {@code RAW}.
-   */
+  /** Image source type. The only admissible value is {@code RAW}. */
   public enum SourceType {
     RAW
   }
@@ -107,9 +98,7 @@ public abstract class ImageConfiguration implements Serializable {
       return self();
     }
 
-    /**
-     * Creates a configuration object.
-     */
+    /** Creates a configuration object. */
     public abstract T build();
   }
 
@@ -128,23 +117,17 @@ public abstract class ImageConfiguration implements Serializable {
     return type;
   }
 
-  /**
-   * Returns the source type of the disk. The default and only value is {@link SourceType#RAW}.
-   */
+  /** Returns the source type of the disk. The default and only value is {@link SourceType#RAW}. */
   public SourceType getSourceType() {
     return sourceType;
   }
 
-  /**
-   * Returns the size of the image archive stored in Google Cloud Storage (in bytes).
-   */
+  /** Returns the size of the image archive stored in Google Cloud Storage (in bytes). */
   public Long getArchiveSizeBytes() {
     return archiveSizeBytes;
   }
 
-  /**
-   * Returns a builder for the object.
-   */
+  /** Returns a builder for the object. */
   public abstract Builder toBuilder();
 
   MoreObjects.ToStringHelper toStringHelper() {

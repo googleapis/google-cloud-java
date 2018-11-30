@@ -23,7 +23,6 @@ import com.google.api.gax.retrying.RetrySettings;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
 import org.threeten.bp.Duration;
 
 public class RetryOptionTest {
@@ -122,7 +121,6 @@ public class RetryOptionTest {
     defRetrySettings = defRetrySettings.toBuilder().setRetryDelayMultiplier(1.5).build();
     mergedRetrySettings = RetryOption.mergeToSettings(defRetrySettings, RETRY_DELAY_MULTIPLIER);
     assertEquals(defRetrySettings, mergedRetrySettings);
-
 
     defRetrySettings = defRetrySettings.toBuilder().setMaxAttempts(100).build();
     mergedRetrySettings = RetryOption.mergeToSettings(defRetrySettings, MAX_ATTEMPTS);

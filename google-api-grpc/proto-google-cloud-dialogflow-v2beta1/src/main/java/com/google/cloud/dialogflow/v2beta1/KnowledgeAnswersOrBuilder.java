@@ -3,20 +3,24 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface KnowledgeAnswersOrBuilder extends
+public interface KnowledgeAnswersOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.KnowledgeAnswers)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A list of answers from Knowledge Connector.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer answers = 1;</code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer> 
-      getAnswersList();
+  java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer> getAnswersList();
   /**
+   *
+   *
    * <pre>
    * A list of answers from Knowledge Connector.
    * </pre>
@@ -25,6 +29,8 @@ public interface KnowledgeAnswersOrBuilder extends
    */
   com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer getAnswers(int index);
   /**
+   *
+   *
    * <pre>
    * A list of answers from Knowledge Connector.
    * </pre>
@@ -33,15 +39,19 @@ public interface KnowledgeAnswersOrBuilder extends
    */
   int getAnswersCount();
   /**
+   *
+   *
    * <pre>
    * A list of answers from Knowledge Connector.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer answers = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.AnswerOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.AnswerOrBuilder>
       getAnswersOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A list of answers from Knowledge Connector.
    * </pre>

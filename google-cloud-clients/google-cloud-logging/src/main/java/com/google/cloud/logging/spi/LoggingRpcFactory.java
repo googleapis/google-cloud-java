@@ -20,8 +20,7 @@ import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.spi.ServiceRpcFactory;
 
 /**
- * An interface for Logging RPC factory.
- * Implementation will be loaded via {@link java.util.ServiceLoader}.
+ * An interface for Logging RPC factory. Implementation will be loaded via {@link
+ * java.util.ServiceLoader}.
  */
-public interface LoggingRpcFactory extends ServiceRpcFactory<LoggingOptions> {
-}
+public interface LoggingRpcFactory extends ServiceRpcFactory<LoggingOptions> {}

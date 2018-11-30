@@ -21,73 +21,52 @@ import com.google.common.collect.ImmutableMap;
 /**
  * The type of a Datastore property.
  *
- * @see <a href="http://cloud.google.com/datastore/docs/concepts/entities#Datastore_Properties_and_value_types">Google Cloud Datastore types</a>
+ * @see <a
+ *     href="http://cloud.google.com/datastore/docs/concepts/entities#Datastore_Properties_and_value_types">Google
+ *     Cloud Datastore types</a>
  */
 public enum ValueType {
 
-  /**
-   * Represents a {@code null} value.
-   */
+  /** Represents a {@code null} value. */
   NULL(NullValue.MARSHALLER),
 
-  /**
-   * Represents a {@code string} value.
-   */
+  /** Represents a {@code string} value. */
   STRING(StringValue.MARSHALLER),
 
-  /**
-   * Represents an entity value.
-   */
+  /** Represents an entity value. */
   ENTITY(EntityValue.MARSHALLER),
 
-  /**
-   * Represents a {@code list} of {@link Value}s.
-   */
+  /** Represents a {@code list} of {@link Value}s. */
   LIST(ListValue.MARSHALLER),
 
-  /**
-   * Represents a {@code key} as a value.
-   */
+  /** Represents a {@code key} as a value. */
   KEY(KeyValue.MARSHALLER),
 
-  /**
-   * Represents a {@code long} value.
-   */
+  /** Represents a {@code long} value. */
   LONG(LongValue.MARSHALLER),
 
-  /**
-   * Represents a {@code double} value.
-   */
+  /** Represents a {@code double} value. */
   DOUBLE(DoubleValue.MARSHALLER),
 
-  /**
-   * Represents a {@code boolean} value.
-   */
+  /** Represents a {@code boolean} value. */
   BOOLEAN(BooleanValue.MARSHALLER),
 
-  /**
-   * Represents a {@link com.google.cloud.Timestamp} value.
-   */
+  /** Represents a {@link com.google.cloud.Timestamp} value. */
   TIMESTAMP(TimestampValue.MARSHALLER),
 
-  /**
-   * Represents a {@link Blob} value.
-   */
+  /** Represents a {@link Blob} value. */
   BLOB(BlobValue.MARSHALLER),
 
-  /**
-   * Represents a raw/unparsed value.
-   */
+  /** Represents a raw/unparsed value. */
   RAW_VALUE(RawValue.MARSHALLER),
 
-  /**
-   * Represents a {@link LatLng} value.
-   */
+  /** Represents a {@link LatLng} value. */
   LAT_LNG(LatLngValue.MARSHALLER);
 
   private static final ImmutableMap<Integer, ValueType> DESCRIPTOR_TO_TYPE_MAP;
 
-  @SuppressWarnings("rawtypes") private final ValueMarshaller marshaller;
+  @SuppressWarnings("rawtypes")
+  private final ValueMarshaller marshaller;
 
   static {
     ImmutableMap.Builder<Integer, ValueType> builder = ImmutableMap.builder();
@@ -100,9 +79,8 @@ public enum ValueType {
     DESCRIPTOR_TO_TYPE_MAP = builder.build();
   }
 
-
-  <V, P extends Value<V>, B extends ValueBuilder<V, P, B>>
-      ValueType(ValueMarshaller<V, P, B> marshaller) {
+  <V, P extends Value<V>, B extends ValueBuilder<V, P, B>> ValueType(
+      ValueMarshaller<V, P, B> marshaller) {
     this.marshaller = marshaller;
   }
 

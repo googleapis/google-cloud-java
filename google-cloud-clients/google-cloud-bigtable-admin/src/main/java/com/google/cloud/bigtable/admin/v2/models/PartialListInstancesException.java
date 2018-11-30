@@ -29,7 +29,8 @@ public class PartialListInstancesException extends RuntimeException {
   private final List<Instance> instances;
 
   @InternalApi
-  public PartialListInstancesException(@Nonnull List<String> unavailableZones, @Nonnull List<Instance> instances) {
+  public PartialListInstancesException(
+      @Nonnull List<String> unavailableZones, @Nonnull List<Instance> instances) {
     super("Failed to list all instances, some zones where unavailable");
 
     this.unavailableZones = ImmutableList.copyOf(unavailableZones);

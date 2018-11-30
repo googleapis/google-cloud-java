@@ -18,12 +18,6 @@ package com.google.cloud.storage.contrib.nio;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-
 import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -31,34 +25,34 @@ import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
-
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class SeekableByteChannelPrefetcherTest {
   // A file big enough to try seeks on.
   private static Path input;
 
-  /**
-   * Sets up an input file to play with.
-   */
+  /** Sets up an input file to play with. */
   @BeforeClass
   public static void setUp() throws IOException {
     // create input, fill with data
     input = Files.createTempFile("tmp_big_file", ".tmp");
     try (BufferedOutputStream writer = new BufferedOutputStream(Files.newOutputStream(input))) {
       byte[] buffer = new byte[1024];
-      for (int i=0; i<buffer.length; i++) {
-        buffer[i] = (byte)i;
+      for (int i = 0; i < buffer.length; i++) {
+        buffer[i] = (byte) i;
       }
-      for (int i=0; i<1024; i++) {
+      for (int i = 0; i < 1024; i++) {
         writer.write(buffer);
       }
     }
   }
 
-  /**
-   * Deletes the test file.
-   */
+  /** Deletes the test file. */
   @AfterClass
   public static void tearDown() throws IOException {
     Files.delete(input);
@@ -67,7 +61,8 @@ public class SeekableByteChannelPrefetcherTest {
   @Test
   public void testRead() throws Exception {
     SeekableByteChannel chan1 = Files.newByteChannel(input);
-    SeekableByteChannel chan2 = SeekableByteChannelPrefetcher.addPrefetcher(1, Files.newByteChannel(input));
+    SeekableByteChannel chan2 =
+        SeekableByteChannelPrefetcher.addPrefetcher(1, Files.newByteChannel(input));
 
     testReading(chan1, chan2, 0);
     testReading(chan1, chan2, 128);
@@ -81,7 +76,8 @@ public class SeekableByteChannelPrefetcherTest {
   @Test
   public void testSeek() throws Exception {
     SeekableByteChannel chan1 = Files.newByteChannel(input);
-    SeekableByteChannel chan2 = SeekableByteChannelPrefetcher.addPrefetcher(1, Files.newByteChannel(input));
+    SeekableByteChannel chan2 =
+        SeekableByteChannelPrefetcher.addPrefetcher(1, Files.newByteChannel(input));
 
     testSeeking(chan1, chan2, 1024);
     testSeeking(chan1, chan2, 1500);
@@ -95,16 +91,16 @@ public class SeekableByteChannelPrefetcherTest {
     testSeeking(chan1, chan2, 0);
     testSeeking(chan1, chan2, 3000);
     testSeeking(chan1, chan2, 6000);
-    testSeeking(chan1, chan2, (int)chan1.size()-127);
-    testSeeking(chan1, chan2, (int)chan1.size()-128);
-    testSeeking(chan1, chan2, (int)chan1.size()-129);
+    testSeeking(chan1, chan2, (int) chan1.size() - 127);
+    testSeeking(chan1, chan2, (int) chan1.size() - 128);
+    testSeeking(chan1, chan2, (int) chan1.size() - 129);
   }
 
   @Test
   public void testPartialBuffers() throws Exception {
     SeekableByteChannel chan1 = Files.newByteChannel(input);
-    SeekableByteChannel chan2 = SeekableByteChannelPrefetcher.addPrefetcher(1,
-        Files.newByteChannel(input));
+    SeekableByteChannel chan2 =
+        SeekableByteChannelPrefetcher.addPrefetcher(1, Files.newByteChannel(input));
     // get a partial buffer
     testSeeking(chan1, chan2, (int) chan1.size() - 127);
     // make sure normal reads can use the full buffer
@@ -122,8 +118,8 @@ public class SeekableByteChannelPrefetcherTest {
   @Test
   public void testEOF() throws Exception {
     SeekableByteChannel chan1 = Files.newByteChannel(input);
-    SeekableByteChannel chan2 = SeekableByteChannelPrefetcher.addPrefetcher(1,
-        Files.newByteChannel(input));
+    SeekableByteChannel chan2 =
+        SeekableByteChannelPrefetcher.addPrefetcher(1, Files.newByteChannel(input));
     // read the final 128 bytes, exactly.
     testSeeking(chan1, chan2, (int) chan1.size() - 128);
     // read truncated because we're asking for beyond EOF
@@ -134,17 +130,17 @@ public class SeekableByteChannelPrefetcherTest {
     testSeeking(chan1, chan2, (int) chan1.size() + 1024 * 2);
   }
 
-  @Test(expected=IllegalArgumentException.class)
+  @Test(expected = IllegalArgumentException.class)
   public void testDoubleWrapping() throws IOException {
-    SeekableByteChannel chan1 = SeekableByteChannelPrefetcher.addPrefetcher(1,
-        Files.newByteChannel(input));
+    SeekableByteChannel chan1 =
+        SeekableByteChannelPrefetcher.addPrefetcher(1, Files.newByteChannel(input));
     SeekableByteChannelPrefetcher.addPrefetcher(1, chan1);
   }
 
   @Test
   public void testCloseWhilePrefetching() throws Exception {
-    SeekableByteChannel chan = SeekableByteChannelPrefetcher.addPrefetcher(10,
-        Files.newByteChannel(input));
+    SeekableByteChannel chan =
+        SeekableByteChannelPrefetcher.addPrefetcher(10, Files.newByteChannel(input));
     // read just 1 byte, get the prefetching going
     ByteBuffer one = ByteBuffer.allocate(1);
     readFully(chan, one);
@@ -153,7 +149,8 @@ public class SeekableByteChannelPrefetcherTest {
     chan.close();
   }
 
-  private void testReading(SeekableByteChannel chan1, SeekableByteChannel chan2, int howMuch) throws IOException {
+  private void testReading(SeekableByteChannel chan1, SeekableByteChannel chan2, int howMuch)
+      throws IOException {
     ByteBuffer one = ByteBuffer.allocate(howMuch);
     ByteBuffer two = ByteBuffer.allocate(howMuch);
 
@@ -164,7 +161,8 @@ public class SeekableByteChannelPrefetcherTest {
     assertThat(one.array()).isEqualTo(two.array());
   }
 
-  private void testSeeking(SeekableByteChannel chan1, SeekableByteChannel chan2, int position) throws IOException {
+  private void testSeeking(SeekableByteChannel chan1, SeekableByteChannel chan2, int position)
+      throws IOException {
     ByteBuffer one = ByteBuffer.allocate(128);
     ByteBuffer two = ByteBuffer.allocate(128);
 
@@ -182,9 +180,8 @@ public class SeekableByteChannelPrefetcherTest {
     // the countdown isn't strictly necessary but it protects us against infinite loops
     // for some potential bugs in the channel implementation.
     int countdown = buf.capacity();
-    while (chan.read(buf) > 0  && countdown > 0) {
+    while (chan.read(buf) > 0 && countdown > 0) {
       countdown--;
     }
   }
-
 }

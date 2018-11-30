@@ -18,13 +18,10 @@ package com.google.cloud.logging;
 
 import com.google.common.base.MoreObjects;
 import com.google.logging.v2.LogEntrySourceLocation;
-
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * Additional information about the source code location that produced the log entry.
- */
+/** Additional information about the source code location that produced the log entry. */
 public final class SourceLocation implements Serializable {
 
   private static final long serialVersionUID = 8502955858162387374L;
@@ -37,17 +34,14 @@ public final class SourceLocation implements Serializable {
     return new Builder();
   }
 
-  /**
-   * A builder for {@code SourceLocation} objects.
-   */
+  /** A builder for {@code SourceLocation} objects. */
   public static final class Builder {
 
     private String file;
     private Long line;
     private String function;
 
-    Builder() {
-    }
+    Builder() {}
 
     Builder(SourceLocation sourceLocation) {
       this.file = sourceLocation.file;
@@ -64,9 +58,7 @@ public final class SourceLocation implements Serializable {
       return this;
     }
 
-    /**
-     * Sets the line within the source file. 1-based; 0 indicates no line number available.
-     */
+    /** Sets the line within the source file. 1-based; 0 indicates no line number available. */
     public Builder setLine(Long line) {
       this.line = line;
       return this;
@@ -101,9 +93,7 @@ public final class SourceLocation implements Serializable {
     return file;
   }
 
-  /**
-   * Returns the line within the source file. 1-based; 0 indicates no line number available.
-   */
+  /** Returns the line within the source file. 1-based; 0 indicates no line number available. */
   public Long getLine() {
     return line;
   }

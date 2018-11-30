@@ -3,11 +3,14 @@
 
 package com.google.cloud.language.v1beta2;
 
-public interface AnalyzeEntitySentimentRequestOrBuilder extends
+public interface AnalyzeEntitySentimentRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.language.v1beta2.AnalyzeEntitySentimentRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Input document.
    * </pre>
@@ -16,6 +19,8 @@ public interface AnalyzeEntitySentimentRequestOrBuilder extends
    */
   boolean hasDocument();
   /**
+   *
+   *
    * <pre>
    * Input document.
    * </pre>
@@ -24,6 +29,8 @@ public interface AnalyzeEntitySentimentRequestOrBuilder extends
    */
   com.google.cloud.language.v1beta2.Document getDocument();
   /**
+   *
+   *
    * <pre>
    * Input document.
    * </pre>
@@ -33,6 +40,8 @@ public interface AnalyzeEntitySentimentRequestOrBuilder extends
   com.google.cloud.language.v1beta2.DocumentOrBuilder getDocumentOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The encoding type used by the API to calculate offsets.
    * </pre>
@@ -41,6 +50,8 @@ public interface AnalyzeEntitySentimentRequestOrBuilder extends
    */
   int getEncodingTypeValue();
   /**
+   *
+   *
    * <pre>
    * The encoding type used by the API to calculate offsets.
    * </pre>

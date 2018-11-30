@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface PullRequestOrBuilder extends
+public interface PullRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.PullRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The subscription from which messages should be pulled.
    * Format is `projects/{project}/subscriptions/{sub}`.
@@ -17,6 +20,8 @@ public interface PullRequestOrBuilder extends
    */
   java.lang.String getSubscription();
   /**
+   *
+   *
    * <pre>
    * The subscription from which messages should be pulled.
    * Format is `projects/{project}/subscriptions/{sub}`.
@@ -24,10 +29,11 @@ public interface PullRequestOrBuilder extends
    *
    * <code>string subscription = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSubscriptionBytes();
+  com.google.protobuf.ByteString getSubscriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * If this field set to true, the system will respond immediately even if
    * it there are no messages available to return in the `Pull` response.
@@ -40,6 +46,8 @@ public interface PullRequestOrBuilder extends
   boolean getReturnImmediately();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of messages returned for this request. The Pub/Sub
    * system may return fewer than the number specified.

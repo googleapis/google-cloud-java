@@ -3,20 +3,24 @@
 
 package com.google.pubsub.v1;
 
-public interface ListTopicSubscriptionsResponseOrBuilder extends
+public interface ListTopicSubscriptionsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.ListTopicSubscriptionsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The names of the subscriptions that match the request.
    * </pre>
    *
    * <code>repeated string subscriptions = 1;</code>
    */
-  java.util.List<java.lang.String>
-      getSubscriptionsList();
+  java.util.List<java.lang.String> getSubscriptionsList();
   /**
+   *
+   *
    * <pre>
    * The names of the subscriptions that match the request.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListTopicSubscriptionsResponseOrBuilder extends
    */
   int getSubscriptionsCount();
   /**
+   *
+   *
    * <pre>
    * The names of the subscriptions that match the request.
    * </pre>
@@ -33,16 +39,19 @@ public interface ListTopicSubscriptionsResponseOrBuilder extends
    */
   java.lang.String getSubscriptions(int index);
   /**
+   *
+   *
    * <pre>
    * The names of the subscriptions that match the request.
    * </pre>
    *
    * <code>repeated string subscriptions = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSubscriptionsBytes(int index);
+  com.google.protobuf.ByteString getSubscriptionsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * If not empty, indicates that there may be more subscriptions that match
    * the request; this value should be passed in a new
@@ -53,6 +62,8 @@ public interface ListTopicSubscriptionsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If not empty, indicates that there may be more subscriptions that match
    * the request; this value should be passed in a new
@@ -61,6 +72,5 @@ public interface ListTopicSubscriptionsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

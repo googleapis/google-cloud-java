@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface ListIntentsRequestOrBuilder extends
+public interface ListIntentsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.ListIntentsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The agent to list all intents from.
    * Format: `projects/&lt;Project ID&gt;/agent`.
@@ -17,6 +20,8 @@ public interface ListIntentsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The agent to list all intents from.
    * Format: `projects/&lt;Project ID&gt;/agent`.
@@ -24,10 +29,11 @@ public interface ListIntentsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The language to list training phrases, parameters and rich
    * messages for. If not specified, the agent's default language is used.
@@ -40,6 +46,8 @@ public interface ListIntentsRequestOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Optional. The language to list training phrases, parameters and rich
    * messages for. If not specified, the agent's default language is used.
@@ -50,10 +58,11 @@ public interface ListIntentsRequestOrBuilder extends
    *
    * <code>string language_code = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The resource view to apply to the returned intent.
    * </pre>
@@ -62,6 +71,8 @@ public interface ListIntentsRequestOrBuilder extends
    */
   int getIntentViewValue();
   /**
+   *
+   *
    * <pre>
    * Optional. The resource view to apply to the returned intent.
    * </pre>
@@ -71,6 +82,8 @@ public interface ListIntentsRequestOrBuilder extends
   com.google.cloud.dialogflow.v2beta1.IntentView getIntentView();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The maximum number of items to return in a single page. By
    * default 100 and at most 1000.
@@ -81,6 +94,8 @@ public interface ListIntentsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The next_page_token value returned from a previous list request.
    * </pre>
@@ -89,12 +104,13 @@ public interface ListIntentsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * Optional. The next_page_token value returned from a previous list request.
    * </pre>
    *
    * <code>string page_token = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

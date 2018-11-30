@@ -4,29 +4,31 @@
 package com.google.cloud.securitycenter.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Request message for updating a SecurityMarks resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest}
  */
-public  final class UpdateSecurityMarksRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class UpdateSecurityMarksRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest)
     UpdateSecurityMarksRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use UpdateSecurityMarksRequest.newBuilder() to construct.
   private UpdateSecurityMarksRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private UpdateSecurityMarksRequest() {
-  }
+
+  private UpdateSecurityMarksRequest() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private UpdateSecurityMarksRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46,80 +48,92 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder subBuilder = null;
-            if (securityMarks_ != null) {
-              subBuilder = securityMarks_.toBuilder();
-            }
-            securityMarks_ = input.readMessage(com.google.cloud.securitycenter.v1beta1.SecurityMarks.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(securityMarks_);
-              securityMarks_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder subBuilder = null;
+              if (securityMarks_ != null) {
+                subBuilder = securityMarks_.toBuilder();
+              }
+              securityMarks_ =
+                  input.readMessage(
+                      com.google.cloud.securitycenter.v1beta1.SecurityMarks.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(securityMarks_);
+                securityMarks_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.protobuf.FieldMask.Builder subBuilder = null;
-            if (updateMask_ != null) {
-              subBuilder = updateMask_.toBuilder();
+              break;
             }
-            updateMask_ = input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(updateMask_);
-              updateMask_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (updateMask_ != null) {
+                subBuilder = updateMask_.toBuilder();
+              }
+              updateMask_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateMask_);
+                updateMask_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (startTime_ != null) {
-              subBuilder = startTime_.toBuilder();
+              break;
             }
-            startTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(startTime_);
-              startTime_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (startTime_ != null) {
+                subBuilder = startTime_.toBuilder();
+              }
+              startTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(startTime_);
+                startTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_UpdateSecurityMarksRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+        .internal_static_google_cloud_securitycenter_v1beta1_UpdateSecurityMarksRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_UpdateSecurityMarksRequest_fieldAccessorTable
+    return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+        .internal_static_google_cloud_securitycenter_v1beta1_UpdateSecurityMarksRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest.class, com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest.Builder.class);
+            com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest.class,
+            com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest.Builder.class);
   }
 
   public static final int SECURITY_MARKS_FIELD_NUMBER = 1;
   private com.google.cloud.securitycenter.v1beta1.SecurityMarks securityMarks_;
   /**
+   *
+   *
    * <pre>
    * The security marks resource to update.
    * </pre>
@@ -130,6 +144,8 @@ private static final long serialVersionUID = 0L;
     return securityMarks_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The security marks resource to update.
    * </pre>
@@ -137,22 +153,29 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 1;</code>
    */
   public com.google.cloud.securitycenter.v1beta1.SecurityMarks getSecurityMarks() {
-    return securityMarks_ == null ? com.google.cloud.securitycenter.v1beta1.SecurityMarks.getDefaultInstance() : securityMarks_;
+    return securityMarks_ == null
+        ? com.google.cloud.securitycenter.v1beta1.SecurityMarks.getDefaultInstance()
+        : securityMarks_;
   }
   /**
+   *
+   *
    * <pre>
    * The security marks resource to update.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 1;</code>
    */
-  public com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder getSecurityMarksOrBuilder() {
+  public com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder
+      getSecurityMarksOrBuilder() {
     return getSecurityMarks();
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
   /**
+   *
+   *
    * <pre>
    * The FieldMask to use when updating the security marks resource.
    * </pre>
@@ -163,6 +186,8 @@ private static final long serialVersionUID = 0L;
     return updateMask_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The FieldMask to use when updating the security marks resource.
    * </pre>
@@ -173,6 +198,8 @@ private static final long serialVersionUID = 0L;
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
   /**
+   *
+   *
    * <pre>
    * The FieldMask to use when updating the security marks resource.
    * </pre>
@@ -186,6 +213,8 @@ private static final long serialVersionUID = 0L;
   public static final int START_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp startTime_;
   /**
+   *
+   *
    * <pre>
    * The time at which the updated SecurityMarks take effect.
    * </pre>
@@ -196,6 +225,8 @@ private static final long serialVersionUID = 0L;
     return startTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The time at which the updated SecurityMarks take effect.
    * </pre>
@@ -206,6 +237,8 @@ private static final long serialVersionUID = 0L;
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
   /**
+   *
+   *
    * <pre>
    * The time at which the updated SecurityMarks take effect.
    * </pre>
@@ -217,6 +250,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -228,8 +262,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (securityMarks_ != null) {
       output.writeMessage(1, getSecurityMarks());
     }
@@ -249,16 +282,13 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (securityMarks_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getSecurityMarks());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSecurityMarks());
     }
     if (updateMask_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getUpdateMask());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
     }
     if (startTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getStartTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getStartTime());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -268,28 +298,26 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest other = (com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest) obj;
+    com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest other =
+        (com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest) obj;
 
     boolean result = true;
     result = result && (hasSecurityMarks() == other.hasSecurityMarks());
     if (hasSecurityMarks()) {
-      result = result && getSecurityMarks()
-          .equals(other.getSecurityMarks());
+      result = result && getSecurityMarks().equals(other.getSecurityMarks());
     }
     result = result && (hasUpdateMask() == other.hasUpdateMask());
     if (hasUpdateMask()) {
-      result = result && getUpdateMask()
-          .equals(other.getUpdateMask());
+      result = result && getUpdateMask().equals(other.getUpdateMask());
     }
     result = result && (hasStartTime() == other.hasStartTime());
     if (hasStartTime()) {
-      result = result && getStartTime()
-          .equals(other.getStartTime());
+      result = result && getStartTime().equals(other.getStartTime());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -320,134 +348,145 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
+
   public static com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
+  public static com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+  }
+
+  public static com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
+  public static com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest parseFrom(
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+  }
+
   public static com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Request message for updating a SecurityMarks resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest)
       com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_UpdateSecurityMarksRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+          .internal_static_google_cloud_securitycenter_v1beta1_UpdateSecurityMarksRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_UpdateSecurityMarksRequest_fieldAccessorTable
+      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+          .internal_static_google_cloud_securitycenter_v1beta1_UpdateSecurityMarksRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest.class, com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest.Builder.class);
+              com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest.class,
+              com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest.newBuilder()
+    // Construct using
+    // com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -473,14 +512,16 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_UpdateSecurityMarksRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+          .internal_static_google_cloud_securitycenter_v1beta1_UpdateSecurityMarksRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest getDefaultInstanceForType() {
-      return com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest.getDefaultInstance();
+    public com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest
+        getDefaultInstanceForType() {
+      return com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest
+          .getDefaultInstance();
     }
 
     @java.lang.Override
@@ -494,7 +535,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest buildPartial() {
-      com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest result = new com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest(this);
+      com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest result =
+          new com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest(this);
       if (securityMarksBuilder_ == null) {
         result.securityMarks_ = securityMarks_;
       } else {
@@ -518,46 +560,51 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest) {
-        return mergeFrom((com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest)other);
+        return mergeFrom(
+            (com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest other) {
-      if (other == com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest other) {
+      if (other
+          == com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest
+              .getDefaultInstance()) return this;
       if (other.hasSecurityMarks()) {
         mergeSecurityMarks(other.getSecurityMarks());
       }
@@ -586,7 +633,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -598,8 +647,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.securitycenter.v1beta1.SecurityMarks securityMarks_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.securitycenter.v1beta1.SecurityMarks, com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder, com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder> securityMarksBuilder_;
+            com.google.cloud.securitycenter.v1beta1.SecurityMarks,
+            com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder,
+            com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder>
+        securityMarksBuilder_;
     /**
+     *
+     *
      * <pre>
      * The security marks resource to update.
      * </pre>
@@ -610,6 +664,8 @@ private static final long serialVersionUID = 0L;
       return securityMarksBuilder_ != null || securityMarks_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The security marks resource to update.
      * </pre>
@@ -618,12 +674,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.securitycenter.v1beta1.SecurityMarks getSecurityMarks() {
       if (securityMarksBuilder_ == null) {
-        return securityMarks_ == null ? com.google.cloud.securitycenter.v1beta1.SecurityMarks.getDefaultInstance() : securityMarks_;
+        return securityMarks_ == null
+            ? com.google.cloud.securitycenter.v1beta1.SecurityMarks.getDefaultInstance()
+            : securityMarks_;
       } else {
         return securityMarksBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The security marks resource to update.
      * </pre>
@@ -644,6 +704,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The security marks resource to update.
      * </pre>
@@ -662,6 +724,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The security marks resource to update.
      * </pre>
@@ -672,7 +736,9 @@ private static final long serialVersionUID = 0L;
       if (securityMarksBuilder_ == null) {
         if (securityMarks_ != null) {
           securityMarks_ =
-            com.google.cloud.securitycenter.v1beta1.SecurityMarks.newBuilder(securityMarks_).mergeFrom(value).buildPartial();
+              com.google.cloud.securitycenter.v1beta1.SecurityMarks.newBuilder(securityMarks_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           securityMarks_ = value;
         }
@@ -684,6 +750,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The security marks resource to update.
      * </pre>
@@ -702,6 +770,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The security marks resource to update.
      * </pre>
@@ -709,26 +779,32 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 1;</code>
      */
     public com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder getSecurityMarksBuilder() {
-      
+
       onChanged();
       return getSecurityMarksFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The security marks resource to update.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 1;</code>
      */
-    public com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder getSecurityMarksOrBuilder() {
+    public com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder
+        getSecurityMarksOrBuilder() {
       if (securityMarksBuilder_ != null) {
         return securityMarksBuilder_.getMessageOrBuilder();
       } else {
-        return securityMarks_ == null ?
-            com.google.cloud.securitycenter.v1beta1.SecurityMarks.getDefaultInstance() : securityMarks_;
+        return securityMarks_ == null
+            ? com.google.cloud.securitycenter.v1beta1.SecurityMarks.getDefaultInstance()
+            : securityMarks_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The security marks resource to update.
      * </pre>
@@ -736,14 +812,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.securitycenter.v1beta1.SecurityMarks security_marks = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.securitycenter.v1beta1.SecurityMarks, com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder, com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder> 
+            com.google.cloud.securitycenter.v1beta1.SecurityMarks,
+            com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder,
+            com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder>
         getSecurityMarksFieldBuilder() {
       if (securityMarksBuilder_ == null) {
-        securityMarksBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.securitycenter.v1beta1.SecurityMarks, com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder, com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder>(
-                getSecurityMarks(),
-                getParentForChildren(),
-                isClean());
+        securityMarksBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1beta1.SecurityMarks,
+                com.google.cloud.securitycenter.v1beta1.SecurityMarks.Builder,
+                com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder>(
+                getSecurityMarks(), getParentForChildren(), isClean());
         securityMarks_ = null;
       }
       return securityMarksBuilder_;
@@ -751,8 +830,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.FieldMask updateMask_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        updateMaskBuilder_;
     /**
+     *
+     *
      * <pre>
      * The FieldMask to use when updating the security marks resource.
      * </pre>
@@ -763,6 +847,8 @@ private static final long serialVersionUID = 0L;
       return updateMaskBuilder_ != null || updateMask_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The FieldMask to use when updating the security marks resource.
      * </pre>
@@ -771,12 +857,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
-        return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
       } else {
         return updateMaskBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The FieldMask to use when updating the security marks resource.
      * </pre>
@@ -797,14 +887,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The FieldMask to use when updating the security marks resource.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
-    public Builder setUpdateMask(
-        com.google.protobuf.FieldMask.Builder builderForValue) {
+    public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
         onChanged();
@@ -815,6 +906,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The FieldMask to use when updating the security marks resource.
      * </pre>
@@ -825,7 +918,7 @@ private static final long serialVersionUID = 0L;
       if (updateMaskBuilder_ == null) {
         if (updateMask_ != null) {
           updateMask_ =
-            com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
         } else {
           updateMask_ = value;
         }
@@ -837,6 +930,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The FieldMask to use when updating the security marks resource.
      * </pre>
@@ -855,6 +950,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The FieldMask to use when updating the security marks resource.
      * </pre>
@@ -862,11 +959,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-      
+
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The FieldMask to use when updating the security marks resource.
      * </pre>
@@ -877,11 +976,14 @@ private static final long serialVersionUID = 0L;
       if (updateMaskBuilder_ != null) {
         return updateMaskBuilder_.getMessageOrBuilder();
       } else {
-        return updateMask_ == null ?
-            com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The FieldMask to use when updating the security marks resource.
      * </pre>
@@ -889,14 +991,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
         getUpdateMaskFieldBuilder() {
       if (updateMaskBuilder_ == null) {
-        updateMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
-                getUpdateMask(),
-                getParentForChildren(),
-                isClean());
+        updateMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(), getParentForChildren(), isClean());
         updateMask_ = null;
       }
       return updateMaskBuilder_;
@@ -904,8 +1009,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp startTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        startTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The time at which the updated SecurityMarks take effect.
      * </pre>
@@ -916,6 +1026,8 @@ private static final long serialVersionUID = 0L;
       return startTimeBuilder_ != null || startTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the updated SecurityMarks take effect.
      * </pre>
@@ -930,6 +1042,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the updated SecurityMarks take effect.
      * </pre>
@@ -950,14 +1064,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the updated SecurityMarks take effect.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
-    public Builder setStartTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
         onChanged();
@@ -968,6 +1083,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the updated SecurityMarks take effect.
      * </pre>
@@ -978,7 +1095,7 @@ private static final long serialVersionUID = 0L;
       if (startTimeBuilder_ == null) {
         if (startTime_ != null) {
           startTime_ =
-            com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
         } else {
           startTime_ = value;
         }
@@ -990,6 +1107,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the updated SecurityMarks take effect.
      * </pre>
@@ -1008,6 +1127,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the updated SecurityMarks take effect.
      * </pre>
@@ -1015,11 +1136,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-      
+
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the updated SecurityMarks take effect.
      * </pre>
@@ -1030,11 +1153,12 @@ private static final long serialVersionUID = 0L;
       if (startTimeBuilder_ != null) {
         return startTimeBuilder_.getMessageOrBuilder();
       } else {
-        return startTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the updated SecurityMarks take effect.
      * </pre>
@@ -1042,21 +1166,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getStartTimeFieldBuilder() {
       if (startTimeBuilder_ == null) {
-        startTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getStartTime(),
-                getParentForChildren(),
-                isClean());
+        startTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getStartTime(), getParentForChildren(), isClean());
         startTime_ = null;
       }
       return startTimeBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1066,30 +1193,32 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest)
-  private static final com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest DEFAULT_INSTANCE;
+  private static final com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest();
   }
 
-  public static com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest getDefaultInstance() {
+  public static com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateSecurityMarksRequest>
-      PARSER = new com.google.protobuf.AbstractParser<UpdateSecurityMarksRequest>() {
-    @java.lang.Override
-    public UpdateSecurityMarksRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new UpdateSecurityMarksRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<UpdateSecurityMarksRequest> PARSER =
+      new com.google.protobuf.AbstractParser<UpdateSecurityMarksRequest>() {
+        @java.lang.Override
+        public UpdateSecurityMarksRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new UpdateSecurityMarksRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<UpdateSecurityMarksRequest> parser() {
     return PARSER;
@@ -1101,9 +1230,8 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest getDefaultInstanceForType() {
+  public com.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

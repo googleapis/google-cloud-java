@@ -102,7 +102,8 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
           .build();
 
   private final PagedCallSettings<
-          AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+          AggregatedListForwardingRulesHttpRequest,
+          ForwardingRuleAggregatedList,
           AggregatedListForwardingRulesPagedResponse>
       aggregatedListForwardingRulesSettings;
   private final UnaryCallSettings<DeleteForwardingRuleHttpRequest, Operation>
@@ -119,7 +120,8 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
 
   /** Returns the object with the settings used for calls to aggregatedListForwardingRules. */
   public PagedCallSettings<
-          AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+          AggregatedListForwardingRulesHttpRequest,
+          ForwardingRuleAggregatedList,
           AggregatedListForwardingRulesPagedResponse>
       aggregatedListForwardingRulesSettings() {
     return aggregatedListForwardingRulesSettings;
@@ -241,11 +243,13 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
   }
 
   private static final PagedListDescriptor<
-          AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+          AggregatedListForwardingRulesHttpRequest,
+          ForwardingRuleAggregatedList,
           ForwardingRulesScopedList>
       AGGREGATED_LIST_FORWARDING_RULES_PAGE_STR_DESC =
           new PagedListDescriptor<
-              AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+              AggregatedListForwardingRulesHttpRequest,
+              ForwardingRuleAggregatedList,
               ForwardingRulesScopedList>() {
             @Override
             public String emptyToken() {
@@ -330,11 +334,13 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+          AggregatedListForwardingRulesHttpRequest,
+          ForwardingRuleAggregatedList,
           AggregatedListForwardingRulesPagedResponse>
       AGGREGATED_LIST_FORWARDING_RULES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+              AggregatedListForwardingRulesHttpRequest,
+              ForwardingRuleAggregatedList,
               AggregatedListForwardingRulesPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListForwardingRulesPagedResponse> getFuturePagedResponse(
@@ -345,7 +351,8 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
                 ApiCallContext context,
                 ApiFuture<ForwardingRuleAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+                      AggregatedListForwardingRulesHttpRequest,
+                      ForwardingRuleAggregatedList,
                       ForwardingRulesScopedList>
                   pageContext =
                       PageContext.create(
@@ -362,7 +369,8 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
           ListForwardingRulesHttpRequest, ForwardingRuleList, ListForwardingRulesPagedResponse>
       LIST_FORWARDING_RULES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListForwardingRulesHttpRequest, ForwardingRuleList,
+              ListForwardingRulesHttpRequest,
+              ForwardingRuleList,
               ListForwardingRulesPagedResponse>() {
             @Override
             public ApiFuture<ListForwardingRulesPagedResponse> getFuturePagedResponse(
@@ -383,7 +391,8 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+            AggregatedListForwardingRulesHttpRequest,
+            ForwardingRuleAggregatedList,
             AggregatedListForwardingRulesPagedResponse>
         aggregatedListForwardingRulesSettings;
     private final UnaryCallSettings.Builder<DeleteForwardingRuleHttpRequest, Operation>
@@ -548,7 +557,8 @@ public class ForwardingRuleStubSettings extends StubSettings<ForwardingRuleStubS
 
     /** Returns the builder for the settings used for calls to aggregatedListForwardingRules. */
     public PagedCallSettings.Builder<
-            AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+            AggregatedListForwardingRulesHttpRequest,
+            ForwardingRuleAggregatedList,
             AggregatedListForwardingRulesPagedResponse>
         aggregatedListForwardingRulesSettings() {
       return aggregatedListForwardingRulesSettings;

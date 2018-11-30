@@ -3,20 +3,24 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface ListModelEvaluationsResponseOrBuilder extends
+public interface ListModelEvaluationsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.ListModelEvaluationsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * List of model evaluations in the requested page.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.ModelEvaluation model_evaluation = 1;</code>
    */
-  java.util.List<com.google.cloud.automl.v1beta1.ModelEvaluation> 
-      getModelEvaluationList();
+  java.util.List<com.google.cloud.automl.v1beta1.ModelEvaluation> getModelEvaluationList();
   /**
+   *
+   *
    * <pre>
    * List of model evaluations in the requested page.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListModelEvaluationsResponseOrBuilder extends
    */
   com.google.cloud.automl.v1beta1.ModelEvaluation getModelEvaluation(int index);
   /**
+   *
+   *
    * <pre>
    * List of model evaluations in the requested page.
    * </pre>
@@ -33,25 +39,30 @@ public interface ListModelEvaluationsResponseOrBuilder extends
    */
   int getModelEvaluationCount();
   /**
+   *
+   *
    * <pre>
    * List of model evaluations in the requested page.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.ModelEvaluation model_evaluation = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.automl.v1beta1.ModelEvaluationOrBuilder> 
+  java.util.List<? extends com.google.cloud.automl.v1beta1.ModelEvaluationOrBuilder>
       getModelEvaluationOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * List of model evaluations in the requested page.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.ModelEvaluation model_evaluation = 1;</code>
    */
-  com.google.cloud.automl.v1beta1.ModelEvaluationOrBuilder getModelEvaluationOrBuilder(
-      int index);
+  com.google.cloud.automl.v1beta1.ModelEvaluationOrBuilder getModelEvaluationOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * A token to retrieve next page of results.
    * Pass to [ListModelEvaluations.page_token][] to obtain that page.
@@ -61,6 +72,8 @@ public interface ListModelEvaluationsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * A token to retrieve next page of results.
    * Pass to [ListModelEvaluations.page_token][] to obtain that page.
@@ -68,6 +81,5 @@ public interface ListModelEvaluationsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

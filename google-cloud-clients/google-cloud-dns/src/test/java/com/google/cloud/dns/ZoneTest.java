@@ -32,24 +32,24 @@ import static org.junit.Assert.fail;
 
 import com.google.api.gax.paging.Page;
 import com.google.common.collect.ImmutableList;
-
+import java.math.BigInteger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.math.BigInteger;
 
 public class ZoneTest {
 
   private static final String ZONE_NAME = "dns-zone-name";
   private static final String ZONE_ID = "123";
-  private static final ZoneInfo ZONE_INFO = Zone.of(ZONE_NAME, "example.com", "description")
-      .toBuilder()
-      .setGeneratedId(ZONE_ID)
-      .setCreationTimeMillis(123478946464L)
-      .build();
+  private static final ZoneInfo ZONE_INFO =
+      Zone.of(ZONE_NAME, "example.com", "description")
+          .toBuilder()
+          .setGeneratedId(ZONE_ID)
+          .setCreationTimeMillis(123478946464L)
+          .build();
   private static final ZoneInfo NO_ID_INFO =
-      ZoneInfo.of(ZONE_NAME, "another-example.com", "description").toBuilder()
+      ZoneInfo.of(ZONE_NAME, "another-example.com", "description")
+          .toBuilder()
           .setCreationTimeMillis(893123464L)
           .build();
   private static final Dns.ZoneOption ZONE_FIELD_OPTIONS =
@@ -79,8 +79,12 @@ public class ZoneTest {
     replay(dns);
     zone = new Zone(dns, new ZoneInfo.BuilderImpl(ZONE_INFO));
     zoneNoId = new Zone(dns, new ZoneInfo.BuilderImpl(NO_ID_INFO));
-    changeRequestAfter = new ChangeRequest(dns, ZONE_NAME, new ChangeRequestInfo.BuilderImpl(
-        CHANGE_REQUEST.toBuilder().setStartTime(123465L).build()));
+    changeRequestAfter =
+        new ChangeRequest(
+            dns,
+            ZONE_NAME,
+            new ChangeRequestInfo.BuilderImpl(
+                CHANGE_REQUEST.toBuilder().setStartTime(123465L).build()));
     reset(dns);
   }
 
@@ -96,7 +100,6 @@ public class ZoneTest {
     assertNotNull(zone.getDns());
     assertEquals(dns, zone.getDns());
   }
-
 
   @Test
   public void deleteByNameAndFound() {
@@ -201,10 +204,8 @@ public class ZoneTest {
 
   @Test
   public void applyChangeByNameAndFound() {
-    expect(dns.applyChangeRequest(ZONE_NAME, CHANGE_REQUEST))
-        .andReturn(changeRequestAfter);
-    expect(dns.applyChangeRequest(ZONE_NAME, CHANGE_REQUEST))
-        .andReturn(changeRequestAfter);
+    expect(dns.applyChangeRequest(ZONE_NAME, CHANGE_REQUEST)).andReturn(changeRequestAfter);
+    expect(dns.applyChangeRequest(ZONE_NAME, CHANGE_REQUEST)).andReturn(changeRequestAfter);
     // again for options
     expect(dns.applyChangeRequest(ZONE_NAME, CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS))
         .andReturn(changeRequestAfter);
@@ -228,7 +229,8 @@ public class ZoneTest {
     expect(dns.applyChangeRequest(ZONE_NAME, CHANGE_REQUEST)).andThrow(EXCEPTION).times(2);
     // again for options
     expect(dns.applyChangeRequest(ZONE_NAME, CHANGE_REQUEST, CHANGE_REQUEST_FIELD_OPTIONS))
-        .andThrow(EXCEPTION).times(2);
+        .andThrow(EXCEPTION)
+        .times(2);
     replay(dns);
     try {
       zoneNoId.applyChangeRequest(CHANGE_REQUEST);
@@ -289,17 +291,22 @@ public class ZoneTest {
   @Test
   public void getChangeAndZoneFoundByName() {
     expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.getGeneratedId()))
-        .andReturn(changeRequestAfter).times(2);
+        .andReturn(changeRequestAfter)
+        .times(2);
     // again for options
-    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.getGeneratedId(),
-        CHANGE_REQUEST_FIELD_OPTIONS)).andReturn(changeRequestAfter).times(2);
+    expect(
+            dns.getChangeRequest(
+                ZONE_NAME, CHANGE_REQUEST.getGeneratedId(), CHANGE_REQUEST_FIELD_OPTIONS))
+        .andReturn(changeRequestAfter)
+        .times(2);
     replay(dns);
     ChangeRequest result = zoneNoId.getChangeRequest(CHANGE_REQUEST.getGeneratedId());
     assertEquals(changeRequestAfter, result);
     result = zone.getChangeRequest(CHANGE_REQUEST.getGeneratedId());
     assertEquals(changeRequestAfter, result);
     // check options
-    result = zoneNoId.getChangeRequest(CHANGE_REQUEST.getGeneratedId(), CHANGE_REQUEST_FIELD_OPTIONS);
+    result =
+        zoneNoId.getChangeRequest(CHANGE_REQUEST.getGeneratedId(), CHANGE_REQUEST_FIELD_OPTIONS);
     assertEquals(changeRequestAfter, result);
     result = zone.getChangeRequest(CHANGE_REQUEST.getGeneratedId(), CHANGE_REQUEST_FIELD_OPTIONS);
     assertEquals(changeRequestAfter, result);
@@ -307,11 +314,15 @@ public class ZoneTest {
 
   @Test
   public void getChangeAndZoneNotFoundByName() {
-    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.getGeneratedId())).andThrow(EXCEPTION)
+    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.getGeneratedId()))
+        .andThrow(EXCEPTION)
         .times(2);
     // again for options
-    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.getGeneratedId(),
-        CHANGE_REQUEST_FIELD_OPTIONS)).andThrow(EXCEPTION).times(2);
+    expect(
+            dns.getChangeRequest(
+                ZONE_NAME, CHANGE_REQUEST.getGeneratedId(), CHANGE_REQUEST_FIELD_OPTIONS))
+        .andThrow(EXCEPTION)
+        .times(2);
     replay(dns);
     try {
       zoneNoId.getChangeRequest(CHANGE_REQUEST.getGeneratedId());
@@ -343,17 +354,21 @@ public class ZoneTest {
   @Test
   public void getChangedWhichDoesNotExistZoneFound() {
     expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.getGeneratedId()))
-        .andReturn(null).times(2);
+        .andReturn(null)
+        .times(2);
     // again for options
-    expect(dns.getChangeRequest(ZONE_NAME, CHANGE_REQUEST.getGeneratedId(),
-        CHANGE_REQUEST_FIELD_OPTIONS)).andReturn(null).times(2);
+    expect(
+            dns.getChangeRequest(
+                ZONE_NAME, CHANGE_REQUEST.getGeneratedId(), CHANGE_REQUEST_FIELD_OPTIONS))
+        .andReturn(null)
+        .times(2);
     replay(dns);
     assertNull(zoneNoId.getChangeRequest(CHANGE_REQUEST.getGeneratedId()));
     assertNull(zone.getChangeRequest(CHANGE_REQUEST.getGeneratedId()));
-    assertNull(zoneNoId.getChangeRequest(CHANGE_REQUEST.getGeneratedId(),
-        CHANGE_REQUEST_FIELD_OPTIONS));
-    assertNull(zone.getChangeRequest(CHANGE_REQUEST.getGeneratedId(),
-        CHANGE_REQUEST_FIELD_OPTIONS));
+    assertNull(
+        zoneNoId.getChangeRequest(CHANGE_REQUEST.getGeneratedId(), CHANGE_REQUEST_FIELD_OPTIONS));
+    assertNull(
+        zone.getChangeRequest(CHANGE_REQUEST.getGeneratedId(), CHANGE_REQUEST_FIELD_OPTIONS));
   }
 
   @Test
@@ -407,8 +422,8 @@ public class ZoneTest {
       // expected
     }
     try {
-      zoneNoId.getChangeRequest(CHANGE_REQUEST_NO_ID.getGeneratedId(),
-          CHANGE_REQUEST_FIELD_OPTIONS);
+      zoneNoId.getChangeRequest(
+          CHANGE_REQUEST_NO_ID.getGeneratedId(), CHANGE_REQUEST_FIELD_OPTIONS);
       fail("Cannot get ChangeRequest by null id.");
     } catch (NullPointerException e) {
       // expected
@@ -423,7 +438,8 @@ public class ZoneTest {
     expect(dns.listChangeRequests(ZONE_NAME)).andReturn(pageMock).times(2);
     // again for options
     expect(dns.listChangeRequests(ZONE_NAME, CHANGE_REQUEST_LIST_OPTIONS))
-        .andReturn(pageMock).times(2);
+        .andReturn(pageMock)
+        .times(2);
     replay(dns);
     Page<ChangeRequest> result = zoneNoId.listChangeRequests();
     assertSame(pageMock, result);
@@ -438,7 +454,8 @@ public class ZoneTest {
   public void listChangeRequestsAndZoneNotFound() {
     expect(dns.listChangeRequests(ZONE_NAME)).andThrow(EXCEPTION).times(2);
     // again for options
-    expect(dns.listChangeRequests(ZONE_NAME, CHANGE_REQUEST_LIST_OPTIONS)).andThrow(EXCEPTION)
+    expect(dns.listChangeRequests(ZONE_NAME, CHANGE_REQUEST_LIST_OPTIONS))
+        .andThrow(EXCEPTION)
         .times(2);
     replay(dns);
     try {
@@ -487,23 +504,25 @@ public class ZoneTest {
     // one for each build() call because it invokes a constructor
     expect(dns.getOptions()).andReturn(OPTIONS).times(8);
     replay(dns);
-    assertNotEquals(zone, zone.toBuilder()
-        .setGeneratedId(new BigInteger(zone.getGeneratedId()).add(BigInteger.ONE).toString())
-        .build());
+    assertNotEquals(
+        zone,
+        zone.toBuilder()
+            .setGeneratedId(new BigInteger(zone.getGeneratedId()).add(BigInteger.ONE).toString())
+            .build());
     assertNotEquals(zone, zone.toBuilder().setDnsName(zone.getName() + "aaaa").build());
-    assertNotEquals(zone,
-        zone.toBuilder().setNameServerSet(zone.getNameServerSet() + "aaaa").build());
-    assertNotEquals(zone,
-        zone.toBuilder().setNameServers(ImmutableList.of("nameserverpppp")).build());
+    assertNotEquals(
+        zone, zone.toBuilder().setNameServerSet(zone.getNameServerSet() + "aaaa").build());
+    assertNotEquals(
+        zone, zone.toBuilder().setNameServers(ImmutableList.of("nameserverpppp")).build());
     assertNotEquals(zone, zone.toBuilder().setDnsName(zone.getDnsName() + "aaaa").build());
-    assertNotEquals(zone, zone.toBuilder().setCreationTimeMillis(zone.getCreationTimeMillis() + 1)
-        .build());
+    assertNotEquals(
+        zone, zone.toBuilder().setCreationTimeMillis(zone.getCreationTimeMillis() + 1).build());
     Zone.Builder builder = zone.toBuilder();
-    builder.setGeneratedId(ZONE_ID)
+    builder
+        .setGeneratedId(ZONE_ID)
         .setDnsName("example.com")
         .setCreationTimeMillis(123478946464L)
         .build();
     assertEquals(zone, builder.build());
   }
 }
-

@@ -3,11 +3,14 @@
 
 package com.google.bigtable.v2;
 
-public interface ReadModifyWriteRuleOrBuilder extends
+public interface ReadModifyWriteRuleOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.v2.ReadModifyWriteRule)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the family to which the read/modify/write should be applied.
    * Must match `[-_.a-zA-Z0-9]+`
@@ -17,6 +20,8 @@ public interface ReadModifyWriteRuleOrBuilder extends
    */
   java.lang.String getFamilyName();
   /**
+   *
+   *
    * <pre>
    * The name of the family to which the read/modify/write should be applied.
    * Must match `[-_.a-zA-Z0-9]+`
@@ -24,10 +29,11 @@ public interface ReadModifyWriteRuleOrBuilder extends
    *
    * <code>string family_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getFamilyNameBytes();
+  com.google.protobuf.ByteString getFamilyNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The qualifier of the column to which the read/modify/write should be
    * applied.
@@ -39,6 +45,8 @@ public interface ReadModifyWriteRuleOrBuilder extends
   com.google.protobuf.ByteString getColumnQualifier();
 
   /**
+   *
+   *
    * <pre>
    * Rule specifying that `append_value` be appended to the existing value.
    * If the targeted cell is unset, it will be treated as containing the
@@ -50,6 +58,8 @@ public interface ReadModifyWriteRuleOrBuilder extends
   com.google.protobuf.ByteString getAppendValue();
 
   /**
+   *
+   *
    * <pre>
    * Rule specifying that `increment_amount` be added to the existing value.
    * If the targeted cell is unset, it will be treated as containing a zero.

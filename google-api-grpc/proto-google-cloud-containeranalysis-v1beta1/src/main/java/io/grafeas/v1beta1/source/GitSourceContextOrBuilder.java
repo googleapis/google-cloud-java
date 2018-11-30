@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.source;
 
-public interface GitSourceContextOrBuilder extends
+public interface GitSourceContextOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.source.GitSourceContext)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Git repository URL.
    * </pre>
@@ -16,16 +19,19 @@ public interface GitSourceContextOrBuilder extends
    */
   java.lang.String getUrl();
   /**
+   *
+   *
    * <pre>
    * Git repository URL.
    * </pre>
    *
    * <code>string url = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getUrlBytes();
+  com.google.protobuf.ByteString getUrlBytes();
 
   /**
+   *
+   *
    * <pre>
    * Git commit hash.
    * </pre>
@@ -34,12 +40,13 @@ public interface GitSourceContextOrBuilder extends
    */
   java.lang.String getRevisionId();
   /**
+   *
+   *
    * <pre>
    * Git commit hash.
    * </pre>
    *
    * <code>string revision_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getRevisionIdBytes();
+  com.google.protobuf.ByteString getRevisionIdBytes();
 }

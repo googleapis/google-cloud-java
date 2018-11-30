@@ -3,11 +3,14 @@
 
 package com.google.datastore.v1;
 
-public interface RunQueryResponseOrBuilder extends
+public interface RunQueryResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.datastore.v1.RunQueryResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A batch of query results (always present).
    * </pre>
@@ -16,6 +19,8 @@ public interface RunQueryResponseOrBuilder extends
    */
   boolean hasBatch();
   /**
+   *
+   *
    * <pre>
    * A batch of query results (always present).
    * </pre>
@@ -24,6 +29,8 @@ public interface RunQueryResponseOrBuilder extends
    */
   com.google.datastore.v1.QueryResultBatch getBatch();
   /**
+   *
+   *
    * <pre>
    * A batch of query results (always present).
    * </pre>
@@ -33,6 +40,8 @@ public interface RunQueryResponseOrBuilder extends
   com.google.datastore.v1.QueryResultBatchOrBuilder getBatchOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The parsed form of the `GqlQuery` from the request, if it was set.
    * </pre>
@@ -41,6 +50,8 @@ public interface RunQueryResponseOrBuilder extends
    */
   boolean hasQuery();
   /**
+   *
+   *
    * <pre>
    * The parsed form of the `GqlQuery` from the request, if it was set.
    * </pre>
@@ -49,6 +60,8 @@ public interface RunQueryResponseOrBuilder extends
    */
   com.google.datastore.v1.Query getQuery();
   /**
+   *
+   *
    * <pre>
    * The parsed form of the `GqlQuery` from the request, if it was set.
    * </pre>

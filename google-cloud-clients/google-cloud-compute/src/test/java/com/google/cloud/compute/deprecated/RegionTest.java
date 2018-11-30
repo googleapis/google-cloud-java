@@ -19,10 +19,8 @@ package com.google.cloud.compute.deprecated;
 import static org.junit.Assert.assertEquals;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class RegionTest {
 
@@ -34,23 +32,22 @@ public class RegionTest {
   private static final ZoneId ZONE_ID1 = ZoneId.of("project", "zone1");
   private static final ZoneId ZONE_ID2 = ZoneId.of("project", "zone2");
   private static final List<ZoneId> ZONES = ImmutableList.of(ZONE_ID1, ZONE_ID2);
-  private static final Region.Quota QUOTA1 =
-      new Region.Quota("METRIC1", 2, 1);
-  private static final Region.Quota QUOTA2 =
-      new Region.Quota("METRIC2", 4, 3);
+  private static final Region.Quota QUOTA1 = new Region.Quota("METRIC1", 2, 1);
+  private static final Region.Quota QUOTA2 = new Region.Quota("METRIC2", 4, 3);
   private static final List<Region.Quota> QUOTAS = ImmutableList.of(QUOTA1, QUOTA2);
   private static final DeprecationStatus<RegionId> DEPRECATION_STATUS =
       DeprecationStatus.of(DeprecationStatus.Status.DELETED, REGION_ID);
-  private static final Region REGION = Region.builder()
-      .setRegionId(REGION_ID)
-      .setGeneratedId(GENERATED_ID)
-      .setCreationTimestamp(CREATION_TIMESTAMP)
-      .setDescription(DESCRIPTION)
-      .setStatus(STATUS)
-      .setZones(ZONES)
-      .setQuotas(QUOTAS)
-      .setDeprecationStatus(DEPRECATION_STATUS)
-      .build();
+  private static final Region REGION =
+      Region.builder()
+          .setRegionId(REGION_ID)
+          .setGeneratedId(GENERATED_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .setDescription(DESCRIPTION)
+          .setStatus(STATUS)
+          .setZones(ZONES)
+          .setQuotas(QUOTAS)
+          .setDeprecationStatus(DEPRECATION_STATUS)
+          .build();
 
   @Test
   public void testBuilder() {

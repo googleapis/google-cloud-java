@@ -130,7 +130,7 @@ public class FirestoreTest {
     DocumentReference doc1 = firestoreMock.document("coll/doc1");
     FieldMask fieldMask = FieldMask.of(FieldPath.of("foo", "bar"));
 
-    firestoreMock.getAll(new DocumentReference[]{doc1}, fieldMask).get();
+    firestoreMock.getAll(new DocumentReference[] {doc1}, fieldMask).get();
 
     BatchGetDocumentsRequest request = getAllCapture.getValue();
     assertEquals(1, request.getMask().getFieldPathsCount());

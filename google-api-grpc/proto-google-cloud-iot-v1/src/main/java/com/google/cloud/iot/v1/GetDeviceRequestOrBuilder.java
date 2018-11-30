@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface GetDeviceRequestOrBuilder extends
+public interface GetDeviceRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.GetDeviceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the device. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
@@ -18,6 +21,8 @@ public interface GetDeviceRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the device. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
@@ -26,10 +31,11 @@ public interface GetDeviceRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The fields of the `Device` resource to be returned in the response. If the
    * field mask is unset or empty, all fields are returned.
@@ -39,6 +45,8 @@ public interface GetDeviceRequestOrBuilder extends
    */
   boolean hasFieldMask();
   /**
+   *
+   *
    * <pre>
    * The fields of the `Device` resource to be returned in the response. If the
    * field mask is unset or empty, all fields are returned.
@@ -48,6 +56,8 @@ public interface GetDeviceRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getFieldMask();
   /**
+   *
+   *
    * <pre>
    * The fields of the `Device` resource to be returned in the response. If the
    * field mask is unset or empty, all fields are returned.

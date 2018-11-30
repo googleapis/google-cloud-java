@@ -41,14 +41,6 @@ import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
-
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-import org.junit.rules.Timeout;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -66,6 +58,12 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.rules.Timeout;
 
 public class ITStorageSnippets {
 
@@ -471,7 +469,8 @@ public class ITStorageSnippets {
     assertTrue(snippetOutput.contains("Size: " + remoteBlob.getSize()));
     assertTrue(snippetOutput.contains("StorageClass: " + remoteBlob.getStorageClass()));
     assertTrue(snippetOutput.contains("TimeCreated: " + new Date(remoteBlob.getCreateTime())));
-    assertTrue(snippetOutput.contains("Last Metadata Update: " + new Date(remoteBlob.getUpdateTime())));
+    assertTrue(
+        snippetOutput.contains("Last Metadata Update: " + new Date(remoteBlob.getUpdateTime())));
     assertTrue(snippetOutput.contains("temporaryHold: disabled"));
     assertTrue(snippetOutput.contains("eventBasedHold: disabled"));
     assertTrue(snippetOutput.contains("User metadata:"));

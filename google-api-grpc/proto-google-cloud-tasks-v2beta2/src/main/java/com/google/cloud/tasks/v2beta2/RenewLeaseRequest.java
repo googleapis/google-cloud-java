@@ -4,6 +4,8 @@
 package com.google.cloud.tasks.v2beta2;
 
 /**
+ *
+ *
  * <pre>
  * Request message for renewing a lease using
  * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease].
@@ -11,25 +13,26 @@ package com.google.cloud.tasks.v2beta2;
  *
  * Protobuf type {@code google.cloud.tasks.v2beta2.RenewLeaseRequest}
  */
-public  final class RenewLeaseRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class RenewLeaseRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta2.RenewLeaseRequest)
     RenewLeaseRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use RenewLeaseRequest.newBuilder() to construct.
   private RenewLeaseRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private RenewLeaseRequest() {
     name_ = "";
     responseView_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private RenewLeaseRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,79 +52,89 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (scheduleTime_ != null) {
-              subBuilder = scheduleTime_.toBuilder();
+              name_ = s;
+              break;
             }
-            scheduleTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(scheduleTime_);
-              scheduleTime_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (scheduleTime_ != null) {
+                subBuilder = scheduleTime_.toBuilder();
+              }
+              scheduleTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(scheduleTime_);
+                scheduleTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (leaseDuration_ != null) {
-              subBuilder = leaseDuration_.toBuilder();
+              break;
             }
-            leaseDuration_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(leaseDuration_);
-              leaseDuration_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (leaseDuration_ != null) {
+                subBuilder = leaseDuration_.toBuilder();
+              }
+              leaseDuration_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(leaseDuration_);
+                leaseDuration_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 32: {
-            int rawValue = input.readEnum();
-
-            responseView_ = rawValue;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 32:
+            {
+              int rawValue = input.readEnum();
+
+              responseView_ = rawValue;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.tasks.v2beta2.CloudTasksProto.internal_static_google_cloud_tasks_v2beta2_RenewLeaseRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.tasks.v2beta2.CloudTasksProto
+        .internal_static_google_cloud_tasks_v2beta2_RenewLeaseRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.tasks.v2beta2.CloudTasksProto.internal_static_google_cloud_tasks_v2beta2_RenewLeaseRequest_fieldAccessorTable
+    return com.google.cloud.tasks.v2beta2.CloudTasksProto
+        .internal_static_google_cloud_tasks_v2beta2_RenewLeaseRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.tasks.v2beta2.RenewLeaseRequest.class, com.google.cloud.tasks.v2beta2.RenewLeaseRequest.Builder.class);
+            com.google.cloud.tasks.v2beta2.RenewLeaseRequest.class,
+            com.google.cloud.tasks.v2beta2.RenewLeaseRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task name. For example:
@@ -135,14 +148,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task name. For example:
@@ -151,13 +165,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -168,6 +180,8 @@ private static final long serialVersionUID = 0L;
   public static final int SCHEDULE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp scheduleTime_;
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task's current schedule time, available in the
@@ -183,6 +197,8 @@ private static final long serialVersionUID = 0L;
     return scheduleTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task's current schedule time, available in the
@@ -195,9 +211,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp schedule_time = 2;</code>
    */
   public com.google.protobuf.Timestamp getScheduleTime() {
-    return scheduleTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : scheduleTime_;
+    return scheduleTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : scheduleTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task's current schedule time, available in the
@@ -216,6 +236,8 @@ private static final long serialVersionUID = 0L;
   public static final int LEASE_DURATION_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration leaseDuration_;
   /**
+   *
+   *
    * <pre>
    * Required.
    * The desired new lease duration, starting from now.
@@ -229,6 +251,8 @@ private static final long serialVersionUID = 0L;
     return leaseDuration_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required.
    * The desired new lease duration, starting from now.
@@ -239,9 +263,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Duration lease_duration = 3;</code>
    */
   public com.google.protobuf.Duration getLeaseDuration() {
-    return leaseDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : leaseDuration_;
+    return leaseDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : leaseDuration_;
   }
   /**
+   *
+   *
    * <pre>
    * Required.
    * The desired new lease duration, starting from now.
@@ -258,6 +286,8 @@ private static final long serialVersionUID = 0L;
   public static final int RESPONSE_VIEW_FIELD_NUMBER = 4;
   private int responseView_;
   /**
+   *
+   *
    * <pre>
    * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
    * returned.
@@ -277,6 +307,8 @@ private static final long serialVersionUID = 0L;
     return responseView_;
   }
   /**
+   *
+   *
    * <pre>
    * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
    * returned.
@@ -294,11 +326,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.tasks.v2beta2.Task.View getResponseView() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.tasks.v2beta2.Task.View result = com.google.cloud.tasks.v2beta2.Task.View.valueOf(responseView_);
+    com.google.cloud.tasks.v2beta2.Task.View result =
+        com.google.cloud.tasks.v2beta2.Task.View.valueOf(responseView_);
     return result == null ? com.google.cloud.tasks.v2beta2.Task.View.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -310,8 +344,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -337,16 +370,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (scheduleTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getScheduleTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getScheduleTime());
     }
     if (leaseDuration_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getLeaseDuration());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getLeaseDuration());
     }
     if (responseView_ != com.google.cloud.tasks.v2beta2.Task.View.VIEW_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, responseView_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, responseView_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -356,25 +386,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.tasks.v2beta2.RenewLeaseRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.tasks.v2beta2.RenewLeaseRequest other = (com.google.cloud.tasks.v2beta2.RenewLeaseRequest) obj;
+    com.google.cloud.tasks.v2beta2.RenewLeaseRequest other =
+        (com.google.cloud.tasks.v2beta2.RenewLeaseRequest) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
+    result = result && getName().equals(other.getName());
     result = result && (hasScheduleTime() == other.hasScheduleTime());
     if (hasScheduleTime()) {
-      result = result && getScheduleTime()
-          .equals(other.getScheduleTime());
+      result = result && getScheduleTime().equals(other.getScheduleTime());
     }
     result = result && (hasLeaseDuration() == other.hasLeaseDuration());
     if (hasLeaseDuration()) {
-      result = result && getLeaseDuration()
-          .equals(other.getLeaseDuration());
+      result = result && getLeaseDuration().equals(other.getLeaseDuration());
     }
     result = result && responseView_ == other.responseView_;
     result = result && unknownFields.equals(other.unknownFields);
@@ -405,97 +433,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.tasks.v2beta2.RenewLeaseRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.tasks.v2beta2.RenewLeaseRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.RenewLeaseRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.RenewLeaseRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.RenewLeaseRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.RenewLeaseRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.RenewLeaseRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.tasks.v2beta2.RenewLeaseRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.tasks.v2beta2.RenewLeaseRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.tasks.v2beta2.RenewLeaseRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.tasks.v2beta2.RenewLeaseRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.RenewLeaseRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.tasks.v2beta2.RenewLeaseRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.tasks.v2beta2.RenewLeaseRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta2.RenewLeaseRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.tasks.v2beta2.RenewLeaseRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Request message for renewing a lease using
    * [RenewLease][google.cloud.tasks.v2beta2.CloudTasks.RenewLease].
@@ -503,21 +538,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.tasks.v2beta2.RenewLeaseRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.tasks.v2beta2.RenewLeaseRequest)
       com.google.cloud.tasks.v2beta2.RenewLeaseRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.tasks.v2beta2.CloudTasksProto.internal_static_google_cloud_tasks_v2beta2_RenewLeaseRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.tasks.v2beta2.CloudTasksProto
+          .internal_static_google_cloud_tasks_v2beta2_RenewLeaseRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.tasks.v2beta2.CloudTasksProto.internal_static_google_cloud_tasks_v2beta2_RenewLeaseRequest_fieldAccessorTable
+      return com.google.cloud.tasks.v2beta2.CloudTasksProto
+          .internal_static_google_cloud_tasks_v2beta2_RenewLeaseRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.tasks.v2beta2.RenewLeaseRequest.class, com.google.cloud.tasks.v2beta2.RenewLeaseRequest.Builder.class);
+              com.google.cloud.tasks.v2beta2.RenewLeaseRequest.class,
+              com.google.cloud.tasks.v2beta2.RenewLeaseRequest.Builder.class);
     }
 
     // Construct using com.google.cloud.tasks.v2beta2.RenewLeaseRequest.newBuilder()
@@ -525,16 +562,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -558,9 +594,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.tasks.v2beta2.CloudTasksProto.internal_static_google_cloud_tasks_v2beta2_RenewLeaseRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.tasks.v2beta2.CloudTasksProto
+          .internal_static_google_cloud_tasks_v2beta2_RenewLeaseRequest_descriptor;
     }
 
     @java.lang.Override
@@ -579,7 +615,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.tasks.v2beta2.RenewLeaseRequest buildPartial() {
-      com.google.cloud.tasks.v2beta2.RenewLeaseRequest result = new com.google.cloud.tasks.v2beta2.RenewLeaseRequest(this);
+      com.google.cloud.tasks.v2beta2.RenewLeaseRequest result =
+          new com.google.cloud.tasks.v2beta2.RenewLeaseRequest(this);
       result.name_ = name_;
       if (scheduleTimeBuilder_ == null) {
         result.scheduleTime_ = scheduleTime_;
@@ -600,38 +637,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.tasks.v2beta2.RenewLeaseRequest) {
-        return mergeFrom((com.google.cloud.tasks.v2beta2.RenewLeaseRequest)other);
+        return mergeFrom((com.google.cloud.tasks.v2beta2.RenewLeaseRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -639,7 +677,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.tasks.v2beta2.RenewLeaseRequest other) {
-      if (other == com.google.cloud.tasks.v2beta2.RenewLeaseRequest.getDefaultInstance()) return this;
+      if (other == com.google.cloud.tasks.v2beta2.RenewLeaseRequest.getDefaultInstance())
+        return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -684,6 +723,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * Required.
      * The task name. For example:
@@ -695,8 +736,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -705,6 +745,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The task name. For example:
@@ -713,13 +755,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -727,6 +767,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The task name. For example:
@@ -735,17 +777,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The task name. For example:
@@ -755,12 +798,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The task name. For example:
@@ -769,13 +814,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -783,8 +827,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp scheduleTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> scheduleTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        scheduleTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required.
      * The task's current schedule time, available in the
@@ -800,6 +849,8 @@ private static final long serialVersionUID = 0L;
       return scheduleTimeBuilder_ != null || scheduleTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The task's current schedule time, available in the
@@ -813,12 +864,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getScheduleTime() {
       if (scheduleTimeBuilder_ == null) {
-        return scheduleTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : scheduleTime_;
+        return scheduleTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : scheduleTime_;
       } else {
         return scheduleTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The task's current schedule time, available in the
@@ -844,6 +899,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The task's current schedule time, available in the
@@ -855,8 +912,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp schedule_time = 2;</code>
      */
-    public Builder setScheduleTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setScheduleTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (scheduleTimeBuilder_ == null) {
         scheduleTime_ = builderForValue.build();
         onChanged();
@@ -867,6 +923,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The task's current schedule time, available in the
@@ -882,7 +940,9 @@ private static final long serialVersionUID = 0L;
       if (scheduleTimeBuilder_ == null) {
         if (scheduleTime_ != null) {
           scheduleTime_ =
-            com.google.protobuf.Timestamp.newBuilder(scheduleTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(scheduleTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           scheduleTime_ = value;
         }
@@ -894,6 +954,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The task's current schedule time, available in the
@@ -917,6 +979,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The task's current schedule time, available in the
@@ -929,11 +993,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp schedule_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getScheduleTimeBuilder() {
-      
+
       onChanged();
       return getScheduleTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The task's current schedule time, available in the
@@ -949,11 +1015,14 @@ private static final long serialVersionUID = 0L;
       if (scheduleTimeBuilder_ != null) {
         return scheduleTimeBuilder_.getMessageOrBuilder();
       } else {
-        return scheduleTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : scheduleTime_;
+        return scheduleTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : scheduleTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The task's current schedule time, available in the
@@ -966,14 +1035,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp schedule_time = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getScheduleTimeFieldBuilder() {
       if (scheduleTimeBuilder_ == null) {
-        scheduleTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getScheduleTime(),
-                getParentForChildren(),
-                isClean());
+        scheduleTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getScheduleTime(), getParentForChildren(), isClean());
         scheduleTime_ = null;
       }
       return scheduleTimeBuilder_;
@@ -981,8 +1053,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Duration leaseDuration_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> leaseDurationBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        leaseDurationBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required.
      * The desired new lease duration, starting from now.
@@ -996,6 +1073,8 @@ private static final long serialVersionUID = 0L;
       return leaseDurationBuilder_ != null || leaseDuration_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The desired new lease duration, starting from now.
@@ -1007,12 +1086,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Duration getLeaseDuration() {
       if (leaseDurationBuilder_ == null) {
-        return leaseDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : leaseDuration_;
+        return leaseDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : leaseDuration_;
       } else {
         return leaseDurationBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The desired new lease duration, starting from now.
@@ -1036,6 +1119,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The desired new lease duration, starting from now.
@@ -1045,8 +1130,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Duration lease_duration = 3;</code>
      */
-    public Builder setLeaseDuration(
-        com.google.protobuf.Duration.Builder builderForValue) {
+    public Builder setLeaseDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (leaseDurationBuilder_ == null) {
         leaseDuration_ = builderForValue.build();
         onChanged();
@@ -1057,6 +1141,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The desired new lease duration, starting from now.
@@ -1070,7 +1156,9 @@ private static final long serialVersionUID = 0L;
       if (leaseDurationBuilder_ == null) {
         if (leaseDuration_ != null) {
           leaseDuration_ =
-            com.google.protobuf.Duration.newBuilder(leaseDuration_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(leaseDuration_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           leaseDuration_ = value;
         }
@@ -1082,6 +1170,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The desired new lease duration, starting from now.
@@ -1103,6 +1193,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The desired new lease duration, starting from now.
@@ -1113,11 +1205,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration lease_duration = 3;</code>
      */
     public com.google.protobuf.Duration.Builder getLeaseDurationBuilder() {
-      
+
       onChanged();
       return getLeaseDurationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The desired new lease duration, starting from now.
@@ -1131,11 +1225,14 @@ private static final long serialVersionUID = 0L;
       if (leaseDurationBuilder_ != null) {
         return leaseDurationBuilder_.getMessageOrBuilder();
       } else {
-        return leaseDuration_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : leaseDuration_;
+        return leaseDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : leaseDuration_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The desired new lease duration, starting from now.
@@ -1146,14 +1243,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration lease_duration = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getLeaseDurationFieldBuilder() {
       if (leaseDurationBuilder_ == null) {
-        leaseDurationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                getLeaseDuration(),
-                getParentForChildren(),
-                isClean());
+        leaseDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getLeaseDuration(), getParentForChildren(), isClean());
         leaseDuration_ = null;
       }
       return leaseDurationBuilder_;
@@ -1161,6 +1261,8 @@ private static final long serialVersionUID = 0L;
 
     private int responseView_ = 0;
     /**
+     *
+     *
      * <pre>
      * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
      * returned.
@@ -1180,6 +1282,8 @@ private static final long serialVersionUID = 0L;
       return responseView_;
     }
     /**
+     *
+     *
      * <pre>
      * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
      * returned.
@@ -1201,6 +1305,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
      * returned.
@@ -1218,10 +1324,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.tasks.v2beta2.Task.View getResponseView() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.tasks.v2beta2.Task.View result = com.google.cloud.tasks.v2beta2.Task.View.valueOf(responseView_);
+      com.google.cloud.tasks.v2beta2.Task.View result =
+          com.google.cloud.tasks.v2beta2.Task.View.valueOf(responseView_);
       return result == null ? com.google.cloud.tasks.v2beta2.Task.View.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
      * returned.
@@ -1241,12 +1350,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       responseView_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
      * returned.
@@ -1263,14 +1374,14 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.tasks.v2beta2.Task.View response_view = 4;</code>
      */
     public Builder clearResponseView() {
-      
+
       responseView_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1280,12 +1391,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.tasks.v2beta2.RenewLeaseRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.tasks.v2beta2.RenewLeaseRequest)
   private static final com.google.cloud.tasks.v2beta2.RenewLeaseRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.tasks.v2beta2.RenewLeaseRequest();
   }
@@ -1294,16 +1405,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RenewLeaseRequest>
-      PARSER = new com.google.protobuf.AbstractParser<RenewLeaseRequest>() {
-    @java.lang.Override
-    public RenewLeaseRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new RenewLeaseRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<RenewLeaseRequest> PARSER =
+      new com.google.protobuf.AbstractParser<RenewLeaseRequest>() {
+        @java.lang.Override
+        public RenewLeaseRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RenewLeaseRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<RenewLeaseRequest> parser() {
     return PARSER;
@@ -1318,6 +1429,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.tasks.v2beta2.RenewLeaseRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

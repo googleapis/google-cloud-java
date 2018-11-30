@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface UpdateNodePoolRequestOrBuilder extends
+public interface UpdateNodePoolRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.UpdateNodePoolRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
@@ -16,8 +19,11 @@ public interface UpdateNodePoolRequestOrBuilder extends
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getProjectId();
+  @java.lang.Deprecated
+  java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
@@ -26,10 +32,12 @@ public interface UpdateNodePoolRequestOrBuilder extends
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getProjectIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
@@ -39,8 +47,11 @@ public interface UpdateNodePoolRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getZone();
+  @java.lang.Deprecated
+  java.lang.String getZone();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
@@ -50,10 +61,12 @@ public interface UpdateNodePoolRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getZoneBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getZoneBytes();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
@@ -61,8 +74,11 @@ public interface UpdateNodePoolRequestOrBuilder extends
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getClusterId();
+  @java.lang.Deprecated
+  java.lang.String getClusterId();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
@@ -70,10 +86,12 @@ public interface UpdateNodePoolRequestOrBuilder extends
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getClusterIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getClusterIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the node pool to upgrade.
    * This field has been deprecated and replaced by the name field.
@@ -81,8 +99,11 @@ public interface UpdateNodePoolRequestOrBuilder extends
    *
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getNodePoolId();
+  @java.lang.Deprecated
+  java.lang.String getNodePoolId();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the node pool to upgrade.
    * This field has been deprecated and replaced by the name field.
@@ -90,10 +111,12 @@ public interface UpdateNodePoolRequestOrBuilder extends
    *
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getNodePoolIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getNodePoolIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The Kubernetes version to change the nodes to (typically an
    * upgrade).
@@ -110,6 +133,8 @@ public interface UpdateNodePoolRequestOrBuilder extends
    */
   java.lang.String getNodeVersion();
   /**
+   *
+   *
    * <pre>
    * The Kubernetes version to change the nodes to (typically an
    * upgrade).
@@ -124,10 +149,11 @@ public interface UpdateNodePoolRequestOrBuilder extends
    *
    * <code>string node_version = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getNodeVersionBytes();
+  com.google.protobuf.ByteString getNodeVersionBytes();
 
   /**
+   *
+   *
    * <pre>
    * The desired image type for the node pool.
    * </pre>
@@ -136,16 +162,19 @@ public interface UpdateNodePoolRequestOrBuilder extends
    */
   java.lang.String getImageType();
   /**
+   *
+   *
    * <pre>
    * The desired image type for the node pool.
    * </pre>
    *
    * <code>string image_type = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getImageTypeBytes();
+  com.google.protobuf.ByteString getImageTypeBytes();
 
   /**
+   *
+   *
    * <pre>
    * The name (project, location, cluster, node pool) of the node pool to
    * update. Specified in the format
@@ -156,6 +185,8 @@ public interface UpdateNodePoolRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name (project, location, cluster, node pool) of the node pool to
    * update. Specified in the format
@@ -164,6 +195,5 @@ public interface UpdateNodePoolRequestOrBuilder extends
    *
    * <code>string name = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

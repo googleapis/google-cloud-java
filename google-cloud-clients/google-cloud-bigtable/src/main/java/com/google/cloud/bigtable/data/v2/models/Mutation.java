@@ -42,8 +42,10 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
 
   @InternalApi("Visible for testing")
   static final int MAX_MUTATIONS = 100_000;
+
   @InternalApi("Visible for testing")
   static final int MAX_BYTE_SIZE = 200 * 1024 * 1024;
+
   @InternalApi("Visible for testing")
   static final long SERVER_SIDE_TIMESTAMP = -1;
 
@@ -55,18 +57,16 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   private int numMutations;
   private long byteSize;
 
-  /**
-   * Creates new instance of Mutation object.
-   */
+  /** Creates new instance of Mutation object. */
   public static Mutation create() {
     return new Mutation(false);
   }
 
   /**
-   * Creates new instance of Mutation object which allows setCell operation to use server
-   * side timestamp. This is dangerous because mutations will no longer be idempotent, which
-   * might cause multiple duplicate values to be stored in Bigtable. This option should only
-   * be used for advanced usecases with extreme care.
+   * Creates new instance of Mutation object which allows setCell operation to use server side
+   * timestamp. This is dangerous because mutations will no longer be idempotent, which might cause
+   * multiple duplicate values to be stored in Bigtable. This option should only be used for
+   * advanced usecases with extreme care.
    */
   @BetaApi
   public static Mutation createUnsafe() {
@@ -124,7 +124,8 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
     Preconditions.checkNotNull(qualifier, "qualifier can't be null.");
     Preconditions.checkNotNull(value, "value can't be null.");
     if (!allowServersideTimestamp) {
-      Preconditions.checkArgument(timestamp != SERVER_SIDE_TIMESTAMP, "Serverside timestamps are not supported");
+      Preconditions.checkArgument(
+          timestamp != SERVER_SIDE_TIMESTAMP, "Serverside timestamps are not supported");
     }
 
     addMutation(
@@ -221,9 +222,9 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   }
 
   private void addMutation(com.google.bigtable.v2.Mutation mutation) {
-    Preconditions.checkState(numMutations + 1 <= MAX_MUTATIONS,
-        "Too many mutations per row");
-    Preconditions.checkState(byteSize + mutation.getSerializedSize() <= MAX_BYTE_SIZE,
+    Preconditions.checkState(numMutations + 1 <= MAX_MUTATIONS, "Too many mutations per row");
+    Preconditions.checkState(
+        byteSize + mutation.getSerializedSize() <= MAX_BYTE_SIZE,
         "Byte size of mutations is too large");
 
     numMutations++;

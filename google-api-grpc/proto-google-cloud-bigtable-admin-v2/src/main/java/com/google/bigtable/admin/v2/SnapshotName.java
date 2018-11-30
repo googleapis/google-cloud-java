@@ -14,20 +14,21 @@
 
 package com.google.bigtable.admin.v2;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class SnapshotName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/instances/{instance}/clusters/{cluster}/snapshots/{snapshot}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -69,21 +70,21 @@ public class SnapshotName implements ResourceName {
 
   public static SnapshotName of(String project, String instance, String cluster, String snapshot) {
     return newBuilder()
-      .setProject(project)
-      .setInstance(instance)
-      .setCluster(cluster)
-      .setSnapshot(snapshot)
-      .build();
+        .setProject(project)
+        .setInstance(instance)
+        .setCluster(cluster)
+        .setSnapshot(snapshot)
+        .build();
   }
 
   public static String format(String project, String instance, String cluster, String snapshot) {
     return newBuilder()
-      .setProject(project)
-      .setInstance(instance)
-      .setCluster(cluster)
-      .setSnapshot(snapshot)
-      .build()
-      .toString();
+        .setProject(project)
+        .setInstance(instance)
+        .setCluster(cluster)
+        .setSnapshot(snapshot)
+        .build()
+        .toString();
   }
 
   public static SnapshotName parse(String formattedString) {
@@ -91,8 +92,13 @@ public class SnapshotName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "SnapshotName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("instance"), matchMap.get("cluster"), matchMap.get("snapshot"));
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "SnapshotName.parse: formattedString not in valid format");
+    return of(
+        matchMap.get("project"),
+        matchMap.get("instance"),
+        matchMap.get("cluster"),
+        matchMap.get("snapshot"));
   }
 
   public static List<SnapshotName> parseList(List<String> formattedStrings) {
@@ -141,7 +147,8 @@ public class SnapshotName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "instance", instance, "cluster", cluster, "snapshot", snapshot);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "instance", instance, "cluster", cluster, "snapshot", snapshot);
   }
 
   /** Builder for SnapshotName. */
@@ -188,8 +195,7 @@ public class SnapshotName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(SnapshotName snapshotName) {
       project = snapshotName.project;
@@ -232,4 +238,3 @@ public class SnapshotName implements ResourceName {
     return h;
   }
 }
-

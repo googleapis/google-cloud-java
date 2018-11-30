@@ -28,10 +28,8 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class NetworkTest {
 
@@ -76,11 +74,12 @@ public class NetworkTest {
   }
 
   private void initializeNetwork() {
-    network = new Network.Builder(compute, NETWORK_ID, NETWORK_CONFIGURATION)
-        .setGeneratedId(GENERATED_ID)
-        .setCreationTimestamp(CREATION_TIMESTAMP)
-        .setDescription(DESCRIPTION)
-        .build();
+    network =
+        new Network.Builder(compute, NETWORK_ID, NETWORK_CONFIGURATION)
+            .setGeneratedId(GENERATED_ID)
+            .setCreationTimestamp(CREATION_TIMESTAMP)
+            .setDescription(DESCRIPTION)
+            .build();
   }
 
   @Test
@@ -122,10 +121,9 @@ public class NetworkTest {
   @Test
   public void testToAndFromPb() {
     initializeExpectedNetwork(12);
-    compareNetwork(standardNetwork,
-        Network.fromPb(serviceMockReturnsOptions, standardNetwork.toPb()));
-    compareNetwork(subnetNetwork,
-        Network.fromPb(serviceMockReturnsOptions, subnetNetwork.toPb()));
+    compareNetwork(
+        standardNetwork, Network.fromPb(serviceMockReturnsOptions, standardNetwork.toPb()));
+    compareNetwork(subnetNetwork, Network.fromPb(serviceMockReturnsOptions, subnetNetwork.toPb()));
     Network network =
         new Network.Builder(serviceMockReturnsOptions, NETWORK_ID, NETWORK_CONFIGURATION).build();
     compareNetwork(network, Network.fromPb(serviceMockReturnsOptions, network.toPb()));
@@ -135,9 +133,10 @@ public class NetworkTest {
   public void testDeleteOperation() {
     initializeExpectedNetwork(3);
     expect(compute.getOptions()).andReturn(mockOptions);
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(GlobalOperationId.of("project", "op"))
-        .build();
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(GlobalOperationId.of("project", "op"))
+            .build();
     expect(compute.deleteNetwork(NETWORK_ID.getNetwork())).andReturn(operation);
     replay(compute);
     initializeNetwork();
@@ -159,8 +158,7 @@ public class NetworkTest {
     initializeExpectedNetwork(2);
     Compute.NetworkOption[] expectedOptions = {Compute.NetworkOption.fields()};
     expect(compute.getOptions()).andReturn(mockOptions);
-    expect(compute.getNetwork(NETWORK_ID.getNetwork(), expectedOptions))
-        .andReturn(standardNetwork);
+    expect(compute.getNetwork(NETWORK_ID.getNetwork(), expectedOptions)).andReturn(standardNetwork);
     replay(compute);
     initializeNetwork();
     assertTrue(network.exists());
@@ -218,9 +216,10 @@ public class NetworkTest {
   @Test
   public void testCreateSubnetwork() throws Exception {
     initializeExpectedNetwork(3);
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(RegionOperationId.of(SUBNETWORK1.getRegionId(), "op"))
-        .build();
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(RegionOperationId.of(SUBNETWORK1.getRegionId(), "op"))
+            .build();
     expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.create(SubnetworkInfo.of(SUBNETWORK1, NETWORK_ID, IP_RANGE)))
         .andReturn(operation);
@@ -233,15 +232,20 @@ public class NetworkTest {
   @Test
   public void testCreateSubnetworkWithOptions() throws Exception {
     initializeExpectedNetwork(3);
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(RegionOperationId.of(SUBNETWORK1.getRegionId(), "op"))
-        .build();
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(RegionOperationId.of(SUBNETWORK1.getRegionId(), "op"))
+            .build();
     expect(compute.getOptions()).andReturn(mockOptions);
-    expect(compute.create(SubnetworkInfo.of(SUBNETWORK1, NETWORK_ID, IP_RANGE),
-        Compute.OperationOption.fields())).andReturn(operation);
+    expect(
+            compute.create(
+                SubnetworkInfo.of(SUBNETWORK1, NETWORK_ID, IP_RANGE),
+                Compute.OperationOption.fields()))
+        .andReturn(operation);
     replay(compute);
     initializeNetwork();
-    assertSame(operation,
+    assertSame(
+        operation,
         network.createSubnetwork(SUBNETWORK1, IP_RANGE, Compute.OperationOption.fields()));
     verify(compute);
   }

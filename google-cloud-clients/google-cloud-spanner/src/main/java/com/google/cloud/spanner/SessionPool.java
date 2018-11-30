@@ -31,12 +31,10 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.common.util.concurrent.Uninterruptibles;
-
 import io.opencensus.trace.Annotation;
 import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracing;
-
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -195,12 +193,12 @@ final class SessionPool {
       return txn.getReadTimestamp();
     }
   }
-  
+
   private static class AutoClosingTransactionManager implements TransactionManager {
     final TransactionManager delegate;
     final PooledSession session;
     private boolean closed;
-    
+
     AutoClosingTransactionManager(TransactionManager delegate, PooledSession session) {
       this.delegate = delegate;
       this.session = session;
@@ -253,7 +251,7 @@ final class SessionPool {
         session.close();
       }
     }
-    
+
     @Override
     public TransactionState getState() {
       return delegate.getState();
@@ -923,10 +921,10 @@ final class SessionPool {
 
   private Annotation sessionAnnotation(Session session) {
     AttributeValue sessionId = AttributeValue.stringAttributeValue(session.getName());
-    return Annotation.fromDescriptionAndAttributes("Using Session",
-        ImmutableMap.of("sessionId", sessionId));
+    return Annotation.fromDescriptionAndAttributes(
+        "Using Session", ImmutableMap.of("sessionId", sessionId));
   }
- 
+
   private void incrementNumSessionsInUse() {
     synchronized (lock) {
       if (maxSessionsInUse < ++numSessionsInUse) {

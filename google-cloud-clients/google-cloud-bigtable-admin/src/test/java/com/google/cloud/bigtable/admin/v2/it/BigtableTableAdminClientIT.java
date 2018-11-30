@@ -66,8 +66,9 @@ public class BigtableTableAdminClientIT {
     prefix = String.format("020%d", System.currentTimeMillis());
 
     // Cleanup old tables, under normal circumstances this will do nothing
-    String stalePrefix = String.format("020%d", System.currentTimeMillis() - TimeUnit.DAYS.toMillis(1));
-    for (String tableId: tableAdmin.listTables()) {
+    String stalePrefix =
+        String.format("020%d", System.currentTimeMillis() - TimeUnit.DAYS.toMillis(1));
+    for (String tableId : tableAdmin.listTables()) {
       if (stalePrefix.compareTo(tableId) > 0) {
         tableAdmin.deleteTable(tableId);
       }
@@ -111,10 +112,7 @@ public class BigtableTableAdminClientIT {
       assertEquals(2, tableResponse.getColumnFamilies().size());
       assertFalse(columnFamilyById.get("cf1").hasGCRule());
       assertTrue(columnFamilyById.get("cf2").hasGCRule());
-      assertEquals(
-          10,
-          ((VersionRule) columnFamilyById.get("cf2").getGCRule())
-              .getMaxVersions());
+      assertEquals(10, ((VersionRule) columnFamilyById.get("cf2").getGCRule()).getMaxVersions());
     } finally {
       tableAdmin.deleteTable(tableId);
     }
@@ -158,31 +156,15 @@ public class BigtableTableAdminClientIT {
       assertEquals(5, columnFamilyById.size());
       assertNotNull(columnFamilyById.get("mf1"));
       assertNotNull(columnFamilyById.get("mf2"));
+      assertEquals(2, ((UnionRule) columnFamilyById.get("mf1").getGCRule()).getRulesList().size());
       assertEquals(
-          2,
-          ((UnionRule) columnFamilyById.get("mf1").getGCRule())
-              .getRulesList()
-              .size());
+          1000, ((DurationRule) columnFamilyById.get("mf2").getGCRule()).getMaxAge().getSeconds());
       assertEquals(
-          1000,
-          ((DurationRule) columnFamilyById.get("mf2").getGCRule())
-              .getMaxAge()
-              .getSeconds());
+          20000, ((DurationRule) columnFamilyById.get("mf2").getGCRule()).getMaxAge().getNano());
       assertEquals(
-          20000,
-          ((DurationRule) columnFamilyById.get("mf2").getGCRule())
-              .getMaxAge()
-              .getNano());
+          2, ((IntersectionRule) columnFamilyById.get("mf3").getGCRule()).getRulesList().size());
       assertEquals(
-          2,
-          ((IntersectionRule) columnFamilyById.get("mf3").getGCRule())
-              .getRulesList()
-              .size());
-      assertEquals(
-          360,
-          ((DurationRule) columnFamilyById.get("mf4").getGCRule())
-              .getMaxAge()
-              .getSeconds());
+          360, ((DurationRule) columnFamilyById.get("mf4").getGCRule()).getMaxAge().getSeconds());
       assertNotNull(columnFamilyById.get("mf7"));
     } finally {
       tableAdmin.deleteTable(tableId);

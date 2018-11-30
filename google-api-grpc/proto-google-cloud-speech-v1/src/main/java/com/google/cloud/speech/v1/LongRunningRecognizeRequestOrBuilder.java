@@ -3,11 +3,14 @@
 
 package com.google.cloud.speech.v1;
 
-public interface LongRunningRecognizeRequestOrBuilder extends
+public interface LongRunningRecognizeRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1.LongRunningRecognizeRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * *Required* Provides information to the recognizer that specifies how to
    * process the request.
@@ -17,6 +20,8 @@ public interface LongRunningRecognizeRequestOrBuilder extends
    */
   boolean hasConfig();
   /**
+   *
+   *
    * <pre>
    * *Required* Provides information to the recognizer that specifies how to
    * process the request.
@@ -26,6 +31,8 @@ public interface LongRunningRecognizeRequestOrBuilder extends
    */
   com.google.cloud.speech.v1.RecognitionConfig getConfig();
   /**
+   *
+   *
    * <pre>
    * *Required* Provides information to the recognizer that specifies how to
    * process the request.
@@ -36,6 +43,8 @@ public interface LongRunningRecognizeRequestOrBuilder extends
   com.google.cloud.speech.v1.RecognitionConfigOrBuilder getConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * *Required* The audio data to be recognized.
    * </pre>
@@ -44,6 +53,8 @@ public interface LongRunningRecognizeRequestOrBuilder extends
    */
   boolean hasAudio();
   /**
+   *
+   *
    * <pre>
    * *Required* The audio data to be recognized.
    * </pre>
@@ -52,6 +63,8 @@ public interface LongRunningRecognizeRequestOrBuilder extends
    */
   com.google.cloud.speech.v1.RecognitionAudio getAudio();
   /**
+   *
+   *
    * <pre>
    * *Required* The audio data to be recognized.
    * </pre>
