@@ -27,6 +27,7 @@ import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PubsubMessage;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.concurrent.Executors;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -118,7 +119,7 @@ public class CreateTopicAndPublishMessages {
             // Once published, returns server-assigned message ids (unique within the topic)
             System.out.println(messageId);
           }
-        });
+        }, Executors.newSingleThreadExecutor());
       }
     } finally {
       if (publisher != null) {
