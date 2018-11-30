@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1;
 
-public interface InstantiateWorkflowTemplateRequestOrBuilder extends
+public interface InstantiateWorkflowTemplateRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The "resource name" of the workflow template, as described
    * in https://cloud.google.com/apis/design/resource_names of the form
@@ -18,6 +21,8 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. The "resource name" of the workflow template, as described
    * in https://cloud.google.com/apis/design/resource_names of the form
@@ -26,10 +31,11 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The version of workflow template to instantiate. If specified,
    * the workflow will be instantiated only if the current version of
@@ -43,6 +49,8 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder extends
   int getVersion();
 
   /**
+   *
+   *
    * <pre>
    * Optional. A tag that prevents multiple concurrent workflow
    * instances with the same tag from running. This mitigates risk of
@@ -57,6 +65,8 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder extends
    */
   java.lang.String getRequestId();
   /**
+   *
+   *
    * <pre>
    * Optional. A tag that prevents multiple concurrent workflow
    * instances with the same tag from running. This mitigates risk of
@@ -69,10 +79,11 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder extends
    *
    * <code>string request_id = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getRequestIdBytes();
+  com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Map from parameter names to values that should be used for those
    * parameters. Values may not exceed 100 characters.
@@ -82,6 +93,8 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder extends
    */
   int getParametersCount();
   /**
+   *
+   *
    * <pre>
    * Optional. Map from parameter names to values that should be used for those
    * parameters. Values may not exceed 100 characters.
@@ -89,15 +102,13 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder extends
    *
    * <code>map&lt;string, string&gt; parameters = 6;</code>
    */
-  boolean containsParameters(
-      java.lang.String key);
-  /**
-   * Use {@link #getParametersMap()} instead.
-   */
+  boolean containsParameters(java.lang.String key);
+  /** Use {@link #getParametersMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getParameters();
+  java.util.Map<java.lang.String, java.lang.String> getParameters();
   /**
+   *
+   *
    * <pre>
    * Optional. Map from parameter names to values that should be used for those
    * parameters. Values may not exceed 100 characters.
@@ -105,9 +116,10 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder extends
    *
    * <code>map&lt;string, string&gt; parameters = 6;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getParametersMap();
+  java.util.Map<java.lang.String, java.lang.String> getParametersMap();
   /**
+   *
+   *
    * <pre>
    * Optional. Map from parameter names to values that should be used for those
    * parameters. Values may not exceed 100 characters.
@@ -115,11 +127,10 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder extends
    *
    * <code>map&lt;string, string&gt; parameters = 6;</code>
    */
-
-  java.lang.String getParametersOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getParametersOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Optional. Map from parameter names to values that should be used for those
    * parameters. Values may not exceed 100 characters.
@@ -127,7 +138,5 @@ public interface InstantiateWorkflowTemplateRequestOrBuilder extends
    *
    * <code>map&lt;string, string&gt; parameters = 6;</code>
    */
-
-  java.lang.String getParametersOrThrow(
-      java.lang.String key);
+  java.lang.String getParametersOrThrow(java.lang.String key);
 }

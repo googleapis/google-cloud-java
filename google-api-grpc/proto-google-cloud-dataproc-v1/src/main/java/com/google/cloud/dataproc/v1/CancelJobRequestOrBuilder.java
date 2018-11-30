@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1;
 
-public interface CancelJobRequestOrBuilder extends
+public interface CancelJobRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1.CancelJobRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The ID of the Google Cloud Platform project that the job
    * belongs to.
@@ -17,6 +20,8 @@ public interface CancelJobRequestOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * Required. The ID of the Google Cloud Platform project that the job
    * belongs to.
@@ -24,10 +29,11 @@ public interface CancelJobRequestOrBuilder extends
    *
    * <code>string project_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
@@ -36,16 +42,19 @@ public interface CancelJobRequestOrBuilder extends
    */
   java.lang.String getRegion();
   /**
+   *
+   *
    * <pre>
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getRegionBytes();
+  com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The job ID.
    * </pre>
@@ -54,12 +63,13 @@ public interface CancelJobRequestOrBuilder extends
    */
   java.lang.String getJobId();
   /**
+   *
+   *
    * <pre>
    * Required. The job ID.
    * </pre>
    *
    * <code>string job_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getJobIdBytes();
+  com.google.protobuf.ByteString getJobIdBytes();
 }

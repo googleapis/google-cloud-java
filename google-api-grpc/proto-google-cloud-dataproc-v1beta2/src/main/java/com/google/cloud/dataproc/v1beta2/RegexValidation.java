@@ -4,30 +4,33 @@
 package com.google.cloud.dataproc.v1beta2;
 
 /**
+ *
+ *
  * <pre>
  * Validation based on regular expressions.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.RegexValidation}
  */
-public  final class RegexValidation extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class RegexValidation extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1beta2.RegexValidation)
     RegexValidationOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use RegexValidation.newBuilder() to construct.
   private RegexValidation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private RegexValidation() {
     regexes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private RegexValidation(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,29 +50,29 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              regexes_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                regexes_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              regexes_.add(s);
+              break;
             }
-            regexes_.add(s);
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         regexes_ = regexes_.getUnmodifiableView();
@@ -78,22 +81,27 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_RegexValidation_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+        .internal_static_google_cloud_dataproc_v1beta2_RegexValidation_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_RegexValidation_fieldAccessorTable
+    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+        .internal_static_google_cloud_dataproc_v1beta2_RegexValidation_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1beta2.RegexValidation.class, com.google.cloud.dataproc.v1beta2.RegexValidation.Builder.class);
+            com.google.cloud.dataproc.v1beta2.RegexValidation.class,
+            com.google.cloud.dataproc.v1beta2.RegexValidation.Builder.class);
   }
 
   public static final int REGEXES_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList regexes_;
   /**
+   *
+   *
    * <pre>
    * Required. RE2 regular expressions used to validate the parameter's value.
    * The value must match the regex in its entirety (substring
@@ -102,11 +110,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string regexes = 1;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getRegexesList() {
+  public com.google.protobuf.ProtocolStringList getRegexesList() {
     return regexes_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. RE2 regular expressions used to validate the parameter's value.
    * The value must match the regex in its entirety (substring
@@ -119,6 +128,8 @@ private static final long serialVersionUID = 0L;
     return regexes_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Required. RE2 regular expressions used to validate the parameter's value.
    * The value must match the regex in its entirety (substring
@@ -131,6 +142,8 @@ private static final long serialVersionUID = 0L;
     return regexes_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Required. RE2 regular expressions used to validate the parameter's value.
    * The value must match the regex in its entirety (substring
@@ -139,12 +152,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string regexes = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getRegexesBytes(int index) {
+  public com.google.protobuf.ByteString getRegexesBytes(int index) {
     return regexes_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -156,8 +169,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < regexes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, regexes_.getRaw(i));
     }
@@ -186,16 +198,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dataproc.v1beta2.RegexValidation)) {
       return super.equals(obj);
     }
-    com.google.cloud.dataproc.v1beta2.RegexValidation other = (com.google.cloud.dataproc.v1beta2.RegexValidation) obj;
+    com.google.cloud.dataproc.v1beta2.RegexValidation other =
+        (com.google.cloud.dataproc.v1beta2.RegexValidation) obj;
 
     boolean result = true;
-    result = result && getRegexesList()
-        .equals(other.getRegexesList());
+    result = result && getRegexesList().equals(other.getRegexesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -217,117 +229,126 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.dataproc.v1beta2.RegexValidation parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.RegexValidation parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.RegexValidation parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.RegexValidation parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.RegexValidation parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.RegexValidation parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1beta2.RegexValidation parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dataproc.v1beta2.RegexValidation parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dataproc.v1beta2.RegexValidation parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.dataproc.v1beta2.RegexValidation parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.RegexValidation parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dataproc.v1beta2.RegexValidation parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dataproc.v1beta2.RegexValidation parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1beta2.RegexValidation parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.dataproc.v1beta2.RegexValidation prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Validation based on regular expressions.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.RegexValidation}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1beta2.RegexValidation)
       com.google.cloud.dataproc.v1beta2.RegexValidationOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_RegexValidation_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+          .internal_static_google_cloud_dataproc_v1beta2_RegexValidation_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_RegexValidation_fieldAccessorTable
+      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+          .internal_static_google_cloud_dataproc_v1beta2_RegexValidation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1beta2.RegexValidation.class, com.google.cloud.dataproc.v1beta2.RegexValidation.Builder.class);
+              com.google.cloud.dataproc.v1beta2.RegexValidation.class,
+              com.google.cloud.dataproc.v1beta2.RegexValidation.Builder.class);
     }
 
     // Construct using com.google.cloud.dataproc.v1beta2.RegexValidation.newBuilder()
@@ -335,16 +356,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -354,9 +374,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_RegexValidation_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+          .internal_static_google_cloud_dataproc_v1beta2_RegexValidation_descriptor;
     }
 
     @java.lang.Override
@@ -375,7 +395,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.RegexValidation buildPartial() {
-      com.google.cloud.dataproc.v1beta2.RegexValidation result = new com.google.cloud.dataproc.v1beta2.RegexValidation(this);
+      com.google.cloud.dataproc.v1beta2.RegexValidation result =
+          new com.google.cloud.dataproc.v1beta2.RegexValidation(this);
       int from_bitField0_ = bitField0_;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         regexes_ = regexes_.getUnmodifiableView();
@@ -390,38 +411,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dataproc.v1beta2.RegexValidation) {
-        return mergeFrom((com.google.cloud.dataproc.v1beta2.RegexValidation)other);
+        return mergeFrom((com.google.cloud.dataproc.v1beta2.RegexValidation) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -429,7 +451,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dataproc.v1beta2.RegexValidation other) {
-      if (other == com.google.cloud.dataproc.v1beta2.RegexValidation.getDefaultInstance()) return this;
+      if (other == com.google.cloud.dataproc.v1beta2.RegexValidation.getDefaultInstance())
+        return this;
       if (!other.regexes_.isEmpty()) {
         if (regexes_.isEmpty()) {
           regexes_ = other.regexes_;
@@ -459,7 +482,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataproc.v1beta2.RegexValidation) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dataproc.v1beta2.RegexValidation) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -468,16 +492,21 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList regexes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList regexes_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureRegexesIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         regexes_ = new com.google.protobuf.LazyStringArrayList(regexes_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * Required. RE2 regular expressions used to validate the parameter's value.
      * The value must match the regex in its entirety (substring
@@ -486,11 +515,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string regexes = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getRegexesList() {
+    public com.google.protobuf.ProtocolStringList getRegexesList() {
       return regexes_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * Required. RE2 regular expressions used to validate the parameter's value.
      * The value must match the regex in its entirety (substring
@@ -503,6 +533,8 @@ private static final long serialVersionUID = 0L;
       return regexes_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Required. RE2 regular expressions used to validate the parameter's value.
      * The value must match the regex in its entirety (substring
@@ -515,6 +547,8 @@ private static final long serialVersionUID = 0L;
       return regexes_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Required. RE2 regular expressions used to validate the parameter's value.
      * The value must match the regex in its entirety (substring
@@ -523,11 +557,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string regexes = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getRegexesBytes(int index) {
+    public com.google.protobuf.ByteString getRegexesBytes(int index) {
       return regexes_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * Required. RE2 regular expressions used to validate the parameter's value.
      * The value must match the regex in its entirety (substring
@@ -536,17 +571,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string regexes = 1;</code>
      */
-    public Builder setRegexes(
-        int index, java.lang.String value) {
+    public Builder setRegexes(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureRegexesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureRegexesIsMutable();
       regexes_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. RE2 regular expressions used to validate the parameter's value.
      * The value must match the regex in its entirety (substring
@@ -555,17 +591,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string regexes = 1;</code>
      */
-    public Builder addRegexes(
-        java.lang.String value) {
+    public Builder addRegexes(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureRegexesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureRegexesIsMutable();
       regexes_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. RE2 regular expressions used to validate the parameter's value.
      * The value must match the regex in its entirety (substring
@@ -574,15 +611,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string regexes = 1;</code>
      */
-    public Builder addAllRegexes(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllRegexes(java.lang.Iterable<java.lang.String> values) {
       ensureRegexesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, regexes_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, regexes_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. RE2 regular expressions used to validate the parameter's value.
      * The value must match the regex in its entirety (substring
@@ -598,6 +635,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. RE2 regular expressions used to validate the parameter's value.
      * The value must match the regex in its entirety (substring
@@ -606,20 +645,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string regexes = 1;</code>
      */
-    public Builder addRegexesBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addRegexesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureRegexesIsMutable();
       regexes_.add(value);
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -629,12 +667,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1beta2.RegexValidation)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1beta2.RegexValidation)
   private static final com.google.cloud.dataproc.v1beta2.RegexValidation DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1beta2.RegexValidation();
   }
@@ -643,16 +681,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RegexValidation>
-      PARSER = new com.google.protobuf.AbstractParser<RegexValidation>() {
-    @java.lang.Override
-    public RegexValidation parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new RegexValidation(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<RegexValidation> PARSER =
+      new com.google.protobuf.AbstractParser<RegexValidation>() {
+        @java.lang.Override
+        public RegexValidation parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RegexValidation(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<RegexValidation> parser() {
     return PARSER;
@@ -667,6 +705,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dataproc.v1beta2.RegexValidation getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-
