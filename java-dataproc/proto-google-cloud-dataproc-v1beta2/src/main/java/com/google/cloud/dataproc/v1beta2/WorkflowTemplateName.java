@@ -14,20 +14,21 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class WorkflowTemplateName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/regions/{region}/workflowTemplates/{workflow_template}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/regions/{region}/workflowTemplates/{workflow_template}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -63,19 +64,19 @@ public class WorkflowTemplateName implements ResourceName {
 
   public static WorkflowTemplateName of(String project, String region, String workflowTemplate) {
     return newBuilder()
-      .setProject(project)
-      .setRegion(region)
-      .setWorkflowTemplate(workflowTemplate)
-      .build();
+        .setProject(project)
+        .setRegion(region)
+        .setWorkflowTemplate(workflowTemplate)
+        .build();
   }
 
   public static String format(String project, String region, String workflowTemplate) {
     return newBuilder()
-      .setProject(project)
-      .setRegion(region)
-      .setWorkflowTemplate(workflowTemplate)
-      .build()
-      .toString();
+        .setProject(project)
+        .setRegion(region)
+        .setWorkflowTemplate(workflowTemplate)
+        .build()
+        .toString();
   }
 
   public static WorkflowTemplateName parse(String formattedString) {
@@ -83,7 +84,8 @@ public class WorkflowTemplateName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "WorkflowTemplateName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "WorkflowTemplateName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("region"), matchMap.get("workflow_template"));
   }
 
@@ -132,7 +134,8 @@ public class WorkflowTemplateName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "region", region, "workflow_template", workflowTemplate);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "region", region, "workflow_template", workflowTemplate);
   }
 
   /** Builder for WorkflowTemplateName. */
@@ -169,8 +172,7 @@ public class WorkflowTemplateName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(WorkflowTemplateName workflowTemplateName) {
       project = workflowTemplateName.project;
@@ -209,4 +211,3 @@ public class WorkflowTemplateName implements ResourceName {
     return h;
   }
 }
-
