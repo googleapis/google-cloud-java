@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface GetOperationRequestOrBuilder extends
+public interface GetOperationRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.GetOperationRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
@@ -16,8 +19,11 @@ public interface GetOperationRequestOrBuilder extends
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getProjectId();
+  @java.lang.Deprecated
+  java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
@@ -26,10 +32,12 @@ public interface GetOperationRequestOrBuilder extends
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getProjectIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
@@ -39,8 +47,11 @@ public interface GetOperationRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getZone();
+  @java.lang.Deprecated
+  java.lang.String getZone();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
@@ -50,10 +61,12 @@ public interface GetOperationRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getZoneBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getZoneBytes();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The server-assigned `name` of the operation.
    * This field has been deprecated and replaced by the name field.
@@ -61,8 +74,11 @@ public interface GetOperationRequestOrBuilder extends
    *
    * <code>string operation_id = 3 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getOperationId();
+  @java.lang.Deprecated
+  java.lang.String getOperationId();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The server-assigned `name` of the operation.
    * This field has been deprecated and replaced by the name field.
@@ -70,10 +86,12 @@ public interface GetOperationRequestOrBuilder extends
    *
    * <code>string operation_id = 3 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getOperationIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getOperationIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The name (project, location, operation id) of the operation to get.
    * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;operations/&#42;'.
@@ -83,6 +101,8 @@ public interface GetOperationRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name (project, location, operation id) of the operation to get.
    * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;operations/&#42;'.
@@ -90,6 +110,5 @@ public interface GetOperationRequestOrBuilder extends
    *
    * <code>string name = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

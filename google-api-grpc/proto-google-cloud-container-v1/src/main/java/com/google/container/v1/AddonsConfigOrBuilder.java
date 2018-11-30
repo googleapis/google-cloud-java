@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface AddonsConfigOrBuilder extends
+public interface AddonsConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.AddonsConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Configuration for the HTTP (L7) load balancing controller addon, which
    * makes it easy to set up HTTP load balancers for services in a cluster.
@@ -17,6 +20,8 @@ public interface AddonsConfigOrBuilder extends
    */
   boolean hasHttpLoadBalancing();
   /**
+   *
+   *
    * <pre>
    * Configuration for the HTTP (L7) load balancing controller addon, which
    * makes it easy to set up HTTP load balancers for services in a cluster.
@@ -26,6 +31,8 @@ public interface AddonsConfigOrBuilder extends
    */
   com.google.container.v1.HttpLoadBalancing getHttpLoadBalancing();
   /**
+   *
+   *
    * <pre>
    * Configuration for the HTTP (L7) load balancing controller addon, which
    * makes it easy to set up HTTP load balancers for services in a cluster.
@@ -36,6 +43,8 @@ public interface AddonsConfigOrBuilder extends
   com.google.container.v1.HttpLoadBalancingOrBuilder getHttpLoadBalancingOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Configuration for the horizontal pod autoscaling feature, which
    * increases or decreases the number of replica pods a replication controller
@@ -46,6 +55,8 @@ public interface AddonsConfigOrBuilder extends
    */
   boolean hasHorizontalPodAutoscaling();
   /**
+   *
+   *
    * <pre>
    * Configuration for the horizontal pod autoscaling feature, which
    * increases or decreases the number of replica pods a replication controller
@@ -56,6 +67,8 @@ public interface AddonsConfigOrBuilder extends
    */
   com.google.container.v1.HorizontalPodAutoscaling getHorizontalPodAutoscaling();
   /**
+   *
+   *
    * <pre>
    * Configuration for the horizontal pod autoscaling feature, which
    * increases or decreases the number of replica pods a replication controller
@@ -67,6 +80,8 @@ public interface AddonsConfigOrBuilder extends
   com.google.container.v1.HorizontalPodAutoscalingOrBuilder getHorizontalPodAutoscalingOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Configuration for the Kubernetes Dashboard.
    * </pre>
@@ -75,6 +90,8 @@ public interface AddonsConfigOrBuilder extends
    */
   boolean hasKubernetesDashboard();
   /**
+   *
+   *
    * <pre>
    * Configuration for the Kubernetes Dashboard.
    * </pre>
@@ -83,6 +100,8 @@ public interface AddonsConfigOrBuilder extends
    */
   com.google.container.v1.KubernetesDashboard getKubernetesDashboard();
   /**
+   *
+   *
    * <pre>
    * Configuration for the Kubernetes Dashboard.
    * </pre>
@@ -92,6 +111,8 @@ public interface AddonsConfigOrBuilder extends
   com.google.container.v1.KubernetesDashboardOrBuilder getKubernetesDashboardOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Configuration for NetworkPolicy. This only tracks whether the addon
    * is enabled or not on the Master, it does not track whether network policy
@@ -102,6 +123,8 @@ public interface AddonsConfigOrBuilder extends
    */
   boolean hasNetworkPolicyConfig();
   /**
+   *
+   *
    * <pre>
    * Configuration for NetworkPolicy. This only tracks whether the addon
    * is enabled or not on the Master, it does not track whether network policy
@@ -112,6 +135,8 @@ public interface AddonsConfigOrBuilder extends
    */
   com.google.container.v1.NetworkPolicyConfig getNetworkPolicyConfig();
   /**
+   *
+   *
    * <pre>
    * Configuration for NetworkPolicy. This only tracks whether the addon
    * is enabled or not on the Master, it does not track whether network policy

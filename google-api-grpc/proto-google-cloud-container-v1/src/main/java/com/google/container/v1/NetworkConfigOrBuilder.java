@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface NetworkConfigOrBuilder extends
+public interface NetworkConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.NetworkConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
    * [network][google.container.v1.NetworkConfig.network](/compute/docs/networks-and-firewalls#networks) to which
@@ -19,6 +22,8 @@ public interface NetworkConfigOrBuilder extends
    */
   java.lang.String getNetwork();
   /**
+   *
+   *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
    * [network][google.container.v1.NetworkConfig.network](/compute/docs/networks-and-firewalls#networks) to which
@@ -28,10 +33,11 @@ public interface NetworkConfigOrBuilder extends
    *
    * <code>string network = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNetworkBytes();
+  com.google.protobuf.ByteString getNetworkBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
    * [subnetwork](/compute/docs/vpc) to which the cluster is connected.
@@ -42,6 +48,8 @@ public interface NetworkConfigOrBuilder extends
    */
   java.lang.String getSubnetwork();
   /**
+   *
+   *
    * <pre>
    * Output only. The relative name of the Google Compute Engine
    * [subnetwork](/compute/docs/vpc) to which the cluster is connected.
@@ -50,6 +58,5 @@ public interface NetworkConfigOrBuilder extends
    *
    * <code>string subnetwork = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getSubnetworkBytes();
+  com.google.protobuf.ByteString getSubnetworkBytes();
 }

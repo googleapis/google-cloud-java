@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface ListNodePoolsRequestOrBuilder extends
+public interface ListNodePoolsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.ListNodePoolsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
    * number](https://developers.google.com/console/help/new/#projectnumber).
@@ -16,8 +19,11 @@ public interface ListNodePoolsRequestOrBuilder extends
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getProjectId();
+  @java.lang.Deprecated
+  java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
    * number](https://developers.google.com/console/help/new/#projectnumber).
@@ -26,10 +32,12 @@ public interface ListNodePoolsRequestOrBuilder extends
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getProjectIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
@@ -39,8 +47,11 @@ public interface ListNodePoolsRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getZone();
+  @java.lang.Deprecated
+  java.lang.String getZone();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
@@ -50,10 +61,12 @@ public interface ListNodePoolsRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getZoneBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getZoneBytes();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the cluster.
    * This field has been deprecated and replaced by the parent field.
@@ -61,8 +74,11 @@ public interface ListNodePoolsRequestOrBuilder extends
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getClusterId();
+  @java.lang.Deprecated
+  java.lang.String getClusterId();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the cluster.
    * This field has been deprecated and replaced by the parent field.
@@ -70,10 +86,12 @@ public interface ListNodePoolsRequestOrBuilder extends
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getClusterIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getClusterIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The parent (project, location, cluster id) where the node pools will be
    * listed. Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
@@ -83,6 +101,8 @@ public interface ListNodePoolsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The parent (project, location, cluster id) where the node pools will be
    * listed. Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
@@ -90,6 +110,5 @@ public interface ListNodePoolsRequestOrBuilder extends
    *
    * <code>string parent = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 }
