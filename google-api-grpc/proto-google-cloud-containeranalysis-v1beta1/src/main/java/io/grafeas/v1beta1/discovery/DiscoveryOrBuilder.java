@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.discovery;
 
-public interface DiscoveryOrBuilder extends
+public interface DiscoveryOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.discovery.Discovery)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The kind of analysis that is handled by this discovery.
    * </pre>
@@ -16,6 +19,8 @@ public interface DiscoveryOrBuilder extends
    */
   int getAnalysisKindValue();
   /**
+   *
+   *
    * <pre>
    * The kind of analysis that is handled by this discovery.
    * </pre>

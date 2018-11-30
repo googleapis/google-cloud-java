@@ -3,11 +3,14 @@
 
 package com.google.containeranalysis.v1beta1;
 
-public interface ListScanConfigsRequestOrBuilder extends
+public interface ListScanConfigsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.containeranalysis.v1beta1.ListScanConfigsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the project to list scan configurations for in the form of
    * `projects/[PROJECT_ID]`.
@@ -17,6 +20,8 @@ public interface ListScanConfigsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The name of the project to list scan configurations for in the form of
    * `projects/[PROJECT_ID]`.
@@ -24,10 +29,11 @@ public interface ListScanConfigsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The filter expression.
    * </pre>
@@ -36,16 +42,19 @@ public interface ListScanConfigsRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * The filter expression.
    * </pre>
    *
    * <code>string filter = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * The number of scan configs to return in the list.
    * </pre>
@@ -55,6 +64,8 @@ public interface ListScanConfigsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * Token to provide to skip to a particular spot in the list.
    * </pre>
@@ -63,12 +74,13 @@ public interface ListScanConfigsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * Token to provide to skip to a particular spot in the list.
    * </pre>
    *
    * <code>string page_token = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }
