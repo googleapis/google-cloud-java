@@ -4,30 +4,33 @@
 package com.google.cloud.vision.v1;
 
 /**
+ *
+ *
  * <pre>
  * Set of crop hints that are used to generate new crops when serving images.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vision.v1.CropHintsAnnotation}
  */
-public  final class CropHintsAnnotation extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class CropHintsAnnotation extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.CropHintsAnnotation)
     CropHintsAnnotationOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use CropHintsAnnotation.newBuilder() to construct.
   private CropHintsAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private CropHintsAnnotation() {
     cropHints_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private CropHintsAnnotation(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,29 +50,30 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              cropHints_ = new java.util.ArrayList<com.google.cloud.vision.v1.CropHint>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                cropHints_ = new java.util.ArrayList<com.google.cloud.vision.v1.CropHint>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              cropHints_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1.CropHint.parser(), extensionRegistry));
+              break;
             }
-            cropHints_.add(
-                input.readMessage(com.google.cloud.vision.v1.CropHint.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         cropHints_ = java.util.Collections.unmodifiableList(cropHints_);
@@ -78,22 +82,27 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_CropHintsAnnotation_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.vision.v1.ImageAnnotatorProto
+        .internal_static_google_cloud_vision_v1_CropHintsAnnotation_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_CropHintsAnnotation_fieldAccessorTable
+    return com.google.cloud.vision.v1.ImageAnnotatorProto
+        .internal_static_google_cloud_vision_v1_CropHintsAnnotation_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vision.v1.CropHintsAnnotation.class, com.google.cloud.vision.v1.CropHintsAnnotation.Builder.class);
+            com.google.cloud.vision.v1.CropHintsAnnotation.class,
+            com.google.cloud.vision.v1.CropHintsAnnotation.Builder.class);
   }
 
   public static final int CROP_HINTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.vision.v1.CropHint> cropHints_;
   /**
+   *
+   *
    * <pre>
    * Crop hint results.
    * </pre>
@@ -104,17 +113,21 @@ private static final long serialVersionUID = 0L;
     return cropHints_;
   }
   /**
+   *
+   *
    * <pre>
    * Crop hint results.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.CropHint crop_hints = 1;</code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1.CropHintOrBuilder> 
+  public java.util.List<? extends com.google.cloud.vision.v1.CropHintOrBuilder>
       getCropHintsOrBuilderList() {
     return cropHints_;
   }
   /**
+   *
+   *
    * <pre>
    * Crop hint results.
    * </pre>
@@ -125,6 +138,8 @@ private static final long serialVersionUID = 0L;
     return cropHints_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Crop hint results.
    * </pre>
@@ -135,18 +150,20 @@ private static final long serialVersionUID = 0L;
     return cropHints_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Crop hint results.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.CropHint crop_hints = 1;</code>
    */
-  public com.google.cloud.vision.v1.CropHintOrBuilder getCropHintsOrBuilder(
-      int index) {
+  public com.google.cloud.vision.v1.CropHintOrBuilder getCropHintsOrBuilder(int index) {
     return cropHints_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -158,8 +175,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < cropHints_.size(); i++) {
       output.writeMessage(1, cropHints_.get(i));
     }
@@ -173,8 +189,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < cropHints_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, cropHints_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, cropHints_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -184,16 +199,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.vision.v1.CropHintsAnnotation)) {
       return super.equals(obj);
     }
-    com.google.cloud.vision.v1.CropHintsAnnotation other = (com.google.cloud.vision.v1.CropHintsAnnotation) obj;
+    com.google.cloud.vision.v1.CropHintsAnnotation other =
+        (com.google.cloud.vision.v1.CropHintsAnnotation) obj;
 
     boolean result = true;
-    result = result && getCropHintsList()
-        .equals(other.getCropHintsList());
+    result = result && getCropHintsList().equals(other.getCropHintsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -214,118 +229,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.vision.v1.CropHintsAnnotation parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.vision.v1.CropHintsAnnotation parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.CropHintsAnnotation parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.CropHintsAnnotation parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.CropHintsAnnotation parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.CropHintsAnnotation parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.CropHintsAnnotation parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.CropHintsAnnotation parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1.CropHintsAnnotation parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.vision.v1.CropHintsAnnotation parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.vision.v1.CropHintsAnnotation parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.vision.v1.CropHintsAnnotation parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.vision.v1.CropHintsAnnotation parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1.CropHintsAnnotation parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.vision.v1.CropHintsAnnotation prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Set of crop hints that are used to generate new crops when serving images.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1.CropHintsAnnotation}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1.CropHintsAnnotation)
       com.google.cloud.vision.v1.CropHintsAnnotationOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_CropHintsAnnotation_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1_CropHintsAnnotation_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_CropHintsAnnotation_fieldAccessorTable
+      return com.google.cloud.vision.v1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1_CropHintsAnnotation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1.CropHintsAnnotation.class, com.google.cloud.vision.v1.CropHintsAnnotation.Builder.class);
+              com.google.cloud.vision.v1.CropHintsAnnotation.class,
+              com.google.cloud.vision.v1.CropHintsAnnotation.Builder.class);
     }
 
     // Construct using com.google.cloud.vision.v1.CropHintsAnnotation.newBuilder()
@@ -333,17 +357,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCropHintsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -357,9 +381,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_CropHintsAnnotation_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.vision.v1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1_CropHintsAnnotation_descriptor;
     }
 
     @java.lang.Override
@@ -378,7 +402,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.vision.v1.CropHintsAnnotation buildPartial() {
-      com.google.cloud.vision.v1.CropHintsAnnotation result = new com.google.cloud.vision.v1.CropHintsAnnotation(this);
+      com.google.cloud.vision.v1.CropHintsAnnotation result =
+          new com.google.cloud.vision.v1.CropHintsAnnotation(this);
       int from_bitField0_ = bitField0_;
       if (cropHintsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -397,38 +422,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1.CropHintsAnnotation) {
-        return mergeFrom((com.google.cloud.vision.v1.CropHintsAnnotation)other);
+        return mergeFrom((com.google.cloud.vision.v1.CropHintsAnnotation) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -455,9 +481,10 @@ private static final long serialVersionUID = 0L;
             cropHintsBuilder_ = null;
             cropHints_ = other.cropHints_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            cropHintsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getCropHintsFieldBuilder() : null;
+            cropHintsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getCropHintsFieldBuilder()
+                    : null;
           } else {
             cropHintsBuilder_.addAllMessages(other.cropHints_);
           }
@@ -491,21 +518,28 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.cloud.vision.v1.CropHint> cropHints_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureCropHintsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         cropHints_ = new java.util.ArrayList<com.google.cloud.vision.v1.CropHint>(cropHints_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.CropHint, com.google.cloud.vision.v1.CropHint.Builder, com.google.cloud.vision.v1.CropHintOrBuilder> cropHintsBuilder_;
+            com.google.cloud.vision.v1.CropHint,
+            com.google.cloud.vision.v1.CropHint.Builder,
+            com.google.cloud.vision.v1.CropHintOrBuilder>
+        cropHintsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Crop hint results.
      * </pre>
@@ -520,6 +554,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Crop hint results.
      * </pre>
@@ -534,6 +570,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Crop hint results.
      * </pre>
@@ -548,14 +586,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Crop hint results.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.CropHint crop_hints = 1;</code>
      */
-    public Builder setCropHints(
-        int index, com.google.cloud.vision.v1.CropHint value) {
+    public Builder setCropHints(int index, com.google.cloud.vision.v1.CropHint value) {
       if (cropHintsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -569,6 +608,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Crop hint results.
      * </pre>
@@ -587,6 +628,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Crop hint results.
      * </pre>
@@ -607,14 +650,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Crop hint results.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.CropHint crop_hints = 1;</code>
      */
-    public Builder addCropHints(
-        int index, com.google.cloud.vision.v1.CropHint value) {
+    public Builder addCropHints(int index, com.google.cloud.vision.v1.CropHint value) {
       if (cropHintsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -628,14 +672,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Crop hint results.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.CropHint crop_hints = 1;</code>
      */
-    public Builder addCropHints(
-        com.google.cloud.vision.v1.CropHint.Builder builderForValue) {
+    public Builder addCropHints(com.google.cloud.vision.v1.CropHint.Builder builderForValue) {
       if (cropHintsBuilder_ == null) {
         ensureCropHintsIsMutable();
         cropHints_.add(builderForValue.build());
@@ -646,6 +691,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Crop hint results.
      * </pre>
@@ -664,6 +711,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Crop hint results.
      * </pre>
@@ -674,8 +723,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.vision.v1.CropHint> values) {
       if (cropHintsBuilder_ == null) {
         ensureCropHintsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, cropHints_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cropHints_);
         onChanged();
       } else {
         cropHintsBuilder_.addAllMessages(values);
@@ -683,6 +731,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Crop hint results.
      * </pre>
@@ -700,6 +750,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Crop hint results.
      * </pre>
@@ -717,39 +769,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Crop hint results.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.CropHint crop_hints = 1;</code>
      */
-    public com.google.cloud.vision.v1.CropHint.Builder getCropHintsBuilder(
-        int index) {
+    public com.google.cloud.vision.v1.CropHint.Builder getCropHintsBuilder(int index) {
       return getCropHintsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Crop hint results.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.CropHint crop_hints = 1;</code>
      */
-    public com.google.cloud.vision.v1.CropHintOrBuilder getCropHintsOrBuilder(
-        int index) {
+    public com.google.cloud.vision.v1.CropHintOrBuilder getCropHintsOrBuilder(int index) {
       if (cropHintsBuilder_ == null) {
-        return cropHints_.get(index);  } else {
+        return cropHints_.get(index);
+      } else {
         return cropHintsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Crop hint results.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.CropHint crop_hints = 1;</code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1.CropHintOrBuilder> 
-         getCropHintsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.vision.v1.CropHintOrBuilder>
+        getCropHintsOrBuilderList() {
       if (cropHintsBuilder_ != null) {
         return cropHintsBuilder_.getMessageOrBuilderList();
       } else {
@@ -757,6 +814,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Crop hint results.
      * </pre>
@@ -764,38 +823,46 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.vision.v1.CropHint crop_hints = 1;</code>
      */
     public com.google.cloud.vision.v1.CropHint.Builder addCropHintsBuilder() {
-      return getCropHintsFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1.CropHint.getDefaultInstance());
+      return getCropHintsFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1.CropHint.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Crop hint results.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.CropHint crop_hints = 1;</code>
      */
-    public com.google.cloud.vision.v1.CropHint.Builder addCropHintsBuilder(
-        int index) {
-      return getCropHintsFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1.CropHint.getDefaultInstance());
+    public com.google.cloud.vision.v1.CropHint.Builder addCropHintsBuilder(int index) {
+      return getCropHintsFieldBuilder()
+          .addBuilder(index, com.google.cloud.vision.v1.CropHint.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Crop hint results.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.CropHint crop_hints = 1;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1.CropHint.Builder> 
-         getCropHintsBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1.CropHint.Builder> getCropHintsBuilderList() {
       return getCropHintsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.CropHint, com.google.cloud.vision.v1.CropHint.Builder, com.google.cloud.vision.v1.CropHintOrBuilder> 
+            com.google.cloud.vision.v1.CropHint,
+            com.google.cloud.vision.v1.CropHint.Builder,
+            com.google.cloud.vision.v1.CropHintOrBuilder>
         getCropHintsFieldBuilder() {
       if (cropHintsBuilder_ == null) {
-        cropHintsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1.CropHint, com.google.cloud.vision.v1.CropHint.Builder, com.google.cloud.vision.v1.CropHintOrBuilder>(
+        cropHintsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1.CropHint,
+                com.google.cloud.vision.v1.CropHint.Builder,
+                com.google.cloud.vision.v1.CropHintOrBuilder>(
                 cropHints_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -804,9 +871,9 @@ private static final long serialVersionUID = 0L;
       }
       return cropHintsBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -816,12 +883,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1.CropHintsAnnotation)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.vision.v1.CropHintsAnnotation)
   private static final com.google.cloud.vision.v1.CropHintsAnnotation DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.vision.v1.CropHintsAnnotation();
   }
@@ -830,16 +897,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CropHintsAnnotation>
-      PARSER = new com.google.protobuf.AbstractParser<CropHintsAnnotation>() {
-    @java.lang.Override
-    public CropHintsAnnotation parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CropHintsAnnotation(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<CropHintsAnnotation> PARSER =
+      new com.google.protobuf.AbstractParser<CropHintsAnnotation>() {
+        @java.lang.Override
+        public CropHintsAnnotation parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CropHintsAnnotation(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<CropHintsAnnotation> parser() {
     return PARSER;
@@ -854,6 +921,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.vision.v1.CropHintsAnnotation getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -3,20 +3,24 @@
 
 package com.google.cloud.vision.v1;
 
-public interface TextAnnotationOrBuilder extends
+public interface TextAnnotationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.TextAnnotation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * List of pages detected by OCR.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.Page pages = 1;</code>
    */
-  java.util.List<com.google.cloud.vision.v1.Page> 
-      getPagesList();
+  java.util.List<com.google.cloud.vision.v1.Page> getPagesList();
   /**
+   *
+   *
    * <pre>
    * List of pages detected by OCR.
    * </pre>
@@ -25,6 +29,8 @@ public interface TextAnnotationOrBuilder extends
    */
   com.google.cloud.vision.v1.Page getPages(int index);
   /**
+   *
+   *
    * <pre>
    * List of pages detected by OCR.
    * </pre>
@@ -33,25 +39,29 @@ public interface TextAnnotationOrBuilder extends
    */
   int getPagesCount();
   /**
+   *
+   *
    * <pre>
    * List of pages detected by OCR.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.Page pages = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1.PageOrBuilder> 
-      getPagesOrBuilderList();
+  java.util.List<? extends com.google.cloud.vision.v1.PageOrBuilder> getPagesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * List of pages detected by OCR.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.Page pages = 1;</code>
    */
-  com.google.cloud.vision.v1.PageOrBuilder getPagesOrBuilder(
-      int index);
+  com.google.cloud.vision.v1.PageOrBuilder getPagesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * UTF-8 text detected on the pages.
    * </pre>
@@ -60,12 +70,13 @@ public interface TextAnnotationOrBuilder extends
    */
   java.lang.String getText();
   /**
+   *
+   *
    * <pre>
    * UTF-8 text detected on the pages.
    * </pre>
    *
    * <code>string text = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getTextBytes();
+  com.google.protobuf.ByteString getTextBytes();
 }

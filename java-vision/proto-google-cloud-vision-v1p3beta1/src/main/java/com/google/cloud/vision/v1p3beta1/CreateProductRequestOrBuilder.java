@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface CreateProductRequestOrBuilder extends
+public interface CreateProductRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.CreateProductRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The project in which the Product should be created.
    * Format is
@@ -18,6 +21,8 @@ public interface CreateProductRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The project in which the Product should be created.
    * Format is
@@ -26,10 +31,11 @@ public interface CreateProductRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The product to create.
    * </pre>
@@ -38,6 +44,8 @@ public interface CreateProductRequestOrBuilder extends
    */
   boolean hasProduct();
   /**
+   *
+   *
    * <pre>
    * The product to create.
    * </pre>
@@ -46,6 +54,8 @@ public interface CreateProductRequestOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.Product getProduct();
   /**
+   *
+   *
    * <pre>
    * The product to create.
    * </pre>
@@ -55,6 +65,8 @@ public interface CreateProductRequestOrBuilder extends
   com.google.cloud.vision.v1p3beta1.ProductOrBuilder getProductOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A user-supplied resource id for this Product. If set, the server will
    * attempt to use this value as the resource id. If it is already in use, an
@@ -66,6 +78,8 @@ public interface CreateProductRequestOrBuilder extends
    */
   java.lang.String getProductId();
   /**
+   *
+   *
    * <pre>
    * A user-supplied resource id for this Product. If set, the server will
    * attempt to use this value as the resource id. If it is already in use, an
@@ -75,6 +89,5 @@ public interface CreateProductRequestOrBuilder extends
    *
    * <code>string product_id = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getProductIdBytes();
+  com.google.protobuf.ByteString getProductIdBytes();
 }
