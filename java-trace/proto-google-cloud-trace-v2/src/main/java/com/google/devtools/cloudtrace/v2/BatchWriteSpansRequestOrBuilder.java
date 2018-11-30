@@ -3,11 +3,14 @@
 
 package com.google.devtools.cloudtrace.v2;
 
-public interface BatchWriteSpansRequestOrBuilder extends
+public interface BatchWriteSpansRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.cloudtrace.v2.BatchWriteSpansRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the project where the spans belong. The format is
    * `projects/[PROJECT_ID]`.
@@ -17,6 +20,8 @@ public interface BatchWriteSpansRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the project where the spans belong. The format is
    * `projects/[PROJECT_ID]`.
@@ -24,10 +29,11 @@ public interface BatchWriteSpansRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * A list of new spans. The span names must not match existing
    * spans, or the results are undefined.
@@ -35,9 +41,10 @@ public interface BatchWriteSpansRequestOrBuilder extends
    *
    * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
    */
-  java.util.List<com.google.devtools.cloudtrace.v2.Span> 
-      getSpansList();
+  java.util.List<com.google.devtools.cloudtrace.v2.Span> getSpansList();
   /**
+   *
+   *
    * <pre>
    * A list of new spans. The span names must not match existing
    * spans, or the results are undefined.
@@ -47,6 +54,8 @@ public interface BatchWriteSpansRequestOrBuilder extends
    */
   com.google.devtools.cloudtrace.v2.Span getSpans(int index);
   /**
+   *
+   *
    * <pre>
    * A list of new spans. The span names must not match existing
    * spans, or the results are undefined.
@@ -56,6 +65,8 @@ public interface BatchWriteSpansRequestOrBuilder extends
    */
   int getSpansCount();
   /**
+   *
+   *
    * <pre>
    * A list of new spans. The span names must not match existing
    * spans, or the results are undefined.
@@ -63,9 +74,10 @@ public interface BatchWriteSpansRequestOrBuilder extends
    *
    * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
    */
-  java.util.List<? extends com.google.devtools.cloudtrace.v2.SpanOrBuilder> 
-      getSpansOrBuilderList();
+  java.util.List<? extends com.google.devtools.cloudtrace.v2.SpanOrBuilder> getSpansOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A list of new spans. The span names must not match existing
    * spans, or the results are undefined.
@@ -73,6 +85,5 @@ public interface BatchWriteSpansRequestOrBuilder extends
    *
    * <code>repeated .google.devtools.cloudtrace.v2.Span spans = 2;</code>
    */
-  com.google.devtools.cloudtrace.v2.SpanOrBuilder getSpansOrBuilder(
-      int index);
+  com.google.devtools.cloudtrace.v2.SpanOrBuilder getSpansOrBuilder(int index);
 }
