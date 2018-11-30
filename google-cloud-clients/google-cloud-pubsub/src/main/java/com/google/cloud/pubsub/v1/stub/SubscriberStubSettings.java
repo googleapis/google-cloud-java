@@ -267,7 +267,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder().setMaxInboundMessageSize(20 << 20); // 20MB
+    return InstantiatingGrpcChannelProvider.newBuilder();
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
@@ -355,7 +355,9 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
 
             @Override
             public Iterable<Subscription> extractResources(ListSubscriptionsResponse payload) {
-              return payload.getSubscriptionsList();
+              return payload.getSubscriptionsList() != null
+                  ? payload.getSubscriptionsList()
+                  : ImmutableList.<Subscription>of();
             }
           };
 
@@ -389,7 +391,9 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
 
             @Override
             public Iterable<Snapshot> extractResources(ListSnapshotsResponse payload) {
-              return payload.getSnapshotsList();
+              return payload.getSnapshotsList() != null
+                  ? payload.getSnapshotsList()
+                  : ImmutableList.<Snapshot>of();
             }
           };
 
@@ -484,11 +488,6 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
                   StatusCode.Code.INTERNAL,
                   StatusCode.Code.RESOURCE_EXHAUSTED,
                   StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "http_get",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
