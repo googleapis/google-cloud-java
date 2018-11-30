@@ -23,15 +23,12 @@ import static com.google.cloud.datastore.Validator.validateNamespace;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
-/**
- * Base class for keys.
- */
+/** Base class for keys. */
 public abstract class BaseKey implements Serializable {
 
   private static final long serialVersionUID = -5897863400209818325L;
@@ -76,58 +73,40 @@ public abstract class BaseKey implements Serializable {
       return (B) this;
     }
 
-
-    /**
-     * Adds an ancestor for this key.
-     */
+    /** Adds an ancestor for this key. */
     public B addAncestor(PathElement ancestor) {
       Preconditions.checkState(ancestors.size() < MAX_PATH, "path can have at most 100 elements");
       ancestors.add(ancestor);
       return self();
     }
 
-
-    /**
-     * Adds the provided ancestors to the key.
-     */
+    /** Adds the provided ancestors to the key. */
     public B addAncestors(PathElement ancestor, PathElement... other) {
       return addAncestors(ImmutableList.<PathElement>builder().add(ancestor).add(other).build());
     }
 
-
-    /**
-     * Adds the provided ancestors to the key.
-     */
+    /** Adds the provided ancestors to the key. */
     public B addAncestors(Iterable<PathElement> ancestors) {
       ImmutableList<PathElement> list = ImmutableList.copyOf(ancestors);
-      Preconditions.checkState(this.ancestors.size() + list.size() < MAX_PATH,
-          "path can have at most 100 elements");
+      Preconditions.checkState(
+          this.ancestors.size() + list.size() < MAX_PATH, "path can have at most 100 elements");
       this.ancestors.addAll(list);
       return self();
     }
 
-
-    /**
-     * Sets the kind of the key.
-     */
+    /** Sets the kind of the key. */
     public B setKind(String kind) {
       this.kind = validateKind(kind);
       return self();
     }
 
-
-    /**
-     * Sets the project ID of the key.
-     */
+    /** Sets the project ID of the key. */
     public B setProjectId(String projectId) {
       this.projectId = validateDatabase(projectId);
       return self();
     }
 
-
-    /**
-     * Sets the namespace of the key.
-     */
+    /** Sets the namespace of the key. */
     public B setNamespace(String namespace) {
       this.namespace = validateNamespace(namespace);
       return self();
@@ -143,34 +122,22 @@ public abstract class BaseKey implements Serializable {
     this.path = path;
   }
 
-
-  /**
-   * Returns the key's projectId.
-   */
+  /** Returns the key's projectId. */
   public String getProjectId() {
     return projectId;
   }
 
-
-  /**
-   * Returns the key's namespace or {@code null} if not provided.
-   */
+  /** Returns the key's namespace or {@code null} if not provided. */
   public String getNamespace() {
     return namespace;
   }
 
-
-  /**
-   * Returns an immutable list with the key's ancestors.
-   */
+  /** Returns an immutable list with the key's ancestors. */
   public List<PathElement> getAncestors() {
     return getPath().subList(0, getPath().size() - 1);
   }
 
-
-  /**
-   * Returns an immutable list of the key's path (ancestors + self).
-   */
+  /** Returns an immutable list of the key's path (ancestors + self). */
   List<PathElement> getPath() {
     return path;
   }
@@ -179,14 +146,10 @@ public abstract class BaseKey implements Serializable {
     return getPath().get(getPath().size() - 1);
   }
 
-
-  /**
-   * Returns the key's kind.
-   */
+  /** Returns the key's kind. */
   public String getKind() {
     return getLeaf().getKind();
   }
-
 
   abstract BaseKey getParent();
 

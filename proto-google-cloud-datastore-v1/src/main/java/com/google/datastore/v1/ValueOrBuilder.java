@@ -3,11 +3,14 @@
 
 package com.google.datastore.v1;
 
-public interface ValueOrBuilder extends
+public interface ValueOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.datastore.v1.Value)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A null value.
    * </pre>
@@ -16,6 +19,8 @@ public interface ValueOrBuilder extends
    */
   int getNullValueValue();
   /**
+   *
+   *
    * <pre>
    * A null value.
    * </pre>
@@ -25,6 +30,8 @@ public interface ValueOrBuilder extends
   com.google.protobuf.NullValue getNullValue();
 
   /**
+   *
+   *
    * <pre>
    * A boolean value.
    * </pre>
@@ -34,6 +41,8 @@ public interface ValueOrBuilder extends
   boolean getBooleanValue();
 
   /**
+   *
+   *
    * <pre>
    * An integer value.
    * </pre>
@@ -43,6 +52,8 @@ public interface ValueOrBuilder extends
   long getIntegerValue();
 
   /**
+   *
+   *
    * <pre>
    * A double value.
    * </pre>
@@ -52,6 +63,8 @@ public interface ValueOrBuilder extends
   double getDoubleValue();
 
   /**
+   *
+   *
    * <pre>
    * A timestamp value.
    * When stored in the Datastore, precise only to microseconds;
@@ -62,6 +75,8 @@ public interface ValueOrBuilder extends
    */
   boolean hasTimestampValue();
   /**
+   *
+   *
    * <pre>
    * A timestamp value.
    * When stored in the Datastore, precise only to microseconds;
@@ -72,6 +87,8 @@ public interface ValueOrBuilder extends
    */
   com.google.protobuf.Timestamp getTimestampValue();
   /**
+   *
+   *
    * <pre>
    * A timestamp value.
    * When stored in the Datastore, precise only to microseconds;
@@ -83,6 +100,8 @@ public interface ValueOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getTimestampValueOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A key value.
    * </pre>
@@ -91,6 +110,8 @@ public interface ValueOrBuilder extends
    */
   boolean hasKeyValue();
   /**
+   *
+   *
    * <pre>
    * A key value.
    * </pre>
@@ -99,6 +120,8 @@ public interface ValueOrBuilder extends
    */
   com.google.datastore.v1.Key getKeyValue();
   /**
+   *
+   *
    * <pre>
    * A key value.
    * </pre>
@@ -108,6 +131,8 @@ public interface ValueOrBuilder extends
   com.google.datastore.v1.KeyOrBuilder getKeyValueOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A UTF-8 encoded string value.
    * When `exclude_from_indexes` is false (it is indexed) , may have at most 1500 bytes.
@@ -118,6 +143,8 @@ public interface ValueOrBuilder extends
    */
   java.lang.String getStringValue();
   /**
+   *
+   *
    * <pre>
    * A UTF-8 encoded string value.
    * When `exclude_from_indexes` is false (it is indexed) , may have at most 1500 bytes.
@@ -126,10 +153,11 @@ public interface ValueOrBuilder extends
    *
    * <code>string string_value = 17;</code>
    */
-  com.google.protobuf.ByteString
-      getStringValueBytes();
+  com.google.protobuf.ByteString getStringValueBytes();
 
   /**
+   *
+   *
    * <pre>
    * A blob value.
    * May have at most 1,000,000 bytes.
@@ -142,6 +170,8 @@ public interface ValueOrBuilder extends
   com.google.protobuf.ByteString getBlobValue();
 
   /**
+   *
+   *
    * <pre>
    * A geo point value representing a point on the surface of Earth.
    * </pre>
@@ -150,6 +180,8 @@ public interface ValueOrBuilder extends
    */
   boolean hasGeoPointValue();
   /**
+   *
+   *
    * <pre>
    * A geo point value representing a point on the surface of Earth.
    * </pre>
@@ -158,6 +190,8 @@ public interface ValueOrBuilder extends
    */
   com.google.type.LatLng getGeoPointValue();
   /**
+   *
+   *
    * <pre>
    * A geo point value representing a point on the surface of Earth.
    * </pre>
@@ -167,6 +201,8 @@ public interface ValueOrBuilder extends
   com.google.type.LatLngOrBuilder getGeoPointValueOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * An entity value.
    * - May have no key.
@@ -178,6 +214,8 @@ public interface ValueOrBuilder extends
    */
   boolean hasEntityValue();
   /**
+   *
+   *
    * <pre>
    * An entity value.
    * - May have no key.
@@ -189,6 +227,8 @@ public interface ValueOrBuilder extends
    */
   com.google.datastore.v1.Entity getEntityValue();
   /**
+   *
+   *
    * <pre>
    * An entity value.
    * - May have no key.
@@ -201,6 +241,8 @@ public interface ValueOrBuilder extends
   com.google.datastore.v1.EntityOrBuilder getEntityValueOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * An array value.
    * Cannot contain another array value.
@@ -212,6 +254,8 @@ public interface ValueOrBuilder extends
    */
   boolean hasArrayValue();
   /**
+   *
+   *
    * <pre>
    * An array value.
    * Cannot contain another array value.
@@ -223,6 +267,8 @@ public interface ValueOrBuilder extends
    */
   com.google.datastore.v1.ArrayValue getArrayValue();
   /**
+   *
+   *
    * <pre>
    * An array value.
    * Cannot contain another array value.
@@ -235,6 +281,8 @@ public interface ValueOrBuilder extends
   com.google.datastore.v1.ArrayValueOrBuilder getArrayValueOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The `meaning` field should only be populated for backwards compatibility.
    * </pre>
@@ -244,6 +292,8 @@ public interface ValueOrBuilder extends
   int getMeaning();
 
   /**
+   *
+   *
    * <pre>
    * If the value should be excluded from all indexes including those defined
    * explicitly.

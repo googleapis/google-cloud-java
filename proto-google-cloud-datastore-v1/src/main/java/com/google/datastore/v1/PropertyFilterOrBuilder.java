@@ -3,11 +3,14 @@
 
 package com.google.datastore.v1;
 
-public interface PropertyFilterOrBuilder extends
+public interface PropertyFilterOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.datastore.v1.PropertyFilter)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The property to filter by.
    * </pre>
@@ -16,6 +19,8 @@ public interface PropertyFilterOrBuilder extends
    */
   boolean hasProperty();
   /**
+   *
+   *
    * <pre>
    * The property to filter by.
    * </pre>
@@ -24,6 +29,8 @@ public interface PropertyFilterOrBuilder extends
    */
   com.google.datastore.v1.PropertyReference getProperty();
   /**
+   *
+   *
    * <pre>
    * The property to filter by.
    * </pre>
@@ -33,6 +40,8 @@ public interface PropertyFilterOrBuilder extends
   com.google.datastore.v1.PropertyReferenceOrBuilder getPropertyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The operator to filter by.
    * </pre>
@@ -41,6 +50,8 @@ public interface PropertyFilterOrBuilder extends
    */
   int getOpValue();
   /**
+   *
+   *
    * <pre>
    * The operator to filter by.
    * </pre>
@@ -50,6 +61,8 @@ public interface PropertyFilterOrBuilder extends
   com.google.datastore.v1.PropertyFilter.Operator getOp();
 
   /**
+   *
+   *
    * <pre>
    * The value to compare the property to.
    * </pre>
@@ -58,6 +71,8 @@ public interface PropertyFilterOrBuilder extends
    */
   boolean hasValue();
   /**
+   *
+   *
    * <pre>
    * The value to compare the property to.
    * </pre>
@@ -66,6 +81,8 @@ public interface PropertyFilterOrBuilder extends
    */
   com.google.datastore.v1.Value getValue();
   /**
+   *
+   *
    * <pre>
    * The value to compare the property to.
    * </pre>

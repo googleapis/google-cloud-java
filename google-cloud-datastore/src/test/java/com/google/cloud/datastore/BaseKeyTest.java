@@ -20,11 +20,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.List;
+import org.junit.Test;
 
 public class BaseKeyTest {
 
@@ -45,7 +43,6 @@ public class BaseKeyTest {
       path.add(PathElement.of(kind));
       return new BaseKey(projectId, namespace, path.build()) {
 
-
         @Override
         protected BaseKey getParent() {
           return null;
@@ -63,7 +60,6 @@ public class BaseKeyTest {
     assertEquals("ds2", key.getProjectId());
   }
 
-
   @Test(expected = IllegalArgumentException.class)
   public void testBadDatasetInConstructor() throws Exception {
     new Builder(" ", "k");
@@ -75,7 +71,6 @@ public class BaseKeyTest {
     builder.setProjectId(" ");
   }
 
-
   @Test
   public void testNamespace() throws Exception {
     Builder builder = new Builder("ds", "k");
@@ -86,7 +81,6 @@ public class BaseKeyTest {
     assertEquals("ns", key.getNamespace());
   }
 
-
   @Test
   public void testKind() throws Exception {
     Builder builder = new Builder("ds", "k1");
@@ -95,7 +89,6 @@ public class BaseKeyTest {
     key = builder.setKind("k2").build();
     assertEquals("k2", key.getKind());
   }
-
 
   @Test(expected = NullPointerException.class)
   public void testNoKind() throws Exception {
@@ -114,7 +107,6 @@ public class BaseKeyTest {
     builder.setKind("");
   }
 
-
   @Test
   public void testAncestors() throws Exception {
     Builder builder = new Builder("ds", "k");
@@ -129,4 +121,3 @@ public class BaseKeyTest {
     assertEquals(path, key.getAncestors());
   }
 }
-

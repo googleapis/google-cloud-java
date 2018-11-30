@@ -31,9 +31,7 @@ import com.google.datastore.v1.RollbackResponse;
 import com.google.datastore.v1.RunQueryRequest;
 import com.google.datastore.v1.RunQueryResponse;
 
-/**
- * Provides access to the remote Datastore service.
- */
+/** Provides access to the remote Datastore service. */
 public interface DatastoreRpc extends ServiceRpc {
 
   /**

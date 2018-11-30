@@ -4,6 +4,8 @@
 package com.google.datastore.v1;
 
 /**
+ *
+ *
  * <pre>
  * A unique identifier for an entity.
  * If a key's partition ID or any of its path kinds or names are
@@ -13,24 +15,25 @@ package com.google.datastore.v1;
  *
  * Protobuf type {@code google.datastore.v1.Key}
  */
-public  final class Key extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Key extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.datastore.v1.Key)
     KeyOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Key.newBuilder() to construct.
   private Key(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Key() {
     path_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Key(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,42 +53,46 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.datastore.v1.PartitionId.Builder subBuilder = null;
-            if (partitionId_ != null) {
-              subBuilder = partitionId_.toBuilder();
-            }
-            partitionId_ = input.readMessage(com.google.datastore.v1.PartitionId.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(partitionId_);
-              partitionId_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.datastore.v1.PartitionId.Builder subBuilder = null;
+              if (partitionId_ != null) {
+                subBuilder = partitionId_.toBuilder();
+              }
+              partitionId_ =
+                  input.readMessage(
+                      com.google.datastore.v1.PartitionId.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(partitionId_);
+                partitionId_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              path_ = new java.util.ArrayList<com.google.datastore.v1.Key.PathElement>();
-              mutable_bitField0_ |= 0x00000002;
+              break;
             }
-            path_.add(
-                input.readMessage(com.google.datastore.v1.Key.PathElement.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                path_ = new java.util.ArrayList<com.google.datastore.v1.Key.PathElement>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              path_.add(
+                  input.readMessage(
+                      com.google.datastore.v1.Key.PathElement.parser(), extensionRegistry));
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         path_ = java.util.Collections.unmodifiableList(path_);
@@ -94,24 +101,27 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.EntityProto.internal_static_google_datastore_v1_Key_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.datastore.v1.EntityProto.internal_static_google_datastore_v1_Key_fieldAccessorTable
-        .ensureFieldAccessorsInitialized(
-            com.google.datastore.v1.Key.class, com.google.datastore.v1.Key.Builder.class);
+    return com.google.datastore.v1.EntityProto
+        .internal_static_google_datastore_v1_Key_fieldAccessorTable.ensureFieldAccessorsInitialized(
+        com.google.datastore.v1.Key.class, com.google.datastore.v1.Key.Builder.class);
   }
 
-  public interface PathElementOrBuilder extends
+  public interface PathElementOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.datastore.v1.Key.PathElement)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * The kind of the entity.
      * A kind matching regex `__.*__` is reserved/read-only.
@@ -123,6 +133,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getKind();
     /**
+     *
+     *
      * <pre>
      * The kind of the entity.
      * A kind matching regex `__.*__` is reserved/read-only.
@@ -132,10 +144,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string kind = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getKindBytes();
+    com.google.protobuf.ByteString getKindBytes();
 
     /**
+     *
+     *
      * <pre>
      * The auto-allocated ID of the entity.
      * Never equal to zero. Values less than zero are discouraged and may not
@@ -147,6 +160,8 @@ private static final long serialVersionUID = 0L;
     long getId();
 
     /**
+     *
+     *
      * <pre>
      * The name of the entity.
      * A name matching regex `__.*__` is reserved/read-only.
@@ -158,6 +173,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getName();
     /**
+     *
+     *
      * <pre>
      * The name of the entity.
      * A name matching regex `__.*__` is reserved/read-only.
@@ -167,12 +184,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 3;</code>
      */
-    com.google.protobuf.ByteString
-        getNameBytes();
+    com.google.protobuf.ByteString getNameBytes();
 
     public com.google.datastore.v1.Key.PathElement.IdTypeCase getIdTypeCase();
   }
   /**
+   *
+   *
    * <pre>
    * A (kind, ID/name) pair used to construct a key path.
    * If either name or ID is set, the element is complete.
@@ -181,24 +199,25 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.datastore.v1.Key.PathElement}
    */
-  public  static final class PathElement extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class PathElement extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.datastore.v1.Key.PathElement)
       PathElementOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use PathElement.newBuilder() to construct.
     private PathElement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private PathElement() {
       kind_ = "";
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private PathElement(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -218,69 +237,73 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              kind_ = s;
-              break;
-            }
-            case 16: {
-              idTypeCase_ = 2;
-              idType_ = input.readInt64();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-              idTypeCase_ = 3;
-              idType_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                kind_ = s;
+                break;
               }
-              break;
-            }
+            case 16:
+              {
+                idTypeCase_ = 2;
+                idType_ = input.readInt64();
+                break;
+              }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                idTypeCase_ = 3;
+                idType_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.datastore.v1.EntityProto.internal_static_google_datastore_v1_Key_PathElement_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.datastore.v1.EntityProto
+          .internal_static_google_datastore_v1_Key_PathElement_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.datastore.v1.EntityProto.internal_static_google_datastore_v1_Key_PathElement_fieldAccessorTable
+      return com.google.datastore.v1.EntityProto
+          .internal_static_google_datastore_v1_Key_PathElement_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.datastore.v1.Key.PathElement.class, com.google.datastore.v1.Key.PathElement.Builder.class);
+              com.google.datastore.v1.Key.PathElement.class,
+              com.google.datastore.v1.Key.PathElement.Builder.class);
     }
 
     private int idTypeCase_ = 0;
     private java.lang.Object idType_;
-    public enum IdTypeCase
-        implements com.google.protobuf.Internal.EnumLite {
+
+    public enum IdTypeCase implements com.google.protobuf.Internal.EnumLite {
       ID(2),
       NAME(3),
       IDTYPE_NOT_SET(0);
       private final int value;
+
       private IdTypeCase(int value) {
         this.value = value;
       }
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
+      /** @deprecated Use {@link #forNumber(int)} instead. */
       @java.lang.Deprecated
       public static IdTypeCase valueOf(int value) {
         return forNumber(value);
@@ -288,26 +311,31 @@ private static final long serialVersionUID = 0L;
 
       public static IdTypeCase forNumber(int value) {
         switch (value) {
-          case 2: return ID;
-          case 3: return NAME;
-          case 0: return IDTYPE_NOT_SET;
-          default: return null;
+          case 2:
+            return ID;
+          case 3:
+            return NAME;
+          case 0:
+            return IDTYPE_NOT_SET;
+          default:
+            return null;
         }
       }
+
       public int getNumber() {
         return this.value;
       }
     };
 
-    public IdTypeCase
-    getIdTypeCase() {
-      return IdTypeCase.forNumber(
-          idTypeCase_);
+    public IdTypeCase getIdTypeCase() {
+      return IdTypeCase.forNumber(idTypeCase_);
     }
 
     public static final int KIND_FIELD_NUMBER = 1;
     private volatile java.lang.Object kind_;
     /**
+     *
+     *
      * <pre>
      * The kind of the entity.
      * A kind matching regex `__.*__` is reserved/read-only.
@@ -322,14 +350,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         kind_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The kind of the entity.
      * A kind matching regex `__.*__` is reserved/read-only.
@@ -339,13 +368,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string kind = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getKindBytes() {
+    public com.google.protobuf.ByteString getKindBytes() {
       java.lang.Object ref = kind_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         kind_ = b;
         return b;
       } else {
@@ -355,6 +382,8 @@ private static final long serialVersionUID = 0L;
 
     public static final int ID_FIELD_NUMBER = 2;
     /**
+     *
+     *
      * <pre>
      * The auto-allocated ID of the entity.
      * Never equal to zero. Values less than zero are discouraged and may not
@@ -372,6 +401,8 @@ private static final long serialVersionUID = 0L;
 
     public static final int NAME_FIELD_NUMBER = 3;
     /**
+     *
+     *
      * <pre>
      * The name of the entity.
      * A name matching regex `__.*__` is reserved/read-only.
@@ -389,8 +420,7 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (idTypeCase_ == 3) {
           idType_ = s;
@@ -399,6 +429,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the entity.
      * A name matching regex `__.*__` is reserved/read-only.
@@ -408,16 +440,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = "";
       if (idTypeCase_ == 3) {
         ref = idType_;
       }
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (idTypeCase_ == 3) {
           idType_ = b;
         }
@@ -428,6 +458,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -439,14 +470,12 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getKindBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, kind_);
       }
       if (idTypeCase_ == 2) {
-        output.writeInt64(
-            2, (long)((java.lang.Long) idType_));
+        output.writeInt64(2, (long) ((java.lang.Long) idType_));
       }
       if (idTypeCase_ == 3) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, idType_);
@@ -464,9 +493,9 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, kind_);
       }
       if (idTypeCase_ == 2) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(
-              2, (long)((java.lang.Long) idType_));
+        size +=
+            com.google.protobuf.CodedOutputStream.computeInt64Size(
+                2, (long) ((java.lang.Long) idType_));
       }
       if (idTypeCase_ == 3) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, idType_);
@@ -479,7 +508,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.datastore.v1.Key.PathElement)) {
         return super.equals(obj);
@@ -487,19 +516,15 @@ private static final long serialVersionUID = 0L;
       com.google.datastore.v1.Key.PathElement other = (com.google.datastore.v1.Key.PathElement) obj;
 
       boolean result = true;
-      result = result && getKind()
-          .equals(other.getKind());
-      result = result && getIdTypeCase().equals(
-          other.getIdTypeCase());
+      result = result && getKind().equals(other.getKind());
+      result = result && getIdTypeCase().equals(other.getIdTypeCase());
       if (!result) return false;
       switch (idTypeCase_) {
         case 2:
-          result = result && (getId()
-              == other.getId());
+          result = result && (getId() == other.getId());
           break;
         case 3:
-          result = result && getName()
-              .equals(other.getName());
+          result = result && getName().equals(other.getName());
           break;
         case 0:
         default:
@@ -520,8 +545,7 @@ private static final long serialVersionUID = 0L;
       switch (idTypeCase_) {
         case 2:
           hash = (37 * hash) + ID_FIELD_NUMBER;
-          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-              getId());
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getId());
           break;
         case 3:
           hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -535,88 +559,94 @@ private static final long serialVersionUID = 0L;
       return hash;
     }
 
-    public static com.google.datastore.v1.Key.PathElement parseFrom(
-        java.nio.ByteBuffer data)
+    public static com.google.datastore.v1.Key.PathElement parseFrom(java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.datastore.v1.Key.PathElement parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.datastore.v1.Key.PathElement parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.datastore.v1.Key.PathElement parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.datastore.v1.Key.PathElement parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.datastore.v1.Key.PathElement parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.datastore.v1.Key.PathElement parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.datastore.v1.Key.PathElement parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static com.google.datastore.v1.Key.PathElement parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
+
     public static com.google.datastore.v1.Key.PathElement parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.datastore.v1.Key.PathElement parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.datastore.v1.Key.PathElement parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.datastore.v1.Key.PathElement parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(com.google.datastore.v1.Key.PathElement prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -626,6 +656,8 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * A (kind, ID/name) pair used to construct a key path.
      * If either name or ID is set, the element is complete.
@@ -634,21 +666,24 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.datastore.v1.Key.PathElement}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.datastore.v1.Key.PathElement)
         com.google.datastore.v1.Key.PathElementOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.datastore.v1.EntityProto.internal_static_google_datastore_v1_Key_PathElement_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.datastore.v1.EntityProto
+            .internal_static_google_datastore_v1_Key_PathElement_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.datastore.v1.EntityProto.internal_static_google_datastore_v1_Key_PathElement_fieldAccessorTable
+        return com.google.datastore.v1.EntityProto
+            .internal_static_google_datastore_v1_Key_PathElement_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.datastore.v1.Key.PathElement.class, com.google.datastore.v1.Key.PathElement.Builder.class);
+                com.google.datastore.v1.Key.PathElement.class,
+                com.google.datastore.v1.Key.PathElement.Builder.class);
       }
 
       // Construct using com.google.datastore.v1.Key.PathElement.newBuilder()
@@ -656,16 +691,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -677,9 +711,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.datastore.v1.EntityProto.internal_static_google_datastore_v1_Key_PathElement_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.datastore.v1.EntityProto
+            .internal_static_google_datastore_v1_Key_PathElement_descriptor;
       }
 
       @java.lang.Override
@@ -698,7 +732,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.datastore.v1.Key.PathElement buildPartial() {
-        com.google.datastore.v1.Key.PathElement result = new com.google.datastore.v1.Key.PathElement(this);
+        com.google.datastore.v1.Key.PathElement result =
+            new com.google.datastore.v1.Key.PathElement(this);
         result.kind_ = kind_;
         if (idTypeCase_ == 2) {
           result.idType_ = idType_;
@@ -715,38 +750,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.datastore.v1.Key.PathElement) {
-          return mergeFrom((com.google.datastore.v1.Key.PathElement)other);
+          return mergeFrom((com.google.datastore.v1.Key.PathElement) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -760,19 +798,22 @@ private static final long serialVersionUID = 0L;
           onChanged();
         }
         switch (other.getIdTypeCase()) {
-          case ID: {
-            setId(other.getId());
-            break;
-          }
-          case NAME: {
-            idTypeCase_ = 3;
-            idType_ = other.idType_;
-            onChanged();
-            break;
-          }
-          case IDTYPE_NOT_SET: {
-            break;
-          }
+          case ID:
+            {
+              setId(other.getId());
+              break;
+            }
+          case NAME:
+            {
+              idTypeCase_ = 3;
+              idType_ = other.idType_;
+              onChanged();
+              break;
+            }
+          case IDTYPE_NOT_SET:
+            {
+              break;
+            }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -802,12 +843,12 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+
       private int idTypeCase_ = 0;
       private java.lang.Object idType_;
-      public IdTypeCase
-          getIdTypeCase() {
-        return IdTypeCase.forNumber(
-            idTypeCase_);
+
+      public IdTypeCase getIdTypeCase() {
+        return IdTypeCase.forNumber(idTypeCase_);
       }
 
       public Builder clearIdType() {
@@ -817,9 +858,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-
       private java.lang.Object kind_ = "";
       /**
+       *
+       *
        * <pre>
        * The kind of the entity.
        * A kind matching regex `__.*__` is reserved/read-only.
@@ -832,8 +874,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getKind() {
         java.lang.Object ref = kind_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           kind_ = s;
           return s;
@@ -842,6 +883,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The kind of the entity.
        * A kind matching regex `__.*__` is reserved/read-only.
@@ -851,13 +894,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string kind = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getKindBytes() {
+      public com.google.protobuf.ByteString getKindBytes() {
         java.lang.Object ref = kind_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           kind_ = b;
           return b;
         } else {
@@ -865,6 +906,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The kind of the entity.
        * A kind matching regex `__.*__` is reserved/read-only.
@@ -874,17 +917,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string kind = 1;</code>
        */
-      public Builder setKind(
-          java.lang.String value) {
+      public Builder setKind(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         kind_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The kind of the entity.
        * A kind matching regex `__.*__` is reserved/read-only.
@@ -895,12 +939,14 @@ private static final long serialVersionUID = 0L;
        * <code>string kind = 1;</code>
        */
       public Builder clearKind() {
-        
+
         kind_ = getDefaultInstance().getKind();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The kind of the entity.
        * A kind matching regex `__.*__` is reserved/read-only.
@@ -910,19 +956,20 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string kind = 1;</code>
        */
-      public Builder setKindBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setKindBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         kind_ = value;
         onChanged();
         return this;
       }
 
       /**
+       *
+       *
        * <pre>
        * The auto-allocated ID of the entity.
        * Never equal to zero. Values less than zero are discouraged and may not
@@ -938,6 +985,8 @@ private static final long serialVersionUID = 0L;
         return 0L;
       }
       /**
+       *
+       *
        * <pre>
        * The auto-allocated ID of the entity.
        * Never equal to zero. Values less than zero are discouraged and may not
@@ -953,6 +1002,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The auto-allocated ID of the entity.
        * Never equal to zero. Values less than zero are discouraged and may not
@@ -971,6 +1022,8 @@ private static final long serialVersionUID = 0L;
       }
 
       /**
+       *
+       *
        * <pre>
        * The name of the entity.
        * A name matching regex `__.*__` is reserved/read-only.
@@ -986,8 +1039,7 @@ private static final long serialVersionUID = 0L;
           ref = idType_;
         }
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (idTypeCase_ == 3) {
             idType_ = s;
@@ -998,6 +1050,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The name of the entity.
        * A name matching regex `__.*__` is reserved/read-only.
@@ -1007,16 +1061,14 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string name = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
+      public com.google.protobuf.ByteString getNameBytes() {
         java.lang.Object ref = "";
         if (idTypeCase_ == 3) {
           ref = idType_;
         }
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           if (idTypeCase_ == 3) {
             idType_ = b;
           }
@@ -1026,6 +1078,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The name of the entity.
        * A name matching regex `__.*__` is reserved/read-only.
@@ -1035,17 +1089,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string name = 3;</code>
        */
-      public Builder setName(
-          java.lang.String value) {
+      public Builder setName(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  idTypeCase_ = 3;
+          throw new NullPointerException();
+        }
+        idTypeCase_ = 3;
         idType_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The name of the entity.
        * A name matching regex `__.*__` is reserved/read-only.
@@ -1064,6 +1119,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The name of the entity.
        * A name matching regex `__.*__` is reserved/read-only.
@@ -1073,17 +1130,17 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string name = 3;</code>
        */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
         idTypeCase_ = 3;
         idType_ = value;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1096,12 +1153,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.datastore.v1.Key.PathElement)
     }
 
     // @@protoc_insertion_point(class_scope:google.datastore.v1.Key.PathElement)
     private static final com.google.datastore.v1.Key.PathElement DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.datastore.v1.Key.PathElement();
     }
@@ -1110,16 +1167,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<PathElement>
-        PARSER = new com.google.protobuf.AbstractParser<PathElement>() {
-      @java.lang.Override
-      public PathElement parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PathElement(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<PathElement> PARSER =
+        new com.google.protobuf.AbstractParser<PathElement>() {
+          @java.lang.Override
+          public PathElement parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new PathElement(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<PathElement> parser() {
       return PARSER;
@@ -1134,13 +1191,14 @@ private static final long serialVersionUID = 0L;
     public com.google.datastore.v1.Key.PathElement getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private int bitField0_;
   public static final int PARTITION_ID_FIELD_NUMBER = 1;
   private com.google.datastore.v1.PartitionId partitionId_;
   /**
+   *
+   *
    * <pre>
    * Entities are partitioned into subsets, currently identified by a project
    * ID and namespace ID.
@@ -1153,6 +1211,8 @@ private static final long serialVersionUID = 0L;
     return partitionId_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Entities are partitioned into subsets, currently identified by a project
    * ID and namespace ID.
@@ -1162,9 +1222,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.datastore.v1.PartitionId partition_id = 1;</code>
    */
   public com.google.datastore.v1.PartitionId getPartitionId() {
-    return partitionId_ == null ? com.google.datastore.v1.PartitionId.getDefaultInstance() : partitionId_;
+    return partitionId_ == null
+        ? com.google.datastore.v1.PartitionId.getDefaultInstance()
+        : partitionId_;
   }
   /**
+   *
+   *
    * <pre>
    * Entities are partitioned into subsets, currently identified by a project
    * ID and namespace ID.
@@ -1180,6 +1244,8 @@ private static final long serialVersionUID = 0L;
   public static final int PATH_FIELD_NUMBER = 2;
   private java.util.List<com.google.datastore.v1.Key.PathElement> path_;
   /**
+   *
+   *
    * <pre>
    * The entity path.
    * An entity path consists of one or more elements composed of a kind and a
@@ -1203,6 +1269,8 @@ private static final long serialVersionUID = 0L;
     return path_;
   }
   /**
+   *
+   *
    * <pre>
    * The entity path.
    * An entity path consists of one or more elements composed of a kind and a
@@ -1222,11 +1290,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.datastore.v1.Key.PathElement path = 2;</code>
    */
-  public java.util.List<? extends com.google.datastore.v1.Key.PathElementOrBuilder> 
+  public java.util.List<? extends com.google.datastore.v1.Key.PathElementOrBuilder>
       getPathOrBuilderList() {
     return path_;
   }
   /**
+   *
+   *
    * <pre>
    * The entity path.
    * An entity path consists of one or more elements composed of a kind and a
@@ -1250,6 +1320,8 @@ private static final long serialVersionUID = 0L;
     return path_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The entity path.
    * An entity path consists of one or more elements composed of a kind and a
@@ -1273,6 +1345,8 @@ private static final long serialVersionUID = 0L;
     return path_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The entity path.
    * An entity path consists of one or more elements composed of a kind and a
@@ -1292,12 +1366,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.datastore.v1.Key.PathElement path = 2;</code>
    */
-  public com.google.datastore.v1.Key.PathElementOrBuilder getPathOrBuilder(
-      int index) {
+  public com.google.datastore.v1.Key.PathElementOrBuilder getPathOrBuilder(int index) {
     return path_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1309,8 +1383,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (partitionId_ != null) {
       output.writeMessage(1, getPartitionId());
     }
@@ -1327,12 +1400,10 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (partitionId_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getPartitionId());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getPartitionId());
     }
     for (int i = 0; i < path_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, path_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, path_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1342,7 +1413,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.datastore.v1.Key)) {
       return super.equals(obj);
@@ -1352,11 +1423,9 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (hasPartitionId() == other.hasPartitionId());
     if (hasPartitionId()) {
-      result = result && getPartitionId()
-          .equals(other.getPartitionId());
+      result = result && getPartitionId().equals(other.getPartitionId());
     }
-    result = result && getPathList()
-        .equals(other.getPathList());
+    result = result && getPathList().equals(other.getPathList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1381,97 +1450,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.datastore.v1.Key parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.datastore.v1.Key parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.Key parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.datastore.v1.Key parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.datastore.v1.Key parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.Key parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.Key parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.Key parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.Key parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.Key parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.datastore.v1.Key parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.Key parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.datastore.v1.Key parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static com.google.datastore.v1.Key parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.Key parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.datastore.v1.Key prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A unique identifier for an entity.
    * If a key's partition ID or any of its path kinds or names are
@@ -1481,19 +1556,19 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.datastore.v1.Key}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.datastore.v1.Key)
       com.google.datastore.v1.KeyOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.datastore.v1.EntityProto.internal_static_google_datastore_v1_Key_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.datastore.v1.EntityProto.internal_static_google_datastore_v1_Key_fieldAccessorTable
+      return com.google.datastore.v1.EntityProto
+          .internal_static_google_datastore_v1_Key_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.datastore.v1.Key.class, com.google.datastore.v1.Key.Builder.class);
     }
@@ -1503,17 +1578,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPathFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1533,8 +1608,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.datastore.v1.EntityProto.internal_static_google_datastore_v1_Key_descriptor;
     }
 
@@ -1580,38 +1654,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.datastore.v1.Key) {
-        return mergeFrom((com.google.datastore.v1.Key)other);
+        return mergeFrom((com.google.datastore.v1.Key) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1641,9 +1716,10 @@ private static final long serialVersionUID = 0L;
             pathBuilder_ = null;
             path_ = other.path_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            pathBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getPathFieldBuilder() : null;
+            pathBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPathFieldBuilder()
+                    : null;
           } else {
             pathBuilder_.addAllMessages(other.path_);
           }
@@ -1677,12 +1753,18 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private com.google.datastore.v1.PartitionId partitionId_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.datastore.v1.PartitionId, com.google.datastore.v1.PartitionId.Builder, com.google.datastore.v1.PartitionIdOrBuilder> partitionIdBuilder_;
+            com.google.datastore.v1.PartitionId,
+            com.google.datastore.v1.PartitionId.Builder,
+            com.google.datastore.v1.PartitionIdOrBuilder>
+        partitionIdBuilder_;
     /**
+     *
+     *
      * <pre>
      * Entities are partitioned into subsets, currently identified by a project
      * ID and namespace ID.
@@ -1695,6 +1777,8 @@ private static final long serialVersionUID = 0L;
       return partitionIdBuilder_ != null || partitionId_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Entities are partitioned into subsets, currently identified by a project
      * ID and namespace ID.
@@ -1705,12 +1789,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.datastore.v1.PartitionId getPartitionId() {
       if (partitionIdBuilder_ == null) {
-        return partitionId_ == null ? com.google.datastore.v1.PartitionId.getDefaultInstance() : partitionId_;
+        return partitionId_ == null
+            ? com.google.datastore.v1.PartitionId.getDefaultInstance()
+            : partitionId_;
       } else {
         return partitionIdBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Entities are partitioned into subsets, currently identified by a project
      * ID and namespace ID.
@@ -1733,6 +1821,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities are partitioned into subsets, currently identified by a project
      * ID and namespace ID.
@@ -1741,8 +1831,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.datastore.v1.PartitionId partition_id = 1;</code>
      */
-    public Builder setPartitionId(
-        com.google.datastore.v1.PartitionId.Builder builderForValue) {
+    public Builder setPartitionId(com.google.datastore.v1.PartitionId.Builder builderForValue) {
       if (partitionIdBuilder_ == null) {
         partitionId_ = builderForValue.build();
         onChanged();
@@ -1753,6 +1842,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities are partitioned into subsets, currently identified by a project
      * ID and namespace ID.
@@ -1765,7 +1856,9 @@ private static final long serialVersionUID = 0L;
       if (partitionIdBuilder_ == null) {
         if (partitionId_ != null) {
           partitionId_ =
-            com.google.datastore.v1.PartitionId.newBuilder(partitionId_).mergeFrom(value).buildPartial();
+              com.google.datastore.v1.PartitionId.newBuilder(partitionId_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           partitionId_ = value;
         }
@@ -1777,6 +1870,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities are partitioned into subsets, currently identified by a project
      * ID and namespace ID.
@@ -1797,6 +1892,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities are partitioned into subsets, currently identified by a project
      * ID and namespace ID.
@@ -1806,11 +1903,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.datastore.v1.PartitionId partition_id = 1;</code>
      */
     public com.google.datastore.v1.PartitionId.Builder getPartitionIdBuilder() {
-      
+
       onChanged();
       return getPartitionIdFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Entities are partitioned into subsets, currently identified by a project
      * ID and namespace ID.
@@ -1823,11 +1922,14 @@ private static final long serialVersionUID = 0L;
       if (partitionIdBuilder_ != null) {
         return partitionIdBuilder_.getMessageOrBuilder();
       } else {
-        return partitionId_ == null ?
-            com.google.datastore.v1.PartitionId.getDefaultInstance() : partitionId_;
+        return partitionId_ == null
+            ? com.google.datastore.v1.PartitionId.getDefaultInstance()
+            : partitionId_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Entities are partitioned into subsets, currently identified by a project
      * ID and namespace ID.
@@ -1837,32 +1939,41 @@ private static final long serialVersionUID = 0L;
      * <code>.google.datastore.v1.PartitionId partition_id = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.datastore.v1.PartitionId, com.google.datastore.v1.PartitionId.Builder, com.google.datastore.v1.PartitionIdOrBuilder> 
+            com.google.datastore.v1.PartitionId,
+            com.google.datastore.v1.PartitionId.Builder,
+            com.google.datastore.v1.PartitionIdOrBuilder>
         getPartitionIdFieldBuilder() {
       if (partitionIdBuilder_ == null) {
-        partitionIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.datastore.v1.PartitionId, com.google.datastore.v1.PartitionId.Builder, com.google.datastore.v1.PartitionIdOrBuilder>(
-                getPartitionId(),
-                getParentForChildren(),
-                isClean());
+        partitionIdBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.datastore.v1.PartitionId,
+                com.google.datastore.v1.PartitionId.Builder,
+                com.google.datastore.v1.PartitionIdOrBuilder>(
+                getPartitionId(), getParentForChildren(), isClean());
         partitionId_ = null;
       }
       return partitionIdBuilder_;
     }
 
     private java.util.List<com.google.datastore.v1.Key.PathElement> path_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensurePathIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         path_ = new java.util.ArrayList<com.google.datastore.v1.Key.PathElement>(path_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.Key.PathElement, com.google.datastore.v1.Key.PathElement.Builder, com.google.datastore.v1.Key.PathElementOrBuilder> pathBuilder_;
+            com.google.datastore.v1.Key.PathElement,
+            com.google.datastore.v1.Key.PathElement.Builder,
+            com.google.datastore.v1.Key.PathElementOrBuilder>
+        pathBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The entity path.
      * An entity path consists of one or more elements composed of a kind and a
@@ -1890,6 +2001,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The entity path.
      * An entity path consists of one or more elements composed of a kind and a
@@ -1917,6 +2030,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The entity path.
      * An entity path consists of one or more elements composed of a kind and a
@@ -1944,6 +2059,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The entity path.
      * An entity path consists of one or more elements composed of a kind and a
@@ -1963,8 +2080,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key.PathElement path = 2;</code>
      */
-    public Builder setPath(
-        int index, com.google.datastore.v1.Key.PathElement value) {
+    public Builder setPath(int index, com.google.datastore.v1.Key.PathElement value) {
       if (pathBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1978,6 +2094,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The entity path.
      * An entity path consists of one or more elements composed of a kind and a
@@ -2009,6 +2127,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The entity path.
      * An entity path consists of one or more elements composed of a kind and a
@@ -2042,6 +2162,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The entity path.
      * An entity path consists of one or more elements composed of a kind and a
@@ -2061,8 +2183,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key.PathElement path = 2;</code>
      */
-    public Builder addPath(
-        int index, com.google.datastore.v1.Key.PathElement value) {
+    public Builder addPath(int index, com.google.datastore.v1.Key.PathElement value) {
       if (pathBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2076,6 +2197,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The entity path.
      * An entity path consists of one or more elements composed of a kind and a
@@ -2095,8 +2218,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key.PathElement path = 2;</code>
      */
-    public Builder addPath(
-        com.google.datastore.v1.Key.PathElement.Builder builderForValue) {
+    public Builder addPath(com.google.datastore.v1.Key.PathElement.Builder builderForValue) {
       if (pathBuilder_ == null) {
         ensurePathIsMutable();
         path_.add(builderForValue.build());
@@ -2107,6 +2229,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The entity path.
      * An entity path consists of one or more elements composed of a kind and a
@@ -2138,6 +2262,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The entity path.
      * An entity path consists of one or more elements composed of a kind and a
@@ -2161,8 +2287,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.datastore.v1.Key.PathElement> values) {
       if (pathBuilder_ == null) {
         ensurePathIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, path_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, path_);
         onChanged();
       } else {
         pathBuilder_.addAllMessages(values);
@@ -2170,6 +2295,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The entity path.
      * An entity path consists of one or more elements composed of a kind and a
@@ -2200,6 +2327,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The entity path.
      * An entity path consists of one or more elements composed of a kind and a
@@ -2230,6 +2359,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The entity path.
      * An entity path consists of one or more elements composed of a kind and a
@@ -2249,11 +2380,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key.PathElement path = 2;</code>
      */
-    public com.google.datastore.v1.Key.PathElement.Builder getPathBuilder(
-        int index) {
+    public com.google.datastore.v1.Key.PathElement.Builder getPathBuilder(int index) {
       return getPathFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The entity path.
      * An entity path consists of one or more elements composed of a kind and a
@@ -2273,14 +2405,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key.PathElement path = 2;</code>
      */
-    public com.google.datastore.v1.Key.PathElementOrBuilder getPathOrBuilder(
-        int index) {
+    public com.google.datastore.v1.Key.PathElementOrBuilder getPathOrBuilder(int index) {
       if (pathBuilder_ == null) {
-        return path_.get(index);  } else {
+        return path_.get(index);
+      } else {
         return pathBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The entity path.
      * An entity path consists of one or more elements composed of a kind and a
@@ -2300,8 +2434,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key.PathElement path = 2;</code>
      */
-    public java.util.List<? extends com.google.datastore.v1.Key.PathElementOrBuilder> 
-         getPathOrBuilderList() {
+    public java.util.List<? extends com.google.datastore.v1.Key.PathElementOrBuilder>
+        getPathOrBuilderList() {
       if (pathBuilder_ != null) {
         return pathBuilder_.getMessageOrBuilderList();
       } else {
@@ -2309,6 +2443,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The entity path.
      * An entity path consists of one or more elements composed of a kind and a
@@ -2329,10 +2465,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.datastore.v1.Key.PathElement path = 2;</code>
      */
     public com.google.datastore.v1.Key.PathElement.Builder addPathBuilder() {
-      return getPathFieldBuilder().addBuilder(
-          com.google.datastore.v1.Key.PathElement.getDefaultInstance());
+      return getPathFieldBuilder()
+          .addBuilder(com.google.datastore.v1.Key.PathElement.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The entity path.
      * An entity path consists of one or more elements composed of a kind and a
@@ -2352,12 +2490,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key.PathElement path = 2;</code>
      */
-    public com.google.datastore.v1.Key.PathElement.Builder addPathBuilder(
-        int index) {
-      return getPathFieldBuilder().addBuilder(
-          index, com.google.datastore.v1.Key.PathElement.getDefaultInstance());
+    public com.google.datastore.v1.Key.PathElement.Builder addPathBuilder(int index) {
+      return getPathFieldBuilder()
+          .addBuilder(index, com.google.datastore.v1.Key.PathElement.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The entity path.
      * An entity path consists of one or more elements composed of a kind and a
@@ -2377,16 +2516,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key.PathElement path = 2;</code>
      */
-    public java.util.List<com.google.datastore.v1.Key.PathElement.Builder> 
-         getPathBuilderList() {
+    public java.util.List<com.google.datastore.v1.Key.PathElement.Builder> getPathBuilderList() {
       return getPathFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.Key.PathElement, com.google.datastore.v1.Key.PathElement.Builder, com.google.datastore.v1.Key.PathElementOrBuilder> 
+            com.google.datastore.v1.Key.PathElement,
+            com.google.datastore.v1.Key.PathElement.Builder,
+            com.google.datastore.v1.Key.PathElementOrBuilder>
         getPathFieldBuilder() {
       if (pathBuilder_ == null) {
-        pathBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.datastore.v1.Key.PathElement, com.google.datastore.v1.Key.PathElement.Builder, com.google.datastore.v1.Key.PathElementOrBuilder>(
+        pathBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.datastore.v1.Key.PathElement,
+                com.google.datastore.v1.Key.PathElement.Builder,
+                com.google.datastore.v1.Key.PathElementOrBuilder>(
                 path_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
@@ -2395,9 +2539,9 @@ private static final long serialVersionUID = 0L;
       }
       return pathBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2407,12 +2551,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.datastore.v1.Key)
   }
 
   // @@protoc_insertion_point(class_scope:google.datastore.v1.Key)
   private static final com.google.datastore.v1.Key DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.datastore.v1.Key();
   }
@@ -2421,16 +2565,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Key>
-      PARSER = new com.google.protobuf.AbstractParser<Key>() {
-    @java.lang.Override
-    public Key parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Key(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Key> PARSER =
+      new com.google.protobuf.AbstractParser<Key>() {
+        @java.lang.Override
+        public Key parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Key(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Key> parser() {
     return PARSER;
@@ -2445,6 +2589,4 @@ private static final long serialVersionUID = 0L;
   public com.google.datastore.v1.Key getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

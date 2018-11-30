@@ -41,15 +41,12 @@ public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntit
       super(ResultType.PROJECTION_ENTITY);
     }
 
-    /**
-     * Clears the projection clause.
-     */
+    /** Clears the projection clause. */
     @Override
     public Builder clearProjection() {
       super.clearProjection();
       return this;
     }
-
 
     /**
      * Sets the query's projection clause (clearing any previously specified Projection settings).
@@ -60,24 +57,19 @@ public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntit
       return this;
     }
 
-    /**
-     * Adds one or more projections to the existing projection clause.
-     */
+    /** Adds one or more projections to the existing projection clause. */
     @Override
     public Builder addProjection(String projection, String... others) {
       super.addProjection(projection, others);
       return this;
     }
 
-    /**
-     * Clears the group by clause.
-     */
+    /** Clears the group by clause. */
     @Override
     public Builder clearDistinctOn() {
       super.clearDistinctOn();
       return this;
     }
-
 
     /**
      * Sets the query's distinct on clause (clearing any previously specified distinct on settings).
@@ -88,9 +80,7 @@ public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntit
       return this;
     }
 
-    /**
-     * Adds one or more properties to the existing group by clause.
-     */
+    /** Adds one or more properties to the existing group by clause. */
     @Override
     public Builder addDistinctOn(String property, String... others) {
       super.addDistinctOn(property, others);
