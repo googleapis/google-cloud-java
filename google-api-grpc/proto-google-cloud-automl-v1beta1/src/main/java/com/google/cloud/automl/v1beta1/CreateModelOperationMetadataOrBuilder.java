@@ -3,7 +3,7 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface CreateModelOperationMetadataOrBuilder extends
+public interface CreateModelOperationMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.CreateModelOperationMetadata)
-    com.google.protobuf.MessageOrBuilder {
-}
+    com.google.protobuf.MessageOrBuilder {}

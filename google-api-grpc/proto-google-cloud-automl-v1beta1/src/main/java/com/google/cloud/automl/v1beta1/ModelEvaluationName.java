@@ -14,20 +14,21 @@
 
 package com.google.cloud.automl.v1beta1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class ModelEvaluationName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}/models/{model}/modelEvaluations/{model_evaluation}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/models/{model}/modelEvaluations/{model_evaluation}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -67,23 +68,25 @@ public class ModelEvaluationName implements ResourceName {
     modelEvaluation = Preconditions.checkNotNull(builder.getModelEvaluation());
   }
 
-  public static ModelEvaluationName of(String project, String location, String model, String modelEvaluation) {
+  public static ModelEvaluationName of(
+      String project, String location, String model, String modelEvaluation) {
     return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setModel(model)
-      .setModelEvaluation(modelEvaluation)
-      .build();
+        .setProject(project)
+        .setLocation(location)
+        .setModel(model)
+        .setModelEvaluation(modelEvaluation)
+        .build();
   }
 
-  public static String format(String project, String location, String model, String modelEvaluation) {
+  public static String format(
+      String project, String location, String model, String modelEvaluation) {
     return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setModel(model)
-      .setModelEvaluation(modelEvaluation)
-      .build()
-      .toString();
+        .setProject(project)
+        .setLocation(location)
+        .setModel(model)
+        .setModelEvaluation(modelEvaluation)
+        .build()
+        .toString();
   }
 
   public static ModelEvaluationName parse(String formattedString) {
@@ -91,8 +94,13 @@ public class ModelEvaluationName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ModelEvaluationName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("model"), matchMap.get("model_evaluation"));
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ModelEvaluationName.parse: formattedString not in valid format");
+    return of(
+        matchMap.get("project"),
+        matchMap.get("location"),
+        matchMap.get("model"),
+        matchMap.get("model_evaluation"));
   }
 
   public static List<ModelEvaluationName> parseList(List<String> formattedStrings) {
@@ -141,7 +149,15 @@ public class ModelEvaluationName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "location", location, "model", model, "model_evaluation", modelEvaluation);
+    return PATH_TEMPLATE.instantiate(
+        "project",
+        project,
+        "location",
+        location,
+        "model",
+        model,
+        "model_evaluation",
+        modelEvaluation);
   }
 
   /** Builder for ModelEvaluationName. */
@@ -188,8 +204,7 @@ public class ModelEvaluationName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ModelEvaluationName modelEvaluationName) {
       project = modelEvaluationName.project;
@@ -232,4 +247,3 @@ public class ModelEvaluationName implements ResourceName {
     return h;
   }
 }
-

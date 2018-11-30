@@ -3,7 +3,7 @@
 
 package com.google.cloud.iot.v1;
 
-public interface BindDeviceToGatewayResponseOrBuilder extends
+public interface BindDeviceToGatewayResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.BindDeviceToGatewayResponse)
-    com.google.protobuf.MessageOrBuilder {
-}
+    com.google.protobuf.MessageOrBuilder {}

@@ -20,28 +20,27 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Identity for a Google Compute Engine license.
- */
+/** Identity for a Google Compute Engine license. */
 public final class LicenseId extends ResourceId {
 
-  static final Function<String, LicenseId> FROM_URL_FUNCTION = new Function<String, LicenseId>() {
-    @Override
-    public LicenseId apply(String pb) {
-      return LicenseId.fromUrl(pb);
-    }
-  };
-  static final Function<LicenseId, String> TO_URL_FUNCTION = new Function<LicenseId, String>() {
-    @Override
-    public String apply(LicenseId licenseId) {
-      return licenseId.getSelfLink();
-    }
-  };
+  static final Function<String, LicenseId> FROM_URL_FUNCTION =
+      new Function<String, LicenseId>() {
+        @Override
+        public LicenseId apply(String pb) {
+          return LicenseId.fromUrl(pb);
+        }
+      };
+  static final Function<LicenseId, String> TO_URL_FUNCTION =
+      new Function<LicenseId, String>() {
+        @Override
+        public String apply(LicenseId licenseId) {
+          return licenseId.getSelfLink();
+        }
+      };
 
   private static final String REGEX = ResourceId.REGEX + "global/licenses/([^/]+)";
   private static final Pattern PATTERN = Pattern.compile(REGEX);
@@ -54,9 +53,7 @@ public final class LicenseId extends ResourceId {
     this.license = checkNotNull(license);
   }
 
-  /**
-   * Returns the name of the license.
-   */
+  /** Returns the name of the license. */
   public String getLicense() {
     return license;
   }
@@ -96,16 +93,12 @@ public final class LicenseId extends ResourceId {
     return LicenseId.of(projectId, license);
   }
 
-  /**
-   * Returns a license identity given the license name.
-   */
+  /** Returns a license identity given the license name. */
   public static LicenseId of(String license) {
     return new LicenseId(null, license);
   }
 
-  /**
-   * Returns a license identity given project and license names.
-   */
+  /** Returns a license identity given project and license names. */
   public static LicenseId of(String project, String license) {
     return new LicenseId(project, license);
   }

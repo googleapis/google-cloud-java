@@ -3,11 +3,14 @@
 
 package com.google.cloud.websecurityscanner.v1alpha;
 
-public interface CreateScanConfigRequestOrBuilder extends
+public interface CreateScanConfigRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1alpha.CreateScanConfigRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The parent resource name where the scan is created, which should be a
@@ -18,6 +21,8 @@ public interface CreateScanConfigRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The parent resource name where the scan is created, which should be a
@@ -26,10 +31,11 @@ public interface CreateScanConfigRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The ScanConfig to be created.
@@ -39,6 +45,8 @@ public interface CreateScanConfigRequestOrBuilder extends
    */
   boolean hasScanConfig();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The ScanConfig to be created.
@@ -48,6 +56,8 @@ public interface CreateScanConfigRequestOrBuilder extends
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanConfig getScanConfig();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The ScanConfig to be created.

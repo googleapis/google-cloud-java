@@ -86,10 +86,11 @@ public class HttpComputeRpc implements ComputeRpc {
     HttpTransport transport = transportOptions.getHttpTransportFactory().create();
     HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);
     this.options = options;
-    compute = new Compute.Builder(transport, new JacksonFactory(), initializer)
-        .setRootUrl(options.getHost())
-        .setApplicationName(options.getApplicationName())
-        .build();
+    compute =
+        new Compute.Builder(transport, new JacksonFactory(), initializer)
+            .setRootUrl(options.getHost())
+            .setApplicationName(options.getApplicationName())
+            .build();
   }
 
   private static ComputeException translate(IOException exception) {
@@ -99,7 +100,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public DiskType getDiskType(String zone, String diskType, Map<Option, ?> options) {
     try {
-      return compute.diskTypes()
+      return compute
+          .diskTypes()
           .get(this.options.getProjectId(), zone, diskType)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -111,13 +113,15 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Tuple<String, Iterable<DiskType>> listDiskTypes(String zone, Map<Option, ?> options) {
     try {
-      DiskTypeList diskTypesList = compute.diskTypes()
-          .list(this.options.getProjectId(), zone)
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setFields(Option.FIELDS.getString(options))
-          .execute();
+      DiskTypeList diskTypesList =
+          compute
+              .diskTypes()
+              .list(this.options.getProjectId(), zone)
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .setFields(Option.FIELDS.getString(options))
+              .execute();
       Iterable<DiskType> diskTypes = diskTypesList.getItems();
       return Tuple.of(diskTypesList.getNextPageToken(), diskTypes);
     } catch (IOException ex) {
@@ -128,14 +132,16 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Tuple<String, Iterable<DiskType>> listDiskTypes(Map<Option, ?> options) {
     try {
-      DiskTypeAggregatedList aggregatedList = compute.diskTypes()
-          .aggregatedList(this.options.getProjectId())
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          // todo(mziccard): uncomment or remove once #711 is closed
-          // .setFields(FIELDS.getString(options))
-          .execute();
+      DiskTypeAggregatedList aggregatedList =
+          compute
+              .diskTypes()
+              .aggregatedList(this.options.getProjectId())
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              // todo(mziccard): uncomment or remove once #711 is closed
+              // .setFields(FIELDS.getString(options))
+              .execute();
       ImmutableList.Builder<DiskType> builder = ImmutableList.builder();
       Map<String, DiskTypesScopedList> scopedList = aggregatedList.getItems();
       if (scopedList != null) {
@@ -145,8 +151,8 @@ public class HttpComputeRpc implements ComputeRpc {
           }
         }
       }
-      return Tuple.<String, Iterable<DiskType>>of(aggregatedList.getNextPageToken(),
-          builder.build());
+      return Tuple.<String, Iterable<DiskType>>of(
+          aggregatedList.getNextPageToken(), builder.build());
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -155,7 +161,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public MachineType getMachineType(String zone, String machineType, Map<Option, ?> options) {
     try {
-      return compute.machineTypes()
+      return compute
+          .machineTypes()
           .get(this.options.getProjectId(), zone, machineType)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -165,16 +172,18 @@ public class HttpComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<MachineType>> listMachineTypes(String zone,
-      Map<Option, ?> options) {
+  public Tuple<String, Iterable<MachineType>> listMachineTypes(
+      String zone, Map<Option, ?> options) {
     try {
-      MachineTypeList machineTypesList = compute.machineTypes()
-          .list(this.options.getProjectId(), zone)
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setFields(Option.FIELDS.getString(options))
-          .execute();
+      MachineTypeList machineTypesList =
+          compute
+              .machineTypes()
+              .list(this.options.getProjectId(), zone)
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .setFields(Option.FIELDS.getString(options))
+              .execute();
       Iterable<MachineType> machineTypes = machineTypesList.getItems();
       return Tuple.of(machineTypesList.getNextPageToken(), machineTypes);
     } catch (IOException ex) {
@@ -185,14 +194,16 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Tuple<String, Iterable<MachineType>> listMachineTypes(Map<Option, ?> options) {
     try {
-      MachineTypeAggregatedList aggregatedList = compute.machineTypes()
-          .aggregatedList(this.options.getProjectId())
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          // todo(mziccard): uncomment or remove once #711 is closed
-          // .setFields(FIELDS.getString(options))
-          .execute();
+      MachineTypeAggregatedList aggregatedList =
+          compute
+              .machineTypes()
+              .aggregatedList(this.options.getProjectId())
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              // todo(mziccard): uncomment or remove once #711 is closed
+              // .setFields(FIELDS.getString(options))
+              .execute();
       ImmutableList.Builder<MachineType> builder = ImmutableList.builder();
       Map<String, MachineTypesScopedList> scopedList = aggregatedList.getItems();
       if (scopedList != null) {
@@ -202,8 +213,8 @@ public class HttpComputeRpc implements ComputeRpc {
           }
         }
       }
-      return Tuple.<String, Iterable<MachineType>>of(aggregatedList.getNextPageToken(),
-          builder.build());
+      return Tuple.<String, Iterable<MachineType>>of(
+          aggregatedList.getNextPageToken(), builder.build());
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -212,7 +223,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Region getRegion(String region, Map<Option, ?> options) {
     try {
-      return compute.regions()
+      return compute
+          .regions()
           .get(this.options.getProjectId(), region)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -224,13 +236,15 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Tuple<String, Iterable<Region>> listRegions(Map<Option, ?> options) {
     try {
-      RegionList regionsList = compute.regions()
-          .list(this.options.getProjectId())
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setFields(Option.FIELDS.getString(options))
-          .execute();
+      RegionList regionsList =
+          compute
+              .regions()
+              .list(this.options.getProjectId())
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .setFields(Option.FIELDS.getString(options))
+              .execute();
       Iterable<Region> regions = regionsList.getItems();
       return Tuple.of(regionsList.getNextPageToken(), regions);
     } catch (IOException ex) {
@@ -241,7 +255,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Zone getZone(String zone, Map<Option, ?> options) {
     try {
-      return compute.zones()
+      return compute
+          .zones()
           .get(this.options.getProjectId(), zone)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -253,13 +268,15 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Tuple<String, Iterable<Zone>> listZones(Map<Option, ?> options) {
     try {
-      ZoneList zonesList = compute.zones()
-          .list(this.options.getProjectId())
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setFields(Option.FIELDS.getString(options))
-          .execute();
+      ZoneList zonesList =
+          compute
+              .zones()
+              .list(this.options.getProjectId())
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .setFields(Option.FIELDS.getString(options))
+              .execute();
       Iterable<Zone> zones = zonesList.getItems();
       return Tuple.of(zonesList.getNextPageToken(), zones);
     } catch (IOException ex) {
@@ -270,7 +287,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public License getLicense(String project, String license, Map<Option, ?> options) {
     try {
-      return compute.licenses()
+      return compute
+          .licenses()
           .get(project, license)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -282,7 +300,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation getGlobalOperation(String operation, Map<Option, ?> options) {
     try {
-      return compute.globalOperations()
+      return compute
+          .globalOperations()
           .get(this.options.getProjectId(), operation)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -294,13 +313,15 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Tuple<String, Iterable<Operation>> listGlobalOperations(Map<Option, ?> options) {
     try {
-      OperationList operationsList = compute.globalOperations()
-          .list(this.options.getProjectId())
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setFields(Option.FIELDS.getString(options))
-          .execute();
+      OperationList operationsList =
+          compute
+              .globalOperations()
+              .list(this.options.getProjectId())
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .setFields(Option.FIELDS.getString(options))
+              .execute();
       Iterable<Operation> operations = operationsList.getItems();
       return Tuple.of(operationsList.getNextPageToken(), operations);
     } catch (IOException ex) {
@@ -321,7 +342,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation getRegionOperation(String region, String operation, Map<Option, ?> options) {
     try {
-      return compute.regionOperations()
+      return compute
+          .regionOperations()
           .get(this.options.getProjectId(), region, operation)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -331,16 +353,18 @@ public class HttpComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<Operation>> listRegionOperations(String region,
-      Map<Option, ?> options) {
+  public Tuple<String, Iterable<Operation>> listRegionOperations(
+      String region, Map<Option, ?> options) {
     try {
-      OperationList operationsList = compute.regionOperations()
-          .list(this.options.getProjectId(), region)
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setFields(Option.FIELDS.getString(options))
-          .execute();
+      OperationList operationsList =
+          compute
+              .regionOperations()
+              .list(this.options.getProjectId(), region)
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .setFields(Option.FIELDS.getString(options))
+              .execute();
       Iterable<Operation> operations = operationsList.getItems();
       return Tuple.of(operationsList.getNextPageToken(), operations);
     } catch (IOException ex) {
@@ -361,7 +385,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation getZoneOperation(String zone, String operation, Map<Option, ?> options) {
     try {
-      return compute.zoneOperations()
+      return compute
+          .zoneOperations()
           .get(this.options.getProjectId(), zone, operation)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -371,16 +396,18 @@ public class HttpComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<Operation>> listZoneOperations(String zone,
-      Map<Option, ?> options) {
+  public Tuple<String, Iterable<Operation>> listZoneOperations(
+      String zone, Map<Option, ?> options) {
     try {
-      OperationList operationsList = compute.zoneOperations()
-          .list(this.options.getProjectId(), zone)
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setFields(Option.FIELDS.getString(options))
-          .execute();
+      OperationList operationsList =
+          compute
+              .zoneOperations()
+              .list(this.options.getProjectId(), zone)
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .setFields(Option.FIELDS.getString(options))
+              .execute();
       Iterable<Operation> operations = operationsList.getItems();
       return Tuple.of(operationsList.getNextPageToken(), operations);
     } catch (IOException ex) {
@@ -401,7 +428,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Address getGlobalAddress(String address, Map<Option, ?> options) {
     try {
-      return compute.globalAddresses()
+      return compute
+          .globalAddresses()
           .get(this.options.getProjectId(), address)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -413,7 +441,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation createGlobalAddress(Address address, Map<Option, ?> options) {
     try {
-      return compute.globalAddresses()
+      return compute
+          .globalAddresses()
           .insert(this.options.getProjectId(), address)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -425,13 +454,15 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Tuple<String, Iterable<Address>> listGlobalAddresses(Map<Option, ?> options) {
     try {
-      AddressList addressList = compute.globalAddresses()
-          .list(this.options.getProjectId())
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setFields(Option.FIELDS.getString(options))
-          .execute();
+      AddressList addressList =
+          compute
+              .globalAddresses()
+              .list(this.options.getProjectId())
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .setFields(Option.FIELDS.getString(options))
+              .execute();
       Iterable<Address> operations = addressList.getItems();
       return Tuple.of(addressList.getNextPageToken(), operations);
     } catch (IOException ex) {
@@ -442,7 +473,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation deleteGlobalAddress(String address, Map<Option, ?> options) {
     try {
-      return compute.globalAddresses()
+      return compute
+          .globalAddresses()
           .delete(this.options.getProjectId(), address)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -454,7 +486,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Address getRegionAddress(String region, String address, Map<Option, ?> options) {
     try {
-      return compute.addresses()
+      return compute
+          .addresses()
           .get(this.options.getProjectId(), region, address)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -466,7 +499,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation createRegionAddress(String region, Address address, Map<Option, ?> options) {
     try {
-      return compute.addresses()
+      return compute
+          .addresses()
           .insert(this.options.getProjectId(), region, address)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -476,16 +510,18 @@ public class HttpComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<Address>> listRegionAddresses(String region,
-      Map<Option, ?> options) {
+  public Tuple<String, Iterable<Address>> listRegionAddresses(
+      String region, Map<Option, ?> options) {
     try {
-      AddressList addressList = compute.addresses()
-          .list(this.options.getProjectId(), region)
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setFields(Option.FIELDS.getString(options))
-          .execute();
+      AddressList addressList =
+          compute
+              .addresses()
+              .list(this.options.getProjectId(), region)
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .setFields(Option.FIELDS.getString(options))
+              .execute();
       Iterable<Address> operations = addressList.getItems();
       return Tuple.of(addressList.getNextPageToken(), operations);
     } catch (IOException ex) {
@@ -496,14 +532,16 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Tuple<String, Iterable<Address>> listAddresses(Map<Option, ?> options) {
     try {
-      AddressAggregatedList aggregatedList = compute.addresses()
-          .aggregatedList(this.options.getProjectId())
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          // todo(mziccard): uncomment or remove once #711 is closed
-          // .setFields(FIELDS.getString(options))
-          .execute();
+      AddressAggregatedList aggregatedList =
+          compute
+              .addresses()
+              .aggregatedList(this.options.getProjectId())
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              // todo(mziccard): uncomment or remove once #711 is closed
+              // .setFields(FIELDS.getString(options))
+              .execute();
       ImmutableList.Builder<Address> builder = ImmutableList.builder();
       Map<String, AddressesScopedList> scopedList = aggregatedList.getItems();
       if (scopedList != null) {
@@ -513,8 +551,8 @@ public class HttpComputeRpc implements ComputeRpc {
           }
         }
       }
-      return Tuple.<String, Iterable<Address>>of(aggregatedList.getNextPageToken(),
-          builder.build());
+      return Tuple.<String, Iterable<Address>>of(
+          aggregatedList.getNextPageToken(), builder.build());
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -523,7 +561,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation deleteRegionAddress(String region, String address, Map<Option, ?> options) {
     try {
-      return compute.addresses()
+      return compute
+          .addresses()
           .delete(this.options.getProjectId(), region, address)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -533,11 +572,12 @@ public class HttpComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Operation createSnapshot(String zone, String disk, String snapshot, String description,
-      Map<Option, ?> options) {
+  public Operation createSnapshot(
+      String zone, String disk, String snapshot, String description, Map<Option, ?> options) {
     Snapshot snapshotObject = new Snapshot().setName(snapshot).setDescription(description);
     try {
-      return compute.disks()
+      return compute
+          .disks()
           .createSnapshot(this.options.getProjectId(), zone, disk, snapshotObject)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -549,7 +589,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Snapshot getSnapshot(String snapshot, Map<Option, ?> options) {
     try {
-      return compute.snapshots()
+      return compute
+          .snapshots()
           .get(this.options.getProjectId(), snapshot)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -561,13 +602,15 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Tuple<String, Iterable<Snapshot>> listSnapshots(Map<Option, ?> options) {
     try {
-      SnapshotList snapshotList = compute.snapshots()
-          .list(this.options.getProjectId())
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setFields(Option.FIELDS.getString(options))
-          .execute();
+      SnapshotList snapshotList =
+          compute
+              .snapshots()
+              .list(this.options.getProjectId())
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .setFields(Option.FIELDS.getString(options))
+              .execute();
       Iterable<Snapshot> snapshots = snapshotList.getItems();
       return Tuple.of(snapshotList.getNextPageToken(), snapshots);
     } catch (IOException ex) {
@@ -578,7 +621,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation deleteSnapshot(String snapshot, Map<Option, ?> options) {
     try {
-      return compute.snapshots()
+      return compute
+          .snapshots()
           .delete(this.options.getProjectId(), snapshot)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -590,7 +634,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation createImage(Image image, Map<Option, ?> options) {
     try {
-      return compute.images()
+      return compute
+          .images()
           .insert(this.options.getProjectId(), image)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -602,7 +647,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Image getImage(String project, String image, Map<Option, ?> options) {
     try {
-      return compute.images()
+      return compute
+          .images()
           .get(project, image)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -614,13 +660,15 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Tuple<String, Iterable<Image>> listImages(String project, Map<Option, ?> options) {
     try {
-      ImageList imageList = compute.images()
-          .list(project)
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setFields(Option.FIELDS.getString(options))
-          .execute();
+      ImageList imageList =
+          compute
+              .images()
+              .list(project)
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .setFields(Option.FIELDS.getString(options))
+              .execute();
       Iterable<Image> images = imageList.getItems();
       return Tuple.of(imageList.getNextPageToken(), images);
     } catch (IOException ex) {
@@ -631,7 +679,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation deleteImage(String project, String image, Map<Option, ?> options) {
     try {
-      return compute.images()
+      return compute
+          .images()
           .delete(project, image)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -641,10 +690,11 @@ public class HttpComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Operation deprecateImage(String project, String image, DeprecationStatus deprecationStatus,
-      Map<Option, ?> options) {
+  public Operation deprecateImage(
+      String project, String image, DeprecationStatus deprecationStatus, Map<Option, ?> options) {
     try {
-      return compute.images()
+      return compute
+          .images()
           .deprecate(project, image, deprecationStatus)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -656,7 +706,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Disk getDisk(String zone, String disk, Map<Option, ?> options) {
     try {
-      return compute.disks()
+      return compute
+          .disks()
           .get(this.options.getProjectId(), zone, disk)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -668,7 +719,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation createDisk(String zone, Disk disk, Map<Option, ?> options) {
     try {
-      return compute.disks()
+      return compute
+          .disks()
           .insert(this.options.getProjectId(), zone, disk)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -680,13 +732,15 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Tuple<String, Iterable<Disk>> listDisks(String zone, Map<Option, ?> options) {
     try {
-      DiskList diskList = compute.disks()
-          .list(this.options.getProjectId(), zone)
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setFields(Option.FIELDS.getString(options))
-          .execute();
+      DiskList diskList =
+          compute
+              .disks()
+              .list(this.options.getProjectId(), zone)
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .setFields(Option.FIELDS.getString(options))
+              .execute();
       Iterable<Disk> disks = diskList.getItems();
       return Tuple.of(diskList.getNextPageToken(), disks);
     } catch (IOException ex) {
@@ -697,14 +751,16 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Tuple<String, Iterable<Disk>> listDisks(Map<Option, ?> options) {
     try {
-      DiskAggregatedList aggregatedList = compute.disks()
-          .aggregatedList(this.options.getProjectId())
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          // todo(mziccard): uncomment or remove once #711 is closed
-          // .setFields(FIELDS.getString(options))
-          .execute();
+      DiskAggregatedList aggregatedList =
+          compute
+              .disks()
+              .aggregatedList(this.options.getProjectId())
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              // todo(mziccard): uncomment or remove once #711 is closed
+              // .setFields(FIELDS.getString(options))
+              .execute();
       ImmutableList.Builder<Disk> builder = ImmutableList.builder();
       Map<String, DisksScopedList> scopedList = aggregatedList.getItems();
       if (scopedList != null) {
@@ -714,8 +770,7 @@ public class HttpComputeRpc implements ComputeRpc {
           }
         }
       }
-      return Tuple.<String, Iterable<Disk>>of(aggregatedList.getNextPageToken(),
-          builder.build());
+      return Tuple.<String, Iterable<Disk>>of(aggregatedList.getNextPageToken(), builder.build());
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -724,7 +779,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation deleteDisk(String zone, String disk, Map<Option, ?> options) {
     try {
-      return compute.disks()
+      return compute
+          .disks()
           .delete(this.options.getProjectId(), zone, disk)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -737,7 +793,9 @@ public class HttpComputeRpc implements ComputeRpc {
   public Operation resizeDisk(String zone, String disk, long sizeGb, Map<Option, ?> options) {
     try {
       DisksResizeRequest resizeRequest = new DisksResizeRequest().setSizeGb(sizeGb);
-      return compute.disks().resize(this.options.getProjectId(), zone, disk, resizeRequest)
+      return compute
+          .disks()
+          .resize(this.options.getProjectId(), zone, disk, resizeRequest)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -747,7 +805,8 @@ public class HttpComputeRpc implements ComputeRpc {
 
   public Operation createSubnetwork(String region, Subnetwork subnetwork, Map<Option, ?> options) {
     try {
-      return compute.subnetworks()
+      return compute
+          .subnetworks()
           .insert(this.options.getProjectId(), region, subnetwork)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -759,7 +818,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Subnetwork getSubnetwork(String region, String subnetwork, Map<Option, ?> options) {
     try {
-      return compute.subnetworks()
+      return compute
+          .subnetworks()
           .get(this.options.getProjectId(), region, subnetwork)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -769,16 +829,18 @@ public class HttpComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Tuple<String, Iterable<Subnetwork>> listSubnetworks(String region,
-      Map<Option, ?> options) {
+  public Tuple<String, Iterable<Subnetwork>> listSubnetworks(
+      String region, Map<Option, ?> options) {
     try {
-      SubnetworkList subnetworkList = compute.subnetworks()
-          .list(this.options.getProjectId(), region)
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setFields(Option.FIELDS.getString(options))
-          .execute();
+      SubnetworkList subnetworkList =
+          compute
+              .subnetworks()
+              .list(this.options.getProjectId(), region)
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .setFields(Option.FIELDS.getString(options))
+              .execute();
       Iterable<Subnetwork> subnetworks = subnetworkList.getItems();
       return Tuple.of(subnetworkList.getNextPageToken(), subnetworks);
     } catch (IOException ex) {
@@ -789,14 +851,16 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Tuple<String, Iterable<Subnetwork>> listSubnetworks(Map<Option, ?> options) {
     try {
-      SubnetworkAggregatedList aggregatedList = compute.subnetworks()
-          .aggregatedList(this.options.getProjectId())
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          // todo(mziccard): uncomment or remove once #711 is closed
-          // .setFields(FIELDS.getString(options))
-          .execute();
+      SubnetworkAggregatedList aggregatedList =
+          compute
+              .subnetworks()
+              .aggregatedList(this.options.getProjectId())
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              // todo(mziccard): uncomment or remove once #711 is closed
+              // .setFields(FIELDS.getString(options))
+              .execute();
       ImmutableList.Builder<Subnetwork> builder = ImmutableList.builder();
       Map<String, SubnetworksScopedList> scopedList = aggregatedList.getItems();
       if (scopedList != null) {
@@ -806,8 +870,8 @@ public class HttpComputeRpc implements ComputeRpc {
           }
         }
       }
-      return Tuple.<String, Iterable<Subnetwork>>of(aggregatedList.getNextPageToken(),
-          builder.build());
+      return Tuple.<String, Iterable<Subnetwork>>of(
+          aggregatedList.getNextPageToken(), builder.build());
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -816,7 +880,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation deleteSubnetwork(String region, String subnetwork, Map<Option, ?> options) {
     try {
-      return compute.subnetworks()
+      return compute
+          .subnetworks()
           .delete(this.options.getProjectId(), region, subnetwork)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -828,7 +893,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation createNetwork(Network network, Map<Option, ?> options) {
     try {
-      return compute.networks()
+      return compute
+          .networks()
           .insert(this.options.getProjectId(), network)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -840,7 +906,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Network getNetwork(String network, Map<Option, ?> options) {
     try {
-      return compute.networks()
+      return compute
+          .networks()
           .get(this.options.getProjectId(), network)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -852,13 +919,15 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Tuple<String, Iterable<Network>> listNetworks(Map<Option, ?> options) {
     try {
-      NetworkList networkList = compute.networks()
-          .list(this.options.getProjectId())
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setFields(Option.FIELDS.getString(options))
-          .execute();
+      NetworkList networkList =
+          compute
+              .networks()
+              .list(this.options.getProjectId())
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .setFields(Option.FIELDS.getString(options))
+              .execute();
       Iterable<Network> networks = networkList.getItems();
       return Tuple.of(networkList.getNextPageToken(), networks);
     } catch (IOException ex) {
@@ -869,7 +938,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation deleteNetwork(String network, Map<Option, ?> options) {
     try {
-      return compute.networks()
+      return compute
+          .networks()
           .delete(this.options.getProjectId(), network)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -881,7 +951,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation createInstance(String zone, Instance instance, Map<Option, ?> options) {
     try {
-      return compute.instances()
+      return compute
+          .instances()
           .insert(this.options.getProjectId(), zone, instance)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -893,7 +964,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Instance getInstance(String zone, String instance, Map<Option, ?> options) {
     try {
-      return compute.instances()
+      return compute
+          .instances()
           .get(this.options.getProjectId(), zone, instance)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -905,13 +977,15 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Tuple<String, Iterable<Instance>> listInstances(String zone, Map<Option, ?> options) {
     try {
-      InstanceList instanceList = compute.instances()
-          .list(this.options.getProjectId(), zone)
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          .setFields(Option.FIELDS.getString(options))
-          .execute();
+      InstanceList instanceList =
+          compute
+              .instances()
+              .list(this.options.getProjectId(), zone)
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              .setFields(Option.FIELDS.getString(options))
+              .execute();
       Iterable<Instance> instances = instanceList.getItems();
       return Tuple.of(instanceList.getNextPageToken(), instances);
     } catch (IOException ex) {
@@ -922,14 +996,16 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Tuple<String, Iterable<Instance>> listInstances(Map<Option, ?> options) {
     try {
-      InstanceAggregatedList aggregatedList = compute.instances()
-          .aggregatedList(this.options.getProjectId())
-          .setFilter(Option.FILTER.getString(options))
-          .setMaxResults(Option.MAX_RESULTS.getLong(options))
-          .setPageToken(Option.PAGE_TOKEN.getString(options))
-          // todo(mziccard): uncomment or remove once #711 is closed
-          // .setFields(FIELDS.getString(options))
-          .execute();
+      InstanceAggregatedList aggregatedList =
+          compute
+              .instances()
+              .aggregatedList(this.options.getProjectId())
+              .setFilter(Option.FILTER.getString(options))
+              .setMaxResults(Option.MAX_RESULTS.getLong(options))
+              .setPageToken(Option.PAGE_TOKEN.getString(options))
+              // todo(mziccard): uncomment or remove once #711 is closed
+              // .setFields(FIELDS.getString(options))
+              .execute();
       ImmutableList.Builder<Instance> builder = ImmutableList.builder();
       Map<String, InstancesScopedList> scopedList = aggregatedList.getItems();
       if (scopedList != null) {
@@ -939,8 +1015,8 @@ public class HttpComputeRpc implements ComputeRpc {
           }
         }
       }
-      return Tuple.<String, Iterable<Instance>>of(aggregatedList.getNextPageToken(),
-          builder.build());
+      return Tuple.<String, Iterable<Instance>>of(
+          aggregatedList.getNextPageToken(), builder.build());
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -949,7 +1025,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation deleteInstance(String zone, String instance, Map<Option, ?> options) {
     try {
-      return compute.instances()
+      return compute
+          .instances()
           .delete(this.options.getProjectId(), zone, instance)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -959,10 +1036,15 @@ public class HttpComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Operation addAccessConfig(String zone, String instance, String networkInterface,
-      AccessConfig accessConfig, Map<Option, ?> options) {
+  public Operation addAccessConfig(
+      String zone,
+      String instance,
+      String networkInterface,
+      AccessConfig accessConfig,
+      Map<Option, ?> options) {
     try {
-      return compute.instances()
+      return compute
+          .instances()
           .addAccessConfig(
               this.options.getProjectId(), zone, instance, networkInterface, accessConfig)
           .setFields(Option.FIELDS.getString(options))
@@ -973,10 +1055,11 @@ public class HttpComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Operation attachDisk(String zone, String instance, AttachedDisk attachedDisk,
-      Map<Option, ?> options) {
+  public Operation attachDisk(
+      String zone, String instance, AttachedDisk attachedDisk, Map<Option, ?> options) {
     try {
-      return compute.instances()
+      return compute
+          .instances()
           .attachDisk(this.options.getProjectId(), zone, instance, attachedDisk)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -986,12 +1069,17 @@ public class HttpComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Operation deleteAccessConfig(String zone, String instance, String networkInterface,
-      String accessConfig, Map<Option, ?> options) {
+  public Operation deleteAccessConfig(
+      String zone,
+      String instance,
+      String networkInterface,
+      String accessConfig,
+      Map<Option, ?> options) {
     try {
-      return compute.instances()
-          .deleteAccessConfig(this.options.getProjectId(), zone, instance, accessConfig,
-              networkInterface)
+      return compute
+          .instances()
+          .deleteAccessConfig(
+              this.options.getProjectId(), zone, instance, accessConfig, networkInterface)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -1000,10 +1088,11 @@ public class HttpComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Operation detachDisk(String zone, String instance, String deviceName,
-      Map<Option, ?> options) {
+  public Operation detachDisk(
+      String zone, String instance, String deviceName, Map<Option, ?> options) {
     try {
-      return compute.instances()
+      return compute
+          .instances()
           .detachDisk(this.options.getProjectId(), zone, instance, deviceName)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -1013,14 +1102,16 @@ public class HttpComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public String getSerialPortOutput(String zone, String instance, Integer port,
-      Map<Option, ?> options) {
+  public String getSerialPortOutput(
+      String zone, String instance, Integer port, Map<Option, ?> options) {
     try {
-      SerialPortOutput portOutput = compute.instances()
-          .getSerialPortOutput(this.options.getProjectId(), zone, instance)
-          .setPort(port)
-          .setFields(Option.FIELDS.getString(options))
-          .execute();
+      SerialPortOutput portOutput =
+          compute
+              .instances()
+              .getSerialPortOutput(this.options.getProjectId(), zone, instance)
+              .setPort(port)
+              .setFields(Option.FIELDS.getString(options))
+              .execute();
       return portOutput != null ? portOutput.getContents() : null;
     } catch (IOException ex) {
       return nullForNotFound(ex);
@@ -1030,7 +1121,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation reset(String zone, String instance, Map<Option, ?> options) {
     try {
-      return compute.instances()
+      return compute
+          .instances()
           .reset(this.options.getProjectId(), zone, instance)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -1040,10 +1132,11 @@ public class HttpComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Operation setDiskAutoDelete(String zone, String instance, String deviceName,
-      boolean autoDelete, Map<Option, ?> options) {
+  public Operation setDiskAutoDelete(
+      String zone, String instance, String deviceName, boolean autoDelete, Map<Option, ?> options) {
     try {
-      return compute.instances()
+      return compute
+          .instances()
           .setDiskAutoDelete(this.options.getProjectId(), zone, instance, autoDelete, deviceName)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -1053,12 +1146,13 @@ public class HttpComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Operation setMachineType(String zone, String instance, String machineTypeUrl,
-      Map<Option, ?> options) {
+  public Operation setMachineType(
+      String zone, String instance, String machineTypeUrl, Map<Option, ?> options) {
     try {
       InstancesSetMachineTypeRequest request =
           new InstancesSetMachineTypeRequest().setMachineType(machineTypeUrl);
-      return compute.instances()
+      return compute
+          .instances()
           .setMachineType(this.options.getProjectId(), zone, instance, request)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -1068,10 +1162,11 @@ public class HttpComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Operation setMetadata(String zone, String instance, Metadata metadata,
-      Map<Option, ?> options) {
+  public Operation setMetadata(
+      String zone, String instance, Metadata metadata, Map<Option, ?> options) {
     try {
-      return compute.instances()
+      return compute
+          .instances()
           .setMetadata(this.options.getProjectId(), zone, instance, metadata)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -1081,10 +1176,11 @@ public class HttpComputeRpc implements ComputeRpc {
   }
 
   @Override
-  public Operation setScheduling(String zone, String instance, Scheduling scheduling,
-      Map<Option, ?> options) {
+  public Operation setScheduling(
+      String zone, String instance, Scheduling scheduling, Map<Option, ?> options) {
     try {
-      return compute.instances()
+      return compute
+          .instances()
           .setScheduling(this.options.getProjectId(), zone, instance, scheduling)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -1096,7 +1192,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation setTags(String zone, String instance, Tags tags, Map<Option, ?> options) {
     try {
-      return compute.instances()
+      return compute
+          .instances()
           .setTags(this.options.getProjectId(), zone, instance, tags)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -1108,7 +1205,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation start(String zone, String instance, Map<Option, ?> options) {
     try {
-      return compute.instances()
+      return compute
+          .instances()
           .start(this.options.getProjectId(), zone, instance)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -1120,7 +1218,8 @@ public class HttpComputeRpc implements ComputeRpc {
   @Override
   public Operation stop(String zone, String instance, Map<Option, ?> options) {
     try {
-      return compute.instances()
+      return compute
+          .instances()
           .stop(this.options.getProjectId(), zone, instance)
           .setFields(Option.FIELDS.getString(options))
           .execute();

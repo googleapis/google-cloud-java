@@ -3,11 +3,14 @@
 
 package com.google.cloud.language.v1beta2;
 
-public interface TokenOrBuilder extends
+public interface TokenOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.language.v1beta2.Token)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The token text.
    * </pre>
@@ -16,6 +19,8 @@ public interface TokenOrBuilder extends
    */
   boolean hasText();
   /**
+   *
+   *
    * <pre>
    * The token text.
    * </pre>
@@ -24,6 +29,8 @@ public interface TokenOrBuilder extends
    */
   com.google.cloud.language.v1beta2.TextSpan getText();
   /**
+   *
+   *
    * <pre>
    * The token text.
    * </pre>
@@ -33,6 +40,8 @@ public interface TokenOrBuilder extends
   com.google.cloud.language.v1beta2.TextSpanOrBuilder getTextOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Parts of speech tag for this token.
    * </pre>
@@ -41,6 +50,8 @@ public interface TokenOrBuilder extends
    */
   boolean hasPartOfSpeech();
   /**
+   *
+   *
    * <pre>
    * Parts of speech tag for this token.
    * </pre>
@@ -49,6 +60,8 @@ public interface TokenOrBuilder extends
    */
   com.google.cloud.language.v1beta2.PartOfSpeech getPartOfSpeech();
   /**
+   *
+   *
    * <pre>
    * Parts of speech tag for this token.
    * </pre>
@@ -58,6 +71,8 @@ public interface TokenOrBuilder extends
   com.google.cloud.language.v1beta2.PartOfSpeechOrBuilder getPartOfSpeechOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Dependency tree parse for this token.
    * </pre>
@@ -66,6 +81,8 @@ public interface TokenOrBuilder extends
    */
   boolean hasDependencyEdge();
   /**
+   *
+   *
    * <pre>
    * Dependency tree parse for this token.
    * </pre>
@@ -74,6 +91,8 @@ public interface TokenOrBuilder extends
    */
   com.google.cloud.language.v1beta2.DependencyEdge getDependencyEdge();
   /**
+   *
+   *
    * <pre>
    * Dependency tree parse for this token.
    * </pre>
@@ -83,6 +102,8 @@ public interface TokenOrBuilder extends
   com.google.cloud.language.v1beta2.DependencyEdgeOrBuilder getDependencyEdgeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * [Lemma](https://en.wikipedia.org/wiki/Lemma_%28morphology%29) of the token.
    * </pre>
@@ -91,12 +112,13 @@ public interface TokenOrBuilder extends
    */
   java.lang.String getLemma();
   /**
+   *
+   *
    * <pre>
    * [Lemma](https://en.wikipedia.org/wiki/Lemma_%28morphology%29) of the token.
    * </pre>
    *
    * <code>string lemma = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getLemmaBytes();
+  com.google.protobuf.ByteString getLemmaBytes();
 }

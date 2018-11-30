@@ -3,20 +3,24 @@
 
 package com.google.pubsub.v1;
 
-public interface ListSubscriptionsResponseOrBuilder extends
+public interface ListSubscriptionsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.ListSubscriptionsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The subscriptions that match the request.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
    */
-  java.util.List<com.google.pubsub.v1.Subscription> 
-      getSubscriptionsList();
+  java.util.List<com.google.pubsub.v1.Subscription> getSubscriptionsList();
   /**
+   *
+   *
    * <pre>
    * The subscriptions that match the request.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListSubscriptionsResponseOrBuilder extends
    */
   com.google.pubsub.v1.Subscription getSubscriptions(int index);
   /**
+   *
+   *
    * <pre>
    * The subscriptions that match the request.
    * </pre>
@@ -33,25 +39,30 @@ public interface ListSubscriptionsResponseOrBuilder extends
    */
   int getSubscriptionsCount();
   /**
+   *
+   *
    * <pre>
    * The subscriptions that match the request.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
    */
-  java.util.List<? extends com.google.pubsub.v1.SubscriptionOrBuilder> 
+  java.util.List<? extends com.google.pubsub.v1.SubscriptionOrBuilder>
       getSubscriptionsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The subscriptions that match the request.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.Subscription subscriptions = 1;</code>
    */
-  com.google.pubsub.v1.SubscriptionOrBuilder getSubscriptionsOrBuilder(
-      int index);
+  com.google.pubsub.v1.SubscriptionOrBuilder getSubscriptionsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If not empty, indicates that there may be more subscriptions that match
    * the request; this value should be passed in a new
@@ -62,6 +73,8 @@ public interface ListSubscriptionsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If not empty, indicates that there may be more subscriptions that match
    * the request; this value should be passed in a new
@@ -70,6 +83,5 @@ public interface ListSubscriptionsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

@@ -4,21 +4,24 @@
 package com.google.devtools.clouderrorreporting.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Description of a group of similar error events.
  * </pre>
  *
  * Protobuf type {@code google.devtools.clouderrorreporting.v1beta1.ErrorGroup}
  */
-public  final class ErrorGroup extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ErrorGroup extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.devtools.clouderrorreporting.v1beta1.ErrorGroup)
     ErrorGroupOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ErrorGroup.newBuilder() to construct.
   private ErrorGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ErrorGroup() {
     name_ = "";
     groupId_ = "";
@@ -26,10 +29,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ErrorGroup(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,41 +52,47 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+              name_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            groupId_ = s;
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              trackingIssues_ = new java.util.ArrayList<com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue>();
-              mutable_bitField0_ |= 0x00000004;
+              groupId_ = s;
+              break;
             }
-            trackingIssues_.add(
-                input.readMessage(com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                trackingIssues_ =
+                    new java.util.ArrayList<
+                        com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              trackingIssues_.add(
+                  input.readMessage(
+                      com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.parser(),
+                      extensionRegistry));
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         trackingIssues_ = java.util.Collections.unmodifiableList(trackingIssues_);
@@ -92,23 +101,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.devtools.clouderrorreporting.v1beta1.CommonProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroup_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.devtools.clouderrorreporting.v1beta1.CommonProto
+        .internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroup_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.devtools.clouderrorreporting.v1beta1.CommonProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroup_fieldAccessorTable
+    return com.google.devtools.clouderrorreporting.v1beta1.CommonProto
+        .internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroup_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.class, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder.class);
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.class,
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder.class);
   }
 
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The group resource name.
    * Example: &lt;code&gt;projects/my-project-123/groups/my-groupid&lt;/code&gt;
@@ -121,14 +135,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The group resource name.
    * Example: &lt;code&gt;projects/my-project-123/groups/my-groupid&lt;/code&gt;
@@ -136,13 +151,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -153,6 +166,8 @@ private static final long serialVersionUID = 0L;
   public static final int GROUP_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object groupId_;
   /**
+   *
+   *
    * <pre>
    * Group IDs are unique for a given project. If the same kind of error
    * occurs in different service contexts, it will receive the same group ID.
@@ -165,14 +180,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       groupId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Group IDs are unique for a given project. If the same kind of error
    * occurs in different service contexts, it will receive the same group ID.
@@ -180,13 +196,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string group_id = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getGroupIdBytes() {
+  public com.google.protobuf.ByteString getGroupIdBytes() {
     java.lang.Object ref = groupId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       groupId_ = b;
       return b;
     } else {
@@ -195,61 +209,81 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TRACKING_ISSUES_FIELD_NUMBER = 3;
-  private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue> trackingIssues_;
+  private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue>
+      trackingIssues_;
   /**
+   *
+   *
    * <pre>
    * Associated tracking issues.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+   * </code>
    */
-  public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue> getTrackingIssuesList() {
+  public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue>
+      getTrackingIssuesList() {
     return trackingIssues_;
   }
   /**
+   *
+   *
    * <pre>
    * Associated tracking issues.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+   * </code>
    */
-  public java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder> 
+  public java.util.List<
+          ? extends com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder>
       getTrackingIssuesOrBuilderList() {
     return trackingIssues_;
   }
   /**
+   *
+   *
    * <pre>
    * Associated tracking issues.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+   * </code>
    */
   public int getTrackingIssuesCount() {
     return trackingIssues_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Associated tracking issues.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+   * </code>
    */
-  public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue getTrackingIssues(int index) {
+  public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue getTrackingIssues(
+      int index) {
     return trackingIssues_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Associated tracking issues.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+   * </code>
    */
-  public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder getTrackingIssuesOrBuilder(
-      int index) {
+  public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder
+      getTrackingIssuesOrBuilder(int index) {
     return trackingIssues_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -261,8 +295,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -288,8 +321,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, groupId_);
     }
     for (int i = 0; i < trackingIssues_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, trackingIssues_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, trackingIssues_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -299,20 +331,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup)) {
       return super.equals(obj);
     }
-    com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup other = (com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup) obj;
+    com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup other =
+        (com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getGroupId()
-        .equals(other.getGroupId());
-    result = result && getTrackingIssuesList()
-        .equals(other.getTrackingIssuesList());
+    result = result && getName().equals(other.getName());
+    result = result && getGroupId().equals(other.getGroupId());
+    result = result && getTrackingIssuesList().equals(other.getTrackingIssuesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -338,117 +368,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup prototype) {
+
+  public static Builder newBuilder(
+      com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Description of a group of similar error events.
    * </pre>
    *
    * Protobuf type {@code google.devtools.clouderrorreporting.v1beta1.ErrorGroup}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.devtools.clouderrorreporting.v1beta1.ErrorGroup)
       com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.devtools.clouderrorreporting.v1beta1.CommonProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroup_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.devtools.clouderrorreporting.v1beta1.CommonProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroup_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.devtools.clouderrorreporting.v1beta1.CommonProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroup_fieldAccessorTable
+      return com.google.devtools.clouderrorreporting.v1beta1.CommonProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroup_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.class, com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder.class);
+              com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.class,
+              com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.Builder.class);
     }
 
     // Construct using com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.newBuilder()
@@ -456,17 +496,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getTrackingIssuesFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -484,9 +524,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.devtools.clouderrorreporting.v1beta1.CommonProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroup_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.devtools.clouderrorreporting.v1beta1.CommonProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ErrorGroup_descriptor;
     }
 
     @java.lang.Override
@@ -505,7 +545,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup buildPartial() {
-      com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup result = new com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup(this);
+      com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup result =
+          new com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.name_ = name_;
@@ -528,38 +569,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup) {
-        return mergeFrom((com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup)other);
+        return mergeFrom((com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -567,7 +609,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup other) {
-      if (other == com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.getDefaultInstance()) return this;
+      if (other == com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup.getDefaultInstance())
+        return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -594,9 +637,10 @@ private static final long serialVersionUID = 0L;
             trackingIssuesBuilder_ = null;
             trackingIssues_ = other.trackingIssues_;
             bitField0_ = (bitField0_ & ~0x00000004);
-            trackingIssuesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getTrackingIssuesFieldBuilder() : null;
+            trackingIssuesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getTrackingIssuesFieldBuilder()
+                    : null;
           } else {
             trackingIssuesBuilder_.addAllMessages(other.trackingIssues_);
           }
@@ -621,7 +665,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -630,10 +675,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The group resource name.
      * Example: &lt;code&gt;projects/my-project-123/groups/my-groupid&lt;/code&gt;
@@ -644,8 +692,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -654,6 +701,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The group resource name.
      * Example: &lt;code&gt;projects/my-project-123/groups/my-groupid&lt;/code&gt;
@@ -661,13 +710,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -675,6 +722,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The group resource name.
      * Example: &lt;code&gt;projects/my-project-123/groups/my-groupid&lt;/code&gt;
@@ -682,17 +731,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The group resource name.
      * Example: &lt;code&gt;projects/my-project-123/groups/my-groupid&lt;/code&gt;
@@ -701,12 +751,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The group resource name.
      * Example: &lt;code&gt;projects/my-project-123/groups/my-groupid&lt;/code&gt;
@@ -714,13 +766,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -728,6 +779,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object groupId_ = "";
     /**
+     *
+     *
      * <pre>
      * Group IDs are unique for a given project. If the same kind of error
      * occurs in different service contexts, it will receive the same group ID.
@@ -738,8 +791,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getGroupId() {
       java.lang.Object ref = groupId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         groupId_ = s;
         return s;
@@ -748,6 +800,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Group IDs are unique for a given project. If the same kind of error
      * occurs in different service contexts, it will receive the same group ID.
@@ -755,13 +809,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string group_id = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getGroupIdBytes() {
+    public com.google.protobuf.ByteString getGroupIdBytes() {
       java.lang.Object ref = groupId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         groupId_ = b;
         return b;
       } else {
@@ -769,6 +821,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Group IDs are unique for a given project. If the same kind of error
      * occurs in different service contexts, it will receive the same group ID.
@@ -776,17 +830,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string group_id = 2;</code>
      */
-    public Builder setGroupId(
-        java.lang.String value) {
+    public Builder setGroupId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       groupId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Group IDs are unique for a given project. If the same kind of error
      * occurs in different service contexts, it will receive the same group ID.
@@ -795,12 +850,14 @@ private static final long serialVersionUID = 0L;
      * <code>string group_id = 2;</code>
      */
     public Builder clearGroupId() {
-      
+
       groupId_ = getDefaultInstance().getGroupId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Group IDs are unique for a given project. If the same kind of error
      * occurs in different service contexts, it will receive the same group ID.
@@ -808,38 +865,48 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string group_id = 2;</code>
      */
-    public Builder setGroupIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setGroupIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       groupId_ = value;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue> trackingIssues_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue>
+        trackingIssues_ = java.util.Collections.emptyList();
+
     private void ensureTrackingIssuesIsMutable() {
       if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-        trackingIssues_ = new java.util.ArrayList<com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue>(trackingIssues_);
+        trackingIssues_ =
+            new java.util.ArrayList<com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue>(
+                trackingIssues_);
         bitField0_ |= 0x00000004;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue, com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder, com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder> trackingIssuesBuilder_;
+            com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue,
+            com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder,
+            com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder>
+        trackingIssuesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Associated tracking issues.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+     * </code>
      */
-    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue> getTrackingIssuesList() {
+    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue>
+        getTrackingIssuesList() {
       if (trackingIssuesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(trackingIssues_);
       } else {
@@ -847,11 +914,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Associated tracking issues.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+     * </code>
      */
     public int getTrackingIssuesCount() {
       if (trackingIssuesBuilder_ == null) {
@@ -861,13 +932,18 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Associated tracking issues.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+     * </code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue getTrackingIssues(int index) {
+    public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue getTrackingIssues(
+        int index) {
       if (trackingIssuesBuilder_ == null) {
         return trackingIssues_.get(index);
       } else {
@@ -875,11 +951,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Associated tracking issues.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+     * </code>
      */
     public Builder setTrackingIssues(
         int index, com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue value) {
@@ -896,14 +976,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Associated tracking issues.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+     * </code>
      */
     public Builder setTrackingIssues(
-        int index, com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder builderForValue) {
+        int index,
+        com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder builderForValue) {
       if (trackingIssuesBuilder_ == null) {
         ensureTrackingIssuesIsMutable();
         trackingIssues_.set(index, builderForValue.build());
@@ -914,13 +999,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Associated tracking issues.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+     * </code>
      */
-    public Builder addTrackingIssues(com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue value) {
+    public Builder addTrackingIssues(
+        com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue value) {
       if (trackingIssuesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -934,11 +1024,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Associated tracking issues.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+     * </code>
      */
     public Builder addTrackingIssues(
         int index, com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue value) {
@@ -955,11 +1049,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Associated tracking issues.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+     * </code>
      */
     public Builder addTrackingIssues(
         com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder builderForValue) {
@@ -973,14 +1071,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Associated tracking issues.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+     * </code>
      */
     public Builder addTrackingIssues(
-        int index, com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder builderForValue) {
+        int index,
+        com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder builderForValue) {
       if (trackingIssuesBuilder_ == null) {
         ensureTrackingIssuesIsMutable();
         trackingIssues_.add(index, builderForValue.build());
@@ -991,18 +1094,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Associated tracking issues.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+     * </code>
      */
     public Builder addAllTrackingIssues(
-        java.lang.Iterable<? extends com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue> values) {
+        java.lang.Iterable<? extends com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue>
+            values) {
       if (trackingIssuesBuilder_ == null) {
         ensureTrackingIssuesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, trackingIssues_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, trackingIssues_);
         onChanged();
       } else {
         trackingIssuesBuilder_.addAllMessages(values);
@@ -1010,11 +1117,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Associated tracking issues.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+     * </code>
      */
     public Builder clearTrackingIssues() {
       if (trackingIssuesBuilder_ == null) {
@@ -1027,11 +1138,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Associated tracking issues.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+     * </code>
      */
     public Builder removeTrackingIssues(int index) {
       if (trackingIssuesBuilder_ == null) {
@@ -1044,39 +1159,53 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Associated tracking issues.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+     * </code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder getTrackingIssuesBuilder(
-        int index) {
+    public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder
+        getTrackingIssuesBuilder(int index) {
       return getTrackingIssuesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Associated tracking issues.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+     * </code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder getTrackingIssuesOrBuilder(
-        int index) {
+    public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder
+        getTrackingIssuesOrBuilder(int index) {
       if (trackingIssuesBuilder_ == null) {
-        return trackingIssues_.get(index);  } else {
+        return trackingIssues_.get(index);
+      } else {
         return trackingIssuesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Associated tracking issues.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+     * </code>
      */
-    public java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder> 
-         getTrackingIssuesOrBuilderList() {
+    public java.util.List<
+            ? extends com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder>
+        getTrackingIssuesOrBuilderList() {
       if (trackingIssuesBuilder_ != null) {
         return trackingIssuesBuilder_.getMessageOrBuilderList();
       } else {
@@ -1084,45 +1213,67 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Associated tracking issues.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+     * </code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder addTrackingIssuesBuilder() {
-      return getTrackingIssuesFieldBuilder().addBuilder(
-          com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.getDefaultInstance());
+    public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder
+        addTrackingIssuesBuilder() {
+      return getTrackingIssuesFieldBuilder()
+          .addBuilder(
+              com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Associated tracking issues.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+     * </code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder addTrackingIssuesBuilder(
-        int index) {
-      return getTrackingIssuesFieldBuilder().addBuilder(
-          index, com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.getDefaultInstance());
+    public com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder
+        addTrackingIssuesBuilder(int index) {
+      return getTrackingIssuesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Associated tracking issues.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;</code>
+     * <code>
+     * repeated .google.devtools.clouderrorreporting.v1beta1.TrackingIssue tracking_issues = 3;
+     * </code>
      */
-    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder> 
-         getTrackingIssuesBuilderList() {
+    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder>
+        getTrackingIssuesBuilderList() {
       return getTrackingIssuesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue, com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder, com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder> 
+            com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue,
+            com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder,
+            com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder>
         getTrackingIssuesFieldBuilder() {
       if (trackingIssuesBuilder_ == null) {
-        trackingIssuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue, com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder, com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder>(
+        trackingIssuesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue,
+                com.google.devtools.clouderrorreporting.v1beta1.TrackingIssue.Builder,
+                com.google.devtools.clouderrorreporting.v1beta1.TrackingIssueOrBuilder>(
                 trackingIssues_,
                 ((bitField0_ & 0x00000004) == 0x00000004),
                 getParentForChildren(),
@@ -1131,9 +1282,9 @@ private static final long serialVersionUID = 0L;
       }
       return trackingIssuesBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1143,12 +1294,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.devtools.clouderrorreporting.v1beta1.ErrorGroup)
   }
 
   // @@protoc_insertion_point(class_scope:google.devtools.clouderrorreporting.v1beta1.ErrorGroup)
   private static final com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup();
   }
@@ -1157,16 +1308,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ErrorGroup>
-      PARSER = new com.google.protobuf.AbstractParser<ErrorGroup>() {
-    @java.lang.Override
-    public ErrorGroup parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ErrorGroup(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ErrorGroup> PARSER =
+      new com.google.protobuf.AbstractParser<ErrorGroup>() {
+        @java.lang.Override
+        public ErrorGroup parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ErrorGroup(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ErrorGroup> parser() {
     return PARSER;
@@ -1181,6 +1332,4 @@ private static final long serialVersionUID = 0L;
   public com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface CreateDocumentRequestOrBuilder extends
+public interface CreateDocumentRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.CreateDocumentRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The knoweldge base to create a document for.
    * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
@@ -17,6 +20,8 @@ public interface CreateDocumentRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The knoweldge base to create a document for.
    * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
@@ -24,10 +29,11 @@ public interface CreateDocumentRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The document to create.
    * </pre>
@@ -36,6 +42,8 @@ public interface CreateDocumentRequestOrBuilder extends
    */
   boolean hasDocument();
   /**
+   *
+   *
    * <pre>
    * Required. The document to create.
    * </pre>
@@ -44,6 +52,8 @@ public interface CreateDocumentRequestOrBuilder extends
    */
   com.google.cloud.dialogflow.v2beta1.Document getDocument();
   /**
+   *
+   *
    * <pre>
    * Required. The document to create.
    * </pre>

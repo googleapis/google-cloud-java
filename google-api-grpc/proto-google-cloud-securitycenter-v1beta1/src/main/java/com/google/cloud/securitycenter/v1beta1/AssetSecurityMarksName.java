@@ -14,20 +14,20 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class AssetSecurityMarksName extends SecuritymarksName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("organizations/{organization}/assets/{asset}/securityMarks");
+      PathTemplate.createWithoutUrlEncoding(
+          "organizations/{organization}/assets/{asset}/securityMarks");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -56,18 +56,11 @@ public class AssetSecurityMarksName extends SecuritymarksName {
   }
 
   public static AssetSecurityMarksName of(String organization, String asset) {
-    return newBuilder()
-      .setOrganization(organization)
-      .setAsset(asset)
-      .build();
+    return newBuilder().setOrganization(organization).setAsset(asset).build();
   }
 
   public static String format(String organization, String asset) {
-    return newBuilder()
-      .setOrganization(organization)
-      .setAsset(asset)
-      .build()
-      .toString();
+    return newBuilder().setOrganization(organization).setAsset(asset).build().toString();
   }
 
   public static AssetSecurityMarksName parse(String formattedString) {
@@ -75,7 +68,8 @@ public class AssetSecurityMarksName extends SecuritymarksName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "AssetSecurityMarksName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "AssetSecurityMarksName.parse: formattedString not in valid format");
     return of(matchMap.get("organization"), matchMap.get("asset"));
   }
 
@@ -150,8 +144,7 @@ public class AssetSecurityMarksName extends SecuritymarksName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(AssetSecurityMarksName assetSecurityMarksName) {
       organization = assetSecurityMarksName.organization;
@@ -170,8 +163,7 @@ public class AssetSecurityMarksName extends SecuritymarksName {
     }
     if (o instanceof AssetSecurityMarksName) {
       AssetSecurityMarksName that = (AssetSecurityMarksName) o;
-      return (this.organization.equals(that.organization))
-          && (this.asset.equals(that.asset));
+      return (this.organization.equals(that.organization)) && (this.asset.equals(that.asset));
     }
     return false;
   }
@@ -186,4 +178,3 @@ public class AssetSecurityMarksName extends SecuritymarksName {
     return h;
   }
 }
-

@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface DeleteNodePoolRequestOrBuilder extends
+public interface DeleteNodePoolRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.DeleteNodePoolRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
    * number](https://developers.google.com/console/help/new/#projectnumber).
@@ -16,8 +19,11 @@ public interface DeleteNodePoolRequestOrBuilder extends
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getProjectId();
+  @java.lang.Deprecated
+  java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
    * number](https://developers.google.com/console/help/new/#projectnumber).
@@ -26,10 +32,12 @@ public interface DeleteNodePoolRequestOrBuilder extends
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getProjectIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
@@ -39,8 +47,11 @@ public interface DeleteNodePoolRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getZone();
+  @java.lang.Deprecated
+  java.lang.String getZone();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
@@ -50,10 +61,12 @@ public interface DeleteNodePoolRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getZoneBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getZoneBytes();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the cluster.
    * This field has been deprecated and replaced by the name field.
@@ -61,8 +74,11 @@ public interface DeleteNodePoolRequestOrBuilder extends
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getClusterId();
+  @java.lang.Deprecated
+  java.lang.String getClusterId();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the cluster.
    * This field has been deprecated and replaced by the name field.
@@ -70,10 +86,12 @@ public interface DeleteNodePoolRequestOrBuilder extends
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getClusterIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getClusterIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the node pool to delete.
    * This field has been deprecated and replaced by the name field.
@@ -81,8 +99,11 @@ public interface DeleteNodePoolRequestOrBuilder extends
    *
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getNodePoolId();
+  @java.lang.Deprecated
+  java.lang.String getNodePoolId();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the node pool to delete.
    * This field has been deprecated and replaced by the name field.
@@ -90,10 +111,12 @@ public interface DeleteNodePoolRequestOrBuilder extends
    *
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getNodePoolIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getNodePoolIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The name (project, location, cluster, node pool id) of the node pool to
    * delete. Specified in the format
@@ -104,6 +127,8 @@ public interface DeleteNodePoolRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name (project, location, cluster, node pool id) of the node pool to
    * delete. Specified in the format
@@ -112,6 +137,5 @@ public interface DeleteNodePoolRequestOrBuilder extends
    *
    * <code>string name = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

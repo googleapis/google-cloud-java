@@ -17,13 +17,10 @@
 package com.google.cloud.compute.deprecated;
 
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * Base class for Google Compute Engine resource identities.
- */
+/** Base class for Google Compute Engine resource identities. */
 public abstract class ResourceId implements Serializable {
 
   static final String REGEX = ".*?projects/([^/]+)/";
@@ -36,16 +33,12 @@ public abstract class ResourceId implements Serializable {
     this.project = project;
   }
 
-  /**
-   * Returns a fully qualified URL to the entity.
-   */
+  /** Returns a fully qualified URL to the entity. */
   public String getSelfLink() {
     return BASE_URL + project;
   }
 
-  /**
-   * Returns the name of the project.
-   */
+  /** Returns the name of the project. */
   public final String getProject() {
     return project;
   }

@@ -3,11 +3,14 @@
 
 package com.google.firestore.v1beta1;
 
-public interface TransactionOptionsOrBuilder extends
+public interface TransactionOptionsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.firestore.v1beta1.TransactionOptions)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The transaction can only be used for read operations.
    * </pre>
@@ -16,6 +19,8 @@ public interface TransactionOptionsOrBuilder extends
    */
   boolean hasReadOnly();
   /**
+   *
+   *
    * <pre>
    * The transaction can only be used for read operations.
    * </pre>
@@ -24,6 +29,8 @@ public interface TransactionOptionsOrBuilder extends
    */
   com.google.firestore.v1beta1.TransactionOptions.ReadOnly getReadOnly();
   /**
+   *
+   *
    * <pre>
    * The transaction can only be used for read operations.
    * </pre>
@@ -33,6 +40,8 @@ public interface TransactionOptionsOrBuilder extends
   com.google.firestore.v1beta1.TransactionOptions.ReadOnlyOrBuilder getReadOnlyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The transaction can be used for both read and write operations.
    * </pre>
@@ -41,6 +50,8 @@ public interface TransactionOptionsOrBuilder extends
    */
   boolean hasReadWrite();
   /**
+   *
+   *
    * <pre>
    * The transaction can be used for both read and write operations.
    * </pre>
@@ -49,6 +60,8 @@ public interface TransactionOptionsOrBuilder extends
    */
   com.google.firestore.v1beta1.TransactionOptions.ReadWrite getReadWrite();
   /**
+   *
+   *
    * <pre>
    * The transaction can be used for both read and write operations.
    * </pre>

@@ -3,11 +3,14 @@
 
 package com.google.cloud.oslogin.v1;
 
-public interface GetLoginProfileRequestOrBuilder extends
+public interface GetLoginProfileRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.oslogin.v1.GetLoginProfileRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique ID for the user in format `users/{user}`.
    * </pre>
@@ -16,12 +19,13 @@ public interface GetLoginProfileRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The unique ID for the user in format `users/{user}`.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

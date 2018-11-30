@@ -45,8 +45,8 @@ import org.threeten.bp.Duration;
 /**
  * Settings class to configure an instance of {@link EnhancedBigQueryStorageStub}.
  *
- * <p>The default instance dynamically reads and applies the default values used by
- * {@link BigQueryStorageStub}.
+ * <p>The default instance dynamically reads and applies the default values used by {@link
+ * BigQueryStorageStub}.
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object. For
@@ -71,7 +71,7 @@ public class EnhancedBigQueryStorageStubSettings
   private final UnaryCallSettings<CreateReadSessionRequest, ReadSession> createReadSessionSettings;
   private final ServerStreamingCallSettings<ReadRowsRequest, ReadRowsResponse> readRowsSettings;
   private final UnaryCallSettings<
-      BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
+          BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
       batchCreateReadSessionStreamsSettings;
   private final UnaryCallSettings<FinalizeStreamRequest, Empty> finalizeStreamSettings;
   private final UnaryCallSettings<SplitReadStreamRequest, SplitReadStreamResponse>
@@ -89,8 +89,8 @@ public class EnhancedBigQueryStorageStubSettings
 
   /** Returns the object with the settings used for calls to batchCreateReadSessionStreams. */
   public UnaryCallSettings<
-      BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
-  batchCreateReadSessionStreamsSettings() {
+          BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
+      batchCreateReadSessionStreamsSettings() {
     return batchCreateReadSessionStreamsSettings;
   }
 
@@ -101,7 +101,7 @@ public class EnhancedBigQueryStorageStubSettings
 
   /** Returns the object with the settings used for calls to splitReadStream. */
   public UnaryCallSettings<SplitReadStreamRequest, SplitReadStreamResponse>
-  splitReadStreamSettings() {
+      splitReadStreamSettings() {
     return splitReadStreamSettings;
   }
 
@@ -127,8 +127,7 @@ public class EnhancedBigQueryStorageStubSettings
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return BigQueryStorageStubSettings
-        .defaultGrpcTransportProviderBuilder()
+    return BigQueryStorageStubSettings.defaultGrpcTransportProviderBuilder()
         .setChannelsPerCpu(2.0)
         .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE);
   }
@@ -190,7 +189,7 @@ public class EnhancedBigQueryStorageStubSettings
     private final ServerStreamingCallSettings.Builder<ReadRowsRequest, ReadRowsResponse>
         readRowsSettings;
     private final UnaryCallSettings.Builder<
-        BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
+            BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
         batchCreateReadSessionStreamsSettings;
     private final UnaryCallSettings.Builder<FinalizeStreamRequest, Empty> finalizeStreamSettings;
     private final UnaryCallSettings.Builder<SplitReadStreamRequest, SplitReadStreamResponse>
@@ -219,7 +218,8 @@ public class EnhancedBigQueryStorageStubSettings
 
       // Per-method settings using override values for defaults.
       readRowsSettings =
-          baseDefaults.readRowsSettings()
+          baseDefaults
+              .readRowsSettings()
               .setRetrySettings(READ_ROWS_RETRY_SETTINGS)
               .setResumptionStrategy(new ReadRowsResumptionStrategy());
 
@@ -267,20 +267,20 @@ public class EnhancedBigQueryStorageStubSettings
 
     /** Returns the builder for the settings used for calls to createReadSession. */
     public UnaryCallSettings.Builder<CreateReadSessionRequest, ReadSession>
-    createReadSessionSettings() {
+        createReadSessionSettings() {
       return createReadSessionSettings;
     }
 
     /** Returns the builder for the settings used for calls to readRows. */
     public ServerStreamingCallSettings.Builder<ReadRowsRequest, ReadRowsResponse>
-    readRowsSettings() {
+        readRowsSettings() {
       return readRowsSettings;
     }
 
     /** Returns the builder for the settings used for calls to batchCreateReadSessionStreams. */
     public UnaryCallSettings.Builder<
-        BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
-    batchCreateReadSessionStreamsSettings() {
+            BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
+        batchCreateReadSessionStreamsSettings() {
       return batchCreateReadSessionStreamsSettings;
     }
 
@@ -291,7 +291,7 @@ public class EnhancedBigQueryStorageStubSettings
 
     /** Returns the builder for the settings used for calls to splitReadStream. */
     public UnaryCallSettings.Builder<SplitReadStreamRequest, SplitReadStreamResponse>
-    splitReadStreamSettings() {
+        splitReadStreamSettings() {
       return splitReadStreamSettings;
     }
 

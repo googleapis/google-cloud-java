@@ -16,16 +16,15 @@
 
 package com.google.cloud.bigquery;
 
-import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
+import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.common.collect.ImmutableSet;
-
 import java.util.Set;
 
 public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
@@ -55,11 +54,9 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     }
   }
 
-  public static class Builder extends
-      ServiceOptions.Builder<BigQuery, BigQueryOptions, Builder> {
+  public static class Builder extends ServiceOptions.Builder<BigQuery, BigQueryOptions, Builder> {
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(BigQueryOptions options) {
       super(options);
@@ -84,8 +81,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     super(BigQueryFactory.class, BigQueryRpcFactory.class, builder, new BigQueryDefaults());
   }
 
-  private static class BigQueryDefaults implements
-      ServiceDefaults<BigQuery, BigQueryOptions> {
+  private static class BigQueryDefaults implements ServiceDefaults<BigQuery, BigQueryOptions> {
 
     @Override
     public BigQueryFactory getDefaultServiceFactory() {
@@ -136,11 +132,9 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     return baseEquals(other);
   }
 
-
   public static BigQueryOptions getDefaultInstance() {
     return newBuilder().build();
   }
-
 
   public static Builder newBuilder() {
     return new Builder();

@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface RecordSuppressionOrBuilder extends
+public interface RecordSuppressionOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.RecordSuppression)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A condition that when it evaluates to true will result in the record being
    * evaluated to be suppressed from the transformed content.
@@ -17,6 +20,8 @@ public interface RecordSuppressionOrBuilder extends
    */
   boolean hasCondition();
   /**
+   *
+   *
    * <pre>
    * A condition that when it evaluates to true will result in the record being
    * evaluated to be suppressed from the transformed content.
@@ -26,6 +31,8 @@ public interface RecordSuppressionOrBuilder extends
    */
   com.google.privacy.dlp.v2.RecordCondition getCondition();
   /**
+   *
+   *
    * <pre>
    * A condition that when it evaluates to true will result in the record being
    * evaluated to be suppressed from the transformed content.

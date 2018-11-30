@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface DeviceConfigOrBuilder extends
+public interface DeviceConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.DeviceConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The version of this update. The version number is assigned by
    * the server, and is always greater than 0 after device creation. The
@@ -20,6 +23,8 @@ public interface DeviceConfigOrBuilder extends
   long getVersion();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The time at which this configuration version was updated in
    * Cloud IoT Core. This timestamp is set by the server.
@@ -29,6 +34,8 @@ public interface DeviceConfigOrBuilder extends
    */
   boolean hasCloudUpdateTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The time at which this configuration version was updated in
    * Cloud IoT Core. This timestamp is set by the server.
@@ -38,6 +45,8 @@ public interface DeviceConfigOrBuilder extends
    */
   com.google.protobuf.Timestamp getCloudUpdateTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The time at which this configuration version was updated in
    * Cloud IoT Core. This timestamp is set by the server.
@@ -48,6 +57,8 @@ public interface DeviceConfigOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCloudUpdateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The time at which Cloud IoT Core received the
    * acknowledgment from the device, indicating that the device has received
@@ -64,6 +75,8 @@ public interface DeviceConfigOrBuilder extends
    */
   boolean hasDeviceAckTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The time at which Cloud IoT Core received the
    * acknowledgment from the device, indicating that the device has received
@@ -80,6 +93,8 @@ public interface DeviceConfigOrBuilder extends
    */
   com.google.protobuf.Timestamp getDeviceAckTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The time at which Cloud IoT Core received the
    * acknowledgment from the device, indicating that the device has received
@@ -97,6 +112,8 @@ public interface DeviceConfigOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getDeviceAckTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The device configuration data.
    * </pre>

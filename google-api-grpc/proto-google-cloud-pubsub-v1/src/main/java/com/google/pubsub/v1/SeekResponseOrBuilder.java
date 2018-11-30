@@ -3,7 +3,7 @@
 
 package com.google.pubsub.v1;
 
-public interface SeekResponseOrBuilder extends
+public interface SeekResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.SeekResponse)
-    com.google.protobuf.MessageOrBuilder {
-}
+    com.google.protobuf.MessageOrBuilder {}

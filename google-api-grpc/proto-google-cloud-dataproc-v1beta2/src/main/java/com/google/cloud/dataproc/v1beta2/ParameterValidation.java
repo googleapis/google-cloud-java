@@ -4,29 +4,31 @@
 package com.google.cloud.dataproc.v1beta2;
 
 /**
+ *
+ *
  * <pre>
  * Configuration for parameter validation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.ParameterValidation}
  */
-public  final class ParameterValidation extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ParameterValidation extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1beta2.ParameterValidation)
     ParameterValidationOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ParameterValidation.newBuilder() to construct.
   private ParameterValidation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ParameterValidation() {
-  }
+
+  private ParameterValidation() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ParameterValidation(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -46,80 +48,93 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.cloud.dataproc.v1beta2.RegexValidation.Builder subBuilder = null;
-            if (validationTypeCase_ == 1) {
-              subBuilder = ((com.google.cloud.dataproc.v1beta2.RegexValidation) validationType_).toBuilder();
+          case 10:
+            {
+              com.google.cloud.dataproc.v1beta2.RegexValidation.Builder subBuilder = null;
+              if (validationTypeCase_ == 1) {
+                subBuilder =
+                    ((com.google.cloud.dataproc.v1beta2.RegexValidation) validationType_)
+                        .toBuilder();
+              }
+              validationType_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.RegexValidation.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.dataproc.v1beta2.RegexValidation) validationType_);
+                validationType_ = subBuilder.buildPartial();
+              }
+              validationTypeCase_ = 1;
+              break;
             }
-            validationType_ =
-                input.readMessage(com.google.cloud.dataproc.v1beta2.RegexValidation.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.dataproc.v1beta2.RegexValidation) validationType_);
-              validationType_ = subBuilder.buildPartial();
+          case 18:
+            {
+              com.google.cloud.dataproc.v1beta2.ValueValidation.Builder subBuilder = null;
+              if (validationTypeCase_ == 2) {
+                subBuilder =
+                    ((com.google.cloud.dataproc.v1beta2.ValueValidation) validationType_)
+                        .toBuilder();
+              }
+              validationType_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.ValueValidation.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.dataproc.v1beta2.ValueValidation) validationType_);
+                validationType_ = subBuilder.buildPartial();
+              }
+              validationTypeCase_ = 2;
+              break;
             }
-            validationTypeCase_ = 1;
-            break;
-          }
-          case 18: {
-            com.google.cloud.dataproc.v1beta2.ValueValidation.Builder subBuilder = null;
-            if (validationTypeCase_ == 2) {
-              subBuilder = ((com.google.cloud.dataproc.v1beta2.ValueValidation) validationType_).toBuilder();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            validationType_ =
-                input.readMessage(com.google.cloud.dataproc.v1beta2.ValueValidation.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.dataproc.v1beta2.ValueValidation) validationType_);
-              validationType_ = subBuilder.buildPartial();
-            }
-            validationTypeCase_ = 2;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_ParameterValidation_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+        .internal_static_google_cloud_dataproc_v1beta2_ParameterValidation_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_ParameterValidation_fieldAccessorTable
+    return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+        .internal_static_google_cloud_dataproc_v1beta2_ParameterValidation_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1beta2.ParameterValidation.class, com.google.cloud.dataproc.v1beta2.ParameterValidation.Builder.class);
+            com.google.cloud.dataproc.v1beta2.ParameterValidation.class,
+            com.google.cloud.dataproc.v1beta2.ParameterValidation.Builder.class);
   }
 
   private int validationTypeCase_ = 0;
   private java.lang.Object validationType_;
-  public enum ValidationTypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum ValidationTypeCase implements com.google.protobuf.Internal.EnumLite {
     REGEX(1),
     VALUES(2),
     VALIDATIONTYPE_NOT_SET(0);
     private final int value;
+
     private ValidationTypeCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static ValidationTypeCase valueOf(int value) {
       return forNumber(value);
@@ -127,25 +142,30 @@ private static final long serialVersionUID = 0L;
 
     public static ValidationTypeCase forNumber(int value) {
       switch (value) {
-        case 1: return REGEX;
-        case 2: return VALUES;
-        case 0: return VALIDATIONTYPE_NOT_SET;
-        default: return null;
+        case 1:
+          return REGEX;
+        case 2:
+          return VALUES;
+        case 0:
+          return VALIDATIONTYPE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public ValidationTypeCase
-  getValidationTypeCase() {
-    return ValidationTypeCase.forNumber(
-        validationTypeCase_);
+  public ValidationTypeCase getValidationTypeCase() {
+    return ValidationTypeCase.forNumber(validationTypeCase_);
   }
 
   public static final int REGEX_FIELD_NUMBER = 1;
   /**
+   *
+   *
    * <pre>
    * Validation based on regular expressions.
    * </pre>
@@ -156,6 +176,8 @@ private static final long serialVersionUID = 0L;
     return validationTypeCase_ == 1;
   }
   /**
+   *
+   *
    * <pre>
    * Validation based on regular expressions.
    * </pre>
@@ -164,11 +186,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1beta2.RegexValidation getRegex() {
     if (validationTypeCase_ == 1) {
-       return (com.google.cloud.dataproc.v1beta2.RegexValidation) validationType_;
+      return (com.google.cloud.dataproc.v1beta2.RegexValidation) validationType_;
     }
     return com.google.cloud.dataproc.v1beta2.RegexValidation.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Validation based on regular expressions.
    * </pre>
@@ -177,13 +201,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1beta2.RegexValidationOrBuilder getRegexOrBuilder() {
     if (validationTypeCase_ == 1) {
-       return (com.google.cloud.dataproc.v1beta2.RegexValidation) validationType_;
+      return (com.google.cloud.dataproc.v1beta2.RegexValidation) validationType_;
     }
     return com.google.cloud.dataproc.v1beta2.RegexValidation.getDefaultInstance();
   }
 
   public static final int VALUES_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * Validation based on a list of allowed values.
    * </pre>
@@ -194,6 +220,8 @@ private static final long serialVersionUID = 0L;
     return validationTypeCase_ == 2;
   }
   /**
+   *
+   *
    * <pre>
    * Validation based on a list of allowed values.
    * </pre>
@@ -202,11 +230,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1beta2.ValueValidation getValues() {
     if (validationTypeCase_ == 2) {
-       return (com.google.cloud.dataproc.v1beta2.ValueValidation) validationType_;
+      return (com.google.cloud.dataproc.v1beta2.ValueValidation) validationType_;
     }
     return com.google.cloud.dataproc.v1beta2.ValueValidation.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Validation based on a list of allowed values.
    * </pre>
@@ -215,12 +245,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1beta2.ValueValidationOrBuilder getValuesOrBuilder() {
     if (validationTypeCase_ == 2) {
-       return (com.google.cloud.dataproc.v1beta2.ValueValidation) validationType_;
+      return (com.google.cloud.dataproc.v1beta2.ValueValidation) validationType_;
     }
     return com.google.cloud.dataproc.v1beta2.ValueValidation.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -232,8 +263,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (validationTypeCase_ == 1) {
       output.writeMessage(1, (com.google.cloud.dataproc.v1beta2.RegexValidation) validationType_);
     }
@@ -250,12 +280,14 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (validationTypeCase_ == 1) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, (com.google.cloud.dataproc.v1beta2.RegexValidation) validationType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              1, (com.google.cloud.dataproc.v1beta2.RegexValidation) validationType_);
     }
     if (validationTypeCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.google.cloud.dataproc.v1beta2.ValueValidation) validationType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.cloud.dataproc.v1beta2.ValueValidation) validationType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -265,25 +297,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dataproc.v1beta2.ParameterValidation)) {
       return super.equals(obj);
     }
-    com.google.cloud.dataproc.v1beta2.ParameterValidation other = (com.google.cloud.dataproc.v1beta2.ParameterValidation) obj;
+    com.google.cloud.dataproc.v1beta2.ParameterValidation other =
+        (com.google.cloud.dataproc.v1beta2.ParameterValidation) obj;
 
     boolean result = true;
-    result = result && getValidationTypeCase().equals(
-        other.getValidationTypeCase());
+    result = result && getValidationTypeCase().equals(other.getValidationTypeCase());
     if (!result) return false;
     switch (validationTypeCase_) {
       case 1:
-        result = result && getRegex()
-            .equals(other.getRegex());
+        result = result && getRegex().equals(other.getRegex());
         break;
       case 2:
-        result = result && getValues()
-            .equals(other.getValues());
+        result = result && getValues().equals(other.getValues());
         break;
       case 0:
       default:
@@ -317,117 +347,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.dataproc.v1beta2.ParameterValidation parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ParameterValidation parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ParameterValidation parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ParameterValidation parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ParameterValidation parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ParameterValidation parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1beta2.ParameterValidation parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dataproc.v1beta2.ParameterValidation parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dataproc.v1beta2.ParameterValidation parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.dataproc.v1beta2.ParameterValidation parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ParameterValidation parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dataproc.v1beta2.ParameterValidation parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dataproc.v1beta2.ParameterValidation parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1beta2.ParameterValidation parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.dataproc.v1beta2.ParameterValidation prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.dataproc.v1beta2.ParameterValidation prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for parameter validation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.ParameterValidation}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1beta2.ParameterValidation)
       com.google.cloud.dataproc.v1beta2.ParameterValidationOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_ParameterValidation_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+          .internal_static_google_cloud_dataproc_v1beta2_ParameterValidation_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_ParameterValidation_fieldAccessorTable
+      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+          .internal_static_google_cloud_dataproc_v1beta2_ParameterValidation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1beta2.ParameterValidation.class, com.google.cloud.dataproc.v1beta2.ParameterValidation.Builder.class);
+              com.google.cloud.dataproc.v1beta2.ParameterValidation.class,
+              com.google.cloud.dataproc.v1beta2.ParameterValidation.Builder.class);
     }
 
     // Construct using com.google.cloud.dataproc.v1beta2.ParameterValidation.newBuilder()
@@ -435,16 +475,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -454,9 +493,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto.internal_static_google_cloud_dataproc_v1beta2_ParameterValidation_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1beta2.WorkflowTemplatesProto
+          .internal_static_google_cloud_dataproc_v1beta2_ParameterValidation_descriptor;
     }
 
     @java.lang.Override
@@ -475,7 +514,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.ParameterValidation buildPartial() {
-      com.google.cloud.dataproc.v1beta2.ParameterValidation result = new com.google.cloud.dataproc.v1beta2.ParameterValidation(this);
+      com.google.cloud.dataproc.v1beta2.ParameterValidation result =
+          new com.google.cloud.dataproc.v1beta2.ParameterValidation(this);
       if (validationTypeCase_ == 1) {
         if (regexBuilder_ == null) {
           result.validationType_ = validationType_;
@@ -499,38 +539,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dataproc.v1beta2.ParameterValidation) {
-        return mergeFrom((com.google.cloud.dataproc.v1beta2.ParameterValidation)other);
+        return mergeFrom((com.google.cloud.dataproc.v1beta2.ParameterValidation) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -538,19 +579,23 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dataproc.v1beta2.ParameterValidation other) {
-      if (other == com.google.cloud.dataproc.v1beta2.ParameterValidation.getDefaultInstance()) return this;
+      if (other == com.google.cloud.dataproc.v1beta2.ParameterValidation.getDefaultInstance())
+        return this;
       switch (other.getValidationTypeCase()) {
-        case REGEX: {
-          mergeRegex(other.getRegex());
-          break;
-        }
-        case VALUES: {
-          mergeValues(other.getValues());
-          break;
-        }
-        case VALIDATIONTYPE_NOT_SET: {
-          break;
-        }
+        case REGEX:
+          {
+            mergeRegex(other.getRegex());
+            break;
+          }
+        case VALUES:
+          {
+            mergeValues(other.getValues());
+            break;
+          }
+        case VALIDATIONTYPE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -571,7 +616,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataproc.v1beta2.ParameterValidation) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dataproc.v1beta2.ParameterValidation) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -580,12 +626,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int validationTypeCase_ = 0;
     private java.lang.Object validationType_;
-    public ValidationTypeCase
-        getValidationTypeCase() {
-      return ValidationTypeCase.forNumber(
-          validationTypeCase_);
+
+    public ValidationTypeCase getValidationTypeCase() {
+      return ValidationTypeCase.forNumber(validationTypeCase_);
     }
 
     public Builder clearValidationType() {
@@ -595,10 +641,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.RegexValidation, com.google.cloud.dataproc.v1beta2.RegexValidation.Builder, com.google.cloud.dataproc.v1beta2.RegexValidationOrBuilder> regexBuilder_;
+            com.google.cloud.dataproc.v1beta2.RegexValidation,
+            com.google.cloud.dataproc.v1beta2.RegexValidation.Builder,
+            com.google.cloud.dataproc.v1beta2.RegexValidationOrBuilder>
+        regexBuilder_;
     /**
+     *
+     *
      * <pre>
      * Validation based on regular expressions.
      * </pre>
@@ -609,6 +659,8 @@ private static final long serialVersionUID = 0L;
       return validationTypeCase_ == 1;
     }
     /**
+     *
+     *
      * <pre>
      * Validation based on regular expressions.
      * </pre>
@@ -629,6 +681,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Validation based on regular expressions.
      * </pre>
@@ -649,6 +703,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Validation based on regular expressions.
      * </pre>
@@ -667,6 +723,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Validation based on regular expressions.
      * </pre>
@@ -675,10 +733,14 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeRegex(com.google.cloud.dataproc.v1beta2.RegexValidation value) {
       if (regexBuilder_ == null) {
-        if (validationTypeCase_ == 1 &&
-            validationType_ != com.google.cloud.dataproc.v1beta2.RegexValidation.getDefaultInstance()) {
-          validationType_ = com.google.cloud.dataproc.v1beta2.RegexValidation.newBuilder((com.google.cloud.dataproc.v1beta2.RegexValidation) validationType_)
-              .mergeFrom(value).buildPartial();
+        if (validationTypeCase_ == 1
+            && validationType_
+                != com.google.cloud.dataproc.v1beta2.RegexValidation.getDefaultInstance()) {
+          validationType_ =
+              com.google.cloud.dataproc.v1beta2.RegexValidation.newBuilder(
+                      (com.google.cloud.dataproc.v1beta2.RegexValidation) validationType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           validationType_ = value;
         }
@@ -693,6 +755,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Validation based on regular expressions.
      * </pre>
@@ -716,6 +780,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Validation based on regular expressions.
      * </pre>
@@ -726,6 +792,8 @@ private static final long serialVersionUID = 0L;
       return getRegexFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Validation based on regular expressions.
      * </pre>
@@ -743,6 +811,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Validation based on regular expressions.
      * </pre>
@@ -750,27 +820,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.RegexValidation regex = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.RegexValidation, com.google.cloud.dataproc.v1beta2.RegexValidation.Builder, com.google.cloud.dataproc.v1beta2.RegexValidationOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.RegexValidation,
+            com.google.cloud.dataproc.v1beta2.RegexValidation.Builder,
+            com.google.cloud.dataproc.v1beta2.RegexValidationOrBuilder>
         getRegexFieldBuilder() {
       if (regexBuilder_ == null) {
         if (!(validationTypeCase_ == 1)) {
           validationType_ = com.google.cloud.dataproc.v1beta2.RegexValidation.getDefaultInstance();
         }
-        regexBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.RegexValidation, com.google.cloud.dataproc.v1beta2.RegexValidation.Builder, com.google.cloud.dataproc.v1beta2.RegexValidationOrBuilder>(
+        regexBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.RegexValidation,
+                com.google.cloud.dataproc.v1beta2.RegexValidation.Builder,
+                com.google.cloud.dataproc.v1beta2.RegexValidationOrBuilder>(
                 (com.google.cloud.dataproc.v1beta2.RegexValidation) validationType_,
                 getParentForChildren(),
                 isClean());
         validationType_ = null;
       }
       validationTypeCase_ = 1;
-      onChanged();;
+      onChanged();
+      ;
       return regexBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.ValueValidation, com.google.cloud.dataproc.v1beta2.ValueValidation.Builder, com.google.cloud.dataproc.v1beta2.ValueValidationOrBuilder> valuesBuilder_;
+            com.google.cloud.dataproc.v1beta2.ValueValidation,
+            com.google.cloud.dataproc.v1beta2.ValueValidation.Builder,
+            com.google.cloud.dataproc.v1beta2.ValueValidationOrBuilder>
+        valuesBuilder_;
     /**
+     *
+     *
      * <pre>
      * Validation based on a list of allowed values.
      * </pre>
@@ -781,6 +862,8 @@ private static final long serialVersionUID = 0L;
       return validationTypeCase_ == 2;
     }
     /**
+     *
+     *
      * <pre>
      * Validation based on a list of allowed values.
      * </pre>
@@ -801,6 +884,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Validation based on a list of allowed values.
      * </pre>
@@ -821,6 +906,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Validation based on a list of allowed values.
      * </pre>
@@ -839,6 +926,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Validation based on a list of allowed values.
      * </pre>
@@ -847,10 +936,14 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeValues(com.google.cloud.dataproc.v1beta2.ValueValidation value) {
       if (valuesBuilder_ == null) {
-        if (validationTypeCase_ == 2 &&
-            validationType_ != com.google.cloud.dataproc.v1beta2.ValueValidation.getDefaultInstance()) {
-          validationType_ = com.google.cloud.dataproc.v1beta2.ValueValidation.newBuilder((com.google.cloud.dataproc.v1beta2.ValueValidation) validationType_)
-              .mergeFrom(value).buildPartial();
+        if (validationTypeCase_ == 2
+            && validationType_
+                != com.google.cloud.dataproc.v1beta2.ValueValidation.getDefaultInstance()) {
+          validationType_ =
+              com.google.cloud.dataproc.v1beta2.ValueValidation.newBuilder(
+                      (com.google.cloud.dataproc.v1beta2.ValueValidation) validationType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           validationType_ = value;
         }
@@ -865,6 +958,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Validation based on a list of allowed values.
      * </pre>
@@ -888,6 +983,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Validation based on a list of allowed values.
      * </pre>
@@ -898,6 +995,8 @@ private static final long serialVersionUID = 0L;
       return getValuesFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Validation based on a list of allowed values.
      * </pre>
@@ -915,6 +1014,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Validation based on a list of allowed values.
      * </pre>
@@ -922,26 +1023,32 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.ValueValidation values = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.ValueValidation, com.google.cloud.dataproc.v1beta2.ValueValidation.Builder, com.google.cloud.dataproc.v1beta2.ValueValidationOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.ValueValidation,
+            com.google.cloud.dataproc.v1beta2.ValueValidation.Builder,
+            com.google.cloud.dataproc.v1beta2.ValueValidationOrBuilder>
         getValuesFieldBuilder() {
       if (valuesBuilder_ == null) {
         if (!(validationTypeCase_ == 2)) {
           validationType_ = com.google.cloud.dataproc.v1beta2.ValueValidation.getDefaultInstance();
         }
-        valuesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.ValueValidation, com.google.cloud.dataproc.v1beta2.ValueValidation.Builder, com.google.cloud.dataproc.v1beta2.ValueValidationOrBuilder>(
+        valuesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.ValueValidation,
+                com.google.cloud.dataproc.v1beta2.ValueValidation.Builder,
+                com.google.cloud.dataproc.v1beta2.ValueValidationOrBuilder>(
                 (com.google.cloud.dataproc.v1beta2.ValueValidation) validationType_,
                 getParentForChildren(),
                 isClean());
         validationType_ = null;
       }
       validationTypeCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return valuesBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -951,12 +1058,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1beta2.ParameterValidation)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1beta2.ParameterValidation)
   private static final com.google.cloud.dataproc.v1beta2.ParameterValidation DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1beta2.ParameterValidation();
   }
@@ -965,16 +1072,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ParameterValidation>
-      PARSER = new com.google.protobuf.AbstractParser<ParameterValidation>() {
-    @java.lang.Override
-    public ParameterValidation parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ParameterValidation(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ParameterValidation> PARSER =
+      new com.google.protobuf.AbstractParser<ParameterValidation>() {
+        @java.lang.Override
+        public ParameterValidation parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ParameterValidation(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ParameterValidation> parser() {
     return PARSER;
@@ -989,6 +1096,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dataproc.v1beta2.ParameterValidation getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

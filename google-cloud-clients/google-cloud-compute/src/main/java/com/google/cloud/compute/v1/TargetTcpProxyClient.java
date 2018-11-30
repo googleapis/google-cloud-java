@@ -55,13 +55,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -876,8 +876,11 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   public static class ListTargetTcpProxiesPagedResponse
       extends AbstractPagedListResponse<
-          ListTargetTcpProxiesHttpRequest, TargetTcpProxyList, TargetTcpProxy,
-          ListTargetTcpProxiesPage, ListTargetTcpProxiesFixedSizeCollection> {
+          ListTargetTcpProxiesHttpRequest,
+          TargetTcpProxyList,
+          TargetTcpProxy,
+          ListTargetTcpProxiesPage,
+          ListTargetTcpProxiesFixedSizeCollection> {
 
     public static ApiFuture<ListTargetTcpProxiesPagedResponse> createAsync(
         PageContext<ListTargetTcpProxiesHttpRequest, TargetTcpProxyList, TargetTcpProxy> context,
@@ -901,7 +904,9 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   public static class ListTargetTcpProxiesPage
       extends AbstractPage<
-          ListTargetTcpProxiesHttpRequest, TargetTcpProxyList, TargetTcpProxy,
+          ListTargetTcpProxiesHttpRequest,
+          TargetTcpProxyList,
+          TargetTcpProxy,
           ListTargetTcpProxiesPage> {
 
     private ListTargetTcpProxiesPage(
@@ -931,8 +936,11 @@ public class TargetTcpProxyClient implements BackgroundResource {
 
   public static class ListTargetTcpProxiesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTargetTcpProxiesHttpRequest, TargetTcpProxyList, TargetTcpProxy,
-          ListTargetTcpProxiesPage, ListTargetTcpProxiesFixedSizeCollection> {
+          ListTargetTcpProxiesHttpRequest,
+          TargetTcpProxyList,
+          TargetTcpProxy,
+          ListTargetTcpProxiesPage,
+          ListTargetTcpProxiesFixedSizeCollection> {
 
     private ListTargetTcpProxiesFixedSizeCollection(
         List<ListTargetTcpProxiesPage> pages, int collectionSize) {

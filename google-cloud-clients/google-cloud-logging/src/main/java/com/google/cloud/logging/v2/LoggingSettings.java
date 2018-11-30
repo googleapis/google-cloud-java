@@ -95,7 +95,8 @@ public class LoggingSettings extends ClientSettings<LoggingSettings> {
 
   /** Returns the object with the settings used for calls to listMonitoredResourceDescriptors. */
   public PagedCallSettings<
-          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+          ListMonitoredResourceDescriptorsRequest,
+          ListMonitoredResourceDescriptorsResponse,
           ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsSettings() {
     return ((LoggingServiceV2StubSettings) getStubSettings())
@@ -224,7 +225,8 @@ public class LoggingSettings extends ClientSettings<LoggingSettings> {
 
     /** Returns the builder for the settings used for calls to listMonitoredResourceDescriptors. */
     public PagedCallSettings.Builder<
-            ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+            ListMonitoredResourceDescriptorsRequest,
+            ListMonitoredResourceDescriptorsResponse,
             ListMonitoredResourceDescriptorsPagedResponse>
         listMonitoredResourceDescriptorsSettings() {
       return getStubSettingsBuilder().listMonitoredResourceDescriptorsSettings();

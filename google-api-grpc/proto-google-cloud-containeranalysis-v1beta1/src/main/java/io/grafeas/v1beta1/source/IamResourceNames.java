@@ -14,7 +14,6 @@
 
 package io.grafeas.v1beta1.source;
 
-import com.google.api.resourcenames.ResourceName;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")

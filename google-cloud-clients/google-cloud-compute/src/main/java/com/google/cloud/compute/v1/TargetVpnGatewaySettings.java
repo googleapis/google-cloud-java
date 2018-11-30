@@ -66,7 +66,8 @@ import javax.annotation.Generated;
 public class TargetVpnGatewaySettings extends ClientSettings<TargetVpnGatewaySettings> {
   /** Returns the object with the settings used for calls to aggregatedListTargetVpnGateways. */
   public PagedCallSettings<
-          AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList,
+          AggregatedListTargetVpnGatewaysHttpRequest,
+          TargetVpnGatewayAggregatedList,
           AggregatedListTargetVpnGatewaysPagedResponse>
       aggregatedListTargetVpnGatewaysSettings() {
     return ((TargetVpnGatewayStubSettings) getStubSettings())
@@ -93,7 +94,8 @@ public class TargetVpnGatewaySettings extends ClientSettings<TargetVpnGatewaySet
 
   /** Returns the object with the settings used for calls to listTargetVpnGateways. */
   public PagedCallSettings<
-          ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList,
+          ListTargetVpnGatewaysHttpRequest,
+          TargetVpnGatewayList,
           ListTargetVpnGatewaysPagedResponse>
       listTargetVpnGatewaysSettings() {
     return ((TargetVpnGatewayStubSettings) getStubSettings()).listTargetVpnGatewaysSettings();
@@ -203,7 +205,8 @@ public class TargetVpnGatewaySettings extends ClientSettings<TargetVpnGatewaySet
 
     /** Returns the builder for the settings used for calls to aggregatedListTargetVpnGateways. */
     public PagedCallSettings.Builder<
-            AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList,
+            AggregatedListTargetVpnGatewaysHttpRequest,
+            TargetVpnGatewayAggregatedList,
             AggregatedListTargetVpnGatewaysPagedResponse>
         aggregatedListTargetVpnGatewaysSettings() {
       return getStubSettingsBuilder().aggregatedListTargetVpnGatewaysSettings();
@@ -229,7 +232,8 @@ public class TargetVpnGatewaySettings extends ClientSettings<TargetVpnGatewaySet
 
     /** Returns the builder for the settings used for calls to listTargetVpnGateways. */
     public PagedCallSettings.Builder<
-            ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList,
+            ListTargetVpnGatewaysHttpRequest,
+            TargetVpnGatewayList,
             ListTargetVpnGatewaysPagedResponse>
         listTargetVpnGatewaysSettings() {
       return getStubSettingsBuilder().listTargetVpnGatewaysSettings();

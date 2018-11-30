@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface LocalizedObjectAnnotationOrBuilder extends
+public interface LocalizedObjectAnnotationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Object ID that should align with EntityAnnotation mid.
    * </pre>
@@ -16,16 +19,19 @@ public interface LocalizedObjectAnnotationOrBuilder extends
    */
   java.lang.String getMid();
   /**
+   *
+   *
    * <pre>
    * Object ID that should align with EntityAnnotation mid.
    * </pre>
    *
    * <code>string mid = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getMidBytes();
+  com.google.protobuf.ByteString getMidBytes();
 
   /**
+   *
+   *
    * <pre>
    * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
    * information, see
@@ -36,6 +42,8 @@ public interface LocalizedObjectAnnotationOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * The BCP-47 language code, such as "en-US" or "sr-Latn". For more
    * information, see
@@ -44,10 +52,11 @@ public interface LocalizedObjectAnnotationOrBuilder extends
    *
    * <code>string language_code = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Object name, expressed in its `language_code` language.
    * </pre>
@@ -56,16 +65,19 @@ public interface LocalizedObjectAnnotationOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Object name, expressed in its `language_code` language.
    * </pre>
    *
    * <code>string name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Score of the result. Range [0, 1].
    * </pre>
@@ -75,6 +87,8 @@ public interface LocalizedObjectAnnotationOrBuilder extends
   float getScore();
 
   /**
+   *
+   *
    * <pre>
    * Image region to which this object belongs. This must be populated.
    * </pre>
@@ -83,6 +97,8 @@ public interface LocalizedObjectAnnotationOrBuilder extends
    */
   boolean hasBoundingPoly();
   /**
+   *
+   *
    * <pre>
    * Image region to which this object belongs. This must be populated.
    * </pre>
@@ -91,6 +107,8 @@ public interface LocalizedObjectAnnotationOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.BoundingPoly getBoundingPoly();
   /**
+   *
+   *
    * <pre>
    * Image region to which this object belongs. This must be populated.
    * </pre>

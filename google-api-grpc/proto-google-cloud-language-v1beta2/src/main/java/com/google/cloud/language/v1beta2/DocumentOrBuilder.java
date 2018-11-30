@@ -3,11 +3,14 @@
 
 package com.google.cloud.language.v1beta2;
 
-public interface DocumentOrBuilder extends
+public interface DocumentOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.language.v1beta2.Document)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. If the type is not set or is `TYPE_UNSPECIFIED`,
    * returns an `INVALID_ARGUMENT` error.
@@ -17,6 +20,8 @@ public interface DocumentOrBuilder extends
    */
   int getTypeValue();
   /**
+   *
+   *
    * <pre>
    * Required. If the type is not set or is `TYPE_UNSPECIFIED`,
    * returns an `INVALID_ARGUMENT` error.
@@ -27,6 +32,8 @@ public interface DocumentOrBuilder extends
   com.google.cloud.language.v1beta2.Document.Type getType();
 
   /**
+   *
+   *
    * <pre>
    * The content of the input in string format.
    * </pre>
@@ -35,16 +42,19 @@ public interface DocumentOrBuilder extends
    */
   java.lang.String getContent();
   /**
+   *
+   *
    * <pre>
    * The content of the input in string format.
    * </pre>
    *
    * <code>string content = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getContentBytes();
+  com.google.protobuf.ByteString getContentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage URI where the file content is located.
    * This URI must be of the form: gs://bucket_name/object_name. For more
@@ -56,6 +66,8 @@ public interface DocumentOrBuilder extends
    */
   java.lang.String getGcsContentUri();
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage URI where the file content is located.
    * This URI must be of the form: gs://bucket_name/object_name. For more
@@ -65,10 +77,11 @@ public interface DocumentOrBuilder extends
    *
    * <code>string gcs_content_uri = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getGcsContentUriBytes();
+  com.google.protobuf.ByteString getGcsContentUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * The language of the document (if not specified, the language is
    * automatically detected). Both ISO and BCP-47 language codes are
@@ -84,6 +97,8 @@ public interface DocumentOrBuilder extends
    */
   java.lang.String getLanguage();
   /**
+   *
+   *
    * <pre>
    * The language of the document (if not specified, the language is
    * automatically detected). Both ISO and BCP-47 language codes are
@@ -97,8 +112,7 @@ public interface DocumentOrBuilder extends
    *
    * <code>string language = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageBytes();
+  com.google.protobuf.ByteString getLanguageBytes();
 
   public com.google.cloud.language.v1beta2.Document.SourceCase getSourceCase();
 }

@@ -56,13 +56,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -432,12 +432,16 @@ public class InterconnectLocationClient implements BackgroundResource {
 
   public static class ListInterconnectLocationsPagedResponse
       extends AbstractPagedListResponse<
-          ListInterconnectLocationsHttpRequest, InterconnectLocationList, InterconnectLocation,
-          ListInterconnectLocationsPage, ListInterconnectLocationsFixedSizeCollection> {
+          ListInterconnectLocationsHttpRequest,
+          InterconnectLocationList,
+          InterconnectLocation,
+          ListInterconnectLocationsPage,
+          ListInterconnectLocationsFixedSizeCollection> {
 
     public static ApiFuture<ListInterconnectLocationsPagedResponse> createAsync(
         PageContext<
-                ListInterconnectLocationsHttpRequest, InterconnectLocationList,
+                ListInterconnectLocationsHttpRequest,
+                InterconnectLocationList,
                 InterconnectLocation>
             context,
         ApiFuture<InterconnectLocationList> futureResponse) {
@@ -461,12 +465,15 @@ public class InterconnectLocationClient implements BackgroundResource {
 
   public static class ListInterconnectLocationsPage
       extends AbstractPage<
-          ListInterconnectLocationsHttpRequest, InterconnectLocationList, InterconnectLocation,
+          ListInterconnectLocationsHttpRequest,
+          InterconnectLocationList,
+          InterconnectLocation,
           ListInterconnectLocationsPage> {
 
     private ListInterconnectLocationsPage(
         PageContext<
-                ListInterconnectLocationsHttpRequest, InterconnectLocationList,
+                ListInterconnectLocationsHttpRequest,
+                InterconnectLocationList,
                 InterconnectLocation>
             context,
         InterconnectLocationList response) {
@@ -480,7 +487,8 @@ public class InterconnectLocationClient implements BackgroundResource {
     @Override
     protected ListInterconnectLocationsPage createPage(
         PageContext<
-                ListInterconnectLocationsHttpRequest, InterconnectLocationList,
+                ListInterconnectLocationsHttpRequest,
+                InterconnectLocationList,
                 InterconnectLocation>
             context,
         InterconnectLocationList response) {
@@ -490,7 +498,8 @@ public class InterconnectLocationClient implements BackgroundResource {
     @Override
     public ApiFuture<ListInterconnectLocationsPage> createPageAsync(
         PageContext<
-                ListInterconnectLocationsHttpRequest, InterconnectLocationList,
+                ListInterconnectLocationsHttpRequest,
+                InterconnectLocationList,
                 InterconnectLocation>
             context,
         ApiFuture<InterconnectLocationList> futureResponse) {
@@ -500,8 +509,11 @@ public class InterconnectLocationClient implements BackgroundResource {
 
   public static class ListInterconnectLocationsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListInterconnectLocationsHttpRequest, InterconnectLocationList, InterconnectLocation,
-          ListInterconnectLocationsPage, ListInterconnectLocationsFixedSizeCollection> {
+          ListInterconnectLocationsHttpRequest,
+          InterconnectLocationList,
+          InterconnectLocation,
+          ListInterconnectLocationsPage,
+          ListInterconnectLocationsFixedSizeCollection> {
 
     private ListInterconnectLocationsFixedSizeCollection(
         List<ListInterconnectLocationsPage> pages, int collectionSize) {

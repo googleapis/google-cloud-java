@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface LocationOrBuilder extends
+public interface LocationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Location)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Zero-based byte offsets delimiting the finding.
    * These are relative to the finding's containing element.
@@ -20,6 +23,8 @@ public interface LocationOrBuilder extends
    */
   boolean hasByteRange();
   /**
+   *
+   *
    * <pre>
    * Zero-based byte offsets delimiting the finding.
    * These are relative to the finding's containing element.
@@ -32,6 +37,8 @@ public interface LocationOrBuilder extends
    */
   com.google.privacy.dlp.v2.Range getByteRange();
   /**
+   *
+   *
    * <pre>
    * Zero-based byte offsets delimiting the finding.
    * These are relative to the finding's containing element.
@@ -45,6 +52,8 @@ public interface LocationOrBuilder extends
   com.google.privacy.dlp.v2.RangeOrBuilder getByteRangeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Unicode character offsets delimiting the finding.
    * These are relative to the finding's containing element.
@@ -55,6 +64,8 @@ public interface LocationOrBuilder extends
    */
   boolean hasCodepointRange();
   /**
+   *
+   *
    * <pre>
    * Unicode character offsets delimiting the finding.
    * These are relative to the finding's containing element.
@@ -65,6 +76,8 @@ public interface LocationOrBuilder extends
    */
   com.google.privacy.dlp.v2.Range getCodepointRange();
   /**
+   *
+   *
    * <pre>
    * Unicode character offsets delimiting the finding.
    * These are relative to the finding's containing element.
@@ -76,6 +89,8 @@ public interface LocationOrBuilder extends
   com.google.privacy.dlp.v2.RangeOrBuilder getCodepointRangeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * List of nested objects pointing to the precise location of the finding
    * within the file or record.
@@ -83,9 +98,10 @@ public interface LocationOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.ContentLocation content_locations = 7;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.ContentLocation> 
-      getContentLocationsList();
+  java.util.List<com.google.privacy.dlp.v2.ContentLocation> getContentLocationsList();
   /**
+   *
+   *
    * <pre>
    * List of nested objects pointing to the precise location of the finding
    * within the file or record.
@@ -95,6 +111,8 @@ public interface LocationOrBuilder extends
    */
   com.google.privacy.dlp.v2.ContentLocation getContentLocations(int index);
   /**
+   *
+   *
    * <pre>
    * List of nested objects pointing to the precise location of the finding
    * within the file or record.
@@ -104,6 +122,8 @@ public interface LocationOrBuilder extends
    */
   int getContentLocationsCount();
   /**
+   *
+   *
    * <pre>
    * List of nested objects pointing to the precise location of the finding
    * within the file or record.
@@ -111,9 +131,11 @@ public interface LocationOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.ContentLocation content_locations = 7;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.ContentLocationOrBuilder> 
+  java.util.List<? extends com.google.privacy.dlp.v2.ContentLocationOrBuilder>
       getContentLocationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * List of nested objects pointing to the precise location of the finding
    * within the file or record.
@@ -121,6 +143,5 @@ public interface LocationOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.ContentLocation content_locations = 7;</code>
    */
-  com.google.privacy.dlp.v2.ContentLocationOrBuilder getContentLocationsOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.ContentLocationOrBuilder getContentLocationsOrBuilder(int index);
 }

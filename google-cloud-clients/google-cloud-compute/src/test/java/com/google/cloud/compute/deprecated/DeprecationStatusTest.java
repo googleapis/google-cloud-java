@@ -122,9 +122,8 @@ public class DeprecationStatusTest {
   public void testToBuilder() {
     compareDeprecationStatus(DISK_TYPE_STATUS, DISK_TYPE_STATUS.toBuilder().build());
     compareDeprecationStatus(MACHINE_TYPE_STATUS, MACHINE_TYPE_STATUS.toBuilder().build());
-    DeprecationStatus<DiskTypeId> deprecationStatus = DISK_TYPE_STATUS.toBuilder()
-        .setDeleted(DEPRECATED)
-        .build();
+    DeprecationStatus<DiskTypeId> deprecationStatus =
+        DISK_TYPE_STATUS.toBuilder().setDeleted(DEPRECATED).build();
     assertEquals(DEPRECATED, deprecationStatus.getDeleted());
     deprecationStatus = deprecationStatus.toBuilder().setDeleted(DELETED).build();
     compareDeprecationStatus(DISK_TYPE_STATUS, deprecationStatus);
@@ -154,18 +153,18 @@ public class DeprecationStatusTest {
     DeprecationStatus<MachineTypeId> machineStatus =
         DeprecationStatus.fromPb(MACHINE_TYPE_STATUS.toPb(), MachineTypeId.FROM_URL_FUNCTION);
     compareDeprecationStatus(MACHINE_TYPE_STATUS, machineStatus);
-    diskStatus = DeprecationStatus.newBuilder(STATUS, DISK_TYPE_ID)
-        .setDeprecated(DEPRECATED)
-        .build();
-    assertEquals(diskStatus,
-        DeprecationStatus.fromPb(diskStatus.toPb(), DiskTypeId.FROM_URL_FUNCTION));
+    diskStatus =
+        DeprecationStatus.newBuilder(STATUS, DISK_TYPE_ID).setDeprecated(DEPRECATED).build();
+    assertEquals(
+        diskStatus, DeprecationStatus.fromPb(diskStatus.toPb(), DiskTypeId.FROM_URL_FUNCTION));
     machineStatus =
         DeprecationStatus.newBuilder(STATUS, MACHINE_TYPE_ID).setDeprecated(DEPRECATED).build();
-    assertEquals(machineStatus,
+    assertEquals(
+        machineStatus,
         DeprecationStatus.fromPb(machineStatus.toPb(), MachineTypeId.FROM_URL_FUNCTION));
     diskStatus = DeprecationStatus.of(STATUS, DISK_TYPE_ID);
-    assertEquals(diskStatus,
-        DeprecationStatus.fromPb(diskStatus.toPb(), DiskTypeId.FROM_URL_FUNCTION));
+    assertEquals(
+        diskStatus, DeprecationStatus.fromPb(diskStatus.toPb(), DiskTypeId.FROM_URL_FUNCTION));
   }
 
   private void compareDeprecationStatus(DeprecationStatus expected, DeprecationStatus value) {

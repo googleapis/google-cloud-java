@@ -3,11 +3,14 @@
 
 package com.google.cloud.language.v1;
 
-public interface ClassifyTextRequestOrBuilder extends
+public interface ClassifyTextRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.language.v1.ClassifyTextRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Input document.
    * </pre>
@@ -16,6 +19,8 @@ public interface ClassifyTextRequestOrBuilder extends
    */
   boolean hasDocument();
   /**
+   *
+   *
    * <pre>
    * Input document.
    * </pre>
@@ -24,6 +29,8 @@ public interface ClassifyTextRequestOrBuilder extends
    */
   com.google.cloud.language.v1.Document getDocument();
   /**
+   *
+   *
    * <pre>
    * Input document.
    * </pre>

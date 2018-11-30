@@ -110,13 +110,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1896,8 +1896,11 @@ public class DlpServiceClient implements BackgroundResource {
 
   public static class ListInspectTemplatesPagedResponse
       extends AbstractPagedListResponse<
-          ListInspectTemplatesRequest, ListInspectTemplatesResponse, InspectTemplate,
-          ListInspectTemplatesPage, ListInspectTemplatesFixedSizeCollection> {
+          ListInspectTemplatesRequest,
+          ListInspectTemplatesResponse,
+          InspectTemplate,
+          ListInspectTemplatesPage,
+          ListInspectTemplatesFixedSizeCollection> {
 
     public static ApiFuture<ListInspectTemplatesPagedResponse> createAsync(
         PageContext<ListInspectTemplatesRequest, ListInspectTemplatesResponse, InspectTemplate>
@@ -1922,7 +1925,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   public static class ListInspectTemplatesPage
       extends AbstractPage<
-          ListInspectTemplatesRequest, ListInspectTemplatesResponse, InspectTemplate,
+          ListInspectTemplatesRequest,
+          ListInspectTemplatesResponse,
+          InspectTemplate,
           ListInspectTemplatesPage> {
 
     private ListInspectTemplatesPage(
@@ -1955,8 +1960,11 @@ public class DlpServiceClient implements BackgroundResource {
 
   public static class ListInspectTemplatesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListInspectTemplatesRequest, ListInspectTemplatesResponse, InspectTemplate,
-          ListInspectTemplatesPage, ListInspectTemplatesFixedSizeCollection> {
+          ListInspectTemplatesRequest,
+          ListInspectTemplatesResponse,
+          InspectTemplate,
+          ListInspectTemplatesPage,
+          ListInspectTemplatesFixedSizeCollection> {
 
     private ListInspectTemplatesFixedSizeCollection(
         List<ListInspectTemplatesPage> pages, int collectionSize) {
@@ -1976,8 +1984,11 @@ public class DlpServiceClient implements BackgroundResource {
 
   public static class ListDeidentifyTemplatesPagedResponse
       extends AbstractPagedListResponse<
-          ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse, DeidentifyTemplate,
-          ListDeidentifyTemplatesPage, ListDeidentifyTemplatesFixedSizeCollection> {
+          ListDeidentifyTemplatesRequest,
+          ListDeidentifyTemplatesResponse,
+          DeidentifyTemplate,
+          ListDeidentifyTemplatesPage,
+          ListDeidentifyTemplatesFixedSizeCollection> {
 
     public static ApiFuture<ListDeidentifyTemplatesPagedResponse> createAsync(
         PageContext<
@@ -2003,7 +2014,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   public static class ListDeidentifyTemplatesPage
       extends AbstractPage<
-          ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse, DeidentifyTemplate,
+          ListDeidentifyTemplatesRequest,
+          ListDeidentifyTemplatesResponse,
+          DeidentifyTemplate,
           ListDeidentifyTemplatesPage> {
 
     private ListDeidentifyTemplatesPage(
@@ -2039,8 +2052,11 @@ public class DlpServiceClient implements BackgroundResource {
 
   public static class ListDeidentifyTemplatesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse, DeidentifyTemplate,
-          ListDeidentifyTemplatesPage, ListDeidentifyTemplatesFixedSizeCollection> {
+          ListDeidentifyTemplatesRequest,
+          ListDeidentifyTemplatesResponse,
+          DeidentifyTemplate,
+          ListDeidentifyTemplatesPage,
+          ListDeidentifyTemplatesFixedSizeCollection> {
 
     private ListDeidentifyTemplatesFixedSizeCollection(
         List<ListDeidentifyTemplatesPage> pages, int collectionSize) {
@@ -2060,7 +2076,10 @@ public class DlpServiceClient implements BackgroundResource {
 
   public static class ListDlpJobsPagedResponse
       extends AbstractPagedListResponse<
-          ListDlpJobsRequest, ListDlpJobsResponse, DlpJob, ListDlpJobsPage,
+          ListDlpJobsRequest,
+          ListDlpJobsResponse,
+          DlpJob,
+          ListDlpJobsPage,
           ListDlpJobsFixedSizeCollection> {
 
     public static ApiFuture<ListDlpJobsPagedResponse> createAsync(
@@ -2113,7 +2132,10 @@ public class DlpServiceClient implements BackgroundResource {
 
   public static class ListDlpJobsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListDlpJobsRequest, ListDlpJobsResponse, DlpJob, ListDlpJobsPage,
+          ListDlpJobsRequest,
+          ListDlpJobsResponse,
+          DlpJob,
+          ListDlpJobsPage,
           ListDlpJobsFixedSizeCollection> {
 
     private ListDlpJobsFixedSizeCollection(List<ListDlpJobsPage> pages, int collectionSize) {
@@ -2133,7 +2155,10 @@ public class DlpServiceClient implements BackgroundResource {
 
   public static class ListJobTriggersPagedResponse
       extends AbstractPagedListResponse<
-          ListJobTriggersRequest, ListJobTriggersResponse, JobTrigger, ListJobTriggersPage,
+          ListJobTriggersRequest,
+          ListJobTriggersResponse,
+          JobTrigger,
+          ListJobTriggersPage,
           ListJobTriggersFixedSizeCollection> {
 
     public static ApiFuture<ListJobTriggersPagedResponse> createAsync(
@@ -2187,7 +2212,10 @@ public class DlpServiceClient implements BackgroundResource {
 
   public static class ListJobTriggersFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListJobTriggersRequest, ListJobTriggersResponse, JobTrigger, ListJobTriggersPage,
+          ListJobTriggersRequest,
+          ListJobTriggersResponse,
+          JobTrigger,
+          ListJobTriggersPage,
           ListJobTriggersFixedSizeCollection> {
 
     private ListJobTriggersFixedSizeCollection(
@@ -2208,8 +2236,11 @@ public class DlpServiceClient implements BackgroundResource {
 
   public static class ListStoredInfoTypesPagedResponse
       extends AbstractPagedListResponse<
-          ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType,
-          ListStoredInfoTypesPage, ListStoredInfoTypesFixedSizeCollection> {
+          ListStoredInfoTypesRequest,
+          ListStoredInfoTypesResponse,
+          StoredInfoType,
+          ListStoredInfoTypesPage,
+          ListStoredInfoTypesFixedSizeCollection> {
 
     public static ApiFuture<ListStoredInfoTypesPagedResponse> createAsync(
         PageContext<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType>
@@ -2234,7 +2265,9 @@ public class DlpServiceClient implements BackgroundResource {
 
   public static class ListStoredInfoTypesPage
       extends AbstractPage<
-          ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType,
+          ListStoredInfoTypesRequest,
+          ListStoredInfoTypesResponse,
+          StoredInfoType,
           ListStoredInfoTypesPage> {
 
     private ListStoredInfoTypesPage(
@@ -2267,8 +2300,11 @@ public class DlpServiceClient implements BackgroundResource {
 
   public static class ListStoredInfoTypesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListStoredInfoTypesRequest, ListStoredInfoTypesResponse, StoredInfoType,
-          ListStoredInfoTypesPage, ListStoredInfoTypesFixedSizeCollection> {
+          ListStoredInfoTypesRequest,
+          ListStoredInfoTypesResponse,
+          StoredInfoType,
+          ListStoredInfoTypesPage,
+          ListStoredInfoTypesFixedSizeCollection> {
 
     private ListStoredInfoTypesFixedSizeCollection(
         List<ListStoredInfoTypesPage> pages, int collectionSize) {

@@ -19,9 +19,9 @@ package com.google.cloud;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.core.BetaApi;
+import com.google.api.gax.retrying.RetrySettings;
 import java.io.Serializable;
 import org.threeten.bp.Duration;
-import com.google.api.gax.retrying.RetrySettings;
 
 /**
  * This class represents an options wrapper around the {@link RetrySettings} class and is an

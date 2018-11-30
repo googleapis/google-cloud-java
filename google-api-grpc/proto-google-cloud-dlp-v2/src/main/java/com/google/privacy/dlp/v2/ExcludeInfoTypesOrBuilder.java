@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface ExcludeInfoTypesOrBuilder extends
+public interface ExcludeInfoTypesOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ExcludeInfoTypes)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * InfoType list in ExclusionRule rule drops a finding when it overlaps or
    * contained within with a finding of an infoType from this list. For
@@ -21,9 +24,10 @@ public interface ExcludeInfoTypesOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.InfoType> 
-      getInfoTypesList();
+  java.util.List<com.google.privacy.dlp.v2.InfoType> getInfoTypesList();
   /**
+   *
+   *
    * <pre>
    * InfoType list in ExclusionRule rule drops a finding when it overlaps or
    * contained within with a finding of an infoType from this list. For
@@ -39,6 +43,8 @@ public interface ExcludeInfoTypesOrBuilder extends
    */
   com.google.privacy.dlp.v2.InfoType getInfoTypes(int index);
   /**
+   *
+   *
    * <pre>
    * InfoType list in ExclusionRule rule drops a finding when it overlaps or
    * contained within with a finding of an infoType from this list. For
@@ -54,6 +60,8 @@ public interface ExcludeInfoTypesOrBuilder extends
    */
   int getInfoTypesCount();
   /**
+   *
+   *
    * <pre>
    * InfoType list in ExclusionRule rule drops a finding when it overlaps or
    * contained within with a finding of an infoType from this list. For
@@ -67,9 +75,10 @@ public interface ExcludeInfoTypesOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder> 
-      getInfoTypesOrBuilderList();
+  java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeOrBuilder> getInfoTypesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * InfoType list in ExclusionRule rule drops a finding when it overlaps or
    * contained within with a finding of an infoType from this list. For
@@ -83,6 +92,5 @@ public interface ExcludeInfoTypesOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.InfoType info_types = 1;</code>
    */
-  com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypesOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypesOrBuilder(int index);
 }

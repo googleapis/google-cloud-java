@@ -134,16 +134,17 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   private static final String QUERY = "CloudSpannerOperation.ExecuteStreamingQuery";
   private static final String READ = "CloudSpannerOperation.ExecuteStreamingRead";
 
-  private static final ThreadLocal<Boolean> hasPendingTransaction = new ThreadLocal<Boolean>() {
-    @Override
-    protected Boolean initialValue() {
-      return false;
-    }
-  };
+  private static final ThreadLocal<Boolean> hasPendingTransaction =
+      new ThreadLocal<Boolean>() {
+        @Override
+        protected Boolean initialValue() {
+          return false;
+        }
+      };
 
   private static void throwIfTransactionsPending() {
     if (hasPendingTransaction.get() == Boolean.TRUE) {
-        throw newSpannerException(ErrorCode.INTERNAL, "Nested transactions are not supported");
+      throw newSpannerException(ErrorCode.INTERNAL, "Nested transactions are not supported");
     }
   }
 
@@ -198,8 +199,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   private static void backoffSleep(Context context, long backoffMillis) throws SpannerException {
-    tracer.getCurrentSpan().addAnnotation("Backing off",
-        ImmutableMap.of("Delay", AttributeValue.longAttributeValue(backoffMillis)));
+    tracer
+        .getCurrentSpan()
+        .addAnnotation(
+            "Backing off",
+            ImmutableMap.of("Delay", AttributeValue.longAttributeValue(backoffMillis)));
     final CountDownLatch latch = new CountDownLatch(1);
     final Context.CancellationListener listener =
         new Context.CancellationListener() {
@@ -241,7 +245,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     while (true) {
       attempt++;
       try {
-        span.addAnnotation("Starting operation",
+        span.addAnnotation(
+            "Starting operation",
             ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
         T result = callable.call();
         return result;
@@ -394,7 +399,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     return ImmutableMap.copyOf(tmp);
   }
 
-  private static <T extends Message> T unpack(Any response, Class<T> clazz) throws SpannerException {
+  private static <T extends Message> T unpack(Any response, Class<T> clazz)
+      throws SpannerException {
     try {
       return response.unpack(clazz);
     } catch (InvalidProtocolBufferException e) {
@@ -403,7 +409,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
   }
 
-  private static abstract class PageFetcher<S, T> implements NextPageFetcher<S> {
+  private abstract static class PageFetcher<S, T> implements NextPageFetcher<S> {
     private String nextPageToken;
 
     @Override
@@ -979,8 +985,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       this(session, rpc, defaultPrefetchChunks, Tracing.getTracer().getCurrentSpan());
     }
 
-    private AbstractReadContext(SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks,
-        Span span) {
+    private AbstractReadContext(
+        SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks, Span span) {
       this.session = session;
       this.rpc = rpc;
       this.defaultPrefetchChunks = defaultPrefetchChunks;
@@ -1052,8 +1058,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     ExecuteSqlRequest.Builder getExecuteSqlRequestBuilder(
-        Statement statement,
-        QueryMode queryMode) {
+        Statement statement, QueryMode queryMode) {
       ExecuteSqlRequest.Builder builder =
           ExecuteSqlRequest.newBuilder()
               .setSql(statement.getSql())
@@ -1081,8 +1086,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         Options readOptions,
         ByteString partitionToken) {
       beforeReadOrQuery();
-      final ExecuteSqlRequest.Builder request =
-          getExecuteSqlRequestBuilder(statement, queryMode);
+      final ExecuteSqlRequest.Builder request = getExecuteSqlRequestBuilder(statement, queryMode);
       if (partitionToken != null) {
         request.setPartitionToken(partitionToken);
       }
@@ -1303,7 +1307,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         attempt++;
         // TODO(user): When using streaming reads, consider using the first read to begin
         // the txn.
-        span.addAnnotation("Starting Transaction Attempt",
+        span.addAnnotation(
+            "Starting Transaction Attempt",
             ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
         txn.ensureTxn();
 
@@ -1315,7 +1320,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         } catch (Exception e) {
           txnLogger.log(Level.FINE, "User-provided TransactionCallable raised exception", e);
           if (txn.isAborted()) {
-            span.addAnnotation("Transaction Attempt Aborted in user operation. Retrying",
+            span.addAnnotation(
+                "Transaction Attempt Aborted in user operation. Retrying",
                 ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
             shouldRollback = false;
             backoff(context, backoff);
@@ -1327,10 +1333,12 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           } else {
             toThrow = newSpannerException(ErrorCode.UNKNOWN, e.getMessage(), e);
           }
-          span.addAnnotation("Transaction Attempt Failed in user operation",
+          span.addAnnotation(
+              "Transaction Attempt Failed in user operation",
               ImmutableMap.<String, AttributeValue>builder()
-              .putAll(TraceUtil.getExceptionAnnotations(toThrow))
-              .put("Attempt", AttributeValue.longAttributeValue(attempt)).build());
+                  .putAll(TraceUtil.getExceptionAnnotations(toThrow))
+                  .put("Attempt", AttributeValue.longAttributeValue(attempt))
+                  .build());
           throw toThrow;
         } finally {
           if (shouldRollback) {
@@ -1340,19 +1348,23 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
         try {
           txn.commit();
-          span.addAnnotation("Transaction Attempt Succeeded",
+          span.addAnnotation(
+              "Transaction Attempt Succeeded",
               ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
           return result;
         } catch (AbortedException e) {
           txnLogger.log(Level.FINE, "Commit aborted", e);
-          span.addAnnotation("Transaction Attempt Aborted in Commit. Retrying",
+          span.addAnnotation(
+              "Transaction Attempt Aborted in Commit. Retrying",
               ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
           backoff(context, backoff);
         } catch (SpannerException e) {
-          span.addAnnotation("Transaction Attempt Failed in Commit",
+          span.addAnnotation(
+              "Transaction Attempt Failed in Commit",
               ImmutableMap.<String, AttributeValue>builder()
-              .putAll(TraceUtil.getExceptionAnnotations(e))
-              .put("Attempt", AttributeValue.longAttributeValue(attempt)).build());
+                  .putAll(TraceUtil.getExceptionAnnotations(e))
+                  .put("Attempt", AttributeValue.longAttributeValue(attempt))
+                  .build());
           throw e;
         }
       }
@@ -1371,8 +1383,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private void backoff(Context context, BackOff backoff) {
       long delay = txn.getRetryDelayInMillis(backoff);
       txn = session.newTransaction();
-      span.addAnnotation("Backing off",
-          ImmutableMap.of("Delay", AttributeValue.longAttributeValue(delay)));
+      span.addAnnotation(
+          "Backing off", ImmutableMap.of("Delay", AttributeValue.longAttributeValue(delay)));
       sleeper.backoffSleep(context, delay);
     }
   }
@@ -1383,9 +1395,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private final SpannerRpc rpc;
     private volatile boolean isValid = true;
 
-    PartitionedDMLTransaction(
-        SessionImpl session,
-        SpannerRpc rpc) {
+    PartitionedDMLTransaction(SessionImpl session, SpannerRpc rpc) {
       this.session = session;
       this.rpc = rpc;
       this.transactionId = initTransaction();
@@ -1416,8 +1426,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     public long executePartitionedUpdate(Statement statement) {
-      checkState(
-            isValid, "Partitioned DML has been invalidated by a new operation on the session");
+      checkState(isValid, "Partitioned DML has been invalidated by a new operation on the session");
       final ExecuteSqlRequest.Builder builder =
           ExecuteSqlRequest.newBuilder()
               .setSql(statement.getSql())
@@ -1483,8 +1492,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         span.addAnnotation("Creating Transaction");
         try {
           transactionId = session.beginTransaction();
-          span.addAnnotation("Transaction Creation Done", ImmutableMap.of("Id",
-              AttributeValue.stringAttributeValue(transactionId.toStringUtf8())));
+          span.addAnnotation(
+              "Transaction Creation Done",
+              ImmutableMap.of(
+                  "Id", AttributeValue.stringAttributeValue(transactionId.toStringUtf8())));
           txnLogger.log(
               Level.FINER,
               "Started transaction {0}",
@@ -1494,9 +1505,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           throw e;
         }
       } else {
-        span.addAnnotation("Transaction Initialized",
-            ImmutableMap.of("Id",  AttributeValue.stringAttributeValue(
-                transactionId.toStringUtf8())));
+        span.addAnnotation(
+            "Transaction Initialized",
+            ImmutableMap.of(
+                "Id", AttributeValue.stringAttributeValue(transactionId.toStringUtf8())));
         txnLogger.log(
             Level.FINER,
             "Using prepared transaction {0}",
@@ -1633,9 +1645,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     public long executeUpdate(Statement statement) {
       beforeReadOrQuery();
       final ExecuteSqlRequest.Builder builder =
-          getExecuteSqlRequestBuilder(
-              statement,
-              QueryMode.NORMAL);
+          getExecuteSqlRequestBuilder(statement, QueryMode.NORMAL);
       com.google.spanner.v1.ResultSet resultSet =
           runWithRetries(
               new Callable<com.google.spanner.v1.ResultSet>() {
@@ -1823,9 +1833,9 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           bound.applyToBuilder(options.getReadOnlyBuilder()).setReturnReadTimestamp(true);
           final BeginTransactionRequest request =
               BeginTransactionRequest.newBuilder()
-              .setSession(session.getName())
-              .setOptions(options)
-              .build();
+                  .setSession(session.getName())
+                  .setOptions(options)
+                  .build();
           Transaction transaction =
               runWithRetries(
                   new Callable<Transaction>() {
@@ -1849,8 +1859,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 ErrorCode.INTERNAL, "Bad value in transaction.read_timestamp metadata field", e);
           }
           transactionId = transaction.getId();
-          span.addAnnotation("Transaction Creation Done",
-              TraceUtil.getTransactionAnnotations(transaction));
+          span.addAnnotation(
+              "Transaction Creation Done", TraceUtil.getTransactionAnnotations(transaction));
         } catch (SpannerException e) {
           span.addAnnotation("Transaction Creation Failed", TraceUtil.getExceptionAnnotations(e));
           throw e;
@@ -2056,8 +2066,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     protected final List<Object> rowData;
 
     /**
-     * Builds an immutable version of this struct using {@link Struct#newBuilder()} which is used
-     * as a serialization proxy.
+     * Builds an immutable version of this struct using {@link Struct#newBuilder()} which is used as
+     * a serialization proxy.
      */
     private Object writeReplace() {
       Builder builder = Struct.newBuilder();
@@ -2132,7 +2142,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           default:
             throw new AssertionError("Unhandled type code: " + fieldType.getCode());
         }
-
       }
       return builder.build();
     }
@@ -2627,8 +2636,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       while (true) {
         // Eagerly start stream before consuming any buffered items.
         if (stream == null) {
-          span.addAnnotation("Starting/Resuming stream",
-              ImmutableMap.of("ResumeToken",
+          span.addAnnotation(
+              "Starting/Resuming stream",
+              ImmutableMap.of(
+                  "ResumeToken",
                   AttributeValue.stringAttributeValue(
                       resumeToken == null ? "null" : resumeToken.toStringUtf8())));
           try (Scope s = tracer.withSpan(span)) {
@@ -2671,8 +2682,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           }
         } catch (SpannerException e) {
           if (safeToRetry && e.isRetryable()) {
-            span.addAnnotation("Stream broken. Safe to retry",
-                TraceUtil.getExceptionAnnotations(e));
+            span.addAnnotation(
+                "Stream broken. Safe to retry", TraceUtil.getExceptionAnnotations(e));
             logger.log(Level.FINE, "Retryable exception, will sleep and retry", e);
             // Truncate any items in the buffer before the last retry token.
             while (!buffer.isEmpty() && buffer.getLast().getResumeToken().isEmpty()) {

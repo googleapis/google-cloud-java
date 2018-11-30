@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface DocumentOrBuilder extends
+public interface DocumentOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.Document)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The document resource name.
    * The name must be empty when creating a document.
@@ -19,6 +22,8 @@ public interface DocumentOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The document resource name.
    * The name must be empty when creating a document.
@@ -28,10 +33,11 @@ public interface DocumentOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The display name of the document. The name must be 1024 bytes or
    * less; otherwise, the creation request fails.
@@ -41,6 +47,8 @@ public interface DocumentOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * Required. The display name of the document. The name must be 1024 bytes or
    * less; otherwise, the creation request fails.
@@ -48,10 +56,11 @@ public interface DocumentOrBuilder extends
    *
    * <code>string display_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The MIME type of this document.
    * </pre>
@@ -60,58 +69,76 @@ public interface DocumentOrBuilder extends
    */
   java.lang.String getMimeType();
   /**
+   *
+   *
    * <pre>
    * Required. The MIME type of this document.
    * </pre>
    *
    * <code>string mime_type = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getMimeTypeBytes();
+  com.google.protobuf.ByteString getMimeTypeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * </code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType> getKnowledgeTypesList();
+  java.util.List<com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType>
+      getKnowledgeTypesList();
   /**
+   *
+   *
    * <pre>
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * </code>
    */
   int getKnowledgeTypesCount();
   /**
+   *
+   *
    * <pre>
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType getKnowledgeTypes(int index);
   /**
+   *
+   *
    * <pre>
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * </code>
    */
-  java.util.List<java.lang.Integer>
-  getKnowledgeTypesValueList();
+  java.util.List<java.lang.Integer> getKnowledgeTypesValueList();
   /**
+   *
+   *
    * <pre>
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * </code>
    */
   int getKnowledgeTypesValue(int index);
 
   /**
+   *
+   *
    * <pre>
    * The URI where the file content is located.
    * For documents stored in Google Cloud Storage, these URIs must have
@@ -126,6 +153,8 @@ public interface DocumentOrBuilder extends
    */
   java.lang.String getContentUri();
   /**
+   *
+   *
    * <pre>
    * The URI where the file content is located.
    * For documents stored in Google Cloud Storage, these URIs must have
@@ -138,10 +167,11 @@ public interface DocumentOrBuilder extends
    *
    * <code>string content_uri = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getContentUriBytes();
+  com.google.protobuf.ByteString getContentUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * The raw content of the document. This field is only permitted for
    * EXTRACTIVE_QA and FAQ knowledge types.
@@ -151,6 +181,8 @@ public interface DocumentOrBuilder extends
    */
   java.lang.String getContent();
   /**
+   *
+   *
    * <pre>
    * The raw content of the document. This field is only permitted for
    * EXTRACTIVE_QA and FAQ knowledge types.
@@ -158,8 +190,7 @@ public interface DocumentOrBuilder extends
    *
    * <code>string content = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getContentBytes();
+  com.google.protobuf.ByteString getContentBytes();
 
   public com.google.cloud.dialogflow.v2beta1.Document.SourceCase getSourceCase();
 }

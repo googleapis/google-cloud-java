@@ -4,31 +4,34 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Response message for ListJobTriggers.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.ListJobTriggersResponse}
  */
-public  final class ListJobTriggersResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListJobTriggersResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ListJobTriggersResponse)
     ListJobTriggersResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListJobTriggersResponse.newBuilder() to construct.
   private ListJobTriggersResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListJobTriggersResponse() {
     jobTriggers_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListJobTriggersResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,35 +51,37 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              jobTriggers_ = new java.util.ArrayList<com.google.privacy.dlp.v2.JobTrigger>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                jobTriggers_ = new java.util.ArrayList<com.google.privacy.dlp.v2.JobTrigger>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              jobTriggers_.add(
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.JobTrigger.parser(), extensionRegistry));
+              break;
             }
-            jobTriggers_.add(
-                input.readMessage(com.google.privacy.dlp.v2.JobTrigger.parser(), extensionRegistry));
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            nextPageToken_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              nextPageToken_ = s;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         jobTriggers_ = java.util.Collections.unmodifiableList(jobTriggers_);
@@ -85,23 +90,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ListJobTriggersResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_ListJobTriggersResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ListJobTriggersResponse_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_ListJobTriggersResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.ListJobTriggersResponse.class, com.google.privacy.dlp.v2.ListJobTriggersResponse.Builder.class);
+            com.google.privacy.dlp.v2.ListJobTriggersResponse.class,
+            com.google.privacy.dlp.v2.ListJobTriggersResponse.Builder.class);
   }
 
   private int bitField0_;
   public static final int JOB_TRIGGERS_FIELD_NUMBER = 1;
   private java.util.List<com.google.privacy.dlp.v2.JobTrigger> jobTriggers_;
   /**
+   *
+   *
    * <pre>
    * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
    * </pre>
@@ -112,17 +122,21 @@ private static final long serialVersionUID = 0L;
     return jobTriggers_;
   }
   /**
+   *
+   *
    * <pre>
    * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.JobTrigger job_triggers = 1;</code>
    */
-  public java.util.List<? extends com.google.privacy.dlp.v2.JobTriggerOrBuilder> 
+  public java.util.List<? extends com.google.privacy.dlp.v2.JobTriggerOrBuilder>
       getJobTriggersOrBuilderList() {
     return jobTriggers_;
   }
   /**
+   *
+   *
    * <pre>
    * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
    * </pre>
@@ -133,6 +147,8 @@ private static final long serialVersionUID = 0L;
     return jobTriggers_.size();
   }
   /**
+   *
+   *
    * <pre>
    * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
    * </pre>
@@ -143,20 +159,23 @@ private static final long serialVersionUID = 0L;
     return jobTriggers_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.JobTrigger job_triggers = 1;</code>
    */
-  public com.google.privacy.dlp.v2.JobTriggerOrBuilder getJobTriggersOrBuilder(
-      int index) {
+  public com.google.privacy.dlp.v2.JobTriggerOrBuilder getJobTriggersOrBuilder(int index) {
     return jobTriggers_.get(index);
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
   private volatile java.lang.Object nextPageToken_;
   /**
+   *
+   *
    * <pre>
    * If the next page is available then the next page token to be used
    * in following ListJobTriggers request.
@@ -169,14 +188,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       nextPageToken_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * If the next page is available then the next page token to be used
    * in following ListJobTriggers request.
@@ -184,13 +204,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string next_page_token = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getNextPageTokenBytes() {
+  public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       nextPageToken_ = b;
       return b;
     } else {
@@ -199,6 +217,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -210,8 +229,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < jobTriggers_.size(); i++) {
       output.writeMessage(1, jobTriggers_.get(i));
     }
@@ -228,8 +246,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < jobTriggers_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, jobTriggers_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, jobTriggers_.get(i));
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
@@ -242,18 +259,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.ListJobTriggersResponse)) {
       return super.equals(obj);
     }
-    com.google.privacy.dlp.v2.ListJobTriggersResponse other = (com.google.privacy.dlp.v2.ListJobTriggersResponse) obj;
+    com.google.privacy.dlp.v2.ListJobTriggersResponse other =
+        (com.google.privacy.dlp.v2.ListJobTriggersResponse) obj;
 
     boolean result = true;
-    result = result && getJobTriggersList()
-        .equals(other.getJobTriggersList());
-    result = result && getNextPageToken()
-        .equals(other.getNextPageToken());
+    result = result && getJobTriggersList().equals(other.getJobTriggersList());
+    result = result && getNextPageToken().equals(other.getNextPageToken());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -277,117 +293,126 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.privacy.dlp.v2.ListJobTriggersResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.ListJobTriggersResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.ListJobTriggersResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.ListJobTriggersResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.ListJobTriggersResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.ListJobTriggersResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.ListJobTriggersResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.privacy.dlp.v2.ListJobTriggersResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.privacy.dlp.v2.ListJobTriggersResponse parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.privacy.dlp.v2.ListJobTriggersResponse parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.ListJobTriggersResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.privacy.dlp.v2.ListJobTriggersResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.privacy.dlp.v2.ListJobTriggersResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.ListJobTriggersResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.privacy.dlp.v2.ListJobTriggersResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Response message for ListJobTriggers.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.ListJobTriggersResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.ListJobTriggersResponse)
       com.google.privacy.dlp.v2.ListJobTriggersResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ListJobTriggersResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_ListJobTriggersResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ListJobTriggersResponse_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_ListJobTriggersResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.ListJobTriggersResponse.class, com.google.privacy.dlp.v2.ListJobTriggersResponse.Builder.class);
+              com.google.privacy.dlp.v2.ListJobTriggersResponse.class,
+              com.google.privacy.dlp.v2.ListJobTriggersResponse.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.ListJobTriggersResponse.newBuilder()
@@ -395,17 +420,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getJobTriggersFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -421,9 +446,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ListJobTriggersResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_ListJobTriggersResponse_descriptor;
     }
 
     @java.lang.Override
@@ -442,7 +467,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.privacy.dlp.v2.ListJobTriggersResponse buildPartial() {
-      com.google.privacy.dlp.v2.ListJobTriggersResponse result = new com.google.privacy.dlp.v2.ListJobTriggersResponse(this);
+      com.google.privacy.dlp.v2.ListJobTriggersResponse result =
+          new com.google.privacy.dlp.v2.ListJobTriggersResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (jobTriggersBuilder_ == null) {
@@ -464,38 +490,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.ListJobTriggersResponse) {
-        return mergeFrom((com.google.privacy.dlp.v2.ListJobTriggersResponse)other);
+        return mergeFrom((com.google.privacy.dlp.v2.ListJobTriggersResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -503,7 +530,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.privacy.dlp.v2.ListJobTriggersResponse other) {
-      if (other == com.google.privacy.dlp.v2.ListJobTriggersResponse.getDefaultInstance()) return this;
+      if (other == com.google.privacy.dlp.v2.ListJobTriggersResponse.getDefaultInstance())
+        return this;
       if (jobTriggersBuilder_ == null) {
         if (!other.jobTriggers_.isEmpty()) {
           if (jobTriggers_.isEmpty()) {
@@ -522,9 +550,10 @@ private static final long serialVersionUID = 0L;
             jobTriggersBuilder_ = null;
             jobTriggers_ = other.jobTriggers_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            jobTriggersBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getJobTriggersFieldBuilder() : null;
+            jobTriggersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getJobTriggersFieldBuilder()
+                    : null;
           } else {
             jobTriggersBuilder_.addAllMessages(other.jobTriggers_);
           }
@@ -553,7 +582,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.privacy.dlp.v2.ListJobTriggersResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.privacy.dlp.v2.ListJobTriggersResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -562,21 +592,28 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.privacy.dlp.v2.JobTrigger> jobTriggers_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureJobTriggersIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         jobTriggers_ = new java.util.ArrayList<com.google.privacy.dlp.v2.JobTrigger>(jobTriggers_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.JobTrigger, com.google.privacy.dlp.v2.JobTrigger.Builder, com.google.privacy.dlp.v2.JobTriggerOrBuilder> jobTriggersBuilder_;
+            com.google.privacy.dlp.v2.JobTrigger,
+            com.google.privacy.dlp.v2.JobTrigger.Builder,
+            com.google.privacy.dlp.v2.JobTriggerOrBuilder>
+        jobTriggersBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
      * </pre>
@@ -591,6 +628,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
      * </pre>
@@ -605,6 +644,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
      * </pre>
@@ -619,14 +660,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.JobTrigger job_triggers = 1;</code>
      */
-    public Builder setJobTriggers(
-        int index, com.google.privacy.dlp.v2.JobTrigger value) {
+    public Builder setJobTriggers(int index, com.google.privacy.dlp.v2.JobTrigger value) {
       if (jobTriggersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -640,6 +682,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
      * </pre>
@@ -658,6 +702,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
      * </pre>
@@ -678,14 +724,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.JobTrigger job_triggers = 1;</code>
      */
-    public Builder addJobTriggers(
-        int index, com.google.privacy.dlp.v2.JobTrigger value) {
+    public Builder addJobTriggers(int index, com.google.privacy.dlp.v2.JobTrigger value) {
       if (jobTriggersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -699,14 +746,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.JobTrigger job_triggers = 1;</code>
      */
-    public Builder addJobTriggers(
-        com.google.privacy.dlp.v2.JobTrigger.Builder builderForValue) {
+    public Builder addJobTriggers(com.google.privacy.dlp.v2.JobTrigger.Builder builderForValue) {
       if (jobTriggersBuilder_ == null) {
         ensureJobTriggersIsMutable();
         jobTriggers_.add(builderForValue.build());
@@ -717,6 +765,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
      * </pre>
@@ -735,6 +785,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
      * </pre>
@@ -745,8 +797,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.privacy.dlp.v2.JobTrigger> values) {
       if (jobTriggersBuilder_ == null) {
         ensureJobTriggersIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, jobTriggers_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, jobTriggers_);
         onChanged();
       } else {
         jobTriggersBuilder_.addAllMessages(values);
@@ -754,6 +805,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
      * </pre>
@@ -771,6 +824,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
      * </pre>
@@ -788,39 +843,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.JobTrigger job_triggers = 1;</code>
      */
-    public com.google.privacy.dlp.v2.JobTrigger.Builder getJobTriggersBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.JobTrigger.Builder getJobTriggersBuilder(int index) {
       return getJobTriggersFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.JobTrigger job_triggers = 1;</code>
      */
-    public com.google.privacy.dlp.v2.JobTriggerOrBuilder getJobTriggersOrBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.JobTriggerOrBuilder getJobTriggersOrBuilder(int index) {
       if (jobTriggersBuilder_ == null) {
-        return jobTriggers_.get(index);  } else {
+        return jobTriggers_.get(index);
+      } else {
         return jobTriggersBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.JobTrigger job_triggers = 1;</code>
      */
-    public java.util.List<? extends com.google.privacy.dlp.v2.JobTriggerOrBuilder> 
-         getJobTriggersOrBuilderList() {
+    public java.util.List<? extends com.google.privacy.dlp.v2.JobTriggerOrBuilder>
+        getJobTriggersOrBuilderList() {
       if (jobTriggersBuilder_ != null) {
         return jobTriggersBuilder_.getMessageOrBuilderList();
       } else {
@@ -828,6 +888,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
      * </pre>
@@ -835,38 +897,47 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.privacy.dlp.v2.JobTrigger job_triggers = 1;</code>
      */
     public com.google.privacy.dlp.v2.JobTrigger.Builder addJobTriggersBuilder() {
-      return getJobTriggersFieldBuilder().addBuilder(
-          com.google.privacy.dlp.v2.JobTrigger.getDefaultInstance());
+      return getJobTriggersFieldBuilder()
+          .addBuilder(com.google.privacy.dlp.v2.JobTrigger.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.JobTrigger job_triggers = 1;</code>
      */
-    public com.google.privacy.dlp.v2.JobTrigger.Builder addJobTriggersBuilder(
-        int index) {
-      return getJobTriggersFieldBuilder().addBuilder(
-          index, com.google.privacy.dlp.v2.JobTrigger.getDefaultInstance());
+    public com.google.privacy.dlp.v2.JobTrigger.Builder addJobTriggersBuilder(int index) {
+      return getJobTriggersFieldBuilder()
+          .addBuilder(index, com.google.privacy.dlp.v2.JobTrigger.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * List of triggeredJobs, up to page_size in ListJobTriggersRequest.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.JobTrigger job_triggers = 1;</code>
      */
-    public java.util.List<com.google.privacy.dlp.v2.JobTrigger.Builder> 
-         getJobTriggersBuilderList() {
+    public java.util.List<com.google.privacy.dlp.v2.JobTrigger.Builder>
+        getJobTriggersBuilderList() {
       return getJobTriggersFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.JobTrigger, com.google.privacy.dlp.v2.JobTrigger.Builder, com.google.privacy.dlp.v2.JobTriggerOrBuilder> 
+            com.google.privacy.dlp.v2.JobTrigger,
+            com.google.privacy.dlp.v2.JobTrigger.Builder,
+            com.google.privacy.dlp.v2.JobTriggerOrBuilder>
         getJobTriggersFieldBuilder() {
       if (jobTriggersBuilder_ == null) {
-        jobTriggersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.privacy.dlp.v2.JobTrigger, com.google.privacy.dlp.v2.JobTrigger.Builder, com.google.privacy.dlp.v2.JobTriggerOrBuilder>(
+        jobTriggersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.privacy.dlp.v2.JobTrigger,
+                com.google.privacy.dlp.v2.JobTrigger.Builder,
+                com.google.privacy.dlp.v2.JobTriggerOrBuilder>(
                 jobTriggers_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -878,6 +949,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nextPageToken_ = "";
     /**
+     *
+     *
      * <pre>
      * If the next page is available then the next page token to be used
      * in following ListJobTriggers request.
@@ -888,8 +961,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         nextPageToken_ = s;
         return s;
@@ -898,6 +970,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If the next page is available then the next page token to be used
      * in following ListJobTriggers request.
@@ -905,13 +979,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getNextPageTokenBytes() {
+    public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         nextPageToken_ = b;
         return b;
       } else {
@@ -919,6 +991,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If the next page is available then the next page token to be used
      * in following ListJobTriggers request.
@@ -926,17 +1000,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public Builder setNextPageToken(
-        java.lang.String value) {
+    public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       nextPageToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If the next page is available then the next page token to be used
      * in following ListJobTriggers request.
@@ -945,12 +1020,14 @@ private static final long serialVersionUID = 0L;
      * <code>string next_page_token = 2;</code>
      */
     public Builder clearNextPageToken() {
-      
+
       nextPageToken_ = getDefaultInstance().getNextPageToken();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If the next page is available then the next page token to be used
      * in following ListJobTriggers request.
@@ -958,20 +1035,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public Builder setNextPageTokenBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       nextPageToken_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -981,12 +1057,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.ListJobTriggersResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.ListJobTriggersResponse)
   private static final com.google.privacy.dlp.v2.ListJobTriggersResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.ListJobTriggersResponse();
   }
@@ -995,16 +1071,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListJobTriggersResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ListJobTriggersResponse>() {
-    @java.lang.Override
-    public ListJobTriggersResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListJobTriggersResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListJobTriggersResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ListJobTriggersResponse>() {
+        @java.lang.Override
+        public ListJobTriggersResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListJobTriggersResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListJobTriggersResponse> parser() {
     return PARSER;
@@ -1019,6 +1095,4 @@ private static final long serialVersionUID = 0L;
   public com.google.privacy.dlp.v2.ListJobTriggersResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

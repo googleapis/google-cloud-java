@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta3;
 
-public interface AppEngineHttpQueueOrBuilder extends
+public interface AppEngineHttpQueueOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta3.AppEngineHttpQueue)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Overrides for the
    * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
@@ -20,6 +23,8 @@ public interface AppEngineHttpQueueOrBuilder extends
    */
   boolean hasAppEngineRoutingOverride();
   /**
+   *
+   *
    * <pre>
    * Overrides for the
    * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].
@@ -32,6 +37,8 @@ public interface AppEngineHttpQueueOrBuilder extends
    */
   com.google.cloud.tasks.v2beta3.AppEngineRouting getAppEngineRoutingOverride();
   /**
+   *
+   *
    * <pre>
    * Overrides for the
    * [task-level app_engine_routing][google.cloud.tasks.v2beta3.AppEngineHttpRequest.app_engine_routing].

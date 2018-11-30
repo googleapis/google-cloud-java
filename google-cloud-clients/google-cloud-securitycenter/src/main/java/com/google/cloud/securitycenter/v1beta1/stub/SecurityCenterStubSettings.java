@@ -59,7 +59,6 @@ import com.google.cloud.securitycenter.v1beta1.GroupFindingsResponse;
 import com.google.cloud.securitycenter.v1beta1.GroupResult;
 import com.google.cloud.securitycenter.v1beta1.ListAssetsRequest;
 import com.google.cloud.securitycenter.v1beta1.ListAssetsResponse;
-import com.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult;
 import com.google.cloud.securitycenter.v1beta1.ListFindingsRequest;
 import com.google.cloud.securitycenter.v1beta1.ListFindingsResponse;
 import com.google.cloud.securitycenter.v1beta1.ListSourcesRequest;

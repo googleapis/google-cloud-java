@@ -30,9 +30,7 @@ import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
-/**
- * A snippet for Google Cloud Storage showing how to create a blob.
- */
+/** A snippet for Google Cloud Storage showing how to create a blob. */
 public class CreateBlob {
 
   public static void main(String... args) {

@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface CropHintsParamsOrBuilder extends
+public interface CropHintsParamsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.CropHintsParams)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Aspect ratios in floats, representing the ratio of the width to the height
    * of the image. For example, if the desired aspect ratio is 4/3, the
@@ -21,6 +24,8 @@ public interface CropHintsParamsOrBuilder extends
    */
   java.util.List<java.lang.Float> getAspectRatiosList();
   /**
+   *
+   *
    * <pre>
    * Aspect ratios in floats, representing the ratio of the width to the height
    * of the image. For example, if the desired aspect ratio is 4/3, the
@@ -34,6 +39,8 @@ public interface CropHintsParamsOrBuilder extends
    */
   int getAspectRatiosCount();
   /**
+   *
+   *
    * <pre>
    * Aspect ratios in floats, representing the ratio of the width to the height
    * of the image. For example, if the desired aspect ratio is 4/3, the

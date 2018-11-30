@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface ServerConfigOrBuilder extends
+public interface ServerConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.ServerConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Version of Kubernetes the service deploys by default.
    * </pre>
@@ -16,25 +19,29 @@ public interface ServerConfigOrBuilder extends
    */
   java.lang.String getDefaultClusterVersion();
   /**
+   *
+   *
    * <pre>
    * Version of Kubernetes the service deploys by default.
    * </pre>
    *
    * <code>string default_cluster_version = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getDefaultClusterVersionBytes();
+  com.google.protobuf.ByteString getDefaultClusterVersionBytes();
 
   /**
+   *
+   *
    * <pre>
    * List of valid node upgrade target versions.
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
    */
-  java.util.List<java.lang.String>
-      getValidNodeVersionsList();
+  java.util.List<java.lang.String> getValidNodeVersionsList();
   /**
+   *
+   *
    * <pre>
    * List of valid node upgrade target versions.
    * </pre>
@@ -43,6 +50,8 @@ public interface ServerConfigOrBuilder extends
    */
   int getValidNodeVersionsCount();
   /**
+   *
+   *
    * <pre>
    * List of valid node upgrade target versions.
    * </pre>
@@ -51,16 +60,19 @@ public interface ServerConfigOrBuilder extends
    */
   java.lang.String getValidNodeVersions(int index);
   /**
+   *
+   *
    * <pre>
    * List of valid node upgrade target versions.
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getValidNodeVersionsBytes(int index);
+  com.google.protobuf.ByteString getValidNodeVersionsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Default image type.
    * </pre>
@@ -69,25 +81,29 @@ public interface ServerConfigOrBuilder extends
    */
   java.lang.String getDefaultImageType();
   /**
+   *
+   *
    * <pre>
    * Default image type.
    * </pre>
    *
    * <code>string default_image_type = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getDefaultImageTypeBytes();
+  com.google.protobuf.ByteString getDefaultImageTypeBytes();
 
   /**
+   *
+   *
    * <pre>
    * List of valid image types.
    * </pre>
    *
    * <code>repeated string valid_image_types = 5;</code>
    */
-  java.util.List<java.lang.String>
-      getValidImageTypesList();
+  java.util.List<java.lang.String> getValidImageTypesList();
   /**
+   *
+   *
    * <pre>
    * List of valid image types.
    * </pre>
@@ -96,6 +112,8 @@ public interface ServerConfigOrBuilder extends
    */
   int getValidImageTypesCount();
   /**
+   *
+   *
    * <pre>
    * List of valid image types.
    * </pre>
@@ -104,25 +122,29 @@ public interface ServerConfigOrBuilder extends
    */
   java.lang.String getValidImageTypes(int index);
   /**
+   *
+   *
    * <pre>
    * List of valid image types.
    * </pre>
    *
    * <code>repeated string valid_image_types = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getValidImageTypesBytes(int index);
+  com.google.protobuf.ByteString getValidImageTypesBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * List of valid master versions.
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
    */
-  java.util.List<java.lang.String>
-      getValidMasterVersionsList();
+  java.util.List<java.lang.String> getValidMasterVersionsList();
   /**
+   *
+   *
    * <pre>
    * List of valid master versions.
    * </pre>
@@ -131,6 +153,8 @@ public interface ServerConfigOrBuilder extends
    */
   int getValidMasterVersionsCount();
   /**
+   *
+   *
    * <pre>
    * List of valid master versions.
    * </pre>
@@ -139,12 +163,13 @@ public interface ServerConfigOrBuilder extends
    */
   java.lang.String getValidMasterVersions(int index);
   /**
+   *
+   *
    * <pre>
    * List of valid master versions.
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getValidMasterVersionsBytes(int index);
+  com.google.protobuf.ByteString getValidMasterVersionsBytes(int index);
 }

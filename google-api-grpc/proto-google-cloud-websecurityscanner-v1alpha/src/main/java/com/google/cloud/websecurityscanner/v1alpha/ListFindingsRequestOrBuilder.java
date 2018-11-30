@@ -3,11 +3,14 @@
 
 package com.google.cloud.websecurityscanner.v1alpha;
 
-public interface ListFindingsRequestOrBuilder extends
+public interface ListFindingsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1alpha.ListFindingsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The parent resource name, which should be a scan run resource name in the
@@ -19,6 +22,8 @@ public interface ListFindingsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The parent resource name, which should be a scan run resource name in the
@@ -28,10 +33,11 @@ public interface ListFindingsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The filter expression. The expression must be in the format: &lt;field&gt;
    * &lt;operator&gt; &lt;value&gt;.
@@ -43,6 +49,8 @@ public interface ListFindingsRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * The filter expression. The expression must be in the format: &lt;field&gt;
    * &lt;operator&gt; &lt;value&gt;.
@@ -52,10 +60,11 @@ public interface ListFindingsRequestOrBuilder extends
    *
    * <code>string filter = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * A token identifying a page of results to be returned. This should be a
    * `next_page_token` value returned from a previous List request.
@@ -66,6 +75,8 @@ public interface ListFindingsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * A token identifying a page of results to be returned. This should be a
    * `next_page_token` value returned from a previous List request.
@@ -74,10 +85,11 @@ public interface ListFindingsRequestOrBuilder extends
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of Findings to return, can be limited by server.
    * If not specified or not positive, the implementation will select a

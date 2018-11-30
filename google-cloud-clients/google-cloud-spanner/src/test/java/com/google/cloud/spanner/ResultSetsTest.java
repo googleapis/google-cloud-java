@@ -48,25 +48,21 @@ public class ResultSetsTest {
     int year = 2018;
     int month = 5;
     int day = 26;
-    boolean[] boolArray = { true, false, true, true, false };
-    long[] longArray = { Long.MAX_VALUE, Long.MIN_VALUE, 0, 1, -1 };
-    double[] doubleArray = { Double.MIN_VALUE, Double.MAX_VALUE, 0, 1, -1, 1.2341 };
+    boolean[] boolArray = {true, false, true, true, false};
+    long[] longArray = {Long.MAX_VALUE, Long.MIN_VALUE, 0, 1, -1};
+    double[] doubleArray = {Double.MIN_VALUE, Double.MAX_VALUE, 0, 1, -1, 1.2341};
     ByteArray[] byteArray = {
-        ByteArray.copyFrom("123"),
-        ByteArray.copyFrom("456"),
-        ByteArray.copyFrom("789")
+      ByteArray.copyFrom("123"), ByteArray.copyFrom("456"), ByteArray.copyFrom("789")
     };
     Timestamp[] timestampArray = {
-        Timestamp.ofTimeMicroseconds(101),
-        Timestamp.ofTimeMicroseconds(202),
-        Timestamp.ofTimeMicroseconds(303)
+      Timestamp.ofTimeMicroseconds(101),
+      Timestamp.ofTimeMicroseconds(202),
+      Timestamp.ofTimeMicroseconds(303)
     };
     Date[] dateArray = {
-        Date.fromYearMonthDay(1, 2, 3),
-        Date.fromYearMonthDay(4, 5, 6),
-        Date.fromYearMonthDay(7, 8, 9)
+      Date.fromYearMonthDay(1, 2, 3), Date.fromYearMonthDay(4, 5, 6), Date.fromYearMonthDay(7, 8, 9)
     };
-    String[] stringArray = { "abc", "def", "ghi" };
+    String[] stringArray = {"abc", "def", "ghi"};
 
     Type type =
         Type.struct(
@@ -84,8 +80,7 @@ public class ResultSetsTest {
             Type.StructField.of("byteArray", Type.array(Type.bytes())),
             Type.StructField.of("timestampArray", Type.array(Type.timestamp())),
             Type.StructField.of("dateArray", Type.array(Type.date())),
-            Type.StructField.of("stringArray", Type.array(Type.string()))
-        );
+            Type.StructField.of("stringArray", Type.array(Type.string())));
     Struct struct1 =
         Struct.newBuilder()
             .set("f1")
@@ -157,9 +152,8 @@ public class ResultSetsTest {
     try {
       rs.getType();
       fail("Exception expected");
-    } catch(IllegalStateException e) {
-      assertThat(e.getMessage())
-          .contains("Must be preceded by a next() call");
+    } catch (IllegalStateException e) {
+      assertThat(e.getMessage()).contains("Must be preceded by a next() call");
     }
 
     assertThat(rs.next()).isTrue();
@@ -221,7 +215,7 @@ public class ResultSetsTest {
     try {
       rs.getStats();
       fail("Exception expected");
-    } catch(UnsupportedOperationException e) {
+    } catch (UnsupportedOperationException e) {
       assertThat(e.getMessage())
           .contains("ResultSetStats are available only for results returned from analyzeQuery");
     }

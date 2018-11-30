@@ -4,6 +4,8 @@
 package com.google.cloud.texttospeech.v1;
 
 /**
+ *
+ *
  * <pre>
  * Gender of the voice as described in
  * [SSML voice element](https://www.w3.org/TR/speech-synthesis11/#edef_voice).
@@ -11,9 +13,10 @@ package com.google.cloud.texttospeech.v1;
  *
  * Protobuf enum {@code google.cloud.texttospeech.v1.SsmlVoiceGender}
  */
-public enum SsmlVoiceGender
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum SsmlVoiceGender implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * An unspecified gender.
    * In VoiceSelectionParams, this means that the client doesn't care which
@@ -26,6 +29,8 @@ public enum SsmlVoiceGender
    */
   SSML_VOICE_GENDER_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * A male voice.
    * </pre>
@@ -34,6 +39,8 @@ public enum SsmlVoiceGender
    */
   MALE(1),
   /**
+   *
+   *
    * <pre>
    * A female voice.
    * </pre>
@@ -42,6 +49,8 @@ public enum SsmlVoiceGender
    */
   FEMALE(2),
   /**
+   *
+   *
    * <pre>
    * A gender-neutral voice.
    * </pre>
@@ -53,6 +62,8 @@ public enum SsmlVoiceGender
   ;
 
   /**
+   *
+   *
    * <pre>
    * An unspecified gender.
    * In VoiceSelectionParams, this means that the client doesn't care which
@@ -65,6 +76,8 @@ public enum SsmlVoiceGender
    */
   public static final int SSML_VOICE_GENDER_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * A male voice.
    * </pre>
@@ -73,6 +86,8 @@ public enum SsmlVoiceGender
    */
   public static final int MALE_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * A female voice.
    * </pre>
@@ -81,6 +96,8 @@ public enum SsmlVoiceGender
    */
   public static final int FEMALE_VALUE = 2;
   /**
+   *
+   *
    * <pre>
    * A gender-neutral voice.
    * </pre>
@@ -88,7 +105,6 @@ public enum SsmlVoiceGender
    * <code>NEUTRAL = 3;</code>
    */
   public static final int NEUTRAL_VALUE = 3;
-
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -98,9 +114,7 @@ public enum SsmlVoiceGender
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static SsmlVoiceGender valueOf(int value) {
     return forNumber(value);
@@ -108,46 +122,47 @@ public enum SsmlVoiceGender
 
   public static SsmlVoiceGender forNumber(int value) {
     switch (value) {
-      case 0: return SSML_VOICE_GENDER_UNSPECIFIED;
-      case 1: return MALE;
-      case 2: return FEMALE;
-      case 3: return NEUTRAL;
-      default: return null;
+      case 0:
+        return SSML_VOICE_GENDER_UNSPECIFIED;
+      case 1:
+        return MALE;
+      case 2:
+        return FEMALE;
+      case 3:
+        return NEUTRAL;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<SsmlVoiceGender>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<SsmlVoiceGender> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      SsmlVoiceGender> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<SsmlVoiceGender>() {
-          public SsmlVoiceGender findValueByNumber(int number) {
-            return SsmlVoiceGender.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<SsmlVoiceGender> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<SsmlVoiceGender>() {
+        public SsmlVoiceGender findValueByNumber(int number) {
+          return SsmlVoiceGender.forNumber(number);
+        }
+      };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.texttospeech.v1.TextToSpeechProto.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final SsmlVoiceGender[] VALUES = values();
 
-  public static SsmlVoiceGender valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static SsmlVoiceGender valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -163,4 +178,3 @@ public enum SsmlVoiceGender
 
   // @@protoc_insertion_point(enum_scope:google.cloud.texttospeech.v1.SsmlVoiceGender)
 }
-

@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface ListStoredInfoTypesRequestOrBuilder extends
+public interface ListStoredInfoTypesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ListStoredInfoTypesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The parent resource name, for example projects/my-project-id or
    * organizations/my-org-id.
@@ -17,6 +20,8 @@ public interface ListStoredInfoTypesRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The parent resource name, for example projects/my-project-id or
    * organizations/my-org-id.
@@ -24,10 +29,11 @@ public interface ListStoredInfoTypesRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional page token to continue retrieval. Comes from previous call
    * to `ListStoredInfoTypes`.
@@ -37,6 +43,8 @@ public interface ListStoredInfoTypesRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * Optional page token to continue retrieval. Comes from previous call
    * to `ListStoredInfoTypes`.
@@ -44,10 +52,11 @@ public interface ListStoredInfoTypesRequestOrBuilder extends
    *
    * <code>string page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional size of the page, can be limited by server. If zero server returns
    * a page of max size 100.
@@ -58,6 +67,8 @@ public interface ListStoredInfoTypesRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * Optional comma separated list of fields to order by,
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
@@ -76,6 +87,8 @@ public interface ListStoredInfoTypesRequestOrBuilder extends
    */
   java.lang.String getOrderBy();
   /**
+   *
+   *
    * <pre>
    * Optional comma separated list of fields to order by,
    * followed by `asc` or `desc` postfix. This list is case-insensitive,
@@ -92,6 +105,5 @@ public interface ListStoredInfoTypesRequestOrBuilder extends
    *
    * <code>string order_by = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getOrderByBytes();
+  com.google.protobuf.ByteString getOrderByBytes();
 }

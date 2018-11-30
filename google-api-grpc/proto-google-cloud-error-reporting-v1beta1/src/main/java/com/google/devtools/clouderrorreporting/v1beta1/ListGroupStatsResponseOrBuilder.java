@@ -3,55 +3,78 @@
 
 package com.google.devtools.clouderrorreporting.v1beta1;
 
-public interface ListGroupStatsResponseOrBuilder extends
+public interface ListGroupStatsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The error group stats which match the given request.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+   * </code>
    */
-  java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats> 
+  java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats>
       getErrorGroupStatsList();
   /**
+   *
+   *
    * <pre>
    * The error group stats which match the given request.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+   * </code>
    */
   com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats getErrorGroupStats(int index);
   /**
+   *
+   *
    * <pre>
    * The error group stats which match the given request.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+   * </code>
    */
   int getErrorGroupStatsCount();
   /**
+   *
+   *
    * <pre>
    * The error group stats which match the given request.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+   * </code>
    */
-  java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder> 
+  java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder>
       getErrorGroupStatsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The error group stats which match the given request.
    * </pre>
    *
-   * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;</code>
+   * <code>
+   * repeated .google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats error_group_stats = 1;
+   * </code>
    */
-  com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder getErrorGroupStatsOrBuilder(
-      int index);
+  com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStatsOrBuilder
+      getErrorGroupStatsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If non-empty, more results are available.
    * Pass this token, along with the same query parameters as the first
@@ -62,6 +85,8 @@ public interface ListGroupStatsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If non-empty, more results are available.
    * Pass this token, along with the same query parameters as the first
@@ -70,10 +95,11 @@ public interface ListGroupStatsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * The timestamp specifies the start time to which the request was restricted.
    * The start time is set based on the requested time range. It may be adjusted
@@ -85,6 +111,8 @@ public interface ListGroupStatsResponseOrBuilder extends
    */
   boolean hasTimeRangeBegin();
   /**
+   *
+   *
    * <pre>
    * The timestamp specifies the start time to which the request was restricted.
    * The start time is set based on the requested time range. It may be adjusted
@@ -96,6 +124,8 @@ public interface ListGroupStatsResponseOrBuilder extends
    */
   com.google.protobuf.Timestamp getTimeRangeBegin();
   /**
+   *
+   *
    * <pre>
    * The timestamp specifies the start time to which the request was restricted.
    * The start time is set based on the requested time range. It may be adjusted

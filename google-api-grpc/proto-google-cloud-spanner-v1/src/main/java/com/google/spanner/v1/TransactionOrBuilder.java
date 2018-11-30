@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface TransactionOrBuilder extends
+public interface TransactionOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.Transaction)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * `id` may be used to identify the transaction in subsequent
    * [Read][google.spanner.v1.Spanner.Read],
@@ -23,6 +26,8 @@ public interface TransactionOrBuilder extends
   com.google.protobuf.ByteString getId();
 
   /**
+   *
+   *
    * <pre>
    * For snapshot read-only transactions, the read timestamp chosen
    * for the transaction. Not returned by default: see
@@ -35,6 +40,8 @@ public interface TransactionOrBuilder extends
    */
   boolean hasReadTimestamp();
   /**
+   *
+   *
    * <pre>
    * For snapshot read-only transactions, the read timestamp chosen
    * for the transaction. Not returned by default: see
@@ -47,6 +54,8 @@ public interface TransactionOrBuilder extends
    */
   com.google.protobuf.Timestamp getReadTimestamp();
   /**
+   *
+   *
    * <pre>
    * For snapshot read-only transactions, the read timestamp chosen
    * for the transaction. Not returned by default: see

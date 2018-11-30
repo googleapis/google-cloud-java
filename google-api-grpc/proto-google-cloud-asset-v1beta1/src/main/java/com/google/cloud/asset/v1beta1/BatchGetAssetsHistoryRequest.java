@@ -4,21 +4,24 @@
 package com.google.cloud.asset.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Batch get assets history request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest}
  */
-public  final class BatchGetAssetsHistoryRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class BatchGetAssetsHistoryRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest)
     BatchGetAssetsHistoryRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use BatchGetAssetsHistoryRequest.newBuilder() to construct.
   private BatchGetAssetsHistoryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private BatchGetAssetsHistoryRequest() {
     parent_ = "";
     assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -26,10 +29,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private BatchGetAssetsHistoryRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,54 +52,59 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            parent_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              assetNames_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+              parent_ = s;
+              break;
             }
-            assetNames_.add(s);
-            break;
-          }
-          case 24: {
-            int rawValue = input.readEnum();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                assetNames_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              assetNames_.add(s);
+              break;
+            }
+          case 24:
+            {
+              int rawValue = input.readEnum();
 
-            contentType_ = rawValue;
-            break;
-          }
-          case 34: {
-            com.google.cloud.asset.v1beta1.TimeWindow.Builder subBuilder = null;
-            if (readTimeWindow_ != null) {
-              subBuilder = readTimeWindow_.toBuilder();
+              contentType_ = rawValue;
+              break;
             }
-            readTimeWindow_ = input.readMessage(com.google.cloud.asset.v1beta1.TimeWindow.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(readTimeWindow_);
-              readTimeWindow_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.cloud.asset.v1beta1.TimeWindow.Builder subBuilder = null;
+              if (readTimeWindow_ != null) {
+                subBuilder = readTimeWindow_.toBuilder();
+              }
+              readTimeWindow_ =
+                  input.readMessage(
+                      com.google.cloud.asset.v1beta1.TimeWindow.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(readTimeWindow_);
+                readTimeWindow_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         assetNames_ = assetNames_.getUnmodifiableView();
@@ -105,23 +113,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.asset.v1beta1.AssetServiceProto.internal_static_google_cloud_asset_v1beta1_BatchGetAssetsHistoryRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.asset.v1beta1.AssetServiceProto
+        .internal_static_google_cloud_asset_v1beta1_BatchGetAssetsHistoryRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.asset.v1beta1.AssetServiceProto.internal_static_google_cloud_asset_v1beta1_BatchGetAssetsHistoryRequest_fieldAccessorTable
+    return com.google.cloud.asset.v1beta1.AssetServiceProto
+        .internal_static_google_cloud_asset_v1beta1_BatchGetAssetsHistoryRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest.class, com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest.Builder.class);
+            com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest.class,
+            com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest.Builder.class);
   }
 
   private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
+   *
+   *
    * <pre>
    * Required. The relative name of the root asset. It can only be an
    * organization number (such as "organizations/123"), a project ID (such as
@@ -135,14 +148,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       parent_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The relative name of the root asset. It can only be an
    * organization number (such as "organizations/123"), a project ID (such as
@@ -151,13 +165,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string parent = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getParentBytes() {
+  public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
       return b;
     } else {
@@ -168,6 +180,8 @@ private static final long serialVersionUID = 0L;
   public static final int ASSET_NAMES_FIELD_NUMBER = 2;
   private com.google.protobuf.LazyStringList assetNames_;
   /**
+   *
+   *
    * <pre>
    * A list of the full names of the assets. For example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
@@ -179,11 +193,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string asset_names = 2;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getAssetNamesList() {
+  public com.google.protobuf.ProtocolStringList getAssetNamesList() {
     return assetNames_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of the full names of the assets. For example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
@@ -199,6 +214,8 @@ private static final long serialVersionUID = 0L;
     return assetNames_.size();
   }
   /**
+   *
+   *
    * <pre>
    * A list of the full names of the assets. For example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
@@ -214,6 +231,8 @@ private static final long serialVersionUID = 0L;
     return assetNames_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * A list of the full names of the assets. For example:
    * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
@@ -225,14 +244,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string asset_names = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getAssetNamesBytes(int index) {
+  public com.google.protobuf.ByteString getAssetNamesBytes(int index) {
     return assetNames_.getByteString(index);
   }
 
   public static final int CONTENT_TYPE_FIELD_NUMBER = 3;
   private int contentType_;
   /**
+   *
+   *
    * <pre>
    * Required. The content type.
    * </pre>
@@ -243,6 +263,8 @@ private static final long serialVersionUID = 0L;
     return contentType_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The content type.
    * </pre>
@@ -251,13 +273,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.asset.v1beta1.ContentType getContentType() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.asset.v1beta1.ContentType result = com.google.cloud.asset.v1beta1.ContentType.valueOf(contentType_);
+    com.google.cloud.asset.v1beta1.ContentType result =
+        com.google.cloud.asset.v1beta1.ContentType.valueOf(contentType_);
     return result == null ? com.google.cloud.asset.v1beta1.ContentType.UNRECOGNIZED : result;
   }
 
   public static final int READ_TIME_WINDOW_FIELD_NUMBER = 4;
   private com.google.cloud.asset.v1beta1.TimeWindow readTimeWindow_;
   /**
+   *
+   *
    * <pre>
    * Required. The time window for the asset history. The start time is
    * required. The returned results contain all temporal assets whose time
@@ -270,6 +295,8 @@ private static final long serialVersionUID = 0L;
     return readTimeWindow_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The time window for the asset history. The start time is
    * required. The returned results contain all temporal assets whose time
@@ -279,9 +306,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
    */
   public com.google.cloud.asset.v1beta1.TimeWindow getReadTimeWindow() {
-    return readTimeWindow_ == null ? com.google.cloud.asset.v1beta1.TimeWindow.getDefaultInstance() : readTimeWindow_;
+    return readTimeWindow_ == null
+        ? com.google.cloud.asset.v1beta1.TimeWindow.getDefaultInstance()
+        : readTimeWindow_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The time window for the asset history. The start time is
    * required. The returned results contain all temporal assets whose time
@@ -295,6 +326,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -306,15 +338,15 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
     for (int i = 0; i < assetNames_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, assetNames_.getRaw(i));
     }
-    if (contentType_ != com.google.cloud.asset.v1beta1.ContentType.CONTENT_TYPE_UNSPECIFIED.getNumber()) {
+    if (contentType_
+        != com.google.cloud.asset.v1beta1.ContentType.CONTENT_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, contentType_);
     }
     if (readTimeWindow_ != null) {
@@ -340,13 +372,12 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getAssetNamesList().size();
     }
-    if (contentType_ != com.google.cloud.asset.v1beta1.ContentType.CONTENT_TYPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, contentType_);
+    if (contentType_
+        != com.google.cloud.asset.v1beta1.ContentType.CONTENT_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, contentType_);
     }
     if (readTimeWindow_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getReadTimeWindow());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getReadTimeWindow());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -356,23 +387,21 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest other = (com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest) obj;
+    com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest other =
+        (com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest) obj;
 
     boolean result = true;
-    result = result && getParent()
-        .equals(other.getParent());
-    result = result && getAssetNamesList()
-        .equals(other.getAssetNamesList());
+    result = result && getParent().equals(other.getParent());
+    result = result && getAssetNamesList().equals(other.getAssetNamesList());
     result = result && contentType_ == other.contentType_;
     result = result && (hasReadTimeWindow() == other.hasReadTimeWindow());
     if (hasReadTimeWindow()) {
-      result = result && getReadTimeWindow()
-          .equals(other.getReadTimeWindow());
+      result = result && getReadTimeWindow().equals(other.getReadTimeWindow());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -403,117 +432,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Batch get assets history request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest)
       com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.asset.v1beta1.AssetServiceProto.internal_static_google_cloud_asset_v1beta1_BatchGetAssetsHistoryRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.asset.v1beta1.AssetServiceProto
+          .internal_static_google_cloud_asset_v1beta1_BatchGetAssetsHistoryRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.asset.v1beta1.AssetServiceProto.internal_static_google_cloud_asset_v1beta1_BatchGetAssetsHistoryRequest_fieldAccessorTable
+      return com.google.cloud.asset.v1beta1.AssetServiceProto
+          .internal_static_google_cloud_asset_v1beta1_BatchGetAssetsHistoryRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest.class, com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest.Builder.class);
+              com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest.class,
+              com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest.Builder.class);
     }
 
     // Construct using com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest.newBuilder()
@@ -521,16 +560,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -550,9 +588,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.asset.v1beta1.AssetServiceProto.internal_static_google_cloud_asset_v1beta1_BatchGetAssetsHistoryRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.asset.v1beta1.AssetServiceProto
+          .internal_static_google_cloud_asset_v1beta1_BatchGetAssetsHistoryRequest_descriptor;
     }
 
     @java.lang.Override
@@ -571,7 +609,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest buildPartial() {
-      com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest result = new com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest(this);
+      com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest result =
+          new com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.parent_ = parent_;
@@ -595,38 +634,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest) {
-        return mergeFrom((com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest)other);
+        return mergeFrom((com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -634,7 +674,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest other) {
-      if (other == com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest.getDefaultInstance()) return this;
+      if (other == com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest.getDefaultInstance())
+        return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         onChanged();
@@ -674,7 +715,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -683,10 +725,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The relative name of the root asset. It can only be an
      * organization number (such as "organizations/123"), a project ID (such as
@@ -698,8 +743,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         parent_ = s;
         return s;
@@ -708,6 +752,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The relative name of the root asset. It can only be an
      * organization number (such as "organizations/123"), a project ID (such as
@@ -716,13 +762,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
+    public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         parent_ = b;
         return b;
       } else {
@@ -730,6 +774,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The relative name of the root asset. It can only be an
      * organization number (such as "organizations/123"), a project ID (such as
@@ -738,17 +784,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParent(
-        java.lang.String value) {
+    public Builder setParent(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       parent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The relative name of the root asset. It can only be an
      * organization number (such as "organizations/123"), a project ID (such as
@@ -758,12 +805,14 @@ private static final long serialVersionUID = 0L;
      * <code>string parent = 1;</code>
      */
     public Builder clearParent() {
-      
+
       parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The relative name of the root asset. It can only be an
      * organization number (such as "organizations/123"), a project ID (such as
@@ -772,26 +821,29 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       parent_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList assetNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList assetNames_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureAssetNamesIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         assetNames_ = new com.google.protobuf.LazyStringArrayList(assetNames_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * A list of the full names of the assets. For example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
@@ -803,11 +855,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string asset_names = 2;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getAssetNamesList() {
+    public com.google.protobuf.ProtocolStringList getAssetNamesList() {
       return assetNames_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * A list of the full names of the assets. For example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
@@ -823,6 +876,8 @@ private static final long serialVersionUID = 0L;
       return assetNames_.size();
     }
     /**
+     *
+     *
      * <pre>
      * A list of the full names of the assets. For example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
@@ -838,6 +893,8 @@ private static final long serialVersionUID = 0L;
       return assetNames_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * A list of the full names of the assets. For example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
@@ -849,11 +906,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string asset_names = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getAssetNamesBytes(int index) {
+    public com.google.protobuf.ByteString getAssetNamesBytes(int index) {
       return assetNames_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * A list of the full names of the assets. For example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
@@ -865,17 +923,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string asset_names = 2;</code>
      */
-    public Builder setAssetNames(
-        int index, java.lang.String value) {
+    public Builder setAssetNames(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureAssetNamesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureAssetNamesIsMutable();
       assetNames_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of the full names of the assets. For example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
@@ -887,17 +946,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string asset_names = 2;</code>
      */
-    public Builder addAssetNames(
-        java.lang.String value) {
+    public Builder addAssetNames(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureAssetNamesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureAssetNamesIsMutable();
       assetNames_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of the full names of the assets. For example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
@@ -909,15 +969,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string asset_names = 2;</code>
      */
-    public Builder addAllAssetNames(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllAssetNames(java.lang.Iterable<java.lang.String> values) {
       ensureAssetNamesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, assetNames_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, assetNames_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of the full names of the assets. For example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
@@ -936,6 +996,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of the full names of the assets. For example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
@@ -947,12 +1009,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string asset_names = 2;</code>
      */
-    public Builder addAssetNamesBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addAssetNamesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureAssetNamesIsMutable();
       assetNames_.add(value);
       onChanged();
@@ -961,6 +1022,8 @@ private static final long serialVersionUID = 0L;
 
     private int contentType_ = 0;
     /**
+     *
+     *
      * <pre>
      * Required. The content type.
      * </pre>
@@ -971,6 +1034,8 @@ private static final long serialVersionUID = 0L;
       return contentType_;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The content type.
      * </pre>
@@ -983,6 +1048,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The content type.
      * </pre>
@@ -991,10 +1058,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.asset.v1beta1.ContentType getContentType() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.asset.v1beta1.ContentType result = com.google.cloud.asset.v1beta1.ContentType.valueOf(contentType_);
+      com.google.cloud.asset.v1beta1.ContentType result =
+          com.google.cloud.asset.v1beta1.ContentType.valueOf(contentType_);
       return result == null ? com.google.cloud.asset.v1beta1.ContentType.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The content type.
      * </pre>
@@ -1005,12 +1075,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       contentType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The content type.
      * </pre>
@@ -1018,7 +1090,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.asset.v1beta1.ContentType content_type = 3;</code>
      */
     public Builder clearContentType() {
-      
+
       contentType_ = 0;
       onChanged();
       return this;
@@ -1026,8 +1098,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.asset.v1beta1.TimeWindow readTimeWindow_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.asset.v1beta1.TimeWindow, com.google.cloud.asset.v1beta1.TimeWindow.Builder, com.google.cloud.asset.v1beta1.TimeWindowOrBuilder> readTimeWindowBuilder_;
+            com.google.cloud.asset.v1beta1.TimeWindow,
+            com.google.cloud.asset.v1beta1.TimeWindow.Builder,
+            com.google.cloud.asset.v1beta1.TimeWindowOrBuilder>
+        readTimeWindowBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required. The time window for the asset history. The start time is
      * required. The returned results contain all temporal assets whose time
@@ -1040,6 +1117,8 @@ private static final long serialVersionUID = 0L;
       return readTimeWindowBuilder_ != null || readTimeWindow_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The time window for the asset history. The start time is
      * required. The returned results contain all temporal assets whose time
@@ -1050,12 +1129,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.asset.v1beta1.TimeWindow getReadTimeWindow() {
       if (readTimeWindowBuilder_ == null) {
-        return readTimeWindow_ == null ? com.google.cloud.asset.v1beta1.TimeWindow.getDefaultInstance() : readTimeWindow_;
+        return readTimeWindow_ == null
+            ? com.google.cloud.asset.v1beta1.TimeWindow.getDefaultInstance()
+            : readTimeWindow_;
       } else {
         return readTimeWindowBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The time window for the asset history. The start time is
      * required. The returned results contain all temporal assets whose time
@@ -1078,6 +1161,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The time window for the asset history. The start time is
      * required. The returned results contain all temporal assets whose time
@@ -1098,6 +1183,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The time window for the asset history. The start time is
      * required. The returned results contain all temporal assets whose time
@@ -1110,7 +1197,9 @@ private static final long serialVersionUID = 0L;
       if (readTimeWindowBuilder_ == null) {
         if (readTimeWindow_ != null) {
           readTimeWindow_ =
-            com.google.cloud.asset.v1beta1.TimeWindow.newBuilder(readTimeWindow_).mergeFrom(value).buildPartial();
+              com.google.cloud.asset.v1beta1.TimeWindow.newBuilder(readTimeWindow_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           readTimeWindow_ = value;
         }
@@ -1122,6 +1211,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The time window for the asset history. The start time is
      * required. The returned results contain all temporal assets whose time
@@ -1142,6 +1233,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The time window for the asset history. The start time is
      * required. The returned results contain all temporal assets whose time
@@ -1151,11 +1244,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
      */
     public com.google.cloud.asset.v1beta1.TimeWindow.Builder getReadTimeWindowBuilder() {
-      
+
       onChanged();
       return getReadTimeWindowFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required. The time window for the asset history. The start time is
      * required. The returned results contain all temporal assets whose time
@@ -1168,11 +1263,14 @@ private static final long serialVersionUID = 0L;
       if (readTimeWindowBuilder_ != null) {
         return readTimeWindowBuilder_.getMessageOrBuilder();
       } else {
-        return readTimeWindow_ == null ?
-            com.google.cloud.asset.v1beta1.TimeWindow.getDefaultInstance() : readTimeWindow_;
+        return readTimeWindow_ == null
+            ? com.google.cloud.asset.v1beta1.TimeWindow.getDefaultInstance()
+            : readTimeWindow_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The time window for the asset history. The start time is
      * required. The returned results contain all temporal assets whose time
@@ -1182,21 +1280,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.asset.v1beta1.TimeWindow read_time_window = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.asset.v1beta1.TimeWindow, com.google.cloud.asset.v1beta1.TimeWindow.Builder, com.google.cloud.asset.v1beta1.TimeWindowOrBuilder> 
+            com.google.cloud.asset.v1beta1.TimeWindow,
+            com.google.cloud.asset.v1beta1.TimeWindow.Builder,
+            com.google.cloud.asset.v1beta1.TimeWindowOrBuilder>
         getReadTimeWindowFieldBuilder() {
       if (readTimeWindowBuilder_ == null) {
-        readTimeWindowBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.asset.v1beta1.TimeWindow, com.google.cloud.asset.v1beta1.TimeWindow.Builder, com.google.cloud.asset.v1beta1.TimeWindowOrBuilder>(
-                getReadTimeWindow(),
-                getParentForChildren(),
-                isClean());
+        readTimeWindowBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.asset.v1beta1.TimeWindow,
+                com.google.cloud.asset.v1beta1.TimeWindow.Builder,
+                com.google.cloud.asset.v1beta1.TimeWindowOrBuilder>(
+                getReadTimeWindow(), getParentForChildren(), isClean());
         readTimeWindow_ = null;
       }
       return readTimeWindowBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1206,12 +1307,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest)
   private static final com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest();
   }
@@ -1220,16 +1321,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<BatchGetAssetsHistoryRequest>
-      PARSER = new com.google.protobuf.AbstractParser<BatchGetAssetsHistoryRequest>() {
-    @java.lang.Override
-    public BatchGetAssetsHistoryRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new BatchGetAssetsHistoryRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<BatchGetAssetsHistoryRequest> PARSER =
+      new com.google.protobuf.AbstractParser<BatchGetAssetsHistoryRequest>() {
+        @java.lang.Override
+        public BatchGetAssetsHistoryRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new BatchGetAssetsHistoryRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<BatchGetAssetsHistoryRequest> parser() {
     return PARSER;
@@ -1244,6 +1345,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.asset.v1beta1.BatchGetAssetsHistoryRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

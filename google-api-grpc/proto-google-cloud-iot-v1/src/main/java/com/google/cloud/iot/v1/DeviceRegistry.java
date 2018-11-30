@@ -4,21 +4,24 @@
 package com.google.cloud.iot.v1;
 
 /**
+ *
+ *
  * <pre>
  * A container for a group of devices.
  * </pre>
  *
  * Protobuf type {@code google.cloud.iot.v1.DeviceRegistry}
  */
-public  final class DeviceRegistry extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class DeviceRegistry extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.DeviceRegistry)
     DeviceRegistryOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use DeviceRegistry.newBuilder() to construct.
   private DeviceRegistry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private DeviceRegistry() {
     id_ = "";
     name_ = "";
@@ -28,10 +31,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private DeviceRegistry(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -51,123 +54,144 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            id_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+              id_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 34: {
-            com.google.cloud.iot.v1.MqttConfig.Builder subBuilder = null;
-            if (mqttConfig_ != null) {
-              subBuilder = mqttConfig_.toBuilder();
+              name_ = s;
+              break;
             }
-            mqttConfig_ = input.readMessage(com.google.cloud.iot.v1.MqttConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(mqttConfig_);
-              mqttConfig_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.cloud.iot.v1.MqttConfig.Builder subBuilder = null;
+              if (mqttConfig_ != null) {
+                subBuilder = mqttConfig_.toBuilder();
+              }
+              mqttConfig_ =
+                  input.readMessage(com.google.cloud.iot.v1.MqttConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(mqttConfig_);
+                mqttConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 58: {
-            com.google.cloud.iot.v1.StateNotificationConfig.Builder subBuilder = null;
-            if (stateNotificationConfig_ != null) {
-              subBuilder = stateNotificationConfig_.toBuilder();
+              break;
             }
-            stateNotificationConfig_ = input.readMessage(com.google.cloud.iot.v1.StateNotificationConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(stateNotificationConfig_);
-              stateNotificationConfig_ = subBuilder.buildPartial();
-            }
+          case 58:
+            {
+              com.google.cloud.iot.v1.StateNotificationConfig.Builder subBuilder = null;
+              if (stateNotificationConfig_ != null) {
+                subBuilder = stateNotificationConfig_.toBuilder();
+              }
+              stateNotificationConfig_ =
+                  input.readMessage(
+                      com.google.cloud.iot.v1.StateNotificationConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(stateNotificationConfig_);
+                stateNotificationConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 66: {
-            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-              credentials_ = new java.util.ArrayList<com.google.cloud.iot.v1.RegistryCredential>();
-              mutable_bitField0_ |= 0x00000080;
+              break;
             }
-            credentials_.add(
-                input.readMessage(com.google.cloud.iot.v1.RegistryCredential.parser(), extensionRegistry));
-            break;
-          }
-          case 74: {
-            com.google.cloud.iot.v1.HttpConfig.Builder subBuilder = null;
-            if (httpConfig_ != null) {
-              subBuilder = httpConfig_.toBuilder();
+          case 66:
+            {
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+                credentials_ =
+                    new java.util.ArrayList<com.google.cloud.iot.v1.RegistryCredential>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              credentials_.add(
+                  input.readMessage(
+                      com.google.cloud.iot.v1.RegistryCredential.parser(), extensionRegistry));
+              break;
             }
-            httpConfig_ = input.readMessage(com.google.cloud.iot.v1.HttpConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(httpConfig_);
-              httpConfig_ = subBuilder.buildPartial();
-            }
+          case 74:
+            {
+              com.google.cloud.iot.v1.HttpConfig.Builder subBuilder = null;
+              if (httpConfig_ != null) {
+                subBuilder = httpConfig_.toBuilder();
+              }
+              httpConfig_ =
+                  input.readMessage(com.google.cloud.iot.v1.HttpConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(httpConfig_);
+                httpConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 82: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              eventNotificationConfigs_ = new java.util.ArrayList<com.google.cloud.iot.v1.EventNotificationConfig>();
-              mutable_bitField0_ |= 0x00000004;
+              break;
             }
-            eventNotificationConfigs_.add(
-                input.readMessage(com.google.cloud.iot.v1.EventNotificationConfig.parser(), extensionRegistry));
-            break;
-          }
-          case 88: {
-            int rawValue = input.readEnum();
+          case 82:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                eventNotificationConfigs_ =
+                    new java.util.ArrayList<com.google.cloud.iot.v1.EventNotificationConfig>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              eventNotificationConfigs_.add(
+                  input.readMessage(
+                      com.google.cloud.iot.v1.EventNotificationConfig.parser(), extensionRegistry));
+              break;
+            }
+          case 88:
+            {
+              int rawValue = input.readEnum();
 
-            logLevel_ = rawValue;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              logLevel_ = rawValue;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
         credentials_ = java.util.Collections.unmodifiableList(credentials_);
       }
       if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-        eventNotificationConfigs_ = java.util.Collections.unmodifiableList(eventNotificationConfigs_);
+        eventNotificationConfigs_ =
+            java.util.Collections.unmodifiableList(eventNotificationConfigs_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_DeviceRegistry_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.iot.v1.ResourcesProto
+        .internal_static_google_cloud_iot_v1_DeviceRegistry_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_DeviceRegistry_fieldAccessorTable
+    return com.google.cloud.iot.v1.ResourcesProto
+        .internal_static_google_cloud_iot_v1_DeviceRegistry_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.iot.v1.DeviceRegistry.class, com.google.cloud.iot.v1.DeviceRegistry.Builder.class);
+            com.google.cloud.iot.v1.DeviceRegistry.class,
+            com.google.cloud.iot.v1.DeviceRegistry.Builder.class);
   }
 
   private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
+   *
+   *
    * <pre>
    * The identifier of this device registry. For example, `myRegistry`.
    * </pre>
@@ -179,27 +203,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       id_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The identifier of this device registry. For example, `myRegistry`.
    * </pre>
    *
    * <code>string id = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getIdBytes() {
+  public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       id_ = b;
       return b;
     } else {
@@ -210,6 +233,8 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The resource path name. For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
@@ -222,14 +247,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The resource path name. For example,
    * `projects/example-project/locations/us-central1/registries/my-registry`.
@@ -237,13 +263,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -254,6 +278,8 @@ private static final long serialVersionUID = 0L;
   public static final int EVENT_NOTIFICATION_CONFIGS_FIELD_NUMBER = 10;
   private java.util.List<com.google.cloud.iot.v1.EventNotificationConfig> eventNotificationConfigs_;
   /**
+   *
+   *
    * <pre>
    * The configuration for notification of telemetry events received from the
    * device. All telemetry events that were successfully published by the
@@ -266,12 +292,16 @@ private static final long serialVersionUID = 0L;
    * configurations may be provided.
    * </pre>
    *
-   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+   * </code>
    */
-  public java.util.List<com.google.cloud.iot.v1.EventNotificationConfig> getEventNotificationConfigsList() {
+  public java.util.List<com.google.cloud.iot.v1.EventNotificationConfig>
+      getEventNotificationConfigsList() {
     return eventNotificationConfigs_;
   }
   /**
+   *
+   *
    * <pre>
    * The configuration for notification of telemetry events received from the
    * device. All telemetry events that were successfully published by the
@@ -284,13 +314,16 @@ private static final long serialVersionUID = 0L;
    * configurations may be provided.
    * </pre>
    *
-   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+   * </code>
    */
-  public java.util.List<? extends com.google.cloud.iot.v1.EventNotificationConfigOrBuilder> 
+  public java.util.List<? extends com.google.cloud.iot.v1.EventNotificationConfigOrBuilder>
       getEventNotificationConfigsOrBuilderList() {
     return eventNotificationConfigs_;
   }
   /**
+   *
+   *
    * <pre>
    * The configuration for notification of telemetry events received from the
    * device. All telemetry events that were successfully published by the
@@ -303,12 +336,15 @@ private static final long serialVersionUID = 0L;
    * configurations may be provided.
    * </pre>
    *
-   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+   * </code>
    */
   public int getEventNotificationConfigsCount() {
     return eventNotificationConfigs_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The configuration for notification of telemetry events received from the
    * device. All telemetry events that were successfully published by the
@@ -321,12 +357,15 @@ private static final long serialVersionUID = 0L;
    * configurations may be provided.
    * </pre>
    *
-   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+   * </code>
    */
   public com.google.cloud.iot.v1.EventNotificationConfig getEventNotificationConfigs(int index) {
     return eventNotificationConfigs_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The configuration for notification of telemetry events received from the
    * device. All telemetry events that were successfully published by the
@@ -339,16 +378,19 @@ private static final long serialVersionUID = 0L;
    * configurations may be provided.
    * </pre>
    *
-   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+   * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+   * </code>
    */
-  public com.google.cloud.iot.v1.EventNotificationConfigOrBuilder getEventNotificationConfigsOrBuilder(
-      int index) {
+  public com.google.cloud.iot.v1.EventNotificationConfigOrBuilder
+      getEventNotificationConfigsOrBuilder(int index) {
     return eventNotificationConfigs_.get(index);
   }
 
   public static final int STATE_NOTIFICATION_CONFIG_FIELD_NUMBER = 7;
   private com.google.cloud.iot.v1.StateNotificationConfig stateNotificationConfig_;
   /**
+   *
+   *
    * <pre>
    * The configuration for notification of new states received from the device.
    * State updates are guaranteed to be stored in the state history, but
@@ -364,6 +406,8 @@ private static final long serialVersionUID = 0L;
     return stateNotificationConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The configuration for notification of new states received from the device.
    * State updates are guaranteed to be stored in the state history, but
@@ -376,9 +420,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.iot.v1.StateNotificationConfig state_notification_config = 7;</code>
    */
   public com.google.cloud.iot.v1.StateNotificationConfig getStateNotificationConfig() {
-    return stateNotificationConfig_ == null ? com.google.cloud.iot.v1.StateNotificationConfig.getDefaultInstance() : stateNotificationConfig_;
+    return stateNotificationConfig_ == null
+        ? com.google.cloud.iot.v1.StateNotificationConfig.getDefaultInstance()
+        : stateNotificationConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * The configuration for notification of new states received from the device.
    * State updates are guaranteed to be stored in the state history, but
@@ -390,13 +438,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.cloud.iot.v1.StateNotificationConfig state_notification_config = 7;</code>
    */
-  public com.google.cloud.iot.v1.StateNotificationConfigOrBuilder getStateNotificationConfigOrBuilder() {
+  public com.google.cloud.iot.v1.StateNotificationConfigOrBuilder
+      getStateNotificationConfigOrBuilder() {
     return getStateNotificationConfig();
   }
 
   public static final int MQTT_CONFIG_FIELD_NUMBER = 4;
   private com.google.cloud.iot.v1.MqttConfig mqttConfig_;
   /**
+   *
+   *
    * <pre>
    * The MQTT configuration for this device registry.
    * </pre>
@@ -407,6 +458,8 @@ private static final long serialVersionUID = 0L;
     return mqttConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The MQTT configuration for this device registry.
    * </pre>
@@ -414,9 +467,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.iot.v1.MqttConfig mqtt_config = 4;</code>
    */
   public com.google.cloud.iot.v1.MqttConfig getMqttConfig() {
-    return mqttConfig_ == null ? com.google.cloud.iot.v1.MqttConfig.getDefaultInstance() : mqttConfig_;
+    return mqttConfig_ == null
+        ? com.google.cloud.iot.v1.MqttConfig.getDefaultInstance()
+        : mqttConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * The MQTT configuration for this device registry.
    * </pre>
@@ -430,6 +487,8 @@ private static final long serialVersionUID = 0L;
   public static final int HTTP_CONFIG_FIELD_NUMBER = 9;
   private com.google.cloud.iot.v1.HttpConfig httpConfig_;
   /**
+   *
+   *
    * <pre>
    * The DeviceService (HTTP) configuration for this device registry.
    * </pre>
@@ -440,6 +499,8 @@ private static final long serialVersionUID = 0L;
     return httpConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The DeviceService (HTTP) configuration for this device registry.
    * </pre>
@@ -447,9 +508,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.iot.v1.HttpConfig http_config = 9;</code>
    */
   public com.google.cloud.iot.v1.HttpConfig getHttpConfig() {
-    return httpConfig_ == null ? com.google.cloud.iot.v1.HttpConfig.getDefaultInstance() : httpConfig_;
+    return httpConfig_ == null
+        ? com.google.cloud.iot.v1.HttpConfig.getDefaultInstance()
+        : httpConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * The DeviceService (HTTP) configuration for this device registry.
    * </pre>
@@ -463,6 +528,8 @@ private static final long serialVersionUID = 0L;
   public static final int LOG_LEVEL_FIELD_NUMBER = 11;
   private int logLevel_;
   /**
+   *
+   *
    * <pre>
    * **Beta Feature**
    * The default logging verbosity for activity from devices in this registry.
@@ -475,6 +542,8 @@ private static final long serialVersionUID = 0L;
     return logLevel_;
   }
   /**
+   *
+   *
    * <pre>
    * **Beta Feature**
    * The default logging verbosity for activity from devices in this registry.
@@ -492,6 +561,8 @@ private static final long serialVersionUID = 0L;
   public static final int CREDENTIALS_FIELD_NUMBER = 8;
   private java.util.List<com.google.cloud.iot.v1.RegistryCredential> credentials_;
   /**
+   *
+   *
    * <pre>
    * The credentials used to verify the device credentials. No more than 10
    * credentials can be bound to a single registry at a time. The verification
@@ -511,6 +582,8 @@ private static final long serialVersionUID = 0L;
     return credentials_;
   }
   /**
+   *
+   *
    * <pre>
    * The credentials used to verify the device credentials. No more than 10
    * credentials can be bound to a single registry at a time. The verification
@@ -526,11 +599,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
    */
-  public java.util.List<? extends com.google.cloud.iot.v1.RegistryCredentialOrBuilder> 
+  public java.util.List<? extends com.google.cloud.iot.v1.RegistryCredentialOrBuilder>
       getCredentialsOrBuilderList() {
     return credentials_;
   }
   /**
+   *
+   *
    * <pre>
    * The credentials used to verify the device credentials. No more than 10
    * credentials can be bound to a single registry at a time. The verification
@@ -550,6 +625,8 @@ private static final long serialVersionUID = 0L;
     return credentials_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The credentials used to verify the device credentials. No more than 10
    * credentials can be bound to a single registry at a time. The verification
@@ -569,6 +646,8 @@ private static final long serialVersionUID = 0L;
     return credentials_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The credentials used to verify the device credentials. No more than 10
    * credentials can be bound to a single registry at a time. The verification
@@ -584,12 +663,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
    */
-  public com.google.cloud.iot.v1.RegistryCredentialOrBuilder getCredentialsOrBuilder(
-      int index) {
+  public com.google.cloud.iot.v1.RegistryCredentialOrBuilder getCredentialsOrBuilder(int index) {
     return credentials_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -601,8 +680,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
@@ -643,28 +721,25 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
     if (mqttConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getMqttConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getMqttConfig());
     }
     if (stateNotificationConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getStateNotificationConfig());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(7, getStateNotificationConfig());
     }
     for (int i = 0; i < credentials_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, credentials_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, credentials_.get(i));
     }
     if (httpConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getHttpConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getHttpConfig());
     }
     for (int i = 0; i < eventNotificationConfigs_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, eventNotificationConfigs_.get(i));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, eventNotificationConfigs_.get(i));
     }
     if (logLevel_ != com.google.cloud.iot.v1.LogLevel.LOG_LEVEL_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(11, logLevel_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, logLevel_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -674,7 +749,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.iot.v1.DeviceRegistry)) {
       return super.equals(obj);
@@ -682,30 +757,24 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.iot.v1.DeviceRegistry other = (com.google.cloud.iot.v1.DeviceRegistry) obj;
 
     boolean result = true;
-    result = result && getId()
-        .equals(other.getId());
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getEventNotificationConfigsList()
-        .equals(other.getEventNotificationConfigsList());
+    result = result && getId().equals(other.getId());
+    result = result && getName().equals(other.getName());
+    result =
+        result && getEventNotificationConfigsList().equals(other.getEventNotificationConfigsList());
     result = result && (hasStateNotificationConfig() == other.hasStateNotificationConfig());
     if (hasStateNotificationConfig()) {
-      result = result && getStateNotificationConfig()
-          .equals(other.getStateNotificationConfig());
+      result = result && getStateNotificationConfig().equals(other.getStateNotificationConfig());
     }
     result = result && (hasMqttConfig() == other.hasMqttConfig());
     if (hasMqttConfig()) {
-      result = result && getMqttConfig()
-          .equals(other.getMqttConfig());
+      result = result && getMqttConfig().equals(other.getMqttConfig());
     }
     result = result && (hasHttpConfig() == other.hasHttpConfig());
     if (hasHttpConfig()) {
-      result = result && getHttpConfig()
-          .equals(other.getHttpConfig());
+      result = result && getHttpConfig().equals(other.getHttpConfig());
     }
     result = result && logLevel_ == other.logLevel_;
-    result = result && getCredentialsList()
-        .equals(other.getCredentialsList());
+    result = result && getCredentialsList().equals(other.getCredentialsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -748,118 +817,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.iot.v1.DeviceRegistry parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.iot.v1.DeviceRegistry parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.DeviceRegistry parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.DeviceRegistry parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.DeviceRegistry parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.DeviceRegistry parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.DeviceRegistry parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.DeviceRegistry parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.iot.v1.DeviceRegistry parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.DeviceRegistry parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.iot.v1.DeviceRegistry parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.DeviceRegistry parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.iot.v1.DeviceRegistry parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.iot.v1.DeviceRegistry prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A container for a group of devices.
    * </pre>
    *
    * Protobuf type {@code google.cloud.iot.v1.DeviceRegistry}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.iot.v1.DeviceRegistry)
       com.google.cloud.iot.v1.DeviceRegistryOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_DeviceRegistry_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.iot.v1.ResourcesProto
+          .internal_static_google_cloud_iot_v1_DeviceRegistry_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_DeviceRegistry_fieldAccessorTable
+      return com.google.cloud.iot.v1.ResourcesProto
+          .internal_static_google_cloud_iot_v1_DeviceRegistry_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.iot.v1.DeviceRegistry.class, com.google.cloud.iot.v1.DeviceRegistry.Builder.class);
+              com.google.cloud.iot.v1.DeviceRegistry.class,
+              com.google.cloud.iot.v1.DeviceRegistry.Builder.class);
     }
 
     // Construct using com.google.cloud.iot.v1.DeviceRegistry.newBuilder()
@@ -867,18 +945,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getEventNotificationConfigsFieldBuilder();
         getCredentialsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -922,9 +1000,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_DeviceRegistry_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.iot.v1.ResourcesProto
+          .internal_static_google_cloud_iot_v1_DeviceRegistry_descriptor;
     }
 
     @java.lang.Override
@@ -943,14 +1021,16 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.iot.v1.DeviceRegistry buildPartial() {
-      com.google.cloud.iot.v1.DeviceRegistry result = new com.google.cloud.iot.v1.DeviceRegistry(this);
+      com.google.cloud.iot.v1.DeviceRegistry result =
+          new com.google.cloud.iot.v1.DeviceRegistry(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.id_ = id_;
       result.name_ = name_;
       if (eventNotificationConfigsBuilder_ == null) {
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          eventNotificationConfigs_ = java.util.Collections.unmodifiableList(eventNotificationConfigs_);
+          eventNotificationConfigs_ =
+              java.util.Collections.unmodifiableList(eventNotificationConfigs_);
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.eventNotificationConfigs_ = eventNotificationConfigs_;
@@ -991,38 +1071,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.iot.v1.DeviceRegistry) {
-        return mergeFrom((com.google.cloud.iot.v1.DeviceRegistry)other);
+        return mergeFrom((com.google.cloud.iot.v1.DeviceRegistry) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1057,9 +1138,10 @@ private static final long serialVersionUID = 0L;
             eventNotificationConfigsBuilder_ = null;
             eventNotificationConfigs_ = other.eventNotificationConfigs_;
             bitField0_ = (bitField0_ & ~0x00000004);
-            eventNotificationConfigsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getEventNotificationConfigsFieldBuilder() : null;
+            eventNotificationConfigsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getEventNotificationConfigsFieldBuilder()
+                    : null;
           } else {
             eventNotificationConfigsBuilder_.addAllMessages(other.eventNotificationConfigs_);
           }
@@ -1095,9 +1177,10 @@ private static final long serialVersionUID = 0L;
             credentialsBuilder_ = null;
             credentials_ = other.credentials_;
             bitField0_ = (bitField0_ & ~0x00000080);
-            credentialsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getCredentialsFieldBuilder() : null;
+            credentialsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getCredentialsFieldBuilder()
+                    : null;
           } else {
             credentialsBuilder_.addAllMessages(other.credentials_);
           }
@@ -1131,10 +1214,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
+     *
+     *
      * <pre>
      * The identifier of this device registry. For example, `myRegistry`.
      * </pre>
@@ -1144,8 +1230,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
         return s;
@@ -1154,19 +1239,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The identifier of this device registry. For example, `myRegistry`.
      * </pre>
      *
      * <code>string id = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getIdBytes() {
+    public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         id_ = b;
         return b;
       } else {
@@ -1174,23 +1259,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The identifier of this device registry. For example, `myRegistry`.
      * </pre>
      *
      * <code>string id = 1;</code>
      */
-    public Builder setId(
-        java.lang.String value) {
+    public Builder setId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       id_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The identifier of this device registry. For example, `myRegistry`.
      * </pre>
@@ -1198,25 +1286,26 @@ private static final long serialVersionUID = 0L;
      * <code>string id = 1;</code>
      */
     public Builder clearId() {
-      
+
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The identifier of this device registry. For example, `myRegistry`.
      * </pre>
      *
      * <code>string id = 1;</code>
      */
-    public Builder setIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       id_ = value;
       onChanged();
       return this;
@@ -1224,6 +1313,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The resource path name. For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
@@ -1234,8 +1325,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1244,6 +1334,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The resource path name. For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
@@ -1251,13 +1343,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1265,6 +1355,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The resource path name. For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
@@ -1272,17 +1364,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The resource path name. For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
@@ -1291,12 +1384,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 2;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The resource path name. For example,
      * `projects/example-project/locations/us-central1/registries/my-registry`.
@@ -1304,31 +1399,38 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.google.cloud.iot.v1.EventNotificationConfig> eventNotificationConfigs_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.cloud.iot.v1.EventNotificationConfig>
+        eventNotificationConfigs_ = java.util.Collections.emptyList();
+
     private void ensureEventNotificationConfigsIsMutable() {
       if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-        eventNotificationConfigs_ = new java.util.ArrayList<com.google.cloud.iot.v1.EventNotificationConfig>(eventNotificationConfigs_);
+        eventNotificationConfigs_ =
+            new java.util.ArrayList<com.google.cloud.iot.v1.EventNotificationConfig>(
+                eventNotificationConfigs_);
         bitField0_ |= 0x00000004;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.iot.v1.EventNotificationConfig, com.google.cloud.iot.v1.EventNotificationConfig.Builder, com.google.cloud.iot.v1.EventNotificationConfigOrBuilder> eventNotificationConfigsBuilder_;
+            com.google.cloud.iot.v1.EventNotificationConfig,
+            com.google.cloud.iot.v1.EventNotificationConfig.Builder,
+            com.google.cloud.iot.v1.EventNotificationConfigOrBuilder>
+        eventNotificationConfigsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of telemetry events received from the
      * device. All telemetry events that were successfully published by the
@@ -1341,9 +1443,11 @@ private static final long serialVersionUID = 0L;
      * configurations may be provided.
      * </pre>
      *
-     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+     * </code>
      */
-    public java.util.List<com.google.cloud.iot.v1.EventNotificationConfig> getEventNotificationConfigsList() {
+    public java.util.List<com.google.cloud.iot.v1.EventNotificationConfig>
+        getEventNotificationConfigsList() {
       if (eventNotificationConfigsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(eventNotificationConfigs_);
       } else {
@@ -1351,6 +1455,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of telemetry events received from the
      * device. All telemetry events that were successfully published by the
@@ -1363,7 +1469,8 @@ private static final long serialVersionUID = 0L;
      * configurations may be provided.
      * </pre>
      *
-     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+     * </code>
      */
     public int getEventNotificationConfigsCount() {
       if (eventNotificationConfigsBuilder_ == null) {
@@ -1373,6 +1480,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of telemetry events received from the
      * device. All telemetry events that were successfully published by the
@@ -1385,7 +1494,8 @@ private static final long serialVersionUID = 0L;
      * configurations may be provided.
      * </pre>
      *
-     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+     * </code>
      */
     public com.google.cloud.iot.v1.EventNotificationConfig getEventNotificationConfigs(int index) {
       if (eventNotificationConfigsBuilder_ == null) {
@@ -1395,6 +1505,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of telemetry events received from the
      * device. All telemetry events that were successfully published by the
@@ -1407,7 +1519,8 @@ private static final long serialVersionUID = 0L;
      * configurations may be provided.
      * </pre>
      *
-     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+     * </code>
      */
     public Builder setEventNotificationConfigs(
         int index, com.google.cloud.iot.v1.EventNotificationConfig value) {
@@ -1424,6 +1537,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of telemetry events received from the
      * device. All telemetry events that were successfully published by the
@@ -1436,7 +1551,8 @@ private static final long serialVersionUID = 0L;
      * configurations may be provided.
      * </pre>
      *
-     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+     * </code>
      */
     public Builder setEventNotificationConfigs(
         int index, com.google.cloud.iot.v1.EventNotificationConfig.Builder builderForValue) {
@@ -1450,6 +1566,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of telemetry events received from the
      * device. All telemetry events that were successfully published by the
@@ -1462,9 +1580,11 @@ private static final long serialVersionUID = 0L;
      * configurations may be provided.
      * </pre>
      *
-     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+     * </code>
      */
-    public Builder addEventNotificationConfigs(com.google.cloud.iot.v1.EventNotificationConfig value) {
+    public Builder addEventNotificationConfigs(
+        com.google.cloud.iot.v1.EventNotificationConfig value) {
       if (eventNotificationConfigsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1478,6 +1598,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of telemetry events received from the
      * device. All telemetry events that were successfully published by the
@@ -1490,7 +1612,8 @@ private static final long serialVersionUID = 0L;
      * configurations may be provided.
      * </pre>
      *
-     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+     * </code>
      */
     public Builder addEventNotificationConfigs(
         int index, com.google.cloud.iot.v1.EventNotificationConfig value) {
@@ -1507,6 +1630,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of telemetry events received from the
      * device. All telemetry events that were successfully published by the
@@ -1519,7 +1644,8 @@ private static final long serialVersionUID = 0L;
      * configurations may be provided.
      * </pre>
      *
-     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+     * </code>
      */
     public Builder addEventNotificationConfigs(
         com.google.cloud.iot.v1.EventNotificationConfig.Builder builderForValue) {
@@ -1533,6 +1659,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of telemetry events received from the
      * device. All telemetry events that were successfully published by the
@@ -1545,7 +1673,8 @@ private static final long serialVersionUID = 0L;
      * configurations may be provided.
      * </pre>
      *
-     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+     * </code>
      */
     public Builder addEventNotificationConfigs(
         int index, com.google.cloud.iot.v1.EventNotificationConfig.Builder builderForValue) {
@@ -1559,6 +1688,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of telemetry events received from the
      * device. All telemetry events that were successfully published by the
@@ -1571,14 +1702,14 @@ private static final long serialVersionUID = 0L;
      * configurations may be provided.
      * </pre>
      *
-     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+     * </code>
      */
     public Builder addAllEventNotificationConfigs(
         java.lang.Iterable<? extends com.google.cloud.iot.v1.EventNotificationConfig> values) {
       if (eventNotificationConfigsBuilder_ == null) {
         ensureEventNotificationConfigsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, eventNotificationConfigs_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, eventNotificationConfigs_);
         onChanged();
       } else {
         eventNotificationConfigsBuilder_.addAllMessages(values);
@@ -1586,6 +1717,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of telemetry events received from the
      * device. All telemetry events that were successfully published by the
@@ -1598,7 +1731,8 @@ private static final long serialVersionUID = 0L;
      * configurations may be provided.
      * </pre>
      *
-     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+     * </code>
      */
     public Builder clearEventNotificationConfigs() {
       if (eventNotificationConfigsBuilder_ == null) {
@@ -1611,6 +1745,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of telemetry events received from the
      * device. All telemetry events that were successfully published by the
@@ -1623,7 +1759,8 @@ private static final long serialVersionUID = 0L;
      * configurations may be provided.
      * </pre>
      *
-     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+     * </code>
      */
     public Builder removeEventNotificationConfigs(int index) {
       if (eventNotificationConfigsBuilder_ == null) {
@@ -1636,6 +1773,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of telemetry events received from the
      * device. All telemetry events that were successfully published by the
@@ -1648,13 +1787,16 @@ private static final long serialVersionUID = 0L;
      * configurations may be provided.
      * </pre>
      *
-     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+     * </code>
      */
-    public com.google.cloud.iot.v1.EventNotificationConfig.Builder getEventNotificationConfigsBuilder(
-        int index) {
+    public com.google.cloud.iot.v1.EventNotificationConfig.Builder
+        getEventNotificationConfigsBuilder(int index) {
       return getEventNotificationConfigsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of telemetry events received from the
      * device. All telemetry events that were successfully published by the
@@ -1667,16 +1809,20 @@ private static final long serialVersionUID = 0L;
      * configurations may be provided.
      * </pre>
      *
-     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+     * </code>
      */
-    public com.google.cloud.iot.v1.EventNotificationConfigOrBuilder getEventNotificationConfigsOrBuilder(
-        int index) {
+    public com.google.cloud.iot.v1.EventNotificationConfigOrBuilder
+        getEventNotificationConfigsOrBuilder(int index) {
       if (eventNotificationConfigsBuilder_ == null) {
-        return eventNotificationConfigs_.get(index);  } else {
+        return eventNotificationConfigs_.get(index);
+      } else {
         return eventNotificationConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of telemetry events received from the
      * device. All telemetry events that were successfully published by the
@@ -1689,10 +1835,11 @@ private static final long serialVersionUID = 0L;
      * configurations may be provided.
      * </pre>
      *
-     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+     * </code>
      */
-    public java.util.List<? extends com.google.cloud.iot.v1.EventNotificationConfigOrBuilder> 
-         getEventNotificationConfigsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.iot.v1.EventNotificationConfigOrBuilder>
+        getEventNotificationConfigsOrBuilderList() {
       if (eventNotificationConfigsBuilder_ != null) {
         return eventNotificationConfigsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1700,6 +1847,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of telemetry events received from the
      * device. All telemetry events that were successfully published by the
@@ -1712,13 +1861,17 @@ private static final long serialVersionUID = 0L;
      * configurations may be provided.
      * </pre>
      *
-     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+     * </code>
      */
-    public com.google.cloud.iot.v1.EventNotificationConfig.Builder addEventNotificationConfigsBuilder() {
-      return getEventNotificationConfigsFieldBuilder().addBuilder(
-          com.google.cloud.iot.v1.EventNotificationConfig.getDefaultInstance());
+    public com.google.cloud.iot.v1.EventNotificationConfig.Builder
+        addEventNotificationConfigsBuilder() {
+      return getEventNotificationConfigsFieldBuilder()
+          .addBuilder(com.google.cloud.iot.v1.EventNotificationConfig.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of telemetry events received from the
      * device. All telemetry events that were successfully published by the
@@ -1731,14 +1884,17 @@ private static final long serialVersionUID = 0L;
      * configurations may be provided.
      * </pre>
      *
-     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+     * </code>
      */
-    public com.google.cloud.iot.v1.EventNotificationConfig.Builder addEventNotificationConfigsBuilder(
-        int index) {
-      return getEventNotificationConfigsFieldBuilder().addBuilder(
-          index, com.google.cloud.iot.v1.EventNotificationConfig.getDefaultInstance());
+    public com.google.cloud.iot.v1.EventNotificationConfig.Builder
+        addEventNotificationConfigsBuilder(int index) {
+      return getEventNotificationConfigsFieldBuilder()
+          .addBuilder(index, com.google.cloud.iot.v1.EventNotificationConfig.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of telemetry events received from the
      * device. All telemetry events that were successfully published by the
@@ -1751,18 +1907,25 @@ private static final long serialVersionUID = 0L;
      * configurations may be provided.
      * </pre>
      *
-     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;</code>
+     * <code>repeated .google.cloud.iot.v1.EventNotificationConfig event_notification_configs = 10;
+     * </code>
      */
-    public java.util.List<com.google.cloud.iot.v1.EventNotificationConfig.Builder> 
-         getEventNotificationConfigsBuilderList() {
+    public java.util.List<com.google.cloud.iot.v1.EventNotificationConfig.Builder>
+        getEventNotificationConfigsBuilderList() {
       return getEventNotificationConfigsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.iot.v1.EventNotificationConfig, com.google.cloud.iot.v1.EventNotificationConfig.Builder, com.google.cloud.iot.v1.EventNotificationConfigOrBuilder> 
+            com.google.cloud.iot.v1.EventNotificationConfig,
+            com.google.cloud.iot.v1.EventNotificationConfig.Builder,
+            com.google.cloud.iot.v1.EventNotificationConfigOrBuilder>
         getEventNotificationConfigsFieldBuilder() {
       if (eventNotificationConfigsBuilder_ == null) {
-        eventNotificationConfigsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.iot.v1.EventNotificationConfig, com.google.cloud.iot.v1.EventNotificationConfig.Builder, com.google.cloud.iot.v1.EventNotificationConfigOrBuilder>(
+        eventNotificationConfigsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.iot.v1.EventNotificationConfig,
+                com.google.cloud.iot.v1.EventNotificationConfig.Builder,
+                com.google.cloud.iot.v1.EventNotificationConfigOrBuilder>(
                 eventNotificationConfigs_,
                 ((bitField0_ & 0x00000004) == 0x00000004),
                 getParentForChildren(),
@@ -1774,8 +1937,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.iot.v1.StateNotificationConfig stateNotificationConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.iot.v1.StateNotificationConfig, com.google.cloud.iot.v1.StateNotificationConfig.Builder, com.google.cloud.iot.v1.StateNotificationConfigOrBuilder> stateNotificationConfigBuilder_;
+            com.google.cloud.iot.v1.StateNotificationConfig,
+            com.google.cloud.iot.v1.StateNotificationConfig.Builder,
+            com.google.cloud.iot.v1.StateNotificationConfigOrBuilder>
+        stateNotificationConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of new states received from the device.
      * State updates are guaranteed to be stored in the state history, but
@@ -1791,6 +1959,8 @@ private static final long serialVersionUID = 0L;
       return stateNotificationConfigBuilder_ != null || stateNotificationConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of new states received from the device.
      * State updates are guaranteed to be stored in the state history, but
@@ -1804,12 +1974,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.iot.v1.StateNotificationConfig getStateNotificationConfig() {
       if (stateNotificationConfigBuilder_ == null) {
-        return stateNotificationConfig_ == null ? com.google.cloud.iot.v1.StateNotificationConfig.getDefaultInstance() : stateNotificationConfig_;
+        return stateNotificationConfig_ == null
+            ? com.google.cloud.iot.v1.StateNotificationConfig.getDefaultInstance()
+            : stateNotificationConfig_;
       } else {
         return stateNotificationConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of new states received from the device.
      * State updates are guaranteed to be stored in the state history, but
@@ -1821,7 +1995,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.iot.v1.StateNotificationConfig state_notification_config = 7;</code>
      */
-    public Builder setStateNotificationConfig(com.google.cloud.iot.v1.StateNotificationConfig value) {
+    public Builder setStateNotificationConfig(
+        com.google.cloud.iot.v1.StateNotificationConfig value) {
       if (stateNotificationConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1835,6 +2010,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of new states received from the device.
      * State updates are guaranteed to be stored in the state history, but
@@ -1858,6 +2035,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of new states received from the device.
      * State updates are guaranteed to be stored in the state history, but
@@ -1869,11 +2048,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.iot.v1.StateNotificationConfig state_notification_config = 7;</code>
      */
-    public Builder mergeStateNotificationConfig(com.google.cloud.iot.v1.StateNotificationConfig value) {
+    public Builder mergeStateNotificationConfig(
+        com.google.cloud.iot.v1.StateNotificationConfig value) {
       if (stateNotificationConfigBuilder_ == null) {
         if (stateNotificationConfig_ != null) {
           stateNotificationConfig_ =
-            com.google.cloud.iot.v1.StateNotificationConfig.newBuilder(stateNotificationConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.iot.v1.StateNotificationConfig.newBuilder(stateNotificationConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           stateNotificationConfig_ = value;
         }
@@ -1885,6 +2067,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of new states received from the device.
      * State updates are guaranteed to be stored in the state history, but
@@ -1908,6 +2092,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of new states received from the device.
      * State updates are guaranteed to be stored in the state history, but
@@ -1919,12 +2105,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.iot.v1.StateNotificationConfig state_notification_config = 7;</code>
      */
-    public com.google.cloud.iot.v1.StateNotificationConfig.Builder getStateNotificationConfigBuilder() {
-      
+    public com.google.cloud.iot.v1.StateNotificationConfig.Builder
+        getStateNotificationConfigBuilder() {
+
       onChanged();
       return getStateNotificationConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of new states received from the device.
      * State updates are guaranteed to be stored in the state history, but
@@ -1936,15 +2125,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.iot.v1.StateNotificationConfig state_notification_config = 7;</code>
      */
-    public com.google.cloud.iot.v1.StateNotificationConfigOrBuilder getStateNotificationConfigOrBuilder() {
+    public com.google.cloud.iot.v1.StateNotificationConfigOrBuilder
+        getStateNotificationConfigOrBuilder() {
       if (stateNotificationConfigBuilder_ != null) {
         return stateNotificationConfigBuilder_.getMessageOrBuilder();
       } else {
-        return stateNotificationConfig_ == null ?
-            com.google.cloud.iot.v1.StateNotificationConfig.getDefaultInstance() : stateNotificationConfig_;
+        return stateNotificationConfig_ == null
+            ? com.google.cloud.iot.v1.StateNotificationConfig.getDefaultInstance()
+            : stateNotificationConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The configuration for notification of new states received from the device.
      * State updates are guaranteed to be stored in the state history, but
@@ -1957,14 +2150,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.iot.v1.StateNotificationConfig state_notification_config = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.iot.v1.StateNotificationConfig, com.google.cloud.iot.v1.StateNotificationConfig.Builder, com.google.cloud.iot.v1.StateNotificationConfigOrBuilder> 
+            com.google.cloud.iot.v1.StateNotificationConfig,
+            com.google.cloud.iot.v1.StateNotificationConfig.Builder,
+            com.google.cloud.iot.v1.StateNotificationConfigOrBuilder>
         getStateNotificationConfigFieldBuilder() {
       if (stateNotificationConfigBuilder_ == null) {
-        stateNotificationConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.iot.v1.StateNotificationConfig, com.google.cloud.iot.v1.StateNotificationConfig.Builder, com.google.cloud.iot.v1.StateNotificationConfigOrBuilder>(
-                getStateNotificationConfig(),
-                getParentForChildren(),
-                isClean());
+        stateNotificationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.iot.v1.StateNotificationConfig,
+                com.google.cloud.iot.v1.StateNotificationConfig.Builder,
+                com.google.cloud.iot.v1.StateNotificationConfigOrBuilder>(
+                getStateNotificationConfig(), getParentForChildren(), isClean());
         stateNotificationConfig_ = null;
       }
       return stateNotificationConfigBuilder_;
@@ -1972,8 +2168,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.iot.v1.MqttConfig mqttConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.iot.v1.MqttConfig, com.google.cloud.iot.v1.MqttConfig.Builder, com.google.cloud.iot.v1.MqttConfigOrBuilder> mqttConfigBuilder_;
+            com.google.cloud.iot.v1.MqttConfig,
+            com.google.cloud.iot.v1.MqttConfig.Builder,
+            com.google.cloud.iot.v1.MqttConfigOrBuilder>
+        mqttConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * The MQTT configuration for this device registry.
      * </pre>
@@ -1984,6 +2185,8 @@ private static final long serialVersionUID = 0L;
       return mqttConfigBuilder_ != null || mqttConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The MQTT configuration for this device registry.
      * </pre>
@@ -1992,12 +2195,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.iot.v1.MqttConfig getMqttConfig() {
       if (mqttConfigBuilder_ == null) {
-        return mqttConfig_ == null ? com.google.cloud.iot.v1.MqttConfig.getDefaultInstance() : mqttConfig_;
+        return mqttConfig_ == null
+            ? com.google.cloud.iot.v1.MqttConfig.getDefaultInstance()
+            : mqttConfig_;
       } else {
         return mqttConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The MQTT configuration for this device registry.
      * </pre>
@@ -2018,14 +2225,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The MQTT configuration for this device registry.
      * </pre>
      *
      * <code>.google.cloud.iot.v1.MqttConfig mqtt_config = 4;</code>
      */
-    public Builder setMqttConfig(
-        com.google.cloud.iot.v1.MqttConfig.Builder builderForValue) {
+    public Builder setMqttConfig(com.google.cloud.iot.v1.MqttConfig.Builder builderForValue) {
       if (mqttConfigBuilder_ == null) {
         mqttConfig_ = builderForValue.build();
         onChanged();
@@ -2036,6 +2244,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The MQTT configuration for this device registry.
      * </pre>
@@ -2046,7 +2256,9 @@ private static final long serialVersionUID = 0L;
       if (mqttConfigBuilder_ == null) {
         if (mqttConfig_ != null) {
           mqttConfig_ =
-            com.google.cloud.iot.v1.MqttConfig.newBuilder(mqttConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.iot.v1.MqttConfig.newBuilder(mqttConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           mqttConfig_ = value;
         }
@@ -2058,6 +2270,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The MQTT configuration for this device registry.
      * </pre>
@@ -2076,6 +2290,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The MQTT configuration for this device registry.
      * </pre>
@@ -2083,11 +2299,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.iot.v1.MqttConfig mqtt_config = 4;</code>
      */
     public com.google.cloud.iot.v1.MqttConfig.Builder getMqttConfigBuilder() {
-      
+
       onChanged();
       return getMqttConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The MQTT configuration for this device registry.
      * </pre>
@@ -2098,11 +2316,14 @@ private static final long serialVersionUID = 0L;
       if (mqttConfigBuilder_ != null) {
         return mqttConfigBuilder_.getMessageOrBuilder();
       } else {
-        return mqttConfig_ == null ?
-            com.google.cloud.iot.v1.MqttConfig.getDefaultInstance() : mqttConfig_;
+        return mqttConfig_ == null
+            ? com.google.cloud.iot.v1.MqttConfig.getDefaultInstance()
+            : mqttConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The MQTT configuration for this device registry.
      * </pre>
@@ -2110,14 +2331,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.iot.v1.MqttConfig mqtt_config = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.iot.v1.MqttConfig, com.google.cloud.iot.v1.MqttConfig.Builder, com.google.cloud.iot.v1.MqttConfigOrBuilder> 
+            com.google.cloud.iot.v1.MqttConfig,
+            com.google.cloud.iot.v1.MqttConfig.Builder,
+            com.google.cloud.iot.v1.MqttConfigOrBuilder>
         getMqttConfigFieldBuilder() {
       if (mqttConfigBuilder_ == null) {
-        mqttConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.iot.v1.MqttConfig, com.google.cloud.iot.v1.MqttConfig.Builder, com.google.cloud.iot.v1.MqttConfigOrBuilder>(
-                getMqttConfig(),
-                getParentForChildren(),
-                isClean());
+        mqttConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.iot.v1.MqttConfig,
+                com.google.cloud.iot.v1.MqttConfig.Builder,
+                com.google.cloud.iot.v1.MqttConfigOrBuilder>(
+                getMqttConfig(), getParentForChildren(), isClean());
         mqttConfig_ = null;
       }
       return mqttConfigBuilder_;
@@ -2125,8 +2349,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.iot.v1.HttpConfig httpConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.iot.v1.HttpConfig, com.google.cloud.iot.v1.HttpConfig.Builder, com.google.cloud.iot.v1.HttpConfigOrBuilder> httpConfigBuilder_;
+            com.google.cloud.iot.v1.HttpConfig,
+            com.google.cloud.iot.v1.HttpConfig.Builder,
+            com.google.cloud.iot.v1.HttpConfigOrBuilder>
+        httpConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * The DeviceService (HTTP) configuration for this device registry.
      * </pre>
@@ -2137,6 +2366,8 @@ private static final long serialVersionUID = 0L;
       return httpConfigBuilder_ != null || httpConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The DeviceService (HTTP) configuration for this device registry.
      * </pre>
@@ -2145,12 +2376,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.iot.v1.HttpConfig getHttpConfig() {
       if (httpConfigBuilder_ == null) {
-        return httpConfig_ == null ? com.google.cloud.iot.v1.HttpConfig.getDefaultInstance() : httpConfig_;
+        return httpConfig_ == null
+            ? com.google.cloud.iot.v1.HttpConfig.getDefaultInstance()
+            : httpConfig_;
       } else {
         return httpConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The DeviceService (HTTP) configuration for this device registry.
      * </pre>
@@ -2171,14 +2406,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The DeviceService (HTTP) configuration for this device registry.
      * </pre>
      *
      * <code>.google.cloud.iot.v1.HttpConfig http_config = 9;</code>
      */
-    public Builder setHttpConfig(
-        com.google.cloud.iot.v1.HttpConfig.Builder builderForValue) {
+    public Builder setHttpConfig(com.google.cloud.iot.v1.HttpConfig.Builder builderForValue) {
       if (httpConfigBuilder_ == null) {
         httpConfig_ = builderForValue.build();
         onChanged();
@@ -2189,6 +2425,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The DeviceService (HTTP) configuration for this device registry.
      * </pre>
@@ -2199,7 +2437,9 @@ private static final long serialVersionUID = 0L;
       if (httpConfigBuilder_ == null) {
         if (httpConfig_ != null) {
           httpConfig_ =
-            com.google.cloud.iot.v1.HttpConfig.newBuilder(httpConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.iot.v1.HttpConfig.newBuilder(httpConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           httpConfig_ = value;
         }
@@ -2211,6 +2451,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The DeviceService (HTTP) configuration for this device registry.
      * </pre>
@@ -2229,6 +2471,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The DeviceService (HTTP) configuration for this device registry.
      * </pre>
@@ -2236,11 +2480,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.iot.v1.HttpConfig http_config = 9;</code>
      */
     public com.google.cloud.iot.v1.HttpConfig.Builder getHttpConfigBuilder() {
-      
+
       onChanged();
       return getHttpConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The DeviceService (HTTP) configuration for this device registry.
      * </pre>
@@ -2251,11 +2497,14 @@ private static final long serialVersionUID = 0L;
       if (httpConfigBuilder_ != null) {
         return httpConfigBuilder_.getMessageOrBuilder();
       } else {
-        return httpConfig_ == null ?
-            com.google.cloud.iot.v1.HttpConfig.getDefaultInstance() : httpConfig_;
+        return httpConfig_ == null
+            ? com.google.cloud.iot.v1.HttpConfig.getDefaultInstance()
+            : httpConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The DeviceService (HTTP) configuration for this device registry.
      * </pre>
@@ -2263,14 +2512,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.iot.v1.HttpConfig http_config = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.iot.v1.HttpConfig, com.google.cloud.iot.v1.HttpConfig.Builder, com.google.cloud.iot.v1.HttpConfigOrBuilder> 
+            com.google.cloud.iot.v1.HttpConfig,
+            com.google.cloud.iot.v1.HttpConfig.Builder,
+            com.google.cloud.iot.v1.HttpConfigOrBuilder>
         getHttpConfigFieldBuilder() {
       if (httpConfigBuilder_ == null) {
-        httpConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.iot.v1.HttpConfig, com.google.cloud.iot.v1.HttpConfig.Builder, com.google.cloud.iot.v1.HttpConfigOrBuilder>(
-                getHttpConfig(),
-                getParentForChildren(),
-                isClean());
+        httpConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.iot.v1.HttpConfig,
+                com.google.cloud.iot.v1.HttpConfig.Builder,
+                com.google.cloud.iot.v1.HttpConfigOrBuilder>(
+                getHttpConfig(), getParentForChildren(), isClean());
         httpConfig_ = null;
       }
       return httpConfigBuilder_;
@@ -2278,6 +2530,8 @@ private static final long serialVersionUID = 0L;
 
     private int logLevel_ = 0;
     /**
+     *
+     *
      * <pre>
      * **Beta Feature**
      * The default logging verbosity for activity from devices in this registry.
@@ -2290,6 +2544,8 @@ private static final long serialVersionUID = 0L;
       return logLevel_;
     }
     /**
+     *
+     *
      * <pre>
      * **Beta Feature**
      * The default logging verbosity for activity from devices in this registry.
@@ -2304,6 +2560,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * **Beta Feature**
      * The default logging verbosity for activity from devices in this registry.
@@ -2318,6 +2576,8 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.google.cloud.iot.v1.LogLevel.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * **Beta Feature**
      * The default logging verbosity for activity from devices in this registry.
@@ -2330,12 +2590,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       logLevel_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * **Beta Feature**
      * The default logging verbosity for activity from devices in this registry.
@@ -2345,25 +2607,32 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.iot.v1.LogLevel log_level = 11;</code>
      */
     public Builder clearLogLevel() {
-      
+
       logLevel_ = 0;
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.cloud.iot.v1.RegistryCredential> credentials_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureCredentialsIsMutable() {
       if (!((bitField0_ & 0x00000080) == 0x00000080)) {
-        credentials_ = new java.util.ArrayList<com.google.cloud.iot.v1.RegistryCredential>(credentials_);
+        credentials_ =
+            new java.util.ArrayList<com.google.cloud.iot.v1.RegistryCredential>(credentials_);
         bitField0_ |= 0x00000080;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.iot.v1.RegistryCredential, com.google.cloud.iot.v1.RegistryCredential.Builder, com.google.cloud.iot.v1.RegistryCredentialOrBuilder> credentialsBuilder_;
+            com.google.cloud.iot.v1.RegistryCredential,
+            com.google.cloud.iot.v1.RegistryCredential.Builder,
+            com.google.cloud.iot.v1.RegistryCredentialOrBuilder>
+        credentialsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The credentials used to verify the device credentials. No more than 10
      * credentials can be bound to a single registry at a time. The verification
@@ -2387,6 +2656,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to verify the device credentials. No more than 10
      * credentials can be bound to a single registry at a time. The verification
@@ -2410,6 +2681,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to verify the device credentials. No more than 10
      * credentials can be bound to a single registry at a time. The verification
@@ -2433,6 +2706,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to verify the device credentials. No more than 10
      * credentials can be bound to a single registry at a time. The verification
@@ -2448,8 +2723,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
      */
-    public Builder setCredentials(
-        int index, com.google.cloud.iot.v1.RegistryCredential value) {
+    public Builder setCredentials(int index, com.google.cloud.iot.v1.RegistryCredential value) {
       if (credentialsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2463,6 +2737,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to verify the device credentials. No more than 10
      * credentials can be bound to a single registry at a time. The verification
@@ -2490,6 +2766,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to verify the device credentials. No more than 10
      * credentials can be bound to a single registry at a time. The verification
@@ -2519,6 +2797,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to verify the device credentials. No more than 10
      * credentials can be bound to a single registry at a time. The verification
@@ -2534,8 +2814,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
      */
-    public Builder addCredentials(
-        int index, com.google.cloud.iot.v1.RegistryCredential value) {
+    public Builder addCredentials(int index, com.google.cloud.iot.v1.RegistryCredential value) {
       if (credentialsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2549,6 +2828,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to verify the device credentials. No more than 10
      * credentials can be bound to a single registry at a time. The verification
@@ -2576,6 +2857,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to verify the device credentials. No more than 10
      * credentials can be bound to a single registry at a time. The verification
@@ -2603,6 +2886,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to verify the device credentials. No more than 10
      * credentials can be bound to a single registry at a time. The verification
@@ -2622,8 +2907,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.iot.v1.RegistryCredential> values) {
       if (credentialsBuilder_ == null) {
         ensureCredentialsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, credentials_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, credentials_);
         onChanged();
       } else {
         credentialsBuilder_.addAllMessages(values);
@@ -2631,6 +2915,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to verify the device credentials. No more than 10
      * credentials can be bound to a single registry at a time. The verification
@@ -2657,6 +2943,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to verify the device credentials. No more than 10
      * credentials can be bound to a single registry at a time. The verification
@@ -2683,6 +2971,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to verify the device credentials. No more than 10
      * credentials can be bound to a single registry at a time. The verification
@@ -2698,11 +2988,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
      */
-    public com.google.cloud.iot.v1.RegistryCredential.Builder getCredentialsBuilder(
-        int index) {
+    public com.google.cloud.iot.v1.RegistryCredential.Builder getCredentialsBuilder(int index) {
       return getCredentialsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to verify the device credentials. No more than 10
      * credentials can be bound to a single registry at a time. The verification
@@ -2718,14 +3009,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
      */
-    public com.google.cloud.iot.v1.RegistryCredentialOrBuilder getCredentialsOrBuilder(
-        int index) {
+    public com.google.cloud.iot.v1.RegistryCredentialOrBuilder getCredentialsOrBuilder(int index) {
       if (credentialsBuilder_ == null) {
-        return credentials_.get(index);  } else {
+        return credentials_.get(index);
+      } else {
         return credentialsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to verify the device credentials. No more than 10
      * credentials can be bound to a single registry at a time. The verification
@@ -2741,8 +3034,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
      */
-    public java.util.List<? extends com.google.cloud.iot.v1.RegistryCredentialOrBuilder> 
-         getCredentialsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.iot.v1.RegistryCredentialOrBuilder>
+        getCredentialsOrBuilderList() {
       if (credentialsBuilder_ != null) {
         return credentialsBuilder_.getMessageOrBuilderList();
       } else {
@@ -2750,6 +3043,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to verify the device credentials. No more than 10
      * credentials can be bound to a single registry at a time. The verification
@@ -2766,10 +3061,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
      */
     public com.google.cloud.iot.v1.RegistryCredential.Builder addCredentialsBuilder() {
-      return getCredentialsFieldBuilder().addBuilder(
-          com.google.cloud.iot.v1.RegistryCredential.getDefaultInstance());
+      return getCredentialsFieldBuilder()
+          .addBuilder(com.google.cloud.iot.v1.RegistryCredential.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to verify the device credentials. No more than 10
      * credentials can be bound to a single registry at a time. The verification
@@ -2785,12 +3082,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
      */
-    public com.google.cloud.iot.v1.RegistryCredential.Builder addCredentialsBuilder(
-        int index) {
-      return getCredentialsFieldBuilder().addBuilder(
-          index, com.google.cloud.iot.v1.RegistryCredential.getDefaultInstance());
+    public com.google.cloud.iot.v1.RegistryCredential.Builder addCredentialsBuilder(int index) {
+      return getCredentialsFieldBuilder()
+          .addBuilder(index, com.google.cloud.iot.v1.RegistryCredential.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to verify the device credentials. No more than 10
      * credentials can be bound to a single registry at a time. The verification
@@ -2806,16 +3104,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.RegistryCredential credentials = 8;</code>
      */
-    public java.util.List<com.google.cloud.iot.v1.RegistryCredential.Builder> 
-         getCredentialsBuilderList() {
+    public java.util.List<com.google.cloud.iot.v1.RegistryCredential.Builder>
+        getCredentialsBuilderList() {
       return getCredentialsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.iot.v1.RegistryCredential, com.google.cloud.iot.v1.RegistryCredential.Builder, com.google.cloud.iot.v1.RegistryCredentialOrBuilder> 
+            com.google.cloud.iot.v1.RegistryCredential,
+            com.google.cloud.iot.v1.RegistryCredential.Builder,
+            com.google.cloud.iot.v1.RegistryCredentialOrBuilder>
         getCredentialsFieldBuilder() {
       if (credentialsBuilder_ == null) {
-        credentialsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.iot.v1.RegistryCredential, com.google.cloud.iot.v1.RegistryCredential.Builder, com.google.cloud.iot.v1.RegistryCredentialOrBuilder>(
+        credentialsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.iot.v1.RegistryCredential,
+                com.google.cloud.iot.v1.RegistryCredential.Builder,
+                com.google.cloud.iot.v1.RegistryCredentialOrBuilder>(
                 credentials_,
                 ((bitField0_ & 0x00000080) == 0x00000080),
                 getParentForChildren(),
@@ -2824,9 +3128,9 @@ private static final long serialVersionUID = 0L;
       }
       return credentialsBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2836,12 +3140,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.iot.v1.DeviceRegistry)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.iot.v1.DeviceRegistry)
   private static final com.google.cloud.iot.v1.DeviceRegistry DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.iot.v1.DeviceRegistry();
   }
@@ -2850,16 +3154,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DeviceRegistry>
-      PARSER = new com.google.protobuf.AbstractParser<DeviceRegistry>() {
-    @java.lang.Override
-    public DeviceRegistry parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new DeviceRegistry(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<DeviceRegistry> PARSER =
+      new com.google.protobuf.AbstractParser<DeviceRegistry>() {
+        @java.lang.Override
+        public DeviceRegistry parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new DeviceRegistry(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<DeviceRegistry> parser() {
     return PARSER;
@@ -2874,6 +3178,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.iot.v1.DeviceRegistry getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -19,7 +19,6 @@ package com.google.cloud.bigquery;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -27,11 +26,11 @@ import java.util.Objects;
  * Base class for Google BigQuery format options. These class define the format of external data
  * used by BigQuery, for either federated tables or load jobs.
  *
- * Load jobs support the following formats: AVRO, CSV, DATASTORE_BACKUP, GOOGLE_SHEETS, JSON, ORC,
- * PARQUET
+ * <p>Load jobs support the following formats: AVRO, CSV, DATASTORE_BACKUP, GOOGLE_SHEETS, JSON,
+ * ORC, PARQUET
  *
- * Federated tables can be defined against following formats: AVRO, BIGTABLE, CSV, DATASTORE_BACKUP,
- * GOOGLE_SHEETS, JSON
+ * <p>Federated tables can be defined against following formats: AVRO, BIGTABLE, CSV,
+ * DATASTORE_BACKUP, GOOGLE_SHEETS, JSON
  */
 public class FormatOptions implements Serializable {
 
@@ -52,9 +51,7 @@ public class FormatOptions implements Serializable {
     this.type = type;
   }
 
-  /**
-   * Returns the external data format, as a string.
-   */
+  /** Returns the external data format, as a string. */
   public String getType() {
     return type;
   }
@@ -73,69 +70,51 @@ public class FormatOptions implements Serializable {
   public boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(FormatOptions.class)
-        && Objects.equals(type, ((FormatOptions) obj).getType());
+            && obj.getClass().equals(FormatOptions.class)
+            && Objects.equals(type, ((FormatOptions) obj).getType());
   }
 
-  /**
-   * Default options for CSV format.
-   */
+  /** Default options for CSV format. */
   public static CsvOptions csv() {
     return CsvOptions.newBuilder().build();
   }
 
-  /**
-   * Default options for NEWLINE_DELIMITED_JSON format.
-   */
+  /** Default options for NEWLINE_DELIMITED_JSON format. */
   public static FormatOptions json() {
     return new FormatOptions(JSON);
   }
 
-  /**
-   * Default options for DATASTORE_BACKUP format.
-   */
+  /** Default options for DATASTORE_BACKUP format. */
   public static FormatOptions datastoreBackup() {
     return DatastoreBackupOptions.newBuilder().build();
   }
 
-  /**
-   * Default options for AVRO format.
-   */
+  /** Default options for AVRO format. */
   public static FormatOptions avro() {
     return new FormatOptions(AVRO);
   }
 
-  /**
-   * Default options for BIGTABLE format.
-   */
+  /** Default options for BIGTABLE format. */
   public static FormatOptions bigtable() {
     return BigtableOptions.newBuilder().build();
   }
 
-  /**
-   * Default options for GOOGLE_SHEETS format.
-   */
+  /** Default options for GOOGLE_SHEETS format. */
   public static FormatOptions googleSheets() {
     return GoogleSheetsOptions.newBuilder().build();
   }
 
-  /**
-   * Default options for PARQUET format.
-   */
+  /** Default options for PARQUET format. */
   public static FormatOptions parquet() {
     return new FormatOptions(PARQUET);
   }
 
-  /**
-   * Default options for the ORC format.
-   */
+  /** Default options for the ORC format. */
   public static FormatOptions orc() {
     return new FormatOptions(ORC);
   }
 
-  /**
-   * Default options for the provided format.
-   */
+  /** Default options for the provided format. */
   public static FormatOptions of(String format) {
     if (checkNotNull(format).equals(CSV)) {
       return csv();

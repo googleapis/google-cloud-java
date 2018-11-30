@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface BlockOrBuilder extends
+public interface BlockOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.Block)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Additional information detected for the block.
    * </pre>
@@ -16,6 +19,8 @@ public interface BlockOrBuilder extends
    */
   boolean hasProperty();
   /**
+   *
+   *
    * <pre>
    * Additional information detected for the block.
    * </pre>
@@ -24,6 +29,8 @@ public interface BlockOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.TextAnnotation.TextProperty getProperty();
   /**
+   *
+   *
    * <pre>
    * Additional information detected for the block.
    * </pre>
@@ -33,6 +40,8 @@ public interface BlockOrBuilder extends
   com.google.cloud.vision.v1p3beta1.TextAnnotation.TextPropertyOrBuilder getPropertyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The bounding box for the block.
    * The vertices are in the order of top-left, top-right, bottom-right,
@@ -55,6 +64,8 @@ public interface BlockOrBuilder extends
    */
   boolean hasBoundingBox();
   /**
+   *
+   *
    * <pre>
    * The bounding box for the block.
    * The vertices are in the order of top-left, top-right, bottom-right,
@@ -77,6 +88,8 @@ public interface BlockOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.BoundingPoly getBoundingBox();
   /**
+   *
+   *
    * <pre>
    * The bounding box for the block.
    * The vertices are in the order of top-left, top-right, bottom-right,
@@ -100,15 +113,18 @@ public interface BlockOrBuilder extends
   com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder getBoundingBoxOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * List of paragraphs in this block (if this blocks is of type text).
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.Paragraph paragraphs = 3;</code>
    */
-  java.util.List<com.google.cloud.vision.v1p3beta1.Paragraph> 
-      getParagraphsList();
+  java.util.List<com.google.cloud.vision.v1p3beta1.Paragraph> getParagraphsList();
   /**
+   *
+   *
    * <pre>
    * List of paragraphs in this block (if this blocks is of type text).
    * </pre>
@@ -117,6 +133,8 @@ public interface BlockOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.Paragraph getParagraphs(int index);
   /**
+   *
+   *
    * <pre>
    * List of paragraphs in this block (if this blocks is of type text).
    * </pre>
@@ -125,25 +143,30 @@ public interface BlockOrBuilder extends
    */
   int getParagraphsCount();
   /**
+   *
+   *
    * <pre>
    * List of paragraphs in this block (if this blocks is of type text).
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.Paragraph paragraphs = 3;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1p3beta1.ParagraphOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1p3beta1.ParagraphOrBuilder>
       getParagraphsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * List of paragraphs in this block (if this blocks is of type text).
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.Paragraph paragraphs = 3;</code>
    */
-  com.google.cloud.vision.v1p3beta1.ParagraphOrBuilder getParagraphsOrBuilder(
-      int index);
+  com.google.cloud.vision.v1p3beta1.ParagraphOrBuilder getParagraphsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Detected block type (text, image etc) for this block.
    * </pre>
@@ -152,6 +175,8 @@ public interface BlockOrBuilder extends
    */
   int getBlockTypeValue();
   /**
+   *
+   *
    * <pre>
    * Detected block type (text, image etc) for this block.
    * </pre>
@@ -161,6 +186,8 @@ public interface BlockOrBuilder extends
   com.google.cloud.vision.v1p3beta1.Block.BlockType getBlockType();
 
   /**
+   *
+   *
    * <pre>
    * Confidence of the OCR results on the block. Range [0, 1].
    * </pre>

@@ -4,21 +4,24 @@
 package com.google.cloud.texttospeech.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Description of audio data to be synthesized.
  * </pre>
  *
  * Protobuf type {@code google.cloud.texttospeech.v1beta1.AudioConfig}
  */
-public  final class AudioConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class AudioConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1beta1.AudioConfig)
     AudioConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use AudioConfig.newBuilder() to construct.
   private AudioConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private AudioConfig() {
     audioEncoding_ = 0;
     speakingRate_ = 0D;
@@ -29,10 +32,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private AudioConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -52,55 +55,56 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
+          case 8:
+            {
+              int rawValue = input.readEnum();
 
-            audioEncoding_ = rawValue;
-            break;
-          }
-          case 17: {
-
-            speakingRate_ = input.readDouble();
-            break;
-          }
-          case 25: {
-
-            pitch_ = input.readDouble();
-            break;
-          }
-          case 33: {
-
-            volumeGainDb_ = input.readDouble();
-            break;
-          }
-          case 40: {
-
-            sampleRateHertz_ = input.readInt32();
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-              effectsProfileId_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000020;
+              audioEncoding_ = rawValue;
+              break;
             }
-            effectsProfileId_.add(s);
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 17:
+            {
+              speakingRate_ = input.readDouble();
+              break;
             }
-            break;
-          }
+          case 25:
+            {
+              pitch_ = input.readDouble();
+              break;
+            }
+          case 33:
+            {
+              volumeGainDb_ = input.readDouble();
+              break;
+            }
+          case 40:
+            {
+              sampleRateHertz_ = input.readInt32();
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                effectsProfileId_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              effectsProfileId_.add(s);
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
         effectsProfileId_ = effectsProfileId_.getUnmodifiableView();
@@ -109,23 +113,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.texttospeech.v1beta1.TextToSpeechProto.internal_static_google_cloud_texttospeech_v1beta1_AudioConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.texttospeech.v1beta1.TextToSpeechProto
+        .internal_static_google_cloud_texttospeech_v1beta1_AudioConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.texttospeech.v1beta1.TextToSpeechProto.internal_static_google_cloud_texttospeech_v1beta1_AudioConfig_fieldAccessorTable
+    return com.google.cloud.texttospeech.v1beta1.TextToSpeechProto
+        .internal_static_google_cloud_texttospeech_v1beta1_AudioConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.texttospeech.v1beta1.AudioConfig.class, com.google.cloud.texttospeech.v1beta1.AudioConfig.Builder.class);
+            com.google.cloud.texttospeech.v1beta1.AudioConfig.class,
+            com.google.cloud.texttospeech.v1beta1.AudioConfig.Builder.class);
   }
 
   private int bitField0_;
   public static final int AUDIO_ENCODING_FIELD_NUMBER = 1;
   private int audioEncoding_;
   /**
+   *
+   *
    * <pre>
    * Required. The format of the requested audio byte stream.
    * </pre>
@@ -136,6 +145,8 @@ private static final long serialVersionUID = 0L;
     return audioEncoding_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The format of the requested audio byte stream.
    * </pre>
@@ -144,13 +155,18 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.texttospeech.v1beta1.AudioEncoding getAudioEncoding() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.texttospeech.v1beta1.AudioEncoding result = com.google.cloud.texttospeech.v1beta1.AudioEncoding.valueOf(audioEncoding_);
-    return result == null ? com.google.cloud.texttospeech.v1beta1.AudioEncoding.UNRECOGNIZED : result;
+    com.google.cloud.texttospeech.v1beta1.AudioEncoding result =
+        com.google.cloud.texttospeech.v1beta1.AudioEncoding.valueOf(audioEncoding_);
+    return result == null
+        ? com.google.cloud.texttospeech.v1beta1.AudioEncoding.UNRECOGNIZED
+        : result;
   }
 
   public static final int SPEAKING_RATE_FIELD_NUMBER = 2;
   private double speakingRate_;
   /**
+   *
+   *
    * <pre>
    * Optional speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal
    * native speed supported by the specific voice. 2.0 is twice as fast, and
@@ -167,6 +183,8 @@ private static final long serialVersionUID = 0L;
   public static final int PITCH_FIELD_NUMBER = 3;
   private double pitch_;
   /**
+   *
+   *
    * <pre>
    * Optional speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20
    * semitones from the original pitch. -20 means decrease 20 semitones from the
@@ -182,6 +200,8 @@ private static final long serialVersionUID = 0L;
   public static final int VOLUME_GAIN_DB_FIELD_NUMBER = 4;
   private double volumeGainDb_;
   /**
+   *
+   *
    * <pre>
    * Optional volume gain (in dB) of the normal native volume supported by the
    * specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of
@@ -202,6 +222,8 @@ private static final long serialVersionUID = 0L;
   public static final int SAMPLE_RATE_HERTZ_FIELD_NUMBER = 5;
   private int sampleRateHertz_;
   /**
+   *
+   *
    * <pre>
    * The synthesis sample rate (in hertz) for this audio. Optional.  If this is
    * different from the voice's natural sample rate, then the synthesizer will
@@ -220,6 +242,8 @@ private static final long serialVersionUID = 0L;
   public static final int EFFECTS_PROFILE_ID_FIELD_NUMBER = 6;
   private com.google.protobuf.LazyStringList effectsProfileId_;
   /**
+   *
+   *
    * <pre>
    * An identifier which selects 'audio effects' profiles that are applied on
    * (post synthesized) text to speech.
@@ -228,11 +252,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string effects_profile_id = 6;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getEffectsProfileIdList() {
+  public com.google.protobuf.ProtocolStringList getEffectsProfileIdList() {
     return effectsProfileId_;
   }
   /**
+   *
+   *
    * <pre>
    * An identifier which selects 'audio effects' profiles that are applied on
    * (post synthesized) text to speech.
@@ -245,6 +270,8 @@ private static final long serialVersionUID = 0L;
     return effectsProfileId_.size();
   }
   /**
+   *
+   *
    * <pre>
    * An identifier which selects 'audio effects' profiles that are applied on
    * (post synthesized) text to speech.
@@ -257,6 +284,8 @@ private static final long serialVersionUID = 0L;
     return effectsProfileId_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * An identifier which selects 'audio effects' profiles that are applied on
    * (post synthesized) text to speech.
@@ -265,12 +294,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string effects_profile_id = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getEffectsProfileIdBytes(int index) {
+  public com.google.protobuf.ByteString getEffectsProfileIdBytes(int index) {
     return effectsProfileId_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -282,9 +311,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    if (audioEncoding_ != com.google.cloud.texttospeech.v1beta1.AudioEncoding.AUDIO_ENCODING_UNSPECIFIED.getNumber()) {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (audioEncoding_
+        != com.google.cloud.texttospeech.v1beta1.AudioEncoding.AUDIO_ENCODING_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(1, audioEncoding_);
     }
     if (speakingRate_ != 0D) {
@@ -311,25 +341,22 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (audioEncoding_ != com.google.cloud.texttospeech.v1beta1.AudioEncoding.AUDIO_ENCODING_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, audioEncoding_);
+    if (audioEncoding_
+        != com.google.cloud.texttospeech.v1beta1.AudioEncoding.AUDIO_ENCODING_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, audioEncoding_);
     }
     if (speakingRate_ != 0D) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(2, speakingRate_);
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(2, speakingRate_);
     }
     if (pitch_ != 0D) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(3, pitch_);
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, pitch_);
     }
     if (volumeGainDb_ != 0D) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeDoubleSize(4, volumeGainDb_);
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(4, volumeGainDb_);
     }
     if (sampleRateHertz_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, sampleRateHertz_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, sampleRateHertz_);
     }
     {
       int dataSize = 0;
@@ -347,31 +374,30 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.texttospeech.v1beta1.AudioConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.texttospeech.v1beta1.AudioConfig other = (com.google.cloud.texttospeech.v1beta1.AudioConfig) obj;
+    com.google.cloud.texttospeech.v1beta1.AudioConfig other =
+        (com.google.cloud.texttospeech.v1beta1.AudioConfig) obj;
 
     boolean result = true;
     result = result && audioEncoding_ == other.audioEncoding_;
-    result = result && (
-        java.lang.Double.doubleToLongBits(getSpeakingRate())
-        == java.lang.Double.doubleToLongBits(
-            other.getSpeakingRate()));
-    result = result && (
-        java.lang.Double.doubleToLongBits(getPitch())
-        == java.lang.Double.doubleToLongBits(
-            other.getPitch()));
-    result = result && (
-        java.lang.Double.doubleToLongBits(getVolumeGainDb())
-        == java.lang.Double.doubleToLongBits(
-            other.getVolumeGainDb()));
-    result = result && (getSampleRateHertz()
-        == other.getSampleRateHertz());
-    result = result && getEffectsProfileIdList()
-        .equals(other.getEffectsProfileIdList());
+    result =
+        result
+            && (java.lang.Double.doubleToLongBits(getSpeakingRate())
+                == java.lang.Double.doubleToLongBits(other.getSpeakingRate()));
+    result =
+        result
+            && (java.lang.Double.doubleToLongBits(getPitch())
+                == java.lang.Double.doubleToLongBits(other.getPitch()));
+    result =
+        result
+            && (java.lang.Double.doubleToLongBits(getVolumeGainDb())
+                == java.lang.Double.doubleToLongBits(other.getVolumeGainDb()));
+    result = result && (getSampleRateHertz() == other.getSampleRateHertz());
+    result = result && getEffectsProfileIdList().equals(other.getEffectsProfileIdList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -386,14 +412,19 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + AUDIO_ENCODING_FIELD_NUMBER;
     hash = (53 * hash) + audioEncoding_;
     hash = (37 * hash) + SPEAKING_RATE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getSpeakingRate()));
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(
+                java.lang.Double.doubleToLongBits(getSpeakingRate()));
     hash = (37 * hash) + PITCH_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getPitch()));
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(java.lang.Double.doubleToLongBits(getPitch()));
     hash = (37 * hash) + VOLUME_GAIN_DB_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        java.lang.Double.doubleToLongBits(getVolumeGainDb()));
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(
+                java.lang.Double.doubleToLongBits(getVolumeGainDb()));
     hash = (37 * hash) + SAMPLE_RATE_HERTZ_FIELD_NUMBER;
     hash = (53 * hash) + getSampleRateHertz();
     if (getEffectsProfileIdCount() > 0) {
@@ -406,117 +437,126 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.texttospeech.v1beta1.AudioConfig parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.texttospeech.v1beta1.AudioConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.texttospeech.v1beta1.AudioConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.texttospeech.v1beta1.AudioConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.texttospeech.v1beta1.AudioConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.texttospeech.v1beta1.AudioConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.texttospeech.v1beta1.AudioConfig parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.texttospeech.v1beta1.AudioConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.texttospeech.v1beta1.AudioConfig parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.texttospeech.v1beta1.AudioConfig parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.texttospeech.v1beta1.AudioConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.texttospeech.v1beta1.AudioConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.texttospeech.v1beta1.AudioConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.texttospeech.v1beta1.AudioConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.texttospeech.v1beta1.AudioConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Description of audio data to be synthesized.
    * </pre>
    *
    * Protobuf type {@code google.cloud.texttospeech.v1beta1.AudioConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.texttospeech.v1beta1.AudioConfig)
       com.google.cloud.texttospeech.v1beta1.AudioConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.texttospeech.v1beta1.TextToSpeechProto.internal_static_google_cloud_texttospeech_v1beta1_AudioConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.texttospeech.v1beta1.TextToSpeechProto
+          .internal_static_google_cloud_texttospeech_v1beta1_AudioConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.texttospeech.v1beta1.TextToSpeechProto.internal_static_google_cloud_texttospeech_v1beta1_AudioConfig_fieldAccessorTable
+      return com.google.cloud.texttospeech.v1beta1.TextToSpeechProto
+          .internal_static_google_cloud_texttospeech_v1beta1_AudioConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.texttospeech.v1beta1.AudioConfig.class, com.google.cloud.texttospeech.v1beta1.AudioConfig.Builder.class);
+              com.google.cloud.texttospeech.v1beta1.AudioConfig.class,
+              com.google.cloud.texttospeech.v1beta1.AudioConfig.Builder.class);
     }
 
     // Construct using com.google.cloud.texttospeech.v1beta1.AudioConfig.newBuilder()
@@ -524,16 +564,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -553,9 +592,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.texttospeech.v1beta1.TextToSpeechProto.internal_static_google_cloud_texttospeech_v1beta1_AudioConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.texttospeech.v1beta1.TextToSpeechProto
+          .internal_static_google_cloud_texttospeech_v1beta1_AudioConfig_descriptor;
     }
 
     @java.lang.Override
@@ -574,7 +613,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.texttospeech.v1beta1.AudioConfig buildPartial() {
-      com.google.cloud.texttospeech.v1beta1.AudioConfig result = new com.google.cloud.texttospeech.v1beta1.AudioConfig(this);
+      com.google.cloud.texttospeech.v1beta1.AudioConfig result =
+          new com.google.cloud.texttospeech.v1beta1.AudioConfig(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.audioEncoding_ = audioEncoding_;
@@ -596,38 +636,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.texttospeech.v1beta1.AudioConfig) {
-        return mergeFrom((com.google.cloud.texttospeech.v1beta1.AudioConfig)other);
+        return mergeFrom((com.google.cloud.texttospeech.v1beta1.AudioConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -635,7 +676,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.texttospeech.v1beta1.AudioConfig other) {
-      if (other == com.google.cloud.texttospeech.v1beta1.AudioConfig.getDefaultInstance()) return this;
+      if (other == com.google.cloud.texttospeech.v1beta1.AudioConfig.getDefaultInstance())
+        return this;
       if (other.audioEncoding_ != 0) {
         setAudioEncodingValue(other.getAudioEncodingValue());
       }
@@ -680,7 +722,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.texttospeech.v1beta1.AudioConfig) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.texttospeech.v1beta1.AudioConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -689,10 +732,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private int audioEncoding_ = 0;
     /**
+     *
+     *
      * <pre>
      * Required. The format of the requested audio byte stream.
      * </pre>
@@ -703,6 +749,8 @@ private static final long serialVersionUID = 0L;
       return audioEncoding_;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The format of the requested audio byte stream.
      * </pre>
@@ -715,6 +763,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The format of the requested audio byte stream.
      * </pre>
@@ -723,10 +773,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.texttospeech.v1beta1.AudioEncoding getAudioEncoding() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.texttospeech.v1beta1.AudioEncoding result = com.google.cloud.texttospeech.v1beta1.AudioEncoding.valueOf(audioEncoding_);
-      return result == null ? com.google.cloud.texttospeech.v1beta1.AudioEncoding.UNRECOGNIZED : result;
+      com.google.cloud.texttospeech.v1beta1.AudioEncoding result =
+          com.google.cloud.texttospeech.v1beta1.AudioEncoding.valueOf(audioEncoding_);
+      return result == null
+          ? com.google.cloud.texttospeech.v1beta1.AudioEncoding.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The format of the requested audio byte stream.
      * </pre>
@@ -737,12 +792,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       audioEncoding_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The format of the requested audio byte stream.
      * </pre>
@@ -750,14 +807,16 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.texttospeech.v1beta1.AudioEncoding audio_encoding = 1;</code>
      */
     public Builder clearAudioEncoding() {
-      
+
       audioEncoding_ = 0;
       onChanged();
       return this;
     }
 
-    private double speakingRate_ ;
+    private double speakingRate_;
     /**
+     *
+     *
      * <pre>
      * Optional speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal
      * native speed supported by the specific voice. 2.0 is twice as fast, and
@@ -771,6 +830,8 @@ private static final long serialVersionUID = 0L;
       return speakingRate_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal
      * native speed supported by the specific voice. 2.0 is twice as fast, and
@@ -781,12 +842,14 @@ private static final long serialVersionUID = 0L;
      * <code>double speaking_rate = 2;</code>
      */
     public Builder setSpeakingRate(double value) {
-      
+
       speakingRate_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal
      * native speed supported by the specific voice. 2.0 is twice as fast, and
@@ -797,14 +860,16 @@ private static final long serialVersionUID = 0L;
      * <code>double speaking_rate = 2;</code>
      */
     public Builder clearSpeakingRate() {
-      
+
       speakingRate_ = 0D;
       onChanged();
       return this;
     }
 
-    private double pitch_ ;
+    private double pitch_;
     /**
+     *
+     *
      * <pre>
      * Optional speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20
      * semitones from the original pitch. -20 means decrease 20 semitones from the
@@ -817,6 +882,8 @@ private static final long serialVersionUID = 0L;
       return pitch_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20
      * semitones from the original pitch. -20 means decrease 20 semitones from the
@@ -826,12 +893,14 @@ private static final long serialVersionUID = 0L;
      * <code>double pitch = 3;</code>
      */
     public Builder setPitch(double value) {
-      
+
       pitch_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20
      * semitones from the original pitch. -20 means decrease 20 semitones from the
@@ -841,14 +910,16 @@ private static final long serialVersionUID = 0L;
      * <code>double pitch = 3;</code>
      */
     public Builder clearPitch() {
-      
+
       pitch_ = 0D;
       onChanged();
       return this;
     }
 
-    private double volumeGainDb_ ;
+    private double volumeGainDb_;
     /**
+     *
+     *
      * <pre>
      * Optional volume gain (in dB) of the normal native volume supported by the
      * specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of
@@ -866,6 +937,8 @@ private static final long serialVersionUID = 0L;
       return volumeGainDb_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional volume gain (in dB) of the normal native volume supported by the
      * specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of
@@ -880,12 +953,14 @@ private static final long serialVersionUID = 0L;
      * <code>double volume_gain_db = 4;</code>
      */
     public Builder setVolumeGainDb(double value) {
-      
+
       volumeGainDb_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional volume gain (in dB) of the normal native volume supported by the
      * specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of
@@ -900,14 +975,16 @@ private static final long serialVersionUID = 0L;
      * <code>double volume_gain_db = 4;</code>
      */
     public Builder clearVolumeGainDb() {
-      
+
       volumeGainDb_ = 0D;
       onChanged();
       return this;
     }
 
-    private int sampleRateHertz_ ;
+    private int sampleRateHertz_;
     /**
+     *
+     *
      * <pre>
      * The synthesis sample rate (in hertz) for this audio. Optional.  If this is
      * different from the voice's natural sample rate, then the synthesizer will
@@ -923,6 +1000,8 @@ private static final long serialVersionUID = 0L;
       return sampleRateHertz_;
     }
     /**
+     *
+     *
      * <pre>
      * The synthesis sample rate (in hertz) for this audio. Optional.  If this is
      * different from the voice's natural sample rate, then the synthesizer will
@@ -935,12 +1014,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 sample_rate_hertz = 5;</code>
      */
     public Builder setSampleRateHertz(int value) {
-      
+
       sampleRateHertz_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The synthesis sample rate (in hertz) for this audio. Optional.  If this is
      * different from the voice's natural sample rate, then the synthesizer will
@@ -953,20 +1034,24 @@ private static final long serialVersionUID = 0L;
      * <code>int32 sample_rate_hertz = 5;</code>
      */
     public Builder clearSampleRateHertz() {
-      
+
       sampleRateHertz_ = 0;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList effectsProfileId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList effectsProfileId_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureEffectsProfileIdIsMutable() {
       if (!((bitField0_ & 0x00000020) == 0x00000020)) {
         effectsProfileId_ = new com.google.protobuf.LazyStringArrayList(effectsProfileId_);
         bitField0_ |= 0x00000020;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * An identifier which selects 'audio effects' profiles that are applied on
      * (post synthesized) text to speech.
@@ -975,11 +1060,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string effects_profile_id = 6;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getEffectsProfileIdList() {
+    public com.google.protobuf.ProtocolStringList getEffectsProfileIdList() {
       return effectsProfileId_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * An identifier which selects 'audio effects' profiles that are applied on
      * (post synthesized) text to speech.
@@ -992,6 +1078,8 @@ private static final long serialVersionUID = 0L;
       return effectsProfileId_.size();
     }
     /**
+     *
+     *
      * <pre>
      * An identifier which selects 'audio effects' profiles that are applied on
      * (post synthesized) text to speech.
@@ -1004,6 +1092,8 @@ private static final long serialVersionUID = 0L;
       return effectsProfileId_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * An identifier which selects 'audio effects' profiles that are applied on
      * (post synthesized) text to speech.
@@ -1012,11 +1102,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string effects_profile_id = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getEffectsProfileIdBytes(int index) {
+    public com.google.protobuf.ByteString getEffectsProfileIdBytes(int index) {
       return effectsProfileId_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * An identifier which selects 'audio effects' profiles that are applied on
      * (post synthesized) text to speech.
@@ -1025,17 +1116,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string effects_profile_id = 6;</code>
      */
-    public Builder setEffectsProfileId(
-        int index, java.lang.String value) {
+    public Builder setEffectsProfileId(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureEffectsProfileIdIsMutable();
+        throw new NullPointerException();
+      }
+      ensureEffectsProfileIdIsMutable();
       effectsProfileId_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An identifier which selects 'audio effects' profiles that are applied on
      * (post synthesized) text to speech.
@@ -1044,17 +1136,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string effects_profile_id = 6;</code>
      */
-    public Builder addEffectsProfileId(
-        java.lang.String value) {
+    public Builder addEffectsProfileId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureEffectsProfileIdIsMutable();
+        throw new NullPointerException();
+      }
+      ensureEffectsProfileIdIsMutable();
       effectsProfileId_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An identifier which selects 'audio effects' profiles that are applied on
      * (post synthesized) text to speech.
@@ -1063,15 +1156,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string effects_profile_id = 6;</code>
      */
-    public Builder addAllEffectsProfileId(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllEffectsProfileId(java.lang.Iterable<java.lang.String> values) {
       ensureEffectsProfileIdIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, effectsProfileId_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, effectsProfileId_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An identifier which selects 'audio effects' profiles that are applied on
      * (post synthesized) text to speech.
@@ -1087,6 +1180,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An identifier which selects 'audio effects' profiles that are applied on
      * (post synthesized) text to speech.
@@ -1095,20 +1190,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string effects_profile_id = 6;</code>
      */
-    public Builder addEffectsProfileIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addEffectsProfileIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureEffectsProfileIdIsMutable();
       effectsProfileId_.add(value);
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1118,12 +1212,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.texttospeech.v1beta1.AudioConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.texttospeech.v1beta1.AudioConfig)
   private static final com.google.cloud.texttospeech.v1beta1.AudioConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.texttospeech.v1beta1.AudioConfig();
   }
@@ -1132,16 +1226,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AudioConfig>
-      PARSER = new com.google.protobuf.AbstractParser<AudioConfig>() {
-    @java.lang.Override
-    public AudioConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new AudioConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<AudioConfig> PARSER =
+      new com.google.protobuf.AbstractParser<AudioConfig>() {
+        @java.lang.Override
+        public AudioConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AudioConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<AudioConfig> parser() {
     return PARSER;
@@ -1156,6 +1250,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.texttospeech.v1beta1.AudioConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

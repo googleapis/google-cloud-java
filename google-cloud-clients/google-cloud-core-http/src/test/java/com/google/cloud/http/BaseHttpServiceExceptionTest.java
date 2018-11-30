@@ -57,23 +57,23 @@ public class BaseHttpServiceExceptionTest {
       super(code, message, reason, idempotent, RETRYABLE_ERRORS);
     }
 
-    private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet
-        .of(new Error(CODE, REASON), new Error(null, REASON),
-            new Error(CODE_NO_REASON, null));
+    private static final Set<Error> RETRYABLE_ERRORS =
+        ImmutableSet.of(
+            new Error(CODE, REASON), new Error(null, REASON), new Error(CODE_NO_REASON, null));
   }
 
   @Test
   public void testBaseServiceException() {
-    BaseServiceException serviceException = new BaseHttpServiceException(CODE, MESSAGE, REASON,
-        IDEMPOTENT, EMPTY_RETRYABLE_ERRORS);
+    BaseServiceException serviceException =
+        new BaseHttpServiceException(CODE, MESSAGE, REASON, IDEMPOTENT, EMPTY_RETRYABLE_ERRORS);
     assertEquals(CODE, serviceException.getCode());
     assertEquals(MESSAGE, serviceException.getMessage());
     assertEquals(REASON, serviceException.getReason());
     assertFalse(serviceException.isRetryable());
     assertNull(serviceException.getCause());
 
-    serviceException = new BaseHttpServiceException(CODE, MESSAGE, REASON, IDEMPOTENT,
-        EMPTY_RETRYABLE_ERRORS);
+    serviceException =
+        new BaseHttpServiceException(CODE, MESSAGE, REASON, IDEMPOTENT, EMPTY_RETRYABLE_ERRORS);
     assertEquals(CODE, serviceException.getCode());
     assertEquals(MESSAGE, serviceException.getMessage());
     assertEquals(REASON, serviceException.getReason());
@@ -81,16 +81,18 @@ public class BaseHttpServiceExceptionTest {
     assertNull(serviceException.getCause());
 
     Exception cause = new RuntimeException();
-    serviceException = new BaseHttpServiceException(CODE, MESSAGE, REASON, IDEMPOTENT,
-        EMPTY_RETRYABLE_ERRORS, cause);
+    serviceException =
+        new BaseHttpServiceException(
+            CODE, MESSAGE, REASON, IDEMPOTENT, EMPTY_RETRYABLE_ERRORS, cause);
     assertEquals(CODE, serviceException.getCode());
     assertEquals(MESSAGE, serviceException.getMessage());
     assertEquals(REASON, serviceException.getReason());
     assertFalse(serviceException.isRetryable());
     assertEquals(cause, serviceException.getCause());
 
-    serviceException = new BaseHttpServiceException(CODE, MESSAGE, REASON, NOT_IDEMPOTENT,
-        EMPTY_RETRYABLE_ERRORS, cause);
+    serviceException =
+        new BaseHttpServiceException(
+            CODE, MESSAGE, REASON, NOT_IDEMPOTENT, EMPTY_RETRYABLE_ERRORS, cause);
     assertEquals(CODE, serviceException.getCode());
     assertEquals(MESSAGE, serviceException.getMessage());
     assertEquals(REASON, serviceException.getReason());
@@ -160,6 +162,4 @@ public class BaseHttpServiceExceptionTest {
       verify(exceptionMock);
     }
   }
-
-
 }

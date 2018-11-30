@@ -3,11 +3,14 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-public interface ScheduleTransferRunsRequestOrBuilder extends
+public interface ScheduleTransferRunsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Transfer configuration name in the form:
    * `projects/{project_id}/transferConfigs/{config_id}`.
@@ -17,6 +20,8 @@ public interface ScheduleTransferRunsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Transfer configuration name in the form:
    * `projects/{project_id}/transferConfigs/{config_id}`.
@@ -24,10 +29,11 @@ public interface ScheduleTransferRunsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Start time of the range of transfer runs. For example,
    * `"2017-05-25T00:00:00+00:00"`.
@@ -37,6 +43,8 @@ public interface ScheduleTransferRunsRequestOrBuilder extends
    */
   boolean hasStartTime();
   /**
+   *
+   *
    * <pre>
    * Start time of the range of transfer runs. For example,
    * `"2017-05-25T00:00:00+00:00"`.
@@ -46,6 +54,8 @@ public interface ScheduleTransferRunsRequestOrBuilder extends
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
+   *
+   *
    * <pre>
    * Start time of the range of transfer runs. For example,
    * `"2017-05-25T00:00:00+00:00"`.
@@ -56,6 +66,8 @@ public interface ScheduleTransferRunsRequestOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * End time of the range of transfer runs. For example,
    * `"2017-05-30T00:00:00+00:00"`.
@@ -65,6 +77,8 @@ public interface ScheduleTransferRunsRequestOrBuilder extends
    */
   boolean hasEndTime();
   /**
+   *
+   *
    * <pre>
    * End time of the range of transfer runs. For example,
    * `"2017-05-30T00:00:00+00:00"`.
@@ -74,6 +88,8 @@ public interface ScheduleTransferRunsRequestOrBuilder extends
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
+   *
+   *
    * <pre>
    * End time of the range of transfer runs. For example,
    * `"2017-05-30T00:00:00+00:00"`.

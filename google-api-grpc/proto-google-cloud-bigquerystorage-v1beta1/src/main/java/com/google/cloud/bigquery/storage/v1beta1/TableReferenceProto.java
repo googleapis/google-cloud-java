@@ -5,20 +5,21 @@ package com.google.cloud.bigquery.storage.v1beta1;
 
 public final class TableReferenceProto {
   private TableReferenceProto() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface TableReferenceOrBuilder extends
+  public interface TableReferenceOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.storage.v1beta1.TableReference)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * The assigned project ID of the project.
      * </pre>
@@ -27,16 +28,19 @@ public final class TableReferenceProto {
      */
     java.lang.String getProjectId();
     /**
+     *
+     *
      * <pre>
      * The assigned project ID of the project.
      * </pre>
      *
      * <code>string project_id = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getProjectIdBytes();
+    com.google.protobuf.ByteString getProjectIdBytes();
 
     /**
+     *
+     *
      * <pre>
      * The ID of the dataset in the above project.
      * </pre>
@@ -45,16 +49,19 @@ public final class TableReferenceProto {
      */
     java.lang.String getDatasetId();
     /**
+     *
+     *
      * <pre>
      * The ID of the dataset in the above project.
      * </pre>
      *
      * <code>string dataset_id = 2;</code>
      */
-    com.google.protobuf.ByteString
-        getDatasetIdBytes();
+    com.google.protobuf.ByteString getDatasetIdBytes();
 
     /**
+     *
+     *
      * <pre>
      * The ID of the table in the above dataset.
      * </pre>
@@ -63,31 +70,35 @@ public final class TableReferenceProto {
      */
     java.lang.String getTableId();
     /**
+     *
+     *
      * <pre>
      * The ID of the table in the above dataset.
      * </pre>
      *
      * <code>string table_id = 3;</code>
      */
-    com.google.protobuf.ByteString
-        getTableIdBytes();
+    com.google.protobuf.ByteString getTableIdBytes();
   }
   /**
+   *
+   *
    * <pre>
    * Table reference that includes just the 3 strings needed to identify a table.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.TableReference}
    */
-  public  static final class TableReference extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class TableReference extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta1.TableReference)
       TableReferenceOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use TableReference.newBuilder() to construct.
     private TableReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private TableReference() {
       projectId_ = "";
       datasetId_ = "";
@@ -95,10 +106,10 @@ public final class TableReferenceProto {
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private TableReference(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -118,59 +129,67 @@ public final class TableReferenceProto {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              projectId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              datasetId_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              tableId_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                projectId_ = s;
+                break;
               }
-              break;
-            }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                datasetId_ = s;
+                break;
+              }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                tableId_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto
+          .internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_fieldAccessorTable
+      return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto
+          .internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference.class, com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference.Builder.class);
+              com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference.class,
+              com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference.Builder
+                  .class);
     }
 
     public static final int PROJECT_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object projectId_;
     /**
+     *
+     *
      * <pre>
      * The assigned project ID of the project.
      * </pre>
@@ -182,27 +201,26 @@ public final class TableReferenceProto {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         projectId_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The assigned project ID of the project.
      * </pre>
      *
      * <code>string project_id = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getProjectIdBytes() {
+    public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         projectId_ = b;
         return b;
       } else {
@@ -213,6 +231,8 @@ public final class TableReferenceProto {
     public static final int DATASET_ID_FIELD_NUMBER = 2;
     private volatile java.lang.Object datasetId_;
     /**
+     *
+     *
      * <pre>
      * The ID of the dataset in the above project.
      * </pre>
@@ -224,27 +244,26 @@ public final class TableReferenceProto {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         datasetId_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The ID of the dataset in the above project.
      * </pre>
      *
      * <code>string dataset_id = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getDatasetIdBytes() {
+    public com.google.protobuf.ByteString getDatasetIdBytes() {
       java.lang.Object ref = datasetId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         datasetId_ = b;
         return b;
       } else {
@@ -255,6 +274,8 @@ public final class TableReferenceProto {
     public static final int TABLE_ID_FIELD_NUMBER = 3;
     private volatile java.lang.Object tableId_;
     /**
+     *
+     *
      * <pre>
      * The ID of the table in the above dataset.
      * </pre>
@@ -266,27 +287,26 @@ public final class TableReferenceProto {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         tableId_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The ID of the table in the above dataset.
      * </pre>
      *
      * <code>string table_id = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getTableIdBytes() {
+    public com.google.protobuf.ByteString getTableIdBytes() {
       java.lang.Object ref = tableId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         tableId_ = b;
         return b;
       } else {
@@ -295,6 +315,7 @@ public final class TableReferenceProto {
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -306,8 +327,7 @@ public final class TableReferenceProto {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getProjectIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
       }
@@ -343,20 +363,20 @@ public final class TableReferenceProto {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
-      if (!(obj instanceof com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference)) {
+      if (!(obj
+          instanceof
+          com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference)) {
         return super.equals(obj);
       }
-      com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference other = (com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference) obj;
+      com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference other =
+          (com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference) obj;
 
       boolean result = true;
-      result = result && getProjectId()
-          .equals(other.getProjectId());
-      result = result && getDatasetId()
-          .equals(other.getDatasetId());
-      result = result && getTableId()
-          .equals(other.getTableId());
+      result = result && getProjectId().equals(other.getProjectId());
+      result = result && getDatasetId().equals(other.getDatasetId());
+      result = result && getTableId().equals(other.getTableId());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -379,88 +399,101 @@ public final class TableReferenceProto {
       return hash;
     }
 
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference prototype) {
+
+    public static Builder newBuilder(
+        com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -470,44 +503,50 @@ public final class TableReferenceProto {
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Table reference that includes just the 3 strings needed to identify a table.
      * </pre>
      *
      * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.TableReference}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.storage.v1beta1.TableReference)
         com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReferenceOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto
+            .internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_fieldAccessorTable
+        return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto
+            .internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference.class, com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference.Builder.class);
+                com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference.class,
+                com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference.Builder
+                    .class);
       }
 
-      // Construct using com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference.newBuilder()
+      // Construct using
+      // com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -521,19 +560,22 @@ public final class TableReferenceProto {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto
+            .internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_descriptor;
       }
 
       @java.lang.Override
-      public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference getDefaultInstanceForType() {
-        return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference.getDefaultInstance();
+      public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+          getDefaultInstanceForType() {
+        return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+            .getDefaultInstance();
       }
 
       @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference build() {
-        com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference result = buildPartial();
+        com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference result =
+            buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -541,8 +583,10 @@ public final class TableReferenceProto {
       }
 
       @java.lang.Override
-      public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference buildPartial() {
-        com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference result = new com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference(this);
+      public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+          buildPartial() {
+        com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference result =
+            new com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference(this);
         result.projectId_ = projectId_;
         result.datasetId_ = datasetId_;
         result.tableId_ = tableId_;
@@ -554,46 +598,55 @@ public final class TableReferenceProto {
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference) {
-          return mergeFrom((com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference)other);
+        if (other
+            instanceof
+            com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference) {
+          return mergeFrom(
+              (com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference other) {
-        if (other == com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference.getDefaultInstance()) return this;
+      public Builder mergeFrom(
+          com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference other) {
+        if (other
+            == com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+                .getDefaultInstance()) return this;
         if (!other.getProjectId().isEmpty()) {
           projectId_ = other.projectId_;
           onChanged();
@@ -621,11 +674,14 @@ public final class TableReferenceProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference parsedMessage = null;
+        com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference parsedMessage =
+            null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -637,6 +693,8 @@ public final class TableReferenceProto {
 
       private java.lang.Object projectId_ = "";
       /**
+       *
+       *
        * <pre>
        * The assigned project ID of the project.
        * </pre>
@@ -646,8 +704,7 @@ public final class TableReferenceProto {
       public java.lang.String getProjectId() {
         java.lang.Object ref = projectId_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           projectId_ = s;
           return s;
@@ -656,19 +713,19 @@ public final class TableReferenceProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * The assigned project ID of the project.
        * </pre>
        *
        * <code>string project_id = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getProjectIdBytes() {
+      public com.google.protobuf.ByteString getProjectIdBytes() {
         java.lang.Object ref = projectId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           projectId_ = b;
           return b;
         } else {
@@ -676,23 +733,26 @@ public final class TableReferenceProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * The assigned project ID of the project.
        * </pre>
        *
        * <code>string project_id = 1;</code>
        */
-      public Builder setProjectId(
-          java.lang.String value) {
+      public Builder setProjectId(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         projectId_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The assigned project ID of the project.
        * </pre>
@@ -700,25 +760,26 @@ public final class TableReferenceProto {
        * <code>string project_id = 1;</code>
        */
       public Builder clearProjectId() {
-        
+
         projectId_ = getDefaultInstance().getProjectId();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The assigned project ID of the project.
        * </pre>
        *
        * <code>string project_id = 1;</code>
        */
-      public Builder setProjectIdBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         projectId_ = value;
         onChanged();
         return this;
@@ -726,6 +787,8 @@ public final class TableReferenceProto {
 
       private java.lang.Object datasetId_ = "";
       /**
+       *
+       *
        * <pre>
        * The ID of the dataset in the above project.
        * </pre>
@@ -735,8 +798,7 @@ public final class TableReferenceProto {
       public java.lang.String getDatasetId() {
         java.lang.Object ref = datasetId_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           datasetId_ = s;
           return s;
@@ -745,19 +807,19 @@ public final class TableReferenceProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * The ID of the dataset in the above project.
        * </pre>
        *
        * <code>string dataset_id = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getDatasetIdBytes() {
+      public com.google.protobuf.ByteString getDatasetIdBytes() {
         java.lang.Object ref = datasetId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           datasetId_ = b;
           return b;
         } else {
@@ -765,23 +827,26 @@ public final class TableReferenceProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * The ID of the dataset in the above project.
        * </pre>
        *
        * <code>string dataset_id = 2;</code>
        */
-      public Builder setDatasetId(
-          java.lang.String value) {
+      public Builder setDatasetId(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         datasetId_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The ID of the dataset in the above project.
        * </pre>
@@ -789,25 +854,26 @@ public final class TableReferenceProto {
        * <code>string dataset_id = 2;</code>
        */
       public Builder clearDatasetId() {
-        
+
         datasetId_ = getDefaultInstance().getDatasetId();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The ID of the dataset in the above project.
        * </pre>
        *
        * <code>string dataset_id = 2;</code>
        */
-      public Builder setDatasetIdBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setDatasetIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         datasetId_ = value;
         onChanged();
         return this;
@@ -815,6 +881,8 @@ public final class TableReferenceProto {
 
       private java.lang.Object tableId_ = "";
       /**
+       *
+       *
        * <pre>
        * The ID of the table in the above dataset.
        * </pre>
@@ -824,8 +892,7 @@ public final class TableReferenceProto {
       public java.lang.String getTableId() {
         java.lang.Object ref = tableId_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           tableId_ = s;
           return s;
@@ -834,19 +901,19 @@ public final class TableReferenceProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * The ID of the table in the above dataset.
        * </pre>
        *
        * <code>string table_id = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getTableIdBytes() {
+      public com.google.protobuf.ByteString getTableIdBytes() {
         java.lang.Object ref = tableId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           tableId_ = b;
           return b;
         } else {
@@ -854,23 +921,26 @@ public final class TableReferenceProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * The ID of the table in the above dataset.
        * </pre>
        *
        * <code>string table_id = 3;</code>
        */
-      public Builder setTableId(
-          java.lang.String value) {
+      public Builder setTableId(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         tableId_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The ID of the table in the above dataset.
        * </pre>
@@ -878,29 +948,31 @@ public final class TableReferenceProto {
        * <code>string table_id = 3;</code>
        */
       public Builder clearTableId() {
-        
+
         tableId_ = getDefaultInstance().getTableId();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The ID of the table in the above dataset.
        * </pre>
        *
        * <code>string table_id = 3;</code>
        */
-      public Builder setTableIdBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setTableIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         tableId_ = value;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -913,30 +985,34 @@ public final class TableReferenceProto {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.storage.v1beta1.TableReference)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.bigquery.storage.v1beta1.TableReference)
-    private static final com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference DEFAULT_INSTANCE;
+    private static final com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto
+            .TableReference
+        DEFAULT_INSTANCE;
+
     static {
-      DEFAULT_INSTANCE = new com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference();
+      DEFAULT_INSTANCE =
+          new com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference();
     }
 
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference getDefaultInstance() {
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<TableReference>
-        PARSER = new com.google.protobuf.AbstractParser<TableReference>() {
-      @java.lang.Override
-      public TableReference parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TableReference(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<TableReference> PARSER =
+        new com.google.protobuf.AbstractParser<TableReference>() {
+          @java.lang.Override
+          public TableReference parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new TableReference(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<TableReference> parser() {
       return PARSER;
@@ -948,17 +1024,20 @@ public final class TableReferenceProto {
     }
 
     @java.lang.Override
-    public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference getDefaultInstanceForType() {
+    public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface TableModifiersOrBuilder extends
+  public interface TableModifiersOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.storage.v1beta1.TableModifiers)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * The snapshot time of the table. If not set, interpreted as now.
      * </pre>
@@ -967,6 +1046,8 @@ public final class TableReferenceProto {
      */
     boolean hasSnapshotTime();
     /**
+     *
+     *
      * <pre>
      * The snapshot time of the table. If not set, interpreted as now.
      * </pre>
@@ -975,6 +1056,8 @@ public final class TableReferenceProto {
      */
     com.google.protobuf.Timestamp getSnapshotTime();
     /**
+     *
+     *
      * <pre>
      * The snapshot time of the table. If not set, interpreted as now.
      * </pre>
@@ -984,29 +1067,31 @@ public final class TableReferenceProto {
     com.google.protobuf.TimestampOrBuilder getSnapshotTimeOrBuilder();
   }
   /**
+   *
+   *
    * <pre>
    * All fields in this message optional.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.TableModifiers}
    */
-  public  static final class TableModifiers extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class TableModifiers extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta1.TableModifiers)
       TableModifiersOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use TableModifiers.newBuilder() to construct.
     private TableModifiers(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private TableModifiers() {
-    }
+
+    private TableModifiers() {}
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private TableModifiers(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1026,54 +1111,61 @@ public final class TableReferenceProto {
             case 0:
               done = true;
               break;
-            case 10: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (snapshotTime_ != null) {
-                subBuilder = snapshotTime_.toBuilder();
-              }
-              snapshotTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(snapshotTime_);
-                snapshotTime_ = subBuilder.buildPartial();
-              }
+            case 10:
+              {
+                com.google.protobuf.Timestamp.Builder subBuilder = null;
+                if (snapshotTime_ != null) {
+                  subBuilder = snapshotTime_.toBuilder();
+                }
+                snapshotTime_ =
+                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(snapshotTime_);
+                  snapshotTime_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.internal_static_google_cloud_bigquery_storage_v1beta1_TableModifiers_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto
+          .internal_static_google_cloud_bigquery_storage_v1beta1_TableModifiers_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.internal_static_google_cloud_bigquery_storage_v1beta1_TableModifiers_fieldAccessorTable
+      return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto
+          .internal_static_google_cloud_bigquery_storage_v1beta1_TableModifiers_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers.class, com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers.Builder.class);
+              com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers.class,
+              com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers.Builder
+                  .class);
     }
 
     public static final int SNAPSHOT_TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp snapshotTime_;
     /**
+     *
+     *
      * <pre>
      * The snapshot time of the table. If not set, interpreted as now.
      * </pre>
@@ -1084,6 +1176,8 @@ public final class TableReferenceProto {
       return snapshotTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The snapshot time of the table. If not set, interpreted as now.
      * </pre>
@@ -1091,9 +1185,13 @@ public final class TableReferenceProto {
      * <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
      */
     public com.google.protobuf.Timestamp getSnapshotTime() {
-      return snapshotTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : snapshotTime_;
+      return snapshotTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : snapshotTime_;
     }
     /**
+     *
+     *
      * <pre>
      * The snapshot time of the table. If not set, interpreted as now.
      * </pre>
@@ -1105,6 +1203,7 @@ public final class TableReferenceProto {
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1116,8 +1215,7 @@ public final class TableReferenceProto {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (snapshotTime_ != null) {
         output.writeMessage(1, getSnapshotTime());
       }
@@ -1131,8 +1229,7 @@ public final class TableReferenceProto {
 
       size = 0;
       if (snapshotTime_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getSnapshotTime());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSnapshotTime());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1142,18 +1239,20 @@ public final class TableReferenceProto {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
-      if (!(obj instanceof com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers)) {
+      if (!(obj
+          instanceof
+          com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers)) {
         return super.equals(obj);
       }
-      com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers other = (com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers) obj;
+      com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers other =
+          (com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers) obj;
 
       boolean result = true;
       result = result && (hasSnapshotTime() == other.hasSnapshotTime());
       if (hasSnapshotTime()) {
-        result = result && getSnapshotTime()
-            .equals(other.getSnapshotTime());
+        result = result && getSnapshotTime().equals(other.getSnapshotTime());
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -1175,88 +1274,101 @@ public final class TableReferenceProto {
       return hash;
     }
 
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers prototype) {
+
+    public static Builder newBuilder(
+        com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -1266,44 +1378,50 @@ public final class TableReferenceProto {
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * All fields in this message optional.
      * </pre>
      *
      * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.TableModifiers}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.storage.v1beta1.TableModifiers)
         com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiersOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.internal_static_google_cloud_bigquery_storage_v1beta1_TableModifiers_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto
+            .internal_static_google_cloud_bigquery_storage_v1beta1_TableModifiers_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.internal_static_google_cloud_bigquery_storage_v1beta1_TableModifiers_fieldAccessorTable
+        return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto
+            .internal_static_google_cloud_bigquery_storage_v1beta1_TableModifiers_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers.class, com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers.Builder.class);
+                com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers.class,
+                com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers.Builder
+                    .class);
       }
 
-      // Construct using com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers.newBuilder()
+      // Construct using
+      // com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -1317,19 +1435,22 @@ public final class TableReferenceProto {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.internal_static_google_cloud_bigquery_storage_v1beta1_TableModifiers_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto
+            .internal_static_google_cloud_bigquery_storage_v1beta1_TableModifiers_descriptor;
       }
 
       @java.lang.Override
-      public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers getDefaultInstanceForType() {
-        return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers.getDefaultInstance();
+      public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+          getDefaultInstanceForType() {
+        return com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+            .getDefaultInstance();
       }
 
       @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers build() {
-        com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers result = buildPartial();
+        com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers result =
+            buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1337,8 +1458,10 @@ public final class TableReferenceProto {
       }
 
       @java.lang.Override
-      public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers buildPartial() {
-        com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers result = new com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers(this);
+      public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+          buildPartial() {
+        com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers result =
+            new com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers(this);
         if (snapshotTimeBuilder_ == null) {
           result.snapshotTime_ = snapshotTime_;
         } else {
@@ -1352,46 +1475,55 @@ public final class TableReferenceProto {
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers) {
-          return mergeFrom((com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers)other);
+        if (other
+            instanceof
+            com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers) {
+          return mergeFrom(
+              (com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers other) {
-        if (other == com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers.getDefaultInstance()) return this;
+      public Builder mergeFrom(
+          com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers other) {
+        if (other
+            == com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+                .getDefaultInstance()) return this;
         if (other.hasSnapshotTime()) {
           mergeSnapshotTime(other.getSnapshotTime());
         }
@@ -1410,11 +1542,14 @@ public final class TableReferenceProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers parsedMessage = null;
+        com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers parsedMessage =
+            null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1426,8 +1561,13 @@ public final class TableReferenceProto {
 
       private com.google.protobuf.Timestamp snapshotTime_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> snapshotTimeBuilder_;
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          snapshotTimeBuilder_;
       /**
+       *
+       *
        * <pre>
        * The snapshot time of the table. If not set, interpreted as now.
        * </pre>
@@ -1438,6 +1578,8 @@ public final class TableReferenceProto {
         return snapshotTimeBuilder_ != null || snapshotTime_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * The snapshot time of the table. If not set, interpreted as now.
        * </pre>
@@ -1446,12 +1588,16 @@ public final class TableReferenceProto {
        */
       public com.google.protobuf.Timestamp getSnapshotTime() {
         if (snapshotTimeBuilder_ == null) {
-          return snapshotTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : snapshotTime_;
+          return snapshotTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : snapshotTime_;
         } else {
           return snapshotTimeBuilder_.getMessage();
         }
       }
       /**
+       *
+       *
        * <pre>
        * The snapshot time of the table. If not set, interpreted as now.
        * </pre>
@@ -1472,14 +1618,15 @@ public final class TableReferenceProto {
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The snapshot time of the table. If not set, interpreted as now.
        * </pre>
        *
        * <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
        */
-      public Builder setSnapshotTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+      public Builder setSnapshotTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (snapshotTimeBuilder_ == null) {
           snapshotTime_ = builderForValue.build();
           onChanged();
@@ -1490,6 +1637,8 @@ public final class TableReferenceProto {
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The snapshot time of the table. If not set, interpreted as now.
        * </pre>
@@ -1500,7 +1649,9 @@ public final class TableReferenceProto {
         if (snapshotTimeBuilder_ == null) {
           if (snapshotTime_ != null) {
             snapshotTime_ =
-              com.google.protobuf.Timestamp.newBuilder(snapshotTime_).mergeFrom(value).buildPartial();
+                com.google.protobuf.Timestamp.newBuilder(snapshotTime_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             snapshotTime_ = value;
           }
@@ -1512,6 +1663,8 @@ public final class TableReferenceProto {
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The snapshot time of the table. If not set, interpreted as now.
        * </pre>
@@ -1530,6 +1683,8 @@ public final class TableReferenceProto {
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The snapshot time of the table. If not set, interpreted as now.
        * </pre>
@@ -1537,11 +1692,13 @@ public final class TableReferenceProto {
        * <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
        */
       public com.google.protobuf.Timestamp.Builder getSnapshotTimeBuilder() {
-        
+
         onChanged();
         return getSnapshotTimeFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * The snapshot time of the table. If not set, interpreted as now.
        * </pre>
@@ -1552,11 +1709,14 @@ public final class TableReferenceProto {
         if (snapshotTimeBuilder_ != null) {
           return snapshotTimeBuilder_.getMessageOrBuilder();
         } else {
-          return snapshotTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : snapshotTime_;
+          return snapshotTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : snapshotTime_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The snapshot time of the table. If not set, interpreted as now.
        * </pre>
@@ -1564,18 +1724,22 @@ public final class TableReferenceProto {
        * <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
           getSnapshotTimeFieldBuilder() {
         if (snapshotTimeBuilder_ == null) {
-          snapshotTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getSnapshotTime(),
-                  getParentForChildren(),
-                  isClean());
+          snapshotTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getSnapshotTime(), getParentForChildren(), isClean());
           snapshotTime_ = null;
         }
         return snapshotTimeBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1588,30 +1752,34 @@ public final class TableReferenceProto {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.storage.v1beta1.TableModifiers)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.bigquery.storage.v1beta1.TableModifiers)
-    private static final com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers DEFAULT_INSTANCE;
+    private static final com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto
+            .TableModifiers
+        DEFAULT_INSTANCE;
+
     static {
-      DEFAULT_INSTANCE = new com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers();
+      DEFAULT_INSTANCE =
+          new com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers();
     }
 
-    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers getDefaultInstance() {
+    public static com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<TableModifiers>
-        PARSER = new com.google.protobuf.AbstractParser<TableModifiers>() {
-      @java.lang.Override
-      public TableModifiers parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TableModifiers(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<TableModifiers> PARSER =
+        new com.google.protobuf.AbstractParser<TableModifiers>() {
+          @java.lang.Override
+          public TableModifiers parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new TableModifiers(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<TableModifiers> parser() {
       return PARSER;
@@ -1623,68 +1791,71 @@ public final class TableReferenceProto {
     }
 
     @java.lang.Override
-    public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers getDefaultInstanceForType() {
+    public com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableModifiers
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_cloud_bigquery_storage_v1beta1_TableModifiers_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_storage_v1beta1_TableModifiers_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_storage_v1beta1_TableModifiers_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+  public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+
+  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
   static {
     java.lang.String[] descriptorData = {
-      "\n;google/cloud/bigquery/storage/v1beta1/" +
-      "table_reference.proto\022%google.cloud.bigq" +
-      "uery.storage.v1beta1\032\037google/protobuf/ti" +
-      "mestamp.proto\"J\n\016TableReference\022\022\n\nproje" +
-      "ct_id\030\001 \001(\t\022\022\n\ndataset_id\030\002 \001(\t\022\020\n\010table" +
-      "_id\030\003 \001(\t\"C\n\016TableModifiers\0221\n\rsnapshot_" +
-      "time\030\001 \001(\0132\032.google.protobuf.TimestampB\216" +
-      "\001\n)com.google.cloud.bigquery.storage.v1b" +
-      "eta1B\023TableReferenceProtoZLgoogle.golang" +
-      ".org/genproto/googleapis/cloud/bigquery/" +
-      "storage/v1beta1;storageb\006proto3"
+      "\n;google/cloud/bigquery/storage/v1beta1/"
+          + "table_reference.proto\022%google.cloud.bigq"
+          + "uery.storage.v1beta1\032\037google/protobuf/ti"
+          + "mestamp.proto\"J\n\016TableReference\022\022\n\nproje"
+          + "ct_id\030\001 \001(\t\022\022\n\ndataset_id\030\002 \001(\t\022\020\n\010table"
+          + "_id\030\003 \001(\t\"C\n\016TableModifiers\0221\n\rsnapshot_"
+          + "time\030\001 \001(\0132\032.google.protobuf.TimestampB\216"
+          + "\001\n)com.google.cloud.bigquery.storage.v1b"
+          + "eta1B\023TableReferenceProtoZLgoogle.golang"
+          + ".org/genproto/googleapis/cloud/bigquery/"
+          + "storage/v1beta1;storageb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
           public com.google.protobuf.ExtensionRegistry assignDescriptors(
               com.google.protobuf.Descriptors.FileDescriptor root) {
             descriptor = root;
             return null;
           }
         };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
+    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+        descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.TimestampProto.getDescriptor(),
-        }, assigner);
+        },
+        assigner);
     internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_descriptor,
-        new java.lang.String[] { "ProjectId", "DatasetId", "TableId", });
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_storage_v1beta1_TableReference_descriptor,
+            new java.lang.String[] {
+              "ProjectId", "DatasetId", "TableId",
+            });
     internal_static_google_cloud_bigquery_storage_v1beta1_TableModifiers_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_google_cloud_bigquery_storage_v1beta1_TableModifiers_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_cloud_bigquery_storage_v1beta1_TableModifiers_descriptor,
-        new java.lang.String[] { "SnapshotTime", });
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_bigquery_storage_v1beta1_TableModifiers_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_storage_v1beta1_TableModifiers_descriptor,
+            new java.lang.String[] {
+              "SnapshotTime",
+            });
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

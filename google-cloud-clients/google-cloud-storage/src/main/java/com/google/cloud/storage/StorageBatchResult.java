@@ -18,13 +18,10 @@ package com.google.cloud.storage;
 
 import com.google.cloud.BatchResult;
 
-/**
- * This class holds a single result of a batch call to Cloud Storage.
- */
+/** This class holds a single result of a batch call to Cloud Storage. */
 public class StorageBatchResult<T> extends BatchResult<T, StorageException> {
 
-  StorageBatchResult() {
-  }
+  StorageBatchResult() {}
 
   @Override
   protected void error(StorageException error) {

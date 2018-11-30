@@ -4,6 +4,8 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * This is a data encryption key (DEK) (as opposed to
  * a key encryption key (KEK) stored by KMS).
@@ -14,23 +16,23 @@ package com.google.privacy.dlp.v2;
  *
  * Protobuf type {@code google.privacy.dlp.v2.CryptoKey}
  */
-public  final class CryptoKey extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class CryptoKey extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CryptoKey)
     CryptoKeyOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use CryptoKey.newBuilder() to construct.
   private CryptoKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private CryptoKey() {
-  }
+
+  private CryptoKey() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private CryptoKey(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,95 +52,102 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.privacy.dlp.v2.TransientCryptoKey.Builder subBuilder = null;
-            if (sourceCase_ == 1) {
-              subBuilder = ((com.google.privacy.dlp.v2.TransientCryptoKey) source_).toBuilder();
+          case 10:
+            {
+              com.google.privacy.dlp.v2.TransientCryptoKey.Builder subBuilder = null;
+              if (sourceCase_ == 1) {
+                subBuilder = ((com.google.privacy.dlp.v2.TransientCryptoKey) source_).toBuilder();
+              }
+              source_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.TransientCryptoKey.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.TransientCryptoKey) source_);
+                source_ = subBuilder.buildPartial();
+              }
+              sourceCase_ = 1;
+              break;
             }
-            source_ =
-                input.readMessage(com.google.privacy.dlp.v2.TransientCryptoKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.TransientCryptoKey) source_);
-              source_ = subBuilder.buildPartial();
+          case 18:
+            {
+              com.google.privacy.dlp.v2.UnwrappedCryptoKey.Builder subBuilder = null;
+              if (sourceCase_ == 2) {
+                subBuilder = ((com.google.privacy.dlp.v2.UnwrappedCryptoKey) source_).toBuilder();
+              }
+              source_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.UnwrappedCryptoKey.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.UnwrappedCryptoKey) source_);
+                source_ = subBuilder.buildPartial();
+              }
+              sourceCase_ = 2;
+              break;
             }
-            sourceCase_ = 1;
-            break;
-          }
-          case 18: {
-            com.google.privacy.dlp.v2.UnwrappedCryptoKey.Builder subBuilder = null;
-            if (sourceCase_ == 2) {
-              subBuilder = ((com.google.privacy.dlp.v2.UnwrappedCryptoKey) source_).toBuilder();
+          case 26:
+            {
+              com.google.privacy.dlp.v2.KmsWrappedCryptoKey.Builder subBuilder = null;
+              if (sourceCase_ == 3) {
+                subBuilder = ((com.google.privacy.dlp.v2.KmsWrappedCryptoKey) source_).toBuilder();
+              }
+              source_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.KmsWrappedCryptoKey.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.KmsWrappedCryptoKey) source_);
+                source_ = subBuilder.buildPartial();
+              }
+              sourceCase_ = 3;
+              break;
             }
-            source_ =
-                input.readMessage(com.google.privacy.dlp.v2.UnwrappedCryptoKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.UnwrappedCryptoKey) source_);
-              source_ = subBuilder.buildPartial();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            sourceCase_ = 2;
-            break;
-          }
-          case 26: {
-            com.google.privacy.dlp.v2.KmsWrappedCryptoKey.Builder subBuilder = null;
-            if (sourceCase_ == 3) {
-              subBuilder = ((com.google.privacy.dlp.v2.KmsWrappedCryptoKey) source_).toBuilder();
-            }
-            source_ =
-                input.readMessage(com.google.privacy.dlp.v2.KmsWrappedCryptoKey.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.KmsWrappedCryptoKey) source_);
-              source_ = subBuilder.buildPartial();
-            }
-            sourceCase_ = 3;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CryptoKey_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_CryptoKey_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CryptoKey_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_CryptoKey_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.CryptoKey.class, com.google.privacy.dlp.v2.CryptoKey.Builder.class);
+            com.google.privacy.dlp.v2.CryptoKey.class,
+            com.google.privacy.dlp.v2.CryptoKey.Builder.class);
   }
 
   private int sourceCase_ = 0;
   private java.lang.Object source_;
-  public enum SourceCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
     TRANSIENT(1),
     UNWRAPPED(2),
     KMS_WRAPPED(3),
     SOURCE_NOT_SET(0);
     private final int value;
+
     private SourceCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static SourceCase valueOf(int value) {
       return forNumber(value);
@@ -146,103 +155,90 @@ private static final long serialVersionUID = 0L;
 
     public static SourceCase forNumber(int value) {
       switch (value) {
-        case 1: return TRANSIENT;
-        case 2: return UNWRAPPED;
-        case 3: return KMS_WRAPPED;
-        case 0: return SOURCE_NOT_SET;
-        default: return null;
+        case 1:
+          return TRANSIENT;
+        case 2:
+          return UNWRAPPED;
+        case 3:
+          return KMS_WRAPPED;
+        case 0:
+          return SOURCE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public SourceCase
-  getSourceCase() {
-    return SourceCase.forNumber(
-        sourceCase_);
+  public SourceCase getSourceCase() {
+    return SourceCase.forNumber(sourceCase_);
   }
 
   public static final int TRANSIENT_FIELD_NUMBER = 1;
-  /**
-   * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
   public boolean hasTransient() {
     return sourceCase_ == 1;
   }
-  /**
-   * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
   public com.google.privacy.dlp.v2.TransientCryptoKey getTransient() {
     if (sourceCase_ == 1) {
-       return (com.google.privacy.dlp.v2.TransientCryptoKey) source_;
+      return (com.google.privacy.dlp.v2.TransientCryptoKey) source_;
     }
     return com.google.privacy.dlp.v2.TransientCryptoKey.getDefaultInstance();
   }
-  /**
-   * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
   public com.google.privacy.dlp.v2.TransientCryptoKeyOrBuilder getTransientOrBuilder() {
     if (sourceCase_ == 1) {
-       return (com.google.privacy.dlp.v2.TransientCryptoKey) source_;
+      return (com.google.privacy.dlp.v2.TransientCryptoKey) source_;
     }
     return com.google.privacy.dlp.v2.TransientCryptoKey.getDefaultInstance();
   }
 
   public static final int UNWRAPPED_FIELD_NUMBER = 2;
-  /**
-   * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
   public boolean hasUnwrapped() {
     return sourceCase_ == 2;
   }
-  /**
-   * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
   public com.google.privacy.dlp.v2.UnwrappedCryptoKey getUnwrapped() {
     if (sourceCase_ == 2) {
-       return (com.google.privacy.dlp.v2.UnwrappedCryptoKey) source_;
+      return (com.google.privacy.dlp.v2.UnwrappedCryptoKey) source_;
     }
     return com.google.privacy.dlp.v2.UnwrappedCryptoKey.getDefaultInstance();
   }
-  /**
-   * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
   public com.google.privacy.dlp.v2.UnwrappedCryptoKeyOrBuilder getUnwrappedOrBuilder() {
     if (sourceCase_ == 2) {
-       return (com.google.privacy.dlp.v2.UnwrappedCryptoKey) source_;
+      return (com.google.privacy.dlp.v2.UnwrappedCryptoKey) source_;
     }
     return com.google.privacy.dlp.v2.UnwrappedCryptoKey.getDefaultInstance();
   }
 
   public static final int KMS_WRAPPED_FIELD_NUMBER = 3;
-  /**
-   * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
   public boolean hasKmsWrapped() {
     return sourceCase_ == 3;
   }
-  /**
-   * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
   public com.google.privacy.dlp.v2.KmsWrappedCryptoKey getKmsWrapped() {
     if (sourceCase_ == 3) {
-       return (com.google.privacy.dlp.v2.KmsWrappedCryptoKey) source_;
+      return (com.google.privacy.dlp.v2.KmsWrappedCryptoKey) source_;
     }
     return com.google.privacy.dlp.v2.KmsWrappedCryptoKey.getDefaultInstance();
   }
-  /**
-   * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
   public com.google.privacy.dlp.v2.KmsWrappedCryptoKeyOrBuilder getKmsWrappedOrBuilder() {
     if (sourceCase_ == 3) {
-       return (com.google.privacy.dlp.v2.KmsWrappedCryptoKey) source_;
+      return (com.google.privacy.dlp.v2.KmsWrappedCryptoKey) source_;
     }
     return com.google.privacy.dlp.v2.KmsWrappedCryptoKey.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -254,8 +250,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (sourceCase_ == 1) {
       output.writeMessage(1, (com.google.privacy.dlp.v2.TransientCryptoKey) source_);
     }
@@ -275,16 +270,19 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (sourceCase_ == 1) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, (com.google.privacy.dlp.v2.TransientCryptoKey) source_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              1, (com.google.privacy.dlp.v2.TransientCryptoKey) source_);
     }
     if (sourceCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.google.privacy.dlp.v2.UnwrappedCryptoKey) source_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.privacy.dlp.v2.UnwrappedCryptoKey) source_);
     }
     if (sourceCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.privacy.dlp.v2.KmsWrappedCryptoKey) source_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.privacy.dlp.v2.KmsWrappedCryptoKey) source_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -294,7 +292,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.CryptoKey)) {
       return super.equals(obj);
@@ -302,21 +300,17 @@ private static final long serialVersionUID = 0L;
     com.google.privacy.dlp.v2.CryptoKey other = (com.google.privacy.dlp.v2.CryptoKey) obj;
 
     boolean result = true;
-    result = result && getSourceCase().equals(
-        other.getSourceCase());
+    result = result && getSourceCase().equals(other.getSourceCase());
     if (!result) return false;
     switch (sourceCase_) {
       case 1:
-        result = result && getTransient()
-            .equals(other.getTransient());
+        result = result && getTransient().equals(other.getTransient());
         break;
       case 2:
-        result = result && getUnwrapped()
-            .equals(other.getUnwrapped());
+        result = result && getUnwrapped().equals(other.getUnwrapped());
         break;
       case 3:
-        result = result && getKmsWrapped()
-            .equals(other.getKmsWrapped());
+        result = result && getKmsWrapped().equals(other.getKmsWrapped());
         break;
       case 0:
       default:
@@ -353,97 +347,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.privacy.dlp.v2.CryptoKey parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.privacy.dlp.v2.CryptoKey parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.CryptoKey parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.CryptoKey parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.privacy.dlp.v2.CryptoKey parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.CryptoKey parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.CryptoKey parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.CryptoKey parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.CryptoKey parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.CryptoKey parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.CryptoKey parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.CryptoKey parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.CryptoKey parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.CryptoKey parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.privacy.dlp.v2.CryptoKey prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * This is a data encryption key (DEK) (as opposed to
    * a key encryption key (KEK) stored by KMS).
@@ -454,21 +454,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.CryptoKey}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CryptoKey)
       com.google.privacy.dlp.v2.CryptoKeyOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CryptoKey_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_CryptoKey_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CryptoKey_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_CryptoKey_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.CryptoKey.class, com.google.privacy.dlp.v2.CryptoKey.Builder.class);
+              com.google.privacy.dlp.v2.CryptoKey.class,
+              com.google.privacy.dlp.v2.CryptoKey.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.CryptoKey.newBuilder()
@@ -476,16 +478,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -495,9 +496,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CryptoKey_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_CryptoKey_descriptor;
     }
 
     @java.lang.Override
@@ -547,38 +548,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.CryptoKey) {
-        return mergeFrom((com.google.privacy.dlp.v2.CryptoKey)other);
+        return mergeFrom((com.google.privacy.dlp.v2.CryptoKey) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -588,21 +590,25 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.privacy.dlp.v2.CryptoKey other) {
       if (other == com.google.privacy.dlp.v2.CryptoKey.getDefaultInstance()) return this;
       switch (other.getSourceCase()) {
-        case TRANSIENT: {
-          mergeTransient(other.getTransient());
-          break;
-        }
-        case UNWRAPPED: {
-          mergeUnwrapped(other.getUnwrapped());
-          break;
-        }
-        case KMS_WRAPPED: {
-          mergeKmsWrapped(other.getKmsWrapped());
-          break;
-        }
-        case SOURCE_NOT_SET: {
-          break;
-        }
+        case TRANSIENT:
+          {
+            mergeTransient(other.getTransient());
+            break;
+          }
+        case UNWRAPPED:
+          {
+            mergeUnwrapped(other.getUnwrapped());
+            break;
+          }
+        case KMS_WRAPPED:
+          {
+            mergeKmsWrapped(other.getKmsWrapped());
+            break;
+          }
+        case SOURCE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -632,12 +638,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int sourceCase_ = 0;
     private java.lang.Object source_;
-    public SourceCase
-        getSourceCase() {
-      return SourceCase.forNumber(
-          sourceCase_);
+
+    public SourceCase getSourceCase() {
+      return SourceCase.forNumber(sourceCase_);
     }
 
     public Builder clearSource() {
@@ -647,18 +653,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.TransientCryptoKey, com.google.privacy.dlp.v2.TransientCryptoKey.Builder, com.google.privacy.dlp.v2.TransientCryptoKeyOrBuilder> transientBuilder_;
-    /**
-     * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
-     */
+            com.google.privacy.dlp.v2.TransientCryptoKey,
+            com.google.privacy.dlp.v2.TransientCryptoKey.Builder,
+            com.google.privacy.dlp.v2.TransientCryptoKeyOrBuilder>
+        transientBuilder_;
+    /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
     public boolean hasTransient() {
       return sourceCase_ == 1;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
     public com.google.privacy.dlp.v2.TransientCryptoKey getTransient() {
       if (transientBuilder_ == null) {
         if (sourceCase_ == 1) {
@@ -672,9 +676,7 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.TransientCryptoKey.getDefaultInstance();
       }
     }
-    /**
-     * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
     public Builder setTransient(com.google.privacy.dlp.v2.TransientCryptoKey value) {
       if (transientBuilder_ == null) {
         if (value == null) {
@@ -688,9 +690,7 @@ private static final long serialVersionUID = 0L;
       sourceCase_ = 1;
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
     public Builder setTransient(
         com.google.privacy.dlp.v2.TransientCryptoKey.Builder builderForValue) {
       if (transientBuilder_ == null) {
@@ -702,15 +702,16 @@ private static final long serialVersionUID = 0L;
       sourceCase_ = 1;
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
     public Builder mergeTransient(com.google.privacy.dlp.v2.TransientCryptoKey value) {
       if (transientBuilder_ == null) {
-        if (sourceCase_ == 1 &&
-            source_ != com.google.privacy.dlp.v2.TransientCryptoKey.getDefaultInstance()) {
-          source_ = com.google.privacy.dlp.v2.TransientCryptoKey.newBuilder((com.google.privacy.dlp.v2.TransientCryptoKey) source_)
-              .mergeFrom(value).buildPartial();
+        if (sourceCase_ == 1
+            && source_ != com.google.privacy.dlp.v2.TransientCryptoKey.getDefaultInstance()) {
+          source_ =
+              com.google.privacy.dlp.v2.TransientCryptoKey.newBuilder(
+                      (com.google.privacy.dlp.v2.TransientCryptoKey) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           source_ = value;
         }
@@ -724,9 +725,7 @@ private static final long serialVersionUID = 0L;
       sourceCase_ = 1;
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
     public Builder clearTransient() {
       if (transientBuilder_ == null) {
         if (sourceCase_ == 1) {
@@ -743,15 +742,11 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
     public com.google.privacy.dlp.v2.TransientCryptoKey.Builder getTransientBuilder() {
       return getTransientFieldBuilder().getBuilder();
     }
-    /**
-     * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
     public com.google.privacy.dlp.v2.TransientCryptoKeyOrBuilder getTransientOrBuilder() {
       if ((sourceCase_ == 1) && (transientBuilder_ != null)) {
         return transientBuilder_.getMessageOrBuilder();
@@ -762,39 +757,42 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.TransientCryptoKey.getDefaultInstance();
       }
     }
-    /**
-     * <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.TransientCryptoKey transient = 1;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.TransientCryptoKey, com.google.privacy.dlp.v2.TransientCryptoKey.Builder, com.google.privacy.dlp.v2.TransientCryptoKeyOrBuilder> 
+            com.google.privacy.dlp.v2.TransientCryptoKey,
+            com.google.privacy.dlp.v2.TransientCryptoKey.Builder,
+            com.google.privacy.dlp.v2.TransientCryptoKeyOrBuilder>
         getTransientFieldBuilder() {
       if (transientBuilder_ == null) {
         if (!(sourceCase_ == 1)) {
           source_ = com.google.privacy.dlp.v2.TransientCryptoKey.getDefaultInstance();
         }
-        transientBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.TransientCryptoKey, com.google.privacy.dlp.v2.TransientCryptoKey.Builder, com.google.privacy.dlp.v2.TransientCryptoKeyOrBuilder>(
+        transientBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.TransientCryptoKey,
+                com.google.privacy.dlp.v2.TransientCryptoKey.Builder,
+                com.google.privacy.dlp.v2.TransientCryptoKeyOrBuilder>(
                 (com.google.privacy.dlp.v2.TransientCryptoKey) source_,
                 getParentForChildren(),
                 isClean());
         source_ = null;
       }
       sourceCase_ = 1;
-      onChanged();;
+      onChanged();
+      ;
       return transientBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.UnwrappedCryptoKey, com.google.privacy.dlp.v2.UnwrappedCryptoKey.Builder, com.google.privacy.dlp.v2.UnwrappedCryptoKeyOrBuilder> unwrappedBuilder_;
-    /**
-     * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
-     */
+            com.google.privacy.dlp.v2.UnwrappedCryptoKey,
+            com.google.privacy.dlp.v2.UnwrappedCryptoKey.Builder,
+            com.google.privacy.dlp.v2.UnwrappedCryptoKeyOrBuilder>
+        unwrappedBuilder_;
+    /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
     public boolean hasUnwrapped() {
       return sourceCase_ == 2;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
     public com.google.privacy.dlp.v2.UnwrappedCryptoKey getUnwrapped() {
       if (unwrappedBuilder_ == null) {
         if (sourceCase_ == 2) {
@@ -808,9 +806,7 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.UnwrappedCryptoKey.getDefaultInstance();
       }
     }
-    /**
-     * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
     public Builder setUnwrapped(com.google.privacy.dlp.v2.UnwrappedCryptoKey value) {
       if (unwrappedBuilder_ == null) {
         if (value == null) {
@@ -824,9 +820,7 @@ private static final long serialVersionUID = 0L;
       sourceCase_ = 2;
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
     public Builder setUnwrapped(
         com.google.privacy.dlp.v2.UnwrappedCryptoKey.Builder builderForValue) {
       if (unwrappedBuilder_ == null) {
@@ -838,15 +832,16 @@ private static final long serialVersionUID = 0L;
       sourceCase_ = 2;
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
     public Builder mergeUnwrapped(com.google.privacy.dlp.v2.UnwrappedCryptoKey value) {
       if (unwrappedBuilder_ == null) {
-        if (sourceCase_ == 2 &&
-            source_ != com.google.privacy.dlp.v2.UnwrappedCryptoKey.getDefaultInstance()) {
-          source_ = com.google.privacy.dlp.v2.UnwrappedCryptoKey.newBuilder((com.google.privacy.dlp.v2.UnwrappedCryptoKey) source_)
-              .mergeFrom(value).buildPartial();
+        if (sourceCase_ == 2
+            && source_ != com.google.privacy.dlp.v2.UnwrappedCryptoKey.getDefaultInstance()) {
+          source_ =
+              com.google.privacy.dlp.v2.UnwrappedCryptoKey.newBuilder(
+                      (com.google.privacy.dlp.v2.UnwrappedCryptoKey) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           source_ = value;
         }
@@ -860,9 +855,7 @@ private static final long serialVersionUID = 0L;
       sourceCase_ = 2;
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
     public Builder clearUnwrapped() {
       if (unwrappedBuilder_ == null) {
         if (sourceCase_ == 2) {
@@ -879,15 +872,11 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
     public com.google.privacy.dlp.v2.UnwrappedCryptoKey.Builder getUnwrappedBuilder() {
       return getUnwrappedFieldBuilder().getBuilder();
     }
-    /**
-     * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
     public com.google.privacy.dlp.v2.UnwrappedCryptoKeyOrBuilder getUnwrappedOrBuilder() {
       if ((sourceCase_ == 2) && (unwrappedBuilder_ != null)) {
         return unwrappedBuilder_.getMessageOrBuilder();
@@ -898,39 +887,42 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.UnwrappedCryptoKey.getDefaultInstance();
       }
     }
-    /**
-     * <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.UnwrappedCryptoKey unwrapped = 2;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.UnwrappedCryptoKey, com.google.privacy.dlp.v2.UnwrappedCryptoKey.Builder, com.google.privacy.dlp.v2.UnwrappedCryptoKeyOrBuilder> 
+            com.google.privacy.dlp.v2.UnwrappedCryptoKey,
+            com.google.privacy.dlp.v2.UnwrappedCryptoKey.Builder,
+            com.google.privacy.dlp.v2.UnwrappedCryptoKeyOrBuilder>
         getUnwrappedFieldBuilder() {
       if (unwrappedBuilder_ == null) {
         if (!(sourceCase_ == 2)) {
           source_ = com.google.privacy.dlp.v2.UnwrappedCryptoKey.getDefaultInstance();
         }
-        unwrappedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.UnwrappedCryptoKey, com.google.privacy.dlp.v2.UnwrappedCryptoKey.Builder, com.google.privacy.dlp.v2.UnwrappedCryptoKeyOrBuilder>(
+        unwrappedBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.UnwrappedCryptoKey,
+                com.google.privacy.dlp.v2.UnwrappedCryptoKey.Builder,
+                com.google.privacy.dlp.v2.UnwrappedCryptoKeyOrBuilder>(
                 (com.google.privacy.dlp.v2.UnwrappedCryptoKey) source_,
                 getParentForChildren(),
                 isClean());
         source_ = null;
       }
       sourceCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return unwrappedBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.KmsWrappedCryptoKey, com.google.privacy.dlp.v2.KmsWrappedCryptoKey.Builder, com.google.privacy.dlp.v2.KmsWrappedCryptoKeyOrBuilder> kmsWrappedBuilder_;
-    /**
-     * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
-     */
+            com.google.privacy.dlp.v2.KmsWrappedCryptoKey,
+            com.google.privacy.dlp.v2.KmsWrappedCryptoKey.Builder,
+            com.google.privacy.dlp.v2.KmsWrappedCryptoKeyOrBuilder>
+        kmsWrappedBuilder_;
+    /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
     public boolean hasKmsWrapped() {
       return sourceCase_ == 3;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
     public com.google.privacy.dlp.v2.KmsWrappedCryptoKey getKmsWrapped() {
       if (kmsWrappedBuilder_ == null) {
         if (sourceCase_ == 3) {
@@ -944,9 +936,7 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.KmsWrappedCryptoKey.getDefaultInstance();
       }
     }
-    /**
-     * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
     public Builder setKmsWrapped(com.google.privacy.dlp.v2.KmsWrappedCryptoKey value) {
       if (kmsWrappedBuilder_ == null) {
         if (value == null) {
@@ -960,9 +950,7 @@ private static final long serialVersionUID = 0L;
       sourceCase_ = 3;
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
     public Builder setKmsWrapped(
         com.google.privacy.dlp.v2.KmsWrappedCryptoKey.Builder builderForValue) {
       if (kmsWrappedBuilder_ == null) {
@@ -974,15 +962,16 @@ private static final long serialVersionUID = 0L;
       sourceCase_ = 3;
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
     public Builder mergeKmsWrapped(com.google.privacy.dlp.v2.KmsWrappedCryptoKey value) {
       if (kmsWrappedBuilder_ == null) {
-        if (sourceCase_ == 3 &&
-            source_ != com.google.privacy.dlp.v2.KmsWrappedCryptoKey.getDefaultInstance()) {
-          source_ = com.google.privacy.dlp.v2.KmsWrappedCryptoKey.newBuilder((com.google.privacy.dlp.v2.KmsWrappedCryptoKey) source_)
-              .mergeFrom(value).buildPartial();
+        if (sourceCase_ == 3
+            && source_ != com.google.privacy.dlp.v2.KmsWrappedCryptoKey.getDefaultInstance()) {
+          source_ =
+              com.google.privacy.dlp.v2.KmsWrappedCryptoKey.newBuilder(
+                      (com.google.privacy.dlp.v2.KmsWrappedCryptoKey) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           source_ = value;
         }
@@ -996,9 +985,7 @@ private static final long serialVersionUID = 0L;
       sourceCase_ = 3;
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
     public Builder clearKmsWrapped() {
       if (kmsWrappedBuilder_ == null) {
         if (sourceCase_ == 3) {
@@ -1015,15 +1002,11 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
     public com.google.privacy.dlp.v2.KmsWrappedCryptoKey.Builder getKmsWrappedBuilder() {
       return getKmsWrappedFieldBuilder().getBuilder();
     }
-    /**
-     * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
     public com.google.privacy.dlp.v2.KmsWrappedCryptoKeyOrBuilder getKmsWrappedOrBuilder() {
       if ((sourceCase_ == 3) && (kmsWrappedBuilder_ != null)) {
         return kmsWrappedBuilder_.getMessageOrBuilder();
@@ -1034,30 +1017,34 @@ private static final long serialVersionUID = 0L;
         return com.google.privacy.dlp.v2.KmsWrappedCryptoKey.getDefaultInstance();
       }
     }
-    /**
-     * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.KmsWrappedCryptoKey, com.google.privacy.dlp.v2.KmsWrappedCryptoKey.Builder, com.google.privacy.dlp.v2.KmsWrappedCryptoKeyOrBuilder> 
+            com.google.privacy.dlp.v2.KmsWrappedCryptoKey,
+            com.google.privacy.dlp.v2.KmsWrappedCryptoKey.Builder,
+            com.google.privacy.dlp.v2.KmsWrappedCryptoKeyOrBuilder>
         getKmsWrappedFieldBuilder() {
       if (kmsWrappedBuilder_ == null) {
         if (!(sourceCase_ == 3)) {
           source_ = com.google.privacy.dlp.v2.KmsWrappedCryptoKey.getDefaultInstance();
         }
-        kmsWrappedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.KmsWrappedCryptoKey, com.google.privacy.dlp.v2.KmsWrappedCryptoKey.Builder, com.google.privacy.dlp.v2.KmsWrappedCryptoKeyOrBuilder>(
+        kmsWrappedBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.KmsWrappedCryptoKey,
+                com.google.privacy.dlp.v2.KmsWrappedCryptoKey.Builder,
+                com.google.privacy.dlp.v2.KmsWrappedCryptoKeyOrBuilder>(
                 (com.google.privacy.dlp.v2.KmsWrappedCryptoKey) source_,
                 getParentForChildren(),
                 isClean());
         source_ = null;
       }
       sourceCase_ = 3;
-      onChanged();;
+      onChanged();
+      ;
       return kmsWrappedBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1067,12 +1054,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CryptoKey)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CryptoKey)
   private static final com.google.privacy.dlp.v2.CryptoKey DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.CryptoKey();
   }
@@ -1081,16 +1068,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CryptoKey>
-      PARSER = new com.google.protobuf.AbstractParser<CryptoKey>() {
-    @java.lang.Override
-    public CryptoKey parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CryptoKey(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<CryptoKey> PARSER =
+      new com.google.protobuf.AbstractParser<CryptoKey>() {
+        @java.lang.Override
+        public CryptoKey parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CryptoKey(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<CryptoKey> parser() {
     return PARSER;
@@ -1105,6 +1092,4 @@ private static final long serialVersionUID = 0L;
   public com.google.privacy.dlp.v2.CryptoKey getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

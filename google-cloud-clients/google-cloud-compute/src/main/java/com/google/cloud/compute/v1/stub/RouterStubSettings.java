@@ -107,7 +107,8 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
           .build();
 
   private final PagedCallSettings<
-          AggregatedListRoutersHttpRequest, RouterAggregatedList,
+          AggregatedListRoutersHttpRequest,
+          RouterAggregatedList,
           AggregatedListRoutersPagedResponse>
       aggregatedListRoutersSettings;
   private final UnaryCallSettings<DeleteRouterHttpRequest, Operation> deleteRouterSettings;
@@ -124,7 +125,8 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
 
   /** Returns the object with the settings used for calls to aggregatedListRouters. */
   public PagedCallSettings<
-          AggregatedListRoutersHttpRequest, RouterAggregatedList,
+          AggregatedListRoutersHttpRequest,
+          RouterAggregatedList,
           AggregatedListRoutersPagedResponse>
       aggregatedListRoutersSettings() {
     return aggregatedListRoutersSettings;
@@ -341,11 +343,13 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListRoutersHttpRequest, RouterAggregatedList,
+          AggregatedListRoutersHttpRequest,
+          RouterAggregatedList,
           AggregatedListRoutersPagedResponse>
       AGGREGATED_LIST_ROUTERS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListRoutersHttpRequest, RouterAggregatedList,
+              AggregatedListRoutersHttpRequest,
+              RouterAggregatedList,
               AggregatedListRoutersPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListRoutersPagedResponse> getFuturePagedResponse(
@@ -383,7 +387,8 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            AggregatedListRoutersHttpRequest, RouterAggregatedList,
+            AggregatedListRoutersHttpRequest,
+            RouterAggregatedList,
             AggregatedListRoutersPagedResponse>
         aggregatedListRoutersSettings;
     private final UnaryCallSettings.Builder<DeleteRouterHttpRequest, Operation>
@@ -580,7 +585,8 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListRouters. */
     public PagedCallSettings.Builder<
-            AggregatedListRoutersHttpRequest, RouterAggregatedList,
+            AggregatedListRoutersHttpRequest,
+            RouterAggregatedList,
             AggregatedListRoutersPagedResponse>
         aggregatedListRoutersSettings() {
       return aggregatedListRoutersSettings;

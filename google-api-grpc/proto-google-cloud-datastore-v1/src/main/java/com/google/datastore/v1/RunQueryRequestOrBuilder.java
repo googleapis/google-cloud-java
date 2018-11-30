@@ -3,11 +3,14 @@
 
 package com.google.datastore.v1;
 
-public interface RunQueryRequestOrBuilder extends
+public interface RunQueryRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.datastore.v1.RunQueryRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The ID of the project against which to make the request.
    * </pre>
@@ -16,16 +19,19 @@ public interface RunQueryRequestOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * The ID of the project against which to make the request.
    * </pre>
    *
    * <code>string project_id = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Entities are partitioned into subsets, identified by a partition ID.
    * Queries are scoped to a single partition.
@@ -37,6 +43,8 @@ public interface RunQueryRequestOrBuilder extends
    */
   boolean hasPartitionId();
   /**
+   *
+   *
    * <pre>
    * Entities are partitioned into subsets, identified by a partition ID.
    * Queries are scoped to a single partition.
@@ -48,6 +56,8 @@ public interface RunQueryRequestOrBuilder extends
    */
   com.google.datastore.v1.PartitionId getPartitionId();
   /**
+   *
+   *
    * <pre>
    * Entities are partitioned into subsets, identified by a partition ID.
    * Queries are scoped to a single partition.
@@ -60,6 +70,8 @@ public interface RunQueryRequestOrBuilder extends
   com.google.datastore.v1.PartitionIdOrBuilder getPartitionIdOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The options for this query.
    * </pre>
@@ -68,6 +80,8 @@ public interface RunQueryRequestOrBuilder extends
    */
   boolean hasReadOptions();
   /**
+   *
+   *
    * <pre>
    * The options for this query.
    * </pre>
@@ -76,6 +90,8 @@ public interface RunQueryRequestOrBuilder extends
    */
   com.google.datastore.v1.ReadOptions getReadOptions();
   /**
+   *
+   *
    * <pre>
    * The options for this query.
    * </pre>
@@ -85,6 +101,8 @@ public interface RunQueryRequestOrBuilder extends
   com.google.datastore.v1.ReadOptionsOrBuilder getReadOptionsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The query to run.
    * </pre>
@@ -93,6 +111,8 @@ public interface RunQueryRequestOrBuilder extends
    */
   boolean hasQuery();
   /**
+   *
+   *
    * <pre>
    * The query to run.
    * </pre>
@@ -101,6 +121,8 @@ public interface RunQueryRequestOrBuilder extends
    */
   com.google.datastore.v1.Query getQuery();
   /**
+   *
+   *
    * <pre>
    * The query to run.
    * </pre>
@@ -110,6 +132,8 @@ public interface RunQueryRequestOrBuilder extends
   com.google.datastore.v1.QueryOrBuilder getQueryOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The GQL query to run.
    * </pre>
@@ -118,6 +142,8 @@ public interface RunQueryRequestOrBuilder extends
    */
   boolean hasGqlQuery();
   /**
+   *
+   *
    * <pre>
    * The GQL query to run.
    * </pre>
@@ -126,6 +152,8 @@ public interface RunQueryRequestOrBuilder extends
    */
   com.google.datastore.v1.GqlQuery getGqlQuery();
   /**
+   *
+   *
    * <pre>
    * The GQL query to run.
    * </pre>

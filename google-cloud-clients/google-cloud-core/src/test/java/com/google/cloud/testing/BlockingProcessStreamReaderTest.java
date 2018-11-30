@@ -21,41 +21,40 @@ import static org.junit.Assert.assertEquals;
 import com.google.api.client.util.Charsets;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
-
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.Timeout;
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.Timeout;
 
 public class BlockingProcessStreamReaderTest {
 
   private static final String BLOCK_UNTIL = "Dev App Server is now running";
-  private static final String OUTPUT = "First Line\n"
-      + "Second Line\n"
-      + BLOCK_UNTIL;
-  private static final String OUTPUT_WITH_LOGS = "First Line\n"
-      + BLOCK_UNTIL + "\n"
-      + "Nov 08, 2016 2:05:44 PM io.netty.buffer.PooledByteBufAllocator <clinit>\n"
-      + "INFO: log line 1\n"
-      + "log line 2\n"
-      + "Nov 08, 2016 2:05:44 PM io.netty.buffer.PooledByteBufAllocator <clinit>\n"
-      + "FINE: log line 3\n";
-  private static final String TAGGED_OUTPUT_WITH_LOGS = "[emulator] First Line\n"
-      + "[emulator]" + BLOCK_UNTIL + "\n"
-      + "[emulator] Nov 08, 2016 2:05:44 PM io.netty.buffer.PooledByteBufAllocator <clinit>\n"
-      + "[emulator] INFO: log line 1\n"
-      + "[emulator] log line 2\n"
-      + "[emulator] Nov 08, 2016 2:05:44 PM io.netty.buffer.PooledByteBufAllocator <clinit>\n"
-      + "[emulator] FINE: log line 3\n";
+  private static final String OUTPUT = "First Line\n" + "Second Line\n" + BLOCK_UNTIL;
+  private static final String OUTPUT_WITH_LOGS =
+      "First Line\n"
+          + BLOCK_UNTIL
+          + "\n"
+          + "Nov 08, 2016 2:05:44 PM io.netty.buffer.PooledByteBufAllocator <clinit>\n"
+          + "INFO: log line 1\n"
+          + "log line 2\n"
+          + "Nov 08, 2016 2:05:44 PM io.netty.buffer.PooledByteBufAllocator <clinit>\n"
+          + "FINE: log line 3\n";
+  private static final String TAGGED_OUTPUT_WITH_LOGS =
+      "[emulator] First Line\n"
+          + "[emulator]"
+          + BLOCK_UNTIL
+          + "\n"
+          + "[emulator] Nov 08, 2016 2:05:44 PM io.netty.buffer.PooledByteBufAllocator <clinit>\n"
+          + "[emulator] INFO: log line 1\n"
+          + "[emulator] log line 2\n"
+          + "[emulator] Nov 08, 2016 2:05:44 PM io.netty.buffer.PooledByteBufAllocator <clinit>\n"
+          + "[emulator] FINE: log line 3\n";
 
-
-  @Rule
-  public Timeout globalTimeout = Timeout.seconds(10);
+  @Rule public Timeout globalTimeout = Timeout.seconds(10);
 
   private static final class TestLogger extends Logger {
 
@@ -79,7 +78,8 @@ public class BlockingProcessStreamReaderTest {
     TestLogger logger = new TestLogger();
     InputStream stream = new ByteArrayInputStream(OUTPUT_WITH_LOGS.getBytes(Charsets.UTF_8));
     BlockingProcessStreamReader.start("emulator", stream, BLOCK_UNTIL, logger).join();
-    assertEquals("[emulator] log line 1" + System.lineSeparator() + "[emulator] log line 2",
+    assertEquals(
+        "[emulator] log line 1" + System.lineSeparator() + "[emulator] log line 2",
         logger.getLogs().get(Level.INFO).iterator().next());
     assertEquals("[emulator] log line 3", logger.getLogs().get(Level.FINE).iterator().next());
     stream.close();
@@ -90,7 +90,8 @@ public class BlockingProcessStreamReaderTest {
     TestLogger logger = new TestLogger();
     InputStream stream = new ByteArrayInputStream(TAGGED_OUTPUT_WITH_LOGS.getBytes(Charsets.UTF_8));
     BlockingProcessStreamReader.start("emulator", stream, BLOCK_UNTIL, logger).join();
-    assertEquals("[emulator] log line 1" + System.lineSeparator() + "[emulator] log line 2",
+    assertEquals(
+        "[emulator] log line 1" + System.lineSeparator() + "[emulator] log line 2",
         logger.getLogs().get(Level.INFO).iterator().next());
     assertEquals("[emulator] log line 3", logger.getLogs().get(Level.FINE).iterator().next());
     stream.close();

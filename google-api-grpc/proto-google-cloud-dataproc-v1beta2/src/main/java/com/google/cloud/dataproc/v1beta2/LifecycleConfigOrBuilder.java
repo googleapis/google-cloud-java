@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface LifecycleConfigOrBuilder extends
+public interface LifecycleConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.LifecycleConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional. The duration to keep the cluster alive while idling.
    * Passing this threshold will cause the cluster to be
@@ -20,6 +23,8 @@ public interface LifecycleConfigOrBuilder extends
    */
   boolean hasIdleDeleteTtl();
   /**
+   *
+   *
    * <pre>
    * Optional. The duration to keep the cluster alive while idling.
    * Passing this threshold will cause the cluster to be
@@ -32,6 +37,8 @@ public interface LifecycleConfigOrBuilder extends
    */
   com.google.protobuf.Duration getIdleDeleteTtl();
   /**
+   *
+   *
    * <pre>
    * Optional. The duration to keep the cluster alive while idling.
    * Passing this threshold will cause the cluster to be
@@ -45,6 +52,8 @@ public interface LifecycleConfigOrBuilder extends
   com.google.protobuf.DurationOrBuilder getIdleDeleteTtlOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The time when cluster will be auto-deleted.
    * </pre>
@@ -53,6 +62,8 @@ public interface LifecycleConfigOrBuilder extends
    */
   boolean hasAutoDeleteTime();
   /**
+   *
+   *
    * <pre>
    * Optional. The time when cluster will be auto-deleted.
    * </pre>
@@ -61,6 +72,8 @@ public interface LifecycleConfigOrBuilder extends
    */
   com.google.protobuf.Timestamp getAutoDeleteTime();
   /**
+   *
+   *
    * <pre>
    * Optional. The time when cluster will be auto-deleted.
    * </pre>
@@ -70,6 +83,8 @@ public interface LifecycleConfigOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getAutoDeleteTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The lifetime duration of cluster. The cluster will be
    * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
@@ -80,6 +95,8 @@ public interface LifecycleConfigOrBuilder extends
    */
   boolean hasAutoDeleteTtl();
   /**
+   *
+   *
    * <pre>
    * Optional. The lifetime duration of cluster. The cluster will be
    * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
@@ -90,6 +107,8 @@ public interface LifecycleConfigOrBuilder extends
    */
   com.google.protobuf.Duration getAutoDeleteTtl();
   /**
+   *
+   *
    * <pre>
    * Optional. The lifetime duration of cluster. The cluster will be
    * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.

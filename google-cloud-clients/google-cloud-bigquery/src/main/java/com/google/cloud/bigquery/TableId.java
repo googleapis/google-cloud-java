@@ -25,9 +25,7 @@ import com.google.common.base.Strings;
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * Google BigQuery Table identity.
- */
+/** Google BigQuery Table identity. */
 public final class TableId implements Serializable {
 
   static final Function<TableReference, TableId> FROM_PB_FUNCTION =
@@ -50,26 +48,17 @@ public final class TableId implements Serializable {
   private final String dataset;
   private final String table;
 
-
-  /**
-   * Returns project's user-defined id.
-   */
+  /** Returns project's user-defined id. */
   public String getProject() {
     return project;
   }
 
-
-  /**
-   * Returns dataset's user-defined id.
-   */
+  /** Returns dataset's user-defined id. */
   public String getDataset() {
     return dataset;
   }
 
-
-  /**
-   * Returns table's user-defined id.
-   */
+  /** Returns table's user-defined id. */
   public String getTable() {
     return table;
   }
@@ -80,25 +69,19 @@ public final class TableId implements Serializable {
     this.table = table;
   }
 
-  /**
-   * Creates a table identity given project's, dataset's and table's user-defined ids.
-   */
+  /** Creates a table identity given project's, dataset's and table's user-defined ids. */
   public static TableId of(String project, String dataset, String table) {
     return new TableId(checkNotNull(project), checkNotNull(dataset), checkNotNull(table));
   }
 
-  /**
-   * Creates a table identity given dataset's and table's user-defined ids.
-   */
+  /** Creates a table identity given dataset's and table's user-defined ids. */
   public static TableId of(String dataset, String table) {
     return new TableId(null, checkNotNull(dataset), checkNotNull(table));
   }
 
   @Override
   public boolean equals(Object obj) {
-    return obj == this
-        || obj instanceof TableId
-        && Objects.equals(toPb(), ((TableId) obj).toPb());
+    return obj == this || obj instanceof TableId && Objects.equals(toPb(), ((TableId) obj).toPb());
   }
 
   @Override
@@ -112,8 +95,8 @@ public final class TableId implements Serializable {
   }
 
   TableId setProjectId(String projectId) {
-    Preconditions
-        .checkArgument(!Strings.isNullOrEmpty(projectId), "Provided projectId is null or empty");
+    Preconditions.checkArgument(
+        !Strings.isNullOrEmpty(projectId), "Provided projectId is null or empty");
     return TableId.of(projectId, getDataset(), getTable());
   }
 
@@ -122,9 +105,6 @@ public final class TableId implements Serializable {
   }
 
   static TableId fromPb(TableReference tableRef) {
-    return new TableId(
-        tableRef.getProjectId(),
-        tableRef.getDatasetId(),
-        tableRef.getTableId());
+    return new TableId(tableRef.getProjectId(), tableRef.getDatasetId(), tableRef.getTableId());
   }
 }

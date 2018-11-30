@@ -3,36 +3,49 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface OperationMetadataOrBuilder extends
+public interface OperationMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.OperationMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Details of CreateModel operation.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;</code>
+   * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;
+   * </code>
    */
   boolean hasCreateModelDetails();
   /**
+   *
+   *
    * <pre>
    * Details of CreateModel operation.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;</code>
+   * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;
+   * </code>
    */
   com.google.cloud.automl.v1beta1.CreateModelOperationMetadata getCreateModelDetails();
   /**
+   *
+   *
    * <pre>
    * Details of CreateModel operation.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;</code>
+   * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;
+   * </code>
    */
-  com.google.cloud.automl.v1beta1.CreateModelOperationMetadataOrBuilder getCreateModelDetailsOrBuilder();
+  com.google.cloud.automl.v1beta1.CreateModelOperationMetadataOrBuilder
+      getCreateModelDetailsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Progress of operation. Range: [0, 100].
    * </pre>
@@ -42,6 +55,8 @@ public interface OperationMetadataOrBuilder extends
   int getProgressPercent();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Partial failures encountered.
    * E.g. single files that couldn't be read.
@@ -51,9 +66,10 @@ public interface OperationMetadataOrBuilder extends
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
-  java.util.List<com.google.rpc.Status> 
-      getPartialFailuresList();
+  java.util.List<com.google.rpc.Status> getPartialFailuresList();
   /**
+   *
+   *
    * <pre>
    * Output only. Partial failures encountered.
    * E.g. single files that couldn't be read.
@@ -65,6 +81,8 @@ public interface OperationMetadataOrBuilder extends
    */
   com.google.rpc.Status getPartialFailures(int index);
   /**
+   *
+   *
    * <pre>
    * Output only. Partial failures encountered.
    * E.g. single files that couldn't be read.
@@ -76,6 +94,8 @@ public interface OperationMetadataOrBuilder extends
    */
   int getPartialFailuresCount();
   /**
+   *
+   *
    * <pre>
    * Output only. Partial failures encountered.
    * E.g. single files that couldn't be read.
@@ -85,9 +105,10 @@ public interface OperationMetadataOrBuilder extends
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
-  java.util.List<? extends com.google.rpc.StatusOrBuilder> 
-      getPartialFailuresOrBuilderList();
+  java.util.List<? extends com.google.rpc.StatusOrBuilder> getPartialFailuresOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Output only. Partial failures encountered.
    * E.g. single files that couldn't be read.
@@ -97,10 +118,11 @@ public interface OperationMetadataOrBuilder extends
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
-  com.google.rpc.StatusOrBuilder getPartialFailuresOrBuilder(
-      int index);
+  com.google.rpc.StatusOrBuilder getPartialFailuresOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Output only. Time when the operation was created.
    * </pre>
@@ -109,6 +131,8 @@ public interface OperationMetadataOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Time when the operation was created.
    * </pre>
@@ -117,6 +141,8 @@ public interface OperationMetadataOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Time when the operation was created.
    * </pre>
@@ -126,6 +152,8 @@ public interface OperationMetadataOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Time when the operation was updated for the last time.
    * </pre>
@@ -134,6 +162,8 @@ public interface OperationMetadataOrBuilder extends
    */
   boolean hasUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Time when the operation was updated for the last time.
    * </pre>
@@ -142,6 +172,8 @@ public interface OperationMetadataOrBuilder extends
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Time when the operation was updated for the last time.
    * </pre>

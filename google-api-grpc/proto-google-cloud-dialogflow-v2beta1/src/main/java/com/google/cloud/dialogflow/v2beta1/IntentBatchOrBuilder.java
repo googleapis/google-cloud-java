@@ -3,20 +3,24 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface IntentBatchOrBuilder extends
+public interface IntentBatchOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.IntentBatch)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A collection of intents.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 1;</code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2beta1.Intent> 
-      getIntentsList();
+  java.util.List<com.google.cloud.dialogflow.v2beta1.Intent> getIntentsList();
   /**
+   *
+   *
    * <pre>
    * A collection of intents.
    * </pre>
@@ -25,6 +29,8 @@ public interface IntentBatchOrBuilder extends
    */
   com.google.cloud.dialogflow.v2beta1.Intent getIntents(int index);
   /**
+   *
+   *
    * <pre>
    * A collection of intents.
    * </pre>
@@ -33,21 +39,24 @@ public interface IntentBatchOrBuilder extends
    */
   int getIntentsCount();
   /**
+   *
+   *
    * <pre>
    * A collection of intents.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.IntentOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.IntentOrBuilder>
       getIntentsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A collection of intents.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent intents = 1;</code>
    */
-  com.google.cloud.dialogflow.v2beta1.IntentOrBuilder getIntentsOrBuilder(
-      int index);
+  com.google.cloud.dialogflow.v2beta1.IntentOrBuilder getIntentsOrBuilder(int index);
 }

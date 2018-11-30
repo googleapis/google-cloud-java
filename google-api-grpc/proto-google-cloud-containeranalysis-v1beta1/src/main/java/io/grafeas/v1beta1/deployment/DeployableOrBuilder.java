@@ -3,20 +3,24 @@
 
 package io.grafeas.v1beta1.deployment;
 
-public interface DeployableOrBuilder extends
+public interface DeployableOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.deployment.Deployable)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Resource URI for the artifact being deployed.
    * </pre>
    *
    * <code>repeated string resource_uri = 1;</code>
    */
-  java.util.List<java.lang.String>
-      getResourceUriList();
+  java.util.List<java.lang.String> getResourceUriList();
   /**
+   *
+   *
    * <pre>
    * Resource URI for the artifact being deployed.
    * </pre>
@@ -25,6 +29,8 @@ public interface DeployableOrBuilder extends
    */
   int getResourceUriCount();
   /**
+   *
+   *
    * <pre>
    * Resource URI for the artifact being deployed.
    * </pre>
@@ -33,12 +39,13 @@ public interface DeployableOrBuilder extends
    */
   java.lang.String getResourceUri(int index);
   /**
+   *
+   *
    * <pre>
    * Resource URI for the artifact being deployed.
    * </pre>
    *
    * <code>repeated string resource_uri = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getResourceUriBytes(int index);
+  com.google.protobuf.ByteString getResourceUriBytes(int index);
 }

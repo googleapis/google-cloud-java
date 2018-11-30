@@ -26,7 +26,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
@@ -35,9 +34,9 @@ import java.util.Objects;
 /**
  * Google Cloud BigQuery insert all response. Objects of this class possibly contain errors for an
  * {@link InsertAllRequest}. If a row failed to be inserted, the non-empty list of errors associated
- * to that row's index can be obtained with {@link InsertAllResponse#getErrorsFor(long)}.
- * {@link InsertAllResponse#getInsertErrors()} can be used to return all errors caused by a
- * {@link InsertAllRequest} as a map.
+ * to that row's index can be obtained with {@link InsertAllResponse#getErrorsFor(long)}. {@link
+ * InsertAllResponse#getInsertErrors()} can be used to return all errors caused by a {@link
+ * InsertAllRequest} as a map.
  */
 public class InsertAllResponse implements Serializable {
 
@@ -46,10 +45,11 @@ public class InsertAllResponse implements Serializable {
   private final Map<Long, List<BigQueryError>> insertErrors;
 
   InsertAllResponse(Map<Long, List<BigQueryError>> insertErrors) {
-    this.insertErrors = insertErrors != null ? ImmutableMap.copyOf(insertErrors)
-        : ImmutableMap.<Long, List<BigQueryError>>of();
+    this.insertErrors =
+        insertErrors != null
+            ? ImmutableMap.copyOf(insertErrors)
+            : ImmutableMap.<Long, List<BigQueryError>>of();
   }
-
 
   /**
    * Returns all insertion errors as a map whose keys are indexes of rows that failed to insert.
@@ -59,10 +59,7 @@ public class InsertAllResponse implements Serializable {
     return insertErrors;
   }
 
-
-  /**
-   * Returns errors for the provided row index. If no error exists returns {@code null}.
-   */
+  /** Returns errors for the provided row index. If no error exists returns {@code null}. */
   public List<BigQueryError> getErrorsFor(long index) {
     return insertErrors.get(index);
   }
@@ -84,8 +81,8 @@ public class InsertAllResponse implements Serializable {
   public final boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(InsertAllResponse.class)
-        && Objects.equals(insertErrors, ((InsertAllResponse) obj).insertErrors);
+            && obj.getClass().equals(InsertAllResponse.class)
+            && Objects.equals(insertErrors, ((InsertAllResponse) obj).insertErrors);
   }
 
   @Override
@@ -96,15 +93,19 @@ public class InsertAllResponse implements Serializable {
   TableDataInsertAllResponse toPb() {
     TableDataInsertAllResponse responsePb = new TableDataInsertAllResponse();
     if (!insertErrors.isEmpty()) {
-      responsePb.setInsertErrors(ImmutableList.copyOf(Iterables.transform(insertErrors.entrySet(),
-          new Function<Map.Entry<Long, List<BigQueryError>>, InsertErrors>() {
-            @Override
-            public InsertErrors apply(Map.Entry<Long, List<BigQueryError>> entry) {
-              return new InsertErrors()
-                  .setIndex(entry.getKey())
-                  .setErrors(Lists.transform(entry.getValue(), BigQueryError.TO_PB_FUNCTION));
-            }
-          })));
+      responsePb.setInsertErrors(
+          ImmutableList.copyOf(
+              Iterables.transform(
+                  insertErrors.entrySet(),
+                  new Function<Map.Entry<Long, List<BigQueryError>>, InsertErrors>() {
+                    @Override
+                    public InsertErrors apply(Map.Entry<Long, List<BigQueryError>> entry) {
+                      return new InsertErrors()
+                          .setIndex(entry.getKey())
+                          .setErrors(
+                              Lists.transform(entry.getValue(), BigQueryError.TO_PB_FUNCTION));
+                    }
+                  })));
     }
     return responsePb;
   }
@@ -115,9 +116,11 @@ public class InsertAllResponse implements Serializable {
       List<InsertErrors> errorsPb = responsePb.getInsertErrors();
       insertErrors = Maps.newHashMapWithExpectedSize(errorsPb.size());
       for (InsertErrors errorPb : errorsPb) {
-        insertErrors.put(errorPb.getIndex(), Lists.transform(
-            errorPb.getErrors() != null ? errorPb.getErrors() : ImmutableList.<ErrorProto>of(),
-            BigQueryError.FROM_PB_FUNCTION));
+        insertErrors.put(
+            errorPb.getIndex(),
+            Lists.transform(
+                errorPb.getErrors() != null ? errorPb.getErrors() : ImmutableList.<ErrorProto>of(),
+                BigQueryError.FROM_PB_FUNCTION));
       }
     }
     return new InsertAllResponse(insertErrors);

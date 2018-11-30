@@ -14,20 +14,21 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class FindingName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("organizations/{organization}/sources/{source}/findings/{finding}");
+      PathTemplate.createWithoutUrlEncoding(
+          "organizations/{organization}/sources/{source}/findings/{finding}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -62,20 +63,16 @@ public class FindingName implements ResourceName {
   }
 
   public static FindingName of(String organization, String source, String finding) {
-    return newBuilder()
-      .setOrganization(organization)
-      .setSource(source)
-      .setFinding(finding)
-      .build();
+    return newBuilder().setOrganization(organization).setSource(source).setFinding(finding).build();
   }
 
   public static String format(String organization, String source, String finding) {
     return newBuilder()
-      .setOrganization(organization)
-      .setSource(source)
-      .setFinding(finding)
-      .build()
-      .toString();
+        .setOrganization(organization)
+        .setSource(source)
+        .setFinding(finding)
+        .build()
+        .toString();
   }
 
   public static FindingName parse(String formattedString) {
@@ -83,7 +80,8 @@ public class FindingName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "FindingName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "FindingName.parse: formattedString not in valid format");
     return of(matchMap.get("organization"), matchMap.get("source"), matchMap.get("finding"));
   }
 
@@ -132,7 +130,8 @@ public class FindingName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("organization", organization, "source", source, "finding", finding);
+    return PATH_TEMPLATE.instantiate(
+        "organization", organization, "source", source, "finding", finding);
   }
 
   /** Builder for FindingName. */
@@ -169,8 +168,7 @@ public class FindingName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(FindingName findingName) {
       organization = findingName.organization;
@@ -209,4 +207,3 @@ public class FindingName implements ResourceName {
     return h;
   }
 }
-

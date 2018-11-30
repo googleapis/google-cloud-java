@@ -38,13 +38,12 @@ public class EnhancedBigtableTableAdminStub extends GrpcBigtableTableAdminStub {
   private final AwaitReplicationCallable awaitReplicationCallable;
 
   public static EnhancedBigtableTableAdminStub createEnhanced(
-      BigtableTableAdminStubSettings settings)
-      throws IOException {
+      BigtableTableAdminStubSettings settings) throws IOException {
     return new EnhancedBigtableTableAdminStub(settings, ClientContext.create(settings));
   }
 
-  private EnhancedBigtableTableAdminStub(BigtableTableAdminStubSettings settings,
-      ClientContext clientContext) throws IOException {
+  private EnhancedBigtableTableAdminStub(
+      BigtableTableAdminStubSettings settings, ClientContext clientContext) throws IOException {
     super(settings, clientContext);
 
     this.settings = settings;
@@ -54,32 +53,32 @@ public class EnhancedBigtableTableAdminStub extends GrpcBigtableTableAdminStub {
 
   private AwaitReplicationCallable createAwaitReplicationCallable() {
     // TODO(igorbernstein2): expose polling settings
-    RetrySettings pollingSettings = RetrySettings.newBuilder()
-        // use overall timeout from checkConsistencyCallable
-        // NOTE: The overall timeout might exceed this value due to underlying retries
-        .setTotalTimeout(settings.checkConsistencySettings().getRetrySettings().getTotalTimeout())
-        // Use constant polling with jitter
-        .setInitialRetryDelay(Duration.ofSeconds(10))
-        .setRetryDelayMultiplier(1.0)
-        .setMaxRetryDelay(Duration.ofSeconds(10))
-        .setJittered(true)
-        // These rpc timeouts are ignored, instead the rpc timeouts defined for
-        // generateConsistencyToken and checkConsistency callables will be used.
-        .setInitialRpcTimeout(Duration.ZERO)
-        .setMaxRpcTimeout(Duration.ZERO)
-        .setRpcTimeoutMultiplier(1.0)
-        .build();
+    RetrySettings pollingSettings =
+        RetrySettings.newBuilder()
+            // use overall timeout from checkConsistencyCallable
+            // NOTE: The overall timeout might exceed this value due to underlying retries
+            .setTotalTimeout(
+                settings.checkConsistencySettings().getRetrySettings().getTotalTimeout())
+            // Use constant polling with jitter
+            .setInitialRetryDelay(Duration.ofSeconds(10))
+            .setRetryDelayMultiplier(1.0)
+            .setMaxRetryDelay(Duration.ofSeconds(10))
+            .setJittered(true)
+            // These rpc timeouts are ignored, instead the rpc timeouts defined for
+            // generateConsistencyToken and checkConsistency callables will be used.
+            .setInitialRpcTimeout(Duration.ZERO)
+            .setMaxRpcTimeout(Duration.ZERO)
+            .setRpcTimeoutMultiplier(1.0)
+            .build();
 
     return AwaitReplicationCallable.create(
         generateConsistencyTokenCallable(),
         checkConsistencyCallable(),
         clientContext,
-        pollingSettings
-    );
+        pollingSettings);
   }
 
   public UnaryCallable<TableName, Void> awaitReplicationCallable() {
     return awaitReplicationCallable;
   }
 }
-

@@ -19,12 +19,9 @@ package com.google.cloud.compute.deprecated;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
 
-/**
- * Base class for Google Compute Engine operation identities.
- */
+/** Base class for Google Compute Engine operation identities. */
 public abstract class OperationId extends ResourceId {
 
   private static final long serialVersionUID = -5502909279744388604L;
@@ -36,9 +33,7 @@ public abstract class OperationId extends ResourceId {
     this.operation = checkNotNull(operation);
   }
 
-  /**
-   * Possible types for a Google Compute Engine operation identity.
-   */
+  /** Possible types for a Google Compute Engine operation identity. */
   enum Type {
     /**
      * Global operations are those operations that deal with global resources, such as global
@@ -59,14 +54,10 @@ public abstract class OperationId extends ResourceId {
     ZONE
   }
 
-  /**
-   * Returns the type of this operation identity.
-   */
+  /** Returns the type of this operation identity. */
   public abstract Type getType();
 
-  /**
-   * Returns the name of the operation resource.
-   */
+  /** Returns the name of the operation resource. */
   public String getOperation() {
     return operation;
   }

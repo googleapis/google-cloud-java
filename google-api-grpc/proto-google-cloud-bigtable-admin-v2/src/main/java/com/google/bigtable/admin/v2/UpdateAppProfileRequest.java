@@ -4,30 +4,33 @@
 package com.google.bigtable.admin.v2;
 
 /**
+ *
+ *
  * <pre>
  * Request message for BigtableInstanceAdmin.UpdateAppProfile.
  * </pre>
  *
  * Protobuf type {@code google.bigtable.admin.v2.UpdateAppProfileRequest}
  */
-public  final class UpdateAppProfileRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class UpdateAppProfileRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.UpdateAppProfileRequest)
     UpdateAppProfileRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use UpdateAppProfileRequest.newBuilder() to construct.
   private UpdateAppProfileRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private UpdateAppProfileRequest() {
     ignoreWarnings_ = false;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private UpdateAppProfileRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,72 +50,81 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.bigtable.admin.v2.AppProfile.Builder subBuilder = null;
-            if (appProfile_ != null) {
-              subBuilder = appProfile_.toBuilder();
-            }
-            appProfile_ = input.readMessage(com.google.bigtable.admin.v2.AppProfile.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(appProfile_);
-              appProfile_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.bigtable.admin.v2.AppProfile.Builder subBuilder = null;
+              if (appProfile_ != null) {
+                subBuilder = appProfile_.toBuilder();
+              }
+              appProfile_ =
+                  input.readMessage(
+                      com.google.bigtable.admin.v2.AppProfile.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(appProfile_);
+                appProfile_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.protobuf.FieldMask.Builder subBuilder = null;
-            if (updateMask_ != null) {
-              subBuilder = updateMask_.toBuilder();
+              break;
             }
-            updateMask_ = input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(updateMask_);
-              updateMask_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (updateMask_ != null) {
+                subBuilder = updateMask_.toBuilder();
+              }
+              updateMask_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateMask_);
+                updateMask_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 24: {
-
-            ignoreWarnings_ = input.readBool();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 24:
+            {
+              ignoreWarnings_ = input.readBool();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.bigtable.admin.v2.BigtableInstanceAdminProto.internal_static_google_bigtable_admin_v2_UpdateAppProfileRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.bigtable.admin.v2.BigtableInstanceAdminProto
+        .internal_static_google_bigtable_admin_v2_UpdateAppProfileRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.bigtable.admin.v2.BigtableInstanceAdminProto.internal_static_google_bigtable_admin_v2_UpdateAppProfileRequest_fieldAccessorTable
+    return com.google.bigtable.admin.v2.BigtableInstanceAdminProto
+        .internal_static_google_bigtable_admin_v2_UpdateAppProfileRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.bigtable.admin.v2.UpdateAppProfileRequest.class, com.google.bigtable.admin.v2.UpdateAppProfileRequest.Builder.class);
+            com.google.bigtable.admin.v2.UpdateAppProfileRequest.class,
+            com.google.bigtable.admin.v2.UpdateAppProfileRequest.Builder.class);
   }
 
   public static final int APP_PROFILE_FIELD_NUMBER = 1;
   private com.google.bigtable.admin.v2.AppProfile appProfile_;
   /**
+   *
+   *
    * <pre>
    * The app profile which will (partially) replace the current value.
    * </pre>
@@ -123,6 +135,8 @@ private static final long serialVersionUID = 0L;
     return appProfile_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The app profile which will (partially) replace the current value.
    * </pre>
@@ -130,9 +144,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
    */
   public com.google.bigtable.admin.v2.AppProfile getAppProfile() {
-    return appProfile_ == null ? com.google.bigtable.admin.v2.AppProfile.getDefaultInstance() : appProfile_;
+    return appProfile_ == null
+        ? com.google.bigtable.admin.v2.AppProfile.getDefaultInstance()
+        : appProfile_;
   }
   /**
+   *
+   *
    * <pre>
    * The app profile which will (partially) replace the current value.
    * </pre>
@@ -146,6 +164,8 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
   /**
+   *
+   *
    * <pre>
    * The subset of app profile fields which should be replaced.
    * If unset, all fields will be replaced.
@@ -157,6 +177,8 @@ private static final long serialVersionUID = 0L;
     return updateMask_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The subset of app profile fields which should be replaced.
    * If unset, all fields will be replaced.
@@ -168,6 +190,8 @@ private static final long serialVersionUID = 0L;
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
   /**
+   *
+   *
    * <pre>
    * The subset of app profile fields which should be replaced.
    * If unset, all fields will be replaced.
@@ -182,6 +206,8 @@ private static final long serialVersionUID = 0L;
   public static final int IGNORE_WARNINGS_FIELD_NUMBER = 3;
   private boolean ignoreWarnings_;
   /**
+   *
+   *
    * <pre>
    * If true, ignore safety checks when updating the app profile.
    * </pre>
@@ -193,6 +219,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -204,8 +231,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (appProfile_ != null) {
       output.writeMessage(1, getAppProfile());
     }
@@ -225,16 +251,13 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (appProfile_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getAppProfile());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getAppProfile());
     }
     if (updateMask_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getUpdateMask());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
     }
     if (ignoreWarnings_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, ignoreWarnings_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, ignoreWarnings_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -244,26 +267,24 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.bigtable.admin.v2.UpdateAppProfileRequest)) {
       return super.equals(obj);
     }
-    com.google.bigtable.admin.v2.UpdateAppProfileRequest other = (com.google.bigtable.admin.v2.UpdateAppProfileRequest) obj;
+    com.google.bigtable.admin.v2.UpdateAppProfileRequest other =
+        (com.google.bigtable.admin.v2.UpdateAppProfileRequest) obj;
 
     boolean result = true;
     result = result && (hasAppProfile() == other.hasAppProfile());
     if (hasAppProfile()) {
-      result = result && getAppProfile()
-          .equals(other.getAppProfile());
+      result = result && getAppProfile().equals(other.getAppProfile());
     }
     result = result && (hasUpdateMask() == other.hasUpdateMask());
     if (hasUpdateMask()) {
-      result = result && getUpdateMask()
-          .equals(other.getUpdateMask());
+      result = result && getUpdateMask().equals(other.getUpdateMask());
     }
-    result = result && (getIgnoreWarnings()
-        == other.getIgnoreWarnings());
+    result = result && (getIgnoreWarnings() == other.getIgnoreWarnings());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -284,125 +305,133 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getUpdateMask().hashCode();
     }
     hash = (37 * hash) + IGNORE_WARNINGS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIgnoreWarnings());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreWarnings());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
   public static com.google.bigtable.admin.v2.UpdateAppProfileRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.admin.v2.UpdateAppProfileRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.bigtable.admin.v2.UpdateAppProfileRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.admin.v2.UpdateAppProfileRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.bigtable.admin.v2.UpdateAppProfileRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.admin.v2.UpdateAppProfileRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.bigtable.admin.v2.UpdateAppProfileRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.bigtable.admin.v2.UpdateAppProfileRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.bigtable.admin.v2.UpdateAppProfileRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.bigtable.admin.v2.UpdateAppProfileRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.bigtable.admin.v2.UpdateAppProfileRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.bigtable.admin.v2.UpdateAppProfileRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.bigtable.admin.v2.UpdateAppProfileRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.bigtable.admin.v2.UpdateAppProfileRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.bigtable.admin.v2.UpdateAppProfileRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Request message for BigtableInstanceAdmin.UpdateAppProfile.
    * </pre>
    *
    * Protobuf type {@code google.bigtable.admin.v2.UpdateAppProfileRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.UpdateAppProfileRequest)
       com.google.bigtable.admin.v2.UpdateAppProfileRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.bigtable.admin.v2.BigtableInstanceAdminProto.internal_static_google_bigtable_admin_v2_UpdateAppProfileRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.BigtableInstanceAdminProto
+          .internal_static_google_bigtable_admin_v2_UpdateAppProfileRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.bigtable.admin.v2.BigtableInstanceAdminProto.internal_static_google_bigtable_admin_v2_UpdateAppProfileRequest_fieldAccessorTable
+      return com.google.bigtable.admin.v2.BigtableInstanceAdminProto
+          .internal_static_google_bigtable_admin_v2_UpdateAppProfileRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.bigtable.admin.v2.UpdateAppProfileRequest.class, com.google.bigtable.admin.v2.UpdateAppProfileRequest.Builder.class);
+              com.google.bigtable.admin.v2.UpdateAppProfileRequest.class,
+              com.google.bigtable.admin.v2.UpdateAppProfileRequest.Builder.class);
     }
 
     // Construct using com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder()
@@ -410,16 +439,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -441,9 +469,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.bigtable.admin.v2.BigtableInstanceAdminProto.internal_static_google_bigtable_admin_v2_UpdateAppProfileRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.bigtable.admin.v2.BigtableInstanceAdminProto
+          .internal_static_google_bigtable_admin_v2_UpdateAppProfileRequest_descriptor;
     }
 
     @java.lang.Override
@@ -462,7 +490,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.bigtable.admin.v2.UpdateAppProfileRequest buildPartial() {
-      com.google.bigtable.admin.v2.UpdateAppProfileRequest result = new com.google.bigtable.admin.v2.UpdateAppProfileRequest(this);
+      com.google.bigtable.admin.v2.UpdateAppProfileRequest result =
+          new com.google.bigtable.admin.v2.UpdateAppProfileRequest(this);
       if (appProfileBuilder_ == null) {
         result.appProfile_ = appProfile_;
       } else {
@@ -482,38 +511,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.bigtable.admin.v2.UpdateAppProfileRequest) {
-        return mergeFrom((com.google.bigtable.admin.v2.UpdateAppProfileRequest)other);
+        return mergeFrom((com.google.bigtable.admin.v2.UpdateAppProfileRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -521,7 +551,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.bigtable.admin.v2.UpdateAppProfileRequest other) {
-      if (other == com.google.bigtable.admin.v2.UpdateAppProfileRequest.getDefaultInstance()) return this;
+      if (other == com.google.bigtable.admin.v2.UpdateAppProfileRequest.getDefaultInstance())
+        return this;
       if (other.hasAppProfile()) {
         mergeAppProfile(other.getAppProfile());
       }
@@ -550,7 +581,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.bigtable.admin.v2.UpdateAppProfileRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.bigtable.admin.v2.UpdateAppProfileRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -562,8 +594,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.bigtable.admin.v2.AppProfile appProfile_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.bigtable.admin.v2.AppProfile, com.google.bigtable.admin.v2.AppProfile.Builder, com.google.bigtable.admin.v2.AppProfileOrBuilder> appProfileBuilder_;
+            com.google.bigtable.admin.v2.AppProfile,
+            com.google.bigtable.admin.v2.AppProfile.Builder,
+            com.google.bigtable.admin.v2.AppProfileOrBuilder>
+        appProfileBuilder_;
     /**
+     *
+     *
      * <pre>
      * The app profile which will (partially) replace the current value.
      * </pre>
@@ -574,6 +611,8 @@ private static final long serialVersionUID = 0L;
       return appProfileBuilder_ != null || appProfile_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The app profile which will (partially) replace the current value.
      * </pre>
@@ -582,12 +621,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.bigtable.admin.v2.AppProfile getAppProfile() {
       if (appProfileBuilder_ == null) {
-        return appProfile_ == null ? com.google.bigtable.admin.v2.AppProfile.getDefaultInstance() : appProfile_;
+        return appProfile_ == null
+            ? com.google.bigtable.admin.v2.AppProfile.getDefaultInstance()
+            : appProfile_;
       } else {
         return appProfileBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The app profile which will (partially) replace the current value.
      * </pre>
@@ -608,14 +651,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The app profile which will (partially) replace the current value.
      * </pre>
      *
      * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
      */
-    public Builder setAppProfile(
-        com.google.bigtable.admin.v2.AppProfile.Builder builderForValue) {
+    public Builder setAppProfile(com.google.bigtable.admin.v2.AppProfile.Builder builderForValue) {
       if (appProfileBuilder_ == null) {
         appProfile_ = builderForValue.build();
         onChanged();
@@ -626,6 +670,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The app profile which will (partially) replace the current value.
      * </pre>
@@ -636,7 +682,9 @@ private static final long serialVersionUID = 0L;
       if (appProfileBuilder_ == null) {
         if (appProfile_ != null) {
           appProfile_ =
-            com.google.bigtable.admin.v2.AppProfile.newBuilder(appProfile_).mergeFrom(value).buildPartial();
+              com.google.bigtable.admin.v2.AppProfile.newBuilder(appProfile_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           appProfile_ = value;
         }
@@ -648,6 +696,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The app profile which will (partially) replace the current value.
      * </pre>
@@ -666,6 +716,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The app profile which will (partially) replace the current value.
      * </pre>
@@ -673,11 +725,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
      */
     public com.google.bigtable.admin.v2.AppProfile.Builder getAppProfileBuilder() {
-      
+
       onChanged();
       return getAppProfileFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The app profile which will (partially) replace the current value.
      * </pre>
@@ -688,11 +742,14 @@ private static final long serialVersionUID = 0L;
       if (appProfileBuilder_ != null) {
         return appProfileBuilder_.getMessageOrBuilder();
       } else {
-        return appProfile_ == null ?
-            com.google.bigtable.admin.v2.AppProfile.getDefaultInstance() : appProfile_;
+        return appProfile_ == null
+            ? com.google.bigtable.admin.v2.AppProfile.getDefaultInstance()
+            : appProfile_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The app profile which will (partially) replace the current value.
      * </pre>
@@ -700,14 +757,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.bigtable.admin.v2.AppProfile app_profile = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.bigtable.admin.v2.AppProfile, com.google.bigtable.admin.v2.AppProfile.Builder, com.google.bigtable.admin.v2.AppProfileOrBuilder> 
+            com.google.bigtable.admin.v2.AppProfile,
+            com.google.bigtable.admin.v2.AppProfile.Builder,
+            com.google.bigtable.admin.v2.AppProfileOrBuilder>
         getAppProfileFieldBuilder() {
       if (appProfileBuilder_ == null) {
-        appProfileBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.bigtable.admin.v2.AppProfile, com.google.bigtable.admin.v2.AppProfile.Builder, com.google.bigtable.admin.v2.AppProfileOrBuilder>(
-                getAppProfile(),
-                getParentForChildren(),
-                isClean());
+        appProfileBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.AppProfile,
+                com.google.bigtable.admin.v2.AppProfile.Builder,
+                com.google.bigtable.admin.v2.AppProfileOrBuilder>(
+                getAppProfile(), getParentForChildren(), isClean());
         appProfile_ = null;
       }
       return appProfileBuilder_;
@@ -715,8 +775,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.FieldMask updateMask_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        updateMaskBuilder_;
     /**
+     *
+     *
      * <pre>
      * The subset of app profile fields which should be replaced.
      * If unset, all fields will be replaced.
@@ -728,6 +793,8 @@ private static final long serialVersionUID = 0L;
       return updateMaskBuilder_ != null || updateMask_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The subset of app profile fields which should be replaced.
      * If unset, all fields will be replaced.
@@ -737,12 +804,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
-        return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
       } else {
         return updateMaskBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The subset of app profile fields which should be replaced.
      * If unset, all fields will be replaced.
@@ -764,6 +835,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The subset of app profile fields which should be replaced.
      * If unset, all fields will be replaced.
@@ -771,8 +844,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
-    public Builder setUpdateMask(
-        com.google.protobuf.FieldMask.Builder builderForValue) {
+    public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
         onChanged();
@@ -783,6 +855,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The subset of app profile fields which should be replaced.
      * If unset, all fields will be replaced.
@@ -794,7 +868,7 @@ private static final long serialVersionUID = 0L;
       if (updateMaskBuilder_ == null) {
         if (updateMask_ != null) {
           updateMask_ =
-            com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
         } else {
           updateMask_ = value;
         }
@@ -806,6 +880,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The subset of app profile fields which should be replaced.
      * If unset, all fields will be replaced.
@@ -825,6 +901,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The subset of app profile fields which should be replaced.
      * If unset, all fields will be replaced.
@@ -833,11 +911,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-      
+
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The subset of app profile fields which should be replaced.
      * If unset, all fields will be replaced.
@@ -849,11 +929,14 @@ private static final long serialVersionUID = 0L;
       if (updateMaskBuilder_ != null) {
         return updateMaskBuilder_.getMessageOrBuilder();
       } else {
-        return updateMask_ == null ?
-            com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The subset of app profile fields which should be replaced.
      * If unset, all fields will be replaced.
@@ -862,21 +945,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
         getUpdateMaskFieldBuilder() {
       if (updateMaskBuilder_ == null) {
-        updateMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
-                getUpdateMask(),
-                getParentForChildren(),
-                isClean());
+        updateMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(), getParentForChildren(), isClean());
         updateMask_ = null;
       }
       return updateMaskBuilder_;
     }
 
-    private boolean ignoreWarnings_ ;
+    private boolean ignoreWarnings_;
     /**
+     *
+     *
      * <pre>
      * If true, ignore safety checks when updating the app profile.
      * </pre>
@@ -887,6 +975,8 @@ private static final long serialVersionUID = 0L;
       return ignoreWarnings_;
     }
     /**
+     *
+     *
      * <pre>
      * If true, ignore safety checks when updating the app profile.
      * </pre>
@@ -894,12 +984,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool ignore_warnings = 3;</code>
      */
     public Builder setIgnoreWarnings(boolean value) {
-      
+
       ignoreWarnings_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If true, ignore safety checks when updating the app profile.
      * </pre>
@@ -907,14 +999,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool ignore_warnings = 3;</code>
      */
     public Builder clearIgnoreWarnings() {
-      
+
       ignoreWarnings_ = false;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -924,12 +1016,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.UpdateAppProfileRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.UpdateAppProfileRequest)
   private static final com.google.bigtable.admin.v2.UpdateAppProfileRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.UpdateAppProfileRequest();
   }
@@ -938,16 +1030,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateAppProfileRequest>
-      PARSER = new com.google.protobuf.AbstractParser<UpdateAppProfileRequest>() {
-    @java.lang.Override
-    public UpdateAppProfileRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new UpdateAppProfileRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<UpdateAppProfileRequest> PARSER =
+      new com.google.protobuf.AbstractParser<UpdateAppProfileRequest>() {
+        @java.lang.Override
+        public UpdateAppProfileRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new UpdateAppProfileRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<UpdateAppProfileRequest> parser() {
     return PARSER;
@@ -962,6 +1054,4 @@ private static final long serialVersionUID = 0L;
   public com.google.bigtable.admin.v2.UpdateAppProfileRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

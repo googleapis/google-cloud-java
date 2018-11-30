@@ -72,7 +72,8 @@ public class NodeGroupSettings extends ClientSettings<NodeGroupSettings> {
 
   /** Returns the object with the settings used for calls to aggregatedListNodeGroups. */
   public PagedCallSettings<
-          AggregatedListNodeGroupsHttpRequest, NodeGroupAggregatedList,
+          AggregatedListNodeGroupsHttpRequest,
+          NodeGroupAggregatedList,
           AggregatedListNodeGroupsPagedResponse>
       aggregatedListNodeGroupsSettings() {
     return ((NodeGroupStubSettings) getStubSettings()).aggregatedListNodeGroupsSettings();
@@ -227,7 +228,8 @@ public class NodeGroupSettings extends ClientSettings<NodeGroupSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListNodeGroups. */
     public PagedCallSettings.Builder<
-            AggregatedListNodeGroupsHttpRequest, NodeGroupAggregatedList,
+            AggregatedListNodeGroupsHttpRequest,
+            NodeGroupAggregatedList,
             AggregatedListNodeGroupsPagedResponse>
         aggregatedListNodeGroupsSettings() {
       return getStubSettingsBuilder().aggregatedListNodeGroupsSettings();

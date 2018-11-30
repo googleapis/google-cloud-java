@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface ContextOrBuilder extends
+public interface ContextOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.Context)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The unique identifier of the context. Format:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`,
@@ -22,6 +25,8 @@ public interface ContextOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. The unique identifier of the context. Format:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/contexts/&lt;Context ID&gt;`,
@@ -34,10 +39,11 @@ public interface ContextOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The number of conversational query requests after which the
    * context expires. If set to `0` (the default) the context expires
@@ -50,6 +56,8 @@ public interface ContextOrBuilder extends
   int getLifespanCount();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of parameters associated with this context.
    * Refer to [this doc](https://dialogflow.com/docs/actions-and-parameters) for
@@ -60,6 +68,8 @@ public interface ContextOrBuilder extends
    */
   boolean hasParameters();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of parameters associated with this context.
    * Refer to [this doc](https://dialogflow.com/docs/actions-and-parameters) for
@@ -70,6 +80,8 @@ public interface ContextOrBuilder extends
    */
   com.google.protobuf.Struct getParameters();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of parameters associated with this context.
    * Refer to [this doc](https://dialogflow.com/docs/actions-and-parameters) for

@@ -19,8 +19,9 @@ package com.google.cloud;
 import com.google.cloud.spi.ServiceRpcFactory;
 import java.io.Serializable;
 
-public interface ServiceDefaults<ServiceT extends Service<OptionsT>,
-    OptionsT extends ServiceOptions<ServiceT, OptionsT>> extends Serializable {
+public interface ServiceDefaults<
+        ServiceT extends Service<OptionsT>, OptionsT extends ServiceOptions<ServiceT, OptionsT>>
+    extends Serializable {
   ServiceFactory<ServiceT, OptionsT> getDefaultServiceFactory();
 
   ServiceRpcFactory<OptionsT> getDefaultRpcFactory();

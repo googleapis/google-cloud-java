@@ -101,7 +101,8 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
           .build();
 
   private final PagedCallSettings<
-          AggregatedListNodeTemplatesHttpRequest, NodeTemplateAggregatedList,
+          AggregatedListNodeTemplatesHttpRequest,
+          NodeTemplateAggregatedList,
           AggregatedListNodeTemplatesPagedResponse>
       aggregatedListNodeTemplatesSettings;
   private final UnaryCallSettings<DeleteNodeTemplateHttpRequest, Operation>
@@ -115,7 +116,8 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
 
   /** Returns the object with the settings used for calls to aggregatedListNodeTemplates. */
   public PagedCallSettings<
-          AggregatedListNodeTemplatesHttpRequest, NodeTemplateAggregatedList,
+          AggregatedListNodeTemplatesHttpRequest,
+          NodeTemplateAggregatedList,
           AggregatedListNodeTemplatesPagedResponse>
       aggregatedListNodeTemplatesSettings() {
     return aggregatedListNodeTemplatesSettings;
@@ -227,11 +229,13 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
   }
 
   private static final PagedListDescriptor<
-          AggregatedListNodeTemplatesHttpRequest, NodeTemplateAggregatedList,
+          AggregatedListNodeTemplatesHttpRequest,
+          NodeTemplateAggregatedList,
           NodeTemplatesScopedList>
       AGGREGATED_LIST_NODE_TEMPLATES_PAGE_STR_DESC =
           new PagedListDescriptor<
-              AggregatedListNodeTemplatesHttpRequest, NodeTemplateAggregatedList,
+              AggregatedListNodeTemplatesHttpRequest,
+              NodeTemplateAggregatedList,
               NodeTemplatesScopedList>() {
             @Override
             public String emptyToken() {
@@ -315,11 +319,13 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListNodeTemplatesHttpRequest, NodeTemplateAggregatedList,
+          AggregatedListNodeTemplatesHttpRequest,
+          NodeTemplateAggregatedList,
           AggregatedListNodeTemplatesPagedResponse>
       AGGREGATED_LIST_NODE_TEMPLATES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListNodeTemplatesHttpRequest, NodeTemplateAggregatedList,
+              AggregatedListNodeTemplatesHttpRequest,
+              NodeTemplateAggregatedList,
               AggregatedListNodeTemplatesPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListNodeTemplatesPagedResponse> getFuturePagedResponse(
@@ -329,7 +335,8 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
                 ApiCallContext context,
                 ApiFuture<NodeTemplateAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListNodeTemplatesHttpRequest, NodeTemplateAggregatedList,
+                      AggregatedListNodeTemplatesHttpRequest,
+                      NodeTemplateAggregatedList,
                       NodeTemplatesScopedList>
                   pageContext =
                       PageContext.create(
@@ -363,7 +370,8 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            AggregatedListNodeTemplatesHttpRequest, NodeTemplateAggregatedList,
+            AggregatedListNodeTemplatesHttpRequest,
+            NodeTemplateAggregatedList,
             AggregatedListNodeTemplatesPagedResponse>
         aggregatedListNodeTemplatesSettings;
     private final UnaryCallSettings.Builder<DeleteNodeTemplateHttpRequest, Operation>
@@ -515,7 +523,8 @@ public class NodeTemplateStubSettings extends StubSettings<NodeTemplateStubSetti
 
     /** Returns the builder for the settings used for calls to aggregatedListNodeTemplates. */
     public PagedCallSettings.Builder<
-            AggregatedListNodeTemplatesHttpRequest, NodeTemplateAggregatedList,
+            AggregatedListNodeTemplatesHttpRequest,
+            NodeTemplateAggregatedList,
             AggregatedListNodeTemplatesPagedResponse>
         aggregatedListNodeTemplatesSettings() {
       return aggregatedListNodeTemplatesSettings;

@@ -19,14 +19,11 @@ package com.google.cloud.compute.deprecated;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Identity for a Google Compute Engine snapshot.
- */
+/** Identity for a Google Compute Engine snapshot. */
 public final class SnapshotId extends ResourceId {
 
   private static final String REGEX = ResourceId.REGEX + "global/snapshots/([^/]+)";
@@ -42,10 +39,10 @@ public final class SnapshotId extends ResourceId {
 
   /**
    * Returns the name of the snapshot. The name must be 1-63 characters long and comply with
-   * RFC1035. Specifically, the name must match the regular expression
-   * {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter,
-   * and all following characters must be a dash, lowercase letter, or digit, except the last
-   * character, which cannot be a dash.
+   * RFC1035. Specifically, the name must match the regular expression {@code
+   * [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter, and all
+   * following characters must be a dash, lowercase letter, or digit, except the last character,
+   * which cannot be a dash.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
@@ -90,10 +87,10 @@ public final class SnapshotId extends ResourceId {
 
   /**
    * Returns a snapshot identity given the snapshot name. The snapshot name must be 1-63 characters
-   * long and comply with RFC1035. Specifically, the name must match the regular expression
-   * {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter,
-   * and all following characters must be a dash, lowercase letter, or digit, except the last
-   * character, which cannot be a dash.
+   * long and comply with RFC1035. Specifically, the name must match the regular expression {@code
+   * [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter, and all
+   * following characters must be a dash, lowercase letter, or digit, except the last character,
+   * which cannot be a dash.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */

@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
 import com.google.logging.v2.LogMetric;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -39,29 +38,22 @@ public class MetricInfo implements Serializable {
   private final String description;
   private final String filter;
 
-  /**
-   * A builder for {@code MetricInfo} objects.
-   */
+  /** A builder for {@code MetricInfo} objects. */
   public abstract static class Builder {
 
-    Builder() {
-    }
+    Builder() {}
 
     /**
-     * Sets the name of the metric. Example: {@code severe-errors}. Metric identifiers are
-     * limited to 1000 characters and can include only the following characters: {@code A-Z},
-     * {@code a-z}, {@code 0-9}, and the special characters {@code _-.,+!*',()%/\}. The
-     * forward-slash character ({@code /}) denotes a hierarchy of name pieces, and it cannot be the
-     * first character of the name.
+     * Sets the name of the metric. Example: {@code severe-errors}. Metric identifiers are limited
+     * to 1000 characters and can include only the following characters: {@code A-Z}, {@code a-z},
+     * {@code 0-9}, and the special characters {@code _-.,+!*',()%/\}. The forward-slash character
+     * ({@code /}) denotes a hierarchy of name pieces, and it cannot be the first character of the
+     * name.
      */
     public abstract Builder setName(String name);
 
-
-    /**
-     * Sets an optional description for this metric. Used for documentation purpose.
-     */
+    /** Sets an optional description for this metric. Used for documentation purpose. */
     public abstract Builder setDescription(String description);
-
 
     /**
      * Sets an advanced logs filter. The value of the metric is the number of log entries that match
@@ -72,9 +64,7 @@ public class MetricInfo implements Serializable {
      */
     public abstract Builder setFilter(String filter);
 
-    /**
-     * Creates a {@code MetricInfo} object for this builder.
-     */
+    /** Creates a {@code MetricInfo} object for this builder. */
     public abstract MetricInfo build();
   }
 
@@ -95,20 +85,17 @@ public class MetricInfo implements Serializable {
       this.filter = metric.filter;
     }
 
-
     @Override
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
-
     @Override
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
-
 
     @Override
     public Builder setFilter(String filter) {
@@ -128,31 +115,26 @@ public class MetricInfo implements Serializable {
     this.description = builder.description;
   }
 
-
   /**
-   * Returns the name of the metric. Example: {@code severe-errors}. Metric identifiers are
-   * limited to 1000 characters and can include only the following characters: {@code A-Z},
-   * {@code a-z}, {@code 0-9}, and the special characters {@code _-.,+!*',()%/\}. The
-   * forward-slash character ({@code /}) denotes a hierarchy of name pieces, and it cannot be the
-   * first character of the name.
+   * Returns the name of the metric. Example: {@code severe-errors}. Metric identifiers are limited
+   * to 1000 characters and can include only the following characters: {@code A-Z}, {@code a-z},
+   * {@code 0-9}, and the special characters {@code _-.,+!*',()%/\}. The forward-slash character
+   * ({@code /}) denotes a hierarchy of name pieces, and it cannot be the first character of the
+   * name.
    */
   public String getName() {
     return name;
   }
 
-
-  /**
-   * Returns an optional description for this metric. Used for documentation purpose.
-   */
+  /** Returns an optional description for this metric. Used for documentation purpose. */
   public String getDescription() {
     return description;
   }
 
-
   /**
    * Returns an advanced logs filter. The value of the metric is the number of log entries that
-   * match this filter. Example:
-   * {@code logName=projects/my-projectid/logs/syslog AND severity>=ERROR}.
+   * match this filter. Example: {@code logName=projects/my-projectid/logs/syslog AND
+   * severity>=ERROR}.
    *
    * @see <a href="https://cloud.google.com/logging/docs/view/advanced_filters">Advanced Log
    *     Filters</a>
@@ -192,13 +174,10 @@ public class MetricInfo implements Serializable {
     return Objects.hash(name, description, filter);
   }
 
-  /**
-   * Returns a builder for this {@code MetricInfo} object.
-   */
+  /** Returns a builder for this {@code MetricInfo} object. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
   }
-
 
   /**
    * Returns a builder for {@code MetricInfo} objects given the name of the metric and its filter.
@@ -207,17 +186,13 @@ public class MetricInfo implements Serializable {
     return new BuilderImpl(name, filter);
   }
 
-  /**
-   * Creates a {@code MetricInfo} object given the name of the metric and its filter.
-   */
+  /** Creates a {@code MetricInfo} object given the name of the metric and its filter. */
   public static MetricInfo of(String name, String filter) {
     return new BuilderImpl(name, filter).build();
   }
 
   LogMetric toPb() {
-    LogMetric.Builder builder = LogMetric.newBuilder()
-        .setName(name)
-        .setFilter(filter);
+    LogMetric.Builder builder = LogMetric.newBuilder().setName(name).setFilter(filter);
     if (description != null) {
       builder.setDescription(description);
     }

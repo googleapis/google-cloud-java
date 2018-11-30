@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1beta2;
 
-public interface LabelSegmentOrBuilder extends
+public interface LabelSegmentOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1beta2.LabelSegment)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Video segment where a label was detected.
    * </pre>
@@ -16,6 +19,8 @@ public interface LabelSegmentOrBuilder extends
    */
   boolean hasSegment();
   /**
+   *
+   *
    * <pre>
    * Video segment where a label was detected.
    * </pre>
@@ -24,6 +29,8 @@ public interface LabelSegmentOrBuilder extends
    */
   com.google.cloud.videointelligence.v1beta2.VideoSegment getSegment();
   /**
+   *
+   *
    * <pre>
    * Video segment where a label was detected.
    * </pre>
@@ -33,6 +40,8 @@ public interface LabelSegmentOrBuilder extends
   com.google.cloud.videointelligence.v1beta2.VideoSegmentOrBuilder getSegmentOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Confidence that the label is accurate. Range: [0, 1].
    * </pre>

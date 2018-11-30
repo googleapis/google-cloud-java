@@ -18,14 +18,14 @@ package com.google.cloud.bigtable.admin.v2.models;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.bigtable.admin.v2.CreateTableRequest.Split;
+import com.google.bigtable.admin.v2.GcRule;
+import com.google.bigtable.admin.v2.InstanceName;
+import com.google.bigtable.admin.v2.Table;
+import com.google.bigtable.admin.v2.TableName;
+import com.google.protobuf.ByteString;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import com.google.bigtable.admin.v2.GcRule;
-import com.google.bigtable.admin.v2.Table;
-import com.google.bigtable.admin.v2.TableName;
-import com.google.bigtable.admin.v2.InstanceName;
-import com.google.protobuf.ByteString;
 
 @RunWith(JUnit4.class)
 public class TableAdminRequestsTest {
@@ -33,7 +33,8 @@ public class TableAdminRequestsTest {
 
   @Test
   public void createTable() {
-    com.google.bigtable.admin.v2.CreateTableRequest actual = CreateTableRequest.of("tableId")
+    com.google.bigtable.admin.v2.CreateTableRequest actual =
+        CreateTableRequest.of("tableId")
             .addFamily("cf1")
             .addFamily("cf2", GCRules.GCRULES.maxVersions(1))
             .addSplit(ByteString.copyFromUtf8("c"))
@@ -46,7 +47,8 @@ public class TableAdminRequestsTest {
             .addInitialSplits(Split.newBuilder().setKey(ByteString.copyFromUtf8("c")))
             .setTable(
                 Table.newBuilder()
-                    .putColumnFamilies("cf1", com.google.bigtable.admin.v2.ColumnFamily.newBuilder().build())
+                    .putColumnFamilies(
+                        "cf1", com.google.bigtable.admin.v2.ColumnFamily.newBuilder().build())
                     .putColumnFamilies(
                         "cf2",
                         com.google.bigtable.admin.v2.ColumnFamily.newBuilder()
@@ -86,7 +88,9 @@ public class TableAdminRequestsTest {
             .addModifications(
                 com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.newBuilder()
                     .setId("cf1")
-                    .setCreate(com.google.bigtable.admin.v2.ColumnFamily.newBuilder().setGcRule(GcRule.getDefaultInstance())))
+                    .setCreate(
+                        com.google.bigtable.admin.v2.ColumnFamily.newBuilder()
+                            .setGcRule(GcRule.getDefaultInstance())))
             .addModifications(
                 com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.newBuilder()
                     .setId("cf2")
@@ -96,14 +100,19 @@ public class TableAdminRequestsTest {
             .addModifications(
                 com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.newBuilder()
                     .setId("cf3")
-                    .setCreate(com.google.bigtable.admin.v2.ColumnFamily.newBuilder().setGcRule(GcRule.getDefaultInstance())))
+                    .setCreate(
+                        com.google.bigtable.admin.v2.ColumnFamily.newBuilder()
+                            .setGcRule(GcRule.getDefaultInstance())))
             .addModifications(
                 com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.newBuilder()
                     .setId("cf1")
                     .setUpdate(
                         com.google.bigtable.admin.v2.ColumnFamily.newBuilder()
                             .setGcRule(GCRules.GCRULES.maxVersions(5).toProto())))
-            .addModifications(com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.newBuilder().setId("cf3").setDrop(true))
+            .addModifications(
+                com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.newBuilder()
+                    .setId("cf3")
+                    .setDrop(true))
             .build();
     assertThat(actual).isEqualTo(expected);
   }

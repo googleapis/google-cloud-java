@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface NodeInitializationActionOrBuilder extends
+public interface NodeInitializationActionOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.NodeInitializationAction)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. Cloud Storage URI of executable file.
    * </pre>
@@ -16,16 +19,19 @@ public interface NodeInitializationActionOrBuilder extends
    */
   java.lang.String getExecutableFile();
   /**
+   *
+   *
    * <pre>
    * Required. Cloud Storage URI of executable file.
    * </pre>
    *
    * <code>string executable_file = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getExecutableFileBytes();
+  com.google.protobuf.ByteString getExecutableFileBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Amount of time executable has to complete. Default is
    * 10 minutes. Cluster creation fails with an explanatory error message (the
@@ -37,6 +43,8 @@ public interface NodeInitializationActionOrBuilder extends
    */
   boolean hasExecutionTimeout();
   /**
+   *
+   *
    * <pre>
    * Optional. Amount of time executable has to complete. Default is
    * 10 minutes. Cluster creation fails with an explanatory error message (the
@@ -48,6 +56,8 @@ public interface NodeInitializationActionOrBuilder extends
    */
   com.google.protobuf.Duration getExecutionTimeout();
   /**
+   *
+   *
    * <pre>
    * Optional. Amount of time executable has to complete. Default is
    * 10 minutes. Cluster creation fails with an explanatory error message (the

@@ -16,11 +16,10 @@
 
 package com.google.cloud.logging.testing;
 
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.grpc.GrpcTransportOptions;
-import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.logging.LoggingOptions;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
@@ -30,10 +29,10 @@ import org.threeten.bp.Duration;
 
 /**
  * Utility to create a remote logging configuration for testing. Logging options can be obtained via
- * the {@link #getOptions()} method. Returned options have custom
- * {@link LoggingOptions#getRetrySettings()}: {@link RetrySettings#getMaxRetryDelay()} is
- * {@code 30000}, {@link RetrySettings#getTotalTimeout()} is {@code 120000} and
- * {@link RetrySettings#getInitialRetryDelay()} is {@code 250}.
+ * the {@link #getOptions()} method. Returned options have custom {@link
+ * LoggingOptions#getRetrySettings()}: {@link RetrySettings#getMaxRetryDelay()} is {@code 30000},
+ * {@link RetrySettings#getTotalTimeout()} is {@code 120000} and {@link
+ * RetrySettings#getInitialRetryDelay()} is {@code 250}.
  */
 public class RemoteLoggingHelper {
 
@@ -44,10 +43,7 @@ public class RemoteLoggingHelper {
     this.options = options;
   }
 
-
-  /**
-   * Returns a {@link LoggingOptions} object to be used for testing.
-   */
+  /** Returns a {@link LoggingOptions} object to be used for testing. */
   public LoggingOptions getOptions() {
     return options;
   }
@@ -59,19 +55,20 @@ public class RemoteLoggingHelper {
    * @param projectId id of the project to be used for running the tests
    * @param keyStream input stream for a JSON key
    * @return A {@code RemoteLoggingHelper} object for the provided options
-   * @throws com.google.cloud.logging.testing.RemoteLoggingHelper.LoggingHelperException if
-   *     {@code keyStream} is not a valid JSON key stream
+   * @throws com.google.cloud.logging.testing.RemoteLoggingHelper.LoggingHelperException if {@code
+   *     keyStream} is not a valid JSON key stream
    */
   public static RemoteLoggingHelper create(String projectId, InputStream keyStream)
       throws LoggingHelperException {
     try {
       GrpcTransportOptions transportOptions = LoggingOptions.getDefaultGrpcTransportOptions();
-      LoggingOptions storageOptions = LoggingOptions.newBuilder()
-          .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
-          .setProjectId(projectId)
-          .setRetrySettings(retrySettings())
-          .setTransportOptions(transportOptions)
-          .build();
+      LoggingOptions storageOptions =
+          LoggingOptions.newBuilder()
+              .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
+              .setProjectId(projectId)
+              .setRetrySettings(retrySettings())
+              .setTransportOptions(transportOptions)
+              .build();
       return new RemoteLoggingHelper(storageOptions);
     } catch (IOException ex) {
       if (log.isLoggable(Level.WARNING)) {
@@ -87,10 +84,11 @@ public class RemoteLoggingHelper {
    */
   public static RemoteLoggingHelper create() throws LoggingHelperException {
     GrpcTransportOptions transportOptions = LoggingOptions.getDefaultGrpcTransportOptions();
-    LoggingOptions loggingOptions = LoggingOptions.newBuilder()
-        .setRetrySettings(retrySettings())
-        .setTransportOptions(transportOptions)
-        .build();
+    LoggingOptions loggingOptions =
+        LoggingOptions.newBuilder()
+            .setRetrySettings(retrySettings())
+            .setTransportOptions(transportOptions)
+            .build();
     return new RemoteLoggingHelper(loggingOptions);
   }
 

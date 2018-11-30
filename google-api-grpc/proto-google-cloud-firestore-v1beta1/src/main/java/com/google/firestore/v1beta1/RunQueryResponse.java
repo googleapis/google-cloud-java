@@ -4,31 +4,34 @@
 package com.google.firestore.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * The response for [Firestore.RunQuery][google.firestore.v1beta1.Firestore.RunQuery].
  * </pre>
  *
  * Protobuf type {@code google.firestore.v1beta1.RunQueryResponse}
  */
-public  final class RunQueryResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class RunQueryResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.firestore.v1beta1.RunQueryResponse)
     RunQueryResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use RunQueryResponse.newBuilder() to construct.
   private RunQueryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private RunQueryResponse() {
     transaction_ = com.google.protobuf.ByteString.EMPTY;
     skippedResults_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private RunQueryResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,77 +51,86 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.firestore.v1beta1.Document.Builder subBuilder = null;
-            if (document_ != null) {
-              subBuilder = document_.toBuilder();
-            }
-            document_ = input.readMessage(com.google.firestore.v1beta1.Document.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(document_);
-              document_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.firestore.v1beta1.Document.Builder subBuilder = null;
+              if (document_ != null) {
+                subBuilder = document_.toBuilder();
+              }
+              document_ =
+                  input.readMessage(
+                      com.google.firestore.v1beta1.Document.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(document_);
+                document_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-
-            transaction_ = input.readBytes();
-            break;
-          }
-          case 26: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (readTime_ != null) {
-              subBuilder = readTime_.toBuilder();
+              break;
             }
-            readTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(readTime_);
-              readTime_ = subBuilder.buildPartial();
+          case 18:
+            {
+              transaction_ = input.readBytes();
+              break;
             }
+          case 26:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (readTime_ != null) {
+                subBuilder = readTime_.toBuilder();
+              }
+              readTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(readTime_);
+                readTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 32: {
-
-            skippedResults_ = input.readInt32();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 32:
+            {
+              skippedResults_ = input.readInt32();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.firestore.v1beta1.FirestoreProto.internal_static_google_firestore_v1beta1_RunQueryResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.firestore.v1beta1.FirestoreProto
+        .internal_static_google_firestore_v1beta1_RunQueryResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.firestore.v1beta1.FirestoreProto.internal_static_google_firestore_v1beta1_RunQueryResponse_fieldAccessorTable
+    return com.google.firestore.v1beta1.FirestoreProto
+        .internal_static_google_firestore_v1beta1_RunQueryResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.firestore.v1beta1.RunQueryResponse.class, com.google.firestore.v1beta1.RunQueryResponse.Builder.class);
+            com.google.firestore.v1beta1.RunQueryResponse.class,
+            com.google.firestore.v1beta1.RunQueryResponse.Builder.class);
   }
 
   public static final int TRANSACTION_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString transaction_;
   /**
+   *
+   *
    * <pre>
    * The transaction that was started as part of this request.
    * Can only be set in the first response, and only if
@@ -135,6 +147,8 @@ private static final long serialVersionUID = 0L;
   public static final int DOCUMENT_FIELD_NUMBER = 1;
   private com.google.firestore.v1beta1.Document document_;
   /**
+   *
+   *
    * <pre>
    * A query result.
    * Not set when reporting partial progress.
@@ -146,6 +160,8 @@ private static final long serialVersionUID = 0L;
     return document_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * A query result.
    * Not set when reporting partial progress.
@@ -154,9 +170,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.firestore.v1beta1.Document document = 1;</code>
    */
   public com.google.firestore.v1beta1.Document getDocument() {
-    return document_ == null ? com.google.firestore.v1beta1.Document.getDefaultInstance() : document_;
+    return document_ == null
+        ? com.google.firestore.v1beta1.Document.getDefaultInstance()
+        : document_;
   }
   /**
+   *
+   *
    * <pre>
    * A query result.
    * Not set when reporting partial progress.
@@ -171,6 +191,8 @@ private static final long serialVersionUID = 0L;
   public static final int READ_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp readTime_;
   /**
+   *
+   *
    * <pre>
    * The time at which the document was read. This may be monotonically
    * increasing; in this case, the previous documents in the result stream are
@@ -186,6 +208,8 @@ private static final long serialVersionUID = 0L;
     return readTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The time at which the document was read. This may be monotonically
    * increasing; in this case, the previous documents in the result stream are
@@ -201,6 +225,8 @@ private static final long serialVersionUID = 0L;
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
   /**
+   *
+   *
    * <pre>
    * The time at which the document was read. This may be monotonically
    * increasing; in this case, the previous documents in the result stream are
@@ -219,6 +245,8 @@ private static final long serialVersionUID = 0L;
   public static final int SKIPPED_RESULTS_FIELD_NUMBER = 4;
   private int skippedResults_;
   /**
+   *
+   *
    * <pre>
    * The number of results that have been skipped due to an offset between
    * the last response and the current response.
@@ -231,6 +259,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -242,8 +271,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (document_ != null) {
       output.writeMessage(1, getDocument());
     }
@@ -266,20 +294,16 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (document_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getDocument());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDocument());
     }
     if (!transaction_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(2, transaction_);
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(2, transaction_);
     }
     if (readTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getReadTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getReadTime());
     }
     if (skippedResults_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, skippedResults_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, skippedResults_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -289,28 +313,25 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.firestore.v1beta1.RunQueryResponse)) {
       return super.equals(obj);
     }
-    com.google.firestore.v1beta1.RunQueryResponse other = (com.google.firestore.v1beta1.RunQueryResponse) obj;
+    com.google.firestore.v1beta1.RunQueryResponse other =
+        (com.google.firestore.v1beta1.RunQueryResponse) obj;
 
     boolean result = true;
-    result = result && getTransaction()
-        .equals(other.getTransaction());
+    result = result && getTransaction().equals(other.getTransaction());
     result = result && (hasDocument() == other.hasDocument());
     if (hasDocument()) {
-      result = result && getDocument()
-          .equals(other.getDocument());
+      result = result && getDocument().equals(other.getDocument());
     }
     result = result && (hasReadTime() == other.hasReadTime());
     if (hasReadTime()) {
-      result = result && getReadTime()
-          .equals(other.getReadTime());
+      result = result && getReadTime().equals(other.getReadTime());
     }
-    result = result && (getSkippedResults()
-        == other.getSkippedResults());
+    result = result && (getSkippedResults() == other.getSkippedResults());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -339,118 +360,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.firestore.v1beta1.RunQueryResponse parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.firestore.v1beta1.RunQueryResponse parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.firestore.v1beta1.RunQueryResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.firestore.v1beta1.RunQueryResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.firestore.v1beta1.RunQueryResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.firestore.v1beta1.RunQueryResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.firestore.v1beta1.RunQueryResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.firestore.v1beta1.RunQueryResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.firestore.v1beta1.RunQueryResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.firestore.v1beta1.RunQueryResponse parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.firestore.v1beta1.RunQueryResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.firestore.v1beta1.RunQueryResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.firestore.v1beta1.RunQueryResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.firestore.v1beta1.RunQueryResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.firestore.v1beta1.RunQueryResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The response for [Firestore.RunQuery][google.firestore.v1beta1.Firestore.RunQuery].
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1beta1.RunQueryResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.firestore.v1beta1.RunQueryResponse)
       com.google.firestore.v1beta1.RunQueryResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.firestore.v1beta1.FirestoreProto.internal_static_google_firestore_v1beta1_RunQueryResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.firestore.v1beta1.FirestoreProto
+          .internal_static_google_firestore_v1beta1_RunQueryResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.firestore.v1beta1.FirestoreProto.internal_static_google_firestore_v1beta1_RunQueryResponse_fieldAccessorTable
+      return com.google.firestore.v1beta1.FirestoreProto
+          .internal_static_google_firestore_v1beta1_RunQueryResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.firestore.v1beta1.RunQueryResponse.class, com.google.firestore.v1beta1.RunQueryResponse.Builder.class);
+              com.google.firestore.v1beta1.RunQueryResponse.class,
+              com.google.firestore.v1beta1.RunQueryResponse.Builder.class);
     }
 
     // Construct using com.google.firestore.v1beta1.RunQueryResponse.newBuilder()
@@ -458,16 +488,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -491,9 +520,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.firestore.v1beta1.FirestoreProto.internal_static_google_firestore_v1beta1_RunQueryResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.firestore.v1beta1.FirestoreProto
+          .internal_static_google_firestore_v1beta1_RunQueryResponse_descriptor;
     }
 
     @java.lang.Override
@@ -512,7 +541,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.firestore.v1beta1.RunQueryResponse buildPartial() {
-      com.google.firestore.v1beta1.RunQueryResponse result = new com.google.firestore.v1beta1.RunQueryResponse(this);
+      com.google.firestore.v1beta1.RunQueryResponse result =
+          new com.google.firestore.v1beta1.RunQueryResponse(this);
       result.transaction_ = transaction_;
       if (documentBuilder_ == null) {
         result.document_ = document_;
@@ -533,38 +563,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.firestore.v1beta1.RunQueryResponse) {
-        return mergeFrom((com.google.firestore.v1beta1.RunQueryResponse)other);
+        return mergeFrom((com.google.firestore.v1beta1.RunQueryResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -616,6 +647,8 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString transaction_ = com.google.protobuf.ByteString.EMPTY;
     /**
+     *
+     *
      * <pre>
      * The transaction that was started as part of this request.
      * Can only be set in the first response, and only if
@@ -629,6 +662,8 @@ private static final long serialVersionUID = 0L;
       return transaction_;
     }
     /**
+     *
+     *
      * <pre>
      * The transaction that was started as part of this request.
      * Can only be set in the first response, and only if
@@ -640,14 +675,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTransaction(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       transaction_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The transaction that was started as part of this request.
      * Can only be set in the first response, and only if
@@ -658,7 +695,7 @@ private static final long serialVersionUID = 0L;
      * <code>bytes transaction = 2;</code>
      */
     public Builder clearTransaction() {
-      
+
       transaction_ = getDefaultInstance().getTransaction();
       onChanged();
       return this;
@@ -666,8 +703,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.firestore.v1beta1.Document document_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.firestore.v1beta1.Document, com.google.firestore.v1beta1.Document.Builder, com.google.firestore.v1beta1.DocumentOrBuilder> documentBuilder_;
+            com.google.firestore.v1beta1.Document,
+            com.google.firestore.v1beta1.Document.Builder,
+            com.google.firestore.v1beta1.DocumentOrBuilder>
+        documentBuilder_;
     /**
+     *
+     *
      * <pre>
      * A query result.
      * Not set when reporting partial progress.
@@ -679,6 +721,8 @@ private static final long serialVersionUID = 0L;
       return documentBuilder_ != null || document_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * A query result.
      * Not set when reporting partial progress.
@@ -688,12 +732,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.firestore.v1beta1.Document getDocument() {
       if (documentBuilder_ == null) {
-        return document_ == null ? com.google.firestore.v1beta1.Document.getDefaultInstance() : document_;
+        return document_ == null
+            ? com.google.firestore.v1beta1.Document.getDefaultInstance()
+            : document_;
       } else {
         return documentBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * A query result.
      * Not set when reporting partial progress.
@@ -715,6 +763,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A query result.
      * Not set when reporting partial progress.
@@ -722,8 +772,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.firestore.v1beta1.Document document = 1;</code>
      */
-    public Builder setDocument(
-        com.google.firestore.v1beta1.Document.Builder builderForValue) {
+    public Builder setDocument(com.google.firestore.v1beta1.Document.Builder builderForValue) {
       if (documentBuilder_ == null) {
         document_ = builderForValue.build();
         onChanged();
@@ -734,6 +783,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A query result.
      * Not set when reporting partial progress.
@@ -745,7 +796,9 @@ private static final long serialVersionUID = 0L;
       if (documentBuilder_ == null) {
         if (document_ != null) {
           document_ =
-            com.google.firestore.v1beta1.Document.newBuilder(document_).mergeFrom(value).buildPartial();
+              com.google.firestore.v1beta1.Document.newBuilder(document_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           document_ = value;
         }
@@ -757,6 +810,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A query result.
      * Not set when reporting partial progress.
@@ -776,6 +831,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A query result.
      * Not set when reporting partial progress.
@@ -784,11 +841,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.firestore.v1beta1.Document document = 1;</code>
      */
     public com.google.firestore.v1beta1.Document.Builder getDocumentBuilder() {
-      
+
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A query result.
      * Not set when reporting partial progress.
@@ -800,11 +859,14 @@ private static final long serialVersionUID = 0L;
       if (documentBuilder_ != null) {
         return documentBuilder_.getMessageOrBuilder();
       } else {
-        return document_ == null ?
-            com.google.firestore.v1beta1.Document.getDefaultInstance() : document_;
+        return document_ == null
+            ? com.google.firestore.v1beta1.Document.getDefaultInstance()
+            : document_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A query result.
      * Not set when reporting partial progress.
@@ -813,14 +875,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.firestore.v1beta1.Document document = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.firestore.v1beta1.Document, com.google.firestore.v1beta1.Document.Builder, com.google.firestore.v1beta1.DocumentOrBuilder> 
+            com.google.firestore.v1beta1.Document,
+            com.google.firestore.v1beta1.Document.Builder,
+            com.google.firestore.v1beta1.DocumentOrBuilder>
         getDocumentFieldBuilder() {
       if (documentBuilder_ == null) {
-        documentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.firestore.v1beta1.Document, com.google.firestore.v1beta1.Document.Builder, com.google.firestore.v1beta1.DocumentOrBuilder>(
-                getDocument(),
-                getParentForChildren(),
-                isClean());
+        documentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.firestore.v1beta1.Document,
+                com.google.firestore.v1beta1.Document.Builder,
+                com.google.firestore.v1beta1.DocumentOrBuilder>(
+                getDocument(), getParentForChildren(), isClean());
         document_ = null;
       }
       return documentBuilder_;
@@ -828,8 +893,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp readTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> readTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        readTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The time at which the document was read. This may be monotonically
      * increasing; in this case, the previous documents in the result stream are
@@ -845,6 +915,8 @@ private static final long serialVersionUID = 0L;
       return readTimeBuilder_ != null || readTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the document was read. This may be monotonically
      * increasing; in this case, the previous documents in the result stream are
@@ -864,6 +936,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the document was read. This may be monotonically
      * increasing; in this case, the previous documents in the result stream are
@@ -889,6 +963,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the document was read. This may be monotonically
      * increasing; in this case, the previous documents in the result stream are
@@ -900,8 +976,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp read_time = 3;</code>
      */
-    public Builder setReadTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setReadTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (readTimeBuilder_ == null) {
         readTime_ = builderForValue.build();
         onChanged();
@@ -912,6 +987,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the document was read. This may be monotonically
      * increasing; in this case, the previous documents in the result stream are
@@ -927,7 +1004,7 @@ private static final long serialVersionUID = 0L;
       if (readTimeBuilder_ == null) {
         if (readTime_ != null) {
           readTime_ =
-            com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
         } else {
           readTime_ = value;
         }
@@ -939,6 +1016,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the document was read. This may be monotonically
      * increasing; in this case, the previous documents in the result stream are
@@ -962,6 +1041,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the document was read. This may be monotonically
      * increasing; in this case, the previous documents in the result stream are
@@ -974,11 +1055,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp read_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
-      
+
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the document was read. This may be monotonically
      * increasing; in this case, the previous documents in the result stream are
@@ -994,11 +1077,12 @@ private static final long serialVersionUID = 0L;
       if (readTimeBuilder_ != null) {
         return readTimeBuilder_.getMessageOrBuilder();
       } else {
-        return readTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
+        return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time at which the document was read. This may be monotonically
      * increasing; in this case, the previous documents in the result stream are
@@ -1011,21 +1095,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp read_time = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getReadTimeFieldBuilder() {
       if (readTimeBuilder_ == null) {
-        readTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getReadTime(),
-                getParentForChildren(),
-                isClean());
+        readTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getReadTime(), getParentForChildren(), isClean());
         readTime_ = null;
       }
       return readTimeBuilder_;
     }
 
-    private int skippedResults_ ;
+    private int skippedResults_;
     /**
+     *
+     *
      * <pre>
      * The number of results that have been skipped due to an offset between
      * the last response and the current response.
@@ -1037,6 +1126,8 @@ private static final long serialVersionUID = 0L;
       return skippedResults_;
     }
     /**
+     *
+     *
      * <pre>
      * The number of results that have been skipped due to an offset between
      * the last response and the current response.
@@ -1045,12 +1136,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 skipped_results = 4;</code>
      */
     public Builder setSkippedResults(int value) {
-      
+
       skippedResults_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The number of results that have been skipped due to an offset between
      * the last response and the current response.
@@ -1059,14 +1152,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 skipped_results = 4;</code>
      */
     public Builder clearSkippedResults() {
-      
+
       skippedResults_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1076,12 +1169,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.firestore.v1beta1.RunQueryResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.firestore.v1beta1.RunQueryResponse)
   private static final com.google.firestore.v1beta1.RunQueryResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.firestore.v1beta1.RunQueryResponse();
   }
@@ -1090,16 +1183,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RunQueryResponse>
-      PARSER = new com.google.protobuf.AbstractParser<RunQueryResponse>() {
-    @java.lang.Override
-    public RunQueryResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new RunQueryResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<RunQueryResponse> PARSER =
+      new com.google.protobuf.AbstractParser<RunQueryResponse>() {
+        @java.lang.Override
+        public RunQueryResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RunQueryResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<RunQueryResponse> parser() {
     return PARSER;
@@ -1114,6 +1207,4 @@ private static final long serialVersionUID = 0L;
   public com.google.firestore.v1beta1.RunQueryResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

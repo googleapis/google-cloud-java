@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1;
 
-public interface ParagraphOrBuilder extends
+public interface ParagraphOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.Paragraph)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Additional information detected for the paragraph.
    * </pre>
@@ -16,6 +19,8 @@ public interface ParagraphOrBuilder extends
    */
   boolean hasProperty();
   /**
+   *
+   *
    * <pre>
    * Additional information detected for the paragraph.
    * </pre>
@@ -24,6 +29,8 @@ public interface ParagraphOrBuilder extends
    */
   com.google.cloud.vision.v1.TextAnnotation.TextProperty getProperty();
   /**
+   *
+   *
    * <pre>
    * Additional information detected for the paragraph.
    * </pre>
@@ -33,6 +40,8 @@ public interface ParagraphOrBuilder extends
   com.google.cloud.vision.v1.TextAnnotation.TextPropertyOrBuilder getPropertyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The bounding box for the paragraph.
    * The vertices are in the order of top-left, top-right, bottom-right,
@@ -55,6 +64,8 @@ public interface ParagraphOrBuilder extends
    */
   boolean hasBoundingBox();
   /**
+   *
+   *
    * <pre>
    * The bounding box for the paragraph.
    * The vertices are in the order of top-left, top-right, bottom-right,
@@ -77,6 +88,8 @@ public interface ParagraphOrBuilder extends
    */
   com.google.cloud.vision.v1.BoundingPoly getBoundingBox();
   /**
+   *
+   *
    * <pre>
    * The bounding box for the paragraph.
    * The vertices are in the order of top-left, top-right, bottom-right,
@@ -100,15 +113,18 @@ public interface ParagraphOrBuilder extends
   com.google.cloud.vision.v1.BoundingPolyOrBuilder getBoundingBoxOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * List of words in this paragraph.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.Word words = 3;</code>
    */
-  java.util.List<com.google.cloud.vision.v1.Word> 
-      getWordsList();
+  java.util.List<com.google.cloud.vision.v1.Word> getWordsList();
   /**
+   *
+   *
    * <pre>
    * List of words in this paragraph.
    * </pre>
@@ -117,6 +133,8 @@ public interface ParagraphOrBuilder extends
    */
   com.google.cloud.vision.v1.Word getWords(int index);
   /**
+   *
+   *
    * <pre>
    * List of words in this paragraph.
    * </pre>
@@ -125,25 +143,29 @@ public interface ParagraphOrBuilder extends
    */
   int getWordsCount();
   /**
+   *
+   *
    * <pre>
    * List of words in this paragraph.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.Word words = 3;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1.WordOrBuilder> 
-      getWordsOrBuilderList();
+  java.util.List<? extends com.google.cloud.vision.v1.WordOrBuilder> getWordsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * List of words in this paragraph.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.Word words = 3;</code>
    */
-  com.google.cloud.vision.v1.WordOrBuilder getWordsOrBuilder(
-      int index);
+  com.google.cloud.vision.v1.WordOrBuilder getWordsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Confidence of the OCR results for the paragraph. Range [0, 1].
    * </pre>

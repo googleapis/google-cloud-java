@@ -18,8 +18,5 @@ package com.google.cloud.translate;
 
 import com.google.cloud.ServiceFactory;
 
-/**
- * An interface for Translates factories.
- */
-public interface TranslateFactory extends ServiceFactory<Translate, TranslateOptions> {
-}
+/** An interface for Translates factories. */
+public interface TranslateFactory extends ServiceFactory<Translate, TranslateOptions> {}

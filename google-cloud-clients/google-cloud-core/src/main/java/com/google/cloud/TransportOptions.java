@@ -17,8 +17,5 @@ package com.google.cloud;
 
 import java.io.Serializable;
 
-/**
- * An abstraction for transport-specific options, e.g. for http1.1 vs grpc.
- */
-public interface TransportOptions extends Serializable {
-}
+/** An abstraction for transport-specific options, e.g. for http1.1 vs grpc. */
+public interface TransportOptions extends Serializable {}

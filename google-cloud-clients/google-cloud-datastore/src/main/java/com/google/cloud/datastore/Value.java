@@ -21,15 +21,14 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.cloud.GcpLaunchStage;
 import com.google.common.base.MoreObjects;
 import com.google.datastore.v1.Value.ValueTypeCase;
-
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Base class for all Google Cloud Datastore value types.
- * All values must be associated with a non-null content (except {@link NullValue}).
- * All values are immutable (including their content). To edit (a copy) use {@link #toBuilder()}.
- * Unsupported value (deprecated or unrecognized) would be represented by {@link RawValue}.
+ * Base class for all Google Cloud Datastore value types. All values must be associated with a
+ * non-null content (except {@link NullValue}). All values are immutable (including their content).
+ * To edit (a copy) use {@link #toBuilder()}. Unsupported value (deprecated or unrecognized) would
+ * be represented by {@link RawValue}.
  *
  * @param <V> the type of the content for this value
  */
@@ -71,8 +70,7 @@ public abstract class Value<V> implements Serializable {
       return builder.build();
     }
 
-    BaseMarshaller() {
-    }
+    BaseMarshaller() {}
 
     protected abstract V getValue(com.google.datastore.v1.Value from);
 
@@ -156,16 +154,12 @@ public abstract class Value<V> implements Serializable {
     value = builder.get();
   }
 
-  /**
-   * Returns the type of this value.
-   */
+  /** Returns the type of this value. */
   public final ValueType getType() {
     return valueType;
   }
 
-  /**
-   * Returns whether this value should be excluded from indexes.
-   */
+  /** Returns whether this value should be excluded from indexes. */
   public final boolean excludeFromIndexes() {
     return excludeFromIndexes;
   }
@@ -220,7 +214,8 @@ public abstract class Value<V> implements Serializable {
   static Value<?> fromPb(com.google.datastore.v1.Value proto) {
     ValueTypeCase descriptorId = proto.getValueTypeCase();
     ValueType valueType = ValueType.getByDescriptorId(descriptorId.getNumber());
-    return valueType == null ? RawValue.MARSHALLER.fromProto(proto).build()
+    return valueType == null
+        ? RawValue.MARSHALLER.fromProto(proto).build()
         : valueType.getMarshaller().fromProto(proto).build();
   }
 }

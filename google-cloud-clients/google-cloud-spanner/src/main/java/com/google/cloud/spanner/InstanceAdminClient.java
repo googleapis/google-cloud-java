@@ -112,18 +112,17 @@ public interface InstanceAdminClient {
    * @param options Options to control the instances returned. It also supports {@link
    *     Options#filter(String)} option. The fields eligible for filtering are:
    *     <ul>
-   *       <li> name
-   *       <li> display_name
-   *       <li> labels.key where key is the name of a label
+   *       <li>name
+   *       <li>display_name
+   *       <li>labels.key where key is the name of a label
    *     </ul>
-   *
-   * <!--SNIPPET instance_admin_client_list_instances-->
-   * <pre>{@code
+   *     <!--SNIPPET instance_admin_client_list_instances-->
+   *     <pre>{@code
    * List<Instance> instances =
    *     Lists.newArrayList(
    *         instanceAdminClient.listInstances(Options.pageSize(1)).iterateAll());
    * }</pre>
-   * <!--SNIPPET instance_admin_client_list_instances-->
+   *     <!--SNIPPET instance_admin_client_list_instances-->
    */
   Page<Instance> listInstances(ListOption... options) throws SpannerException;
 

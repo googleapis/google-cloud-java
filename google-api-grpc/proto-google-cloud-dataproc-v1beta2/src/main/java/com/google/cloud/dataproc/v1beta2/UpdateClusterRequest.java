@@ -4,21 +4,24 @@
 package com.google.cloud.dataproc.v1beta2;
 
 /**
+ *
+ *
  * <pre>
  * A request to update a cluster.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.UpdateClusterRequest}
  */
-public  final class UpdateClusterRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class UpdateClusterRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1beta2.UpdateClusterRequest)
     UpdateClusterRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use UpdateClusterRequest.newBuilder() to construct.
   private UpdateClusterRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private UpdateClusterRequest() {
     projectId_ = "";
     region_ = "";
@@ -27,10 +30,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private UpdateClusterRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,104 +53,119 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            projectId_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+              projectId_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            clusterName_ = s;
-            break;
-          }
-          case 26: {
-            com.google.cloud.dataproc.v1beta2.Cluster.Builder subBuilder = null;
-            if (cluster_ != null) {
-              subBuilder = cluster_.toBuilder();
+              clusterName_ = s;
+              break;
             }
-            cluster_ = input.readMessage(com.google.cloud.dataproc.v1beta2.Cluster.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(cluster_);
-              cluster_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.cloud.dataproc.v1beta2.Cluster.Builder subBuilder = null;
+              if (cluster_ != null) {
+                subBuilder = cluster_.toBuilder();
+              }
+              cluster_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.Cluster.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(cluster_);
+                cluster_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 34: {
-            com.google.protobuf.FieldMask.Builder subBuilder = null;
-            if (updateMask_ != null) {
-              subBuilder = updateMask_.toBuilder();
+              break;
             }
-            updateMask_ = input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(updateMask_);
-              updateMask_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (updateMask_ != null) {
+                subBuilder = updateMask_.toBuilder();
+              }
+              updateMask_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateMask_);
+                updateMask_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            region_ = s;
-            break;
-          }
-          case 50: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (gracefulDecommissionTimeout_ != null) {
-              subBuilder = gracefulDecommissionTimeout_.toBuilder();
+              break;
             }
-            gracefulDecommissionTimeout_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(gracefulDecommissionTimeout_);
-              gracefulDecommissionTimeout_ = subBuilder.buildPartial();
-            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            requestId_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              region_ = s;
+              break;
             }
-            break;
-          }
+          case 50:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (gracefulDecommissionTimeout_ != null) {
+                subBuilder = gracefulDecommissionTimeout_.toBuilder();
+              }
+              gracefulDecommissionTimeout_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(gracefulDecommissionTimeout_);
+                gracefulDecommissionTimeout_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestId_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_UpdateClusterRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1beta2.ClustersProto
+        .internal_static_google_cloud_dataproc_v1beta2_UpdateClusterRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_UpdateClusterRequest_fieldAccessorTable
+    return com.google.cloud.dataproc.v1beta2.ClustersProto
+        .internal_static_google_cloud_dataproc_v1beta2_UpdateClusterRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1beta2.UpdateClusterRequest.class, com.google.cloud.dataproc.v1beta2.UpdateClusterRequest.Builder.class);
+            com.google.cloud.dataproc.v1beta2.UpdateClusterRequest.class,
+            com.google.cloud.dataproc.v1beta2.UpdateClusterRequest.Builder.class);
   }
 
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object projectId_;
   /**
+   *
+   *
    * <pre>
    * Required. The ID of the Google Cloud Platform project the
    * cluster belongs to.
@@ -160,14 +178,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       projectId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The ID of the Google Cloud Platform project the
    * cluster belongs to.
@@ -175,13 +194,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string project_id = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getProjectIdBytes() {
+  public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       projectId_ = b;
       return b;
     } else {
@@ -192,6 +209,8 @@ private static final long serialVersionUID = 0L;
   public static final int REGION_FIELD_NUMBER = 5;
   private volatile java.lang.Object region_;
   /**
+   *
+   *
    * <pre>
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
@@ -203,27 +222,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       region_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getRegionBytes() {
+  public com.google.protobuf.ByteString getRegionBytes() {
     java.lang.Object ref = region_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       region_ = b;
       return b;
     } else {
@@ -234,6 +252,8 @@ private static final long serialVersionUID = 0L;
   public static final int CLUSTER_NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object clusterName_;
   /**
+   *
+   *
    * <pre>
    * Required. The cluster name.
    * </pre>
@@ -245,27 +265,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       clusterName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The cluster name.
    * </pre>
    *
    * <code>string cluster_name = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getClusterNameBytes() {
+  public com.google.protobuf.ByteString getClusterNameBytes() {
     java.lang.Object ref = clusterName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       clusterName_ = b;
       return b;
     } else {
@@ -276,6 +295,8 @@ private static final long serialVersionUID = 0L;
   public static final int CLUSTER_FIELD_NUMBER = 3;
   private com.google.cloud.dataproc.v1beta2.Cluster cluster_;
   /**
+   *
+   *
    * <pre>
    * Required. The changes to the cluster.
    * </pre>
@@ -286,6 +307,8 @@ private static final long serialVersionUID = 0L;
     return cluster_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The changes to the cluster.
    * </pre>
@@ -293,9 +316,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1beta2.Cluster cluster = 3;</code>
    */
   public com.google.cloud.dataproc.v1beta2.Cluster getCluster() {
-    return cluster_ == null ? com.google.cloud.dataproc.v1beta2.Cluster.getDefaultInstance() : cluster_;
+    return cluster_ == null
+        ? com.google.cloud.dataproc.v1beta2.Cluster.getDefaultInstance()
+        : cluster_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The changes to the cluster.
    * </pre>
@@ -309,6 +336,8 @@ private static final long serialVersionUID = 0L;
   public static final int GRACEFUL_DECOMMISSION_TIMEOUT_FIELD_NUMBER = 6;
   private com.google.protobuf.Duration gracefulDecommissionTimeout_;
   /**
+   *
+   *
    * <pre>
    * Optional. Timeout for graceful YARN decomissioning. Graceful
    * decommissioning allows removing nodes from the cluster without
@@ -325,6 +354,8 @@ private static final long serialVersionUID = 0L;
     return gracefulDecommissionTimeout_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Timeout for graceful YARN decomissioning. Graceful
    * decommissioning allows removing nodes from the cluster without
@@ -338,9 +369,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
    */
   public com.google.protobuf.Duration getGracefulDecommissionTimeout() {
-    return gracefulDecommissionTimeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : gracefulDecommissionTimeout_;
+    return gracefulDecommissionTimeout_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : gracefulDecommissionTimeout_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Timeout for graceful YARN decomissioning. Graceful
    * decommissioning allows removing nodes from the cluster without
@@ -360,6 +395,8 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATE_MASK_FIELD_NUMBER = 4;
   private com.google.protobuf.FieldMask updateMask_;
   /**
+   *
+   *
    * <pre>
    * Required. Specifies the path, relative to `Cluster`, of
    * the field to update. For example, to change the number of workers
@@ -415,6 +452,8 @@ private static final long serialVersionUID = 0L;
     return updateMask_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required. Specifies the path, relative to `Cluster`, of
    * the field to update. For example, to change the number of workers
@@ -470,6 +509,8 @@ private static final long serialVersionUID = 0L;
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. Specifies the path, relative to `Cluster`, of
    * the field to update. For example, to change the number of workers
@@ -528,6 +569,8 @@ private static final long serialVersionUID = 0L;
   public static final int REQUEST_ID_FIELD_NUMBER = 7;
   private volatile java.lang.Object requestId_;
   /**
+   *
+   *
    * <pre>
    * Optional. A unique id used to identify the request. If the server
    * receives two [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest] requests  with the same
@@ -547,14 +590,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       requestId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A unique id used to identify the request. If the server
    * receives two [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest] requests  with the same
@@ -569,13 +613,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string request_id = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getRequestIdBytes() {
+  public com.google.protobuf.ByteString getRequestIdBytes() {
     java.lang.Object ref = requestId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       requestId_ = b;
       return b;
     } else {
@@ -584,6 +626,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -595,8 +638,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getProjectIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
@@ -634,19 +676,18 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clusterName_);
     }
     if (cluster_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getCluster());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCluster());
     }
     if (updateMask_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getUpdateMask());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getUpdateMask());
     }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, region_);
     }
     if (gracefulDecommissionTimeout_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getGracefulDecommissionTimeout());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, getGracefulDecommissionTimeout());
     }
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, requestId_);
@@ -659,37 +700,32 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dataproc.v1beta2.UpdateClusterRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.dataproc.v1beta2.UpdateClusterRequest other = (com.google.cloud.dataproc.v1beta2.UpdateClusterRequest) obj;
+    com.google.cloud.dataproc.v1beta2.UpdateClusterRequest other =
+        (com.google.cloud.dataproc.v1beta2.UpdateClusterRequest) obj;
 
     boolean result = true;
-    result = result && getProjectId()
-        .equals(other.getProjectId());
-    result = result && getRegion()
-        .equals(other.getRegion());
-    result = result && getClusterName()
-        .equals(other.getClusterName());
+    result = result && getProjectId().equals(other.getProjectId());
+    result = result && getRegion().equals(other.getRegion());
+    result = result && getClusterName().equals(other.getClusterName());
     result = result && (hasCluster() == other.hasCluster());
     if (hasCluster()) {
-      result = result && getCluster()
-          .equals(other.getCluster());
+      result = result && getCluster().equals(other.getCluster());
     }
     result = result && (hasGracefulDecommissionTimeout() == other.hasGracefulDecommissionTimeout());
     if (hasGracefulDecommissionTimeout()) {
-      result = result && getGracefulDecommissionTimeout()
-          .equals(other.getGracefulDecommissionTimeout());
+      result =
+          result && getGracefulDecommissionTimeout().equals(other.getGracefulDecommissionTimeout());
     }
     result = result && (hasUpdateMask() == other.hasUpdateMask());
     if (hasUpdateMask()) {
-      result = result && getUpdateMask()
-          .equals(other.getUpdateMask());
+      result = result && getUpdateMask().equals(other.getUpdateMask());
     }
-    result = result && getRequestId()
-        .equals(other.getRequestId());
+    result = result && getRequestId().equals(other.getRequestId());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -727,117 +763,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.dataproc.v1beta2.UpdateClusterRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.UpdateClusterRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.UpdateClusterRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.UpdateClusterRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.UpdateClusterRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.UpdateClusterRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1beta2.UpdateClusterRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dataproc.v1beta2.UpdateClusterRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dataproc.v1beta2.UpdateClusterRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.dataproc.v1beta2.UpdateClusterRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.UpdateClusterRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dataproc.v1beta2.UpdateClusterRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dataproc.v1beta2.UpdateClusterRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1beta2.UpdateClusterRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.dataproc.v1beta2.UpdateClusterRequest prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.dataproc.v1beta2.UpdateClusterRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A request to update a cluster.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.UpdateClusterRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1beta2.UpdateClusterRequest)
       com.google.cloud.dataproc.v1beta2.UpdateClusterRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_UpdateClusterRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1beta2.ClustersProto
+          .internal_static_google_cloud_dataproc_v1beta2_UpdateClusterRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_UpdateClusterRequest_fieldAccessorTable
+      return com.google.cloud.dataproc.v1beta2.ClustersProto
+          .internal_static_google_cloud_dataproc_v1beta2_UpdateClusterRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1beta2.UpdateClusterRequest.class, com.google.cloud.dataproc.v1beta2.UpdateClusterRequest.Builder.class);
+              com.google.cloud.dataproc.v1beta2.UpdateClusterRequest.class,
+              com.google.cloud.dataproc.v1beta2.UpdateClusterRequest.Builder.class);
     }
 
     // Construct using com.google.cloud.dataproc.v1beta2.UpdateClusterRequest.newBuilder()
@@ -845,16 +891,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -888,9 +933,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_UpdateClusterRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1beta2.ClustersProto
+          .internal_static_google_cloud_dataproc_v1beta2_UpdateClusterRequest_descriptor;
     }
 
     @java.lang.Override
@@ -909,7 +954,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.UpdateClusterRequest buildPartial() {
-      com.google.cloud.dataproc.v1beta2.UpdateClusterRequest result = new com.google.cloud.dataproc.v1beta2.UpdateClusterRequest(this);
+      com.google.cloud.dataproc.v1beta2.UpdateClusterRequest result =
+          new com.google.cloud.dataproc.v1beta2.UpdateClusterRequest(this);
       result.projectId_ = projectId_;
       result.region_ = region_;
       result.clusterName_ = clusterName_;
@@ -937,38 +983,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dataproc.v1beta2.UpdateClusterRequest) {
-        return mergeFrom((com.google.cloud.dataproc.v1beta2.UpdateClusterRequest)other);
+        return mergeFrom((com.google.cloud.dataproc.v1beta2.UpdateClusterRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -976,7 +1023,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dataproc.v1beta2.UpdateClusterRequest other) {
-      if (other == com.google.cloud.dataproc.v1beta2.UpdateClusterRequest.getDefaultInstance()) return this;
+      if (other == com.google.cloud.dataproc.v1beta2.UpdateClusterRequest.getDefaultInstance())
+        return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
         onChanged();
@@ -1021,7 +1069,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataproc.v1beta2.UpdateClusterRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dataproc.v1beta2.UpdateClusterRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1033,6 +1082,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object projectId_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The ID of the Google Cloud Platform project the
      * cluster belongs to.
@@ -1043,8 +1094,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         projectId_ = s;
         return s;
@@ -1053,6 +1103,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The ID of the Google Cloud Platform project the
      * cluster belongs to.
@@ -1060,13 +1112,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string project_id = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getProjectIdBytes() {
+    public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         projectId_ = b;
         return b;
       } else {
@@ -1074,6 +1124,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The ID of the Google Cloud Platform project the
      * cluster belongs to.
@@ -1081,17 +1133,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string project_id = 1;</code>
      */
-    public Builder setProjectId(
-        java.lang.String value) {
+    public Builder setProjectId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       projectId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The ID of the Google Cloud Platform project the
      * cluster belongs to.
@@ -1100,12 +1153,14 @@ private static final long serialVersionUID = 0L;
      * <code>string project_id = 1;</code>
      */
     public Builder clearProjectId() {
-      
+
       projectId_ = getDefaultInstance().getProjectId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The ID of the Google Cloud Platform project the
      * cluster belongs to.
@@ -1113,13 +1168,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string project_id = 1;</code>
      */
-    public Builder setProjectIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       projectId_ = value;
       onChanged();
       return this;
@@ -1127,6 +1181,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object region_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
@@ -1136,8 +1192,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getRegion() {
       java.lang.Object ref = region_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         region_ = s;
         return s;
@@ -1146,19 +1201,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getRegionBytes() {
+    public com.google.protobuf.ByteString getRegionBytes() {
       java.lang.Object ref = region_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         region_ = b;
         return b;
       } else {
@@ -1166,23 +1221,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 5;</code>
      */
-    public Builder setRegion(
-        java.lang.String value) {
+    public Builder setRegion(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       region_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
@@ -1190,25 +1248,26 @@ private static final long serialVersionUID = 0L;
      * <code>string region = 5;</code>
      */
     public Builder clearRegion() {
-      
+
       region_ = getDefaultInstance().getRegion();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Cloud Dataproc region in which to handle the request.
      * </pre>
      *
      * <code>string region = 5;</code>
      */
-    public Builder setRegionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setRegionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       region_ = value;
       onChanged();
       return this;
@@ -1216,6 +1275,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object clusterName_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The cluster name.
      * </pre>
@@ -1225,8 +1286,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         clusterName_ = s;
         return s;
@@ -1235,19 +1295,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The cluster name.
      * </pre>
      *
      * <code>string cluster_name = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getClusterNameBytes() {
+    public com.google.protobuf.ByteString getClusterNameBytes() {
       java.lang.Object ref = clusterName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         clusterName_ = b;
         return b;
       } else {
@@ -1255,23 +1315,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The cluster name.
      * </pre>
      *
      * <code>string cluster_name = 2;</code>
      */
-    public Builder setClusterName(
-        java.lang.String value) {
+    public Builder setClusterName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       clusterName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The cluster name.
      * </pre>
@@ -1279,25 +1342,26 @@ private static final long serialVersionUID = 0L;
      * <code>string cluster_name = 2;</code>
      */
     public Builder clearClusterName() {
-      
+
       clusterName_ = getDefaultInstance().getClusterName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The cluster name.
      * </pre>
      *
      * <code>string cluster_name = 2;</code>
      */
-    public Builder setClusterNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setClusterNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       clusterName_ = value;
       onChanged();
       return this;
@@ -1305,8 +1369,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dataproc.v1beta2.Cluster cluster_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.Cluster, com.google.cloud.dataproc.v1beta2.Cluster.Builder, com.google.cloud.dataproc.v1beta2.ClusterOrBuilder> clusterBuilder_;
+            com.google.cloud.dataproc.v1beta2.Cluster,
+            com.google.cloud.dataproc.v1beta2.Cluster.Builder,
+            com.google.cloud.dataproc.v1beta2.ClusterOrBuilder>
+        clusterBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required. The changes to the cluster.
      * </pre>
@@ -1317,6 +1386,8 @@ private static final long serialVersionUID = 0L;
       return clusterBuilder_ != null || cluster_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The changes to the cluster.
      * </pre>
@@ -1325,12 +1396,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1beta2.Cluster getCluster() {
       if (clusterBuilder_ == null) {
-        return cluster_ == null ? com.google.cloud.dataproc.v1beta2.Cluster.getDefaultInstance() : cluster_;
+        return cluster_ == null
+            ? com.google.cloud.dataproc.v1beta2.Cluster.getDefaultInstance()
+            : cluster_;
       } else {
         return clusterBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The changes to the cluster.
      * </pre>
@@ -1351,14 +1426,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The changes to the cluster.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.Cluster cluster = 3;</code>
      */
-    public Builder setCluster(
-        com.google.cloud.dataproc.v1beta2.Cluster.Builder builderForValue) {
+    public Builder setCluster(com.google.cloud.dataproc.v1beta2.Cluster.Builder builderForValue) {
       if (clusterBuilder_ == null) {
         cluster_ = builderForValue.build();
         onChanged();
@@ -1369,6 +1445,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The changes to the cluster.
      * </pre>
@@ -1379,7 +1457,9 @@ private static final long serialVersionUID = 0L;
       if (clusterBuilder_ == null) {
         if (cluster_ != null) {
           cluster_ =
-            com.google.cloud.dataproc.v1beta2.Cluster.newBuilder(cluster_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1beta2.Cluster.newBuilder(cluster_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           cluster_ = value;
         }
@@ -1391,6 +1471,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The changes to the cluster.
      * </pre>
@@ -1409,6 +1491,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The changes to the cluster.
      * </pre>
@@ -1416,11 +1500,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.Cluster cluster = 3;</code>
      */
     public com.google.cloud.dataproc.v1beta2.Cluster.Builder getClusterBuilder() {
-      
+
       onChanged();
       return getClusterFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required. The changes to the cluster.
      * </pre>
@@ -1431,11 +1517,14 @@ private static final long serialVersionUID = 0L;
       if (clusterBuilder_ != null) {
         return clusterBuilder_.getMessageOrBuilder();
       } else {
-        return cluster_ == null ?
-            com.google.cloud.dataproc.v1beta2.Cluster.getDefaultInstance() : cluster_;
+        return cluster_ == null
+            ? com.google.cloud.dataproc.v1beta2.Cluster.getDefaultInstance()
+            : cluster_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The changes to the cluster.
      * </pre>
@@ -1443,14 +1532,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.Cluster cluster = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.Cluster, com.google.cloud.dataproc.v1beta2.Cluster.Builder, com.google.cloud.dataproc.v1beta2.ClusterOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.Cluster,
+            com.google.cloud.dataproc.v1beta2.Cluster.Builder,
+            com.google.cloud.dataproc.v1beta2.ClusterOrBuilder>
         getClusterFieldBuilder() {
       if (clusterBuilder_ == null) {
-        clusterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.Cluster, com.google.cloud.dataproc.v1beta2.Cluster.Builder, com.google.cloud.dataproc.v1beta2.ClusterOrBuilder>(
-                getCluster(),
-                getParentForChildren(),
-                isClean());
+        clusterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.Cluster,
+                com.google.cloud.dataproc.v1beta2.Cluster.Builder,
+                com.google.cloud.dataproc.v1beta2.ClusterOrBuilder>(
+                getCluster(), getParentForChildren(), isClean());
         cluster_ = null;
       }
       return clusterBuilder_;
@@ -1458,8 +1550,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Duration gracefulDecommissionTimeout_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> gracefulDecommissionTimeoutBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        gracefulDecommissionTimeoutBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. Timeout for graceful YARN decomissioning. Graceful
      * decommissioning allows removing nodes from the cluster without
@@ -1476,6 +1573,8 @@ private static final long serialVersionUID = 0L;
       return gracefulDecommissionTimeoutBuilder_ != null || gracefulDecommissionTimeout_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Timeout for graceful YARN decomissioning. Graceful
      * decommissioning allows removing nodes from the cluster without
@@ -1490,12 +1589,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Duration getGracefulDecommissionTimeout() {
       if (gracefulDecommissionTimeoutBuilder_ == null) {
-        return gracefulDecommissionTimeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : gracefulDecommissionTimeout_;
+        return gracefulDecommissionTimeout_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : gracefulDecommissionTimeout_;
       } else {
         return gracefulDecommissionTimeoutBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Timeout for graceful YARN decomissioning. Graceful
      * decommissioning allows removing nodes from the cluster without
@@ -1522,6 +1625,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Timeout for graceful YARN decomissioning. Graceful
      * decommissioning allows removing nodes from the cluster without
@@ -1546,6 +1651,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Timeout for graceful YARN decomissioning. Graceful
      * decommissioning allows removing nodes from the cluster without
@@ -1562,7 +1669,9 @@ private static final long serialVersionUID = 0L;
       if (gracefulDecommissionTimeoutBuilder_ == null) {
         if (gracefulDecommissionTimeout_ != null) {
           gracefulDecommissionTimeout_ =
-            com.google.protobuf.Duration.newBuilder(gracefulDecommissionTimeout_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(gracefulDecommissionTimeout_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           gracefulDecommissionTimeout_ = value;
         }
@@ -1574,6 +1683,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Timeout for graceful YARN decomissioning. Graceful
      * decommissioning allows removing nodes from the cluster without
@@ -1598,6 +1709,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Timeout for graceful YARN decomissioning. Graceful
      * decommissioning allows removing nodes from the cluster without
@@ -1611,11 +1724,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
      */
     public com.google.protobuf.Duration.Builder getGracefulDecommissionTimeoutBuilder() {
-      
+
       onChanged();
       return getGracefulDecommissionTimeoutFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Timeout for graceful YARN decomissioning. Graceful
      * decommissioning allows removing nodes from the cluster without
@@ -1632,11 +1747,14 @@ private static final long serialVersionUID = 0L;
       if (gracefulDecommissionTimeoutBuilder_ != null) {
         return gracefulDecommissionTimeoutBuilder_.getMessageOrBuilder();
       } else {
-        return gracefulDecommissionTimeout_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : gracefulDecommissionTimeout_;
+        return gracefulDecommissionTimeout_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : gracefulDecommissionTimeout_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Timeout for graceful YARN decomissioning. Graceful
      * decommissioning allows removing nodes from the cluster without
@@ -1650,14 +1768,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration graceful_decommission_timeout = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getGracefulDecommissionTimeoutFieldBuilder() {
       if (gracefulDecommissionTimeoutBuilder_ == null) {
-        gracefulDecommissionTimeoutBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                getGracefulDecommissionTimeout(),
-                getParentForChildren(),
-                isClean());
+        gracefulDecommissionTimeoutBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getGracefulDecommissionTimeout(), getParentForChildren(), isClean());
         gracefulDecommissionTimeout_ = null;
       }
       return gracefulDecommissionTimeoutBuilder_;
@@ -1665,8 +1786,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.FieldMask updateMask_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        updateMaskBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required. Specifies the path, relative to `Cluster`, of
      * the field to update. For example, to change the number of workers
@@ -1722,6 +1848,8 @@ private static final long serialVersionUID = 0L;
       return updateMaskBuilder_ != null || updateMask_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Specifies the path, relative to `Cluster`, of
      * the field to update. For example, to change the number of workers
@@ -1775,12 +1903,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
-        return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
       } else {
         return updateMaskBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. Specifies the path, relative to `Cluster`, of
      * the field to update. For example, to change the number of workers
@@ -1846,6 +1978,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Specifies the path, relative to `Cluster`, of
      * the field to update. For example, to change the number of workers
@@ -1897,8 +2031,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
-    public Builder setUpdateMask(
-        com.google.protobuf.FieldMask.Builder builderForValue) {
+    public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
         onChanged();
@@ -1909,6 +2042,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Specifies the path, relative to `Cluster`, of
      * the field to update. For example, to change the number of workers
@@ -1964,7 +2099,7 @@ private static final long serialVersionUID = 0L;
       if (updateMaskBuilder_ == null) {
         if (updateMask_ != null) {
           updateMask_ =
-            com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
         } else {
           updateMask_ = value;
         }
@@ -1976,6 +2111,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Specifies the path, relative to `Cluster`, of
      * the field to update. For example, to change the number of workers
@@ -2039,6 +2176,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Specifies the path, relative to `Cluster`, of
      * the field to update. For example, to change the number of workers
@@ -2091,11 +2230,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-      
+
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required. Specifies the path, relative to `Cluster`, of
      * the field to update. For example, to change the number of workers
@@ -2151,11 +2292,14 @@ private static final long serialVersionUID = 0L;
       if (updateMaskBuilder_ != null) {
         return updateMaskBuilder_.getMessageOrBuilder();
       } else {
-        return updateMask_ == null ?
-            com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. Specifies the path, relative to `Cluster`, of
      * the field to update. For example, to change the number of workers
@@ -2208,14 +2352,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
         getUpdateMaskFieldBuilder() {
       if (updateMaskBuilder_ == null) {
-        updateMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
-                getUpdateMask(),
-                getParentForChildren(),
-                isClean());
+        updateMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(), getParentForChildren(), isClean());
         updateMask_ = null;
       }
       return updateMaskBuilder_;
@@ -2223,6 +2370,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object requestId_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
      * receives two [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest] requests  with the same
@@ -2240,8 +2389,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getRequestId() {
       java.lang.Object ref = requestId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         requestId_ = s;
         return s;
@@ -2250,6 +2398,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
      * receives two [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest] requests  with the same
@@ -2264,13 +2414,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string request_id = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getRequestIdBytes() {
+    public com.google.protobuf.ByteString getRequestIdBytes() {
       java.lang.Object ref = requestId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         requestId_ = b;
         return b;
       } else {
@@ -2278,6 +2426,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
      * receives two [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest] requests  with the same
@@ -2292,17 +2442,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string request_id = 7;</code>
      */
-    public Builder setRequestId(
-        java.lang.String value) {
+    public Builder setRequestId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       requestId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
      * receives two [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest] requests  with the same
@@ -2318,12 +2469,14 @@ private static final long serialVersionUID = 0L;
      * <code>string request_id = 7;</code>
      */
     public Builder clearRequestId() {
-      
+
       requestId_ = getDefaultInstance().getRequestId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A unique id used to identify the request. If the server
      * receives two [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest] requests  with the same
@@ -2338,20 +2491,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string request_id = 7;</code>
      */
-    public Builder setRequestIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setRequestIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       requestId_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2361,12 +2513,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1beta2.UpdateClusterRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1beta2.UpdateClusterRequest)
   private static final com.google.cloud.dataproc.v1beta2.UpdateClusterRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1beta2.UpdateClusterRequest();
   }
@@ -2375,16 +2527,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateClusterRequest>
-      PARSER = new com.google.protobuf.AbstractParser<UpdateClusterRequest>() {
-    @java.lang.Override
-    public UpdateClusterRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new UpdateClusterRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<UpdateClusterRequest> PARSER =
+      new com.google.protobuf.AbstractParser<UpdateClusterRequest>() {
+        @java.lang.Override
+        public UpdateClusterRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new UpdateClusterRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<UpdateClusterRequest> parser() {
     return PARSER;
@@ -2399,6 +2551,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dataproc.v1beta2.UpdateClusterRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

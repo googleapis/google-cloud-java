@@ -18,6 +18,7 @@ package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.AbstractApiService;
 import com.google.api.core.ApiClock;
+import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiService;
 import com.google.api.core.BetaApi;
 import com.google.api.core.CurrentMillisClock;
@@ -33,6 +34,7 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.NoHeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.pubsub.v1.stub.GrpcSubscriberStub;
 import com.google.cloud.pubsub.v1.stub.SubscriberStub;
@@ -49,10 +51,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import com.google.api.gax.rpc.UnaryCallSettings;
 import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
-import com.google.api.core.ApiFunction;
 
 /**
  * A Cloud Pub/Sub <a href="https://cloud.google.com/pubsub/docs/subscriber">subscriber</a> that is
@@ -179,13 +179,14 @@ public class Subscriber extends AbstractApiService {
               .setCredentialsProvider(builder.credentialsProvider)
               .setTransportChannelProvider(channelProvider)
               .setHeaderProvider(builder.headerProvider)
-              .applyToAllUnaryMethods(new ApiFunction<UnaryCallSettings.Builder<?,?>, Void>() {
-                @Override
-                public Void apply(UnaryCallSettings.Builder<?,?> settingsBuilder) {
-                  settingsBuilder.setSimpleTimeoutNoRetries(UNARY_TIMEOUT);
-                  return null;
-                }
-              })
+              .applyToAllUnaryMethods(
+                  new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
+                    @Override
+                    public Void apply(UnaryCallSettings.Builder<?, ?> settingsBuilder) {
+                      settingsBuilder.setSimpleTimeoutNoRetries(UNARY_TIMEOUT);
+                      return null;
+                    }
+                  })
               .build();
       // TODO(pongad): what about internal header??
     } catch (Exception e) {
@@ -577,9 +578,7 @@ public class Subscriber extends AbstractApiService {
       return this;
     }
 
-    /**
-     * Sets the number of pullers used to pull messages from the subscription. Defaults to one.
-     */
+    /** Sets the number of pullers used to pull messages from the subscription. Defaults to one. */
     public Builder setParallelPullCount(int parallelPullCount) {
       this.parallelPullCount = parallelPullCount;
       return this;
