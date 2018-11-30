@@ -33,7 +33,7 @@ import java.util.Objects;
  * Google Storage Notification metadata;
  *
  * @see <a href="https://cloud.google.com/storage/docs/concepts-techniques#concepts">Concepts and
- *      Terminology</a>
+ *     Terminology</a>
  */
 public class NotificationInfo implements Serializable {
   // TODO: Consider making this an AutoValue class.
@@ -131,7 +131,8 @@ public class NotificationInfo implements Serializable {
     }
 
     public Builder setCustomAttributes(Map<String, String> customAttributes) {
-      this.customAttributes = customAttributes != null ? ImmutableMap.copyOf(customAttributes) : null;
+      this.customAttributes =
+          customAttributes != null ? ImmutableMap.copyOf(customAttributes) : null;
       return this;
     }
 
@@ -152,37 +153,27 @@ public class NotificationInfo implements Serializable {
     objectNamePrefix = builder.objectNamePrefix;
   }
 
-  /**
-   * Returns the service-generated id for the notification.
-   */
+  /** Returns the service-generated id for the notification. */
   public String getGeneratedId() {
     return generatedId;
   }
 
-  /**
-   * Returns the Cloud PubSub topic to which this subscription publishes.
-   */
+  /** Returns the Cloud PubSub topic to which this subscription publishes. */
   public ProjectTopicName getTopic() {
     return topic;
   }
 
-  /**
-   * Returns the canonical URI of this topic as a string.
-   */
+  /** Returns the canonical URI of this topic as a string. */
   public String getSelfLink() {
     return selfLink;
   }
 
-  /**
-   * Returns the desired content of the Payload.
-   */
+  /** Returns the desired content of the Payload. */
   public PayloadFormat getPayloadFormat() {
     return payloadFormat;
   }
 
-  /**
-   * Returns the object name prefix for which this notification configuration applies.
-   */
+  /** Returns the object name prefix for which this notification configuration applies. */
   public String getObjectNamePrefix() {
     return objectNamePrefix;
   }
@@ -197,11 +188,11 @@ public class NotificationInfo implements Serializable {
   }
 
   /**
-   * Returns the list of event types that this notification will apply to.
-   * If empty, notifications will be sent on all event types.
+   * Returns the list of event types that this notification will apply to. If empty, notifications
+   * will be sent on all event types.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/cross-origin">
-   *     Cross-Origin Resource Sharing (CORS)</a>
+   * @see <a href="https://cloud.google.com/storage/docs/cross-origin">Cross-Origin Resource Sharing
+   *     (CORS)</a>
    */
   public List<String> getEventTypes() {
     return eventTypes;
@@ -218,9 +209,7 @@ public class NotificationInfo implements Serializable {
     return customAttributes;
   }
 
-  /**
-   * Returns a builder for the current notification.
-   */
+  /** Returns a builder for the current notification. */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -234,15 +223,13 @@ public class NotificationInfo implements Serializable {
   public boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(NotificationInfo.class)
-        && Objects.equals(toPb(), ((NotificationInfo) obj).toPb());
+            && obj.getClass().equals(NotificationInfo.class)
+            && Objects.equals(toPb(), ((NotificationInfo) obj).toPb());
   }
 
   @Override
   public String toString() {
-    return MoreObjects.toStringHelper(this)
-        .add("topic", getTopic())
-        .toString();
+    return MoreObjects.toStringHelper(this).add("topic", getTopic()).toString();
   }
 
   Notification toPb() {
@@ -269,9 +256,7 @@ public class NotificationInfo implements Serializable {
     return notificationPb;
   }
 
-  /**
-   * Creates a {@code NotificationInfo} object for the provided topic name.
-   */
+  /** Creates a {@code NotificationInfo} object for the provided topic name. */
   public static NotificationInfo of(ProjectTopicName topic) {
     return newBuilder(topic).build();
   }
