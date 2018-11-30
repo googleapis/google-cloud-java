@@ -18,13 +18,12 @@ package com.google.cloud;
 
 import com.google.api.core.ApiClock;
 import com.google.api.core.BetaApi;
-import com.google.api.gax.retrying.ExponentialPollAlgorithm;
-import com.google.api.gax.retrying.ResultRetryAlgorithm;
-import com.google.api.gax.retrying.RetrySettings;
-
 import com.google.api.gax.retrying.DirectRetryingExecutor;
+import com.google.api.gax.retrying.ExponentialPollAlgorithm;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
+import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.RetryingExecutor;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.api.gax.retrying.TimedRetryAlgorithm;
@@ -50,7 +49,8 @@ public class RetryHelper {
       ResultRetryAlgorithm<V> algorithm = (ResultRetryAlgorithm<V>) resultRetryAlgorithm;
       return run(callable, new ExponentialRetryAlgorithm(retrySettings, clock), algorithm);
     } catch (Exception e) {
-      //TODO: remove RetryHelperException, throw InterruptedException or ExecutionException#getCause() explicitly
+      // TODO: remove RetryHelperException, throw InterruptedException or
+      // ExecutionException#getCause() explicitly
       throw new RetryHelperException(e.getCause());
     }
   }
@@ -59,20 +59,22 @@ public class RetryHelper {
       Callable<V> callable,
       RetrySettings pollSettings,
       ResultRetryAlgorithm<V> resultPollAlgorithm,
-      ApiClock clock) throws ExecutionException, InterruptedException {
-      return run(callable, new ExponentialPollAlgorithm(pollSettings, clock), resultPollAlgorithm);
+      ApiClock clock)
+      throws ExecutionException, InterruptedException {
+    return run(callable, new ExponentialPollAlgorithm(pollSettings, clock), resultPollAlgorithm);
   }
 
   private static <V> V run(
       Callable<V> callable,
       TimedRetryAlgorithm timedAlgorithm,
-      ResultRetryAlgorithm<V> resultAlgorithm) throws ExecutionException, InterruptedException {
-      RetryAlgorithm<V> retryAlgorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
-      RetryingExecutor<V> executor = new DirectRetryingExecutor<>(retryAlgorithm);
+      ResultRetryAlgorithm<V> resultAlgorithm)
+      throws ExecutionException, InterruptedException {
+    RetryAlgorithm<V> retryAlgorithm = new RetryAlgorithm<>(resultAlgorithm, timedAlgorithm);
+    RetryingExecutor<V> executor = new DirectRetryingExecutor<>(retryAlgorithm);
 
-      RetryingFuture<V> retryingFuture = executor.createFuture(callable);
-      executor.submit(retryingFuture);
-      return retryingFuture.get();
+    RetryingFuture<V> retryingFuture = executor.createFuture(callable);
+    executor.submit(retryingFuture);
+    return retryingFuture.get();
   }
 
   public static class RetryHelperException extends RuntimeException {
