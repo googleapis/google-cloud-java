@@ -19,8 +19,8 @@ package com.google.cloud.datastore;
 import com.google.common.collect.ImmutableList;
 
 /**
- * A helper for creating keys for a specific {@link Datastore},
- * using its associated projectId and namespace.
+ * A helper for creating keys for a specific {@link Datastore}, using its associated projectId and
+ * namespace.
  */
 public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
 
@@ -39,25 +39,32 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
   }
 
   public IncompleteKey newKey() {
-    ImmutableList<PathElement> path = ImmutableList.<PathElement>builder()
-        .addAll(ancestors).add(PathElement.of(kind)).build();
+    ImmutableList<PathElement> path =
+        ImmutableList.<PathElement>builder().addAll(ancestors).add(PathElement.of(kind)).build();
     return new IncompleteKey(projectId, namespace, path);
   }
 
   public Key newKey(String name) {
-    ImmutableList<PathElement> path = ImmutableList.<PathElement>builder()
-        .addAll(ancestors).add(PathElement.of(kind, name)).build();
+    ImmutableList<PathElement> path =
+        ImmutableList.<PathElement>builder()
+            .addAll(ancestors)
+            .add(PathElement.of(kind, name))
+            .build();
     return new Key(projectId, namespace, path);
   }
 
   public Key newKey(long id) {
-    ImmutableList<PathElement> path = ImmutableList.<PathElement>builder()
-        .addAll(ancestors).add(PathElement.of(kind, id)).build();
+    ImmutableList<PathElement> path =
+        ImmutableList.<PathElement>builder()
+            .addAll(ancestors)
+            .add(PathElement.of(kind, id))
+            .build();
     return new Key(projectId, namespace, path);
   }
 
   /**
    * Resets the KeyFactory to its initial state.
+   *
    * @return {@code this} for chaining
    */
   public KeyFactory reset() {
