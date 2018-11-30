@@ -3,11 +3,14 @@
 
 package com.google.firestore.v1beta1;
 
-public interface CreateDocumentRequestOrBuilder extends
+public interface CreateDocumentRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.firestore.v1beta1.CreateDocumentRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The parent resource. For example:
    * `projects/{project_id}/databases/{database_id}/documents` or
@@ -18,6 +21,8 @@ public interface CreateDocumentRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The parent resource. For example:
    * `projects/{project_id}/databases/{database_id}/documents` or
@@ -26,10 +31,11 @@ public interface CreateDocumentRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The collection ID, relative to `parent`, to list. For example: `chatrooms`.
    * </pre>
@@ -38,16 +44,19 @@ public interface CreateDocumentRequestOrBuilder extends
    */
   java.lang.String getCollectionId();
   /**
+   *
+   *
    * <pre>
    * The collection ID, relative to `parent`, to list. For example: `chatrooms`.
    * </pre>
    *
    * <code>string collection_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getCollectionIdBytes();
+  com.google.protobuf.ByteString getCollectionIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The client-assigned document ID to use for this document.
    * Optional. If not specified, an ID will be assigned by the service.
@@ -57,6 +66,8 @@ public interface CreateDocumentRequestOrBuilder extends
    */
   java.lang.String getDocumentId();
   /**
+   *
+   *
    * <pre>
    * The client-assigned document ID to use for this document.
    * Optional. If not specified, an ID will be assigned by the service.
@@ -64,10 +75,11 @@ public interface CreateDocumentRequestOrBuilder extends
    *
    * <code>string document_id = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDocumentIdBytes();
+  com.google.protobuf.ByteString getDocumentIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The document to create. `name` must not be set.
    * </pre>
@@ -76,6 +88,8 @@ public interface CreateDocumentRequestOrBuilder extends
    */
   boolean hasDocument();
   /**
+   *
+   *
    * <pre>
    * The document to create. `name` must not be set.
    * </pre>
@@ -84,6 +98,8 @@ public interface CreateDocumentRequestOrBuilder extends
    */
   com.google.firestore.v1beta1.Document getDocument();
   /**
+   *
+   *
    * <pre>
    * The document to create. `name` must not be set.
    * </pre>
@@ -93,6 +109,8 @@ public interface CreateDocumentRequestOrBuilder extends
   com.google.firestore.v1beta1.DocumentOrBuilder getDocumentOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The fields to return. If not set, returns all fields.
    * If the document has a field that is not present in this mask, that field
@@ -103,6 +121,8 @@ public interface CreateDocumentRequestOrBuilder extends
    */
   boolean hasMask();
   /**
+   *
+   *
    * <pre>
    * The fields to return. If not set, returns all fields.
    * If the document has a field that is not present in this mask, that field
@@ -113,6 +133,8 @@ public interface CreateDocumentRequestOrBuilder extends
    */
   com.google.firestore.v1beta1.DocumentMask getMask();
   /**
+   *
+   *
    * <pre>
    * The fields to return. If not set, returns all fields.
    * If the document has a field that is not present in this mask, that field
