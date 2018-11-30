@@ -4,6 +4,8 @@
 package com.google.cloud.scheduler.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Settings that determine the retry behavior.
  * By default, if a job does not complete successfully (meaning that
@@ -13,25 +15,26 @@ package com.google.cloud.scheduler.v1beta1;
  *
  * Protobuf type {@code google.cloud.scheduler.v1beta1.RetryConfig}
  */
-public  final class RetryConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.scheduler.v1beta1.RetryConfig)
     RetryConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use RetryConfig.newBuilder() to construct.
   private RetryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private RetryConfig() {
     retryCount_ = 0;
     maxDoublings_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private RetryConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -51,90 +54,100 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 8:
+            {
+              retryCount_ = input.readInt32();
+              break;
+            }
+          case 18:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (maxRetryDuration_ != null) {
+                subBuilder = maxRetryDuration_.toBuilder();
+              }
+              maxRetryDuration_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(maxRetryDuration_);
+                maxRetryDuration_ = subBuilder.buildPartial();
+              }
 
-            retryCount_ = input.readInt32();
-            break;
-          }
-          case 18: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (maxRetryDuration_ != null) {
-              subBuilder = maxRetryDuration_.toBuilder();
+              break;
             }
-            maxRetryDuration_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(maxRetryDuration_);
-              maxRetryDuration_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (minBackoffDuration_ != null) {
+                subBuilder = minBackoffDuration_.toBuilder();
+              }
+              minBackoffDuration_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(minBackoffDuration_);
+                minBackoffDuration_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (minBackoffDuration_ != null) {
-              subBuilder = minBackoffDuration_.toBuilder();
+              break;
             }
-            minBackoffDuration_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(minBackoffDuration_);
-              minBackoffDuration_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (maxBackoffDuration_ != null) {
+                subBuilder = maxBackoffDuration_.toBuilder();
+              }
+              maxBackoffDuration_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(maxBackoffDuration_);
+                maxBackoffDuration_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 34: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (maxBackoffDuration_ != null) {
-              subBuilder = maxBackoffDuration_.toBuilder();
+              break;
             }
-            maxBackoffDuration_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(maxBackoffDuration_);
-              maxBackoffDuration_ = subBuilder.buildPartial();
+          case 40:
+            {
+              maxDoublings_ = input.readInt32();
+              break;
             }
-
-            break;
-          }
-          case 40: {
-
-            maxDoublings_ = input.readInt32();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.scheduler.v1beta1.JobProto.internal_static_google_cloud_scheduler_v1beta1_RetryConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.scheduler.v1beta1.JobProto
+        .internal_static_google_cloud_scheduler_v1beta1_RetryConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.scheduler.v1beta1.JobProto.internal_static_google_cloud_scheduler_v1beta1_RetryConfig_fieldAccessorTable
+    return com.google.cloud.scheduler.v1beta1.JobProto
+        .internal_static_google_cloud_scheduler_v1beta1_RetryConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.scheduler.v1beta1.RetryConfig.class, com.google.cloud.scheduler.v1beta1.RetryConfig.Builder.class);
+            com.google.cloud.scheduler.v1beta1.RetryConfig.class,
+            com.google.cloud.scheduler.v1beta1.RetryConfig.Builder.class);
   }
 
   public static final int RETRY_COUNT_FIELD_NUMBER = 1;
   private int retryCount_;
   /**
+   *
+   *
    * <pre>
    * The number of attempts that the system will make to run a job using the
    * exponential backoff procedure described by
@@ -159,6 +172,8 @@ private static final long serialVersionUID = 0L;
   public static final int MAX_RETRY_DURATION_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration maxRetryDuration_;
   /**
+   *
+   *
    * <pre>
    * The time limit for retrying a failed job, measured from time when an
    * execution was first attempted. If specified with
@@ -174,6 +189,8 @@ private static final long serialVersionUID = 0L;
     return maxRetryDuration_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The time limit for retrying a failed job, measured from time when an
    * execution was first attempted. If specified with
@@ -186,9 +203,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Duration max_retry_duration = 2;</code>
    */
   public com.google.protobuf.Duration getMaxRetryDuration() {
-    return maxRetryDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxRetryDuration_;
+    return maxRetryDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : maxRetryDuration_;
   }
   /**
+   *
+   *
    * <pre>
    * The time limit for retrying a failed job, measured from time when an
    * execution was first attempted. If specified with
@@ -207,6 +228,8 @@ private static final long serialVersionUID = 0L;
   public static final int MIN_BACKOFF_DURATION_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration minBackoffDuration_;
   /**
+   *
+   *
    * <pre>
    * The minimum amount of time to wait before retrying a job after
    * it fails.
@@ -219,6 +242,8 @@ private static final long serialVersionUID = 0L;
     return minBackoffDuration_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The minimum amount of time to wait before retrying a job after
    * it fails.
@@ -228,9 +253,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Duration min_backoff_duration = 3;</code>
    */
   public com.google.protobuf.Duration getMinBackoffDuration() {
-    return minBackoffDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : minBackoffDuration_;
+    return minBackoffDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : minBackoffDuration_;
   }
   /**
+   *
+   *
    * <pre>
    * The minimum amount of time to wait before retrying a job after
    * it fails.
@@ -246,6 +275,8 @@ private static final long serialVersionUID = 0L;
   public static final int MAX_BACKOFF_DURATION_FIELD_NUMBER = 4;
   private com.google.protobuf.Duration maxBackoffDuration_;
   /**
+   *
+   *
    * <pre>
    * The maximum amount of time to wait before retrying a job after
    * it fails.
@@ -258,6 +289,8 @@ private static final long serialVersionUID = 0L;
     return maxBackoffDuration_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The maximum amount of time to wait before retrying a job after
    * it fails.
@@ -267,9 +300,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Duration max_backoff_duration = 4;</code>
    */
   public com.google.protobuf.Duration getMaxBackoffDuration() {
-    return maxBackoffDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxBackoffDuration_;
+    return maxBackoffDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : maxBackoffDuration_;
   }
   /**
+   *
+   *
    * <pre>
    * The maximum amount of time to wait before retrying a job after
    * it fails.
@@ -285,6 +322,8 @@ private static final long serialVersionUID = 0L;
   public static final int MAX_DOUBLINGS_FIELD_NUMBER = 5;
   private int maxDoublings_;
   /**
+   *
+   *
    * <pre>
    * The time between retries will double `max_doublings` times.
    * A job's retry interval starts at
@@ -311,6 +350,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -322,8 +362,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (retryCount_ != 0) {
       output.writeInt32(1, retryCount_);
     }
@@ -349,24 +388,19 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (retryCount_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, retryCount_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, retryCount_);
     }
     if (maxRetryDuration_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getMaxRetryDuration());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getMaxRetryDuration());
     }
     if (minBackoffDuration_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getMinBackoffDuration());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getMinBackoffDuration());
     }
     if (maxBackoffDuration_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getMaxBackoffDuration());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getMaxBackoffDuration());
     }
     if (maxDoublings_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, maxDoublings_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, maxDoublings_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -376,33 +410,29 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.scheduler.v1beta1.RetryConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.scheduler.v1beta1.RetryConfig other = (com.google.cloud.scheduler.v1beta1.RetryConfig) obj;
+    com.google.cloud.scheduler.v1beta1.RetryConfig other =
+        (com.google.cloud.scheduler.v1beta1.RetryConfig) obj;
 
     boolean result = true;
-    result = result && (getRetryCount()
-        == other.getRetryCount());
+    result = result && (getRetryCount() == other.getRetryCount());
     result = result && (hasMaxRetryDuration() == other.hasMaxRetryDuration());
     if (hasMaxRetryDuration()) {
-      result = result && getMaxRetryDuration()
-          .equals(other.getMaxRetryDuration());
+      result = result && getMaxRetryDuration().equals(other.getMaxRetryDuration());
     }
     result = result && (hasMinBackoffDuration() == other.hasMinBackoffDuration());
     if (hasMinBackoffDuration()) {
-      result = result && getMinBackoffDuration()
-          .equals(other.getMinBackoffDuration());
+      result = result && getMinBackoffDuration().equals(other.getMinBackoffDuration());
     }
     result = result && (hasMaxBackoffDuration() == other.hasMaxBackoffDuration());
     if (hasMaxBackoffDuration()) {
-      result = result && getMaxBackoffDuration()
-          .equals(other.getMaxBackoffDuration());
+      result = result && getMaxBackoffDuration().equals(other.getMaxBackoffDuration());
     }
-    result = result && (getMaxDoublings()
-        == other.getMaxDoublings());
+    result = result && (getMaxDoublings() == other.getMaxDoublings());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -435,97 +465,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.scheduler.v1beta1.RetryConfig parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.scheduler.v1beta1.RetryConfig parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.scheduler.v1beta1.RetryConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.scheduler.v1beta1.RetryConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.scheduler.v1beta1.RetryConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.scheduler.v1beta1.RetryConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.scheduler.v1beta1.RetryConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.scheduler.v1beta1.RetryConfig parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.scheduler.v1beta1.RetryConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.scheduler.v1beta1.RetryConfig parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.scheduler.v1beta1.RetryConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.scheduler.v1beta1.RetryConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.scheduler.v1beta1.RetryConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.scheduler.v1beta1.RetryConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.scheduler.v1beta1.RetryConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Settings that determine the retry behavior.
    * By default, if a job does not complete successfully (meaning that
@@ -535,21 +572,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.scheduler.v1beta1.RetryConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.scheduler.v1beta1.RetryConfig)
       com.google.cloud.scheduler.v1beta1.RetryConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.scheduler.v1beta1.JobProto.internal_static_google_cloud_scheduler_v1beta1_RetryConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.scheduler.v1beta1.JobProto
+          .internal_static_google_cloud_scheduler_v1beta1_RetryConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.scheduler.v1beta1.JobProto.internal_static_google_cloud_scheduler_v1beta1_RetryConfig_fieldAccessorTable
+      return com.google.cloud.scheduler.v1beta1.JobProto
+          .internal_static_google_cloud_scheduler_v1beta1_RetryConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.scheduler.v1beta1.RetryConfig.class, com.google.cloud.scheduler.v1beta1.RetryConfig.Builder.class);
+              com.google.cloud.scheduler.v1beta1.RetryConfig.class,
+              com.google.cloud.scheduler.v1beta1.RetryConfig.Builder.class);
     }
 
     // Construct using com.google.cloud.scheduler.v1beta1.RetryConfig.newBuilder()
@@ -557,16 +596,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -596,9 +634,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.scheduler.v1beta1.JobProto.internal_static_google_cloud_scheduler_v1beta1_RetryConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.scheduler.v1beta1.JobProto
+          .internal_static_google_cloud_scheduler_v1beta1_RetryConfig_descriptor;
     }
 
     @java.lang.Override
@@ -617,7 +655,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.scheduler.v1beta1.RetryConfig buildPartial() {
-      com.google.cloud.scheduler.v1beta1.RetryConfig result = new com.google.cloud.scheduler.v1beta1.RetryConfig(this);
+      com.google.cloud.scheduler.v1beta1.RetryConfig result =
+          new com.google.cloud.scheduler.v1beta1.RetryConfig(this);
       result.retryCount_ = retryCount_;
       if (maxRetryDurationBuilder_ == null) {
         result.maxRetryDuration_ = maxRetryDuration_;
@@ -643,38 +682,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.scheduler.v1beta1.RetryConfig) {
-        return mergeFrom((com.google.cloud.scheduler.v1beta1.RetryConfig)other);
+        return mergeFrom((com.google.cloud.scheduler.v1beta1.RetryConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -727,8 +767,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int retryCount_ ;
+    private int retryCount_;
     /**
+     *
+     *
      * <pre>
      * The number of attempts that the system will make to run a job using the
      * exponential backoff procedure described by
@@ -750,6 +792,8 @@ private static final long serialVersionUID = 0L;
       return retryCount_;
     }
     /**
+     *
+     *
      * <pre>
      * The number of attempts that the system will make to run a job using the
      * exponential backoff procedure described by
@@ -768,12 +812,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 retry_count = 1;</code>
      */
     public Builder setRetryCount(int value) {
-      
+
       retryCount_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The number of attempts that the system will make to run a job using the
      * exponential backoff procedure described by
@@ -792,7 +838,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 retry_count = 1;</code>
      */
     public Builder clearRetryCount() {
-      
+
       retryCount_ = 0;
       onChanged();
       return this;
@@ -800,8 +846,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Duration maxRetryDuration_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> maxRetryDurationBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        maxRetryDurationBuilder_;
     /**
+     *
+     *
      * <pre>
      * The time limit for retrying a failed job, measured from time when an
      * execution was first attempted. If specified with
@@ -817,6 +868,8 @@ private static final long serialVersionUID = 0L;
       return maxRetryDurationBuilder_ != null || maxRetryDuration_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The time limit for retrying a failed job, measured from time when an
      * execution was first attempted. If specified with
@@ -830,12 +883,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Duration getMaxRetryDuration() {
       if (maxRetryDurationBuilder_ == null) {
-        return maxRetryDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxRetryDuration_;
+        return maxRetryDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : maxRetryDuration_;
       } else {
         return maxRetryDurationBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time limit for retrying a failed job, measured from time when an
      * execution was first attempted. If specified with
@@ -861,6 +918,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time limit for retrying a failed job, measured from time when an
      * execution was first attempted. If specified with
@@ -872,8 +931,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Duration max_retry_duration = 2;</code>
      */
-    public Builder setMaxRetryDuration(
-        com.google.protobuf.Duration.Builder builderForValue) {
+    public Builder setMaxRetryDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (maxRetryDurationBuilder_ == null) {
         maxRetryDuration_ = builderForValue.build();
         onChanged();
@@ -884,6 +942,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time limit for retrying a failed job, measured from time when an
      * execution was first attempted. If specified with
@@ -899,7 +959,9 @@ private static final long serialVersionUID = 0L;
       if (maxRetryDurationBuilder_ == null) {
         if (maxRetryDuration_ != null) {
           maxRetryDuration_ =
-            com.google.protobuf.Duration.newBuilder(maxRetryDuration_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(maxRetryDuration_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           maxRetryDuration_ = value;
         }
@@ -911,6 +973,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time limit for retrying a failed job, measured from time when an
      * execution was first attempted. If specified with
@@ -934,6 +998,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time limit for retrying a failed job, measured from time when an
      * execution was first attempted. If specified with
@@ -946,11 +1012,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration max_retry_duration = 2;</code>
      */
     public com.google.protobuf.Duration.Builder getMaxRetryDurationBuilder() {
-      
+
       onChanged();
       return getMaxRetryDurationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The time limit for retrying a failed job, measured from time when an
      * execution was first attempted. If specified with
@@ -966,11 +1034,14 @@ private static final long serialVersionUID = 0L;
       if (maxRetryDurationBuilder_ != null) {
         return maxRetryDurationBuilder_.getMessageOrBuilder();
       } else {
-        return maxRetryDuration_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : maxRetryDuration_;
+        return maxRetryDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : maxRetryDuration_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time limit for retrying a failed job, measured from time when an
      * execution was first attempted. If specified with
@@ -983,14 +1054,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration max_retry_duration = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getMaxRetryDurationFieldBuilder() {
       if (maxRetryDurationBuilder_ == null) {
-        maxRetryDurationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                getMaxRetryDuration(),
-                getParentForChildren(),
-                isClean());
+        maxRetryDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getMaxRetryDuration(), getParentForChildren(), isClean());
         maxRetryDuration_ = null;
       }
       return maxRetryDurationBuilder_;
@@ -998,8 +1072,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Duration minBackoffDuration_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> minBackoffDurationBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        minBackoffDurationBuilder_;
     /**
+     *
+     *
      * <pre>
      * The minimum amount of time to wait before retrying a job after
      * it fails.
@@ -1012,6 +1091,8 @@ private static final long serialVersionUID = 0L;
       return minBackoffDurationBuilder_ != null || minBackoffDuration_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The minimum amount of time to wait before retrying a job after
      * it fails.
@@ -1022,12 +1103,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Duration getMinBackoffDuration() {
       if (minBackoffDurationBuilder_ == null) {
-        return minBackoffDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : minBackoffDuration_;
+        return minBackoffDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : minBackoffDuration_;
       } else {
         return minBackoffDurationBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The minimum amount of time to wait before retrying a job after
      * it fails.
@@ -1050,6 +1135,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The minimum amount of time to wait before retrying a job after
      * it fails.
@@ -1058,8 +1145,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Duration min_backoff_duration = 3;</code>
      */
-    public Builder setMinBackoffDuration(
-        com.google.protobuf.Duration.Builder builderForValue) {
+    public Builder setMinBackoffDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (minBackoffDurationBuilder_ == null) {
         minBackoffDuration_ = builderForValue.build();
         onChanged();
@@ -1070,6 +1156,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The minimum amount of time to wait before retrying a job after
      * it fails.
@@ -1082,7 +1170,9 @@ private static final long serialVersionUID = 0L;
       if (minBackoffDurationBuilder_ == null) {
         if (minBackoffDuration_ != null) {
           minBackoffDuration_ =
-            com.google.protobuf.Duration.newBuilder(minBackoffDuration_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(minBackoffDuration_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           minBackoffDuration_ = value;
         }
@@ -1094,6 +1184,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The minimum amount of time to wait before retrying a job after
      * it fails.
@@ -1114,6 +1206,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The minimum amount of time to wait before retrying a job after
      * it fails.
@@ -1123,11 +1217,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration min_backoff_duration = 3;</code>
      */
     public com.google.protobuf.Duration.Builder getMinBackoffDurationBuilder() {
-      
+
       onChanged();
       return getMinBackoffDurationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The minimum amount of time to wait before retrying a job after
      * it fails.
@@ -1140,11 +1236,14 @@ private static final long serialVersionUID = 0L;
       if (minBackoffDurationBuilder_ != null) {
         return minBackoffDurationBuilder_.getMessageOrBuilder();
       } else {
-        return minBackoffDuration_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : minBackoffDuration_;
+        return minBackoffDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : minBackoffDuration_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The minimum amount of time to wait before retrying a job after
      * it fails.
@@ -1154,14 +1253,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration min_backoff_duration = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getMinBackoffDurationFieldBuilder() {
       if (minBackoffDurationBuilder_ == null) {
-        minBackoffDurationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                getMinBackoffDuration(),
-                getParentForChildren(),
-                isClean());
+        minBackoffDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getMinBackoffDuration(), getParentForChildren(), isClean());
         minBackoffDuration_ = null;
       }
       return minBackoffDurationBuilder_;
@@ -1169,8 +1271,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Duration maxBackoffDuration_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> maxBackoffDurationBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        maxBackoffDurationBuilder_;
     /**
+     *
+     *
      * <pre>
      * The maximum amount of time to wait before retrying a job after
      * it fails.
@@ -1183,6 +1290,8 @@ private static final long serialVersionUID = 0L;
       return maxBackoffDurationBuilder_ != null || maxBackoffDuration_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum amount of time to wait before retrying a job after
      * it fails.
@@ -1193,12 +1302,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Duration getMaxBackoffDuration() {
       if (maxBackoffDurationBuilder_ == null) {
-        return maxBackoffDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxBackoffDuration_;
+        return maxBackoffDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : maxBackoffDuration_;
       } else {
         return maxBackoffDurationBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The maximum amount of time to wait before retrying a job after
      * it fails.
@@ -1221,6 +1334,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum amount of time to wait before retrying a job after
      * it fails.
@@ -1229,8 +1344,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Duration max_backoff_duration = 4;</code>
      */
-    public Builder setMaxBackoffDuration(
-        com.google.protobuf.Duration.Builder builderForValue) {
+    public Builder setMaxBackoffDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (maxBackoffDurationBuilder_ == null) {
         maxBackoffDuration_ = builderForValue.build();
         onChanged();
@@ -1241,6 +1355,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum amount of time to wait before retrying a job after
      * it fails.
@@ -1253,7 +1369,9 @@ private static final long serialVersionUID = 0L;
       if (maxBackoffDurationBuilder_ == null) {
         if (maxBackoffDuration_ != null) {
           maxBackoffDuration_ =
-            com.google.protobuf.Duration.newBuilder(maxBackoffDuration_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(maxBackoffDuration_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           maxBackoffDuration_ = value;
         }
@@ -1265,6 +1383,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum amount of time to wait before retrying a job after
      * it fails.
@@ -1285,6 +1405,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum amount of time to wait before retrying a job after
      * it fails.
@@ -1294,11 +1416,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration max_backoff_duration = 4;</code>
      */
     public com.google.protobuf.Duration.Builder getMaxBackoffDurationBuilder() {
-      
+
       onChanged();
       return getMaxBackoffDurationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The maximum amount of time to wait before retrying a job after
      * it fails.
@@ -1311,11 +1435,14 @@ private static final long serialVersionUID = 0L;
       if (maxBackoffDurationBuilder_ != null) {
         return maxBackoffDurationBuilder_.getMessageOrBuilder();
       } else {
-        return maxBackoffDuration_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : maxBackoffDuration_;
+        return maxBackoffDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : maxBackoffDuration_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The maximum amount of time to wait before retrying a job after
      * it fails.
@@ -1325,21 +1452,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration max_backoff_duration = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getMaxBackoffDurationFieldBuilder() {
       if (maxBackoffDurationBuilder_ == null) {
-        maxBackoffDurationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                getMaxBackoffDuration(),
-                getParentForChildren(),
-                isClean());
+        maxBackoffDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getMaxBackoffDuration(), getParentForChildren(), isClean());
         maxBackoffDuration_ = null;
       }
       return maxBackoffDurationBuilder_;
     }
 
-    private int maxDoublings_ ;
+    private int maxDoublings_;
     /**
+     *
+     *
      * <pre>
      * The time between retries will double `max_doublings` times.
      * A job's retry interval starts at
@@ -1365,6 +1497,8 @@ private static final long serialVersionUID = 0L;
       return maxDoublings_;
     }
     /**
+     *
+     *
      * <pre>
      * The time between retries will double `max_doublings` times.
      * A job's retry interval starts at
@@ -1387,12 +1521,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 max_doublings = 5;</code>
      */
     public Builder setMaxDoublings(int value) {
-      
+
       maxDoublings_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time between retries will double `max_doublings` times.
      * A job's retry interval starts at
@@ -1415,14 +1551,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 max_doublings = 5;</code>
      */
     public Builder clearMaxDoublings() {
-      
+
       maxDoublings_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1432,12 +1568,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.scheduler.v1beta1.RetryConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1beta1.RetryConfig)
   private static final com.google.cloud.scheduler.v1beta1.RetryConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.scheduler.v1beta1.RetryConfig();
   }
@@ -1446,16 +1582,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RetryConfig>
-      PARSER = new com.google.protobuf.AbstractParser<RetryConfig>() {
-    @java.lang.Override
-    public RetryConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new RetryConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<RetryConfig> PARSER =
+      new com.google.protobuf.AbstractParser<RetryConfig>() {
+        @java.lang.Override
+        public RetryConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RetryConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<RetryConfig> parser() {
     return PARSER;
@@ -1470,6 +1606,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.scheduler.v1beta1.RetryConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

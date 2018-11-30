@@ -4,6 +4,8 @@
 package com.google.cloud.scheduler.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Configuration for a job.
  * The maximum allowed size for a job is 100KB.
@@ -11,15 +13,16 @@ package com.google.cloud.scheduler.v1beta1;
  *
  * Protobuf type {@code google.cloud.scheduler.v1beta1.Job}
  */
-public  final class Job extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Job extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.scheduler.v1beta1.Job)
     JobOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Job.newBuilder() to construct.
   private Job(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Job() {
     name_ = "";
     description_ = "";
@@ -29,10 +32,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Job(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -52,185 +55,215 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+              name_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            description_ = s;
-            break;
-          }
-          case 34: {
-            com.google.cloud.scheduler.v1beta1.PubsubTarget.Builder subBuilder = null;
-            if (targetCase_ == 4) {
-              subBuilder = ((com.google.cloud.scheduler.v1beta1.PubsubTarget) target_).toBuilder();
+              description_ = s;
+              break;
             }
-            target_ =
-                input.readMessage(com.google.cloud.scheduler.v1beta1.PubsubTarget.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.scheduler.v1beta1.PubsubTarget) target_);
-              target_ = subBuilder.buildPartial();
+          case 34:
+            {
+              com.google.cloud.scheduler.v1beta1.PubsubTarget.Builder subBuilder = null;
+              if (targetCase_ == 4) {
+                subBuilder =
+                    ((com.google.cloud.scheduler.v1beta1.PubsubTarget) target_).toBuilder();
+              }
+              target_ =
+                  input.readMessage(
+                      com.google.cloud.scheduler.v1beta1.PubsubTarget.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.scheduler.v1beta1.PubsubTarget) target_);
+                target_ = subBuilder.buildPartial();
+              }
+              targetCase_ = 4;
+              break;
             }
-            targetCase_ = 4;
-            break;
-          }
-          case 42: {
-            com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.Builder subBuilder = null;
-            if (targetCase_ == 5) {
-              subBuilder = ((com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget) target_).toBuilder();
+          case 42:
+            {
+              com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.Builder subBuilder = null;
+              if (targetCase_ == 5) {
+                subBuilder =
+                    ((com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget) target_).toBuilder();
+              }
+              target_ =
+                  input.readMessage(
+                      com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget) target_);
+                target_ = subBuilder.buildPartial();
+              }
+              targetCase_ = 5;
+              break;
             }
-            target_ =
-                input.readMessage(com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget) target_);
-              target_ = subBuilder.buildPartial();
+          case 50:
+            {
+              com.google.cloud.scheduler.v1beta1.HttpTarget.Builder subBuilder = null;
+              if (targetCase_ == 6) {
+                subBuilder = ((com.google.cloud.scheduler.v1beta1.HttpTarget) target_).toBuilder();
+              }
+              target_ =
+                  input.readMessage(
+                      com.google.cloud.scheduler.v1beta1.HttpTarget.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.scheduler.v1beta1.HttpTarget) target_);
+                target_ = subBuilder.buildPartial();
+              }
+              targetCase_ = 6;
+              break;
             }
-            targetCase_ = 5;
-            break;
-          }
-          case 50: {
-            com.google.cloud.scheduler.v1beta1.HttpTarget.Builder subBuilder = null;
-            if (targetCase_ == 6) {
-              subBuilder = ((com.google.cloud.scheduler.v1beta1.HttpTarget) target_).toBuilder();
-            }
-            target_ =
-                input.readMessage(com.google.cloud.scheduler.v1beta1.HttpTarget.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.scheduler.v1beta1.HttpTarget) target_);
-              target_ = subBuilder.buildPartial();
-            }
-            targetCase_ = 6;
-            break;
-          }
-          case 74: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (userUpdateTime_ != null) {
-              subBuilder = userUpdateTime_.toBuilder();
-            }
-            userUpdateTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(userUpdateTime_);
-              userUpdateTime_ = subBuilder.buildPartial();
-            }
+          case 74:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (userUpdateTime_ != null) {
+                subBuilder = userUpdateTime_.toBuilder();
+              }
+              userUpdateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(userUpdateTime_);
+                userUpdateTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 80: {
-            int rawValue = input.readEnum();
+              break;
+            }
+          case 80:
+            {
+              int rawValue = input.readEnum();
 
-            state_ = rawValue;
-            break;
-          }
-          case 90: {
-            com.google.rpc.Status.Builder subBuilder = null;
-            if (status_ != null) {
-              subBuilder = status_.toBuilder();
+              state_ = rawValue;
+              break;
             }
-            status_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(status_);
-              status_ = subBuilder.buildPartial();
-            }
+          case 90:
+            {
+              com.google.rpc.Status.Builder subBuilder = null;
+              if (status_ != null) {
+                subBuilder = status_.toBuilder();
+              }
+              status_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(status_);
+                status_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 138: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (scheduleTime_ != null) {
-              subBuilder = scheduleTime_.toBuilder();
+              break;
             }
-            scheduleTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(scheduleTime_);
-              scheduleTime_ = subBuilder.buildPartial();
-            }
+          case 138:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (scheduleTime_ != null) {
+                subBuilder = scheduleTime_.toBuilder();
+              }
+              scheduleTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(scheduleTime_);
+                scheduleTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 146: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (lastAttemptTime_ != null) {
-              subBuilder = lastAttemptTime_.toBuilder();
+              break;
             }
-            lastAttemptTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(lastAttemptTime_);
-              lastAttemptTime_ = subBuilder.buildPartial();
-            }
+          case 146:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (lastAttemptTime_ != null) {
+                subBuilder = lastAttemptTime_.toBuilder();
+              }
+              lastAttemptTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lastAttemptTime_);
+                lastAttemptTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 154: {
-            com.google.cloud.scheduler.v1beta1.RetryConfig.Builder subBuilder = null;
-            if (retryConfig_ != null) {
-              subBuilder = retryConfig_.toBuilder();
+              break;
             }
-            retryConfig_ = input.readMessage(com.google.cloud.scheduler.v1beta1.RetryConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(retryConfig_);
-              retryConfig_ = subBuilder.buildPartial();
+          case 154:
+            {
+              com.google.cloud.scheduler.v1beta1.RetryConfig.Builder subBuilder = null;
+              if (retryConfig_ != null) {
+                subBuilder = retryConfig_.toBuilder();
+              }
+              retryConfig_ =
+                  input.readMessage(
+                      com.google.cloud.scheduler.v1beta1.RetryConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(retryConfig_);
+                retryConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
+          case 162:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 162: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            schedule_ = s;
-            break;
-          }
-          case 170: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            timeZone_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              schedule_ = s;
+              break;
             }
-            break;
-          }
+          case 170:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              timeZone_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.scheduler.v1beta1.JobProto.internal_static_google_cloud_scheduler_v1beta1_Job_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.scheduler.v1beta1.JobProto
+        .internal_static_google_cloud_scheduler_v1beta1_Job_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.scheduler.v1beta1.JobProto.internal_static_google_cloud_scheduler_v1beta1_Job_fieldAccessorTable
+    return com.google.cloud.scheduler.v1beta1.JobProto
+        .internal_static_google_cloud_scheduler_v1beta1_Job_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.scheduler.v1beta1.Job.class, com.google.cloud.scheduler.v1beta1.Job.Builder.class);
+            com.google.cloud.scheduler.v1beta1.Job.class,
+            com.google.cloud.scheduler.v1beta1.Job.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * State of the job.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.scheduler.v1beta1.Job.State}
    */
-  public enum State
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Unspecified state.
      * </pre>
@@ -239,6 +272,8 @@ private static final long serialVersionUID = 0L;
      */
     STATE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * The job is executing normally.
      * </pre>
@@ -247,6 +282,8 @@ private static final long serialVersionUID = 0L;
      */
     ENABLED(1),
     /**
+     *
+     *
      * <pre>
      * The job is paused by the user. It will not execute. A user can
      * intentionally pause the job using
@@ -257,6 +294,8 @@ private static final long serialVersionUID = 0L;
      */
     PAUSED(2),
     /**
+     *
+     *
      * <pre>
      * The job is disabled by the system due to error. The user
      * cannot directly set a job to be disabled.
@@ -266,6 +305,8 @@ private static final long serialVersionUID = 0L;
      */
     DISABLED(3),
     /**
+     *
+     *
      * <pre>
      * The job state resulting from a failed [CloudScheduler.UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob]
      * operation. To recover a job from this state, retry
@@ -279,6 +320,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Unspecified state.
      * </pre>
@@ -287,6 +330,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The job is executing normally.
      * </pre>
@@ -295,6 +340,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ENABLED_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * The job is paused by the user. It will not execute. A user can
      * intentionally pause the job using
@@ -305,6 +352,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PAUSED_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * The job is disabled by the system due to error. The user
      * cannot directly set a job to be disabled.
@@ -314,6 +363,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DISABLED_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * The job state resulting from a failed [CloudScheduler.UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob]
      * operation. To recover a job from this state, retry
@@ -324,7 +375,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int UPDATE_FAILED_VALUE = 4;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -333,9 +383,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
@@ -343,47 +391,49 @@ private static final long serialVersionUID = 0L;
 
     public static State forNumber(int value) {
       switch (value) {
-        case 0: return STATE_UNSPECIFIED;
-        case 1: return ENABLED;
-        case 2: return PAUSED;
-        case 3: return DISABLED;
-        case 4: return UPDATE_FAILED;
-        default: return null;
+        case 0:
+          return STATE_UNSPECIFIED;
+        case 1:
+          return ENABLED;
+        case 2:
+          return PAUSED;
+        case 3:
+          return DISABLED;
+        case 4:
+          return UPDATE_FAILED;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<State>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        State> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<State>() {
-            public State findValueByNumber(int number) {
-              return State.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.scheduler.v1beta1.Job.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final State[] VALUES = values();
 
-    public static State valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -402,19 +452,18 @@ private static final long serialVersionUID = 0L;
 
   private int targetCase_ = 0;
   private java.lang.Object target_;
-  public enum TargetCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum TargetCase implements com.google.protobuf.Internal.EnumLite {
     PUBSUB_TARGET(4),
     APP_ENGINE_HTTP_TARGET(5),
     HTTP_TARGET(6),
     TARGET_NOT_SET(0);
     private final int value;
+
     private TargetCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static TargetCase valueOf(int value) {
       return forNumber(value);
@@ -422,27 +471,33 @@ private static final long serialVersionUID = 0L;
 
     public static TargetCase forNumber(int value) {
       switch (value) {
-        case 4: return PUBSUB_TARGET;
-        case 5: return APP_ENGINE_HTTP_TARGET;
-        case 6: return HTTP_TARGET;
-        case 0: return TARGET_NOT_SET;
-        default: return null;
+        case 4:
+          return PUBSUB_TARGET;
+        case 5:
+          return APP_ENGINE_HTTP_TARGET;
+        case 6:
+          return HTTP_TARGET;
+        case 0:
+          return TARGET_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public TargetCase
-  getTargetCase() {
-    return TargetCase.forNumber(
-        targetCase_);
+  public TargetCase getTargetCase() {
+    return TargetCase.forNumber(targetCase_);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The job name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
@@ -465,14 +520,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The job name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
@@ -490,13 +546,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -507,6 +561,8 @@ private static final long serialVersionUID = 0L;
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
   private volatile java.lang.Object description_;
   /**
+   *
+   *
    * <pre>
    * A human-readable description for the job. This string must not contain
    * more than 500 characters.
@@ -519,14 +575,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       description_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A human-readable description for the job. This string must not contain
    * more than 500 characters.
@@ -534,13 +591,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string description = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getDescriptionBytes() {
+  public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       description_ = b;
       return b;
     } else {
@@ -550,6 +605,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int PUBSUB_TARGET_FIELD_NUMBER = 4;
   /**
+   *
+   *
    * <pre>
    * Pub/Sub target.
    * </pre>
@@ -560,6 +617,8 @@ private static final long serialVersionUID = 0L;
     return targetCase_ == 4;
   }
   /**
+   *
+   *
    * <pre>
    * Pub/Sub target.
    * </pre>
@@ -568,11 +627,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.scheduler.v1beta1.PubsubTarget getPubsubTarget() {
     if (targetCase_ == 4) {
-       return (com.google.cloud.scheduler.v1beta1.PubsubTarget) target_;
+      return (com.google.cloud.scheduler.v1beta1.PubsubTarget) target_;
     }
     return com.google.cloud.scheduler.v1beta1.PubsubTarget.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Pub/Sub target.
    * </pre>
@@ -581,13 +642,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.scheduler.v1beta1.PubsubTargetOrBuilder getPubsubTargetOrBuilder() {
     if (targetCase_ == 4) {
-       return (com.google.cloud.scheduler.v1beta1.PubsubTarget) target_;
+      return (com.google.cloud.scheduler.v1beta1.PubsubTarget) target_;
     }
     return com.google.cloud.scheduler.v1beta1.PubsubTarget.getDefaultInstance();
   }
 
   public static final int APP_ENGINE_HTTP_TARGET_FIELD_NUMBER = 5;
   /**
+   *
+   *
    * <pre>
    * App Engine HTTP target.
    * </pre>
@@ -598,6 +661,8 @@ private static final long serialVersionUID = 0L;
     return targetCase_ == 5;
   }
   /**
+   *
+   *
    * <pre>
    * App Engine HTTP target.
    * </pre>
@@ -606,26 +671,31 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget getAppEngineHttpTarget() {
     if (targetCase_ == 5) {
-       return (com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget) target_;
+      return (com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget) target_;
     }
     return com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * App Engine HTTP target.
    * </pre>
    *
    * <code>.google.cloud.scheduler.v1beta1.AppEngineHttpTarget app_engine_http_target = 5;</code>
    */
-  public com.google.cloud.scheduler.v1beta1.AppEngineHttpTargetOrBuilder getAppEngineHttpTargetOrBuilder() {
+  public com.google.cloud.scheduler.v1beta1.AppEngineHttpTargetOrBuilder
+      getAppEngineHttpTargetOrBuilder() {
     if (targetCase_ == 5) {
-       return (com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget) target_;
+      return (com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget) target_;
     }
     return com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.getDefaultInstance();
   }
 
   public static final int HTTP_TARGET_FIELD_NUMBER = 6;
   /**
+   *
+   *
    * <pre>
    * HTTP target.
    * </pre>
@@ -636,6 +706,8 @@ private static final long serialVersionUID = 0L;
     return targetCase_ == 6;
   }
   /**
+   *
+   *
    * <pre>
    * HTTP target.
    * </pre>
@@ -644,11 +716,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.scheduler.v1beta1.HttpTarget getHttpTarget() {
     if (targetCase_ == 6) {
-       return (com.google.cloud.scheduler.v1beta1.HttpTarget) target_;
+      return (com.google.cloud.scheduler.v1beta1.HttpTarget) target_;
     }
     return com.google.cloud.scheduler.v1beta1.HttpTarget.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * HTTP target.
    * </pre>
@@ -657,7 +731,7 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.scheduler.v1beta1.HttpTargetOrBuilder getHttpTargetOrBuilder() {
     if (targetCase_ == 6) {
-       return (com.google.cloud.scheduler.v1beta1.HttpTarget) target_;
+      return (com.google.cloud.scheduler.v1beta1.HttpTarget) target_;
     }
     return com.google.cloud.scheduler.v1beta1.HttpTarget.getDefaultInstance();
   }
@@ -665,6 +739,8 @@ private static final long serialVersionUID = 0L;
   public static final int SCHEDULE_FIELD_NUMBER = 20;
   private volatile java.lang.Object schedule_;
   /**
+   *
+   *
    * <pre>
    * Required.
    * Describes the schedule on which the job will be executed.
@@ -692,14 +768,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       schedule_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required.
    * Describes the schedule on which the job will be executed.
@@ -722,13 +799,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string schedule = 20;</code>
    */
-  public com.google.protobuf.ByteString
-      getScheduleBytes() {
+  public com.google.protobuf.ByteString getScheduleBytes() {
     java.lang.Object ref = schedule_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       schedule_ = b;
       return b;
     } else {
@@ -739,6 +814,8 @@ private static final long serialVersionUID = 0L;
   public static final int TIME_ZONE_FIELD_NUMBER = 21;
   private volatile java.lang.Object timeZone_;
   /**
+   *
+   *
    * <pre>
    * Specifies the time zone to be used in interpreting
    * [schedule][google.cloud.scheduler.v1beta1.Job.schedule]. The value of this field must be a time
@@ -757,14 +834,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       timeZone_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Specifies the time zone to be used in interpreting
    * [schedule][google.cloud.scheduler.v1beta1.Job.schedule]. The value of this field must be a time
@@ -778,13 +856,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string time_zone = 21;</code>
    */
-  public com.google.protobuf.ByteString
-      getTimeZoneBytes() {
+  public com.google.protobuf.ByteString getTimeZoneBytes() {
     java.lang.Object ref = timeZone_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       timeZone_ = b;
       return b;
     } else {
@@ -795,6 +871,8 @@ private static final long serialVersionUID = 0L;
   public static final int USER_UPDATE_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp userUpdateTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. The creation time of the job.
    * </pre>
@@ -805,6 +883,8 @@ private static final long serialVersionUID = 0L;
     return userUpdateTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The creation time of the job.
    * </pre>
@@ -812,9 +892,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp user_update_time = 9;</code>
    */
   public com.google.protobuf.Timestamp getUserUpdateTime() {
-    return userUpdateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : userUpdateTime_;
+    return userUpdateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : userUpdateTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The creation time of the job.
    * </pre>
@@ -828,6 +912,8 @@ private static final long serialVersionUID = 0L;
   public static final int STATE_FIELD_NUMBER = 10;
   private int state_;
   /**
+   *
+   *
    * <pre>
    * Output only. State of the job.
    * </pre>
@@ -838,6 +924,8 @@ private static final long serialVersionUID = 0L;
     return state_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. State of the job.
    * </pre>
@@ -846,13 +934,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.scheduler.v1beta1.Job.State getState() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.scheduler.v1beta1.Job.State result = com.google.cloud.scheduler.v1beta1.Job.State.valueOf(state_);
+    com.google.cloud.scheduler.v1beta1.Job.State result =
+        com.google.cloud.scheduler.v1beta1.Job.State.valueOf(state_);
     return result == null ? com.google.cloud.scheduler.v1beta1.Job.State.UNRECOGNIZED : result;
   }
 
   public static final int STATUS_FIELD_NUMBER = 11;
   private com.google.rpc.Status status_;
   /**
+   *
+   *
    * <pre>
    * Output only. The response from the target for the last attempted execution.
    * </pre>
@@ -863,6 +954,8 @@ private static final long serialVersionUID = 0L;
     return status_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The response from the target for the last attempted execution.
    * </pre>
@@ -873,6 +966,8 @@ private static final long serialVersionUID = 0L;
     return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The response from the target for the last attempted execution.
    * </pre>
@@ -886,6 +981,8 @@ private static final long serialVersionUID = 0L;
   public static final int SCHEDULE_TIME_FIELD_NUMBER = 17;
   private com.google.protobuf.Timestamp scheduleTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. The next time the job is scheduled. Note that this may be a
    * retry of a previously failed attempt or the next execution time
@@ -898,6 +995,8 @@ private static final long serialVersionUID = 0L;
     return scheduleTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The next time the job is scheduled. Note that this may be a
    * retry of a previously failed attempt or the next execution time
@@ -907,9 +1006,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp schedule_time = 17;</code>
    */
   public com.google.protobuf.Timestamp getScheduleTime() {
-    return scheduleTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : scheduleTime_;
+    return scheduleTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : scheduleTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The next time the job is scheduled. Note that this may be a
    * retry of a previously failed attempt or the next execution time
@@ -925,6 +1028,8 @@ private static final long serialVersionUID = 0L;
   public static final int LAST_ATTEMPT_TIME_FIELD_NUMBER = 18;
   private com.google.protobuf.Timestamp lastAttemptTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. The time the last job attempt started.
    * </pre>
@@ -935,6 +1040,8 @@ private static final long serialVersionUID = 0L;
     return lastAttemptTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time the last job attempt started.
    * </pre>
@@ -942,9 +1049,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp last_attempt_time = 18;</code>
    */
   public com.google.protobuf.Timestamp getLastAttemptTime() {
-    return lastAttemptTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastAttemptTime_;
+    return lastAttemptTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastAttemptTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time the last job attempt started.
    * </pre>
@@ -958,6 +1069,8 @@ private static final long serialVersionUID = 0L;
   public static final int RETRY_CONFIG_FIELD_NUMBER = 19;
   private com.google.cloud.scheduler.v1beta1.RetryConfig retryConfig_;
   /**
+   *
+   *
    * <pre>
    * Settings that determine the retry behavior.
    * </pre>
@@ -968,6 +1081,8 @@ private static final long serialVersionUID = 0L;
     return retryConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Settings that determine the retry behavior.
    * </pre>
@@ -975,9 +1090,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.scheduler.v1beta1.RetryConfig retry_config = 19;</code>
    */
   public com.google.cloud.scheduler.v1beta1.RetryConfig getRetryConfig() {
-    return retryConfig_ == null ? com.google.cloud.scheduler.v1beta1.RetryConfig.getDefaultInstance() : retryConfig_;
+    return retryConfig_ == null
+        ? com.google.cloud.scheduler.v1beta1.RetryConfig.getDefaultInstance()
+        : retryConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Settings that determine the retry behavior.
    * </pre>
@@ -989,6 +1108,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1000,8 +1120,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -1057,40 +1176,37 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
     if (targetCase_ == 4) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (com.google.cloud.scheduler.v1beta1.PubsubTarget) target_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.scheduler.v1beta1.PubsubTarget) target_);
     }
     if (targetCase_ == 5) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, (com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget) target_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget) target_);
     }
     if (targetCase_ == 6) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, (com.google.cloud.scheduler.v1beta1.HttpTarget) target_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.cloud.scheduler.v1beta1.HttpTarget) target_);
     }
     if (userUpdateTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getUserUpdateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getUserUpdateTime());
     }
     if (state_ != com.google.cloud.scheduler.v1beta1.Job.State.STATE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(10, state_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, state_);
     }
     if (status_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getStatus());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getStatus());
     }
     if (scheduleTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(17, getScheduleTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getScheduleTime());
     }
     if (lastAttemptTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(18, getLastAttemptTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getLastAttemptTime());
     }
     if (retryConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(19, getRetryConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getRetryConfig());
     }
     if (!getScheduleBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, schedule_);
@@ -1106,7 +1222,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.scheduler.v1beta1.Job)) {
       return super.equals(obj);
@@ -1114,55 +1230,42 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.scheduler.v1beta1.Job other = (com.google.cloud.scheduler.v1beta1.Job) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getDescription()
-        .equals(other.getDescription());
-    result = result && getSchedule()
-        .equals(other.getSchedule());
-    result = result && getTimeZone()
-        .equals(other.getTimeZone());
+    result = result && getName().equals(other.getName());
+    result = result && getDescription().equals(other.getDescription());
+    result = result && getSchedule().equals(other.getSchedule());
+    result = result && getTimeZone().equals(other.getTimeZone());
     result = result && (hasUserUpdateTime() == other.hasUserUpdateTime());
     if (hasUserUpdateTime()) {
-      result = result && getUserUpdateTime()
-          .equals(other.getUserUpdateTime());
+      result = result && getUserUpdateTime().equals(other.getUserUpdateTime());
     }
     result = result && state_ == other.state_;
     result = result && (hasStatus() == other.hasStatus());
     if (hasStatus()) {
-      result = result && getStatus()
-          .equals(other.getStatus());
+      result = result && getStatus().equals(other.getStatus());
     }
     result = result && (hasScheduleTime() == other.hasScheduleTime());
     if (hasScheduleTime()) {
-      result = result && getScheduleTime()
-          .equals(other.getScheduleTime());
+      result = result && getScheduleTime().equals(other.getScheduleTime());
     }
     result = result && (hasLastAttemptTime() == other.hasLastAttemptTime());
     if (hasLastAttemptTime()) {
-      result = result && getLastAttemptTime()
-          .equals(other.getLastAttemptTime());
+      result = result && getLastAttemptTime().equals(other.getLastAttemptTime());
     }
     result = result && (hasRetryConfig() == other.hasRetryConfig());
     if (hasRetryConfig()) {
-      result = result && getRetryConfig()
-          .equals(other.getRetryConfig());
+      result = result && getRetryConfig().equals(other.getRetryConfig());
     }
-    result = result && getTargetCase().equals(
-        other.getTargetCase());
+    result = result && getTargetCase().equals(other.getTargetCase());
     if (!result) return false;
     switch (targetCase_) {
       case 4:
-        result = result && getPubsubTarget()
-            .equals(other.getPubsubTarget());
+        result = result && getPubsubTarget().equals(other.getPubsubTarget());
         break;
       case 5:
-        result = result && getAppEngineHttpTarget()
-            .equals(other.getAppEngineHttpTarget());
+        result = result && getAppEngineHttpTarget().equals(other.getAppEngineHttpTarget());
         break;
       case 6:
-        result = result && getHttpTarget()
-            .equals(other.getHttpTarget());
+        result = result && getHttpTarget().equals(other.getHttpTarget());
         break;
       case 0:
       default:
@@ -1229,97 +1332,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.scheduler.v1beta1.Job parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.scheduler.v1beta1.Job parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.scheduler.v1beta1.Job parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.scheduler.v1beta1.Job parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.scheduler.v1beta1.Job parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.scheduler.v1beta1.Job parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.scheduler.v1beta1.Job parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.scheduler.v1beta1.Job parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.scheduler.v1beta1.Job parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.scheduler.v1beta1.Job parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.scheduler.v1beta1.Job parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.scheduler.v1beta1.Job parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.scheduler.v1beta1.Job parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.scheduler.v1beta1.Job prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for a job.
    * The maximum allowed size for a job is 100KB.
@@ -1327,21 +1437,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.scheduler.v1beta1.Job}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.scheduler.v1beta1.Job)
       com.google.cloud.scheduler.v1beta1.JobOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.scheduler.v1beta1.JobProto.internal_static_google_cloud_scheduler_v1beta1_Job_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.scheduler.v1beta1.JobProto
+          .internal_static_google_cloud_scheduler_v1beta1_Job_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.scheduler.v1beta1.JobProto.internal_static_google_cloud_scheduler_v1beta1_Job_fieldAccessorTable
+      return com.google.cloud.scheduler.v1beta1.JobProto
+          .internal_static_google_cloud_scheduler_v1beta1_Job_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.scheduler.v1beta1.Job.class, com.google.cloud.scheduler.v1beta1.Job.Builder.class);
+              com.google.cloud.scheduler.v1beta1.Job.class,
+              com.google.cloud.scheduler.v1beta1.Job.Builder.class);
     }
 
     // Construct using com.google.cloud.scheduler.v1beta1.Job.newBuilder()
@@ -1349,16 +1461,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1408,9 +1519,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.scheduler.v1beta1.JobProto.internal_static_google_cloud_scheduler_v1beta1_Job_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.scheduler.v1beta1.JobProto
+          .internal_static_google_cloud_scheduler_v1beta1_Job_descriptor;
     }
 
     @java.lang.Override
@@ -1429,7 +1540,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.scheduler.v1beta1.Job buildPartial() {
-      com.google.cloud.scheduler.v1beta1.Job result = new com.google.cloud.scheduler.v1beta1.Job(this);
+      com.google.cloud.scheduler.v1beta1.Job result =
+          new com.google.cloud.scheduler.v1beta1.Job(this);
       result.name_ = name_;
       result.description_ = description_;
       if (targetCase_ == 4) {
@@ -1490,38 +1602,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.scheduler.v1beta1.Job) {
-        return mergeFrom((com.google.cloud.scheduler.v1beta1.Job)other);
+        return mergeFrom((com.google.cloud.scheduler.v1beta1.Job) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1565,21 +1678,25 @@ private static final long serialVersionUID = 0L;
         mergeRetryConfig(other.getRetryConfig());
       }
       switch (other.getTargetCase()) {
-        case PUBSUB_TARGET: {
-          mergePubsubTarget(other.getPubsubTarget());
-          break;
-        }
-        case APP_ENGINE_HTTP_TARGET: {
-          mergeAppEngineHttpTarget(other.getAppEngineHttpTarget());
-          break;
-        }
-        case HTTP_TARGET: {
-          mergeHttpTarget(other.getHttpTarget());
-          break;
-        }
-        case TARGET_NOT_SET: {
-          break;
-        }
+        case PUBSUB_TARGET:
+          {
+            mergePubsubTarget(other.getPubsubTarget());
+            break;
+          }
+        case APP_ENGINE_HTTP_TARGET:
+          {
+            mergeAppEngineHttpTarget(other.getAppEngineHttpTarget());
+            break;
+          }
+        case HTTP_TARGET:
+          {
+            mergeHttpTarget(other.getHttpTarget());
+            break;
+          }
+        case TARGET_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1609,12 +1726,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int targetCase_ = 0;
     private java.lang.Object target_;
-    public TargetCase
-        getTargetCase() {
-      return TargetCase.forNumber(
-          targetCase_);
+
+    public TargetCase getTargetCase() {
+      return TargetCase.forNumber(targetCase_);
     }
 
     public Builder clearTarget() {
@@ -1624,9 +1741,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The job name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
@@ -1647,8 +1765,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1657,6 +1774,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The job name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
@@ -1674,13 +1793,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1688,6 +1805,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The job name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
@@ -1705,17 +1824,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The job name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
@@ -1734,12 +1854,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The job name. For example:
      * `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
@@ -1757,13 +1879,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1771,6 +1892,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
+     *
+     *
      * <pre>
      * A human-readable description for the job. This string must not contain
      * more than 500 characters.
@@ -1781,8 +1904,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         description_ = s;
         return s;
@@ -1791,6 +1913,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A human-readable description for the job. This string must not contain
      * more than 500 characters.
@@ -1798,13 +1922,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
+    public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         description_ = b;
         return b;
       } else {
@@ -1812,6 +1934,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A human-readable description for the job. This string must not contain
      * more than 500 characters.
@@ -1819,17 +1943,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 2;</code>
      */
-    public Builder setDescription(
-        java.lang.String value) {
+    public Builder setDescription(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       description_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A human-readable description for the job. This string must not contain
      * more than 500 characters.
@@ -1838,12 +1963,14 @@ private static final long serialVersionUID = 0L;
      * <code>string description = 2;</code>
      */
     public Builder clearDescription() {
-      
+
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A human-readable description for the job. This string must not contain
      * more than 500 characters.
@@ -1851,21 +1978,25 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 2;</code>
      */
-    public Builder setDescriptionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       description_ = value;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.scheduler.v1beta1.PubsubTarget, com.google.cloud.scheduler.v1beta1.PubsubTarget.Builder, com.google.cloud.scheduler.v1beta1.PubsubTargetOrBuilder> pubsubTargetBuilder_;
+            com.google.cloud.scheduler.v1beta1.PubsubTarget,
+            com.google.cloud.scheduler.v1beta1.PubsubTarget.Builder,
+            com.google.cloud.scheduler.v1beta1.PubsubTargetOrBuilder>
+        pubsubTargetBuilder_;
     /**
+     *
+     *
      * <pre>
      * Pub/Sub target.
      * </pre>
@@ -1876,6 +2007,8 @@ private static final long serialVersionUID = 0L;
       return targetCase_ == 4;
     }
     /**
+     *
+     *
      * <pre>
      * Pub/Sub target.
      * </pre>
@@ -1896,6 +2029,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Pub/Sub target.
      * </pre>
@@ -1916,6 +2051,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Pub/Sub target.
      * </pre>
@@ -1934,6 +2071,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Pub/Sub target.
      * </pre>
@@ -1942,10 +2081,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergePubsubTarget(com.google.cloud.scheduler.v1beta1.PubsubTarget value) {
       if (pubsubTargetBuilder_ == null) {
-        if (targetCase_ == 4 &&
-            target_ != com.google.cloud.scheduler.v1beta1.PubsubTarget.getDefaultInstance()) {
-          target_ = com.google.cloud.scheduler.v1beta1.PubsubTarget.newBuilder((com.google.cloud.scheduler.v1beta1.PubsubTarget) target_)
-              .mergeFrom(value).buildPartial();
+        if (targetCase_ == 4
+            && target_ != com.google.cloud.scheduler.v1beta1.PubsubTarget.getDefaultInstance()) {
+          target_ =
+              com.google.cloud.scheduler.v1beta1.PubsubTarget.newBuilder(
+                      (com.google.cloud.scheduler.v1beta1.PubsubTarget) target_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           target_ = value;
         }
@@ -1960,6 +2102,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Pub/Sub target.
      * </pre>
@@ -1983,6 +2127,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Pub/Sub target.
      * </pre>
@@ -1993,6 +2139,8 @@ private static final long serialVersionUID = 0L;
       return getPubsubTargetFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Pub/Sub target.
      * </pre>
@@ -2010,6 +2158,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Pub/Sub target.
      * </pre>
@@ -2017,27 +2167,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.scheduler.v1beta1.PubsubTarget pubsub_target = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.scheduler.v1beta1.PubsubTarget, com.google.cloud.scheduler.v1beta1.PubsubTarget.Builder, com.google.cloud.scheduler.v1beta1.PubsubTargetOrBuilder> 
+            com.google.cloud.scheduler.v1beta1.PubsubTarget,
+            com.google.cloud.scheduler.v1beta1.PubsubTarget.Builder,
+            com.google.cloud.scheduler.v1beta1.PubsubTargetOrBuilder>
         getPubsubTargetFieldBuilder() {
       if (pubsubTargetBuilder_ == null) {
         if (!(targetCase_ == 4)) {
           target_ = com.google.cloud.scheduler.v1beta1.PubsubTarget.getDefaultInstance();
         }
-        pubsubTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.scheduler.v1beta1.PubsubTarget, com.google.cloud.scheduler.v1beta1.PubsubTarget.Builder, com.google.cloud.scheduler.v1beta1.PubsubTargetOrBuilder>(
+        pubsubTargetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.scheduler.v1beta1.PubsubTarget,
+                com.google.cloud.scheduler.v1beta1.PubsubTarget.Builder,
+                com.google.cloud.scheduler.v1beta1.PubsubTargetOrBuilder>(
                 (com.google.cloud.scheduler.v1beta1.PubsubTarget) target_,
                 getParentForChildren(),
                 isClean());
         target_ = null;
       }
       targetCase_ = 4;
-      onChanged();;
+      onChanged();
+      ;
       return pubsubTargetBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget, com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.Builder, com.google.cloud.scheduler.v1beta1.AppEngineHttpTargetOrBuilder> appEngineHttpTargetBuilder_;
+            com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget,
+            com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.Builder,
+            com.google.cloud.scheduler.v1beta1.AppEngineHttpTargetOrBuilder>
+        appEngineHttpTargetBuilder_;
     /**
+     *
+     *
      * <pre>
      * App Engine HTTP target.
      * </pre>
@@ -2048,6 +2209,8 @@ private static final long serialVersionUID = 0L;
       return targetCase_ == 5;
     }
     /**
+     *
+     *
      * <pre>
      * App Engine HTTP target.
      * </pre>
@@ -2068,13 +2231,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * App Engine HTTP target.
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.AppEngineHttpTarget app_engine_http_target = 5;</code>
      */
-    public Builder setAppEngineHttpTarget(com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget value) {
+    public Builder setAppEngineHttpTarget(
+        com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget value) {
       if (appEngineHttpTargetBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2088,6 +2254,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * App Engine HTTP target.
      * </pre>
@@ -2106,18 +2274,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * App Engine HTTP target.
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.AppEngineHttpTarget app_engine_http_target = 5;</code>
      */
-    public Builder mergeAppEngineHttpTarget(com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget value) {
+    public Builder mergeAppEngineHttpTarget(
+        com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget value) {
       if (appEngineHttpTargetBuilder_ == null) {
-        if (targetCase_ == 5 &&
-            target_ != com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.getDefaultInstance()) {
-          target_ = com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.newBuilder((com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget) target_)
-              .mergeFrom(value).buildPartial();
+        if (targetCase_ == 5
+            && target_
+                != com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.getDefaultInstance()) {
+          target_ =
+              com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.newBuilder(
+                      (com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget) target_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           target_ = value;
         }
@@ -2132,6 +2307,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * App Engine HTTP target.
      * </pre>
@@ -2155,23 +2332,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * App Engine HTTP target.
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.AppEngineHttpTarget app_engine_http_target = 5;</code>
      */
-    public com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.Builder getAppEngineHttpTargetBuilder() {
+    public com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.Builder
+        getAppEngineHttpTargetBuilder() {
       return getAppEngineHttpTargetFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * App Engine HTTP target.
      * </pre>
      *
      * <code>.google.cloud.scheduler.v1beta1.AppEngineHttpTarget app_engine_http_target = 5;</code>
      */
-    public com.google.cloud.scheduler.v1beta1.AppEngineHttpTargetOrBuilder getAppEngineHttpTargetOrBuilder() {
+    public com.google.cloud.scheduler.v1beta1.AppEngineHttpTargetOrBuilder
+        getAppEngineHttpTargetOrBuilder() {
       if ((targetCase_ == 5) && (appEngineHttpTargetBuilder_ != null)) {
         return appEngineHttpTargetBuilder_.getMessageOrBuilder();
       } else {
@@ -2182,6 +2365,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * App Engine HTTP target.
      * </pre>
@@ -2189,27 +2374,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.scheduler.v1beta1.AppEngineHttpTarget app_engine_http_target = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget, com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.Builder, com.google.cloud.scheduler.v1beta1.AppEngineHttpTargetOrBuilder> 
+            com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget,
+            com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.Builder,
+            com.google.cloud.scheduler.v1beta1.AppEngineHttpTargetOrBuilder>
         getAppEngineHttpTargetFieldBuilder() {
       if (appEngineHttpTargetBuilder_ == null) {
         if (!(targetCase_ == 5)) {
           target_ = com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.getDefaultInstance();
         }
-        appEngineHttpTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget, com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.Builder, com.google.cloud.scheduler.v1beta1.AppEngineHttpTargetOrBuilder>(
+        appEngineHttpTargetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget,
+                com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget.Builder,
+                com.google.cloud.scheduler.v1beta1.AppEngineHttpTargetOrBuilder>(
                 (com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget) target_,
                 getParentForChildren(),
                 isClean());
         target_ = null;
       }
       targetCase_ = 5;
-      onChanged();;
+      onChanged();
+      ;
       return appEngineHttpTargetBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.scheduler.v1beta1.HttpTarget, com.google.cloud.scheduler.v1beta1.HttpTarget.Builder, com.google.cloud.scheduler.v1beta1.HttpTargetOrBuilder> httpTargetBuilder_;
+            com.google.cloud.scheduler.v1beta1.HttpTarget,
+            com.google.cloud.scheduler.v1beta1.HttpTarget.Builder,
+            com.google.cloud.scheduler.v1beta1.HttpTargetOrBuilder>
+        httpTargetBuilder_;
     /**
+     *
+     *
      * <pre>
      * HTTP target.
      * </pre>
@@ -2220,6 +2416,8 @@ private static final long serialVersionUID = 0L;
       return targetCase_ == 6;
     }
     /**
+     *
+     *
      * <pre>
      * HTTP target.
      * </pre>
@@ -2240,6 +2438,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * HTTP target.
      * </pre>
@@ -2260,6 +2460,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * HTTP target.
      * </pre>
@@ -2278,6 +2480,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * HTTP target.
      * </pre>
@@ -2286,10 +2490,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeHttpTarget(com.google.cloud.scheduler.v1beta1.HttpTarget value) {
       if (httpTargetBuilder_ == null) {
-        if (targetCase_ == 6 &&
-            target_ != com.google.cloud.scheduler.v1beta1.HttpTarget.getDefaultInstance()) {
-          target_ = com.google.cloud.scheduler.v1beta1.HttpTarget.newBuilder((com.google.cloud.scheduler.v1beta1.HttpTarget) target_)
-              .mergeFrom(value).buildPartial();
+        if (targetCase_ == 6
+            && target_ != com.google.cloud.scheduler.v1beta1.HttpTarget.getDefaultInstance()) {
+          target_ =
+              com.google.cloud.scheduler.v1beta1.HttpTarget.newBuilder(
+                      (com.google.cloud.scheduler.v1beta1.HttpTarget) target_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           target_ = value;
         }
@@ -2304,6 +2511,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * HTTP target.
      * </pre>
@@ -2327,6 +2536,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * HTTP target.
      * </pre>
@@ -2337,6 +2548,8 @@ private static final long serialVersionUID = 0L;
       return getHttpTargetFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * HTTP target.
      * </pre>
@@ -2354,6 +2567,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * HTTP target.
      * </pre>
@@ -2361,26 +2576,34 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.scheduler.v1beta1.HttpTarget http_target = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.scheduler.v1beta1.HttpTarget, com.google.cloud.scheduler.v1beta1.HttpTarget.Builder, com.google.cloud.scheduler.v1beta1.HttpTargetOrBuilder> 
+            com.google.cloud.scheduler.v1beta1.HttpTarget,
+            com.google.cloud.scheduler.v1beta1.HttpTarget.Builder,
+            com.google.cloud.scheduler.v1beta1.HttpTargetOrBuilder>
         getHttpTargetFieldBuilder() {
       if (httpTargetBuilder_ == null) {
         if (!(targetCase_ == 6)) {
           target_ = com.google.cloud.scheduler.v1beta1.HttpTarget.getDefaultInstance();
         }
-        httpTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.scheduler.v1beta1.HttpTarget, com.google.cloud.scheduler.v1beta1.HttpTarget.Builder, com.google.cloud.scheduler.v1beta1.HttpTargetOrBuilder>(
+        httpTargetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.scheduler.v1beta1.HttpTarget,
+                com.google.cloud.scheduler.v1beta1.HttpTarget.Builder,
+                com.google.cloud.scheduler.v1beta1.HttpTargetOrBuilder>(
                 (com.google.cloud.scheduler.v1beta1.HttpTarget) target_,
                 getParentForChildren(),
                 isClean());
         target_ = null;
       }
       targetCase_ = 6;
-      onChanged();;
+      onChanged();
+      ;
       return httpTargetBuilder_;
     }
 
     private java.lang.Object schedule_ = "";
     /**
+     *
+     *
      * <pre>
      * Required.
      * Describes the schedule on which the job will be executed.
@@ -2406,8 +2629,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSchedule() {
       java.lang.Object ref = schedule_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         schedule_ = s;
         return s;
@@ -2416,6 +2638,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * Describes the schedule on which the job will be executed.
@@ -2438,13 +2662,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string schedule = 20;</code>
      */
-    public com.google.protobuf.ByteString
-        getScheduleBytes() {
+    public com.google.protobuf.ByteString getScheduleBytes() {
       java.lang.Object ref = schedule_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         schedule_ = b;
         return b;
       } else {
@@ -2452,6 +2674,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * Describes the schedule on which the job will be executed.
@@ -2474,17 +2698,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string schedule = 20;</code>
      */
-    public Builder setSchedule(
-        java.lang.String value) {
+    public Builder setSchedule(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       schedule_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * Describes the schedule on which the job will be executed.
@@ -2508,12 +2733,14 @@ private static final long serialVersionUID = 0L;
      * <code>string schedule = 20;</code>
      */
     public Builder clearSchedule() {
-      
+
       schedule_ = getDefaultInstance().getSchedule();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * Describes the schedule on which the job will be executed.
@@ -2536,13 +2763,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string schedule = 20;</code>
      */
-    public Builder setScheduleBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setScheduleBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       schedule_ = value;
       onChanged();
       return this;
@@ -2550,6 +2776,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object timeZone_ = "";
     /**
+     *
+     *
      * <pre>
      * Specifies the time zone to be used in interpreting
      * [schedule][google.cloud.scheduler.v1beta1.Job.schedule]. The value of this field must be a time
@@ -2566,8 +2794,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getTimeZone() {
       java.lang.Object ref = timeZone_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         timeZone_ = s;
         return s;
@@ -2576,6 +2803,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the time zone to be used in interpreting
      * [schedule][google.cloud.scheduler.v1beta1.Job.schedule]. The value of this field must be a time
@@ -2589,13 +2818,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string time_zone = 21;</code>
      */
-    public com.google.protobuf.ByteString
-        getTimeZoneBytes() {
+    public com.google.protobuf.ByteString getTimeZoneBytes() {
       java.lang.Object ref = timeZone_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         timeZone_ = b;
         return b;
       } else {
@@ -2603,6 +2830,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the time zone to be used in interpreting
      * [schedule][google.cloud.scheduler.v1beta1.Job.schedule]. The value of this field must be a time
@@ -2616,17 +2845,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string time_zone = 21;</code>
      */
-    public Builder setTimeZone(
-        java.lang.String value) {
+    public Builder setTimeZone(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       timeZone_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the time zone to be used in interpreting
      * [schedule][google.cloud.scheduler.v1beta1.Job.schedule]. The value of this field must be a time
@@ -2641,12 +2871,14 @@ private static final long serialVersionUID = 0L;
      * <code>string time_zone = 21;</code>
      */
     public Builder clearTimeZone() {
-      
+
       timeZone_ = getDefaultInstance().getTimeZone();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the time zone to be used in interpreting
      * [schedule][google.cloud.scheduler.v1beta1.Job.schedule]. The value of this field must be a time
@@ -2660,13 +2892,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string time_zone = 21;</code>
      */
-    public Builder setTimeZoneBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTimeZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       timeZone_ = value;
       onChanged();
       return this;
@@ -2674,8 +2905,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp userUpdateTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> userUpdateTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        userUpdateTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The creation time of the job.
      * </pre>
@@ -2686,6 +2922,8 @@ private static final long serialVersionUID = 0L;
       return userUpdateTimeBuilder_ != null || userUpdateTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The creation time of the job.
      * </pre>
@@ -2694,12 +2932,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getUserUpdateTime() {
       if (userUpdateTimeBuilder_ == null) {
-        return userUpdateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : userUpdateTime_;
+        return userUpdateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : userUpdateTime_;
       } else {
         return userUpdateTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The creation time of the job.
      * </pre>
@@ -2720,14 +2962,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The creation time of the job.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp user_update_time = 9;</code>
      */
-    public Builder setUserUpdateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setUserUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (userUpdateTimeBuilder_ == null) {
         userUpdateTime_ = builderForValue.build();
         onChanged();
@@ -2738,6 +2981,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The creation time of the job.
      * </pre>
@@ -2748,7 +2993,9 @@ private static final long serialVersionUID = 0L;
       if (userUpdateTimeBuilder_ == null) {
         if (userUpdateTime_ != null) {
           userUpdateTime_ =
-            com.google.protobuf.Timestamp.newBuilder(userUpdateTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(userUpdateTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           userUpdateTime_ = value;
         }
@@ -2760,6 +3007,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The creation time of the job.
      * </pre>
@@ -2778,6 +3027,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The creation time of the job.
      * </pre>
@@ -2785,11 +3036,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp user_update_time = 9;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUserUpdateTimeBuilder() {
-      
+
       onChanged();
       return getUserUpdateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The creation time of the job.
      * </pre>
@@ -2800,11 +3053,14 @@ private static final long serialVersionUID = 0L;
       if (userUpdateTimeBuilder_ != null) {
         return userUpdateTimeBuilder_.getMessageOrBuilder();
       } else {
-        return userUpdateTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : userUpdateTime_;
+        return userUpdateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : userUpdateTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The creation time of the job.
      * </pre>
@@ -2812,14 +3068,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp user_update_time = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getUserUpdateTimeFieldBuilder() {
       if (userUpdateTimeBuilder_ == null) {
-        userUpdateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getUserUpdateTime(),
-                getParentForChildren(),
-                isClean());
+        userUpdateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUserUpdateTime(), getParentForChildren(), isClean());
         userUpdateTime_ = null;
       }
       return userUpdateTimeBuilder_;
@@ -2827,6 +3086,8 @@ private static final long serialVersionUID = 0L;
 
     private int state_ = 0;
     /**
+     *
+     *
      * <pre>
      * Output only. State of the job.
      * </pre>
@@ -2837,6 +3098,8 @@ private static final long serialVersionUID = 0L;
       return state_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. State of the job.
      * </pre>
@@ -2849,6 +3112,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. State of the job.
      * </pre>
@@ -2857,10 +3122,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.scheduler.v1beta1.Job.State getState() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.scheduler.v1beta1.Job.State result = com.google.cloud.scheduler.v1beta1.Job.State.valueOf(state_);
+      com.google.cloud.scheduler.v1beta1.Job.State result =
+          com.google.cloud.scheduler.v1beta1.Job.State.valueOf(state_);
       return result == null ? com.google.cloud.scheduler.v1beta1.Job.State.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. State of the job.
      * </pre>
@@ -2871,12 +3139,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       state_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. State of the job.
      * </pre>
@@ -2884,7 +3154,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.scheduler.v1beta1.Job.State state = 10;</code>
      */
     public Builder clearState() {
-      
+
       state_ = 0;
       onChanged();
       return this;
@@ -2892,8 +3162,11 @@ private static final long serialVersionUID = 0L;
 
     private com.google.rpc.Status status_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> statusBuilder_;
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        statusBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The response from the target for the last attempted execution.
      * </pre>
@@ -2904,6 +3177,8 @@ private static final long serialVersionUID = 0L;
       return statusBuilder_ != null || status_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The response from the target for the last attempted execution.
      * </pre>
@@ -2918,6 +3193,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The response from the target for the last attempted execution.
      * </pre>
@@ -2938,14 +3215,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The response from the target for the last attempted execution.
      * </pre>
      *
      * <code>.google.rpc.Status status = 11;</code>
      */
-    public Builder setStatus(
-        com.google.rpc.Status.Builder builderForValue) {
+    public Builder setStatus(com.google.rpc.Status.Builder builderForValue) {
       if (statusBuilder_ == null) {
         status_ = builderForValue.build();
         onChanged();
@@ -2956,6 +3234,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The response from the target for the last attempted execution.
      * </pre>
@@ -2965,8 +3245,7 @@ private static final long serialVersionUID = 0L;
     public Builder mergeStatus(com.google.rpc.Status value) {
       if (statusBuilder_ == null) {
         if (status_ != null) {
-          status_ =
-            com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
+          status_ = com.google.rpc.Status.newBuilder(status_).mergeFrom(value).buildPartial();
         } else {
           status_ = value;
         }
@@ -2978,6 +3257,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The response from the target for the last attempted execution.
      * </pre>
@@ -2996,6 +3277,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The response from the target for the last attempted execution.
      * </pre>
@@ -3003,11 +3286,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status status = 11;</code>
      */
     public com.google.rpc.Status.Builder getStatusBuilder() {
-      
+
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The response from the target for the last attempted execution.
      * </pre>
@@ -3018,11 +3303,12 @@ private static final long serialVersionUID = 0L;
       if (statusBuilder_ != null) {
         return statusBuilder_.getMessageOrBuilder();
       } else {
-        return status_ == null ?
-            com.google.rpc.Status.getDefaultInstance() : status_;
+        return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The response from the target for the last attempted execution.
      * </pre>
@@ -3030,14 +3316,14 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status status = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> 
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         getStatusFieldBuilder() {
       if (statusBuilder_ == null) {
-        statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>(
-                getStatus(),
-                getParentForChildren(),
-                isClean());
+        statusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(getStatus(), getParentForChildren(), isClean());
         status_ = null;
       }
       return statusBuilder_;
@@ -3045,8 +3331,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp scheduleTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> scheduleTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        scheduleTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The next time the job is scheduled. Note that this may be a
      * retry of a previously failed attempt or the next execution time
@@ -3059,6 +3350,8 @@ private static final long serialVersionUID = 0L;
       return scheduleTimeBuilder_ != null || scheduleTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The next time the job is scheduled. Note that this may be a
      * retry of a previously failed attempt or the next execution time
@@ -3069,12 +3362,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getScheduleTime() {
       if (scheduleTimeBuilder_ == null) {
-        return scheduleTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : scheduleTime_;
+        return scheduleTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : scheduleTime_;
       } else {
         return scheduleTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The next time the job is scheduled. Note that this may be a
      * retry of a previously failed attempt or the next execution time
@@ -3097,6 +3394,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The next time the job is scheduled. Note that this may be a
      * retry of a previously failed attempt or the next execution time
@@ -3105,8 +3404,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp schedule_time = 17;</code>
      */
-    public Builder setScheduleTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setScheduleTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (scheduleTimeBuilder_ == null) {
         scheduleTime_ = builderForValue.build();
         onChanged();
@@ -3117,6 +3415,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The next time the job is scheduled. Note that this may be a
      * retry of a previously failed attempt or the next execution time
@@ -3129,7 +3429,9 @@ private static final long serialVersionUID = 0L;
       if (scheduleTimeBuilder_ == null) {
         if (scheduleTime_ != null) {
           scheduleTime_ =
-            com.google.protobuf.Timestamp.newBuilder(scheduleTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(scheduleTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           scheduleTime_ = value;
         }
@@ -3141,6 +3443,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The next time the job is scheduled. Note that this may be a
      * retry of a previously failed attempt or the next execution time
@@ -3161,6 +3465,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The next time the job is scheduled. Note that this may be a
      * retry of a previously failed attempt or the next execution time
@@ -3170,11 +3476,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp schedule_time = 17;</code>
      */
     public com.google.protobuf.Timestamp.Builder getScheduleTimeBuilder() {
-      
+
       onChanged();
       return getScheduleTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The next time the job is scheduled. Note that this may be a
      * retry of a previously failed attempt or the next execution time
@@ -3187,11 +3495,14 @@ private static final long serialVersionUID = 0L;
       if (scheduleTimeBuilder_ != null) {
         return scheduleTimeBuilder_.getMessageOrBuilder();
       } else {
-        return scheduleTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : scheduleTime_;
+        return scheduleTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : scheduleTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The next time the job is scheduled. Note that this may be a
      * retry of a previously failed attempt or the next execution time
@@ -3201,14 +3512,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp schedule_time = 17;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getScheduleTimeFieldBuilder() {
       if (scheduleTimeBuilder_ == null) {
-        scheduleTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getScheduleTime(),
-                getParentForChildren(),
-                isClean());
+        scheduleTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getScheduleTime(), getParentForChildren(), isClean());
         scheduleTime_ = null;
       }
       return scheduleTimeBuilder_;
@@ -3216,8 +3530,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp lastAttemptTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastAttemptTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        lastAttemptTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The time the last job attempt started.
      * </pre>
@@ -3228,6 +3547,8 @@ private static final long serialVersionUID = 0L;
       return lastAttemptTimeBuilder_ != null || lastAttemptTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the last job attempt started.
      * </pre>
@@ -3236,12 +3557,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getLastAttemptTime() {
       if (lastAttemptTimeBuilder_ == null) {
-        return lastAttemptTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastAttemptTime_;
+        return lastAttemptTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastAttemptTime_;
       } else {
         return lastAttemptTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the last job attempt started.
      * </pre>
@@ -3262,14 +3587,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the last job attempt started.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_attempt_time = 18;</code>
      */
-    public Builder setLastAttemptTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setLastAttemptTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastAttemptTimeBuilder_ == null) {
         lastAttemptTime_ = builderForValue.build();
         onChanged();
@@ -3280,6 +3606,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the last job attempt started.
      * </pre>
@@ -3290,7 +3618,9 @@ private static final long serialVersionUID = 0L;
       if (lastAttemptTimeBuilder_ == null) {
         if (lastAttemptTime_ != null) {
           lastAttemptTime_ =
-            com.google.protobuf.Timestamp.newBuilder(lastAttemptTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(lastAttemptTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           lastAttemptTime_ = value;
         }
@@ -3302,6 +3632,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the last job attempt started.
      * </pre>
@@ -3320,6 +3652,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the last job attempt started.
      * </pre>
@@ -3327,11 +3661,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_attempt_time = 18;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastAttemptTimeBuilder() {
-      
+
       onChanged();
       return getLastAttemptTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the last job attempt started.
      * </pre>
@@ -3342,11 +3678,14 @@ private static final long serialVersionUID = 0L;
       if (lastAttemptTimeBuilder_ != null) {
         return lastAttemptTimeBuilder_.getMessageOrBuilder();
       } else {
-        return lastAttemptTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : lastAttemptTime_;
+        return lastAttemptTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastAttemptTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the last job attempt started.
      * </pre>
@@ -3354,14 +3693,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_attempt_time = 18;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getLastAttemptTimeFieldBuilder() {
       if (lastAttemptTimeBuilder_ == null) {
-        lastAttemptTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getLastAttemptTime(),
-                getParentForChildren(),
-                isClean());
+        lastAttemptTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getLastAttemptTime(), getParentForChildren(), isClean());
         lastAttemptTime_ = null;
       }
       return lastAttemptTimeBuilder_;
@@ -3369,8 +3711,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.scheduler.v1beta1.RetryConfig retryConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.scheduler.v1beta1.RetryConfig, com.google.cloud.scheduler.v1beta1.RetryConfig.Builder, com.google.cloud.scheduler.v1beta1.RetryConfigOrBuilder> retryConfigBuilder_;
+            com.google.cloud.scheduler.v1beta1.RetryConfig,
+            com.google.cloud.scheduler.v1beta1.RetryConfig.Builder,
+            com.google.cloud.scheduler.v1beta1.RetryConfigOrBuilder>
+        retryConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * </pre>
@@ -3381,6 +3728,8 @@ private static final long serialVersionUID = 0L;
       return retryConfigBuilder_ != null || retryConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * </pre>
@@ -3389,12 +3738,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.scheduler.v1beta1.RetryConfig getRetryConfig() {
       if (retryConfigBuilder_ == null) {
-        return retryConfig_ == null ? com.google.cloud.scheduler.v1beta1.RetryConfig.getDefaultInstance() : retryConfig_;
+        return retryConfig_ == null
+            ? com.google.cloud.scheduler.v1beta1.RetryConfig.getDefaultInstance()
+            : retryConfig_;
       } else {
         return retryConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * </pre>
@@ -3415,6 +3768,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * </pre>
@@ -3433,6 +3788,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * </pre>
@@ -3443,7 +3800,9 @@ private static final long serialVersionUID = 0L;
       if (retryConfigBuilder_ == null) {
         if (retryConfig_ != null) {
           retryConfig_ =
-            com.google.cloud.scheduler.v1beta1.RetryConfig.newBuilder(retryConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.scheduler.v1beta1.RetryConfig.newBuilder(retryConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           retryConfig_ = value;
         }
@@ -3455,6 +3814,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * </pre>
@@ -3473,6 +3834,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * </pre>
@@ -3480,11 +3843,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.scheduler.v1beta1.RetryConfig retry_config = 19;</code>
      */
     public com.google.cloud.scheduler.v1beta1.RetryConfig.Builder getRetryConfigBuilder() {
-      
+
       onChanged();
       return getRetryConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * </pre>
@@ -3495,11 +3860,14 @@ private static final long serialVersionUID = 0L;
       if (retryConfigBuilder_ != null) {
         return retryConfigBuilder_.getMessageOrBuilder();
       } else {
-        return retryConfig_ == null ?
-            com.google.cloud.scheduler.v1beta1.RetryConfig.getDefaultInstance() : retryConfig_;
+        return retryConfig_ == null
+            ? com.google.cloud.scheduler.v1beta1.RetryConfig.getDefaultInstance()
+            : retryConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * </pre>
@@ -3507,21 +3875,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.scheduler.v1beta1.RetryConfig retry_config = 19;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.scheduler.v1beta1.RetryConfig, com.google.cloud.scheduler.v1beta1.RetryConfig.Builder, com.google.cloud.scheduler.v1beta1.RetryConfigOrBuilder> 
+            com.google.cloud.scheduler.v1beta1.RetryConfig,
+            com.google.cloud.scheduler.v1beta1.RetryConfig.Builder,
+            com.google.cloud.scheduler.v1beta1.RetryConfigOrBuilder>
         getRetryConfigFieldBuilder() {
       if (retryConfigBuilder_ == null) {
-        retryConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.scheduler.v1beta1.RetryConfig, com.google.cloud.scheduler.v1beta1.RetryConfig.Builder, com.google.cloud.scheduler.v1beta1.RetryConfigOrBuilder>(
-                getRetryConfig(),
-                getParentForChildren(),
-                isClean());
+        retryConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.scheduler.v1beta1.RetryConfig,
+                com.google.cloud.scheduler.v1beta1.RetryConfig.Builder,
+                com.google.cloud.scheduler.v1beta1.RetryConfigOrBuilder>(
+                getRetryConfig(), getParentForChildren(), isClean());
         retryConfig_ = null;
       }
       return retryConfigBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -3531,12 +3902,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.scheduler.v1beta1.Job)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1beta1.Job)
   private static final com.google.cloud.scheduler.v1beta1.Job DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.scheduler.v1beta1.Job();
   }
@@ -3545,16 +3916,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Job>
-      PARSER = new com.google.protobuf.AbstractParser<Job>() {
-    @java.lang.Override
-    public Job parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Job(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Job> PARSER =
+      new com.google.protobuf.AbstractParser<Job>() {
+        @java.lang.Override
+        public Job parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Job(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Job> parser() {
     return PARSER;
@@ -3569,6 +3940,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.scheduler.v1beta1.Job getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-
