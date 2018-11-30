@@ -5,20 +5,21 @@ package com.google.cloud.bigquery.storage.v1beta1;
 
 public final class ReadOptions {
   private ReadOptions() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface TableReadOptionsOrBuilder extends
+  public interface TableReadOptionsOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.storage.v1beta1.TableReadOptions)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Optional. Names of the fields in the table that should be read. If empty,
      * all fields will be read. If the specified field is a nested field, all the
@@ -28,9 +29,10 @@ public final class ReadOptions {
      *
      * <code>repeated string selected_fields = 1;</code>
      */
-    java.util.List<java.lang.String>
-        getSelectedFieldsList();
+    java.util.List<java.lang.String> getSelectedFieldsList();
     /**
+     *
+     *
      * <pre>
      * Optional. Names of the fields in the table that should be read. If empty,
      * all fields will be read. If the specified field is a nested field, all the
@@ -42,6 +44,8 @@ public final class ReadOptions {
      */
     int getSelectedFieldsCount();
     /**
+     *
+     *
      * <pre>
      * Optional. Names of the fields in the table that should be read. If empty,
      * all fields will be read. If the specified field is a nested field, all the
@@ -53,6 +57,8 @@ public final class ReadOptions {
      */
     java.lang.String getSelectedFields(int index);
     /**
+     *
+     *
      * <pre>
      * Optional. Names of the fields in the table that should be read. If empty,
      * all fields will be read. If the specified field is a nested field, all the
@@ -62,10 +68,11 @@ public final class ReadOptions {
      *
      * <code>repeated string selected_fields = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getSelectedFieldsBytes(int index);
+    com.google.protobuf.ByteString getSelectedFieldsBytes(int index);
 
     /**
+     *
+     *
      * <pre>
      * Optional. SQL text filtering statement, similar to a WHERE clause in
      * a query. Currently, we support combinations of predicates that are
@@ -78,6 +85,8 @@ public final class ReadOptions {
      */
     java.lang.String getRowRestriction();
     /**
+     *
+     *
      * <pre>
      * Optional. SQL text filtering statement, similar to a WHERE clause in
      * a query. Currently, we support combinations of predicates that are
@@ -88,35 +97,37 @@ public final class ReadOptions {
      *
      * <code>string row_restriction = 2;</code>
      */
-    com.google.protobuf.ByteString
-        getRowRestrictionBytes();
+    com.google.protobuf.ByteString getRowRestrictionBytes();
   }
   /**
+   *
+   *
    * <pre>
    * Options dictating how we read a table.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.TableReadOptions}
    */
-  public  static final class TableReadOptions extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class TableReadOptions extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta1.TableReadOptions)
       TableReadOptionsOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use TableReadOptions.newBuilder() to construct.
     private TableReadOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private TableReadOptions() {
       selectedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       rowRestriction_ = "";
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private TableReadOptions(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -136,35 +147,36 @@ public final class ReadOptions {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                selectedFields_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  selectedFields_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                selectedFields_.add(s);
+                break;
               }
-              selectedFields_.add(s);
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              rowRestriction_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                rowRestriction_ = s;
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           selectedFields_ = selectedFields_.getUnmodifiableView();
@@ -173,23 +185,28 @@ public final class ReadOptions {
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.bigquery.storage.v1beta1.ReadOptions.internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.bigquery.storage.v1beta1.ReadOptions
+          .internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.bigquery.storage.v1beta1.ReadOptions.internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_fieldAccessorTable
+      return com.google.cloud.bigquery.storage.v1beta1.ReadOptions
+          .internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions.class, com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions.Builder.class);
+              com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions.class,
+              com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions.Builder.class);
     }
 
     private int bitField0_;
     public static final int SELECTED_FIELDS_FIELD_NUMBER = 1;
     private com.google.protobuf.LazyStringList selectedFields_;
     /**
+     *
+     *
      * <pre>
      * Optional. Names of the fields in the table that should be read. If empty,
      * all fields will be read. If the specified field is a nested field, all the
@@ -199,11 +216,12 @@ public final class ReadOptions {
      *
      * <code>repeated string selected_fields = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getSelectedFieldsList() {
+    public com.google.protobuf.ProtocolStringList getSelectedFieldsList() {
       return selectedFields_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Names of the fields in the table that should be read. If empty,
      * all fields will be read. If the specified field is a nested field, all the
@@ -217,6 +235,8 @@ public final class ReadOptions {
       return selectedFields_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Names of the fields in the table that should be read. If empty,
      * all fields will be read. If the specified field is a nested field, all the
@@ -230,6 +250,8 @@ public final class ReadOptions {
       return selectedFields_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Names of the fields in the table that should be read. If empty,
      * all fields will be read. If the specified field is a nested field, all the
@@ -239,14 +261,15 @@ public final class ReadOptions {
      *
      * <code>repeated string selected_fields = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getSelectedFieldsBytes(int index) {
+    public com.google.protobuf.ByteString getSelectedFieldsBytes(int index) {
       return selectedFields_.getByteString(index);
     }
 
     public static final int ROW_RESTRICTION_FIELD_NUMBER = 2;
     private volatile java.lang.Object rowRestriction_;
     /**
+     *
+     *
      * <pre>
      * Optional. SQL text filtering statement, similar to a WHERE clause in
      * a query. Currently, we support combinations of predicates that are
@@ -262,14 +285,15 @@ public final class ReadOptions {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         rowRestriction_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. SQL text filtering statement, similar to a WHERE clause in
      * a query. Currently, we support combinations of predicates that are
@@ -280,13 +304,11 @@ public final class ReadOptions {
      *
      * <code>string row_restriction = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getRowRestrictionBytes() {
+    public com.google.protobuf.ByteString getRowRestrictionBytes() {
       java.lang.Object ref = rowRestriction_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         rowRestriction_ = b;
         return b;
       } else {
@@ -295,6 +317,7 @@ public final class ReadOptions {
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -306,8 +329,7 @@ public final class ReadOptions {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       for (int i = 0; i < selectedFields_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, selectedFields_.getRaw(i));
       }
@@ -342,18 +364,18 @@ public final class ReadOptions {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
-      if (!(obj instanceof com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions)) {
+      if (!(obj
+          instanceof com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions)) {
         return super.equals(obj);
       }
-      com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions other = (com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions) obj;
+      com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions other =
+          (com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions) obj;
 
       boolean result = true;
-      result = result && getSelectedFieldsList()
-          .equals(other.getSelectedFieldsList());
-      result = result && getRowRestriction()
-          .equals(other.getRowRestriction());
+      result = result && getSelectedFieldsList().equals(other.getSelectedFieldsList());
+      result = result && getRowRestriction().equals(other.getRowRestriction());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -377,87 +399,95 @@ public final class ReadOptions {
     }
 
     public static com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
+
     public static com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions parseFrom(
-        com.google.protobuf.CodedInputStream input)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
+    public static com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
     public static com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions prototype) {
+
+    public static Builder newBuilder(
+        com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -467,44 +497,50 @@ public final class ReadOptions {
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Options dictating how we read a table.
      * </pre>
      *
      * Protobuf type {@code google.cloud.bigquery.storage.v1beta1.TableReadOptions}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.storage.v1beta1.TableReadOptions)
         com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptionsOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.bigquery.storage.v1beta1.ReadOptions.internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.bigquery.storage.v1beta1.ReadOptions
+            .internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.bigquery.storage.v1beta1.ReadOptions.internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_fieldAccessorTable
+        return com.google.cloud.bigquery.storage.v1beta1.ReadOptions
+            .internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions.class, com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions.Builder.class);
+                com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions.class,
+                com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions.Builder
+                    .class);
       }
 
-      // Construct using com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions.newBuilder()
+      // Construct using
+      // com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -516,19 +552,22 @@ public final class ReadOptions {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.bigquery.storage.v1beta1.ReadOptions.internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.bigquery.storage.v1beta1.ReadOptions
+            .internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_descriptor;
       }
 
       @java.lang.Override
-      public com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions getDefaultInstanceForType() {
-        return com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions.getDefaultInstance();
+      public com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions
+          getDefaultInstanceForType() {
+        return com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions
+            .getDefaultInstance();
       }
 
       @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions build() {
-        com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions result = buildPartial();
+        com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions result =
+            buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -537,7 +576,8 @@ public final class ReadOptions {
 
       @java.lang.Override
       public com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions buildPartial() {
-        com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions result = new com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions(this);
+        com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions result =
+            new com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -555,46 +595,54 @@ public final class ReadOptions {
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions) {
-          return mergeFrom((com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions)other);
+        if (other
+            instanceof com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions) {
+          return mergeFrom(
+              (com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions other) {
-        if (other == com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions.getDefaultInstance()) return this;
+      public Builder mergeFrom(
+          com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions other) {
+        if (other
+            == com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions
+                .getDefaultInstance()) return this;
         if (!other.selectedFields_.isEmpty()) {
           if (selectedFields_.isEmpty()) {
             selectedFields_ = other.selectedFields_;
@@ -628,7 +676,9 @@ public final class ReadOptions {
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -637,16 +687,21 @@ public final class ReadOptions {
         }
         return this;
       }
+
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList selectedFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringList selectedFields_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
       private void ensureSelectedFieldsIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           selectedFields_ = new com.google.protobuf.LazyStringArrayList(selectedFields_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
+       *
+       *
        * <pre>
        * Optional. Names of the fields in the table that should be read. If empty,
        * all fields will be read. If the specified field is a nested field, all the
@@ -656,11 +711,12 @@ public final class ReadOptions {
        *
        * <code>repeated string selected_fields = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getSelectedFieldsList() {
+      public com.google.protobuf.ProtocolStringList getSelectedFieldsList() {
         return selectedFields_.getUnmodifiableView();
       }
       /**
+       *
+       *
        * <pre>
        * Optional. Names of the fields in the table that should be read. If empty,
        * all fields will be read. If the specified field is a nested field, all the
@@ -674,6 +730,8 @@ public final class ReadOptions {
         return selectedFields_.size();
       }
       /**
+       *
+       *
        * <pre>
        * Optional. Names of the fields in the table that should be read. If empty,
        * all fields will be read. If the specified field is a nested field, all the
@@ -687,6 +745,8 @@ public final class ReadOptions {
         return selectedFields_.get(index);
       }
       /**
+       *
+       *
        * <pre>
        * Optional. Names of the fields in the table that should be read. If empty,
        * all fields will be read. If the specified field is a nested field, all the
@@ -696,11 +756,12 @@ public final class ReadOptions {
        *
        * <code>repeated string selected_fields = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getSelectedFieldsBytes(int index) {
+      public com.google.protobuf.ByteString getSelectedFieldsBytes(int index) {
         return selectedFields_.getByteString(index);
       }
       /**
+       *
+       *
        * <pre>
        * Optional. Names of the fields in the table that should be read. If empty,
        * all fields will be read. If the specified field is a nested field, all the
@@ -710,17 +771,18 @@ public final class ReadOptions {
        *
        * <code>repeated string selected_fields = 1;</code>
        */
-      public Builder setSelectedFields(
-          int index, java.lang.String value) {
+      public Builder setSelectedFields(int index, java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureSelectedFieldsIsMutable();
+          throw new NullPointerException();
+        }
+        ensureSelectedFieldsIsMutable();
         selectedFields_.set(index, value);
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Optional. Names of the fields in the table that should be read. If empty,
        * all fields will be read. If the specified field is a nested field, all the
@@ -730,17 +792,18 @@ public final class ReadOptions {
        *
        * <code>repeated string selected_fields = 1;</code>
        */
-      public Builder addSelectedFields(
-          java.lang.String value) {
+      public Builder addSelectedFields(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureSelectedFieldsIsMutable();
+          throw new NullPointerException();
+        }
+        ensureSelectedFieldsIsMutable();
         selectedFields_.add(value);
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Optional. Names of the fields in the table that should be read. If empty,
        * all fields will be read. If the specified field is a nested field, all the
@@ -750,15 +813,15 @@ public final class ReadOptions {
        *
        * <code>repeated string selected_fields = 1;</code>
        */
-      public Builder addAllSelectedFields(
-          java.lang.Iterable<java.lang.String> values) {
+      public Builder addAllSelectedFields(java.lang.Iterable<java.lang.String> values) {
         ensureSelectedFieldsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, selectedFields_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, selectedFields_);
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Optional. Names of the fields in the table that should be read. If empty,
        * all fields will be read. If the specified field is a nested field, all the
@@ -775,6 +838,8 @@ public final class ReadOptions {
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Optional. Names of the fields in the table that should be read. If empty,
        * all fields will be read. If the specified field is a nested field, all the
@@ -784,12 +849,11 @@ public final class ReadOptions {
        *
        * <code>repeated string selected_fields = 1;</code>
        */
-      public Builder addSelectedFieldsBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder addSelectedFieldsBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
         ensureSelectedFieldsIsMutable();
         selectedFields_.add(value);
         onChanged();
@@ -798,6 +862,8 @@ public final class ReadOptions {
 
       private java.lang.Object rowRestriction_ = "";
       /**
+       *
+       *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
        * a query. Currently, we support combinations of predicates that are
@@ -811,8 +877,7 @@ public final class ReadOptions {
       public java.lang.String getRowRestriction() {
         java.lang.Object ref = rowRestriction_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           rowRestriction_ = s;
           return s;
@@ -821,6 +886,8 @@ public final class ReadOptions {
         }
       }
       /**
+       *
+       *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
        * a query. Currently, we support combinations of predicates that are
@@ -831,13 +898,11 @@ public final class ReadOptions {
        *
        * <code>string row_restriction = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getRowRestrictionBytes() {
+      public com.google.protobuf.ByteString getRowRestrictionBytes() {
         java.lang.Object ref = rowRestriction_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           rowRestriction_ = b;
           return b;
         } else {
@@ -845,6 +910,8 @@ public final class ReadOptions {
         }
       }
       /**
+       *
+       *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
        * a query. Currently, we support combinations of predicates that are
@@ -855,17 +922,18 @@ public final class ReadOptions {
        *
        * <code>string row_restriction = 2;</code>
        */
-      public Builder setRowRestriction(
-          java.lang.String value) {
+      public Builder setRowRestriction(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         rowRestriction_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
        * a query. Currently, we support combinations of predicates that are
@@ -877,12 +945,14 @@ public final class ReadOptions {
        * <code>string row_restriction = 2;</code>
        */
       public Builder clearRowRestriction() {
-        
+
         rowRestriction_ = getDefaultInstance().getRowRestriction();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
        * a query. Currently, we support combinations of predicates that are
@@ -893,17 +963,17 @@ public final class ReadOptions {
        *
        * <code>string row_restriction = 2;</code>
        */
-      public Builder setRowRestrictionBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setRowRestrictionBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         rowRestriction_ = value;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -916,30 +986,33 @@ public final class ReadOptions {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.storage.v1beta1.TableReadOptions)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.bigquery.storage.v1beta1.TableReadOptions)
-    private static final com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions DEFAULT_INSTANCE;
+    private static final com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions
+        DEFAULT_INSTANCE;
+
     static {
-      DEFAULT_INSTANCE = new com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions();
+      DEFAULT_INSTANCE =
+          new com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions();
     }
 
-    public static com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions getDefaultInstance() {
+    public static com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<TableReadOptions>
-        PARSER = new com.google.protobuf.AbstractParser<TableReadOptions>() {
-      @java.lang.Override
-      public TableReadOptions parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TableReadOptions(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<TableReadOptions> PARSER =
+        new com.google.protobuf.AbstractParser<TableReadOptions>() {
+          @java.lang.Override
+          public TableReadOptions parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new TableReadOptions(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<TableReadOptions> parser() {
       return PARSER;
@@ -951,53 +1024,52 @@ public final class ReadOptions {
     }
 
     @java.lang.Override
-    public com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions getDefaultInstanceForType() {
+    public com.google.cloud.bigquery.storage.v1beta1.ReadOptions.TableReadOptions
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+  public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+
+  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
   static {
     java.lang.String[] descriptorData = {
-      "\n8google/cloud/bigquery/storage/v1beta1/" +
-      "read_options.proto\022%google.cloud.bigquer" +
-      "y.storage.v1beta1\"D\n\020TableReadOptions\022\027\n" +
-      "\017selected_fields\030\001 \003(\t\022\027\n\017row_restrictio" +
-      "n\030\002 \001(\tBy\n)com.google.cloud.bigquery.sto" +
-      "rage.v1beta1ZLgoogle.golang.org/genproto" +
-      "/googleapis/cloud/bigquery/storage/v1bet" +
-      "a1;storageb\006proto3"
+      "\n8google/cloud/bigquery/storage/v1beta1/"
+          + "read_options.proto\022%google.cloud.bigquer"
+          + "y.storage.v1beta1\"D\n\020TableReadOptions\022\027\n"
+          + "\017selected_fields\030\001 \003(\t\022\027\n\017row_restrictio"
+          + "n\030\002 \001(\tBy\n)com.google.cloud.bigquery.sto"
+          + "rage.v1beta1ZLgoogle.golang.org/genproto"
+          + "/googleapis/cloud/bigquery/storage/v1bet"
+          + "a1;storageb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
           public com.google.protobuf.ExtensionRegistry assignDescriptors(
               com.google.protobuf.Descriptors.FileDescriptor root) {
             descriptor = root;
             return null;
           }
         };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        }, assigner);
+    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+        descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {}, assigner);
     internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_descriptor,
-        new java.lang.String[] { "SelectedFields", "RowRestriction", });
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_bigquery_storage_v1beta1_TableReadOptions_descriptor,
+            new java.lang.String[] {
+              "SelectedFields", "RowRestriction",
+            });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

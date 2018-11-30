@@ -49,15 +49,16 @@ public class ReadRowsResumptionStrategy
   /**
    * {@inheritDoc}
    *
-   * Given the initial/original request, this implementation generates a request that will yield a
-   * new stream whose first response would come right after the last response received by
+   * <p>Given the initial/original request, this implementation generates a request that will yield
+   * a new stream whose first response would come right after the last response received by
    * processResponse. It takes into account the offset from the original request.
    */
   @Override
   public ReadRowsRequest getResumeRequest(ReadRowsRequest originalRequest) {
     ReadRowsRequest.Builder resumeRequestBuilder = originalRequest.toBuilder();
 
-    resumeRequestBuilder.getReadPositionBuilder()
+    resumeRequestBuilder
+        .getReadPositionBuilder()
         .setOffset(originalRequest.getReadPosition().getOffset() + rowsProcessed);
 
     return resumeRequestBuilder.build();
