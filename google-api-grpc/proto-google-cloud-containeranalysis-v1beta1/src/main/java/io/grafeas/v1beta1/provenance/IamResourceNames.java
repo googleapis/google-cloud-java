@@ -14,6 +14,7 @@
 
 package io.grafeas.v1beta1.provenance;
 
+
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class IamResourceNames {
