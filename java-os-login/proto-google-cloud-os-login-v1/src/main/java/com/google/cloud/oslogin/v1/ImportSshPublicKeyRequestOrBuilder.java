@@ -3,11 +3,14 @@
 
 package com.google.cloud.oslogin.v1;
 
-public interface ImportSshPublicKeyRequestOrBuilder extends
+public interface ImportSshPublicKeyRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.oslogin.v1.ImportSshPublicKeyRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique ID for the user in format `users/{user}`.
    * </pre>
@@ -16,16 +19,19 @@ public interface ImportSshPublicKeyRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The unique ID for the user in format `users/{user}`.
    * </pre>
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The SSH public key and expiration time.
    * </pre>
@@ -34,6 +40,8 @@ public interface ImportSshPublicKeyRequestOrBuilder extends
    */
   boolean hasSshPublicKey();
   /**
+   *
+   *
    * <pre>
    * The SSH public key and expiration time.
    * </pre>
@@ -42,6 +50,8 @@ public interface ImportSshPublicKeyRequestOrBuilder extends
    */
   com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKey();
   /**
+   *
+   *
    * <pre>
    * The SSH public key and expiration time.
    * </pre>
@@ -51,6 +61,8 @@ public interface ImportSshPublicKeyRequestOrBuilder extends
   com.google.cloud.oslogin.common.OsLoginProto.SshPublicKeyOrBuilder getSshPublicKeyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The project ID of the Google Cloud Platform project.
    * </pre>
@@ -59,12 +71,13 @@ public interface ImportSshPublicKeyRequestOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * The project ID of the Google Cloud Platform project.
    * </pre>
    *
    * <code>string project_id = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 }
