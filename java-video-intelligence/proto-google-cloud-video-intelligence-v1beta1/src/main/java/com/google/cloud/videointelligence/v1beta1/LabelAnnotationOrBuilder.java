@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1beta1;
 
-public interface LabelAnnotationOrBuilder extends
+public interface LabelAnnotationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1beta1.LabelAnnotation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Textual description, e.g. `Fixed-gear bicycle`.
    * </pre>
@@ -16,16 +19,19 @@ public interface LabelAnnotationOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * Textual description, e.g. `Fixed-gear bicycle`.
    * </pre>
    *
    * <code>string description = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Language code for `description` in BCP-47 format.
    * </pre>
@@ -34,25 +40,29 @@ public interface LabelAnnotationOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Language code for `description` in BCP-47 format.
    * </pre>
    *
    * <code>string language_code = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Where the label was detected and with what confidence.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1beta1.LabelLocation locations = 3;</code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1beta1.LabelLocation> 
-      getLocationsList();
+  java.util.List<com.google.cloud.videointelligence.v1beta1.LabelLocation> getLocationsList();
   /**
+   *
+   *
    * <pre>
    * Where the label was detected and with what confidence.
    * </pre>
@@ -61,6 +71,8 @@ public interface LabelAnnotationOrBuilder extends
    */
   com.google.cloud.videointelligence.v1beta1.LabelLocation getLocations(int index);
   /**
+   *
+   *
    * <pre>
    * Where the label was detected and with what confidence.
    * </pre>
@@ -69,15 +81,19 @@ public interface LabelAnnotationOrBuilder extends
    */
   int getLocationsCount();
   /**
+   *
+   *
    * <pre>
    * Where the label was detected and with what confidence.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1beta1.LabelLocation locations = 3;</code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1beta1.LabelLocationOrBuilder> 
+  java.util.List<? extends com.google.cloud.videointelligence.v1beta1.LabelLocationOrBuilder>
       getLocationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Where the label was detected and with what confidence.
    * </pre>

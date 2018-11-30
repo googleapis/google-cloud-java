@@ -3,20 +3,24 @@
 
 package com.google.cloud.videointelligence.v1;
 
-public interface ExplicitContentAnnotationOrBuilder extends
+public interface ExplicitContentAnnotationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1.ExplicitContentAnnotation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * All video frames where explicit content was detected.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1.ExplicitContentFrame> 
-      getFramesList();
+  java.util.List<com.google.cloud.videointelligence.v1.ExplicitContentFrame> getFramesList();
   /**
+   *
+   *
    * <pre>
    * All video frames where explicit content was detected.
    * </pre>
@@ -25,6 +29,8 @@ public interface ExplicitContentAnnotationOrBuilder extends
    */
   com.google.cloud.videointelligence.v1.ExplicitContentFrame getFrames(int index);
   /**
+   *
+   *
    * <pre>
    * All video frames where explicit content was detected.
    * </pre>
@@ -33,21 +39,24 @@ public interface ExplicitContentAnnotationOrBuilder extends
    */
   int getFramesCount();
   /**
+   *
+   *
    * <pre>
    * All video frames where explicit content was detected.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1.ExplicitContentFrameOrBuilder> 
+  java.util.List<? extends com.google.cloud.videointelligence.v1.ExplicitContentFrameOrBuilder>
       getFramesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * All video frames where explicit content was detected.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1.ExplicitContentFrame frames = 1;</code>
    */
-  com.google.cloud.videointelligence.v1.ExplicitContentFrameOrBuilder getFramesOrBuilder(
-      int index);
+  com.google.cloud.videointelligence.v1.ExplicitContentFrameOrBuilder getFramesOrBuilder(int index);
 }

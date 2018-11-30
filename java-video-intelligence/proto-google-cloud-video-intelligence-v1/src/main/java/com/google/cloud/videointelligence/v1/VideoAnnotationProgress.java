@@ -4,31 +4,34 @@
 package com.google.cloud.videointelligence.v1;
 
 /**
+ *
+ *
  * <pre>
  * Annotation progress for a single video.
  * </pre>
  *
  * Protobuf type {@code google.cloud.videointelligence.v1.VideoAnnotationProgress}
  */
-public  final class VideoAnnotationProgress extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class VideoAnnotationProgress extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1.VideoAnnotationProgress)
     VideoAnnotationProgressOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use VideoAnnotationProgress.newBuilder() to construct.
   private VideoAnnotationProgress(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private VideoAnnotationProgress() {
     inputUri_ = "";
     progressPercent_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private VideoAnnotationProgress(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,78 +51,87 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            inputUri_ = s;
-            break;
-          }
-          case 16: {
+              inputUri_ = s;
+              break;
+            }
+          case 16:
+            {
+              progressPercent_ = input.readInt32();
+              break;
+            }
+          case 26:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (startTime_ != null) {
+                subBuilder = startTime_.toBuilder();
+              }
+              startTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(startTime_);
+                startTime_ = subBuilder.buildPartial();
+              }
 
-            progressPercent_ = input.readInt32();
-            break;
-          }
-          case 26: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (startTime_ != null) {
-              subBuilder = startTime_.toBuilder();
+              break;
             }
-            startTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(startTime_);
-              startTime_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (updateTime_ != null) {
+                subBuilder = updateTime_.toBuilder();
+              }
+              updateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateTime_);
+                updateTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 34: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (updateTime_ != null) {
-              subBuilder = updateTime_.toBuilder();
+              break;
             }
-            updateTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(updateTime_);
-              updateTime_ = subBuilder.buildPartial();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1_VideoAnnotationProgress_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1_VideoAnnotationProgress_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1_VideoAnnotationProgress_fieldAccessorTable
+    return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1_VideoAnnotationProgress_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.videointelligence.v1.VideoAnnotationProgress.class, com.google.cloud.videointelligence.v1.VideoAnnotationProgress.Builder.class);
+            com.google.cloud.videointelligence.v1.VideoAnnotationProgress.class,
+            com.google.cloud.videointelligence.v1.VideoAnnotationProgress.Builder.class);
   }
 
   public static final int INPUT_URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object inputUri_;
   /**
+   *
+   *
    * <pre>
    * Video file location in
    * [Google Cloud Storage](https://cloud.google.com/storage/).
@@ -132,14 +144,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       inputUri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Video file location in
    * [Google Cloud Storage](https://cloud.google.com/storage/).
@@ -147,13 +160,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string input_uri = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getInputUriBytes() {
+  public com.google.protobuf.ByteString getInputUriBytes() {
     java.lang.Object ref = inputUri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       inputUri_ = b;
       return b;
     } else {
@@ -164,6 +175,8 @@ private static final long serialVersionUID = 0L;
   public static final int PROGRESS_PERCENT_FIELD_NUMBER = 2;
   private int progressPercent_;
   /**
+   *
+   *
    * <pre>
    * Approximate percentage processed thus far. Guaranteed to be
    * 100 when fully processed.
@@ -178,6 +191,8 @@ private static final long serialVersionUID = 0L;
   public static final int START_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp startTime_;
   /**
+   *
+   *
    * <pre>
    * Time when the request was received.
    * </pre>
@@ -188,6 +203,8 @@ private static final long serialVersionUID = 0L;
     return startTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Time when the request was received.
    * </pre>
@@ -198,6 +215,8 @@ private static final long serialVersionUID = 0L;
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Time when the request was received.
    * </pre>
@@ -211,6 +230,8 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
   /**
+   *
+   *
    * <pre>
    * Time of the most recent update.
    * </pre>
@@ -221,6 +242,8 @@ private static final long serialVersionUID = 0L;
     return updateTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Time of the most recent update.
    * </pre>
@@ -231,6 +254,8 @@ private static final long serialVersionUID = 0L;
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Time of the most recent update.
    * </pre>
@@ -242,6 +267,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -253,8 +279,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getInputUriBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, inputUri_);
     }
@@ -280,16 +305,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, inputUri_);
     }
     if (progressPercent_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, progressPercent_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, progressPercent_);
     }
     if (startTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getStartTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getStartTime());
     }
     if (updateTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getUpdateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getUpdateTime());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -299,27 +321,24 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.videointelligence.v1.VideoAnnotationProgress)) {
       return super.equals(obj);
     }
-    com.google.cloud.videointelligence.v1.VideoAnnotationProgress other = (com.google.cloud.videointelligence.v1.VideoAnnotationProgress) obj;
+    com.google.cloud.videointelligence.v1.VideoAnnotationProgress other =
+        (com.google.cloud.videointelligence.v1.VideoAnnotationProgress) obj;
 
     boolean result = true;
-    result = result && getInputUri()
-        .equals(other.getInputUri());
-    result = result && (getProgressPercent()
-        == other.getProgressPercent());
+    result = result && getInputUri().equals(other.getInputUri());
+    result = result && (getProgressPercent() == other.getProgressPercent());
     result = result && (hasStartTime() == other.hasStartTime());
     if (hasStartTime()) {
-      result = result && getStartTime()
-          .equals(other.getStartTime());
+      result = result && getStartTime().equals(other.getStartTime());
     }
     result = result && (hasUpdateTime() == other.hasUpdateTime());
     if (hasUpdateTime()) {
-      result = result && getUpdateTime()
-          .equals(other.getUpdateTime());
+      result = result && getUpdateTime().equals(other.getUpdateTime());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -350,117 +369,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.videointelligence.v1.VideoAnnotationProgress parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1.VideoAnnotationProgress parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1.VideoAnnotationProgress parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1.VideoAnnotationProgress parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1.VideoAnnotationProgress parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1.VideoAnnotationProgress parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.videointelligence.v1.VideoAnnotationProgress parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.videointelligence.v1.VideoAnnotationProgress parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.videointelligence.v1.VideoAnnotationProgress parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.videointelligence.v1.VideoAnnotationProgress parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1.VideoAnnotationProgress parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.videointelligence.v1.VideoAnnotationProgress parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.videointelligence.v1.VideoAnnotationProgress parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.videointelligence.v1.VideoAnnotationProgress parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.videointelligence.v1.VideoAnnotationProgress prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.videointelligence.v1.VideoAnnotationProgress prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Annotation progress for a single video.
    * </pre>
    *
    * Protobuf type {@code google.cloud.videointelligence.v1.VideoAnnotationProgress}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.videointelligence.v1.VideoAnnotationProgress)
       com.google.cloud.videointelligence.v1.VideoAnnotationProgressOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1_VideoAnnotationProgress_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1_VideoAnnotationProgress_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1_VideoAnnotationProgress_fieldAccessorTable
+      return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1_VideoAnnotationProgress_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.videointelligence.v1.VideoAnnotationProgress.class, com.google.cloud.videointelligence.v1.VideoAnnotationProgress.Builder.class);
+              com.google.cloud.videointelligence.v1.VideoAnnotationProgress.class,
+              com.google.cloud.videointelligence.v1.VideoAnnotationProgress.Builder.class);
     }
 
     // Construct using com.google.cloud.videointelligence.v1.VideoAnnotationProgress.newBuilder()
@@ -468,16 +497,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -501,13 +529,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1_VideoAnnotationProgress_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.videointelligence.v1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1_VideoAnnotationProgress_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.videointelligence.v1.VideoAnnotationProgress getDefaultInstanceForType() {
+    public com.google.cloud.videointelligence.v1.VideoAnnotationProgress
+        getDefaultInstanceForType() {
       return com.google.cloud.videointelligence.v1.VideoAnnotationProgress.getDefaultInstance();
     }
 
@@ -522,7 +551,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.videointelligence.v1.VideoAnnotationProgress buildPartial() {
-      com.google.cloud.videointelligence.v1.VideoAnnotationProgress result = new com.google.cloud.videointelligence.v1.VideoAnnotationProgress(this);
+      com.google.cloud.videointelligence.v1.VideoAnnotationProgress result =
+          new com.google.cloud.videointelligence.v1.VideoAnnotationProgress(this);
       result.inputUri_ = inputUri_;
       result.progressPercent_ = progressPercent_;
       if (startTimeBuilder_ == null) {
@@ -543,38 +573,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.videointelligence.v1.VideoAnnotationProgress) {
-        return mergeFrom((com.google.cloud.videointelligence.v1.VideoAnnotationProgress)other);
+        return mergeFrom((com.google.cloud.videointelligence.v1.VideoAnnotationProgress) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -582,7 +613,9 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.videointelligence.v1.VideoAnnotationProgress other) {
-      if (other == com.google.cloud.videointelligence.v1.VideoAnnotationProgress.getDefaultInstance()) return this;
+      if (other
+          == com.google.cloud.videointelligence.v1.VideoAnnotationProgress.getDefaultInstance())
+        return this;
       if (!other.getInputUri().isEmpty()) {
         inputUri_ = other.inputUri_;
         onChanged();
@@ -615,7 +648,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.videointelligence.v1.VideoAnnotationProgress) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.videointelligence.v1.VideoAnnotationProgress)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -627,6 +662,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object inputUri_ = "";
     /**
+     *
+     *
      * <pre>
      * Video file location in
      * [Google Cloud Storage](https://cloud.google.com/storage/).
@@ -637,8 +674,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getInputUri() {
       java.lang.Object ref = inputUri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         inputUri_ = s;
         return s;
@@ -647,6 +683,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Video file location in
      * [Google Cloud Storage](https://cloud.google.com/storage/).
@@ -654,13 +692,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string input_uri = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getInputUriBytes() {
+    public com.google.protobuf.ByteString getInputUriBytes() {
       java.lang.Object ref = inputUri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         inputUri_ = b;
         return b;
       } else {
@@ -668,6 +704,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Video file location in
      * [Google Cloud Storage](https://cloud.google.com/storage/).
@@ -675,17 +713,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string input_uri = 1;</code>
      */
-    public Builder setInputUri(
-        java.lang.String value) {
+    public Builder setInputUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       inputUri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video file location in
      * [Google Cloud Storage](https://cloud.google.com/storage/).
@@ -694,12 +733,14 @@ private static final long serialVersionUID = 0L;
      * <code>string input_uri = 1;</code>
      */
     public Builder clearInputUri() {
-      
+
       inputUri_ = getDefaultInstance().getInputUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video file location in
      * [Google Cloud Storage](https://cloud.google.com/storage/).
@@ -707,20 +748,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string input_uri = 1;</code>
      */
-    public Builder setInputUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setInputUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       inputUri_ = value;
       onChanged();
       return this;
     }
 
-    private int progressPercent_ ;
+    private int progressPercent_;
     /**
+     *
+     *
      * <pre>
      * Approximate percentage processed thus far. Guaranteed to be
      * 100 when fully processed.
@@ -732,6 +774,8 @@ private static final long serialVersionUID = 0L;
       return progressPercent_;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate percentage processed thus far. Guaranteed to be
      * 100 when fully processed.
@@ -740,12 +784,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 progress_percent = 2;</code>
      */
     public Builder setProgressPercent(int value) {
-      
+
       progressPercent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Approximate percentage processed thus far. Guaranteed to be
      * 100 when fully processed.
@@ -754,7 +800,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 progress_percent = 2;</code>
      */
     public Builder clearProgressPercent() {
-      
+
       progressPercent_ = 0;
       onChanged();
       return this;
@@ -762,8 +808,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp startTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        startTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Time when the request was received.
      * </pre>
@@ -774,6 +825,8 @@ private static final long serialVersionUID = 0L;
       return startTimeBuilder_ != null || startTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Time when the request was received.
      * </pre>
@@ -788,6 +841,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Time when the request was received.
      * </pre>
@@ -808,14 +863,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time when the request was received.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
-    public Builder setStartTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
         onChanged();
@@ -826,6 +882,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time when the request was received.
      * </pre>
@@ -836,7 +894,7 @@ private static final long serialVersionUID = 0L;
       if (startTimeBuilder_ == null) {
         if (startTime_ != null) {
           startTime_ =
-            com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
         } else {
           startTime_ = value;
         }
@@ -848,6 +906,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time when the request was received.
      * </pre>
@@ -866,6 +926,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time when the request was received.
      * </pre>
@@ -873,11 +935,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-      
+
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Time when the request was received.
      * </pre>
@@ -888,11 +952,12 @@ private static final long serialVersionUID = 0L;
       if (startTimeBuilder_ != null) {
         return startTimeBuilder_.getMessageOrBuilder();
       } else {
-        return startTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Time when the request was received.
      * </pre>
@@ -900,14 +965,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getStartTimeFieldBuilder() {
       if (startTimeBuilder_ == null) {
-        startTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getStartTime(),
-                getParentForChildren(),
-                isClean());
+        startTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getStartTime(), getParentForChildren(), isClean());
         startTime_ = null;
       }
       return startTimeBuilder_;
@@ -915,8 +983,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp updateTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Time of the most recent update.
      * </pre>
@@ -927,6 +1000,8 @@ private static final long serialVersionUID = 0L;
       return updateTimeBuilder_ != null || updateTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Time of the most recent update.
      * </pre>
@@ -935,12 +1010,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
-        return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
       } else {
         return updateTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Time of the most recent update.
      * </pre>
@@ -961,14 +1040,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time of the most recent update.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 4;</code>
      */
-    public Builder setUpdateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
         onChanged();
@@ -979,6 +1059,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time of the most recent update.
      * </pre>
@@ -989,7 +1071,7 @@ private static final long serialVersionUID = 0L;
       if (updateTimeBuilder_ == null) {
         if (updateTime_ != null) {
           updateTime_ =
-            com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
         } else {
           updateTime_ = value;
         }
@@ -1001,6 +1083,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time of the most recent update.
      * </pre>
@@ -1019,6 +1103,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time of the most recent update.
      * </pre>
@@ -1026,11 +1112,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      
+
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Time of the most recent update.
      * </pre>
@@ -1041,11 +1129,14 @@ private static final long serialVersionUID = 0L;
       if (updateTimeBuilder_ != null) {
         return updateTimeBuilder_.getMessageOrBuilder();
       } else {
-        return updateTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Time of the most recent update.
      * </pre>
@@ -1053,21 +1144,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getUpdateTimeFieldBuilder() {
       if (updateTimeBuilder_ == null) {
-        updateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getUpdateTime(),
-                getParentForChildren(),
-                isClean());
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
         updateTime_ = null;
       }
       return updateTimeBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1077,12 +1171,13 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.videointelligence.v1.VideoAnnotationProgress)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.videointelligence.v1.VideoAnnotationProgress)
-  private static final com.google.cloud.videointelligence.v1.VideoAnnotationProgress DEFAULT_INSTANCE;
+  private static final com.google.cloud.videointelligence.v1.VideoAnnotationProgress
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.videointelligence.v1.VideoAnnotationProgress();
   }
@@ -1091,16 +1186,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<VideoAnnotationProgress>
-      PARSER = new com.google.protobuf.AbstractParser<VideoAnnotationProgress>() {
-    @java.lang.Override
-    public VideoAnnotationProgress parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new VideoAnnotationProgress(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<VideoAnnotationProgress> PARSER =
+      new com.google.protobuf.AbstractParser<VideoAnnotationProgress>() {
+        @java.lang.Override
+        public VideoAnnotationProgress parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new VideoAnnotationProgress(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<VideoAnnotationProgress> parser() {
     return PARSER;
@@ -1115,6 +1210,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.videointelligence.v1.VideoAnnotationProgress getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-
