@@ -197,7 +197,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
    *      2----3
    *      |    |
    *      1----0
-   *   and the vertice order will still be (0, 1, 2, 3).
+   *   and the vertex order will still be (0, 1, 2, 3).
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
@@ -223,7 +223,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
    *      2----3
    *      |    |
    *      1----0
-   *   and the vertice order will still be (0, 1, 2, 3).
+   *   and the vertex order will still be (0, 1, 2, 3).
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
@@ -251,7 +251,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
    *      2----3
    *      |    |
    *      1----0
-   *   and the vertice order will still be (0, 1, 2, 3).
+   *   and the vertex order will still be (0, 1, 2, 3).
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
@@ -981,7 +981,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
      *      2----3
      *      |    |
      *      1----0
-     *   and the vertice order will still be (0, 1, 2, 3).
+     *   and the vertex order will still be (0, 1, 2, 3).
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
@@ -1007,7 +1007,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
      *      2----3
      *      |    |
      *      1----0
-     *   and the vertice order will still be (0, 1, 2, 3).
+     *   and the vertex order will still be (0, 1, 2, 3).
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
@@ -1039,7 +1039,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
      *      2----3
      *      |    |
      *      1----0
-     *   and the vertice order will still be (0, 1, 2, 3).
+     *   and the vertex order will still be (0, 1, 2, 3).
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
@@ -1075,7 +1075,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
      *      2----3
      *      |    |
      *      1----0
-     *   and the vertice order will still be (0, 1, 2, 3).
+     *   and the vertex order will still be (0, 1, 2, 3).
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
@@ -1108,7 +1108,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
      *      2----3
      *      |    |
      *      1----0
-     *   and the vertice order will still be (0, 1, 2, 3).
+     *   and the vertex order will still be (0, 1, 2, 3).
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
@@ -1148,7 +1148,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
      *      2----3
      *      |    |
      *      1----0
-     *   and the vertice order will still be (0, 1, 2, 3).
+     *   and the vertex order will still be (0, 1, 2, 3).
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
@@ -1182,7 +1182,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
      *      2----3
      *      |    |
      *      1----0
-     *   and the vertice order will still be (0, 1, 2, 3).
+     *   and the vertex order will still be (0, 1, 2, 3).
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
@@ -1210,7 +1210,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
      *      2----3
      *      |    |
      *      1----0
-     *   and the vertice order will still be (0, 1, 2, 3).
+     *   and the vertex order will still be (0, 1, 2, 3).
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>
@@ -1242,7 +1242,7 @@ public final class Word extends com.google.protobuf.GeneratedMessageV3
      *      2----3
      *      |    |
      *      1----0
-     *   and the vertice order will still be (0, 1, 2, 3).
+     *   and the vertex order will still be (0, 1, 2, 3).
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_box = 2;</code>

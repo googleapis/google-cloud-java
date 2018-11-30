@@ -42,10 +42,10 @@
  * <pre>
  * <code>
  * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
- *   String formattedParent = ProductSearchClient.formatLocationName("[PROJECT]", "[LOCATION]");
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   Product product = Product.newBuilder().build();
  *   String productId = "";
- *   Product response = productSearchClient.createProduct(formattedParent, product, productId);
+ *   Product response = productSearchClient.createProduct(parent, product, productId);
  * }
  * </code>
  * </pre>
