@@ -245,7 +245,8 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
           ListAlertPoliciesRequest, ListAlertPoliciesResponse, ListAlertPoliciesPagedResponse>
       LIST_ALERT_POLICIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListAlertPoliciesRequest, ListAlertPoliciesResponse,
+              ListAlertPoliciesRequest,
+              ListAlertPoliciesResponse,
               ListAlertPoliciesPagedResponse>() {
             @Override
             public ApiFuture<ListAlertPoliciesPagedResponse> getFuturePagedResponse(

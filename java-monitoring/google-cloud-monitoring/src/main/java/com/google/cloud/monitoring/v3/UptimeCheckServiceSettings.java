@@ -74,7 +74,8 @@ import javax.annotation.Generated;
 public class UptimeCheckServiceSettings extends ClientSettings<UptimeCheckServiceSettings> {
   /** Returns the object with the settings used for calls to listUptimeCheckConfigs. */
   public PagedCallSettings<
-          ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse,
+          ListUptimeCheckConfigsRequest,
+          ListUptimeCheckConfigsResponse,
           ListUptimeCheckConfigsPagedResponse>
       listUptimeCheckConfigsSettings() {
     return ((UptimeCheckServiceStubSettings) getStubSettings()).listUptimeCheckConfigsSettings();
@@ -210,7 +211,8 @@ public class UptimeCheckServiceSettings extends ClientSettings<UptimeCheckServic
 
     /** Returns the builder for the settings used for calls to listUptimeCheckConfigs. */
     public PagedCallSettings.Builder<
-            ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse,
+            ListUptimeCheckConfigsRequest,
+            ListUptimeCheckConfigsResponse,
             ListUptimeCheckConfigsPagedResponse>
         listUptimeCheckConfigsSettings() {
       return getStubSettingsBuilder().listUptimeCheckConfigsSettings();

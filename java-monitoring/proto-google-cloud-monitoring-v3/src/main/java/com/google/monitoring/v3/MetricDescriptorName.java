@@ -14,20 +14,21 @@
 
 package com.google.monitoring.v3;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class MetricDescriptorName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/metricDescriptors/{metric_descriptor=**}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/metricDescriptors/{metric_descriptor=**}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -56,18 +57,15 @@ public class MetricDescriptorName implements ResourceName {
   }
 
   public static MetricDescriptorName of(String project, String metricDescriptor) {
-    return newBuilder()
-      .setProject(project)
-      .setMetricDescriptor(metricDescriptor)
-      .build();
+    return newBuilder().setProject(project).setMetricDescriptor(metricDescriptor).build();
   }
 
   public static String format(String project, String metricDescriptor) {
     return newBuilder()
-      .setProject(project)
-      .setMetricDescriptor(metricDescriptor)
-      .build()
-      .toString();
+        .setProject(project)
+        .setMetricDescriptor(metricDescriptor)
+        .build()
+        .toString();
   }
 
   public static MetricDescriptorName parse(String formattedString) {
@@ -75,7 +73,8 @@ public class MetricDescriptorName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "MetricDescriptorName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "MetricDescriptorName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("metric_descriptor"));
   }
 
@@ -150,8 +149,7 @@ public class MetricDescriptorName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(MetricDescriptorName metricDescriptorName) {
       project = metricDescriptorName.project;
@@ -186,4 +184,3 @@ public class MetricDescriptorName implements ResourceName {
     return h;
   }
 }
-

@@ -4,6 +4,8 @@
 package com.google.monitoring.v3;
 
 /**
+ *
+ *
  * <pre>
  * Describes how to combine multiple time series to provide different views of
  * the data.  Aggregation consists of an alignment step on individual time
@@ -15,15 +17,16 @@ package com.google.monitoring.v3;
  *
  * Protobuf type {@code google.monitoring.v3.Aggregation}
  */
-public  final class Aggregation extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Aggregation extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.Aggregation)
     AggregationOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Aggregation.newBuilder() to construct.
   private Aggregation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Aggregation() {
     perSeriesAligner_ = 0;
     crossSeriesReducer_ = 0;
@@ -31,10 +34,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Aggregation(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -54,54 +57,58 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (alignmentPeriod_ != null) {
-              subBuilder = alignmentPeriod_.toBuilder();
-            }
-            alignmentPeriod_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(alignmentPeriod_);
-              alignmentPeriod_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (alignmentPeriod_ != null) {
+                subBuilder = alignmentPeriod_.toBuilder();
+              }
+              alignmentPeriod_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(alignmentPeriod_);
+                alignmentPeriod_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 16: {
-            int rawValue = input.readEnum();
-
-            perSeriesAligner_ = rawValue;
-            break;
-          }
-          case 32: {
-            int rawValue = input.readEnum();
-
-            crossSeriesReducer_ = rawValue;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              groupByFields_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000008;
+              break;
             }
-            groupByFields_.add(s);
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 16:
+            {
+              int rawValue = input.readEnum();
+
+              perSeriesAligner_ = rawValue;
+              break;
             }
-            break;
-          }
+          case 32:
+            {
+              int rawValue = input.readEnum();
+
+              crossSeriesReducer_ = rawValue;
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                groupByFields_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              groupByFields_.add(s);
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         groupByFields_ = groupByFields_.getUnmodifiableView();
@@ -110,20 +117,25 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.monitoring.v3.CommonProto.internal_static_google_monitoring_v3_Aggregation_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.monitoring.v3.CommonProto
+        .internal_static_google_monitoring_v3_Aggregation_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.monitoring.v3.CommonProto.internal_static_google_monitoring_v3_Aggregation_fieldAccessorTable
+    return com.google.monitoring.v3.CommonProto
+        .internal_static_google_monitoring_v3_Aggregation_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.monitoring.v3.Aggregation.class, com.google.monitoring.v3.Aggregation.Builder.class);
+            com.google.monitoring.v3.Aggregation.class,
+            com.google.monitoring.v3.Aggregation.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * The Aligner describes how to bring the data points in a single
    * time series into temporal alignment.
@@ -131,9 +143,10 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf enum {@code google.monitoring.v3.Aggregation.Aligner}
    */
-  public enum Aligner
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Aligner implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * No alignment. Raw data is returned. Not valid if cross-time
      * series reduction is requested. The value type of the result is
@@ -144,6 +157,8 @@ private static final long serialVersionUID = 0L;
      */
     ALIGN_NONE(0),
     /**
+     *
+     *
      * <pre>
      * Align and convert to delta metric type. This alignment is valid
      * for cumulative metrics and delta metrics. Aligning an existing
@@ -158,6 +173,8 @@ private static final long serialVersionUID = 0L;
      */
     ALIGN_DELTA(1),
     /**
+     *
+     *
      * <pre>
      * Align and convert to a rate. This alignment is valid for
      * cumulative metrics and delta metrics with numeric values. The output is a
@@ -175,6 +192,8 @@ private static final long serialVersionUID = 0L;
      */
     ALIGN_RATE(2),
     /**
+     *
+     *
      * <pre>
      * Align by interpolating between adjacent points around the
      * period boundary. This alignment is valid for gauge
@@ -186,6 +205,8 @@ private static final long serialVersionUID = 0L;
      */
     ALIGN_INTERPOLATE(3),
     /**
+     *
+     *
      * <pre>
      * Align by shifting the oldest data point before the period
      * boundary to the boundary. This alignment is valid for gauge
@@ -197,6 +218,8 @@ private static final long serialVersionUID = 0L;
      */
     ALIGN_NEXT_OLDER(4),
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the minimum of all data points in the
@@ -209,6 +232,8 @@ private static final long serialVersionUID = 0L;
      */
     ALIGN_MIN(10),
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the maximum of all data points in the
@@ -221,6 +246,8 @@ private static final long serialVersionUID = 0L;
      */
     ALIGN_MAX(11),
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the average or arithmetic mean of all
@@ -233,6 +260,8 @@ private static final long serialVersionUID = 0L;
      */
     ALIGN_MEAN(12),
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the count of all data points in the
@@ -245,6 +274,8 @@ private static final long serialVersionUID = 0L;
      */
     ALIGN_COUNT(13),
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the sum of all data points in the
@@ -257,6 +288,8 @@ private static final long serialVersionUID = 0L;
      */
     ALIGN_SUM(14),
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the standard deviation of all data
@@ -269,6 +302,8 @@ private static final long serialVersionUID = 0L;
      */
     ALIGN_STDDEV(15),
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the count of True-valued data points in the
@@ -281,6 +316,8 @@ private static final long serialVersionUID = 0L;
      */
     ALIGN_COUNT_TRUE(16),
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the count of False-valued data points in the
@@ -293,6 +330,8 @@ private static final long serialVersionUID = 0L;
      */
     ALIGN_COUNT_FALSE(24),
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the fraction of True-valued data points in the
@@ -305,6 +344,8 @@ private static final long serialVersionUID = 0L;
      */
     ALIGN_FRACTION_TRUE(17),
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the 99th percentile of all data
@@ -317,6 +358,8 @@ private static final long serialVersionUID = 0L;
      */
     ALIGN_PERCENTILE_99(18),
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the 95th percentile of all data
@@ -329,6 +372,8 @@ private static final long serialVersionUID = 0L;
      */
     ALIGN_PERCENTILE_95(19),
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the 50th percentile of all data
@@ -341,6 +386,8 @@ private static final long serialVersionUID = 0L;
      */
     ALIGN_PERCENTILE_50(20),
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the 5th percentile of all data
@@ -353,6 +400,8 @@ private static final long serialVersionUID = 0L;
      */
     ALIGN_PERCENTILE_05(21),
     /**
+     *
+     *
      * <pre>
      * Align and convert to a percentage change. This alignment is valid for
      * gauge and delta metrics with numeric values. This alignment conceptually
@@ -378,6 +427,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * No alignment. Raw data is returned. Not valid if cross-time
      * series reduction is requested. The value type of the result is
@@ -388,6 +439,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALIGN_NONE_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Align and convert to delta metric type. This alignment is valid
      * for cumulative metrics and delta metrics. Aligning an existing
@@ -402,6 +455,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALIGN_DELTA_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Align and convert to a rate. This alignment is valid for
      * cumulative metrics and delta metrics with numeric values. The output is a
@@ -419,6 +474,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALIGN_RATE_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Align by interpolating between adjacent points around the
      * period boundary. This alignment is valid for gauge
@@ -430,6 +487,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALIGN_INTERPOLATE_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * Align by shifting the oldest data point before the period
      * boundary to the boundary. This alignment is valid for gauge
@@ -441,6 +500,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALIGN_NEXT_OLDER_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the minimum of all data points in the
@@ -453,6 +514,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALIGN_MIN_VALUE = 10;
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the maximum of all data points in the
@@ -465,6 +528,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALIGN_MAX_VALUE = 11;
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the average or arithmetic mean of all
@@ -477,6 +542,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALIGN_MEAN_VALUE = 12;
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the count of all data points in the
@@ -489,6 +556,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALIGN_COUNT_VALUE = 13;
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the sum of all data points in the
@@ -501,6 +570,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALIGN_SUM_VALUE = 14;
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the standard deviation of all data
@@ -513,6 +584,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALIGN_STDDEV_VALUE = 15;
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the count of True-valued data points in the
@@ -525,6 +598,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALIGN_COUNT_TRUE_VALUE = 16;
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the count of False-valued data points in the
@@ -537,6 +612,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALIGN_COUNT_FALSE_VALUE = 24;
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the fraction of True-valued data points in the
@@ -549,6 +626,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALIGN_FRACTION_TRUE_VALUE = 17;
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the 99th percentile of all data
@@ -561,6 +640,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALIGN_PERCENTILE_99_VALUE = 18;
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the 95th percentile of all data
@@ -573,6 +654,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALIGN_PERCENTILE_95_VALUE = 19;
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the 50th percentile of all data
@@ -585,6 +668,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALIGN_PERCENTILE_50_VALUE = 20;
     /**
+     *
+     *
      * <pre>
      * Align time series via aggregation. The resulting data point in
      * the alignment period is the 5th percentile of all data
@@ -597,6 +682,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALIGN_PERCENTILE_05_VALUE = 21;
     /**
+     *
+     *
      * <pre>
      * Align and convert to a percentage change. This alignment is valid for
      * gauge and delta metrics with numeric values. This alignment conceptually
@@ -619,7 +706,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ALIGN_PERCENT_CHANGE_VALUE = 23;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -628,9 +714,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Aligner valueOf(int value) {
       return forNumber(value);
@@ -638,61 +722,77 @@ private static final long serialVersionUID = 0L;
 
     public static Aligner forNumber(int value) {
       switch (value) {
-        case 0: return ALIGN_NONE;
-        case 1: return ALIGN_DELTA;
-        case 2: return ALIGN_RATE;
-        case 3: return ALIGN_INTERPOLATE;
-        case 4: return ALIGN_NEXT_OLDER;
-        case 10: return ALIGN_MIN;
-        case 11: return ALIGN_MAX;
-        case 12: return ALIGN_MEAN;
-        case 13: return ALIGN_COUNT;
-        case 14: return ALIGN_SUM;
-        case 15: return ALIGN_STDDEV;
-        case 16: return ALIGN_COUNT_TRUE;
-        case 24: return ALIGN_COUNT_FALSE;
-        case 17: return ALIGN_FRACTION_TRUE;
-        case 18: return ALIGN_PERCENTILE_99;
-        case 19: return ALIGN_PERCENTILE_95;
-        case 20: return ALIGN_PERCENTILE_50;
-        case 21: return ALIGN_PERCENTILE_05;
-        case 23: return ALIGN_PERCENT_CHANGE;
-        default: return null;
+        case 0:
+          return ALIGN_NONE;
+        case 1:
+          return ALIGN_DELTA;
+        case 2:
+          return ALIGN_RATE;
+        case 3:
+          return ALIGN_INTERPOLATE;
+        case 4:
+          return ALIGN_NEXT_OLDER;
+        case 10:
+          return ALIGN_MIN;
+        case 11:
+          return ALIGN_MAX;
+        case 12:
+          return ALIGN_MEAN;
+        case 13:
+          return ALIGN_COUNT;
+        case 14:
+          return ALIGN_SUM;
+        case 15:
+          return ALIGN_STDDEV;
+        case 16:
+          return ALIGN_COUNT_TRUE;
+        case 24:
+          return ALIGN_COUNT_FALSE;
+        case 17:
+          return ALIGN_FRACTION_TRUE;
+        case 18:
+          return ALIGN_PERCENTILE_99;
+        case 19:
+          return ALIGN_PERCENTILE_95;
+        case 20:
+          return ALIGN_PERCENTILE_50;
+        case 21:
+          return ALIGN_PERCENTILE_05;
+        case 23:
+          return ALIGN_PERCENT_CHANGE;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Aligner>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Aligner> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Aligner> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Aligner>() {
-            public Aligner findValueByNumber(int number) {
-              return Aligner.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Aligner> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Aligner>() {
+          public Aligner findValueByNumber(int number) {
+            return Aligner.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.monitoring.v3.Aggregation.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final Aligner[] VALUES = values();
 
-    public static Aligner valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Aligner valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -710,6 +810,8 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
    * <pre>
    * A Reducer describes how to aggregate data points from multiple
    * time series into a single time series.
@@ -717,9 +819,10 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf enum {@code google.monitoring.v3.Aggregation.Reducer}
    */
-  public enum Reducer
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Reducer implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * No cross-time series reduction. The output of the aligner is
      * returned.
@@ -729,6 +832,8 @@ private static final long serialVersionUID = 0L;
      */
     REDUCE_NONE(0),
     /**
+     *
+     *
      * <pre>
      * Reduce by computing the mean across time series for each
      * alignment period. This reducer is valid for delta and
@@ -740,6 +845,8 @@ private static final long serialVersionUID = 0L;
      */
     REDUCE_MEAN(1),
     /**
+     *
+     *
      * <pre>
      * Reduce by computing the minimum across time series for each
      * alignment period. This reducer is valid for delta and
@@ -751,6 +858,8 @@ private static final long serialVersionUID = 0L;
      */
     REDUCE_MIN(2),
     /**
+     *
+     *
      * <pre>
      * Reduce by computing the maximum across time series for each
      * alignment period. This reducer is valid for delta and
@@ -762,6 +871,8 @@ private static final long serialVersionUID = 0L;
      */
     REDUCE_MAX(3),
     /**
+     *
+     *
      * <pre>
      * Reduce by computing the sum across time series for each
      * alignment period. This reducer is valid for delta and
@@ -773,6 +884,8 @@ private static final long serialVersionUID = 0L;
      */
     REDUCE_SUM(4),
     /**
+     *
+     *
      * <pre>
      * Reduce by computing the standard deviation across time series
      * for each alignment period. This reducer is valid for delta
@@ -784,6 +897,8 @@ private static final long serialVersionUID = 0L;
      */
     REDUCE_STDDEV(5),
     /**
+     *
+     *
      * <pre>
      * Reduce by computing the count of data points across time series
      * for each alignment period. This reducer is valid for delta
@@ -796,6 +911,8 @@ private static final long serialVersionUID = 0L;
      */
     REDUCE_COUNT(6),
     /**
+     *
+     *
      * <pre>
      * Reduce by computing the count of True-valued data points across time
      * series for each alignment period. This reducer is valid for delta
@@ -807,6 +924,8 @@ private static final long serialVersionUID = 0L;
      */
     REDUCE_COUNT_TRUE(7),
     /**
+     *
+     *
      * <pre>
      * Reduce by computing the count of False-valued data points across time
      * series for each alignment period. This reducer is valid for delta
@@ -818,6 +937,8 @@ private static final long serialVersionUID = 0L;
      */
     REDUCE_COUNT_FALSE(15),
     /**
+     *
+     *
      * <pre>
      * Reduce by computing the fraction of True-valued data points across time
      * series for each alignment period. This reducer is valid for delta
@@ -830,6 +951,8 @@ private static final long serialVersionUID = 0L;
      */
     REDUCE_FRACTION_TRUE(8),
     /**
+     *
+     *
      * <pre>
      * Reduce by computing 99th percentile of data points across time series
      * for each alignment period. This reducer is valid for gauge and delta
@@ -841,6 +964,8 @@ private static final long serialVersionUID = 0L;
      */
     REDUCE_PERCENTILE_99(9),
     /**
+     *
+     *
      * <pre>
      * Reduce by computing 95th percentile of data points across time series
      * for each alignment period. This reducer is valid for gauge and delta
@@ -852,6 +977,8 @@ private static final long serialVersionUID = 0L;
      */
     REDUCE_PERCENTILE_95(10),
     /**
+     *
+     *
      * <pre>
      * Reduce by computing 50th percentile of data points across time series
      * for each alignment period. This reducer is valid for gauge and delta
@@ -863,6 +990,8 @@ private static final long serialVersionUID = 0L;
      */
     REDUCE_PERCENTILE_50(11),
     /**
+     *
+     *
      * <pre>
      * Reduce by computing 5th percentile of data points across time series
      * for each alignment period. This reducer is valid for gauge and delta
@@ -877,6 +1006,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * No cross-time series reduction. The output of the aligner is
      * returned.
@@ -886,6 +1017,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REDUCE_NONE_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Reduce by computing the mean across time series for each
      * alignment period. This reducer is valid for delta and
@@ -897,6 +1030,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REDUCE_MEAN_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Reduce by computing the minimum across time series for each
      * alignment period. This reducer is valid for delta and
@@ -908,6 +1043,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REDUCE_MIN_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Reduce by computing the maximum across time series for each
      * alignment period. This reducer is valid for delta and
@@ -919,6 +1056,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REDUCE_MAX_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * Reduce by computing the sum across time series for each
      * alignment period. This reducer is valid for delta and
@@ -930,6 +1069,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REDUCE_SUM_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * Reduce by computing the standard deviation across time series
      * for each alignment period. This reducer is valid for delta
@@ -941,6 +1082,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REDUCE_STDDEV_VALUE = 5;
     /**
+     *
+     *
      * <pre>
      * Reduce by computing the count of data points across time series
      * for each alignment period. This reducer is valid for delta
@@ -953,6 +1096,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REDUCE_COUNT_VALUE = 6;
     /**
+     *
+     *
      * <pre>
      * Reduce by computing the count of True-valued data points across time
      * series for each alignment period. This reducer is valid for delta
@@ -964,6 +1109,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REDUCE_COUNT_TRUE_VALUE = 7;
     /**
+     *
+     *
      * <pre>
      * Reduce by computing the count of False-valued data points across time
      * series for each alignment period. This reducer is valid for delta
@@ -975,6 +1122,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REDUCE_COUNT_FALSE_VALUE = 15;
     /**
+     *
+     *
      * <pre>
      * Reduce by computing the fraction of True-valued data points across time
      * series for each alignment period. This reducer is valid for delta
@@ -987,6 +1136,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REDUCE_FRACTION_TRUE_VALUE = 8;
     /**
+     *
+     *
      * <pre>
      * Reduce by computing 99th percentile of data points across time series
      * for each alignment period. This reducer is valid for gauge and delta
@@ -998,6 +1149,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REDUCE_PERCENTILE_99_VALUE = 9;
     /**
+     *
+     *
      * <pre>
      * Reduce by computing 95th percentile of data points across time series
      * for each alignment period. This reducer is valid for gauge and delta
@@ -1009,6 +1162,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REDUCE_PERCENTILE_95_VALUE = 10;
     /**
+     *
+     *
      * <pre>
      * Reduce by computing 50th percentile of data points across time series
      * for each alignment period. This reducer is valid for gauge and delta
@@ -1020,6 +1175,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REDUCE_PERCENTILE_50_VALUE = 11;
     /**
+     *
+     *
      * <pre>
      * Reduce by computing 5th percentile of data points across time series
      * for each alignment period. This reducer is valid for gauge and delta
@@ -1031,7 +1188,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REDUCE_PERCENTILE_05_VALUE = 12;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -1040,9 +1196,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Reducer valueOf(int value) {
       return forNumber(value);
@@ -1050,56 +1204,67 @@ private static final long serialVersionUID = 0L;
 
     public static Reducer forNumber(int value) {
       switch (value) {
-        case 0: return REDUCE_NONE;
-        case 1: return REDUCE_MEAN;
-        case 2: return REDUCE_MIN;
-        case 3: return REDUCE_MAX;
-        case 4: return REDUCE_SUM;
-        case 5: return REDUCE_STDDEV;
-        case 6: return REDUCE_COUNT;
-        case 7: return REDUCE_COUNT_TRUE;
-        case 15: return REDUCE_COUNT_FALSE;
-        case 8: return REDUCE_FRACTION_TRUE;
-        case 9: return REDUCE_PERCENTILE_99;
-        case 10: return REDUCE_PERCENTILE_95;
-        case 11: return REDUCE_PERCENTILE_50;
-        case 12: return REDUCE_PERCENTILE_05;
-        default: return null;
+        case 0:
+          return REDUCE_NONE;
+        case 1:
+          return REDUCE_MEAN;
+        case 2:
+          return REDUCE_MIN;
+        case 3:
+          return REDUCE_MAX;
+        case 4:
+          return REDUCE_SUM;
+        case 5:
+          return REDUCE_STDDEV;
+        case 6:
+          return REDUCE_COUNT;
+        case 7:
+          return REDUCE_COUNT_TRUE;
+        case 15:
+          return REDUCE_COUNT_FALSE;
+        case 8:
+          return REDUCE_FRACTION_TRUE;
+        case 9:
+          return REDUCE_PERCENTILE_99;
+        case 10:
+          return REDUCE_PERCENTILE_95;
+        case 11:
+          return REDUCE_PERCENTILE_50;
+        case 12:
+          return REDUCE_PERCENTILE_05;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Reducer>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Reducer> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Reducer> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Reducer>() {
-            public Reducer findValueByNumber(int number) {
-              return Reducer.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Reducer> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Reducer>() {
+          public Reducer findValueByNumber(int number) {
+            return Reducer.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.monitoring.v3.Aggregation.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final Reducer[] VALUES = values();
 
-    public static Reducer valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Reducer valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -1120,6 +1285,8 @@ private static final long serialVersionUID = 0L;
   public static final int ALIGNMENT_PERIOD_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration alignmentPeriod_;
   /**
+   *
+   *
    * <pre>
    * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
    * alignment. If present, `alignmentPeriod` must be at least 60
@@ -1137,6 +1304,8 @@ private static final long serialVersionUID = 0L;
     return alignmentPeriod_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
    * alignment. If present, `alignmentPeriod` must be at least 60
@@ -1151,9 +1320,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Duration alignment_period = 1;</code>
    */
   public com.google.protobuf.Duration getAlignmentPeriod() {
-    return alignmentPeriod_ == null ? com.google.protobuf.Duration.getDefaultInstance() : alignmentPeriod_;
+    return alignmentPeriod_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : alignmentPeriod_;
   }
   /**
+   *
+   *
    * <pre>
    * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
    * alignment. If present, `alignmentPeriod` must be at least 60
@@ -1174,6 +1347,8 @@ private static final long serialVersionUID = 0L;
   public static final int PER_SERIES_ALIGNER_FIELD_NUMBER = 2;
   private int perSeriesAligner_;
   /**
+   *
+   *
    * <pre>
    * The approach to be used to align individual time series. Not all
    * alignment functions may be applied to all time series, depending
@@ -1193,6 +1368,8 @@ private static final long serialVersionUID = 0L;
     return perSeriesAligner_;
   }
   /**
+   *
+   *
    * <pre>
    * The approach to be used to align individual time series. Not all
    * alignment functions may be applied to all time series, depending
@@ -1210,13 +1387,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.monitoring.v3.Aggregation.Aligner getPerSeriesAligner() {
     @SuppressWarnings("deprecation")
-    com.google.monitoring.v3.Aggregation.Aligner result = com.google.monitoring.v3.Aggregation.Aligner.valueOf(perSeriesAligner_);
+    com.google.monitoring.v3.Aggregation.Aligner result =
+        com.google.monitoring.v3.Aggregation.Aligner.valueOf(perSeriesAligner_);
     return result == null ? com.google.monitoring.v3.Aggregation.Aligner.UNRECOGNIZED : result;
   }
 
   public static final int CROSS_SERIES_REDUCER_FIELD_NUMBER = 4;
   private int crossSeriesReducer_;
   /**
+   *
+   *
    * <pre>
    * The approach to be used to combine time series. Not all reducer
    * functions may be applied to all time series, depending on the
@@ -1236,6 +1416,8 @@ private static final long serialVersionUID = 0L;
     return crossSeriesReducer_;
   }
   /**
+   *
+   *
    * <pre>
    * The approach to be used to combine time series. Not all reducer
    * functions may be applied to all time series, depending on the
@@ -1253,13 +1435,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.monitoring.v3.Aggregation.Reducer getCrossSeriesReducer() {
     @SuppressWarnings("deprecation")
-    com.google.monitoring.v3.Aggregation.Reducer result = com.google.monitoring.v3.Aggregation.Reducer.valueOf(crossSeriesReducer_);
+    com.google.monitoring.v3.Aggregation.Reducer result =
+        com.google.monitoring.v3.Aggregation.Reducer.valueOf(crossSeriesReducer_);
     return result == null ? com.google.monitoring.v3.Aggregation.Reducer.UNRECOGNIZED : result;
   }
 
   public static final int GROUP_BY_FIELDS_FIELD_NUMBER = 5;
   private com.google.protobuf.LazyStringList groupByFields_;
   /**
+   *
+   *
    * <pre>
    * The set of fields to preserve when `crossSeriesReducer` is
    * specified. The `groupByFields` determine how the time series are
@@ -1279,11 +1464,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string group_by_fields = 5;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getGroupByFieldsList() {
+  public com.google.protobuf.ProtocolStringList getGroupByFieldsList() {
     return groupByFields_;
   }
   /**
+   *
+   *
    * <pre>
    * The set of fields to preserve when `crossSeriesReducer` is
    * specified. The `groupByFields` determine how the time series are
@@ -1307,6 +1493,8 @@ private static final long serialVersionUID = 0L;
     return groupByFields_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The set of fields to preserve when `crossSeriesReducer` is
    * specified. The `groupByFields` determine how the time series are
@@ -1330,6 +1518,8 @@ private static final long serialVersionUID = 0L;
     return groupByFields_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The set of fields to preserve when `crossSeriesReducer` is
    * specified. The `groupByFields` determine how the time series are
@@ -1349,12 +1539,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string group_by_fields = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getGroupByFieldsBytes(int index) {
+  public com.google.protobuf.ByteString getGroupByFieldsBytes(int index) {
     return groupByFields_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1366,15 +1556,15 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (alignmentPeriod_ != null) {
       output.writeMessage(1, getAlignmentPeriod());
     }
     if (perSeriesAligner_ != com.google.monitoring.v3.Aggregation.Aligner.ALIGN_NONE.getNumber()) {
       output.writeEnum(2, perSeriesAligner_);
     }
-    if (crossSeriesReducer_ != com.google.monitoring.v3.Aggregation.Reducer.REDUCE_NONE.getNumber()) {
+    if (crossSeriesReducer_
+        != com.google.monitoring.v3.Aggregation.Reducer.REDUCE_NONE.getNumber()) {
       output.writeEnum(4, crossSeriesReducer_);
     }
     for (int i = 0; i < groupByFields_.size(); i++) {
@@ -1390,16 +1580,14 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (alignmentPeriod_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getAlignmentPeriod());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getAlignmentPeriod());
     }
     if (perSeriesAligner_ != com.google.monitoring.v3.Aggregation.Aligner.ALIGN_NONE.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, perSeriesAligner_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, perSeriesAligner_);
     }
-    if (crossSeriesReducer_ != com.google.monitoring.v3.Aggregation.Reducer.REDUCE_NONE.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, crossSeriesReducer_);
+    if (crossSeriesReducer_
+        != com.google.monitoring.v3.Aggregation.Reducer.REDUCE_NONE.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, crossSeriesReducer_);
     }
     {
       int dataSize = 0;
@@ -1417,7 +1605,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.monitoring.v3.Aggregation)) {
       return super.equals(obj);
@@ -1427,13 +1615,11 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (hasAlignmentPeriod() == other.hasAlignmentPeriod());
     if (hasAlignmentPeriod()) {
-      result = result && getAlignmentPeriod()
-          .equals(other.getAlignmentPeriod());
+      result = result && getAlignmentPeriod().equals(other.getAlignmentPeriod());
     }
     result = result && perSeriesAligner_ == other.perSeriesAligner_;
     result = result && crossSeriesReducer_ == other.crossSeriesReducer_;
-    result = result && getGroupByFieldsList()
-        .equals(other.getGroupByFieldsList());
+    result = result && getGroupByFieldsList().equals(other.getGroupByFieldsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1462,97 +1648,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.monitoring.v3.Aggregation parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.monitoring.v3.Aggregation parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.Aggregation parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.monitoring.v3.Aggregation parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.monitoring.v3.Aggregation parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.Aggregation parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.Aggregation parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.Aggregation parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.Aggregation parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.monitoring.v3.Aggregation parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.Aggregation parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.monitoring.v3.Aggregation parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.Aggregation parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.monitoring.v3.Aggregation parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.monitoring.v3.Aggregation prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Describes how to combine multiple time series to provide different views of
    * the data.  Aggregation consists of an alignment step on individual time
@@ -1564,21 +1756,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.monitoring.v3.Aggregation}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.monitoring.v3.Aggregation)
       com.google.monitoring.v3.AggregationOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.monitoring.v3.CommonProto.internal_static_google_monitoring_v3_Aggregation_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.CommonProto
+          .internal_static_google_monitoring_v3_Aggregation_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.monitoring.v3.CommonProto.internal_static_google_monitoring_v3_Aggregation_fieldAccessorTable
+      return com.google.monitoring.v3.CommonProto
+          .internal_static_google_monitoring_v3_Aggregation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.monitoring.v3.Aggregation.class, com.google.monitoring.v3.Aggregation.Builder.class);
+              com.google.monitoring.v3.Aggregation.class,
+              com.google.monitoring.v3.Aggregation.Builder.class);
     }
 
     // Construct using com.google.monitoring.v3.Aggregation.newBuilder()
@@ -1586,16 +1780,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1615,9 +1808,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.monitoring.v3.CommonProto.internal_static_google_monitoring_v3_Aggregation_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.monitoring.v3.CommonProto
+          .internal_static_google_monitoring_v3_Aggregation_descriptor;
     }
 
     @java.lang.Override
@@ -1660,38 +1853,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.monitoring.v3.Aggregation) {
-        return mergeFrom((com.google.monitoring.v3.Aggregation)other);
+        return mergeFrom((com.google.monitoring.v3.Aggregation) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1747,12 +1941,18 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private com.google.protobuf.Duration alignmentPeriod_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> alignmentPeriodBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        alignmentPeriodBuilder_;
     /**
+     *
+     *
      * <pre>
      * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
      * alignment. If present, `alignmentPeriod` must be at least 60
@@ -1770,6 +1970,8 @@ private static final long serialVersionUID = 0L;
       return alignmentPeriodBuilder_ != null || alignmentPeriod_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
      * alignment. If present, `alignmentPeriod` must be at least 60
@@ -1785,12 +1987,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Duration getAlignmentPeriod() {
       if (alignmentPeriodBuilder_ == null) {
-        return alignmentPeriod_ == null ? com.google.protobuf.Duration.getDefaultInstance() : alignmentPeriod_;
+        return alignmentPeriod_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : alignmentPeriod_;
       } else {
         return alignmentPeriodBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
      * alignment. If present, `alignmentPeriod` must be at least 60
@@ -1818,6 +2024,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
      * alignment. If present, `alignmentPeriod` must be at least 60
@@ -1831,8 +2039,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
      */
-    public Builder setAlignmentPeriod(
-        com.google.protobuf.Duration.Builder builderForValue) {
+    public Builder setAlignmentPeriod(com.google.protobuf.Duration.Builder builderForValue) {
       if (alignmentPeriodBuilder_ == null) {
         alignmentPeriod_ = builderForValue.build();
         onChanged();
@@ -1843,6 +2050,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
      * alignment. If present, `alignmentPeriod` must be at least 60
@@ -1860,7 +2069,9 @@ private static final long serialVersionUID = 0L;
       if (alignmentPeriodBuilder_ == null) {
         if (alignmentPeriod_ != null) {
           alignmentPeriod_ =
-            com.google.protobuf.Duration.newBuilder(alignmentPeriod_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(alignmentPeriod_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           alignmentPeriod_ = value;
         }
@@ -1872,6 +2083,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
      * alignment. If present, `alignmentPeriod` must be at least 60
@@ -1897,6 +2110,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
      * alignment. If present, `alignmentPeriod` must be at least 60
@@ -1911,11 +2126,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getAlignmentPeriodBuilder() {
-      
+
       onChanged();
       return getAlignmentPeriodFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
      * alignment. If present, `alignmentPeriod` must be at least 60
@@ -1933,11 +2150,14 @@ private static final long serialVersionUID = 0L;
       if (alignmentPeriodBuilder_ != null) {
         return alignmentPeriodBuilder_.getMessageOrBuilder();
       } else {
-        return alignmentPeriod_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : alignmentPeriod_;
+        return alignmentPeriod_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : alignmentPeriod_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The alignment period for per-[time series][google.monitoring.v3.TimeSeries]
      * alignment. If present, `alignmentPeriod` must be at least 60
@@ -1952,14 +2172,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration alignment_period = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getAlignmentPeriodFieldBuilder() {
       if (alignmentPeriodBuilder_ == null) {
-        alignmentPeriodBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                getAlignmentPeriod(),
-                getParentForChildren(),
-                isClean());
+        alignmentPeriodBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getAlignmentPeriod(), getParentForChildren(), isClean());
         alignmentPeriod_ = null;
       }
       return alignmentPeriodBuilder_;
@@ -1967,6 +2190,8 @@ private static final long serialVersionUID = 0L;
 
     private int perSeriesAligner_ = 0;
     /**
+     *
+     *
      * <pre>
      * The approach to be used to align individual time series. Not all
      * alignment functions may be applied to all time series, depending
@@ -1986,6 +2211,8 @@ private static final long serialVersionUID = 0L;
       return perSeriesAligner_;
     }
     /**
+     *
+     *
      * <pre>
      * The approach to be used to align individual time series. Not all
      * alignment functions may be applied to all time series, depending
@@ -2007,6 +2234,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The approach to be used to align individual time series. Not all
      * alignment functions may be applied to all time series, depending
@@ -2024,10 +2253,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.monitoring.v3.Aggregation.Aligner getPerSeriesAligner() {
       @SuppressWarnings("deprecation")
-      com.google.monitoring.v3.Aggregation.Aligner result = com.google.monitoring.v3.Aggregation.Aligner.valueOf(perSeriesAligner_);
+      com.google.monitoring.v3.Aggregation.Aligner result =
+          com.google.monitoring.v3.Aggregation.Aligner.valueOf(perSeriesAligner_);
       return result == null ? com.google.monitoring.v3.Aggregation.Aligner.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * The approach to be used to align individual time series. Not all
      * alignment functions may be applied to all time series, depending
@@ -2047,12 +2279,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       perSeriesAligner_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The approach to be used to align individual time series. Not all
      * alignment functions may be applied to all time series, depending
@@ -2069,7 +2303,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.monitoring.v3.Aggregation.Aligner per_series_aligner = 2;</code>
      */
     public Builder clearPerSeriesAligner() {
-      
+
       perSeriesAligner_ = 0;
       onChanged();
       return this;
@@ -2077,6 +2311,8 @@ private static final long serialVersionUID = 0L;
 
     private int crossSeriesReducer_ = 0;
     /**
+     *
+     *
      * <pre>
      * The approach to be used to combine time series. Not all reducer
      * functions may be applied to all time series, depending on the
@@ -2096,6 +2332,8 @@ private static final long serialVersionUID = 0L;
       return crossSeriesReducer_;
     }
     /**
+     *
+     *
      * <pre>
      * The approach to be used to combine time series. Not all reducer
      * functions may be applied to all time series, depending on the
@@ -2117,6 +2355,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The approach to be used to combine time series. Not all reducer
      * functions may be applied to all time series, depending on the
@@ -2134,10 +2374,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.monitoring.v3.Aggregation.Reducer getCrossSeriesReducer() {
       @SuppressWarnings("deprecation")
-      com.google.monitoring.v3.Aggregation.Reducer result = com.google.monitoring.v3.Aggregation.Reducer.valueOf(crossSeriesReducer_);
+      com.google.monitoring.v3.Aggregation.Reducer result =
+          com.google.monitoring.v3.Aggregation.Reducer.valueOf(crossSeriesReducer_);
       return result == null ? com.google.monitoring.v3.Aggregation.Reducer.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * The approach to be used to combine time series. Not all reducer
      * functions may be applied to all time series, depending on the
@@ -2157,12 +2400,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       crossSeriesReducer_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The approach to be used to combine time series. Not all reducer
      * functions may be applied to all time series, depending on the
@@ -2179,20 +2424,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.monitoring.v3.Aggregation.Reducer cross_series_reducer = 4;</code>
      */
     public Builder clearCrossSeriesReducer() {
-      
+
       crossSeriesReducer_ = 0;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList groupByFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList groupByFields_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureGroupByFieldsIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
         groupByFields_ = new com.google.protobuf.LazyStringArrayList(groupByFields_);
         bitField0_ |= 0x00000008;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * The set of fields to preserve when `crossSeriesReducer` is
      * specified. The `groupByFields` determine how the time series are
@@ -2212,11 +2461,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string group_by_fields = 5;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getGroupByFieldsList() {
+    public com.google.protobuf.ProtocolStringList getGroupByFieldsList() {
       return groupByFields_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * The set of fields to preserve when `crossSeriesReducer` is
      * specified. The `groupByFields` determine how the time series are
@@ -2240,6 +2490,8 @@ private static final long serialVersionUID = 0L;
       return groupByFields_.size();
     }
     /**
+     *
+     *
      * <pre>
      * The set of fields to preserve when `crossSeriesReducer` is
      * specified. The `groupByFields` determine how the time series are
@@ -2263,6 +2515,8 @@ private static final long serialVersionUID = 0L;
       return groupByFields_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * The set of fields to preserve when `crossSeriesReducer` is
      * specified. The `groupByFields` determine how the time series are
@@ -2282,11 +2536,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string group_by_fields = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getGroupByFieldsBytes(int index) {
+    public com.google.protobuf.ByteString getGroupByFieldsBytes(int index) {
       return groupByFields_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * The set of fields to preserve when `crossSeriesReducer` is
      * specified. The `groupByFields` determine how the time series are
@@ -2306,17 +2561,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string group_by_fields = 5;</code>
      */
-    public Builder setGroupByFields(
-        int index, java.lang.String value) {
+    public Builder setGroupByFields(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureGroupByFieldsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureGroupByFieldsIsMutable();
       groupByFields_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The set of fields to preserve when `crossSeriesReducer` is
      * specified. The `groupByFields` determine how the time series are
@@ -2336,17 +2592,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string group_by_fields = 5;</code>
      */
-    public Builder addGroupByFields(
-        java.lang.String value) {
+    public Builder addGroupByFields(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureGroupByFieldsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureGroupByFieldsIsMutable();
       groupByFields_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The set of fields to preserve when `crossSeriesReducer` is
      * specified. The `groupByFields` determine how the time series are
@@ -2366,15 +2623,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string group_by_fields = 5;</code>
      */
-    public Builder addAllGroupByFields(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllGroupByFields(java.lang.Iterable<java.lang.String> values) {
       ensureGroupByFieldsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, groupByFields_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, groupByFields_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The set of fields to preserve when `crossSeriesReducer` is
      * specified. The `groupByFields` determine how the time series are
@@ -2401,6 +2658,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The set of fields to preserve when `crossSeriesReducer` is
      * specified. The `groupByFields` determine how the time series are
@@ -2420,20 +2679,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string group_by_fields = 5;</code>
      */
-    public Builder addGroupByFieldsBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addGroupByFieldsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureGroupByFieldsIsMutable();
       groupByFields_.add(value);
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2443,12 +2701,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.monitoring.v3.Aggregation)
   }
 
   // @@protoc_insertion_point(class_scope:google.monitoring.v3.Aggregation)
   private static final com.google.monitoring.v3.Aggregation DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.monitoring.v3.Aggregation();
   }
@@ -2457,16 +2715,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Aggregation>
-      PARSER = new com.google.protobuf.AbstractParser<Aggregation>() {
-    @java.lang.Override
-    public Aggregation parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Aggregation(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Aggregation> PARSER =
+      new com.google.protobuf.AbstractParser<Aggregation>() {
+        @java.lang.Override
+        public Aggregation parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Aggregation(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Aggregation> parser() {
     return PARSER;
@@ -2481,6 +2739,4 @@ private static final long serialVersionUID = 0L;
   public com.google.monitoring.v3.Aggregation getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-
