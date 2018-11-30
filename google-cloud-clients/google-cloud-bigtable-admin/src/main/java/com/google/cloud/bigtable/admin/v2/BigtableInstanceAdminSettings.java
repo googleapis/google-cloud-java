@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 /**
  * Settings class to configure an instance of {@link BigtableInstanceAdminClient}.
  *
- * <p>It must be configured with a {@link ProjectName} and can be used to change default RPC settings.
+ * <p>It must be configured with a {@link ProjectName} and can be used to change default RPC
+ * settings.
  *
  * <p>Example usage:
  *
@@ -77,11 +78,9 @@ public final class BigtableInstanceAdminSettings {
     return new Builder();
   }
 
-
   /** Builder for BigtableInstanceAdminSettings. */
   public static final class Builder {
-    @Nullable
-    private ProjectName projectName;
+    @Nullable private ProjectName projectName;
     private final BigtableInstanceAdminStubSettings.Builder stubSettings;
 
     private Builder() {

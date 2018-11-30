@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface ListInstancesRequestOrBuilder extends
+public interface ListInstancesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.ListInstancesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the project for which a list of instances is requested.
    * Values are of the form `projects/&lt;project&gt;`.
@@ -17,6 +20,8 @@ public interface ListInstancesRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The unique name of the project for which a list of instances is requested.
    * Values are of the form `projects/&lt;project&gt;`.
@@ -24,10 +29,11 @@ public interface ListInstancesRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * DEPRECATED: This field is unused and ignored.
    * </pre>
@@ -36,12 +42,13 @@ public interface ListInstancesRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * DEPRECATED: This field is unused and ignored.
    * </pre>
    *
    * <code>string page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

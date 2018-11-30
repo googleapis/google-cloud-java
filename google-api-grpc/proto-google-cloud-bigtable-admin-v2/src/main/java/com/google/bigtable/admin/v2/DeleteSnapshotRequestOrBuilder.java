@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface DeleteSnapshotRequestOrBuilder extends
+public interface DeleteSnapshotRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.DeleteSnapshotRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the snapshot to be deleted.
    * Values are of the form
@@ -18,6 +21,8 @@ public interface DeleteSnapshotRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The unique name of the snapshot to be deleted.
    * Values are of the form
@@ -26,6 +31,5 @@ public interface DeleteSnapshotRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

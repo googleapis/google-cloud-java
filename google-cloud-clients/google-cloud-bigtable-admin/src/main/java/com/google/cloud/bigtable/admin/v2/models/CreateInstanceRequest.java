@@ -26,22 +26,21 @@ import javax.annotation.Nonnull;
 /**
  * Parameters for creating a new Bigtable Instance.
  *
- * <p>A Cloud Bigtable instance is mostly just a container for your clusters and nodes,
- * which do all of the real work. Instances come in 2 flavors:
+ * <p>A Cloud Bigtable instance is mostly just a container for your clusters and nodes, which do all
+ * of the real work. Instances come in 2 flavors:
  *
  * <dl>
- * <dt>Production
- * <dd>A standard instance with either 1 or 2 clusters, as well as 3 or more nodes in each cluster.
- * You cannot downgrade a production instance to a development instance.
- *
- * <dt>Development
- * <dd>A low-cost instance for development and testing, with performance limited to the equivalent
- * of a 1-node cluster. Development instances only support a single 1 node cluster.
+ *   <dt>Production
+ *   <dd>A standard instance with either 1 or 2 clusters, as well as 3 or more nodes in each
+ *       cluster. You cannot downgrade a production instance to a development instance.
+ *   <dt>Development
+ *   <dd>A low-cost instance for development and testing, with performance limited to the equivalent
+ *       of a 1-node cluster. Development instances only support a single 1 node cluster.
  * </dl>
  *
  * When creating an Instance, you must create at least one cluster in it.
  *
- * Examples:
+ * <p>Examples:
  *
  * <pre>{@code
  * // Small production instance:
@@ -56,7 +55,7 @@ import javax.annotation.Nonnull;
  * }</pre>
  *
  * @see <a href="https://cloud.google.com/bigtable/docs/instances-clusters-nodes#instances">For more
- * details</a>
+ *     details</a>
  */
 public final class CreateInstanceRequest {
   private final com.google.bigtable.admin.v2.CreateInstanceRequest.Builder builder =
@@ -90,8 +89,8 @@ public final class CreateInstanceRequest {
   /**
    * Sets the type of instance.
    *
-   * <p>Can be either DEVELOPMENT or PRODUCTION. Defaults to PRODUCTION.
-   * Please see class javadoc for details.
+   * <p>Can be either DEVELOPMENT or PRODUCTION. Defaults to PRODUCTION. Please see class javadoc
+   * for details.
    */
   @SuppressWarnings("WeakerAccess")
   public CreateInstanceRequest setType(@Nonnull Instance.Type type) {
@@ -108,7 +107,7 @@ public final class CreateInstanceRequest {
    * about an instance.
    *
    * @see <a href="https://cloud.google.com/bigtable/docs/creating-managing-labels">For more
-   * details</a>
+   *     details</a>
    */
   @SuppressWarnings("WeakerAccess")
   public CreateInstanceRequest addLabel(@Nonnull String key, @Nonnull String value) {
@@ -127,18 +126,21 @@ public final class CreateInstanceRequest {
    * @param clusterId The name of the cluster.
    * @param zone The zone where the cluster will be created.
    * @param serveNodes The number of nodes that cluster will contain. DEVELOPMENT instance clusters
-   * must have exactly one node.
+   *     must have exactly one node.
    * @param storageType The type of storage used by this cluster to serve its parent instance's
-   * tables.
+   *     tables.
    */
   @SuppressWarnings("WeakerAccess")
-  public CreateInstanceRequest addCluster(@Nonnull String clusterId, @Nonnull String zone,
-      int serveNodes, @Nonnull StorageType storageType) {
-    CreateClusterRequest clusterRequest = CreateClusterRequest
-        .of("ignored-instance-id", clusterId)
-        .setZone(zone)
-        .setServeNodes(serveNodes)
-        .setStorageType(storageType);
+  public CreateInstanceRequest addCluster(
+      @Nonnull String clusterId,
+      @Nonnull String zone,
+      int serveNodes,
+      @Nonnull StorageType storageType) {
+    CreateClusterRequest clusterRequest =
+        CreateClusterRequest.of("ignored-instance-id", clusterId)
+            .setZone(zone)
+            .setServeNodes(serveNodes)
+            .setStorageType(storageType);
     clusterRequests.add(clusterRequest);
 
     return this;
@@ -150,13 +152,11 @@ public final class CreateInstanceRequest {
    */
   @InternalApi
   public com.google.bigtable.admin.v2.CreateInstanceRequest toProto(ProjectName projectName) {
-    builder
-        .setParent(projectName.toString())
-        .clearClusters();
+    builder.setParent(projectName.toString()).clearClusters();
 
     for (CreateClusterRequest clusterRequest : clusterRequests) {
-      builder
-          .putClusters(clusterRequest.getClusterId(), clusterRequest.toEmbeddedProto(projectName));
+      builder.putClusters(
+          clusterRequest.getClusterId(), clusterRequest.toEmbeddedProto(projectName));
     }
 
     return builder.build();

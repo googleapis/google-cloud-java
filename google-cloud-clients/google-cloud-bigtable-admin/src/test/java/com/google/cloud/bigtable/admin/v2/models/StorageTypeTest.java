@@ -41,7 +41,6 @@ public class StorageTypeTest {
     }
     assertThat(actualError).isInstanceOf(IllegalArgumentException.class);
 
-
     List<StorageType> validModelValues = Lists.newArrayList(StorageType.values());
 
     List<StorageType> actualModelValues = Lists.newArrayList();
