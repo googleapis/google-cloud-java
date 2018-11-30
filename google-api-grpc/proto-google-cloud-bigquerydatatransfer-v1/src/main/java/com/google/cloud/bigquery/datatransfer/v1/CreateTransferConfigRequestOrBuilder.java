@@ -3,11 +3,14 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-public interface CreateTransferConfigRequestOrBuilder extends
+public interface CreateTransferConfigRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The BigQuery project id where the transfer configuration should be created.
    * Must be in the format /projects/{project_id}/locations/{location_id}
@@ -19,6 +22,8 @@ public interface CreateTransferConfigRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The BigQuery project id where the transfer configuration should be created.
    * Must be in the format /projects/{project_id}/locations/{location_id}
@@ -28,10 +33,11 @@ public interface CreateTransferConfigRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Data transfer configuration to create.
    * </pre>
@@ -40,6 +46,8 @@ public interface CreateTransferConfigRequestOrBuilder extends
    */
   boolean hasTransferConfig();
   /**
+   *
+   *
    * <pre>
    * Data transfer configuration to create.
    * </pre>
@@ -48,6 +56,8 @@ public interface CreateTransferConfigRequestOrBuilder extends
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig();
   /**
+   *
+   *
    * <pre>
    * Data transfer configuration to create.
    * </pre>
@@ -57,6 +67,8 @@ public interface CreateTransferConfigRequestOrBuilder extends
   com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder getTransferConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional OAuth2 authorization code to use with this transfer configuration.
    * This is required if new credentials are needed, as indicated by
@@ -79,6 +91,8 @@ public interface CreateTransferConfigRequestOrBuilder extends
    */
   java.lang.String getAuthorizationCode();
   /**
+   *
+   *
    * <pre>
    * Optional OAuth2 authorization code to use with this transfer configuration.
    * This is required if new credentials are needed, as indicated by
@@ -99,6 +113,5 @@ public interface CreateTransferConfigRequestOrBuilder extends
    *
    * <code>string authorization_code = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getAuthorizationCodeBytes();
+  com.google.protobuf.ByteString getAuthorizationCodeBytes();
 }

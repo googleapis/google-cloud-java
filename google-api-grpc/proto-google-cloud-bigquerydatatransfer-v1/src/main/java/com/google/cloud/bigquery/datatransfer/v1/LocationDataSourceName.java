@@ -14,20 +14,20 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class LocationDataSourceName extends DataSourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}/dataSources/{data_source}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/dataSources/{data_source}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -62,20 +62,16 @@ public class LocationDataSourceName extends DataSourceName {
   }
 
   public static LocationDataSourceName of(String project, String location, String dataSource) {
-    return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setDataSource(dataSource)
-      .build();
+    return newBuilder().setProject(project).setLocation(location).setDataSource(dataSource).build();
   }
 
   public static String format(String project, String location, String dataSource) {
     return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setDataSource(dataSource)
-      .build()
-      .toString();
+        .setProject(project)
+        .setLocation(location)
+        .setDataSource(dataSource)
+        .build()
+        .toString();
   }
 
   public static LocationDataSourceName parse(String formattedString) {
@@ -83,7 +79,8 @@ public class LocationDataSourceName extends DataSourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "LocationDataSourceName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "LocationDataSourceName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("data_source"));
   }
 
@@ -132,7 +129,8 @@ public class LocationDataSourceName extends DataSourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "location", location, "data_source", dataSource);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "location", location, "data_source", dataSource);
   }
 
   /** Builder for LocationDataSourceName. */
@@ -169,8 +167,7 @@ public class LocationDataSourceName extends DataSourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(LocationDataSourceName locationDataSourceName) {
       project = locationDataSourceName.project;
@@ -209,4 +206,3 @@ public class LocationDataSourceName extends DataSourceName {
     return h;
   }
 }
-
