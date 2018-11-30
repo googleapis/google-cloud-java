@@ -377,11 +377,11 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   @Override
   public boolean delete(TableId tableId) {
-    final TableId completeTableId = tableId.setProjectId(
-        Strings.isNullOrEmpty(tableId.getProject())
-            ? getOptions().getProjectId()
-            : tableId.getProject()
-    );
+    final TableId completeTableId =
+        tableId.setProjectId(
+            Strings.isNullOrEmpty(tableId.getProject())
+                ? getOptions().getProjectId()
+                : tableId.getProject());
     try {
       return runWithRetries(
           new Callable<Boolean>() {

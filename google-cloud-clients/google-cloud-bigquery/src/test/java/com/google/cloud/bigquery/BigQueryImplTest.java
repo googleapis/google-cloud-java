@@ -748,7 +748,7 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     BigQueryOptions bigQueryOptions = createBigQueryOptionsForProject(PROJECT, rpcFactoryMock);
     bigquery = bigQueryOptions.getService();
-    assertTrue(bigquery.delete(tableId)); 
+    assertTrue(bigquery.delete(tableId));
   }
 
   @Test
