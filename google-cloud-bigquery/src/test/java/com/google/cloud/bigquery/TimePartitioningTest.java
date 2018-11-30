@@ -20,7 +20,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 import com.google.cloud.bigquery.TimePartitioning.Type;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -33,13 +32,12 @@ public class TimePartitioningTest {
   private static final String FIELD = "field";
   private static final TimePartitioning TIME_PARTITIONING =
       TimePartitioning.newBuilder(TYPE)
-              .setExpirationMs(EXPIRATION_MS)
-              .setRequirePartitionFilter(REQUIRE_PARTITION_FILTER)
-              .setField(FIELD)
-              .build();
+          .setExpirationMs(EXPIRATION_MS)
+          .setRequirePartitionFilter(REQUIRE_PARTITION_FILTER)
+          .setField(FIELD)
+          .build();
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testOf() {

@@ -20,9 +20,7 @@ import com.google.common.base.MoreObjects;
 import java.util.List;
 import java.util.Objects;
 
-/**
- * Google BigQuery options for Cloud Datastore backup.
- */
+/** Google BigQuery options for Cloud Datastore backup. */
 public final class DatastoreBackupOptions extends FormatOptions {
 
   private final List<String> projectionFields;
@@ -40,18 +38,16 @@ public final class DatastoreBackupOptions extends FormatOptions {
 
     /**
      * Sets which entity properties to load into BigQuery from a Cloud Datastore backup. Property
-     * names are case sensitive and must be top-level properties.
-     * If no properties are specified, BigQuery loads all properties. If any named property isn't
-     * found in the Cloud Datastore backup, an invalid error is returned in the job result.
+     * names are case sensitive and must be top-level properties. If no properties are specified,
+     * BigQuery loads all properties. If any named property isn't found in the Cloud Datastore
+     * backup, an invalid error is returned in the job result.
      */
     public Builder setProjectionFields(List<String> projectionFields) {
       this.projectionFields = projectionFields;
       return this;
     }
 
-    /**
-     * Creates a {@code DatastoreBackupOptions} object.
-     */
+    /** Creates a {@code DatastoreBackupOptions} object. */
     public DatastoreBackupOptions build() {
       return new DatastoreBackupOptions(this);
     }
@@ -70,25 +66,19 @@ public final class DatastoreBackupOptions extends FormatOptions {
     return projectionFields;
   }
 
-  /**
-   * Returns a builder for the {@code DatastoreBackupOptions} object.
-   */
+  /** Returns a builder for the {@code DatastoreBackupOptions} object. */
   public Builder toBuilder() {
     return new Builder(this);
   }
 
-  /**
-   * Returns a builder for a {@code DatastoreBackupOptions} object.
-   */
+  /** Returns a builder for a {@code DatastoreBackupOptions} object. */
   public static Builder newBuilder() {
     return new Builder();
   }
 
   @Override
   public String toString() {
-    return MoreObjects.toStringHelper(this)
-        .add("projectionFields", projectionFields)
-        .toString();
+    return MoreObjects.toStringHelper(this).add("projectionFields", projectionFields).toString();
   }
 
   @Override
@@ -100,6 +90,7 @@ public final class DatastoreBackupOptions extends FormatOptions {
   public boolean equals(Object obj) {
     return obj == this
         || obj instanceof DatastoreBackupOptions
-        && Objects.equals(projectionFields, ((DatastoreBackupOptions) obj).getProjectionFields());
+            && Objects.equals(
+                projectionFields, ((DatastoreBackupOptions) obj).getProjectionFields());
   }
 }

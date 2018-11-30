@@ -18,8 +18,8 @@ package com.google.cloud.bigquery;
 
 import com.google.cloud.BaseSerializationTest;
 import com.google.cloud.NoCredentials;
-import com.google.cloud.Restorable;
 import com.google.cloud.PageImpl;
+import com.google.cloud.Restorable;
 import com.google.cloud.bigquery.StandardTableDefinition.StreamingBuffer;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -30,15 +30,14 @@ import java.util.Map;
 
 public class SerializationTest extends BaseSerializationTest {
 
-  private static final Acl DOMAIN_ACCESS =
-      Acl.of(new Acl.Domain("domain"), Acl.Role.WRITER);
+  private static final Acl DOMAIN_ACCESS = Acl.of(new Acl.Domain("domain"), Acl.Role.WRITER);
   private static final Acl GROUP_ACCESS =
       Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER);
   private static final Acl USER_ACCESS = Acl.of(new Acl.User("user"), Acl.Role.OWNER);
   private static final Acl VIEW_ACCESS =
       Acl.of(new Acl.View(TableId.of("project", "dataset", "table")), Acl.Role.WRITER);
-  private static final List<Acl> ACCESS_RULES = ImmutableList.of(DOMAIN_ACCESS, GROUP_ACCESS,
-      VIEW_ACCESS, USER_ACCESS);
+  private static final List<Acl> ACCESS_RULES =
+      ImmutableList.of(DOMAIN_ACCESS, GROUP_ACCESS, VIEW_ACCESS, USER_ACCESS);
   private static final Long CREATION_TIME = System.currentTimeMillis() - 10;
   private static final Long DEFAULT_TABLE_EXPIRATION = 100L;
   private static final String DESCRIPTION = "Description";
@@ -49,27 +48,29 @@ public class SerializationTest extends BaseSerializationTest {
   private static final String LOCATION = "";
   private static final String SELF_LINK = "http://bigquery/p/d";
   private static final DatasetId DATASET_ID = DatasetId.of("project", "dataset");
-  private static final DatasetInfo DATASET_INFO = DatasetInfo.newBuilder(DATASET_ID)
-      .setAcl(ACCESS_RULES)
-      .setCreationTime(CREATION_TIME)
-      .setDefaultTableLifetime(DEFAULT_TABLE_EXPIRATION)
-      .setDescription(DESCRIPTION)
-      .setEtag(ETAG)
-      .setFriendlyName(FRIENDLY_NAME)
-      .setGeneratedId(GENERATED_ID)
-      .setLastModified(LAST_MODIFIED)
-      .setLocation(LOCATION)
-      .setSelfLink(SELF_LINK)
-      .build();
+  private static final DatasetInfo DATASET_INFO =
+      DatasetInfo.newBuilder(DATASET_ID)
+          .setAcl(ACCESS_RULES)
+          .setCreationTime(CREATION_TIME)
+          .setDefaultTableLifetime(DEFAULT_TABLE_EXPIRATION)
+          .setDescription(DESCRIPTION)
+          .setEtag(ETAG)
+          .setFriendlyName(FRIENDLY_NAME)
+          .setGeneratedId(GENERATED_ID)
+          .setLastModified(LAST_MODIFIED)
+          .setLocation(LOCATION)
+          .setSelfLink(SELF_LINK)
+          .build();
   private static final TableId TABLE_ID = TableId.of("project", "dataset", "table");
-  private static final CsvOptions CSV_OPTIONS = CsvOptions.newBuilder()
-      .setAllowJaggedRows(true)
-      .setAllowQuotedNewLines(false)
-      .setEncoding(StandardCharsets.ISO_8859_1)
-      .setFieldDelimiter(",")
-      .setQuote("\"")
-      .setSkipLeadingRows(42L)
-      .build();
+  private static final CsvOptions CSV_OPTIONS =
+      CsvOptions.newBuilder()
+          .setAllowJaggedRows(true)
+          .setAllowQuotedNewLines(false)
+          .setEncoding(StandardCharsets.ISO_8859_1)
+          .setFieldDelimiter(",")
+          .setQuote("\"")
+          .setSkipLeadingRows(42L)
+          .build();
   private static final Field FIELD_SCHEMA1 =
       Field.newBuilder("StringField", LegacySQLTypeName.STRING)
           .setMode(Field.Mode.NULLABLE)
@@ -97,24 +98,27 @@ public class SerializationTest extends BaseSerializationTest {
       new UserDefinedFunction.InlineFunction("inline");
   private static final UserDefinedFunction URI_FUNCTION =
       new UserDefinedFunction.UriFunction("URI");
-  private static final TableDefinition TABLE_DEFINITION = StandardTableDefinition.newBuilder()
-      .setSchema(TABLE_SCHEMA)
-      .setLocation(LOCATION)
-      .setStreamingBuffer(STREAMING_BUFFER)
-      .build();
-  private static final TableInfo TABLE_INFO = TableInfo.newBuilder(TABLE_ID, TABLE_DEFINITION)
-      .setCreationTime(CREATION_TIME)
-      .setDescription(DESCRIPTION)
-      .setEtag(ETAG)
-      .setGeneratedId(GENERATED_ID)
-      .build();
+  private static final TableDefinition TABLE_DEFINITION =
+      StandardTableDefinition.newBuilder()
+          .setSchema(TABLE_SCHEMA)
+          .setLocation(LOCATION)
+          .setStreamingBuffer(STREAMING_BUFFER)
+          .build();
+  private static final TableInfo TABLE_INFO =
+      TableInfo.newBuilder(TABLE_ID, TABLE_DEFINITION)
+          .setCreationTime(CREATION_TIME)
+          .setDescription(DESCRIPTION)
+          .setEtag(ETAG)
+          .setGeneratedId(GENERATED_ID)
+          .build();
   private static final TableDefinition VIEW_DEFINITION = ViewDefinition.of("QUERY");
-  private static final TableInfo VIEW_INFO = TableInfo.newBuilder(TABLE_ID, VIEW_DEFINITION)
-      .setCreationTime(CREATION_TIME)
-      .setDescription(DESCRIPTION)
-      .setEtag(ETAG)
-      .setGeneratedId(GENERATED_ID)
-      .build();
+  private static final TableInfo VIEW_INFO =
+      TableInfo.newBuilder(TABLE_ID, VIEW_DEFINITION)
+          .setCreationTime(CREATION_TIME)
+          .setDescription(DESCRIPTION)
+          .setEtag(ETAG)
+          .setGeneratedId(GENERATED_ID)
+          .build();
   private static final TableInfo EXTERNAL_TABLE_INFO =
       TableInfo.newBuilder(TABLE_ID, EXTERNAL_TABLE_DEFINITION)
           .setCreationTime(CREATION_TIME)
@@ -157,8 +161,8 @@ public class SerializationTest extends BaseSerializationTest {
           .build();
   private static final BigQueryError BIGQUERY_ERROR =
       new BigQueryError("reason", "location", "message", "debugInfo");
-  private static final JobStatus JOB_STATUS = new JobStatus(JobStatus.State.DONE, BIGQUERY_ERROR,
-      ImmutableList.of(BIGQUERY_ERROR));
+  private static final JobStatus JOB_STATUS =
+      new JobStatus(JobStatus.State.DONE, BIGQUERY_ERROR, ImmutableList.of(BIGQUERY_ERROR));
   private static final JobId JOB_ID = JobId.of("project", "job");
   private static final Long NUM_DL_AFFECTED_ROWS = 24L;
   private static final CopyJobConfiguration COPY_JOB_CONFIGURATION =
@@ -183,18 +187,20 @@ public class SerializationTest extends BaseSerializationTest {
       ImmutableMap.<String, Object>of("key", "val1");
   private static final Map<String, Object> CONTENT2 =
       ImmutableMap.<String, Object>of("key", "val2");
-  private static final InsertAllRequest INSERT_ALL_REQUEST = InsertAllRequest.newBuilder(TABLE_ID)
-      .addRow(CONTENT1)
-      .addRow(CONTENT2)
-      .setIgnoreUnknownValues(true)
-      .setSkipInvalidRows(false)
-      .build();
+  private static final InsertAllRequest INSERT_ALL_REQUEST =
+      InsertAllRequest.newBuilder(TABLE_ID)
+          .addRow(CONTENT1)
+          .addRow(CONTENT2)
+          .setIgnoreUnknownValues(true)
+          .setSkipInvalidRows(false)
+          .build();
   private static final Map<Long, List<BigQueryError>> ERRORS_MAP =
       ImmutableMap.<Long, List<BigQueryError>>of(0L, ImmutableList.of(BIGQUERY_ERROR));
   private static final InsertAllResponse INSERT_ALL_RESPONSE = new InsertAllResponse(ERRORS_MAP);
   private static final FieldValue FIELD_VALUE =
       FieldValue.of(FieldValue.Attribute.PRIMITIVE, "value");
-  private static final TableResult TABLE_RESULT = new TableResult(Schema.of(), 0L, new PageImpl(null, "", ImmutableList.of()));
+  private static final TableResult TABLE_RESULT =
+      new TableResult(Schema.of(), 0L, new PageImpl(null, "", ImmutableList.of()));
   private static final BigQuery BIGQUERY =
       BigQueryOptions.newBuilder().setProjectId("p1").build().getService();
   private static final Dataset DATASET =
@@ -208,10 +214,11 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Serializable[] serializableObjects() {
-    BigQueryOptions options = BigQueryOptions.newBuilder()
-        .setProjectId("p1")
-        .setCredentials(NoCredentials.getInstance())
-        .build();
+    BigQueryOptions options =
+        BigQueryOptions.newBuilder()
+            .setProjectId("p1")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
     BigQueryOptions otherOptions = options.toBuilder().setProjectId("p2").build();
     return new Serializable[] {
       DOMAIN_ACCESS,
@@ -273,6 +280,6 @@ public class SerializationTest extends BaseSerializationTest {
     @SuppressWarnings("resource")
     TableDataWriteChannel writer =
         new TableDataWriteChannel(options, LOAD_CONFIGURATION, "upload-id");
-    return new Restorable<?>[]{writer};
+    return new Restorable<?>[] {writer};
   }
 }

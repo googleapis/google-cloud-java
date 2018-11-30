@@ -17,12 +17,9 @@
 package com.google.cloud.bigquery;
 
 import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
 
-/**
- * Google BigQuery options for the Google Sheets format.
- */
+/** Google BigQuery options for the Google Sheets format. */
 public final class GoogleSheetsOptions extends FormatOptions {
 
   private static final long serialVersionUID = 1837436979033106123L;
@@ -40,18 +37,16 @@ public final class GoogleSheetsOptions extends FormatOptions {
     }
 
     /**
-     * Sets the number of rows at the top of a sheet that BigQuery will skip when reading the
-     * data. The default value is 0. This property is useful if you have header rows
-     * that should be skipped.
+     * Sets the number of rows at the top of a sheet that BigQuery will skip when reading the data.
+     * The default value is 0. This property is useful if you have header rows that should be
+     * skipped.
      */
     public Builder setSkipLeadingRows(long skipLeadingRows) {
       this.skipLeadingRows = skipLeadingRows;
       return this;
     }
 
-    /**
-     * Creates a {@link GoogleSheetsOptions} object.
-     */
+    /** Creates a {@link GoogleSheetsOptions} object. */
     public GoogleSheetsOptions build() {
       return new GoogleSheetsOptions(this);
     }
@@ -62,18 +57,14 @@ public final class GoogleSheetsOptions extends FormatOptions {
     this.skipLeadingRows = builder.skipLeadingRows;
   }
 
-
   /**
-   * Returns the number of rows at the top of a sheet that BigQuery will skip when reading the
-   * data.
+   * Returns the number of rows at the top of a sheet that BigQuery will skip when reading the data.
    */
   public Long getSkipLeadingRows() {
     return skipLeadingRows;
   }
 
-  /**
-   * Returns a builder for the {@link GoogleSheetsOptions} object.
-   */
+  /** Returns a builder for the {@link GoogleSheetsOptions} object. */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -95,7 +86,7 @@ public final class GoogleSheetsOptions extends FormatOptions {
   public boolean equals(Object obj) {
     return obj == this
         || obj instanceof GoogleSheetsOptions
-        && Objects.equals(toPb(), ((GoogleSheetsOptions) obj).toPb());
+            && Objects.equals(toPb(), ((GoogleSheetsOptions) obj).toPb());
   }
 
   com.google.api.services.bigquery.model.GoogleSheetsOptions toPb() {
@@ -105,15 +96,13 @@ public final class GoogleSheetsOptions extends FormatOptions {
     return options;
   }
 
-
-  /**
-   * Returns a builder for a {@link GoogleSheetsOptions} object.
-   */
+  /** Returns a builder for a {@link GoogleSheetsOptions} object. */
   public static Builder newBuilder() {
     return new Builder();
   }
 
-  static GoogleSheetsOptions fromPb(com.google.api.services.bigquery.model.GoogleSheetsOptions options) {
+  static GoogleSheetsOptions fromPb(
+      com.google.api.services.bigquery.model.GoogleSheetsOptions options) {
     Builder builder = newBuilder();
     if (options.getSkipLeadingRows() != null) {
       builder.setSkipLeadingRows(options.getSkipLeadingRows());
