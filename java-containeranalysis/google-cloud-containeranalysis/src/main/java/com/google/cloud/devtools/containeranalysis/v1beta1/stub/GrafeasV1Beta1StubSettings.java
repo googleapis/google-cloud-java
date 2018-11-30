@@ -456,7 +456,8 @@ public class GrafeasV1Beta1StubSettings extends StubSettings<GrafeasV1Beta1StubS
           ListNoteOccurrencesRequest, ListNoteOccurrencesResponse, ListNoteOccurrencesPagedResponse>
       LIST_NOTE_OCCURRENCES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListNoteOccurrencesRequest, ListNoteOccurrencesResponse,
+              ListNoteOccurrencesRequest,
+              ListNoteOccurrencesResponse,
               ListNoteOccurrencesPagedResponse>() {
             @Override
             public ApiFuture<ListNoteOccurrencesPagedResponse> getFuturePagedResponse(
@@ -501,7 +502,8 @@ public class GrafeasV1Beta1StubSettings extends StubSettings<GrafeasV1Beta1StubS
         batchCreateNotesSettings;
     private final UnaryCallSettings.Builder<UpdateNoteRequest, Note> updateNoteSettings;
     private final PagedCallSettings.Builder<
-            ListNoteOccurrencesRequest, ListNoteOccurrencesResponse,
+            ListNoteOccurrencesRequest,
+            ListNoteOccurrencesResponse,
             ListNoteOccurrencesPagedResponse>
         listNoteOccurrencesSettings;
     private final UnaryCallSettings.Builder<
@@ -819,7 +821,8 @@ public class GrafeasV1Beta1StubSettings extends StubSettings<GrafeasV1Beta1StubS
 
     /** Returns the builder for the settings used for calls to listNoteOccurrences. */
     public PagedCallSettings.Builder<
-            ListNoteOccurrencesRequest, ListNoteOccurrencesResponse,
+            ListNoteOccurrencesRequest,
+            ListNoteOccurrencesResponse,
             ListNoteOccurrencesPagedResponse>
         listNoteOccurrencesSettings() {
       return listNoteOccurrencesSettings;

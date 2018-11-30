@@ -4,21 +4,24 @@
 package io.grafeas.v1beta1.build;
 
 /**
+ *
+ *
  * <pre>
  * Message encapsulating the signature of the verified build.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1beta1.build.BuildSignature}
  */
-public  final class BuildSignature extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class BuildSignature extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.build.BuildSignature)
     BuildSignatureOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use BuildSignature.newBuilder() to construct.
   private BuildSignature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private BuildSignature() {
     publicKey_ = "";
     signature_ = com.google.protobuf.ByteString.EMPTY;
@@ -27,10 +30,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private BuildSignature(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,71 +53,79 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            publicKey_ = s;
-            break;
-          }
-          case 18: {
-
-            signature_ = input.readBytes();
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            keyId_ = s;
-            break;
-          }
-          case 32: {
-            int rawValue = input.readEnum();
-
-            keyType_ = rawValue;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              publicKey_ = s;
+              break;
             }
-            break;
-          }
+          case 18:
+            {
+              signature_ = input.readBytes();
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              keyId_ = s;
+              break;
+            }
+          case 32:
+            {
+              int rawValue = input.readEnum();
+
+              keyType_ = rawValue;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return io.grafeas.v1beta1.build.BuildOuterClass.internal_static_grafeas_v1beta1_build_BuildSignature_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return io.grafeas.v1beta1.build.BuildOuterClass
+        .internal_static_grafeas_v1beta1_build_BuildSignature_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1beta1.build.BuildOuterClass.internal_static_grafeas_v1beta1_build_BuildSignature_fieldAccessorTable
+    return io.grafeas.v1beta1.build.BuildOuterClass
+        .internal_static_grafeas_v1beta1_build_BuildSignature_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grafeas.v1beta1.build.BuildSignature.class, io.grafeas.v1beta1.build.BuildSignature.Builder.class);
+            io.grafeas.v1beta1.build.BuildSignature.class,
+            io.grafeas.v1beta1.build.BuildSignature.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Public key formats
    * </pre>
    *
    * Protobuf enum {@code grafeas.v1beta1.build.BuildSignature.KeyType}
    */
-  public enum KeyType
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum KeyType implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * `KeyType` is not set.
      * </pre>
@@ -123,6 +134,8 @@ private static final long serialVersionUID = 0L;
      */
     KEY_TYPE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * `PGP ASCII Armored` public key.
      * </pre>
@@ -131,6 +144,8 @@ private static final long serialVersionUID = 0L;
      */
     PGP_ASCII_ARMORED(1),
     /**
+     *
+     *
      * <pre>
      * `PKIX PEM` public key.
      * </pre>
@@ -142,6 +157,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * `KeyType` is not set.
      * </pre>
@@ -150,6 +167,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int KEY_TYPE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * `PGP ASCII Armored` public key.
      * </pre>
@@ -158,6 +177,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PGP_ASCII_ARMORED_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * `PKIX PEM` public key.
      * </pre>
@@ -165,7 +186,6 @@ private static final long serialVersionUID = 0L;
      * <code>PKIX_PEM = 2;</code>
      */
     public static final int PKIX_PEM_VALUE = 2;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -175,9 +195,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static KeyType valueOf(int value) {
       return forNumber(value);
@@ -185,45 +203,45 @@ private static final long serialVersionUID = 0L;
 
     public static KeyType forNumber(int value) {
       switch (value) {
-        case 0: return KEY_TYPE_UNSPECIFIED;
-        case 1: return PGP_ASCII_ARMORED;
-        case 2: return PKIX_PEM;
-        default: return null;
+        case 0:
+          return KEY_TYPE_UNSPECIFIED;
+        case 1:
+          return PGP_ASCII_ARMORED;
+        case 2:
+          return PKIX_PEM;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<KeyType>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<KeyType> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        KeyType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<KeyType>() {
-            public KeyType findValueByNumber(int number) {
-              return KeyType.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<KeyType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<KeyType>() {
+          public KeyType findValueByNumber(int number) {
+            return KeyType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return io.grafeas.v1beta1.build.BuildSignature.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final KeyType[] VALUES = values();
 
-    public static KeyType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static KeyType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -243,6 +261,8 @@ private static final long serialVersionUID = 0L;
   public static final int PUBLIC_KEY_FIELD_NUMBER = 1;
   private volatile java.lang.Object publicKey_;
   /**
+   *
+   *
    * <pre>
    * Public key of the builder which can be used to verify that the related
    * findings are valid and unchanged. If `key_type` is empty, this defaults
@@ -264,14 +284,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       publicKey_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Public key of the builder which can be used to verify that the related
    * findings are valid and unchanged. If `key_type` is empty, this defaults
@@ -288,13 +309,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string public_key = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getPublicKeyBytes() {
+  public com.google.protobuf.ByteString getPublicKeyBytes() {
     java.lang.Object ref = publicKey_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       publicKey_ = b;
       return b;
     } else {
@@ -305,6 +324,8 @@ private static final long serialVersionUID = 0L;
   public static final int SIGNATURE_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString signature_;
   /**
+   *
+   *
    * <pre>
    * Signature of the related `BuildProvenance`. In JSON, this is base-64
    * encoded.
@@ -319,6 +340,8 @@ private static final long serialVersionUID = 0L;
   public static final int KEY_ID_FIELD_NUMBER = 3;
   private volatile java.lang.Object keyId_;
   /**
+   *
+   *
    * <pre>
    * An ID for the key used to sign. This could be either an Id for the key
    * stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
@@ -333,14 +356,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       keyId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * An ID for the key used to sign. This could be either an Id for the key
    * stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
@@ -350,13 +374,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string key_id = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getKeyIdBytes() {
+  public com.google.protobuf.ByteString getKeyIdBytes() {
     java.lang.Object ref = keyId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       keyId_ = b;
       return b;
     } else {
@@ -367,6 +389,8 @@ private static final long serialVersionUID = 0L;
   public static final int KEY_TYPE_FIELD_NUMBER = 4;
   private int keyType_;
   /**
+   *
+   *
    * <pre>
    * The type of the key, either stored in `public_key` or referenced in
    * `key_id`
@@ -378,6 +402,8 @@ private static final long serialVersionUID = 0L;
     return keyType_;
   }
   /**
+   *
+   *
    * <pre>
    * The type of the key, either stored in `public_key` or referenced in
    * `key_id`
@@ -387,11 +413,13 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.build.BuildSignature.KeyType getKeyType() {
     @SuppressWarnings("deprecation")
-    io.grafeas.v1beta1.build.BuildSignature.KeyType result = io.grafeas.v1beta1.build.BuildSignature.KeyType.valueOf(keyType_);
+    io.grafeas.v1beta1.build.BuildSignature.KeyType result =
+        io.grafeas.v1beta1.build.BuildSignature.KeyType.valueOf(keyType_);
     return result == null ? io.grafeas.v1beta1.build.BuildSignature.KeyType.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -403,8 +431,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getPublicKeyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, publicKey_);
     }
@@ -414,7 +441,8 @@ private static final long serialVersionUID = 0L;
     if (!getKeyIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, keyId_);
     }
-    if (keyType_ != io.grafeas.v1beta1.build.BuildSignature.KeyType.KEY_TYPE_UNSPECIFIED.getNumber()) {
+    if (keyType_
+        != io.grafeas.v1beta1.build.BuildSignature.KeyType.KEY_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(4, keyType_);
     }
     unknownFields.writeTo(output);
@@ -430,15 +458,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, publicKey_);
     }
     if (!signature_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(2, signature_);
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(2, signature_);
     }
     if (!getKeyIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, keyId_);
     }
-    if (keyType_ != io.grafeas.v1beta1.build.BuildSignature.KeyType.KEY_TYPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, keyType_);
+    if (keyType_
+        != io.grafeas.v1beta1.build.BuildSignature.KeyType.KEY_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, keyType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -448,7 +475,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1beta1.build.BuildSignature)) {
       return super.equals(obj);
@@ -456,12 +483,9 @@ private static final long serialVersionUID = 0L;
     io.grafeas.v1beta1.build.BuildSignature other = (io.grafeas.v1beta1.build.BuildSignature) obj;
 
     boolean result = true;
-    result = result && getPublicKey()
-        .equals(other.getPublicKey());
-    result = result && getSignature()
-        .equals(other.getSignature());
-    result = result && getKeyId()
-        .equals(other.getKeyId());
+    result = result && getPublicKey().equals(other.getPublicKey());
+    result = result && getSignature().equals(other.getSignature());
+    result = result && getKeyId().equals(other.getKeyId());
     result = result && keyType_ == other.keyType_;
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -487,118 +511,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1beta1.build.BuildSignature parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1beta1.build.BuildSignature parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.build.BuildSignature parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.build.BuildSignature parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.build.BuildSignature parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.build.BuildSignature parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.build.BuildSignature parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.build.BuildSignature parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.build.BuildSignature parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1beta1.build.BuildSignature parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static io.grafeas.v1beta1.build.BuildSignature parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static io.grafeas.v1beta1.build.BuildSignature parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static io.grafeas.v1beta1.build.BuildSignature parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.build.BuildSignature parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(io.grafeas.v1beta1.build.BuildSignature prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Message encapsulating the signature of the verified build.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1beta1.build.BuildSignature}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1beta1.build.BuildSignature)
       io.grafeas.v1beta1.build.BuildSignatureOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1beta1.build.BuildOuterClass.internal_static_grafeas_v1beta1_build_BuildSignature_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1beta1.build.BuildOuterClass
+          .internal_static_grafeas_v1beta1_build_BuildSignature_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1beta1.build.BuildOuterClass.internal_static_grafeas_v1beta1_build_BuildSignature_fieldAccessorTable
+      return io.grafeas.v1beta1.build.BuildOuterClass
+          .internal_static_grafeas_v1beta1_build_BuildSignature_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1beta1.build.BuildSignature.class, io.grafeas.v1beta1.build.BuildSignature.Builder.class);
+              io.grafeas.v1beta1.build.BuildSignature.class,
+              io.grafeas.v1beta1.build.BuildSignature.Builder.class);
     }
 
     // Construct using io.grafeas.v1beta1.build.BuildSignature.newBuilder()
@@ -606,16 +639,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -631,9 +663,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return io.grafeas.v1beta1.build.BuildOuterClass.internal_static_grafeas_v1beta1_build_BuildSignature_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return io.grafeas.v1beta1.build.BuildOuterClass
+          .internal_static_grafeas_v1beta1_build_BuildSignature_descriptor;
     }
 
     @java.lang.Override
@@ -652,7 +684,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public io.grafeas.v1beta1.build.BuildSignature buildPartial() {
-      io.grafeas.v1beta1.build.BuildSignature result = new io.grafeas.v1beta1.build.BuildSignature(this);
+      io.grafeas.v1beta1.build.BuildSignature result =
+          new io.grafeas.v1beta1.build.BuildSignature(this);
       result.publicKey_ = publicKey_;
       result.signature_ = signature_;
       result.keyId_ = keyId_;
@@ -665,38 +698,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1beta1.build.BuildSignature) {
-        return mergeFrom((io.grafeas.v1beta1.build.BuildSignature)other);
+        return mergeFrom((io.grafeas.v1beta1.build.BuildSignature) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -750,6 +784,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object publicKey_ = "";
     /**
+     *
+     *
      * <pre>
      * Public key of the builder which can be used to verify that the related
      * findings are valid and unchanged. If `key_type` is empty, this defaults
@@ -769,8 +805,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getPublicKey() {
       java.lang.Object ref = publicKey_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         publicKey_ = s;
         return s;
@@ -779,6 +814,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Public key of the builder which can be used to verify that the related
      * findings are valid and unchanged. If `key_type` is empty, this defaults
@@ -795,13 +832,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string public_key = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getPublicKeyBytes() {
+    public com.google.protobuf.ByteString getPublicKeyBytes() {
       java.lang.Object ref = publicKey_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         publicKey_ = b;
         return b;
       } else {
@@ -809,6 +844,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Public key of the builder which can be used to verify that the related
      * findings are valid and unchanged. If `key_type` is empty, this defaults
@@ -825,17 +862,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string public_key = 1;</code>
      */
-    public Builder setPublicKey(
-        java.lang.String value) {
+    public Builder setPublicKey(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       publicKey_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Public key of the builder which can be used to verify that the related
      * findings are valid and unchanged. If `key_type` is empty, this defaults
@@ -853,12 +891,14 @@ private static final long serialVersionUID = 0L;
      * <code>string public_key = 1;</code>
      */
     public Builder clearPublicKey() {
-      
+
       publicKey_ = getDefaultInstance().getPublicKey();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Public key of the builder which can be used to verify that the related
      * findings are valid and unchanged. If `key_type` is empty, this defaults
@@ -875,13 +915,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string public_key = 1;</code>
      */
-    public Builder setPublicKeyBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setPublicKeyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       publicKey_ = value;
       onChanged();
       return this;
@@ -889,6 +928,8 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString signature_ = com.google.protobuf.ByteString.EMPTY;
     /**
+     *
+     *
      * <pre>
      * Signature of the related `BuildProvenance`. In JSON, this is base-64
      * encoded.
@@ -900,6 +941,8 @@ private static final long serialVersionUID = 0L;
       return signature_;
     }
     /**
+     *
+     *
      * <pre>
      * Signature of the related `BuildProvenance`. In JSON, this is base-64
      * encoded.
@@ -909,14 +952,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setSignature(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       signature_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Signature of the related `BuildProvenance`. In JSON, this is base-64
      * encoded.
@@ -925,7 +970,7 @@ private static final long serialVersionUID = 0L;
      * <code>bytes signature = 2;</code>
      */
     public Builder clearSignature() {
-      
+
       signature_ = getDefaultInstance().getSignature();
       onChanged();
       return this;
@@ -933,6 +978,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object keyId_ = "";
     /**
+     *
+     *
      * <pre>
      * An ID for the key used to sign. This could be either an Id for the key
      * stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
@@ -945,8 +992,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getKeyId() {
       java.lang.Object ref = keyId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         keyId_ = s;
         return s;
@@ -955,6 +1001,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * An ID for the key used to sign. This could be either an Id for the key
      * stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
@@ -964,13 +1012,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string key_id = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getKeyIdBytes() {
+    public com.google.protobuf.ByteString getKeyIdBytes() {
       java.lang.Object ref = keyId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         keyId_ = b;
         return b;
       } else {
@@ -978,6 +1024,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * An ID for the key used to sign. This could be either an Id for the key
      * stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
@@ -987,17 +1035,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string key_id = 3;</code>
      */
-    public Builder setKeyId(
-        java.lang.String value) {
+    public Builder setKeyId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       keyId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An ID for the key used to sign. This could be either an Id for the key
      * stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
@@ -1008,12 +1057,14 @@ private static final long serialVersionUID = 0L;
      * <code>string key_id = 3;</code>
      */
     public Builder clearKeyId() {
-      
+
       keyId_ = getDefaultInstance().getKeyId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An ID for the key used to sign. This could be either an Id for the key
      * stored in `public_key` (such as the Id or fingerprint for a PGP key, or the
@@ -1023,13 +1074,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string key_id = 3;</code>
      */
-    public Builder setKeyIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setKeyIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       keyId_ = value;
       onChanged();
       return this;
@@ -1037,6 +1087,8 @@ private static final long serialVersionUID = 0L;
 
     private int keyType_ = 0;
     /**
+     *
+     *
      * <pre>
      * The type of the key, either stored in `public_key` or referenced in
      * `key_id`
@@ -1048,6 +1100,8 @@ private static final long serialVersionUID = 0L;
       return keyType_;
     }
     /**
+     *
+     *
      * <pre>
      * The type of the key, either stored in `public_key` or referenced in
      * `key_id`
@@ -1061,6 +1115,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The type of the key, either stored in `public_key` or referenced in
      * `key_id`
@@ -1070,10 +1126,13 @@ private static final long serialVersionUID = 0L;
      */
     public io.grafeas.v1beta1.build.BuildSignature.KeyType getKeyType() {
       @SuppressWarnings("deprecation")
-      io.grafeas.v1beta1.build.BuildSignature.KeyType result = io.grafeas.v1beta1.build.BuildSignature.KeyType.valueOf(keyType_);
+      io.grafeas.v1beta1.build.BuildSignature.KeyType result =
+          io.grafeas.v1beta1.build.BuildSignature.KeyType.valueOf(keyType_);
       return result == null ? io.grafeas.v1beta1.build.BuildSignature.KeyType.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * The type of the key, either stored in `public_key` or referenced in
      * `key_id`
@@ -1085,12 +1144,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       keyType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The type of the key, either stored in `public_key` or referenced in
      * `key_id`
@@ -1099,14 +1160,14 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.build.BuildSignature.KeyType key_type = 4;</code>
      */
     public Builder clearKeyType() {
-      
+
       keyType_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1116,12 +1177,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:grafeas.v1beta1.build.BuildSignature)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1beta1.build.BuildSignature)
   private static final io.grafeas.v1beta1.build.BuildSignature DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1beta1.build.BuildSignature();
   }
@@ -1130,16 +1191,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<BuildSignature>
-      PARSER = new com.google.protobuf.AbstractParser<BuildSignature>() {
-    @java.lang.Override
-    public BuildSignature parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new BuildSignature(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<BuildSignature> PARSER =
+      new com.google.protobuf.AbstractParser<BuildSignature>() {
+        @java.lang.Override
+        public BuildSignature parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new BuildSignature(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<BuildSignature> parser() {
     return PARSER;
@@ -1154,6 +1215,4 @@ private static final long serialVersionUID = 0L;
   public io.grafeas.v1beta1.build.BuildSignature getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

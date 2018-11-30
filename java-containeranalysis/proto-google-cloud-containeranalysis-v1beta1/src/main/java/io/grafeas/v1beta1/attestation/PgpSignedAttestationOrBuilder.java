@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.attestation;
 
-public interface PgpSignedAttestationOrBuilder extends
+public interface PgpSignedAttestationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.attestation.PgpSignedAttestation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The raw content of the signature, as output by GNU Privacy Guard (GPG) or
    * equivalent.  Since this message only supports attached signatures, the
@@ -24,6 +27,8 @@ public interface PgpSignedAttestationOrBuilder extends
    */
   java.lang.String getSignature();
   /**
+   *
+   *
    * <pre>
    * The raw content of the signature, as output by GNU Privacy Guard (GPG) or
    * equivalent.  Since this message only supports attached signatures, the
@@ -38,10 +43,11 @@ public interface PgpSignedAttestationOrBuilder extends
    *
    * <code>string signature = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSignatureBytes();
+  com.google.protobuf.ByteString getSignatureBytes();
 
   /**
+   *
+   *
    * <pre>
    * Type (for example schema) of the attestation payload that was signed.
    * The verifier must ensure that the provided type is one that the verifier
@@ -53,6 +59,8 @@ public interface PgpSignedAttestationOrBuilder extends
    */
   int getContentTypeValue();
   /**
+   *
+   *
    * <pre>
    * Type (for example schema) of the attestation payload that was signed.
    * The verifier must ensure that the provided type is one that the verifier
@@ -65,6 +73,8 @@ public interface PgpSignedAttestationOrBuilder extends
   io.grafeas.v1beta1.attestation.PgpSignedAttestation.ContentType getContentType();
 
   /**
+   *
+   *
    * <pre>
    * The cryptographic fingerprint of the key used to generate the signature,
    * as output by, e.g. `gpg --list-keys`. This should be the version 4, full
@@ -88,6 +98,8 @@ public interface PgpSignedAttestationOrBuilder extends
    */
   java.lang.String getPgpKeyId();
   /**
+   *
+   *
    * <pre>
    * The cryptographic fingerprint of the key used to generate the signature,
    * as output by, e.g. `gpg --list-keys`. This should be the version 4, full
@@ -109,8 +121,7 @@ public interface PgpSignedAttestationOrBuilder extends
    *
    * <code>string pgp_key_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getPgpKeyIdBytes();
+  com.google.protobuf.ByteString getPgpKeyIdBytes();
 
   public io.grafeas.v1beta1.attestation.PgpSignedAttestation.KeyIdCase getKeyIdCase();
 }
