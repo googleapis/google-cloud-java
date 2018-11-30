@@ -3,11 +3,14 @@
 
 package com.google.cloud.kms.v1;
 
-public interface AsymmetricSignResponseOrBuilder extends
+public interface AsymmetricSignResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.AsymmetricSignResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The created signature.
    * </pre>
