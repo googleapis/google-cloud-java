@@ -25,20 +25,22 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.cloud.Identity;
 import com.google.api.gax.paging.Page;
+import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
 import com.google.cloud.resourcemanager.ProjectInfo.ResourceId;
 import com.google.cloud.resourcemanager.ResourceManager.ProjectField;
 import com.google.cloud.resourcemanager.ResourceManager.ProjectGetOption;
 import com.google.cloud.resourcemanager.ResourceManager.ProjectListOption;
-import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.ResourceManagerRpcFactory;
+import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
 import com.google.cloud.resourcemanager.testing.LocalResourceManagerHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import org.easymock.EasyMock;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -46,10 +48,6 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 
 public class ResourceManagerImplTest {
 
@@ -66,19 +64,20 @@ public class ResourceManagerImplTest {
   private static final ProjectInfo PARTIAL_PROJECT =
       ProjectInfo.newBuilder("partial-project").build();
   private static final ResourceId PARENT = new ResourceId("id", "type");
-  private static final ProjectInfo COMPLETE_PROJECT = ProjectInfo.newBuilder("complete-project")
-      .setName("name")
-      .setLabels(ImmutableMap.of("k1", "v1"))
-      .setParent(PARENT)
-      .build();
+  private static final ProjectInfo COMPLETE_PROJECT =
+      ProjectInfo.newBuilder("complete-project")
+          .setName("name")
+          .setLabels(ImmutableMap.of("k1", "v1"))
+          .setParent(PARENT)
+          .build();
   private static final Map<ResourceManagerRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
-  private static final Policy POLICY = Policy.newBuilder()
-      .addIdentity(Role.owner(), Identity.user("me@gmail.com"))
-      .addIdentity(Role.editor(), Identity.serviceAccount("serviceaccount@gmail.com"))
-      .build();
+  private static final Policy POLICY =
+      Policy.newBuilder()
+          .addIdentity(Role.owner(), Identity.user("me@gmail.com"))
+          .addIdentity(Role.editor(), Identity.serviceAccount("serviceaccount@gmail.com"))
+          .build();
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @BeforeClass
   public static void beforeClass() {
@@ -123,8 +122,9 @@ public class ResourceManagerImplTest {
       fail("Should fail, project already exists.");
     } catch (ResourceManagerException e) {
       assertEquals(409, e.getCode());
-      assertTrue(e.getMessage().startsWith("A project with the same project ID")
-          && e.getMessage().endsWith("already exists."));
+      assertTrue(
+          e.getMessage().startsWith("A project with the same project ID")
+              && e.getMessage().endsWith("already exists."));
     }
     returnedProject = RESOURCE_MANAGER.create(COMPLETE_PROJECT);
     compareReadWriteFields(COMPLETE_PROJECT, returnedProject);
@@ -138,7 +138,8 @@ public class ResourceManagerImplTest {
   public void testDelete() {
     RESOURCE_MANAGER.create(COMPLETE_PROJECT);
     RESOURCE_MANAGER.delete(COMPLETE_PROJECT.getProjectId());
-    assertEquals(ProjectInfo.State.DELETE_REQUESTED,
+    assertEquals(
+        ProjectInfo.State.DELETE_REQUESTED,
         RESOURCE_MANAGER.get(COMPLETE_PROJECT.getProjectId()).getState());
     try {
       RESOURCE_MANAGER.delete("some-nonexistant-project-id");
@@ -258,18 +259,21 @@ public class ResourceManagerImplTest {
 
   @Test
   public void testListFilterOptions() {
-    ProjectInfo matchingProject = ProjectInfo.newBuilder("matching-project")
-        .setName("MyProject")
-        .setLabels(ImmutableMap.of("color", "blue", "size", "big"))
-        .build();
-    ProjectInfo nonMatchingProject1 = ProjectInfo.newBuilder("non-matching-project1")
-        .setName("myProject")
-        .setLabels(ImmutableMap.of("color", "blue"))
-        .build();
-    ProjectInfo nonMatchingProject2 = ProjectInfo.newBuilder("non-matching-project2")
-        .setName("myProj")
-        .setLabels(ImmutableMap.of("color", "blue", "size", "big"))
-        .build();
+    ProjectInfo matchingProject =
+        ProjectInfo.newBuilder("matching-project")
+            .setName("MyProject")
+            .setLabels(ImmutableMap.of("color", "blue", "size", "big"))
+            .build();
+    ProjectInfo nonMatchingProject1 =
+        ProjectInfo.newBuilder("non-matching-project1")
+            .setName("myProject")
+            .setLabels(ImmutableMap.of("color", "blue"))
+            .build();
+    ProjectInfo nonMatchingProject2 =
+        ProjectInfo.newBuilder("non-matching-project2")
+            .setName("myProj")
+            .setLabels(ImmutableMap.of("color", "blue", "size", "big"))
+            .build();
     ProjectInfo nonMatchingProject3 = ProjectInfo.newBuilder("non-matching-project3").build();
     RESOURCE_MANAGER.create(matchingProject);
     RESOURCE_MANAGER.create(nonMatchingProject1);
@@ -287,13 +291,14 @@ public class ResourceManagerImplTest {
   public void testReplace() {
     ProjectInfo createdProject = RESOURCE_MANAGER.create(COMPLETE_PROJECT);
     Map<String, String> newLabels = ImmutableMap.of("new k1", "new v1");
-    ProjectInfo anotherCompleteProject = ProjectInfo.newBuilder(COMPLETE_PROJECT.getProjectId())
-        .setLabels(newLabels)
-        .setProjectNumber(987654321L)
-        .setCreateTimeMillis(230682061315L)
-        .setState(ProjectInfo.State.DELETE_REQUESTED)
-        .setParent(createdProject.getParent())
-        .build();
+    ProjectInfo anotherCompleteProject =
+        ProjectInfo.newBuilder(COMPLETE_PROJECT.getProjectId())
+            .setLabels(newLabels)
+            .setProjectNumber(987654321L)
+            .setCreateTimeMillis(230682061315L)
+            .setState(ProjectInfo.State.DELETE_REQUESTED)
+            .setParent(createdProject.getParent())
+            .build();
     Project returnedProject = RESOURCE_MANAGER.replace(anotherCompleteProject);
     compareReadWriteFields(anotherCompleteProject, returnedProject);
     assertEquals(createdProject.getProjectNumber(), returnedProject.getProjectNumber());
@@ -379,7 +384,8 @@ public class ResourceManagerImplTest {
       assertEquals("Project nonexistent-project not found.", e.getMessage());
     }
     RESOURCE_MANAGER.create(PARTIAL_PROJECT);
-    assertEquals(ImmutableList.of(true),
+    assertEquals(
+        ImmutableList.of(true),
         RESOURCE_MANAGER.testPermissions(PARTIAL_PROJECT.getProjectId(), permissions));
   }
 
@@ -390,10 +396,11 @@ public class ResourceManagerImplTest {
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(ResourceManagerOptions.class)))
         .andReturn(resourceManagerRpcMock);
     EasyMock.replay(rpcFactoryMock);
-    ResourceManager resourceManagerMock = ResourceManagerOptions.newBuilder()
-        .setServiceRpcFactory(rpcFactoryMock)
-        .build()
-        .getService();
+    ResourceManager resourceManagerMock =
+        ResourceManagerOptions.newBuilder()
+            .setServiceRpcFactory(rpcFactoryMock)
+            .build()
+            .getService();
     EasyMock.expect(resourceManagerRpcMock.get(PARTIAL_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS))
         .andThrow(new ResourceManagerException(500, "Internal Error"))
         .andReturn(PARTIAL_PROJECT.toPb());
@@ -411,13 +418,15 @@ public class ResourceManagerImplTest {
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(ResourceManagerOptions.class)))
         .andReturn(resourceManagerRpcMock);
     EasyMock.replay(rpcFactoryMock);
-    ResourceManager resourceManagerMock = ResourceManagerOptions.newBuilder()
-        .setServiceRpcFactory(rpcFactoryMock)
-        .build()
-        .getService();
+    ResourceManager resourceManagerMock =
+        ResourceManagerOptions.newBuilder()
+            .setServiceRpcFactory(rpcFactoryMock)
+            .build()
+            .getService();
     EasyMock.expect(resourceManagerRpcMock.get(PARTIAL_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS))
-        .andThrow(new ResourceManagerException(
-            403, "Project " + PARTIAL_PROJECT.getProjectId() + " not found."))
+        .andThrow(
+            new ResourceManagerException(
+                403, "Project " + PARTIAL_PROJECT.getProjectId() + " not found."))
         .once();
     EasyMock.replay(resourceManagerRpcMock);
     thrown.expect(ResourceManagerException.class);
@@ -432,10 +441,11 @@ public class ResourceManagerImplTest {
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(ResourceManagerOptions.class)))
         .andReturn(resourceManagerRpcMock);
     EasyMock.replay(rpcFactoryMock);
-    ResourceManager resourceManagerMock = ResourceManagerOptions.newBuilder()
-        .setServiceRpcFactory(rpcFactoryMock)
-        .build()
-        .getService();
+    ResourceManager resourceManagerMock =
+        ResourceManagerOptions.newBuilder()
+            .setServiceRpcFactory(rpcFactoryMock)
+            .build()
+            .getService();
     String exceptionMessage = "Artificial runtime exception";
     EasyMock.expect(resourceManagerRpcMock.get(PARTIAL_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS))
         .andThrow(new RuntimeException(exceptionMessage));
