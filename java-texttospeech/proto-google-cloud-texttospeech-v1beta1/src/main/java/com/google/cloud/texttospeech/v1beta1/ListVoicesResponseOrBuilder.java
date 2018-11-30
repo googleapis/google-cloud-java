@@ -3,20 +3,24 @@
 
 package com.google.cloud.texttospeech.v1beta1;
 
-public interface ListVoicesResponseOrBuilder extends
+public interface ListVoicesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.texttospeech.v1beta1.ListVoicesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of voices.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1beta1.Voice voices = 1;</code>
    */
-  java.util.List<com.google.cloud.texttospeech.v1beta1.Voice> 
-      getVoicesList();
+  java.util.List<com.google.cloud.texttospeech.v1beta1.Voice> getVoicesList();
   /**
+   *
+   *
    * <pre>
    * The list of voices.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListVoicesResponseOrBuilder extends
    */
   com.google.cloud.texttospeech.v1beta1.Voice getVoices(int index);
   /**
+   *
+   *
    * <pre>
    * The list of voices.
    * </pre>
@@ -33,21 +39,24 @@ public interface ListVoicesResponseOrBuilder extends
    */
   int getVoicesCount();
   /**
+   *
+   *
    * <pre>
    * The list of voices.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1beta1.Voice voices = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.texttospeech.v1beta1.VoiceOrBuilder> 
+  java.util.List<? extends com.google.cloud.texttospeech.v1beta1.VoiceOrBuilder>
       getVoicesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of voices.
    * </pre>
    *
    * <code>repeated .google.cloud.texttospeech.v1beta1.Voice voices = 1;</code>
    */
-  com.google.cloud.texttospeech.v1beta1.VoiceOrBuilder getVoicesOrBuilder(
-      int index);
+  com.google.cloud.texttospeech.v1beta1.VoiceOrBuilder getVoicesOrBuilder(int index);
 }
