@@ -4,6 +4,8 @@
 package com.google.cloud.bigquery.datatransfer.v1;
 
 /**
+ *
+ *
  * <pre>
  * A request to update a transfer configuration. To update the user id of the
  * transfer configuration, an authorization code needs to be provided.
@@ -11,24 +13,25 @@ package com.google.cloud.bigquery.datatransfer.v1;
  *
  * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest}
  */
-public  final class UpdateTransferConfigRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class UpdateTransferConfigRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest)
     UpdateTransferConfigRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use UpdateTransferConfigRequest.newBuilder() to construct.
   private UpdateTransferConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private UpdateTransferConfigRequest() {
     authorizationCode_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private UpdateTransferConfigRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,73 +51,84 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder subBuilder = null;
-            if (transferConfig_ != null) {
-              subBuilder = transferConfig_.toBuilder();
-            }
-            transferConfig_ = input.readMessage(com.google.cloud.bigquery.datatransfer.v1.TransferConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(transferConfig_);
-              transferConfig_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder subBuilder = null;
+              if (transferConfig_ != null) {
+                subBuilder = transferConfig_.toBuilder();
+              }
+              transferConfig_ =
+                  input.readMessage(
+                      com.google.cloud.bigquery.datatransfer.v1.TransferConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(transferConfig_);
+                transferConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            authorizationCode_ = s;
-            break;
-          }
-          case 34: {
-            com.google.protobuf.FieldMask.Builder subBuilder = null;
-            if (updateMask_ != null) {
-              subBuilder = updateMask_.toBuilder();
+              authorizationCode_ = s;
+              break;
             }
-            updateMask_ = input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(updateMask_);
-              updateMask_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (updateMask_ != null) {
+                subBuilder = updateMask_.toBuilder();
+              }
+              updateMask_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateMask_);
+                updateMask_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_UpdateTransferConfigRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto
+        .internal_static_google_cloud_bigquery_datatransfer_v1_UpdateTransferConfigRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_UpdateTransferConfigRequest_fieldAccessorTable
+    return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto
+        .internal_static_google_cloud_bigquery_datatransfer_v1_UpdateTransferConfigRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest.class, com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest.Builder.class);
+            com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest.class,
+            com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest.Builder.class);
   }
 
   public static final int TRANSFER_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.bigquery.datatransfer.v1.TransferConfig transferConfig_;
   /**
+   *
+   *
    * <pre>
    * Data transfer configuration to create.
    * </pre>
@@ -125,6 +139,8 @@ private static final long serialVersionUID = 0L;
     return transferConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Data transfer configuration to create.
    * </pre>
@@ -132,22 +148,29 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig() {
-    return transferConfig_ == null ? com.google.cloud.bigquery.datatransfer.v1.TransferConfig.getDefaultInstance() : transferConfig_;
+    return transferConfig_ == null
+        ? com.google.cloud.bigquery.datatransfer.v1.TransferConfig.getDefaultInstance()
+        : transferConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Data transfer configuration to create.
    * </pre>
    *
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
    */
-  public com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder getTransferConfigOrBuilder() {
+  public com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder
+      getTransferConfigOrBuilder() {
     return getTransferConfig();
   }
 
   public static final int AUTHORIZATION_CODE_FIELD_NUMBER = 3;
   private volatile java.lang.Object authorizationCode_;
   /**
+   *
+   *
    * <pre>
    * Optional OAuth2 authorization code to use with this transfer configuration.
    * If it is provided, the transfer configuration will be associated with the
@@ -173,14 +196,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       authorizationCode_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional OAuth2 authorization code to use with this transfer configuration.
    * If it is provided, the transfer configuration will be associated with the
@@ -201,13 +225,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string authorization_code = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getAuthorizationCodeBytes() {
+  public com.google.protobuf.ByteString getAuthorizationCodeBytes() {
     java.lang.Object ref = authorizationCode_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       authorizationCode_ = b;
       return b;
     } else {
@@ -218,6 +240,8 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATE_MASK_FIELD_NUMBER = 4;
   private com.google.protobuf.FieldMask updateMask_;
   /**
+   *
+   *
    * <pre>
    * Required list of fields to be updated in this request.
    * </pre>
@@ -228,6 +252,8 @@ private static final long serialVersionUID = 0L;
     return updateMask_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required list of fields to be updated in this request.
    * </pre>
@@ -238,6 +264,8 @@ private static final long serialVersionUID = 0L;
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
   /**
+   *
+   *
    * <pre>
    * Required list of fields to be updated in this request.
    * </pre>
@@ -249,6 +277,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -260,8 +289,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (transferConfig_ != null) {
       output.writeMessage(1, getTransferConfig());
     }
@@ -281,15 +309,13 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (transferConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getTransferConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getTransferConfig());
     }
     if (!getAuthorizationCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, authorizationCode_);
     }
     if (updateMask_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getUpdateMask());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getUpdateMask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -299,25 +325,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest other = (com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest) obj;
+    com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest other =
+        (com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest) obj;
 
     boolean result = true;
     result = result && (hasTransferConfig() == other.hasTransferConfig());
     if (hasTransferConfig()) {
-      result = result && getTransferConfig()
-          .equals(other.getTransferConfig());
+      result = result && getTransferConfig().equals(other.getTransferConfig());
     }
-    result = result && getAuthorizationCode()
-        .equals(other.getAuthorizationCode());
+    result = result && getAuthorizationCode().equals(other.getAuthorizationCode());
     result = result && (hasUpdateMask() == other.hasUpdateMask());
     if (hasUpdateMask()) {
-      result = result && getUpdateMask()
-          .equals(other.getUpdateMask());
+      result = result && getUpdateMask().equals(other.getUpdateMask());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -346,96 +370,105 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
+
   public static com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
+  public static com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+  }
+
+  public static com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
+  public static com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest parseFrom(
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+  }
+
   public static com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A request to update a transfer configuration. To update the user id of the
    * transfer configuration, an authorization code needs to be provided.
@@ -443,38 +476,40 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest)
       com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_UpdateTransferConfigRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto
+          .internal_static_google_cloud_bigquery_datatransfer_v1_UpdateTransferConfigRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_UpdateTransferConfigRequest_fieldAccessorTable
+      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto
+          .internal_static_google_cloud_bigquery_datatransfer_v1_UpdateTransferConfigRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest.class, com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest.Builder.class);
+              com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest.class,
+              com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest.newBuilder()
+    // Construct using
+    // com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -496,14 +531,16 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_UpdateTransferConfigRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto
+          .internal_static_google_cloud_bigquery_datatransfer_v1_UpdateTransferConfigRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest getDefaultInstanceForType() {
-      return com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest.getDefaultInstance();
+    public com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest
+        getDefaultInstanceForType() {
+      return com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest
+          .getDefaultInstance();
     }
 
     @java.lang.Override
@@ -517,7 +554,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest buildPartial() {
-      com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest result = new com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest(this);
+      com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest result =
+          new com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest(this);
       if (transferConfigBuilder_ == null) {
         result.transferConfig_ = transferConfig_;
       } else {
@@ -537,46 +575,51 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest) {
-        return mergeFrom((com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest)other);
+        return mergeFrom(
+            (com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest other) {
-      if (other == com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest other) {
+      if (other
+          == com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest
+              .getDefaultInstance()) return this;
       if (other.hasTransferConfig()) {
         mergeTransferConfig(other.getTransferConfig());
       }
@@ -606,7 +649,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -618,8 +663,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.bigquery.datatransfer.v1.TransferConfig transferConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.bigquery.datatransfer.v1.TransferConfig, com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder, com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder> transferConfigBuilder_;
+            com.google.cloud.bigquery.datatransfer.v1.TransferConfig,
+            com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder,
+            com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder>
+        transferConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Data transfer configuration to create.
      * </pre>
@@ -630,6 +680,8 @@ private static final long serialVersionUID = 0L;
       return transferConfigBuilder_ != null || transferConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Data transfer configuration to create.
      * </pre>
@@ -638,19 +690,24 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig() {
       if (transferConfigBuilder_ == null) {
-        return transferConfig_ == null ? com.google.cloud.bigquery.datatransfer.v1.TransferConfig.getDefaultInstance() : transferConfig_;
+        return transferConfig_ == null
+            ? com.google.cloud.bigquery.datatransfer.v1.TransferConfig.getDefaultInstance()
+            : transferConfig_;
       } else {
         return transferConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Data transfer configuration to create.
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
      */
-    public Builder setTransferConfig(com.google.cloud.bigquery.datatransfer.v1.TransferConfig value) {
+    public Builder setTransferConfig(
+        com.google.cloud.bigquery.datatransfer.v1.TransferConfig value) {
       if (transferConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -664,6 +721,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Data transfer configuration to create.
      * </pre>
@@ -682,17 +741,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Data transfer configuration to create.
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
      */
-    public Builder mergeTransferConfig(com.google.cloud.bigquery.datatransfer.v1.TransferConfig value) {
+    public Builder mergeTransferConfig(
+        com.google.cloud.bigquery.datatransfer.v1.TransferConfig value) {
       if (transferConfigBuilder_ == null) {
         if (transferConfig_ != null) {
           transferConfig_ =
-            com.google.cloud.bigquery.datatransfer.v1.TransferConfig.newBuilder(transferConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.bigquery.datatransfer.v1.TransferConfig.newBuilder(transferConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           transferConfig_ = value;
         }
@@ -704,6 +768,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Data transfer configuration to create.
      * </pre>
@@ -722,33 +788,42 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Data transfer configuration to create.
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
      */
-    public com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder getTransferConfigBuilder() {
-      
+    public com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder
+        getTransferConfigBuilder() {
+
       onChanged();
       return getTransferConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Data transfer configuration to create.
      * </pre>
      *
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
      */
-    public com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder getTransferConfigOrBuilder() {
+    public com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder
+        getTransferConfigOrBuilder() {
       if (transferConfigBuilder_ != null) {
         return transferConfigBuilder_.getMessageOrBuilder();
       } else {
-        return transferConfig_ == null ?
-            com.google.cloud.bigquery.datatransfer.v1.TransferConfig.getDefaultInstance() : transferConfig_;
+        return transferConfig_ == null
+            ? com.google.cloud.bigquery.datatransfer.v1.TransferConfig.getDefaultInstance()
+            : transferConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Data transfer configuration to create.
      * </pre>
@@ -756,14 +831,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferConfig transfer_config = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.bigquery.datatransfer.v1.TransferConfig, com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder, com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder> 
+            com.google.cloud.bigquery.datatransfer.v1.TransferConfig,
+            com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder,
+            com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder>
         getTransferConfigFieldBuilder() {
       if (transferConfigBuilder_ == null) {
-        transferConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.bigquery.datatransfer.v1.TransferConfig, com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder, com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder>(
-                getTransferConfig(),
-                getParentForChildren(),
-                isClean());
+        transferConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.datatransfer.v1.TransferConfig,
+                com.google.cloud.bigquery.datatransfer.v1.TransferConfig.Builder,
+                com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder>(
+                getTransferConfig(), getParentForChildren(), isClean());
         transferConfig_ = null;
       }
       return transferConfigBuilder_;
@@ -771,6 +849,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object authorizationCode_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional OAuth2 authorization code to use with this transfer configuration.
      * If it is provided, the transfer configuration will be associated with the
@@ -794,8 +874,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getAuthorizationCode() {
       java.lang.Object ref = authorizationCode_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         authorizationCode_ = s;
         return s;
@@ -804,6 +883,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional OAuth2 authorization code to use with this transfer configuration.
      * If it is provided, the transfer configuration will be associated with the
@@ -824,13 +905,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string authorization_code = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getAuthorizationCodeBytes() {
+    public com.google.protobuf.ByteString getAuthorizationCodeBytes() {
       java.lang.Object ref = authorizationCode_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         authorizationCode_ = b;
         return b;
       } else {
@@ -838,6 +917,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional OAuth2 authorization code to use with this transfer configuration.
      * If it is provided, the transfer configuration will be associated with the
@@ -858,17 +939,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string authorization_code = 3;</code>
      */
-    public Builder setAuthorizationCode(
-        java.lang.String value) {
+    public Builder setAuthorizationCode(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       authorizationCode_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional OAuth2 authorization code to use with this transfer configuration.
      * If it is provided, the transfer configuration will be associated with the
@@ -890,12 +972,14 @@ private static final long serialVersionUID = 0L;
      * <code>string authorization_code = 3;</code>
      */
     public Builder clearAuthorizationCode() {
-      
+
       authorizationCode_ = getDefaultInstance().getAuthorizationCode();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional OAuth2 authorization code to use with this transfer configuration.
      * If it is provided, the transfer configuration will be associated with the
@@ -916,13 +1000,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string authorization_code = 3;</code>
      */
-    public Builder setAuthorizationCodeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setAuthorizationCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       authorizationCode_ = value;
       onChanged();
       return this;
@@ -930,8 +1013,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.FieldMask updateMask_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        updateMaskBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required list of fields to be updated in this request.
      * </pre>
@@ -942,6 +1030,8 @@ private static final long serialVersionUID = 0L;
       return updateMaskBuilder_ != null || updateMask_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required list of fields to be updated in this request.
      * </pre>
@@ -950,12 +1040,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
-        return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
       } else {
         return updateMaskBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required list of fields to be updated in this request.
      * </pre>
@@ -976,14 +1070,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required list of fields to be updated in this request.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
-    public Builder setUpdateMask(
-        com.google.protobuf.FieldMask.Builder builderForValue) {
+    public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
         onChanged();
@@ -994,6 +1089,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required list of fields to be updated in this request.
      * </pre>
@@ -1004,7 +1101,7 @@ private static final long serialVersionUID = 0L;
       if (updateMaskBuilder_ == null) {
         if (updateMask_ != null) {
           updateMask_ =
-            com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
         } else {
           updateMask_ = value;
         }
@@ -1016,6 +1113,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required list of fields to be updated in this request.
      * </pre>
@@ -1034,6 +1133,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required list of fields to be updated in this request.
      * </pre>
@@ -1041,11 +1142,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-      
+
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required list of fields to be updated in this request.
      * </pre>
@@ -1056,11 +1159,14 @@ private static final long serialVersionUID = 0L;
       if (updateMaskBuilder_ != null) {
         return updateMaskBuilder_.getMessageOrBuilder();
       } else {
-        return updateMask_ == null ?
-            com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required list of fields to be updated in this request.
      * </pre>
@@ -1068,21 +1174,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask update_mask = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
         getUpdateMaskFieldBuilder() {
       if (updateMaskBuilder_ == null) {
-        updateMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
-                getUpdateMask(),
-                getParentForChildren(),
-                isClean());
+        updateMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(), getParentForChildren(), isClean());
         updateMask_ = null;
       }
       return updateMaskBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1092,30 +1201,32 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest)
-  private static final com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest DEFAULT_INSTANCE;
+  private static final com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest();
   }
 
-  public static com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest getDefaultInstance() {
+  public static com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateTransferConfigRequest>
-      PARSER = new com.google.protobuf.AbstractParser<UpdateTransferConfigRequest>() {
-    @java.lang.Override
-    public UpdateTransferConfigRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new UpdateTransferConfigRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<UpdateTransferConfigRequest> PARSER =
+      new com.google.protobuf.AbstractParser<UpdateTransferConfigRequest>() {
+        @java.lang.Override
+        public UpdateTransferConfigRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new UpdateTransferConfigRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<UpdateTransferConfigRequest> parser() {
     return PARSER;
@@ -1127,9 +1238,8 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest getDefaultInstanceForType() {
+  public com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-
