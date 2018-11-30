@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface ExecuteSqlRequestOrBuilder extends
+public interface ExecuteSqlRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.ExecuteSqlRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The session in which the SQL query should be performed.
    * </pre>
@@ -16,16 +19,19 @@ public interface ExecuteSqlRequestOrBuilder extends
    */
   java.lang.String getSession();
   /**
+   *
+   *
    * <pre>
    * Required. The session in which the SQL query should be performed.
    * </pre>
    *
    * <code>string session = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSessionBytes();
+  com.google.protobuf.ByteString getSessionBytes();
 
   /**
+   *
+   *
    * <pre>
    * The transaction to use. If none is provided, the default is a
    * temporary read-only transaction with strong concurrency.
@@ -42,6 +48,8 @@ public interface ExecuteSqlRequestOrBuilder extends
    */
   boolean hasTransaction();
   /**
+   *
+   *
    * <pre>
    * The transaction to use. If none is provided, the default is a
    * temporary read-only transaction with strong concurrency.
@@ -58,6 +66,8 @@ public interface ExecuteSqlRequestOrBuilder extends
    */
   com.google.spanner.v1.TransactionSelector getTransaction();
   /**
+   *
+   *
    * <pre>
    * The transaction to use. If none is provided, the default is a
    * temporary read-only transaction with strong concurrency.
@@ -75,6 +85,8 @@ public interface ExecuteSqlRequestOrBuilder extends
   com.google.spanner.v1.TransactionSelectorOrBuilder getTransactionOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required. The SQL string.
    * </pre>
@@ -83,16 +95,19 @@ public interface ExecuteSqlRequestOrBuilder extends
    */
   java.lang.String getSql();
   /**
+   *
+   *
    * <pre>
    * Required. The SQL string.
    * </pre>
    *
    * <code>string sql = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getSqlBytes();
+  com.google.protobuf.ByteString getSqlBytes();
 
   /**
+   *
+   *
    * <pre>
    * The SQL string can contain parameter placeholders. A parameter
    * placeholder consists of `'&#64;'` followed by the parameter
@@ -111,6 +126,8 @@ public interface ExecuteSqlRequestOrBuilder extends
    */
   boolean hasParams();
   /**
+   *
+   *
    * <pre>
    * The SQL string can contain parameter placeholders. A parameter
    * placeholder consists of `'&#64;'` followed by the parameter
@@ -129,6 +146,8 @@ public interface ExecuteSqlRequestOrBuilder extends
    */
   com.google.protobuf.Struct getParams();
   /**
+   *
+   *
    * <pre>
    * The SQL string can contain parameter placeholders. A parameter
    * placeholder consists of `'&#64;'` followed by the parameter
@@ -148,6 +167,8 @@ public interface ExecuteSqlRequestOrBuilder extends
   com.google.protobuf.StructOrBuilder getParamsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
@@ -162,6 +183,8 @@ public interface ExecuteSqlRequestOrBuilder extends
    */
   int getParamTypesCount();
   /**
+   *
+   *
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
@@ -174,15 +197,13 @@ public interface ExecuteSqlRequestOrBuilder extends
    *
    * <code>map&lt;string, .google.spanner.v1.Type&gt; param_types = 5;</code>
    */
-  boolean containsParamTypes(
-      java.lang.String key);
-  /**
-   * Use {@link #getParamTypesMap()} instead.
-   */
+  boolean containsParamTypes(java.lang.String key);
+  /** Use {@link #getParamTypesMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, com.google.spanner.v1.Type>
-  getParamTypes();
+  java.util.Map<java.lang.String, com.google.spanner.v1.Type> getParamTypes();
   /**
+   *
+   *
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
@@ -195,9 +216,10 @@ public interface ExecuteSqlRequestOrBuilder extends
    *
    * <code>map&lt;string, .google.spanner.v1.Type&gt; param_types = 5;</code>
    */
-  java.util.Map<java.lang.String, com.google.spanner.v1.Type>
-  getParamTypesMap();
+  java.util.Map<java.lang.String, com.google.spanner.v1.Type> getParamTypesMap();
   /**
+   *
+   *
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
@@ -210,11 +232,11 @@ public interface ExecuteSqlRequestOrBuilder extends
    *
    * <code>map&lt;string, .google.spanner.v1.Type&gt; param_types = 5;</code>
    */
-
   com.google.spanner.v1.Type getParamTypesOrDefault(
-      java.lang.String key,
-      com.google.spanner.v1.Type defaultValue);
+      java.lang.String key, com.google.spanner.v1.Type defaultValue);
   /**
+   *
+   *
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
@@ -227,11 +249,11 @@ public interface ExecuteSqlRequestOrBuilder extends
    *
    * <code>map&lt;string, .google.spanner.v1.Type&gt; param_types = 5;</code>
    */
-
-  com.google.spanner.v1.Type getParamTypesOrThrow(
-      java.lang.String key);
+  com.google.spanner.v1.Type getParamTypesOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * If this request is resuming a previously interrupted SQL statement
    * execution, `resume_token` should be copied from the last
@@ -246,6 +268,8 @@ public interface ExecuteSqlRequestOrBuilder extends
   com.google.protobuf.ByteString getResumeToken();
 
   /**
+   *
+   *
    * <pre>
    * Used to control the amount of debugging information returned in
    * [ResultSetStats][google.spanner.v1.ResultSetStats]. If [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
@@ -256,6 +280,8 @@ public interface ExecuteSqlRequestOrBuilder extends
    */
   int getQueryModeValue();
   /**
+   *
+   *
    * <pre>
    * Used to control the amount of debugging information returned in
    * [ResultSetStats][google.spanner.v1.ResultSetStats]. If [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
@@ -267,6 +293,8 @@ public interface ExecuteSqlRequestOrBuilder extends
   com.google.spanner.v1.ExecuteSqlRequest.QueryMode getQueryMode();
 
   /**
+   *
+   *
    * <pre>
    * If present, results will be restricted to the specified partition
    * previously created using PartitionQuery().  There must be an exact
@@ -279,6 +307,8 @@ public interface ExecuteSqlRequestOrBuilder extends
   com.google.protobuf.ByteString getPartitionToken();
 
   /**
+   *
+   *
    * <pre>
    * A per-transaction sequence number used to identify this request. This
    * makes each request idempotent such that if the request is received multiple

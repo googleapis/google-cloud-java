@@ -61,8 +61,7 @@ public class HttpRequestTest {
           .setLatency(Duration.ofSeconds(123, 456))
           .build();
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testBuilder() {
@@ -80,7 +79,6 @@ public class HttpRequestTest {
     assertEquals(CACHE_VALIDATED_WITH_ORIGIN_SERVER, HTTP_REQUEST.cacheValidatedWithOriginServer());
     assertEquals(CACHE_FILL_BYTES, HTTP_REQUEST.getCacheFillBytes());
   }
-
 
   @Test
   public void testBuilderDefaultValues() {
@@ -103,21 +101,23 @@ public class HttpRequestTest {
   @Test
   public void testToBuilder() {
     compareHttpRequest(HTTP_REQUEST, HTTP_REQUEST.toBuilder().build());
-    HttpRequest httpRequest = HTTP_REQUEST.toBuilder()
-        .setRequestMethod(RequestMethod.POST)
-        .setRequestUrl("http://www.other-example.com")
-        .setRequestSize(4)
-        .setStatus(201)
-        .setResponseSize(5)
-        .setUserAgent("otherUserAgent")
-        .setRemoteIp("192.168.1.3")
-        .setServerIp("192.168.1.4")
-        .setReferer("Referer: http://www.other-example.com")
-        .setCacheLookup(true)
-        .setCacheHit(true)
-        .setCacheValidatedWithOriginServer(true)
-        .setCacheFillBytes(6)
-        .build();
+    HttpRequest httpRequest =
+        HTTP_REQUEST
+            .toBuilder()
+            .setRequestMethod(RequestMethod.POST)
+            .setRequestUrl("http://www.other-example.com")
+            .setRequestSize(4)
+            .setStatus(201)
+            .setResponseSize(5)
+            .setUserAgent("otherUserAgent")
+            .setRemoteIp("192.168.1.3")
+            .setServerIp("192.168.1.4")
+            .setReferer("Referer: http://www.other-example.com")
+            .setCacheLookup(true)
+            .setCacheHit(true)
+            .setCacheValidatedWithOriginServer(true)
+            .setCacheFillBytes(6)
+            .build();
     assertEquals(RequestMethod.POST, httpRequest.getRequestMethod());
     assertEquals("http://www.other-example.com", httpRequest.getRequestUrl());
     assertEquals(4, (long) httpRequest.getRequestSize());

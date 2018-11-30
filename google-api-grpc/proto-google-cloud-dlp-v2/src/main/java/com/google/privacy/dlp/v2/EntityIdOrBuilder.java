@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface EntityIdOrBuilder extends
+public interface EntityIdOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.EntityId)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Composite key indicating which field contains the entity identifier.
    * </pre>
@@ -16,6 +19,8 @@ public interface EntityIdOrBuilder extends
    */
   boolean hasField();
   /**
+   *
+   *
    * <pre>
    * Composite key indicating which field contains the entity identifier.
    * </pre>
@@ -24,6 +29,8 @@ public interface EntityIdOrBuilder extends
    */
   com.google.privacy.dlp.v2.FieldId getField();
   /**
+   *
+   *
    * <pre>
    * Composite key indicating which field contains the entity identifier.
    * </pre>

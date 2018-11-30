@@ -3,11 +3,14 @@
 
 package com.google.cloud.kms.v1;
 
-public interface PublicKeyOrBuilder extends
+public interface PublicKeyOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.PublicKey)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The public key, encoded in PEM format. For more information, see the
    * [RFC 7468](https://tools.ietf.org/html/rfc7468) sections for
@@ -20,6 +23,8 @@ public interface PublicKeyOrBuilder extends
    */
   java.lang.String getPem();
   /**
+   *
+   *
    * <pre>
    * The public key, encoded in PEM format. For more information, see the
    * [RFC 7468](https://tools.ietf.org/html/rfc7468) sections for
@@ -30,10 +35,11 @@ public interface PublicKeyOrBuilder extends
    *
    * <code>string pem = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getPemBytes();
+  com.google.protobuf.ByteString getPemBytes();
 
   /**
+   *
+   *
    * <pre>
    * The [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] associated
    * with this key.
@@ -43,6 +49,8 @@ public interface PublicKeyOrBuilder extends
    */
   int getAlgorithmValue();
   /**
+   *
+   *
    * <pre>
    * The [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] associated
    * with this key.

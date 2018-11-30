@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface CropHintOrBuilder extends
+public interface CropHintOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.CropHint)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The bounding polygon for the crop region. The coordinates of the bounding
    * box are in the original image's scale, as returned in `ImageParams`.
@@ -17,6 +20,8 @@ public interface CropHintOrBuilder extends
    */
   boolean hasBoundingPoly();
   /**
+   *
+   *
    * <pre>
    * The bounding polygon for the crop region. The coordinates of the bounding
    * box are in the original image's scale, as returned in `ImageParams`.
@@ -26,6 +31,8 @@ public interface CropHintOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.BoundingPoly getBoundingPoly();
   /**
+   *
+   *
    * <pre>
    * The bounding polygon for the crop region. The coordinates of the bounding
    * box are in the original image's scale, as returned in `ImageParams`.
@@ -36,6 +43,8 @@ public interface CropHintOrBuilder extends
   com.google.cloud.vision.v1p3beta1.BoundingPolyOrBuilder getBoundingPolyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Confidence of this being a salient region.  Range [0, 1].
    * </pre>
@@ -45,6 +54,8 @@ public interface CropHintOrBuilder extends
   float getConfidence();
 
   /**
+   *
+   *
    * <pre>
    * Fraction of importance of this salient region with respect to the original
    * image.

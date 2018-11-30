@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface TextInputOrBuilder extends
+public interface TextInputOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.TextInput)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The UTF-8 encoded natural language text to be processed.
    * Text length must not exceed 256 bytes.
@@ -17,6 +20,8 @@ public interface TextInputOrBuilder extends
    */
   java.lang.String getText();
   /**
+   *
+   *
    * <pre>
    * Required. The UTF-8 encoded natural language text to be processed.
    * Text length must not exceed 256 bytes.
@@ -24,10 +29,11 @@ public interface TextInputOrBuilder extends
    *
    * <code>string text = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getTextBytes();
+  com.google.protobuf.ByteString getTextBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The language of this conversational query. See [Language
    * Support](https://dialogflow.com/docs/languages) for a list of the
@@ -39,6 +45,8 @@ public interface TextInputOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Required. The language of this conversational query. See [Language
    * Support](https://dialogflow.com/docs/languages) for a list of the
@@ -48,6 +56,5 @@ public interface TextInputOrBuilder extends
    *
    * <code>string language_code = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 }

@@ -79,7 +79,7 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
    */
   public static Timestamp ofTimeMicroseconds(long microseconds) {
     long seconds = microseconds / 1_000_000;
-    int nanos = (int)(microseconds % 1_000_000 * 1000);
+    int nanos = (int) (microseconds % 1_000_000 * 1000);
     if (nanos < 0) {
       seconds--;
       nanos += 1_000_000_000;

@@ -56,13 +56,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -787,13 +787,16 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   public static class AggregatedListTargetVpnGatewaysPagedResponse
       extends AbstractPagedListResponse<
-          AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList,
-          TargetVpnGatewaysScopedList, AggregatedListTargetVpnGatewaysPage,
+          AggregatedListTargetVpnGatewaysHttpRequest,
+          TargetVpnGatewayAggregatedList,
+          TargetVpnGatewaysScopedList,
+          AggregatedListTargetVpnGatewaysPage,
           AggregatedListTargetVpnGatewaysFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListTargetVpnGatewaysPagedResponse> createAsync(
         PageContext<
-                AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList,
+                AggregatedListTargetVpnGatewaysHttpRequest,
+                TargetVpnGatewayAggregatedList,
                 TargetVpnGatewaysScopedList>
             context,
         ApiFuture<TargetVpnGatewayAggregatedList> futureResponse) {
@@ -819,12 +822,15 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   public static class AggregatedListTargetVpnGatewaysPage
       extends AbstractPage<
-          AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList,
-          TargetVpnGatewaysScopedList, AggregatedListTargetVpnGatewaysPage> {
+          AggregatedListTargetVpnGatewaysHttpRequest,
+          TargetVpnGatewayAggregatedList,
+          TargetVpnGatewaysScopedList,
+          AggregatedListTargetVpnGatewaysPage> {
 
     private AggregatedListTargetVpnGatewaysPage(
         PageContext<
-                AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList,
+                AggregatedListTargetVpnGatewaysHttpRequest,
+                TargetVpnGatewayAggregatedList,
                 TargetVpnGatewaysScopedList>
             context,
         TargetVpnGatewayAggregatedList response) {
@@ -838,7 +844,8 @@ public class TargetVpnGatewayClient implements BackgroundResource {
     @Override
     protected AggregatedListTargetVpnGatewaysPage createPage(
         PageContext<
-                AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList,
+                AggregatedListTargetVpnGatewaysHttpRequest,
+                TargetVpnGatewayAggregatedList,
                 TargetVpnGatewaysScopedList>
             context,
         TargetVpnGatewayAggregatedList response) {
@@ -848,7 +855,8 @@ public class TargetVpnGatewayClient implements BackgroundResource {
     @Override
     public ApiFuture<AggregatedListTargetVpnGatewaysPage> createPageAsync(
         PageContext<
-                AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList,
+                AggregatedListTargetVpnGatewaysHttpRequest,
+                TargetVpnGatewayAggregatedList,
                 TargetVpnGatewaysScopedList>
             context,
         ApiFuture<TargetVpnGatewayAggregatedList> futureResponse) {
@@ -858,8 +866,10 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   public static class AggregatedListTargetVpnGatewaysFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AggregatedListTargetVpnGatewaysHttpRequest, TargetVpnGatewayAggregatedList,
-          TargetVpnGatewaysScopedList, AggregatedListTargetVpnGatewaysPage,
+          AggregatedListTargetVpnGatewaysHttpRequest,
+          TargetVpnGatewayAggregatedList,
+          TargetVpnGatewaysScopedList,
+          AggregatedListTargetVpnGatewaysPage,
           AggregatedListTargetVpnGatewaysFixedSizeCollection> {
 
     private AggregatedListTargetVpnGatewaysFixedSizeCollection(
@@ -880,8 +890,11 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   public static class ListTargetVpnGatewaysPagedResponse
       extends AbstractPagedListResponse<
-          ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList, TargetVpnGateway,
-          ListTargetVpnGatewaysPage, ListTargetVpnGatewaysFixedSizeCollection> {
+          ListTargetVpnGatewaysHttpRequest,
+          TargetVpnGatewayList,
+          TargetVpnGateway,
+          ListTargetVpnGatewaysPage,
+          ListTargetVpnGatewaysFixedSizeCollection> {
 
     public static ApiFuture<ListTargetVpnGatewaysPagedResponse> createAsync(
         PageContext<ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList, TargetVpnGateway>
@@ -906,7 +919,9 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   public static class ListTargetVpnGatewaysPage
       extends AbstractPage<
-          ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList, TargetVpnGateway,
+          ListTargetVpnGatewaysHttpRequest,
+          TargetVpnGatewayList,
+          TargetVpnGateway,
           ListTargetVpnGatewaysPage> {
 
     private ListTargetVpnGatewaysPage(
@@ -939,8 +954,11 @@ public class TargetVpnGatewayClient implements BackgroundResource {
 
   public static class ListTargetVpnGatewaysFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTargetVpnGatewaysHttpRequest, TargetVpnGatewayList, TargetVpnGateway,
-          ListTargetVpnGatewaysPage, ListTargetVpnGatewaysFixedSizeCollection> {
+          ListTargetVpnGatewaysHttpRequest,
+          TargetVpnGatewayList,
+          TargetVpnGateway,
+          ListTargetVpnGatewaysPage,
+          ListTargetVpnGatewaysFixedSizeCollection> {
 
     private ListTargetVpnGatewaysFixedSizeCollection(
         List<ListTargetVpnGatewaysPage> pages, int collectionSize) {

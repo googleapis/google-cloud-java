@@ -21,7 +21,6 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
 
 import com.google.cloud.dns.spi.v1.DnsRpc;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -37,8 +36,7 @@ public class OptionTest {
   private static final Option OPTION_NOT_EQUALS1 = new Option(RPC_OPTION, OTHER_VALUE) {};
   private static final Option OPTION_NOT_EQUALS2 = new Option(ANOTHER_RPC_OPTION, VALUE) {};
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testEquals() {

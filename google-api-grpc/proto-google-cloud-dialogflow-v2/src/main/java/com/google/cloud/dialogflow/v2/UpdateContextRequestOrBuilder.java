@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface UpdateContextRequestOrBuilder extends
+public interface UpdateContextRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.UpdateContextRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The context to update.
    * </pre>
@@ -16,6 +19,8 @@ public interface UpdateContextRequestOrBuilder extends
    */
   boolean hasContext();
   /**
+   *
+   *
    * <pre>
    * Required. The context to update.
    * </pre>
@@ -24,6 +29,8 @@ public interface UpdateContextRequestOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.Context getContext();
   /**
+   *
+   *
    * <pre>
    * Required. The context to update.
    * </pre>
@@ -33,6 +40,8 @@ public interface UpdateContextRequestOrBuilder extends
   com.google.cloud.dialogflow.v2.ContextOrBuilder getContextOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -41,6 +50,8 @@ public interface UpdateContextRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -49,6 +60,8 @@ public interface UpdateContextRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>

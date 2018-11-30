@@ -21,7 +21,6 @@ import com.google.cloud.translate.Language;
 import com.google.cloud.translate.Translate;
 import com.google.cloud.translate.TranslateOptions;
 import com.google.cloud.translate.Translation;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -32,9 +31,10 @@ import java.util.Map;
  *
  * <p>This example demonstrates a simple/typical Translation usage.
  *
- * <p>See the
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
+ * <p>See the <a
+ * href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
+ *
  * <pre>{@code target/appassembler/bin/TranslateExample
  *  -Dexec.args="[[<apiKey>] <targetLanguage>]
  *  list languages <languageCode>?
@@ -42,7 +42,8 @@ import java.util.Map;
  *  translate <text>+"}</pre>
  *
  * <p>The first parameter is an optional {@code targetLanguage}. If the target language is not
- * supplied, {@code en} is used (see {@link com.google.cloud.translate.TranslateOptions.Builder#setTargetLanguage(String)}).
+ * supplied, {@code en} is used (see {@link
+ * com.google.cloud.translate.TranslateOptions.Builder#setTargetLanguage(String)}).
  */
 public class TranslateExample {
 
@@ -169,7 +170,8 @@ public class TranslateExample {
         actionAndParams.append(' ').append(param);
       }
     }
-    System.out.printf("Usage: %s [[<apiKey>] <targetLanguage>] operation <args>*%s%n",
+    System.out.printf(
+        "Usage: %s [[<apiKey>] <targetLanguage>] operation <args>*%s%n",
         TranslateExample.class.getSimpleName(), actionAndParams);
   }
 

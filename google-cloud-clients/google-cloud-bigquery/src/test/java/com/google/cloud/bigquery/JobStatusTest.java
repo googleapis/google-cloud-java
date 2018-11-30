@@ -19,19 +19,18 @@ package com.google.cloud.bigquery;
 import static org.junit.Assert.assertEquals;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class JobStatusTest {
 
   private static final JobStatus.State STATE = JobStatus.State.DONE;
   private static final BigQueryError ERROR =
       new BigQueryError("reason", "location", "message", "debugInfo");
-  private static final List<BigQueryError> ALL_ERRORS = ImmutableList.of(
-      new BigQueryError("reason1", "location1", "message1", "debugInfo1"),
-      new BigQueryError("reason2", "location2", "message2", "debugInfo2"));
+  private static final List<BigQueryError> ALL_ERRORS =
+      ImmutableList.of(
+          new BigQueryError("reason1", "location1", "message1", "debugInfo1"),
+          new BigQueryError("reason2", "location2", "message2", "debugInfo2"));
   private static final JobStatus JOB_STATUS = new JobStatus(STATE, ERROR, ALL_ERRORS);
   private static final JobStatus JOB_STATUS_INCOMPLETE1 = new JobStatus(STATE, ERROR, null);
   private static final JobStatus JOB_STATUS_INCOMPLETE2 = new JobStatus(STATE, null, null);

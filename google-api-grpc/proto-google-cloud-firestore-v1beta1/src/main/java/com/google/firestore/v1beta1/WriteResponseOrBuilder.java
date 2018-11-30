@@ -3,11 +3,14 @@
 
 package com.google.firestore.v1beta1;
 
-public interface WriteResponseOrBuilder extends
+public interface WriteResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.firestore.v1beta1.WriteResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The ID of the stream.
    * Only set on the first message, when a new stream was created.
@@ -17,6 +20,8 @@ public interface WriteResponseOrBuilder extends
    */
   java.lang.String getStreamId();
   /**
+   *
+   *
    * <pre>
    * The ID of the stream.
    * Only set on the first message, when a new stream was created.
@@ -24,10 +29,11 @@ public interface WriteResponseOrBuilder extends
    *
    * <code>string stream_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getStreamIdBytes();
+  com.google.protobuf.ByteString getStreamIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * A token that represents the position of this response in the stream.
    * This can be used by a client to resume the stream at this point.
@@ -39,6 +45,8 @@ public interface WriteResponseOrBuilder extends
   com.google.protobuf.ByteString getStreamToken();
 
   /**
+   *
+   *
    * <pre>
    * The result of applying the writes.
    * This i-th write result corresponds to the i-th write in the
@@ -47,9 +55,10 @@ public interface WriteResponseOrBuilder extends
    *
    * <code>repeated .google.firestore.v1beta1.WriteResult write_results = 3;</code>
    */
-  java.util.List<com.google.firestore.v1beta1.WriteResult> 
-      getWriteResultsList();
+  java.util.List<com.google.firestore.v1beta1.WriteResult> getWriteResultsList();
   /**
+   *
+   *
    * <pre>
    * The result of applying the writes.
    * This i-th write result corresponds to the i-th write in the
@@ -60,6 +69,8 @@ public interface WriteResponseOrBuilder extends
    */
   com.google.firestore.v1beta1.WriteResult getWriteResults(int index);
   /**
+   *
+   *
    * <pre>
    * The result of applying the writes.
    * This i-th write result corresponds to the i-th write in the
@@ -70,6 +81,8 @@ public interface WriteResponseOrBuilder extends
    */
   int getWriteResultsCount();
   /**
+   *
+   *
    * <pre>
    * The result of applying the writes.
    * This i-th write result corresponds to the i-th write in the
@@ -78,9 +91,11 @@ public interface WriteResponseOrBuilder extends
    *
    * <code>repeated .google.firestore.v1beta1.WriteResult write_results = 3;</code>
    */
-  java.util.List<? extends com.google.firestore.v1beta1.WriteResultOrBuilder> 
+  java.util.List<? extends com.google.firestore.v1beta1.WriteResultOrBuilder>
       getWriteResultsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The result of applying the writes.
    * This i-th write result corresponds to the i-th write in the
@@ -89,10 +104,11 @@ public interface WriteResponseOrBuilder extends
    *
    * <code>repeated .google.firestore.v1beta1.WriteResult write_results = 3;</code>
    */
-  com.google.firestore.v1beta1.WriteResultOrBuilder getWriteResultsOrBuilder(
-      int index);
+  com.google.firestore.v1beta1.WriteResultOrBuilder getWriteResultsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * The time at which the commit occurred.
    * </pre>
@@ -101,6 +117,8 @@ public interface WriteResponseOrBuilder extends
    */
   boolean hasCommitTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the commit occurred.
    * </pre>
@@ -109,6 +127,8 @@ public interface WriteResponseOrBuilder extends
    */
   com.google.protobuf.Timestamp getCommitTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the commit occurred.
    * </pre>

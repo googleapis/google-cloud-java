@@ -16,11 +16,7 @@
 
 package com.google.cloud.storage;
 
-
 import com.google.cloud.ServiceFactory;
 
-/**
- * An interface for Storage factories.
- */
-public interface StorageFactory extends ServiceFactory<Storage, StorageOptions> {
-}
+/** An interface for Storage factories. */
+public interface StorageFactory extends ServiceFactory<Storage, StorageOptions> {}

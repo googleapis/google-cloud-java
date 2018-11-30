@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.compute.model.Image;
 import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
 
 /**
@@ -34,9 +33,7 @@ public class DiskImageConfiguration extends ImageConfiguration {
   private final DiskId sourceDisk;
   private final String sourceDiskId;
 
-  /**
-   * A builder for {@code DiskImageConfiguration} objects.
-   */
+  /** A builder for {@code DiskImageConfiguration} objects. */
   public static final class Builder
       extends ImageConfiguration.Builder<DiskImageConfiguration, Builder> {
 
@@ -59,9 +56,7 @@ public class DiskImageConfiguration extends ImageConfiguration {
       this.sourceDiskId = imagePb.getSourceDiskId();
     }
 
-    /**
-     * Sets the identity of the source disk used to create the image.
-     */
+    /** Sets the identity of the source disk used to create the image. */
     public Builder setSourceDisk(DiskId sourceDisk) {
       this.sourceDisk = checkNotNull(sourceDisk);
       return this;
@@ -72,9 +67,7 @@ public class DiskImageConfiguration extends ImageConfiguration {
       return this;
     }
 
-    /**
-     * Creates a {@code DiskImageConfiguration} object.
-     */
+    /** Creates a {@code DiskImageConfiguration} object. */
     @Override
     public DiskImageConfiguration build() {
       return new DiskImageConfiguration(this);
@@ -87,9 +80,7 @@ public class DiskImageConfiguration extends ImageConfiguration {
     this.sourceDiskId = builder.sourceDiskId;
   }
 
-  /**
-   * Returns the identity of the source disk used to create this image.
-   */
+  /** Returns the identity of the source disk used to create this image. */
   public DiskId getSourceDisk() {
     return sourceDisk;
   }
@@ -110,9 +101,7 @@ public class DiskImageConfiguration extends ImageConfiguration {
 
   @Override
   MoreObjects.ToStringHelper toStringHelper() {
-    return super.toStringHelper()
-        .add("sourceDisk", sourceDisk)
-        .add("sourceDiskId", sourceDiskId);
+    return super.toStringHelper().add("sourceDisk", sourceDisk).add("sourceDiskId", sourceDiskId);
   }
 
   @Override
@@ -124,8 +113,8 @@ public class DiskImageConfiguration extends ImageConfiguration {
   public final boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(DiskImageConfiguration.class)
-        && baseEquals((DiskImageConfiguration) obj);
+            && obj.getClass().equals(DiskImageConfiguration.class)
+            && baseEquals((DiskImageConfiguration) obj);
   }
 
   @Override
@@ -144,16 +133,12 @@ public class DiskImageConfiguration extends ImageConfiguration {
     return imagePb;
   }
 
-  /**
-   * Creates a builder for a {@code DiskImageConfiguration} given the source disk identity.
-   */
+  /** Creates a builder for a {@code DiskImageConfiguration} given the source disk identity. */
   public static Builder newBuilder(DiskId sourceDisk) {
     return new Builder().setSourceDisk(sourceDisk);
   }
 
-  /**
-   * Creates a {@code DiskImageConfiguration} object given the source disk identity.
-   */
+  /** Creates a {@code DiskImageConfiguration} object given the source disk identity. */
   public static DiskImageConfiguration of(DiskId sourceId) {
     return newBuilder(sourceId).build();
   }

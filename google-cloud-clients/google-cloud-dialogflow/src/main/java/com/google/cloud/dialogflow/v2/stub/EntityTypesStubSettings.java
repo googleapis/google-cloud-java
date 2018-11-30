@@ -343,7 +343,9 @@ public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSetting
 
             @Override
             public Iterable<EntityType> extractResources(ListEntityTypesResponse payload) {
-              return payload.getEntityTypesList();
+              return payload.getEntityTypesList() != null
+                  ? payload.getEntityTypesList()
+                  : ImmutableList.<EntityType>of();
             }
           };
 

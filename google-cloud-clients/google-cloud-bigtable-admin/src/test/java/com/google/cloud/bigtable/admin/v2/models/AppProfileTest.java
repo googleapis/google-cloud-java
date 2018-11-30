@@ -34,9 +34,7 @@ public class AppProfileTest {
               SingleClusterRouting.newBuilder()
                   .setClusterId("my-cluster")
                   .setAllowTransactionalWrites(true)
-                  .build()
-
-          )
+                  .build())
           .setEtag("my-etag")
           .build();
 
@@ -55,10 +53,7 @@ public class AppProfileTest {
     Exception actualException = null;
 
     try {
-      AppProfile.fromProto(
-          TEST_PROTO.toBuilder()
-              .setName("")
-              .build());
+      AppProfile.fromProto(TEST_PROTO.toBuilder().setName("").build());
     } catch (Exception e) {
       actualException = e;
     }
@@ -71,10 +66,7 @@ public class AppProfileTest {
     Exception actualException = null;
 
     try {
-      AppProfile.fromProto(
-          TEST_PROTO.toBuilder()
-              .clearSingleClusterRouting()
-              .build());
+      AppProfile.fromProto(TEST_PROTO.toBuilder().clearSingleClusterRouting().build());
     } catch (Exception e) {
       actualException = e;
     }

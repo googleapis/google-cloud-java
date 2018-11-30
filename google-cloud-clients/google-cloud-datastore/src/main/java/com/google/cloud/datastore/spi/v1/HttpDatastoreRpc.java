@@ -43,8 +43,8 @@ public class HttpDatastoreRpc implements DatastoreRpc {
   private final com.google.datastore.v1.client.Datastore client;
 
   public HttpDatastoreRpc(DatastoreOptions options) {
-    HttpTransportOptions httpTransportOptions = (HttpTransportOptions) options
-        .getTransportOptions();
+    HttpTransportOptions httpTransportOptions =
+        (HttpTransportOptions) options.getTransportOptions();
     HttpTransport transport = httpTransportOptions.getHttpTransportFactory().create();
     com.google.datastore.v1.client.DatastoreOptions.Builder clientBuilder =
         new com.google.datastore.v1.client.DatastoreOptions.Builder()
@@ -55,26 +55,25 @@ public class HttpDatastoreRpc implements DatastoreRpc {
     if (isLocalHost(normalizedHost)) {
       clientBuilder = clientBuilder.localHost(removeScheme(normalizedHost));
     } else if (!removeScheme(com.google.datastore.v1.client.DatastoreFactory.DEFAULT_HOST)
-                    .equals(removeScheme(normalizedHost))
+            .equals(removeScheme(normalizedHost))
         && !normalizedHost.isEmpty()) {
       String fullUrl = normalizedHost;
       if (fullUrl.charAt(fullUrl.length() - 1) != '/') {
         fullUrl = fullUrl + '/';
       }
-      fullUrl = fullUrl
-          + com.google.datastore.v1.client.DatastoreFactory.VERSION
-          + "/projects/"
-          + options.getProjectId();
+      fullUrl =
+          fullUrl
+              + com.google.datastore.v1.client.DatastoreFactory.VERSION
+              + "/projects/"
+              + options.getProjectId();
       clientBuilder = clientBuilder.projectId(null).projectEndpoint(fullUrl);
     }
-    client = com.google.datastore.v1.client.DatastoreFactory.get()
-        .create(clientBuilder.build());
+    client = com.google.datastore.v1.client.DatastoreFactory.get().create(clientBuilder.build());
   }
 
-  private HttpRequestInitializer getHttpRequestInitializer(final DatastoreOptions options,
-      HttpTransportOptions httpTransportOptions) {
-    final HttpRequestInitializer delegate = httpTransportOptions
-        .getHttpRequestInitializer(options);
+  private HttpRequestInitializer getHttpRequestInitializer(
+      final DatastoreOptions options, HttpTransportOptions httpTransportOptions) {
+    final HttpRequestInitializer delegate = httpTransportOptions.getHttpRequestInitializer(options);
     final String applicationName = options.getApplicationName();
     return new HttpRequestInitializer() {
       @Override

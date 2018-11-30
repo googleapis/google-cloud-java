@@ -75,8 +75,11 @@ public class SessionImplTest {
     DatabaseId db = DatabaseId.of(dbName);
 
     Session sessionProto = Session.newBuilder().setName(sessionName).build();
-    Mockito.when(rpc.createSession(Mockito.eq(dbName),
-    		Mockito.anyMapOf(String.class, String.class), optionsCaptor.capture()))
+    Mockito.when(
+            rpc.createSession(
+                Mockito.eq(dbName),
+                Mockito.anyMapOf(String.class, String.class),
+                optionsCaptor.capture()))
         .thenReturn(sessionProto);
     session = spanner.createSession(db);
     // We expect the same options, "options", on all calls on "session".

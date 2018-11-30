@@ -3,11 +3,14 @@
 
 package com.google.cloud.texttospeech.v1;
 
-public interface SynthesizeSpeechResponseOrBuilder extends
+public interface SynthesizeSpeechResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.texttospeech.v1.SynthesizeSpeechResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The audio data bytes encoded as specified in the request, including the
    * header (For LINEAR16 audio, we include the WAV header). Note: as

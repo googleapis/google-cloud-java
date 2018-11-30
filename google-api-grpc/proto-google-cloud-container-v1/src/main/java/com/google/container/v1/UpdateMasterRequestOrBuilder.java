@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface UpdateMasterRequestOrBuilder extends
+public interface UpdateMasterRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.UpdateMasterRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
@@ -16,8 +19,11 @@ public interface UpdateMasterRequestOrBuilder extends
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getProjectId();
+  @java.lang.Deprecated
+  java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
@@ -26,10 +32,12 @@ public interface UpdateMasterRequestOrBuilder extends
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getProjectIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
@@ -39,8 +47,11 @@ public interface UpdateMasterRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getZone();
+  @java.lang.Deprecated
+  java.lang.String getZone();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
@@ -50,10 +61,12 @@ public interface UpdateMasterRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getZoneBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getZoneBytes();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
@@ -61,8 +74,11 @@ public interface UpdateMasterRequestOrBuilder extends
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getClusterId();
+  @java.lang.Deprecated
+  java.lang.String getClusterId();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the cluster to upgrade.
    * This field has been deprecated and replaced by the name field.
@@ -70,10 +86,12 @@ public interface UpdateMasterRequestOrBuilder extends
    *
    * <code>string cluster_id = 3 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getClusterIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getClusterIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The Kubernetes version to change the master to.
    * Users may specify either explicit versions offered by Kubernetes Engine or
@@ -89,6 +107,8 @@ public interface UpdateMasterRequestOrBuilder extends
    */
   java.lang.String getMasterVersion();
   /**
+   *
+   *
    * <pre>
    * The Kubernetes version to change the master to.
    * Users may specify either explicit versions offered by Kubernetes Engine or
@@ -102,10 +122,11 @@ public interface UpdateMasterRequestOrBuilder extends
    *
    * <code>string master_version = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getMasterVersionBytes();
+  com.google.protobuf.ByteString getMasterVersionBytes();
 
   /**
+   *
+   *
    * <pre>
    * The name (project, location, cluster) of the cluster to update.
    * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
@@ -115,6 +136,8 @@ public interface UpdateMasterRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name (project, location, cluster) of the cluster to update.
    * Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
@@ -122,6 +145,5 @@ public interface UpdateMasterRequestOrBuilder extends
    *
    * <code>string name = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

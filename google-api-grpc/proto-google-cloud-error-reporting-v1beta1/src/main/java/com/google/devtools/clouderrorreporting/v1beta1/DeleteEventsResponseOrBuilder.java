@@ -3,7 +3,7 @@
 
 package com.google.devtools.clouderrorreporting.v1beta1;
 
-public interface DeleteEventsResponseOrBuilder extends
+public interface DeleteEventsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse)
-    com.google.protobuf.MessageOrBuilder {
-}
+    com.google.protobuf.MessageOrBuilder {}

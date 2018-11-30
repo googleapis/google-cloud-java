@@ -73,8 +73,9 @@ import org.threeten.bp.Duration;
  * @param <ServiceT> the service subclass
  * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
  */
-public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
-    OptionsT extends ServiceOptions<ServiceT, OptionsT>> implements Serializable {
+public abstract class ServiceOptions<
+        ServiceT extends Service<OptionsT>, OptionsT extends ServiceOptions<ServiceT, OptionsT>>
+    implements Serializable {
 
   public static final String CREDENTIAL_ENV_NAME = "GOOGLE_APPLICATION_CREDENTIALS";
 
@@ -82,10 +83,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   private static final String LEGACY_PROJECT_ENV_NAME = "GCLOUD_PROJECT";
   private static final String PROJECT_ENV_NAME = "GOOGLE_CLOUD_PROJECT";
 
-  private static final RetrySettings DEFAULT_RETRY_SETTINGS = getDefaultRetrySettingsBuilder()
-      .build();
-  private static final RetrySettings NO_RETRY_SETTINGS = getDefaultRetrySettingsBuilder()
-      .setMaxAttempts(1).build();
+  private static final RetrySettings DEFAULT_RETRY_SETTINGS =
+      getDefaultRetrySettingsBuilder().build();
+  private static final RetrySettings NO_RETRY_SETTINGS =
+      getDefaultRetrySettingsBuilder().setMaxAttempts(1).build();
 
   private static final long serialVersionUID = 9198896031667942014L;
 
@@ -111,7 +112,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
    * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
    * @param <B> the {@code ServiceOptions} builder
    */
-  public abstract static class Builder<ServiceT extends Service<OptionsT>,
+  public abstract static class Builder<
+      ServiceT extends Service<OptionsT>,
       OptionsT extends ServiceOptions<ServiceT, OptionsT>,
       B extends Builder<ServiceT, OptionsT, B>> {
 
@@ -147,19 +149,15 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
       return (B) this;
     }
 
-
-    /**
-     * Sets the service factory.
-     */
+    /** Sets the service factory. */
     public B setServiceFactory(ServiceFactory<ServiceT, OptionsT> serviceFactory) {
       this.serviceFactory = serviceFactory;
       return self();
     }
 
-
     /**
-     * Sets the service's clock. The clock is mainly used for testing purpose. {@link ApiClock}
-     * will be replaced by Java8's {@code java.time.Clock}.
+     * Sets the service's clock. The clock is mainly used for testing purpose. {@link ApiClock} will
+     * be replaced by Java8's {@code java.time.Clock}.
      *
      * @param clock the clock to set
      * @return the builder
@@ -168,7 +166,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
       this.clock = clock;
       return self();
     }
-
 
     /**
      * Sets the project ID. If no project ID is set, {@link #getDefaultProjectId()} will be used to
@@ -181,7 +178,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
       return self();
     }
 
-
     /**
      * Sets service host.
      *
@@ -193,26 +189,24 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     }
 
     /**
-     * Sets the service authentication credentials. If no credentials are set,
-     * {@link GoogleCredentials#getApplicationDefault()} will be used to attempt getting credentials
-     * from the environment. Use {@link NoCredentials#getInstance()} to skip authentication, this is
+     * Sets the service authentication credentials. If no credentials are set, {@link
+     * GoogleCredentials#getApplicationDefault()} will be used to attempt getting credentials from
+     * the environment. Use {@link NoCredentials#getInstance()} to skip authentication, this is
      * typically useful when using local service emulators.
      *
      * @param credentials authentication credentials, should not be {@code null}
      * @return the builder
      * @throws NullPointerException if {@code credentials} is {@code null}. To disable
-     * authentication use {@link NoCredentials#getInstance()}
+     *     authentication use {@link NoCredentials#getInstance()}
      */
     public B setCredentials(Credentials credentials) {
       this.credentials = checkNotNull(credentials);
       // set project id if available
-      if (this.projectId == null &&
-          credentials instanceof ServiceAccountCredentials) {
+      if (this.projectId == null && credentials instanceof ServiceAccountCredentials) {
         this.projectId = ((ServiceAccountCredentials) credentials).getProjectId();
       }
       return self();
     }
-
 
     /**
      * Sets configuration parameters for request retries.
@@ -223,7 +217,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
       this.retrySettings = retrySettings;
       return self();
     }
-
 
     /**
      * Sets the factory for rpc services.
@@ -263,7 +256,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   }
 
   @InternalApi("This class should only be extended within google-cloud-java")
-  protected ServiceOptions(Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
+  protected ServiceOptions(
+      Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
       Class<? extends ServiceRpcFactory<OptionsT>> rpcFactoryClass,
       Builder<ServiceT, OptionsT, ?> builder,
       ServiceDefaults<ServiceT, OptionsT> serviceDefaults) {
@@ -277,15 +271,19 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     host = firstNonNull(builder.host, getDefaultHost());
     credentials = builder.credentials != null ? builder.credentials : defaultCredentials();
     retrySettings = firstNonNull(builder.retrySettings, getDefaultRetrySettings());
-    serviceFactory = firstNonNull(builder.serviceFactory,
-        getFromServiceLoader(serviceFactoryClass, serviceDefaults.getDefaultServiceFactory()));
+    serviceFactory =
+        firstNonNull(
+            builder.serviceFactory,
+            getFromServiceLoader(serviceFactoryClass, serviceDefaults.getDefaultServiceFactory()));
     serviceFactoryClassName = serviceFactory.getClass().getName();
-    serviceRpcFactory = firstNonNull(builder.serviceRpcFactory,
-        getFromServiceLoader(rpcFactoryClass, serviceDefaults.getDefaultRpcFactory()));
+    serviceRpcFactory =
+        firstNonNull(
+            builder.serviceRpcFactory,
+            getFromServiceLoader(rpcFactoryClass, serviceDefaults.getDefaultRpcFactory()));
     serviceRpcFactoryClassName = serviceRpcFactory.getClass().getName();
     clock = firstNonNull(builder.clock, CurrentMillisClock.getDefaultClock());
-    transportOptions = firstNonNull(builder.transportOptions,
-        serviceDefaults.getDefaultTransportOptions());
+    transportOptions =
+        firstNonNull(builder.transportOptions, serviceDefaults.getDefaultTransportOptions());
     headerProvider = firstNonNull(builder.headerProvider, new NoHeaderProvider());
   }
 
@@ -307,11 +305,9 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     }
   }
 
-
   protected String getDefaultHost() {
     return DEFAULT_HOST;
   }
-
 
   protected String getDefaultProject() {
     return getDefaultProjectId();
@@ -320,11 +316,12 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   /**
    * Returns the default project ID, or {@code null} if no default project ID could be found. This
    * method returns the first available project ID among the following sources:
+   *
    * <ol>
    *   <li>The project ID specified by the GOOGLE_CLOUD_PROJECT environment variable
    *   <li>The App Engine project ID
-   *   <li>The project ID specified in the JSON credentials file pointed by the
-   *   {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable
+   *   <li>The project ID specified in the JSON credentials file pointed by the {@code
+   *       GOOGLE_APPLICATION_CREDENTIALS} environment variable
    *   <li>The Google Cloud SDK project ID
    *   <li>The Compute Engine project ID
    * </ol>
@@ -418,7 +415,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     if (PlatformInformation.isOnGAEStandard7()) {
       projectId = getAppEngineProjectIdFromAppId();
     } else {
-      //for GAE flex and standard Java 8 environment
+      // for GAE flex and standard Java 8 environment
       projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
       if (projectId == null) {
         projectId = System.getenv("GCLOUD_PROJECT");
@@ -453,7 +450,9 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
 
     HttpTransport netHttpTransport = new NetHttpTransport();
     HttpRequestFactory requestFactory = netHttpTransport.createRequestFactory();
-    HttpRequest request = requestFactory.buildGetRequest(url)
+    HttpRequest request =
+        requestFactory
+            .buildGetRequest(url)
             .setConnectTimeout(500)
             .setReadTimeout(500)
             .setHeaders(new HttpHeaders().set("Metadata-Flavor", "Google"));
@@ -478,8 +477,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
       try (InputStream credentialsStream = new FileInputStream(credentialsPath)) {
         JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
         JsonObjectParser parser = new JsonObjectParser(jsonFactory);
-        GenericJson fileContents = parser.parseAndClose(
-            credentialsStream, Charsets.UTF_8, GenericJson.class);
+        GenericJson fileContents =
+            parser.parseAndClose(credentialsStream, Charsets.UTF_8, GenericJson.class);
         project = (String) fileContents.get("project_id");
       } catch (IOException e) {
         // ignore
@@ -487,7 +486,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     }
     return project;
   }
-
 
   /**
    * Returns a Service object for the current service. For instance, when using Google Cloud
@@ -501,7 +499,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     return service;
   }
 
-
   /**
    * Returns a Service RPC object for the current service. For instance, when using Google Cloud
    * Storage, it returns a StorageRpc object.
@@ -514,7 +511,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     return rpc;
   }
 
-
   /**
    * Returns the project ID. Return value can be null (for services that don't require a project
    * ID).
@@ -523,24 +519,17 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     return projectId;
   }
 
-
-  /**
-   * Returns the service host.
-   */
+  /** Returns the service host. */
   public String getHost() {
     return host;
   }
 
-  /**
-   * Returns the authentication credentials.
-   */
+  /** Returns the authentication credentials. */
   public Credentials getCredentials() {
     return credentials;
   }
 
-  /**
-   * Returns the authentication credentials. If required, credentials are scoped.
-   */
+  /** Returns the authentication credentials. If required, credentials are scoped. */
   public Credentials getScopedCredentials() {
     Credentials credentialsToReturn = credentials;
     if (credentials instanceof GoogleCredentials
@@ -550,14 +539,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     return credentialsToReturn;
   }
 
-
-  /**
-   * Returns configuration parameters for request retries.
-   */
+  /** Returns configuration parameters for request retries. */
   public RetrySettings getRetrySettings() {
     return retrySettings;
   }
-
 
   /**
    * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to get
@@ -567,9 +552,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     return clock;
   }
 
-  /**
-   * Returns the transport-specific options for this service.
-   */
+  /** Returns the transport-specific options for this service. */
   public TransportOptions getTransportOptions() {
     return transportOptions;
   }
@@ -599,23 +582,17 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
     return sb.toString();
   }
 
-  /**
-   * Returns the library's name, {@code gcloud-java}, as a string.
-   */
+  /** Returns the library's name, {@code gcloud-java}, as a string. */
   public static String getLibraryName() {
     return "gcloud-java";
   }
 
-  /**
-   * Returns the library's name used by x-goog-api-client header as a string.
-   */
+  /** Returns the library's name used by x-goog-api-client header as a string. */
   public static String getGoogApiClientLibName() {
     return "gccl";
   }
 
-  /**
-   * Returns the library's version as a string.
-   */
+  /** Returns the library's version as a string. */
   public String getLibraryVersion() {
     return GaxProperties.getLibraryVersion(this.getClass());
   }
@@ -643,8 +620,14 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>,
   }
 
   protected int baseHashCode() {
-    return Objects.hash(projectId, host, credentials, retrySettings, serviceFactoryClassName,
-        serviceRpcFactoryClassName, clock);
+    return Objects.hash(
+        projectId,
+        host,
+        credentials,
+        retrySettings,
+        serviceFactoryClassName,
+        serviceRpcFactoryClassName,
+        clock);
   }
 
   protected boolean baseEquals(ServiceOptions<?, ?> other) {

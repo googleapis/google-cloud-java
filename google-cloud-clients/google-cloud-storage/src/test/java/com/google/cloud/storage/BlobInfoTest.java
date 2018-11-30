@@ -30,18 +30,17 @@ import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.BlobInfo.CustomerEncryption;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
-import org.junit.Test;
-
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
+import org.junit.Test;
 
 public class BlobInfoTest {
 
-  private static final List<Acl> ACL = ImmutableList.of(
-      Acl.of(User.ofAllAuthenticatedUsers(), READER),
-      Acl.of(new Project(VIEWERS, "p1"), WRITER));
+  private static final List<Acl> ACL =
+      ImmutableList.of(
+          Acl.of(User.ofAllAuthenticatedUsers(), READER),
+          Acl.of(new Project(VIEWERS, "p1"), WRITER));
   private static final Integer COMPONENT_COUNT = 2;
   private static final String CONTENT_TYPE = "text/html";
   private static final String CACHE_CONTROL = "cache";
@@ -66,44 +65,44 @@ public class BlobInfoTest {
   private static final String KEY_SHA256 = "keySha";
   private static final CustomerEncryption CUSTOMER_ENCRYPTION =
       new CustomerEncryption(ENCRYPTION_ALGORITHM, KEY_SHA256);
-  private static final String KMS_KEY_NAME = "projects/p/locations/kr-loc/keyRings/kr/cryptoKeys/key";
+  private static final String KMS_KEY_NAME =
+      "projects/p/locations/kr-loc/keyRings/kr/cryptoKeys/key";
   private static final StorageClass STORAGE_CLASS = StorageClass.COLDLINE;
   private static final Boolean EVENT_BASED_HOLD = true;
   private static final Boolean TEMPORARY_HOLD = true;
   private static final Long RETENTION_EXPIRATION_TIME = 10L;
 
-  private static final BlobInfo BLOB_INFO = BlobInfo.newBuilder("b", "n", GENERATION)
-      .setAcl(ACL)
-      .setComponentCount(COMPONENT_COUNT)
-      .setContentType(CONTENT_TYPE)
-      .setCacheControl(CACHE_CONTROL)
-      .setContentDisposition(CONTENT_DISPOSITION)
-      .setContentEncoding(CONTENT_ENCODING)
-      .setContentLanguage(CONTENT_LANGUAGE)
-      .setCustomerEncryption(CUSTOMER_ENCRYPTION)
-      .setCrc32c(CRC32)
-      .setDeleteTime(DELETE_TIME)
-      .setEtag(ETAG)
-      .setGeneratedId(GENERATED_ID)
-      .setMd5(MD5)
-      .setMediaLink(MEDIA_LINK)
-      .setMetadata(METADATA)
-      .setMetageneration(META_GENERATION)
-      .setOwner(OWNER)
-      .setSelfLink(SELF_LINK)
-      .setSize(SIZE)
-      .setUpdateTime(UPDATE_TIME)
-      .setCreateTime(CREATE_TIME)
-      .setStorageClass(STORAGE_CLASS)
-      .setKmsKeyName(KMS_KEY_NAME)
-      .setEventBasedHold(EVENT_BASED_HOLD)
-      .setTemporaryHold(TEMPORARY_HOLD)
-      .setRetentionExpirationTime(RETENTION_EXPIRATION_TIME)
-      .build();
-  private static final BlobInfo DIRECTORY_INFO = BlobInfo.newBuilder("b", "n/")
-      .setSize(0L)
-      .setIsDirectory(true)
-      .build();
+  private static final BlobInfo BLOB_INFO =
+      BlobInfo.newBuilder("b", "n", GENERATION)
+          .setAcl(ACL)
+          .setComponentCount(COMPONENT_COUNT)
+          .setContentType(CONTENT_TYPE)
+          .setCacheControl(CACHE_CONTROL)
+          .setContentDisposition(CONTENT_DISPOSITION)
+          .setContentEncoding(CONTENT_ENCODING)
+          .setContentLanguage(CONTENT_LANGUAGE)
+          .setCustomerEncryption(CUSTOMER_ENCRYPTION)
+          .setCrc32c(CRC32)
+          .setDeleteTime(DELETE_TIME)
+          .setEtag(ETAG)
+          .setGeneratedId(GENERATED_ID)
+          .setMd5(MD5)
+          .setMediaLink(MEDIA_LINK)
+          .setMetadata(METADATA)
+          .setMetageneration(META_GENERATION)
+          .setOwner(OWNER)
+          .setSelfLink(SELF_LINK)
+          .setSize(SIZE)
+          .setUpdateTime(UPDATE_TIME)
+          .setCreateTime(CREATE_TIME)
+          .setStorageClass(STORAGE_CLASS)
+          .setKmsKeyName(KMS_KEY_NAME)
+          .setEventBasedHold(EVENT_BASED_HOLD)
+          .setTemporaryHold(TEMPORARY_HOLD)
+          .setRetentionExpirationTime(RETENTION_EXPIRATION_TIME)
+          .build();
+  private static final BlobInfo DIRECTORY_INFO =
+      BlobInfo.newBuilder("b", "n/").setSize(0L).setIsDirectory(true).build();
 
   @Test
   public void testCustomerEncryption() {
@@ -114,17 +113,13 @@ public class BlobInfoTest {
   @Test
   public void testToBuilder() {
     compareBlobs(BLOB_INFO, BLOB_INFO.toBuilder().build());
-    BlobInfo blobInfo = BLOB_INFO.toBuilder()
-        .setBlobId(BlobId.of("b2", "n2"))
-        .setSize(200L)
-        .build();
+    BlobInfo blobInfo =
+        BLOB_INFO.toBuilder().setBlobId(BlobId.of("b2", "n2")).setSize(200L).build();
     assertEquals("n2", blobInfo.getName());
     assertEquals("b2", blobInfo.getBucket());
     assertEquals(Long.valueOf(200), blobInfo.getSize());
-    blobInfo = blobInfo.toBuilder()
-        .setBlobId(BlobId.of("b", "n", GENERATION))
-        .setSize(SIZE)
-        .build();
+    blobInfo =
+        blobInfo.toBuilder().setBlobId(BlobId.of("b", "n", GENERATION)).setSize(SIZE).build();
     compareBlobs(BLOB_INFO, blobInfo);
   }
 
@@ -235,16 +230,17 @@ public class BlobInfoTest {
 
   @Test
   public void testToPbAndFromPb() {
-    compareCustomerEncryptions(CUSTOMER_ENCRYPTION,
-        CustomerEncryption.fromPb(CUSTOMER_ENCRYPTION.toPb()));
+    compareCustomerEncryptions(
+        CUSTOMER_ENCRYPTION, CustomerEncryption.fromPb(CUSTOMER_ENCRYPTION.toPb()));
     compareBlobs(BLOB_INFO, BlobInfo.fromPb(BLOB_INFO.toPb()));
     BlobInfo blobInfo = BlobInfo.newBuilder(BlobId.of("b", "n")).build();
     compareBlobs(blobInfo, BlobInfo.fromPb(blobInfo.toPb()));
-    StorageObject object = new StorageObject()
-        .setName("n/")
-        .setBucket("b")
-        .setSize(BigInteger.ZERO)
-        .set("isDirectory", true);
+    StorageObject object =
+        new StorageObject()
+            .setName("n/")
+            .setBucket("b")
+            .setSize(BigInteger.ZERO)
+            .set("isDirectory", true);
     blobInfo = BlobInfo.fromPb(object);
     assertEquals("b", blobInfo.getBucket());
     assertEquals("n/", blobInfo.getName());

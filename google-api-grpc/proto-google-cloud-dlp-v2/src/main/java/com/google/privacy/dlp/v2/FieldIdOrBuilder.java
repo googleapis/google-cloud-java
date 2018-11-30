@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface FieldIdOrBuilder extends
+public interface FieldIdOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.FieldId)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Name describing the field.
    * </pre>
@@ -16,12 +19,13 @@ public interface FieldIdOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Name describing the field.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

@@ -3,11 +3,14 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-public interface TransferRunOrBuilder extends
+public interface TransferRunOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.datatransfer.v1.TransferRun)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resource name of the transfer run.
    * Transfer run names have the form
@@ -19,6 +22,8 @@ public interface TransferRunOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The resource name of the transfer run.
    * Transfer run names have the form
@@ -28,10 +33,11 @@ public interface TransferRunOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Minimum time after which a transfer run can be started.
    * </pre>
@@ -40,6 +46,8 @@ public interface TransferRunOrBuilder extends
    */
   boolean hasScheduleTime();
   /**
+   *
+   *
    * <pre>
    * Minimum time after which a transfer run can be started.
    * </pre>
@@ -48,6 +56,8 @@ public interface TransferRunOrBuilder extends
    */
   com.google.protobuf.Timestamp getScheduleTime();
   /**
+   *
+   *
    * <pre>
    * Minimum time after which a transfer run can be started.
    * </pre>
@@ -57,6 +67,8 @@ public interface TransferRunOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getScheduleTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * For batch transfer runs, specifies the date and time that
    * data should be ingested.
@@ -66,6 +78,8 @@ public interface TransferRunOrBuilder extends
    */
   boolean hasRunTime();
   /**
+   *
+   *
    * <pre>
    * For batch transfer runs, specifies the date and time that
    * data should be ingested.
@@ -75,6 +89,8 @@ public interface TransferRunOrBuilder extends
    */
   com.google.protobuf.Timestamp getRunTime();
   /**
+   *
+   *
    * <pre>
    * For batch transfer runs, specifies the date and time that
    * data should be ingested.
@@ -85,6 +101,8 @@ public interface TransferRunOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getRunTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Status of the transfer run.
    * </pre>
@@ -93,6 +111,8 @@ public interface TransferRunOrBuilder extends
    */
   boolean hasErrorStatus();
   /**
+   *
+   *
    * <pre>
    * Status of the transfer run.
    * </pre>
@@ -101,6 +121,8 @@ public interface TransferRunOrBuilder extends
    */
   com.google.rpc.Status getErrorStatus();
   /**
+   *
+   *
    * <pre>
    * Status of the transfer run.
    * </pre>
@@ -110,6 +132,8 @@ public interface TransferRunOrBuilder extends
   com.google.rpc.StatusOrBuilder getErrorStatusOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Time when transfer run was started.
    * Parameter ignored by server for input requests.
@@ -119,6 +143,8 @@ public interface TransferRunOrBuilder extends
    */
   boolean hasStartTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Time when transfer run was started.
    * Parameter ignored by server for input requests.
@@ -128,6 +154,8 @@ public interface TransferRunOrBuilder extends
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Time when transfer run was started.
    * Parameter ignored by server for input requests.
@@ -138,6 +166,8 @@ public interface TransferRunOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Time when transfer run ended.
    * Parameter ignored by server for input requests.
@@ -147,6 +177,8 @@ public interface TransferRunOrBuilder extends
    */
   boolean hasEndTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Time when transfer run ended.
    * Parameter ignored by server for input requests.
@@ -156,6 +188,8 @@ public interface TransferRunOrBuilder extends
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Time when transfer run ended.
    * Parameter ignored by server for input requests.
@@ -166,6 +200,8 @@ public interface TransferRunOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Last time the data transfer run state was updated.
    * </pre>
@@ -174,6 +210,8 @@ public interface TransferRunOrBuilder extends
    */
   boolean hasUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Last time the data transfer run state was updated.
    * </pre>
@@ -182,6 +220,8 @@ public interface TransferRunOrBuilder extends
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Last time the data transfer run state was updated.
    * </pre>
@@ -191,6 +231,8 @@ public interface TransferRunOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Data transfer specific parameters.
    * </pre>
@@ -199,6 +241,8 @@ public interface TransferRunOrBuilder extends
    */
   boolean hasParams();
   /**
+   *
+   *
    * <pre>
    * Output only. Data transfer specific parameters.
    * </pre>
@@ -207,6 +251,8 @@ public interface TransferRunOrBuilder extends
    */
   com.google.protobuf.Struct getParams();
   /**
+   *
+   *
    * <pre>
    * Output only. Data transfer specific parameters.
    * </pre>
@@ -216,6 +262,8 @@ public interface TransferRunOrBuilder extends
   com.google.protobuf.StructOrBuilder getParamsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The BigQuery target dataset id.
    * </pre>
@@ -224,16 +272,19 @@ public interface TransferRunOrBuilder extends
    */
   java.lang.String getDestinationDatasetId();
   /**
+   *
+   *
    * <pre>
    * Output only. The BigQuery target dataset id.
    * </pre>
    *
    * <code>string destination_dataset_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDestinationDatasetIdBytes();
+  com.google.protobuf.ByteString getDestinationDatasetIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Data source id.
    * </pre>
@@ -242,16 +293,19 @@ public interface TransferRunOrBuilder extends
    */
   java.lang.String getDataSourceId();
   /**
+   *
+   *
    * <pre>
    * Output only. Data source id.
    * </pre>
    *
    * <code>string data_source_id = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getDataSourceIdBytes();
+  com.google.protobuf.ByteString getDataSourceIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Data transfer run state. Ignored for input requests.
    * </pre>
@@ -260,6 +314,8 @@ public interface TransferRunOrBuilder extends
    */
   int getStateValue();
   /**
+   *
+   *
    * <pre>
    * Data transfer run state. Ignored for input requests.
    * </pre>
@@ -269,6 +325,8 @@ public interface TransferRunOrBuilder extends
   com.google.cloud.bigquery.datatransfer.v1.TransferState getState();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Unique ID of the user on whose behalf transfer is done.
    * Applicable only to data sources that do not support service accounts.
@@ -282,6 +340,8 @@ public interface TransferRunOrBuilder extends
   long getUserId();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Describes the schedule of this transfer run if it was
    * created as part of a regular schedule. For batch transfer runs that are
@@ -294,6 +354,8 @@ public interface TransferRunOrBuilder extends
    */
   java.lang.String getSchedule();
   /**
+   *
+   *
    * <pre>
    * Output only. Describes the schedule of this transfer run if it was
    * created as part of a regular schedule. For batch transfer runs that are
@@ -304,6 +366,5 @@ public interface TransferRunOrBuilder extends
    *
    * <code>string schedule = 12;</code>
    */
-  com.google.protobuf.ByteString
-      getScheduleBytes();
+  com.google.protobuf.ByteString getScheduleBytes();
 }

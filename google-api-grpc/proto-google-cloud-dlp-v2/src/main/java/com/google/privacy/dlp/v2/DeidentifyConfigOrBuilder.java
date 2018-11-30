@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface DeidentifyConfigOrBuilder extends
+public interface DeidentifyConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DeidentifyConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Treat the dataset as free-form text and apply the same free text
    * transformation everywhere.
@@ -17,6 +20,8 @@ public interface DeidentifyConfigOrBuilder extends
    */
   boolean hasInfoTypeTransformations();
   /**
+   *
+   *
    * <pre>
    * Treat the dataset as free-form text and apply the same free text
    * transformation everywhere.
@@ -26,6 +31,8 @@ public interface DeidentifyConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.InfoTypeTransformations getInfoTypeTransformations();
   /**
+   *
+   *
    * <pre>
    * Treat the dataset as free-form text and apply the same free text
    * transformation everywhere.
@@ -36,6 +43,8 @@ public interface DeidentifyConfigOrBuilder extends
   com.google.privacy.dlp.v2.InfoTypeTransformationsOrBuilder getInfoTypeTransformationsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Treat the dataset as structured. Transformations can be applied to
    * specific locations within structured datasets, such as transforming
@@ -46,6 +55,8 @@ public interface DeidentifyConfigOrBuilder extends
    */
   boolean hasRecordTransformations();
   /**
+   *
+   *
    * <pre>
    * Treat the dataset as structured. Transformations can be applied to
    * specific locations within structured datasets, such as transforming
@@ -56,6 +67,8 @@ public interface DeidentifyConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.RecordTransformations getRecordTransformations();
   /**
+   *
+   *
    * <pre>
    * Treat the dataset as structured. Transformations can be applied to
    * specific locations within structured datasets, such as transforming

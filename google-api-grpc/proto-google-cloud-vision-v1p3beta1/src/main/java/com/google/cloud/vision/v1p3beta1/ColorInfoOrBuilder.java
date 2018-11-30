@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface ColorInfoOrBuilder extends
+public interface ColorInfoOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.ColorInfo)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * RGB components of the color.
    * </pre>
@@ -16,6 +19,8 @@ public interface ColorInfoOrBuilder extends
    */
   boolean hasColor();
   /**
+   *
+   *
    * <pre>
    * RGB components of the color.
    * </pre>
@@ -24,6 +29,8 @@ public interface ColorInfoOrBuilder extends
    */
   com.google.type.Color getColor();
   /**
+   *
+   *
    * <pre>
    * RGB components of the color.
    * </pre>
@@ -33,6 +40,8 @@ public interface ColorInfoOrBuilder extends
   com.google.type.ColorOrBuilder getColorOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Image-specific score for this color. Value in range [0, 1].
    * </pre>
@@ -42,6 +51,8 @@ public interface ColorInfoOrBuilder extends
   float getScore();
 
   /**
+   *
+   *
    * <pre>
    * The fraction of pixels the color occupies in the image.
    * Value in range [0, 1].

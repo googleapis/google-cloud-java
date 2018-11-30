@@ -14,13 +14,12 @@
 
 package com.google.logging.v2;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +55,11 @@ public class OrganizationExclusionName extends ExclusionName {
   }
 
   public static OrganizationExclusionName of(String organization, String exclusion) {
-    return newBuilder()
-      .setOrganization(organization)
-      .setExclusion(exclusion)
-      .build();
+    return newBuilder().setOrganization(organization).setExclusion(exclusion).build();
   }
 
   public static String format(String organization, String exclusion) {
-    return newBuilder()
-      .setOrganization(organization)
-      .setExclusion(exclusion)
-      .build()
-      .toString();
+    return newBuilder().setOrganization(organization).setExclusion(exclusion).build().toString();
   }
 
   public static OrganizationExclusionName parse(String formattedString) {
@@ -75,7 +67,9 @@ public class OrganizationExclusionName extends ExclusionName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "OrganizationExclusionName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "OrganizationExclusionName.parse: formattedString not in valid format");
     return of(matchMap.get("organization"), matchMap.get("exclusion"));
   }
 
@@ -150,8 +144,7 @@ public class OrganizationExclusionName extends ExclusionName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(OrganizationExclusionName organizationExclusionName) {
       organization = organizationExclusionName.organization;
@@ -186,4 +179,3 @@ public class OrganizationExclusionName extends ExclusionName {
     return h;
   }
 }
-

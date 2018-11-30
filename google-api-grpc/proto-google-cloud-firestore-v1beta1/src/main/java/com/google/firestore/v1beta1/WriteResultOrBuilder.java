@@ -3,11 +3,14 @@
 
 package com.google.firestore.v1beta1;
 
-public interface WriteResultOrBuilder extends
+public interface WriteResultOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.firestore.v1beta1.WriteResult)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The last update time of the document after applying the write. Not set
    * after a `delete`.
@@ -19,6 +22,8 @@ public interface WriteResultOrBuilder extends
    */
   boolean hasUpdateTime();
   /**
+   *
+   *
    * <pre>
    * The last update time of the document after applying the write. Not set
    * after a `delete`.
@@ -30,6 +35,8 @@ public interface WriteResultOrBuilder extends
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
+   *
+   *
    * <pre>
    * The last update time of the document after applying the write. Not set
    * after a `delete`.
@@ -42,6 +49,8 @@ public interface WriteResultOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
    * same order.
@@ -49,9 +58,10 @@ public interface WriteResultOrBuilder extends
    *
    * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
    */
-  java.util.List<com.google.firestore.v1beta1.Value> 
-      getTransformResultsList();
+  java.util.List<com.google.firestore.v1beta1.Value> getTransformResultsList();
   /**
+   *
+   *
    * <pre>
    * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
    * same order.
@@ -61,6 +71,8 @@ public interface WriteResultOrBuilder extends
    */
   com.google.firestore.v1beta1.Value getTransformResults(int index);
   /**
+   *
+   *
    * <pre>
    * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
    * same order.
@@ -70,6 +82,8 @@ public interface WriteResultOrBuilder extends
    */
   int getTransformResultsCount();
   /**
+   *
+   *
    * <pre>
    * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
    * same order.
@@ -77,9 +91,11 @@ public interface WriteResultOrBuilder extends
    *
    * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
    */
-  java.util.List<? extends com.google.firestore.v1beta1.ValueOrBuilder> 
+  java.util.List<? extends com.google.firestore.v1beta1.ValueOrBuilder>
       getTransformResultsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
    * same order.
@@ -87,6 +103,5 @@ public interface WriteResultOrBuilder extends
    *
    * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
    */
-  com.google.firestore.v1beta1.ValueOrBuilder getTransformResultsOrBuilder(
-      int index);
+  com.google.firestore.v1beta1.ValueOrBuilder getTransformResultsOrBuilder(int index);
 }

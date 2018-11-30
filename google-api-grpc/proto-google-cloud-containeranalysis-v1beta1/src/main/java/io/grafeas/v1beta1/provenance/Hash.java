@@ -4,31 +4,34 @@
 package io.grafeas.v1beta1.provenance;
 
 /**
+ *
+ *
  * <pre>
  * Container message for hash values.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1beta1.provenance.Hash}
  */
-public  final class Hash extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Hash extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.provenance.Hash)
     HashOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Hash.newBuilder() to construct.
   private Hash(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Hash() {
     type_ = 0;
     value_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Hash(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,59 +51,65 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
+          case 8:
+            {
+              int rawValue = input.readEnum();
 
-            type_ = rawValue;
-            break;
-          }
-          case 18: {
-
-            value_ = input.readBytes();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              type_ = rawValue;
+              break;
             }
-            break;
-          }
+          case 18:
+            {
+              value_ = input.readBytes();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_Hash_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return io.grafeas.v1beta1.provenance.Provenance
+        .internal_static_grafeas_v1beta1_provenance_Hash_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_Hash_fieldAccessorTable
+    return io.grafeas.v1beta1.provenance.Provenance
+        .internal_static_grafeas_v1beta1_provenance_Hash_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grafeas.v1beta1.provenance.Hash.class, io.grafeas.v1beta1.provenance.Hash.Builder.class);
+            io.grafeas.v1beta1.provenance.Hash.class,
+            io.grafeas.v1beta1.provenance.Hash.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Specifies the hash algorithm, if any.
    * </pre>
    *
    * Protobuf enum {@code grafeas.v1beta1.provenance.Hash.HashType}
    */
-  public enum HashType
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum HashType implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Unknown.
      * </pre>
@@ -109,6 +118,8 @@ private static final long serialVersionUID = 0L;
      */
     HASH_TYPE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * A SHA-256 hash.
      * </pre>
@@ -120,6 +131,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Unknown.
      * </pre>
@@ -128,6 +141,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int HASH_TYPE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * A SHA-256 hash.
      * </pre>
@@ -135,7 +150,6 @@ private static final long serialVersionUID = 0L;
      * <code>SHA256 = 1;</code>
      */
     public static final int SHA256_VALUE = 1;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -145,9 +159,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static HashType valueOf(int value) {
       return forNumber(value);
@@ -155,44 +167,43 @@ private static final long serialVersionUID = 0L;
 
     public static HashType forNumber(int value) {
       switch (value) {
-        case 0: return HASH_TYPE_UNSPECIFIED;
-        case 1: return SHA256;
-        default: return null;
+        case 0:
+          return HASH_TYPE_UNSPECIFIED;
+        case 1:
+          return SHA256;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<HashType>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<HashType> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        HashType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<HashType>() {
-            public HashType findValueByNumber(int number) {
-              return HashType.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<HashType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<HashType>() {
+          public HashType findValueByNumber(int number) {
+            return HashType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return io.grafeas.v1beta1.provenance.Hash.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final HashType[] VALUES = values();
 
-    public static HashType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static HashType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -212,6 +223,8 @@ private static final long serialVersionUID = 0L;
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_;
   /**
+   *
+   *
    * <pre>
    * The type of hash that was performed.
    * </pre>
@@ -222,6 +235,8 @@ private static final long serialVersionUID = 0L;
     return type_;
   }
   /**
+   *
+   *
    * <pre>
    * The type of hash that was performed.
    * </pre>
@@ -230,13 +245,16 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.provenance.Hash.HashType getType() {
     @SuppressWarnings("deprecation")
-    io.grafeas.v1beta1.provenance.Hash.HashType result = io.grafeas.v1beta1.provenance.Hash.HashType.valueOf(type_);
+    io.grafeas.v1beta1.provenance.Hash.HashType result =
+        io.grafeas.v1beta1.provenance.Hash.HashType.valueOf(type_);
     return result == null ? io.grafeas.v1beta1.provenance.Hash.HashType.UNRECOGNIZED : result;
   }
 
   public static final int VALUE_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString value_;
   /**
+   *
+   *
    * <pre>
    * The hash value.
    * </pre>
@@ -248,6 +266,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -259,8 +278,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (type_ != io.grafeas.v1beta1.provenance.Hash.HashType.HASH_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, type_);
     }
@@ -277,12 +295,10 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (type_ != io.grafeas.v1beta1.provenance.Hash.HashType.HASH_TYPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, type_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, type_);
     }
     if (!value_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(2, value_);
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(2, value_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -292,7 +308,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1beta1.provenance.Hash)) {
       return super.equals(obj);
@@ -301,8 +317,7 @@ private static final long serialVersionUID = 0L;
 
     boolean result = true;
     result = result && type_ == other.type_;
-    result = result && getValue()
-        .equals(other.getValue());
+    result = result && getValue().equals(other.getValue());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -323,118 +338,126 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1beta1.provenance.Hash parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1beta1.provenance.Hash parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.provenance.Hash parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grafeas.v1beta1.provenance.Hash parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static io.grafeas.v1beta1.provenance.Hash parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.provenance.Hash parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.provenance.Hash parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.provenance.Hash parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.provenance.Hash parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.provenance.Hash parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.provenance.Hash parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.provenance.Hash parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.provenance.Hash parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.provenance.Hash parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(io.grafeas.v1beta1.provenance.Hash prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Container message for hash values.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1beta1.provenance.Hash}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1beta1.provenance.Hash)
       io.grafeas.v1beta1.provenance.HashOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_Hash_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1beta1.provenance.Provenance
+          .internal_static_grafeas_v1beta1_provenance_Hash_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_Hash_fieldAccessorTable
+      return io.grafeas.v1beta1.provenance.Provenance
+          .internal_static_grafeas_v1beta1_provenance_Hash_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1beta1.provenance.Hash.class, io.grafeas.v1beta1.provenance.Hash.Builder.class);
+              io.grafeas.v1beta1.provenance.Hash.class,
+              io.grafeas.v1beta1.provenance.Hash.Builder.class);
     }
 
     // Construct using io.grafeas.v1beta1.provenance.Hash.newBuilder()
@@ -442,16 +465,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -463,9 +485,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_Hash_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return io.grafeas.v1beta1.provenance.Provenance
+          .internal_static_grafeas_v1beta1_provenance_Hash_descriptor;
     }
 
     @java.lang.Override
@@ -495,38 +517,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1beta1.provenance.Hash) {
-        return mergeFrom((io.grafeas.v1beta1.provenance.Hash)other);
+        return mergeFrom((io.grafeas.v1beta1.provenance.Hash) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -572,6 +595,8 @@ private static final long serialVersionUID = 0L;
 
     private int type_ = 0;
     /**
+     *
+     *
      * <pre>
      * The type of hash that was performed.
      * </pre>
@@ -582,6 +607,8 @@ private static final long serialVersionUID = 0L;
       return type_;
     }
     /**
+     *
+     *
      * <pre>
      * The type of hash that was performed.
      * </pre>
@@ -594,6 +621,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The type of hash that was performed.
      * </pre>
@@ -602,10 +631,13 @@ private static final long serialVersionUID = 0L;
      */
     public io.grafeas.v1beta1.provenance.Hash.HashType getType() {
       @SuppressWarnings("deprecation")
-      io.grafeas.v1beta1.provenance.Hash.HashType result = io.grafeas.v1beta1.provenance.Hash.HashType.valueOf(type_);
+      io.grafeas.v1beta1.provenance.Hash.HashType result =
+          io.grafeas.v1beta1.provenance.Hash.HashType.valueOf(type_);
       return result == null ? io.grafeas.v1beta1.provenance.Hash.HashType.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * The type of hash that was performed.
      * </pre>
@@ -616,12 +648,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       type_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The type of hash that was performed.
      * </pre>
@@ -629,7 +663,7 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.provenance.Hash.HashType type = 1;</code>
      */
     public Builder clearType() {
-      
+
       type_ = 0;
       onChanged();
       return this;
@@ -637,6 +671,8 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
     /**
+     *
+     *
      * <pre>
      * The hash value.
      * </pre>
@@ -647,6 +683,8 @@ private static final long serialVersionUID = 0L;
       return value_;
     }
     /**
+     *
+     *
      * <pre>
      * The hash value.
      * </pre>
@@ -655,14 +693,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setValue(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       value_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The hash value.
      * </pre>
@@ -670,14 +710,14 @@ private static final long serialVersionUID = 0L;
      * <code>bytes value = 2;</code>
      */
     public Builder clearValue() {
-      
+
       value_ = getDefaultInstance().getValue();
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -687,12 +727,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:grafeas.v1beta1.provenance.Hash)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1beta1.provenance.Hash)
   private static final io.grafeas.v1beta1.provenance.Hash DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1beta1.provenance.Hash();
   }
@@ -701,16 +741,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Hash>
-      PARSER = new com.google.protobuf.AbstractParser<Hash>() {
-    @java.lang.Override
-    public Hash parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Hash(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Hash> PARSER =
+      new com.google.protobuf.AbstractParser<Hash>() {
+        @java.lang.Override
+        public Hash parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Hash(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Hash> parser() {
     return PARSER;
@@ -725,6 +765,4 @@ private static final long serialVersionUID = 0L;
   public io.grafeas.v1beta1.provenance.Hash getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

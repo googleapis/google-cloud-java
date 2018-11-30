@@ -71,7 +71,9 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
       Runnable command, long initialDelay, long period, TimeUnit unit) {
     return schedulePendingCallable(
         new PendingCallable<>(
-            Duration.ofMillis(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_RATE));
+            Duration.ofMillis(unit.toMillis(initialDelay)),
+            command,
+            PendingCallableType.FIXED_RATE));
   }
 
   @Override
@@ -79,14 +81,16 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
       Runnable command, long initialDelay, long delay, TimeUnit unit) {
     return schedulePendingCallable(
         new PendingCallable<>(
-            Duration.ofMillis(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_DELAY));
+            Duration.ofMillis(unit.toMillis(initialDelay)),
+            command,
+            PendingCallableType.FIXED_DELAY));
   }
 
   /**
-   * This allows for adding expectations on future work to be scheduled (
-   * {@link FakeScheduledExecutorService#schedule}
-   * or {@link FakeScheduledExecutorService#scheduleAtFixedRate}
-   * or {@link FakeScheduledExecutorService#scheduleWithFixedDelay}) based on its delay.
+   * This allows for adding expectations on future work to be scheduled ( {@link
+   * FakeScheduledExecutorService#schedule} or {@link
+   * FakeScheduledExecutorService#scheduleAtFixedRate} or {@link
+   * FakeScheduledExecutorService#scheduleWithFixedDelay}) based on its delay.
    */
   public void setupScheduleExpectation(Duration delay) {
     synchronized (expectedWorkQueue) {
@@ -123,7 +127,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
   private void work() {
     Instant cmpTime = Instant.ofEpochMilli(clock.millisTime());
 
-    for (;;) {
+    for (; ; ) {
       PendingCallable<?> callable = null;
       synchronized (pendingCallables) {
         if (pendingCallables.isEmpty()
@@ -271,8 +275,8 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
       return new ScheduledFuture<T>() {
         @Override
         public long getDelay(TimeUnit unit) {
-          return unit.convert(getScheduledTime().toEpochMilli() - clock.millisTime(),
-              TimeUnit.MILLISECONDS);
+          return unit.convert(
+              getScheduledTime().toEpochMilli() - clock.millisTime(), TimeUnit.MILLISECONDS);
         }
 
         @Override

@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface ListGroupsRequestOrBuilder extends
+public interface ListGroupsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.ListGroupsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The project whose groups are to be listed. The format is
    * `"projects/{project_id_or_number}"`.
@@ -17,6 +20,8 @@ public interface ListGroupsRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The project whose groups are to be listed. The format is
    * `"projects/{project_id_or_number}"`.
@@ -24,10 +29,11 @@ public interface ListGroupsRequestOrBuilder extends
    *
    * <code>string name = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
    * Returns groups whose `parentName` field contains the group
@@ -38,6 +44,8 @@ public interface ListGroupsRequestOrBuilder extends
    */
   java.lang.String getChildrenOfGroup();
   /**
+   *
+   *
    * <pre>
    * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
    * Returns groups whose `parentName` field contains the group
@@ -46,10 +54,11 @@ public interface ListGroupsRequestOrBuilder extends
    *
    * <code>string children_of_group = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getChildrenOfGroupBytes();
+  com.google.protobuf.ByteString getChildrenOfGroupBytes();
 
   /**
+   *
+   *
    * <pre>
    * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
    * Returns groups that are ancestors of the specified group.
@@ -62,6 +71,8 @@ public interface ListGroupsRequestOrBuilder extends
    */
   java.lang.String getAncestorsOfGroup();
   /**
+   *
+   *
    * <pre>
    * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
    * Returns groups that are ancestors of the specified group.
@@ -72,10 +83,11 @@ public interface ListGroupsRequestOrBuilder extends
    *
    * <code>string ancestors_of_group = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getAncestorsOfGroupBytes();
+  com.google.protobuf.ByteString getAncestorsOfGroupBytes();
 
   /**
+   *
+   *
    * <pre>
    * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
    * Returns the descendants of the specified group.  This is a superset of
@@ -87,6 +99,8 @@ public interface ListGroupsRequestOrBuilder extends
    */
   java.lang.String getDescendantsOfGroup();
   /**
+   *
+   *
    * <pre>
    * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
    * Returns the descendants of the specified group.  This is a superset of
@@ -96,10 +110,11 @@ public interface ListGroupsRequestOrBuilder extends
    *
    * <code>string descendants_of_group = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getDescendantsOfGroupBytes();
+  com.google.protobuf.ByteString getDescendantsOfGroupBytes();
 
   /**
+   *
+   *
    * <pre>
    * A positive number that is the maximum number of results to return.
    * </pre>
@@ -109,6 +124,8 @@ public interface ListGroupsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * If this field is not empty then it must contain the `nextPageToken` value
    * returned by a previous call to this method.  Using this field causes the
@@ -119,6 +136,8 @@ public interface ListGroupsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * If this field is not empty then it must contain the `nextPageToken` value
    * returned by a previous call to this method.  Using this field causes the
@@ -127,8 +146,7 @@ public interface ListGroupsRequestOrBuilder extends
    *
    * <code>string page_token = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   public com.google.monitoring.v3.ListGroupsRequest.FilterCase getFilterCase();
 }

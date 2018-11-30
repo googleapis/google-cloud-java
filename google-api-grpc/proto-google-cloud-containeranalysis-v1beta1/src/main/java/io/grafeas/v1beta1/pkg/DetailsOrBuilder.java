@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.pkg;
 
-public interface DetailsOrBuilder extends
+public interface DetailsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.package.Details)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Where the package was installed.
    * </pre>
@@ -16,6 +19,8 @@ public interface DetailsOrBuilder extends
    */
   boolean hasInstallation();
   /**
+   *
+   *
    * <pre>
    * Where the package was installed.
    * </pre>
@@ -24,6 +29,8 @@ public interface DetailsOrBuilder extends
    */
   io.grafeas.v1beta1.pkg.Installation getInstallation();
   /**
+   *
+   *
    * <pre>
    * Where the package was installed.
    * </pre>

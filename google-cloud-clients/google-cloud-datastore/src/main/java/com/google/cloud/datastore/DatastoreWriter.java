@@ -18,9 +18,7 @@ package com.google.cloud.datastore;
 
 import java.util.List;
 
-/**
- * An interface to represent Google Cloud Datastore write operations.
- */
+/** An interface to represent Google Cloud Datastore write operations. */
 public interface DatastoreWriter {
 
   /**
@@ -28,8 +26,8 @@ public interface DatastoreWriter {
    * an id if necessary.
    *
    * @param entity the entity to add
-   * @return an {@code Entity} with the same properties and a key that is either newly allocated
-   *     or the same one if key is already complete
+   * @return an {@code Entity} with the same properties and a key that is either newly allocated or
+   *     the same one if key is already complete
    * @throws DatastoreException upon failure
    * @throws IllegalArgumentException if the given entity is missing a key
    */
@@ -39,8 +37,8 @@ public interface DatastoreWriter {
    * Datastore add operation: inserts the provided entities. This method will automatically allocate
    * id for any entity with an incomplete key.
    *
-   * @return a list of {@code Entity} ordered by input with the same properties and a key that
-   *     is either newly allocated or the same one if was already complete
+   * @return a list of {@code Entity} ordered by input with the same properties and a key that is
+   *     either newly allocated or the same one if was already complete
    * @throws DatastoreException upon failure
    * @throws IllegalArgumentException if any of the given entities is missing a key
    * @see #add(FullEntity)
@@ -60,8 +58,8 @@ public interface DatastoreWriter {
    * otherwise. This method will automatically allocate an id if necessary.
    *
    * @param entity the entity to put
-   * @return an {@code Entity} with the same properties and a key that is either newly allocated
-   *     or the same one if key is already complete
+   * @return an {@code Entity} with the same properties and a key that is either newly allocated or
+   *     the same one if key is already complete
    * @throws DatastoreException upon failure
    * @throws IllegalArgumentException if the given entity is missing a key
    */
@@ -78,8 +76,6 @@ public interface DatastoreWriter {
    */
   List<Entity> put(FullEntity<?>... entities);
 
-  /**
-   * A datastore delete operation. It is OK to request the deletion of a non-existing key.
-   */
+  /** A datastore delete operation. It is OK to request the deletion of a non-existing key. */
   void delete(Key... keys);
 }

@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1beta1;
 
-public interface VideoAnnotationResultsOrBuilder extends
+public interface VideoAnnotationResultsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1beta1.VideoAnnotationResults)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Video file location in
    * [Google Cloud Storage](https://cloud.google.com/storage/).
@@ -17,6 +20,8 @@ public interface VideoAnnotationResultsOrBuilder extends
    */
   java.lang.String getInputUri();
   /**
+   *
+   *
    * <pre>
    * Video file location in
    * [Google Cloud Storage](https://cloud.google.com/storage/).
@@ -24,186 +29,252 @@ public interface VideoAnnotationResultsOrBuilder extends
    *
    * <code>string input_uri = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getInputUriBytes();
+  com.google.protobuf.ByteString getInputUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * Label annotations. There is exactly one element for each unique label.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.LabelAnnotation label_annotations = 2;</code>
+   * <code>repeated .google.cloud.videointelligence.v1beta1.LabelAnnotation label_annotations = 2;
+   * </code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1beta1.LabelAnnotation> 
+  java.util.List<com.google.cloud.videointelligence.v1beta1.LabelAnnotation>
       getLabelAnnotationsList();
   /**
+   *
+   *
    * <pre>
    * Label annotations. There is exactly one element for each unique label.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.LabelAnnotation label_annotations = 2;</code>
+   * <code>repeated .google.cloud.videointelligence.v1beta1.LabelAnnotation label_annotations = 2;
+   * </code>
    */
   com.google.cloud.videointelligence.v1beta1.LabelAnnotation getLabelAnnotations(int index);
   /**
+   *
+   *
    * <pre>
    * Label annotations. There is exactly one element for each unique label.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.LabelAnnotation label_annotations = 2;</code>
+   * <code>repeated .google.cloud.videointelligence.v1beta1.LabelAnnotation label_annotations = 2;
+   * </code>
    */
   int getLabelAnnotationsCount();
   /**
+   *
+   *
    * <pre>
    * Label annotations. There is exactly one element for each unique label.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.LabelAnnotation label_annotations = 2;</code>
+   * <code>repeated .google.cloud.videointelligence.v1beta1.LabelAnnotation label_annotations = 2;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1beta1.LabelAnnotationOrBuilder> 
+  java.util.List<? extends com.google.cloud.videointelligence.v1beta1.LabelAnnotationOrBuilder>
       getLabelAnnotationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Label annotations. There is exactly one element for each unique label.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.LabelAnnotation label_annotations = 2;</code>
+   * <code>repeated .google.cloud.videointelligence.v1beta1.LabelAnnotation label_annotations = 2;
+   * </code>
    */
   com.google.cloud.videointelligence.v1beta1.LabelAnnotationOrBuilder getLabelAnnotationsOrBuilder(
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Face annotations. There is exactly one element for each unique face.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.FaceAnnotation face_annotations = 3;</code>
+   * <code>repeated .google.cloud.videointelligence.v1beta1.FaceAnnotation face_annotations = 3;
+   * </code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1beta1.FaceAnnotation> 
+  java.util.List<com.google.cloud.videointelligence.v1beta1.FaceAnnotation>
       getFaceAnnotationsList();
   /**
+   *
+   *
    * <pre>
    * Face annotations. There is exactly one element for each unique face.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.FaceAnnotation face_annotations = 3;</code>
+   * <code>repeated .google.cloud.videointelligence.v1beta1.FaceAnnotation face_annotations = 3;
+   * </code>
    */
   com.google.cloud.videointelligence.v1beta1.FaceAnnotation getFaceAnnotations(int index);
   /**
+   *
+   *
    * <pre>
    * Face annotations. There is exactly one element for each unique face.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.FaceAnnotation face_annotations = 3;</code>
+   * <code>repeated .google.cloud.videointelligence.v1beta1.FaceAnnotation face_annotations = 3;
+   * </code>
    */
   int getFaceAnnotationsCount();
   /**
+   *
+   *
    * <pre>
    * Face annotations. There is exactly one element for each unique face.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.FaceAnnotation face_annotations = 3;</code>
+   * <code>repeated .google.cloud.videointelligence.v1beta1.FaceAnnotation face_annotations = 3;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1beta1.FaceAnnotationOrBuilder> 
+  java.util.List<? extends com.google.cloud.videointelligence.v1beta1.FaceAnnotationOrBuilder>
       getFaceAnnotationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Face annotations. There is exactly one element for each unique face.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.FaceAnnotation face_annotations = 3;</code>
+   * <code>repeated .google.cloud.videointelligence.v1beta1.FaceAnnotation face_annotations = 3;
+   * </code>
    */
   com.google.cloud.videointelligence.v1beta1.FaceAnnotationOrBuilder getFaceAnnotationsOrBuilder(
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Shot annotations. Each shot is represented as a video segment.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.VideoSegment shot_annotations = 4;</code>
+   * <code>repeated .google.cloud.videointelligence.v1beta1.VideoSegment shot_annotations = 4;
+   * </code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1beta1.VideoSegment> 
-      getShotAnnotationsList();
+  java.util.List<com.google.cloud.videointelligence.v1beta1.VideoSegment> getShotAnnotationsList();
   /**
+   *
+   *
    * <pre>
    * Shot annotations. Each shot is represented as a video segment.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.VideoSegment shot_annotations = 4;</code>
+   * <code>repeated .google.cloud.videointelligence.v1beta1.VideoSegment shot_annotations = 4;
+   * </code>
    */
   com.google.cloud.videointelligence.v1beta1.VideoSegment getShotAnnotations(int index);
   /**
+   *
+   *
    * <pre>
    * Shot annotations. Each shot is represented as a video segment.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.VideoSegment shot_annotations = 4;</code>
+   * <code>repeated .google.cloud.videointelligence.v1beta1.VideoSegment shot_annotations = 4;
+   * </code>
    */
   int getShotAnnotationsCount();
   /**
+   *
+   *
    * <pre>
    * Shot annotations. Each shot is represented as a video segment.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.VideoSegment shot_annotations = 4;</code>
+   * <code>repeated .google.cloud.videointelligence.v1beta1.VideoSegment shot_annotations = 4;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1beta1.VideoSegmentOrBuilder> 
+  java.util.List<? extends com.google.cloud.videointelligence.v1beta1.VideoSegmentOrBuilder>
       getShotAnnotationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Shot annotations. Each shot is represented as a video segment.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.VideoSegment shot_annotations = 4;</code>
+   * <code>repeated .google.cloud.videointelligence.v1beta1.VideoSegment shot_annotations = 4;
+   * </code>
    */
   com.google.cloud.videointelligence.v1beta1.VideoSegmentOrBuilder getShotAnnotationsOrBuilder(
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Safe search annotations.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.SafeSearchAnnotation safe_search_annotations = 6;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1beta1.SafeSearchAnnotation safe_search_annotations = 6;
+   * </code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1beta1.SafeSearchAnnotation> 
+  java.util.List<com.google.cloud.videointelligence.v1beta1.SafeSearchAnnotation>
       getSafeSearchAnnotationsList();
   /**
+   *
+   *
    * <pre>
    * Safe search annotations.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.SafeSearchAnnotation safe_search_annotations = 6;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1beta1.SafeSearchAnnotation safe_search_annotations = 6;
+   * </code>
    */
-  com.google.cloud.videointelligence.v1beta1.SafeSearchAnnotation getSafeSearchAnnotations(int index);
+  com.google.cloud.videointelligence.v1beta1.SafeSearchAnnotation getSafeSearchAnnotations(
+      int index);
   /**
+   *
+   *
    * <pre>
    * Safe search annotations.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.SafeSearchAnnotation safe_search_annotations = 6;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1beta1.SafeSearchAnnotation safe_search_annotations = 6;
+   * </code>
    */
   int getSafeSearchAnnotationsCount();
   /**
+   *
+   *
    * <pre>
    * Safe search annotations.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.SafeSearchAnnotation safe_search_annotations = 6;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1beta1.SafeSearchAnnotation safe_search_annotations = 6;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1beta1.SafeSearchAnnotationOrBuilder> 
+  java.util.List<? extends com.google.cloud.videointelligence.v1beta1.SafeSearchAnnotationOrBuilder>
       getSafeSearchAnnotationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Safe search annotations.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.SafeSearchAnnotation safe_search_annotations = 6;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1beta1.SafeSearchAnnotation safe_search_annotations = 6;
+   * </code>
    */
-  com.google.cloud.videointelligence.v1beta1.SafeSearchAnnotationOrBuilder getSafeSearchAnnotationsOrBuilder(
-      int index);
+  com.google.cloud.videointelligence.v1beta1.SafeSearchAnnotationOrBuilder
+      getSafeSearchAnnotationsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
    * some videos may succeed and some may fail.
@@ -213,6 +284,8 @@ public interface VideoAnnotationResultsOrBuilder extends
    */
   boolean hasError();
   /**
+   *
+   *
    * <pre>
    * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
    * some videos may succeed and some may fail.
@@ -222,6 +295,8 @@ public interface VideoAnnotationResultsOrBuilder extends
    */
   com.google.rpc.Status getError();
   /**
+   *
+   *
    * <pre>
    * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
    * some videos may succeed and some may fail.

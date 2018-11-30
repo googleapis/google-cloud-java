@@ -4,21 +4,24 @@
 package com.google.cloud.redis.v1;
 
 /**
+ *
+ *
  * <pre>
  * Represents the v1 metadata of the long-running operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1.OperationMetadata}
  */
-public  final class OperationMetadata extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class OperationMetadata extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.redis.v1.OperationMetadata)
     OperationMetadataOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use OperationMetadata.newBuilder() to construct.
   private OperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private OperationMetadata() {
     target_ = "";
     verb_ = "";
@@ -28,10 +31,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private OperationMetadata(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -51,96 +54,108 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (createTime_ != null) {
-              subBuilder = createTime_.toBuilder();
+          case 10:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
-            createTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(createTime_);
-              createTime_ = subBuilder.buildPartial();
+          case 18:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (endTime_ != null) {
+                subBuilder = endTime_.toBuilder();
+              }
+              endTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(endTime_);
+                endTime_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 18: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (endTime_ != null) {
-              subBuilder = endTime_.toBuilder();
+              target_ = s;
+              break;
             }
-            endTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(endTime_);
-              endTime_ = subBuilder.buildPartial();
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              verb_ = s;
+              break;
             }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            target_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            verb_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            statusDetail_ = s;
-            break;
-          }
-          case 48: {
-
-            cancelRequested_ = input.readBool();
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            apiVersion_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              statusDetail_ = s;
+              break;
             }
-            break;
-          }
+          case 48:
+            {
+              cancelRequested_ = input.readBool();
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              apiVersion_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.redis.v1.CloudRedisServiceV1Proto.internal_static_google_cloud_redis_v1_OperationMetadata_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.redis.v1.CloudRedisServiceV1Proto
+        .internal_static_google_cloud_redis_v1_OperationMetadata_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.redis.v1.CloudRedisServiceV1Proto.internal_static_google_cloud_redis_v1_OperationMetadata_fieldAccessorTable
+    return com.google.cloud.redis.v1.CloudRedisServiceV1Proto
+        .internal_static_google_cloud_redis_v1_OperationMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.redis.v1.OperationMetadata.class, com.google.cloud.redis.v1.OperationMetadata.Builder.class);
+            com.google.cloud.redis.v1.OperationMetadata.class,
+            com.google.cloud.redis.v1.OperationMetadata.Builder.class);
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
   /**
+   *
+   *
    * <pre>
    * Creation timestamp.
    * </pre>
@@ -151,6 +166,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Creation timestamp.
    * </pre>
@@ -161,6 +178,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Creation timestamp.
    * </pre>
@@ -174,6 +193,8 @@ private static final long serialVersionUID = 0L;
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp endTime_;
   /**
+   *
+   *
    * <pre>
    * End timestamp.
    * </pre>
@@ -184,6 +205,8 @@ private static final long serialVersionUID = 0L;
     return endTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * End timestamp.
    * </pre>
@@ -194,6 +217,8 @@ private static final long serialVersionUID = 0L;
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
   /**
+   *
+   *
    * <pre>
    * End timestamp.
    * </pre>
@@ -207,6 +232,8 @@ private static final long serialVersionUID = 0L;
   public static final int TARGET_FIELD_NUMBER = 3;
   private volatile java.lang.Object target_;
   /**
+   *
+   *
    * <pre>
    * Operation target.
    * </pre>
@@ -218,27 +245,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       target_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Operation target.
    * </pre>
    *
    * <code>string target = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getTargetBytes() {
+  public com.google.protobuf.ByteString getTargetBytes() {
     java.lang.Object ref = target_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       target_ = b;
       return b;
     } else {
@@ -249,6 +275,8 @@ private static final long serialVersionUID = 0L;
   public static final int VERB_FIELD_NUMBER = 4;
   private volatile java.lang.Object verb_;
   /**
+   *
+   *
    * <pre>
    * Operation verb.
    * </pre>
@@ -260,27 +288,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       verb_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Operation verb.
    * </pre>
    *
    * <code>string verb = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getVerbBytes() {
+  public com.google.protobuf.ByteString getVerbBytes() {
     java.lang.Object ref = verb_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       verb_ = b;
       return b;
     } else {
@@ -291,6 +318,8 @@ private static final long serialVersionUID = 0L;
   public static final int STATUS_DETAIL_FIELD_NUMBER = 5;
   private volatile java.lang.Object statusDetail_;
   /**
+   *
+   *
    * <pre>
    * Operation status details.
    * </pre>
@@ -302,27 +331,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       statusDetail_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Operation status details.
    * </pre>
    *
    * <code>string status_detail = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getStatusDetailBytes() {
+  public com.google.protobuf.ByteString getStatusDetailBytes() {
     java.lang.Object ref = statusDetail_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       statusDetail_ = b;
       return b;
     } else {
@@ -333,6 +361,8 @@ private static final long serialVersionUID = 0L;
   public static final int CANCEL_REQUESTED_FIELD_NUMBER = 6;
   private boolean cancelRequested_;
   /**
+   *
+   *
    * <pre>
    * Specifies if cancellation was requested for the operation.
    * </pre>
@@ -346,6 +376,8 @@ private static final long serialVersionUID = 0L;
   public static final int API_VERSION_FIELD_NUMBER = 7;
   private volatile java.lang.Object apiVersion_;
   /**
+   *
+   *
    * <pre>
    * API version.
    * </pre>
@@ -357,27 +389,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       apiVersion_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * API version.
    * </pre>
    *
    * <code>string api_version = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getApiVersionBytes() {
+  public com.google.protobuf.ByteString getApiVersionBytes() {
     java.lang.Object ref = apiVersion_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       apiVersion_ = b;
       return b;
     } else {
@@ -386,6 +417,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -397,8 +429,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (createTime_ != null) {
       output.writeMessage(1, getCreateTime());
     }
@@ -430,12 +461,10 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (createTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getCreateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getCreateTime());
     }
     if (endTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getEndTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEndTime());
     }
     if (!getTargetBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, target_);
@@ -447,8 +476,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, statusDetail_);
     }
     if (cancelRequested_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(6, cancelRequested_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, cancelRequested_);
     }
     if (!getApiVersionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, apiVersion_);
@@ -461,34 +489,28 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.redis.v1.OperationMetadata)) {
       return super.equals(obj);
     }
-    com.google.cloud.redis.v1.OperationMetadata other = (com.google.cloud.redis.v1.OperationMetadata) obj;
+    com.google.cloud.redis.v1.OperationMetadata other =
+        (com.google.cloud.redis.v1.OperationMetadata) obj;
 
     boolean result = true;
     result = result && (hasCreateTime() == other.hasCreateTime());
     if (hasCreateTime()) {
-      result = result && getCreateTime()
-          .equals(other.getCreateTime());
+      result = result && getCreateTime().equals(other.getCreateTime());
     }
     result = result && (hasEndTime() == other.hasEndTime());
     if (hasEndTime()) {
-      result = result && getEndTime()
-          .equals(other.getEndTime());
+      result = result && getEndTime().equals(other.getEndTime());
     }
-    result = result && getTarget()
-        .equals(other.getTarget());
-    result = result && getVerb()
-        .equals(other.getVerb());
-    result = result && getStatusDetail()
-        .equals(other.getStatusDetail());
-    result = result && (getCancelRequested()
-        == other.getCancelRequested());
-    result = result && getApiVersion()
-        .equals(other.getApiVersion());
+    result = result && getTarget().equals(other.getTarget());
+    result = result && getVerb().equals(other.getVerb());
+    result = result && getStatusDetail().equals(other.getStatusDetail());
+    result = result && (getCancelRequested() == other.getCancelRequested());
+    result = result && getApiVersion().equals(other.getApiVersion());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -515,8 +537,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + STATUS_DETAIL_FIELD_NUMBER;
     hash = (53 * hash) + getStatusDetail().hashCode();
     hash = (37 * hash) + CANCEL_REQUESTED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getCancelRequested());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCancelRequested());
     hash = (37 * hash) + API_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getApiVersion().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -524,118 +545,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.redis.v1.OperationMetadata parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.redis.v1.OperationMetadata parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.redis.v1.OperationMetadata parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.redis.v1.OperationMetadata parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.redis.v1.OperationMetadata parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.redis.v1.OperationMetadata parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.redis.v1.OperationMetadata parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.redis.v1.OperationMetadata parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.redis.v1.OperationMetadata parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.redis.v1.OperationMetadata parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.redis.v1.OperationMetadata parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.redis.v1.OperationMetadata parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.redis.v1.OperationMetadata parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.redis.v1.OperationMetadata parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.redis.v1.OperationMetadata prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Represents the v1 metadata of the long-running operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1.OperationMetadata}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.redis.v1.OperationMetadata)
       com.google.cloud.redis.v1.OperationMetadataOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.redis.v1.CloudRedisServiceV1Proto.internal_static_google_cloud_redis_v1_OperationMetadata_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.redis.v1.CloudRedisServiceV1Proto
+          .internal_static_google_cloud_redis_v1_OperationMetadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.redis.v1.CloudRedisServiceV1Proto.internal_static_google_cloud_redis_v1_OperationMetadata_fieldAccessorTable
+      return com.google.cloud.redis.v1.CloudRedisServiceV1Proto
+          .internal_static_google_cloud_redis_v1_OperationMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.redis.v1.OperationMetadata.class, com.google.cloud.redis.v1.OperationMetadata.Builder.class);
+              com.google.cloud.redis.v1.OperationMetadata.class,
+              com.google.cloud.redis.v1.OperationMetadata.Builder.class);
     }
 
     // Construct using com.google.cloud.redis.v1.OperationMetadata.newBuilder()
@@ -643,16 +673,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -682,9 +711,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.redis.v1.CloudRedisServiceV1Proto.internal_static_google_cloud_redis_v1_OperationMetadata_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.redis.v1.CloudRedisServiceV1Proto
+          .internal_static_google_cloud_redis_v1_OperationMetadata_descriptor;
     }
 
     @java.lang.Override
@@ -703,7 +732,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.redis.v1.OperationMetadata buildPartial() {
-      com.google.cloud.redis.v1.OperationMetadata result = new com.google.cloud.redis.v1.OperationMetadata(this);
+      com.google.cloud.redis.v1.OperationMetadata result =
+          new com.google.cloud.redis.v1.OperationMetadata(this);
       if (createTimeBuilder_ == null) {
         result.createTime_ = createTime_;
       } else {
@@ -727,38 +757,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.redis.v1.OperationMetadata) {
-        return mergeFrom((com.google.cloud.redis.v1.OperationMetadata)other);
+        return mergeFrom((com.google.cloud.redis.v1.OperationMetadata) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -823,8 +854,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp createTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Creation timestamp.
      * </pre>
@@ -835,6 +871,8 @@ private static final long serialVersionUID = 0L;
       return createTimeBuilder_ != null || createTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Creation timestamp.
      * </pre>
@@ -843,12 +881,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
-        return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       } else {
         return createTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Creation timestamp.
      * </pre>
@@ -869,14 +911,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Creation timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
      */
-    public Builder setCreateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
         onChanged();
@@ -887,6 +930,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Creation timestamp.
      * </pre>
@@ -897,7 +942,7 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ == null) {
         if (createTime_ != null) {
           createTime_ =
-            com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
         } else {
           createTime_ = value;
         }
@@ -909,6 +954,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Creation timestamp.
      * </pre>
@@ -927,6 +974,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Creation timestamp.
      * </pre>
@@ -934,11 +983,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      
+
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Creation timestamp.
      * </pre>
@@ -949,11 +1000,14 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ != null) {
         return createTimeBuilder_.getMessageOrBuilder();
       } else {
-        return createTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Creation timestamp.
      * </pre>
@@ -961,14 +1015,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getCreateTimeFieldBuilder() {
       if (createTimeBuilder_ == null) {
-        createTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getCreateTime(),
-                getParentForChildren(),
-                isClean());
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
         createTime_ = null;
       }
       return createTimeBuilder_;
@@ -976,8 +1033,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp endTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> endTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        endTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * End timestamp.
      * </pre>
@@ -988,6 +1050,8 @@ private static final long serialVersionUID = 0L;
       return endTimeBuilder_ != null || endTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * End timestamp.
      * </pre>
@@ -1002,6 +1066,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * End timestamp.
      * </pre>
@@ -1022,14 +1088,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * End timestamp.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
-    public Builder setEndTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
         onChanged();
@@ -1040,6 +1107,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * End timestamp.
      * </pre>
@@ -1050,7 +1119,7 @@ private static final long serialVersionUID = 0L;
       if (endTimeBuilder_ == null) {
         if (endTime_ != null) {
           endTime_ =
-            com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
         } else {
           endTime_ = value;
         }
@@ -1062,6 +1131,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * End timestamp.
      * </pre>
@@ -1080,6 +1151,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * End timestamp.
      * </pre>
@@ -1087,11 +1160,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      
+
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * End timestamp.
      * </pre>
@@ -1102,11 +1177,12 @@ private static final long serialVersionUID = 0L;
       if (endTimeBuilder_ != null) {
         return endTimeBuilder_.getMessageOrBuilder();
       } else {
-        return endTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * End timestamp.
      * </pre>
@@ -1114,14 +1190,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp end_time = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getEndTimeFieldBuilder() {
       if (endTimeBuilder_ == null) {
-        endTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getEndTime(),
-                getParentForChildren(),
-                isClean());
+        endTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getEndTime(), getParentForChildren(), isClean());
         endTime_ = null;
       }
       return endTimeBuilder_;
@@ -1129,6 +1208,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object target_ = "";
     /**
+     *
+     *
      * <pre>
      * Operation target.
      * </pre>
@@ -1138,8 +1219,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getTarget() {
       java.lang.Object ref = target_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         target_ = s;
         return s;
@@ -1148,19 +1228,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Operation target.
      * </pre>
      *
      * <code>string target = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getTargetBytes() {
+    public com.google.protobuf.ByteString getTargetBytes() {
       java.lang.Object ref = target_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         target_ = b;
         return b;
       } else {
@@ -1168,23 +1248,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Operation target.
      * </pre>
      *
      * <code>string target = 3;</code>
      */
-    public Builder setTarget(
-        java.lang.String value) {
+    public Builder setTarget(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       target_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Operation target.
      * </pre>
@@ -1192,25 +1275,26 @@ private static final long serialVersionUID = 0L;
      * <code>string target = 3;</code>
      */
     public Builder clearTarget() {
-      
+
       target_ = getDefaultInstance().getTarget();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Operation target.
      * </pre>
      *
      * <code>string target = 3;</code>
      */
-    public Builder setTargetBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTargetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       target_ = value;
       onChanged();
       return this;
@@ -1218,6 +1302,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object verb_ = "";
     /**
+     *
+     *
      * <pre>
      * Operation verb.
      * </pre>
@@ -1227,8 +1313,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getVerb() {
       java.lang.Object ref = verb_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         verb_ = s;
         return s;
@@ -1237,19 +1322,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Operation verb.
      * </pre>
      *
      * <code>string verb = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getVerbBytes() {
+    public com.google.protobuf.ByteString getVerbBytes() {
       java.lang.Object ref = verb_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         verb_ = b;
         return b;
       } else {
@@ -1257,23 +1342,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Operation verb.
      * </pre>
      *
      * <code>string verb = 4;</code>
      */
-    public Builder setVerb(
-        java.lang.String value) {
+    public Builder setVerb(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       verb_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Operation verb.
      * </pre>
@@ -1281,25 +1369,26 @@ private static final long serialVersionUID = 0L;
      * <code>string verb = 4;</code>
      */
     public Builder clearVerb() {
-      
+
       verb_ = getDefaultInstance().getVerb();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Operation verb.
      * </pre>
      *
      * <code>string verb = 4;</code>
      */
-    public Builder setVerbBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setVerbBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       verb_ = value;
       onChanged();
       return this;
@@ -1307,6 +1396,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object statusDetail_ = "";
     /**
+     *
+     *
      * <pre>
      * Operation status details.
      * </pre>
@@ -1316,8 +1407,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getStatusDetail() {
       java.lang.Object ref = statusDetail_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         statusDetail_ = s;
         return s;
@@ -1326,19 +1416,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Operation status details.
      * </pre>
      *
      * <code>string status_detail = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getStatusDetailBytes() {
+    public com.google.protobuf.ByteString getStatusDetailBytes() {
       java.lang.Object ref = statusDetail_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         statusDetail_ = b;
         return b;
       } else {
@@ -1346,23 +1436,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Operation status details.
      * </pre>
      *
      * <code>string status_detail = 5;</code>
      */
-    public Builder setStatusDetail(
-        java.lang.String value) {
+    public Builder setStatusDetail(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       statusDetail_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Operation status details.
      * </pre>
@@ -1370,32 +1463,35 @@ private static final long serialVersionUID = 0L;
      * <code>string status_detail = 5;</code>
      */
     public Builder clearStatusDetail() {
-      
+
       statusDetail_ = getDefaultInstance().getStatusDetail();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Operation status details.
      * </pre>
      *
      * <code>string status_detail = 5;</code>
      */
-    public Builder setStatusDetailBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setStatusDetailBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       statusDetail_ = value;
       onChanged();
       return this;
     }
 
-    private boolean cancelRequested_ ;
+    private boolean cancelRequested_;
     /**
+     *
+     *
      * <pre>
      * Specifies if cancellation was requested for the operation.
      * </pre>
@@ -1406,6 +1502,8 @@ private static final long serialVersionUID = 0L;
       return cancelRequested_;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies if cancellation was requested for the operation.
      * </pre>
@@ -1413,12 +1511,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool cancel_requested = 6;</code>
      */
     public Builder setCancelRequested(boolean value) {
-      
+
       cancelRequested_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies if cancellation was requested for the operation.
      * </pre>
@@ -1426,7 +1526,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool cancel_requested = 6;</code>
      */
     public Builder clearCancelRequested() {
-      
+
       cancelRequested_ = false;
       onChanged();
       return this;
@@ -1434,6 +1534,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object apiVersion_ = "";
     /**
+     *
+     *
      * <pre>
      * API version.
      * </pre>
@@ -1443,8 +1545,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getApiVersion() {
       java.lang.Object ref = apiVersion_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         apiVersion_ = s;
         return s;
@@ -1453,19 +1554,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * API version.
      * </pre>
      *
      * <code>string api_version = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getApiVersionBytes() {
+    public com.google.protobuf.ByteString getApiVersionBytes() {
       java.lang.Object ref = apiVersion_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         apiVersion_ = b;
         return b;
       } else {
@@ -1473,23 +1574,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * API version.
      * </pre>
      *
      * <code>string api_version = 7;</code>
      */
-    public Builder setApiVersion(
-        java.lang.String value) {
+    public Builder setApiVersion(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       apiVersion_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * API version.
      * </pre>
@@ -1497,32 +1601,33 @@ private static final long serialVersionUID = 0L;
      * <code>string api_version = 7;</code>
      */
     public Builder clearApiVersion() {
-      
+
       apiVersion_ = getDefaultInstance().getApiVersion();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * API version.
      * </pre>
      *
      * <code>string api_version = 7;</code>
      */
-    public Builder setApiVersionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setApiVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       apiVersion_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1532,12 +1637,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.redis.v1.OperationMetadata)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.redis.v1.OperationMetadata)
   private static final com.google.cloud.redis.v1.OperationMetadata DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.redis.v1.OperationMetadata();
   }
@@ -1546,16 +1651,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<OperationMetadata>
-      PARSER = new com.google.protobuf.AbstractParser<OperationMetadata>() {
-    @java.lang.Override
-    public OperationMetadata parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new OperationMetadata(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<OperationMetadata> PARSER =
+      new com.google.protobuf.AbstractParser<OperationMetadata>() {
+        @java.lang.Override
+        public OperationMetadata parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new OperationMetadata(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<OperationMetadata> parser() {
     return PARSER;
@@ -1570,6 +1675,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.redis.v1.OperationMetadata getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

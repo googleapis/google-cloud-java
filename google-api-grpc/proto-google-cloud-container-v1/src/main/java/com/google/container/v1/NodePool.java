@@ -4,6 +4,8 @@
 package com.google.container.v1;
 
 /**
+ *
+ *
  * <pre>
  * NodePool contains the name and configuration for a cluster's node pool.
  * Node pools are a set of nodes (i.e. VM's), with a common configuration and
@@ -15,15 +17,16 @@ package com.google.container.v1;
  *
  * Protobuf type {@code google.container.v1.NodePool}
  */
-public  final class NodePool extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class NodePool extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.container.v1.NodePool)
     NodePoolOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use NodePool.newBuilder() to construct.
   private NodePool(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private NodePool() {
     name_ = "";
     initialNodeCount_ = 0;
@@ -35,10 +38,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private NodePool(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -58,103 +61,116 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            com.google.container.v1.NodeConfig.Builder subBuilder = null;
-            if (config_ != null) {
-              subBuilder = config_.toBuilder();
+              name_ = s;
+              break;
             }
-            config_ = input.readMessage(com.google.container.v1.NodeConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(config_);
-              config_ = subBuilder.buildPartial();
+          case 18:
+            {
+              com.google.container.v1.NodeConfig.Builder subBuilder = null;
+              if (config_ != null) {
+                subBuilder = config_.toBuilder();
+              }
+              config_ =
+                  input.readMessage(com.google.container.v1.NodeConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(config_);
+                config_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
-
-            break;
-          }
-          case 24: {
-
-            initialNodeCount_ = input.readInt32();
-            break;
-          }
-          case 34: {
-            com.google.container.v1.NodePoolAutoscaling.Builder subBuilder = null;
-            if (autoscaling_ != null) {
-              subBuilder = autoscaling_.toBuilder();
+          case 24:
+            {
+              initialNodeCount_ = input.readInt32();
+              break;
             }
-            autoscaling_ = input.readMessage(com.google.container.v1.NodePoolAutoscaling.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(autoscaling_);
-              autoscaling_ = subBuilder.buildPartial();
+          case 34:
+            {
+              com.google.container.v1.NodePoolAutoscaling.Builder subBuilder = null;
+              if (autoscaling_ != null) {
+                subBuilder = autoscaling_.toBuilder();
+              }
+              autoscaling_ =
+                  input.readMessage(
+                      com.google.container.v1.NodePoolAutoscaling.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(autoscaling_);
+                autoscaling_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
+          case 42:
+            {
+              com.google.container.v1.NodeManagement.Builder subBuilder = null;
+              if (management_ != null) {
+                subBuilder = management_.toBuilder();
+              }
+              management_ =
+                  input.readMessage(
+                      com.google.container.v1.NodeManagement.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(management_);
+                management_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 42: {
-            com.google.container.v1.NodeManagement.Builder subBuilder = null;
-            if (management_ != null) {
-              subBuilder = management_.toBuilder();
+              break;
             }
-            management_ = input.readMessage(com.google.container.v1.NodeManagement.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(management_);
-              management_ = subBuilder.buildPartial();
+          case 802:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              selfLink_ = s;
+              break;
             }
+          case 810:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 802: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            selfLink_ = s;
-            break;
-          }
-          case 810: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            version_ = s;
-            break;
-          }
-          case 818: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-              instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000020;
+              version_ = s;
+              break;
             }
-            instanceGroupUrls_.add(s);
-            break;
-          }
-          case 824: {
-            int rawValue = input.readEnum();
-
-            status_ = rawValue;
-            break;
-          }
-          case 834: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            statusMessage_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 818:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              instanceGroupUrls_.add(s);
+              break;
             }
-            break;
-          }
+          case 824:
+            {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+          case 834:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              statusMessage_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
         instanceGroupUrls_ = instanceGroupUrls_.getUnmodifiableView();
@@ -163,29 +179,34 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_NodePool_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_NodePool_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_NodePool_fieldAccessorTable
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_NodePool_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.container.v1.NodePool.class, com.google.container.v1.NodePool.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * The current status of the node pool instance.
    * </pre>
    *
    * Protobuf enum {@code google.container.v1.NodePool.Status}
    */
-  public enum Status
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Status implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Not set.
      * </pre>
@@ -194,6 +215,8 @@ private static final long serialVersionUID = 0L;
      */
     STATUS_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * The PROVISIONING state indicates the node pool is being created.
      * </pre>
@@ -202,6 +225,8 @@ private static final long serialVersionUID = 0L;
      */
     PROVISIONING(1),
     /**
+     *
+     *
      * <pre>
      * The RUNNING state indicates the node pool has been created
      * and is fully usable.
@@ -211,6 +236,8 @@ private static final long serialVersionUID = 0L;
      */
     RUNNING(2),
     /**
+     *
+     *
      * <pre>
      * The RUNNING_WITH_ERROR state indicates the node pool has been created
      * and is partially usable. Some error state has occurred and some
@@ -222,6 +249,8 @@ private static final long serialVersionUID = 0L;
      */
     RUNNING_WITH_ERROR(3),
     /**
+     *
+     *
      * <pre>
      * The RECONCILING state indicates that some work is actively being done on
      * the node pool, such as upgrading node software. Details can
@@ -232,6 +261,8 @@ private static final long serialVersionUID = 0L;
      */
     RECONCILING(4),
     /**
+     *
+     *
      * <pre>
      * The STOPPING state indicates the node pool is being deleted.
      * </pre>
@@ -240,6 +271,8 @@ private static final long serialVersionUID = 0L;
      */
     STOPPING(5),
     /**
+     *
+     *
      * <pre>
      * The ERROR state indicates the node pool may be unusable. Details
      * can be found in the `statusMessage` field.
@@ -252,6 +285,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Not set.
      * </pre>
@@ -260,6 +295,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int STATUS_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The PROVISIONING state indicates the node pool is being created.
      * </pre>
@@ -268,6 +305,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PROVISIONING_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * The RUNNING state indicates the node pool has been created
      * and is fully usable.
@@ -277,6 +316,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RUNNING_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * The RUNNING_WITH_ERROR state indicates the node pool has been created
      * and is partially usable. Some error state has occurred and some
@@ -288,6 +329,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RUNNING_WITH_ERROR_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * The RECONCILING state indicates that some work is actively being done on
      * the node pool, such as upgrading node software. Details can
@@ -298,6 +341,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RECONCILING_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * The STOPPING state indicates the node pool is being deleted.
      * </pre>
@@ -306,6 +351,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int STOPPING_VALUE = 5;
     /**
+     *
+     *
      * <pre>
      * The ERROR state indicates the node pool may be unusable. Details
      * can be found in the `statusMessage` field.
@@ -315,7 +362,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ERROR_VALUE = 6;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -324,9 +370,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Status valueOf(int value) {
       return forNumber(value);
@@ -334,49 +378,53 @@ private static final long serialVersionUID = 0L;
 
     public static Status forNumber(int value) {
       switch (value) {
-        case 0: return STATUS_UNSPECIFIED;
-        case 1: return PROVISIONING;
-        case 2: return RUNNING;
-        case 3: return RUNNING_WITH_ERROR;
-        case 4: return RECONCILING;
-        case 5: return STOPPING;
-        case 6: return ERROR;
-        default: return null;
+        case 0:
+          return STATUS_UNSPECIFIED;
+        case 1:
+          return PROVISIONING;
+        case 2:
+          return RUNNING;
+        case 3:
+          return RUNNING_WITH_ERROR;
+        case 4:
+          return RECONCILING;
+        case 5:
+          return STOPPING;
+        case 6:
+          return ERROR;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Status>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Status> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Status> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Status>() {
-            public Status findValueByNumber(int number) {
-              return Status.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Status> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Status>() {
+          public Status findValueByNumber(int number) {
+            return Status.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.container.v1.NodePool.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final Status[] VALUES = values();
 
-    public static Status valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Status valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -397,6 +445,8 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The name of the node pool.
    * </pre>
@@ -408,27 +458,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The name of the node pool.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -439,6 +488,8 @@ private static final long serialVersionUID = 0L;
   public static final int CONFIG_FIELD_NUMBER = 2;
   private com.google.container.v1.NodeConfig config_;
   /**
+   *
+   *
    * <pre>
    * The node configuration of the pool.
    * </pre>
@@ -449,6 +500,8 @@ private static final long serialVersionUID = 0L;
     return config_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The node configuration of the pool.
    * </pre>
@@ -459,6 +512,8 @@ private static final long serialVersionUID = 0L;
     return config_ == null ? com.google.container.v1.NodeConfig.getDefaultInstance() : config_;
   }
   /**
+   *
+   *
    * <pre>
    * The node configuration of the pool.
    * </pre>
@@ -472,6 +527,8 @@ private static final long serialVersionUID = 0L;
   public static final int INITIAL_NODE_COUNT_FIELD_NUMBER = 3;
   private int initialNodeCount_;
   /**
+   *
+   *
    * <pre>
    * The initial node count for the pool. You must ensure that your
    * Compute Engine &lt;a href="/compute/docs/resource-quotas"&gt;resource quota&lt;/a&gt;
@@ -488,6 +545,8 @@ private static final long serialVersionUID = 0L;
   public static final int SELF_LINK_FIELD_NUMBER = 100;
   private volatile java.lang.Object selfLink_;
   /**
+   *
+   *
    * <pre>
    * [Output only] Server-defined URL for the resource.
    * </pre>
@@ -499,27 +558,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       selfLink_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] Server-defined URL for the resource.
    * </pre>
    *
    * <code>string self_link = 100;</code>
    */
-  public com.google.protobuf.ByteString
-      getSelfLinkBytes() {
+  public com.google.protobuf.ByteString getSelfLinkBytes() {
     java.lang.Object ref = selfLink_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       selfLink_ = b;
       return b;
     } else {
@@ -530,6 +588,8 @@ private static final long serialVersionUID = 0L;
   public static final int VERSION_FIELD_NUMBER = 101;
   private volatile java.lang.Object version_;
   /**
+   *
+   *
    * <pre>
    * The version of the Kubernetes of this node.
    * </pre>
@@ -541,27 +601,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       version_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The version of the Kubernetes of this node.
    * </pre>
    *
    * <code>string version = 101;</code>
    */
-  public com.google.protobuf.ByteString
-      getVersionBytes() {
+  public com.google.protobuf.ByteString getVersionBytes() {
     java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       version_ = b;
       return b;
     } else {
@@ -572,6 +631,8 @@ private static final long serialVersionUID = 0L;
   public static final int INSTANCE_GROUP_URLS_FIELD_NUMBER = 102;
   private com.google.protobuf.LazyStringList instanceGroupUrls_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The resource URLs of the [managed instance
    * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
@@ -580,11 +641,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string instance_group_urls = 102;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getInstanceGroupUrlsList() {
+  public com.google.protobuf.ProtocolStringList getInstanceGroupUrlsList() {
     return instanceGroupUrls_;
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The resource URLs of the [managed instance
    * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
@@ -597,6 +659,8 @@ private static final long serialVersionUID = 0L;
     return instanceGroupUrls_.size();
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The resource URLs of the [managed instance
    * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
@@ -609,6 +673,8 @@ private static final long serialVersionUID = 0L;
     return instanceGroupUrls_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The resource URLs of the [managed instance
    * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
@@ -617,14 +683,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string instance_group_urls = 102;</code>
    */
-  public com.google.protobuf.ByteString
-      getInstanceGroupUrlsBytes(int index) {
+  public com.google.protobuf.ByteString getInstanceGroupUrlsBytes(int index) {
     return instanceGroupUrls_.getByteString(index);
   }
 
   public static final int STATUS_FIELD_NUMBER = 103;
   private int status_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The status of the nodes in this pool instance.
    * </pre>
@@ -635,6 +702,8 @@ private static final long serialVersionUID = 0L;
     return status_;
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The status of the nodes in this pool instance.
    * </pre>
@@ -643,13 +712,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.container.v1.NodePool.Status getStatus() {
     @SuppressWarnings("deprecation")
-    com.google.container.v1.NodePool.Status result = com.google.container.v1.NodePool.Status.valueOf(status_);
+    com.google.container.v1.NodePool.Status result =
+        com.google.container.v1.NodePool.Status.valueOf(status_);
     return result == null ? com.google.container.v1.NodePool.Status.UNRECOGNIZED : result;
   }
 
   public static final int STATUS_MESSAGE_FIELD_NUMBER = 104;
   private volatile java.lang.Object statusMessage_;
   /**
+   *
+   *
    * <pre>
    * [Output only] Additional information about the current status of this
    * node pool instance, if available.
@@ -662,14 +734,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       statusMessage_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] Additional information about the current status of this
    * node pool instance, if available.
@@ -677,13 +750,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string status_message = 104;</code>
    */
-  public com.google.protobuf.ByteString
-      getStatusMessageBytes() {
+  public com.google.protobuf.ByteString getStatusMessageBytes() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       statusMessage_ = b;
       return b;
     } else {
@@ -694,6 +765,8 @@ private static final long serialVersionUID = 0L;
   public static final int AUTOSCALING_FIELD_NUMBER = 4;
   private com.google.container.v1.NodePoolAutoscaling autoscaling_;
   /**
+   *
+   *
    * <pre>
    * Autoscaler configuration for this NodePool. Autoscaler is enabled
    * only if a valid configuration is present.
@@ -705,6 +778,8 @@ private static final long serialVersionUID = 0L;
     return autoscaling_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Autoscaler configuration for this NodePool. Autoscaler is enabled
    * only if a valid configuration is present.
@@ -713,9 +788,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 4;</code>
    */
   public com.google.container.v1.NodePoolAutoscaling getAutoscaling() {
-    return autoscaling_ == null ? com.google.container.v1.NodePoolAutoscaling.getDefaultInstance() : autoscaling_;
+    return autoscaling_ == null
+        ? com.google.container.v1.NodePoolAutoscaling.getDefaultInstance()
+        : autoscaling_;
   }
   /**
+   *
+   *
    * <pre>
    * Autoscaler configuration for this NodePool. Autoscaler is enabled
    * only if a valid configuration is present.
@@ -730,6 +809,8 @@ private static final long serialVersionUID = 0L;
   public static final int MANAGEMENT_FIELD_NUMBER = 5;
   private com.google.container.v1.NodeManagement management_;
   /**
+   *
+   *
    * <pre>
    * NodeManagement configuration for this NodePool.
    * </pre>
@@ -740,6 +821,8 @@ private static final long serialVersionUID = 0L;
     return management_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * NodeManagement configuration for this NodePool.
    * </pre>
@@ -747,9 +830,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.NodeManagement management = 5;</code>
    */
   public com.google.container.v1.NodeManagement getManagement() {
-    return management_ == null ? com.google.container.v1.NodeManagement.getDefaultInstance() : management_;
+    return management_ == null
+        ? com.google.container.v1.NodeManagement.getDefaultInstance()
+        : management_;
   }
   /**
+   *
+   *
    * <pre>
    * NodeManagement configuration for this NodePool.
    * </pre>
@@ -761,6 +848,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -772,8 +860,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -817,20 +904,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (config_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getConfig());
     }
     if (initialNodeCount_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, initialNodeCount_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, initialNodeCount_);
     }
     if (autoscaling_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getAutoscaling());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getAutoscaling());
     }
     if (management_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getManagement());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getManagement());
     }
     if (!getSelfLinkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, selfLink_);
@@ -847,8 +930,7 @@ private static final long serialVersionUID = 0L;
       size += 2 * getInstanceGroupUrlsList().size();
     }
     if (status_ != com.google.container.v1.NodePool.Status.STATUS_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(103, status_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(103, status_);
     }
     if (!getStatusMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(104, statusMessage_);
@@ -861,7 +943,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.container.v1.NodePool)) {
       return super.equals(obj);
@@ -869,33 +951,24 @@ private static final long serialVersionUID = 0L;
     com.google.container.v1.NodePool other = (com.google.container.v1.NodePool) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
+    result = result && getName().equals(other.getName());
     result = result && (hasConfig() == other.hasConfig());
     if (hasConfig()) {
-      result = result && getConfig()
-          .equals(other.getConfig());
+      result = result && getConfig().equals(other.getConfig());
     }
-    result = result && (getInitialNodeCount()
-        == other.getInitialNodeCount());
-    result = result && getSelfLink()
-        .equals(other.getSelfLink());
-    result = result && getVersion()
-        .equals(other.getVersion());
-    result = result && getInstanceGroupUrlsList()
-        .equals(other.getInstanceGroupUrlsList());
+    result = result && (getInitialNodeCount() == other.getInitialNodeCount());
+    result = result && getSelfLink().equals(other.getSelfLink());
+    result = result && getVersion().equals(other.getVersion());
+    result = result && getInstanceGroupUrlsList().equals(other.getInstanceGroupUrlsList());
     result = result && status_ == other.status_;
-    result = result && getStatusMessage()
-        .equals(other.getStatusMessage());
+    result = result && getStatusMessage().equals(other.getStatusMessage());
     result = result && (hasAutoscaling() == other.hasAutoscaling());
     if (hasAutoscaling()) {
-      result = result && getAutoscaling()
-          .equals(other.getAutoscaling());
+      result = result && getAutoscaling().equals(other.getAutoscaling());
     }
     result = result && (hasManagement() == other.hasManagement());
     if (hasManagement()) {
-      result = result && getManagement()
-          .equals(other.getManagement());
+      result = result && getManagement().equals(other.getManagement());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -941,97 +1014,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.container.v1.NodePool parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.container.v1.NodePool parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.NodePool parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.container.v1.NodePool parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.container.v1.NodePool parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.NodePool parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.NodePool parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.NodePool parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.NodePool parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.NodePool parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.container.v1.NodePool parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.NodePool parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.container.v1.NodePool parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.NodePool parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.container.v1.NodePool prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * NodePool contains the name and configuration for a cluster's node pool.
    * Node pools are a set of nodes (i.e. VM's), with a common configuration and
@@ -1043,21 +1122,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.container.v1.NodePool}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.container.v1.NodePool)
       com.google.container.v1.NodePoolOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_NodePool_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_NodePool_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_NodePool_fieldAccessorTable
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_NodePool_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1.NodePool.class, com.google.container.v1.NodePool.Builder.class);
+              com.google.container.v1.NodePool.class,
+              com.google.container.v1.NodePool.Builder.class);
     }
 
     // Construct using com.google.container.v1.NodePool.newBuilder()
@@ -1065,16 +1146,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1114,9 +1194,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_NodePool_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_NodePool_descriptor;
     }
 
     @java.lang.Override
@@ -1173,38 +1253,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.container.v1.NodePool) {
-        return mergeFrom((com.google.container.v1.NodePool)other);
+        return mergeFrom((com.google.container.v1.NodePool) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1282,10 +1363,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The name of the node pool.
      * </pre>
@@ -1295,8 +1379,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1305,19 +1388,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the node pool.
      * </pre>
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1325,23 +1408,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the node pool.
      * </pre>
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the node pool.
      * </pre>
@@ -1349,25 +1435,26 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the node pool.
      * </pre>
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1375,8 +1462,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.NodeConfig config_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.NodeConfig, com.google.container.v1.NodeConfig.Builder, com.google.container.v1.NodeConfigOrBuilder> configBuilder_;
+            com.google.container.v1.NodeConfig,
+            com.google.container.v1.NodeConfig.Builder,
+            com.google.container.v1.NodeConfigOrBuilder>
+        configBuilder_;
     /**
+     *
+     *
      * <pre>
      * The node configuration of the pool.
      * </pre>
@@ -1387,6 +1479,8 @@ private static final long serialVersionUID = 0L;
       return configBuilder_ != null || config_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The node configuration of the pool.
      * </pre>
@@ -1401,6 +1495,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The node configuration of the pool.
      * </pre>
@@ -1421,14 +1517,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The node configuration of the pool.
      * </pre>
      *
      * <code>.google.container.v1.NodeConfig config = 2;</code>
      */
-    public Builder setConfig(
-        com.google.container.v1.NodeConfig.Builder builderForValue) {
+    public Builder setConfig(com.google.container.v1.NodeConfig.Builder builderForValue) {
       if (configBuilder_ == null) {
         config_ = builderForValue.build();
         onChanged();
@@ -1439,6 +1536,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The node configuration of the pool.
      * </pre>
@@ -1449,7 +1548,9 @@ private static final long serialVersionUID = 0L;
       if (configBuilder_ == null) {
         if (config_ != null) {
           config_ =
-            com.google.container.v1.NodeConfig.newBuilder(config_).mergeFrom(value).buildPartial();
+              com.google.container.v1.NodeConfig.newBuilder(config_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           config_ = value;
         }
@@ -1461,6 +1562,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The node configuration of the pool.
      * </pre>
@@ -1479,6 +1582,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The node configuration of the pool.
      * </pre>
@@ -1486,11 +1591,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.NodeConfig config = 2;</code>
      */
     public com.google.container.v1.NodeConfig.Builder getConfigBuilder() {
-      
+
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The node configuration of the pool.
      * </pre>
@@ -1501,11 +1608,12 @@ private static final long serialVersionUID = 0L;
       if (configBuilder_ != null) {
         return configBuilder_.getMessageOrBuilder();
       } else {
-        return config_ == null ?
-            com.google.container.v1.NodeConfig.getDefaultInstance() : config_;
+        return config_ == null ? com.google.container.v1.NodeConfig.getDefaultInstance() : config_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The node configuration of the pool.
      * </pre>
@@ -1513,21 +1621,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.NodeConfig config = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.NodeConfig, com.google.container.v1.NodeConfig.Builder, com.google.container.v1.NodeConfigOrBuilder> 
+            com.google.container.v1.NodeConfig,
+            com.google.container.v1.NodeConfig.Builder,
+            com.google.container.v1.NodeConfigOrBuilder>
         getConfigFieldBuilder() {
       if (configBuilder_ == null) {
-        configBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.NodeConfig, com.google.container.v1.NodeConfig.Builder, com.google.container.v1.NodeConfigOrBuilder>(
-                getConfig(),
-                getParentForChildren(),
-                isClean());
+        configBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodeConfig,
+                com.google.container.v1.NodeConfig.Builder,
+                com.google.container.v1.NodeConfigOrBuilder>(
+                getConfig(), getParentForChildren(), isClean());
         config_ = null;
       }
       return configBuilder_;
     }
 
-    private int initialNodeCount_ ;
+    private int initialNodeCount_;
     /**
+     *
+     *
      * <pre>
      * The initial node count for the pool. You must ensure that your
      * Compute Engine &lt;a href="/compute/docs/resource-quotas"&gt;resource quota&lt;/a&gt;
@@ -1541,6 +1654,8 @@ private static final long serialVersionUID = 0L;
       return initialNodeCount_;
     }
     /**
+     *
+     *
      * <pre>
      * The initial node count for the pool. You must ensure that your
      * Compute Engine &lt;a href="/compute/docs/resource-quotas"&gt;resource quota&lt;/a&gt;
@@ -1551,12 +1666,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 initial_node_count = 3;</code>
      */
     public Builder setInitialNodeCount(int value) {
-      
+
       initialNodeCount_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The initial node count for the pool. You must ensure that your
      * Compute Engine &lt;a href="/compute/docs/resource-quotas"&gt;resource quota&lt;/a&gt;
@@ -1567,7 +1684,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 initial_node_count = 3;</code>
      */
     public Builder clearInitialNodeCount() {
-      
+
       initialNodeCount_ = 0;
       onChanged();
       return this;
@@ -1575,6 +1692,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object selfLink_ = "";
     /**
+     *
+     *
      * <pre>
      * [Output only] Server-defined URL for the resource.
      * </pre>
@@ -1584,8 +1703,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSelfLink() {
       java.lang.Object ref = selfLink_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         selfLink_ = s;
         return s;
@@ -1594,19 +1712,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>string self_link = 100;</code>
      */
-    public com.google.protobuf.ByteString
-        getSelfLinkBytes() {
+    public com.google.protobuf.ByteString getSelfLinkBytes() {
       java.lang.Object ref = selfLink_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         selfLink_ = b;
         return b;
       } else {
@@ -1614,23 +1732,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>string self_link = 100;</code>
      */
-    public Builder setSelfLink(
-        java.lang.String value) {
+    public Builder setSelfLink(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       selfLink_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Server-defined URL for the resource.
      * </pre>
@@ -1638,25 +1759,26 @@ private static final long serialVersionUID = 0L;
      * <code>string self_link = 100;</code>
      */
     public Builder clearSelfLink() {
-      
+
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Server-defined URL for the resource.
      * </pre>
      *
      * <code>string self_link = 100;</code>
      */
-    public Builder setSelfLinkBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setSelfLinkBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       selfLink_ = value;
       onChanged();
       return this;
@@ -1664,6 +1786,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object version_ = "";
     /**
+     *
+     *
      * <pre>
      * The version of the Kubernetes of this node.
      * </pre>
@@ -1673,8 +1797,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getVersion() {
       java.lang.Object ref = version_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         version_ = s;
         return s;
@@ -1683,19 +1806,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The version of the Kubernetes of this node.
      * </pre>
      *
      * <code>string version = 101;</code>
      */
-    public com.google.protobuf.ByteString
-        getVersionBytes() {
+    public com.google.protobuf.ByteString getVersionBytes() {
       java.lang.Object ref = version_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         version_ = b;
         return b;
       } else {
@@ -1703,23 +1826,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The version of the Kubernetes of this node.
      * </pre>
      *
      * <code>string version = 101;</code>
      */
-    public Builder setVersion(
-        java.lang.String value) {
+    public Builder setVersion(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       version_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The version of the Kubernetes of this node.
      * </pre>
@@ -1727,38 +1853,43 @@ private static final long serialVersionUID = 0L;
      * <code>string version = 101;</code>
      */
     public Builder clearVersion() {
-      
+
       version_ = getDefaultInstance().getVersion();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The version of the Kubernetes of this node.
      * </pre>
      *
      * <code>string version = 101;</code>
      */
-    public Builder setVersionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       version_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList instanceGroupUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList instanceGroupUrls_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureInstanceGroupUrlsIsMutable() {
       if (!((bitField0_ & 0x00000020) == 0x00000020)) {
         instanceGroupUrls_ = new com.google.protobuf.LazyStringArrayList(instanceGroupUrls_);
         bitField0_ |= 0x00000020;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The resource URLs of the [managed instance
      * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
@@ -1767,11 +1898,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string instance_group_urls = 102;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getInstanceGroupUrlsList() {
+    public com.google.protobuf.ProtocolStringList getInstanceGroupUrlsList() {
       return instanceGroupUrls_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The resource URLs of the [managed instance
      * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
@@ -1784,6 +1916,8 @@ private static final long serialVersionUID = 0L;
       return instanceGroupUrls_.size();
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The resource URLs of the [managed instance
      * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
@@ -1796,6 +1930,8 @@ private static final long serialVersionUID = 0L;
       return instanceGroupUrls_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The resource URLs of the [managed instance
      * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
@@ -1804,11 +1940,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string instance_group_urls = 102;</code>
      */
-    public com.google.protobuf.ByteString
-        getInstanceGroupUrlsBytes(int index) {
+    public com.google.protobuf.ByteString getInstanceGroupUrlsBytes(int index) {
       return instanceGroupUrls_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The resource URLs of the [managed instance
      * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
@@ -1817,17 +1954,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string instance_group_urls = 102;</code>
      */
-    public Builder setInstanceGroupUrls(
-        int index, java.lang.String value) {
+    public Builder setInstanceGroupUrls(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureInstanceGroupUrlsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureInstanceGroupUrlsIsMutable();
       instanceGroupUrls_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The resource URLs of the [managed instance
      * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
@@ -1836,17 +1974,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string instance_group_urls = 102;</code>
      */
-    public Builder addInstanceGroupUrls(
-        java.lang.String value) {
+    public Builder addInstanceGroupUrls(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureInstanceGroupUrlsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureInstanceGroupUrlsIsMutable();
       instanceGroupUrls_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The resource URLs of the [managed instance
      * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
@@ -1855,15 +1994,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string instance_group_urls = 102;</code>
      */
-    public Builder addAllInstanceGroupUrls(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllInstanceGroupUrls(java.lang.Iterable<java.lang.String> values) {
       ensureInstanceGroupUrlsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, instanceGroupUrls_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instanceGroupUrls_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The resource URLs of the [managed instance
      * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
@@ -1879,6 +2018,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The resource URLs of the [managed instance
      * groups](/compute/docs/instance-groups/creating-groups-of-managed-instances)
@@ -1887,12 +2028,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string instance_group_urls = 102;</code>
      */
-    public Builder addInstanceGroupUrlsBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addInstanceGroupUrlsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureInstanceGroupUrlsIsMutable();
       instanceGroupUrls_.add(value);
       onChanged();
@@ -1901,6 +2041,8 @@ private static final long serialVersionUID = 0L;
 
     private int status_ = 0;
     /**
+     *
+     *
      * <pre>
      * [Output only] The status of the nodes in this pool instance.
      * </pre>
@@ -1911,6 +2053,8 @@ private static final long serialVersionUID = 0L;
       return status_;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The status of the nodes in this pool instance.
      * </pre>
@@ -1923,6 +2067,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The status of the nodes in this pool instance.
      * </pre>
@@ -1931,10 +2077,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.NodePool.Status getStatus() {
       @SuppressWarnings("deprecation")
-      com.google.container.v1.NodePool.Status result = com.google.container.v1.NodePool.Status.valueOf(status_);
+      com.google.container.v1.NodePool.Status result =
+          com.google.container.v1.NodePool.Status.valueOf(status_);
       return result == null ? com.google.container.v1.NodePool.Status.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The status of the nodes in this pool instance.
      * </pre>
@@ -1945,12 +2094,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       status_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The status of the nodes in this pool instance.
      * </pre>
@@ -1958,7 +2109,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.NodePool.Status status = 103;</code>
      */
     public Builder clearStatus() {
-      
+
       status_ = 0;
       onChanged();
       return this;
@@ -1966,6 +2117,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object statusMessage_ = "";
     /**
+     *
+     *
      * <pre>
      * [Output only] Additional information about the current status of this
      * node pool instance, if available.
@@ -1976,8 +2129,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getStatusMessage() {
       java.lang.Object ref = statusMessage_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         statusMessage_ = s;
         return s;
@@ -1986,6 +2138,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Additional information about the current status of this
      * node pool instance, if available.
@@ -1993,13 +2147,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string status_message = 104;</code>
      */
-    public com.google.protobuf.ByteString
-        getStatusMessageBytes() {
+    public com.google.protobuf.ByteString getStatusMessageBytes() {
       java.lang.Object ref = statusMessage_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         statusMessage_ = b;
         return b;
       } else {
@@ -2007,6 +2159,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Additional information about the current status of this
      * node pool instance, if available.
@@ -2014,17 +2168,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string status_message = 104;</code>
      */
-    public Builder setStatusMessage(
-        java.lang.String value) {
+    public Builder setStatusMessage(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       statusMessage_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Additional information about the current status of this
      * node pool instance, if available.
@@ -2033,12 +2188,14 @@ private static final long serialVersionUID = 0L;
      * <code>string status_message = 104;</code>
      */
     public Builder clearStatusMessage() {
-      
+
       statusMessage_ = getDefaultInstance().getStatusMessage();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] Additional information about the current status of this
      * node pool instance, if available.
@@ -2046,13 +2203,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string status_message = 104;</code>
      */
-    public Builder setStatusMessageBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setStatusMessageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       statusMessage_ = value;
       onChanged();
       return this;
@@ -2060,8 +2216,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.NodePoolAutoscaling autoscaling_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.NodePoolAutoscaling, com.google.container.v1.NodePoolAutoscaling.Builder, com.google.container.v1.NodePoolAutoscalingOrBuilder> autoscalingBuilder_;
+            com.google.container.v1.NodePoolAutoscaling,
+            com.google.container.v1.NodePoolAutoscaling.Builder,
+            com.google.container.v1.NodePoolAutoscalingOrBuilder>
+        autoscalingBuilder_;
     /**
+     *
+     *
      * <pre>
      * Autoscaler configuration for this NodePool. Autoscaler is enabled
      * only if a valid configuration is present.
@@ -2073,6 +2234,8 @@ private static final long serialVersionUID = 0L;
       return autoscalingBuilder_ != null || autoscaling_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaler configuration for this NodePool. Autoscaler is enabled
      * only if a valid configuration is present.
@@ -2082,12 +2245,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.NodePoolAutoscaling getAutoscaling() {
       if (autoscalingBuilder_ == null) {
-        return autoscaling_ == null ? com.google.container.v1.NodePoolAutoscaling.getDefaultInstance() : autoscaling_;
+        return autoscaling_ == null
+            ? com.google.container.v1.NodePoolAutoscaling.getDefaultInstance()
+            : autoscaling_;
       } else {
         return autoscalingBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaler configuration for this NodePool. Autoscaler is enabled
      * only if a valid configuration is present.
@@ -2109,6 +2276,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaler configuration for this NodePool. Autoscaler is enabled
      * only if a valid configuration is present.
@@ -2128,6 +2297,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaler configuration for this NodePool. Autoscaler is enabled
      * only if a valid configuration is present.
@@ -2139,7 +2310,9 @@ private static final long serialVersionUID = 0L;
       if (autoscalingBuilder_ == null) {
         if (autoscaling_ != null) {
           autoscaling_ =
-            com.google.container.v1.NodePoolAutoscaling.newBuilder(autoscaling_).mergeFrom(value).buildPartial();
+              com.google.container.v1.NodePoolAutoscaling.newBuilder(autoscaling_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           autoscaling_ = value;
         }
@@ -2151,6 +2324,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaler configuration for this NodePool. Autoscaler is enabled
      * only if a valid configuration is present.
@@ -2170,6 +2345,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaler configuration for this NodePool. Autoscaler is enabled
      * only if a valid configuration is present.
@@ -2178,11 +2355,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 4;</code>
      */
     public com.google.container.v1.NodePoolAutoscaling.Builder getAutoscalingBuilder() {
-      
+
       onChanged();
       return getAutoscalingFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaler configuration for this NodePool. Autoscaler is enabled
      * only if a valid configuration is present.
@@ -2194,11 +2373,14 @@ private static final long serialVersionUID = 0L;
       if (autoscalingBuilder_ != null) {
         return autoscalingBuilder_.getMessageOrBuilder();
       } else {
-        return autoscaling_ == null ?
-            com.google.container.v1.NodePoolAutoscaling.getDefaultInstance() : autoscaling_;
+        return autoscaling_ == null
+            ? com.google.container.v1.NodePoolAutoscaling.getDefaultInstance()
+            : autoscaling_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Autoscaler configuration for this NodePool. Autoscaler is enabled
      * only if a valid configuration is present.
@@ -2207,14 +2389,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.NodePoolAutoscaling autoscaling = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.NodePoolAutoscaling, com.google.container.v1.NodePoolAutoscaling.Builder, com.google.container.v1.NodePoolAutoscalingOrBuilder> 
+            com.google.container.v1.NodePoolAutoscaling,
+            com.google.container.v1.NodePoolAutoscaling.Builder,
+            com.google.container.v1.NodePoolAutoscalingOrBuilder>
         getAutoscalingFieldBuilder() {
       if (autoscalingBuilder_ == null) {
-        autoscalingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.NodePoolAutoscaling, com.google.container.v1.NodePoolAutoscaling.Builder, com.google.container.v1.NodePoolAutoscalingOrBuilder>(
-                getAutoscaling(),
-                getParentForChildren(),
-                isClean());
+        autoscalingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodePoolAutoscaling,
+                com.google.container.v1.NodePoolAutoscaling.Builder,
+                com.google.container.v1.NodePoolAutoscalingOrBuilder>(
+                getAutoscaling(), getParentForChildren(), isClean());
         autoscaling_ = null;
       }
       return autoscalingBuilder_;
@@ -2222,8 +2407,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.NodeManagement management_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.NodeManagement, com.google.container.v1.NodeManagement.Builder, com.google.container.v1.NodeManagementOrBuilder> managementBuilder_;
+            com.google.container.v1.NodeManagement,
+            com.google.container.v1.NodeManagement.Builder,
+            com.google.container.v1.NodeManagementOrBuilder>
+        managementBuilder_;
     /**
+     *
+     *
      * <pre>
      * NodeManagement configuration for this NodePool.
      * </pre>
@@ -2234,6 +2424,8 @@ private static final long serialVersionUID = 0L;
       return managementBuilder_ != null || management_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * NodeManagement configuration for this NodePool.
      * </pre>
@@ -2242,12 +2434,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.NodeManagement getManagement() {
       if (managementBuilder_ == null) {
-        return management_ == null ? com.google.container.v1.NodeManagement.getDefaultInstance() : management_;
+        return management_ == null
+            ? com.google.container.v1.NodeManagement.getDefaultInstance()
+            : management_;
       } else {
         return managementBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * NodeManagement configuration for this NodePool.
      * </pre>
@@ -2268,14 +2464,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * NodeManagement configuration for this NodePool.
      * </pre>
      *
      * <code>.google.container.v1.NodeManagement management = 5;</code>
      */
-    public Builder setManagement(
-        com.google.container.v1.NodeManagement.Builder builderForValue) {
+    public Builder setManagement(com.google.container.v1.NodeManagement.Builder builderForValue) {
       if (managementBuilder_ == null) {
         management_ = builderForValue.build();
         onChanged();
@@ -2286,6 +2483,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * NodeManagement configuration for this NodePool.
      * </pre>
@@ -2296,7 +2495,9 @@ private static final long serialVersionUID = 0L;
       if (managementBuilder_ == null) {
         if (management_ != null) {
           management_ =
-            com.google.container.v1.NodeManagement.newBuilder(management_).mergeFrom(value).buildPartial();
+              com.google.container.v1.NodeManagement.newBuilder(management_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           management_ = value;
         }
@@ -2308,6 +2509,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * NodeManagement configuration for this NodePool.
      * </pre>
@@ -2326,6 +2529,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * NodeManagement configuration for this NodePool.
      * </pre>
@@ -2333,11 +2538,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.NodeManagement management = 5;</code>
      */
     public com.google.container.v1.NodeManagement.Builder getManagementBuilder() {
-      
+
       onChanged();
       return getManagementFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * NodeManagement configuration for this NodePool.
      * </pre>
@@ -2348,11 +2555,14 @@ private static final long serialVersionUID = 0L;
       if (managementBuilder_ != null) {
         return managementBuilder_.getMessageOrBuilder();
       } else {
-        return management_ == null ?
-            com.google.container.v1.NodeManagement.getDefaultInstance() : management_;
+        return management_ == null
+            ? com.google.container.v1.NodeManagement.getDefaultInstance()
+            : management_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * NodeManagement configuration for this NodePool.
      * </pre>
@@ -2360,21 +2570,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.NodeManagement management = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.NodeManagement, com.google.container.v1.NodeManagement.Builder, com.google.container.v1.NodeManagementOrBuilder> 
+            com.google.container.v1.NodeManagement,
+            com.google.container.v1.NodeManagement.Builder,
+            com.google.container.v1.NodeManagementOrBuilder>
         getManagementFieldBuilder() {
       if (managementBuilder_ == null) {
-        managementBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.NodeManagement, com.google.container.v1.NodeManagement.Builder, com.google.container.v1.NodeManagementOrBuilder>(
-                getManagement(),
-                getParentForChildren(),
-                isClean());
+        managementBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NodeManagement,
+                com.google.container.v1.NodeManagement.Builder,
+                com.google.container.v1.NodeManagementOrBuilder>(
+                getManagement(), getParentForChildren(), isClean());
         management_ = null;
       }
       return managementBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2384,12 +2597,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.container.v1.NodePool)
   }
 
   // @@protoc_insertion_point(class_scope:google.container.v1.NodePool)
   private static final com.google.container.v1.NodePool DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.container.v1.NodePool();
   }
@@ -2398,16 +2611,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<NodePool>
-      PARSER = new com.google.protobuf.AbstractParser<NodePool>() {
-    @java.lang.Override
-    public NodePool parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new NodePool(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<NodePool> PARSER =
+      new com.google.protobuf.AbstractParser<NodePool>() {
+        @java.lang.Override
+        public NodePool parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new NodePool(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<NodePool> parser() {
     return PARSER;
@@ -2422,6 +2635,4 @@ private static final long serialVersionUID = 0L;
   public com.google.container.v1.NodePool getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

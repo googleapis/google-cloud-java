@@ -17,15 +17,13 @@
 package com.google.cloud.spanner;
 
 import com.google.common.base.Preconditions;
-
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Defines the configuration for the number and size of partitions returned from
- * {@link BatchReadOnlyTransaction#partitionRead},
- * {@link BatchReadOnlyTransaction#partitionReadUsingIndex} and
- * {@link BatchReadOnlyTransaction#partitionQuery}
+ * Defines the configuration for the number and size of partitions returned from {@link
+ * BatchReadOnlyTransaction#partitionRead}, {@link BatchReadOnlyTransaction#partitionReadUsingIndex}
+ * and {@link BatchReadOnlyTransaction#partitionQuery}
  *
  * <p>Note: these options may not be honored based on the other parameters in the request.
  */
@@ -56,8 +54,8 @@ public class PartitionOptions implements Serializable {
      * @param partitionSizeBytes configuration for size of the partitions returned
      */
     public Builder setPartitionSizeBytes(long partitionSizeBytes) {
-      Preconditions.checkArgument(partitionSizeBytes > 0,
-          "Invalid partitionSizeBytes: " + partitionSizeBytes);
+      Preconditions.checkArgument(
+          partitionSizeBytes > 0, "Invalid partitionSizeBytes: " + partitionSizeBytes);
       this.partitionSizeBytes = partitionSizeBytes;
       return this;
     }
@@ -70,8 +68,7 @@ public class PartitionOptions implements Serializable {
      * @param maxPartitions configuration for count of the partitions returned
      */
     public Builder setMaxPartitions(long maxPartitions) {
-      Preconditions.checkArgument(maxPartitions > 0,
-          "Invalid maxPartitions: " + maxPartitions);
+      Preconditions.checkArgument(maxPartitions > 0, "Invalid maxPartitions: " + maxPartitions);
       this.maxPartitions = maxPartitions;
       return this;
     }

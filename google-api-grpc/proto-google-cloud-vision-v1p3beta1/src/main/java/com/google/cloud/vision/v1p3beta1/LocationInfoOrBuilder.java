@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface LocationInfoOrBuilder extends
+public interface LocationInfoOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.LocationInfo)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * lat/long location coordinates.
    * </pre>
@@ -16,6 +19,8 @@ public interface LocationInfoOrBuilder extends
    */
   boolean hasLatLng();
   /**
+   *
+   *
    * <pre>
    * lat/long location coordinates.
    * </pre>
@@ -24,6 +29,8 @@ public interface LocationInfoOrBuilder extends
    */
   com.google.type.LatLng getLatLng();
   /**
+   *
+   *
    * <pre>
    * lat/long location coordinates.
    * </pre>

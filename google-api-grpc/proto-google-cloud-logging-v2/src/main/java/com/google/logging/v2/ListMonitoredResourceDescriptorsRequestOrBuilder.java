@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface ListMonitoredResourceDescriptorsRequestOrBuilder extends
+public interface ListMonitoredResourceDescriptorsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.ListMonitoredResourceDescriptorsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional. The maximum number of results to return from this request.
    * Non-positive values are ignored.  The presence of `nextPageToken` in the
@@ -19,6 +22,8 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * Optional. If present, then retrieve the next batch of results from the
    * preceding call to this method.  `pageToken` must be the value of
@@ -30,6 +35,8 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * Optional. If present, then retrieve the next batch of results from the
    * preceding call to this method.  `pageToken` must be the value of
@@ -39,6 +46,5 @@ public interface ListMonitoredResourceDescriptorsRequestOrBuilder extends
    *
    * <code>string page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

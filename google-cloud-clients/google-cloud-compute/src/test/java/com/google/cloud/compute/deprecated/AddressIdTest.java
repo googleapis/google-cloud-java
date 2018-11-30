@@ -36,8 +36,7 @@ public class AddressIdTest {
   private static final String REGION_URL =
       "https://www.googleapis.com/compute/v1/projects/project/regions/region/addresses/addr";
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testOf() {

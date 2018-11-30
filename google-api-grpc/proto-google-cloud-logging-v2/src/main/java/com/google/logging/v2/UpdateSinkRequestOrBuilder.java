@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface UpdateSinkRequestOrBuilder extends
+public interface UpdateSinkRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.UpdateSinkRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The full resource name of the sink to update, including the
    * parent resource and the sink identifier:
@@ -22,6 +25,8 @@ public interface UpdateSinkRequestOrBuilder extends
    */
   java.lang.String getSinkName();
   /**
+   *
+   *
    * <pre>
    * Required. The full resource name of the sink to update, including the
    * parent resource and the sink identifier:
@@ -34,10 +39,11 @@ public interface UpdateSinkRequestOrBuilder extends
    *
    * <code>string sink_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSinkNameBytes();
+  com.google.protobuf.ByteString getSinkNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The updated sink, whose name is the same identifier that appears
    * as part of `sink_name`.
@@ -47,6 +53,8 @@ public interface UpdateSinkRequestOrBuilder extends
    */
   boolean hasSink();
   /**
+   *
+   *
    * <pre>
    * Required. The updated sink, whose name is the same identifier that appears
    * as part of `sink_name`.
@@ -56,6 +64,8 @@ public interface UpdateSinkRequestOrBuilder extends
    */
   com.google.logging.v2.LogSink getSink();
   /**
+   *
+   *
    * <pre>
    * Required. The updated sink, whose name is the same identifier that appears
    * as part of `sink_name`.
@@ -66,6 +76,8 @@ public interface UpdateSinkRequestOrBuilder extends
   com.google.logging.v2.LogSinkOrBuilder getSinkOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. See
    * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create)
@@ -85,6 +97,8 @@ public interface UpdateSinkRequestOrBuilder extends
   boolean getUniqueWriterIdentity();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Field mask that specifies the fields in `sink` that need
    * an update. A sink field will be overwritten if, and only if, it is
@@ -103,6 +117,8 @@ public interface UpdateSinkRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Optional. Field mask that specifies the fields in `sink` that need
    * an update. A sink field will be overwritten if, and only if, it is
@@ -121,6 +137,8 @@ public interface UpdateSinkRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Optional. Field mask that specifies the fields in `sink` that need
    * an update. A sink field will be overwritten if, and only if, it is

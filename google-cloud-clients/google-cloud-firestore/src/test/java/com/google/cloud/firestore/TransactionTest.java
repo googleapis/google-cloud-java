@@ -46,6 +46,8 @@ import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
+import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
+import com.google.firestore.v1beta1.DocumentMask;
 import com.google.firestore.v1beta1.Write;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Message;
@@ -383,6 +385,50 @@ public class TransactionTest {
         getAll(
             TRANSACTION_ID, doc1.getResourcePath().toString(), doc2.getResourcePath().toString()),
         requests.get(1));
+    assertEquals(commit(TRANSACTION_ID), requests.get(2));
+  }
+
+  @Test
+  public void getMultipleDocumentsWithFieldMask() throws Exception {
+    doReturn(beginResponse())
+        .doReturn(commitResponse(0, 0))
+        .when(firestoreMock)
+        .sendRequest(requestCapture.capture(), Matchers.<UnaryCallable<Message, Message>>any());
+
+    doAnswer(getAllResponse(SINGLE_FIELD_PROTO))
+        .when(firestoreMock)
+        .streamRequest(
+            requestCapture.capture(),
+            streamObserverCapture.capture(),
+            Matchers.<ServerStreamingCallable>any());
+
+    final DocumentReference doc1 = firestoreMock.document("coll/doc1");
+    final FieldMask fieldMask = FieldMask.of(FieldPath.of("foo", "bar"));
+
+    ApiFuture<List<DocumentSnapshot>> transaction =
+        firestoreMock.runTransaction(
+            new Transaction.Function<List<DocumentSnapshot>>() {
+              @Override
+              public List<DocumentSnapshot> updateCallback(Transaction transaction)
+                  throws ExecutionException, InterruptedException {
+                return transaction.getAll(new DocumentReference[] {doc1}, fieldMask).get();
+              }
+            },
+            options);
+    transaction.get();
+
+    List<Message> requests = requestCapture.getAllValues();
+    assertEquals(3, requests.size());
+
+    assertEquals(begin(), requests.get(0));
+    BatchGetDocumentsRequest expectedGetAll =
+        getAll(TRANSACTION_ID, doc1.getResourcePath().toString());
+    expectedGetAll =
+        expectedGetAll
+            .toBuilder()
+            .setMask(DocumentMask.newBuilder().addFieldPaths("foo.bar"))
+            .build();
+    assertEquals(expectedGetAll, requests.get(1));
     assertEquals(commit(TRANSACTION_ID), requests.get(2));
   }
 

@@ -14,20 +14,21 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class EnvironmentSessionEntityTypeName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}/entityTypes/{entity_type}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}/entityTypes/{entity_type}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -73,25 +74,27 @@ public class EnvironmentSessionEntityTypeName implements ResourceName {
     entityType = Preconditions.checkNotNull(builder.getEntityType());
   }
 
-  public static EnvironmentSessionEntityTypeName of(String project, String environment, String user, String session, String entityType) {
+  public static EnvironmentSessionEntityTypeName of(
+      String project, String environment, String user, String session, String entityType) {
     return newBuilder()
-      .setProject(project)
-      .setEnvironment(environment)
-      .setUser(user)
-      .setSession(session)
-      .setEntityType(entityType)
-      .build();
+        .setProject(project)
+        .setEnvironment(environment)
+        .setUser(user)
+        .setSession(session)
+        .setEntityType(entityType)
+        .build();
   }
 
-  public static String format(String project, String environment, String user, String session, String entityType) {
+  public static String format(
+      String project, String environment, String user, String session, String entityType) {
     return newBuilder()
-      .setProject(project)
-      .setEnvironment(environment)
-      .setUser(user)
-      .setSession(session)
-      .setEntityType(entityType)
-      .build()
-      .toString();
+        .setProject(project)
+        .setEnvironment(environment)
+        .setUser(user)
+        .setSession(session)
+        .setEntityType(entityType)
+        .build()
+        .toString();
   }
 
   public static EnvironmentSessionEntityTypeName parse(String formattedString) {
@@ -99,8 +102,15 @@ public class EnvironmentSessionEntityTypeName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "EnvironmentSessionEntityTypeName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("environment"), matchMap.get("user"), matchMap.get("session"), matchMap.get("entity_type"));
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "EnvironmentSessionEntityTypeName.parse: formattedString not in valid format");
+    return of(
+        matchMap.get("project"),
+        matchMap.get("environment"),
+        matchMap.get("user"),
+        matchMap.get("session"),
+        matchMap.get("entity_type"));
   }
 
   public static List<EnvironmentSessionEntityTypeName> parseList(List<String> formattedStrings) {
@@ -150,7 +160,17 @@ public class EnvironmentSessionEntityTypeName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "environment", environment, "user", user, "session", session, "entity_type", entityType);
+    return PATH_TEMPLATE.instantiate(
+        "project",
+        project,
+        "environment",
+        environment,
+        "user",
+        user,
+        "session",
+        session,
+        "entity_type",
+        entityType);
   }
 
   /** Builder for EnvironmentSessionEntityTypeName. */
@@ -207,8 +227,7 @@ public class EnvironmentSessionEntityTypeName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(EnvironmentSessionEntityTypeName environmentSessionEntityTypeName) {
       project = environmentSessionEntityTypeName.project;
@@ -255,4 +274,3 @@ public class EnvironmentSessionEntityTypeName implements ResourceName {
     return h;
   }
 }
-

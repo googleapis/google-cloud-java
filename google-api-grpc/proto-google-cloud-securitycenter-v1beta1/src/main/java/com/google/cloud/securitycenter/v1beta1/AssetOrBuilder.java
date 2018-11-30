@@ -3,11 +3,14 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-public interface AssetOrBuilder extends
+public interface AssetOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.Asset)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The relative resource name of this asset. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -19,6 +22,8 @@ public interface AssetOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The relative resource name of this asset. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -28,38 +33,53 @@ public interface AssetOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Cloud SCC managed properties. These properties are managed by
    * Cloud SCC and cannot be modified by the user.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;
+   * </code>
    */
   boolean hasSecurityCenterProperties();
   /**
+   *
+   *
    * <pre>
    * Cloud SCC managed properties. These properties are managed by
    * Cloud SCC and cannot be modified by the user.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;
+   * </code>
    */
-  com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties getSecurityCenterProperties();
+  com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties
+      getSecurityCenterProperties();
   /**
+   *
+   *
    * <pre>
    * Cloud SCC managed properties. These properties are managed by
    * Cloud SCC and cannot be modified by the user.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.Asset.SecurityCenterProperties security_center_properties = 2;
+   * </code>
    */
-  com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterPropertiesOrBuilder getSecurityCenterPropertiesOrBuilder();
+  com.google.cloud.securitycenter.v1beta1.Asset.SecurityCenterPropertiesOrBuilder
+      getSecurityCenterPropertiesOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Resource managed properties. These properties are managed and defined by
    * the GCP resource and cannot be modified by the user.
@@ -69,6 +89,8 @@ public interface AssetOrBuilder extends
    */
   int getResourcePropertiesCount();
   /**
+   *
+   *
    * <pre>
    * Resource managed properties. These properties are managed and defined by
    * the GCP resource and cannot be modified by the user.
@@ -76,15 +98,13 @@ public interface AssetOrBuilder extends
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
    */
-  boolean containsResourceProperties(
-      java.lang.String key);
-  /**
-   * Use {@link #getResourcePropertiesMap()} instead.
-   */
+  boolean containsResourceProperties(java.lang.String key);
+  /** Use {@link #getResourcePropertiesMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, com.google.protobuf.Value>
-  getResourceProperties();
+  java.util.Map<java.lang.String, com.google.protobuf.Value> getResourceProperties();
   /**
+   *
+   *
    * <pre>
    * Resource managed properties. These properties are managed and defined by
    * the GCP resource and cannot be modified by the user.
@@ -92,9 +112,10 @@ public interface AssetOrBuilder extends
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
    */
-  java.util.Map<java.lang.String, com.google.protobuf.Value>
-  getResourcePropertiesMap();
+  java.util.Map<java.lang.String, com.google.protobuf.Value> getResourcePropertiesMap();
   /**
+   *
+   *
    * <pre>
    * Resource managed properties. These properties are managed and defined by
    * the GCP resource and cannot be modified by the user.
@@ -102,11 +123,11 @@ public interface AssetOrBuilder extends
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
    */
-
   com.google.protobuf.Value getResourcePropertiesOrDefault(
-      java.lang.String key,
-      com.google.protobuf.Value defaultValue);
+      java.lang.String key, com.google.protobuf.Value defaultValue);
   /**
+   *
+   *
    * <pre>
    * Resource managed properties. These properties are managed and defined by
    * the GCP resource and cannot be modified by the user.
@@ -114,11 +135,11 @@ public interface AssetOrBuilder extends
    *
    * <code>map&lt;string, .google.protobuf.Value&gt; resource_properties = 7;</code>
    */
-
-  com.google.protobuf.Value getResourcePropertiesOrThrow(
-      java.lang.String key);
+  com.google.protobuf.Value getResourcePropertiesOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * User specified security marks. These marks are entirely managed by the user
    * and come from the SecurityMarks resource that belongs to the asset.
@@ -128,6 +149,8 @@ public interface AssetOrBuilder extends
    */
   boolean hasSecurityMarks();
   /**
+   *
+   *
    * <pre>
    * User specified security marks. These marks are entirely managed by the user
    * and come from the SecurityMarks resource that belongs to the asset.
@@ -137,6 +160,8 @@ public interface AssetOrBuilder extends
    */
   com.google.cloud.securitycenter.v1beta1.SecurityMarks getSecurityMarks();
   /**
+   *
+   *
    * <pre>
    * User specified security marks. These marks are entirely managed by the user
    * and come from the SecurityMarks resource that belongs to the asset.
@@ -147,6 +172,8 @@ public interface AssetOrBuilder extends
   com.google.cloud.securitycenter.v1beta1.SecurityMarksOrBuilder getSecurityMarksOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time at which the asset was created in Cloud SCC.
    * </pre>
@@ -155,6 +182,8 @@ public interface AssetOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the asset was created in Cloud SCC.
    * </pre>
@@ -163,6 +192,8 @@ public interface AssetOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the asset was created in Cloud SCC.
    * </pre>
@@ -172,6 +203,8 @@ public interface AssetOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time at which the asset was last updated, added, or deleted in Cloud
    * SCC.
@@ -181,6 +214,8 @@ public interface AssetOrBuilder extends
    */
   boolean hasUpdateTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the asset was last updated, added, or deleted in Cloud
    * SCC.
@@ -190,6 +225,8 @@ public interface AssetOrBuilder extends
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the asset was last updated, added, or deleted in Cloud
    * SCC.

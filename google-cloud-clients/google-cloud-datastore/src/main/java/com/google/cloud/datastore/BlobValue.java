@@ -77,7 +77,6 @@ public final class BlobValue extends Value<Blob> {
     return new BlobValue(blob);
   }
 
-
   public static Builder newBuilder(Blob blob) {
     return new Builder().set(blob);
   }

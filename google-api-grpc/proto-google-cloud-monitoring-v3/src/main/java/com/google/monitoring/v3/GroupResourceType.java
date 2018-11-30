@@ -4,6 +4,8 @@
 package com.google.monitoring.v3;
 
 /**
+ *
+ *
  * <pre>
  * The supported resource types that can be used as values of
  * `group_resource.resource_type`.
@@ -14,9 +16,10 @@ package com.google.monitoring.v3;
  *
  * Protobuf enum {@code google.monitoring.v3.GroupResourceType}
  */
-public enum GroupResourceType
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum GroupResourceType implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * Default value (not valid).
    * </pre>
@@ -25,6 +28,8 @@ public enum GroupResourceType
    */
   RESOURCE_TYPE_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * A group of instances from Google Cloud Platform (GCP) or
    * Amazon Web Services (AWS).
@@ -34,6 +39,8 @@ public enum GroupResourceType
    */
   INSTANCE(1),
   /**
+   *
+   *
    * <pre>
    * A group of Amazon ELB load balancers.
    * </pre>
@@ -45,6 +52,8 @@ public enum GroupResourceType
   ;
 
   /**
+   *
+   *
    * <pre>
    * Default value (not valid).
    * </pre>
@@ -53,6 +62,8 @@ public enum GroupResourceType
    */
   public static final int RESOURCE_TYPE_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * A group of instances from Google Cloud Platform (GCP) or
    * Amazon Web Services (AWS).
@@ -62,6 +73,8 @@ public enum GroupResourceType
    */
   public static final int INSTANCE_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * A group of Amazon ELB load balancers.
    * </pre>
@@ -69,7 +82,6 @@ public enum GroupResourceType
    * <code>AWS_ELB_LOAD_BALANCER = 2;</code>
    */
   public static final int AWS_ELB_LOAD_BALANCER_VALUE = 2;
-
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -79,9 +91,7 @@ public enum GroupResourceType
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static GroupResourceType valueOf(int value) {
     return forNumber(value);
@@ -89,35 +99,38 @@ public enum GroupResourceType
 
   public static GroupResourceType forNumber(int value) {
     switch (value) {
-      case 0: return RESOURCE_TYPE_UNSPECIFIED;
-      case 1: return INSTANCE;
-      case 2: return AWS_ELB_LOAD_BALANCER;
-      default: return null;
+      case 0:
+        return RESOURCE_TYPE_UNSPECIFIED;
+      case 1:
+        return INSTANCE;
+      case 2:
+        return AWS_ELB_LOAD_BALANCER;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<GroupResourceType>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<GroupResourceType> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      GroupResourceType> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<GroupResourceType>() {
-          public GroupResourceType findValueByNumber(int number) {
-            return GroupResourceType.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<GroupResourceType>
+      internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<GroupResourceType>() {
+            public GroupResourceType findValueByNumber(int number) {
+              return GroupResourceType.forNumber(number);
+            }
+          };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.monitoring.v3.UptimeProto.getDescriptor().getEnumTypes().get(1);
   }
 
@@ -126,8 +139,7 @@ public enum GroupResourceType
   public static GroupResourceType valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -143,4 +155,3 @@ public enum GroupResourceType
 
   // @@protoc_insertion_point(enum_scope:google.monitoring.v3.GroupResourceType)
 }
-

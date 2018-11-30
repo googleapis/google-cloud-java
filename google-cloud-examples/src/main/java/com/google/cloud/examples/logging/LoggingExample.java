@@ -46,9 +46,10 @@ import java.util.Map;
  *
  * <p>This example demonstrates a simple/typical Logging usage.
  *
- * <p>See the
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
+ * <p>See the <a
+ * href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
+ *
  * <pre>{@code target/appassembler/bin/LoggingExample
  *  -Dexec.args="[<project_id>]
  *  create metric <metric> <filter>
@@ -143,7 +144,8 @@ public class LoggingExample {
   /**
    * This class demonstrates how to list Logging metrics.
    *
-   * @see <a href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/projects.metrics/list">
+   * @see <a
+   *     href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/projects.metrics/list">
    *     List metrics</a>
    */
   private static class ListMetricsAction extends NoArgsAction {
@@ -178,7 +180,8 @@ public class LoggingExample {
   /**
    * This class demonstrates how to retrieve information on a Logging metric.
    *
-   * @see <a href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/projects.metrics/get">
+   * @see <a
+   *     href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/projects.metrics/get">
    *     Get metric</a>
    */
   private static class MetricInfoAction extends MetricAction {
@@ -191,7 +194,8 @@ public class LoggingExample {
   /**
    * This class demonstrates how to delete a Logging metric.
    *
-   * @see <a href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/projects.metrics/delete">
+   * @see <a
+   *     href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/projects.metrics/delete">
    *     Delete a metric</a>
    */
   private static class DeleteMetricAction extends MetricAction {
@@ -205,7 +209,8 @@ public class LoggingExample {
   /**
    * This class demonstrates how to create a Logging metric.
    *
-   * @see <a href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/projects.metrics/create">
+   * @see <a
+   *     href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/projects.metrics/create">
    *     Create a metric</a>
    */
   private static class CreateMetricAction extends LoggingAction<MetricInfo> {
@@ -236,7 +241,8 @@ public class LoggingExample {
   /**
    * This class demonstrates how to list Logging sinks.
    *
-   * @see <a href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/projects.sinks/list">
+   * @see <a
+   *     href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/projects.sinks/list">
    *     List sinks</a>
    */
   private static class ListSinksAction extends NoArgsAction {
@@ -271,7 +277,8 @@ public class LoggingExample {
   /**
    * This class demonstrates how to retrieve information on a Logging sink.
    *
-   * @see <a href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/projects.sinks/get">
+   * @see <a
+   *     href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/projects.sinks/get">
    *     Get sink</a>
    */
   private static class SinkInfoAction extends SinkAction {
@@ -284,7 +291,8 @@ public class LoggingExample {
   /**
    * This class demonstrates how to delete a Logging sink.
    *
-   * @see <a href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/projects.sinks/delete">
+   * @see <a
+   *     href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/projects.sinks/delete">
    *     Delete a sink</a>
    */
   private static class DeleteSinkAction extends SinkAction {
@@ -298,7 +306,8 @@ public class LoggingExample {
   /**
    * This class demonstrates how to create a Logging sink.
    *
-   * @see <a href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/projects.sinks/create">
+   * @see <a
+   *     href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/projects.sinks/create">
    *     Create a sink</a>
    */
   private static class CreateSinkAction extends LoggingAction<SinkInfo> {
@@ -346,13 +355,15 @@ public class LoggingExample {
   /**
    * This class demonstrates how to list Logging monitored resource descriptors.
    *
-   * @see <a href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/monitoredResourceDescriptors/list">
+   * @see <a
+   *     href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/monitoredResourceDescriptors/list">
    *     List monitored resource descriptor</a>
    */
   private static class ListResourceDescriptorsAction extends NoArgsAction {
     @Override
     public void run(Logging logging, Void arg) {
-      for (MonitoredResourceDescriptor descriptor : logging.listMonitoredResourceDescriptors().iterateAll()) {
+      for (MonitoredResourceDescriptor descriptor :
+          logging.listMonitoredResourceDescriptors().iterateAll()) {
         System.out.println(descriptor);
       }
     }
@@ -361,16 +372,18 @@ public class LoggingExample {
   /**
    * This class demonstrates how to write Logging entries.
    *
-   * @see <a href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/entries/write">
+   * @see <a
+   *     href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/entries/write">
    *     Write log entries</a>
    */
   private static class WriteEntryAction extends LoggingAction<LogEntry> {
 
     @Override
     public void run(Logging logging, LogEntry entry) {
-      MonitoredResource resource = MonitoredResource.newBuilder("global")
-          .addLabel("project_id", logging.getOptions().getProjectId())
-          .build();
+      MonitoredResource resource =
+          MonitoredResource.newBuilder("global")
+              .addLabel("project_id", logging.getOptions().getProjectId())
+              .build();
       LogEntry entryWithResource = entry.toBuilder().setResource(resource).build();
       logging.write(Collections.singleton(entryWithResource));
       System.out.printf("Written entry %s%n", entryWithResource);
@@ -444,7 +457,8 @@ public class LoggingExample {
   /**
    * This class demonstrates how to delete a Logging log.
    *
-   * @see <a href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/projects.logs/delete">
+   * @see <a
+   *     href="https://cloud.google.com/logging/docs/api/ref_v2beta1/rest/v2beta1/projects.logs/delete">
    *     Delete a log</a>
    */
   private static class DeleteLogAction extends LoggingAction<String> {
@@ -502,7 +516,8 @@ public class LoggingExample {
         actionAndParams.append(' ').append(param.replace("\n", "\n\t\t"));
       }
     }
-    System.out.printf("Usage: %s [<project_id>] operation [entity] <args>*%s%n",
+    System.out.printf(
+        "Usage: %s [<project_id>] operation [entity] <args>*%s%n",
         LoggingExample.class.getSimpleName(), actionAndParams);
   }
 

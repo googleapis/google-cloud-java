@@ -3,11 +3,14 @@
 
 package com.google.spanner.admin.database.v1;
 
-public interface GetDatabaseDdlResponseOrBuilder extends
+public interface GetDatabaseDdlResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.admin.database.v1.GetDatabaseDdlResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A list of formatted DDL statements defining the schema of the database
    * specified in the request.
@@ -15,9 +18,10 @@ public interface GetDatabaseDdlResponseOrBuilder extends
    *
    * <code>repeated string statements = 1;</code>
    */
-  java.util.List<java.lang.String>
-      getStatementsList();
+  java.util.List<java.lang.String> getStatementsList();
   /**
+   *
+   *
    * <pre>
    * A list of formatted DDL statements defining the schema of the database
    * specified in the request.
@@ -27,6 +31,8 @@ public interface GetDatabaseDdlResponseOrBuilder extends
    */
   int getStatementsCount();
   /**
+   *
+   *
    * <pre>
    * A list of formatted DDL statements defining the schema of the database
    * specified in the request.
@@ -36,6 +42,8 @@ public interface GetDatabaseDdlResponseOrBuilder extends
    */
   java.lang.String getStatements(int index);
   /**
+   *
+   *
    * <pre>
    * A list of formatted DDL statements defining the schema of the database
    * specified in the request.
@@ -43,6 +51,5 @@ public interface GetDatabaseDdlResponseOrBuilder extends
    *
    * <code>repeated string statements = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getStatementsBytes(int index);
+  com.google.protobuf.ByteString getStatementsBytes(int index);
 }

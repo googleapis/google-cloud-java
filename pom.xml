@@ -99,6 +99,15 @@
             <autoReleaseAfterClose>false</autoReleaseAfterClose>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>com.coveo</groupId>
+          <artifactId>fmt-maven-plugin</artifactId>
+          <version>2.6.0</version>
+          <configuration>
+            <style>google</style>
+            <verbose>true</verbose>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>

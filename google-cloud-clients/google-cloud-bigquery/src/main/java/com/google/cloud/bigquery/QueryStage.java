@@ -22,7 +22,6 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
@@ -86,7 +85,6 @@ public class QueryStage implements Serializable {
       this.substeps = substeps;
     }
 
-
     /**
      * Returns a machine-readable name for the operation.
      *
@@ -97,10 +95,7 @@ public class QueryStage implements Serializable {
       return name;
     }
 
-
-    /**
-     * Returns a list of human-readable stage descriptions.
-     */
+    /** Returns a list of human-readable stage descriptions. */
     public List<String> getSubsteps() {
       return substeps;
     }
@@ -132,8 +127,10 @@ public class QueryStage implements Serializable {
     }
 
     static QueryStep fromPb(com.google.api.services.bigquery.model.ExplainQueryStep stepPb) {
-      return new QueryStep(stepPb.getKind(), ImmutableList.copyOf(stepPb.getSubsteps() != null
-          ? stepPb.getSubsteps() : ImmutableList.<String>of()));
+      return new QueryStep(
+          stepPb.getKind(),
+          ImmutableList.copyOf(
+              stepPb.getSubsteps() != null ? stepPb.getSubsteps() : ImmutableList.<String>of()));
     }
   }
 
@@ -185,17 +182,17 @@ public class QueryStage implements Serializable {
     private double readRatioMax;
     private long recordsRead;
     private long recordsWritten;
-    private  long shuffleOutputBytes;
-    private  long shuffleOutputBytesSpilled;
-    private  long startMs;
+    private long shuffleOutputBytes;
+    private long shuffleOutputBytesSpilled;
+    private long startMs;
     private String status;
     private List<QueryStep> steps;
-    private  long waitMsAvg;
-    private  long waitMsMax;
+    private long waitMsAvg;
+    private long waitMsMax;
     private double waitRatioAvg;
     private double waitRatioMax;
-    private  long writeMsAvg;
-    private  long writeMsMax;
+    private long writeMsAvg;
+    private long writeMsMax;
     private double writeRatioAvg;
     private double writeRatioMax;
 
@@ -298,7 +295,7 @@ public class QueryStage implements Serializable {
 
     Builder setStatus(String status) {
       this.status = status;
-      return this;  
+      return this;
     }
 
     Builder setSteps(List<QueryStep> steps) {
@@ -383,23 +380,17 @@ public class QueryStage implements Serializable {
     writeRatioMax = builder.writeRatioMax;
   }
 
-  /**
-   * Returns the number of parallel input segments completed.
-   */
+  /** Returns the number of parallel input segments completed. */
   public long getCompletedParallelInputs() {
     return completedParallelInputs;
   }
 
-  /**
-   * Returns the time in milliseconds the average worker spent on CPU-bound tasks.
-   */
+  /** Returns the time in milliseconds the average worker spent on CPU-bound tasks. */
   public long getComputeMsAvg() {
     return computeMsAvg;
   }
 
-  /**
-   * Returns the time in milliseconds the slowest worker spent on CPU-bound tasks.
-   */
+  /** Returns the time in milliseconds the slowest worker spent on CPU-bound tasks. */
   public long getComputeMsMax() {
     return computeMsMax;
   }
@@ -412,7 +403,6 @@ public class QueryStage implements Serializable {
     return computeRatioAvg;
   }
 
-
   /**
    * Returns the time the slowest worker spent CPU-bound, divided by the longest time spent by any
    * worker in any segment.
@@ -421,51 +411,37 @@ public class QueryStage implements Serializable {
     return computeRatioMax;
   }
 
-  /**
-   * Returns the stage end time represented as milliseconds since epoch.
-   */
+  /** Returns the stage end time represented as milliseconds since epoch. */
   public long getEndMs() {
     return endMs;
   }
 
-  /**
-   * Returns a unique, server-generated ID for the stage within its plan.
-   */
+  /** Returns a unique, server-generated ID for the stage within its plan. */
   public long getGeneratedId() {
     return generatedId;
   }
 
-  /**
-   * Returns a list of the stage IDs that are inputs to this stage.
-   */
+  /** Returns a list of the stage IDs that are inputs to this stage. */
   public List<Long> getInputStages() {
     return inputStages;
   }
 
-  /**
-   * Returns a human-readable name for the stage.
-   */
+  /** Returns a human-readable name for the stage. */
   public String getName() {
     return name;
   }
 
-  /**
-   * Returns the number of parallel input segments to be processed.
-   */
+  /** Returns the number of parallel input segments to be processed. */
   public long getParallelInputs() {
     return parallelInputs;
   }
 
-  /**
-   * Returns the time in milliseconds the average worker spent reading input.
-   */
+  /** Returns the time in milliseconds the average worker spent reading input. */
   public long getReadMsAvg() {
     return readMsAvg;
   }
 
-  /**
-   * Returns the time in milliseconds the slowest worker spent reading input.
-   */
+  /** Returns the time in milliseconds the slowest worker spent reading input. */
   public long getReadMsMax() {
     return readMsMax;
   }
@@ -478,7 +454,6 @@ public class QueryStage implements Serializable {
     return readRatioAvg;
   }
 
-
   /**
    * Returns the time the slowest worker spent reading input data, divided by the longest time spent
    * by any worker in any segment.
@@ -487,46 +462,32 @@ public class QueryStage implements Serializable {
     return readRatioMax;
   }
 
-
-  /**
-   * Returns the number of rows (top-level records) read by the stage.
-   */
+  /** Returns the number of rows (top-level records) read by the stage. */
   public long getRecordsRead() {
     return recordsRead;
   }
 
-
-  /**
-   * Returns the number of rows (top-level records) written by the stage.
-   */
+  /** Returns the number of rows (top-level records) written by the stage. */
   public long getRecordsWritten() {
     return recordsWritten;
   }
 
-  /**
-   * Returns the total number of bytes written to shuffle.
-   */
+  /** Returns the total number of bytes written to shuffle. */
   public long getShuffleOutputBytes() {
     return shuffleOutputBytes;
   }
 
-  /**
-   * Returns the total number of bytes writtedn to shuffle and spilled to disk.
-   */
+  /** Returns the total number of bytes writtedn to shuffle and spilled to disk. */
   public long getShuffleOutputBytesSpilled() {
     return shuffleOutputBytesSpilled;
   }
 
-  /**
-   * Returns the stage start time represented as milliseconds since epoch.
-   */
+  /** Returns the stage start time represented as milliseconds since epoch. */
   public long getStartMs() {
     return startMs;
   }
 
-  /**
-   * Returns the current status for the stage.
-   */
+  /** Returns the current status for the stage. */
   public String getStatus() {
     return status;
   }
@@ -538,16 +499,12 @@ public class QueryStage implements Serializable {
     return steps;
   }
 
-  /**
-   * Returns the time in milliseconds the average worker spent waiting to be scheduled.
-   */
+  /** Returns the time in milliseconds the average worker spent waiting to be scheduled. */
   public long getWaitMsAvg() {
     return waitMsAvg;
   }
 
-  /**
-   * Returns the time in milliseconds the slowest worker spent waiting to be scheduled.
-   */
+  /** Returns the time in milliseconds the slowest worker spent waiting to be scheduled. */
   public long getWaitMsMax() {
     return waitMsMax;
   }
@@ -560,7 +517,6 @@ public class QueryStage implements Serializable {
     return waitRatioAvg;
   }
 
-
   /**
    * Returns the time the slowest worker spent waiting to be scheduled, divided by the longest time
    * spent by any worker in any segment.
@@ -569,16 +525,12 @@ public class QueryStage implements Serializable {
     return waitRatioMax;
   }
 
-  /**
-   * Returns the time in milliseconds the average worker spent writing output.
-   */
+  /** Returns the time in milliseconds the average worker spent writing output. */
   public long getWriteMsAvg() {
     return writeMsAvg;
   }
 
-  /**
-   * Returns the time in milliseconds the slowest worker spent writing output.
-   */
+  /** Returns the time in milliseconds the slowest worker spent writing output. */
   public long getWriteMsMax() {
     return writeMsMax;
   }
@@ -590,7 +542,6 @@ public class QueryStage implements Serializable {
   public double getWriteRatioAvg() {
     return writeRatioAvg;
   }
-
 
   /**
    * Returns the time the slowest worker spent writing output data, divided by the longest time
@@ -635,15 +586,38 @@ public class QueryStage implements Serializable {
         .toString();
   }
 
-
   @Override
   public final int hashCode() {
-    return Objects.hash(completedParallelInputs, computeMsAvg, computeMsMax,
-        computeRatioAvg, computeRatioMax, endMs, generatedId, inputStages, name, 
-        parallelInputs, readMsAvg, readMsMax, readRatioAvg, readRatioMax, 
-        recordsRead, recordsWritten, shuffleOutputBytes, shuffleOutputBytesSpilled,
-        startMs, status, steps, waitMsAvg, waitMsMax, waitRatioAvg, waitRatioMax,
-        writeMsAvg, writeMsMax, writeRatioAvg, writeRatioMax);
+    return Objects.hash(
+        completedParallelInputs,
+        computeMsAvg,
+        computeMsMax,
+        computeRatioAvg,
+        computeRatioMax,
+        endMs,
+        generatedId,
+        inputStages,
+        name,
+        parallelInputs,
+        readMsAvg,
+        readMsMax,
+        readRatioAvg,
+        readRatioMax,
+        recordsRead,
+        recordsWritten,
+        shuffleOutputBytes,
+        shuffleOutputBytesSpilled,
+        startMs,
+        status,
+        steps,
+        waitMsAvg,
+        waitMsMax,
+        waitRatioAvg,
+        waitRatioMax,
+        writeMsAvg,
+        writeMsMax,
+        writeRatioAvg,
+        writeRatioMax);
   }
 
   @Override
@@ -691,35 +665,36 @@ public class QueryStage implements Serializable {
   }
 
   ExplainQueryStage toPb() {
-    ExplainQueryStage stagePb = new ExplainQueryStage()
-        .setCompletedParallelInputs(completedParallelInputs)
-        .setComputeMsAvg(computeMsAvg)
-        .setComputeMsMax(computeMsMax)
-        .setComputeRatioAvg(computeRatioAvg)
-        .setComputeRatioMax(computeRatioMax)
-        .setEndMs(endMs)
-        .setId(generatedId)
-        .setInputStages(inputStages)
-        .setName(name)
-        .setParallelInputs(parallelInputs)
-        .setReadMsAvg(readMsAvg)
-        .setReadMsMax(readMsMax)
-        .setReadRatioAvg(readRatioAvg)
-        .setReadRatioMax(readRatioMax)
-        .setRecordsRead(recordsRead)
-        .setRecordsWritten(recordsWritten)
-        .setShuffleOutputBytes(shuffleOutputBytes)
-        .setShuffleOutputBytesSpilled(shuffleOutputBytesSpilled)
-        .setStartMs(startMs)
-        .setStatus(status)
-        .setWaitMsAvg(waitMsAvg)
-        .setWaitMsMax(waitMsMax)
-        .setWaitRatioAvg(waitRatioAvg)
-        .setWaitRatioMax(waitRatioMax)
-        .setWriteMsAvg(writeMsAvg)
-        .setWriteMsMax(writeMsMax)
-        .setWriteRatioAvg(writeRatioAvg)
-        .setWriteRatioMax(writeRatioMax);
+    ExplainQueryStage stagePb =
+        new ExplainQueryStage()
+            .setCompletedParallelInputs(completedParallelInputs)
+            .setComputeMsAvg(computeMsAvg)
+            .setComputeMsMax(computeMsMax)
+            .setComputeRatioAvg(computeRatioAvg)
+            .setComputeRatioMax(computeRatioMax)
+            .setEndMs(endMs)
+            .setId(generatedId)
+            .setInputStages(inputStages)
+            .setName(name)
+            .setParallelInputs(parallelInputs)
+            .setReadMsAvg(readMsAvg)
+            .setReadMsMax(readMsMax)
+            .setReadRatioAvg(readRatioAvg)
+            .setReadRatioMax(readRatioMax)
+            .setRecordsRead(recordsRead)
+            .setRecordsWritten(recordsWritten)
+            .setShuffleOutputBytes(shuffleOutputBytes)
+            .setShuffleOutputBytesSpilled(shuffleOutputBytesSpilled)
+            .setStartMs(startMs)
+            .setStatus(status)
+            .setWaitMsAvg(waitMsAvg)
+            .setWaitMsMax(waitMsMax)
+            .setWaitRatioAvg(waitRatioAvg)
+            .setWaitRatioMax(waitRatioMax)
+            .setWriteMsAvg(writeMsAvg)
+            .setWriteMsMax(writeMsMax)
+            .setWriteRatioAvg(writeRatioAvg)
+            .setWriteRatioMax(writeRatioMax);
     if (steps != null) {
       stagePb.setSteps(Lists.transform(steps, QueryStep.TO_PB_FUNCTION));
     }

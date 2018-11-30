@@ -25,12 +25,10 @@ import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Metric;
 import com.google.cloud.logging.MetricInfo;
 import com.google.cloud.logging.testing.RemoteLoggingHelper;
-
+import java.util.concurrent.ExecutionException;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import java.util.concurrent.ExecutionException;
 
 public class ITMetricSnippets {
 
@@ -46,9 +44,8 @@ public class ITMetricSnippets {
   public static void beforeClass() {
     RemoteLoggingHelper helper = RemoteLoggingHelper.create();
     logging = helper.getOptions().getService();
-    MetricInfo metricInfo = MetricInfo.newBuilder(METRIC_NAME, METRIC_FILTER)
-        .setDescription(DESCRIPTION)
-        .build();
+    MetricInfo metricInfo =
+        MetricInfo.newBuilder(METRIC_NAME, METRIC_FILTER).setDescription(DESCRIPTION).build();
     metricSnippets = new MetricSnippets(logging.create(metricInfo));
   }
 

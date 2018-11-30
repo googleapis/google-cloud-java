@@ -3,20 +3,24 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface ListJobsResponseOrBuilder extends
+public interface ListJobsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.ListJobsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. Jobs list.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
    */
-  java.util.List<com.google.cloud.dataproc.v1beta2.Job> 
-      getJobsList();
+  java.util.List<com.google.cloud.dataproc.v1beta2.Job> getJobsList();
   /**
+   *
+   *
    * <pre>
    * Output only. Jobs list.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListJobsResponseOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.Job getJobs(int index);
   /**
+   *
+   *
    * <pre>
    * Output only. Jobs list.
    * </pre>
@@ -33,25 +39,29 @@ public interface ListJobsResponseOrBuilder extends
    */
   int getJobsCount();
   /**
+   *
+   *
    * <pre>
    * Output only. Jobs list.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.dataproc.v1beta2.JobOrBuilder> 
-      getJobsOrBuilderList();
+  java.util.List<? extends com.google.cloud.dataproc.v1beta2.JobOrBuilder> getJobsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Output only. Jobs list.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.Job jobs = 1;</code>
    */
-  com.google.cloud.dataproc.v1beta2.JobOrBuilder getJobsOrBuilder(
-      int index);
+  com.google.cloud.dataproc.v1beta2.JobOrBuilder getJobsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. This token is included in the response if there are more results
    * to fetch. To fetch additional results, provide this value as the
@@ -62,6 +72,8 @@ public interface ListJobsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * Optional. This token is included in the response if there are more results
    * to fetch. To fetch additional results, provide this value as the
@@ -70,6 +82,5 @@ public interface ListJobsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

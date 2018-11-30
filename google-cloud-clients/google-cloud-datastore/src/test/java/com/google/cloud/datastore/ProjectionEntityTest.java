@@ -30,19 +30,23 @@ public class ProjectionEntityTest {
   private static final Key KEY = Key.newBuilder("ds1", "k1", "n1").build();
   private static final StringValue STRING_INDEX_VALUE =
       StringValue.newBuilder("foo").setMeaning(18).build();
-  private static final BlobValue BLOB_VALUE = BlobValue.of(Blob.copyFrom(new byte[]{1}));
+  private static final BlobValue BLOB_VALUE = BlobValue.of(Blob.copyFrom(new byte[] {1}));
   private static final TimestampValue TIMESTAMP_VALUE = TimestampValue.of(Timestamp.now());
   private static final LongValue LONG_INDEX_VALUE =
-      LongValue.newBuilder(TIMESTAMP_VALUE.get().getSeconds() * 1000000
-          + TIMESTAMP_VALUE.get().getNanos() / 1000).setMeaning(18).build();
+      LongValue.newBuilder(
+              TIMESTAMP_VALUE.get().getSeconds() * 1000000
+                  + TIMESTAMP_VALUE.get().getNanos() / 1000)
+          .setMeaning(18)
+          .build();
   private static final ProjectionEntity ENTITY1 =
       new ProjectionEntity.Builder().setKey(KEY).set("a", "b").build();
-  private static final ProjectionEntity ENTITY2 = new ProjectionEntity.Builder()
-      .set("a", STRING_INDEX_VALUE)
-      .set("b", BLOB_VALUE)
-      .set("c", TIMESTAMP_VALUE)
-      .set("d", LONG_INDEX_VALUE)
-      .build();
+  private static final ProjectionEntity ENTITY2 =
+      new ProjectionEntity.Builder()
+          .set("a", STRING_INDEX_VALUE)
+          .set("b", BLOB_VALUE)
+          .set("c", TIMESTAMP_VALUE)
+          .set("d", LONG_INDEX_VALUE)
+          .build();
 
   @Test
   public void testHasKey() throws Exception {

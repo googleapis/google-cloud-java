@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataproc.v1beta2.CreateWorkflowTemplateRequest;
 import com.google.cloud.dataproc.v1beta2.DeleteWorkflowTemplateRequest;
 import com.google.cloud.dataproc.v1beta2.GetWorkflowTemplateRequest;
+import com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest;
 import com.google.cloud.dataproc.v1beta2.InstantiateWorkflowTemplateRequest;
 import com.google.cloud.dataproc.v1beta2.ListWorkflowTemplatesRequest;
 import com.google.cloud.dataproc.v1beta2.ListWorkflowTemplatesResponse;
@@ -83,6 +84,17 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
                   ProtoUtils.marshaller(InstantiateWorkflowTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+  private static final MethodDescriptor<InstantiateInlineWorkflowTemplateRequest, Operation>
+      instantiateInlineWorkflowTemplateMethodDescriptor =
+          MethodDescriptor.<InstantiateInlineWorkflowTemplateRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dataproc.v1beta2.WorkflowTemplateService/InstantiateInlineWorkflowTemplate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      InstantiateInlineWorkflowTemplateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
   private static final MethodDescriptor<UpdateWorkflowTemplateRequest, WorkflowTemplate>
       updateWorkflowTemplateMethodDescriptor =
           MethodDescriptor.<UpdateWorkflowTemplateRequest, WorkflowTemplate>newBuilder()
@@ -126,6 +138,10 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
       instantiateWorkflowTemplateCallable;
   private final OperationCallable<InstantiateWorkflowTemplateRequest, Empty, WorkflowMetadata>
       instantiateWorkflowTemplateOperationCallable;
+  private final UnaryCallable<InstantiateInlineWorkflowTemplateRequest, Operation>
+      instantiateInlineWorkflowTemplateCallable;
+  private final OperationCallable<InstantiateInlineWorkflowTemplateRequest, Empty, WorkflowMetadata>
+      instantiateInlineWorkflowTemplateOperationCallable;
   private final UnaryCallable<UpdateWorkflowTemplateRequest, WorkflowTemplate>
       updateWorkflowTemplateCallable;
   private final UnaryCallable<ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse>
@@ -192,6 +208,11 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
             GrpcCallSettings.<InstantiateWorkflowTemplateRequest, Operation>newBuilder()
                 .setMethodDescriptor(instantiateWorkflowTemplateMethodDescriptor)
                 .build();
+    GrpcCallSettings<InstantiateInlineWorkflowTemplateRequest, Operation>
+        instantiateInlineWorkflowTemplateTransportSettings =
+            GrpcCallSettings.<InstantiateInlineWorkflowTemplateRequest, Operation>newBuilder()
+                .setMethodDescriptor(instantiateInlineWorkflowTemplateMethodDescriptor)
+                .build();
     GrpcCallSettings<UpdateWorkflowTemplateRequest, WorkflowTemplate>
         updateWorkflowTemplateTransportSettings =
             GrpcCallSettings.<UpdateWorkflowTemplateRequest, WorkflowTemplate>newBuilder()
@@ -227,6 +248,17 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
         callableFactory.createOperationCallable(
             instantiateWorkflowTemplateTransportSettings,
             settings.instantiateWorkflowTemplateOperationSettings(),
+            clientContext,
+            this.operationsStub);
+    this.instantiateInlineWorkflowTemplateCallable =
+        callableFactory.createUnaryCallable(
+            instantiateInlineWorkflowTemplateTransportSettings,
+            settings.instantiateInlineWorkflowTemplateSettings(),
+            clientContext);
+    this.instantiateInlineWorkflowTemplateOperationCallable =
+        callableFactory.createOperationCallable(
+            instantiateInlineWorkflowTemplateTransportSettings,
+            settings.instantiateInlineWorkflowTemplateOperationSettings(),
             clientContext,
             this.operationsStub);
     this.updateWorkflowTemplateCallable =
@@ -276,6 +308,17 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
   public UnaryCallable<InstantiateWorkflowTemplateRequest, Operation>
       instantiateWorkflowTemplateCallable() {
     return instantiateWorkflowTemplateCallable;
+  }
+
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallable<InstantiateInlineWorkflowTemplateRequest, Empty, WorkflowMetadata>
+      instantiateInlineWorkflowTemplateOperationCallable() {
+    return instantiateInlineWorkflowTemplateOperationCallable;
+  }
+
+  public UnaryCallable<InstantiateInlineWorkflowTemplateRequest, Operation>
+      instantiateInlineWorkflowTemplateCallable() {
+    return instantiateInlineWorkflowTemplateCallable;
   }
 
   public UnaryCallable<UpdateWorkflowTemplateRequest, WorkflowTemplate>

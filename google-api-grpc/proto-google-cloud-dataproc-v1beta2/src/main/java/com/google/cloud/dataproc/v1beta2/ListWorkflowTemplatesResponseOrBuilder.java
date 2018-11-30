@@ -3,20 +3,24 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface ListWorkflowTemplatesResponseOrBuilder extends
+public interface ListWorkflowTemplatesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.ListWorkflowTemplatesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. WorkflowTemplates list.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
    */
-  java.util.List<com.google.cloud.dataproc.v1beta2.WorkflowTemplate> 
-      getTemplatesList();
+  java.util.List<com.google.cloud.dataproc.v1beta2.WorkflowTemplate> getTemplatesList();
   /**
+   *
+   *
    * <pre>
    * Output only. WorkflowTemplates list.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListWorkflowTemplatesResponseOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.WorkflowTemplate getTemplates(int index);
   /**
+   *
+   *
    * <pre>
    * Output only. WorkflowTemplates list.
    * </pre>
@@ -33,25 +39,30 @@ public interface ListWorkflowTemplatesResponseOrBuilder extends
    */
   int getTemplatesCount();
   /**
+   *
+   *
    * <pre>
    * Output only. WorkflowTemplates list.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder> 
+  java.util.List<? extends com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder>
       getTemplatesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Output only. WorkflowTemplates list.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.WorkflowTemplate templates = 1;</code>
    */
-  com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder getTemplatesOrBuilder(
-      int index);
+  com.google.cloud.dataproc.v1beta2.WorkflowTemplateOrBuilder getTemplatesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Output only. This token is included in the response if there are more results
    * to fetch. To fetch additional results, provide this value as the
@@ -62,6 +73,8 @@ public interface ListWorkflowTemplatesResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * Output only. This token is included in the response if there are more results
    * to fetch. To fetch additional results, provide this value as the
@@ -70,6 +83,5 @@ public interface ListWorkflowTemplatesResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

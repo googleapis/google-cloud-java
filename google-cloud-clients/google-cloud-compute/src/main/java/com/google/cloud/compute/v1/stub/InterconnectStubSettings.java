@@ -252,7 +252,9 @@ public class InterconnectStubSettings extends StubSettings<InterconnectStubSetti
 
             @Override
             public Iterable<Interconnect> extractResources(InterconnectList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<Interconnect>of();
             }
           };
 

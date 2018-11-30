@@ -17,8 +17,8 @@
 package com.google.cloud.datastore;
 
 /**
- * A full entity is a {@link BaseEntity} that holds all the properties associated with a
- * Datastore entity (as opposed to {@link ProjectionEntity}).
+ * A full entity is a {@link BaseEntity} that holds all the properties associated with a Datastore
+ * entity (as opposed to {@link ProjectionEntity}).
  */
 public class FullEntity<K extends IncompleteKey> extends BaseEntity<K> {
 
@@ -26,8 +26,7 @@ public class FullEntity<K extends IncompleteKey> extends BaseEntity<K> {
 
   public static class Builder<K extends IncompleteKey> extends BaseEntity.Builder<K, Builder<K>> {
 
-    Builder() {
-    }
+    Builder() {}
 
     Builder(K key) {
       super(key);
@@ -51,16 +50,13 @@ public class FullEntity<K extends IncompleteKey> extends BaseEntity<K> {
     super(from);
   }
 
-
   public static Builder<IncompleteKey> newBuilder() {
     return new Builder<>();
   }
 
-
   public static <K extends IncompleteKey> Builder<K> newBuilder(K key) {
     return new Builder<>(key);
   }
-
 
   public static <K extends IncompleteKey> Builder<K> newBuilder(FullEntity<K> copyFrom) {
     return new Builder<>(copyFrom);

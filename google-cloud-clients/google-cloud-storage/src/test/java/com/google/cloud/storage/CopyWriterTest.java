@@ -26,18 +26,16 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.RestorableState;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.storage.spi.StorageRpcFactory;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.cloud.storage.spi.v1.StorageRpc.RewriteRequest;
 import com.google.cloud.storage.spi.v1.StorageRpc.RewriteResponse;
-import com.google.cloud.storage.spi.StorageRpcFactory;
 import com.google.common.collect.ImmutableMap;
-
+import java.util.Map;
 import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.Map;
 
 public class CopyWriterTest {
 
@@ -49,19 +47,20 @@ public class CopyWriterTest {
   private static final BlobInfo BLOB_INFO =
       BlobInfo.newBuilder(DESTINATION_BUCKET_NAME, DESTINATION_BLOB_NAME).build();
   private static final BlobInfo RESULT_INFO =
-      BlobInfo.newBuilder(DESTINATION_BUCKET_NAME, DESTINATION_BLOB_NAME).setContentType("type")
+      BlobInfo.newBuilder(DESTINATION_BUCKET_NAME, DESTINATION_BLOB_NAME)
+          .setContentType("type")
           .build();
   private static final Map<StorageRpc.Option, ?> EMPTY_OPTIONS = ImmutableMap.of();
   private static final RewriteRequest REQUEST_WITH_OBJECT =
-      new StorageRpc.RewriteRequest(BLOB_ID.toPb(), EMPTY_OPTIONS, true, BLOB_INFO.toPb(),
-          EMPTY_OPTIONS, null);
+      new StorageRpc.RewriteRequest(
+          BLOB_ID.toPb(), EMPTY_OPTIONS, true, BLOB_INFO.toPb(), EMPTY_OPTIONS, null);
   private static final RewriteRequest REQUEST_WITHOUT_OBJECT =
-      new StorageRpc.RewriteRequest(BLOB_ID.toPb(), EMPTY_OPTIONS, false, BLOB_INFO.toPb(),
-          EMPTY_OPTIONS, null);
-  private static final RewriteResponse RESPONSE_WITH_OBJECT = new RewriteResponse(
-      REQUEST_WITH_OBJECT, null, 42L, false, "token", 21L);
-  private static final RewriteResponse RESPONSE_WITHOUT_OBJECT = new RewriteResponse(
-      REQUEST_WITHOUT_OBJECT, null, 42L, false, "token", 21L);
+      new StorageRpc.RewriteRequest(
+          BLOB_ID.toPb(), EMPTY_OPTIONS, false, BLOB_INFO.toPb(), EMPTY_OPTIONS, null);
+  private static final RewriteResponse RESPONSE_WITH_OBJECT =
+      new RewriteResponse(REQUEST_WITH_OBJECT, null, 42L, false, "token", 21L);
+  private static final RewriteResponse RESPONSE_WITHOUT_OBJECT =
+      new RewriteResponse(REQUEST_WITHOUT_OBJECT, null, 42L, false, "token", 21L);
   private static final RewriteResponse RESPONSE_WITH_OBJECT_DONE =
       new RewriteResponse(REQUEST_WITH_OBJECT, RESULT_INFO.toPb(), 42L, true, "token", 42L);
   private static final RewriteResponse RESPONSE_WITHOUT_OBJECT_DONE =
@@ -77,14 +76,14 @@ public class CopyWriterTest {
   public void setUp() {
     rpcFactoryMock = createMock(StorageRpcFactory.class);
     storageRpcMock = createMock(StorageRpc.class);
-    expect(rpcFactoryMock.create(anyObject(StorageOptions.class)))
-        .andReturn(storageRpcMock);
+    expect(rpcFactoryMock.create(anyObject(StorageOptions.class))).andReturn(storageRpcMock);
     replay(rpcFactoryMock);
-    options = StorageOptions.newBuilder()
-        .setProjectId("projectid")
-        .setServiceRpcFactory(rpcFactoryMock)
-        .setRetrySettings(ServiceOptions.getNoRetrySettings())
-        .build();
+    options =
+        StorageOptions.newBuilder()
+            .setProjectId("projectid")
+            .setServiceRpcFactory(rpcFactoryMock)
+            .setRetrySettings(ServiceOptions.getNoRetrySettings())
+            .build();
     result = new Blob(options.getService(), new BlobInfo.BuilderImpl(RESULT_INFO));
   }
 

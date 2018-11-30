@@ -21,7 +21,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.compute.deprecated.NetworkConfiguration.Type;
-
 import org.junit.Test;
 
 public class StandardNetworkConfigurationTest {
@@ -45,15 +44,19 @@ public class StandardNetworkConfigurationTest {
 
   @Test
   public void testToAndFromPb() {
-    assertTrue(NetworkConfiguration.fromPb(NETWORK_CONFIGURATION.toPb())
-        instanceof StandardNetworkConfiguration);
-    compareNetworkConfiguration(NETWORK_CONFIGURATION,
+    assertTrue(
+        NetworkConfiguration.fromPb(NETWORK_CONFIGURATION.toPb())
+            instanceof StandardNetworkConfiguration);
+    compareNetworkConfiguration(
+        NETWORK_CONFIGURATION,
         NetworkConfiguration.<StandardNetworkConfiguration>fromPb(NETWORK_CONFIGURATION.toPb()));
     StandardNetworkConfiguration networkConfiguration =
         new StandardNetworkConfiguration(IP_RANGE, null);
-    assertTrue(NetworkConfiguration.fromPb(networkConfiguration.toPb())
-        instanceof StandardNetworkConfiguration);
-    compareNetworkConfiguration(networkConfiguration,
+    assertTrue(
+        NetworkConfiguration.fromPb(networkConfiguration.toPb())
+            instanceof StandardNetworkConfiguration);
+    compareNetworkConfiguration(
+        networkConfiguration,
         NetworkConfiguration.<StandardNetworkConfiguration>fromPb(networkConfiguration.toPb()));
   }
 
@@ -65,8 +68,8 @@ public class StandardNetworkConfigurationTest {
     assertNull(configuration.getGatewayAddress());
   }
 
-  private void compareNetworkConfiguration(StandardNetworkConfiguration expected,
-      StandardNetworkConfiguration value) {
+  private void compareNetworkConfiguration(
+      StandardNetworkConfiguration expected, StandardNetworkConfiguration value) {
     assertEquals(expected, value);
     assertEquals(expected.getIpRange(), value.getIpRange());
     assertEquals(expected.getGatewayAddress(), value.getGatewayAddress());

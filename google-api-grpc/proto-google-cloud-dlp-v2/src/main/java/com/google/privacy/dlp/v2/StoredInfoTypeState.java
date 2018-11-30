@@ -4,19 +4,20 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * State of a StoredInfoType version.
  * </pre>
  *
  * Protobuf enum {@code google.privacy.dlp.v2.StoredInfoTypeState}
  */
-public enum StoredInfoTypeState
-    implements com.google.protobuf.ProtocolMessageEnum {
-  /**
-   * <code>STORED_INFO_TYPE_STATE_UNSPECIFIED = 0;</code>
-   */
+public enum StoredInfoTypeState implements com.google.protobuf.ProtocolMessageEnum {
+  /** <code>STORED_INFO_TYPE_STATE_UNSPECIFIED = 0;</code> */
   STORED_INFO_TYPE_STATE_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * StoredInfoType version is being created.
    * </pre>
@@ -25,6 +26,8 @@ public enum StoredInfoTypeState
    */
   PENDING(1),
   /**
+   *
+   *
    * <pre>
    * StoredInfoType version is ready for use.
    * </pre>
@@ -33,6 +36,8 @@ public enum StoredInfoTypeState
    */
   READY(2),
   /**
+   *
+   *
    * <pre>
    * StoredInfoType creation failed. All relevant error messages are returned in
    * the `StoredInfoTypeVersion` message.
@@ -42,6 +47,8 @@ public enum StoredInfoTypeState
    */
   FAILED(3),
   /**
+   *
+   *
    * <pre>
    * StoredInfoType is no longer valid because artifacts stored in
    * user-controlled storage were modified. To fix an invalid StoredInfoType,
@@ -54,11 +61,11 @@ public enum StoredInfoTypeState
   UNRECOGNIZED(-1),
   ;
 
-  /**
-   * <code>STORED_INFO_TYPE_STATE_UNSPECIFIED = 0;</code>
-   */
+  /** <code>STORED_INFO_TYPE_STATE_UNSPECIFIED = 0;</code> */
   public static final int STORED_INFO_TYPE_STATE_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * StoredInfoType version is being created.
    * </pre>
@@ -67,6 +74,8 @@ public enum StoredInfoTypeState
    */
   public static final int PENDING_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * StoredInfoType version is ready for use.
    * </pre>
@@ -75,6 +84,8 @@ public enum StoredInfoTypeState
    */
   public static final int READY_VALUE = 2;
   /**
+   *
+   *
    * <pre>
    * StoredInfoType creation failed. All relevant error messages are returned in
    * the `StoredInfoTypeVersion` message.
@@ -84,6 +95,8 @@ public enum StoredInfoTypeState
    */
   public static final int FAILED_VALUE = 3;
   /**
+   *
+   *
    * <pre>
    * StoredInfoType is no longer valid because artifacts stored in
    * user-controlled storage were modified. To fix an invalid StoredInfoType,
@@ -94,7 +107,6 @@ public enum StoredInfoTypeState
    */
   public static final int INVALID_VALUE = 4;
 
-
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -103,9 +115,7 @@ public enum StoredInfoTypeState
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static StoredInfoTypeState valueOf(int value) {
     return forNumber(value);
@@ -113,12 +123,18 @@ public enum StoredInfoTypeState
 
   public static StoredInfoTypeState forNumber(int value) {
     switch (value) {
-      case 0: return STORED_INFO_TYPE_STATE_UNSPECIFIED;
-      case 1: return PENDING;
-      case 2: return READY;
-      case 3: return FAILED;
-      case 4: return INVALID;
-      default: return null;
+      case 0:
+        return STORED_INFO_TYPE_STATE_UNSPECIFIED;
+      case 1:
+        return PENDING;
+      case 2:
+        return READY;
+      case 3:
+        return FAILED;
+      case 4:
+        return INVALID;
+      default:
+        return null;
     }
   }
 
@@ -126,24 +142,24 @@ public enum StoredInfoTypeState
       internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      StoredInfoTypeState> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<StoredInfoTypeState>() {
-          public StoredInfoTypeState findValueByNumber(int number) {
-            return StoredInfoTypeState.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<StoredInfoTypeState>
+      internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<StoredInfoTypeState>() {
+            public StoredInfoTypeState findValueByNumber(int number) {
+              return StoredInfoTypeState.forNumber(number);
+            }
+          };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(5);
   }
 
@@ -152,8 +168,7 @@ public enum StoredInfoTypeState
   public static StoredInfoTypeState valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -169,4 +184,3 @@ public enum StoredInfoTypeState
 
   // @@protoc_insertion_point(enum_scope:google.privacy.dlp.v2.StoredInfoTypeState)
 }
-

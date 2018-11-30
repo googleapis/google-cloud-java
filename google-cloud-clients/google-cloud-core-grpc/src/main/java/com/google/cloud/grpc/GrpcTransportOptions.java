@@ -41,10 +41,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Class representing service options for those services that use gRPC as the transport
- * layer.
- */
+/** Class representing service options for those services that use gRPC as the transport layer. */
 public class GrpcTransportOptions implements TransportOptions {
 
   private static final long serialVersionUID = -9049538465533951165L;
@@ -52,9 +49,7 @@ public class GrpcTransportOptions implements TransportOptions {
 
   private transient ExecutorFactory<ScheduledExecutorService> executorFactory;
 
-  /**
-   * Shared thread pool executor.
-   */
+  /** Shared thread pool executor. */
   private static final Resource<ScheduledExecutorService> EXECUTOR =
       new Resource<ScheduledExecutorService>() {
         @Override
@@ -75,8 +70,8 @@ public class GrpcTransportOptions implements TransportOptions {
   /**
    * An interface for {@link ExecutorService} factories. Implementations of this interface can be
    * used to provide an user-defined executor to execute requests. Any implementation of this
-   * interface must override the {@code get()} method to return the desired executor. The
-   * {@code release(executor)} method should be overriden to free resources used by the executor (if
+   * interface must override the {@code get()} method to return the desired executor. The {@code
+   * release(executor)} method should be overriden to free resources used by the executor (if
    * needed) according to application's logic.
    *
    * <p>Implementation must provide a public no-arg constructor. Loading of a factory implementation
@@ -86,14 +81,10 @@ public class GrpcTransportOptions implements TransportOptions {
    */
   public interface ExecutorFactory<T extends ExecutorService> {
 
-    /**
-     * Gets an executor service instance.
-     */
+    /** Gets an executor service instance. */
     T get();
 
-    /**
-     * Releases resources used by the executor and possibly shuts it down.
-     */
+    /** Releases resources used by the executor and possibly shuts it down. */
     void release(T executor);
   }
 
@@ -113,9 +104,7 @@ public class GrpcTransportOptions implements TransportOptions {
     }
   }
 
-  /**
-   * Builder for {@code GrpcTransportOptions}.
-   */
+  /** Builder for {@code GrpcTransportOptions}. */
   public static class Builder {
 
     private ExecutorFactory executorFactory;
@@ -144,44 +133,41 @@ public class GrpcTransportOptions implements TransportOptions {
 
   @SuppressWarnings("unchecked")
   private GrpcTransportOptions(Builder builder) {
-    executorFactory = firstNonNull(builder.executorFactory,
-        ServiceOptions.getFromServiceLoader(ExecutorFactory.class, DefaultExecutorFactory.INSTANCE));
+    executorFactory =
+        firstNonNull(
+            builder.executorFactory,
+            ServiceOptions.getFromServiceLoader(
+                ExecutorFactory.class, DefaultExecutorFactory.INSTANCE));
     executorFactoryClassName = executorFactory.getClass().getName();
   }
 
-  /**
-   * Returns a scheduled executor service provider.
-   */
+  /** Returns a scheduled executor service provider. */
   public ExecutorFactory<ScheduledExecutorService> getExecutorFactory() {
     return executorFactory;
   }
 
-  /**
-   * Returns a builder for API call settings.
-   */
+  /** Returns a builder for API call settings. */
   @Deprecated
   public UnaryCallSettings.Builder getApiCallSettings(RetrySettings retrySettings) {
     return UnaryCallSettings.newUnaryCallSettingsBuilder().setRetrySettings(retrySettings);
   }
 
-  /**
-   * Returns a channel provider from the given default provider.
-   */
+  /** Returns a channel provider from the given default provider. */
   @BetaApi
   public static TransportChannelProvider setUpChannelProvider(
-      InstantiatingGrpcChannelProvider.Builder providerBuilder, ServiceOptions<?, ?> serviceOptions) {
+      InstantiatingGrpcChannelProvider.Builder providerBuilder,
+      ServiceOptions<?, ?> serviceOptions) {
     providerBuilder.setEndpoint(serviceOptions.getHost());
     return providerBuilder.build();
   }
 
   public static CredentialsProvider setUpCredentialsProvider(ServiceOptions<?, ?> serviceOptions) {
     Credentials scopedCredentials = serviceOptions.getScopedCredentials();
-     if (scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()) {
-       return FixedCredentialsProvider.create(scopedCredentials);
-     }
-     return NoCredentialsProvider.create();
+    if (scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()) {
+      return FixedCredentialsProvider.create(scopedCredentials);
+    }
+    return NoCredentialsProvider.create();
   }
-
 
   public Builder toBuilder() {
     return new Builder(this);

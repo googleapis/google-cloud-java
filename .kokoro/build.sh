@@ -21,7 +21,7 @@ cd github/google-cloud-java/
 java -version
 echo $JOB_TYPE
 
-mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V
 
 # prepend Kokoro root directory onto GOOGLE_APPLICATION_CREDENTIALS path
 if [ ! -z "$GOOGLE_APPLICATION_CREDENTIALS" ]; then
@@ -32,6 +32,9 @@ case $JOB_TYPE in
 test)
     mvn test -B
     bash $KOKORO_GFILE_DIR/codecov.sh
+    ;;
+lint)
+    mvn com.coveo:fmt-maven-plugin:check
     ;;
 javadoc)
     mvn javadoc:javadoc javadoc:test-javadoc

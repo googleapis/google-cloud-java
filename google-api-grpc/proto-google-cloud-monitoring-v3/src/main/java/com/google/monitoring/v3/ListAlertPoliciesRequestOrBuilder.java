@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface ListAlertPoliciesRequestOrBuilder extends
+public interface ListAlertPoliciesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.ListAlertPoliciesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The project whose alert policies are to be listed. The format is
    *     projects/[PROJECT_ID]
@@ -22,6 +25,8 @@ public interface ListAlertPoliciesRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The project whose alert policies are to be listed. The format is
    *     projects/[PROJECT_ID]
@@ -34,10 +39,11 @@ public interface ListAlertPoliciesRequestOrBuilder extends
    *
    * <code>string name = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * If provided, this field specifies the criteria that must be met by
    * alert policies to be included in the response.
@@ -49,6 +55,8 @@ public interface ListAlertPoliciesRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * If provided, this field specifies the criteria that must be met by
    * alert policies to be included in the response.
@@ -58,10 +66,11 @@ public interface ListAlertPoliciesRequestOrBuilder extends
    *
    * <code>string filter = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * A comma-separated list of fields by which to sort the result. Supports
    * the same set of field references as the `filter` field. Entries can be
@@ -74,6 +83,8 @@ public interface ListAlertPoliciesRequestOrBuilder extends
    */
   java.lang.String getOrderBy();
   /**
+   *
+   *
    * <pre>
    * A comma-separated list of fields by which to sort the result. Supports
    * the same set of field references as the `filter` field. Entries can be
@@ -84,10 +95,11 @@ public interface ListAlertPoliciesRequestOrBuilder extends
    *
    * <code>string order_by = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getOrderByBytes();
+  com.google.protobuf.ByteString getOrderByBytes();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of results to return in a single response.
    * </pre>
@@ -97,6 +109,8 @@ public interface ListAlertPoliciesRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * If this field is not empty then it must contain the `nextPageToken` value
    * returned by a previous call to this method.  Using this field causes the
@@ -107,6 +121,8 @@ public interface ListAlertPoliciesRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * If this field is not empty then it must contain the `nextPageToken` value
    * returned by a previous call to this method.  Using this field causes the
@@ -115,6 +131,5 @@ public interface ListAlertPoliciesRequestOrBuilder extends
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

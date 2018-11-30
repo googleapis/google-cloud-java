@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface GetReferenceImageRequestOrBuilder extends
+public interface GetReferenceImageRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.GetReferenceImageRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resource name of the ReferenceImage to get.
    * Format is:
@@ -18,6 +21,8 @@ public interface GetReferenceImageRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The resource name of the ReferenceImage to get.
    * Format is:
@@ -26,6 +31,5 @@ public interface GetReferenceImageRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

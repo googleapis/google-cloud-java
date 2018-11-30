@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface WorkflowTemplateOrBuilder extends
+public interface WorkflowTemplateOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.WorkflowTemplate)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The template id.
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -19,6 +22,8 @@ public interface WorkflowTemplateOrBuilder extends
    */
   java.lang.String getId();
   /**
+   *
+   *
    * <pre>
    * Required. The template id.
    * The id must contain only letters (a-z, A-Z), numbers (0-9),
@@ -28,10 +33,11 @@ public interface WorkflowTemplateOrBuilder extends
    *
    * <code>string id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getIdBytes();
+  com.google.protobuf.ByteString getIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The "resource name" of the template, as described
    * in https://cloud.google.com/apis/design/resource_names of the form
@@ -42,6 +48,8 @@ public interface WorkflowTemplateOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Output only. The "resource name" of the template, as described
    * in https://cloud.google.com/apis/design/resource_names of the form
@@ -50,10 +58,11 @@ public interface WorkflowTemplateOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Used to perform a consistent read-modify-write.
    * This field should be left blank for a `CreateWorkflowTemplate` request. It
@@ -70,6 +79,8 @@ public interface WorkflowTemplateOrBuilder extends
   int getVersion();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time template was created.
    * </pre>
@@ -78,6 +89,8 @@ public interface WorkflowTemplateOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time template was created.
    * </pre>
@@ -86,6 +99,8 @@ public interface WorkflowTemplateOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time template was created.
    * </pre>
@@ -95,6 +110,8 @@ public interface WorkflowTemplateOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time template was last updated.
    * </pre>
@@ -103,6 +120,8 @@ public interface WorkflowTemplateOrBuilder extends
    */
   boolean hasUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time template was last updated.
    * </pre>
@@ -111,6 +130,8 @@ public interface WorkflowTemplateOrBuilder extends
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time template was last updated.
    * </pre>
@@ -120,6 +141,8 @@ public interface WorkflowTemplateOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this template. These labels
    * will be propagated to all jobs and clusters created by the workflow
@@ -136,6 +159,8 @@ public interface WorkflowTemplateOrBuilder extends
    */
   int getLabelsCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this template. These labels
    * will be propagated to all jobs and clusters created by the workflow
@@ -150,15 +175,13 @@ public interface WorkflowTemplateOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
-  boolean containsLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabels();
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this template. These labels
    * will be propagated to all jobs and clusters created by the workflow
@@ -173,9 +196,10 @@ public interface WorkflowTemplateOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this template. These labels
    * will be propagated to all jobs and clusters created by the workflow
@@ -190,11 +214,10 @@ public interface WorkflowTemplateOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
-
-  java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this template. These labels
    * will be propagated to all jobs and clusters created by the workflow
@@ -209,11 +232,11 @@ public interface WorkflowTemplateOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
-
-  java.lang.String getLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Required. WorkflowTemplate scheduling information.
    * </pre>
@@ -222,6 +245,8 @@ public interface WorkflowTemplateOrBuilder extends
    */
   boolean hasPlacement();
   /**
+   *
+   *
    * <pre>
    * Required. WorkflowTemplate scheduling information.
    * </pre>
@@ -230,6 +255,8 @@ public interface WorkflowTemplateOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacement getPlacement();
   /**
+   *
+   *
    * <pre>
    * Required. WorkflowTemplate scheduling information.
    * </pre>
@@ -239,15 +266,18 @@ public interface WorkflowTemplateOrBuilder extends
   com.google.cloud.dataproc.v1beta2.WorkflowTemplatePlacementOrBuilder getPlacementOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required. The Directed Acyclic Graph of Jobs to submit.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.OrderedJob jobs = 8;</code>
    */
-  java.util.List<com.google.cloud.dataproc.v1beta2.OrderedJob> 
-      getJobsList();
+  java.util.List<com.google.cloud.dataproc.v1beta2.OrderedJob> getJobsList();
   /**
+   *
+   *
    * <pre>
    * Required. The Directed Acyclic Graph of Jobs to submit.
    * </pre>
@@ -256,6 +286,8 @@ public interface WorkflowTemplateOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.OrderedJob getJobs(int index);
   /**
+   *
+   *
    * <pre>
    * Required. The Directed Acyclic Graph of Jobs to submit.
    * </pre>
@@ -264,21 +296,86 @@ public interface WorkflowTemplateOrBuilder extends
    */
   int getJobsCount();
   /**
+   *
+   *
    * <pre>
    * Required. The Directed Acyclic Graph of Jobs to submit.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.OrderedJob jobs = 8;</code>
    */
-  java.util.List<? extends com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder> 
+  java.util.List<? extends com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder>
       getJobsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Required. The Directed Acyclic Graph of Jobs to submit.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.OrderedJob jobs = 8;</code>
    */
-  com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder getJobsOrBuilder(
-      int index);
+  com.google.cloud.dataproc.v1beta2.OrderedJobOrBuilder getJobsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  java.util.List<com.google.cloud.dataproc.v1beta2.TemplateParameter> getParametersList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  com.google.cloud.dataproc.v1beta2.TemplateParameter getParameters(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  int getParametersCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  java.util.List<? extends com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder>
+      getParametersOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Template parameters whose values are substituted into the
+   * template. Values for parameters must be provided when the template is
+   * instantiated.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.dataproc.v1beta2.TemplateParameter parameters = 9;</code>
+   */
+  com.google.cloud.dataproc.v1beta2.TemplateParameterOrBuilder getParametersOrBuilder(int index);
 }

@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface InternalCheckerOrBuilder extends
+public interface InternalCheckerOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.InternalChecker)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The GCP project ID. Not necessarily the same as the project_id for the
    * config.
@@ -17,6 +20,8 @@ public interface InternalCheckerOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * The GCP project ID. Not necessarily the same as the project_id for the
    * config.
@@ -24,10 +29,11 @@ public interface InternalCheckerOrBuilder extends
    *
    * <code>string project_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The internal network to perform this uptime check on.
    * </pre>
@@ -36,16 +42,19 @@ public interface InternalCheckerOrBuilder extends
    */
   java.lang.String getNetwork();
   /**
+   *
+   *
    * <pre>
    * The internal network to perform this uptime check on.
    * </pre>
    *
    * <code>string network = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNetworkBytes();
+  com.google.protobuf.ByteString getNetworkBytes();
 
   /**
+   *
+   *
    * <pre>
    * The GCP zone the uptime check should egress from. Only respected for
    * internal uptime checks, where internal_network is specified.
@@ -55,6 +64,8 @@ public interface InternalCheckerOrBuilder extends
    */
   java.lang.String getGcpZone();
   /**
+   *
+   *
    * <pre>
    * The GCP zone the uptime check should egress from. Only respected for
    * internal uptime checks, where internal_network is specified.
@@ -62,10 +73,11 @@ public interface InternalCheckerOrBuilder extends
    *
    * <code>string gcp_zone = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getGcpZoneBytes();
+  com.google.protobuf.ByteString getGcpZoneBytes();
 
   /**
+   *
+   *
    * <pre>
    * The checker ID.
    * </pre>
@@ -74,16 +86,19 @@ public interface InternalCheckerOrBuilder extends
    */
   java.lang.String getCheckerId();
   /**
+   *
+   *
    * <pre>
    * The checker ID.
    * </pre>
    *
    * <code>string checker_id = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getCheckerIdBytes();
+  com.google.protobuf.ByteString getCheckerIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The checker's human-readable name.
    * </pre>
@@ -92,12 +107,13 @@ public interface InternalCheckerOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * The checker's human-readable name.
    * </pre>
    *
    * <code>string display_name = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 }

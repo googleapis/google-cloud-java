@@ -418,9 +418,7 @@ public class DocumentReferenceTest {
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
-    documentReference
-        .set(map("foo", FieldValue.arrayUnion("bar", map("foo", "baz"))))
-        .get();
+    documentReference.set(map("foo", FieldValue.arrayUnion("bar", map("foo", "baz")))).get();
 
     CommitRequest set =
         commit(
@@ -438,9 +436,7 @@ public class DocumentReferenceTest {
         .sendRequest(
             commitCapture.capture(), Matchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
-    documentReference
-        .set(map("foo", FieldValue.arrayRemove("bar", map("foo", "baz"))))
-        .get();
+    documentReference.set(map("foo", FieldValue.arrayRemove("bar", map("foo", "baz")))).get();
 
     CommitRequest set =
         commit(

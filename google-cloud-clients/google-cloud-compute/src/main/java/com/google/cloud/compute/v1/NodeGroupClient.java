@@ -56,13 +56,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1264,8 +1264,11 @@ public class NodeGroupClient implements BackgroundResource {
 
   public static class AggregatedListNodeGroupsPagedResponse
       extends AbstractPagedListResponse<
-          AggregatedListNodeGroupsHttpRequest, NodeGroupAggregatedList, NodeGroupsScopedList,
-          AggregatedListNodeGroupsPage, AggregatedListNodeGroupsFixedSizeCollection> {
+          AggregatedListNodeGroupsHttpRequest,
+          NodeGroupAggregatedList,
+          NodeGroupsScopedList,
+          AggregatedListNodeGroupsPage,
+          AggregatedListNodeGroupsFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListNodeGroupsPagedResponse> createAsync(
         PageContext<
@@ -1291,7 +1294,9 @@ public class NodeGroupClient implements BackgroundResource {
 
   public static class AggregatedListNodeGroupsPage
       extends AbstractPage<
-          AggregatedListNodeGroupsHttpRequest, NodeGroupAggregatedList, NodeGroupsScopedList,
+          AggregatedListNodeGroupsHttpRequest,
+          NodeGroupAggregatedList,
+          NodeGroupsScopedList,
           AggregatedListNodeGroupsPage> {
 
     private AggregatedListNodeGroupsPage(
@@ -1327,8 +1332,11 @@ public class NodeGroupClient implements BackgroundResource {
 
   public static class AggregatedListNodeGroupsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AggregatedListNodeGroupsHttpRequest, NodeGroupAggregatedList, NodeGroupsScopedList,
-          AggregatedListNodeGroupsPage, AggregatedListNodeGroupsFixedSizeCollection> {
+          AggregatedListNodeGroupsHttpRequest,
+          NodeGroupAggregatedList,
+          NodeGroupsScopedList,
+          AggregatedListNodeGroupsPage,
+          AggregatedListNodeGroupsFixedSizeCollection> {
 
     private AggregatedListNodeGroupsFixedSizeCollection(
         List<AggregatedListNodeGroupsPage> pages, int collectionSize) {
@@ -1348,7 +1356,10 @@ public class NodeGroupClient implements BackgroundResource {
 
   public static class ListNodeGroupsPagedResponse
       extends AbstractPagedListResponse<
-          ListNodeGroupsHttpRequest, NodeGroupList, NodeGroup, ListNodeGroupsPage,
+          ListNodeGroupsHttpRequest,
+          NodeGroupList,
+          NodeGroup,
+          ListNodeGroupsPage,
           ListNodeGroupsFixedSizeCollection> {
 
     public static ApiFuture<ListNodeGroupsPagedResponse> createAsync(
@@ -1402,7 +1413,10 @@ public class NodeGroupClient implements BackgroundResource {
 
   public static class ListNodeGroupsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListNodeGroupsHttpRequest, NodeGroupList, NodeGroup, ListNodeGroupsPage,
+          ListNodeGroupsHttpRequest,
+          NodeGroupList,
+          NodeGroup,
+          ListNodeGroupsPage,
           ListNodeGroupsFixedSizeCollection> {
 
     private ListNodeGroupsFixedSizeCollection(List<ListNodeGroupsPage> pages, int collectionSize) {
@@ -1422,8 +1436,11 @@ public class NodeGroupClient implements BackgroundResource {
 
   public static class ListNodesNodeGroupsPagedResponse
       extends AbstractPagedListResponse<
-          ListNodesNodeGroupsHttpRequest, NodeGroupsListNodes, NodeGroupNode,
-          ListNodesNodeGroupsPage, ListNodesNodeGroupsFixedSizeCollection> {
+          ListNodesNodeGroupsHttpRequest,
+          NodeGroupsListNodes,
+          NodeGroupNode,
+          ListNodesNodeGroupsPage,
+          ListNodesNodeGroupsFixedSizeCollection> {
 
     public static ApiFuture<ListNodesNodeGroupsPagedResponse> createAsync(
         PageContext<ListNodesNodeGroupsHttpRequest, NodeGroupsListNodes, NodeGroupNode> context,
@@ -1447,7 +1464,9 @@ public class NodeGroupClient implements BackgroundResource {
 
   public static class ListNodesNodeGroupsPage
       extends AbstractPage<
-          ListNodesNodeGroupsHttpRequest, NodeGroupsListNodes, NodeGroupNode,
+          ListNodesNodeGroupsHttpRequest,
+          NodeGroupsListNodes,
+          NodeGroupNode,
           ListNodesNodeGroupsPage> {
 
     private ListNodesNodeGroupsPage(
@@ -1477,8 +1496,11 @@ public class NodeGroupClient implements BackgroundResource {
 
   public static class ListNodesNodeGroupsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListNodesNodeGroupsHttpRequest, NodeGroupsListNodes, NodeGroupNode,
-          ListNodesNodeGroupsPage, ListNodesNodeGroupsFixedSizeCollection> {
+          ListNodesNodeGroupsHttpRequest,
+          NodeGroupsListNodes,
+          NodeGroupNode,
+          ListNodesNodeGroupsPage,
+          ListNodesNodeGroupsFixedSizeCollection> {
 
     private ListNodesNodeGroupsFixedSizeCollection(
         List<ListNodesNodeGroupsPage> pages, int collectionSize) {

@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface UpdateIntentRequestOrBuilder extends
+public interface UpdateIntentRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.UpdateIntentRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The intent to update.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
@@ -17,6 +20,8 @@ public interface UpdateIntentRequestOrBuilder extends
    */
   boolean hasIntent();
   /**
+   *
+   *
    * <pre>
    * Required. The intent to update.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
@@ -26,6 +31,8 @@ public interface UpdateIntentRequestOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.Intent getIntent();
   /**
+   *
+   *
    * <pre>
    * Required. The intent to update.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
@@ -36,6 +43,8 @@ public interface UpdateIntentRequestOrBuilder extends
   com.google.cloud.dialogflow.v2.IntentOrBuilder getIntentOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The language of training phrases, parameters and rich messages
    * defined in `intent`. If not specified, the agent's default language is
@@ -48,6 +57,8 @@ public interface UpdateIntentRequestOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Optional. The language of training phrases, parameters and rich messages
    * defined in `intent`. If not specified, the agent's default language is
@@ -58,10 +69,11 @@ public interface UpdateIntentRequestOrBuilder extends
    *
    * <code>string language_code = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -70,6 +82,8 @@ public interface UpdateIntentRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -78,6 +92,8 @@ public interface UpdateIntentRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -87,6 +103,8 @@ public interface UpdateIntentRequestOrBuilder extends
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The resource view to apply to the returned intent.
    * </pre>
@@ -95,6 +113,8 @@ public interface UpdateIntentRequestOrBuilder extends
    */
   int getIntentViewValue();
   /**
+   *
+   *
    * <pre>
    * Optional. The resource view to apply to the returned intent.
    * </pre>

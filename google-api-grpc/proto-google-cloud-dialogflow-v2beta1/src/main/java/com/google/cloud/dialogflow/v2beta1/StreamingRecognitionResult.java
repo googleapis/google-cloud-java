@@ -4,6 +4,8 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 /**
+ *
+ *
  * <pre>
  * Contains a speech recognition result corresponding to a portion of the audio
  * that is currently being processed or an indication that this is the end
@@ -29,15 +31,16 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.StreamingRecognitionResult}
  */
-public  final class StreamingRecognitionResult extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class StreamingRecognitionResult extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.StreamingRecognitionResult)
     StreamingRecognitionResultOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use StreamingRecognitionResult.newBuilder() to construct.
   private StreamingRecognitionResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private StreamingRecognitionResult() {
     messageType_ = 0;
     transcript_ = "";
@@ -46,10 +49,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private StreamingRecognitionResult(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -69,70 +72,77 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
+          case 8:
+            {
+              int rawValue = input.readEnum();
 
-            messageType_ = rawValue;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            transcript_ = s;
-            break;
-          }
-          case 24: {
-
-            isFinal_ = input.readBool();
-            break;
-          }
-          case 37: {
-
-            confidence_ = input.readFloat();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              messageType_ = rawValue;
+              break;
             }
-            break;
-          }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              transcript_ = s;
+              break;
+            }
+          case 24:
+            {
+              isFinal_ = input.readBool();
+              break;
+            }
+          case 37:
+            {
+              confidence_ = input.readFloat();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_StreamingRecognitionResult_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dialogflow.v2beta1.SessionProto
+        .internal_static_google_cloud_dialogflow_v2beta1_StreamingRecognitionResult_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_StreamingRecognitionResult_fieldAccessorTable
+    return com.google.cloud.dialogflow.v2beta1.SessionProto
+        .internal_static_google_cloud_dialogflow_v2beta1_StreamingRecognitionResult_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.class, com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.Builder.class);
+            com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.class,
+            com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Type of the response message.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType}
    */
-  public enum MessageType
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum MessageType implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Not specified. Should never be used.
      * </pre>
@@ -141,6 +151,8 @@ private static final long serialVersionUID = 0L;
      */
     MESSAGE_TYPE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Message contains a (possibly partial) transcript.
      * </pre>
@@ -149,6 +161,8 @@ private static final long serialVersionUID = 0L;
      */
     TRANSCRIPT(1),
     /**
+     *
+     *
      * <pre>
      * Event indicates that the server has detected the end of the user's speech
      * utterance and expects no additional speech. Therefore, the server will
@@ -166,6 +180,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Not specified. Should never be used.
      * </pre>
@@ -174,6 +190,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int MESSAGE_TYPE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Message contains a (possibly partial) transcript.
      * </pre>
@@ -182,6 +200,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int TRANSCRIPT_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Event indicates that the server has detected the end of the user's speech
      * utterance and expects no additional speech. Therefore, the server will
@@ -196,7 +216,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int END_OF_SINGLE_UTTERANCE_VALUE = 2;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -205,9 +224,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static MessageType valueOf(int value) {
       return forNumber(value);
@@ -215,45 +232,47 @@ private static final long serialVersionUID = 0L;
 
     public static MessageType forNumber(int value) {
       switch (value) {
-        case 0: return MESSAGE_TYPE_UNSPECIFIED;
-        case 1: return TRANSCRIPT;
-        case 2: return END_OF_SINGLE_UTTERANCE;
-        default: return null;
+        case 0:
+          return MESSAGE_TYPE_UNSPECIFIED;
+        case 1:
+          return TRANSCRIPT;
+        case 2:
+          return END_OF_SINGLE_UTTERANCE;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<MessageType>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<MessageType> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        MessageType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<MessageType>() {
-            public MessageType findValueByNumber(int number) {
-              return MessageType.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<MessageType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<MessageType>() {
+          public MessageType findValueByNumber(int number) {
+            return MessageType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.getDescriptor().getEnumTypes().get(0);
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.getDescriptor()
+          .getEnumTypes()
+          .get(0);
     }
 
     private static final MessageType[] VALUES = values();
 
-    public static MessageType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static MessageType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -273,31 +292,44 @@ private static final long serialVersionUID = 0L;
   public static final int MESSAGE_TYPE_FIELD_NUMBER = 1;
   private int messageType_;
   /**
+   *
+   *
    * <pre>
    * Type of the result message.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;</code>
+   * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;
+   * </code>
    */
   public int getMessageTypeValue() {
     return messageType_;
   }
   /**
+   *
+   *
    * <pre>
    * Type of the result message.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;</code>
+   * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;
+   * </code>
    */
-  public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType getMessageType() {
+  public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType
+      getMessageType() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType result = com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType.valueOf(messageType_);
-    return result == null ? com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType.UNRECOGNIZED : result;
+    com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType result =
+        com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType.valueOf(
+            messageType_);
+    return result == null
+        ? com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType.UNRECOGNIZED
+        : result;
   }
 
   public static final int TRANSCRIPT_FIELD_NUMBER = 2;
   private volatile java.lang.Object transcript_;
   /**
+   *
+   *
    * <pre>
    * Transcript text representing the words that the user spoke.
    * Populated if and only if `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
@@ -310,14 +342,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       transcript_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Transcript text representing the words that the user spoke.
    * Populated if and only if `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
@@ -325,13 +358,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string transcript = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getTranscriptBytes() {
+  public com.google.protobuf.ByteString getTranscriptBytes() {
     java.lang.Object ref = transcript_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       transcript_ = b;
       return b;
     } else {
@@ -342,6 +373,8 @@ private static final long serialVersionUID = 0L;
   public static final int IS_FINAL_FIELD_NUMBER = 3;
   private boolean isFinal_;
   /**
+   *
+   *
    * <pre>
    * The default of 0.0 is a sentinel value indicating `confidence` was not set.
    * If `false`, the `StreamingRecognitionResult` represents an
@@ -359,6 +392,8 @@ private static final long serialVersionUID = 0L;
   public static final int CONFIDENCE_FIELD_NUMBER = 4;
   private float confidence_;
   /**
+   *
+   *
    * <pre>
    * The Speech confidence between 0.0 and 1.0 for the current portion of audio.
    * A higher number indicates an estimated greater likelihood that the
@@ -375,6 +410,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -386,9 +422,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    if (messageType_ != com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType.MESSAGE_TYPE_UNSPECIFIED.getNumber()) {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (messageType_
+        != com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType
+            .MESSAGE_TYPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, messageType_);
     }
     if (!getTranscriptBytes().isEmpty()) {
@@ -409,20 +446,19 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (messageType_ != com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType.MESSAGE_TYPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, messageType_);
+    if (messageType_
+        != com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType
+            .MESSAGE_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, messageType_);
     }
     if (!getTranscriptBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, transcript_);
     }
     if (isFinal_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, isFinal_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, isFinal_);
     }
     if (confidence_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(4, confidence_);
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, confidence_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -432,23 +468,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult)) {
       return super.equals(obj);
     }
-    com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult other = (com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult) obj;
+    com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult other =
+        (com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult) obj;
 
     boolean result = true;
     result = result && messageType_ == other.messageType_;
-    result = result && getTranscript()
-        .equals(other.getTranscript());
-    result = result && (getIsFinal()
-        == other.getIsFinal());
-    result = result && (
-        java.lang.Float.floatToIntBits(getConfidence())
-        == java.lang.Float.floatToIntBits(
-            other.getConfidence()));
+    result = result && getTranscript().equals(other.getTranscript());
+    result = result && (getIsFinal() == other.getIsFinal());
+    result =
+        result
+            && (java.lang.Float.floatToIntBits(getConfidence())
+                == java.lang.Float.floatToIntBits(other.getConfidence()));
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -465,107 +500,113 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TRANSCRIPT_FIELD_NUMBER;
     hash = (53 * hash) + getTranscript().hashCode();
     hash = (37 * hash) + IS_FINAL_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsFinal());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsFinal());
     hash = (37 * hash) + CONFIDENCE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getConfidence());
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getConfidence());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
   public static com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Contains a speech recognition result corresponding to a portion of the audio
    * that is currently being processed or an indication that this is the end
@@ -591,21 +632,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.StreamingRecognitionResult}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.StreamingRecognitionResult)
       com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResultOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_StreamingRecognitionResult_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.SessionProto
+          .internal_static_google_cloud_dialogflow_v2beta1_StreamingRecognitionResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_StreamingRecognitionResult_fieldAccessorTable
+      return com.google.cloud.dialogflow.v2beta1.SessionProto
+          .internal_static_google_cloud_dialogflow_v2beta1_StreamingRecognitionResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.class, com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.Builder.class);
+              com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.class,
+              com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.Builder.class);
     }
 
     // Construct using com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.newBuilder()
@@ -613,16 +656,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -638,13 +680,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_StreamingRecognitionResult_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dialogflow.v2beta1.SessionProto
+          .internal_static_google_cloud_dialogflow_v2beta1_StreamingRecognitionResult_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult getDefaultInstanceForType() {
+    public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult
+        getDefaultInstanceForType() {
       return com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.getDefaultInstance();
     }
 
@@ -659,7 +702,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult buildPartial() {
-      com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult result = new com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult(this);
+      com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult result =
+          new com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult(this);
       result.messageType_ = messageType_;
       result.transcript_ = transcript_;
       result.isFinal_ = isFinal_;
@@ -672,38 +716,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult) {
-        return mergeFrom((com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult)other);
+        return mergeFrom((com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -711,7 +756,9 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult other) {
-      if (other == com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.getDefaultInstance()) return this;
+      if (other
+          == com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.getDefaultInstance())
+        return this;
       if (other.messageType_ != 0) {
         setMessageTypeValue(other.getMessageTypeValue());
       }
@@ -744,7 +791,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -756,21 +805,29 @@ private static final long serialVersionUID = 0L;
 
     private int messageType_ = 0;
     /**
+     *
+     *
      * <pre>
      * Type of the result message.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;
+     * </code>
      */
     public int getMessageTypeValue() {
       return messageType_;
     }
     /**
+     *
+     *
      * <pre>
      * Type of the result message.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;
+     * </code>
      */
     public Builder setMessageTypeValue(int value) {
       messageType_ = value;
@@ -778,42 +835,60 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Type of the result message.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;
+     * </code>
      */
-    public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType getMessageType() {
+    public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType
+        getMessageType() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType result = com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType.valueOf(messageType_);
-      return result == null ? com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType.UNRECOGNIZED : result;
+      com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType result =
+          com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType.valueOf(
+              messageType_);
+      return result == null
+          ? com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Type of the result message.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;
+     * </code>
      */
-    public Builder setMessageType(com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType value) {
+    public Builder setMessageType(
+        com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       messageType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Type of the result message.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;
+     * </code>
      */
     public Builder clearMessageType() {
-      
+
       messageType_ = 0;
       onChanged();
       return this;
@@ -821,6 +896,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object transcript_ = "";
     /**
+     *
+     *
      * <pre>
      * Transcript text representing the words that the user spoke.
      * Populated if and only if `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
@@ -831,8 +908,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getTranscript() {
       java.lang.Object ref = transcript_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         transcript_ = s;
         return s;
@@ -841,6 +917,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Transcript text representing the words that the user spoke.
      * Populated if and only if `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
@@ -848,13 +926,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string transcript = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getTranscriptBytes() {
+    public com.google.protobuf.ByteString getTranscriptBytes() {
       java.lang.Object ref = transcript_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         transcript_ = b;
         return b;
       } else {
@@ -862,6 +938,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Transcript text representing the words that the user spoke.
      * Populated if and only if `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
@@ -869,17 +947,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string transcript = 2;</code>
      */
-    public Builder setTranscript(
-        java.lang.String value) {
+    public Builder setTranscript(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       transcript_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Transcript text representing the words that the user spoke.
      * Populated if and only if `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
@@ -888,12 +967,14 @@ private static final long serialVersionUID = 0L;
      * <code>string transcript = 2;</code>
      */
     public Builder clearTranscript() {
-      
+
       transcript_ = getDefaultInstance().getTranscript();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Transcript text representing the words that the user spoke.
      * Populated if and only if `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
@@ -901,20 +982,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string transcript = 2;</code>
      */
-    public Builder setTranscriptBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTranscriptBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       transcript_ = value;
       onChanged();
       return this;
     }
 
-    private boolean isFinal_ ;
+    private boolean isFinal_;
     /**
+     *
+     *
      * <pre>
      * The default of 0.0 is a sentinel value indicating `confidence` was not set.
      * If `false`, the `StreamingRecognitionResult` represents an
@@ -929,6 +1011,8 @@ private static final long serialVersionUID = 0L;
       return isFinal_;
     }
     /**
+     *
+     *
      * <pre>
      * The default of 0.0 is a sentinel value indicating `confidence` was not set.
      * If `false`, the `StreamingRecognitionResult` represents an
@@ -940,12 +1024,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool is_final = 3;</code>
      */
     public Builder setIsFinal(boolean value) {
-      
+
       isFinal_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The default of 0.0 is a sentinel value indicating `confidence` was not set.
      * If `false`, the `StreamingRecognitionResult` represents an
@@ -957,14 +1043,16 @@ private static final long serialVersionUID = 0L;
      * <code>bool is_final = 3;</code>
      */
     public Builder clearIsFinal() {
-      
+
       isFinal_ = false;
       onChanged();
       return this;
     }
 
-    private float confidence_ ;
+    private float confidence_;
     /**
+     *
+     *
      * <pre>
      * The Speech confidence between 0.0 and 1.0 for the current portion of audio.
      * A higher number indicates an estimated greater likelihood that the
@@ -980,6 +1068,8 @@ private static final long serialVersionUID = 0L;
       return confidence_;
     }
     /**
+     *
+     *
      * <pre>
      * The Speech confidence between 0.0 and 1.0 for the current portion of audio.
      * A higher number indicates an estimated greater likelihood that the
@@ -992,12 +1082,14 @@ private static final long serialVersionUID = 0L;
      * <code>float confidence = 4;</code>
      */
     public Builder setConfidence(float value) {
-      
+
       confidence_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The Speech confidence between 0.0 and 1.0 for the current portion of audio.
      * A higher number indicates an estimated greater likelihood that the
@@ -1010,14 +1102,14 @@ private static final long serialVersionUID = 0L;
      * <code>float confidence = 4;</code>
      */
     public Builder clearConfidence() {
-      
+
       confidence_ = 0F;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1027,30 +1119,32 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.StreamingRecognitionResult)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.StreamingRecognitionResult)
-  private static final com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult DEFAULT_INSTANCE;
+  private static final com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult();
   }
 
-  public static com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult getDefaultInstance() {
+  public static com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<StreamingRecognitionResult>
-      PARSER = new com.google.protobuf.AbstractParser<StreamingRecognitionResult>() {
-    @java.lang.Override
-    public StreamingRecognitionResult parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new StreamingRecognitionResult(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<StreamingRecognitionResult> PARSER =
+      new com.google.protobuf.AbstractParser<StreamingRecognitionResult>() {
+        @java.lang.Override
+        public StreamingRecognitionResult parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new StreamingRecognitionResult(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<StreamingRecognitionResult> parser() {
     return PARSER;
@@ -1062,9 +1156,8 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult getDefaultInstanceForType() {
+  public com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

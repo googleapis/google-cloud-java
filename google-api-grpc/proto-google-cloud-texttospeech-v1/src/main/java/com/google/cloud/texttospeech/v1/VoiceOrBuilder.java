@@ -3,11 +3,14 @@
 
 package com.google.cloud.texttospeech.v1;
 
-public interface VoiceOrBuilder extends
+public interface VoiceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.texttospeech.v1.Voice)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The languages that this voice supports, expressed as
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags (e.g.
@@ -16,9 +19,10 @@ public interface VoiceOrBuilder extends
    *
    * <code>repeated string language_codes = 1;</code>
    */
-  java.util.List<java.lang.String>
-      getLanguageCodesList();
+  java.util.List<java.lang.String> getLanguageCodesList();
   /**
+   *
+   *
    * <pre>
    * The languages that this voice supports, expressed as
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags (e.g.
@@ -29,6 +33,8 @@ public interface VoiceOrBuilder extends
    */
   int getLanguageCodesCount();
   /**
+   *
+   *
    * <pre>
    * The languages that this voice supports, expressed as
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags (e.g.
@@ -39,6 +45,8 @@ public interface VoiceOrBuilder extends
    */
   java.lang.String getLanguageCodes(int index);
   /**
+   *
+   *
    * <pre>
    * The languages that this voice supports, expressed as
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags (e.g.
@@ -47,10 +55,11 @@ public interface VoiceOrBuilder extends
    *
    * <code>repeated string language_codes = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodesBytes(int index);
+  com.google.protobuf.ByteString getLanguageCodesBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * The name of this voice.  Each distinct voice has a unique name.
    * </pre>
@@ -59,16 +68,19 @@ public interface VoiceOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of this voice.  Each distinct voice has a unique name.
    * </pre>
    *
    * <code>string name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The gender of this voice.
    * </pre>
@@ -77,6 +89,8 @@ public interface VoiceOrBuilder extends
    */
   int getSsmlGenderValue();
   /**
+   *
+   *
    * <pre>
    * The gender of this voice.
    * </pre>
@@ -86,6 +100,8 @@ public interface VoiceOrBuilder extends
   com.google.cloud.texttospeech.v1.SsmlVoiceGender getSsmlGender();
 
   /**
+   *
+   *
    * <pre>
    * The natural sample rate (in hertz) for this voice.
    * </pre>

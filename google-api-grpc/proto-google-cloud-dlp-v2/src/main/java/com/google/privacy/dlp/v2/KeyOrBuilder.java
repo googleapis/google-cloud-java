@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface KeyOrBuilder extends
+public interface KeyOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Key)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Entities are partitioned into subsets, currently identified by a project
    * ID and namespace ID.
@@ -18,6 +21,8 @@ public interface KeyOrBuilder extends
    */
   boolean hasPartitionId();
   /**
+   *
+   *
    * <pre>
    * Entities are partitioned into subsets, currently identified by a project
    * ID and namespace ID.
@@ -28,6 +33,8 @@ public interface KeyOrBuilder extends
    */
   com.google.privacy.dlp.v2.PartitionId getPartitionId();
   /**
+   *
+   *
    * <pre>
    * Entities are partitioned into subsets, currently identified by a project
    * ID and namespace ID.
@@ -39,6 +46,8 @@ public interface KeyOrBuilder extends
   com.google.privacy.dlp.v2.PartitionIdOrBuilder getPartitionIdOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The entity path.
    * An entity path consists of one or more elements composed of a kind and a
@@ -52,9 +61,10 @@ public interface KeyOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.Key.PathElement path = 2;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.Key.PathElement> 
-      getPathList();
+  java.util.List<com.google.privacy.dlp.v2.Key.PathElement> getPathList();
   /**
+   *
+   *
    * <pre>
    * The entity path.
    * An entity path consists of one or more elements composed of a kind and a
@@ -70,6 +80,8 @@ public interface KeyOrBuilder extends
    */
   com.google.privacy.dlp.v2.Key.PathElement getPath(int index);
   /**
+   *
+   *
    * <pre>
    * The entity path.
    * An entity path consists of one or more elements composed of a kind and a
@@ -85,6 +97,8 @@ public interface KeyOrBuilder extends
    */
   int getPathCount();
   /**
+   *
+   *
    * <pre>
    * The entity path.
    * An entity path consists of one or more elements composed of a kind and a
@@ -98,9 +112,11 @@ public interface KeyOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.Key.PathElement path = 2;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.Key.PathElementOrBuilder> 
+  java.util.List<? extends com.google.privacy.dlp.v2.Key.PathElementOrBuilder>
       getPathOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The entity path.
    * An entity path consists of one or more elements composed of a kind and a
@@ -114,6 +130,5 @@ public interface KeyOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.Key.PathElement path = 2;</code>
    */
-  com.google.privacy.dlp.v2.Key.PathElementOrBuilder getPathOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.Key.PathElementOrBuilder getPathOrBuilder(int index);
 }

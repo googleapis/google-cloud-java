@@ -18,8 +18,5 @@ package com.google.cloud.compute.deprecated;
 
 import com.google.cloud.ServiceFactory;
 
-/**
- * An interface for Compute factories.
- */
-public interface ComputeFactory extends ServiceFactory<Compute, ComputeOptions> {
-}
+/** An interface for Compute factories. */
+public interface ComputeFactory extends ServiceFactory<Compute, ComputeOptions> {}

@@ -14,13 +14,12 @@
 
 package com.google.pubsub.v1;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +55,11 @@ public class ProjectTopicName extends TopicName {
   }
 
   public static ProjectTopicName of(String project, String topic) {
-    return newBuilder()
-      .setProject(project)
-      .setTopic(topic)
-      .build();
+    return newBuilder().setProject(project).setTopic(topic).build();
   }
 
   public static String format(String project, String topic) {
-    return newBuilder()
-      .setProject(project)
-      .setTopic(topic)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setTopic(topic).build().toString();
   }
 
   public static ProjectTopicName parse(String formattedString) {
@@ -75,7 +67,8 @@ public class ProjectTopicName extends TopicName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectTopicName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ProjectTopicName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("topic"));
   }
 
@@ -150,8 +143,7 @@ public class ProjectTopicName extends TopicName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ProjectTopicName projectTopicName) {
       project = projectTopicName.project;
@@ -170,8 +162,7 @@ public class ProjectTopicName extends TopicName {
     }
     if (o instanceof ProjectTopicName) {
       ProjectTopicName that = (ProjectTopicName) o;
-      return (this.project.equals(that.project))
-          && (this.topic.equals(that.topic));
+      return (this.project.equals(that.project)) && (this.topic.equals(that.topic));
     }
     return false;
   }
@@ -186,4 +177,3 @@ public class ProjectTopicName extends TopicName {
     return h;
   }
 }
-

@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface InstanceGroupConfigOrBuilder extends
+public interface InstanceGroupConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.InstanceGroupConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional. The number of VM instances in the instance group.
    * For master instance groups, must be set to 1.
@@ -18,6 +21,8 @@ public interface InstanceGroupConfigOrBuilder extends
   int getNumInstances();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The list of instance names. Cloud Dataproc derives the names
    * from `cluster_name`, `num_instances`, and the instance group.
@@ -25,9 +30,10 @@ public interface InstanceGroupConfigOrBuilder extends
    *
    * <code>repeated string instance_names = 2;</code>
    */
-  java.util.List<java.lang.String>
-      getInstanceNamesList();
+  java.util.List<java.lang.String> getInstanceNamesList();
   /**
+   *
+   *
    * <pre>
    * Output only. The list of instance names. Cloud Dataproc derives the names
    * from `cluster_name`, `num_instances`, and the instance group.
@@ -37,6 +43,8 @@ public interface InstanceGroupConfigOrBuilder extends
    */
   int getInstanceNamesCount();
   /**
+   *
+   *
    * <pre>
    * Output only. The list of instance names. Cloud Dataproc derives the names
    * from `cluster_name`, `num_instances`, and the instance group.
@@ -46,6 +54,8 @@ public interface InstanceGroupConfigOrBuilder extends
    */
   java.lang.String getInstanceNames(int index);
   /**
+   *
+   *
    * <pre>
    * Output only. The list of instance names. Cloud Dataproc derives the names
    * from `cluster_name`, `num_instances`, and the instance group.
@@ -53,30 +63,36 @@ public interface InstanceGroupConfigOrBuilder extends
    *
    * <code>repeated string instance_names = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getInstanceNamesBytes(int index);
+  com.google.protobuf.ByteString getInstanceNamesBytes(int index);
 
   /**
+   *
+   *
    * <pre>
-   * Output only. The Compute Engine image resource used for cluster
-   * instances. Inferred from `SoftwareConfig.image_version`.
+   * Optional. The Compute Engine image resource used for cluster
+   * instances. It can be specified or may be inferred from
+   * `SoftwareConfig.image_version`.
    * </pre>
    *
    * <code>string image_uri = 3;</code>
    */
   java.lang.String getImageUri();
   /**
+   *
+   *
    * <pre>
-   * Output only. The Compute Engine image resource used for cluster
-   * instances. Inferred from `SoftwareConfig.image_version`.
+   * Optional. The Compute Engine image resource used for cluster
+   * instances. It can be specified or may be inferred from
+   * `SoftwareConfig.image_version`.
    * </pre>
    *
    * <code>string image_uri = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getImageUriBytes();
+  com.google.protobuf.ByteString getImageUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine machine type used for cluster instances.
    * A full URL, partial URI, or short name are valid. Examples:
@@ -93,6 +109,8 @@ public interface InstanceGroupConfigOrBuilder extends
    */
   java.lang.String getMachineTypeUri();
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine machine type used for cluster instances.
    * A full URL, partial URI, or short name are valid. Examples:
@@ -107,10 +125,11 @@ public interface InstanceGroupConfigOrBuilder extends
    *
    * <code>string machine_type_uri = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getMachineTypeUriBytes();
+  com.google.protobuf.ByteString getMachineTypeUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Disk option config settings.
    * </pre>
@@ -119,6 +138,8 @@ public interface InstanceGroupConfigOrBuilder extends
    */
   boolean hasDiskConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. Disk option config settings.
    * </pre>
@@ -127,6 +148,8 @@ public interface InstanceGroupConfigOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.DiskConfig getDiskConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. Disk option config settings.
    * </pre>
@@ -136,6 +159,8 @@ public interface InstanceGroupConfigOrBuilder extends
   com.google.cloud.dataproc.v1beta2.DiskConfigOrBuilder getDiskConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Specifies that this instance group contains preemptible instances.
    * </pre>
@@ -145,6 +170,8 @@ public interface InstanceGroupConfigOrBuilder extends
   boolean getIsPreemptible();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The config for Compute Engine Instance Group
    * Manager that manages this group.
@@ -155,6 +182,8 @@ public interface InstanceGroupConfigOrBuilder extends
    */
   boolean hasManagedGroupConfig();
   /**
+   *
+   *
    * <pre>
    * Output only. The config for Compute Engine Instance Group
    * Manager that manages this group.
@@ -165,6 +194,8 @@ public interface InstanceGroupConfigOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.ManagedGroupConfig getManagedGroupConfig();
   /**
+   *
+   *
    * <pre>
    * Output only. The config for Compute Engine Instance Group
    * Manager that manages this group.
@@ -176,6 +207,8 @@ public interface InstanceGroupConfigOrBuilder extends
   com.google.cloud.dataproc.v1beta2.ManagedGroupConfigOrBuilder getManagedGroupConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
@@ -185,9 +218,10 @@ public interface InstanceGroupConfigOrBuilder extends
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
    */
-  java.util.List<com.google.cloud.dataproc.v1beta2.AcceleratorConfig> 
-      getAcceleratorsList();
+  java.util.List<com.google.cloud.dataproc.v1beta2.AcceleratorConfig> getAcceleratorsList();
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
@@ -199,6 +233,8 @@ public interface InstanceGroupConfigOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.AcceleratorConfig getAccelerators(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
@@ -210,6 +246,8 @@ public interface InstanceGroupConfigOrBuilder extends
    */
   int getAcceleratorsCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
@@ -219,9 +257,11 @@ public interface InstanceGroupConfigOrBuilder extends
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
    */
-  java.util.List<? extends com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder> 
+  java.util.List<? extends com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder>
       getAcceleratorsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Optional. The Compute Engine accelerator configuration for these
    * instances.
@@ -231,10 +271,11 @@ public interface InstanceGroupConfigOrBuilder extends
    *
    * <code>repeated .google.cloud.dataproc.v1beta2.AcceleratorConfig accelerators = 8;</code>
    */
-  com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder getAcceleratorsOrBuilder(
-      int index);
+  com.google.cloud.dataproc.v1beta2.AcceleratorConfigOrBuilder getAcceleratorsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. Specifies the minimum cpu platform for the Instance Group.
    * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
@@ -245,6 +286,8 @@ public interface InstanceGroupConfigOrBuilder extends
    */
   java.lang.String getMinCpuPlatform();
   /**
+   *
+   *
    * <pre>
    * Optional. Specifies the minimum cpu platform for the Instance Group.
    * See [Cloud Dataproc&amp;rarr;Minimum CPU Platform]
@@ -253,6 +296,5 @@ public interface InstanceGroupConfigOrBuilder extends
    *
    * <code>string min_cpu_platform = 9;</code>
    */
-  com.google.protobuf.ByteString
-      getMinCpuPlatformBytes();
+  com.google.protobuf.ByteString getMinCpuPlatformBytes();
 }

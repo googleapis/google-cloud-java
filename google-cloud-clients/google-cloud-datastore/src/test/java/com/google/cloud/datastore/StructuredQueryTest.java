@@ -26,10 +26,8 @@ import com.google.cloud.datastore.StructuredQuery.Filter;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class StructuredQueryTest {
 
@@ -50,26 +48,28 @@ public class StructuredQueryTest {
   private static final String DISTINCT_ON1 = "p6";
   private static final String DISTINCT_ON2 = "p7";
   private static final List<String> DISTINCT_ON = ImmutableList.of(DISTINCT_ON1, DISTINCT_ON2);
-  private static final EntityQuery ENTITY_QUERY = Query.newEntityQueryBuilder()
-      .setNamespace(NAMESPACE)
-      .setKind(KIND)
-      .setStartCursor(START_CURSOR)
-      .setEndCursor(END_CURSOR)
-      .setOffset(OFFSET)
-      .setLimit(LIMIT)
-      .setFilter(FILTER)
-      .setOrderBy(ORDER_BY_1, ORDER_BY_2)
-      .build();
-  private static final KeyQuery KEY_QUERY = Query.newKeyQueryBuilder()
-      .setNamespace(NAMESPACE)
-      .setKind(KIND)
-      .setStartCursor(START_CURSOR)
-      .setEndCursor(END_CURSOR)
-      .setOffset(OFFSET)
-      .setLimit(LIMIT)
-      .setFilter(FILTER)
-      .setOrderBy(ORDER_BY_1, ORDER_BY_2)
-      .build();
+  private static final EntityQuery ENTITY_QUERY =
+      Query.newEntityQueryBuilder()
+          .setNamespace(NAMESPACE)
+          .setKind(KIND)
+          .setStartCursor(START_CURSOR)
+          .setEndCursor(END_CURSOR)
+          .setOffset(OFFSET)
+          .setLimit(LIMIT)
+          .setFilter(FILTER)
+          .setOrderBy(ORDER_BY_1, ORDER_BY_2)
+          .build();
+  private static final KeyQuery KEY_QUERY =
+      Query.newKeyQueryBuilder()
+          .setNamespace(NAMESPACE)
+          .setKind(KIND)
+          .setStartCursor(START_CURSOR)
+          .setEndCursor(END_CURSOR)
+          .setOffset(OFFSET)
+          .setLimit(LIMIT)
+          .setFilter(FILTER)
+          .setOrderBy(ORDER_BY_1, ORDER_BY_2)
+          .build();
   private static final ProjectionEntityQuery PROJECTION_QUERY =
       Query.newProjectionEntityQueryBuilder()
           .setNamespace(NAMESPACE)
@@ -91,7 +91,6 @@ public class StructuredQueryTest {
     assertTrue(ENTITY_QUERY.getDistinctOn().isEmpty());
   }
 
-
   @Test
   public void testKeyQueryBuilder() {
     compareBaseBuilderFields(KEY_QUERY);
@@ -99,14 +98,12 @@ public class StructuredQueryTest {
     assertTrue(KEY_QUERY.getDistinctOn().isEmpty());
   }
 
-
   @Test
   public void testProjectionEntityQueryBuilder() {
     compareBaseBuilderFields(PROJECTION_QUERY);
     assertEquals(PROJECTION, PROJECTION_QUERY.getProjection());
     assertEquals(DISTINCT_ON, PROJECTION_QUERY.getDistinctOn());
   }
-
 
   private void compareBaseBuilderFields(StructuredQuery<?> query) {
     assertEquals(NAMESPACE, query.getNamespace());
@@ -118,7 +115,6 @@ public class StructuredQueryTest {
     assertEquals(FILTER, query.getFilter());
     assertEquals(ORDER_BY, query.getOrderBy());
   }
-
 
   @Test
   public void mergeFrom() {
@@ -146,15 +142,16 @@ public class StructuredQueryTest {
   public void testToAndFromPb() {
     assertEquals(
         ENTITY_QUERY,
-        StructuredQuery.fromPb(ResultType.ENTITY, ENTITY_QUERY.getNamespace(),
-            ENTITY_QUERY.toPb()));
+        StructuredQuery.fromPb(
+            ResultType.ENTITY, ENTITY_QUERY.getNamespace(), ENTITY_QUERY.toPb()));
     assertEquals(
-        KEY_QUERY, StructuredQuery.fromPb(ResultType.KEY, KEY_QUERY.getNamespace(),
-            KEY_QUERY.toPb()));
+        KEY_QUERY,
+        StructuredQuery.fromPb(ResultType.KEY, KEY_QUERY.getNamespace(), KEY_QUERY.toPb()));
     assertEquals(
         PROJECTION_QUERY,
         StructuredQuery.fromPb(
-            ResultType.PROJECTION_ENTITY, PROJECTION_QUERY.getNamespace(),
+            ResultType.PROJECTION_ENTITY,
+            PROJECTION_QUERY.getNamespace(),
             PROJECTION_QUERY.toPb()));
   }
 

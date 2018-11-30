@@ -4,31 +4,34 @@
 package com.google.devtools.clouderrorreporting.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Contains a set of requested error events.
  * </pre>
  *
  * Protobuf type {@code google.devtools.clouderrorreporting.v1beta1.ListEventsResponse}
  */
-public  final class ListEventsResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListEventsResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.devtools.clouderrorreporting.v1beta1.ListEventsResponse)
     ListEventsResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListEventsResponse.newBuilder() to construct.
   private ListEventsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListEventsResponse() {
     errorEvents_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListEventsResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,48 +51,55 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              errorEvents_ = new java.util.ArrayList<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                errorEvents_ =
+                    new java.util.ArrayList<
+                        com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              errorEvents_.add(
+                  input.readMessage(
+                      com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.parser(),
+                      extensionRegistry));
+              break;
             }
-            errorEvents_.add(
-                input.readMessage(com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.parser(), extensionRegistry));
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            nextPageToken_ = s;
-            break;
-          }
-          case 34: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (timeRangeBegin_ != null) {
-              subBuilder = timeRangeBegin_.toBuilder();
+              nextPageToken_ = s;
+              break;
             }
-            timeRangeBegin_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(timeRangeBegin_);
-              timeRangeBegin_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (timeRangeBegin_ != null) {
+                subBuilder = timeRangeBegin_.toBuilder();
+              }
+              timeRangeBegin_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(timeRangeBegin_);
+                timeRangeBegin_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         errorEvents_ = java.util.Collections.unmodifiableList(errorEvents_);
@@ -98,44 +108,55 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ListEventsResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto
+        .internal_static_google_devtools_clouderrorreporting_v1beta1_ListEventsResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ListEventsResponse_fieldAccessorTable
+    return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto
+        .internal_static_google_devtools_clouderrorreporting_v1beta1_ListEventsResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse.class, com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse.Builder.class);
+            com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse.class,
+            com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse.Builder.class);
   }
 
   private int bitField0_;
   public static final int ERROR_EVENTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent> errorEvents_;
   /**
+   *
+   *
    * <pre>
    * The error events which match the given request.
    * </pre>
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
    */
-  public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent> getErrorEventsList() {
+  public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent>
+      getErrorEventsList() {
     return errorEvents_;
   }
   /**
+   *
+   *
    * <pre>
    * The error events which match the given request.
    * </pre>
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
    */
-  public java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder> 
+  public java.util.List<
+          ? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder>
       getErrorEventsOrBuilderList() {
     return errorEvents_;
   }
   /**
+   *
+   *
    * <pre>
    * The error events which match the given request.
    * </pre>
@@ -146,6 +167,8 @@ private static final long serialVersionUID = 0L;
     return errorEvents_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The error events which match the given request.
    * </pre>
@@ -156,20 +179,24 @@ private static final long serialVersionUID = 0L;
     return errorEvents_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The error events which match the given request.
    * </pre>
    *
    * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
    */
-  public com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder getErrorEventsOrBuilder(
-      int index) {
+  public com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder
+      getErrorEventsOrBuilder(int index) {
     return errorEvents_.get(index);
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
   private volatile java.lang.Object nextPageToken_;
   /**
+   *
+   *
    * <pre>
    * If non-empty, more results are available.
    * Pass this token, along with the same query parameters as the first
@@ -183,14 +210,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       nextPageToken_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * If non-empty, more results are available.
    * Pass this token, along with the same query parameters as the first
@@ -199,13 +227,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string next_page_token = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getNextPageTokenBytes() {
+  public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       nextPageToken_ = b;
       return b;
     } else {
@@ -216,6 +242,8 @@ private static final long serialVersionUID = 0L;
   public static final int TIME_RANGE_BEGIN_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp timeRangeBegin_;
   /**
+   *
+   *
    * <pre>
    * The timestamp specifies the start time to which the request was restricted.
    * </pre>
@@ -226,6 +254,8 @@ private static final long serialVersionUID = 0L;
     return timeRangeBegin_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The timestamp specifies the start time to which the request was restricted.
    * </pre>
@@ -233,9 +263,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp time_range_begin = 4;</code>
    */
   public com.google.protobuf.Timestamp getTimeRangeBegin() {
-    return timeRangeBegin_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timeRangeBegin_;
+    return timeRangeBegin_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : timeRangeBegin_;
   }
   /**
+   *
+   *
    * <pre>
    * The timestamp specifies the start time to which the request was restricted.
    * </pre>
@@ -247,6 +281,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -258,8 +293,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < errorEvents_.size(); i++) {
       output.writeMessage(1, errorEvents_.get(i));
     }
@@ -279,15 +313,13 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < errorEvents_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, errorEvents_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, errorEvents_.get(i));
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     if (timeRangeBegin_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getTimeRangeBegin());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTimeRangeBegin());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -297,22 +329,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse)) {
       return super.equals(obj);
     }
-    com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse other = (com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse) obj;
+    com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse other =
+        (com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse) obj;
 
     boolean result = true;
-    result = result && getErrorEventsList()
-        .equals(other.getErrorEventsList());
-    result = result && getNextPageToken()
-        .equals(other.getNextPageToken());
+    result = result && getErrorEventsList().equals(other.getErrorEventsList());
+    result = result && getNextPageToken().equals(other.getNextPageToken());
     result = result && (hasTimeRangeBegin() == other.hasTimeRangeBegin());
     if (hasTimeRangeBegin()) {
-      result = result && getTimeRangeBegin()
-          .equals(other.getTimeRangeBegin());
+      result = result && getTimeRangeBegin().equals(other.getTimeRangeBegin());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -341,135 +371,147 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+  }
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse parseFrom(
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse prototype) {
+
+  public static Builder newBuilder(
+      com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Contains a set of requested error events.
    * </pre>
    *
    * Protobuf type {@code google.devtools.clouderrorreporting.v1beta1.ListEventsResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.devtools.clouderrorreporting.v1beta1.ListEventsResponse)
       com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ListEventsResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ListEventsResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ListEventsResponse_fieldAccessorTable
+      return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ListEventsResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse.class, com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse.Builder.class);
+              com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse.class,
+              com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse.Builder.class);
     }
 
-    // Construct using com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse.newBuilder()
+    // Construct using
+    // com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getErrorEventsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -491,14 +533,16 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ListEventsResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ListEventsResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse getDefaultInstanceForType() {
-      return com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse.getDefaultInstance();
+    public com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse
+        getDefaultInstanceForType() {
+      return com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse
+          .getDefaultInstance();
     }
 
     @java.lang.Override
@@ -512,7 +556,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse buildPartial() {
-      com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse result = new com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse(this);
+      com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse result =
+          new com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (errorEventsBuilder_ == null) {
@@ -539,46 +584,51 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse) {
-        return mergeFrom((com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse)other);
+        return mergeFrom(
+            (com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse other) {
-      if (other == com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse other) {
+      if (other
+          == com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse
+              .getDefaultInstance()) return this;
       if (errorEventsBuilder_ == null) {
         if (!other.errorEvents_.isEmpty()) {
           if (errorEvents_.isEmpty()) {
@@ -597,9 +647,10 @@ private static final long serialVersionUID = 0L;
             errorEventsBuilder_ = null;
             errorEvents_ = other.errorEvents_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            errorEventsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getErrorEventsFieldBuilder() : null;
+            errorEventsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getErrorEventsFieldBuilder()
+                    : null;
           } else {
             errorEventsBuilder_.addAllMessages(other.errorEvents_);
           }
@@ -631,7 +682,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -640,28 +693,39 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
-    private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent> errorEvents_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent>
+        errorEvents_ = java.util.Collections.emptyList();
+
     private void ensureErrorEventsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        errorEvents_ = new java.util.ArrayList<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent>(errorEvents_);
+        errorEvents_ =
+            new java.util.ArrayList<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent>(
+                errorEvents_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent, com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder, com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder> errorEventsBuilder_;
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent,
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder,
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder>
+        errorEventsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The error events which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;
+     * </code>
      */
-    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent> getErrorEventsList() {
+    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent>
+        getErrorEventsList() {
       if (errorEventsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(errorEvents_);
       } else {
@@ -669,11 +733,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The error events which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;
+     * </code>
      */
     public int getErrorEventsCount() {
       if (errorEventsBuilder_ == null) {
@@ -683,11 +750,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The error events which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;
+     * </code>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent getErrorEvents(int index) {
       if (errorEventsBuilder_ == null) {
@@ -697,11 +767,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The error events which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;
+     * </code>
      */
     public Builder setErrorEvents(
         int index, com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent value) {
@@ -718,14 +791,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The error events which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;
+     * </code>
      */
     public Builder setErrorEvents(
-        int index, com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder builderForValue) {
+        int index,
+        com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder builderForValue) {
       if (errorEventsBuilder_ == null) {
         ensureErrorEventsIsMutable();
         errorEvents_.set(index, builderForValue.build());
@@ -736,13 +813,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The error events which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;
+     * </code>
      */
-    public Builder addErrorEvents(com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent value) {
+    public Builder addErrorEvents(
+        com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent value) {
       if (errorEventsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -756,11 +837,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The error events which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;
+     * </code>
      */
     public Builder addErrorEvents(
         int index, com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent value) {
@@ -777,11 +861,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The error events which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;
+     * </code>
      */
     public Builder addErrorEvents(
         com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder builderForValue) {
@@ -795,14 +882,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The error events which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;
+     * </code>
      */
     public Builder addErrorEvents(
-        int index, com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder builderForValue) {
+        int index,
+        com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder builderForValue) {
       if (errorEventsBuilder_ == null) {
         ensureErrorEventsIsMutable();
         errorEvents_.add(index, builderForValue.build());
@@ -813,18 +904,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The error events which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;
+     * </code>
      */
     public Builder addAllErrorEvents(
-        java.lang.Iterable<? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent> values) {
+        java.lang.Iterable<? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent>
+            values) {
       if (errorEventsBuilder_ == null) {
         ensureErrorEventsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, errorEvents_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, errorEvents_);
         onChanged();
       } else {
         errorEventsBuilder_.addAllMessages(values);
@@ -832,11 +926,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The error events which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;
+     * </code>
      */
     public Builder clearErrorEvents() {
       if (errorEventsBuilder_ == null) {
@@ -849,11 +946,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The error events which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;
+     * </code>
      */
     public Builder removeErrorEvents(int index) {
       if (errorEventsBuilder_ == null) {
@@ -866,39 +966,50 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The error events which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;
+     * </code>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder getErrorEventsBuilder(
         int index) {
       return getErrorEventsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The error events which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;
+     * </code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder getErrorEventsOrBuilder(
-        int index) {
+    public com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder
+        getErrorEventsOrBuilder(int index) {
       if (errorEventsBuilder_ == null) {
-        return errorEvents_.get(index);  } else {
+        return errorEvents_.get(index);
+      } else {
         return errorEventsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The error events which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;
+     * </code>
      */
-    public java.util.List<? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder> 
-         getErrorEventsOrBuilderList() {
+    public java.util.List<
+            ? extends com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder>
+        getErrorEventsOrBuilderList() {
       if (errorEventsBuilder_ != null) {
         return errorEventsBuilder_.getMessageOrBuilderList();
       } else {
@@ -906,45 +1017,64 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The error events which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;
+     * </code>
      */
-    public com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder addErrorEventsBuilder() {
-      return getErrorEventsFieldBuilder().addBuilder(
-          com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.getDefaultInstance());
+    public com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder
+        addErrorEventsBuilder() {
+      return getErrorEventsFieldBuilder()
+          .addBuilder(
+              com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The error events which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;
+     * </code>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder addErrorEventsBuilder(
         int index) {
-      return getErrorEventsFieldBuilder().addBuilder(
-          index, com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.getDefaultInstance());
+      return getErrorEventsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The error events which match the given request.
      * </pre>
      *
-     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;</code>
+     * <code>repeated .google.devtools.clouderrorreporting.v1beta1.ErrorEvent error_events = 1;
+     * </code>
      */
-    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder> 
-         getErrorEventsBuilderList() {
+    public java.util.List<com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder>
+        getErrorEventsBuilderList() {
       return getErrorEventsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent, com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder, com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder> 
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent,
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder,
+            com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder>
         getErrorEventsFieldBuilder() {
       if (errorEventsBuilder_ == null) {
-        errorEventsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent, com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder, com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder>(
+        errorEventsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent,
+                com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent.Builder,
+                com.google.devtools.clouderrorreporting.v1beta1.ErrorEventOrBuilder>(
                 errorEvents_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -956,6 +1086,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nextPageToken_ = "";
     /**
+     *
+     *
      * <pre>
      * If non-empty, more results are available.
      * Pass this token, along with the same query parameters as the first
@@ -967,8 +1099,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         nextPageToken_ = s;
         return s;
@@ -977,6 +1108,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If non-empty, more results are available.
      * Pass this token, along with the same query parameters as the first
@@ -985,13 +1118,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getNextPageTokenBytes() {
+    public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         nextPageToken_ = b;
         return b;
       } else {
@@ -999,6 +1130,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If non-empty, more results are available.
      * Pass this token, along with the same query parameters as the first
@@ -1007,17 +1140,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public Builder setNextPageToken(
-        java.lang.String value) {
+    public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       nextPageToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If non-empty, more results are available.
      * Pass this token, along with the same query parameters as the first
@@ -1027,12 +1161,14 @@ private static final long serialVersionUID = 0L;
      * <code>string next_page_token = 2;</code>
      */
     public Builder clearNextPageToken() {
-      
+
       nextPageToken_ = getDefaultInstance().getNextPageToken();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If non-empty, more results are available.
      * Pass this token, along with the same query parameters as the first
@@ -1041,13 +1177,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public Builder setNextPageTokenBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       nextPageToken_ = value;
       onChanged();
       return this;
@@ -1055,8 +1190,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp timeRangeBegin_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timeRangeBeginBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        timeRangeBeginBuilder_;
     /**
+     *
+     *
      * <pre>
      * The timestamp specifies the start time to which the request was restricted.
      * </pre>
@@ -1067,6 +1207,8 @@ private static final long serialVersionUID = 0L;
       return timeRangeBeginBuilder_ != null || timeRangeBegin_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp specifies the start time to which the request was restricted.
      * </pre>
@@ -1075,12 +1217,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getTimeRangeBegin() {
       if (timeRangeBeginBuilder_ == null) {
-        return timeRangeBegin_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timeRangeBegin_;
+        return timeRangeBegin_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : timeRangeBegin_;
       } else {
         return timeRangeBeginBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp specifies the start time to which the request was restricted.
      * </pre>
@@ -1101,14 +1247,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp specifies the start time to which the request was restricted.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp time_range_begin = 4;</code>
      */
-    public Builder setTimeRangeBegin(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setTimeRangeBegin(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (timeRangeBeginBuilder_ == null) {
         timeRangeBegin_ = builderForValue.build();
         onChanged();
@@ -1119,6 +1266,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp specifies the start time to which the request was restricted.
      * </pre>
@@ -1129,7 +1278,9 @@ private static final long serialVersionUID = 0L;
       if (timeRangeBeginBuilder_ == null) {
         if (timeRangeBegin_ != null) {
           timeRangeBegin_ =
-            com.google.protobuf.Timestamp.newBuilder(timeRangeBegin_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(timeRangeBegin_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           timeRangeBegin_ = value;
         }
@@ -1141,6 +1292,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp specifies the start time to which the request was restricted.
      * </pre>
@@ -1159,6 +1312,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp specifies the start time to which the request was restricted.
      * </pre>
@@ -1166,11 +1321,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp time_range_begin = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getTimeRangeBeginBuilder() {
-      
+
       onChanged();
       return getTimeRangeBeginFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp specifies the start time to which the request was restricted.
      * </pre>
@@ -1181,11 +1338,14 @@ private static final long serialVersionUID = 0L;
       if (timeRangeBeginBuilder_ != null) {
         return timeRangeBeginBuilder_.getMessageOrBuilder();
       } else {
-        return timeRangeBegin_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : timeRangeBegin_;
+        return timeRangeBegin_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : timeRangeBegin_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The timestamp specifies the start time to which the request was restricted.
      * </pre>
@@ -1193,21 +1353,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp time_range_begin = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getTimeRangeBeginFieldBuilder() {
       if (timeRangeBeginBuilder_ == null) {
-        timeRangeBeginBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getTimeRangeBegin(),
-                getParentForChildren(),
-                isClean());
+        timeRangeBeginBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getTimeRangeBegin(), getParentForChildren(), isClean());
         timeRangeBegin_ = null;
       }
       return timeRangeBeginBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1217,30 +1380,32 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.devtools.clouderrorreporting.v1beta1.ListEventsResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.devtools.clouderrorreporting.v1beta1.ListEventsResponse)
-  private static final com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse DEFAULT_INSTANCE;
+  private static final com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse();
   }
 
-  public static com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse getDefaultInstance() {
+  public static com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListEventsResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ListEventsResponse>() {
-    @java.lang.Override
-    public ListEventsResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListEventsResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListEventsResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ListEventsResponse>() {
+        @java.lang.Override
+        public ListEventsResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListEventsResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListEventsResponse> parser() {
     return PARSER;
@@ -1252,9 +1417,8 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse getDefaultInstanceForType() {
+  public com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

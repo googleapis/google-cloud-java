@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface NetworkPolicyOrBuilder extends
+public interface NetworkPolicyOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.NetworkPolicy)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The selected network policy provider.
    * </pre>
@@ -16,6 +19,8 @@ public interface NetworkPolicyOrBuilder extends
    */
   int getProviderValue();
   /**
+   *
+   *
    * <pre>
    * The selected network policy provider.
    * </pre>
@@ -25,6 +30,8 @@ public interface NetworkPolicyOrBuilder extends
   com.google.container.v1.NetworkPolicy.Provider getProvider();
 
   /**
+   *
+   *
    * <pre>
    * Whether network policy is enabled on the cluster.
    * </pre>

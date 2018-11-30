@@ -38,10 +38,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Objects;
 
-/**
- * Class representing service options for those services that use HTTP as the transport
- * layer.
- */
+/** Class representing service options for those services that use HTTP as the transport layer. */
 public class HttpTransportOptions implements TransportOptions {
 
   private static final long serialVersionUID = 7890117765045419810L;
@@ -69,9 +66,7 @@ public class HttpTransportOptions implements TransportOptions {
     }
   }
 
-  /**
-   * Builder for {@code HttpTransportOptions}.
-   */
+  /** Builder for {@code HttpTransportOptions}. */
   public static class Builder {
 
     private HttpTransportFactory httpTransportFactory;
@@ -104,7 +99,7 @@ public class HttpTransportOptions implements TransportOptions {
      * Sets the timeout in milliseconds to establish a connection.
      *
      * @param connectTimeout connection timeout in milliseconds. 0 for an infinite timeout, a
-     *        negative number for the default value (20000).
+     *     negative number for the default value (20000).
      * @return the builder
      */
     public Builder setConnectTimeout(int connectTimeout) {
@@ -116,7 +111,7 @@ public class HttpTransportOptions implements TransportOptions {
      * Sets the timeout in milliseconds to read data from an established connection.
      *
      * @param readTimeout read timeout in milliseconds. 0 for an infinite timeout, a negative number
-     *        for the default value (20000).
+     *     for the default value (20000).
      * @return the builder
      */
     public Builder setReadTimeout(int readTimeout) {
@@ -126,17 +121,17 @@ public class HttpTransportOptions implements TransportOptions {
   }
 
   private HttpTransportOptions(Builder builder) {
-    httpTransportFactory = firstNonNull(builder.httpTransportFactory,
-        ServiceOptions.getFromServiceLoader(HttpTransportFactory.class,
-            DefaultHttpTransportFactory.INSTANCE));
+    httpTransportFactory =
+        firstNonNull(
+            builder.httpTransportFactory,
+            ServiceOptions.getFromServiceLoader(
+                HttpTransportFactory.class, DefaultHttpTransportFactory.INSTANCE));
     httpTransportFactoryClassName = httpTransportFactory.getClass().getName();
     connectTimeout = builder.connectTimeout;
     readTimeout = builder.readTimeout;
   }
 
-  /**
-   * Returns the HTTP transport factory.
-   */
+  /** Returns the HTTP transport factory. */
   public HttpTransportFactory getHttpTransportFactory() {
     return httpTransportFactory;
   }
@@ -150,9 +145,12 @@ public class HttpTransportOptions implements TransportOptions {
     Credentials scopedCredentials = serviceOptions.getScopedCredentials();
     final HttpRequestInitializer delegate =
         scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()
-            ? new HttpCredentialsAdapter(scopedCredentials) : null;
-    HeaderProvider internalHeaderProvider = getInternalHeaderProviderBuilder(serviceOptions).build();
-    final HeaderProvider headerProvider = serviceOptions.getMergedHeaderProvider(internalHeaderProvider);
+            ? new HttpCredentialsAdapter(scopedCredentials)
+            : null;
+    HeaderProvider internalHeaderProvider =
+        getInternalHeaderProviderBuilder(serviceOptions).build();
+    final HeaderProvider headerProvider =
+        serviceOptions.getMergedHeaderProvider(internalHeaderProvider);
 
     return new HttpRequestInitializer() {
       @Override
@@ -203,8 +201,7 @@ public class HttpTransportOptions implements TransportOptions {
 
   @Override
   public int hashCode() {
-    return Objects.hash(httpTransportFactoryClassName, connectTimeout,
-        readTimeout);
+    return Objects.hash(httpTransportFactoryClassName, connectTimeout, readTimeout);
   }
 
   @Override

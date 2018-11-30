@@ -23,30 +23,33 @@
  * <h3>How It Works</h3>
  *
  * The simplest way to get started is with {@code Paths} and {@code Files}:
+ *
  * <pre>{@code
- *   Path path = Paths.get(URI.create("gs://bucket/lolcat.csv"));
- *   List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+ * Path path = Paths.get(URI.create("gs://bucket/lolcat.csv"));
+ * List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
  * }</pre>
  *
- * <p>For the complete source code see
- * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/ReadAllLines.java">
+ * <p>For the complete source code see <a
+ * href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/ReadAllLines.java">
  * ReadAllLines.java</a>.
  *
  * <p>If you want to configure the bucket per-environment, it might make more sense to use the
  * {@code FileSystem} API:
+ *
  * <pre>{@code
- *   FileSystem fs = FileSystems.getFileSystem(URI.create("gs://bucket"));
- *   byte[] data = "hello world".getBytes(StandardCharsets.UTF_8);
- *   Path path = fs.getPath("/object");
- *   Files.write(path, data);
- *   List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+ * FileSystem fs = FileSystems.getFileSystem(URI.create("gs://bucket"));
+ * byte[] data = "hello world".getBytes(StandardCharsets.UTF_8);
+ * Path path = fs.getPath("/object");
+ * Files.write(path, data);
+ * List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
  * }</pre>
  *
- * <p>For the complete source code see
- * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/GetFileSystem.java">
+ * <p>For the complete source code see <a
+ * href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/GetFileSystem.java">
  * GetFileSystem.java</a>.
  *
  * <p>You can also use {@code InputStream} and {@code OutputStream} for streaming:
+ *
  * <pre>
  *   Path path = Paths.get(URI.create("gs://bucket/lolcat.csv"));
  *   try (InputStream input = Files.newInputStream(path)) {
@@ -54,13 +57,13 @@
  *   }
  * </pre>
  *
- * <p>For the complete source code see
- * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/CreateInputStream.java">
+ * <p>For the complete source code see <a
+ * href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/CreateInputStream.java">
  * CreateInputStream.java</a>.
  *
- * <p>You can set various attributes using
- * {@link com.google.cloud.storage.contrib.nio.CloudStorageOptions CloudStorageOptions} static
- * helpers:
+ * <p>You can set various attributes using {@link
+ * com.google.cloud.storage.contrib.nio.CloudStorageOptions CloudStorageOptions} static helpers:
+ *
  * <pre>
  *   Path path = Paths.get(URI.create("gs://bucket/lolcat.csv"));
  *   Files.write(path, csvLines, StandardCharsets.UTF_8,
@@ -68,16 +71,16 @@
  *       withoutCaching());
  * </pre>
  *
- * <p>For the complete source code see
- * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/WriteFileWithAttributes.java">
+ * <p>For the complete source code see <a
+ * href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/WriteFileWithAttributes.java">
  * WriteFileWithAttributes.java</a>.
  *
  * <p><b>NOTE:</b> Cloud Storage uses a flat namespace and therefore doesn't support real
  * directories. So this library supports what's known as "pseudo-directories". Any path that
  * includes a trailing slash, will be considered a directory. It will always be assumed to exist,
  * without performing any I/O. This allows you to do path manipulation in the same manner as you
- * would with the normal UNIX file system implementation. You can disable this feature with
- * {@link com.google.cloud.storage.contrib.nio.CloudStorageConfiguration#usePseudoDirectories()}.
+ * would with the normal UNIX file system implementation. You can disable this feature with {@link
+ * com.google.cloud.storage.contrib.nio.CloudStorageConfiguration#usePseudoDirectories()}.
  *
  * <h3>Non-SPI Interface</h3>
  *
@@ -92,8 +95,8 @@
  *   data = Files.readAllBytes(path);
  * </pre>
  *
- * <p>For the complete source code see
- * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/CreateCloudStorageFileSystem.java">
+ * <p>For the complete source code see <a
+ * href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/nio/snippets/CreateCloudStorageFileSystem.java">
  * CreateCloudStorageFileSystem.java</a>.
  */
 @javax.annotation.ParametersAreNonnullByDefault

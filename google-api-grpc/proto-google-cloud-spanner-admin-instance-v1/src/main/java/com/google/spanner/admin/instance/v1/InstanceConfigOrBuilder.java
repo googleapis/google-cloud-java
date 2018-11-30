@@ -3,11 +3,14 @@
 
 package com.google.spanner.admin.instance.v1;
 
-public interface InstanceConfigOrBuilder extends
+public interface InstanceConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.admin.instance.v1.InstanceConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A unique identifier for the instance configuration.  Values
    * are of the form
@@ -18,6 +21,8 @@ public interface InstanceConfigOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * A unique identifier for the instance configuration.  Values
    * are of the form
@@ -26,10 +31,11 @@ public interface InstanceConfigOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The name of this instance configuration as it appears in UIs.
    * </pre>
@@ -38,12 +44,13 @@ public interface InstanceConfigOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * The name of this instance configuration as it appears in UIs.
    * </pre>
    *
    * <code>string display_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 }

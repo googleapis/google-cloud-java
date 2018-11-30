@@ -3,11 +3,14 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-public interface SecurityMarksOrBuilder extends
+public interface SecurityMarksOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.SecurityMarks)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The relative resource name of the SecurityMarks. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -20,6 +23,8 @@ public interface SecurityMarksOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The relative resource name of the SecurityMarks. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -30,10 +35,11 @@ public interface SecurityMarksOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Mutable user specified security marks belonging to the parent resource.
    * Constraints are as follows:
@@ -47,6 +53,8 @@ public interface SecurityMarksOrBuilder extends
    */
   int getMarksCount();
   /**
+   *
+   *
    * <pre>
    * Mutable user specified security marks belonging to the parent resource.
    * Constraints are as follows:
@@ -58,15 +66,13 @@ public interface SecurityMarksOrBuilder extends
    *
    * <code>map&lt;string, string&gt; marks = 2;</code>
    */
-  boolean containsMarks(
-      java.lang.String key);
-  /**
-   * Use {@link #getMarksMap()} instead.
-   */
+  boolean containsMarks(java.lang.String key);
+  /** Use {@link #getMarksMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getMarks();
+  java.util.Map<java.lang.String, java.lang.String> getMarks();
   /**
+   *
+   *
    * <pre>
    * Mutable user specified security marks belonging to the parent resource.
    * Constraints are as follows:
@@ -78,9 +84,10 @@ public interface SecurityMarksOrBuilder extends
    *
    * <code>map&lt;string, string&gt; marks = 2;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getMarksMap();
+  java.util.Map<java.lang.String, java.lang.String> getMarksMap();
   /**
+   *
+   *
    * <pre>
    * Mutable user specified security marks belonging to the parent resource.
    * Constraints are as follows:
@@ -92,11 +99,10 @@ public interface SecurityMarksOrBuilder extends
    *
    * <code>map&lt;string, string&gt; marks = 2;</code>
    */
-
-  java.lang.String getMarksOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getMarksOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Mutable user specified security marks belonging to the parent resource.
    * Constraints are as follows:
@@ -108,7 +114,5 @@ public interface SecurityMarksOrBuilder extends
    *
    * <code>map&lt;string, string&gt; marks = 2;</code>
    */
-
-  java.lang.String getMarksOrThrow(
-      java.lang.String key);
+  java.lang.String getMarksOrThrow(java.lang.String key);
 }

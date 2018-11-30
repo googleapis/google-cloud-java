@@ -90,7 +90,8 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
   private final PagedCallSettings<
-          ListSessionEntityTypesRequest, ListSessionEntityTypesResponse,
+          ListSessionEntityTypesRequest,
+          ListSessionEntityTypesResponse,
           ListSessionEntityTypesPagedResponse>
       listSessionEntityTypesSettings;
   private final UnaryCallSettings<GetSessionEntityTypeRequest, SessionEntityType>
@@ -104,7 +105,8 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
 
   /** Returns the object with the settings used for calls to listSessionEntityTypes. */
   public PagedCallSettings<
-          ListSessionEntityTypesRequest, ListSessionEntityTypesResponse,
+          ListSessionEntityTypesRequest,
+          ListSessionEntityTypesResponse,
           ListSessionEntityTypesPagedResponse>
       listSessionEntityTypesSettings() {
     return listSessionEntityTypesSettings;
@@ -246,16 +248,20 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
             @Override
             public Iterable<SessionEntityType> extractResources(
                 ListSessionEntityTypesResponse payload) {
-              return payload.getSessionEntityTypesList();
+              return payload.getSessionEntityTypesList() != null
+                  ? payload.getSessionEntityTypesList()
+                  : ImmutableList.<SessionEntityType>of();
             }
           };
 
   private static final PagedListResponseFactory<
-          ListSessionEntityTypesRequest, ListSessionEntityTypesResponse,
+          ListSessionEntityTypesRequest,
+          ListSessionEntityTypesResponse,
           ListSessionEntityTypesPagedResponse>
       LIST_SESSION_ENTITY_TYPES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListSessionEntityTypesRequest, ListSessionEntityTypesResponse,
+              ListSessionEntityTypesRequest,
+              ListSessionEntityTypesResponse,
               ListSessionEntityTypesPagedResponse>() {
             @Override
             public ApiFuture<ListSessionEntityTypesPagedResponse> getFuturePagedResponse(
@@ -265,7 +271,8 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
                 ApiCallContext context,
                 ApiFuture<ListSessionEntityTypesResponse> futureResponse) {
               PageContext<
-                      ListSessionEntityTypesRequest, ListSessionEntityTypesResponse,
+                      ListSessionEntityTypesRequest,
+                      ListSessionEntityTypesResponse,
                       SessionEntityType>
                   pageContext =
                       PageContext.create(
@@ -280,7 +287,8 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            ListSessionEntityTypesRequest, ListSessionEntityTypesResponse,
+            ListSessionEntityTypesRequest,
+            ListSessionEntityTypesResponse,
             ListSessionEntityTypesPagedResponse>
         listSessionEntityTypesSettings;
     private final UnaryCallSettings.Builder<GetSessionEntityTypeRequest, SessionEntityType>
@@ -430,7 +438,8 @@ public class SessionEntityTypesStubSettings extends StubSettings<SessionEntityTy
 
     /** Returns the builder for the settings used for calls to listSessionEntityTypes. */
     public PagedCallSettings.Builder<
-            ListSessionEntityTypesRequest, ListSessionEntityTypesResponse,
+            ListSessionEntityTypesRequest,
+            ListSessionEntityTypesResponse,
             ListSessionEntityTypesPagedResponse>
         listSessionEntityTypesSettings() {
       return listSessionEntityTypesSettings;
