@@ -107,7 +107,8 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
 
   /** Returns the object with the settings used for calls to listTopicSubscriptions. */
   public PagedCallSettings<
-          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+          ListTopicSubscriptionsRequest,
+          ListTopicSubscriptionsResponse,
           ListTopicSubscriptionsPagedResponse>
       listTopicSubscriptionsSettings() {
     return ((PublisherStubSettings) getStubSettings()).listTopicSubscriptionsSettings();
@@ -259,7 +260,8 @@ public class TopicAdminSettings extends ClientSettings<TopicAdminSettings> {
 
     /** Returns the builder for the settings used for calls to listTopicSubscriptions. */
     public PagedCallSettings.Builder<
-            ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+            ListTopicSubscriptionsRequest,
+            ListTopicSubscriptionsResponse,
             ListTopicSubscriptionsPagedResponse>
         listTopicSubscriptionsSettings() {
       return getStubSettingsBuilder().listTopicSubscriptionsSettings();

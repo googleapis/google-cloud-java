@@ -14,8 +14,6 @@
 
 package com.google.pubsub.v1;
 
-import com.google.api.resourcenames.ResourceName;
-
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class TopicNames {

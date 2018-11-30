@@ -3,20 +3,24 @@
 
 package com.google.pubsub.v1;
 
-public interface ListTopicsResponseOrBuilder extends
+public interface ListTopicsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.ListTopicsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resulting topics.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
    */
-  java.util.List<com.google.pubsub.v1.Topic> 
-      getTopicsList();
+  java.util.List<com.google.pubsub.v1.Topic> getTopicsList();
   /**
+   *
+   *
    * <pre>
    * The resulting topics.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListTopicsResponseOrBuilder extends
    */
   com.google.pubsub.v1.Topic getTopics(int index);
   /**
+   *
+   *
    * <pre>
    * The resulting topics.
    * </pre>
@@ -33,25 +39,29 @@ public interface ListTopicsResponseOrBuilder extends
    */
   int getTopicsCount();
   /**
+   *
+   *
    * <pre>
    * The resulting topics.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
    */
-  java.util.List<? extends com.google.pubsub.v1.TopicOrBuilder> 
-      getTopicsOrBuilderList();
+  java.util.List<? extends com.google.pubsub.v1.TopicOrBuilder> getTopicsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The resulting topics.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.Topic topics = 1;</code>
    */
-  com.google.pubsub.v1.TopicOrBuilder getTopicsOrBuilder(
-      int index);
+  com.google.pubsub.v1.TopicOrBuilder getTopicsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If not empty, indicates that there may be more topics that match the
    * request; this value should be passed in a new `ListTopicsRequest`.
@@ -61,6 +71,8 @@ public interface ListTopicsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If not empty, indicates that there may be more topics that match the
    * request; this value should be passed in a new `ListTopicsRequest`.
@@ -68,6 +80,5 @@ public interface ListTopicsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

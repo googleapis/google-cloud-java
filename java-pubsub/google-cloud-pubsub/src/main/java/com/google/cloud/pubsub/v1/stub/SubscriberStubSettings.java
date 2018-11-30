@@ -267,8 +267,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
 
   /** Returns a builder for the default ChannelProvider for this service. */
   public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder()
-            .setMaxInboundMessageSize(20<<20); // 20MB
+    return InstantiatingGrpcChannelProvider.newBuilder().setMaxInboundMessageSize(20 << 20); // 20MB
   }
 
   public static TransportChannelProvider defaultTransportChannelProvider() {
@@ -398,7 +397,8 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
           ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
       LIST_SUBSCRIPTIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListSubscriptionsRequest, ListSubscriptionsResponse,
+              ListSubscriptionsRequest,
+              ListSubscriptionsResponse,
               ListSubscriptionsPagedResponse>() {
             @Override
             public ApiFuture<ListSubscriptionsPagedResponse> getFuturePagedResponse(

@@ -23,9 +23,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Tests for {@link MessageWaiter}.
- */
+/** Tests for {@link MessageWaiter}. */
 @RunWith(JUnit4.class)
 public class MessageWaiterTest {
 
@@ -36,15 +34,17 @@ public class MessageWaiterTest {
 
     final AtomicBoolean waitReached = new AtomicBoolean();
 
-    Thread t = new Thread(new Runnable(){
-      @Override
-      public void run() {
-        while (!waitReached.get()) {
-          Thread.yield();
-        }
-        waiter.incrementPendingMessages(-1);
-      }
-    });
+    Thread t =
+        new Thread(
+            new Runnable() {
+              @Override
+              public void run() {
+                while (!waitReached.get()) {
+                  Thread.yield();
+                }
+                waiter.incrementPendingMessages(-1);
+              }
+            });
     t.start();
 
     waiter.waitNoMessages(waitReached);

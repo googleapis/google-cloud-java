@@ -85,7 +85,8 @@ public class ITPubSubTest {
 
   @Test
   public void testTopicPolicy() {
-    ProjectTopicName topicName = ProjectTopicName.of(projectId, formatForTest("testing-topic-policy"));
+    ProjectTopicName topicName =
+        ProjectTopicName.of(projectId, formatForTest("testing-topic-policy"));
     topicAdminClient.createTopic(topicName);
 
     Policy policy = topicAdminClient.getIamPolicy(topicName.toString());
@@ -111,7 +112,8 @@ public class ITPubSubTest {
     ProjectTopicName topicName =
         ProjectTopicName.of(projectId, formatForTest("testing-publish-subscribe-topic"));
     ProjectSubscriptionName subscriptionName =
-        ProjectSubscriptionName.of(projectId, formatForTest("testing-publish-subscribe-subscription"));
+        ProjectSubscriptionName.of(
+            projectId, formatForTest("testing-publish-subscribe-subscription"));
 
     topicAdminClient.createTopic(topicName);
     subscriptionAdminClient.createSubscription(

@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface PubsubMessageOrBuilder extends
+public interface PubsubMessageOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.PubsubMessage)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The message data field. If this field is empty, the message must contain
    * at least one attribute.
@@ -18,6 +21,8 @@ public interface PubsubMessageOrBuilder extends
   com.google.protobuf.ByteString getData();
 
   /**
+   *
+   *
    * <pre>
    * Optional attributes for this message.
    * </pre>
@@ -26,52 +31,52 @@ public interface PubsubMessageOrBuilder extends
    */
   int getAttributesCount();
   /**
+   *
+   *
    * <pre>
    * Optional attributes for this message.
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
-  boolean containsAttributes(
-      java.lang.String key);
-  /**
-   * Use {@link #getAttributesMap()} instead.
-   */
+  boolean containsAttributes(java.lang.String key);
+  /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getAttributes();
+  java.util.Map<java.lang.String, java.lang.String> getAttributes();
   /**
+   *
+   *
    * <pre>
    * Optional attributes for this message.
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getAttributesMap();
+  java.util.Map<java.lang.String, java.lang.String> getAttributesMap();
   /**
+   *
+   *
    * <pre>
    * Optional attributes for this message.
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
-
-  java.lang.String getAttributesOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getAttributesOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Optional attributes for this message.
    * </pre>
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
-
-  java.lang.String getAttributesOrThrow(
-      java.lang.String key);
+  java.lang.String getAttributesOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * ID of this message, assigned by the server when the message is published.
    * Guaranteed to be unique within the topic. This value may be read by a
@@ -83,6 +88,8 @@ public interface PubsubMessageOrBuilder extends
    */
   java.lang.String getMessageId();
   /**
+   *
+   *
    * <pre>
    * ID of this message, assigned by the server when the message is published.
    * Guaranteed to be unique within the topic. This value may be read by a
@@ -92,10 +99,11 @@ public interface PubsubMessageOrBuilder extends
    *
    * <code>string message_id = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getMessageIdBytes();
+  com.google.protobuf.ByteString getMessageIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The time at which the message was published, populated by the server when
    * it receives the `Publish` call. It must not be populated by the
@@ -106,6 +114,8 @@ public interface PubsubMessageOrBuilder extends
    */
   boolean hasPublishTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the message was published, populated by the server when
    * it receives the `Publish` call. It must not be populated by the
@@ -116,6 +126,8 @@ public interface PubsubMessageOrBuilder extends
    */
   com.google.protobuf.Timestamp getPublishTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the message was published, populated by the server when
    * it receives the `Publish` call. It must not be populated by the

@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface ModifyPushConfigRequestOrBuilder extends
+public interface ModifyPushConfigRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.ModifyPushConfigRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the subscription.
    * Format is `projects/{project}/subscriptions/{sub}`.
@@ -17,6 +20,8 @@ public interface ModifyPushConfigRequestOrBuilder extends
    */
   java.lang.String getSubscription();
   /**
+   *
+   *
    * <pre>
    * The name of the subscription.
    * Format is `projects/{project}/subscriptions/{sub}`.
@@ -24,10 +29,11 @@ public interface ModifyPushConfigRequestOrBuilder extends
    *
    * <code>string subscription = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSubscriptionBytes();
+  com.google.protobuf.ByteString getSubscriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * The push configuration for future deliveries.
    * An empty `pushConfig` indicates that the Pub/Sub system should
@@ -40,6 +46,8 @@ public interface ModifyPushConfigRequestOrBuilder extends
    */
   boolean hasPushConfig();
   /**
+   *
+   *
    * <pre>
    * The push configuration for future deliveries.
    * An empty `pushConfig` indicates that the Pub/Sub system should
@@ -52,6 +60,8 @@ public interface ModifyPushConfigRequestOrBuilder extends
    */
   com.google.pubsub.v1.PushConfig getPushConfig();
   /**
+   *
+   *
    * <pre>
    * The push configuration for future deliveries.
    * An empty `pushConfig` indicates that the Pub/Sub system should

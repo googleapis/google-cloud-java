@@ -14,13 +14,13 @@
 
 package com.google.pubsub.v1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +56,11 @@ public class ProjectSnapshotName implements ResourceName {
   }
 
   public static ProjectSnapshotName of(String project, String snapshot) {
-    return newBuilder()
-      .setProject(project)
-      .setSnapshot(snapshot)
-      .build();
+    return newBuilder().setProject(project).setSnapshot(snapshot).build();
   }
 
   public static String format(String project, String snapshot) {
-    return newBuilder()
-      .setProject(project)
-      .setSnapshot(snapshot)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setSnapshot(snapshot).build().toString();
   }
 
   public static ProjectSnapshotName parse(String formattedString) {
@@ -75,7 +68,8 @@ public class ProjectSnapshotName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectSnapshotName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ProjectSnapshotName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("snapshot"));
   }
 
@@ -150,8 +144,7 @@ public class ProjectSnapshotName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ProjectSnapshotName projectSnapshotName) {
       project = projectSnapshotName.project;
@@ -170,8 +163,7 @@ public class ProjectSnapshotName implements ResourceName {
     }
     if (o instanceof ProjectSnapshotName) {
       ProjectSnapshotName that = (ProjectSnapshotName) o;
-      return (this.project.equals(that.project))
-          && (this.snapshot.equals(that.snapshot));
+      return (this.project.equals(that.project)) && (this.snapshot.equals(that.snapshot));
     }
     return false;
   }
@@ -186,4 +178,3 @@ public class ProjectSnapshotName implements ResourceName {
     return h;
   }
 }
-

@@ -16,16 +16,14 @@
 
 package com.google.cloud.pubsub.v1;
 
-/**
- * Accepts a reply, sending it to the service.
- */
+/** Accepts a reply, sending it to the service. */
 public interface AckReplyConsumer {
   /**
    * Acknowledges that the message has been successfully processed. The service will not send the
    * message again.
    */
   void ack();
-  
+
   /**
    * Signals that the message has not been successfully processed. The service should resend the
    * message.

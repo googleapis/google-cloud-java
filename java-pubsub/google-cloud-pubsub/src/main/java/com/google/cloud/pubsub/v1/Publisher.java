@@ -72,9 +72,8 @@ import org.threeten.bp.Duration;
  *   <li>Retries: such as the maximum duration of retries for a failing batch of messages.
  * </ul>
  *
- * <p>{@link Publisher} will use the credentials set on the channel, which uses
- *  application default credentials through {@link GoogleCredentials#getApplicationDefault}
- *  by default.
+ * <p>{@link Publisher} will use the credentials set on the channel, which uses application default
+ * credentials through {@link GoogleCredentials#getApplicationDefault} by default.
  */
 public class Publisher {
   private static final Logger logger = Logger.getLogger(Publisher.class.getName());
@@ -287,9 +286,9 @@ public class Publisher {
   }
 
   /**
-   * Publish any outstanding batches if non-empty.   This method sends buffered messages, but does
-   * not wait for the send operations to complete.  To wait for messages to send, call {@code get}
-   * on the futures returned from {@code publish}.
+   * Publish any outstanding batches if non-empty. This method sends buffered messages, but does not
+   * wait for the send operations to complete. To wait for messages to send, call {@code get} on the
+   * futures returned from {@code publish}.
    */
   public void publishAllOutstanding() {
     messagesBatchLock.lock();

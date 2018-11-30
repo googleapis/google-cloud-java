@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface UpdateTopicRequestOrBuilder extends
+public interface UpdateTopicRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.UpdateTopicRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The updated topic object.
    * </pre>
@@ -16,6 +19,8 @@ public interface UpdateTopicRequestOrBuilder extends
    */
   boolean hasTopic();
   /**
+   *
+   *
    * <pre>
    * The updated topic object.
    * </pre>
@@ -24,6 +29,8 @@ public interface UpdateTopicRequestOrBuilder extends
    */
   com.google.pubsub.v1.Topic getTopic();
   /**
+   *
+   *
    * <pre>
    * The updated topic object.
    * </pre>
@@ -33,6 +40,8 @@ public interface UpdateTopicRequestOrBuilder extends
   com.google.pubsub.v1.TopicOrBuilder getTopicOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Indicates which fields in the provided topic to update. Must be specified
    * and non-empty. Note that if `update_mask` contains
@@ -45,6 +54,8 @@ public interface UpdateTopicRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Indicates which fields in the provided topic to update. Must be specified
    * and non-empty. Note that if `update_mask` contains
@@ -57,6 +68,8 @@ public interface UpdateTopicRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Indicates which fields in the provided topic to update. Must be specified
    * and non-empty. Note that if `update_mask` contains

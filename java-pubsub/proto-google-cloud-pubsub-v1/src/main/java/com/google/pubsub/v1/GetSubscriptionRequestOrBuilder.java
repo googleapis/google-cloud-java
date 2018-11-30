@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface GetSubscriptionRequestOrBuilder extends
+public interface GetSubscriptionRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.GetSubscriptionRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the subscription to get.
    * Format is `projects/{project}/subscriptions/{sub}`.
@@ -17,6 +20,8 @@ public interface GetSubscriptionRequestOrBuilder extends
    */
   java.lang.String getSubscription();
   /**
+   *
+   *
    * <pre>
    * The name of the subscription to get.
    * Format is `projects/{project}/subscriptions/{sub}`.
@@ -24,6 +29,5 @@ public interface GetSubscriptionRequestOrBuilder extends
    *
    * <code>string subscription = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSubscriptionBytes();
+  com.google.protobuf.ByteString getSubscriptionBytes();
 }

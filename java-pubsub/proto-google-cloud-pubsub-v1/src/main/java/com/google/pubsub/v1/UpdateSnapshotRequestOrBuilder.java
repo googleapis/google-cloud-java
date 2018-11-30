@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface UpdateSnapshotRequestOrBuilder extends
+public interface UpdateSnapshotRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.UpdateSnapshotRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The updated snapshot object.
    * </pre>
@@ -16,6 +19,8 @@ public interface UpdateSnapshotRequestOrBuilder extends
    */
   boolean hasSnapshot();
   /**
+   *
+   *
    * <pre>
    * The updated snapshot object.
    * </pre>
@@ -24,6 +29,8 @@ public interface UpdateSnapshotRequestOrBuilder extends
    */
   com.google.pubsub.v1.Snapshot getSnapshot();
   /**
+   *
+   *
    * <pre>
    * The updated snapshot object.
    * </pre>
@@ -33,6 +40,8 @@ public interface UpdateSnapshotRequestOrBuilder extends
   com.google.pubsub.v1.SnapshotOrBuilder getSnapshotOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Indicates which fields in the provided snapshot to update.
    * Must be specified and non-empty.
@@ -42,6 +51,8 @@ public interface UpdateSnapshotRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Indicates which fields in the provided snapshot to update.
    * Must be specified and non-empty.
@@ -51,6 +62,8 @@ public interface UpdateSnapshotRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Indicates which fields in the provided snapshot to update.
    * Must be specified and non-empty.

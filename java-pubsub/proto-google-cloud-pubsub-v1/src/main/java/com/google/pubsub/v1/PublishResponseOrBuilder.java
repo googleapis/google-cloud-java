@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface PublishResponseOrBuilder extends
+public interface PublishResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.PublishResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The server-assigned ID of each published message, in the same order as
    * the messages in the request. IDs are guaranteed to be unique within
@@ -16,9 +19,10 @@ public interface PublishResponseOrBuilder extends
    *
    * <code>repeated string message_ids = 1;</code>
    */
-  java.util.List<java.lang.String>
-      getMessageIdsList();
+  java.util.List<java.lang.String> getMessageIdsList();
   /**
+   *
+   *
    * <pre>
    * The server-assigned ID of each published message, in the same order as
    * the messages in the request. IDs are guaranteed to be unique within
@@ -29,6 +33,8 @@ public interface PublishResponseOrBuilder extends
    */
   int getMessageIdsCount();
   /**
+   *
+   *
    * <pre>
    * The server-assigned ID of each published message, in the same order as
    * the messages in the request. IDs are guaranteed to be unique within
@@ -39,6 +45,8 @@ public interface PublishResponseOrBuilder extends
    */
   java.lang.String getMessageIds(int index);
   /**
+   *
+   *
    * <pre>
    * The server-assigned ID of each published message, in the same order as
    * the messages in the request. IDs are guaranteed to be unique within
@@ -47,6 +55,5 @@ public interface PublishResponseOrBuilder extends
    *
    * <code>repeated string message_ids = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getMessageIdsBytes(int index);
+  com.google.protobuf.ByteString getMessageIdsBytes(int index);
 }

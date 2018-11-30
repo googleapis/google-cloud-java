@@ -3,20 +3,24 @@
 
 package com.google.pubsub.v1;
 
-public interface ListTopicSnapshotsResponseOrBuilder extends
+public interface ListTopicSnapshotsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.ListTopicSnapshotsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The names of the snapshots that match the request.
    * </pre>
    *
    * <code>repeated string snapshots = 1;</code>
    */
-  java.util.List<java.lang.String>
-      getSnapshotsList();
+  java.util.List<java.lang.String> getSnapshotsList();
   /**
+   *
+   *
    * <pre>
    * The names of the snapshots that match the request.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListTopicSnapshotsResponseOrBuilder extends
    */
   int getSnapshotsCount();
   /**
+   *
+   *
    * <pre>
    * The names of the snapshots that match the request.
    * </pre>
@@ -33,16 +39,19 @@ public interface ListTopicSnapshotsResponseOrBuilder extends
    */
   java.lang.String getSnapshots(int index);
   /**
+   *
+   *
    * <pre>
    * The names of the snapshots that match the request.
    * </pre>
    *
    * <code>repeated string snapshots = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSnapshotsBytes(int index);
+  com.google.protobuf.ByteString getSnapshotsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * If not empty, indicates that there may be more snapshots that match
    * the request; this value should be passed in a new
@@ -53,6 +62,8 @@ public interface ListTopicSnapshotsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If not empty, indicates that there may be more snapshots that match
    * the request; this value should be passed in a new
@@ -61,6 +72,5 @@ public interface ListTopicSnapshotsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

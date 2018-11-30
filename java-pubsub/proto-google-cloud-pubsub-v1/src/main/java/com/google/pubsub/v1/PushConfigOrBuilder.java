@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface PushConfigOrBuilder extends
+public interface PushConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.PushConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A URL locating the endpoint to which messages should be pushed.
    * For example, a Webhook endpoint might use "https://example.com/push".
@@ -17,6 +20,8 @@ public interface PushConfigOrBuilder extends
    */
   java.lang.String getPushEndpoint();
   /**
+   *
+   *
    * <pre>
    * A URL locating the endpoint to which messages should be pushed.
    * For example, a Webhook endpoint might use "https://example.com/push".
@@ -24,10 +29,11 @@ public interface PushConfigOrBuilder extends
    *
    * <code>string push_endpoint = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getPushEndpointBytes();
+  com.google.protobuf.ByteString getPushEndpointBytes();
 
   /**
+   *
+   *
    * <pre>
    * Endpoint configuration attributes.
    * Every endpoint has a set of API supported attributes that can be used to
@@ -51,6 +57,8 @@ public interface PushConfigOrBuilder extends
    */
   int getAttributesCount();
   /**
+   *
+   *
    * <pre>
    * Endpoint configuration attributes.
    * Every endpoint has a set of API supported attributes that can be used to
@@ -72,15 +80,13 @@ public interface PushConfigOrBuilder extends
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
-  boolean containsAttributes(
-      java.lang.String key);
-  /**
-   * Use {@link #getAttributesMap()} instead.
-   */
+  boolean containsAttributes(java.lang.String key);
+  /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getAttributes();
+  java.util.Map<java.lang.String, java.lang.String> getAttributes();
   /**
+   *
+   *
    * <pre>
    * Endpoint configuration attributes.
    * Every endpoint has a set of API supported attributes that can be used to
@@ -102,9 +108,10 @@ public interface PushConfigOrBuilder extends
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getAttributesMap();
+  java.util.Map<java.lang.String, java.lang.String> getAttributesMap();
   /**
+   *
+   *
    * <pre>
    * Endpoint configuration attributes.
    * Every endpoint has a set of API supported attributes that can be used to
@@ -126,11 +133,10 @@ public interface PushConfigOrBuilder extends
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
-
-  java.lang.String getAttributesOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getAttributesOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Endpoint configuration attributes.
    * Every endpoint has a set of API supported attributes that can be used to
@@ -152,7 +158,5 @@ public interface PushConfigOrBuilder extends
    *
    * <code>map&lt;string, string&gt; attributes = 2;</code>
    */
-
-  java.lang.String getAttributesOrThrow(
-      java.lang.String key);
+  java.lang.String getAttributesOrThrow(java.lang.String key);
 }

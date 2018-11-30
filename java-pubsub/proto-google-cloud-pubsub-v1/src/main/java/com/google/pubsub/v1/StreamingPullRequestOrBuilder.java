@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface StreamingPullRequestOrBuilder extends
+public interface StreamingPullRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.StreamingPullRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The subscription for which to initialize the new stream. This must be
    * provided in the first request on the stream, and must not be set in
@@ -19,6 +22,8 @@ public interface StreamingPullRequestOrBuilder extends
    */
   java.lang.String getSubscription();
   /**
+   *
+   *
    * <pre>
    * The subscription for which to initialize the new stream. This must be
    * provided in the first request on the stream, and must not be set in
@@ -28,10 +33,11 @@ public interface StreamingPullRequestOrBuilder extends
    *
    * <code>string subscription = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSubscriptionBytes();
+  com.google.protobuf.ByteString getSubscriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * List of acknowledgement IDs for acknowledging previously received messages
    * (received on this stream or a different stream). If an ack ID has expired,
@@ -42,9 +48,10 @@ public interface StreamingPullRequestOrBuilder extends
    *
    * <code>repeated string ack_ids = 2;</code>
    */
-  java.util.List<java.lang.String>
-      getAckIdsList();
+  java.util.List<java.lang.String> getAckIdsList();
   /**
+   *
+   *
    * <pre>
    * List of acknowledgement IDs for acknowledging previously received messages
    * (received on this stream or a different stream). If an ack ID has expired,
@@ -57,6 +64,8 @@ public interface StreamingPullRequestOrBuilder extends
    */
   int getAckIdsCount();
   /**
+   *
+   *
    * <pre>
    * List of acknowledgement IDs for acknowledging previously received messages
    * (received on this stream or a different stream). If an ack ID has expired,
@@ -69,6 +78,8 @@ public interface StreamingPullRequestOrBuilder extends
    */
   java.lang.String getAckIds(int index);
   /**
+   *
+   *
    * <pre>
    * List of acknowledgement IDs for acknowledging previously received messages
    * (received on this stream or a different stream). If an ack ID has expired,
@@ -79,10 +90,11 @@ public interface StreamingPullRequestOrBuilder extends
    *
    * <code>repeated string ack_ids = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getAckIdsBytes(int index);
+  com.google.protobuf.ByteString getAckIdsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * The list of new ack deadlines for the IDs listed in
    * `modify_deadline_ack_ids`. The size of this list must be the same as the
@@ -101,6 +113,8 @@ public interface StreamingPullRequestOrBuilder extends
    */
   java.util.List<java.lang.Integer> getModifyDeadlineSecondsList();
   /**
+   *
+   *
    * <pre>
    * The list of new ack deadlines for the IDs listed in
    * `modify_deadline_ack_ids`. The size of this list must be the same as the
@@ -119,6 +133,8 @@ public interface StreamingPullRequestOrBuilder extends
    */
   int getModifyDeadlineSecondsCount();
   /**
+   *
+   *
    * <pre>
    * The list of new ack deadlines for the IDs listed in
    * `modify_deadline_ack_ids`. The size of this list must be the same as the
@@ -138,6 +154,8 @@ public interface StreamingPullRequestOrBuilder extends
   int getModifyDeadlineSeconds(int index);
 
   /**
+   *
+   *
    * <pre>
    * List of acknowledgement IDs whose deadline will be modified based on the
    * corresponding element in `modify_deadline_seconds`. This field can be used
@@ -148,9 +166,10 @@ public interface StreamingPullRequestOrBuilder extends
    *
    * <code>repeated string modify_deadline_ack_ids = 4;</code>
    */
-  java.util.List<java.lang.String>
-      getModifyDeadlineAckIdsList();
+  java.util.List<java.lang.String> getModifyDeadlineAckIdsList();
   /**
+   *
+   *
    * <pre>
    * List of acknowledgement IDs whose deadline will be modified based on the
    * corresponding element in `modify_deadline_seconds`. This field can be used
@@ -163,6 +182,8 @@ public interface StreamingPullRequestOrBuilder extends
    */
   int getModifyDeadlineAckIdsCount();
   /**
+   *
+   *
    * <pre>
    * List of acknowledgement IDs whose deadline will be modified based on the
    * corresponding element in `modify_deadline_seconds`. This field can be used
@@ -175,6 +196,8 @@ public interface StreamingPullRequestOrBuilder extends
    */
   java.lang.String getModifyDeadlineAckIds(int index);
   /**
+   *
+   *
    * <pre>
    * List of acknowledgement IDs whose deadline will be modified based on the
    * corresponding element in `modify_deadline_seconds`. This field can be used
@@ -185,10 +208,11 @@ public interface StreamingPullRequestOrBuilder extends
    *
    * <code>repeated string modify_deadline_ack_ids = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getModifyDeadlineAckIdsBytes(int index);
+  com.google.protobuf.ByteString getModifyDeadlineAckIdsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * The ack deadline to use for the stream. This must be provided in the
    * first request on the stream, but it can also be updated on subsequent

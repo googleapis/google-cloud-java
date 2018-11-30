@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface ExpirationPolicyOrBuilder extends
+public interface ExpirationPolicyOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.ExpirationPolicy)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Specifies the "time-to-live" duration for an associated resource. The
    * resource expires if it is not active for a period of `ttl`. The definition
@@ -21,6 +24,8 @@ public interface ExpirationPolicyOrBuilder extends
    */
   boolean hasTtl();
   /**
+   *
+   *
    * <pre>
    * Specifies the "time-to-live" duration for an associated resource. The
    * resource expires if it is not active for a period of `ttl`. The definition
@@ -34,6 +39,8 @@ public interface ExpirationPolicyOrBuilder extends
    */
   com.google.protobuf.Duration getTtl();
   /**
+   *
+   *
    * <pre>
    * Specifies the "time-to-live" duration for an associated resource. The
    * resource expires if it is not active for a period of `ttl`. The definition

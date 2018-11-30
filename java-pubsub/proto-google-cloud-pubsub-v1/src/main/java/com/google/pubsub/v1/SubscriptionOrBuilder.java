@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface SubscriptionOrBuilder extends
+public interface SubscriptionOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.Subscription)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the subscription. It must have the format
    * `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
@@ -21,6 +24,8 @@ public interface SubscriptionOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the subscription. It must have the format
    * `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
@@ -32,10 +37,11 @@ public interface SubscriptionOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The name of the topic from which this subscription is receiving messages.
    * Format is `projects/{project}/topics/{topic}`.
@@ -47,6 +53,8 @@ public interface SubscriptionOrBuilder extends
    */
   java.lang.String getTopic();
   /**
+   *
+   *
    * <pre>
    * The name of the topic from which this subscription is receiving messages.
    * Format is `projects/{project}/topics/{topic}`.
@@ -56,10 +64,11 @@ public interface SubscriptionOrBuilder extends
    *
    * <code>string topic = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getTopicBytes();
+  com.google.protobuf.ByteString getTopicBytes();
 
   /**
+   *
+   *
    * <pre>
    * If push delivery is used with this subscription, this field is
    * used to configure it. An empty `pushConfig` signifies that the subscriber
@@ -70,6 +79,8 @@ public interface SubscriptionOrBuilder extends
    */
   boolean hasPushConfig();
   /**
+   *
+   *
    * <pre>
    * If push delivery is used with this subscription, this field is
    * used to configure it. An empty `pushConfig` signifies that the subscriber
@@ -80,6 +91,8 @@ public interface SubscriptionOrBuilder extends
    */
   com.google.pubsub.v1.PushConfig getPushConfig();
   /**
+   *
+   *
    * <pre>
    * If push delivery is used with this subscription, this field is
    * used to configure it. An empty `pushConfig` signifies that the subscriber
@@ -91,6 +104,8 @@ public interface SubscriptionOrBuilder extends
   com.google.pubsub.v1.PushConfigOrBuilder getPushConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * This value is the maximum time after a subscriber receives a message
    * before the subscriber should acknowledge the message. After message
@@ -116,6 +131,8 @@ public interface SubscriptionOrBuilder extends
   int getAckDeadlineSeconds();
 
   /**
+   *
+   *
    * <pre>
    * Indicates whether to retain acknowledged messages. If true, then
    * messages are not expunged from the subscription's backlog, even if they are
@@ -131,6 +148,8 @@ public interface SubscriptionOrBuilder extends
   boolean getRetainAckedMessages();
 
   /**
+   *
+   *
    * <pre>
    * How long to retain unacknowledged messages in the subscription's backlog,
    * from the moment a message is published.
@@ -147,6 +166,8 @@ public interface SubscriptionOrBuilder extends
    */
   boolean hasMessageRetentionDuration();
   /**
+   *
+   *
    * <pre>
    * How long to retain unacknowledged messages in the subscription's backlog,
    * from the moment a message is published.
@@ -163,6 +184,8 @@ public interface SubscriptionOrBuilder extends
    */
   com.google.protobuf.Duration getMessageRetentionDuration();
   /**
+   *
+   *
    * <pre>
    * How long to retain unacknowledged messages in the subscription's backlog,
    * from the moment a message is published.
@@ -180,6 +203,8 @@ public interface SubscriptionOrBuilder extends
   com.google.protobuf.DurationOrBuilder getMessageRetentionDurationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
@@ -188,52 +213,52 @@ public interface SubscriptionOrBuilder extends
    */
   int getLabelsCount();
   /**
+   *
+   *
    * <pre>
    * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
-  boolean containsLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabels();
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
   /**
+   *
+   *
    * <pre>
    * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
+   *
+   *
    * <pre>
    * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
-
-  java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * See &lt;a href="/pubsub/docs/labels"&gt; Creating and managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
-
-  java.lang.String getLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * A policy that specifies the conditions for this subscription's expiration.
    * A subscription is considered active as long as any connected subscriber is
@@ -250,6 +275,8 @@ public interface SubscriptionOrBuilder extends
    */
   boolean hasExpirationPolicy();
   /**
+   *
+   *
    * <pre>
    * A policy that specifies the conditions for this subscription's expiration.
    * A subscription is considered active as long as any connected subscriber is
@@ -266,6 +293,8 @@ public interface SubscriptionOrBuilder extends
    */
   com.google.pubsub.v1.ExpirationPolicy getExpirationPolicy();
   /**
+   *
+   *
    * <pre>
    * A policy that specifies the conditions for this subscription's expiration.
    * A subscription is considered active as long as any connected subscriber is
