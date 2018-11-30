@@ -171,7 +171,7 @@ public class ServiceOptionsTest {
     }
   }
 
-  private interface TestService extends Service<TestServiceOptions> {}
+  interface TestService extends Service<TestServiceOptions> {}
 
   private static class TestServiceImpl extends BaseService<TestServiceOptions>
       implements TestService {
@@ -209,7 +209,7 @@ public class ServiceOptionsTest {
     DefaultTestServiceRpc(TestServiceOptions options) {}
   }
 
-  private static class TestServiceOptions
+  static class TestServiceOptions
       extends ServiceOptions<TestService, TestServiceOptions> {
     private static class Builder
         extends ServiceOptions.Builder<TestService, TestServiceOptions, Builder> {
