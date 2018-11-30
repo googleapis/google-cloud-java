@@ -3,11 +3,14 @@
 
 package com.google.cloud.language.v1;
 
-public interface SentenceOrBuilder extends
+public interface SentenceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.language.v1.Sentence)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The sentence text.
    * </pre>
@@ -16,6 +19,8 @@ public interface SentenceOrBuilder extends
    */
   boolean hasText();
   /**
+   *
+   *
    * <pre>
    * The sentence text.
    * </pre>
@@ -24,6 +29,8 @@ public interface SentenceOrBuilder extends
    */
   com.google.cloud.language.v1.TextSpan getText();
   /**
+   *
+   *
    * <pre>
    * The sentence text.
    * </pre>
@@ -33,6 +40,8 @@ public interface SentenceOrBuilder extends
   com.google.cloud.language.v1.TextSpanOrBuilder getTextOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * For calls to [AnalyzeSentiment][] or if
    * [AnnotateTextRequest.Features.extract_document_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_document_sentiment] is set to
@@ -43,6 +52,8 @@ public interface SentenceOrBuilder extends
    */
   boolean hasSentiment();
   /**
+   *
+   *
    * <pre>
    * For calls to [AnalyzeSentiment][] or if
    * [AnnotateTextRequest.Features.extract_document_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_document_sentiment] is set to
@@ -53,6 +64,8 @@ public interface SentenceOrBuilder extends
    */
   com.google.cloud.language.v1.Sentiment getSentiment();
   /**
+   *
+   *
    * <pre>
    * For calls to [AnalyzeSentiment][] or if
    * [AnnotateTextRequest.Features.extract_document_sentiment][google.cloud.language.v1.AnnotateTextRequest.Features.extract_document_sentiment] is set to
