@@ -22,7 +22,6 @@ import static org.junit.Assert.assertNull;
 
 import com.google.cloud.logging.Logging.ListOption;
 import com.google.cloud.logging.Option.OptionType;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -38,8 +37,7 @@ public class OptionTest {
   private static final Option OPTION_NOT_EQUALS1 = new Option(ANOTHER_OPTION_TYPE, OTHER_VALUE) {};
   private static final Option OPTION_NOT_EQUALS2 = new Option(ANOTHER_OPTION_TYPE, VALUE) {};
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testEquals() {

@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface WriteLogEntriesPartialErrorsOrBuilder extends
+public interface WriteLogEntriesPartialErrorsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.WriteLogEntriesPartialErrors)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * When `WriteLogEntriesRequest.partial_success` is true, records the error
    * status for entries that were not written due to a permanent error, keyed
@@ -20,6 +23,8 @@ public interface WriteLogEntriesPartialErrorsOrBuilder extends
    */
   int getLogEntryErrorsCount();
   /**
+   *
+   *
    * <pre>
    * When `WriteLogEntriesRequest.partial_success` is true, records the error
    * status for entries that were not written due to a permanent error, keyed
@@ -30,15 +35,13 @@ public interface WriteLogEntriesPartialErrorsOrBuilder extends
    *
    * <code>map&lt;int32, .google.rpc.Status&gt; log_entry_errors = 1;</code>
    */
-  boolean containsLogEntryErrors(
-      int key);
-  /**
-   * Use {@link #getLogEntryErrorsMap()} instead.
-   */
+  boolean containsLogEntryErrors(int key);
+  /** Use {@link #getLogEntryErrorsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.Integer, com.google.rpc.Status>
-  getLogEntryErrors();
+  java.util.Map<java.lang.Integer, com.google.rpc.Status> getLogEntryErrors();
   /**
+   *
+   *
    * <pre>
    * When `WriteLogEntriesRequest.partial_success` is true, records the error
    * status for entries that were not written due to a permanent error, keyed
@@ -49,9 +52,10 @@ public interface WriteLogEntriesPartialErrorsOrBuilder extends
    *
    * <code>map&lt;int32, .google.rpc.Status&gt; log_entry_errors = 1;</code>
    */
-  java.util.Map<java.lang.Integer, com.google.rpc.Status>
-  getLogEntryErrorsMap();
+  java.util.Map<java.lang.Integer, com.google.rpc.Status> getLogEntryErrorsMap();
   /**
+   *
+   *
    * <pre>
    * When `WriteLogEntriesRequest.partial_success` is true, records the error
    * status for entries that were not written due to a permanent error, keyed
@@ -62,11 +66,10 @@ public interface WriteLogEntriesPartialErrorsOrBuilder extends
    *
    * <code>map&lt;int32, .google.rpc.Status&gt; log_entry_errors = 1;</code>
    */
-
-  com.google.rpc.Status getLogEntryErrorsOrDefault(
-      int key,
-      com.google.rpc.Status defaultValue);
+  com.google.rpc.Status getLogEntryErrorsOrDefault(int key, com.google.rpc.Status defaultValue);
   /**
+   *
+   *
    * <pre>
    * When `WriteLogEntriesRequest.partial_success` is true, records the error
    * status for entries that were not written due to a permanent error, keyed
@@ -77,7 +80,5 @@ public interface WriteLogEntriesPartialErrorsOrBuilder extends
    *
    * <code>map&lt;int32, .google.rpc.Status&gt; log_entry_errors = 1;</code>
    */
-
-  com.google.rpc.Status getLogEntryErrorsOrThrow(
-      int key);
+  com.google.rpc.Status getLogEntryErrorsOrThrow(int key);
 }

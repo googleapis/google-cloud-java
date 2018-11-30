@@ -25,16 +25,14 @@ import com.google.protobuf.ListValue;
 import com.google.protobuf.NullValue;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
-
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class StructsTest {
 
@@ -46,38 +44,38 @@ public class StructsTest {
   private static final Map<String, Object> MAP = new HashMap<>();
   private static final Value NULL_VALUE =
       Value.newBuilder().setNullValue(NullValue.NULL_VALUE).build();
-  private static final Value NUMBER_VALUE =
-      Value.newBuilder().setNumberValue(NUMBER).build();
-  private static final Value STRING_VALUE =
-      Value.newBuilder().setStringValue(STRING).build();
-  private static final Value BOOLEAN_VALUE =
-      Value.newBuilder().setBoolValue(BOOLEAN).build();
-  private static final ListValue PROTO_LIST = ListValue.newBuilder()
-      .addAllValues(ImmutableList.of(NUMBER_VALUE, STRING_VALUE, BOOLEAN_VALUE))
-      .build();
-  private static final Value LIST_VALUE = Value.newBuilder()
-      .setListValue(PROTO_LIST)
-      .build();
-  private static final Struct INNER_STRUCT = Struct.newBuilder().putAllFields(ImmutableMap.of(
-      "null", NULL_VALUE,
-      "number", NUMBER_VALUE,
-      "string", STRING_VALUE,
-      "boolean", BOOLEAN_VALUE,
-      "list", LIST_VALUE)).build();
+  private static final Value NUMBER_VALUE = Value.newBuilder().setNumberValue(NUMBER).build();
+  private static final Value STRING_VALUE = Value.newBuilder().setStringValue(STRING).build();
+  private static final Value BOOLEAN_VALUE = Value.newBuilder().setBoolValue(BOOLEAN).build();
+  private static final ListValue PROTO_LIST =
+      ListValue.newBuilder()
+          .addAllValues(ImmutableList.of(NUMBER_VALUE, STRING_VALUE, BOOLEAN_VALUE))
+          .build();
+  private static final Value LIST_VALUE = Value.newBuilder().setListValue(PROTO_LIST).build();
+  private static final Struct INNER_STRUCT =
+      Struct.newBuilder()
+          .putAllFields(
+              ImmutableMap.of(
+                  "null", NULL_VALUE,
+                  "number", NUMBER_VALUE,
+                  "string", STRING_VALUE,
+                  "boolean", BOOLEAN_VALUE,
+                  "list", LIST_VALUE))
+          .build();
   private static final Value STRUCT_VALUE = Value.newBuilder().setStructValue(INNER_STRUCT).build();
-  private static final Map<String, Value> VALUE_MAP = ImmutableMap.<String, Value>builder()
-      .put("null", NULL_VALUE)
-      .put("number", NUMBER_VALUE)
-      .put("string", STRING_VALUE)
-      .put("boolean", BOOLEAN_VALUE)
-      .put("list", LIST_VALUE)
-      .put("struct", STRUCT_VALUE)
-      .build();
+  private static final Map<String, Value> VALUE_MAP =
+      ImmutableMap.<String, Value>builder()
+          .put("null", NULL_VALUE)
+          .put("number", NUMBER_VALUE)
+          .put("string", STRING_VALUE)
+          .put("boolean", BOOLEAN_VALUE)
+          .put("list", LIST_VALUE)
+          .put("struct", STRUCT_VALUE)
+          .build();
   private static final Struct STRUCT = Struct.newBuilder().putAllFields(VALUE_MAP).build();
   private static final Map<String, Object> EMPTY_MAP = Collections.emptyMap();
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @BeforeClass
   public static void beforeClass() {
@@ -173,8 +171,9 @@ public class StructsTest {
     long longNumber = Long.MAX_VALUE;
     float floatNumber = Float.MIN_VALUE;
     double doubleNumber = Double.MAX_VALUE;
-    Map<String, Object> map = ImmutableMap.<String, Object>of(
-        "int", intNumber, "long", longNumber, "float", floatNumber, "double", doubleNumber);
+    Map<String, Object> map =
+        ImmutableMap.<String, Object>of(
+            "int", intNumber, "long", longNumber, "float", floatNumber, "double", doubleNumber);
     Struct struct = Structs.newStruct(map);
     checkStructField(struct, "int", Value.newBuilder().setNumberValue(intNumber).build());
     checkStructField(struct, "long", Value.newBuilder().setNumberValue(longNumber).build());

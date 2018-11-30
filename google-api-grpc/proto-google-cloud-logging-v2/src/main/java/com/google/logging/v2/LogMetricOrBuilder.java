@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface LogMetricOrBuilder extends
+public interface LogMetricOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.LogMetric)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The client-assigned metric identifier.
    * Examples: `"error_count"`, `"nginx/requests"`.
@@ -28,6 +31,8 @@ public interface LogMetricOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. The client-assigned metric identifier.
    * Examples: `"error_count"`, `"nginx/requests"`.
@@ -46,10 +51,11 @@ public interface LogMetricOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. A description of this metric, which is used in documentation.
    * </pre>
@@ -58,16 +64,19 @@ public interface LogMetricOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * Optional. A description of this metric, which is used in documentation.
    * </pre>
    *
    * <code>string description = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. An [advanced logs filter](/logging/docs/view/advanced_filters)
    * which is used to match log entries.
@@ -80,6 +89,8 @@ public interface LogMetricOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * Required. An [advanced logs filter](/logging/docs/view/advanced_filters)
    * which is used to match log entries.
@@ -90,10 +101,11 @@ public interface LogMetricOrBuilder extends
    *
    * <code>string filter = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The metric descriptor associated with the logs-based metric.
    * If unspecified, it uses a default metric descriptor with a DELTA metric
@@ -118,6 +130,8 @@ public interface LogMetricOrBuilder extends
    */
   boolean hasMetricDescriptor();
   /**
+   *
+   *
    * <pre>
    * Optional. The metric descriptor associated with the logs-based metric.
    * If unspecified, it uses a default metric descriptor with a DELTA metric
@@ -142,6 +156,8 @@ public interface LogMetricOrBuilder extends
    */
   com.google.api.MetricDescriptor getMetricDescriptor();
   /**
+   *
+   *
    * <pre>
    * Optional. The metric descriptor associated with the logs-based metric.
    * If unspecified, it uses a default metric descriptor with a DELTA metric
@@ -167,6 +183,8 @@ public interface LogMetricOrBuilder extends
   com.google.api.MetricDescriptorOrBuilder getMetricDescriptorOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. A `value_extractor` is required when using a distribution
    * logs-based metric to extract the values to record from a log entry.
@@ -191,6 +209,8 @@ public interface LogMetricOrBuilder extends
    */
   java.lang.String getValueExtractor();
   /**
+   *
+   *
    * <pre>
    * Optional. A `value_extractor` is required when using a distribution
    * logs-based metric to extract the values to record from a log entry.
@@ -213,10 +233,11 @@ public interface LogMetricOrBuilder extends
    *
    * <code>string value_extractor = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getValueExtractorBytes();
+  com.google.protobuf.ByteString getValueExtractorBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. A map from a label key string to an extractor expression which is
    * used to extract data from a log entry field and assign as the label value.
@@ -236,6 +257,8 @@ public interface LogMetricOrBuilder extends
    */
   int getLabelExtractorsCount();
   /**
+   *
+   *
    * <pre>
    * Optional. A map from a label key string to an extractor expression which is
    * used to extract data from a log entry field and assign as the label value.
@@ -253,15 +276,13 @@ public interface LogMetricOrBuilder extends
    *
    * <code>map&lt;string, string&gt; label_extractors = 7;</code>
    */
-  boolean containsLabelExtractors(
-      java.lang.String key);
-  /**
-   * Use {@link #getLabelExtractorsMap()} instead.
-   */
+  boolean containsLabelExtractors(java.lang.String key);
+  /** Use {@link #getLabelExtractorsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelExtractors();
+  java.util.Map<java.lang.String, java.lang.String> getLabelExtractors();
   /**
+   *
+   *
    * <pre>
    * Optional. A map from a label key string to an extractor expression which is
    * used to extract data from a log entry field and assign as the label value.
@@ -279,9 +300,10 @@ public interface LogMetricOrBuilder extends
    *
    * <code>map&lt;string, string&gt; label_extractors = 7;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelExtractorsMap();
+  java.util.Map<java.lang.String, java.lang.String> getLabelExtractorsMap();
   /**
+   *
+   *
    * <pre>
    * Optional. A map from a label key string to an extractor expression which is
    * used to extract data from a log entry field and assign as the label value.
@@ -299,11 +321,10 @@ public interface LogMetricOrBuilder extends
    *
    * <code>map&lt;string, string&gt; label_extractors = 7;</code>
    */
-
-  java.lang.String getLabelExtractorsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getLabelExtractorsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Optional. A map from a label key string to an extractor expression which is
    * used to extract data from a log entry field and assign as the label value.
@@ -321,11 +342,11 @@ public interface LogMetricOrBuilder extends
    *
    * <code>map&lt;string, string&gt; label_extractors = 7;</code>
    */
-
-  java.lang.String getLabelExtractorsOrThrow(
-      java.lang.String key);
+  java.lang.String getLabelExtractorsOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Optional. The `bucket_options` are required when the logs-based metric is
    * using a DISTRIBUTION value type and it describes the bucket boundaries
@@ -336,6 +357,8 @@ public interface LogMetricOrBuilder extends
    */
   boolean hasBucketOptions();
   /**
+   *
+   *
    * <pre>
    * Optional. The `bucket_options` are required when the logs-based metric is
    * using a DISTRIBUTION value type and it describes the bucket boundaries
@@ -346,6 +369,8 @@ public interface LogMetricOrBuilder extends
    */
   com.google.api.Distribution.BucketOptions getBucketOptions();
   /**
+   *
+   *
    * <pre>
    * Optional. The `bucket_options` are required when the logs-based metric is
    * using a DISTRIBUTION value type and it describes the bucket boundaries
@@ -357,6 +382,8 @@ public interface LogMetricOrBuilder extends
   com.google.api.Distribution.BucketOptionsOrBuilder getBucketOptionsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The API version that created or updated this metric.
    * The v2 format is used by default and cannot be changed.
@@ -364,8 +391,11 @@ public interface LogMetricOrBuilder extends
    *
    * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
    */
-  @java.lang.Deprecated int getVersionValue();
+  @java.lang.Deprecated
+  int getVersionValue();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The API version that created or updated this metric.
    * The v2 format is used by default and cannot be changed.
@@ -373,5 +403,6 @@ public interface LogMetricOrBuilder extends
    *
    * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.logging.v2.LogMetric.ApiVersion getVersion();
+  @java.lang.Deprecated
+  com.google.logging.v2.LogMetric.ApiVersion getVersion();
 }

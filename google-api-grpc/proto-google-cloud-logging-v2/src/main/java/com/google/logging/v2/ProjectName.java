@@ -14,13 +14,12 @@
 
 package com.google.logging.v2;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -50,16 +49,11 @@ public class ProjectName extends ParentName {
   }
 
   public static ProjectName of(String project) {
-    return newBuilder()
-      .setProject(project)
-      .build();
+    return newBuilder().setProject(project).build();
   }
 
   public static String format(String project) {
-    return newBuilder()
-      .setProject(project)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).build().toString();
   }
 
   public static ProjectName parse(String formattedString) {
@@ -67,7 +61,8 @@ public class ProjectName extends ParentName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ProjectName.parse: formattedString not in valid format");
     return of(matchMap.get("project"));
   }
 
@@ -131,8 +126,7 @@ public class ProjectName extends ParentName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ProjectName projectName) {
       project = projectName.project;
@@ -163,4 +157,3 @@ public class ProjectName extends ParentName {
     return h;
   }
 }
-

@@ -14,13 +14,12 @@
 
 package com.google.logging.v2;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +55,11 @@ public class ProjectLogName extends LogName {
   }
 
   public static ProjectLogName of(String project, String log) {
-    return newBuilder()
-      .setProject(project)
-      .setLog(log)
-      .build();
+    return newBuilder().setProject(project).setLog(log).build();
   }
 
   public static String format(String project, String log) {
-    return newBuilder()
-      .setProject(project)
-      .setLog(log)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setLog(log).build().toString();
   }
 
   public static ProjectLogName parse(String formattedString) {
@@ -75,7 +67,8 @@ public class ProjectLogName extends LogName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectLogName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ProjectLogName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("log"));
   }
 
@@ -150,8 +143,7 @@ public class ProjectLogName extends LogName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ProjectLogName projectLogName) {
       project = projectLogName.project;
@@ -170,8 +162,7 @@ public class ProjectLogName extends LogName {
     }
     if (o instanceof ProjectLogName) {
       ProjectLogName that = (ProjectLogName) o;
-      return (this.project.equals(that.project))
-          && (this.log.equals(that.log));
+      return (this.project.equals(that.project)) && (this.log.equals(that.log));
     }
     return false;
   }
@@ -186,4 +177,3 @@ public class ProjectLogName extends LogName {
     return h;
   }
 }
-

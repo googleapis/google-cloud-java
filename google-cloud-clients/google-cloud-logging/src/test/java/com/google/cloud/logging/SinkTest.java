@@ -30,11 +30,9 @@ import com.google.api.core.ApiFutures;
 import com.google.cloud.logging.SinkInfo.Destination.BucketDestination;
 import com.google.cloud.logging.SinkInfo.Destination.DatasetDestination;
 import com.google.cloud.logging.SinkInfo.VersionFormat;
-
+import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.Test;
-
-import java.util.concurrent.ExecutionException;
 
 public class SinkTest {
 
@@ -43,15 +41,15 @@ public class SinkTest {
       "logName=projects/my-projectid/logs/syslog AND severity>=ERROR";
   private static final VersionFormat VERSION = VersionFormat.V1;
   private static final String NEW_NAME = "newSink";
-  private static final String NEW_FILTER =
-      "logName=projects/my-projectid/logs/syslog";
+  private static final String NEW_FILTER = "logName=projects/my-projectid/logs/syslog";
   private static final VersionFormat NEW_VERSION = VersionFormat.V2;
   private static final BucketDestination BUCKET_DESTINATION = BucketDestination.of("bucket");
   private static final DatasetDestination DATASET_DESTINATION = DatasetDestination.of("dataset");
-  private static final SinkInfo SINK_INFO = SinkInfo.newBuilder(NAME, BUCKET_DESTINATION)
-      .setFilter(FILTER)
-      .setVersionFormat(VERSION)
-      .build();
+  private static final SinkInfo SINK_INFO =
+      SinkInfo.newBuilder(NAME, BUCKET_DESTINATION)
+          .setFilter(FILTER)
+          .setVersionFormat(VERSION)
+          .build();
   private final Logging serviceMockReturnsOptions = createStrictMock(Logging.class);
   private final LoggingOptions mockOptions = createMock(LoggingOptions.class);
   private Logging logging;
@@ -78,18 +76,19 @@ public class SinkTest {
   public void testBuilder() {
     initializeExpectedSink(2);
     replay(logging);
-    Sink builtSink = expectedSink.toBuilder()
-        .setName(NEW_NAME)
-        .setFilter(NEW_FILTER)
-        .setDestination(DATASET_DESTINATION)
-        .setVersionFormat(NEW_VERSION)
-        .build();
+    Sink builtSink =
+        expectedSink
+            .toBuilder()
+            .setName(NEW_NAME)
+            .setFilter(NEW_FILTER)
+            .setDestination(DATASET_DESTINATION)
+            .setVersionFormat(NEW_VERSION)
+            .build();
     assertEquals(NEW_NAME, builtSink.getName());
     assertEquals(DATASET_DESTINATION, builtSink.getDestination());
     assertEquals(NEW_FILTER, builtSink.getFilter());
     assertEquals(NEW_VERSION, builtSink.getVersionFormat());
   }
-
 
   @Test
   public void testToBuilder() {
@@ -102,8 +101,7 @@ public class SinkTest {
   public void testReload() {
     initializeExpectedSink(2);
     SinkInfo updatedInfo = SINK_INFO.toBuilder().setFilter(NEW_FILTER).build();
-    Sink expectedSink =
-        new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(updatedInfo));
+    Sink expectedSink = new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(updatedInfo));
     expect(logging.getOptions()).andReturn(mockOptions);
     expect(logging.getSink(NAME)).andReturn(expectedSink);
     replay(logging);
@@ -128,8 +126,7 @@ public class SinkTest {
     SinkInfo updatedInfo = SINK_INFO.toBuilder().setFilter(NEW_FILTER).build();
     Sink expectedSink = new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(updatedInfo));
     expect(logging.getOptions()).andReturn(mockOptions);
-    expect(logging.getSinkAsync(NAME))
-        .andReturn(ApiFutures.immediateFuture(expectedSink));
+    expect(logging.getSinkAsync(NAME)).andReturn(ApiFutures.immediateFuture(expectedSink));
     replay(logging);
     initializeSink();
     Sink updatedSink = sink.reloadAsync().get();
