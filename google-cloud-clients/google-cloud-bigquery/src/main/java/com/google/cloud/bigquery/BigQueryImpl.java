@@ -175,7 +175,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   @Override
   public Table create(TableInfo tableInfo, TableOption... options) {
     final com.google.api.services.bigquery.model.Table tablePb =
-        tableInfo.setProjectId(getOptions().getProjectId()).toPb();
+        tableInfo
+            .setProjectId(
+                Strings.isNullOrEmpty(tableInfo.getTableId().getProject())
+                    ? getOptions().getProjectId()
+                    : tableInfo.getTableId().getProject())
+            .toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       return Table.fromPb(
@@ -372,7 +377,11 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   @Override
   public boolean delete(TableId tableId) {
-    final TableId completeTableId = tableId.setProjectId(getOptions().getProjectId());
+    final TableId completeTableId = tableId.setProjectId(
+        Strings.isNullOrEmpty(tableId.getProject())
+            ? getOptions().getProjectId()
+            : tableId.getProject()
+    );
     try {
       return runWithRetries(
           new Callable<Boolean>() {
@@ -418,7 +427,12 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   @Override
   public Table update(TableInfo tableInfo, TableOption... options) {
     final com.google.api.services.bigquery.model.Table tablePb =
-        tableInfo.setProjectId(getOptions().getProjectId()).toPb();
+        tableInfo
+            .setProjectId(
+                Strings.isNullOrEmpty(tableInfo.getTableId().getProject())
+                    ? getOptions().getProjectId()
+                    : tableInfo.getTableId().getProject())
+            .toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       return Table.fromPb(

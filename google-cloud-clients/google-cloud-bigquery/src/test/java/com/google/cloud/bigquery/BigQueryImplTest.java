@@ -552,6 +552,20 @@ public class BigQueryImplTest {
   }
 
   @Test
+  public void testCreateTableWithoutProject() {
+    TableInfo tableInfo = TABLE_INFO.setProjectId(PROJECT);
+    TableId tableId = TableId.of("", TABLE_ID.getDataset(), TABLE_ID.getTable());
+    tableInfo.toBuilder().setTableId(tableId);
+    EasyMock.expect(bigqueryRpcMock.create(tableInfo.toPb(), EMPTY_RPC_OPTIONS))
+        .andReturn(tableInfo.toPb());
+    EasyMock.replay(bigqueryRpcMock);
+    BigQueryOptions bigQueryOptions = createBigQueryOptionsForProject(PROJECT, rpcFactoryMock);
+    bigquery = bigQueryOptions.getService();
+    Table table = bigquery.create(tableInfo);
+    assertEquals(new Table(bigquery, new TableInfo.BuilderImpl(tableInfo)), table);
+  }
+
+  @Test
   public void testCreateTableWithSelectedFields() {
     Capture<Map<BigQueryRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(
@@ -728,6 +742,16 @@ public class BigQueryImplTest {
   }
 
   @Test
+  public void testDeleteTableFromTableIdWithoutProject() {
+    TableId tableId = TableId.of("", TABLE_ID.getDataset(), TABLE_ID.getTable());
+    EasyMock.expect(bigqueryRpcMock.deleteTable(PROJECT, DATASET, TABLE)).andReturn(true);
+    EasyMock.replay(bigqueryRpcMock);
+    BigQueryOptions bigQueryOptions = createBigQueryOptionsForProject(PROJECT, rpcFactoryMock);
+    bigquery = bigQueryOptions.getService();
+    assertTrue(bigquery.delete(tableId)); 
+  }
+
+  @Test
   public void testUpdateTable() {
     TableInfo updatedTableInfo =
         TABLE_INFO.setProjectId(OTHER_PROJECT).toBuilder().setDescription("newDescription").build();
@@ -739,6 +763,20 @@ public class BigQueryImplTest {
     bigquery = bigQueryOptions.getService();
     Table table = bigquery.update(updatedTableInfo);
     assertEquals(new Table(bigquery, new TableInfo.BuilderImpl(updatedTableInfo)), table);
+  }
+
+  @Test
+  public void testUpdateTableWithoutProject() {
+    TableInfo tableInfo = TABLE_INFO.setProjectId(PROJECT);
+    TableId tableId = TableId.of("", TABLE_ID.getDataset(), TABLE_ID.getTable());
+    tableInfo.toBuilder().setTableId(tableId);
+    EasyMock.expect(bigqueryRpcMock.patch(tableInfo.toPb(), EMPTY_RPC_OPTIONS))
+        .andReturn(tableInfo.toPb());
+    EasyMock.replay(bigqueryRpcMock);
+    BigQueryOptions bigQueryOptions = createBigQueryOptionsForProject(PROJECT, rpcFactoryMock);
+    bigquery = bigQueryOptions.getService();
+    Table table = bigquery.update(tableInfo);
+    assertEquals(new Table(bigquery, new TableInfo.BuilderImpl(tableInfo)), table);
   }
 
   @Test
