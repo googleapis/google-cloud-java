@@ -14,13 +14,13 @@
 
 package io.grafeas.v1beta1.build;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +56,11 @@ public class ScanConfigName implements ResourceName {
   }
 
   public static ScanConfigName of(String project, String scanConfig) {
-    return newBuilder()
-      .setProject(project)
-      .setScanConfig(scanConfig)
-      .build();
+    return newBuilder().setProject(project).setScanConfig(scanConfig).build();
   }
 
   public static String format(String project, String scanConfig) {
-    return newBuilder()
-      .setProject(project)
-      .setScanConfig(scanConfig)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setScanConfig(scanConfig).build().toString();
   }
 
   public static ScanConfigName parse(String formattedString) {
@@ -75,7 +68,8 @@ public class ScanConfigName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ScanConfigName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ScanConfigName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("scan_config"));
   }
 
@@ -150,8 +144,7 @@ public class ScanConfigName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ScanConfigName scanConfigName) {
       project = scanConfigName.project;
@@ -170,8 +163,7 @@ public class ScanConfigName implements ResourceName {
     }
     if (o instanceof ScanConfigName) {
       ScanConfigName that = (ScanConfigName) o;
-      return (this.project.equals(that.project))
-          && (this.scanConfig.equals(that.scanConfig));
+      return (this.project.equals(that.project)) && (this.scanConfig.equals(that.scanConfig));
     }
     return false;
   }
@@ -186,4 +178,3 @@ public class ScanConfigName implements ResourceName {
     return h;
   }
 }
-
