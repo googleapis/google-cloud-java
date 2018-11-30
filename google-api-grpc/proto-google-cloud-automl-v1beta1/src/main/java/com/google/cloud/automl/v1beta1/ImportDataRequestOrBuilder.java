@@ -3,11 +3,14 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface ImportDataRequestOrBuilder extends
+public interface ImportDataRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.ImportDataRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. Dataset name. Dataset must already exist. All imported
    * annotations and examples will be added.
@@ -17,6 +20,8 @@ public interface ImportDataRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. Dataset name. Dataset must already exist. All imported
    * annotations and examples will be added.
@@ -24,10 +29,11 @@ public interface ImportDataRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The desired input location.
    * </pre>
@@ -36,6 +42,8 @@ public interface ImportDataRequestOrBuilder extends
    */
   boolean hasInputConfig();
   /**
+   *
+   *
    * <pre>
    * Required. The desired input location.
    * </pre>
@@ -44,6 +52,8 @@ public interface ImportDataRequestOrBuilder extends
    */
   com.google.cloud.automl.v1beta1.InputConfig getInputConfig();
   /**
+   *
+   *
    * <pre>
    * Required. The desired input location.
    * </pre>

@@ -3,86 +3,127 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface ModelOrBuilder extends
+public interface ModelOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.Model)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Metadata for image classification models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+   * </code>
    */
   boolean hasImageClassificationModelMetadata();
   /**
+   *
+   *
    * <pre>
    * Metadata for image classification models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+   * </code>
    */
-  com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata getImageClassificationModelMetadata();
+  com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata
+      getImageClassificationModelMetadata();
   /**
+   *
+   *
    * <pre>
    * Metadata for image classification models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+   * </code>
    */
-  com.google.cloud.automl.v1beta1.ImageClassificationModelMetadataOrBuilder getImageClassificationModelMetadataOrBuilder();
+  com.google.cloud.automl.v1beta1.ImageClassificationModelMetadataOrBuilder
+      getImageClassificationModelMetadataOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Metadata for text classification models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+   * </code>
    */
   boolean hasTextClassificationModelMetadata();
   /**
+   *
+   *
    * <pre>
    * Metadata for text classification models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+   * </code>
    */
-  com.google.cloud.automl.v1beta1.TextClassificationModelMetadata getTextClassificationModelMetadata();
+  com.google.cloud.automl.v1beta1.TextClassificationModelMetadata
+      getTextClassificationModelMetadata();
   /**
+   *
+   *
    * <pre>
    * Metadata for text classification models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+   * </code>
    */
-  com.google.cloud.automl.v1beta1.TextClassificationModelMetadataOrBuilder getTextClassificationModelMetadataOrBuilder();
+  com.google.cloud.automl.v1beta1.TextClassificationModelMetadataOrBuilder
+      getTextClassificationModelMetadataOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Metadata for translation models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;</code>
+   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+   * </code>
    */
   boolean hasTranslationModelMetadata();
   /**
+   *
+   *
    * <pre>
    * Metadata for translation models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;</code>
+   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+   * </code>
    */
   com.google.cloud.automl.v1beta1.TranslationModelMetadata getTranslationModelMetadata();
   /**
+   *
+   *
    * <pre>
    * Metadata for translation models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;</code>
+   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+   * </code>
    */
-  com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder getTranslationModelMetadataOrBuilder();
+  com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder
+      getTranslationModelMetadataOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Resource name of the model.
@@ -93,6 +134,8 @@ public interface ModelOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Resource name of the model.
@@ -101,10 +144,11 @@ public interface ModelOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the model to show in the interface. The name can be
    * up to 32 characters
@@ -116,6 +160,8 @@ public interface ModelOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the model to show in the interface. The name can be
    * up to 32 characters
@@ -125,10 +171,11 @@ public interface ModelOrBuilder extends
    *
    * <code>string display_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The resource ID of the dataset used to create the model. The dataset must
@@ -140,6 +187,8 @@ public interface ModelOrBuilder extends
    */
   java.lang.String getDatasetId();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The resource ID of the dataset used to create the model. The dataset must
@@ -149,10 +198,11 @@ public interface ModelOrBuilder extends
    *
    * <code>string dataset_id = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDatasetIdBytes();
+  com.google.protobuf.ByteString getDatasetIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Timestamp when this model was created.
@@ -162,6 +212,8 @@ public interface ModelOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Timestamp when this model was created.
@@ -171,6 +223,8 @@ public interface ModelOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Timestamp when this model was created.
@@ -181,6 +235,8 @@ public interface ModelOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Timestamp when this model was last updated.
@@ -190,6 +246,8 @@ public interface ModelOrBuilder extends
    */
   boolean hasUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Timestamp when this model was last updated.
@@ -199,6 +257,8 @@ public interface ModelOrBuilder extends
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Timestamp when this model was last updated.
@@ -209,6 +269,8 @@ public interface ModelOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Deployment state of the model.
    * </pre>
@@ -217,6 +279,8 @@ public interface ModelOrBuilder extends
    */
   int getDeploymentStateValue();
   /**
+   *
+   *
    * <pre>
    * Output only. Deployment state of the model.
    * </pre>
