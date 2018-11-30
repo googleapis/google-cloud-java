@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface LogEntryOperationOrBuilder extends
+public interface LogEntryOperationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.LogEntryOperation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional. An arbitrary operation identifier. Log entries with the
    * same identifier are assumed to be part of the same operation.
@@ -17,6 +20,8 @@ public interface LogEntryOperationOrBuilder extends
    */
   java.lang.String getId();
   /**
+   *
+   *
    * <pre>
    * Optional. An arbitrary operation identifier. Log entries with the
    * same identifier are assumed to be part of the same operation.
@@ -24,10 +29,11 @@ public interface LogEntryOperationOrBuilder extends
    *
    * <code>string id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getIdBytes();
+  com.google.protobuf.ByteString getIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. An arbitrary producer identifier. The combination of
    * `id` and `producer` must be globally unique.  Examples for `producer`:
@@ -38,6 +44,8 @@ public interface LogEntryOperationOrBuilder extends
    */
   java.lang.String getProducer();
   /**
+   *
+   *
    * <pre>
    * Optional. An arbitrary producer identifier. The combination of
    * `id` and `producer` must be globally unique.  Examples for `producer`:
@@ -46,10 +54,11 @@ public interface LogEntryOperationOrBuilder extends
    *
    * <code>string producer = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getProducerBytes();
+  com.google.protobuf.ByteString getProducerBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Set this to True if this is the first log entry in the operation.
    * </pre>
@@ -59,6 +68,8 @@ public interface LogEntryOperationOrBuilder extends
   boolean getFirst();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Set this to True if this is the last log entry in the operation.
    * </pre>

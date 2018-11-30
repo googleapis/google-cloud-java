@@ -4,21 +4,24 @@
 package com.google.logging.v2;
 
 /**
+ *
+ *
  * <pre>
  * An individual entry in a log.
  * </pre>
  *
  * Protobuf type {@code google.logging.v2.LogEntry}
  */
-public  final class LogEntry extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class LogEntry extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.logging.v2.LogEntry)
     LogEntryOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use LogEntry.newBuilder() to construct.
   private LogEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private LogEntry() {
     logName_ = "";
     severity_ = 0;
@@ -29,10 +32,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private LogEntry(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -52,219 +55,243 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 18: {
-            com.google.protobuf.Any.Builder subBuilder = null;
-            if (payloadCase_ == 2) {
-              subBuilder = ((com.google.protobuf.Any) payload_).toBuilder();
+          case 18:
+            {
+              com.google.protobuf.Any.Builder subBuilder = null;
+              if (payloadCase_ == 2) {
+                subBuilder = ((com.google.protobuf.Any) payload_).toBuilder();
+              }
+              payload_ = input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.protobuf.Any) payload_);
+                payload_ = subBuilder.buildPartial();
+              }
+              payloadCase_ = 2;
+              break;
             }
-            payload_ =
-                input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.protobuf.Any) payload_);
-              payload_ = subBuilder.buildPartial();
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              payloadCase_ = 3;
+              payload_ = s;
+              break;
             }
-            payloadCase_ = 2;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-            payloadCase_ = 3;
-            payload_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            insertId_ = s;
-            break;
-          }
-          case 50: {
-            com.google.protobuf.Struct.Builder subBuilder = null;
-            if (payloadCase_ == 6) {
-              subBuilder = ((com.google.protobuf.Struct) payload_).toBuilder();
+              insertId_ = s;
+              break;
             }
-            payload_ =
-                input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.protobuf.Struct) payload_);
-              payload_ = subBuilder.buildPartial();
+          case 50:
+            {
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (payloadCase_ == 6) {
+                subBuilder = ((com.google.protobuf.Struct) payload_).toBuilder();
+              }
+              payload_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.protobuf.Struct) payload_);
+                payload_ = subBuilder.buildPartial();
+              }
+              payloadCase_ = 6;
+              break;
             }
-            payloadCase_ = 6;
-            break;
-          }
-          case 58: {
-            com.google.logging.type.HttpRequest.Builder subBuilder = null;
-            if (httpRequest_ != null) {
-              subBuilder = httpRequest_.toBuilder();
-            }
-            httpRequest_ = input.readMessage(com.google.logging.type.HttpRequest.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(httpRequest_);
-              httpRequest_ = subBuilder.buildPartial();
-            }
+          case 58:
+            {
+              com.google.logging.type.HttpRequest.Builder subBuilder = null;
+              if (httpRequest_ != null) {
+                subBuilder = httpRequest_.toBuilder();
+              }
+              httpRequest_ =
+                  input.readMessage(
+                      com.google.logging.type.HttpRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(httpRequest_);
+                httpRequest_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 66: {
-            com.google.api.MonitoredResource.Builder subBuilder = null;
-            if (resource_ != null) {
-              subBuilder = resource_.toBuilder();
+              break;
             }
-            resource_ = input.readMessage(com.google.api.MonitoredResource.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(resource_);
-              resource_ = subBuilder.buildPartial();
-            }
+          case 66:
+            {
+              com.google.api.MonitoredResource.Builder subBuilder = null;
+              if (resource_ != null) {
+                subBuilder = resource_.toBuilder();
+              }
+              resource_ =
+                  input.readMessage(com.google.api.MonitoredResource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(resource_);
+                resource_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 74: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (timestamp_ != null) {
-              subBuilder = timestamp_.toBuilder();
+              break;
             }
-            timestamp_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(timestamp_);
-              timestamp_ = subBuilder.buildPartial();
-            }
+          case 74:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (timestamp_ != null) {
+                subBuilder = timestamp_.toBuilder();
+              }
+              timestamp_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(timestamp_);
+                timestamp_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 80: {
-            int rawValue = input.readEnum();
+              break;
+            }
+          case 80:
+            {
+              int rawValue = input.readEnum();
 
-            severity_ = rawValue;
-            break;
-          }
-          case 90: {
-            if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
-              labels_ = com.google.protobuf.MapField.newMapField(
-                  LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000400;
+              severity_ = rawValue;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            labels__ = input.readMessage(
-                LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            labels_.getMutableMap().put(
-                labels__.getKey(), labels__.getValue());
-            break;
-          }
-          case 98: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 90:
+            {
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000400;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                  input.readMessage(
+                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
+            }
+          case 98:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            logName_ = s;
-            break;
-          }
-          case 122: {
-            com.google.logging.v2.LogEntryOperation.Builder subBuilder = null;
-            if (operation_ != null) {
-              subBuilder = operation_.toBuilder();
+              logName_ = s;
+              break;
             }
-            operation_ = input.readMessage(com.google.logging.v2.LogEntryOperation.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(operation_);
-              operation_ = subBuilder.buildPartial();
-            }
+          case 122:
+            {
+              com.google.logging.v2.LogEntryOperation.Builder subBuilder = null;
+              if (operation_ != null) {
+                subBuilder = operation_.toBuilder();
+              }
+              operation_ =
+                  input.readMessage(
+                      com.google.logging.v2.LogEntryOperation.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(operation_);
+                operation_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 178: {
-            java.lang.String s = input.readStringRequireUtf8();
+              break;
+            }
+          case 178:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            trace_ = s;
-            break;
-          }
-          case 186: {
-            com.google.logging.v2.LogEntrySourceLocation.Builder subBuilder = null;
-            if (sourceLocation_ != null) {
-              subBuilder = sourceLocation_.toBuilder();
+              trace_ = s;
+              break;
             }
-            sourceLocation_ = input.readMessage(com.google.logging.v2.LogEntrySourceLocation.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(sourceLocation_);
-              sourceLocation_ = subBuilder.buildPartial();
-            }
+          case 186:
+            {
+              com.google.logging.v2.LogEntrySourceLocation.Builder subBuilder = null;
+              if (sourceLocation_ != null) {
+                subBuilder = sourceLocation_.toBuilder();
+              }
+              sourceLocation_ =
+                  input.readMessage(
+                      com.google.logging.v2.LogEntrySourceLocation.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sourceLocation_);
+                sourceLocation_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 194: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (receiveTimestamp_ != null) {
-              subBuilder = receiveTimestamp_.toBuilder();
+              break;
             }
-            receiveTimestamp_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(receiveTimestamp_);
-              receiveTimestamp_ = subBuilder.buildPartial();
-            }
+          case 194:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (receiveTimestamp_ != null) {
+                subBuilder = receiveTimestamp_.toBuilder();
+              }
+              receiveTimestamp_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(receiveTimestamp_);
+                receiveTimestamp_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 202: {
-            com.google.api.MonitoredResourceMetadata.Builder subBuilder = null;
-            if (metadata_ != null) {
-              subBuilder = metadata_.toBuilder();
+              break;
             }
-            metadata_ = input.readMessage(com.google.api.MonitoredResourceMetadata.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(metadata_);
-              metadata_ = subBuilder.buildPartial();
+          case 202:
+            {
+              com.google.api.MonitoredResourceMetadata.Builder subBuilder = null;
+              if (metadata_ != null) {
+                subBuilder = metadata_.toBuilder();
+              }
+              metadata_ =
+                  input.readMessage(
+                      com.google.api.MonitoredResourceMetadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metadata_);
+                metadata_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
+          case 218:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 218: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            spanId_ = s;
-            break;
-          }
-          case 240: {
-
-            traceSampled_ = input.readBool();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              spanId_ = s;
+              break;
             }
-            break;
-          }
+          case 240:
+            {
+              traceSampled_ = input.readBool();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.logging.v2.LogEntryProto.internal_static_google_logging_v2_LogEntry_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.logging.v2.LogEntryProto
+        .internal_static_google_logging_v2_LogEntry_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 11:
         return internalGetLabels();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.logging.v2.LogEntryProto.internal_static_google_logging_v2_LogEntry_fieldAccessorTable
+    return com.google.logging.v2.LogEntryProto
+        .internal_static_google_logging_v2_LogEntry_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.logging.v2.LogEntry.class, com.google.logging.v2.LogEntry.Builder.class);
   }
@@ -272,19 +299,18 @@ private static final long serialVersionUID = 0L;
   private int bitField0_;
   private int payloadCase_ = 0;
   private java.lang.Object payload_;
-  public enum PayloadCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum PayloadCase implements com.google.protobuf.Internal.EnumLite {
     PROTO_PAYLOAD(2),
     TEXT_PAYLOAD(3),
     JSON_PAYLOAD(6),
     PAYLOAD_NOT_SET(0);
     private final int value;
+
     private PayloadCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static PayloadCase valueOf(int value) {
       return forNumber(value);
@@ -292,27 +318,33 @@ private static final long serialVersionUID = 0L;
 
     public static PayloadCase forNumber(int value) {
       switch (value) {
-        case 2: return PROTO_PAYLOAD;
-        case 3: return TEXT_PAYLOAD;
-        case 6: return JSON_PAYLOAD;
-        case 0: return PAYLOAD_NOT_SET;
-        default: return null;
+        case 2:
+          return PROTO_PAYLOAD;
+        case 3:
+          return TEXT_PAYLOAD;
+        case 6:
+          return JSON_PAYLOAD;
+        case 0:
+          return PAYLOAD_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public PayloadCase
-  getPayloadCase() {
-    return PayloadCase.forNumber(
-        payloadCase_);
+  public PayloadCase getPayloadCase() {
+    return PayloadCase.forNumber(payloadCase_);
   }
 
   public static final int LOG_NAME_FIELD_NUMBER = 12;
   private volatile java.lang.Object logName_;
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the log to which this log entry belongs:
    *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
@@ -341,14 +373,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       logName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the log to which this log entry belongs:
    *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
@@ -372,13 +405,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string log_name = 12;</code>
    */
-  public com.google.protobuf.ByteString
-      getLogNameBytes() {
+  public com.google.protobuf.ByteString getLogNameBytes() {
     java.lang.Object ref = logName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       logName_ = b;
       return b;
     } else {
@@ -389,6 +420,8 @@ private static final long serialVersionUID = 0L;
   public static final int RESOURCE_FIELD_NUMBER = 8;
   private com.google.api.MonitoredResource resource_;
   /**
+   *
+   *
    * <pre>
    * Required. The primary monitored resource associated with this log entry.
    * Example: a log entry that reports a database error would be
@@ -402,6 +435,8 @@ private static final long serialVersionUID = 0L;
     return resource_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The primary monitored resource associated with this log entry.
    * Example: a log entry that reports a database error would be
@@ -415,6 +450,8 @@ private static final long serialVersionUID = 0L;
     return resource_ == null ? com.google.api.MonitoredResource.getDefaultInstance() : resource_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The primary monitored resource associated with this log entry.
    * Example: a log entry that reports a database error would be
@@ -430,6 +467,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int PROTO_PAYLOAD_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * The log entry payload, represented as a protocol buffer.  Some
    * Google Cloud Platform services use this field for their log
@@ -442,6 +481,8 @@ private static final long serialVersionUID = 0L;
     return payloadCase_ == 2;
   }
   /**
+   *
+   *
    * <pre>
    * The log entry payload, represented as a protocol buffer.  Some
    * Google Cloud Platform services use this field for their log
@@ -452,11 +493,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.Any getProtoPayload() {
     if (payloadCase_ == 2) {
-       return (com.google.protobuf.Any) payload_;
+      return (com.google.protobuf.Any) payload_;
     }
     return com.google.protobuf.Any.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * The log entry payload, represented as a protocol buffer.  Some
    * Google Cloud Platform services use this field for their log
@@ -467,13 +510,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.AnyOrBuilder getProtoPayloadOrBuilder() {
     if (payloadCase_ == 2) {
-       return (com.google.protobuf.Any) payload_;
+      return (com.google.protobuf.Any) payload_;
     }
     return com.google.protobuf.Any.getDefaultInstance();
   }
 
   public static final int TEXT_PAYLOAD_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * The log entry payload, represented as a Unicode string (UTF-8).
    * </pre>
@@ -488,8 +533,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       if (payloadCase_ == 3) {
         payload_ = s;
@@ -498,22 +542,22 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The log entry payload, represented as a Unicode string (UTF-8).
    * </pre>
    *
    * <code>string text_payload = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getTextPayloadBytes() {
+  public com.google.protobuf.ByteString getTextPayloadBytes() {
     java.lang.Object ref = "";
     if (payloadCase_ == 3) {
       ref = payload_;
     }
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (payloadCase_ == 3) {
         payload_ = b;
       }
@@ -525,6 +569,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int JSON_PAYLOAD_FIELD_NUMBER = 6;
   /**
+   *
+   *
    * <pre>
    * The log entry payload, represented as a structure that is
    * expressed as a JSON object.
@@ -536,6 +582,8 @@ private static final long serialVersionUID = 0L;
     return payloadCase_ == 6;
   }
   /**
+   *
+   *
    * <pre>
    * The log entry payload, represented as a structure that is
    * expressed as a JSON object.
@@ -545,11 +593,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.Struct getJsonPayload() {
     if (payloadCase_ == 6) {
-       return (com.google.protobuf.Struct) payload_;
+      return (com.google.protobuf.Struct) payload_;
     }
     return com.google.protobuf.Struct.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * The log entry payload, represented as a structure that is
    * expressed as a JSON object.
@@ -559,7 +609,7 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.StructOrBuilder getJsonPayloadOrBuilder() {
     if (payloadCase_ == 6) {
-       return (com.google.protobuf.Struct) payload_;
+      return (com.google.protobuf.Struct) payload_;
     }
     return com.google.protobuf.Struct.getDefaultInstance();
   }
@@ -567,6 +617,8 @@ private static final long serialVersionUID = 0L;
   public static final int TIMESTAMP_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp timestamp_;
   /**
+   *
+   *
    * <pre>
    * Optional. The time the event described by the log entry occurred.
    * This time is used to compute the log entry's age and to enforce
@@ -588,6 +640,8 @@ private static final long serialVersionUID = 0L;
     return timestamp_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The time the event described by the log entry occurred.
    * This time is used to compute the log entry's age and to enforce
@@ -609,6 +663,8 @@ private static final long serialVersionUID = 0L;
     return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The time the event described by the log entry occurred.
    * This time is used to compute the log entry's age and to enforce
@@ -633,6 +689,8 @@ private static final long serialVersionUID = 0L;
   public static final int RECEIVE_TIMESTAMP_FIELD_NUMBER = 24;
   private com.google.protobuf.Timestamp receiveTimestamp_;
   /**
+   *
+   *
    * <pre>
    * Output only. The time the log entry was received by Logging.
    * </pre>
@@ -643,6 +701,8 @@ private static final long serialVersionUID = 0L;
     return receiveTimestamp_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time the log entry was received by Logging.
    * </pre>
@@ -650,9 +710,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
    */
   public com.google.protobuf.Timestamp getReceiveTimestamp() {
-    return receiveTimestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : receiveTimestamp_;
+    return receiveTimestamp_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : receiveTimestamp_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time the log entry was received by Logging.
    * </pre>
@@ -666,6 +730,8 @@ private static final long serialVersionUID = 0L;
   public static final int SEVERITY_FIELD_NUMBER = 10;
   private int severity_;
   /**
+   *
+   *
    * <pre>
    * Optional. The severity of the log entry. The default value is
    * `LogSeverity.DEFAULT`.
@@ -677,6 +743,8 @@ private static final long serialVersionUID = 0L;
     return severity_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The severity of the log entry. The default value is
    * `LogSeverity.DEFAULT`.
@@ -686,13 +754,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.logging.type.LogSeverity getSeverity() {
     @SuppressWarnings("deprecation")
-    com.google.logging.type.LogSeverity result = com.google.logging.type.LogSeverity.valueOf(severity_);
+    com.google.logging.type.LogSeverity result =
+        com.google.logging.type.LogSeverity.valueOf(severity_);
     return result == null ? com.google.logging.type.LogSeverity.UNRECOGNIZED : result;
   }
 
   public static final int INSERT_ID_FIELD_NUMBER = 4;
   private volatile java.lang.Object insertId_;
   /**
+   *
+   *
    * <pre>
    * Optional. A unique identifier for the log entry. If you provide a value,
    * then Logging considers other log entries in the same project,
@@ -709,14 +780,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       insertId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A unique identifier for the log entry. If you provide a value,
    * then Logging considers other log entries in the same project,
@@ -728,13 +800,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string insert_id = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getInsertIdBytes() {
+  public com.google.protobuf.ByteString getInsertIdBytes() {
     java.lang.Object ref = insertId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       insertId_ = b;
       return b;
     } else {
@@ -745,6 +815,8 @@ private static final long serialVersionUID = 0L;
   public static final int HTTP_REQUEST_FIELD_NUMBER = 7;
   private com.google.logging.type.HttpRequest httpRequest_;
   /**
+   *
+   *
    * <pre>
    * Optional. Information about the HTTP request associated with this
    * log entry, if applicable.
@@ -756,6 +828,8 @@ private static final long serialVersionUID = 0L;
     return httpRequest_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Information about the HTTP request associated with this
    * log entry, if applicable.
@@ -764,9 +838,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.logging.type.HttpRequest http_request = 7;</code>
    */
   public com.google.logging.type.HttpRequest getHttpRequest() {
-    return httpRequest_ == null ? com.google.logging.type.HttpRequest.getDefaultInstance() : httpRequest_;
+    return httpRequest_ == null
+        ? com.google.logging.type.HttpRequest.getDefaultInstance()
+        : httpRequest_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Information about the HTTP request associated with this
    * log entry, if applicable.
@@ -779,24 +857,23 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LABELS_FIELD_NUMBER = 11;
+
   private static final class LabelsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.logging.v2.LogEntryProto.internal_static_google_logging_v2_LogEntry_LabelsEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.logging.v2.LogEntryProto
+                .internal_static_google_logging_v2_LogEntry_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> labels_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetLabels() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
     if (labels_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          LabelsDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
     }
     return labels_;
   }
@@ -805,6 +882,8 @@ private static final long serialVersionUID = 0L;
     return internalGetLabels().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A set of user-defined (key, value) data that provides additional
    * information about the log entry.
@@ -812,20 +891,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
-
-  public boolean containsLabels(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetLabels().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A set of user-defined (key, value) data that provides additional
    * information about the log entry.
@@ -833,11 +912,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A set of user-defined (key, value) data that provides additional
    * information about the log entry.
@@ -845,16 +925,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
-
-  public java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A set of user-defined (key, value) data that provides additional
    * information about the log entry.
@@ -862,12 +942,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
-
-  public java.lang.String getLabelsOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -877,6 +956,8 @@ private static final long serialVersionUID = 0L;
   public static final int METADATA_FIELD_NUMBER = 25;
   private com.google.api.MonitoredResourceMetadata metadata_;
   /**
+   *
+   *
    * <pre>
    * Output only. Additional metadata about the monitored resource.
    * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
@@ -889,6 +970,8 @@ private static final long serialVersionUID = 0L;
     return metadata_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Additional metadata about the monitored resource.
    * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
@@ -898,9 +981,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.api.MonitoredResourceMetadata metadata = 25;</code>
    */
   public com.google.api.MonitoredResourceMetadata getMetadata() {
-    return metadata_ == null ? com.google.api.MonitoredResourceMetadata.getDefaultInstance() : metadata_;
+    return metadata_ == null
+        ? com.google.api.MonitoredResourceMetadata.getDefaultInstance()
+        : metadata_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Additional metadata about the monitored resource.
    * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
@@ -916,6 +1003,8 @@ private static final long serialVersionUID = 0L;
   public static final int OPERATION_FIELD_NUMBER = 15;
   private com.google.logging.v2.LogEntryOperation operation_;
   /**
+   *
+   *
    * <pre>
    * Optional. Information about an operation associated with the log entry, if
    * applicable.
@@ -927,6 +1016,8 @@ private static final long serialVersionUID = 0L;
     return operation_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Information about an operation associated with the log entry, if
    * applicable.
@@ -935,9 +1026,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
    */
   public com.google.logging.v2.LogEntryOperation getOperation() {
-    return operation_ == null ? com.google.logging.v2.LogEntryOperation.getDefaultInstance() : operation_;
+    return operation_ == null
+        ? com.google.logging.v2.LogEntryOperation.getDefaultInstance()
+        : operation_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Information about an operation associated with the log entry, if
    * applicable.
@@ -952,6 +1047,8 @@ private static final long serialVersionUID = 0L;
   public static final int TRACE_FIELD_NUMBER = 22;
   private volatile java.lang.Object trace_;
   /**
+   *
+   *
    * <pre>
    * Optional. Resource name of the trace associated with the log entry, if any.
    * If it contains a relative resource name, the name is assumed to be relative
@@ -966,14 +1063,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       trace_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Resource name of the trace associated with the log entry, if any.
    * If it contains a relative resource name, the name is assumed to be relative
@@ -983,13 +1081,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string trace = 22;</code>
    */
-  public com.google.protobuf.ByteString
-      getTraceBytes() {
+  public com.google.protobuf.ByteString getTraceBytes() {
     java.lang.Object ref = trace_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       trace_ = b;
       return b;
     } else {
@@ -1000,6 +1096,8 @@ private static final long serialVersionUID = 0L;
   public static final int SPAN_ID_FIELD_NUMBER = 27;
   private volatile java.lang.Object spanId_;
   /**
+   *
+   *
    * <pre>
    * Optional. The span ID within the trace associated with the log entry.
    * For Trace spans, this is the same format that the Trace
@@ -1014,14 +1112,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       spanId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The span ID within the trace associated with the log entry.
    * For Trace spans, this is the same format that the Trace
@@ -1031,13 +1130,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string span_id = 27;</code>
    */
-  public com.google.protobuf.ByteString
-      getSpanIdBytes() {
+  public com.google.protobuf.ByteString getSpanIdBytes() {
     java.lang.Object ref = spanId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       spanId_ = b;
       return b;
     } else {
@@ -1048,6 +1145,8 @@ private static final long serialVersionUID = 0L;
   public static final int TRACE_SAMPLED_FIELD_NUMBER = 30;
   private boolean traceSampled_;
   /**
+   *
+   *
    * <pre>
    * Optional. The sampling decision of the trace associated with the log entry.
    * True means that the trace resource name in the `trace` field was sampled
@@ -1066,6 +1165,8 @@ private static final long serialVersionUID = 0L;
   public static final int SOURCE_LOCATION_FIELD_NUMBER = 23;
   private com.google.logging.v2.LogEntrySourceLocation sourceLocation_;
   /**
+   *
+   *
    * <pre>
    * Optional. Source code location information associated with the log entry,
    * if any.
@@ -1077,6 +1178,8 @@ private static final long serialVersionUID = 0L;
     return sourceLocation_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Source code location information associated with the log entry,
    * if any.
@@ -1085,9 +1188,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
    */
   public com.google.logging.v2.LogEntrySourceLocation getSourceLocation() {
-    return sourceLocation_ == null ? com.google.logging.v2.LogEntrySourceLocation.getDefaultInstance() : sourceLocation_;
+    return sourceLocation_ == null
+        ? com.google.logging.v2.LogEntrySourceLocation.getDefaultInstance()
+        : sourceLocation_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Source code location information associated with the log entry,
    * if any.
@@ -1100,6 +1207,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1111,8 +1219,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (payloadCase_ == 2) {
       output.writeMessage(2, (com.google.protobuf.Any) payload_);
     }
@@ -1137,12 +1244,8 @@ private static final long serialVersionUID = 0L;
     if (severity_ != com.google.logging.type.LogSeverity.DEFAULT.getNumber()) {
       output.writeEnum(10, severity_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetLabels(),
-        LabelsDefaultEntryHolder.defaultEntry,
-        11);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 11);
     if (!getLogNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, logName_);
     }
@@ -1177,8 +1280,9 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (payloadCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.google.protobuf.Any) payload_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.protobuf.Any) payload_);
     }
     if (payloadCase_ == 3) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, payload_);
@@ -1187,63 +1291,55 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, insertId_);
     }
     if (payloadCase_ == 6) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, (com.google.protobuf.Struct) payload_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.protobuf.Struct) payload_);
     }
     if (httpRequest_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getHttpRequest());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getHttpRequest());
     }
     if (resource_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getResource());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getResource());
     }
     if (timestamp_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getTimestamp());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getTimestamp());
     }
     if (severity_ != com.google.logging.type.LogSeverity.DEFAULT.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(10, severity_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, severity_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetLabels().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      labels__ = LabelsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, labels__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, labels__);
     }
     if (!getLogNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, logName_);
     }
     if (operation_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(15, getOperation());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getOperation());
     }
     if (!getTraceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, trace_);
     }
     if (sourceLocation_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(23, getSourceLocation());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getSourceLocation());
     }
     if (receiveTimestamp_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(24, getReceiveTimestamp());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getReceiveTimestamp());
     }
     if (metadata_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(25, getMetadata());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(25, getMetadata());
     }
     if (!getSpanIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, spanId_);
     }
     if (traceSampled_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(30, traceSampled_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, traceSampled_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1253,7 +1349,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.logging.v2.LogEntry)) {
       return super.equals(obj);
@@ -1261,69 +1357,52 @@ private static final long serialVersionUID = 0L;
     com.google.logging.v2.LogEntry other = (com.google.logging.v2.LogEntry) obj;
 
     boolean result = true;
-    result = result && getLogName()
-        .equals(other.getLogName());
+    result = result && getLogName().equals(other.getLogName());
     result = result && (hasResource() == other.hasResource());
     if (hasResource()) {
-      result = result && getResource()
-          .equals(other.getResource());
+      result = result && getResource().equals(other.getResource());
     }
     result = result && (hasTimestamp() == other.hasTimestamp());
     if (hasTimestamp()) {
-      result = result && getTimestamp()
-          .equals(other.getTimestamp());
+      result = result && getTimestamp().equals(other.getTimestamp());
     }
     result = result && (hasReceiveTimestamp() == other.hasReceiveTimestamp());
     if (hasReceiveTimestamp()) {
-      result = result && getReceiveTimestamp()
-          .equals(other.getReceiveTimestamp());
+      result = result && getReceiveTimestamp().equals(other.getReceiveTimestamp());
     }
     result = result && severity_ == other.severity_;
-    result = result && getInsertId()
-        .equals(other.getInsertId());
+    result = result && getInsertId().equals(other.getInsertId());
     result = result && (hasHttpRequest() == other.hasHttpRequest());
     if (hasHttpRequest()) {
-      result = result && getHttpRequest()
-          .equals(other.getHttpRequest());
+      result = result && getHttpRequest().equals(other.getHttpRequest());
     }
-    result = result && internalGetLabels().equals(
-        other.internalGetLabels());
+    result = result && internalGetLabels().equals(other.internalGetLabels());
     result = result && (hasMetadata() == other.hasMetadata());
     if (hasMetadata()) {
-      result = result && getMetadata()
-          .equals(other.getMetadata());
+      result = result && getMetadata().equals(other.getMetadata());
     }
     result = result && (hasOperation() == other.hasOperation());
     if (hasOperation()) {
-      result = result && getOperation()
-          .equals(other.getOperation());
+      result = result && getOperation().equals(other.getOperation());
     }
-    result = result && getTrace()
-        .equals(other.getTrace());
-    result = result && getSpanId()
-        .equals(other.getSpanId());
-    result = result && (getTraceSampled()
-        == other.getTraceSampled());
+    result = result && getTrace().equals(other.getTrace());
+    result = result && getSpanId().equals(other.getSpanId());
+    result = result && (getTraceSampled() == other.getTraceSampled());
     result = result && (hasSourceLocation() == other.hasSourceLocation());
     if (hasSourceLocation()) {
-      result = result && getSourceLocation()
-          .equals(other.getSourceLocation());
+      result = result && getSourceLocation().equals(other.getSourceLocation());
     }
-    result = result && getPayloadCase().equals(
-        other.getPayloadCase());
+    result = result && getPayloadCase().equals(other.getPayloadCase());
     if (!result) return false;
     switch (payloadCase_) {
       case 2:
-        result = result && getProtoPayload()
-            .equals(other.getProtoPayload());
+        result = result && getProtoPayload().equals(other.getProtoPayload());
         break;
       case 3:
-        result = result && getTextPayload()
-            .equals(other.getTextPayload());
+        result = result && getTextPayload().equals(other.getTextPayload());
         break;
       case 6:
-        result = result && getJsonPayload()
-            .equals(other.getJsonPayload());
+        result = result && getJsonPayload().equals(other.getJsonPayload());
         break;
       case 0:
       default:
@@ -1378,8 +1457,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SPAN_ID_FIELD_NUMBER;
     hash = (53 * hash) + getSpanId().hashCode();
     hash = (37 * hash) + TRACE_SAMPLED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getTraceSampled());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTraceSampled());
     if (hasSourceLocation()) {
       hash = (37 * hash) + SOURCE_LOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getSourceLocation().hashCode();
@@ -1405,138 +1483,143 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.logging.v2.LogEntry parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.logging.v2.LogEntry parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.LogEntry parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.logging.v2.LogEntry parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.logging.v2.LogEntry parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.LogEntry parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.logging.v2.LogEntry parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.LogEntry parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.logging.v2.LogEntry parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.logging.v2.LogEntry parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.logging.v2.LogEntry parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.logging.v2.LogEntry parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.logging.v2.LogEntry parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static com.google.logging.v2.LogEntry parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.logging.v2.LogEntry parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.logging.v2.LogEntry prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * An individual entry in a log.
    * </pre>
    *
    * Protobuf type {@code google.logging.v2.LogEntry}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.logging.v2.LogEntry)
       com.google.logging.v2.LogEntryOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.logging.v2.LogEntryProto.internal_static_google_logging_v2_LogEntry_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.logging.v2.LogEntryProto
+          .internal_static_google_logging_v2_LogEntry_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 11:
           return internalGetLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 11:
           return internalGetMutableLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.logging.v2.LogEntryProto.internal_static_google_logging_v2_LogEntry_fieldAccessorTable
+      return com.google.logging.v2.LogEntryProto
+          .internal_static_google_logging_v2_LogEntry_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.logging.v2.LogEntry.class, com.google.logging.v2.LogEntry.Builder.class);
     }
@@ -1546,16 +1629,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1620,9 +1702,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.logging.v2.LogEntryProto.internal_static_google_logging_v2_LogEntry_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.logging.v2.LogEntryProto
+          .internal_static_google_logging_v2_LogEntry_descriptor;
     }
 
     @java.lang.Override
@@ -1714,38 +1796,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.logging.v2.LogEntry) {
-        return mergeFrom((com.google.logging.v2.LogEntry)other);
+        return mergeFrom((com.google.logging.v2.LogEntry) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1777,8 +1860,7 @@ private static final long serialVersionUID = 0L;
       if (other.hasHttpRequest()) {
         mergeHttpRequest(other.getHttpRequest());
       }
-      internalGetMutableLabels().mergeFrom(
-          other.internalGetLabels());
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
       }
@@ -1800,23 +1882,27 @@ private static final long serialVersionUID = 0L;
         mergeSourceLocation(other.getSourceLocation());
       }
       switch (other.getPayloadCase()) {
-        case PROTO_PAYLOAD: {
-          mergeProtoPayload(other.getProtoPayload());
-          break;
-        }
-        case TEXT_PAYLOAD: {
-          payloadCase_ = 3;
-          payload_ = other.payload_;
-          onChanged();
-          break;
-        }
-        case JSON_PAYLOAD: {
-          mergeJsonPayload(other.getJsonPayload());
-          break;
-        }
-        case PAYLOAD_NOT_SET: {
-          break;
-        }
+        case PROTO_PAYLOAD:
+          {
+            mergeProtoPayload(other.getProtoPayload());
+            break;
+          }
+        case TEXT_PAYLOAD:
+          {
+            payloadCase_ = 3;
+            payload_ = other.payload_;
+            onChanged();
+            break;
+          }
+        case JSON_PAYLOAD:
+          {
+            mergeJsonPayload(other.getJsonPayload());
+            break;
+          }
+        case PAYLOAD_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1846,12 +1932,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int payloadCase_ = 0;
     private java.lang.Object payload_;
-    public PayloadCase
-        getPayloadCase() {
-      return PayloadCase.forNumber(
-          payloadCase_);
+
+    public PayloadCase getPayloadCase() {
+      return PayloadCase.forNumber(payloadCase_);
     }
 
     public Builder clearPayload() {
@@ -1865,6 +1951,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object logName_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The resource name of the log to which this log entry belongs:
      *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
@@ -1891,8 +1979,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getLogName() {
       java.lang.Object ref = logName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         logName_ = s;
         return s;
@@ -1901,6 +1988,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The resource name of the log to which this log entry belongs:
      *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
@@ -1924,13 +2013,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string log_name = 12;</code>
      */
-    public com.google.protobuf.ByteString
-        getLogNameBytes() {
+    public com.google.protobuf.ByteString getLogNameBytes() {
       java.lang.Object ref = logName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         logName_ = b;
         return b;
       } else {
@@ -1938,6 +2025,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The resource name of the log to which this log entry belongs:
      *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
@@ -1961,17 +2050,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string log_name = 12;</code>
      */
-    public Builder setLogName(
-        java.lang.String value) {
+    public Builder setLogName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       logName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The resource name of the log to which this log entry belongs:
      *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
@@ -1996,12 +2086,14 @@ private static final long serialVersionUID = 0L;
      * <code>string log_name = 12;</code>
      */
     public Builder clearLogName() {
-      
+
       logName_ = getDefaultInstance().getLogName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The resource name of the log to which this log entry belongs:
      *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
@@ -2025,13 +2117,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string log_name = 12;</code>
      */
-    public Builder setLogNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setLogNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       logName_ = value;
       onChanged();
       return this;
@@ -2039,8 +2130,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.api.MonitoredResource resource_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.api.MonitoredResource, com.google.api.MonitoredResource.Builder, com.google.api.MonitoredResourceOrBuilder> resourceBuilder_;
+            com.google.api.MonitoredResource,
+            com.google.api.MonitoredResource.Builder,
+            com.google.api.MonitoredResourceOrBuilder>
+        resourceBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required. The primary monitored resource associated with this log entry.
      * Example: a log entry that reports a database error would be
@@ -2054,6 +2150,8 @@ private static final long serialVersionUID = 0L;
       return resourceBuilder_ != null || resource_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The primary monitored resource associated with this log entry.
      * Example: a log entry that reports a database error would be
@@ -2065,12 +2163,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.api.MonitoredResource getResource() {
       if (resourceBuilder_ == null) {
-        return resource_ == null ? com.google.api.MonitoredResource.getDefaultInstance() : resource_;
+        return resource_ == null
+            ? com.google.api.MonitoredResource.getDefaultInstance()
+            : resource_;
       } else {
         return resourceBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The primary monitored resource associated with this log entry.
      * Example: a log entry that reports a database error would be
@@ -2094,6 +2196,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The primary monitored resource associated with this log entry.
      * Example: a log entry that reports a database error would be
@@ -2103,8 +2207,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.api.MonitoredResource resource = 8;</code>
      */
-    public Builder setResource(
-        com.google.api.MonitoredResource.Builder builderForValue) {
+    public Builder setResource(com.google.api.MonitoredResource.Builder builderForValue) {
       if (resourceBuilder_ == null) {
         resource_ = builderForValue.build();
         onChanged();
@@ -2115,6 +2218,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The primary monitored resource associated with this log entry.
      * Example: a log entry that reports a database error would be
@@ -2128,7 +2233,9 @@ private static final long serialVersionUID = 0L;
       if (resourceBuilder_ == null) {
         if (resource_ != null) {
           resource_ =
-            com.google.api.MonitoredResource.newBuilder(resource_).mergeFrom(value).buildPartial();
+              com.google.api.MonitoredResource.newBuilder(resource_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           resource_ = value;
         }
@@ -2140,6 +2247,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The primary monitored resource associated with this log entry.
      * Example: a log entry that reports a database error would be
@@ -2161,6 +2270,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The primary monitored resource associated with this log entry.
      * Example: a log entry that reports a database error would be
@@ -2171,11 +2282,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.api.MonitoredResource resource = 8;</code>
      */
     public com.google.api.MonitoredResource.Builder getResourceBuilder() {
-      
+
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required. The primary monitored resource associated with this log entry.
      * Example: a log entry that reports a database error would be
@@ -2189,11 +2302,14 @@ private static final long serialVersionUID = 0L;
       if (resourceBuilder_ != null) {
         return resourceBuilder_.getMessageOrBuilder();
       } else {
-        return resource_ == null ?
-            com.google.api.MonitoredResource.getDefaultInstance() : resource_;
+        return resource_ == null
+            ? com.google.api.MonitoredResource.getDefaultInstance()
+            : resource_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The primary monitored resource associated with this log entry.
      * Example: a log entry that reports a database error would be
@@ -2204,22 +2320,30 @@ private static final long serialVersionUID = 0L;
      * <code>.google.api.MonitoredResource resource = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.api.MonitoredResource, com.google.api.MonitoredResource.Builder, com.google.api.MonitoredResourceOrBuilder> 
+            com.google.api.MonitoredResource,
+            com.google.api.MonitoredResource.Builder,
+            com.google.api.MonitoredResourceOrBuilder>
         getResourceFieldBuilder() {
       if (resourceBuilder_ == null) {
-        resourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.api.MonitoredResource, com.google.api.MonitoredResource.Builder, com.google.api.MonitoredResourceOrBuilder>(
-                getResource(),
-                getParentForChildren(),
-                isClean());
+        resourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.api.MonitoredResource,
+                com.google.api.MonitoredResource.Builder,
+                com.google.api.MonitoredResourceOrBuilder>(
+                getResource(), getParentForChildren(), isClean());
         resource_ = null;
       }
       return resourceBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> protoPayloadBuilder_;
+            com.google.protobuf.Any,
+            com.google.protobuf.Any.Builder,
+            com.google.protobuf.AnyOrBuilder>
+        protoPayloadBuilder_;
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a protocol buffer.  Some
      * Google Cloud Platform services use this field for their log
@@ -2232,6 +2356,8 @@ private static final long serialVersionUID = 0L;
       return payloadCase_ == 2;
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a protocol buffer.  Some
      * Google Cloud Platform services use this field for their log
@@ -2254,6 +2380,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a protocol buffer.  Some
      * Google Cloud Platform services use this field for their log
@@ -2276,6 +2404,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a protocol buffer.  Some
      * Google Cloud Platform services use this field for their log
@@ -2284,8 +2414,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Any proto_payload = 2;</code>
      */
-    public Builder setProtoPayload(
-        com.google.protobuf.Any.Builder builderForValue) {
+    public Builder setProtoPayload(com.google.protobuf.Any.Builder builderForValue) {
       if (protoPayloadBuilder_ == null) {
         payload_ = builderForValue.build();
         onChanged();
@@ -2296,6 +2425,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a protocol buffer.  Some
      * Google Cloud Platform services use this field for their log
@@ -2306,10 +2437,11 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeProtoPayload(com.google.protobuf.Any value) {
       if (protoPayloadBuilder_ == null) {
-        if (payloadCase_ == 2 &&
-            payload_ != com.google.protobuf.Any.getDefaultInstance()) {
-          payload_ = com.google.protobuf.Any.newBuilder((com.google.protobuf.Any) payload_)
-              .mergeFrom(value).buildPartial();
+        if (payloadCase_ == 2 && payload_ != com.google.protobuf.Any.getDefaultInstance()) {
+          payload_ =
+              com.google.protobuf.Any.newBuilder((com.google.protobuf.Any) payload_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           payload_ = value;
         }
@@ -2324,6 +2456,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a protocol buffer.  Some
      * Google Cloud Platform services use this field for their log
@@ -2349,6 +2483,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a protocol buffer.  Some
      * Google Cloud Platform services use this field for their log
@@ -2361,6 +2497,8 @@ private static final long serialVersionUID = 0L;
       return getProtoPayloadFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a protocol buffer.  Some
      * Google Cloud Platform services use this field for their log
@@ -2380,6 +2518,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a protocol buffer.  Some
      * Google Cloud Platform services use this field for their log
@@ -2389,25 +2529,31 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Any proto_payload = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+            com.google.protobuf.Any,
+            com.google.protobuf.Any.Builder,
+            com.google.protobuf.AnyOrBuilder>
         getProtoPayloadFieldBuilder() {
       if (protoPayloadBuilder_ == null) {
         if (!(payloadCase_ == 2)) {
           payload_ = com.google.protobuf.Any.getDefaultInstance();
         }
-        protoPayloadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
-                (com.google.protobuf.Any) payload_,
-                getParentForChildren(),
-                isClean());
+        protoPayloadBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Any,
+                com.google.protobuf.Any.Builder,
+                com.google.protobuf.AnyOrBuilder>(
+                (com.google.protobuf.Any) payload_, getParentForChildren(), isClean());
         payload_ = null;
       }
       payloadCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return protoPayloadBuilder_;
     }
 
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a Unicode string (UTF-8).
      * </pre>
@@ -2420,8 +2566,7 @@ private static final long serialVersionUID = 0L;
         ref = payload_;
       }
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (payloadCase_ == 3) {
           payload_ = s;
@@ -2432,22 +2577,22 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a Unicode string (UTF-8).
      * </pre>
      *
      * <code>string text_payload = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getTextPayloadBytes() {
+    public com.google.protobuf.ByteString getTextPayloadBytes() {
       java.lang.Object ref = "";
       if (payloadCase_ == 3) {
         ref = payload_;
       }
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (payloadCase_ == 3) {
           payload_ = b;
         }
@@ -2457,23 +2602,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a Unicode string (UTF-8).
      * </pre>
      *
      * <code>string text_payload = 3;</code>
      */
-    public Builder setTextPayload(
-        java.lang.String value) {
+    public Builder setTextPayload(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  payloadCase_ = 3;
+        throw new NullPointerException();
+      }
+      payloadCase_ = 3;
       payload_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a Unicode string (UTF-8).
      * </pre>
@@ -2489,18 +2637,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a Unicode string (UTF-8).
      * </pre>
      *
      * <code>string text_payload = 3;</code>
      */
-    public Builder setTextPayloadBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTextPayloadBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       payloadCase_ = 3;
       payload_ = value;
       onChanged();
@@ -2508,8 +2657,13 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> jsonPayloadBuilder_;
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        jsonPayloadBuilder_;
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a structure that is
      * expressed as a JSON object.
@@ -2521,6 +2675,8 @@ private static final long serialVersionUID = 0L;
       return payloadCase_ == 6;
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a structure that is
      * expressed as a JSON object.
@@ -2542,6 +2698,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a structure that is
      * expressed as a JSON object.
@@ -2563,6 +2721,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a structure that is
      * expressed as a JSON object.
@@ -2570,8 +2730,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Struct json_payload = 6;</code>
      */
-    public Builder setJsonPayload(
-        com.google.protobuf.Struct.Builder builderForValue) {
+    public Builder setJsonPayload(com.google.protobuf.Struct.Builder builderForValue) {
       if (jsonPayloadBuilder_ == null) {
         payload_ = builderForValue.build();
         onChanged();
@@ -2582,6 +2741,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a structure that is
      * expressed as a JSON object.
@@ -2591,10 +2752,11 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeJsonPayload(com.google.protobuf.Struct value) {
       if (jsonPayloadBuilder_ == null) {
-        if (payloadCase_ == 6 &&
-            payload_ != com.google.protobuf.Struct.getDefaultInstance()) {
-          payload_ = com.google.protobuf.Struct.newBuilder((com.google.protobuf.Struct) payload_)
-              .mergeFrom(value).buildPartial();
+        if (payloadCase_ == 6 && payload_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          payload_ =
+              com.google.protobuf.Struct.newBuilder((com.google.protobuf.Struct) payload_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           payload_ = value;
         }
@@ -2609,6 +2771,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a structure that is
      * expressed as a JSON object.
@@ -2633,6 +2797,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a structure that is
      * expressed as a JSON object.
@@ -2644,6 +2810,8 @@ private static final long serialVersionUID = 0L;
       return getJsonPayloadFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a structure that is
      * expressed as a JSON object.
@@ -2662,6 +2830,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The log entry payload, represented as a structure that is
      * expressed as a JSON object.
@@ -2670,28 +2840,37 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Struct json_payload = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
         getJsonPayloadFieldBuilder() {
       if (jsonPayloadBuilder_ == null) {
         if (!(payloadCase_ == 6)) {
           payload_ = com.google.protobuf.Struct.getDefaultInstance();
         }
-        jsonPayloadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
-                (com.google.protobuf.Struct) payload_,
-                getParentForChildren(),
-                isClean());
+        jsonPayloadBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                (com.google.protobuf.Struct) payload_, getParentForChildren(), isClean());
         payload_ = null;
       }
       payloadCase_ = 6;
-      onChanged();;
+      onChanged();
+      ;
       return jsonPayloadBuilder_;
     }
 
     private com.google.protobuf.Timestamp timestamp_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timestampBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        timestampBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. The time the event described by the log entry occurred.
      * This time is used to compute the log entry's age and to enforce
@@ -2713,6 +2892,8 @@ private static final long serialVersionUID = 0L;
       return timestampBuilder_ != null || timestamp_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The time the event described by the log entry occurred.
      * This time is used to compute the log entry's age and to enforce
@@ -2738,6 +2919,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The time the event described by the log entry occurred.
      * This time is used to compute the log entry's age and to enforce
@@ -2769,6 +2952,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The time the event described by the log entry occurred.
      * This time is used to compute the log entry's age and to enforce
@@ -2786,8 +2971,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp timestamp = 9;</code>
      */
-    public Builder setTimestamp(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setTimestamp(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (timestampBuilder_ == null) {
         timestamp_ = builderForValue.build();
         onChanged();
@@ -2798,6 +2982,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The time the event described by the log entry occurred.
      * This time is used to compute the log entry's age and to enforce
@@ -2819,7 +3005,7 @@ private static final long serialVersionUID = 0L;
       if (timestampBuilder_ == null) {
         if (timestamp_ != null) {
           timestamp_ =
-            com.google.protobuf.Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
         } else {
           timestamp_ = value;
         }
@@ -2831,6 +3017,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The time the event described by the log entry occurred.
      * This time is used to compute the log entry's age and to enforce
@@ -2860,6 +3048,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The time the event described by the log entry occurred.
      * This time is used to compute the log entry's age and to enforce
@@ -2878,11 +3068,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp timestamp = 9;</code>
      */
     public com.google.protobuf.Timestamp.Builder getTimestampBuilder() {
-      
+
       onChanged();
       return getTimestampFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The time the event described by the log entry occurred.
      * This time is used to compute the log entry's age and to enforce
@@ -2904,11 +3096,12 @@ private static final long serialVersionUID = 0L;
       if (timestampBuilder_ != null) {
         return timestampBuilder_.getMessageOrBuilder();
       } else {
-        return timestamp_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
+        return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The time the event described by the log entry occurred.
      * This time is used to compute the log entry's age and to enforce
@@ -2927,14 +3120,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp timestamp = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getTimestampFieldBuilder() {
       if (timestampBuilder_ == null) {
-        timestampBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getTimestamp(),
-                getParentForChildren(),
-                isClean());
+        timestampBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getTimestamp(), getParentForChildren(), isClean());
         timestamp_ = null;
       }
       return timestampBuilder_;
@@ -2942,8 +3138,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp receiveTimestamp_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> receiveTimestampBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        receiveTimestampBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The time the log entry was received by Logging.
      * </pre>
@@ -2954,6 +3155,8 @@ private static final long serialVersionUID = 0L;
       return receiveTimestampBuilder_ != null || receiveTimestamp_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the log entry was received by Logging.
      * </pre>
@@ -2962,12 +3165,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getReceiveTimestamp() {
       if (receiveTimestampBuilder_ == null) {
-        return receiveTimestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : receiveTimestamp_;
+        return receiveTimestamp_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : receiveTimestamp_;
       } else {
         return receiveTimestampBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the log entry was received by Logging.
      * </pre>
@@ -2988,14 +3195,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the log entry was received by Logging.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
      */
-    public Builder setReceiveTimestamp(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setReceiveTimestamp(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (receiveTimestampBuilder_ == null) {
         receiveTimestamp_ = builderForValue.build();
         onChanged();
@@ -3006,6 +3214,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the log entry was received by Logging.
      * </pre>
@@ -3016,7 +3226,9 @@ private static final long serialVersionUID = 0L;
       if (receiveTimestampBuilder_ == null) {
         if (receiveTimestamp_ != null) {
           receiveTimestamp_ =
-            com.google.protobuf.Timestamp.newBuilder(receiveTimestamp_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(receiveTimestamp_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           receiveTimestamp_ = value;
         }
@@ -3028,6 +3240,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the log entry was received by Logging.
      * </pre>
@@ -3046,6 +3260,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the log entry was received by Logging.
      * </pre>
@@ -3053,11 +3269,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
      */
     public com.google.protobuf.Timestamp.Builder getReceiveTimestampBuilder() {
-      
+
       onChanged();
       return getReceiveTimestampFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the log entry was received by Logging.
      * </pre>
@@ -3068,11 +3286,14 @@ private static final long serialVersionUID = 0L;
       if (receiveTimestampBuilder_ != null) {
         return receiveTimestampBuilder_.getMessageOrBuilder();
       } else {
-        return receiveTimestamp_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : receiveTimestamp_;
+        return receiveTimestamp_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : receiveTimestamp_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the log entry was received by Logging.
      * </pre>
@@ -3080,14 +3301,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getReceiveTimestampFieldBuilder() {
       if (receiveTimestampBuilder_ == null) {
-        receiveTimestampBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getReceiveTimestamp(),
-                getParentForChildren(),
-                isClean());
+        receiveTimestampBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getReceiveTimestamp(), getParentForChildren(), isClean());
         receiveTimestamp_ = null;
       }
       return receiveTimestampBuilder_;
@@ -3095,6 +3319,8 @@ private static final long serialVersionUID = 0L;
 
     private int severity_ = 0;
     /**
+     *
+     *
      * <pre>
      * Optional. The severity of the log entry. The default value is
      * `LogSeverity.DEFAULT`.
@@ -3106,6 +3332,8 @@ private static final long serialVersionUID = 0L;
       return severity_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The severity of the log entry. The default value is
      * `LogSeverity.DEFAULT`.
@@ -3119,6 +3347,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The severity of the log entry. The default value is
      * `LogSeverity.DEFAULT`.
@@ -3128,10 +3358,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.logging.type.LogSeverity getSeverity() {
       @SuppressWarnings("deprecation")
-      com.google.logging.type.LogSeverity result = com.google.logging.type.LogSeverity.valueOf(severity_);
+      com.google.logging.type.LogSeverity result =
+          com.google.logging.type.LogSeverity.valueOf(severity_);
       return result == null ? com.google.logging.type.LogSeverity.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The severity of the log entry. The default value is
      * `LogSeverity.DEFAULT`.
@@ -3143,12 +3376,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       severity_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The severity of the log entry. The default value is
      * `LogSeverity.DEFAULT`.
@@ -3157,7 +3392,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.logging.type.LogSeverity severity = 10;</code>
      */
     public Builder clearSeverity() {
-      
+
       severity_ = 0;
       onChanged();
       return this;
@@ -3165,6 +3400,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object insertId_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. A unique identifier for the log entry. If you provide a value,
      * then Logging considers other log entries in the same project,
@@ -3179,8 +3416,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getInsertId() {
       java.lang.Object ref = insertId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         insertId_ = s;
         return s;
@@ -3189,6 +3425,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A unique identifier for the log entry. If you provide a value,
      * then Logging considers other log entries in the same project,
@@ -3200,13 +3438,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string insert_id = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getInsertIdBytes() {
+    public com.google.protobuf.ByteString getInsertIdBytes() {
       java.lang.Object ref = insertId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         insertId_ = b;
         return b;
       } else {
@@ -3214,6 +3450,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A unique identifier for the log entry. If you provide a value,
      * then Logging considers other log entries in the same project,
@@ -3225,17 +3463,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string insert_id = 4;</code>
      */
-    public Builder setInsertId(
-        java.lang.String value) {
+    public Builder setInsertId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       insertId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A unique identifier for the log entry. If you provide a value,
      * then Logging considers other log entries in the same project,
@@ -3248,12 +3487,14 @@ private static final long serialVersionUID = 0L;
      * <code>string insert_id = 4;</code>
      */
     public Builder clearInsertId() {
-      
+
       insertId_ = getDefaultInstance().getInsertId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A unique identifier for the log entry. If you provide a value,
      * then Logging considers other log entries in the same project,
@@ -3265,13 +3506,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string insert_id = 4;</code>
      */
-    public Builder setInsertIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setInsertIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       insertId_ = value;
       onChanged();
       return this;
@@ -3279,8 +3519,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.logging.type.HttpRequest httpRequest_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.logging.type.HttpRequest, com.google.logging.type.HttpRequest.Builder, com.google.logging.type.HttpRequestOrBuilder> httpRequestBuilder_;
+            com.google.logging.type.HttpRequest,
+            com.google.logging.type.HttpRequest.Builder,
+            com.google.logging.type.HttpRequestOrBuilder>
+        httpRequestBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. Information about the HTTP request associated with this
      * log entry, if applicable.
@@ -3292,6 +3537,8 @@ private static final long serialVersionUID = 0L;
       return httpRequestBuilder_ != null || httpRequest_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Information about the HTTP request associated with this
      * log entry, if applicable.
@@ -3301,12 +3548,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.logging.type.HttpRequest getHttpRequest() {
       if (httpRequestBuilder_ == null) {
-        return httpRequest_ == null ? com.google.logging.type.HttpRequest.getDefaultInstance() : httpRequest_;
+        return httpRequest_ == null
+            ? com.google.logging.type.HttpRequest.getDefaultInstance()
+            : httpRequest_;
       } else {
         return httpRequestBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Information about the HTTP request associated with this
      * log entry, if applicable.
@@ -3328,6 +3579,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Information about the HTTP request associated with this
      * log entry, if applicable.
@@ -3335,8 +3588,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.logging.type.HttpRequest http_request = 7;</code>
      */
-    public Builder setHttpRequest(
-        com.google.logging.type.HttpRequest.Builder builderForValue) {
+    public Builder setHttpRequest(com.google.logging.type.HttpRequest.Builder builderForValue) {
       if (httpRequestBuilder_ == null) {
         httpRequest_ = builderForValue.build();
         onChanged();
@@ -3347,6 +3599,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Information about the HTTP request associated with this
      * log entry, if applicable.
@@ -3358,7 +3612,9 @@ private static final long serialVersionUID = 0L;
       if (httpRequestBuilder_ == null) {
         if (httpRequest_ != null) {
           httpRequest_ =
-            com.google.logging.type.HttpRequest.newBuilder(httpRequest_).mergeFrom(value).buildPartial();
+              com.google.logging.type.HttpRequest.newBuilder(httpRequest_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           httpRequest_ = value;
         }
@@ -3370,6 +3626,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Information about the HTTP request associated with this
      * log entry, if applicable.
@@ -3389,6 +3647,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Information about the HTTP request associated with this
      * log entry, if applicable.
@@ -3397,11 +3657,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.logging.type.HttpRequest http_request = 7;</code>
      */
     public com.google.logging.type.HttpRequest.Builder getHttpRequestBuilder() {
-      
+
       onChanged();
       return getHttpRequestFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Information about the HTTP request associated with this
      * log entry, if applicable.
@@ -3413,11 +3675,14 @@ private static final long serialVersionUID = 0L;
       if (httpRequestBuilder_ != null) {
         return httpRequestBuilder_.getMessageOrBuilder();
       } else {
-        return httpRequest_ == null ?
-            com.google.logging.type.HttpRequest.getDefaultInstance() : httpRequest_;
+        return httpRequest_ == null
+            ? com.google.logging.type.HttpRequest.getDefaultInstance()
+            : httpRequest_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Information about the HTTP request associated with this
      * log entry, if applicable.
@@ -3426,35 +3691,37 @@ private static final long serialVersionUID = 0L;
      * <code>.google.logging.type.HttpRequest http_request = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.logging.type.HttpRequest, com.google.logging.type.HttpRequest.Builder, com.google.logging.type.HttpRequestOrBuilder> 
+            com.google.logging.type.HttpRequest,
+            com.google.logging.type.HttpRequest.Builder,
+            com.google.logging.type.HttpRequestOrBuilder>
         getHttpRequestFieldBuilder() {
       if (httpRequestBuilder_ == null) {
-        httpRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.logging.type.HttpRequest, com.google.logging.type.HttpRequest.Builder, com.google.logging.type.HttpRequestOrBuilder>(
-                getHttpRequest(),
-                getParentForChildren(),
-                isClean());
+        httpRequestBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.logging.type.HttpRequest,
+                com.google.logging.type.HttpRequest.Builder,
+                com.google.logging.type.HttpRequestOrBuilder>(
+                getHttpRequest(), getParentForChildren(), isClean());
         httpRequest_ = null;
       }
       return httpRequestBuilder_;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> labels_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetLabels() {
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
       if (labels_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       return labels_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableLabels() {
-      onChanged();;
+        internalGetMutableLabels() {
+      onChanged();
+      ;
       if (labels_ == null) {
-        labels_ = com.google.protobuf.MapField.newMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
@@ -3466,6 +3733,8 @@ private static final long serialVersionUID = 0L;
       return internalGetLabels().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A set of user-defined (key, value) data that provides additional
      * information about the log entry.
@@ -3473,20 +3742,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 11;</code>
      */
-
-    public boolean containsLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetLabels().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getLabelsMap()} instead.
-     */
+    /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A set of user-defined (key, value) data that provides additional
      * information about the log entry.
@@ -3494,11 +3763,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 11;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A set of user-defined (key, value) data that provides additional
      * information about the log entry.
@@ -3506,16 +3776,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 11;</code>
      */
-
     public java.lang.String getLabelsOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A set of user-defined (key, value) data that provides additional
      * information about the log entry.
@@ -3523,12 +3794,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 11;</code>
      */
-
-    public java.lang.String getLabelsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -3536,11 +3806,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearLabels() {
-      internalGetMutableLabels().getMutableMap()
-          .clear();
+      internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A set of user-defined (key, value) data that provides additional
      * information about the log entry.
@@ -3548,23 +3819,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 11;</code>
      */
-
-    public Builder removeLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .remove(key);
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableLabels() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       return internalGetMutableLabels().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A set of user-defined (key, value) data that provides additional
      * information about the log entry.
@@ -3572,16 +3841,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 11;</code>
      */
-    public Builder putLabels(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .put(key, value);
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A set of user-defined (key, value) data that provides additional
      * information about the log entry.
@@ -3589,18 +3861,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 11;</code>
      */
-
-    public Builder putAllLabels(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableLabels().getMutableMap()
-          .putAll(values);
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
     }
 
     private com.google.api.MonitoredResourceMetadata metadata_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.api.MonitoredResourceMetadata, com.google.api.MonitoredResourceMetadata.Builder, com.google.api.MonitoredResourceMetadataOrBuilder> metadataBuilder_;
+            com.google.api.MonitoredResourceMetadata,
+            com.google.api.MonitoredResourceMetadata.Builder,
+            com.google.api.MonitoredResourceMetadataOrBuilder>
+        metadataBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. Additional metadata about the monitored resource.
      * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
@@ -3613,6 +3887,8 @@ private static final long serialVersionUID = 0L;
       return metadataBuilder_ != null || metadata_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Additional metadata about the monitored resource.
      * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
@@ -3623,12 +3899,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.api.MonitoredResourceMetadata getMetadata() {
       if (metadataBuilder_ == null) {
-        return metadata_ == null ? com.google.api.MonitoredResourceMetadata.getDefaultInstance() : metadata_;
+        return metadata_ == null
+            ? com.google.api.MonitoredResourceMetadata.getDefaultInstance()
+            : metadata_;
       } else {
         return metadataBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Additional metadata about the monitored resource.
      * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
@@ -3651,6 +3931,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Additional metadata about the monitored resource.
      * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
@@ -3659,8 +3941,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.api.MonitoredResourceMetadata metadata = 25;</code>
      */
-    public Builder setMetadata(
-        com.google.api.MonitoredResourceMetadata.Builder builderForValue) {
+    public Builder setMetadata(com.google.api.MonitoredResourceMetadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
         metadata_ = builderForValue.build();
         onChanged();
@@ -3671,6 +3952,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Additional metadata about the monitored resource.
      * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
@@ -3683,7 +3966,9 @@ private static final long serialVersionUID = 0L;
       if (metadataBuilder_ == null) {
         if (metadata_ != null) {
           metadata_ =
-            com.google.api.MonitoredResourceMetadata.newBuilder(metadata_).mergeFrom(value).buildPartial();
+              com.google.api.MonitoredResourceMetadata.newBuilder(metadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           metadata_ = value;
         }
@@ -3695,6 +3980,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Additional metadata about the monitored resource.
      * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
@@ -3715,6 +4002,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Additional metadata about the monitored resource.
      * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
@@ -3724,11 +4013,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.api.MonitoredResourceMetadata metadata = 25;</code>
      */
     public com.google.api.MonitoredResourceMetadata.Builder getMetadataBuilder() {
-      
+
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Additional metadata about the monitored resource.
      * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
@@ -3741,11 +4032,14 @@ private static final long serialVersionUID = 0L;
       if (metadataBuilder_ != null) {
         return metadataBuilder_.getMessageOrBuilder();
       } else {
-        return metadata_ == null ?
-            com.google.api.MonitoredResourceMetadata.getDefaultInstance() : metadata_;
+        return metadata_ == null
+            ? com.google.api.MonitoredResourceMetadata.getDefaultInstance()
+            : metadata_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Additional metadata about the monitored resource.
      * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
@@ -3755,14 +4049,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.api.MonitoredResourceMetadata metadata = 25;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.api.MonitoredResourceMetadata, com.google.api.MonitoredResourceMetadata.Builder, com.google.api.MonitoredResourceMetadataOrBuilder> 
+            com.google.api.MonitoredResourceMetadata,
+            com.google.api.MonitoredResourceMetadata.Builder,
+            com.google.api.MonitoredResourceMetadataOrBuilder>
         getMetadataFieldBuilder() {
       if (metadataBuilder_ == null) {
-        metadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.api.MonitoredResourceMetadata, com.google.api.MonitoredResourceMetadata.Builder, com.google.api.MonitoredResourceMetadataOrBuilder>(
-                getMetadata(),
-                getParentForChildren(),
-                isClean());
+        metadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.api.MonitoredResourceMetadata,
+                com.google.api.MonitoredResourceMetadata.Builder,
+                com.google.api.MonitoredResourceMetadataOrBuilder>(
+                getMetadata(), getParentForChildren(), isClean());
         metadata_ = null;
       }
       return metadataBuilder_;
@@ -3770,8 +4067,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.logging.v2.LogEntryOperation operation_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.logging.v2.LogEntryOperation, com.google.logging.v2.LogEntryOperation.Builder, com.google.logging.v2.LogEntryOperationOrBuilder> operationBuilder_;
+            com.google.logging.v2.LogEntryOperation,
+            com.google.logging.v2.LogEntryOperation.Builder,
+            com.google.logging.v2.LogEntryOperationOrBuilder>
+        operationBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. Information about an operation associated with the log entry, if
      * applicable.
@@ -3783,6 +4085,8 @@ private static final long serialVersionUID = 0L;
       return operationBuilder_ != null || operation_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Information about an operation associated with the log entry, if
      * applicable.
@@ -3792,12 +4096,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.logging.v2.LogEntryOperation getOperation() {
       if (operationBuilder_ == null) {
-        return operation_ == null ? com.google.logging.v2.LogEntryOperation.getDefaultInstance() : operation_;
+        return operation_ == null
+            ? com.google.logging.v2.LogEntryOperation.getDefaultInstance()
+            : operation_;
       } else {
         return operationBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Information about an operation associated with the log entry, if
      * applicable.
@@ -3819,6 +4127,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Information about an operation associated with the log entry, if
      * applicable.
@@ -3826,8 +4136,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
      */
-    public Builder setOperation(
-        com.google.logging.v2.LogEntryOperation.Builder builderForValue) {
+    public Builder setOperation(com.google.logging.v2.LogEntryOperation.Builder builderForValue) {
       if (operationBuilder_ == null) {
         operation_ = builderForValue.build();
         onChanged();
@@ -3838,6 +4147,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Information about an operation associated with the log entry, if
      * applicable.
@@ -3849,7 +4160,9 @@ private static final long serialVersionUID = 0L;
       if (operationBuilder_ == null) {
         if (operation_ != null) {
           operation_ =
-            com.google.logging.v2.LogEntryOperation.newBuilder(operation_).mergeFrom(value).buildPartial();
+              com.google.logging.v2.LogEntryOperation.newBuilder(operation_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           operation_ = value;
         }
@@ -3861,6 +4174,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Information about an operation associated with the log entry, if
      * applicable.
@@ -3880,6 +4195,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Information about an operation associated with the log entry, if
      * applicable.
@@ -3888,11 +4205,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
      */
     public com.google.logging.v2.LogEntryOperation.Builder getOperationBuilder() {
-      
+
       onChanged();
       return getOperationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Information about an operation associated with the log entry, if
      * applicable.
@@ -3904,11 +4223,14 @@ private static final long serialVersionUID = 0L;
       if (operationBuilder_ != null) {
         return operationBuilder_.getMessageOrBuilder();
       } else {
-        return operation_ == null ?
-            com.google.logging.v2.LogEntryOperation.getDefaultInstance() : operation_;
+        return operation_ == null
+            ? com.google.logging.v2.LogEntryOperation.getDefaultInstance()
+            : operation_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Information about an operation associated with the log entry, if
      * applicable.
@@ -3917,14 +4239,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.logging.v2.LogEntryOperation operation = 15;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.logging.v2.LogEntryOperation, com.google.logging.v2.LogEntryOperation.Builder, com.google.logging.v2.LogEntryOperationOrBuilder> 
+            com.google.logging.v2.LogEntryOperation,
+            com.google.logging.v2.LogEntryOperation.Builder,
+            com.google.logging.v2.LogEntryOperationOrBuilder>
         getOperationFieldBuilder() {
       if (operationBuilder_ == null) {
-        operationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.logging.v2.LogEntryOperation, com.google.logging.v2.LogEntryOperation.Builder, com.google.logging.v2.LogEntryOperationOrBuilder>(
-                getOperation(),
-                getParentForChildren(),
-                isClean());
+        operationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.logging.v2.LogEntryOperation,
+                com.google.logging.v2.LogEntryOperation.Builder,
+                com.google.logging.v2.LogEntryOperationOrBuilder>(
+                getOperation(), getParentForChildren(), isClean());
         operation_ = null;
       }
       return operationBuilder_;
@@ -3932,6 +4257,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object trace_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. Resource name of the trace associated with the log entry, if any.
      * If it contains a relative resource name, the name is assumed to be relative
@@ -3944,8 +4271,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getTrace() {
       java.lang.Object ref = trace_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         trace_ = s;
         return s;
@@ -3954,6 +4280,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Resource name of the trace associated with the log entry, if any.
      * If it contains a relative resource name, the name is assumed to be relative
@@ -3963,13 +4291,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string trace = 22;</code>
      */
-    public com.google.protobuf.ByteString
-        getTraceBytes() {
+    public com.google.protobuf.ByteString getTraceBytes() {
       java.lang.Object ref = trace_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         trace_ = b;
         return b;
       } else {
@@ -3977,6 +4303,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Resource name of the trace associated with the log entry, if any.
      * If it contains a relative resource name, the name is assumed to be relative
@@ -3986,17 +4314,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string trace = 22;</code>
      */
-    public Builder setTrace(
-        java.lang.String value) {
+    public Builder setTrace(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       trace_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Resource name of the trace associated with the log entry, if any.
      * If it contains a relative resource name, the name is assumed to be relative
@@ -4007,12 +4336,14 @@ private static final long serialVersionUID = 0L;
      * <code>string trace = 22;</code>
      */
     public Builder clearTrace() {
-      
+
       trace_ = getDefaultInstance().getTrace();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Resource name of the trace associated with the log entry, if any.
      * If it contains a relative resource name, the name is assumed to be relative
@@ -4022,13 +4353,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string trace = 22;</code>
      */
-    public Builder setTraceBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTraceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       trace_ = value;
       onChanged();
       return this;
@@ -4036,6 +4366,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object spanId_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. The span ID within the trace associated with the log entry.
      * For Trace spans, this is the same format that the Trace
@@ -4048,8 +4380,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSpanId() {
       java.lang.Object ref = spanId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         spanId_ = s;
         return s;
@@ -4058,6 +4389,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The span ID within the trace associated with the log entry.
      * For Trace spans, this is the same format that the Trace
@@ -4067,13 +4400,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string span_id = 27;</code>
      */
-    public com.google.protobuf.ByteString
-        getSpanIdBytes() {
+    public com.google.protobuf.ByteString getSpanIdBytes() {
       java.lang.Object ref = spanId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         spanId_ = b;
         return b;
       } else {
@@ -4081,6 +4412,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The span ID within the trace associated with the log entry.
      * For Trace spans, this is the same format that the Trace
@@ -4090,17 +4423,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string span_id = 27;</code>
      */
-    public Builder setSpanId(
-        java.lang.String value) {
+    public Builder setSpanId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       spanId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The span ID within the trace associated with the log entry.
      * For Trace spans, this is the same format that the Trace
@@ -4111,12 +4445,14 @@ private static final long serialVersionUID = 0L;
      * <code>string span_id = 27;</code>
      */
     public Builder clearSpanId() {
-      
+
       spanId_ = getDefaultInstance().getSpanId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The span ID within the trace associated with the log entry.
      * For Trace spans, this is the same format that the Trace
@@ -4126,20 +4462,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string span_id = 27;</code>
      */
-    public Builder setSpanIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setSpanIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       spanId_ = value;
       onChanged();
       return this;
     }
 
-    private boolean traceSampled_ ;
+    private boolean traceSampled_;
     /**
+     *
+     *
      * <pre>
      * Optional. The sampling decision of the trace associated with the log entry.
      * True means that the trace resource name in the `trace` field was sampled
@@ -4155,6 +4492,8 @@ private static final long serialVersionUID = 0L;
       return traceSampled_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The sampling decision of the trace associated with the log entry.
      * True means that the trace resource name in the `trace` field was sampled
@@ -4167,12 +4506,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool trace_sampled = 30;</code>
      */
     public Builder setTraceSampled(boolean value) {
-      
+
       traceSampled_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The sampling decision of the trace associated with the log entry.
      * True means that the trace resource name in the `trace` field was sampled
@@ -4185,7 +4526,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool trace_sampled = 30;</code>
      */
     public Builder clearTraceSampled() {
-      
+
       traceSampled_ = false;
       onChanged();
       return this;
@@ -4193,8 +4534,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.logging.v2.LogEntrySourceLocation sourceLocation_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.logging.v2.LogEntrySourceLocation, com.google.logging.v2.LogEntrySourceLocation.Builder, com.google.logging.v2.LogEntrySourceLocationOrBuilder> sourceLocationBuilder_;
+            com.google.logging.v2.LogEntrySourceLocation,
+            com.google.logging.v2.LogEntrySourceLocation.Builder,
+            com.google.logging.v2.LogEntrySourceLocationOrBuilder>
+        sourceLocationBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. Source code location information associated with the log entry,
      * if any.
@@ -4206,6 +4552,8 @@ private static final long serialVersionUID = 0L;
       return sourceLocationBuilder_ != null || sourceLocation_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Source code location information associated with the log entry,
      * if any.
@@ -4215,12 +4563,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.logging.v2.LogEntrySourceLocation getSourceLocation() {
       if (sourceLocationBuilder_ == null) {
-        return sourceLocation_ == null ? com.google.logging.v2.LogEntrySourceLocation.getDefaultInstance() : sourceLocation_;
+        return sourceLocation_ == null
+            ? com.google.logging.v2.LogEntrySourceLocation.getDefaultInstance()
+            : sourceLocation_;
       } else {
         return sourceLocationBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Source code location information associated with the log entry,
      * if any.
@@ -4242,6 +4594,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Source code location information associated with the log entry,
      * if any.
@@ -4261,6 +4615,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Source code location information associated with the log entry,
      * if any.
@@ -4272,7 +4628,9 @@ private static final long serialVersionUID = 0L;
       if (sourceLocationBuilder_ == null) {
         if (sourceLocation_ != null) {
           sourceLocation_ =
-            com.google.logging.v2.LogEntrySourceLocation.newBuilder(sourceLocation_).mergeFrom(value).buildPartial();
+              com.google.logging.v2.LogEntrySourceLocation.newBuilder(sourceLocation_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           sourceLocation_ = value;
         }
@@ -4284,6 +4642,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Source code location information associated with the log entry,
      * if any.
@@ -4303,6 +4663,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Source code location information associated with the log entry,
      * if any.
@@ -4311,11 +4673,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
      */
     public com.google.logging.v2.LogEntrySourceLocation.Builder getSourceLocationBuilder() {
-      
+
       onChanged();
       return getSourceLocationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Source code location information associated with the log entry,
      * if any.
@@ -4327,11 +4691,14 @@ private static final long serialVersionUID = 0L;
       if (sourceLocationBuilder_ != null) {
         return sourceLocationBuilder_.getMessageOrBuilder();
       } else {
-        return sourceLocation_ == null ?
-            com.google.logging.v2.LogEntrySourceLocation.getDefaultInstance() : sourceLocation_;
+        return sourceLocation_ == null
+            ? com.google.logging.v2.LogEntrySourceLocation.getDefaultInstance()
+            : sourceLocation_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Source code location information associated with the log entry,
      * if any.
@@ -4340,21 +4707,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.logging.v2.LogEntrySourceLocation source_location = 23;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.logging.v2.LogEntrySourceLocation, com.google.logging.v2.LogEntrySourceLocation.Builder, com.google.logging.v2.LogEntrySourceLocationOrBuilder> 
+            com.google.logging.v2.LogEntrySourceLocation,
+            com.google.logging.v2.LogEntrySourceLocation.Builder,
+            com.google.logging.v2.LogEntrySourceLocationOrBuilder>
         getSourceLocationFieldBuilder() {
       if (sourceLocationBuilder_ == null) {
-        sourceLocationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.logging.v2.LogEntrySourceLocation, com.google.logging.v2.LogEntrySourceLocation.Builder, com.google.logging.v2.LogEntrySourceLocationOrBuilder>(
-                getSourceLocation(),
-                getParentForChildren(),
-                isClean());
+        sourceLocationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.logging.v2.LogEntrySourceLocation,
+                com.google.logging.v2.LogEntrySourceLocation.Builder,
+                com.google.logging.v2.LogEntrySourceLocationOrBuilder>(
+                getSourceLocation(), getParentForChildren(), isClean());
         sourceLocation_ = null;
       }
       return sourceLocationBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -4364,12 +4734,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.logging.v2.LogEntry)
   }
 
   // @@protoc_insertion_point(class_scope:google.logging.v2.LogEntry)
   private static final com.google.logging.v2.LogEntry DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.logging.v2.LogEntry();
   }
@@ -4378,16 +4748,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LogEntry>
-      PARSER = new com.google.protobuf.AbstractParser<LogEntry>() {
-    @java.lang.Override
-    public LogEntry parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new LogEntry(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<LogEntry> PARSER =
+      new com.google.protobuf.AbstractParser<LogEntry>() {
+        @java.lang.Override
+        public LogEntry parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new LogEntry(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<LogEntry> parser() {
     return PARSER;
@@ -4402,6 +4772,4 @@ private static final long serialVersionUID = 0L;
   public com.google.logging.v2.LogEntry getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -14,8 +14,6 @@
 
 package com.google.logging.v2;
 
-import com.google.api.resourcenames.ResourceName;
-
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class ParentNames {

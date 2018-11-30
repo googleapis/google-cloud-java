@@ -14,13 +14,12 @@
 
 package com.google.logging.v2;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +55,11 @@ public class FolderSinkName extends SinkName {
   }
 
   public static FolderSinkName of(String folder, String sink) {
-    return newBuilder()
-      .setFolder(folder)
-      .setSink(sink)
-      .build();
+    return newBuilder().setFolder(folder).setSink(sink).build();
   }
 
   public static String format(String folder, String sink) {
-    return newBuilder()
-      .setFolder(folder)
-      .setSink(sink)
-      .build()
-      .toString();
+    return newBuilder().setFolder(folder).setSink(sink).build().toString();
   }
 
   public static FolderSinkName parse(String formattedString) {
@@ -75,7 +67,8 @@ public class FolderSinkName extends SinkName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "FolderSinkName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "FolderSinkName.parse: formattedString not in valid format");
     return of(matchMap.get("folder"), matchMap.get("sink"));
   }
 
@@ -150,8 +143,7 @@ public class FolderSinkName extends SinkName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(FolderSinkName folderSinkName) {
       folder = folderSinkName.folder;
@@ -170,8 +162,7 @@ public class FolderSinkName extends SinkName {
     }
     if (o instanceof FolderSinkName) {
       FolderSinkName that = (FolderSinkName) o;
-      return (this.folder.equals(that.folder))
-          && (this.sink.equals(that.sink));
+      return (this.folder.equals(that.folder)) && (this.sink.equals(that.sink));
     }
     return false;
   }
@@ -186,4 +177,3 @@ public class FolderSinkName extends SinkName {
     return h;
   }
 }
-
