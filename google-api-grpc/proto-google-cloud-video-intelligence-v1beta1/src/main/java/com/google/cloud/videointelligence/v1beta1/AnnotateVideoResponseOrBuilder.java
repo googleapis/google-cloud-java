@@ -3,51 +3,73 @@
 
 package com.google.cloud.videointelligence.v1beta1;
 
-public interface AnnotateVideoResponseOrBuilder extends
+public interface AnnotateVideoResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1beta1.AnnotateVideoResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Annotation results for all videos specified in `AnnotateVideoRequest`.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.VideoAnnotationResults annotation_results = 1;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1beta1.VideoAnnotationResults annotation_results = 1;
+   * </code>
    */
-  java.util.List<com.google.cloud.videointelligence.v1beta1.VideoAnnotationResults> 
+  java.util.List<com.google.cloud.videointelligence.v1beta1.VideoAnnotationResults>
       getAnnotationResultsList();
   /**
+   *
+   *
    * <pre>
    * Annotation results for all videos specified in `AnnotateVideoRequest`.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.VideoAnnotationResults annotation_results = 1;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1beta1.VideoAnnotationResults annotation_results = 1;
+   * </code>
    */
   com.google.cloud.videointelligence.v1beta1.VideoAnnotationResults getAnnotationResults(int index);
   /**
+   *
+   *
    * <pre>
    * Annotation results for all videos specified in `AnnotateVideoRequest`.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.VideoAnnotationResults annotation_results = 1;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1beta1.VideoAnnotationResults annotation_results = 1;
+   * </code>
    */
   int getAnnotationResultsCount();
   /**
+   *
+   *
    * <pre>
    * Annotation results for all videos specified in `AnnotateVideoRequest`.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.VideoAnnotationResults annotation_results = 1;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1beta1.VideoAnnotationResults annotation_results = 1;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.videointelligence.v1beta1.VideoAnnotationResultsOrBuilder> 
+  java.util.List<
+          ? extends com.google.cloud.videointelligence.v1beta1.VideoAnnotationResultsOrBuilder>
       getAnnotationResultsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Annotation results for all videos specified in `AnnotateVideoRequest`.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1beta1.VideoAnnotationResults annotation_results = 1;</code>
+   * <code>
+   * repeated .google.cloud.videointelligence.v1beta1.VideoAnnotationResults annotation_results = 1;
+   * </code>
    */
-  com.google.cloud.videointelligence.v1beta1.VideoAnnotationResultsOrBuilder getAnnotationResultsOrBuilder(
-      int index);
+  com.google.cloud.videointelligence.v1beta1.VideoAnnotationResultsOrBuilder
+      getAnnotationResultsOrBuilder(int index);
 }
