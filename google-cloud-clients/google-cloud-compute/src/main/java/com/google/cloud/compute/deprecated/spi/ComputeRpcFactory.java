@@ -20,8 +20,7 @@ import com.google.cloud.compute.deprecated.ComputeOptions;
 import com.google.cloud.spi.ServiceRpcFactory;
 
 /**
- * An interface for Compute RPC factory.
- * Implementation will be loaded via {@link java.util.ServiceLoader}.
+ * An interface for Compute RPC factory. Implementation will be loaded via {@link
+ * java.util.ServiceLoader}.
  */
-public interface ComputeRpcFactory extends ServiceRpcFactory<ComputeOptions> {
-}
+public interface ComputeRpcFactory extends ServiceRpcFactory<ComputeOptions> {}

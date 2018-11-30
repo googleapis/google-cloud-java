@@ -20,18 +20,18 @@ import com.google.api.core.ApiFunction;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * A Google Compute Engine instance scheduling options. When there are system events that might
- * cause your instances to be disrupted, Google Compute Engine automatically manages the
- * scheduling decisions for your instances. Use {@code SchedulingOptions.preemptible()} to create
- * a preemptible instance. Use {@code SchedulingOptions.standard()} to configure scheduling
- * options for a standard instance.
+ * cause your instances to be disrupted, Google Compute Engine automatically manages the scheduling
+ * decisions for your instances. Use {@code SchedulingOptions.preemptible()} to create a preemptible
+ * instance. Use {@code SchedulingOptions.standard()} to configure scheduling options for a standard
+ * instance.
  *
- * @see <a href="https://cloud.google.com/compute/docs/instances/setting-instance-scheduling-options">
+ * @see <a
+ *     href="https://cloud.google.com/compute/docs/instances/setting-instance-scheduling-options">
  *     Setting Instance Scheduling Options</a>
  */
 public final class SchedulingOptions implements Serializable {
@@ -42,9 +42,7 @@ public final class SchedulingOptions implements Serializable {
   private final Maintenance maintenance;
   private final boolean isPreemptible;
 
-  /**
-   * Defines the maintenance behavior for this instance.
-   */
+  /** Defines the maintenance behavior for this instance. */
   public static final class Maintenance extends StringEnumValue {
     private static final long serialVersionUID = 1041388027965833378L;
 
@@ -56,18 +54,13 @@ public final class SchedulingOptions implements Serializable {
           }
         };
 
-    private static final StringEnumType<Maintenance> type = new StringEnumType(
-        Maintenance.class,
-        CONSTRUCTOR);
+    private static final StringEnumType<Maintenance> type =
+        new StringEnumType(Maintenance.class, CONSTRUCTOR);
 
-    /**
-     * The default behavior for standard instances.
-     */
+    /** The default behavior for standard instances. */
     public static final Maintenance MIGRATE = type.createAndRegister("MIGRATE");
 
-    /**
-     * The default and only possible behavior for preemptible instances.
-     */
+    /** The default and only possible behavior for preemptible instances. */
     public static final Maintenance TERMINATE = type.createAndRegister("TERMINATE");
 
     private Maintenance(String constant) {
@@ -82,23 +75,19 @@ public final class SchedulingOptions implements Serializable {
       return type.valueOfStrict(constant);
     }
 
-    /**
-     * Get the Maintenance for the given String constant, and allow unrecognized values.
-     */
+    /** Get the Maintenance for the given String constant, and allow unrecognized values. */
     public static Maintenance valueOf(String constant) {
       return type.valueOf(constant);
     }
 
-    /**
-     * Return the known values for Maintenance.
-     */
+    /** Return the known values for Maintenance. */
     public static Maintenance[] values() {
       return type.values();
     }
   }
 
-  private SchedulingOptions(Boolean automaticRestart, Maintenance maintenance,
-      Boolean isPreemptible) {
+  private SchedulingOptions(
+      Boolean automaticRestart, Maintenance maintenance, Boolean isPreemptible) {
     this.automaticRestart = automaticRestart;
     this.maintenance = maintenance;
     this.isPreemptible = isPreemptible;
@@ -112,9 +101,7 @@ public final class SchedulingOptions implements Serializable {
     return automaticRestart;
   }
 
-  /**
-   * Returns the maintenance behavior for the instance.
-   */
+  /** Returns the maintenance behavior for the instance. */
   public Maintenance getMaintenance() {
     return maintenance;
   }
@@ -147,7 +134,7 @@ public final class SchedulingOptions implements Serializable {
   public boolean equals(Object obj) {
     return obj == this
         || obj instanceof SchedulingOptions
-        && Objects.equals(toPb(), ((SchedulingOptions) obj).toPb());
+            && Objects.equals(toPb(), ((SchedulingOptions) obj).toPb());
   }
 
   com.google.api.services.compute.model.Scheduling toPb() {
@@ -174,8 +161,8 @@ public final class SchedulingOptions implements Serializable {
   /**
    * Returns a {@code SchedulingOptions} object for a standard instance.
    *
-   * @param automaticRestart specifies whether the instance should be automatically restarted if
-   *     it is terminated by Compute Engine (not terminated by a user)
+   * @param automaticRestart specifies whether the instance should be automatically restarted if it
+   *     is terminated by Compute Engine (not terminated by a user)
    * @param maintenance defines the maintenance behavior for the instance
    */
   public static SchedulingOptions standard(boolean automaticRestart, Maintenance maintenance) {
@@ -187,7 +174,7 @@ public final class SchedulingOptions implements Serializable {
     if (schedPb.getOnHostMaintenance() != null) {
       maintenance = Maintenance.valueOf(schedPb.getOnHostMaintenance());
     }
-    return new SchedulingOptions(schedPb.getAutomaticRestart(), maintenance,
-        schedPb.getPreemptible());
+    return new SchedulingOptions(
+        schedPb.getAutomaticRestart(), maintenance, schedPb.getPreemptible());
   }
 }

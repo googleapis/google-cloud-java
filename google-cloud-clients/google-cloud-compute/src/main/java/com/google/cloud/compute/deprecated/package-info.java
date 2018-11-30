@@ -18,10 +18,11 @@
  * A client for Google Compute Engine – High-performance, scalable virtual machines.
  *
  * <p>Here's a simple usage example for using google-cloud from App/Compute Engine. This example
- * shows how to create a snapshot from an existing disk. For the complete source code see
- * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateSnapshot.java">
+ * shows how to create a snapshot from an existing disk. For the complete source code see <a
+ * href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateSnapshot.java">
  * CreateSnapshot.java</a>.
- * <pre> {@code
+ *
+ * <pre>{@code
  * Compute compute = ComputeOptions.getDefaultInstance().getService();
  * DiskId diskId = DiskId.of("us-central1-a", "disk-name");
  * Disk disk = compute.getDisk(diskId, Compute.DiskOption.fields());
@@ -33,12 +34,15 @@
  *     // use snapshot
  *     Snapshot snapshot = compute.getSnapshot(snapshotName);
  *   }
- * }}</pre>
+ * }
+ * }</pre>
+ *
  * <p>This second example shows how to create a virtual machine instance. Complete source code can
- * be found at
- * <a href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateInstance.java">
+ * be found at <a
+ * href="https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateInstance.java">
  * CreateInstance.java</a>.
- * <pre> {@code
+ *
+ * <pre>{@code
  * Compute compute = ComputeOptions.getDefaultInstance().getService();
  * ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
  * NetworkId networkId = NetworkId.of("default");
@@ -52,7 +56,8 @@
  * if (operation.getErrors() == null) {
  *   // use instance
  *   Instance instance = compute.getInstance(instanceId);
- * }}</pre>
+ * }
+ * }</pre>
  *
  * @see <a href="https://cloud.google.com/compute/">Google Cloud Compute</a>
  */

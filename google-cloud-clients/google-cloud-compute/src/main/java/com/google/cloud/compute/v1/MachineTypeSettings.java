@@ -66,7 +66,8 @@ import javax.annotation.Generated;
 public class MachineTypeSettings extends ClientSettings<MachineTypeSettings> {
   /** Returns the object with the settings used for calls to aggregatedListMachineTypes. */
   public PagedCallSettings<
-          AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList,
+          AggregatedListMachineTypesHttpRequest,
+          MachineTypeAggregatedList,
           AggregatedListMachineTypesPagedResponse>
       aggregatedListMachineTypesSettings() {
     return ((MachineTypeStubSettings) getStubSettings()).aggregatedListMachineTypesSettings();
@@ -187,7 +188,8 @@ public class MachineTypeSettings extends ClientSettings<MachineTypeSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListMachineTypes. */
     public PagedCallSettings.Builder<
-            AggregatedListMachineTypesHttpRequest, MachineTypeAggregatedList,
+            AggregatedListMachineTypesHttpRequest,
+            MachineTypeAggregatedList,
             AggregatedListMachineTypesPagedResponse>
         aggregatedListMachineTypesSettings() {
       return getStubSettingsBuilder().aggregatedListMachineTypesSettings();

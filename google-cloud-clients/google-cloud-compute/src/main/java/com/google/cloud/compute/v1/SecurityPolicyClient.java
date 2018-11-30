@@ -56,13 +56,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1226,8 +1226,11 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   public static class ListSecurityPoliciesPagedResponse
       extends AbstractPagedListResponse<
-          ListSecurityPoliciesHttpRequest, SecurityPolicyList, SecurityPolicy,
-          ListSecurityPoliciesPage, ListSecurityPoliciesFixedSizeCollection> {
+          ListSecurityPoliciesHttpRequest,
+          SecurityPolicyList,
+          SecurityPolicy,
+          ListSecurityPoliciesPage,
+          ListSecurityPoliciesFixedSizeCollection> {
 
     public static ApiFuture<ListSecurityPoliciesPagedResponse> createAsync(
         PageContext<ListSecurityPoliciesHttpRequest, SecurityPolicyList, SecurityPolicy> context,
@@ -1251,7 +1254,9 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   public static class ListSecurityPoliciesPage
       extends AbstractPage<
-          ListSecurityPoliciesHttpRequest, SecurityPolicyList, SecurityPolicy,
+          ListSecurityPoliciesHttpRequest,
+          SecurityPolicyList,
+          SecurityPolicy,
           ListSecurityPoliciesPage> {
 
     private ListSecurityPoliciesPage(
@@ -1281,8 +1286,11 @@ public class SecurityPolicyClient implements BackgroundResource {
 
   public static class ListSecurityPoliciesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListSecurityPoliciesHttpRequest, SecurityPolicyList, SecurityPolicy,
-          ListSecurityPoliciesPage, ListSecurityPoliciesFixedSizeCollection> {
+          ListSecurityPoliciesHttpRequest,
+          SecurityPolicyList,
+          SecurityPolicy,
+          ListSecurityPoliciesPage,
+          ListSecurityPoliciesFixedSizeCollection> {
 
     private ListSecurityPoliciesFixedSizeCollection(
         List<ListSecurityPoliciesPage> pages, int collectionSize) {

@@ -21,13 +21,11 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.services.compute.model.Subnetwork;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
-
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Objects;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 
 /**
  * A Google Compute Engine subnetwork. Compute Engine subnetworks allow you to segment your Compute
@@ -64,23 +62,17 @@ public class SubnetworkInfo implements Serializable {
   private final NetworkId network;
   private final String ipRange;
 
-  /**
-   * A builder for {@code SubnetworkInfo} objects.
-   */
+  /** A builder for {@code SubnetworkInfo} objects. */
   public abstract static class Builder {
 
     abstract Builder setGeneratedId(String generatedId);
 
     abstract Builder setCreationTimestamp(Long creationTimestamp);
 
-    /**
-     * Sets the identity of the subnework.
-     */
+    /** Sets the identity of the subnework. */
     public abstract Builder setSubnetworkId(SubnetworkId subnetworkId);
 
-    /**
-     * Sets an optional textual description of the subnetwork.
-     */
+    /** Sets an optional textual description of the subnetwork. */
     public abstract Builder setDescription(String description);
 
     abstract Builder setGatewayAddress(String gatewayAddress);
@@ -100,9 +92,7 @@ public class SubnetworkInfo implements Serializable {
      */
     public abstract Builder setIpRange(String ipRange);
 
-    /**
-     * Creates a {@code SubnetworkInfo} object.
-     */
+    /** Creates a {@code SubnetworkInfo} object. */
     public abstract SubnetworkInfo build();
   }
 
@@ -207,37 +197,27 @@ public class SubnetworkInfo implements Serializable {
     this.ipRange = builder.ipRange;
   }
 
-  /**
-   * Returns the service-generated unique identifier for the subnetwork.
-   */
+  /** Returns the service-generated unique identifier for the subnetwork. */
   public String getGeneratedId() {
     return generatedId;
   }
 
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
+  /** Returns the creation timestamp in milliseconds since epoch. */
   public Long getCreationTimestamp() {
     return creationTimestamp;
   }
 
-  /**
-   * Returns the subnetwork identity.
-   */
+  /** Returns the subnetwork identity. */
   public SubnetworkId getSubnetworkId() {
     return subnetworkId;
   }
 
-  /**
-   * Returns a textual description of the subnetwork.
-   */
+  /** Returns a textual description of the subnetwork. */
   public String getDescription() {
     return description;
   }
 
-  /**
-   * Returns the gateway IPv4 address for this subnetwork, selected by the service.
-   */
+  /** Returns the gateway IPv4 address for this subnetwork, selected by the service. */
   public String getGatewayAddress() {
     return gatewayAddress;
   }
@@ -261,9 +241,7 @@ public class SubnetworkInfo implements Serializable {
     return ipRange;
   }
 
-  /**
-   * Returns a builder for the current subnetwork.
-   */
+  /** Returns a builder for the current subnetwork. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
   }
@@ -283,16 +261,22 @@ public class SubnetworkInfo implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(generatedId, creationTimestamp, subnetworkId, description, gatewayAddress,
-        network, ipRange);
+    return Objects.hash(
+        generatedId,
+        creationTimestamp,
+        subnetworkId,
+        description,
+        gatewayAddress,
+        network,
+        ipRange);
   }
 
   @Override
   public boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(SubnetworkInfo.class)
-        && Objects.equals(toPb(), ((SubnetworkInfo) obj).toPb());
+            && obj.getClass().equals(SubnetworkInfo.class)
+            && Objects.equals(toPb(), ((SubnetworkInfo) obj).toPb());
   }
 
   SubnetworkInfo setProjectId(String projectId) {
@@ -322,8 +306,8 @@ public class SubnetworkInfo implements Serializable {
   /**
    * Returns a builder for a {@code SubnetworkInfo} object given the identity of the subnetwork, the
    * identity of the network this subnetwork belongs to and the range of IPv4 addresses owned by
-   * this subnetwork. {@code ipRange} must be a CIDR specification, for example:
-   * {@code 192.168.0.0/16}.
+   * this subnetwork. {@code ipRange} must be a CIDR specification, for example: {@code
+   * 192.168.0.0/16}.
    *
    * @see <a href="https://wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR</a>
    */

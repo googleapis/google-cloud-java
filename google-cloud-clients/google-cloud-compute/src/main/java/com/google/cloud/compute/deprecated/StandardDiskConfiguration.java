@@ -17,7 +17,6 @@
 package com.google.cloud.compute.deprecated;
 
 import com.google.api.services.compute.model.Disk;
-
 import java.util.Objects;
 
 /**
@@ -30,9 +29,7 @@ public class StandardDiskConfiguration extends DiskConfiguration {
 
   private static final long serialVersionUID = -6974045909359567054L;
 
-  /**
-   * A builder for {@code StandardDiskConfiguration} objects.
-   */
+  /** A builder for {@code StandardDiskConfiguration} objects. */
   public static class Builder
       extends DiskConfiguration.Builder<StandardDiskConfiguration, Builder> {
 
@@ -48,18 +45,14 @@ public class StandardDiskConfiguration extends DiskConfiguration {
       super(Type.STANDARD, diskPb);
     }
 
-    /**
-     * Sets the size of the persistent disk, in GB. If not set, 500GB is used.
-     */
+    /** Sets the size of the persistent disk, in GB. If not set, 500GB is used. */
     @Override
     public Builder setSizeGb(Long sizeGb) {
       super.setSizeGb(sizeGb);
       return this;
     }
 
-    /**
-     * Creates a {@code StandardDiskConfiguration} object.
-     */
+    /** Creates a {@code StandardDiskConfiguration} object. */
     @Override
     public StandardDiskConfiguration build() {
       return new StandardDiskConfiguration(this);
@@ -84,8 +77,8 @@ public class StandardDiskConfiguration extends DiskConfiguration {
   public final boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(StandardDiskConfiguration.class)
-        && baseEquals((StandardDiskConfiguration) obj);
+            && obj.getClass().equals(StandardDiskConfiguration.class)
+            && baseEquals((StandardDiskConfiguration) obj);
   }
 
   @Override
@@ -96,30 +89,22 @@ public class StandardDiskConfiguration extends DiskConfiguration {
     return toBuilder().setDiskType(getDiskType().setProjectId(projectId)).build();
   }
 
-  /**
-   * Returns a builder for a {@code StandardDiskConfiguration} object.
-   */
+  /** Returns a builder for a {@code StandardDiskConfiguration} object. */
   public static Builder newBuilder() {
     return new Builder();
   }
 
-  /**
-   * Returns a {@code StandardDiskConfiguration} object given the disk type.
-   */
+  /** Returns a {@code StandardDiskConfiguration} object given the disk type. */
   public static StandardDiskConfiguration of(DiskTypeId diskType) {
     return newBuilder().setDiskType(diskType).build();
   }
 
-  /**
-   * Returns a {@code StandardDiskConfiguration} object given the disk size in GB.
-   */
+  /** Returns a {@code StandardDiskConfiguration} object given the disk size in GB. */
   public static StandardDiskConfiguration of(long sizeGb) {
     return newBuilder().setSizeGb(sizeGb).build();
   }
 
-  /**
-   * Returns a {@code StandardDiskConfiguration} object given the disk type and size in GB.
-   */
+  /** Returns a {@code StandardDiskConfiguration} object given the disk type and size in GB. */
   public static StandardDiskConfiguration of(DiskTypeId diskType, long sizeGb) {
     return newBuilder().setDiskType(diskType).setSizeGb(sizeGb).build();
   }

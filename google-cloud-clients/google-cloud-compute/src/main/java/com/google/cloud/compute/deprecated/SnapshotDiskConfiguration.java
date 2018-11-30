@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.compute.model.Disk;
 import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
 
 /**
@@ -36,9 +35,7 @@ public class SnapshotDiskConfiguration extends DiskConfiguration {
   private final SnapshotId sourceSnapshot;
   private final String sourceSnapshotId;
 
-  /**
-   * A builder for {@code SnapshotDiskConfiguration} objects.
-   */
+  /** A builder for {@code SnapshotDiskConfiguration} objects. */
   public static class Builder
       extends DiskConfiguration.Builder<SnapshotDiskConfiguration, Builder> {
 
@@ -77,9 +74,7 @@ public class SnapshotDiskConfiguration extends DiskConfiguration {
       return this;
     }
 
-    /**
-     * Sets the identity of the source snapshot used to create the disk.
-     */
+    /** Sets the identity of the source snapshot used to create the disk. */
     public Builder setSourceSnapshot(SnapshotId sourceSnapshot) {
       this.sourceSnapshot = checkNotNull(sourceSnapshot);
       return this;
@@ -90,9 +85,7 @@ public class SnapshotDiskConfiguration extends DiskConfiguration {
       return this;
     }
 
-    /**
-     * Creates a {@code SnapshotDiskConfiguration} object.
-     */
+    /** Creates a {@code SnapshotDiskConfiguration} object. */
     @Override
     public SnapshotDiskConfiguration build() {
       return new SnapshotDiskConfiguration(this);
@@ -105,9 +98,7 @@ public class SnapshotDiskConfiguration extends DiskConfiguration {
     this.sourceSnapshotId = builder.sourceSnapshotId;
   }
 
-  /**
-   * Returns the identity of the source snapshot used to create the disk.
-   */
+  /** Returns the identity of the source snapshot used to create the disk. */
   public SnapshotId getSourceSnapshot() {
     return sourceSnapshot;
   }
@@ -143,8 +134,8 @@ public class SnapshotDiskConfiguration extends DiskConfiguration {
   public final boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(SnapshotDiskConfiguration.class)
-        && baseEquals((SnapshotDiskConfiguration) obj);
+            && obj.getClass().equals(SnapshotDiskConfiguration.class)
+            && baseEquals((SnapshotDiskConfiguration) obj);
   }
 
   @Override
@@ -170,9 +161,7 @@ public class SnapshotDiskConfiguration extends DiskConfiguration {
     return new Builder(sourceSnapshot);
   }
 
-  /**
-   * Returns a {@code SnapshotDiskConfiguration} object given the snapshot identity.
-   */
+  /** Returns a {@code SnapshotDiskConfiguration} object given the snapshot identity. */
   public static SnapshotDiskConfiguration of(SnapshotId sourceSnapshot) {
     return newBuilder(sourceSnapshot).build();
   }
