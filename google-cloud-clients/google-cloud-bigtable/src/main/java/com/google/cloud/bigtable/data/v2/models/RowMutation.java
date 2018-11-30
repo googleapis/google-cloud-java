@@ -54,9 +54,9 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
   }
 
   /**
-   * Creates new instance of mutation builder by wrapping existing set of row mutations.
-   * The builder will be owned by this RowMutation and should not be used by the caller after this call.
-   * This functionality is intended for advanced usage.
+   * Creates new instance of mutation builder by wrapping existing set of row mutations. The builder
+   * will be owned by this RowMutation and should not be used by the caller after this call. This
+   * functionality is intended for advanced usage.
    *
    * <p>Sample code:
    *
@@ -66,14 +66,15 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
    * RowMutation rowMutation = RowMutation.create("[TABLE]", "[ROW_KEY]", mutation);
    * </code></pre>
    */
-  public static RowMutation create(@Nonnull String tableId, @Nonnull String key, @Nonnull Mutation mutation) {
+  public static RowMutation create(
+      @Nonnull String tableId, @Nonnull String key, @Nonnull Mutation mutation) {
     return create(tableId, ByteString.copyFromUtf8(key), mutation);
   }
 
   /**
-   * Creates new instance of mutation builder by wrapping existing set of row mutations.
-   * The builder will be owned by this RowMutation and should not be used by the caller after this call.
-   * This functionality is intended for advanced usage.
+   * Creates new instance of mutation builder by wrapping existing set of row mutations. The builder
+   * will be owned by this RowMutation and should not be used by the caller after this call. This
+   * functionality is intended for advanced usage.
    *
    * <p>Sample code:
    *
@@ -83,7 +84,8 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
    * RowMutation rowMutation = RowMutation.create("[TABLE]", [BYTE_STRING_ROW_KEY], mutation);
    * </code></pre>
    */
-  public static RowMutation create(@Nonnull String tableId, @Nonnull ByteString key, @Nonnull Mutation mutation) {
+  public static RowMutation create(
+      @Nonnull String tableId, @Nonnull ByteString key, @Nonnull Mutation mutation) {
     return new RowMutation(tableId, key, mutation);
   }
 
