@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface CommitRequestOrBuilder extends
+public interface CommitRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.CommitRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The session in which the transaction to be committed is running.
    * </pre>
@@ -16,16 +19,19 @@ public interface CommitRequestOrBuilder extends
    */
   java.lang.String getSession();
   /**
+   *
+   *
    * <pre>
    * Required. The session in which the transaction to be committed is running.
    * </pre>
    *
    * <code>string session = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSessionBytes();
+  com.google.protobuf.ByteString getSessionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Commit a previously-started transaction.
    * </pre>
@@ -35,6 +41,8 @@ public interface CommitRequestOrBuilder extends
   com.google.protobuf.ByteString getTransactionId();
 
   /**
+   *
+   *
    * <pre>
    * Execute mutations in a temporary transaction. Note that unlike
    * commit of a previously-started transaction, commit with a
@@ -51,6 +59,8 @@ public interface CommitRequestOrBuilder extends
    */
   boolean hasSingleUseTransaction();
   /**
+   *
+   *
    * <pre>
    * Execute mutations in a temporary transaction. Note that unlike
    * commit of a previously-started transaction, commit with a
@@ -67,6 +77,8 @@ public interface CommitRequestOrBuilder extends
    */
   com.google.spanner.v1.TransactionOptions getSingleUseTransaction();
   /**
+   *
+   *
    * <pre>
    * Execute mutations in a temporary transaction. Note that unlike
    * commit of a previously-started transaction, commit with a
@@ -84,6 +96,8 @@ public interface CommitRequestOrBuilder extends
   com.google.spanner.v1.TransactionOptionsOrBuilder getSingleUseTransactionOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The mutations to be executed when this transaction commits. All
    * mutations are applied atomically, in the order they appear in
@@ -92,9 +106,10 @@ public interface CommitRequestOrBuilder extends
    *
    * <code>repeated .google.spanner.v1.Mutation mutations = 4;</code>
    */
-  java.util.List<com.google.spanner.v1.Mutation> 
-      getMutationsList();
+  java.util.List<com.google.spanner.v1.Mutation> getMutationsList();
   /**
+   *
+   *
    * <pre>
    * The mutations to be executed when this transaction commits. All
    * mutations are applied atomically, in the order they appear in
@@ -105,6 +120,8 @@ public interface CommitRequestOrBuilder extends
    */
   com.google.spanner.v1.Mutation getMutations(int index);
   /**
+   *
+   *
    * <pre>
    * The mutations to be executed when this transaction commits. All
    * mutations are applied atomically, in the order they appear in
@@ -115,6 +132,8 @@ public interface CommitRequestOrBuilder extends
    */
   int getMutationsCount();
   /**
+   *
+   *
    * <pre>
    * The mutations to be executed when this transaction commits. All
    * mutations are applied atomically, in the order they appear in
@@ -123,9 +142,10 @@ public interface CommitRequestOrBuilder extends
    *
    * <code>repeated .google.spanner.v1.Mutation mutations = 4;</code>
    */
-  java.util.List<? extends com.google.spanner.v1.MutationOrBuilder> 
-      getMutationsOrBuilderList();
+  java.util.List<? extends com.google.spanner.v1.MutationOrBuilder> getMutationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The mutations to be executed when this transaction commits. All
    * mutations are applied atomically, in the order they appear in
@@ -134,8 +154,7 @@ public interface CommitRequestOrBuilder extends
    *
    * <code>repeated .google.spanner.v1.Mutation mutations = 4;</code>
    */
-  com.google.spanner.v1.MutationOrBuilder getMutationsOrBuilder(
-      int index);
+  com.google.spanner.v1.MutationOrBuilder getMutationsOrBuilder(int index);
 
   public com.google.spanner.v1.CommitRequest.TransactionCase getTransactionCase();
 }

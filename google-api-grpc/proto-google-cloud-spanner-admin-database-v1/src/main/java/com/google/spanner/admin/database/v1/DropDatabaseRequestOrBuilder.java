@@ -3,11 +3,14 @@
 
 package com.google.spanner.admin.database.v1;
 
-public interface DropDatabaseRequestOrBuilder extends
+public interface DropDatabaseRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.admin.database.v1.DropDatabaseRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The database to be dropped.
    * </pre>
@@ -16,12 +19,13 @@ public interface DropDatabaseRequestOrBuilder extends
    */
   java.lang.String getDatabase();
   /**
+   *
+   *
    * <pre>
    * Required. The database to be dropped.
    * </pre>
    *
    * <code>string database = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getDatabaseBytes();
+  com.google.protobuf.ByteString getDatabaseBytes();
 }

@@ -19,14 +19,12 @@ package com.google.cloud.spanner;
 import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableMap;
 import com.google.spanner.v1.Transaction;
-
 import io.opencensus.contrib.grpc.util.StatusConverter;
 import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Status;
 import io.opencensus.trace.Tracing;
 import io.opencensus.trace.export.SampledSpanStore;
-
 import java.util.Arrays;
 import java.util.Map;
 

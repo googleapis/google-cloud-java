@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface DeleteSessionRequestOrBuilder extends
+public interface DeleteSessionRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.DeleteSessionRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the session to delete.
    * </pre>
@@ -16,12 +19,13 @@ public interface DeleteSessionRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the session to delete.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }
