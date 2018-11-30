@@ -17,8 +17,6 @@ package com.google.cloud.bigtable.data.v2.it.env;
 
 import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
-import java.io.IOException;
-import java.util.concurrent.TimeoutException;
 
 /**
  * Defines the interface of a target environment.

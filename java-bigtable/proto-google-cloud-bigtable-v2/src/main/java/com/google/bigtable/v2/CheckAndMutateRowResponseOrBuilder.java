@@ -3,11 +3,14 @@
 
 package com.google.bigtable.v2;
 
-public interface CheckAndMutateRowResponseOrBuilder extends
+public interface CheckAndMutateRowResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.v2.CheckAndMutateRowResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Whether or not the request's `predicate_filter` yielded any results for
    * the specified row.

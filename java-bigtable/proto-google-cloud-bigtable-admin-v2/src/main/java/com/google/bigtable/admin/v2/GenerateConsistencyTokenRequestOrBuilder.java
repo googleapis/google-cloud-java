@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface GenerateConsistencyTokenRequestOrBuilder extends
+public interface GenerateConsistencyTokenRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.GenerateConsistencyTokenRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the Table for which to create a consistency token.
    * Values are of the form
@@ -18,6 +21,8 @@ public interface GenerateConsistencyTokenRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The unique name of the Table for which to create a consistency token.
    * Values are of the form
@@ -26,6 +31,5 @@ public interface GenerateConsistencyTokenRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

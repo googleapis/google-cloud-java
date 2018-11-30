@@ -26,7 +26,8 @@ import javax.annotation.Nullable;
 /**
  * Settings class to configure an instance of {@link BigtableTableAdminClient}.
  *
- * <p>It must be configured with an {@link InstanceName} and can be used to change default RPC settings.
+ * <p>It must be configured with an {@link InstanceName} and can be used to change default RPC
+ * settings.
  *
  * <p>Example usage:
  *
@@ -48,8 +49,10 @@ public final class BigtableTableAdminSettings {
   private final BigtableTableAdminStubSettings stubSettings;
 
   private BigtableTableAdminSettings(Builder builder) throws IOException {
-    this.instanceName = Preconditions.checkNotNull(builder.instanceName, "InstanceName must be set");
-    this.stubSettings = Verify.verifyNotNull(builder.stubSettings, "stubSettings should never be null").build();
+    this.instanceName =
+        Preconditions.checkNotNull(builder.instanceName, "InstanceName must be set");
+    this.stubSettings =
+        Verify.verifyNotNull(builder.stubSettings, "stubSettings should never be null").build();
   }
 
   /** Gets the name of instance whose tables the client will manage. */
@@ -75,8 +78,7 @@ public final class BigtableTableAdminSettings {
 
   /** Builder for BigtableTableAdminSettings. */
   public static final class Builder {
-    @Nullable
-    private InstanceName instanceName;
+    @Nullable private InstanceName instanceName;
     private final BigtableTableAdminStubSettings.Builder stubSettings;
 
     private Builder() {

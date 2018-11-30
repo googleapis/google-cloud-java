@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface CreateClusterRequestOrBuilder extends
+public interface CreateClusterRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.CreateClusterRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the instance in which to create the new cluster.
    * Values are of the form
@@ -18,6 +21,8 @@ public interface CreateClusterRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The unique name of the instance in which to create the new cluster.
    * Values are of the form
@@ -26,10 +31,11 @@ public interface CreateClusterRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The ID to be used when referring to the new cluster within its instance,
    * e.g., just `mycluster` rather than
@@ -40,6 +46,8 @@ public interface CreateClusterRequestOrBuilder extends
    */
   java.lang.String getClusterId();
   /**
+   *
+   *
    * <pre>
    * The ID to be used when referring to the new cluster within its instance,
    * e.g., just `mycluster` rather than
@@ -48,10 +56,11 @@ public interface CreateClusterRequestOrBuilder extends
    *
    * <code>string cluster_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getClusterIdBytes();
+  com.google.protobuf.ByteString getClusterIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The cluster to be created.
    * Fields marked `OutputOnly` must be left blank.
@@ -61,6 +70,8 @@ public interface CreateClusterRequestOrBuilder extends
    */
   boolean hasCluster();
   /**
+   *
+   *
    * <pre>
    * The cluster to be created.
    * Fields marked `OutputOnly` must be left blank.
@@ -70,6 +81,8 @@ public interface CreateClusterRequestOrBuilder extends
    */
   com.google.bigtable.admin.v2.Cluster getCluster();
   /**
+   *
+   *
    * <pre>
    * The cluster to be created.
    * Fields marked `OutputOnly` must be left blank.

@@ -41,12 +41,14 @@ public final class Table {
      * The table is temporarily unable to serve Data API requests from this cluster due to planned
      * internal maintenance.
      */
-    PLANNED_MAINTENANCE(com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.PLANNED_MAINTENANCE),
+    PLANNED_MAINTENANCE(
+        com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.PLANNED_MAINTENANCE),
     /**
      * The table is temporarily unable to serve Data API requests from this cluster due to unplanned
      * or emergency maintenance.
      */
-    UNPLANNED_MAINTENANCE(com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.UNPLANNED_MAINTENANCE),
+    UNPLANNED_MAINTENANCE(
+        com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.UNPLANNED_MAINTENANCE),
     /**
      * The table can serve Data API requests from this cluster. Depending on replication delay,
      * reads may not immediately reflect the state of the table in other clusters.
@@ -56,7 +58,6 @@ public final class Table {
     /** The replication state of table is not known by this client. Please upgrade your client. */
     UNRECOGNIZED(com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.UNRECOGNIZED);
 
-
     private final com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState proto;
 
     /**
@@ -64,7 +65,8 @@ public final class Table {
      * to be used by applications.
      */
     @InternalApi
-    public static ReplicationState fromProto(com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState proto) {
+    public static ReplicationState fromProto(
+        com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState proto) {
       Preconditions.checkNotNull(proto);
 
       for (ReplicationState state : values()) {
@@ -98,23 +100,25 @@ public final class Table {
   public static Table fromProto(@Nonnull com.google.bigtable.admin.v2.Table proto) {
     ImmutableMap.Builder<String, ReplicationState> replicationStates = ImmutableMap.builder();
 
-    for (Entry<String, com.google.bigtable.admin.v2.Table.ClusterState> entry : proto.getClusterStatesMap().entrySet()) {
-      replicationStates.put(entry.getKey(), ReplicationState.fromProto(entry.getValue().getReplicationState()));
+    for (Entry<String, com.google.bigtable.admin.v2.Table.ClusterState> entry :
+        proto.getClusterStatesMap().entrySet()) {
+      replicationStates.put(
+          entry.getKey(), ReplicationState.fromProto(entry.getValue().getReplicationState()));
     }
 
     ImmutableList.Builder<ColumnFamily> columnFamilies = ImmutableList.builder();
 
-    for (Entry<String, com.google.bigtable.admin.v2.ColumnFamily> entry : proto.getColumnFamiliesMap().entrySet()) {
+    for (Entry<String, com.google.bigtable.admin.v2.ColumnFamily> entry :
+        proto.getColumnFamiliesMap().entrySet()) {
       columnFamilies.add(ColumnFamily.fromProto(entry.getKey(), entry.getValue()));
     }
 
     return new Table(
-        TableName.parse(proto.getName()),
-        replicationStates.build(),
-        columnFamilies.build());
+        TableName.parse(proto.getName()), replicationStates.build(), columnFamilies.build());
   }
 
-  private Table(TableName tableName,
+  private Table(
+      TableName tableName,
       Map<String, ReplicationState> replicationStatesByClusterId,
       List<ColumnFamily> columnFamilies) {
     this.instanceId = tableName.getInstance();
@@ -150,11 +154,10 @@ public final class Table {
       return false;
     }
     Table table = (Table) o;
-    return Objects.equal(id, table.id) &&
-        Objects.equal(instanceId, table.instanceId) &&
-        Objects
-            .equal(replicationStatesByClusterId, table.replicationStatesByClusterId) &&
-        Objects.equal(columnFamilies, table.columnFamilies);
+    return Objects.equal(id, table.id)
+        && Objects.equal(instanceId, table.instanceId)
+        && Objects.equal(replicationStatesByClusterId, table.replicationStatesByClusterId)
+        && Objects.equal(columnFamilies, table.columnFamilies);
   }
 
   @Override

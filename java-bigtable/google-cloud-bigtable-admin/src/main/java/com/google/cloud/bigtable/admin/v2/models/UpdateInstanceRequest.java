@@ -30,14 +30,14 @@ import javax.annotation.Nonnull;
 /**
  * Parameters for updating an existing Bigtable instance.
  *
- * <p>Existing instances maybe updated to change their superficial appearance (ie. display name)
- * and can also be upgraded from a DEVELOPMENT instance to a PRODUCTION instance. Please note that
+ * <p>Existing instances maybe updated to change their superficial appearance (ie. display name) and
+ * can also be upgraded from a DEVELOPMENT instance to a PRODUCTION instance. Please note that
  * upgrading to a PRODUCTION instance cannot be undone.
  */
 public class UpdateInstanceRequest {
   private final String instanceId;
-  private final PartialUpdateInstanceRequest.Builder builder = PartialUpdateInstanceRequest
-      .newBuilder();
+  private final PartialUpdateInstanceRequest.Builder builder =
+      PartialUpdateInstanceRequest.newBuilder();
 
   /** Builds a new request to update an existing instance with the specified id. */
   public static UpdateInstanceRequest of(@Nonnull String instanceId) {
@@ -75,7 +75,7 @@ public class UpdateInstanceRequest {
    * Replaces the labels associated with the instance.
    *
    * @see <a href="https://cloud.google.com/bigtable/docs/creating-managing-labels">For more
-   * details</a>
+   *     details</a>
    */
   @SuppressWarnings("WeakerAccess")
   public UpdateInstanceRequest setAllLabels(@Nonnull Map<String, String> labels) {
@@ -100,7 +100,8 @@ public class UpdateInstanceRequest {
   public PartialUpdateInstanceRequest toProto(ProjectName projectName) {
     // Empty field mask implies full resource replacement, which would clear all fields in an empty
     // update request.
-    Preconditions.checkState(!builder.getUpdateMask().getPathsList().isEmpty(), "Update request is empty");
+    Preconditions.checkState(
+        !builder.getUpdateMask().getPathsList().isEmpty(), "Update request is empty");
 
     InstanceName instanceName = InstanceName.of(projectName.getProject(), instanceId);
     builder.getInstanceBuilder().setName(instanceName.toString());

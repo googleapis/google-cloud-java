@@ -3,11 +3,14 @@
 
 package com.google.bigtable.v2;
 
-public interface TimestampRangeOrBuilder extends
+public interface TimestampRangeOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.v2.TimestampRange)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Inclusive lower bound. If left empty, interpreted as 0.
    * </pre>
@@ -17,6 +20,8 @@ public interface TimestampRangeOrBuilder extends
   long getStartTimestampMicros();
 
   /**
+   *
+   *
    * <pre>
    * Exclusive upper bound. If left empty, interpreted as infinity.
    * </pre>

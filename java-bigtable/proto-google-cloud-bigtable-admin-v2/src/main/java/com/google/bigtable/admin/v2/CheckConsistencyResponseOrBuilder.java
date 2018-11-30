@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface CheckConsistencyResponseOrBuilder extends
+public interface CheckConsistencyResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.CheckConsistencyResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * True only if the token is consistent. A token is consistent if replication
    * has caught up with the restrictions specified in the request.

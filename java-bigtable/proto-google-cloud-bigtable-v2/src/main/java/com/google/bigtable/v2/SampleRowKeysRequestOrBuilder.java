@@ -3,11 +3,14 @@
 
 package com.google.bigtable.v2;
 
-public interface SampleRowKeysRequestOrBuilder extends
+public interface SampleRowKeysRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.v2.SampleRowKeysRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the table from which to sample row keys.
    * Values are of the form
@@ -18,6 +21,8 @@ public interface SampleRowKeysRequestOrBuilder extends
    */
   java.lang.String getTableName();
   /**
+   *
+   *
    * <pre>
    * The unique name of the table from which to sample row keys.
    * Values are of the form
@@ -26,10 +31,11 @@ public interface SampleRowKeysRequestOrBuilder extends
    *
    * <code>string table_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getTableNameBytes();
+  com.google.protobuf.ByteString getTableNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * This value specifies routing for replication. If not specified, the
    * "default" application profile will be used.
@@ -39,6 +45,8 @@ public interface SampleRowKeysRequestOrBuilder extends
    */
   java.lang.String getAppProfileId();
   /**
+   *
+   *
    * <pre>
    * This value specifies routing for replication. If not specified, the
    * "default" application profile will be used.
@@ -46,6 +54,5 @@ public interface SampleRowKeysRequestOrBuilder extends
    *
    * <code>string app_profile_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getAppProfileIdBytes();
+  com.google.protobuf.ByteString getAppProfileIdBytes();
 }

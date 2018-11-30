@@ -30,55 +30,51 @@ import org.junit.runners.JUnit4;
 public class UpdateAppProfileRequestTest {
   @Test
   public void testToProto() {
-    UpdateAppProfileRequest wrapper = UpdateAppProfileRequest.of("my-instance", "my-profile")
-        .setDescription("my description")
-        .setRoutingPolicy(
-            SingleClusterRoutingPolicy.of("my-cluster", true)
-        )
-        .setIgnoreWarnings(true);
+    UpdateAppProfileRequest wrapper =
+        UpdateAppProfileRequest.of("my-instance", "my-profile")
+            .setDescription("my description")
+            .setRoutingPolicy(SingleClusterRoutingPolicy.of("my-cluster", true))
+            .setIgnoreWarnings(true);
 
-    assertThat(wrapper.toProto(ProjectName.of("my-project"))).isEqualTo(
-        com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder()
-            .setAppProfile(
-                com.google.bigtable.admin.v2.AppProfile.newBuilder()
-                    .setName("projects/my-project/instances/my-instance/appProfiles/my-profile")
-                    .setDescription("my description")
-                    .setSingleClusterRouting(
-                        SingleClusterRouting.newBuilder()
-                            .setClusterId("my-cluster")
-                            .setAllowTransactionalWrites(true)
-                    )
-            )
-            .setIgnoreWarnings(true)
-            .setUpdateMask(
-                FieldMask.newBuilder()
-                    .addPaths("description")
-                    .addPaths("single_cluster_routing")
-            )
-            .build()
-    );
+    assertThat(wrapper.toProto(ProjectName.of("my-project")))
+        .isEqualTo(
+            com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder()
+                .setAppProfile(
+                    com.google.bigtable.admin.v2.AppProfile.newBuilder()
+                        .setName("projects/my-project/instances/my-instance/appProfiles/my-profile")
+                        .setDescription("my description")
+                        .setSingleClusterRouting(
+                            SingleClusterRouting.newBuilder()
+                                .setClusterId("my-cluster")
+                                .setAllowTransactionalWrites(true)))
+                .setIgnoreWarnings(true)
+                .setUpdateMask(
+                    FieldMask.newBuilder()
+                        .addPaths("description")
+                        .addPaths("single_cluster_routing"))
+                .build());
   }
 
   @Test
   public void testUpdateExisting() {
-    com.google.bigtable.admin.v2.AppProfile existingProto = com.google.bigtable.admin.v2.AppProfile
-        .newBuilder()
-        .setName("projects/my-project/instances/my-instance/appProfiles/my-profile")
-        .setEtag("my-etag")
-        .setDescription("description")
-        .setMultiClusterRoutingUseAny(MultiClusterRoutingUseAny.getDefaultInstance())
-        .build();
+    com.google.bigtable.admin.v2.AppProfile existingProto =
+        com.google.bigtable.admin.v2.AppProfile.newBuilder()
+            .setName("projects/my-project/instances/my-instance/appProfiles/my-profile")
+            .setEtag("my-etag")
+            .setDescription("description")
+            .setMultiClusterRoutingUseAny(MultiClusterRoutingUseAny.getDefaultInstance())
+            .build();
 
     AppProfile existingWrapper = AppProfile.fromProto(existingProto);
 
-    UpdateAppProfileRequest updateWrapper = UpdateAppProfileRequest.of(existingWrapper)
-        .setDescription("new description");
+    UpdateAppProfileRequest updateWrapper =
+        UpdateAppProfileRequest.of(existingWrapper).setDescription("new description");
 
-    assertThat(updateWrapper.toProto(ProjectName.of("my-project"))).isEqualTo(
-        com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder()
-            .setAppProfile(existingProto.toBuilder().setDescription("new description"))
-            .setUpdateMask(FieldMask.newBuilder().addPaths("description"))
-            .build()
-    );
+    assertThat(updateWrapper.toProto(ProjectName.of("my-project")))
+        .isEqualTo(
+            com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder()
+                .setAppProfile(existingProto.toBuilder().setDescription("new description"))
+                .setUpdateMask(FieldMask.newBuilder().addPaths("description"))
+                .build());
   }
 }

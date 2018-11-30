@@ -28,14 +28,15 @@ public class InstanceTest {
 
   @Test
   public void testFromProto() {
-    com.google.bigtable.admin.v2.Instance proto = com.google.bigtable.admin.v2.Instance.newBuilder()
-        .setName("projects/my-project/instances/my-instance")
-        .setDisplayName("my display name")
-        .setType(com.google.bigtable.admin.v2.Instance.Type.PRODUCTION)
-        .setState(com.google.bigtable.admin.v2.Instance.State.READY)
-        .putLabels("label1", "value1")
-        .putLabels("label2", "value2")
-        .build();
+    com.google.bigtable.admin.v2.Instance proto =
+        com.google.bigtable.admin.v2.Instance.newBuilder()
+            .setName("projects/my-project/instances/my-instance")
+            .setDisplayName("my display name")
+            .setType(com.google.bigtable.admin.v2.Instance.Type.PRODUCTION)
+            .setState(com.google.bigtable.admin.v2.Instance.State.READY)
+            .putLabels("label1", "value1")
+            .putLabels("label2", "value2")
+            .build();
 
     Instance result = Instance.fromProto(proto);
 
@@ -43,21 +44,22 @@ public class InstanceTest {
     assertThat(result.getDisplayName()).isEqualTo("my display name");
     assertThat(result.getType()).isEqualTo(Instance.Type.PRODUCTION);
     assertThat(result.getState()).isEqualTo(Instance.State.READY);
-    assertThat(result.getLabels()).containsExactly(
-        "label1", "value1",
-        "label2", "value2"
-    );
+    assertThat(result.getLabels())
+        .containsExactly(
+            "label1", "value1",
+            "label2", "value2");
   }
 
   @Test
   public void testRequiresName() {
-    com.google.bigtable.admin.v2.Instance proto = com.google.bigtable.admin.v2.Instance.newBuilder()
-        .setDisplayName("my display name")
-        .setType(com.google.bigtable.admin.v2.Instance.Type.PRODUCTION)
-        .setState(com.google.bigtable.admin.v2.Instance.State.READY)
-        .putLabels("label1", "value1")
-        .putLabels("label2", "value2")
-        .build();
+    com.google.bigtable.admin.v2.Instance proto =
+        com.google.bigtable.admin.v2.Instance.newBuilder()
+            .setDisplayName("my display name")
+            .setType(com.google.bigtable.admin.v2.Instance.Type.PRODUCTION)
+            .setState(com.google.bigtable.admin.v2.Instance.State.READY)
+            .putLabels("label1", "value1")
+            .putLabels("label2", "value2")
+            .build();
 
     Exception actualException = null;
 

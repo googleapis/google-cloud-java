@@ -99,7 +99,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
    *
    * <p>When the credentials provider contains any of these scopes (default behavior) and the
    * application default credentials point to a service account, then OAuth2 tokens will be replaced
-   * with JWT tokens. This removes the need for access token refreshes. */
+   * with JWT tokens. This removes the need for access token refreshes.
+   */
   private static final ImmutableList<String> JWT_ENABLED_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/bigtable.data")

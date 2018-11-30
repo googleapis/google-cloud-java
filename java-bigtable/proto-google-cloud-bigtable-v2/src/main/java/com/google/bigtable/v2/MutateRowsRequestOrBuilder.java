@@ -3,11 +3,14 @@
 
 package com.google.bigtable.v2;
 
-public interface MutateRowsRequestOrBuilder extends
+public interface MutateRowsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.v2.MutateRowsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the table to which the mutations should be applied.
    * </pre>
@@ -16,16 +19,19 @@ public interface MutateRowsRequestOrBuilder extends
    */
   java.lang.String getTableName();
   /**
+   *
+   *
    * <pre>
    * The unique name of the table to which the mutations should be applied.
    * </pre>
    *
    * <code>string table_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getTableNameBytes();
+  com.google.protobuf.ByteString getTableNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * This value specifies routing for replication. If not specified, the
    * "default" application profile will be used.
@@ -35,6 +41,8 @@ public interface MutateRowsRequestOrBuilder extends
    */
   java.lang.String getAppProfileId();
   /**
+   *
+   *
    * <pre>
    * This value specifies routing for replication. If not specified, the
    * "default" application profile will be used.
@@ -42,10 +50,11 @@ public interface MutateRowsRequestOrBuilder extends
    *
    * <code>string app_profile_id = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getAppProfileIdBytes();
+  com.google.protobuf.ByteString getAppProfileIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The row keys and corresponding mutations to be applied in bulk.
    * Each entry is applied as an atomic mutation, but the entries may be
@@ -56,9 +65,10 @@ public interface MutateRowsRequestOrBuilder extends
    *
    * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
    */
-  java.util.List<com.google.bigtable.v2.MutateRowsRequest.Entry> 
-      getEntriesList();
+  java.util.List<com.google.bigtable.v2.MutateRowsRequest.Entry> getEntriesList();
   /**
+   *
+   *
    * <pre>
    * The row keys and corresponding mutations to be applied in bulk.
    * Each entry is applied as an atomic mutation, but the entries may be
@@ -71,6 +81,8 @@ public interface MutateRowsRequestOrBuilder extends
    */
   com.google.bigtable.v2.MutateRowsRequest.Entry getEntries(int index);
   /**
+   *
+   *
    * <pre>
    * The row keys and corresponding mutations to be applied in bulk.
    * Each entry is applied as an atomic mutation, but the entries may be
@@ -83,6 +95,8 @@ public interface MutateRowsRequestOrBuilder extends
    */
   int getEntriesCount();
   /**
+   *
+   *
    * <pre>
    * The row keys and corresponding mutations to be applied in bulk.
    * Each entry is applied as an atomic mutation, but the entries may be
@@ -93,9 +107,11 @@ public interface MutateRowsRequestOrBuilder extends
    *
    * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
    */
-  java.util.List<? extends com.google.bigtable.v2.MutateRowsRequest.EntryOrBuilder> 
+  java.util.List<? extends com.google.bigtable.v2.MutateRowsRequest.EntryOrBuilder>
       getEntriesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The row keys and corresponding mutations to be applied in bulk.
    * Each entry is applied as an atomic mutation, but the entries may be
@@ -106,6 +122,5 @@ public interface MutateRowsRequestOrBuilder extends
    *
    * <code>repeated .google.bigtable.v2.MutateRowsRequest.Entry entries = 2;</code>
    */
-  com.google.bigtable.v2.MutateRowsRequest.EntryOrBuilder getEntriesOrBuilder(
-      int index);
+  com.google.bigtable.v2.MutateRowsRequest.EntryOrBuilder getEntriesOrBuilder(int index);
 }

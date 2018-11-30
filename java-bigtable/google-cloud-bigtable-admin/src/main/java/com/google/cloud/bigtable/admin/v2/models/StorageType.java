@@ -36,7 +36,8 @@ public enum StorageType {
   @InternalApi
   public static StorageType fromProto(com.google.bigtable.admin.v2.StorageType proto) {
     Preconditions.checkNotNull(proto);
-    Preconditions.checkArgument(proto != com.google.bigtable.admin.v2.StorageType.STORAGE_TYPE_UNSPECIFIED,
+    Preconditions.checkArgument(
+        proto != com.google.bigtable.admin.v2.StorageType.STORAGE_TYPE_UNSPECIFIED,
         "Storage type must be specified");
 
     for (StorageType type : values()) {

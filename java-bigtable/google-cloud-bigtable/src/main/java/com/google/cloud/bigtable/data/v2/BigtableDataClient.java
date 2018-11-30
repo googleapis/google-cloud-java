@@ -24,9 +24,9 @@ import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
+import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
@@ -69,13 +69,13 @@ import java.util.List;
  *       service.
  * </ol>
  *
- * <p>All RPC related errors are represented as subclasses of {@link com.google.api.gax.rpc.ApiException}.
- * For example, a nonexistent table will trigger a {@link com.google.api.gax.rpc.NotFoundException}.
- * Async methods will wrap the error inside the future. Synchronous methods will re-throw the async
- * error but will try to preserve the caller's stacktrace by attaching a suppressed exception at the
- * callsite. This allows callers to use typesafe exceptions, without losing their callsite.
- * Streaming methods (ie. readRows) will re-throw the async exception (like sync methods) when
- * starting iteration.
+ * <p>All RPC related errors are represented as subclasses of {@link
+ * com.google.api.gax.rpc.ApiException}. For example, a nonexistent table will trigger a {@link
+ * com.google.api.gax.rpc.NotFoundException}. Async methods will wrap the error inside the future.
+ * Synchronous methods will re-throw the async error but will try to preserve the caller's
+ * stacktrace by attaching a suppressed exception at the callsite. This allows callers to use
+ * typesafe exceptions, without losing their callsite. Streaming methods (ie. readRows) will
+ * re-throw the async exception (like sync methods) when starting iteration.
  *
  * <p>See the individual methods for example code.
  *
@@ -138,8 +138,8 @@ public class BigtableDataClient implements AutoCloseable {
   }
 
   /**
-   * Convenience method for synchronously reading a single row. If the row does not exist, the
-   * value will be null.
+   * Convenience method for synchronously reading a single row. If the row does not exist, the value
+   * will be null.
    *
    * <p>Sample code:
    *
@@ -168,8 +168,8 @@ public class BigtableDataClient implements AutoCloseable {
   }
 
   /**
-   * Convenience method for synchronously reading a single row. If the row does not exist, the
-   * value will be null.
+   * Convenience method for synchronously reading a single row. If the row does not exist, the value
+   * will be null.
    *
    * <p>Sample code:
    *
@@ -674,7 +674,8 @@ public class BigtableDataClient implements AutoCloseable {
    * }</pre>
    *
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
-   * @throws com.google.cloud.bigtable.data.v2.models.MutateRowsException if any of the entries failed to be applied
+   * @throws com.google.cloud.bigtable.data.v2.models.MutateRowsException if any of the entries
+   *     failed to be applied
    */
   public void bulkMutateRows(BulkMutation mutation) {
     ApiExceptions.callAndTranslateApiException(bulkMutateRowsAsync(mutation));
@@ -836,10 +837,10 @@ public class BigtableDataClient implements AutoCloseable {
   }
 
   /**
-   * Convenience method that synchronously modifies a row atomically on the server. The method
-   * reads the latest existing timestamp and value from the specified columns and writes a new
-   * entry. The new value for the timestamp is the greater of the existing timestamp or the current
-   * server time. The method returns the new contents of all modified cells.
+   * Convenience method that synchronously modifies a row atomically on the server. The method reads
+   * the latest existing timestamp and value from the specified columns and writes a new entry. The
+   * new value for the timestamp is the greater of the existing timestamp or the current server
+   * time. The method returns the new contents of all modified cells.
    *
    * <p>Sample code:
    *

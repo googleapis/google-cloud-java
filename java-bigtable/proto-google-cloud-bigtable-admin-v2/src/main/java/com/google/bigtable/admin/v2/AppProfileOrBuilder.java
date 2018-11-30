@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface AppProfileOrBuilder extends
+public interface AppProfileOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.AppProfile)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The unique name of the app profile. Values are of the form
@@ -18,6 +21,8 @@ public interface AppProfileOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The unique name of the app profile. Values are of the form
@@ -26,10 +31,11 @@ public interface AppProfileOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Strongly validated etag for optimistic concurrency control. Preserve the
    * value returned from `GetAppProfile` when calling `UpdateAppProfile` to
@@ -45,6 +51,8 @@ public interface AppProfileOrBuilder extends
    */
   java.lang.String getEtag();
   /**
+   *
+   *
    * <pre>
    * Strongly validated etag for optimistic concurrency control. Preserve the
    * value returned from `GetAppProfile` when calling `UpdateAppProfile` to
@@ -58,10 +66,11 @@ public interface AppProfileOrBuilder extends
    *
    * <code>string etag = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getEtagBytes();
+  com.google.protobuf.ByteString getEtagBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional long form description of the use case for this AppProfile.
    * </pre>
@@ -70,64 +79,88 @@ public interface AppProfileOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * Optional long form description of the use case for this AppProfile.
    * </pre>
    *
    * <code>string description = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Use a multi-cluster routing policy that may pick any cluster.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny multi_cluster_routing_use_any = 5;</code>
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny multi_cluster_routing_use_any = 5;
+   * </code>
    */
   boolean hasMultiClusterRoutingUseAny();
   /**
+   *
+   *
    * <pre>
    * Use a multi-cluster routing policy that may pick any cluster.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny multi_cluster_routing_use_any = 5;</code>
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny multi_cluster_routing_use_any = 5;
+   * </code>
    */
   com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny getMultiClusterRoutingUseAny();
   /**
+   *
+   *
    * <pre>
    * Use a multi-cluster routing policy that may pick any cluster.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny multi_cluster_routing_use_any = 5;</code>
+   * <code>
+   * .google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny multi_cluster_routing_use_any = 5;
+   * </code>
    */
-  com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAnyOrBuilder getMultiClusterRoutingUseAnyOrBuilder();
+  com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAnyOrBuilder
+      getMultiClusterRoutingUseAnyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Use a single-cluster routing policy.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.AppProfile.SingleClusterRouting single_cluster_routing = 6;</code>
+   * <code>.google.bigtable.admin.v2.AppProfile.SingleClusterRouting single_cluster_routing = 6;
+   * </code>
    */
   boolean hasSingleClusterRouting();
   /**
+   *
+   *
    * <pre>
    * Use a single-cluster routing policy.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.AppProfile.SingleClusterRouting single_cluster_routing = 6;</code>
+   * <code>.google.bigtable.admin.v2.AppProfile.SingleClusterRouting single_cluster_routing = 6;
+   * </code>
    */
   com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting getSingleClusterRouting();
   /**
+   *
+   *
    * <pre>
    * Use a single-cluster routing policy.
    * </pre>
    *
-   * <code>.google.bigtable.admin.v2.AppProfile.SingleClusterRouting single_cluster_routing = 6;</code>
+   * <code>.google.bigtable.admin.v2.AppProfile.SingleClusterRouting single_cluster_routing = 6;
+   * </code>
    */
-  com.google.bigtable.admin.v2.AppProfile.SingleClusterRoutingOrBuilder getSingleClusterRoutingOrBuilder();
+  com.google.bigtable.admin.v2.AppProfile.SingleClusterRoutingOrBuilder
+      getSingleClusterRoutingOrBuilder();
 
   public com.google.bigtable.admin.v2.AppProfile.RoutingPolicyCase getRoutingPolicyCase();
 }

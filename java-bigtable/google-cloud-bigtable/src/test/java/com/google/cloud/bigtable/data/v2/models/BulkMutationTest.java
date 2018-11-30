@@ -56,40 +56,43 @@ public class BulkMutationTest {
 
     MutateRowsRequest actual = m.toProto(REQUEST_CONTEXT);
 
-    MutateRowsRequest.Builder expected = MutateRowsRequest.newBuilder()
-        .setTableName(TableName.format(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), TABLE_ID))
-        .setAppProfileId(APP_PROFILE);
+    MutateRowsRequest.Builder expected =
+        MutateRowsRequest.newBuilder()
+            .setTableName(
+                TableName.format(INSTANCE_NAME.getProject(), INSTANCE_NAME.getInstance(), TABLE_ID))
+            .setAppProfileId(APP_PROFILE);
     TextFormat.merge(
         "entries {"
-        + "  row_key: 'key-a'"
-        + "  mutations {"
-        + "    set_cell {"
-        + "      family_name: 'fake-family1'"
-        + "      column_qualifier: 'fake-qualifier1'"
-        + "      timestamp_micros: 1000"
-        + "      value: 'fake-value1'"
-        + "    }"
-        + "  }"
-        + "  mutations {"
-        + "    set_cell {"
-        + "      family_name: 'fake-family2'"
-        + "      column_qualifier: 'fake-qualifier2'"
-        + "      timestamp_micros: 2000"
-        + "      value: 'fake-value2'"
-        + "    }"
-        + "  }"
-        + "}"
-        + "entries {"
-        + "  row_key: 'key-b'"
-        + "  mutations {"
-        + "    set_cell {"
-        + "      family_name: 'fake-family3'"
-        + "      column_qualifier: 'fake-qualifier3'"
-        + "      timestamp_micros: 3000"
-        + "      value: 'fake-value3'"
-        + "    }"
-        + "  }"
-        + "}", expected);
+            + "  row_key: 'key-a'"
+            + "  mutations {"
+            + "    set_cell {"
+            + "      family_name: 'fake-family1'"
+            + "      column_qualifier: 'fake-qualifier1'"
+            + "      timestamp_micros: 1000"
+            + "      value: 'fake-value1'"
+            + "    }"
+            + "  }"
+            + "  mutations {"
+            + "    set_cell {"
+            + "      family_name: 'fake-family2'"
+            + "      column_qualifier: 'fake-qualifier2'"
+            + "      timestamp_micros: 2000"
+            + "      value: 'fake-value2'"
+            + "    }"
+            + "  }"
+            + "}"
+            + "entries {"
+            + "  row_key: 'key-b'"
+            + "  mutations {"
+            + "    set_cell {"
+            + "      family_name: 'fake-family3'"
+            + "      column_qualifier: 'fake-qualifier3'"
+            + "      timestamp_micros: 3000"
+            + "      value: 'fake-value3'"
+            + "    }"
+            + "  }"
+            + "}",
+        expected);
 
     assertThat(actual).isEqualTo(expected.build());
   }

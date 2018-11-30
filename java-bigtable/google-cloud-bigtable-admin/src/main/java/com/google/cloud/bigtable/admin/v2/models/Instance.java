@@ -26,8 +26,8 @@ import javax.annotation.Nonnull;
 /**
  * Represents an existing Cloud Bigtable instance.
  *
- * <p>A Cloud Bigtable instance is mostly just a container for your clusters and nodes, which do
- * all of the real work.
+ * <p>A Cloud Bigtable instance is mostly just a container for your clusters and nodes, which do all
+ * of the real work.
  */
 public final class Instance {
   public enum Type {
@@ -47,7 +47,8 @@ public final class Instance {
     @InternalApi
     public static Type fromProto(com.google.bigtable.admin.v2.Instance.Type proto) {
       Preconditions.checkNotNull(proto);
-      Preconditions.checkArgument(proto != com.google.bigtable.admin.v2.Instance.Type.TYPE_UNSPECIFIED,
+      Preconditions.checkArgument(
+          proto != com.google.bigtable.admin.v2.Instance.Type.TYPE_UNSPECIFIED,
           "Server instance type must always be specified");
       for (Type type : values()) {
         if (type.proto.equals(proto)) {
@@ -115,8 +116,7 @@ public final class Instance {
     }
   }
 
-  @Nonnull
-  private final com.google.bigtable.admin.v2.Instance proto;
+  @Nonnull private final com.google.bigtable.admin.v2.Instance proto;
 
   /**
    * Wraps the protobuf. This method is considered an internal implementation detail and not meant
@@ -137,9 +137,8 @@ public final class Instance {
   @SuppressWarnings("WeakerAccess")
   public String getId() {
     // Constructor ensures that name is not null
-    InstanceName fullName = Verify.verifyNotNull(
-        InstanceName.parse(proto.getName()),
-        "Name can never be null");
+    InstanceName fullName =
+        Verify.verifyNotNull(InstanceName.parse(proto.getName()), "Name can never be null");
 
     //noinspection ConstantConditions
     return fullName.getInstance();
@@ -161,13 +160,12 @@ public final class Instance {
    * Gets the current labels associated with the instance.
    *
    * @see <a href="https://cloud.google.com/bigtable/docs/creating-managing-labels">For more
-   * details</a>
+   *     details</a>
    */
   @SuppressWarnings("WeakerAccess")
   public Map<String, String> getLabels() {
     return proto.getLabelsMap();
   }
-
 
   /** The current state of the instance. */
   @SuppressWarnings("WeakerAccess")

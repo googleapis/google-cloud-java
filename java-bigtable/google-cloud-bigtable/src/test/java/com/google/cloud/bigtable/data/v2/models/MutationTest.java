@@ -100,14 +100,14 @@ public class MutationTest {
   @Test
   public void setCellWithServerSideTimestamp() {
     Mutation mutation = Mutation.createUnsafe();
-    mutation
-        .setCell(
-            "fake-family",
-            ByteString.copyFromUtf8("fake-qualifier"),
-            Mutation.SERVER_SIDE_TIMESTAMP,
-            ByteString.copyFromUtf8("fake-value"));
+    mutation.setCell(
+        "fake-family",
+        ByteString.copyFromUtf8("fake-qualifier"),
+        Mutation.SERVER_SIDE_TIMESTAMP,
+        ByteString.copyFromUtf8("fake-value"));
     List<com.google.bigtable.v2.Mutation> actual = mutation.getMutations();
-    assertThat(actual.get(0).getSetCell().getTimestampMicros()).isEqualTo(Mutation.SERVER_SIDE_TIMESTAMP);
+    assertThat(actual.get(0).getSetCell().getTimestampMicros())
+        .isEqualTo(Mutation.SERVER_SIDE_TIMESTAMP);
   }
 
   @Test
@@ -217,8 +217,8 @@ public class MutationTest {
     Exception actualError = null;
 
     try {
-      mutation.setCell("f", ByteString.copyFromUtf8(""),
-          ByteString.copyFrom(new byte[Mutation.MAX_BYTE_SIZE]));
+      mutation.setCell(
+          "f", ByteString.copyFromUtf8(""), ByteString.copyFrom(new byte[Mutation.MAX_BYTE_SIZE]));
     } catch (Exception e) {
       actualError = e;
     }

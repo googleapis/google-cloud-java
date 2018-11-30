@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface ListClustersRequestOrBuilder extends
+public interface ListClustersRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.ListClustersRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the instance for which a list of clusters is requested.
    * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
@@ -19,6 +22,8 @@ public interface ListClustersRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The unique name of the instance for which a list of clusters is requested.
    * Values are of the form `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
@@ -28,10 +33,11 @@ public interface ListClustersRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * DEPRECATED: This field is unused and ignored.
    * </pre>
@@ -40,12 +46,13 @@ public interface ListClustersRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * DEPRECATED: This field is unused and ignored.
    * </pre>
    *
    * <code>string page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface TableOrBuilder extends
+public interface TableOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Table)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The unique name of the table. Values are of the form
@@ -19,6 +22,8 @@ public interface TableOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The unique name of the table. Values are of the form
@@ -28,10 +33,11 @@ public interface TableOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * Map from cluster ID to per-cluster table state.
@@ -41,10 +47,13 @@ public interface TableOrBuilder extends
    * Views: `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
+   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+   * </code>
    */
   int getClusterStatesCount();
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * Map from cluster ID to per-cluster table state.
@@ -54,17 +63,17 @@ public interface TableOrBuilder extends
    * Views: `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
+   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+   * </code>
    */
-  boolean containsClusterStates(
-      java.lang.String key);
-  /**
-   * Use {@link #getClusterStatesMap()} instead.
-   */
+  boolean containsClusterStates(java.lang.String key);
+  /** Use {@link #getClusterStatesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
-  getClusterStates();
+      getClusterStates();
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * Map from cluster ID to per-cluster table state.
@@ -74,11 +83,14 @@ public interface TableOrBuilder extends
    * Views: `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
+   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+   * </code>
    */
   java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
-  getClusterStatesMap();
+      getClusterStatesMap();
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * Map from cluster ID to per-cluster table state.
@@ -88,13 +100,14 @@ public interface TableOrBuilder extends
    * Views: `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
+   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+   * </code>
    */
-
   com.google.bigtable.admin.v2.Table.ClusterState getClusterStatesOrDefault(
-      java.lang.String key,
-      com.google.bigtable.admin.v2.Table.ClusterState defaultValue);
+      java.lang.String key, com.google.bigtable.admin.v2.Table.ClusterState defaultValue);
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * Map from cluster ID to per-cluster table state.
@@ -104,13 +117,14 @@ public interface TableOrBuilder extends
    * Views: `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
+   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+   * </code>
    */
-
-  com.google.bigtable.admin.v2.Table.ClusterState getClusterStatesOrThrow(
-      java.lang.String key);
+  com.google.bigtable.admin.v2.Table.ClusterState getClusterStatesOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * (`CreationOnly`)
    * The column families configured for this table, mapped by column family ID.
@@ -121,6 +135,8 @@ public interface TableOrBuilder extends
    */
   int getColumnFamiliesCount();
   /**
+   *
+   *
    * <pre>
    * (`CreationOnly`)
    * The column families configured for this table, mapped by column family ID.
@@ -129,15 +145,13 @@ public interface TableOrBuilder extends
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
    */
-  boolean containsColumnFamilies(
-      java.lang.String key);
-  /**
-   * Use {@link #getColumnFamiliesMap()} instead.
-   */
+  boolean containsColumnFamilies(java.lang.String key);
+  /** Use {@link #getColumnFamiliesMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
-  getColumnFamilies();
+  java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> getColumnFamilies();
   /**
+   *
+   *
    * <pre>
    * (`CreationOnly`)
    * The column families configured for this table, mapped by column family ID.
@@ -146,9 +160,10 @@ public interface TableOrBuilder extends
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
    */
-  java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
-  getColumnFamiliesMap();
+  java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> getColumnFamiliesMap();
   /**
+   *
+   *
    * <pre>
    * (`CreationOnly`)
    * The column families configured for this table, mapped by column family ID.
@@ -157,11 +172,11 @@ public interface TableOrBuilder extends
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
    */
-
   com.google.bigtable.admin.v2.ColumnFamily getColumnFamiliesOrDefault(
-      java.lang.String key,
-      com.google.bigtable.admin.v2.ColumnFamily defaultValue);
+      java.lang.String key, com.google.bigtable.admin.v2.ColumnFamily defaultValue);
   /**
+   *
+   *
    * <pre>
    * (`CreationOnly`)
    * The column families configured for this table, mapped by column family ID.
@@ -170,11 +185,11 @@ public interface TableOrBuilder extends
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
    */
-
-  com.google.bigtable.admin.v2.ColumnFamily getColumnFamiliesOrThrow(
-      java.lang.String key);
+  com.google.bigtable.admin.v2.ColumnFamily getColumnFamiliesOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * (`CreationOnly`)
    * The granularity (i.e. `MILLIS`) at which timestamps are stored in
@@ -187,6 +202,8 @@ public interface TableOrBuilder extends
    */
   int getGranularityValue();
   /**
+   *
+   *
    * <pre>
    * (`CreationOnly`)
    * The granularity (i.e. `MILLIS`) at which timestamps are stored in

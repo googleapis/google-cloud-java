@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface ListSnapshotsRequestOrBuilder extends
+public interface ListSnapshotsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.ListSnapshotsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the cluster for which snapshots should be listed.
    * Values are of the form
@@ -20,6 +23,8 @@ public interface ListSnapshotsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The unique name of the cluster for which snapshots should be listed.
    * Values are of the form
@@ -30,10 +35,11 @@ public interface ListSnapshotsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of snapshots to return per page.
    * CURRENTLY UNIMPLEMENTED AND IGNORED.
@@ -44,6 +50,8 @@ public interface ListSnapshotsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * The value of `next_page_token` returned by a previous call.
    * </pre>
@@ -52,12 +60,13 @@ public interface ListSnapshotsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * The value of `next_page_token` returned by a previous call.
    * </pre>
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

@@ -28,13 +28,14 @@ public class ClusterTest {
 
   @Test
   public void testFromProto() {
-    com.google.bigtable.admin.v2.Cluster proto = com.google.bigtable.admin.v2.Cluster.newBuilder()
-        .setName("projects/my-project/instances/my-instance/clusters/my-cluster")
-        .setLocation("projects/my-project/locations/us-east1-c")
-        .setState(com.google.bigtable.admin.v2.Cluster.State.READY)
-        .setServeNodes(30)
-        .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
-        .build();
+    com.google.bigtable.admin.v2.Cluster proto =
+        com.google.bigtable.admin.v2.Cluster.newBuilder()
+            .setName("projects/my-project/instances/my-instance/clusters/my-cluster")
+            .setLocation("projects/my-project/locations/us-east1-c")
+            .setState(com.google.bigtable.admin.v2.Cluster.State.READY)
+            .setServeNodes(30)
+            .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
+            .build();
 
     Cluster result = Cluster.fromProto(proto);
 
@@ -48,12 +49,13 @@ public class ClusterTest {
 
   @Test
   public void testRequiresName() {
-    com.google.bigtable.admin.v2.Cluster proto = com.google.bigtable.admin.v2.Cluster.newBuilder()
-        .setLocation("projects/my-project/locations/us-east1-c")
-        .setState(com.google.bigtable.admin.v2.Cluster.State.READY)
-        .setServeNodes(30)
-        .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
-        .build();
+    com.google.bigtable.admin.v2.Cluster proto =
+        com.google.bigtable.admin.v2.Cluster.newBuilder()
+            .setLocation("projects/my-project/locations/us-east1-c")
+            .setState(com.google.bigtable.admin.v2.Cluster.State.READY)
+            .setServeNodes(30)
+            .setDefaultStorageType(com.google.bigtable.admin.v2.StorageType.SSD)
+            .build();
 
     Exception actualException = null;
 

@@ -4,6 +4,8 @@
 package com.google.bigtable.admin.v2;
 
 /**
+ *
+ *
  * <pre>
  * A collection of user data indexed by row, column, and timestamp.
  * Each table is served using the resources of its parent cluster.
@@ -11,25 +13,26 @@ package com.google.bigtable.admin.v2;
  *
  * Protobuf type {@code google.bigtable.admin.v2.Table}
  */
-public  final class Table extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Table extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Table)
     TableOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Table.newBuilder() to construct.
   private Table(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Table() {
     name_ = "";
     granularity_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Table(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,91 +52,108 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              clusterStates_ = com.google.protobuf.MapField.newMapField(
-                  ClusterStatesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000002;
+              name_ = s;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
-            clusterStates__ = input.readMessage(
-                ClusterStatesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            clusterStates_.getMutableMap().put(
-                clusterStates__.getKey(), clusterStates__.getValue());
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              columnFamilies_ = com.google.protobuf.MapField.newMapField(
-                  ColumnFamiliesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000004;
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                clusterStates_ =
+                    com.google.protobuf.MapField.newMapField(
+                        ClusterStatesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<
+                      java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
+                  clusterStates__ =
+                      input.readMessage(
+                          ClusterStatesDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              clusterStates_
+                  .getMutableMap()
+                  .put(clusterStates__.getKey(), clusterStates__.getValue());
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
-            columnFamilies__ = input.readMessage(
-                ColumnFamiliesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            columnFamilies_.getMutableMap().put(
-                columnFamilies__.getKey(), columnFamilies__.getValue());
-            break;
-          }
-          case 32: {
-            int rawValue = input.readEnum();
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                columnFamilies_ =
+                    com.google.protobuf.MapField.newMapField(
+                        ColumnFamiliesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<
+                      java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
+                  columnFamilies__ =
+                      input.readMessage(
+                          ColumnFamiliesDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              columnFamilies_
+                  .getMutableMap()
+                  .put(columnFamilies__.getKey(), columnFamilies__.getValue());
+              break;
+            }
+          case 32:
+            {
+              int rawValue = input.readEnum();
 
-            granularity_ = rawValue;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              granularity_ = rawValue;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.bigtable.admin.v2.TableProto
+        .internal_static_google_bigtable_admin_v2_Table_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 2:
         return internalGetClusterStates();
       case 3:
         return internalGetColumnFamilies();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_fieldAccessorTable
+    return com.google.bigtable.admin.v2.TableProto
+        .internal_static_google_bigtable_admin_v2_Table_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.bigtable.admin.v2.Table.class, com.google.bigtable.admin.v2.Table.Builder.class);
+            com.google.bigtable.admin.v2.Table.class,
+            com.google.bigtable.admin.v2.Table.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Possible timestamp granularities to use when keeping multiple versions
    * of data in a table.
@@ -141,9 +161,10 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf enum {@code google.bigtable.admin.v2.Table.TimestampGranularity}
    */
-  public enum TimestampGranularity
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum TimestampGranularity implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * The user did not specify a granularity. Should not be returned.
      * When specified during table creation, MILLIS will be used.
@@ -153,6 +174,8 @@ private static final long serialVersionUID = 0L;
      */
     TIMESTAMP_GRANULARITY_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * The table keeps data versioned at a granularity of 1ms.
      * </pre>
@@ -164,6 +187,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * The user did not specify a granularity. Should not be returned.
      * When specified during table creation, MILLIS will be used.
@@ -173,6 +198,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int TIMESTAMP_GRANULARITY_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The table keeps data versioned at a granularity of 1ms.
      * </pre>
@@ -180,7 +207,6 @@ private static final long serialVersionUID = 0L;
      * <code>MILLIS = 1;</code>
      */
     public static final int MILLIS_VALUE = 1;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -190,9 +216,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static TimestampGranularity valueOf(int value) {
       return forNumber(value);
@@ -200,9 +224,12 @@ private static final long serialVersionUID = 0L;
 
     public static TimestampGranularity forNumber(int value) {
       switch (value) {
-        case 0: return TIMESTAMP_GRANULARITY_UNSPECIFIED;
-        case 1: return MILLIS;
-        default: return null;
+        case 0:
+          return TIMESTAMP_GRANULARITY_UNSPECIFIED;
+        case 1:
+          return MILLIS;
+        default:
+          return null;
       }
     }
 
@@ -210,24 +237,24 @@ private static final long serialVersionUID = 0L;
         internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        TimestampGranularity> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<TimestampGranularity>() {
-            public TimestampGranularity findValueByNumber(int number) {
-              return TimestampGranularity.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<TimestampGranularity>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<TimestampGranularity>() {
+              public TimestampGranularity findValueByNumber(int number) {
+                return TimestampGranularity.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.bigtable.admin.v2.Table.getDescriptor().getEnumTypes().get(0);
     }
 
@@ -236,8 +263,7 @@ private static final long serialVersionUID = 0L;
     public static TimestampGranularity valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -255,15 +281,18 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
    * <pre>
    * Defines a view over a table's fields.
    * </pre>
    *
    * Protobuf enum {@code google.bigtable.admin.v2.Table.View}
    */
-  public enum View
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum View implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Uses the default view for each method as documented in its request.
      * </pre>
@@ -272,6 +301,8 @@ private static final long serialVersionUID = 0L;
      */
     VIEW_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Only populates `name`.
      * </pre>
@@ -280,6 +311,8 @@ private static final long serialVersionUID = 0L;
      */
     NAME_ONLY(1),
     /**
+     *
+     *
      * <pre>
      * Only populates `name` and fields related to the table's schema.
      * </pre>
@@ -288,6 +321,8 @@ private static final long serialVersionUID = 0L;
      */
     SCHEMA_VIEW(2),
     /**
+     *
+     *
      * <pre>
      * Only populates `name` and fields related to the table's
      * replication state.
@@ -297,6 +332,8 @@ private static final long serialVersionUID = 0L;
      */
     REPLICATION_VIEW(3),
     /**
+     *
+     *
      * <pre>
      * Populates all fields.
      * </pre>
@@ -308,6 +345,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Uses the default view for each method as documented in its request.
      * </pre>
@@ -316,6 +355,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int VIEW_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Only populates `name`.
      * </pre>
@@ -324,6 +365,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int NAME_ONLY_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Only populates `name` and fields related to the table's schema.
      * </pre>
@@ -332,6 +375,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SCHEMA_VIEW_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Only populates `name` and fields related to the table's
      * replication state.
@@ -341,6 +386,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REPLICATION_VIEW_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * Populates all fields.
      * </pre>
@@ -348,7 +395,6 @@ private static final long serialVersionUID = 0L;
      * <code>FULL = 4;</code>
      */
     public static final int FULL_VALUE = 4;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -358,9 +404,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static View valueOf(int value) {
       return forNumber(value);
@@ -368,47 +412,49 @@ private static final long serialVersionUID = 0L;
 
     public static View forNumber(int value) {
       switch (value) {
-        case 0: return VIEW_UNSPECIFIED;
-        case 1: return NAME_ONLY;
-        case 2: return SCHEMA_VIEW;
-        case 3: return REPLICATION_VIEW;
-        case 4: return FULL;
-        default: return null;
+        case 0:
+          return VIEW_UNSPECIFIED;
+        case 1:
+          return NAME_ONLY;
+        case 2:
+          return SCHEMA_VIEW;
+        case 3:
+          return REPLICATION_VIEW;
+        case 4:
+          return FULL;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<View>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<View> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        View> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<View>() {
-            public View findValueByNumber(int number) {
-              return View.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<View> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<View>() {
+          public View findValueByNumber(int number) {
+            return View.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.bigtable.admin.v2.Table.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final View[] VALUES = values();
 
-    public static View valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static View valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -425,54 +471,64 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.bigtable.admin.v2.Table.View)
   }
 
-  public interface ClusterStateOrBuilder extends
+  public interface ClusterStateOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Table.ClusterState)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The state of replication for the table in this cluster.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;</code>
+     * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
+     * </code>
      */
     int getReplicationStateValue();
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The state of replication for the table in this cluster.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;</code>
+     * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
+     * </code>
      */
     com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState getReplicationState();
   }
   /**
+   *
+   *
    * <pre>
    * The state of a table's data in a particular cluster.
    * </pre>
    *
    * Protobuf type {@code google.bigtable.admin.v2.Table.ClusterState}
    */
-  public  static final class ClusterState extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class ClusterState extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Table.ClusterState)
       ClusterStateOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use ClusterState.newBuilder() to construct.
     private ClusterState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private ClusterState() {
       replicationState_ = 0;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private ClusterState(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -492,54 +548,60 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 8: {
-              int rawValue = input.readEnum();
+            case 8:
+              {
+                int rawValue = input.readEnum();
 
-              replicationState_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                replicationState_ = rawValue;
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_ClusterState_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.TableProto
+          .internal_static_google_bigtable_admin_v2_Table_ClusterState_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_ClusterState_fieldAccessorTable
+      return com.google.bigtable.admin.v2.TableProto
+          .internal_static_google_bigtable_admin_v2_Table_ClusterState_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.bigtable.admin.v2.Table.ClusterState.class, com.google.bigtable.admin.v2.Table.ClusterState.Builder.class);
+              com.google.bigtable.admin.v2.Table.ClusterState.class,
+              com.google.bigtable.admin.v2.Table.ClusterState.Builder.class);
     }
 
     /**
+     *
+     *
      * <pre>
      * Table replication states.
      * </pre>
      *
      * Protobuf enum {@code google.bigtable.admin.v2.Table.ClusterState.ReplicationState}
      */
-    public enum ReplicationState
-        implements com.google.protobuf.ProtocolMessageEnum {
+    public enum ReplicationState implements com.google.protobuf.ProtocolMessageEnum {
       /**
+       *
+       *
        * <pre>
        * The replication state of the table is unknown in this cluster.
        * </pre>
@@ -548,6 +610,8 @@ private static final long serialVersionUID = 0L;
        */
       STATE_NOT_KNOWN(0),
       /**
+       *
+       *
        * <pre>
        * The cluster was recently created, and the table must finish copying
        * over pre-existing data from other clusters before it can begin
@@ -558,6 +622,8 @@ private static final long serialVersionUID = 0L;
        */
       INITIALIZING(1),
       /**
+       *
+       *
        * <pre>
        * The table is temporarily unable to serve Data API requests from this
        * cluster due to planned internal maintenance.
@@ -567,6 +633,8 @@ private static final long serialVersionUID = 0L;
        */
       PLANNED_MAINTENANCE(2),
       /**
+       *
+       *
        * <pre>
        * The table is temporarily unable to serve Data API requests from this
        * cluster due to unplanned or emergency maintenance.
@@ -576,6 +644,8 @@ private static final long serialVersionUID = 0L;
        */
       UNPLANNED_MAINTENANCE(3),
       /**
+       *
+       *
        * <pre>
        * The table can serve Data API requests from this cluster. Depending on
        * replication delay, reads may not immediately reflect the state of the
@@ -589,6 +659,8 @@ private static final long serialVersionUID = 0L;
       ;
 
       /**
+       *
+       *
        * <pre>
        * The replication state of the table is unknown in this cluster.
        * </pre>
@@ -597,6 +669,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int STATE_NOT_KNOWN_VALUE = 0;
       /**
+       *
+       *
        * <pre>
        * The cluster was recently created, and the table must finish copying
        * over pre-existing data from other clusters before it can begin
@@ -607,6 +681,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int INITIALIZING_VALUE = 1;
       /**
+       *
+       *
        * <pre>
        * The table is temporarily unable to serve Data API requests from this
        * cluster due to planned internal maintenance.
@@ -616,6 +692,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int PLANNED_MAINTENANCE_VALUE = 2;
       /**
+       *
+       *
        * <pre>
        * The table is temporarily unable to serve Data API requests from this
        * cluster due to unplanned or emergency maintenance.
@@ -625,6 +703,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int UNPLANNED_MAINTENANCE_VALUE = 3;
       /**
+       *
+       *
        * <pre>
        * The table can serve Data API requests from this cluster. Depending on
        * replication delay, reads may not immediately reflect the state of the
@@ -635,7 +715,6 @@ private static final long serialVersionUID = 0L;
        */
       public static final int READY_VALUE = 4;
 
-
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
           throw new java.lang.IllegalArgumentException(
@@ -644,9 +723,7 @@ private static final long serialVersionUID = 0L;
         return value;
       }
 
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
+      /** @deprecated Use {@link #forNumber(int)} instead. */
       @java.lang.Deprecated
       public static ReplicationState valueOf(int value) {
         return forNumber(value);
@@ -654,12 +731,18 @@ private static final long serialVersionUID = 0L;
 
       public static ReplicationState forNumber(int value) {
         switch (value) {
-          case 0: return STATE_NOT_KNOWN;
-          case 1: return INITIALIZING;
-          case 2: return PLANNED_MAINTENANCE;
-          case 3: return UNPLANNED_MAINTENANCE;
-          case 4: return READY;
-          default: return null;
+          case 0:
+            return STATE_NOT_KNOWN;
+          case 1:
+            return INITIALIZING;
+          case 2:
+            return PLANNED_MAINTENANCE;
+          case 3:
+            return UNPLANNED_MAINTENANCE;
+          case 4:
+            return READY;
+          default:
+            return null;
         }
       }
 
@@ -667,25 +750,27 @@ private static final long serialVersionUID = 0L;
           internalGetValueMap() {
         return internalValueMap;
       }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          ReplicationState> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<ReplicationState>() {
-              public ReplicationState findValueByNumber(int number) {
-                return ReplicationState.forNumber(number);
-              }
-            };
 
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
+      private static final com.google.protobuf.Internal.EnumLiteMap<ReplicationState>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<ReplicationState>() {
+                public ReplicationState findValueByNumber(int number) {
+                  return ReplicationState.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
         return getDescriptor().getValues().get(ordinal());
       }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
         return getDescriptor();
       }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.google.bigtable.admin.v2.Table.ClusterState.getDescriptor().getEnumTypes().get(0);
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.Table.ClusterState.getDescriptor()
+            .getEnumTypes()
+            .get(0);
       }
 
       private static final ReplicationState[] VALUES = values();
@@ -693,8 +778,7 @@ private static final long serialVersionUID = 0L;
       public static ReplicationState valueOf(
           com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
         }
         if (desc.getIndex() == -1) {
           return UNRECOGNIZED;
@@ -714,31 +798,42 @@ private static final long serialVersionUID = 0L;
     public static final int REPLICATION_STATE_FIELD_NUMBER = 1;
     private int replicationState_;
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The state of replication for the table in this cluster.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;</code>
+     * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
+     * </code>
      */
     public int getReplicationStateValue() {
       return replicationState_;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The state of replication for the table in this cluster.
      * </pre>
      *
-     * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;</code>
+     * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
+     * </code>
      */
     public com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState getReplicationState() {
       @SuppressWarnings("deprecation")
-      com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState result = com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.valueOf(replicationState_);
-      return result == null ? com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.UNRECOGNIZED : result;
+      com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState result =
+          com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.valueOf(
+              replicationState_);
+      return result == null
+          ? com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.UNRECOGNIZED
+          : result;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -750,9 +845,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (replicationState_ != com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.STATE_NOT_KNOWN.getNumber()) {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (replicationState_
+          != com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.STATE_NOT_KNOWN
+              .getNumber()) {
         output.writeEnum(1, replicationState_);
       }
       unknownFields.writeTo(output);
@@ -764,9 +860,10 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (replicationState_ != com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.STATE_NOT_KNOWN.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, replicationState_);
+      if (replicationState_
+          != com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.STATE_NOT_KNOWN
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, replicationState_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -776,12 +873,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.bigtable.admin.v2.Table.ClusterState)) {
         return super.equals(obj);
       }
-      com.google.bigtable.admin.v2.Table.ClusterState other = (com.google.bigtable.admin.v2.Table.ClusterState) obj;
+      com.google.bigtable.admin.v2.Table.ClusterState other =
+          (com.google.bigtable.admin.v2.Table.ClusterState) obj;
 
       boolean result = true;
       result = result && replicationState_ == other.replicationState_;
@@ -804,87 +902,93 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.bigtable.admin.v2.Table.ClusterState parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.bigtable.admin.v2.Table.ClusterState parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.bigtable.admin.v2.Table.ClusterState parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.bigtable.admin.v2.Table.ClusterState parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.bigtable.admin.v2.Table.ClusterState parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.bigtable.admin.v2.Table.ClusterState parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.bigtable.admin.v2.Table.ClusterState parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.bigtable.admin.v2.Table.ClusterState parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.bigtable.admin.v2.Table.ClusterState parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.bigtable.admin.v2.Table.ClusterState parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.bigtable.admin.v2.Table.ClusterState parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.bigtable.admin.v2.Table.ClusterState parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.bigtable.admin.v2.Table.ClusterState parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.bigtable.admin.v2.Table.ClusterState parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(com.google.bigtable.admin.v2.Table.ClusterState prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -894,27 +998,32 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * The state of a table's data in a particular cluster.
      * </pre>
      *
      * Protobuf type {@code google.bigtable.admin.v2.Table.ClusterState}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Table.ClusterState)
         com.google.bigtable.admin.v2.Table.ClusterStateOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_ClusterState_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.TableProto
+            .internal_static_google_bigtable_admin_v2_Table_ClusterState_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_ClusterState_fieldAccessorTable
+        return com.google.bigtable.admin.v2.TableProto
+            .internal_static_google_bigtable_admin_v2_Table_ClusterState_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.bigtable.admin.v2.Table.ClusterState.class, com.google.bigtable.admin.v2.Table.ClusterState.Builder.class);
+                com.google.bigtable.admin.v2.Table.ClusterState.class,
+                com.google.bigtable.admin.v2.Table.ClusterState.Builder.class);
       }
 
       // Construct using com.google.bigtable.admin.v2.Table.ClusterState.newBuilder()
@@ -922,16 +1031,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -941,9 +1049,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_ClusterState_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.bigtable.admin.v2.TableProto
+            .internal_static_google_bigtable_admin_v2_Table_ClusterState_descriptor;
       }
 
       @java.lang.Override
@@ -962,7 +1070,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.bigtable.admin.v2.Table.ClusterState buildPartial() {
-        com.google.bigtable.admin.v2.Table.ClusterState result = new com.google.bigtable.admin.v2.Table.ClusterState(this);
+        com.google.bigtable.admin.v2.Table.ClusterState result =
+            new com.google.bigtable.admin.v2.Table.ClusterState(this);
         result.replicationState_ = replicationState_;
         onBuilt();
         return result;
@@ -972,38 +1081,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.bigtable.admin.v2.Table.ClusterState) {
-          return mergeFrom((com.google.bigtable.admin.v2.Table.ClusterState)other);
+          return mergeFrom((com.google.bigtable.admin.v2.Table.ClusterState) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -1011,7 +1123,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.bigtable.admin.v2.Table.ClusterState other) {
-        if (other == com.google.bigtable.admin.v2.Table.ClusterState.getDefaultInstance()) return this;
+        if (other == com.google.bigtable.admin.v2.Table.ClusterState.getDefaultInstance())
+          return this;
         if (other.replicationState_ != 0) {
           setReplicationStateValue(other.getReplicationStateValue());
         }
@@ -1034,7 +1147,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.bigtable.admin.v2.Table.ClusterState) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.bigtable.admin.v2.Table.ClusterState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1046,23 +1160,29 @@ private static final long serialVersionUID = 0L;
 
       private int replicationState_ = 0;
       /**
+       *
+       *
        * <pre>
        * (`OutputOnly`)
        * The state of replication for the table in this cluster.
        * </pre>
        *
-       * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;</code>
+       * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
+       * </code>
        */
       public int getReplicationStateValue() {
         return replicationState_;
       }
       /**
+       *
+       *
        * <pre>
        * (`OutputOnly`)
        * The state of replication for the table in this cluster.
        * </pre>
        *
-       * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;</code>
+       * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
+       * </code>
        */
       public Builder setReplicationStateValue(int value) {
         replicationState_ = value;
@@ -1070,49 +1190,65 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * (`OutputOnly`)
        * The state of replication for the table in this cluster.
        * </pre>
        *
-       * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;</code>
+       * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
+       * </code>
        */
-      public com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState getReplicationState() {
+      public com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState
+          getReplicationState() {
         @SuppressWarnings("deprecation")
-        com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState result = com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.valueOf(replicationState_);
-        return result == null ? com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.UNRECOGNIZED : result;
+        com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState result =
+            com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.valueOf(
+                replicationState_);
+        return result == null
+            ? com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.UNRECOGNIZED
+            : result;
       }
       /**
+       *
+       *
        * <pre>
        * (`OutputOnly`)
        * The state of replication for the table in this cluster.
        * </pre>
        *
-       * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;</code>
+       * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
+       * </code>
        */
-      public Builder setReplicationState(com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState value) {
+      public Builder setReplicationState(
+          com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+
         replicationState_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * (`OutputOnly`)
        * The state of replication for the table in this cluster.
        * </pre>
        *
-       * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;</code>
+       * <code>.google.bigtable.admin.v2.Table.ClusterState.ReplicationState replication_state = 1;
+       * </code>
        */
       public Builder clearReplicationState() {
-        
+
         replicationState_ = 0;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1125,12 +1261,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Table.ClusterState)
     }
 
     // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Table.ClusterState)
     private static final com.google.bigtable.admin.v2.Table.ClusterState DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Table.ClusterState();
     }
@@ -1139,16 +1275,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ClusterState>
-        PARSER = new com.google.protobuf.AbstractParser<ClusterState>() {
-      @java.lang.Override
-      public ClusterState parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ClusterState(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<ClusterState> PARSER =
+        new com.google.protobuf.AbstractParser<ClusterState>() {
+          @java.lang.Override
+          public ClusterState parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ClusterState(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<ClusterState> parser() {
       return PARSER;
@@ -1163,13 +1299,14 @@ private static final long serialVersionUID = 0L;
     public com.google.bigtable.admin.v2.Table.ClusterState getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The unique name of the table. Values are of the form
@@ -1184,14 +1321,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The unique name of the table. Values are of the form
@@ -1201,13 +1339,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -1216,21 +1352,29 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CLUSTER_STATES_FIELD_NUMBER = 2;
+
   private static final class ClusterStatesDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
-        java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState> defaultEntry =
+            java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
+        defaultEntry =
             com.google.protobuf.MapEntry
-            .<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>newDefaultInstance(
-                com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_ClusterStatesEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                com.google.bigtable.admin.v2.Table.ClusterState.getDefaultInstance());
+                .<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
+                    newDefaultInstance(
+                        com.google.bigtable.admin.v2.TableProto
+                            .internal_static_google_bigtable_admin_v2_Table_ClusterStatesEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.bigtable.admin.v2.Table.ClusterState.getDefaultInstance());
   }
+
   private com.google.protobuf.MapField<
-      java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState> clusterStates_;
-  private com.google.protobuf.MapField<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
-  internalGetClusterStates() {
+          java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
+      clusterStates_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
+      internalGetClusterStates() {
     if (clusterStates_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
           ClusterStatesDefaultEntryHolder.defaultEntry);
@@ -1242,6 +1386,8 @@ private static final long serialVersionUID = 0L;
     return internalGetClusterStates().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * Map from cluster ID to per-cluster table state.
@@ -1251,22 +1397,24 @@ private static final long serialVersionUID = 0L;
    * Views: `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
+   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+   * </code>
    */
-
-  public boolean containsClusterStates(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsClusterStates(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetClusterStates().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getClusterStatesMap()} instead.
-   */
+  /** Use {@link #getClusterStatesMap()} instead. */
   @java.lang.Deprecated
-  public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState> getClusterStates() {
+  public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
+      getClusterStates() {
     return getClusterStatesMap();
   }
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * Map from cluster ID to per-cluster table state.
@@ -1276,13 +1424,16 @@ private static final long serialVersionUID = 0L;
    * Views: `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
+   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+   * </code>
    */
-
-  public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState> getClusterStatesMap() {
+  public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
+      getClusterStatesMap() {
     return internalGetClusterStates().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * Map from cluster ID to per-cluster table state.
@@ -1292,18 +1443,21 @@ private static final long serialVersionUID = 0L;
    * Views: `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
+   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+   * </code>
    */
-
   public com.google.bigtable.admin.v2.Table.ClusterState getClusterStatesOrDefault(
-      java.lang.String key,
-      com.google.bigtable.admin.v2.Table.ClusterState defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+      java.lang.String key, com.google.bigtable.admin.v2.Table.ClusterState defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState> map =
         internalGetClusterStates().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * Map from cluster ID to per-cluster table state.
@@ -1313,12 +1467,14 @@ private static final long serialVersionUID = 0L;
    * Views: `REPLICATION_VIEW`, `FULL`
    * </pre>
    *
-   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
+   * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+   * </code>
    */
-
   public com.google.bigtable.admin.v2.Table.ClusterState getClusterStatesOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState> map =
         internalGetClusterStates().getMap();
     if (!map.containsKey(key)) {
@@ -1328,21 +1484,26 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COLUMN_FAMILIES_FIELD_NUMBER = 3;
+
   private static final class ColumnFamiliesDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
-        java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> defaultEntry =
+            java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
+        defaultEntry =
             com.google.protobuf.MapEntry
-            .<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>newDefaultInstance(
-                com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_ColumnFamiliesEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance());
+                .<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>newDefaultInstance(
+                    com.google.bigtable.admin.v2.TableProto
+                        .internal_static_google_bigtable_admin_v2_Table_ColumnFamiliesEntry_descriptor,
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance());
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> columnFamilies_;
+
   private com.google.protobuf.MapField<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
-  internalGetColumnFamilies() {
+      columnFamilies_;
+
+  private com.google.protobuf.MapField<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
+      internalGetColumnFamilies() {
     if (columnFamilies_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
           ColumnFamiliesDefaultEntryHolder.defaultEntry);
@@ -1354,6 +1515,8 @@ private static final long serialVersionUID = 0L;
     return internalGetColumnFamilies().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * (`CreationOnly`)
    * The column families configured for this table, mapped by column family ID.
@@ -1362,20 +1525,21 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
    */
-
-  public boolean containsColumnFamilies(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsColumnFamilies(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetColumnFamilies().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getColumnFamiliesMap()} instead.
-   */
+  /** Use {@link #getColumnFamiliesMap()} instead. */
   @java.lang.Deprecated
-  public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> getColumnFamilies() {
+  public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
+      getColumnFamilies() {
     return getColumnFamiliesMap();
   }
   /**
+   *
+   *
    * <pre>
    * (`CreationOnly`)
    * The column families configured for this table, mapped by column family ID.
@@ -1384,11 +1548,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
    */
-
-  public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> getColumnFamiliesMap() {
+  public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
+      getColumnFamiliesMap() {
     return internalGetColumnFamilies().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * (`CreationOnly`)
    * The column families configured for this table, mapped by column family ID.
@@ -1397,16 +1563,18 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
    */
-
   public com.google.bigtable.admin.v2.ColumnFamily getColumnFamiliesOrDefault(
-      java.lang.String key,
-      com.google.bigtable.admin.v2.ColumnFamily defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+      java.lang.String key, com.google.bigtable.admin.v2.ColumnFamily defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> map =
         internalGetColumnFamilies().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * (`CreationOnly`)
    * The column families configured for this table, mapped by column family ID.
@@ -1415,10 +1583,10 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
    */
-
-  public com.google.bigtable.admin.v2.ColumnFamily getColumnFamiliesOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public com.google.bigtable.admin.v2.ColumnFamily getColumnFamiliesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> map =
         internalGetColumnFamilies().getMap();
     if (!map.containsKey(key)) {
@@ -1430,6 +1598,8 @@ private static final long serialVersionUID = 0L;
   public static final int GRANULARITY_FIELD_NUMBER = 4;
   private int granularity_;
   /**
+   *
+   *
    * <pre>
    * (`CreationOnly`)
    * The granularity (i.e. `MILLIS`) at which timestamps are stored in
@@ -1444,6 +1614,8 @@ private static final long serialVersionUID = 0L;
     return granularity_;
   }
   /**
+   *
+   *
    * <pre>
    * (`CreationOnly`)
    * The granularity (i.e. `MILLIS`) at which timestamps are stored in
@@ -1456,11 +1628,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.bigtable.admin.v2.Table.TimestampGranularity getGranularity() {
     @SuppressWarnings("deprecation")
-    com.google.bigtable.admin.v2.Table.TimestampGranularity result = com.google.bigtable.admin.v2.Table.TimestampGranularity.valueOf(granularity_);
-    return result == null ? com.google.bigtable.admin.v2.Table.TimestampGranularity.UNRECOGNIZED : result;
+    com.google.bigtable.admin.v2.Table.TimestampGranularity result =
+        com.google.bigtable.admin.v2.Table.TimestampGranularity.valueOf(granularity_);
+    return result == null
+        ? com.google.bigtable.admin.v2.Table.TimestampGranularity.UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1472,24 +1648,17 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetClusterStates(),
-        ClusterStatesDefaultEntryHolder.defaultEntry,
-        2);
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetColumnFamilies(),
-        ColumnFamiliesDefaultEntryHolder.defaultEntry,
-        3);
-    if (granularity_ != com.google.bigtable.admin.v2.Table.TimestampGranularity.TIMESTAMP_GRANULARITY_UNSPECIFIED.getNumber()) {
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetClusterStates(), ClusterStatesDefaultEntryHolder.defaultEntry, 2);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetColumnFamilies(), ColumnFamiliesDefaultEntryHolder.defaultEntry, 3);
+    if (granularity_
+        != com.google.bigtable.admin.v2.Table.TimestampGranularity.TIMESTAMP_GRANULARITY_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(4, granularity_);
     }
     unknownFields.writeTo(output);
@@ -1504,29 +1673,33 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    for (java.util.Map.Entry<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState> entry
-         : internalGetClusterStates().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
-      clusterStates__ = ClusterStatesDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, clusterStates__);
+    for (java.util.Map.Entry<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
+        entry : internalGetClusterStates().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<
+              java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
+          clusterStates__ =
+              ClusterStatesDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, clusterStates__);
     }
-    for (java.util.Map.Entry<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> entry
-         : internalGetColumnFamilies().getMap().entrySet()) {
+    for (java.util.Map.Entry<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> entry :
+        internalGetColumnFamilies().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
-      columnFamilies__ = ColumnFamiliesDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, columnFamilies__);
+          columnFamilies__ =
+              ColumnFamiliesDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, columnFamilies__);
     }
-    if (granularity_ != com.google.bigtable.admin.v2.Table.TimestampGranularity.TIMESTAMP_GRANULARITY_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, granularity_);
+    if (granularity_
+        != com.google.bigtable.admin.v2.Table.TimestampGranularity.TIMESTAMP_GRANULARITY_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, granularity_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1536,7 +1709,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.bigtable.admin.v2.Table)) {
       return super.equals(obj);
@@ -1544,12 +1717,9 @@ private static final long serialVersionUID = 0L;
     com.google.bigtable.admin.v2.Table other = (com.google.bigtable.admin.v2.Table) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && internalGetClusterStates().equals(
-        other.internalGetClusterStates());
-    result = result && internalGetColumnFamilies().equals(
-        other.internalGetColumnFamilies());
+    result = result && getName().equals(other.getName());
+    result = result && internalGetClusterStates().equals(other.internalGetClusterStates());
+    result = result && internalGetColumnFamilies().equals(other.internalGetColumnFamilies());
     result = result && granularity_ == other.granularity_;
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -1579,97 +1749,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.bigtable.admin.v2.Table parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.bigtable.admin.v2.Table parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.admin.v2.Table parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.bigtable.admin.v2.Table parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.bigtable.admin.v2.Table parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.admin.v2.Table parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.bigtable.admin.v2.Table parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.admin.v2.Table parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.bigtable.admin.v2.Table parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.bigtable.admin.v2.Table parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.bigtable.admin.v2.Table parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.bigtable.admin.v2.Table parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.bigtable.admin.v2.Table parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.bigtable.admin.v2.Table parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.bigtable.admin.v2.Table prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A collection of user data indexed by row, column, and timestamp.
    * Each table is served using the resources of its parent cluster.
@@ -1677,47 +1853,47 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.bigtable.admin.v2.Table}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.Table)
       com.google.bigtable.admin.v2.TableOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.TableProto
+          .internal_static_google_bigtable_admin_v2_Table_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 2:
           return internalGetClusterStates();
         case 3:
           return internalGetColumnFamilies();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 2:
           return internalGetMutableClusterStates();
         case 3:
           return internalGetMutableColumnFamilies();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_fieldAccessorTable
+      return com.google.bigtable.admin.v2.TableProto
+          .internal_static_google_bigtable_admin_v2_Table_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.bigtable.admin.v2.Table.class, com.google.bigtable.admin.v2.Table.Builder.class);
+              com.google.bigtable.admin.v2.Table.class,
+              com.google.bigtable.admin.v2.Table.Builder.class);
     }
 
     // Construct using com.google.bigtable.admin.v2.Table.newBuilder()
@@ -1725,16 +1901,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1748,9 +1923,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.bigtable.admin.v2.TableProto.internal_static_google_bigtable_admin_v2_Table_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.bigtable.admin.v2.TableProto
+          .internal_static_google_bigtable_admin_v2_Table_descriptor;
     }
 
     @java.lang.Override
@@ -1787,38 +1962,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.bigtable.admin.v2.Table) {
-        return mergeFrom((com.google.bigtable.admin.v2.Table)other);
+        return mergeFrom((com.google.bigtable.admin.v2.Table) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1831,10 +2007,8 @@ private static final long serialVersionUID = 0L;
         name_ = other.name_;
         onChanged();
       }
-      internalGetMutableClusterStates().mergeFrom(
-          other.internalGetClusterStates());
-      internalGetMutableColumnFamilies().mergeFrom(
-          other.internalGetColumnFamilies());
+      internalGetMutableClusterStates().mergeFrom(other.internalGetClusterStates());
+      internalGetMutableColumnFamilies().mergeFrom(other.internalGetColumnFamilies());
       if (other.granularity_ != 0) {
         setGranularityValue(other.getGranularityValue());
       }
@@ -1866,10 +2040,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The unique name of the table. Values are of the form
@@ -1882,8 +2059,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1892,6 +2068,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The unique name of the table. Values are of the form
@@ -1901,13 +2079,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1915,6 +2091,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The unique name of the table. Values are of the form
@@ -1924,17 +2102,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The unique name of the table. Values are of the form
@@ -1945,12 +2124,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * The unique name of the table. Values are of the form
@@ -1960,34 +2141,39 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.MapField<
-        java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState> clusterStates_;
-    private com.google.protobuf.MapField<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
-    internalGetClusterStates() {
+            java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
+        clusterStates_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
+        internalGetClusterStates() {
       if (clusterStates_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             ClusterStatesDefaultEntryHolder.defaultEntry);
       }
       return clusterStates_;
     }
-    private com.google.protobuf.MapField<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
-    internalGetMutableClusterStates() {
-      onChanged();;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
+        internalGetMutableClusterStates() {
+      onChanged();
+      ;
       if (clusterStates_ == null) {
-        clusterStates_ = com.google.protobuf.MapField.newMapField(
-            ClusterStatesDefaultEntryHolder.defaultEntry);
+        clusterStates_ =
+            com.google.protobuf.MapField.newMapField(ClusterStatesDefaultEntryHolder.defaultEntry);
       }
       if (!clusterStates_.isMutable()) {
         clusterStates_ = clusterStates_.copy();
@@ -1999,6 +2185,8 @@ private static final long serialVersionUID = 0L;
       return internalGetClusterStates().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
@@ -2008,22 +2196,24 @@ private static final long serialVersionUID = 0L;
      * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
+     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+     * </code>
      */
-
-    public boolean containsClusterStates(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsClusterStates(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetClusterStates().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getClusterStatesMap()} instead.
-     */
+    /** Use {@link #getClusterStatesMap()} instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState> getClusterStates() {
+    public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
+        getClusterStates() {
       return getClusterStatesMap();
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
@@ -2033,13 +2223,16 @@ private static final long serialVersionUID = 0L;
      * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
+     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+     * </code>
      */
-
-    public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState> getClusterStatesMap() {
+    public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
+        getClusterStatesMap() {
       return internalGetClusterStates().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
@@ -2049,18 +2242,21 @@ private static final long serialVersionUID = 0L;
      * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
+     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+     * </code>
      */
-
     public com.google.bigtable.admin.v2.Table.ClusterState getClusterStatesOrDefault(
-        java.lang.String key,
-        com.google.bigtable.admin.v2.Table.ClusterState defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+        java.lang.String key, com.google.bigtable.admin.v2.Table.ClusterState defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState> map =
           internalGetClusterStates().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
@@ -2070,12 +2266,14 @@ private static final long serialVersionUID = 0L;
      * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
+     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+     * </code>
      */
-
     public com.google.bigtable.admin.v2.Table.ClusterState getClusterStatesOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState> map =
           internalGetClusterStates().getMap();
       if (!map.containsKey(key)) {
@@ -2085,11 +2283,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearClusterStates() {
-      internalGetMutableClusterStates().getMutableMap()
-          .clear();
+      internalGetMutableClusterStates().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
@@ -2099,25 +2298,25 @@ private static final long serialVersionUID = 0L;
      * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
+     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+     * </code>
      */
-
-    public Builder removeClusterStates(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableClusterStates().getMutableMap()
-          .remove(key);
+    public Builder removeClusterStates(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableClusterStates().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
-    getMutableClusterStates() {
+        getMutableClusterStates() {
       return internalGetMutableClusterStates().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
@@ -2127,18 +2326,23 @@ private static final long serialVersionUID = 0L;
      * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
+     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+     * </code>
      */
     public Builder putClusterStates(
-        java.lang.String key,
-        com.google.bigtable.admin.v2.Table.ClusterState value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableClusterStates().getMutableMap()
-          .put(key, value);
+        java.lang.String key, com.google.bigtable.admin.v2.Table.ClusterState value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableClusterStates().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`OutputOnly`)
      * Map from cluster ID to per-cluster table state.
@@ -2148,32 +2352,37 @@ private static final long serialVersionUID = 0L;
      * Views: `REPLICATION_VIEW`, `FULL`
      * </pre>
      *
-     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;</code>
+     * <code>map&lt;string, .google.bigtable.admin.v2.Table.ClusterState&gt; cluster_states = 2;
+     * </code>
      */
-
     public Builder putAllClusterStates(
         java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState> values) {
-      internalGetMutableClusterStates().getMutableMap()
-          .putAll(values);
+      internalGetMutableClusterStates().getMutableMap().putAll(values);
       return this;
     }
 
     private com.google.protobuf.MapField<
-        java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> columnFamilies_;
-    private com.google.protobuf.MapField<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
-    internalGetColumnFamilies() {
+            java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
+        columnFamilies_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
+        internalGetColumnFamilies() {
       if (columnFamilies_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             ColumnFamiliesDefaultEntryHolder.defaultEntry);
       }
       return columnFamilies_;
     }
-    private com.google.protobuf.MapField<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
-    internalGetMutableColumnFamilies() {
-      onChanged();;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
+        internalGetMutableColumnFamilies() {
+      onChanged();
+      ;
       if (columnFamilies_ == null) {
-        columnFamilies_ = com.google.protobuf.MapField.newMapField(
-            ColumnFamiliesDefaultEntryHolder.defaultEntry);
+        columnFamilies_ =
+            com.google.protobuf.MapField.newMapField(ColumnFamiliesDefaultEntryHolder.defaultEntry);
       }
       if (!columnFamilies_.isMutable()) {
         columnFamilies_ = columnFamilies_.copy();
@@ -2185,6 +2394,8 @@ private static final long serialVersionUID = 0L;
       return internalGetColumnFamilies().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * (`CreationOnly`)
      * The column families configured for this table, mapped by column family ID.
@@ -2193,20 +2404,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
      */
-
-    public boolean containsColumnFamilies(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsColumnFamilies(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetColumnFamilies().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getColumnFamiliesMap()} instead.
-     */
+    /** Use {@link #getColumnFamiliesMap()} instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> getColumnFamilies() {
+    public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
+        getColumnFamilies() {
       return getColumnFamiliesMap();
     }
     /**
+     *
+     *
      * <pre>
      * (`CreationOnly`)
      * The column families configured for this table, mapped by column family ID.
@@ -2215,11 +2427,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
      */
-
-    public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> getColumnFamiliesMap() {
+    public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
+        getColumnFamiliesMap() {
       return internalGetColumnFamilies().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * (`CreationOnly`)
      * The column families configured for this table, mapped by column family ID.
@@ -2228,16 +2442,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
      */
-
     public com.google.bigtable.admin.v2.ColumnFamily getColumnFamiliesOrDefault(
-        java.lang.String key,
-        com.google.bigtable.admin.v2.ColumnFamily defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+        java.lang.String key, com.google.bigtable.admin.v2.ColumnFamily defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> map =
           internalGetColumnFamilies().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * (`CreationOnly`)
      * The column families configured for this table, mapped by column family ID.
@@ -2246,10 +2462,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
      */
-
     public com.google.bigtable.admin.v2.ColumnFamily getColumnFamiliesOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> map =
           internalGetColumnFamilies().getMap();
       if (!map.containsKey(key)) {
@@ -2259,11 +2476,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearColumnFamilies() {
-      internalGetMutableColumnFamilies().getMutableMap()
-          .clear();
+      internalGetMutableColumnFamilies().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`CreationOnly`)
      * The column families configured for this table, mapped by column family ID.
@@ -2272,23 +2490,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
      */
-
-    public Builder removeColumnFamilies(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableColumnFamilies().getMutableMap()
-          .remove(key);
+    public Builder removeColumnFamilies(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableColumnFamilies().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
-    getMutableColumnFamilies() {
+        getMutableColumnFamilies() {
       return internalGetMutableColumnFamilies().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * (`CreationOnly`)
      * The column families configured for this table, mapped by column family ID.
@@ -2298,15 +2515,19 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
      */
     public Builder putColumnFamilies(
-        java.lang.String key,
-        com.google.bigtable.admin.v2.ColumnFamily value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableColumnFamilies().getMutableMap()
-          .put(key, value);
+        java.lang.String key, com.google.bigtable.admin.v2.ColumnFamily value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableColumnFamilies().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`CreationOnly`)
      * The column families configured for this table, mapped by column family ID.
@@ -2315,16 +2536,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
      */
-
     public Builder putAllColumnFamilies(
         java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> values) {
-      internalGetMutableColumnFamilies().getMutableMap()
-          .putAll(values);
+      internalGetMutableColumnFamilies().getMutableMap().putAll(values);
       return this;
     }
 
     private int granularity_ = 0;
     /**
+     *
+     *
      * <pre>
      * (`CreationOnly`)
      * The granularity (i.e. `MILLIS`) at which timestamps are stored in
@@ -2339,6 +2560,8 @@ private static final long serialVersionUID = 0L;
       return granularity_;
     }
     /**
+     *
+     *
      * <pre>
      * (`CreationOnly`)
      * The granularity (i.e. `MILLIS`) at which timestamps are stored in
@@ -2355,6 +2578,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`CreationOnly`)
      * The granularity (i.e. `MILLIS`) at which timestamps are stored in
@@ -2367,10 +2592,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.bigtable.admin.v2.Table.TimestampGranularity getGranularity() {
       @SuppressWarnings("deprecation")
-      com.google.bigtable.admin.v2.Table.TimestampGranularity result = com.google.bigtable.admin.v2.Table.TimestampGranularity.valueOf(granularity_);
-      return result == null ? com.google.bigtable.admin.v2.Table.TimestampGranularity.UNRECOGNIZED : result;
+      com.google.bigtable.admin.v2.Table.TimestampGranularity result =
+          com.google.bigtable.admin.v2.Table.TimestampGranularity.valueOf(granularity_);
+      return result == null
+          ? com.google.bigtable.admin.v2.Table.TimestampGranularity.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * (`CreationOnly`)
      * The granularity (i.e. `MILLIS`) at which timestamps are stored in
@@ -2385,12 +2615,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       granularity_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * (`CreationOnly`)
      * The granularity (i.e. `MILLIS`) at which timestamps are stored in
@@ -2402,14 +2634,14 @@ private static final long serialVersionUID = 0L;
      * <code>.google.bigtable.admin.v2.Table.TimestampGranularity granularity = 4;</code>
      */
     public Builder clearGranularity() {
-      
+
       granularity_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2419,12 +2651,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Table)
   }
 
   // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.Table)
   private static final com.google.bigtable.admin.v2.Table DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.Table();
   }
@@ -2433,16 +2665,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Table>
-      PARSER = new com.google.protobuf.AbstractParser<Table>() {
-    @java.lang.Override
-    public Table parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Table(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Table> PARSER =
+      new com.google.protobuf.AbstractParser<Table>() {
+        @java.lang.Override
+        public Table parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Table(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Table> parser() {
     return PARSER;
@@ -2457,6 +2689,4 @@ private static final long serialVersionUID = 0L;
   public com.google.bigtable.admin.v2.Table getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

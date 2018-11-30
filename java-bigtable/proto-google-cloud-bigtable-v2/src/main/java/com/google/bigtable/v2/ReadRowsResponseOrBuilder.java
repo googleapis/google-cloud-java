@@ -3,35 +3,26 @@
 
 package com.google.bigtable.v2;
 
-public interface ReadRowsResponseOrBuilder extends
+public interface ReadRowsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.v2.ReadRowsResponse)
     com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code>
-   */
-  java.util.List<com.google.bigtable.v2.ReadRowsResponse.CellChunk> 
-      getChunksList();
-  /**
-   * <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code>
-   */
+  /** <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code> */
+  java.util.List<com.google.bigtable.v2.ReadRowsResponse.CellChunk> getChunksList();
+  /** <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code> */
   com.google.bigtable.v2.ReadRowsResponse.CellChunk getChunks(int index);
-  /**
-   * <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code>
-   */
+  /** <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code> */
   int getChunksCount();
-  /**
-   * <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code>
-   */
-  java.util.List<? extends com.google.bigtable.v2.ReadRowsResponse.CellChunkOrBuilder> 
+  /** <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code> */
+  java.util.List<? extends com.google.bigtable.v2.ReadRowsResponse.CellChunkOrBuilder>
       getChunksOrBuilderList();
-  /**
-   * <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code>
-   */
-  com.google.bigtable.v2.ReadRowsResponse.CellChunkOrBuilder getChunksOrBuilder(
-      int index);
+  /** <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code> */
+  com.google.bigtable.v2.ReadRowsResponse.CellChunkOrBuilder getChunksOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optionally the server might return the row key of the last row it
    * has scanned.  The client can use this to construct a more

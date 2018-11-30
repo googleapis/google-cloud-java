@@ -119,24 +119,30 @@ public class ReadIT {
 
   @Test
   public void readSingleNonexistentAsyncCallback() throws Exception {
-    ApiFuture<Row> future = testEnvRule.env().getDataClient()
-        .readRowAsync(testEnvRule.env().getTableName().getTable(), "somenonexistentkey");
+    ApiFuture<Row> future =
+        testEnvRule
+            .env()
+            .getDataClient()
+            .readRowAsync(testEnvRule.env().getTableName().getTable(), "somenonexistentkey");
 
     final AtomicBoolean found = new AtomicBoolean();
     final CountDownLatch latch = new CountDownLatch(1);
 
-    ApiFutures.addCallback(future, new ApiFutureCallback<Row>() {
-      @Override
-      public void onFailure(Throwable t) {
-        latch.countDown();
-      }
+    ApiFutures.addCallback(
+        future,
+        new ApiFutureCallback<Row>() {
+          @Override
+          public void onFailure(Throwable t) {
+            latch.countDown();
+          }
 
-      @Override
-      public void onSuccess(Row result) {
-        found.set(true);
-        latch.countDown();
-      }
-    }, MoreExecutors.directExecutor());
+          @Override
+          public void onSuccess(Row result) {
+            found.set(true);
+            latch.countDown();
+          }
+        },
+        MoreExecutors.directExecutor());
 
     latch.await(1, TimeUnit.MINUTES);
     assertThat(found.get()).isTrue();

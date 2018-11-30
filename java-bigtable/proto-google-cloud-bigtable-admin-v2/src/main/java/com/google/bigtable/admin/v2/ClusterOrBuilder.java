@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface ClusterOrBuilder extends
+public interface ClusterOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Cluster)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The unique name of the cluster. Values are of the form
@@ -18,6 +21,8 @@ public interface ClusterOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The unique name of the cluster. Values are of the form
@@ -26,10 +31,11 @@ public interface ClusterOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * (`CreationOnly`)
    * The location where this cluster's nodes and storage reside. For best
@@ -42,6 +48,8 @@ public interface ClusterOrBuilder extends
    */
   java.lang.String getLocation();
   /**
+   *
+   *
    * <pre>
    * (`CreationOnly`)
    * The location where this cluster's nodes and storage reside. For best
@@ -52,10 +60,11 @@ public interface ClusterOrBuilder extends
    *
    * <code>string location = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getLocationBytes();
+  com.google.protobuf.ByteString getLocationBytes();
 
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The current state of the cluster.
@@ -65,6 +74,8 @@ public interface ClusterOrBuilder extends
    */
   int getStateValue();
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The current state of the cluster.
@@ -75,6 +86,8 @@ public interface ClusterOrBuilder extends
   com.google.bigtable.admin.v2.Cluster.State getState();
 
   /**
+   *
+   *
    * <pre>
    * The number of nodes allocated to this cluster. More nodes enable higher
    * throughput and more consistent performance.
@@ -85,6 +98,8 @@ public interface ClusterOrBuilder extends
   int getServeNodes();
 
   /**
+   *
+   *
    * <pre>
    * (`CreationOnly`)
    * The type of storage used by this cluster to serve its
@@ -95,6 +110,8 @@ public interface ClusterOrBuilder extends
    */
   int getDefaultStorageTypeValue();
   /**
+   *
+   *
    * <pre>
    * (`CreationOnly`)
    * The type of storage used by this cluster to serve its

@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface SnapshotOrBuilder extends
+public interface SnapshotOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Snapshot)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The unique name of the snapshot.
@@ -19,6 +22,8 @@ public interface SnapshotOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The unique name of the snapshot.
@@ -28,10 +33,11 @@ public interface SnapshotOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The source table at the time the snapshot was taken.
@@ -41,6 +47,8 @@ public interface SnapshotOrBuilder extends
    */
   boolean hasSourceTable();
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The source table at the time the snapshot was taken.
@@ -50,6 +58,8 @@ public interface SnapshotOrBuilder extends
    */
   com.google.bigtable.admin.v2.Table getSourceTable();
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The source table at the time the snapshot was taken.
@@ -60,6 +70,8 @@ public interface SnapshotOrBuilder extends
   com.google.bigtable.admin.v2.TableOrBuilder getSourceTableOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The size of the data in the source table at the time the snapshot was
@@ -72,6 +84,8 @@ public interface SnapshotOrBuilder extends
   long getDataSizeBytes();
 
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The time when the snapshot is created.
@@ -81,6 +95,8 @@ public interface SnapshotOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The time when the snapshot is created.
@@ -90,6 +106,8 @@ public interface SnapshotOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The time when the snapshot is created.
@@ -100,6 +118,8 @@ public interface SnapshotOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The time when the snapshot will be deleted. The maximum amount of time a
@@ -111,6 +131,8 @@ public interface SnapshotOrBuilder extends
    */
   boolean hasDeleteTime();
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The time when the snapshot will be deleted. The maximum amount of time a
@@ -122,6 +144,8 @@ public interface SnapshotOrBuilder extends
    */
   com.google.protobuf.Timestamp getDeleteTime();
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The time when the snapshot will be deleted. The maximum amount of time a
@@ -134,6 +158,8 @@ public interface SnapshotOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The current state of the snapshot.
@@ -143,6 +169,8 @@ public interface SnapshotOrBuilder extends
    */
   int getStateValue();
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The current state of the snapshot.
@@ -153,6 +181,8 @@ public interface SnapshotOrBuilder extends
   com.google.bigtable.admin.v2.Snapshot.State getState();
 
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * Description of the snapshot.
@@ -162,6 +192,8 @@ public interface SnapshotOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * Description of the snapshot.
@@ -169,6 +201,5 @@ public interface SnapshotOrBuilder extends
    *
    * <code>string description = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 }

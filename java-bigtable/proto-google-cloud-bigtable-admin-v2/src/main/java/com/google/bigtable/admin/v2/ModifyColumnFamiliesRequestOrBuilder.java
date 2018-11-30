@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface ModifyColumnFamiliesRequestOrBuilder extends
+public interface ModifyColumnFamiliesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.ModifyColumnFamiliesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the table whose families should be modified.
    * Values are of the form
@@ -18,6 +21,8 @@ public interface ModifyColumnFamiliesRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The unique name of the table whose families should be modified.
    * Values are of the form
@@ -26,10 +31,11 @@ public interface ModifyColumnFamiliesRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
@@ -37,11 +43,15 @@ public interface ModifyColumnFamiliesRequestOrBuilder extends
    * for example).
    * </pre>
    *
-   * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+   * <code>
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * </code>
    */
-  java.util.List<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification> 
+  java.util.List<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification>
       getModificationsList();
   /**
+   *
+   *
    * <pre>
    * Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
@@ -49,10 +59,14 @@ public interface ModifyColumnFamiliesRequestOrBuilder extends
    * for example).
    * </pre>
    *
-   * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+   * <code>
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * </code>
    */
   com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification getModifications(int index);
   /**
+   *
+   *
    * <pre>
    * Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
@@ -60,10 +74,14 @@ public interface ModifyColumnFamiliesRequestOrBuilder extends
    * for example).
    * </pre>
    *
-   * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+   * <code>
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * </code>
    */
   int getModificationsCount();
   /**
+   *
+   *
    * <pre>
    * Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
@@ -71,11 +89,16 @@ public interface ModifyColumnFamiliesRequestOrBuilder extends
    * for example).
    * </pre>
    *
-   * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+   * <code>
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * </code>
    */
-  java.util.List<? extends com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder> 
+  java.util.List<
+          ? extends com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder>
       getModificationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
@@ -83,8 +106,10 @@ public interface ModifyColumnFamiliesRequestOrBuilder extends
    * for example).
    * </pre>
    *
-   * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+   * <code>
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * </code>
    */
-  com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder getModificationsOrBuilder(
-      int index);
+  com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder
+      getModificationsOrBuilder(int index);
 }

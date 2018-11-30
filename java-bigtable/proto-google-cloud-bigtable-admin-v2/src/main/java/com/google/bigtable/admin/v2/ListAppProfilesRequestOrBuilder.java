@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface ListAppProfilesRequestOrBuilder extends
+public interface ListAppProfilesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.ListAppProfilesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the instance for which a list of app profiles is
    * requested. Values are of the form
@@ -20,6 +23,8 @@ public interface ListAppProfilesRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The unique name of the instance for which a list of app profiles is
    * requested. Values are of the form
@@ -30,10 +35,11 @@ public interface ListAppProfilesRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Maximum number of results per page.
    * CURRENTLY UNIMPLEMENTED AND IGNORED.
@@ -44,6 +50,8 @@ public interface ListAppProfilesRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * The value of `next_page_token` returned by a previous call.
    * </pre>
@@ -52,12 +60,13 @@ public interface ListAppProfilesRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * The value of `next_page_token` returned by a previous call.
    * </pre>
    *
    * <code>string page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

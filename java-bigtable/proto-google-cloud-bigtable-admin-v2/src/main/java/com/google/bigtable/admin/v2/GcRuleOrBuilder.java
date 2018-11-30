@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface GcRuleOrBuilder extends
+public interface GcRuleOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.GcRule)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Delete all cells in a column except the most recent N.
    * </pre>
@@ -17,6 +20,8 @@ public interface GcRuleOrBuilder extends
   int getMaxNumVersions();
 
   /**
+   *
+   *
    * <pre>
    * Delete cells in a column older than the given age.
    * Values must be at least one millisecond, and will be truncated to
@@ -27,6 +32,8 @@ public interface GcRuleOrBuilder extends
    */
   boolean hasMaxAge();
   /**
+   *
+   *
    * <pre>
    * Delete cells in a column older than the given age.
    * Values must be at least one millisecond, and will be truncated to
@@ -37,6 +44,8 @@ public interface GcRuleOrBuilder extends
    */
   com.google.protobuf.Duration getMaxAge();
   /**
+   *
+   *
    * <pre>
    * Delete cells in a column older than the given age.
    * Values must be at least one millisecond, and will be truncated to
@@ -48,6 +57,8 @@ public interface GcRuleOrBuilder extends
   com.google.protobuf.DurationOrBuilder getMaxAgeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Delete cells that would be deleted by every nested rule.
    * </pre>
@@ -56,6 +67,8 @@ public interface GcRuleOrBuilder extends
    */
   boolean hasIntersection();
   /**
+   *
+   *
    * <pre>
    * Delete cells that would be deleted by every nested rule.
    * </pre>
@@ -64,6 +77,8 @@ public interface GcRuleOrBuilder extends
    */
   com.google.bigtable.admin.v2.GcRule.Intersection getIntersection();
   /**
+   *
+   *
    * <pre>
    * Delete cells that would be deleted by every nested rule.
    * </pre>
@@ -73,6 +88,8 @@ public interface GcRuleOrBuilder extends
   com.google.bigtable.admin.v2.GcRule.IntersectionOrBuilder getIntersectionOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Delete cells that would be deleted by any nested rule.
    * </pre>
@@ -81,6 +98,8 @@ public interface GcRuleOrBuilder extends
    */
   boolean hasUnion();
   /**
+   *
+   *
    * <pre>
    * Delete cells that would be deleted by any nested rule.
    * </pre>
@@ -89,6 +108,8 @@ public interface GcRuleOrBuilder extends
    */
   com.google.bigtable.admin.v2.GcRule.Union getUnion();
   /**
+   *
+   *
    * <pre>
    * Delete cells that would be deleted by any nested rule.
    * </pre>

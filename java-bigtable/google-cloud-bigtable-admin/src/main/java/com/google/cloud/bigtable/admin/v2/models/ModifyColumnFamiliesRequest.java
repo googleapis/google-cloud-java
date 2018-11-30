@@ -38,7 +38,6 @@ public final class ModifyColumnFamiliesRequest {
       com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.newBuilder();
   private final String tableId;
 
-
   public static ModifyColumnFamiliesRequest of(String tableId) {
     return new ModifyColumnFamiliesRequest(tableId);
   }
@@ -100,15 +99,14 @@ public final class ModifyColumnFamiliesRequest {
    * @return
    */
   public ModifyColumnFamiliesRequest dropFamily(String familyId) {
-    Modification.Builder modification = Modification.newBuilder()
-        .setId(familyId)
-        .setDrop(true);
+    Modification.Builder modification = Modification.newBuilder().setId(familyId).setDrop(true);
     modFamilyRequest.addModifications(modification.build());
     return this;
   }
 
   @InternalApi
-  public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest toProto(InstanceName instanceName) {
+  public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest toProto(
+      InstanceName instanceName) {
     Preconditions.checkNotNull(instanceName);
     String tableName =
         TableName.of(instanceName.getProject(), instanceName.getInstance(), tableId).toString();

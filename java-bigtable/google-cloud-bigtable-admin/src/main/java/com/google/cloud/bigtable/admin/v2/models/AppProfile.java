@@ -25,10 +25,10 @@ import com.google.common.base.VerifyException;
 import javax.annotation.Nonnull;
 
 /**
- * <p>An application profile, or app profile, stores settings that tell your Cloud Bigtable
- * instance how to handle incoming requests from an application. When one of your applications
- * connects to a Cloud Bigtable instance, it can specify an app profile, and Cloud Bigtable uses
- * that app profile for any requests that the application sends over that connection.
+ * An application profile, or app profile, stores settings that tell your Cloud Bigtable instance
+ * how to handle incoming requests from an application. When one of your applications connects to a
+ * Cloud Bigtable instance, it can specify an app profile, and Cloud Bigtable uses that app profile
+ * for any requests that the application sends over that connection.
  *
  * <p>App profiles affect how your applications communicate with an instance that uses replication.
  * As a result, app profiles are especially useful for instances that have 2 clusters. Even if your
@@ -53,13 +53,12 @@ public final class AppProfile {
 
   private AppProfile(@Nonnull com.google.bigtable.admin.v2.AppProfile proto) {
     Preconditions.checkNotNull(proto);
-    Preconditions
-        .checkArgument(proto.hasSingleClusterRouting() || proto.hasMultiClusterRoutingUseAny(),
-            "AppProfile must have a routing policy");
+    Preconditions.checkArgument(
+        proto.hasSingleClusterRouting() || proto.hasMultiClusterRoutingUseAny(),
+        "AppProfile must have a routing policy");
     Preconditions.checkArgument(!proto.getName().isEmpty(), "AppProfile must have a name");
     this.proto = proto;
   }
-
 
   /** Gets the routing policy for all read/write requests which use this app profile. */
   @SuppressWarnings("WeakerAccess")
@@ -77,9 +76,8 @@ public final class AppProfile {
   /** Gets the id of this AppProfile. */
   @SuppressWarnings("WeakerAccess")
   public String getId() {
-    AppProfileName fullName = Verify.verifyNotNull(
-        AppProfileName.parse(proto.getName()),
-        "Name can never be null");
+    AppProfileName fullName =
+        Verify.verifyNotNull(AppProfileName.parse(proto.getName()), "Name can never be null");
 
     //noinspection ConstantConditions
     return fullName.getAppProfile();
@@ -88,9 +86,8 @@ public final class AppProfile {
   /** Gets the id of the instance that owns this AppProfile. */
   @SuppressWarnings("WeakerAccess")
   public String getInstanceId() {
-    AppProfileName fullName = Verify.verifyNotNull(
-        AppProfileName.parse(proto.getName()),
-        "Name can never be null");
+    AppProfileName fullName =
+        Verify.verifyNotNull(AppProfileName.parse(proto.getName()), "Name can never be null");
 
     //noinspection ConstantConditions
     return fullName.getInstance();
@@ -101,7 +98,6 @@ public final class AppProfile {
   public String getDescription() {
     return proto.getDescription();
   }
-
 
   /**
    * Creates the request protobuf. This method is considered an internal implementation detail and
@@ -128,18 +124,14 @@ public final class AppProfile {
     return Objects.hashCode(proto);
   }
 
-
   /**
    * Represents the routing for read/write requests. Please check the implementations of this
    * interface for more details.
    */
   @SuppressWarnings("WeakerAccess")
-  public interface RoutingPolicy {
-  }
+  public interface RoutingPolicy {}
 
-  /**
-   * A {@link RoutingPolicy} that routes all requests to a specific cluster.
-   */
+  /** A {@link RoutingPolicy} that routes all requests to a specific cluster. */
   @SuppressWarnings("WeakerAccess")
   public static class SingleClusterRoutingPolicy implements RoutingPolicy {
     private final com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting proto;
@@ -171,7 +163,8 @@ public final class AppProfile {
      * cluster. This variant enables the ability to re-enable single row transactions at the cost of
      * consistency.
      *
-     * <p>Please see the <a href="https://cloud.google.com/bigtable/docs/app-profiles#single-row-transactions">online
+     * <p>Please see the <a
+     * href="https://cloud.google.com/bigtable/docs/app-profiles#single-row-transactions">online
      * documentation</a> for more details.
      */
     public static SingleClusterRoutingPolicy of(String clusterId, boolean allowTransactionWrites) {
@@ -179,8 +172,7 @@ public final class AppProfile {
           com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting.newBuilder()
               .setClusterId(clusterId)
               .setAllowTransactionalWrites(allowTransactionWrites)
-              .build()
-      );
+              .build());
     }
 
     private SingleClusterRoutingPolicy(
@@ -234,16 +226,15 @@ public final class AppProfile {
    * available cluster.
    */
   public static class MultiClusterRoutingPolicy implements RoutingPolicy {
-    private static final MultiClusterRoutingUseAny proto = MultiClusterRoutingUseAny
-        .getDefaultInstance();
+    private static final MultiClusterRoutingUseAny proto =
+        MultiClusterRoutingUseAny.getDefaultInstance();
 
     /** Creates a new instance of {@link MultiClusterRoutingPolicy}. */
     public static MultiClusterRoutingPolicy of() {
       return new MultiClusterRoutingPolicy();
     }
 
-    private MultiClusterRoutingPolicy() {
-    }
+    private MultiClusterRoutingPolicy() {}
 
     /**
      * Creates the request protobuf. This method is considered an internal implementation detail and

@@ -15,18 +15,18 @@
  */
 package com.google.cloud.bigtable.admin.v2.models;
 
-import com.google.common.base.Objects;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-import javax.annotation.Nonnull;
-import org.threeten.bp.Duration;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.GcRule;
 import com.google.bigtable.admin.v2.GcRule.Intersection;
 import com.google.bigtable.admin.v2.GcRule.Union;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Objects;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Nonnull;
+import org.threeten.bp.Duration;
 
 // TODO(igorbernstein2): the distinction between GcRule & GCRule is too subtle, use fully qualified
 // names for the protos.
@@ -38,16 +38,12 @@ public final class GCRules {
 
   private GCRules() {}
 
-  /**
-   * Creates a new instance of the IntersectionRule
-   */
+  /** Creates a new instance of the IntersectionRule */
   public IntersectionRule intersection() {
     return new IntersectionRule();
   }
 
-  /**
-   * Creates a new instance of the IntersectionRule
-   */
+  /** Creates a new instance of the IntersectionRule */
   public UnionRule union() {
     return new UnionRule();
   }
@@ -80,13 +76,10 @@ public final class GCRules {
     return new DurationRule(duration);
   }
 
-  /**
-   * Creates an empty default rule
-   */
+  /** Creates an empty default rule */
   public DefaultRule defaultRule() {
     return new DefaultRule();
   }
-
 
   @InternalApi
   public GCRule fromProto(GcRule source) {
@@ -142,9 +135,7 @@ public final class GCRules {
       return this;
     }
 
-    /**
-     * Gets the list of child rules
-     */
+    /** Gets the list of child rules */
     public List<GCRule> getRulesList() {
       return rulesList;
     }
@@ -208,13 +199,10 @@ public final class GCRules {
       return this;
     }
 
-    /**
-     * Gets the list of child rules
-     */
+    /** Gets the list of child rules */
     public List<GCRule> getRulesList() {
       return rulesList;
     }
-
 
     @Override
     public boolean equals(Object o) {
@@ -308,9 +296,7 @@ public final class GCRules {
               .setNanos(duration.getNano());
     }
 
-    /**
-     * Gets the configured maximum age
-     */
+    /** Gets the configured maximum age */
     public Duration getMaxAge() {
       return Duration.ofSeconds(builder.getSeconds(), builder.getNanos());
     }
@@ -370,7 +356,6 @@ public final class GCRules {
     public int hashCode() {
       return Objects.hashCode(1);
     }
-
 
     @Override
     public String toString() {

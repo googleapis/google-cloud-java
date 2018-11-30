@@ -15,9 +15,9 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.readrows;
 
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
+import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi.ServerStreamingStashCallable;

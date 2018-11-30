@@ -37,8 +37,8 @@ import com.google.protobuf.ByteString;
  */
 public final class CreateTableRequest {
   // TODO(igorbernstein): rename to requestBuilder
-  private final com.google.bigtable.admin.v2.CreateTableRequest.Builder createTableRequest = com.google.bigtable.admin.v2.CreateTableRequest
-      .newBuilder();
+  private final com.google.bigtable.admin.v2.CreateTableRequest.Builder createTableRequest =
+      com.google.bigtable.admin.v2.CreateTableRequest.newBuilder();
   // TODO(igorbernstein): use the embedded TableBuilder in createTableRequest
   private final Table.Builder tableRequest = Table.newBuilder();
 
@@ -100,8 +100,8 @@ public final class CreateTableRequest {
       return false;
     }
     CreateTableRequest that = (CreateTableRequest) o;
-    return Objects.equal(createTableRequest, that.createTableRequest) &&
-        Objects.equal(tableRequest, that.tableRequest);
+    return Objects.equal(createTableRequest, that.createTableRequest)
+        && Objects.equal(tableRequest, that.tableRequest);
   }
 
   @Override

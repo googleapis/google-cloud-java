@@ -48,36 +48,33 @@ import java.util.concurrent.CancellationException;
  * token then poll until isConsistent is true.
  */
 class AwaitReplicationCallable extends UnaryCallable<TableName, Void> {
-  private final UnaryCallable<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse> generateCallable;
+  private final UnaryCallable<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>
+      generateCallable;
   private final UnaryCallable<CheckConsistencyRequest, CheckConsistencyResponse> checkCallable;
   private final RetryingExecutor<CheckConsistencyResponse> executor;
 
   static AwaitReplicationCallable create(
-      UnaryCallable<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse> generateCallable,
+      UnaryCallable<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>
+          generateCallable,
       UnaryCallable<CheckConsistencyRequest, CheckConsistencyResponse> checkCallable,
       ClientContext clientContext,
       RetrySettings pollingSettings) {
 
-    RetryAlgorithm<CheckConsistencyResponse> retryAlgorithm = new RetryAlgorithm<>(
-        new PollResultAlgorithm(),
-        new ExponentialPollAlgorithm(pollingSettings, clientContext.getClock())
-    );
+    RetryAlgorithm<CheckConsistencyResponse> retryAlgorithm =
+        new RetryAlgorithm<>(
+            new PollResultAlgorithm(),
+            new ExponentialPollAlgorithm(pollingSettings, clientContext.getClock()));
 
-    RetryingExecutor<CheckConsistencyResponse> retryingExecutor = new ScheduledRetryingExecutor<>(
-        retryAlgorithm,
-        clientContext.getExecutor()
-    );
+    RetryingExecutor<CheckConsistencyResponse> retryingExecutor =
+        new ScheduledRetryingExecutor<>(retryAlgorithm, clientContext.getExecutor());
 
-    return new AwaitReplicationCallable(
-        generateCallable,
-        checkCallable,
-        retryingExecutor
-    );
+    return new AwaitReplicationCallable(generateCallable, checkCallable, retryingExecutor);
   }
 
   @VisibleForTesting
   AwaitReplicationCallable(
-      UnaryCallable<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse> generateCallable,
+      UnaryCallable<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>
+          generateCallable,
       UnaryCallable<CheckConsistencyRequest, CheckConsistencyResponse> checkCallable,
       RetryingExecutor<CheckConsistencyResponse> executor) {
     this.generateCallable = generateCallable;
@@ -94,31 +91,30 @@ class AwaitReplicationCallable extends UnaryCallable<TableName, Void> {
         new ApiAsyncFunction<GenerateConsistencyTokenResponse, Void>() {
           @Override
           public ApiFuture<Void> apply(GenerateConsistencyTokenResponse input) {
-            CheckConsistencyRequest request = CheckConsistencyRequest.newBuilder()
-                .setName(tableName.toString())
-                .setConsistencyToken(input.getConsistencyToken())
-                .build();
+            CheckConsistencyRequest request =
+                CheckConsistencyRequest.newBuilder()
+                    .setName(tableName.toString())
+                    .setConsistencyToken(input.getConsistencyToken())
+                    .build();
 
             return pollToken(request, context);
           }
         },
-        MoreExecutors.directExecutor()
-    );
+        MoreExecutors.directExecutor());
   }
 
-  private ApiFuture<GenerateConsistencyTokenResponse> generateToken(TableName tableName,
-      ApiCallContext context) {
-    GenerateConsistencyTokenRequest generateRequest = GenerateConsistencyTokenRequest.newBuilder()
-        .setName(tableName.toString())
-        .build();
+  private ApiFuture<GenerateConsistencyTokenResponse> generateToken(
+      TableName tableName, ApiCallContext context) {
+    GenerateConsistencyTokenRequest generateRequest =
+        GenerateConsistencyTokenRequest.newBuilder().setName(tableName.toString()).build();
     return generateCallable.futureCall(generateRequest, context);
   }
 
   private ApiFuture<Void> pollToken(CheckConsistencyRequest request, ApiCallContext context) {
     AttemptCallable<CheckConsistencyRequest, CheckConsistencyResponse> attemptCallable =
         new AttemptCallable<>(checkCallable, request, context);
-    RetryingFuture<CheckConsistencyResponse> retryingFuture = executor
-        .createFuture(attemptCallable);
+    RetryingFuture<CheckConsistencyResponse> retryingFuture =
+        executor.createFuture(attemptCallable);
     attemptCallable.setExternalFuture(retryingFuture);
     attemptCallable.call();
 
@@ -130,13 +126,10 @@ class AwaitReplicationCallable extends UnaryCallable<TableName, Void> {
             return null;
           }
         },
-        MoreExecutors.directExecutor()
-    );
+        MoreExecutors.directExecutor());
   }
 
-  /**
-   * A callable representing an attempt to make an RPC call.
-   */
+  /** A callable representing an attempt to make an RPC call. */
   private static class AttemptCallable<RequestT, ResponseT> implements Callable<ResponseT> {
     private final UnaryCallable<RequestT, ResponseT> callable;
     private final RequestT request;
@@ -178,11 +171,13 @@ class AwaitReplicationCallable extends UnaryCallable<TableName, Void> {
    * that this class doesn't handle retryable errors and expects the underlying callable chain to
    * handle this.
    */
-  private static class PollResultAlgorithm implements
-      ResultRetryAlgorithm<CheckConsistencyResponse> {
+  private static class PollResultAlgorithm
+      implements ResultRetryAlgorithm<CheckConsistencyResponse> {
     @Override
-    public TimedAttemptSettings createNextAttempt(Throwable prevThrowable,
-        CheckConsistencyResponse prevResponse, TimedAttemptSettings prevSettings) {
+    public TimedAttemptSettings createNextAttempt(
+        Throwable prevThrowable,
+        CheckConsistencyResponse prevResponse,
+        TimedAttemptSettings prevSettings) {
       return null;
     }
 

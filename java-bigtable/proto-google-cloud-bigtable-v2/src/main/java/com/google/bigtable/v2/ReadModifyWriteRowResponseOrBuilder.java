@@ -3,11 +3,14 @@
 
 package com.google.bigtable.v2;
 
-public interface ReadModifyWriteRowResponseOrBuilder extends
+public interface ReadModifyWriteRowResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.v2.ReadModifyWriteRowResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A Row containing the new contents of all cells modified by the request.
    * </pre>
@@ -16,6 +19,8 @@ public interface ReadModifyWriteRowResponseOrBuilder extends
    */
   boolean hasRow();
   /**
+   *
+   *
    * <pre>
    * A Row containing the new contents of all cells modified by the request.
    * </pre>
@@ -24,6 +29,8 @@ public interface ReadModifyWriteRowResponseOrBuilder extends
    */
   com.google.bigtable.v2.Row getRow();
   /**
+   *
+   *
    * <pre>
    * A Row containing the new contents of all cells modified by the request.
    * </pre>

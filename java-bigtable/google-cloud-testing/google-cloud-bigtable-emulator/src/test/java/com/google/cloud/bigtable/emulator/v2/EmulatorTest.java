@@ -44,7 +44,6 @@ public class EmulatorTest {
   private BigtableTableAdminBlockingStub tableAdminStub;
   private BigtableBlockingStub dataStub;
 
-
   @Before
   public void setUp() throws Exception {
     emulator = Emulator.createBundled();
@@ -61,16 +60,14 @@ public class EmulatorTest {
 
   @Test
   public void testTableAdminClient() {
-    Table table = tableAdminStub.createTable(
-        CreateTableRequest.newBuilder()
-            .setParent("projects/fake-project/instances/fake-instance")
-            .setTableId("fake-table")
-            .setTable(
-                Table.newBuilder()
-                    .putColumnFamilies("cf", ColumnFamily.getDefaultInstance())
-            )
-            .build()
-    );
+    Table table =
+        tableAdminStub.createTable(
+            CreateTableRequest.newBuilder()
+                .setParent("projects/fake-project/instances/fake-instance")
+                .setTableId("fake-table")
+                .setTable(
+                    Table.newBuilder().putColumnFamilies("cf", ColumnFamily.getDefaultInstance()))
+                .build());
 
     assertThat(table.getName())
         .isEqualTo("projects/fake-project/instances/fake-instance/tables/fake-table");
@@ -82,33 +79,27 @@ public class EmulatorTest {
         CreateTableRequest.newBuilder()
             .setParent("projects/fake-project/instances/fake-instance")
             .setTableId("fake-table")
-            .setTable(
-                Table.newBuilder()
-                    .putColumnFamilies("cf", ColumnFamily.getDefaultInstance())
-            )
-            .build()
-    );
+            .setTable(Table.newBuilder().putColumnFamilies("cf", ColumnFamily.getDefaultInstance()))
+            .build());
 
     dataStub.mutateRow(
         MutateRowRequest.newBuilder()
             .setTableName("projects/fake-project/instances/fake-instance/tables/fake-table")
             .setRowKey(ByteString.copyFromUtf8("fake-key"))
             .addMutations(
-                Mutation.newBuilder().setSetCell(
-                    SetCell.newBuilder()
-                      .setFamilyName("cf")
-                      .setColumnQualifier(ByteString.EMPTY)
-                      .setValue(ByteString.copyFromUtf8("value"))
-                )
-            )
-            .build()
-    );
+                Mutation.newBuilder()
+                    .setSetCell(
+                        SetCell.newBuilder()
+                            .setFamilyName("cf")
+                            .setColumnQualifier(ByteString.EMPTY)
+                            .setValue(ByteString.copyFromUtf8("value"))))
+            .build());
 
-    Iterator<ReadRowsResponse> results = dataStub.readRows(
-        ReadRowsRequest.newBuilder()
-            .setTableName("projects/fake-project/instances/fake-instance/tables/fake-table")
-            .build()
-    );
+    Iterator<ReadRowsResponse> results =
+        dataStub.readRows(
+            ReadRowsRequest.newBuilder()
+                .setTableName("projects/fake-project/instances/fake-instance/tables/fake-table")
+                .build());
 
     ReadRowsResponse row = results.next();
     assertThat(row.getChunks(0).getValue()).isEqualTo(ByteString.copyFromUtf8("value"));

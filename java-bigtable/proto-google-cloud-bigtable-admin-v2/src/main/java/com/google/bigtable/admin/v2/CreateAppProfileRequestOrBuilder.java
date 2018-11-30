@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface CreateAppProfileRequestOrBuilder extends
+public interface CreateAppProfileRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.CreateAppProfileRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the instance in which to create the new app profile.
    * Values are of the form
@@ -18,6 +21,8 @@ public interface CreateAppProfileRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The unique name of the instance in which to create the new app profile.
    * Values are of the form
@@ -26,10 +31,11 @@ public interface CreateAppProfileRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The ID to be used when referring to the new app profile within its
    * instance, e.g., just `myprofile` rather than
@@ -40,6 +46,8 @@ public interface CreateAppProfileRequestOrBuilder extends
    */
   java.lang.String getAppProfileId();
   /**
+   *
+   *
    * <pre>
    * The ID to be used when referring to the new app profile within its
    * instance, e.g., just `myprofile` rather than
@@ -48,10 +56,11 @@ public interface CreateAppProfileRequestOrBuilder extends
    *
    * <code>string app_profile_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getAppProfileIdBytes();
+  com.google.protobuf.ByteString getAppProfileIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The app profile to be created.
    * Fields marked `OutputOnly` will be ignored.
@@ -61,6 +70,8 @@ public interface CreateAppProfileRequestOrBuilder extends
    */
   boolean hasAppProfile();
   /**
+   *
+   *
    * <pre>
    * The app profile to be created.
    * Fields marked `OutputOnly` will be ignored.
@@ -70,6 +81,8 @@ public interface CreateAppProfileRequestOrBuilder extends
    */
   com.google.bigtable.admin.v2.AppProfile getAppProfile();
   /**
+   *
+   *
    * <pre>
    * The app profile to be created.
    * Fields marked `OutputOnly` will be ignored.
@@ -80,6 +93,8 @@ public interface CreateAppProfileRequestOrBuilder extends
   com.google.bigtable.admin.v2.AppProfileOrBuilder getAppProfileOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * If true, ignore safety checks when creating the app profile.
    * </pre>

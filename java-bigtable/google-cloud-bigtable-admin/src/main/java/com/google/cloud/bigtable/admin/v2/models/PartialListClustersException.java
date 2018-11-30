@@ -28,7 +28,7 @@ public class PartialListClustersException extends RuntimeException {
   private final List<Cluster> clusters;
 
   /**
-   * <p>This method is considered an internal implementation detail and not meant to be used by
+   * This method is considered an internal implementation detail and not meant to be used by
    * applications.
    */
   @InternalApi
