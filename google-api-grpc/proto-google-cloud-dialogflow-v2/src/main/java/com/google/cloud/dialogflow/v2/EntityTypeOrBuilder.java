@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface EntityTypeOrBuilder extends
+public interface EntityTypeOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.EntityType)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required for all methods except `create` (`create` populates the name
    * automatically.
@@ -19,6 +22,8 @@ public interface EntityTypeOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required for all methods except `create` (`create` populates the name
    * automatically.
@@ -28,10 +33,11 @@ public interface EntityTypeOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the entity.
    * </pre>
@@ -40,16 +46,19 @@ public interface EntityTypeOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the entity.
    * </pre>
    *
    * <code>string display_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. Indicates the kind of entity type.
    * </pre>
@@ -58,6 +67,8 @@ public interface EntityTypeOrBuilder extends
    */
   int getKindValue();
   /**
+   *
+   *
    * <pre>
    * Required. Indicates the kind of entity type.
    * </pre>
@@ -67,6 +78,8 @@ public interface EntityTypeOrBuilder extends
   com.google.cloud.dialogflow.v2.EntityType.Kind getKind();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Indicates whether the entity type can be automatically
    * expanded.
@@ -76,6 +89,8 @@ public interface EntityTypeOrBuilder extends
    */
   int getAutoExpansionModeValue();
   /**
+   *
+   *
    * <pre>
    * Optional. Indicates whether the entity type can be automatically
    * expanded.
@@ -86,15 +101,18 @@ public interface EntityTypeOrBuilder extends
   com.google.cloud.dialogflow.v2.EntityType.AutoExpansionMode getAutoExpansionMode();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of entities associated with the entity type.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 6;</code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2.EntityType.Entity> 
-      getEntitiesList();
+  java.util.List<com.google.cloud.dialogflow.v2.EntityType.Entity> getEntitiesList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of entities associated with the entity type.
    * </pre>
@@ -103,6 +121,8 @@ public interface EntityTypeOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.EntityType.Entity getEntities(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of entities associated with the entity type.
    * </pre>
@@ -111,21 +131,24 @@ public interface EntityTypeOrBuilder extends
    */
   int getEntitiesCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of entities associated with the entity type.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 6;</code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2.EntityType.EntityOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2.EntityType.EntityOrBuilder>
       getEntitiesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of entities associated with the entity type.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2.EntityType.Entity entities = 6;</code>
    */
-  com.google.cloud.dialogflow.v2.EntityType.EntityOrBuilder getEntitiesOrBuilder(
-      int index);
+  com.google.cloud.dialogflow.v2.EntityType.EntityOrBuilder getEntitiesOrBuilder(int index);
 }

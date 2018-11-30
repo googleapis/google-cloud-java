@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1;
 
-public interface FeatureOrBuilder extends
+public interface FeatureOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.Feature)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The feature type.
    * </pre>
@@ -16,6 +19,8 @@ public interface FeatureOrBuilder extends
    */
   int getTypeValue();
   /**
+   *
+   *
    * <pre>
    * The feature type.
    * </pre>
@@ -25,6 +30,8 @@ public interface FeatureOrBuilder extends
   com.google.cloud.vision.v1.Feature.Type getType();
 
   /**
+   *
+   *
    * <pre>
    * Maximum number of results of this type. Does not apply to
    * `TEXT_DETECTION`, `DOCUMENT_TEXT_DETECTION`, or `CROP_HINTS`.
@@ -35,6 +42,8 @@ public interface FeatureOrBuilder extends
   int getMaxResults();
 
   /**
+   *
+   *
    * <pre>
    * Model to use for the feature.
    * Supported values: "builtin/stable" (the default if unset) and
@@ -45,6 +54,8 @@ public interface FeatureOrBuilder extends
    */
   java.lang.String getModel();
   /**
+   *
+   *
    * <pre>
    * Model to use for the feature.
    * Supported values: "builtin/stable" (the default if unset) and
@@ -53,6 +64,5 @@ public interface FeatureOrBuilder extends
    *
    * <code>string model = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getModelBytes();
+  com.google.protobuf.ByteString getModelBytes();
 }

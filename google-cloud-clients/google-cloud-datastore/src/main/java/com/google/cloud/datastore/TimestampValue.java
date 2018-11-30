@@ -79,7 +79,6 @@ public final class TimestampValue extends Value<Timestamp> {
     return new TimestampValue(timestamp);
   }
 
-
   public static Builder newBuilder(Timestamp timestamp) {
     return new Builder().set(timestamp);
   }

@@ -3,11 +3,14 @@
 
 package com.google.cloud.websecurityscanner.v1alpha;
 
-public interface ListFindingTypeStatsRequestOrBuilder extends
+public interface ListFindingTypeStatsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1alpha.ListFindingTypeStatsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The parent resource name, which should be a scan run resource name in the
@@ -19,6 +22,8 @@ public interface ListFindingTypeStatsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The parent resource name, which should be a scan run resource name in the
@@ -28,6 +33,5 @@ public interface ListFindingTypeStatsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 }

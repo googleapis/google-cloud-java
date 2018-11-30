@@ -4,21 +4,24 @@
 package com.google.datastore.v1;
 
 /**
+ *
+ *
  * <pre>
  * A query for entities.
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.Query}
  */
-public  final class Query extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Query extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.datastore.v1.Query)
     QueryOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Query.newBuilder() to construct.
   private Query(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Query() {
     projection_ = java.util.Collections.emptyList();
     kind_ = java.util.Collections.emptyList();
@@ -30,10 +33,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Query(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -53,97 +56,108 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              projection_ = new java.util.ArrayList<com.google.datastore.v1.Projection>();
-              mutable_bitField0_ |= 0x00000001;
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                projection_ = new java.util.ArrayList<com.google.datastore.v1.Projection>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              projection_.add(
+                  input.readMessage(
+                      com.google.datastore.v1.Projection.parser(), extensionRegistry));
+              break;
             }
-            projection_.add(
-                input.readMessage(com.google.datastore.v1.Projection.parser(), extensionRegistry));
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              kind_ = new java.util.ArrayList<com.google.datastore.v1.KindExpression>();
-              mutable_bitField0_ |= 0x00000002;
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                kind_ = new java.util.ArrayList<com.google.datastore.v1.KindExpression>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              kind_.add(
+                  input.readMessage(
+                      com.google.datastore.v1.KindExpression.parser(), extensionRegistry));
+              break;
             }
-            kind_.add(
-                input.readMessage(com.google.datastore.v1.KindExpression.parser(), extensionRegistry));
-            break;
-          }
-          case 34: {
-            com.google.datastore.v1.Filter.Builder subBuilder = null;
-            if (filter_ != null) {
-              subBuilder = filter_.toBuilder();
-            }
-            filter_ = input.readMessage(com.google.datastore.v1.Filter.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(filter_);
-              filter_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.datastore.v1.Filter.Builder subBuilder = null;
+              if (filter_ != null) {
+                subBuilder = filter_.toBuilder();
+              }
+              filter_ =
+                  input.readMessage(com.google.datastore.v1.Filter.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(filter_);
+                filter_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 42: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              order_ = new java.util.ArrayList<com.google.datastore.v1.PropertyOrder>();
-              mutable_bitField0_ |= 0x00000008;
+              break;
             }
-            order_.add(
-                input.readMessage(com.google.datastore.v1.PropertyOrder.parser(), extensionRegistry));
-            break;
-          }
-          case 50: {
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-              distinctOn_ = new java.util.ArrayList<com.google.datastore.v1.PropertyReference>();
-              mutable_bitField0_ |= 0x00000010;
+          case 42:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                order_ = new java.util.ArrayList<com.google.datastore.v1.PropertyOrder>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              order_.add(
+                  input.readMessage(
+                      com.google.datastore.v1.PropertyOrder.parser(), extensionRegistry));
+              break;
             }
-            distinctOn_.add(
-                input.readMessage(com.google.datastore.v1.PropertyReference.parser(), extensionRegistry));
-            break;
-          }
-          case 58: {
+          case 50:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                distinctOn_ = new java.util.ArrayList<com.google.datastore.v1.PropertyReference>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              distinctOn_.add(
+                  input.readMessage(
+                      com.google.datastore.v1.PropertyReference.parser(), extensionRegistry));
+              break;
+            }
+          case 58:
+            {
+              startCursor_ = input.readBytes();
+              break;
+            }
+          case 66:
+            {
+              endCursor_ = input.readBytes();
+              break;
+            }
+          case 80:
+            {
+              offset_ = input.readInt32();
+              break;
+            }
+          case 98:
+            {
+              com.google.protobuf.Int32Value.Builder subBuilder = null;
+              if (limit_ != null) {
+                subBuilder = limit_.toBuilder();
+              }
+              limit_ =
+                  input.readMessage(com.google.protobuf.Int32Value.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(limit_);
+                limit_ = subBuilder.buildPartial();
+              }
 
-            startCursor_ = input.readBytes();
-            break;
-          }
-          case 66: {
-
-            endCursor_ = input.readBytes();
-            break;
-          }
-          case 80: {
-
-            offset_ = input.readInt32();
-            break;
-          }
-          case 98: {
-            com.google.protobuf.Int32Value.Builder subBuilder = null;
-            if (limit_ != null) {
-              subBuilder = limit_.toBuilder();
+              break;
             }
-            limit_ = input.readMessage(com.google.protobuf.Int32Value.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(limit_);
-              limit_ = subBuilder.buildPartial();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         projection_ = java.util.Collections.unmodifiableList(projection_);
@@ -161,15 +175,16 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_Query_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_Query_fieldAccessorTable
+    return com.google.datastore.v1.QueryProto
+        .internal_static_google_datastore_v1_Query_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.datastore.v1.Query.class, com.google.datastore.v1.Query.Builder.class);
   }
@@ -178,6 +193,8 @@ private static final long serialVersionUID = 0L;
   public static final int PROJECTION_FIELD_NUMBER = 2;
   private java.util.List<com.google.datastore.v1.Projection> projection_;
   /**
+   *
+   *
    * <pre>
    * The projection to return. Defaults to returning all properties.
    * </pre>
@@ -188,17 +205,21 @@ private static final long serialVersionUID = 0L;
     return projection_;
   }
   /**
+   *
+   *
    * <pre>
    * The projection to return. Defaults to returning all properties.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Projection projection = 2;</code>
    */
-  public java.util.List<? extends com.google.datastore.v1.ProjectionOrBuilder> 
+  public java.util.List<? extends com.google.datastore.v1.ProjectionOrBuilder>
       getProjectionOrBuilderList() {
     return projection_;
   }
   /**
+   *
+   *
    * <pre>
    * The projection to return. Defaults to returning all properties.
    * </pre>
@@ -209,6 +230,8 @@ private static final long serialVersionUID = 0L;
     return projection_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The projection to return. Defaults to returning all properties.
    * </pre>
@@ -219,20 +242,23 @@ private static final long serialVersionUID = 0L;
     return projection_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The projection to return. Defaults to returning all properties.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Projection projection = 2;</code>
    */
-  public com.google.datastore.v1.ProjectionOrBuilder getProjectionOrBuilder(
-      int index) {
+  public com.google.datastore.v1.ProjectionOrBuilder getProjectionOrBuilder(int index) {
     return projection_.get(index);
   }
 
   public static final int KIND_FIELD_NUMBER = 3;
   private java.util.List<com.google.datastore.v1.KindExpression> kind_;
   /**
+   *
+   *
    * <pre>
    * The kinds to query (if empty, returns entities of all kinds).
    * Currently at most 1 kind may be specified.
@@ -244,6 +270,8 @@ private static final long serialVersionUID = 0L;
     return kind_;
   }
   /**
+   *
+   *
    * <pre>
    * The kinds to query (if empty, returns entities of all kinds).
    * Currently at most 1 kind may be specified.
@@ -251,11 +279,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.datastore.v1.KindExpression kind = 3;</code>
    */
-  public java.util.List<? extends com.google.datastore.v1.KindExpressionOrBuilder> 
+  public java.util.List<? extends com.google.datastore.v1.KindExpressionOrBuilder>
       getKindOrBuilderList() {
     return kind_;
   }
   /**
+   *
+   *
    * <pre>
    * The kinds to query (if empty, returns entities of all kinds).
    * Currently at most 1 kind may be specified.
@@ -267,6 +297,8 @@ private static final long serialVersionUID = 0L;
     return kind_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The kinds to query (if empty, returns entities of all kinds).
    * Currently at most 1 kind may be specified.
@@ -278,6 +310,8 @@ private static final long serialVersionUID = 0L;
     return kind_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The kinds to query (if empty, returns entities of all kinds).
    * Currently at most 1 kind may be specified.
@@ -285,14 +319,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.datastore.v1.KindExpression kind = 3;</code>
    */
-  public com.google.datastore.v1.KindExpressionOrBuilder getKindOrBuilder(
-      int index) {
+  public com.google.datastore.v1.KindExpressionOrBuilder getKindOrBuilder(int index) {
     return kind_.get(index);
   }
 
   public static final int FILTER_FIELD_NUMBER = 4;
   private com.google.datastore.v1.Filter filter_;
   /**
+   *
+   *
    * <pre>
    * The filter to apply.
    * </pre>
@@ -303,6 +338,8 @@ private static final long serialVersionUID = 0L;
     return filter_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The filter to apply.
    * </pre>
@@ -313,6 +350,8 @@ private static final long serialVersionUID = 0L;
     return filter_ == null ? com.google.datastore.v1.Filter.getDefaultInstance() : filter_;
   }
   /**
+   *
+   *
    * <pre>
    * The filter to apply.
    * </pre>
@@ -326,6 +365,8 @@ private static final long serialVersionUID = 0L;
   public static final int ORDER_FIELD_NUMBER = 5;
   private java.util.List<com.google.datastore.v1.PropertyOrder> order_;
   /**
+   *
+   *
    * <pre>
    * The order to apply to the query results (if empty, order is unspecified).
    * </pre>
@@ -336,17 +377,21 @@ private static final long serialVersionUID = 0L;
     return order_;
   }
   /**
+   *
+   *
    * <pre>
    * The order to apply to the query results (if empty, order is unspecified).
    * </pre>
    *
    * <code>repeated .google.datastore.v1.PropertyOrder order = 5;</code>
    */
-  public java.util.List<? extends com.google.datastore.v1.PropertyOrderOrBuilder> 
+  public java.util.List<? extends com.google.datastore.v1.PropertyOrderOrBuilder>
       getOrderOrBuilderList() {
     return order_;
   }
   /**
+   *
+   *
    * <pre>
    * The order to apply to the query results (if empty, order is unspecified).
    * </pre>
@@ -357,6 +402,8 @@ private static final long serialVersionUID = 0L;
     return order_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The order to apply to the query results (if empty, order is unspecified).
    * </pre>
@@ -367,20 +414,23 @@ private static final long serialVersionUID = 0L;
     return order_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The order to apply to the query results (if empty, order is unspecified).
    * </pre>
    *
    * <code>repeated .google.datastore.v1.PropertyOrder order = 5;</code>
    */
-  public com.google.datastore.v1.PropertyOrderOrBuilder getOrderOrBuilder(
-      int index) {
+  public com.google.datastore.v1.PropertyOrderOrBuilder getOrderOrBuilder(int index) {
     return order_.get(index);
   }
 
   public static final int DISTINCT_ON_FIELD_NUMBER = 6;
   private java.util.List<com.google.datastore.v1.PropertyReference> distinctOn_;
   /**
+   *
+   *
    * <pre>
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
@@ -393,6 +443,8 @@ private static final long serialVersionUID = 0L;
     return distinctOn_;
   }
   /**
+   *
+   *
    * <pre>
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
@@ -401,11 +453,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
    */
-  public java.util.List<? extends com.google.datastore.v1.PropertyReferenceOrBuilder> 
+  public java.util.List<? extends com.google.datastore.v1.PropertyReferenceOrBuilder>
       getDistinctOnOrBuilderList() {
     return distinctOn_;
   }
   /**
+   *
+   *
    * <pre>
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
@@ -418,6 +472,8 @@ private static final long serialVersionUID = 0L;
     return distinctOn_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
@@ -430,6 +486,8 @@ private static final long serialVersionUID = 0L;
     return distinctOn_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
@@ -438,14 +496,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
    */
-  public com.google.datastore.v1.PropertyReferenceOrBuilder getDistinctOnOrBuilder(
-      int index) {
+  public com.google.datastore.v1.PropertyReferenceOrBuilder getDistinctOnOrBuilder(int index) {
     return distinctOn_.get(index);
   }
 
   public static final int START_CURSOR_FIELD_NUMBER = 7;
   private com.google.protobuf.ByteString startCursor_;
   /**
+   *
+   *
    * <pre>
    * A starting point for the query results. Query cursors are
    * returned in query result batches and
@@ -461,6 +520,8 @@ private static final long serialVersionUID = 0L;
   public static final int END_CURSOR_FIELD_NUMBER = 8;
   private com.google.protobuf.ByteString endCursor_;
   /**
+   *
+   *
    * <pre>
    * An ending point for the query results. Query cursors are
    * returned in query result batches and
@@ -476,6 +537,8 @@ private static final long serialVersionUID = 0L;
   public static final int OFFSET_FIELD_NUMBER = 10;
   private int offset_;
   /**
+   *
+   *
    * <pre>
    * The number of results to skip. Applies before limit, but after all other
    * constraints. Optional. Must be &gt;= 0 if specified.
@@ -490,6 +553,8 @@ private static final long serialVersionUID = 0L;
   public static final int LIMIT_FIELD_NUMBER = 12;
   private com.google.protobuf.Int32Value limit_;
   /**
+   *
+   *
    * <pre>
    * The maximum number of results to return. Applies after all other
    * constraints. Optional.
@@ -503,6 +568,8 @@ private static final long serialVersionUID = 0L;
     return limit_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The maximum number of results to return. Applies after all other
    * constraints. Optional.
@@ -516,6 +583,8 @@ private static final long serialVersionUID = 0L;
     return limit_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : limit_;
   }
   /**
+   *
+   *
    * <pre>
    * The maximum number of results to return. Applies after all other
    * constraints. Optional.
@@ -530,6 +599,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -541,8 +611,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < projection_.size(); i++) {
       output.writeMessage(2, projection_.get(i));
     }
@@ -580,40 +649,31 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < projection_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, projection_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, projection_.get(i));
     }
     for (int i = 0; i < kind_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, kind_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, kind_.get(i));
     }
     if (filter_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getFilter());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getFilter());
     }
     for (int i = 0; i < order_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, order_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, order_.get(i));
     }
     for (int i = 0; i < distinctOn_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, distinctOn_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, distinctOn_.get(i));
     }
     if (!startCursor_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(7, startCursor_);
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(7, startCursor_);
     }
     if (!endCursor_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(8, endCursor_);
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(8, endCursor_);
     }
     if (offset_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(10, offset_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(10, offset_);
     }
     if (limit_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, getLimit());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getLimit());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -623,7 +683,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.datastore.v1.Query)) {
       return super.equals(obj);
@@ -631,29 +691,20 @@ private static final long serialVersionUID = 0L;
     com.google.datastore.v1.Query other = (com.google.datastore.v1.Query) obj;
 
     boolean result = true;
-    result = result && getProjectionList()
-        .equals(other.getProjectionList());
-    result = result && getKindList()
-        .equals(other.getKindList());
+    result = result && getProjectionList().equals(other.getProjectionList());
+    result = result && getKindList().equals(other.getKindList());
     result = result && (hasFilter() == other.hasFilter());
     if (hasFilter()) {
-      result = result && getFilter()
-          .equals(other.getFilter());
+      result = result && getFilter().equals(other.getFilter());
     }
-    result = result && getOrderList()
-        .equals(other.getOrderList());
-    result = result && getDistinctOnList()
-        .equals(other.getDistinctOnList());
-    result = result && getStartCursor()
-        .equals(other.getStartCursor());
-    result = result && getEndCursor()
-        .equals(other.getEndCursor());
-    result = result && (getOffset()
-        == other.getOffset());
+    result = result && getOrderList().equals(other.getOrderList());
+    result = result && getDistinctOnList().equals(other.getDistinctOnList());
+    result = result && getStartCursor().equals(other.getStartCursor());
+    result = result && getEndCursor().equals(other.getEndCursor());
+    result = result && (getOffset() == other.getOffset());
     result = result && (hasLimit() == other.hasLimit());
     if (hasLimit()) {
-      result = result && getLimit()
-          .equals(other.getLimit());
+      result = result && getLimit().equals(other.getLimit());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -701,116 +752,123 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.datastore.v1.Query parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.datastore.v1.Query parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.Query parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.datastore.v1.Query parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.datastore.v1.Query parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.Query parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.Query parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.Query parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.Query parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.Query parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.datastore.v1.Query parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.Query parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.datastore.v1.Query parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static com.google.datastore.v1.Query parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.Query parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.datastore.v1.Query prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A query for entities.
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.Query}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.datastore.v1.Query)
       com.google.datastore.v1.QueryOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_Query_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.datastore.v1.QueryProto
+          .internal_static_google_datastore_v1_Query_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_Query_fieldAccessorTable
+      return com.google.datastore.v1.QueryProto
+          .internal_static_google_datastore_v1_Query_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.datastore.v1.Query.class, com.google.datastore.v1.Query.Builder.class);
     }
@@ -820,20 +878,20 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getProjectionFieldBuilder();
         getKindFieldBuilder();
         getOrderFieldBuilder();
         getDistinctOnFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -883,9 +941,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_Query_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.datastore.v1.QueryProto
+          .internal_static_google_datastore_v1_Query_descriptor;
     }
 
     @java.lang.Override
@@ -965,38 +1023,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.datastore.v1.Query) {
-        return mergeFrom((com.google.datastore.v1.Query)other);
+        return mergeFrom((com.google.datastore.v1.Query) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1023,9 +1082,10 @@ private static final long serialVersionUID = 0L;
             projectionBuilder_ = null;
             projection_ = other.projection_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            projectionBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getProjectionFieldBuilder() : null;
+            projectionBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getProjectionFieldBuilder()
+                    : null;
           } else {
             projectionBuilder_.addAllMessages(other.projection_);
           }
@@ -1049,9 +1109,10 @@ private static final long serialVersionUID = 0L;
             kindBuilder_ = null;
             kind_ = other.kind_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            kindBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getKindFieldBuilder() : null;
+            kindBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getKindFieldBuilder()
+                    : null;
           } else {
             kindBuilder_.addAllMessages(other.kind_);
           }
@@ -1078,9 +1139,10 @@ private static final long serialVersionUID = 0L;
             orderBuilder_ = null;
             order_ = other.order_;
             bitField0_ = (bitField0_ & ~0x00000008);
-            orderBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getOrderFieldBuilder() : null;
+            orderBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getOrderFieldBuilder()
+                    : null;
           } else {
             orderBuilder_.addAllMessages(other.order_);
           }
@@ -1104,9 +1166,10 @@ private static final long serialVersionUID = 0L;
             distinctOnBuilder_ = null;
             distinctOn_ = other.distinctOn_;
             bitField0_ = (bitField0_ & ~0x00000010);
-            distinctOnBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getDistinctOnFieldBuilder() : null;
+            distinctOnBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDistinctOnFieldBuilder()
+                    : null;
           } else {
             distinctOnBuilder_.addAllMessages(other.distinctOn_);
           }
@@ -1152,21 +1215,28 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.datastore.v1.Projection> projection_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureProjectionIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         projection_ = new java.util.ArrayList<com.google.datastore.v1.Projection>(projection_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.Projection, com.google.datastore.v1.Projection.Builder, com.google.datastore.v1.ProjectionOrBuilder> projectionBuilder_;
+            com.google.datastore.v1.Projection,
+            com.google.datastore.v1.Projection.Builder,
+            com.google.datastore.v1.ProjectionOrBuilder>
+        projectionBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The projection to return. Defaults to returning all properties.
      * </pre>
@@ -1181,6 +1251,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The projection to return. Defaults to returning all properties.
      * </pre>
@@ -1195,6 +1267,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The projection to return. Defaults to returning all properties.
      * </pre>
@@ -1209,14 +1283,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The projection to return. Defaults to returning all properties.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Projection projection = 2;</code>
      */
-    public Builder setProjection(
-        int index, com.google.datastore.v1.Projection value) {
+    public Builder setProjection(int index, com.google.datastore.v1.Projection value) {
       if (projectionBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1230,6 +1305,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The projection to return. Defaults to returning all properties.
      * </pre>
@@ -1248,6 +1325,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The projection to return. Defaults to returning all properties.
      * </pre>
@@ -1268,14 +1347,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The projection to return. Defaults to returning all properties.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Projection projection = 2;</code>
      */
-    public Builder addProjection(
-        int index, com.google.datastore.v1.Projection value) {
+    public Builder addProjection(int index, com.google.datastore.v1.Projection value) {
       if (projectionBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1289,14 +1369,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The projection to return. Defaults to returning all properties.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Projection projection = 2;</code>
      */
-    public Builder addProjection(
-        com.google.datastore.v1.Projection.Builder builderForValue) {
+    public Builder addProjection(com.google.datastore.v1.Projection.Builder builderForValue) {
       if (projectionBuilder_ == null) {
         ensureProjectionIsMutable();
         projection_.add(builderForValue.build());
@@ -1307,6 +1388,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The projection to return. Defaults to returning all properties.
      * </pre>
@@ -1325,6 +1408,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The projection to return. Defaults to returning all properties.
      * </pre>
@@ -1335,8 +1420,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.datastore.v1.Projection> values) {
       if (projectionBuilder_ == null) {
         ensureProjectionIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, projection_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, projection_);
         onChanged();
       } else {
         projectionBuilder_.addAllMessages(values);
@@ -1344,6 +1428,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The projection to return. Defaults to returning all properties.
      * </pre>
@@ -1361,6 +1447,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The projection to return. Defaults to returning all properties.
      * </pre>
@@ -1378,39 +1466,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The projection to return. Defaults to returning all properties.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Projection projection = 2;</code>
      */
-    public com.google.datastore.v1.Projection.Builder getProjectionBuilder(
-        int index) {
+    public com.google.datastore.v1.Projection.Builder getProjectionBuilder(int index) {
       return getProjectionFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The projection to return. Defaults to returning all properties.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Projection projection = 2;</code>
      */
-    public com.google.datastore.v1.ProjectionOrBuilder getProjectionOrBuilder(
-        int index) {
+    public com.google.datastore.v1.ProjectionOrBuilder getProjectionOrBuilder(int index) {
       if (projectionBuilder_ == null) {
-        return projection_.get(index);  } else {
+        return projection_.get(index);
+      } else {
         return projectionBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The projection to return. Defaults to returning all properties.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Projection projection = 2;</code>
      */
-    public java.util.List<? extends com.google.datastore.v1.ProjectionOrBuilder> 
-         getProjectionOrBuilderList() {
+    public java.util.List<? extends com.google.datastore.v1.ProjectionOrBuilder>
+        getProjectionOrBuilderList() {
       if (projectionBuilder_ != null) {
         return projectionBuilder_.getMessageOrBuilderList();
       } else {
@@ -1418,6 +1511,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The projection to return. Defaults to returning all properties.
      * </pre>
@@ -1425,38 +1520,46 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.datastore.v1.Projection projection = 2;</code>
      */
     public com.google.datastore.v1.Projection.Builder addProjectionBuilder() {
-      return getProjectionFieldBuilder().addBuilder(
-          com.google.datastore.v1.Projection.getDefaultInstance());
+      return getProjectionFieldBuilder()
+          .addBuilder(com.google.datastore.v1.Projection.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The projection to return. Defaults to returning all properties.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Projection projection = 2;</code>
      */
-    public com.google.datastore.v1.Projection.Builder addProjectionBuilder(
-        int index) {
-      return getProjectionFieldBuilder().addBuilder(
-          index, com.google.datastore.v1.Projection.getDefaultInstance());
+    public com.google.datastore.v1.Projection.Builder addProjectionBuilder(int index) {
+      return getProjectionFieldBuilder()
+          .addBuilder(index, com.google.datastore.v1.Projection.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The projection to return. Defaults to returning all properties.
      * </pre>
      *
      * <code>repeated .google.datastore.v1.Projection projection = 2;</code>
      */
-    public java.util.List<com.google.datastore.v1.Projection.Builder> 
-         getProjectionBuilderList() {
+    public java.util.List<com.google.datastore.v1.Projection.Builder> getProjectionBuilderList() {
       return getProjectionFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.Projection, com.google.datastore.v1.Projection.Builder, com.google.datastore.v1.ProjectionOrBuilder> 
+            com.google.datastore.v1.Projection,
+            com.google.datastore.v1.Projection.Builder,
+            com.google.datastore.v1.ProjectionOrBuilder>
         getProjectionFieldBuilder() {
       if (projectionBuilder_ == null) {
-        projectionBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.datastore.v1.Projection, com.google.datastore.v1.Projection.Builder, com.google.datastore.v1.ProjectionOrBuilder>(
+        projectionBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.datastore.v1.Projection,
+                com.google.datastore.v1.Projection.Builder,
+                com.google.datastore.v1.ProjectionOrBuilder>(
                 projection_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -1467,18 +1570,24 @@ private static final long serialVersionUID = 0L;
     }
 
     private java.util.List<com.google.datastore.v1.KindExpression> kind_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureKindIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         kind_ = new java.util.ArrayList<com.google.datastore.v1.KindExpression>(kind_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.KindExpression, com.google.datastore.v1.KindExpression.Builder, com.google.datastore.v1.KindExpressionOrBuilder> kindBuilder_;
+            com.google.datastore.v1.KindExpression,
+            com.google.datastore.v1.KindExpression.Builder,
+            com.google.datastore.v1.KindExpressionOrBuilder>
+        kindBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The kinds to query (if empty, returns entities of all kinds).
      * Currently at most 1 kind may be specified.
@@ -1494,6 +1603,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The kinds to query (if empty, returns entities of all kinds).
      * Currently at most 1 kind may be specified.
@@ -1509,6 +1620,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The kinds to query (if empty, returns entities of all kinds).
      * Currently at most 1 kind may be specified.
@@ -1524,6 +1637,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The kinds to query (if empty, returns entities of all kinds).
      * Currently at most 1 kind may be specified.
@@ -1531,8 +1646,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.KindExpression kind = 3;</code>
      */
-    public Builder setKind(
-        int index, com.google.datastore.v1.KindExpression value) {
+    public Builder setKind(int index, com.google.datastore.v1.KindExpression value) {
       if (kindBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1546,6 +1660,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The kinds to query (if empty, returns entities of all kinds).
      * Currently at most 1 kind may be specified.
@@ -1565,6 +1681,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The kinds to query (if empty, returns entities of all kinds).
      * Currently at most 1 kind may be specified.
@@ -1586,6 +1704,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The kinds to query (if empty, returns entities of all kinds).
      * Currently at most 1 kind may be specified.
@@ -1593,8 +1713,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.KindExpression kind = 3;</code>
      */
-    public Builder addKind(
-        int index, com.google.datastore.v1.KindExpression value) {
+    public Builder addKind(int index, com.google.datastore.v1.KindExpression value) {
       if (kindBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1608,6 +1727,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The kinds to query (if empty, returns entities of all kinds).
      * Currently at most 1 kind may be specified.
@@ -1615,8 +1736,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.KindExpression kind = 3;</code>
      */
-    public Builder addKind(
-        com.google.datastore.v1.KindExpression.Builder builderForValue) {
+    public Builder addKind(com.google.datastore.v1.KindExpression.Builder builderForValue) {
       if (kindBuilder_ == null) {
         ensureKindIsMutable();
         kind_.add(builderForValue.build());
@@ -1627,6 +1747,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The kinds to query (if empty, returns entities of all kinds).
      * Currently at most 1 kind may be specified.
@@ -1646,6 +1768,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The kinds to query (if empty, returns entities of all kinds).
      * Currently at most 1 kind may be specified.
@@ -1657,8 +1781,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.datastore.v1.KindExpression> values) {
       if (kindBuilder_ == null) {
         ensureKindIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, kind_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, kind_);
         onChanged();
       } else {
         kindBuilder_.addAllMessages(values);
@@ -1666,6 +1789,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The kinds to query (if empty, returns entities of all kinds).
      * Currently at most 1 kind may be specified.
@@ -1684,6 +1809,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The kinds to query (if empty, returns entities of all kinds).
      * Currently at most 1 kind may be specified.
@@ -1702,6 +1829,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The kinds to query (if empty, returns entities of all kinds).
      * Currently at most 1 kind may be specified.
@@ -1709,11 +1838,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.KindExpression kind = 3;</code>
      */
-    public com.google.datastore.v1.KindExpression.Builder getKindBuilder(
-        int index) {
+    public com.google.datastore.v1.KindExpression.Builder getKindBuilder(int index) {
       return getKindFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The kinds to query (if empty, returns entities of all kinds).
      * Currently at most 1 kind may be specified.
@@ -1721,14 +1851,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.KindExpression kind = 3;</code>
      */
-    public com.google.datastore.v1.KindExpressionOrBuilder getKindOrBuilder(
-        int index) {
+    public com.google.datastore.v1.KindExpressionOrBuilder getKindOrBuilder(int index) {
       if (kindBuilder_ == null) {
-        return kind_.get(index);  } else {
+        return kind_.get(index);
+      } else {
         return kindBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The kinds to query (if empty, returns entities of all kinds).
      * Currently at most 1 kind may be specified.
@@ -1736,8 +1868,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.KindExpression kind = 3;</code>
      */
-    public java.util.List<? extends com.google.datastore.v1.KindExpressionOrBuilder> 
-         getKindOrBuilderList() {
+    public java.util.List<? extends com.google.datastore.v1.KindExpressionOrBuilder>
+        getKindOrBuilderList() {
       if (kindBuilder_ != null) {
         return kindBuilder_.getMessageOrBuilderList();
       } else {
@@ -1745,6 +1877,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The kinds to query (if empty, returns entities of all kinds).
      * Currently at most 1 kind may be specified.
@@ -1753,10 +1887,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.datastore.v1.KindExpression kind = 3;</code>
      */
     public com.google.datastore.v1.KindExpression.Builder addKindBuilder() {
-      return getKindFieldBuilder().addBuilder(
-          com.google.datastore.v1.KindExpression.getDefaultInstance());
+      return getKindFieldBuilder()
+          .addBuilder(com.google.datastore.v1.KindExpression.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The kinds to query (if empty, returns entities of all kinds).
      * Currently at most 1 kind may be specified.
@@ -1764,12 +1900,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.KindExpression kind = 3;</code>
      */
-    public com.google.datastore.v1.KindExpression.Builder addKindBuilder(
-        int index) {
-      return getKindFieldBuilder().addBuilder(
-          index, com.google.datastore.v1.KindExpression.getDefaultInstance());
+    public com.google.datastore.v1.KindExpression.Builder addKindBuilder(int index) {
+      return getKindFieldBuilder()
+          .addBuilder(index, com.google.datastore.v1.KindExpression.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The kinds to query (if empty, returns entities of all kinds).
      * Currently at most 1 kind may be specified.
@@ -1777,16 +1914,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.KindExpression kind = 3;</code>
      */
-    public java.util.List<com.google.datastore.v1.KindExpression.Builder> 
-         getKindBuilderList() {
+    public java.util.List<com.google.datastore.v1.KindExpression.Builder> getKindBuilderList() {
       return getKindFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.KindExpression, com.google.datastore.v1.KindExpression.Builder, com.google.datastore.v1.KindExpressionOrBuilder> 
+            com.google.datastore.v1.KindExpression,
+            com.google.datastore.v1.KindExpression.Builder,
+            com.google.datastore.v1.KindExpressionOrBuilder>
         getKindFieldBuilder() {
       if (kindBuilder_ == null) {
-        kindBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.datastore.v1.KindExpression, com.google.datastore.v1.KindExpression.Builder, com.google.datastore.v1.KindExpressionOrBuilder>(
+        kindBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.datastore.v1.KindExpression,
+                com.google.datastore.v1.KindExpression.Builder,
+                com.google.datastore.v1.KindExpressionOrBuilder>(
                 kind_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
@@ -1798,8 +1940,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.datastore.v1.Filter filter_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.datastore.v1.Filter, com.google.datastore.v1.Filter.Builder, com.google.datastore.v1.FilterOrBuilder> filterBuilder_;
+            com.google.datastore.v1.Filter,
+            com.google.datastore.v1.Filter.Builder,
+            com.google.datastore.v1.FilterOrBuilder>
+        filterBuilder_;
     /**
+     *
+     *
      * <pre>
      * The filter to apply.
      * </pre>
@@ -1810,6 +1957,8 @@ private static final long serialVersionUID = 0L;
       return filterBuilder_ != null || filter_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The filter to apply.
      * </pre>
@@ -1824,6 +1973,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The filter to apply.
      * </pre>
@@ -1844,14 +1995,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The filter to apply.
      * </pre>
      *
      * <code>.google.datastore.v1.Filter filter = 4;</code>
      */
-    public Builder setFilter(
-        com.google.datastore.v1.Filter.Builder builderForValue) {
+    public Builder setFilter(com.google.datastore.v1.Filter.Builder builderForValue) {
       if (filterBuilder_ == null) {
         filter_ = builderForValue.build();
         onChanged();
@@ -1862,6 +2014,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The filter to apply.
      * </pre>
@@ -1872,7 +2026,7 @@ private static final long serialVersionUID = 0L;
       if (filterBuilder_ == null) {
         if (filter_ != null) {
           filter_ =
-            com.google.datastore.v1.Filter.newBuilder(filter_).mergeFrom(value).buildPartial();
+              com.google.datastore.v1.Filter.newBuilder(filter_).mergeFrom(value).buildPartial();
         } else {
           filter_ = value;
         }
@@ -1884,6 +2038,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The filter to apply.
      * </pre>
@@ -1902,6 +2058,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The filter to apply.
      * </pre>
@@ -1909,11 +2067,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.datastore.v1.Filter filter = 4;</code>
      */
     public com.google.datastore.v1.Filter.Builder getFilterBuilder() {
-      
+
       onChanged();
       return getFilterFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The filter to apply.
      * </pre>
@@ -1924,11 +2084,12 @@ private static final long serialVersionUID = 0L;
       if (filterBuilder_ != null) {
         return filterBuilder_.getMessageOrBuilder();
       } else {
-        return filter_ == null ?
-            com.google.datastore.v1.Filter.getDefaultInstance() : filter_;
+        return filter_ == null ? com.google.datastore.v1.Filter.getDefaultInstance() : filter_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The filter to apply.
      * </pre>
@@ -1936,32 +2097,41 @@ private static final long serialVersionUID = 0L;
      * <code>.google.datastore.v1.Filter filter = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.datastore.v1.Filter, com.google.datastore.v1.Filter.Builder, com.google.datastore.v1.FilterOrBuilder> 
+            com.google.datastore.v1.Filter,
+            com.google.datastore.v1.Filter.Builder,
+            com.google.datastore.v1.FilterOrBuilder>
         getFilterFieldBuilder() {
       if (filterBuilder_ == null) {
-        filterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.datastore.v1.Filter, com.google.datastore.v1.Filter.Builder, com.google.datastore.v1.FilterOrBuilder>(
-                getFilter(),
-                getParentForChildren(),
-                isClean());
+        filterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.datastore.v1.Filter,
+                com.google.datastore.v1.Filter.Builder,
+                com.google.datastore.v1.FilterOrBuilder>(
+                getFilter(), getParentForChildren(), isClean());
         filter_ = null;
       }
       return filterBuilder_;
     }
 
     private java.util.List<com.google.datastore.v1.PropertyOrder> order_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureOrderIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
         order_ = new java.util.ArrayList<com.google.datastore.v1.PropertyOrder>(order_);
         bitField0_ |= 0x00000008;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.PropertyOrder, com.google.datastore.v1.PropertyOrder.Builder, com.google.datastore.v1.PropertyOrderOrBuilder> orderBuilder_;
+            com.google.datastore.v1.PropertyOrder,
+            com.google.datastore.v1.PropertyOrder.Builder,
+            com.google.datastore.v1.PropertyOrderOrBuilder>
+        orderBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The order to apply to the query results (if empty, order is unspecified).
      * </pre>
@@ -1976,6 +2146,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The order to apply to the query results (if empty, order is unspecified).
      * </pre>
@@ -1990,6 +2162,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The order to apply to the query results (if empty, order is unspecified).
      * </pre>
@@ -2004,14 +2178,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The order to apply to the query results (if empty, order is unspecified).
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyOrder order = 5;</code>
      */
-    public Builder setOrder(
-        int index, com.google.datastore.v1.PropertyOrder value) {
+    public Builder setOrder(int index, com.google.datastore.v1.PropertyOrder value) {
       if (orderBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2025,6 +2200,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The order to apply to the query results (if empty, order is unspecified).
      * </pre>
@@ -2043,6 +2220,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The order to apply to the query results (if empty, order is unspecified).
      * </pre>
@@ -2063,14 +2242,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The order to apply to the query results (if empty, order is unspecified).
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyOrder order = 5;</code>
      */
-    public Builder addOrder(
-        int index, com.google.datastore.v1.PropertyOrder value) {
+    public Builder addOrder(int index, com.google.datastore.v1.PropertyOrder value) {
       if (orderBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2084,14 +2264,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The order to apply to the query results (if empty, order is unspecified).
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyOrder order = 5;</code>
      */
-    public Builder addOrder(
-        com.google.datastore.v1.PropertyOrder.Builder builderForValue) {
+    public Builder addOrder(com.google.datastore.v1.PropertyOrder.Builder builderForValue) {
       if (orderBuilder_ == null) {
         ensureOrderIsMutable();
         order_.add(builderForValue.build());
@@ -2102,6 +2283,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The order to apply to the query results (if empty, order is unspecified).
      * </pre>
@@ -2120,6 +2303,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The order to apply to the query results (if empty, order is unspecified).
      * </pre>
@@ -2130,8 +2315,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.datastore.v1.PropertyOrder> values) {
       if (orderBuilder_ == null) {
         ensureOrderIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, order_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, order_);
         onChanged();
       } else {
         orderBuilder_.addAllMessages(values);
@@ -2139,6 +2323,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The order to apply to the query results (if empty, order is unspecified).
      * </pre>
@@ -2156,6 +2342,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The order to apply to the query results (if empty, order is unspecified).
      * </pre>
@@ -2173,39 +2361,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The order to apply to the query results (if empty, order is unspecified).
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyOrder order = 5;</code>
      */
-    public com.google.datastore.v1.PropertyOrder.Builder getOrderBuilder(
-        int index) {
+    public com.google.datastore.v1.PropertyOrder.Builder getOrderBuilder(int index) {
       return getOrderFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The order to apply to the query results (if empty, order is unspecified).
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyOrder order = 5;</code>
      */
-    public com.google.datastore.v1.PropertyOrderOrBuilder getOrderOrBuilder(
-        int index) {
+    public com.google.datastore.v1.PropertyOrderOrBuilder getOrderOrBuilder(int index) {
       if (orderBuilder_ == null) {
-        return order_.get(index);  } else {
+        return order_.get(index);
+      } else {
         return orderBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The order to apply to the query results (if empty, order is unspecified).
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyOrder order = 5;</code>
      */
-    public java.util.List<? extends com.google.datastore.v1.PropertyOrderOrBuilder> 
-         getOrderOrBuilderList() {
+    public java.util.List<? extends com.google.datastore.v1.PropertyOrderOrBuilder>
+        getOrderOrBuilderList() {
       if (orderBuilder_ != null) {
         return orderBuilder_.getMessageOrBuilderList();
       } else {
@@ -2213,6 +2406,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The order to apply to the query results (if empty, order is unspecified).
      * </pre>
@@ -2220,38 +2415,46 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.datastore.v1.PropertyOrder order = 5;</code>
      */
     public com.google.datastore.v1.PropertyOrder.Builder addOrderBuilder() {
-      return getOrderFieldBuilder().addBuilder(
-          com.google.datastore.v1.PropertyOrder.getDefaultInstance());
+      return getOrderFieldBuilder()
+          .addBuilder(com.google.datastore.v1.PropertyOrder.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The order to apply to the query results (if empty, order is unspecified).
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyOrder order = 5;</code>
      */
-    public com.google.datastore.v1.PropertyOrder.Builder addOrderBuilder(
-        int index) {
-      return getOrderFieldBuilder().addBuilder(
-          index, com.google.datastore.v1.PropertyOrder.getDefaultInstance());
+    public com.google.datastore.v1.PropertyOrder.Builder addOrderBuilder(int index) {
+      return getOrderFieldBuilder()
+          .addBuilder(index, com.google.datastore.v1.PropertyOrder.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The order to apply to the query results (if empty, order is unspecified).
      * </pre>
      *
      * <code>repeated .google.datastore.v1.PropertyOrder order = 5;</code>
      */
-    public java.util.List<com.google.datastore.v1.PropertyOrder.Builder> 
-         getOrderBuilderList() {
+    public java.util.List<com.google.datastore.v1.PropertyOrder.Builder> getOrderBuilderList() {
       return getOrderFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.PropertyOrder, com.google.datastore.v1.PropertyOrder.Builder, com.google.datastore.v1.PropertyOrderOrBuilder> 
+            com.google.datastore.v1.PropertyOrder,
+            com.google.datastore.v1.PropertyOrder.Builder,
+            com.google.datastore.v1.PropertyOrderOrBuilder>
         getOrderFieldBuilder() {
       if (orderBuilder_ == null) {
-        orderBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.datastore.v1.PropertyOrder, com.google.datastore.v1.PropertyOrder.Builder, com.google.datastore.v1.PropertyOrderOrBuilder>(
+        orderBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.datastore.v1.PropertyOrder,
+                com.google.datastore.v1.PropertyOrder.Builder,
+                com.google.datastore.v1.PropertyOrderOrBuilder>(
                 order_,
                 ((bitField0_ & 0x00000008) == 0x00000008),
                 getParentForChildren(),
@@ -2262,18 +2465,25 @@ private static final long serialVersionUID = 0L;
     }
 
     private java.util.List<com.google.datastore.v1.PropertyReference> distinctOn_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureDistinctOnIsMutable() {
       if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-        distinctOn_ = new java.util.ArrayList<com.google.datastore.v1.PropertyReference>(distinctOn_);
+        distinctOn_ =
+            new java.util.ArrayList<com.google.datastore.v1.PropertyReference>(distinctOn_);
         bitField0_ |= 0x00000010;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.PropertyReference, com.google.datastore.v1.PropertyReference.Builder, com.google.datastore.v1.PropertyReferenceOrBuilder> distinctOnBuilder_;
+            com.google.datastore.v1.PropertyReference,
+            com.google.datastore.v1.PropertyReference.Builder,
+            com.google.datastore.v1.PropertyReferenceOrBuilder>
+        distinctOnBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
@@ -2290,6 +2500,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
@@ -2306,6 +2518,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
@@ -2322,6 +2536,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
@@ -2330,8 +2546,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
      */
-    public Builder setDistinctOn(
-        int index, com.google.datastore.v1.PropertyReference value) {
+    public Builder setDistinctOn(int index, com.google.datastore.v1.PropertyReference value) {
       if (distinctOnBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2345,6 +2560,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
@@ -2365,6 +2582,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
@@ -2387,6 +2606,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
@@ -2395,8 +2616,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
      */
-    public Builder addDistinctOn(
-        int index, com.google.datastore.v1.PropertyReference value) {
+    public Builder addDistinctOn(int index, com.google.datastore.v1.PropertyReference value) {
       if (distinctOnBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2410,6 +2630,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
@@ -2430,6 +2652,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
@@ -2450,6 +2674,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
@@ -2462,8 +2688,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.datastore.v1.PropertyReference> values) {
       if (distinctOnBuilder_ == null) {
         ensureDistinctOnIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, distinctOn_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, distinctOn_);
         onChanged();
       } else {
         distinctOnBuilder_.addAllMessages(values);
@@ -2471,6 +2696,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
@@ -2490,6 +2717,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
@@ -2509,6 +2738,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
@@ -2517,11 +2748,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
      */
-    public com.google.datastore.v1.PropertyReference.Builder getDistinctOnBuilder(
-        int index) {
+    public com.google.datastore.v1.PropertyReference.Builder getDistinctOnBuilder(int index) {
       return getDistinctOnFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
@@ -2530,14 +2762,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
      */
-    public com.google.datastore.v1.PropertyReferenceOrBuilder getDistinctOnOrBuilder(
-        int index) {
+    public com.google.datastore.v1.PropertyReferenceOrBuilder getDistinctOnOrBuilder(int index) {
       if (distinctOnBuilder_ == null) {
-        return distinctOn_.get(index);  } else {
+        return distinctOn_.get(index);
+      } else {
         return distinctOnBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
@@ -2546,8 +2780,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
      */
-    public java.util.List<? extends com.google.datastore.v1.PropertyReferenceOrBuilder> 
-         getDistinctOnOrBuilderList() {
+    public java.util.List<? extends com.google.datastore.v1.PropertyReferenceOrBuilder>
+        getDistinctOnOrBuilderList() {
       if (distinctOnBuilder_ != null) {
         return distinctOnBuilder_.getMessageOrBuilderList();
       } else {
@@ -2555,6 +2789,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
@@ -2564,10 +2800,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
      */
     public com.google.datastore.v1.PropertyReference.Builder addDistinctOnBuilder() {
-      return getDistinctOnFieldBuilder().addBuilder(
-          com.google.datastore.v1.PropertyReference.getDefaultInstance());
+      return getDistinctOnFieldBuilder()
+          .addBuilder(com.google.datastore.v1.PropertyReference.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
@@ -2576,12 +2814,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
      */
-    public com.google.datastore.v1.PropertyReference.Builder addDistinctOnBuilder(
-        int index) {
-      return getDistinctOnFieldBuilder().addBuilder(
-          index, com.google.datastore.v1.PropertyReference.getDefaultInstance());
+    public com.google.datastore.v1.PropertyReference.Builder addDistinctOnBuilder(int index) {
+      return getDistinctOnFieldBuilder()
+          .addBuilder(index, com.google.datastore.v1.PropertyReference.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The properties to make distinct. The query results will contain the first
      * result for each distinct combination of values for the given properties
@@ -2590,16 +2829,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
      */
-    public java.util.List<com.google.datastore.v1.PropertyReference.Builder> 
-         getDistinctOnBuilderList() {
+    public java.util.List<com.google.datastore.v1.PropertyReference.Builder>
+        getDistinctOnBuilderList() {
       return getDistinctOnFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.PropertyReference, com.google.datastore.v1.PropertyReference.Builder, com.google.datastore.v1.PropertyReferenceOrBuilder> 
+            com.google.datastore.v1.PropertyReference,
+            com.google.datastore.v1.PropertyReference.Builder,
+            com.google.datastore.v1.PropertyReferenceOrBuilder>
         getDistinctOnFieldBuilder() {
       if (distinctOnBuilder_ == null) {
-        distinctOnBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.datastore.v1.PropertyReference, com.google.datastore.v1.PropertyReference.Builder, com.google.datastore.v1.PropertyReferenceOrBuilder>(
+        distinctOnBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.datastore.v1.PropertyReference,
+                com.google.datastore.v1.PropertyReference.Builder,
+                com.google.datastore.v1.PropertyReferenceOrBuilder>(
                 distinctOn_,
                 ((bitField0_ & 0x00000010) == 0x00000010),
                 getParentForChildren(),
@@ -2611,6 +2856,8 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString startCursor_ = com.google.protobuf.ByteString.EMPTY;
     /**
+     *
+     *
      * <pre>
      * A starting point for the query results. Query cursors are
      * returned in query result batches and
@@ -2623,6 +2870,8 @@ private static final long serialVersionUID = 0L;
       return startCursor_;
     }
     /**
+     *
+     *
      * <pre>
      * A starting point for the query results. Query cursors are
      * returned in query result batches and
@@ -2633,14 +2882,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStartCursor(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       startCursor_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A starting point for the query results. Query cursors are
      * returned in query result batches and
@@ -2650,7 +2901,7 @@ private static final long serialVersionUID = 0L;
      * <code>bytes start_cursor = 7;</code>
      */
     public Builder clearStartCursor() {
-      
+
       startCursor_ = getDefaultInstance().getStartCursor();
       onChanged();
       return this;
@@ -2658,6 +2909,8 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString endCursor_ = com.google.protobuf.ByteString.EMPTY;
     /**
+     *
+     *
      * <pre>
      * An ending point for the query results. Query cursors are
      * returned in query result batches and
@@ -2670,6 +2923,8 @@ private static final long serialVersionUID = 0L;
       return endCursor_;
     }
     /**
+     *
+     *
      * <pre>
      * An ending point for the query results. Query cursors are
      * returned in query result batches and
@@ -2680,14 +2935,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setEndCursor(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       endCursor_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An ending point for the query results. Query cursors are
      * returned in query result batches and
@@ -2697,14 +2954,16 @@ private static final long serialVersionUID = 0L;
      * <code>bytes end_cursor = 8;</code>
      */
     public Builder clearEndCursor() {
-      
+
       endCursor_ = getDefaultInstance().getEndCursor();
       onChanged();
       return this;
     }
 
-    private int offset_ ;
+    private int offset_;
     /**
+     *
+     *
      * <pre>
      * The number of results to skip. Applies before limit, but after all other
      * constraints. Optional. Must be &gt;= 0 if specified.
@@ -2716,6 +2975,8 @@ private static final long serialVersionUID = 0L;
       return offset_;
     }
     /**
+     *
+     *
      * <pre>
      * The number of results to skip. Applies before limit, but after all other
      * constraints. Optional. Must be &gt;= 0 if specified.
@@ -2724,12 +2985,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 offset = 10;</code>
      */
     public Builder setOffset(int value) {
-      
+
       offset_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The number of results to skip. Applies before limit, but after all other
      * constraints. Optional. Must be &gt;= 0 if specified.
@@ -2738,7 +3001,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 offset = 10;</code>
      */
     public Builder clearOffset() {
-      
+
       offset_ = 0;
       onChanged();
       return this;
@@ -2746,8 +3009,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Int32Value limit_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> limitBuilder_;
+            com.google.protobuf.Int32Value,
+            com.google.protobuf.Int32Value.Builder,
+            com.google.protobuf.Int32ValueOrBuilder>
+        limitBuilder_;
     /**
+     *
+     *
      * <pre>
      * The maximum number of results to return. Applies after all other
      * constraints. Optional.
@@ -2761,6 +3029,8 @@ private static final long serialVersionUID = 0L;
       return limitBuilder_ != null || limit_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of results to return. Applies after all other
      * constraints. Optional.
@@ -2778,6 +3048,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of results to return. Applies after all other
      * constraints. Optional.
@@ -2801,6 +3073,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of results to return. Applies after all other
      * constraints. Optional.
@@ -2810,8 +3084,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Int32Value limit = 12;</code>
      */
-    public Builder setLimit(
-        com.google.protobuf.Int32Value.Builder builderForValue) {
+    public Builder setLimit(com.google.protobuf.Int32Value.Builder builderForValue) {
       if (limitBuilder_ == null) {
         limit_ = builderForValue.build();
         onChanged();
@@ -2822,6 +3095,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of results to return. Applies after all other
      * constraints. Optional.
@@ -2835,7 +3110,7 @@ private static final long serialVersionUID = 0L;
       if (limitBuilder_ == null) {
         if (limit_ != null) {
           limit_ =
-            com.google.protobuf.Int32Value.newBuilder(limit_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Int32Value.newBuilder(limit_).mergeFrom(value).buildPartial();
         } else {
           limit_ = value;
         }
@@ -2847,6 +3122,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of results to return. Applies after all other
      * constraints. Optional.
@@ -2868,6 +3145,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of results to return. Applies after all other
      * constraints. Optional.
@@ -2878,11 +3157,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Int32Value limit = 12;</code>
      */
     public com.google.protobuf.Int32Value.Builder getLimitBuilder() {
-      
+
       onChanged();
       return getLimitFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of results to return. Applies after all other
      * constraints. Optional.
@@ -2896,11 +3177,12 @@ private static final long serialVersionUID = 0L;
       if (limitBuilder_ != null) {
         return limitBuilder_.getMessageOrBuilder();
       } else {
-        return limit_ == null ?
-            com.google.protobuf.Int32Value.getDefaultInstance() : limit_;
+        return limit_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : limit_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of results to return. Applies after all other
      * constraints. Optional.
@@ -2911,21 +3193,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Int32Value limit = 12;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder> 
+            com.google.protobuf.Int32Value,
+            com.google.protobuf.Int32Value.Builder,
+            com.google.protobuf.Int32ValueOrBuilder>
         getLimitFieldBuilder() {
       if (limitBuilder_ == null) {
-        limitBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Int32Value, com.google.protobuf.Int32Value.Builder, com.google.protobuf.Int32ValueOrBuilder>(
-                getLimit(),
-                getParentForChildren(),
-                isClean());
+        limitBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Int32Value,
+                com.google.protobuf.Int32Value.Builder,
+                com.google.protobuf.Int32ValueOrBuilder>(
+                getLimit(), getParentForChildren(), isClean());
         limit_ = null;
       }
       return limitBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2935,12 +3220,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.datastore.v1.Query)
   }
 
   // @@protoc_insertion_point(class_scope:google.datastore.v1.Query)
   private static final com.google.datastore.v1.Query DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.datastore.v1.Query();
   }
@@ -2949,16 +3234,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Query>
-      PARSER = new com.google.protobuf.AbstractParser<Query>() {
-    @java.lang.Override
-    public Query parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Query(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Query> PARSER =
+      new com.google.protobuf.AbstractParser<Query>() {
+        @java.lang.Override
+        public Query parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Query(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Query> parser() {
     return PARSER;
@@ -2973,6 +3258,4 @@ private static final long serialVersionUID = 0L;
   public com.google.datastore.v1.Query getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

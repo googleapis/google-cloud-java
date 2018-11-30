@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.image;
 
-public interface LayerOrBuilder extends
+public interface LayerOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.image.Layer)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The recovered Dockerfile directive used to construct this layer.
    * </pre>
@@ -16,6 +19,8 @@ public interface LayerOrBuilder extends
    */
   int getDirectiveValue();
   /**
+   *
+   *
    * <pre>
    * The recovered Dockerfile directive used to construct this layer.
    * </pre>
@@ -25,6 +30,8 @@ public interface LayerOrBuilder extends
   io.grafeas.v1beta1.image.Layer.Directive getDirective();
 
   /**
+   *
+   *
    * <pre>
    * The recovered arguments to the Dockerfile directive.
    * </pre>
@@ -33,12 +40,13 @@ public interface LayerOrBuilder extends
    */
   java.lang.String getArguments();
   /**
+   *
+   *
    * <pre>
    * The recovered arguments to the Dockerfile directive.
    * </pre>
    *
    * <code>string arguments = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getArgumentsBytes();
+  com.google.protobuf.ByteString getArgumentsBytes();
 }

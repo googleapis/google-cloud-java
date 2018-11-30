@@ -3,11 +3,14 @@
 
 package com.google.cloud.kms.v1;
 
-public interface CryptoKeyOrBuilder extends
+public interface CryptoKeyOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.CryptoKey)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. The resource name for this [CryptoKey][google.cloud.kms.v1.CryptoKey] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
@@ -17,6 +20,8 @@ public interface CryptoKeyOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Output only. The resource name for this [CryptoKey][google.cloud.kms.v1.CryptoKey] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
@@ -24,10 +29,11 @@ public interface CryptoKeyOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. A copy of the "primary" [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that will be used
    * by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] when this [CryptoKey][google.cloud.kms.v1.CryptoKey] is given
@@ -43,6 +49,8 @@ public interface CryptoKeyOrBuilder extends
    */
   boolean hasPrimary();
   /**
+   *
+   *
    * <pre>
    * Output only. A copy of the "primary" [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that will be used
    * by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] when this [CryptoKey][google.cloud.kms.v1.CryptoKey] is given
@@ -58,6 +66,8 @@ public interface CryptoKeyOrBuilder extends
    */
   com.google.cloud.kms.v1.CryptoKeyVersion getPrimary();
   /**
+   *
+   *
    * <pre>
    * Output only. A copy of the "primary" [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] that will be used
    * by [Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt] when this [CryptoKey][google.cloud.kms.v1.CryptoKey] is given
@@ -74,6 +84,8 @@ public interface CryptoKeyOrBuilder extends
   com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder getPrimaryOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The immutable purpose of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
    * </pre>
@@ -82,6 +94,8 @@ public interface CryptoKeyOrBuilder extends
    */
   int getPurposeValue();
   /**
+   *
+   *
    * <pre>
    * The immutable purpose of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
    * </pre>
@@ -91,6 +105,8 @@ public interface CryptoKeyOrBuilder extends
   com.google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose getPurpose();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time at which this [CryptoKey][google.cloud.kms.v1.CryptoKey] was created.
    * </pre>
@@ -99,6 +115,8 @@ public interface CryptoKeyOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time at which this [CryptoKey][google.cloud.kms.v1.CryptoKey] was created.
    * </pre>
@@ -107,6 +125,8 @@ public interface CryptoKeyOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time at which this [CryptoKey][google.cloud.kms.v1.CryptoKey] was created.
    * </pre>
@@ -116,6 +136,8 @@ public interface CryptoKeyOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * At [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time], the Key Management Service will automatically:
    * 1. Create a new version of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
@@ -133,6 +155,8 @@ public interface CryptoKeyOrBuilder extends
    */
   boolean hasNextRotationTime();
   /**
+   *
+   *
    * <pre>
    * At [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time], the Key Management Service will automatically:
    * 1. Create a new version of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
@@ -150,6 +174,8 @@ public interface CryptoKeyOrBuilder extends
    */
   com.google.protobuf.Timestamp getNextRotationTime();
   /**
+   *
+   *
    * <pre>
    * At [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time], the Key Management Service will automatically:
    * 1. Create a new version of this [CryptoKey][google.cloud.kms.v1.CryptoKey].
@@ -168,6 +194,8 @@ public interface CryptoKeyOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getNextRotationTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] will be advanced by this period when the service
    * automatically rotates a key. Must be at least one day.
@@ -181,6 +209,8 @@ public interface CryptoKeyOrBuilder extends
    */
   boolean hasRotationPeriod();
   /**
+   *
+   *
    * <pre>
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] will be advanced by this period when the service
    * automatically rotates a key. Must be at least one day.
@@ -194,6 +224,8 @@ public interface CryptoKeyOrBuilder extends
    */
   com.google.protobuf.Duration getRotationPeriod();
   /**
+   *
+   *
    * <pre>
    * [next_rotation_time][google.cloud.kms.v1.CryptoKey.next_rotation_time] will be advanced by this period when the service
    * automatically rotates a key. Must be at least one day.
@@ -208,6 +240,8 @@ public interface CryptoKeyOrBuilder extends
   com.google.protobuf.DurationOrBuilder getRotationPeriodOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A template describing settings for new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances.
    * The properties of new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances created by either
@@ -219,6 +253,8 @@ public interface CryptoKeyOrBuilder extends
    */
   boolean hasVersionTemplate();
   /**
+   *
+   *
    * <pre>
    * A template describing settings for new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances.
    * The properties of new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances created by either
@@ -230,6 +266,8 @@ public interface CryptoKeyOrBuilder extends
    */
   com.google.cloud.kms.v1.CryptoKeyVersionTemplate getVersionTemplate();
   /**
+   *
+   *
    * <pre>
    * A template describing settings for new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances.
    * The properties of new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] instances created by either
@@ -242,6 +280,8 @@ public interface CryptoKeyOrBuilder extends
   com.google.cloud.kms.v1.CryptoKeyVersionTemplateOrBuilder getVersionTemplateOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Labels with user-defined metadata. For more information, see
    * [Labeling Keys](/kms/docs/labeling-keys).
@@ -251,6 +291,8 @@ public interface CryptoKeyOrBuilder extends
    */
   int getLabelsCount();
   /**
+   *
+   *
    * <pre>
    * Labels with user-defined metadata. For more information, see
    * [Labeling Keys](/kms/docs/labeling-keys).
@@ -258,15 +300,13 @@ public interface CryptoKeyOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
-  boolean containsLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabels();
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
   /**
+   *
+   *
    * <pre>
    * Labels with user-defined metadata. For more information, see
    * [Labeling Keys](/kms/docs/labeling-keys).
@@ -274,9 +314,10 @@ public interface CryptoKeyOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
+   *
+   *
    * <pre>
    * Labels with user-defined metadata. For more information, see
    * [Labeling Keys](/kms/docs/labeling-keys).
@@ -284,11 +325,10 @@ public interface CryptoKeyOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
-
-  java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Labels with user-defined metadata. For more information, see
    * [Labeling Keys](/kms/docs/labeling-keys).
@@ -296,9 +336,7 @@ public interface CryptoKeyOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 10;</code>
    */
-
-  java.lang.String getLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 
   public com.google.cloud.kms.v1.CryptoKey.RotationScheduleCase getRotationScheduleCase();
 }

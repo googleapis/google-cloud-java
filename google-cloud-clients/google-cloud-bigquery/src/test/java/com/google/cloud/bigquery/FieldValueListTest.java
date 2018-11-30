@@ -158,18 +158,19 @@ public class FieldValueListTest {
 
   @Test
   public void testNullSchema() {
-    FieldValueList fieldValuesNoSchema = FieldValueList.of(
-        ImmutableList.of(
-            booleanFv,
-            integerFv,
-            floatFv,
-            stringFv,
-            timestampFv,
-            bytesFv,
-            nullFv,
-            repeatedFv,
-            recordFv,
-            numericFv));
+    FieldValueList fieldValuesNoSchema =
+        FieldValueList.of(
+            ImmutableList.of(
+                booleanFv,
+                integerFv,
+                floatFv,
+                stringFv,
+                timestampFv,
+                bytesFv,
+                nullFv,
+                repeatedFv,
+                recordFv,
+                numericFv));
 
     assertEquals(fieldValues, fieldValuesNoSchema);
 

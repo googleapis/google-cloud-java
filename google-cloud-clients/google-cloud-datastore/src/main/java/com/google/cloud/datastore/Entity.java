@@ -21,8 +21,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.common.base.Preconditions;
 
 /**
- * An entity is the Google Cloud Datastore persistent data object for a specific key.
- * An entity will always have a complete {@link Key}.
+ * An entity is the Google Cloud Datastore persistent data object for a specific key. An entity will
+ * always have a complete {@link Key}.
  */
 public final class Entity extends FullEntity<Key> {
 
@@ -30,8 +30,7 @@ public final class Entity extends FullEntity<Key> {
 
   public static final class Builder extends BaseEntity.Builder<Key, Builder> {
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(Key key) {
       super(checkNotNull(key));
@@ -45,7 +44,6 @@ public final class Entity extends FullEntity<Key> {
       setProperties(entity.getProperties());
       setKey(key);
     }
-
 
     @Override
     public Builder setKey(Key key) {
@@ -76,16 +74,13 @@ public final class Entity extends FullEntity<Key> {
     return new Entity(from);
   }
 
-
   public static Builder newBuilder(Key key) {
     return new Builder(key);
   }
 
-
   public static Builder newBuilder(Entity copyFrom) {
     return new Builder(copyFrom);
   }
-
 
   public static Builder newBuilder(Key key, FullEntity<?> copyFrom) {
     return new Builder(key, copyFrom);

@@ -22,21 +22,17 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.contrib.nio.testing.LocalStorageHelper;
 import com.google.common.testing.NullPointerTester;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-
 import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
-/**
- * Unit tests for {@link CloudStorageOptions}.
- */
+/** Unit tests for {@link CloudStorageOptions}. */
 @RunWith(JUnit4.class)
 public class CloudStorageOptionsTest {
 
@@ -73,7 +69,10 @@ public class CloudStorageOptionsTest {
   @Test
   public void testWithContentDisposition() throws IOException {
     Path path = Paths.get(URI.create("gs://bucket/path"));
-    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), CloudStorageOptions.withContentDisposition("bubbly fun"));
+    Files.write(
+        path,
+        "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
+        CloudStorageOptions.withContentDisposition("bubbly fun"));
     assertThat(
             Files.readAttributes(path, CloudStorageFileAttributes.class).contentDisposition().get())
         .isEqualTo("bubbly fun");

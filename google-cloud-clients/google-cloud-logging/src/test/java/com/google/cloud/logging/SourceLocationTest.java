@@ -25,11 +25,8 @@ public class SourceLocationTest {
   private static final String FILE = "file";
   private static final Long LINE = 42L;
   private static final String FUNCTION = "function";
-  private static final SourceLocation SOURCE_LOCATION = SourceLocation.newBuilder()
-      .setFile(FILE)
-      .setLine(LINE)
-      .setFunction(FUNCTION)
-      .build();
+  private static final SourceLocation SOURCE_LOCATION =
+      SourceLocation.newBuilder().setFile(FILE).setLine(LINE).setFunction(FUNCTION).build();
 
   @Test
   public void testBuilder() {
@@ -41,19 +38,18 @@ public class SourceLocationTest {
   @Test
   public void testToBuilder() {
     compareSourceLocation(SOURCE_LOCATION, SOURCE_LOCATION.toBuilder().build());
-    SourceLocation sourceLocation = SOURCE_LOCATION.toBuilder()
-        .setFile("newFile")
-        .setLine(43L)
-        .setFunction("newFunction")
-        .build();
+    SourceLocation sourceLocation =
+        SOURCE_LOCATION
+            .toBuilder()
+            .setFile("newFile")
+            .setLine(43L)
+            .setFunction("newFunction")
+            .build();
     assertEquals("newFile", sourceLocation.getFile());
     assertEquals(Long.valueOf(43L), sourceLocation.getLine());
     assertEquals("newFunction", sourceLocation.getFunction());
-    sourceLocation = sourceLocation.toBuilder()
-        .setFile(FILE)
-        .setLine(LINE)
-        .setFunction(FUNCTION)
-        .build();
+    sourceLocation =
+        sourceLocation.toBuilder().setFile(FILE).setLine(LINE).setFunction(FUNCTION).build();
     compareSourceLocation(SOURCE_LOCATION, sourceLocation);
   }
 

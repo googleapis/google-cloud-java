@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.attestation;
 
-public interface AttestationOrBuilder extends
+public interface AttestationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.attestation.Attestation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A PGP signed attestation.
    * </pre>
@@ -16,6 +19,8 @@ public interface AttestationOrBuilder extends
    */
   boolean hasPgpSignedAttestation();
   /**
+   *
+   *
    * <pre>
    * A PGP signed attestation.
    * </pre>
@@ -24,6 +29,8 @@ public interface AttestationOrBuilder extends
    */
   io.grafeas.v1beta1.attestation.PgpSignedAttestation getPgpSignedAttestation();
   /**
+   *
+   *
    * <pre>
    * A PGP signed attestation.
    * </pre>

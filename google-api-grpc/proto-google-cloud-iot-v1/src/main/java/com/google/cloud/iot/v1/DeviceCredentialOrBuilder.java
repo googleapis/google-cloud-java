@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface DeviceCredentialOrBuilder extends
+public interface DeviceCredentialOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.DeviceCredential)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A public key used to verify the signature of JSON Web Tokens (JWTs).
    * When adding a new device credential, either via device creation or via
@@ -26,6 +29,8 @@ public interface DeviceCredentialOrBuilder extends
    */
   boolean hasPublicKey();
   /**
+   *
+   *
    * <pre>
    * A public key used to verify the signature of JSON Web Tokens (JWTs).
    * When adding a new device credential, either via device creation or via
@@ -44,6 +49,8 @@ public interface DeviceCredentialOrBuilder extends
    */
   com.google.cloud.iot.v1.PublicKeyCredential getPublicKey();
   /**
+   *
+   *
    * <pre>
    * A public key used to verify the signature of JSON Web Tokens (JWTs).
    * When adding a new device credential, either via device creation or via
@@ -63,6 +70,8 @@ public interface DeviceCredentialOrBuilder extends
   com.google.cloud.iot.v1.PublicKeyCredentialOrBuilder getPublicKeyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * [Optional] The time at which this credential becomes invalid. This
    * credential will be ignored for new client authentication requests after
@@ -73,6 +82,8 @@ public interface DeviceCredentialOrBuilder extends
    */
   boolean hasExpirationTime();
   /**
+   *
+   *
    * <pre>
    * [Optional] The time at which this credential becomes invalid. This
    * credential will be ignored for new client authentication requests after
@@ -83,6 +94,8 @@ public interface DeviceCredentialOrBuilder extends
    */
   com.google.protobuf.Timestamp getExpirationTime();
   /**
+   *
+   *
    * <pre>
    * [Optional] The time at which this credential becomes invalid. This
    * credential will be ignored for new client authentication requests after

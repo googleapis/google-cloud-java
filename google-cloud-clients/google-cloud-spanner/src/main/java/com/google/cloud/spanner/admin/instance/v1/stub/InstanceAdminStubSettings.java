@@ -360,7 +360,8 @@ public class InstanceAdminStubSettings extends StubSettings<InstanceAdminStubSet
           ListInstanceConfigsRequest, ListInstanceConfigsResponse, ListInstanceConfigsPagedResponse>
       LIST_INSTANCE_CONFIGS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListInstanceConfigsRequest, ListInstanceConfigsResponse,
+              ListInstanceConfigsRequest,
+              ListInstanceConfigsResponse,
               ListInstanceConfigsPagedResponse>() {
             @Override
             public ApiFuture<ListInstanceConfigsPagedResponse> getFuturePagedResponse(
@@ -398,7 +399,8 @@ public class InstanceAdminStubSettings extends StubSettings<InstanceAdminStubSet
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            ListInstanceConfigsRequest, ListInstanceConfigsResponse,
+            ListInstanceConfigsRequest,
+            ListInstanceConfigsResponse,
             ListInstanceConfigsPagedResponse>
         listInstanceConfigsSettings;
     private final UnaryCallSettings.Builder<GetInstanceConfigRequest, InstanceConfig>
@@ -663,7 +665,8 @@ public class InstanceAdminStubSettings extends StubSettings<InstanceAdminStubSet
 
     /** Returns the builder for the settings used for calls to listInstanceConfigs. */
     public PagedCallSettings.Builder<
-            ListInstanceConfigsRequest, ListInstanceConfigsResponse,
+            ListInstanceConfigsRequest,
+            ListInstanceConfigsResponse,
             ListInstanceConfigsPagedResponse>
         listInstanceConfigsSettings() {
       return listInstanceConfigsSettings;

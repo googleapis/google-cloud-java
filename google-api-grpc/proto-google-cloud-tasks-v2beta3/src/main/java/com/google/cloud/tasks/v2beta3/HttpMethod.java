@@ -4,15 +4,18 @@
 package com.google.cloud.tasks.v2beta3;
 
 /**
+ *
+ *
  * <pre>
  * The HTTP method used to execute the task.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.tasks.v2beta3.HttpMethod}
  */
-public enum HttpMethod
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum HttpMethod implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * HTTP method unspecified
    * </pre>
@@ -21,6 +24,8 @@ public enum HttpMethod
    */
   HTTP_METHOD_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * HTTP POST
    * </pre>
@@ -29,6 +34,8 @@ public enum HttpMethod
    */
   POST(1),
   /**
+   *
+   *
    * <pre>
    * HTTP GET
    * </pre>
@@ -37,6 +44,8 @@ public enum HttpMethod
    */
   GET(2),
   /**
+   *
+   *
    * <pre>
    * HTTP HEAD
    * </pre>
@@ -45,6 +54,8 @@ public enum HttpMethod
    */
   HEAD(3),
   /**
+   *
+   *
    * <pre>
    * HTTP PUT
    * </pre>
@@ -53,6 +64,8 @@ public enum HttpMethod
    */
   PUT(4),
   /**
+   *
+   *
    * <pre>
    * HTTP DELETE
    * </pre>
@@ -64,6 +77,8 @@ public enum HttpMethod
   ;
 
   /**
+   *
+   *
    * <pre>
    * HTTP method unspecified
    * </pre>
@@ -72,6 +87,8 @@ public enum HttpMethod
    */
   public static final int HTTP_METHOD_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * HTTP POST
    * </pre>
@@ -80,6 +97,8 @@ public enum HttpMethod
    */
   public static final int POST_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * HTTP GET
    * </pre>
@@ -88,6 +107,8 @@ public enum HttpMethod
    */
   public static final int GET_VALUE = 2;
   /**
+   *
+   *
    * <pre>
    * HTTP HEAD
    * </pre>
@@ -96,6 +117,8 @@ public enum HttpMethod
    */
   public static final int HEAD_VALUE = 3;
   /**
+   *
+   *
    * <pre>
    * HTTP PUT
    * </pre>
@@ -104,6 +127,8 @@ public enum HttpMethod
    */
   public static final int PUT_VALUE = 4;
   /**
+   *
+   *
    * <pre>
    * HTTP DELETE
    * </pre>
@@ -111,7 +136,6 @@ public enum HttpMethod
    * <code>DELETE = 5;</code>
    */
   public static final int DELETE_VALUE = 5;
-
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -121,9 +145,7 @@ public enum HttpMethod
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static HttpMethod valueOf(int value) {
     return forNumber(value);
@@ -131,48 +153,51 @@ public enum HttpMethod
 
   public static HttpMethod forNumber(int value) {
     switch (value) {
-      case 0: return HTTP_METHOD_UNSPECIFIED;
-      case 1: return POST;
-      case 2: return GET;
-      case 3: return HEAD;
-      case 4: return PUT;
-      case 5: return DELETE;
-      default: return null;
+      case 0:
+        return HTTP_METHOD_UNSPECIFIED;
+      case 1:
+        return POST;
+      case 2:
+        return GET;
+      case 3:
+        return HEAD;
+      case 4:
+        return PUT;
+      case 5:
+        return DELETE;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<HttpMethod>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<HttpMethod> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      HttpMethod> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<HttpMethod>() {
-          public HttpMethod findValueByNumber(int number) {
-            return HttpMethod.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<HttpMethod> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<HttpMethod>() {
+        public HttpMethod findValueByNumber(int number) {
+          return HttpMethod.forNumber(number);
+        }
+      };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.tasks.v2beta3.TargetProto.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final HttpMethod[] VALUES = values();
 
-  public static HttpMethod valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static HttpMethod valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -188,4 +213,3 @@ public enum HttpMethod
 
   // @@protoc_insertion_point(enum_scope:google.cloud.tasks.v2beta3.HttpMethod)
 }
-

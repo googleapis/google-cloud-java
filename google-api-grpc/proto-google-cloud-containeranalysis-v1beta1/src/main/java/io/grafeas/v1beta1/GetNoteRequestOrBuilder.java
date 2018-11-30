@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1;
 
-public interface GetNoteRequestOrBuilder extends
+public interface GetNoteRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.GetNoteRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the note in the form of
    * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
@@ -17,6 +20,8 @@ public interface GetNoteRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the note in the form of
    * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
@@ -24,6 +29,5 @@ public interface GetNoteRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

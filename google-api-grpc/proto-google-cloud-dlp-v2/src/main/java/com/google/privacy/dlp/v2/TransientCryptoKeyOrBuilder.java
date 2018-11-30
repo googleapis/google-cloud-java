@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface TransientCryptoKeyOrBuilder extends
+public interface TransientCryptoKeyOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.TransientCryptoKey)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Name of the key. [required]
    * This is an arbitrary string used to differentiate different keys.
@@ -21,6 +24,8 @@ public interface TransientCryptoKeyOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Name of the key. [required]
    * This is an arbitrary string used to differentiate different keys.
@@ -32,6 +37,5 @@ public interface TransientCryptoKeyOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

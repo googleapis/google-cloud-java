@@ -3,11 +3,14 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-public interface TransferMessageOrBuilder extends
+public interface TransferMessageOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.datatransfer.v1.TransferMessage)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Time when message was logged.
    * </pre>
@@ -16,6 +19,8 @@ public interface TransferMessageOrBuilder extends
    */
   boolean hasMessageTime();
   /**
+   *
+   *
    * <pre>
    * Time when message was logged.
    * </pre>
@@ -24,6 +29,8 @@ public interface TransferMessageOrBuilder extends
    */
   com.google.protobuf.Timestamp getMessageTime();
   /**
+   *
+   *
    * <pre>
    * Time when message was logged.
    * </pre>
@@ -33,23 +40,31 @@ public interface TransferMessageOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getMessageTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Message severity.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;</code>
+   * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;
+   * </code>
    */
   int getSeverityValue();
   /**
+   *
+   *
    * <pre>
    * Message severity.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;</code>
+   * <code>.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity severity = 2;
+   * </code>
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity getSeverity();
 
   /**
+   *
+   *
    * <pre>
    * Message text.
    * </pre>
@@ -58,12 +73,13 @@ public interface TransferMessageOrBuilder extends
    */
   java.lang.String getMessageText();
   /**
+   *
+   *
    * <pre>
    * Message text.
    * </pre>
    *
    * <code>string message_text = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getMessageTextBytes();
+  com.google.protobuf.ByteString getMessageTextBytes();
 }

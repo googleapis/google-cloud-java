@@ -4,21 +4,24 @@
 package com.google.cloud.iot.v1;
 
 /**
+ *
+ *
  * <pre>
  * Details of an X.509 certificate. For informational purposes only.
  * </pre>
  *
  * Protobuf type {@code google.cloud.iot.v1.X509CertificateDetails}
  */
-public  final class X509CertificateDetails extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class X509CertificateDetails extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.X509CertificateDetails)
     X509CertificateDetailsOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use X509CertificateDetails.newBuilder() to construct.
   private X509CertificateDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private X509CertificateDetails() {
     issuer_ = "";
     subject_ = "";
@@ -27,10 +30,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private X509CertificateDetails(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,91 +53,103 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            issuer_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            subject_ = s;
-            break;
-          }
-          case 26: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (startTime_ != null) {
-              subBuilder = startTime_.toBuilder();
+              issuer_ = s;
+              break;
             }
-            startTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(startTime_);
-              startTime_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 34: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (expiryTime_ != null) {
-              subBuilder = expiryTime_.toBuilder();
+              subject_ = s;
+              break;
             }
-            expiryTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(expiryTime_);
-              expiryTime_ = subBuilder.buildPartial();
+          case 26:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (startTime_ != null) {
+                subBuilder = startTime_.toBuilder();
+              }
+              startTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(startTime_);
+                startTime_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
+          case 34:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (expiryTime_ != null) {
+                subBuilder = expiryTime_.toBuilder();
+              }
+              expiryTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(expiryTime_);
+                expiryTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            signatureAlgorithm_ = s;
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            publicKeyType_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              signatureAlgorithm_ = s;
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              publicKeyType_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_X509CertificateDetails_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.iot.v1.ResourcesProto
+        .internal_static_google_cloud_iot_v1_X509CertificateDetails_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_X509CertificateDetails_fieldAccessorTable
+    return com.google.cloud.iot.v1.ResourcesProto
+        .internal_static_google_cloud_iot_v1_X509CertificateDetails_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.iot.v1.X509CertificateDetails.class, com.google.cloud.iot.v1.X509CertificateDetails.Builder.class);
+            com.google.cloud.iot.v1.X509CertificateDetails.class,
+            com.google.cloud.iot.v1.X509CertificateDetails.Builder.class);
   }
 
   public static final int ISSUER_FIELD_NUMBER = 1;
   private volatile java.lang.Object issuer_;
   /**
+   *
+   *
    * <pre>
    * The entity that signed the certificate.
    * </pre>
@@ -146,27 +161,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       issuer_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The entity that signed the certificate.
    * </pre>
    *
    * <code>string issuer = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getIssuerBytes() {
+  public com.google.protobuf.ByteString getIssuerBytes() {
     java.lang.Object ref = issuer_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       issuer_ = b;
       return b;
     } else {
@@ -177,6 +191,8 @@ private static final long serialVersionUID = 0L;
   public static final int SUBJECT_FIELD_NUMBER = 2;
   private volatile java.lang.Object subject_;
   /**
+   *
+   *
    * <pre>
    * The entity the certificate and public key belong to.
    * </pre>
@@ -188,27 +204,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       subject_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The entity the certificate and public key belong to.
    * </pre>
    *
    * <code>string subject = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getSubjectBytes() {
+  public com.google.protobuf.ByteString getSubjectBytes() {
     java.lang.Object ref = subject_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       subject_ = b;
       return b;
     } else {
@@ -219,6 +234,8 @@ private static final long serialVersionUID = 0L;
   public static final int START_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp startTime_;
   /**
+   *
+   *
    * <pre>
    * The time the certificate becomes valid.
    * </pre>
@@ -229,6 +246,8 @@ private static final long serialVersionUID = 0L;
     return startTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The time the certificate becomes valid.
    * </pre>
@@ -239,6 +258,8 @@ private static final long serialVersionUID = 0L;
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
   /**
+   *
+   *
    * <pre>
    * The time the certificate becomes valid.
    * </pre>
@@ -252,6 +273,8 @@ private static final long serialVersionUID = 0L;
   public static final int EXPIRY_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp expiryTime_;
   /**
+   *
+   *
    * <pre>
    * The time the certificate becomes invalid.
    * </pre>
@@ -262,6 +285,8 @@ private static final long serialVersionUID = 0L;
     return expiryTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The time the certificate becomes invalid.
    * </pre>
@@ -272,6 +297,8 @@ private static final long serialVersionUID = 0L;
     return expiryTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiryTime_;
   }
   /**
+   *
+   *
    * <pre>
    * The time the certificate becomes invalid.
    * </pre>
@@ -285,6 +312,8 @@ private static final long serialVersionUID = 0L;
   public static final int SIGNATURE_ALGORITHM_FIELD_NUMBER = 5;
   private volatile java.lang.Object signatureAlgorithm_;
   /**
+   *
+   *
    * <pre>
    * The algorithm used to sign the certificate.
    * </pre>
@@ -296,27 +325,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       signatureAlgorithm_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The algorithm used to sign the certificate.
    * </pre>
    *
    * <code>string signature_algorithm = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getSignatureAlgorithmBytes() {
+  public com.google.protobuf.ByteString getSignatureAlgorithmBytes() {
     java.lang.Object ref = signatureAlgorithm_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       signatureAlgorithm_ = b;
       return b;
     } else {
@@ -327,6 +355,8 @@ private static final long serialVersionUID = 0L;
   public static final int PUBLIC_KEY_TYPE_FIELD_NUMBER = 6;
   private volatile java.lang.Object publicKeyType_;
   /**
+   *
+   *
    * <pre>
    * The type of public key in the certificate.
    * </pre>
@@ -338,27 +368,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       publicKeyType_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The type of public key in the certificate.
    * </pre>
    *
    * <code>string public_key_type = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getPublicKeyTypeBytes() {
+  public com.google.protobuf.ByteString getPublicKeyTypeBytes() {
     java.lang.Object ref = publicKeyType_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       publicKeyType_ = b;
       return b;
     } else {
@@ -367,6 +396,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -378,8 +408,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getIssuerBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, issuer_);
     }
@@ -414,12 +443,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, subject_);
     }
     if (startTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getStartTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getStartTime());
     }
     if (expiryTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getExpiryTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getExpiryTime());
     }
     if (!getSignatureAlgorithmBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, signatureAlgorithm_);
@@ -435,32 +462,27 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.iot.v1.X509CertificateDetails)) {
       return super.equals(obj);
     }
-    com.google.cloud.iot.v1.X509CertificateDetails other = (com.google.cloud.iot.v1.X509CertificateDetails) obj;
+    com.google.cloud.iot.v1.X509CertificateDetails other =
+        (com.google.cloud.iot.v1.X509CertificateDetails) obj;
 
     boolean result = true;
-    result = result && getIssuer()
-        .equals(other.getIssuer());
-    result = result && getSubject()
-        .equals(other.getSubject());
+    result = result && getIssuer().equals(other.getIssuer());
+    result = result && getSubject().equals(other.getSubject());
     result = result && (hasStartTime() == other.hasStartTime());
     if (hasStartTime()) {
-      result = result && getStartTime()
-          .equals(other.getStartTime());
+      result = result && getStartTime().equals(other.getStartTime());
     }
     result = result && (hasExpiryTime() == other.hasExpiryTime());
     if (hasExpiryTime()) {
-      result = result && getExpiryTime()
-          .equals(other.getExpiryTime());
+      result = result && getExpiryTime().equals(other.getExpiryTime());
     }
-    result = result && getSignatureAlgorithm()
-        .equals(other.getSignatureAlgorithm());
-    result = result && getPublicKeyType()
-        .equals(other.getPublicKeyType());
+    result = result && getSignatureAlgorithm().equals(other.getSignatureAlgorithm());
+    result = result && getPublicKeyType().equals(other.getPublicKeyType());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -493,118 +515,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.iot.v1.X509CertificateDetails parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.iot.v1.X509CertificateDetails parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.X509CertificateDetails parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.X509CertificateDetails parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.X509CertificateDetails parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.X509CertificateDetails parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.X509CertificateDetails parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.X509CertificateDetails parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.iot.v1.X509CertificateDetails parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.iot.v1.X509CertificateDetails parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.iot.v1.X509CertificateDetails parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.iot.v1.X509CertificateDetails parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.iot.v1.X509CertificateDetails parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.iot.v1.X509CertificateDetails parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.iot.v1.X509CertificateDetails prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Details of an X.509 certificate. For informational purposes only.
    * </pre>
    *
    * Protobuf type {@code google.cloud.iot.v1.X509CertificateDetails}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.iot.v1.X509CertificateDetails)
       com.google.cloud.iot.v1.X509CertificateDetailsOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_X509CertificateDetails_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.iot.v1.ResourcesProto
+          .internal_static_google_cloud_iot_v1_X509CertificateDetails_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_X509CertificateDetails_fieldAccessorTable
+      return com.google.cloud.iot.v1.ResourcesProto
+          .internal_static_google_cloud_iot_v1_X509CertificateDetails_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.iot.v1.X509CertificateDetails.class, com.google.cloud.iot.v1.X509CertificateDetails.Builder.class);
+              com.google.cloud.iot.v1.X509CertificateDetails.class,
+              com.google.cloud.iot.v1.X509CertificateDetails.Builder.class);
     }
 
     // Construct using com.google.cloud.iot.v1.X509CertificateDetails.newBuilder()
@@ -612,16 +643,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -649,9 +679,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_X509CertificateDetails_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.iot.v1.ResourcesProto
+          .internal_static_google_cloud_iot_v1_X509CertificateDetails_descriptor;
     }
 
     @java.lang.Override
@@ -670,7 +700,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.iot.v1.X509CertificateDetails buildPartial() {
-      com.google.cloud.iot.v1.X509CertificateDetails result = new com.google.cloud.iot.v1.X509CertificateDetails(this);
+      com.google.cloud.iot.v1.X509CertificateDetails result =
+          new com.google.cloud.iot.v1.X509CertificateDetails(this);
       result.issuer_ = issuer_;
       result.subject_ = subject_;
       if (startTimeBuilder_ == null) {
@@ -693,38 +724,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.iot.v1.X509CertificateDetails) {
-        return mergeFrom((com.google.cloud.iot.v1.X509CertificateDetails)other);
+        return mergeFrom((com.google.cloud.iot.v1.X509CertificateDetails) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -786,6 +818,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object issuer_ = "";
     /**
+     *
+     *
      * <pre>
      * The entity that signed the certificate.
      * </pre>
@@ -795,8 +829,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getIssuer() {
       java.lang.Object ref = issuer_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         issuer_ = s;
         return s;
@@ -805,19 +838,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The entity that signed the certificate.
      * </pre>
      *
      * <code>string issuer = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getIssuerBytes() {
+    public com.google.protobuf.ByteString getIssuerBytes() {
       java.lang.Object ref = issuer_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         issuer_ = b;
         return b;
       } else {
@@ -825,23 +858,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The entity that signed the certificate.
      * </pre>
      *
      * <code>string issuer = 1;</code>
      */
-    public Builder setIssuer(
-        java.lang.String value) {
+    public Builder setIssuer(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       issuer_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The entity that signed the certificate.
      * </pre>
@@ -849,25 +885,26 @@ private static final long serialVersionUID = 0L;
      * <code>string issuer = 1;</code>
      */
     public Builder clearIssuer() {
-      
+
       issuer_ = getDefaultInstance().getIssuer();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The entity that signed the certificate.
      * </pre>
      *
      * <code>string issuer = 1;</code>
      */
-    public Builder setIssuerBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setIssuerBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       issuer_ = value;
       onChanged();
       return this;
@@ -875,6 +912,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object subject_ = "";
     /**
+     *
+     *
      * <pre>
      * The entity the certificate and public key belong to.
      * </pre>
@@ -884,8 +923,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSubject() {
       java.lang.Object ref = subject_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         subject_ = s;
         return s;
@@ -894,19 +932,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The entity the certificate and public key belong to.
      * </pre>
      *
      * <code>string subject = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getSubjectBytes() {
+    public com.google.protobuf.ByteString getSubjectBytes() {
       java.lang.Object ref = subject_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         subject_ = b;
         return b;
       } else {
@@ -914,23 +952,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The entity the certificate and public key belong to.
      * </pre>
      *
      * <code>string subject = 2;</code>
      */
-    public Builder setSubject(
-        java.lang.String value) {
+    public Builder setSubject(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       subject_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The entity the certificate and public key belong to.
      * </pre>
@@ -938,25 +979,26 @@ private static final long serialVersionUID = 0L;
      * <code>string subject = 2;</code>
      */
     public Builder clearSubject() {
-      
+
       subject_ = getDefaultInstance().getSubject();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The entity the certificate and public key belong to.
      * </pre>
      *
      * <code>string subject = 2;</code>
      */
-    public Builder setSubjectBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setSubjectBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       subject_ = value;
       onChanged();
       return this;
@@ -964,8 +1006,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp startTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        startTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The time the certificate becomes valid.
      * </pre>
@@ -976,6 +1023,8 @@ private static final long serialVersionUID = 0L;
       return startTimeBuilder_ != null || startTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The time the certificate becomes valid.
      * </pre>
@@ -990,6 +1039,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time the certificate becomes valid.
      * </pre>
@@ -1010,14 +1061,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time the certificate becomes valid.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
-    public Builder setStartTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
         onChanged();
@@ -1028,6 +1080,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time the certificate becomes valid.
      * </pre>
@@ -1038,7 +1092,7 @@ private static final long serialVersionUID = 0L;
       if (startTimeBuilder_ == null) {
         if (startTime_ != null) {
           startTime_ =
-            com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
         } else {
           startTime_ = value;
         }
@@ -1050,6 +1104,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time the certificate becomes valid.
      * </pre>
@@ -1068,6 +1124,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time the certificate becomes valid.
      * </pre>
@@ -1075,11 +1133,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-      
+
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The time the certificate becomes valid.
      * </pre>
@@ -1090,11 +1150,12 @@ private static final long serialVersionUID = 0L;
       if (startTimeBuilder_ != null) {
         return startTimeBuilder_.getMessageOrBuilder();
       } else {
-        return startTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time the certificate becomes valid.
      * </pre>
@@ -1102,14 +1163,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getStartTimeFieldBuilder() {
       if (startTimeBuilder_ == null) {
-        startTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getStartTime(),
-                getParentForChildren(),
-                isClean());
+        startTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getStartTime(), getParentForChildren(), isClean());
         startTime_ = null;
       }
       return startTimeBuilder_;
@@ -1117,8 +1181,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp expiryTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expiryTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        expiryTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The time the certificate becomes invalid.
      * </pre>
@@ -1129,6 +1198,8 @@ private static final long serialVersionUID = 0L;
       return expiryTimeBuilder_ != null || expiryTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The time the certificate becomes invalid.
      * </pre>
@@ -1137,12 +1208,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getExpiryTime() {
       if (expiryTimeBuilder_ == null) {
-        return expiryTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiryTime_;
+        return expiryTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : expiryTime_;
       } else {
         return expiryTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time the certificate becomes invalid.
      * </pre>
@@ -1163,14 +1238,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time the certificate becomes invalid.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expiry_time = 4;</code>
      */
-    public Builder setExpiryTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setExpiryTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (expiryTimeBuilder_ == null) {
         expiryTime_ = builderForValue.build();
         onChanged();
@@ -1181,6 +1257,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time the certificate becomes invalid.
      * </pre>
@@ -1191,7 +1269,7 @@ private static final long serialVersionUID = 0L;
       if (expiryTimeBuilder_ == null) {
         if (expiryTime_ != null) {
           expiryTime_ =
-            com.google.protobuf.Timestamp.newBuilder(expiryTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(expiryTime_).mergeFrom(value).buildPartial();
         } else {
           expiryTime_ = value;
         }
@@ -1203,6 +1281,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time the certificate becomes invalid.
      * </pre>
@@ -1221,6 +1301,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time the certificate becomes invalid.
      * </pre>
@@ -1228,11 +1310,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp expiry_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getExpiryTimeBuilder() {
-      
+
       onChanged();
       return getExpiryTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The time the certificate becomes invalid.
      * </pre>
@@ -1243,11 +1327,14 @@ private static final long serialVersionUID = 0L;
       if (expiryTimeBuilder_ != null) {
         return expiryTimeBuilder_.getMessageOrBuilder();
       } else {
-        return expiryTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : expiryTime_;
+        return expiryTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : expiryTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time the certificate becomes invalid.
      * </pre>
@@ -1255,14 +1342,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp expiry_time = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getExpiryTimeFieldBuilder() {
       if (expiryTimeBuilder_ == null) {
-        expiryTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getExpiryTime(),
-                getParentForChildren(),
-                isClean());
+        expiryTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getExpiryTime(), getParentForChildren(), isClean());
         expiryTime_ = null;
       }
       return expiryTimeBuilder_;
@@ -1270,6 +1360,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object signatureAlgorithm_ = "";
     /**
+     *
+     *
      * <pre>
      * The algorithm used to sign the certificate.
      * </pre>
@@ -1279,8 +1371,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSignatureAlgorithm() {
       java.lang.Object ref = signatureAlgorithm_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         signatureAlgorithm_ = s;
         return s;
@@ -1289,19 +1380,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The algorithm used to sign the certificate.
      * </pre>
      *
      * <code>string signature_algorithm = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getSignatureAlgorithmBytes() {
+    public com.google.protobuf.ByteString getSignatureAlgorithmBytes() {
       java.lang.Object ref = signatureAlgorithm_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         signatureAlgorithm_ = b;
         return b;
       } else {
@@ -1309,23 +1400,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The algorithm used to sign the certificate.
      * </pre>
      *
      * <code>string signature_algorithm = 5;</code>
      */
-    public Builder setSignatureAlgorithm(
-        java.lang.String value) {
+    public Builder setSignatureAlgorithm(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       signatureAlgorithm_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The algorithm used to sign the certificate.
      * </pre>
@@ -1333,25 +1427,26 @@ private static final long serialVersionUID = 0L;
      * <code>string signature_algorithm = 5;</code>
      */
     public Builder clearSignatureAlgorithm() {
-      
+
       signatureAlgorithm_ = getDefaultInstance().getSignatureAlgorithm();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The algorithm used to sign the certificate.
      * </pre>
      *
      * <code>string signature_algorithm = 5;</code>
      */
-    public Builder setSignatureAlgorithmBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setSignatureAlgorithmBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       signatureAlgorithm_ = value;
       onChanged();
       return this;
@@ -1359,6 +1454,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object publicKeyType_ = "";
     /**
+     *
+     *
      * <pre>
      * The type of public key in the certificate.
      * </pre>
@@ -1368,8 +1465,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getPublicKeyType() {
       java.lang.Object ref = publicKeyType_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         publicKeyType_ = s;
         return s;
@@ -1378,19 +1474,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The type of public key in the certificate.
      * </pre>
      *
      * <code>string public_key_type = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getPublicKeyTypeBytes() {
+    public com.google.protobuf.ByteString getPublicKeyTypeBytes() {
       java.lang.Object ref = publicKeyType_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         publicKeyType_ = b;
         return b;
       } else {
@@ -1398,23 +1494,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The type of public key in the certificate.
      * </pre>
      *
      * <code>string public_key_type = 6;</code>
      */
-    public Builder setPublicKeyType(
-        java.lang.String value) {
+    public Builder setPublicKeyType(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       publicKeyType_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The type of public key in the certificate.
      * </pre>
@@ -1422,32 +1521,33 @@ private static final long serialVersionUID = 0L;
      * <code>string public_key_type = 6;</code>
      */
     public Builder clearPublicKeyType() {
-      
+
       publicKeyType_ = getDefaultInstance().getPublicKeyType();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The type of public key in the certificate.
      * </pre>
      *
      * <code>string public_key_type = 6;</code>
      */
-    public Builder setPublicKeyTypeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setPublicKeyTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       publicKeyType_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1457,12 +1557,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.iot.v1.X509CertificateDetails)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.iot.v1.X509CertificateDetails)
   private static final com.google.cloud.iot.v1.X509CertificateDetails DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.iot.v1.X509CertificateDetails();
   }
@@ -1471,16 +1571,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<X509CertificateDetails>
-      PARSER = new com.google.protobuf.AbstractParser<X509CertificateDetails>() {
-    @java.lang.Override
-    public X509CertificateDetails parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new X509CertificateDetails(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<X509CertificateDetails> PARSER =
+      new com.google.protobuf.AbstractParser<X509CertificateDetails>() {
+        @java.lang.Override
+        public X509CertificateDetails parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new X509CertificateDetails(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<X509CertificateDetails> parser() {
     return PARSER;
@@ -1495,6 +1595,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.iot.v1.X509CertificateDetails getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface SynthesizeSpeechConfigOrBuilder extends
+public interface SynthesizeSpeechConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.SynthesizeSpeechConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is the normal
    * native speed supported by the specific voice. 2.0 is twice as fast, and
@@ -20,6 +23,8 @@ public interface SynthesizeSpeechConfigOrBuilder extends
   double getSpeakingRate();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Speaking pitch, in the range [-20.0, 20.0]. 20 means increase 20
    * semitones from the original pitch. -20 means decrease 20 semitones from the
@@ -31,6 +36,8 @@ public interface SynthesizeSpeechConfigOrBuilder extends
   double getPitch();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Volume gain (in dB) of the normal native volume supported by the
    * specific voice, in the range [-96.0, 16.0]. If unset, or set to a value of
@@ -47,6 +54,8 @@ public interface SynthesizeSpeechConfigOrBuilder extends
   double getVolumeGainDb();
 
   /**
+   *
+   *
    * <pre>
    * Optional. An identifier which selects 'audio effects' profiles that are
    * applied on (post synthesized) text to speech. Effects are applied on top of
@@ -55,9 +64,10 @@ public interface SynthesizeSpeechConfigOrBuilder extends
    *
    * <code>repeated string effects_profile_id = 5;</code>
    */
-  java.util.List<java.lang.String>
-      getEffectsProfileIdList();
+  java.util.List<java.lang.String> getEffectsProfileIdList();
   /**
+   *
+   *
    * <pre>
    * Optional. An identifier which selects 'audio effects' profiles that are
    * applied on (post synthesized) text to speech. Effects are applied on top of
@@ -68,6 +78,8 @@ public interface SynthesizeSpeechConfigOrBuilder extends
    */
   int getEffectsProfileIdCount();
   /**
+   *
+   *
    * <pre>
    * Optional. An identifier which selects 'audio effects' profiles that are
    * applied on (post synthesized) text to speech. Effects are applied on top of
@@ -78,6 +90,8 @@ public interface SynthesizeSpeechConfigOrBuilder extends
    */
   java.lang.String getEffectsProfileId(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. An identifier which selects 'audio effects' profiles that are
    * applied on (post synthesized) text to speech. Effects are applied on top of
@@ -86,10 +100,11 @@ public interface SynthesizeSpeechConfigOrBuilder extends
    *
    * <code>repeated string effects_profile_id = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getEffectsProfileIdBytes(int index);
+  com.google.protobuf.ByteString getEffectsProfileIdBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. The desired voice of the synthesized audio.
    * </pre>
@@ -98,6 +113,8 @@ public interface SynthesizeSpeechConfigOrBuilder extends
    */
   boolean hasVoice();
   /**
+   *
+   *
    * <pre>
    * Optional. The desired voice of the synthesized audio.
    * </pre>
@@ -106,6 +123,8 @@ public interface SynthesizeSpeechConfigOrBuilder extends
    */
   com.google.cloud.dialogflow.v2beta1.VoiceSelectionParams getVoice();
   /**
+   *
+   *
    * <pre>
    * Optional. The desired voice of the synthesized audio.
    * </pre>

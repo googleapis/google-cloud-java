@@ -3,28 +3,37 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface StreamingRecognitionResultOrBuilder extends
+public interface StreamingRecognitionResultOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.StreamingRecognitionResult)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Type of the result message.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;</code>
+   * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;
+   * </code>
    */
   int getMessageTypeValue();
   /**
+   *
+   *
    * <pre>
    * Type of the result message.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;</code>
+   * <code>.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType message_type = 1;
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType getMessageType();
 
   /**
+   *
+   *
    * <pre>
    * Transcript text representing the words that the user spoke.
    * Populated if and only if `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
@@ -34,6 +43,8 @@ public interface StreamingRecognitionResultOrBuilder extends
    */
   java.lang.String getTranscript();
   /**
+   *
+   *
    * <pre>
    * Transcript text representing the words that the user spoke.
    * Populated if and only if `event_type` = `RECOGNITION_EVENT_TRANSCRIPT`.
@@ -41,10 +52,11 @@ public interface StreamingRecognitionResultOrBuilder extends
    *
    * <code>string transcript = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getTranscriptBytes();
+  com.google.protobuf.ByteString getTranscriptBytes();
 
   /**
+   *
+   *
    * <pre>
    * The default of 0.0 is a sentinel value indicating `confidence` was not set.
    * If `false`, the `StreamingRecognitionResult` represents an
@@ -58,6 +70,8 @@ public interface StreamingRecognitionResultOrBuilder extends
   boolean getIsFinal();
 
   /**
+   *
+   *
    * <pre>
    * The Speech confidence between 0.0 and 1.0 for the current portion of audio.
    * A higher number indicates an estimated greater likelihood that the

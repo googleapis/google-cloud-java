@@ -20,18 +20,14 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 import com.google.common.collect.ImmutableMap;
-
-import org.junit.Test;
-
 import java.util.Map;
+import org.junit.Test;
 
 public class MetadataTest {
 
-  private static final Metadata METADATA = Metadata.newBuilder()
-      .add("key1", "value1")
-      .add("key2", "value2")
-      .build();
-  
+  private static final Metadata METADATA =
+      Metadata.newBuilder().add("key1", "value1").add("key2", "value2").build();
+
   @Test
   public void testToBuilder() {
     Metadata metadata = METADATA.toBuilder().setFingerprint("newFingerprint").build();
@@ -43,15 +39,17 @@ public class MetadataTest {
   public void testBuilder() {
     assertEquals(ImmutableMap.of("key1", "value1", "key2", "value2"), METADATA.getValues());
     assertNull(METADATA.getFingerprint());
-    Metadata metadata = Metadata.newBuilder()
-        .setValues(ImmutableMap.of("key1", "value1", "key2", "value2"))
-        .build();
+    Metadata metadata =
+        Metadata.newBuilder()
+            .setValues(ImmutableMap.of("key1", "value1", "key2", "value2"))
+            .build();
     assertEquals(ImmutableMap.of("key1", "value1", "key2", "value2"), metadata.getValues());
     assertNull(metadata.getFingerprint());
-    metadata = Metadata.newBuilder()
-        .setValues(ImmutableMap.of("key1", "value1", "key2", "value2"))
-        .setFingerprint("fingerprint")
-        .build();
+    metadata =
+        Metadata.newBuilder()
+            .setValues(ImmutableMap.of("key1", "value1", "key2", "value2"))
+            .setFingerprint("fingerprint")
+            .build();
     assertEquals(ImmutableMap.of("key1", "value1", "key2", "value2"), metadata.getValues());
     assertEquals("fingerprint", metadata.getFingerprint());
   }
@@ -65,10 +63,11 @@ public class MetadataTest {
   @Test
   public void testToAndFromPb() {
     compareMetadata(METADATA, Metadata.fromPb(METADATA.toPb()));
-    Metadata metadata = Metadata.newBuilder()
-        .setValues(ImmutableMap.of("key1", "value1", "key2", "value2"))
-        .setFingerprint("fingerprint")
-        .build();
+    Metadata metadata =
+        Metadata.newBuilder()
+            .setValues(ImmutableMap.of("key1", "value1", "key2", "value2"))
+            .setFingerprint("fingerprint")
+            .build();
     compareMetadata(metadata, Metadata.fromPb(metadata.toPb()));
   }
 

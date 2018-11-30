@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface BatchUpdateEntityTypesRequestOrBuilder extends
+public interface BatchUpdateEntityTypesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the agent to update or create entity types in.
    * Format: `projects/&lt;Project ID&gt;/agent`.
@@ -17,6 +20,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the agent to update or create entity types in.
    * Format: `projects/&lt;Project ID&gt;/agent`.
@@ -24,10 +29,11 @@ public interface BatchUpdateEntityTypesRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The URI to a Google Cloud Storage file containing entity types to update
    * or create. The file format can either be a serialized proto (of
@@ -39,6 +45,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder extends
    */
   java.lang.String getEntityTypeBatchUri();
   /**
+   *
+   *
    * <pre>
    * The URI to a Google Cloud Storage file containing entity types to update
    * or create. The file format can either be a serialized proto (of
@@ -48,10 +56,11 @@ public interface BatchUpdateEntityTypesRequestOrBuilder extends
    *
    * <code>string entity_type_batch_uri = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getEntityTypeBatchUriBytes();
+  com.google.protobuf.ByteString getEntityTypeBatchUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * The collection of entity type to update or create.
    * </pre>
@@ -60,6 +69,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder extends
    */
   boolean hasEntityTypeBatchInline();
   /**
+   *
+   *
    * <pre>
    * The collection of entity type to update or create.
    * </pre>
@@ -68,6 +79,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder extends
    */
   com.google.cloud.dialogflow.v2beta1.EntityTypeBatch getEntityTypeBatchInline();
   /**
+   *
+   *
    * <pre>
    * The collection of entity type to update or create.
    * </pre>
@@ -77,6 +90,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder extends
   com.google.cloud.dialogflow.v2beta1.EntityTypeBatchOrBuilder getEntityTypeBatchInlineOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The language of entity synonyms defined in `entity_types`. If not
    * specified, the agent's default language is used.
@@ -89,6 +104,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Optional. The language of entity synonyms defined in `entity_types`. If not
    * specified, the agent's default language is used.
@@ -99,10 +116,11 @@ public interface BatchUpdateEntityTypesRequestOrBuilder extends
    *
    * <code>string language_code = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -111,6 +129,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -119,6 +139,8 @@ public interface BatchUpdateEntityTypesRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -127,5 +149,6 @@ public interface BatchUpdateEntityTypesRequestOrBuilder extends
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
-  public com.google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesRequest.EntityTypeBatchCase getEntityTypeBatchCase();
+  public com.google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesRequest.EntityTypeBatchCase
+      getEntityTypeBatchCase();
 }

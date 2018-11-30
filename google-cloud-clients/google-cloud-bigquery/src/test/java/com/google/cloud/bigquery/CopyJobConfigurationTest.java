@@ -23,17 +23,15 @@ import static org.junit.Assert.assertNull;
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class CopyJobConfigurationTest {
 
   private static final TableId SOURCE_TABLE = TableId.of("dataset", "sourceTable");
-  private static final List<TableId> SOURCE_TABLES = ImmutableList.of(
-      TableId.of("dataset", "sourceTable1"),
-      TableId.of("dataset", "sourceTable2"));
+  private static final List<TableId> SOURCE_TABLES =
+      ImmutableList.of(
+          TableId.of("dataset", "sourceTable1"), TableId.of("dataset", "sourceTable2"));
   private static final TableId DESTINATION_TABLE = TableId.of("dataset", "destinationTable");
   private static final CreateDisposition CREATE_DISPOSITION = CreateDisposition.CREATE_IF_NEEDED;
   private static final WriteDisposition WRITE_DISPOSITION = WriteDisposition.WRITE_APPEND;
@@ -54,11 +52,14 @@ public class CopyJobConfigurationTest {
   @Test
   public void testToBuilder() {
     compareCopyJobConfiguration(COPY_JOB_CONFIGURATION, COPY_JOB_CONFIGURATION.toBuilder().build());
-    compareCopyJobConfiguration(COPY_JOB_CONFIGURATION_MULTIPLE_TABLES,
+    compareCopyJobConfiguration(
+        COPY_JOB_CONFIGURATION_MULTIPLE_TABLES,
         COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.toBuilder().build());
-    CopyJobConfiguration jobConfiguration = COPY_JOB_CONFIGURATION.toBuilder()
-        .setDestinationTable(TableId.of("dataset", "newTable"))
-        .build();
+    CopyJobConfiguration jobConfiguration =
+        COPY_JOB_CONFIGURATION
+            .toBuilder()
+            .setDestinationTable(TableId.of("dataset", "newTable"))
+            .build();
     assertEquals("newTable", jobConfiguration.getDestinationTable().getTable());
     jobConfiguration = jobConfiguration.toBuilder().setDestinationTable(DESTINATION_TABLE).build();
     compareCopyJobConfiguration(COPY_JOB_CONFIGURATION, jobConfiguration);
@@ -93,7 +94,6 @@ public class CopyJobConfigurationTest {
     assertEquals(WRITE_DISPOSITION, COPY_JOB_CONFIGURATION.getWriteDisposition());
   }
 
-
   @Test
   public void testToPbAndFromPb() {
     assertNotNull(COPY_JOB_CONFIGURATION.toPb().getCopy());
@@ -102,9 +102,10 @@ public class CopyJobConfigurationTest {
     assertNull(COPY_JOB_CONFIGURATION.toPb().getQuery());
     assertNull(COPY_JOB_CONFIGURATION.toPb().getCopy().getSourceTables());
     assertNull(COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.toPb().getCopy().getSourceTable());
-    compareCopyJobConfiguration(COPY_JOB_CONFIGURATION,
-        CopyJobConfiguration.fromPb(COPY_JOB_CONFIGURATION.toPb()));
-    compareCopyJobConfiguration(COPY_JOB_CONFIGURATION_MULTIPLE_TABLES,
+    compareCopyJobConfiguration(
+        COPY_JOB_CONFIGURATION, CopyJobConfiguration.fromPb(COPY_JOB_CONFIGURATION.toPb()));
+    compareCopyJobConfiguration(
+        COPY_JOB_CONFIGURATION_MULTIPLE_TABLES,
         CopyJobConfiguration.fromPb(COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.toPb()));
     CopyJobConfiguration jobConfiguration =
         CopyJobConfiguration.of(DESTINATION_TABLE, SOURCE_TABLES);
@@ -127,8 +128,8 @@ public class CopyJobConfigurationTest {
     assertEquals(JobConfiguration.Type.COPY, COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.getType());
   }
 
-  private void compareCopyJobConfiguration(CopyJobConfiguration expected,
-      CopyJobConfiguration value) {
+  private void compareCopyJobConfiguration(
+      CopyJobConfiguration expected, CopyJobConfiguration value) {
     assertEquals(expected, value);
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
@@ -136,6 +137,8 @@ public class CopyJobConfigurationTest {
     assertEquals(expected.getSourceTables(), value.getSourceTables());
     assertEquals(expected.getCreateDisposition(), value.getCreateDisposition());
     assertEquals(expected.getWriteDisposition(), value.getWriteDisposition());
-    assertEquals(expected.getDestinationEncryptionConfiguration(), value.getDestinationEncryptionConfiguration());
+    assertEquals(
+        expected.getDestinationEncryptionConfiguration(),
+        value.getDestinationEncryptionConfiguration());
   }
 }

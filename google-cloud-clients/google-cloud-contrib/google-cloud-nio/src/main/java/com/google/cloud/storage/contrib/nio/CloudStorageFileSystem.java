@@ -26,7 +26,6 @@ import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableSet;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -41,7 +40,6 @@ import java.nio.file.attribute.UserPrincipalLookupService;
 import java.util.HashMap;
 import java.util.Objects;
 import java.util.Set;
-
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.ThreadSafe;
@@ -49,10 +47,10 @@ import javax.annotation.concurrent.ThreadSafe;
 /**
  * Google Cloud Storage {@link FileSystem} implementation.
  *
- * @see <a href="https://developers.google.com/storage/docs/concepts-techniques#concepts">
- *        Concepts and Terminology</a>
- * @see <a href="https://developers.google.com/storage/docs/bucketnaming">
- *        Bucket and Object Naming Guidelines</a>
+ * @see <a href="https://developers.google.com/storage/docs/concepts-techniques#concepts">Concepts
+ *     and Terminology</a>
+ * @see <a href="https://developers.google.com/storage/docs/bucketnaming">Bucket and Object Naming
+ *     Guidelines</a>
  */
 @ThreadSafe
 public final class CloudStorageFileSystem extends FileSystem {
@@ -93,7 +91,8 @@ public final class CloudStorageFileSystem extends FileSystem {
    * Lists the project's buckets. Pass "null" to use the default project.
    *
    * <p>Example of listing buckets, specifying the page size and a name prefix.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String prefix = "bucket_";
    * Page<Bucket> buckets = CloudStorageFileSystem.listBuckets("my-project", BucketListOption.prefix(prefix));
    * Iterator<Bucket> bucketIterator = buckets.iterateAll();
@@ -105,17 +104,22 @@ public final class CloudStorageFileSystem extends FileSystem {
    *
    * @throws StorageException upon failure
    */
-  public static Page<Bucket> listBuckets(@Nullable String project, Storage.BucketListOption... options) {
-    CloudStorageFileSystemProvider provider = new CloudStorageFileSystemProvider(null, StorageOptions.newBuilder().setProjectId(project).build());
+  public static Page<Bucket> listBuckets(
+      @Nullable String project, Storage.BucketListOption... options) {
+    CloudStorageFileSystemProvider provider =
+        new CloudStorageFileSystemProvider(
+            null, StorageOptions.newBuilder().setProjectId(project).build());
     return provider.listBuckets(options);
   }
 
   /**
    * Returns Google Cloud Storage {@link FileSystem} object for {@code bucket}.
    *
-   * <p><b>NOTE:</b> You may prefer to use Java's standard API instead:<pre>   {@code
+   * <p><b>NOTE:</b> You may prefer to use Java's standard API instead:
    *
-   *   FileSystem fs = FileSystems.getFileSystem(URI.create("gs://bucket"));}</pre>
+   * <pre>{@code
+   * FileSystem fs = FileSystems.getFileSystem(URI.create("gs://bucket"));
+   * }</pre>
    *
    * <p>However some systems and build environments might be flaky when it comes to Java SPI. This
    * is because services are generally runtime dependencies and depend on a META-INF file being
@@ -152,20 +156,22 @@ public final class CloudStorageFileSystem extends FileSystem {
    * resources associated with this object. Therefore calling {@link #close()} on the returned value
    * is optional.
    *
-   * <p><b>Note:</b> It is also possible to instantiate this class via Java's
-   * {@code FileSystems.getFileSystem(URI.create("gs://bucket"))}. We discourage you
-   * from using that if possible, for the reasons documented in
-   * {@link CloudStorageFileSystemProvider#newFileSystem(URI, java.util.Map)}
+   * <p><b>Note:</b> It is also possible to instantiate this class via Java's {@code
+   * FileSystems.getFileSystem(URI.create("gs://bucket"))}. We discourage you from using that if
+   * possible, for the reasons documented in {@link
+   * CloudStorageFileSystemProvider#newFileSystem(URI, java.util.Map)}
    *
    * @see java.nio.file.FileSystems#getFileSystem(URI)
    */
   @CheckReturnValue
-  public static CloudStorageFileSystem forBucket(String bucket, CloudStorageConfiguration config,
-      @Nullable StorageOptions storageOptions) {
-    checkArgument(!bucket.startsWith(URI_SCHEME + ":"),
-        "Bucket name must not have schema: %s", bucket);
-    return new CloudStorageFileSystem(new CloudStorageFileSystemProvider(config.userProject(), storageOptions),
-        bucket, checkNotNull(config));
+  public static CloudStorageFileSystem forBucket(
+      String bucket, CloudStorageConfiguration config, @Nullable StorageOptions storageOptions) {
+    checkArgument(
+        !bucket.startsWith(URI_SCHEME + ":"), "Bucket name must not have schema: %s", bucket);
+    return new CloudStorageFileSystem(
+        new CloudStorageFileSystemProvider(config.userProject(), storageOptions),
+        bucket,
+        checkNotNull(config));
   }
 
   CloudStorageFileSystem(
@@ -174,7 +180,8 @@ public final class CloudStorageFileSystem extends FileSystem {
     this.bucket = bucket;
     if (config.useUserProjectOnlyForRequesterPaysBuckets()) {
       if (Strings.isNullOrEmpty(config.userProject())) {
-        throw new IllegalArgumentException("If useUserProjectOnlyForRequesterPaysBuckets is set, then userProject must be set too.");
+        throw new IllegalArgumentException(
+            "If useUserProjectOnlyForRequesterPaysBuckets is set, then userProject must be set too.");
       }
       // detect whether we want to pay for these accesses or not.
       if (!provider.requesterPays(bucket)) {
@@ -195,23 +202,17 @@ public final class CloudStorageFileSystem extends FileSystem {
     return provider;
   }
 
-  /**
-   * Returns Cloud Storage bucket name being served by this file system.
-   */
+  /** Returns Cloud Storage bucket name being served by this file system. */
   public String bucket() {
     return bucket;
   }
 
-  /**
-   * Returns configuration object for this file system instance.
-   */
+  /** Returns configuration object for this file system instance. */
   public CloudStorageConfiguration config() {
     return config;
   }
 
-  /**
-   * Converts Cloud Storage object name to a {@link Path} object.
-   */
+  /** Converts Cloud Storage object name to a {@link Path} object. */
   @Override
   public CloudStoragePath getPath(String first, String... more) {
     checkArgument(
@@ -231,25 +232,19 @@ public final class CloudStorageFileSystem extends FileSystem {
     // TODO(#809): Synchronously close all channels associated with this FileSystem instance.
   }
 
-  /**
-   * Returns {@code true}, even if you previously called the {@link #close()} method.
-   */
+  /** Returns {@code true}, even if you previously called the {@link #close()} method. */
   @Override
   public boolean isOpen() {
     return true;
   }
 
-  /**
-   * Returns {@code false}.
-   */
+  /** Returns {@code false}. */
   @Override
   public boolean isReadOnly() {
     return false;
   }
 
-  /**
-   * Returns {@value UnixPath#SEPARATOR}.
-   */
+  /** Returns {@value UnixPath#SEPARATOR}. */
   @Override
   public String getSeparator() {
     return Character.toString(UnixPath.SEPARATOR);

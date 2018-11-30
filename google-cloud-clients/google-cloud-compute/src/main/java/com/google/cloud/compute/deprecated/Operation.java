@@ -29,12 +29,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
@@ -42,6 +36,10 @@ import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 import org.threeten.bp.Duration;
 
 /**
@@ -96,25 +94,28 @@ public class Operation implements Serializable {
   /** An error that can occur during the processing of a Google Compute Engine operation. */
   public static final class OperationError implements Serializable {
 
-    static final Function<com.google.api.services.compute.model.Operation.Error.Errors,
-        OperationError> FROM_PB_FUNCTION = new Function<
-            com.google.api.services.compute.model.Operation.Error.Errors, OperationError>() {
-          @Override
-          public OperationError apply(
-              com.google.api.services.compute.model.Operation.Error.Errors pb) {
-            return OperationError.fromPb(pb);
-          }
-        };
-    static final Function<OperationError,
-        com.google.api.services.compute.model.Operation.Error.Errors> TO_PB_FUNCTION =
-        new Function<OperationError,
-            com.google.api.services.compute.model.Operation.Error.Errors>() {
-          @Override
-          public com.google.api.services.compute.model.Operation.Error.Errors apply(
-              OperationError operation) {
-            return operation.toPb();
-          }
-        };
+    static final Function<
+            com.google.api.services.compute.model.Operation.Error.Errors, OperationError>
+        FROM_PB_FUNCTION =
+            new Function<
+                com.google.api.services.compute.model.Operation.Error.Errors, OperationError>() {
+              @Override
+              public OperationError apply(
+                  com.google.api.services.compute.model.Operation.Error.Errors pb) {
+                return OperationError.fromPb(pb);
+              }
+            };
+    static final Function<
+            OperationError, com.google.api.services.compute.model.Operation.Error.Errors>
+        TO_PB_FUNCTION =
+            new Function<
+                OperationError, com.google.api.services.compute.model.Operation.Error.Errors>() {
+              @Override
+              public com.google.api.services.compute.model.Operation.Error.Errors apply(
+                  OperationError operation) {
+                return operation.toPb();
+              }
+            };
 
     private static final long serialVersionUID = -1155314394806515873L;
 
@@ -183,28 +184,28 @@ public class Operation implements Serializable {
    */
   public static final class OperationWarning implements Serializable {
 
-    static final
-        Function<com.google.api.services.compute.model.Operation.Warnings, OperationWarning>
+    static final Function<
+            com.google.api.services.compute.model.Operation.Warnings, OperationWarning>
         FROM_PB_FUNCTION =
-        new Function<com.google.api.services.compute.model.Operation.Warnings,
-            OperationWarning>() {
-          @Override
-          public OperationWarning apply(
-              com.google.api.services.compute.model.Operation.Warnings pb) {
-            return OperationWarning.fromPb(pb);
-          }
-        };
-    static final
-        Function<OperationWarning, com.google.api.services.compute.model.Operation.Warnings>
+            new Function<
+                com.google.api.services.compute.model.Operation.Warnings, OperationWarning>() {
+              @Override
+              public OperationWarning apply(
+                  com.google.api.services.compute.model.Operation.Warnings pb) {
+                return OperationWarning.fromPb(pb);
+              }
+            };
+    static final Function<
+            OperationWarning, com.google.api.services.compute.model.Operation.Warnings>
         TO_PB_FUNCTION =
-        new Function<OperationWarning,
-            com.google.api.services.compute.model.Operation.Warnings>() {
-          @Override
-          public com.google.api.services.compute.model.Operation.Warnings apply(
-              OperationWarning operation) {
-            return operation.toPb();
-          }
-        };
+            new Function<
+                OperationWarning, com.google.api.services.compute.model.Operation.Warnings>() {
+              @Override
+              public com.google.api.services.compute.model.Operation.Warnings apply(
+                  OperationWarning operation) {
+                return operation.toPb();
+              }
+            };
 
     private static final long serialVersionUID = 4917326627380228928L;
 
@@ -688,8 +689,7 @@ public class Operation implements Serializable {
    * @throws InterruptedException if the current thread gets interrupted while waiting for the
    *     operation to complete
    */
-  public Operation waitFor(RetryOption... waitOptions)
-      throws InterruptedException {
+  public Operation waitFor(RetryOption... waitOptions) throws InterruptedException {
     RetrySettings waitSettings =
         RetryOption.mergeToSettings(DEFAULT_OPERATION_WAIT_SETTINGS, waitOptions);
     try {

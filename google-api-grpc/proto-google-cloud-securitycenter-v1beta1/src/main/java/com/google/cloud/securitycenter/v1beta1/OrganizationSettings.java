@@ -4,6 +4,8 @@
 package com.google.cloud.securitycenter.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * User specified settings that are attached to the Cloud Security Command
  * Center (Cloud SCC) organization.
@@ -11,25 +13,26 @@ package com.google.cloud.securitycenter.v1beta1;
  *
  * Protobuf type {@code google.cloud.securitycenter.v1beta1.OrganizationSettings}
  */
-public  final class OrganizationSettings extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class OrganizationSettings extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1beta1.OrganizationSettings)
     OrganizationSettingsOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use OrganizationSettings.newBuilder() to construct.
   private OrganizationSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private OrganizationSettings() {
     name_ = "";
     enableAssetDiscovery_ = false;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private OrganizationSettings(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,76 +52,90 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 16: {
+              name_ = s;
+              break;
+            }
+          case 16:
+            {
+              enableAssetDiscovery_ = input.readBool();
+              break;
+            }
+          case 26:
+            {
+              com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+                      .Builder
+                  subBuilder = null;
+              if (assetDiscoveryConfig_ != null) {
+                subBuilder = assetDiscoveryConfig_.toBuilder();
+              }
+              assetDiscoveryConfig_ =
+                  input.readMessage(
+                      com.google.cloud.securitycenter.v1beta1.OrganizationSettings
+                          .AssetDiscoveryConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(assetDiscoveryConfig_);
+                assetDiscoveryConfig_ = subBuilder.buildPartial();
+              }
 
-            enableAssetDiscovery_ = input.readBool();
-            break;
-          }
-          case 26: {
-            com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.Builder subBuilder = null;
-            if (assetDiscoveryConfig_ != null) {
-              subBuilder = assetDiscoveryConfig_.toBuilder();
+              break;
             }
-            assetDiscoveryConfig_ = input.readMessage(com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(assetDiscoveryConfig_);
-              assetDiscoveryConfig_ = subBuilder.buildPartial();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass.internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass
+        .internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass.internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_fieldAccessorTable
+    return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass
+        .internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.securitycenter.v1beta1.OrganizationSettings.class, com.google.cloud.securitycenter.v1beta1.OrganizationSettings.Builder.class);
+            com.google.cloud.securitycenter.v1beta1.OrganizationSettings.class,
+            com.google.cloud.securitycenter.v1beta1.OrganizationSettings.Builder.class);
   }
 
-  public interface AssetDiscoveryConfigOrBuilder extends
+  public interface AssetDiscoveryConfigOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * The project ids to use for filtering asset discovery.
      * </pre>
      *
      * <code>repeated string project_ids = 1;</code>
      */
-    java.util.List<java.lang.String>
-        getProjectIdsList();
+    java.util.List<java.lang.String> getProjectIdsList();
     /**
+     *
+     *
      * <pre>
      * The project ids to use for filtering asset discovery.
      * </pre>
@@ -127,6 +144,8 @@ private static final long serialVersionUID = 0L;
      */
     int getProjectIdsCount();
     /**
+     *
+     *
      * <pre>
      * The project ids to use for filtering asset discovery.
      * </pre>
@@ -135,58 +154,72 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getProjectIds(int index);
     /**
+     *
+     *
      * <pre>
      * The project ids to use for filtering asset discovery.
      * </pre>
      *
      * <code>repeated string project_ids = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getProjectIdsBytes(int index);
+    com.google.protobuf.ByteString getProjectIdsBytes(int index);
 
     /**
+     *
+     *
      * <pre>
      * The mode to use for filtering asset discovery.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;
+     * </code>
      */
     int getInclusionModeValue();
     /**
+     *
+     *
      * <pre>
      * The mode to use for filtering asset discovery.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;
+     * </code>
      */
-    com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode getInclusionMode();
+    com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode
+        getInclusionMode();
   }
   /**
+   *
+   *
    * <pre>
    * The configuration used for Asset Discovery runs.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig}
+   * Protobuf type {@code
+   * google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig}
    */
-  public  static final class AssetDiscoveryConfig extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class AssetDiscoveryConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig)
       AssetDiscoveryConfigOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use AssetDiscoveryConfig.newBuilder() to construct.
     private AssetDiscoveryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private AssetDiscoveryConfig() {
       projectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       inclusionMode_ = 0;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private AssetDiscoveryConfig(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -206,35 +239,36 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                projectIds_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  projectIds_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                projectIds_.add(s);
+                break;
               }
-              projectIds_.add(s);
-              break;
-            }
-            case 16: {
-              int rawValue = input.readEnum();
+            case 16:
+              {
+                int rawValue = input.readEnum();
 
-              inclusionMode_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                inclusionMode_ = rawValue;
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           projectIds_ = projectIds_.getUnmodifiableView();
@@ -243,20 +277,27 @@ private static final long serialVersionUID = 0L;
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass.internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_AssetDiscoveryConfig_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass
+          .internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_AssetDiscoveryConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass.internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_AssetDiscoveryConfig_fieldAccessorTable
+      return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass
+          .internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_AssetDiscoveryConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.class, com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.Builder.class);
+              com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+                  .class,
+              com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+                  .Builder.class);
     }
 
     /**
+     *
+     *
      * <pre>
      * The mode of inclusion when running Asset Discovery.
      * Asset discovery can be limited by explicitly identifying projects to be
@@ -268,11 +309,13 @@ private static final long serialVersionUID = 0L;
      * discovery.
      * </pre>
      *
-     * Protobuf enum {@code google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode}
+     * Protobuf enum {@code
+     * google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode}
      */
-    public enum InclusionMode
-        implements com.google.protobuf.ProtocolMessageEnum {
+    public enum InclusionMode implements com.google.protobuf.ProtocolMessageEnum {
       /**
+       *
+       *
        * <pre>
        * Unspecified. Setting the mode with this value will disable
        * inclusion/exclusion filtering for Asset Discovery.
@@ -282,6 +325,8 @@ private static final long serialVersionUID = 0L;
        */
       INCLUSION_MODE_UNSPECIFIED(0),
       /**
+       *
+       *
        * <pre>
        * Asset Discovery will capture only the resources within the projects
        * specified. All other resources will be ignored.
@@ -291,6 +336,8 @@ private static final long serialVersionUID = 0L;
        */
       INCLUDE_ONLY(1),
       /**
+       *
+       *
        * <pre>
        * Asset Discovery will ignore all resources under the projects specified.
        * All other resources will be retrieved.
@@ -303,6 +350,8 @@ private static final long serialVersionUID = 0L;
       ;
 
       /**
+       *
+       *
        * <pre>
        * Unspecified. Setting the mode with this value will disable
        * inclusion/exclusion filtering for Asset Discovery.
@@ -312,6 +361,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int INCLUSION_MODE_UNSPECIFIED_VALUE = 0;
       /**
+       *
+       *
        * <pre>
        * Asset Discovery will capture only the resources within the projects
        * specified. All other resources will be ignored.
@@ -321,6 +372,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int INCLUDE_ONLY_VALUE = 1;
       /**
+       *
+       *
        * <pre>
        * Asset Discovery will ignore all resources under the projects specified.
        * All other resources will be retrieved.
@@ -330,7 +383,6 @@ private static final long serialVersionUID = 0L;
        */
       public static final int EXCLUDE_VALUE = 2;
 
-
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
           throw new java.lang.IllegalArgumentException(
@@ -339,9 +391,7 @@ private static final long serialVersionUID = 0L;
         return value;
       }
 
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
+      /** @deprecated Use {@link #forNumber(int)} instead. */
       @java.lang.Deprecated
       public static InclusionMode valueOf(int value) {
         return forNumber(value);
@@ -349,36 +399,42 @@ private static final long serialVersionUID = 0L;
 
       public static InclusionMode forNumber(int value) {
         switch (value) {
-          case 0: return INCLUSION_MODE_UNSPECIFIED;
-          case 1: return INCLUDE_ONLY;
-          case 2: return EXCLUDE;
-          default: return null;
+          case 0:
+            return INCLUSION_MODE_UNSPECIFIED;
+          case 1:
+            return INCLUDE_ONLY;
+          case 2:
+            return EXCLUDE;
+          default:
+            return null;
         }
       }
 
-      public static com.google.protobuf.Internal.EnumLiteMap<InclusionMode>
-          internalGetValueMap() {
+      public static com.google.protobuf.Internal.EnumLiteMap<InclusionMode> internalGetValueMap() {
         return internalValueMap;
       }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          InclusionMode> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<InclusionMode>() {
-              public InclusionMode findValueByNumber(int number) {
-                return InclusionMode.forNumber(number);
-              }
-            };
 
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
+      private static final com.google.protobuf.Internal.EnumLiteMap<InclusionMode>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<InclusionMode>() {
+                public InclusionMode findValueByNumber(int number) {
+                  return InclusionMode.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
         return getDescriptor().getValues().get(ordinal());
       }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
         return getDescriptor();
       }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.getDescriptor().getEnumTypes().get(0);
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
       }
 
       private static final InclusionMode[] VALUES = values();
@@ -386,8 +442,7 @@ private static final long serialVersionUID = 0L;
       public static InclusionMode valueOf(
           com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
         }
         if (desc.getIndex() == -1) {
           return UNRECOGNIZED;
@@ -408,17 +463,20 @@ private static final long serialVersionUID = 0L;
     public static final int PROJECT_IDS_FIELD_NUMBER = 1;
     private com.google.protobuf.LazyStringList projectIds_;
     /**
+     *
+     *
      * <pre>
      * The project ids to use for filtering asset discovery.
      * </pre>
      *
      * <code>repeated string project_ids = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getProjectIdsList() {
+    public com.google.protobuf.ProtocolStringList getProjectIdsList() {
       return projectIds_;
     }
     /**
+     *
+     *
      * <pre>
      * The project ids to use for filtering asset discovery.
      * </pre>
@@ -429,6 +487,8 @@ private static final long serialVersionUID = 0L;
       return projectIds_.size();
     }
     /**
+     *
+     *
      * <pre>
      * The project ids to use for filtering asset discovery.
      * </pre>
@@ -439,43 +499,62 @@ private static final long serialVersionUID = 0L;
       return projectIds_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * The project ids to use for filtering asset discovery.
      * </pre>
      *
      * <code>repeated string project_ids = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getProjectIdsBytes(int index) {
+    public com.google.protobuf.ByteString getProjectIdsBytes(int index) {
       return projectIds_.getByteString(index);
     }
 
     public static final int INCLUSION_MODE_FIELD_NUMBER = 2;
     private int inclusionMode_;
     /**
+     *
+     *
      * <pre>
      * The mode to use for filtering asset discovery.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;
+     * </code>
      */
     public int getInclusionModeValue() {
       return inclusionMode_;
     }
     /**
+     *
+     *
      * <pre>
      * The mode to use for filtering asset discovery.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;
+     * </code>
      */
-    public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode getInclusionMode() {
+    public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+            .InclusionMode
+        getInclusionMode() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode result = com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode.valueOf(inclusionMode_);
-      return result == null ? com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode.UNRECOGNIZED : result;
+      com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+              .InclusionMode
+          result =
+              com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+                  .InclusionMode.valueOf(inclusionMode_);
+      return result == null
+          ? com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+              .InclusionMode.UNRECOGNIZED
+          : result;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -487,12 +566,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       for (int i = 0; i < projectIds_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectIds_.getRaw(i));
       }
-      if (inclusionMode_ != com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode.INCLUSION_MODE_UNSPECIFIED.getNumber()) {
+      if (inclusionMode_
+          != com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+              .InclusionMode.INCLUSION_MODE_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, inclusionMode_);
       }
       unknownFields.writeTo(output);
@@ -512,9 +592,10 @@ private static final long serialVersionUID = 0L;
         size += dataSize;
         size += 1 * getProjectIdsList().size();
       }
-      if (inclusionMode_ != com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode.INCLUSION_MODE_UNSPECIFIED.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, inclusionMode_);
+      if (inclusionMode_
+          != com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+              .InclusionMode.INCLUSION_MODE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, inclusionMode_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -524,16 +605,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
-      if (!(obj instanceof com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig)) {
+      if (!(obj
+          instanceof
+          com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig)) {
         return super.equals(obj);
       }
-      com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig other = (com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig) obj;
+      com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig other =
+          (com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig) obj;
 
       boolean result = true;
-      result = result && getProjectIdsList()
-          .equals(other.getProjectIdsList());
+      result = result && getProjectIdsList().equals(other.getProjectIdsList());
       result = result && inclusionMode_ == other.inclusionMode_;
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -557,88 +640,102 @@ private static final long serialVersionUID = 0L;
       return hash;
     }
 
-    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+
+    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+
+    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
     }
-    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+
+    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+
+    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig prototype) {
+
+    public static Builder newBuilder(
+        com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+            prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -648,44 +745,52 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration used for Asset Discovery runs.
      * </pre>
      *
-     * Protobuf type {@code google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig}
+     * Protobuf type {@code
+     * google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig)
         com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfigOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass.internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_AssetDiscoveryConfig_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass
+            .internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_AssetDiscoveryConfig_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass.internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_AssetDiscoveryConfig_fieldAccessorTable
+        return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass
+            .internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_AssetDiscoveryConfig_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.class, com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.Builder.class);
+                com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+                    .class,
+                com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+                    .Builder.class);
       }
 
-      // Construct using com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.newBuilder()
+      // Construct using
+      // com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -697,19 +802,23 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass.internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_AssetDiscoveryConfig_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass
+            .internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_AssetDiscoveryConfig_descriptor;
       }
 
       @java.lang.Override
-      public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig getDefaultInstanceForType() {
-        return com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.getDefaultInstance();
+      public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+            .getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig build() {
-        com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig result = buildPartial();
+      public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+          build() {
+        com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig result =
+            buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -717,8 +826,11 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig buildPartial() {
-        com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig result = new com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig(this);
+      public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+          buildPartial() {
+        com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig result =
+            new com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig(
+                this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -736,46 +848,56 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig) {
-          return mergeFrom((com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig)other);
+        if (other
+            instanceof
+            com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig) {
+          return mergeFrom(
+              (com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig)
+                  other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig other) {
-        if (other == com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.getDefaultInstance()) return this;
+      public Builder mergeFrom(
+          com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig other) {
+        if (other
+            == com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+                .getDefaultInstance()) return this;
         if (!other.projectIds_.isEmpty()) {
           if (projectIds_.isEmpty()) {
             projectIds_ = other.projectIds_;
@@ -804,11 +926,14 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig parsedMessage = null;
+        com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+            parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -817,27 +942,33 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+
       private int bitField0_;
 
-      private com.google.protobuf.LazyStringList projectIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private com.google.protobuf.LazyStringList projectIds_ =
+          com.google.protobuf.LazyStringArrayList.EMPTY;
+
       private void ensureProjectIdsIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
           projectIds_ = new com.google.protobuf.LazyStringArrayList(projectIds_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
+       *
+       *
        * <pre>
        * The project ids to use for filtering asset discovery.
        * </pre>
        *
        * <code>repeated string project_ids = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getProjectIdsList() {
+      public com.google.protobuf.ProtocolStringList getProjectIdsList() {
         return projectIds_.getUnmodifiableView();
       }
       /**
+       *
+       *
        * <pre>
        * The project ids to use for filtering asset discovery.
        * </pre>
@@ -848,6 +979,8 @@ private static final long serialVersionUID = 0L;
         return projectIds_.size();
       }
       /**
+       *
+       *
        * <pre>
        * The project ids to use for filtering asset discovery.
        * </pre>
@@ -858,66 +991,71 @@ private static final long serialVersionUID = 0L;
         return projectIds_.get(index);
       }
       /**
+       *
+       *
        * <pre>
        * The project ids to use for filtering asset discovery.
        * </pre>
        *
        * <code>repeated string project_ids = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getProjectIdsBytes(int index) {
+      public com.google.protobuf.ByteString getProjectIdsBytes(int index) {
         return projectIds_.getByteString(index);
       }
       /**
+       *
+       *
        * <pre>
        * The project ids to use for filtering asset discovery.
        * </pre>
        *
        * <code>repeated string project_ids = 1;</code>
        */
-      public Builder setProjectIds(
-          int index, java.lang.String value) {
+      public Builder setProjectIds(int index, java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureProjectIdsIsMutable();
+          throw new NullPointerException();
+        }
+        ensureProjectIdsIsMutable();
         projectIds_.set(index, value);
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The project ids to use for filtering asset discovery.
        * </pre>
        *
        * <code>repeated string project_ids = 1;</code>
        */
-      public Builder addProjectIds(
-          java.lang.String value) {
+      public Builder addProjectIds(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureProjectIdsIsMutable();
+          throw new NullPointerException();
+        }
+        ensureProjectIdsIsMutable();
         projectIds_.add(value);
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The project ids to use for filtering asset discovery.
        * </pre>
        *
        * <code>repeated string project_ids = 1;</code>
        */
-      public Builder addAllProjectIds(
-          java.lang.Iterable<java.lang.String> values) {
+      public Builder addAllProjectIds(java.lang.Iterable<java.lang.String> values) {
         ensureProjectIdsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, projectIds_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, projectIds_);
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The project ids to use for filtering asset discovery.
        * </pre>
@@ -931,18 +1069,19 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The project ids to use for filtering asset discovery.
        * </pre>
        *
        * <code>repeated string project_ids = 1;</code>
        */
-      public Builder addProjectIdsBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder addProjectIdsBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
         ensureProjectIdsIsMutable();
         projectIds_.add(value);
         onChanged();
@@ -951,21 +1090,29 @@ private static final long serialVersionUID = 0L;
 
       private int inclusionMode_ = 0;
       /**
+       *
+       *
        * <pre>
        * The mode to use for filtering asset discovery.
        * </pre>
        *
-       * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;</code>
+       * <code>
+       * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;
+       * </code>
        */
       public int getInclusionModeValue() {
         return inclusionMode_;
       }
       /**
+       *
+       *
        * <pre>
        * The mode to use for filtering asset discovery.
        * </pre>
        *
-       * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;</code>
+       * <code>
+       * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;
+       * </code>
        */
       public Builder setInclusionModeValue(int value) {
         inclusionMode_ = value;
@@ -973,46 +1120,71 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The mode to use for filtering asset discovery.
        * </pre>
        *
-       * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;</code>
+       * <code>
+       * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;
+       * </code>
        */
-      public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode getInclusionMode() {
+      public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+              .InclusionMode
+          getInclusionMode() {
         @SuppressWarnings("deprecation")
-        com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode result = com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode.valueOf(inclusionMode_);
-        return result == null ? com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode.UNRECOGNIZED : result;
+        com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+                .InclusionMode
+            result =
+                com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+                    .InclusionMode.valueOf(inclusionMode_);
+        return result == null
+            ? com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+                .InclusionMode.UNRECOGNIZED
+            : result;
       }
       /**
+       *
+       *
        * <pre>
        * The mode to use for filtering asset discovery.
        * </pre>
        *
-       * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;</code>
+       * <code>
+       * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;
+       * </code>
        */
-      public Builder setInclusionMode(com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode value) {
+      public Builder setInclusionMode(
+          com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+                  .InclusionMode
+              value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+
         inclusionMode_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The mode to use for filtering asset discovery.
        * </pre>
        *
-       * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;</code>
+       * <code>
+       * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.InclusionMode inclusion_mode = 2;
+       * </code>
        */
       public Builder clearInclusionMode() {
-        
+
         inclusionMode_ = 0;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1025,30 +1197,34 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig)
-    private static final com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig DEFAULT_INSTANCE;
+    private static final com.google.cloud.securitycenter.v1beta1.OrganizationSettings
+            .AssetDiscoveryConfig
+        DEFAULT_INSTANCE;
+
     static {
-      DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig();
+      DEFAULT_INSTANCE =
+          new com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig();
     }
 
-    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig getDefaultInstance() {
+    public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<AssetDiscoveryConfig>
-        PARSER = new com.google.protobuf.AbstractParser<AssetDiscoveryConfig>() {
-      @java.lang.Override
-      public AssetDiscoveryConfig parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AssetDiscoveryConfig(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<AssetDiscoveryConfig> PARSER =
+        new com.google.protobuf.AbstractParser<AssetDiscoveryConfig>() {
+          @java.lang.Override
+          public AssetDiscoveryConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new AssetDiscoveryConfig(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<AssetDiscoveryConfig> parser() {
       return PARSER;
@@ -1060,15 +1236,17 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig getDefaultInstanceForType() {
+    public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The relative resource name of the settings. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -1083,14 +1261,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The relative resource name of the settings. See:
    * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -1100,13 +1279,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -1117,6 +1294,8 @@ private static final long serialVersionUID = 0L;
   public static final int ENABLE_ASSET_DISCOVERY_FIELD_NUMBER = 2;
   private boolean enableAssetDiscovery_;
   /**
+   *
+   *
    * <pre>
    * A flag that indicates if Asset Discovery should be enabled. If the flag is
    * set to `true`, then discovery of assets will occur. If it is set to `false,
@@ -1131,39 +1310,58 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ASSET_DISCOVERY_CONFIG_FIELD_NUMBER = 3;
-  private com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig assetDiscoveryConfig_;
+  private com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+      assetDiscoveryConfig_;
   /**
+   *
+   *
    * <pre>
    * The configuration used for Asset Discovery runs.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;
+   * </code>
    */
   public boolean hasAssetDiscoveryConfig() {
     return assetDiscoveryConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The configuration used for Asset Discovery runs.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;
+   * </code>
    */
-  public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig getAssetDiscoveryConfig() {
-    return assetDiscoveryConfig_ == null ? com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.getDefaultInstance() : assetDiscoveryConfig_;
+  public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+      getAssetDiscoveryConfig() {
+    return assetDiscoveryConfig_ == null
+        ? com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+            .getDefaultInstance()
+        : assetDiscoveryConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * The configuration used for Asset Discovery runs.
    * </pre>
    *
-   * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
+   * <code>
+   * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;
+   * </code>
    */
-  public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfigOrBuilder getAssetDiscoveryConfigOrBuilder() {
+  public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfigOrBuilder
+      getAssetDiscoveryConfigOrBuilder() {
     return getAssetDiscoveryConfig();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1175,8 +1373,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -1199,12 +1396,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (enableAssetDiscovery_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(2, enableAssetDiscovery_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, enableAssetDiscovery_);
     }
     if (assetDiscoveryConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getAssetDiscoveryConfig());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAssetDiscoveryConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1214,22 +1410,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.securitycenter.v1beta1.OrganizationSettings)) {
       return super.equals(obj);
     }
-    com.google.cloud.securitycenter.v1beta1.OrganizationSettings other = (com.google.cloud.securitycenter.v1beta1.OrganizationSettings) obj;
+    com.google.cloud.securitycenter.v1beta1.OrganizationSettings other =
+        (com.google.cloud.securitycenter.v1beta1.OrganizationSettings) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && (getEnableAssetDiscovery()
-        == other.getEnableAssetDiscovery());
+    result = result && getName().equals(other.getName());
+    result = result && (getEnableAssetDiscovery() == other.getEnableAssetDiscovery());
     result = result && (hasAssetDiscoveryConfig() == other.hasAssetDiscoveryConfig());
     if (hasAssetDiscoveryConfig()) {
-      result = result && getAssetDiscoveryConfig()
-          .equals(other.getAssetDiscoveryConfig());
+      result = result && getAssetDiscoveryConfig().equals(other.getAssetDiscoveryConfig());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -1245,8 +1439,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + ENABLE_ASSET_DISCOVERY_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getEnableAssetDiscovery());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAssetDiscovery());
     if (hasAssetDiscoveryConfig()) {
       hash = (37 * hash) + ASSET_DISCOVERY_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getAssetDiscoveryConfig().hashCode();
@@ -1257,96 +1450,104 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.OrganizationSettings parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.securitycenter.v1beta1.OrganizationSettings prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.securitycenter.v1beta1.OrganizationSettings prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * User specified settings that are attached to the Cloud Security Command
    * Center (Cloud SCC) organization.
@@ -1354,21 +1555,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.securitycenter.v1beta1.OrganizationSettings}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1beta1.OrganizationSettings)
       com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass.internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass
+          .internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass.internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_fieldAccessorTable
+      return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass
+          .internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.securitycenter.v1beta1.OrganizationSettings.class, com.google.cloud.securitycenter.v1beta1.OrganizationSettings.Builder.class);
+              com.google.cloud.securitycenter.v1beta1.OrganizationSettings.class,
+              com.google.cloud.securitycenter.v1beta1.OrganizationSettings.Builder.class);
     }
 
     // Construct using com.google.cloud.securitycenter.v1beta1.OrganizationSettings.newBuilder()
@@ -1376,16 +1579,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1403,13 +1605,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass.internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.securitycenter.v1beta1.OrganizationSettingsOuterClass
+          .internal_static_google_cloud_securitycenter_v1beta1_OrganizationSettings_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1beta1.OrganizationSettings getDefaultInstanceForType() {
+    public com.google.cloud.securitycenter.v1beta1.OrganizationSettings
+        getDefaultInstanceForType() {
       return com.google.cloud.securitycenter.v1beta1.OrganizationSettings.getDefaultInstance();
     }
 
@@ -1424,7 +1627,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.securitycenter.v1beta1.OrganizationSettings buildPartial() {
-      com.google.cloud.securitycenter.v1beta1.OrganizationSettings result = new com.google.cloud.securitycenter.v1beta1.OrganizationSettings(this);
+      com.google.cloud.securitycenter.v1beta1.OrganizationSettings result =
+          new com.google.cloud.securitycenter.v1beta1.OrganizationSettings(this);
       result.name_ = name_;
       result.enableAssetDiscovery_ = enableAssetDiscovery_;
       if (assetDiscoveryConfigBuilder_ == null) {
@@ -1440,38 +1644,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.securitycenter.v1beta1.OrganizationSettings) {
-        return mergeFrom((com.google.cloud.securitycenter.v1beta1.OrganizationSettings)other);
+        return mergeFrom((com.google.cloud.securitycenter.v1beta1.OrganizationSettings) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1479,7 +1684,9 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.securitycenter.v1beta1.OrganizationSettings other) {
-      if (other == com.google.cloud.securitycenter.v1beta1.OrganizationSettings.getDefaultInstance()) return this;
+      if (other
+          == com.google.cloud.securitycenter.v1beta1.OrganizationSettings.getDefaultInstance())
+        return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -1509,7 +1716,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.securitycenter.v1beta1.OrganizationSettings) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.securitycenter.v1beta1.OrganizationSettings) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1521,6 +1729,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The relative resource name of the settings. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -1533,8 +1743,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1543,6 +1752,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The relative resource name of the settings. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -1552,13 +1763,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1566,6 +1775,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The relative resource name of the settings. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -1575,17 +1786,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The relative resource name of the settings. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -1596,12 +1808,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The relative resource name of the settings. See:
      * https://cloud.google.com/apis/design/resource_names#relative_resource_name
@@ -1611,20 +1825,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
     }
 
-    private boolean enableAssetDiscovery_ ;
+    private boolean enableAssetDiscovery_;
     /**
+     *
+     *
      * <pre>
      * A flag that indicates if Asset Discovery should be enabled. If the flag is
      * set to `true`, then discovery of assets will occur. If it is set to `false,
@@ -1638,6 +1853,8 @@ private static final long serialVersionUID = 0L;
       return enableAssetDiscovery_;
     }
     /**
+     *
+     *
      * <pre>
      * A flag that indicates if Asset Discovery should be enabled. If the flag is
      * set to `true`, then discovery of assets will occur. If it is set to `false,
@@ -1648,12 +1865,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool enable_asset_discovery = 2;</code>
      */
     public Builder setEnableAssetDiscovery(boolean value) {
-      
+
       enableAssetDiscovery_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A flag that indicates if Asset Discovery should be enabled. If the flag is
      * set to `true`, then discovery of assets will occur. If it is set to `false,
@@ -1664,47 +1883,70 @@ private static final long serialVersionUID = 0L;
      * <code>bool enable_asset_discovery = 2;</code>
      */
     public Builder clearEnableAssetDiscovery() {
-      
+
       enableAssetDiscovery_ = false;
       onChanged();
       return this;
     }
 
-    private com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig assetDiscoveryConfig_ = null;
+    private com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+        assetDiscoveryConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig, com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.Builder, com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfigOrBuilder> assetDiscoveryConfigBuilder_;
+            com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig,
+            com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+                .Builder,
+            com.google.cloud.securitycenter.v1beta1.OrganizationSettings
+                .AssetDiscoveryConfigOrBuilder>
+        assetDiscoveryConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * The configuration used for Asset Discovery runs.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;
+     * </code>
      */
     public boolean hasAssetDiscoveryConfig() {
       return assetDiscoveryConfigBuilder_ != null || assetDiscoveryConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration used for Asset Discovery runs.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;
+     * </code>
      */
-    public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig getAssetDiscoveryConfig() {
+    public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+        getAssetDiscoveryConfig() {
       if (assetDiscoveryConfigBuilder_ == null) {
-        return assetDiscoveryConfig_ == null ? com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.getDefaultInstance() : assetDiscoveryConfig_;
+        return assetDiscoveryConfig_ == null
+            ? com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+                .getDefaultInstance()
+            : assetDiscoveryConfig_;
       } else {
         return assetDiscoveryConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The configuration used for Asset Discovery runs.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;
+     * </code>
      */
-    public Builder setAssetDiscoveryConfig(com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig value) {
+    public Builder setAssetDiscoveryConfig(
+        com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig value) {
       if (assetDiscoveryConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1718,14 +1960,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration used for Asset Discovery runs.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;
+     * </code>
      */
     public Builder setAssetDiscoveryConfig(
-        com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.Builder builderForValue) {
+        com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.Builder
+            builderForValue) {
       if (assetDiscoveryConfigBuilder_ == null) {
         assetDiscoveryConfig_ = builderForValue.build();
         onChanged();
@@ -1736,17 +1983,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration used for Asset Discovery runs.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;
+     * </code>
      */
-    public Builder mergeAssetDiscoveryConfig(com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig value) {
+    public Builder mergeAssetDiscoveryConfig(
+        com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig value) {
       if (assetDiscoveryConfigBuilder_ == null) {
         if (assetDiscoveryConfig_ != null) {
           assetDiscoveryConfig_ =
-            com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.newBuilder(assetDiscoveryConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+                  .newBuilder(assetDiscoveryConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           assetDiscoveryConfig_ = value;
         }
@@ -1758,11 +2013,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration used for Asset Discovery runs.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;
+     * </code>
      */
     public Builder clearAssetDiscoveryConfig() {
       if (assetDiscoveryConfigBuilder_ == null) {
@@ -1776,55 +2035,79 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The configuration used for Asset Discovery runs.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;
+     * </code>
      */
-    public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.Builder getAssetDiscoveryConfigBuilder() {
-      
+    public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.Builder
+        getAssetDiscoveryConfigBuilder() {
+
       onChanged();
       return getAssetDiscoveryConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The configuration used for Asset Discovery runs.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;
+     * </code>
      */
-    public com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfigOrBuilder getAssetDiscoveryConfigOrBuilder() {
+    public com.google.cloud.securitycenter.v1beta1.OrganizationSettings
+            .AssetDiscoveryConfigOrBuilder
+        getAssetDiscoveryConfigOrBuilder() {
       if (assetDiscoveryConfigBuilder_ != null) {
         return assetDiscoveryConfigBuilder_.getMessageOrBuilder();
       } else {
-        return assetDiscoveryConfig_ == null ?
-            com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.getDefaultInstance() : assetDiscoveryConfig_;
+        return assetDiscoveryConfig_ == null
+            ? com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+                .getDefaultInstance()
+            : assetDiscoveryConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The configuration used for Asset Discovery runs.
      * </pre>
      *
-     * <code>.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;</code>
+     * <code>
+     * .google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig asset_discovery_config = 3;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig, com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.Builder, com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfigOrBuilder> 
+            com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig,
+            com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+                .Builder,
+            com.google.cloud.securitycenter.v1beta1.OrganizationSettings
+                .AssetDiscoveryConfigOrBuilder>
         getAssetDiscoveryConfigFieldBuilder() {
       if (assetDiscoveryConfigBuilder_ == null) {
-        assetDiscoveryConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig, com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig.Builder, com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfigOrBuilder>(
-                getAssetDiscoveryConfig(),
-                getParentForChildren(),
-                isClean());
+        assetDiscoveryConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig,
+                com.google.cloud.securitycenter.v1beta1.OrganizationSettings.AssetDiscoveryConfig
+                    .Builder,
+                com.google.cloud.securitycenter.v1beta1.OrganizationSettings
+                    .AssetDiscoveryConfigOrBuilder>(
+                getAssetDiscoveryConfig(), getParentForChildren(), isClean());
         assetDiscoveryConfig_ = null;
       }
       return assetDiscoveryConfigBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1834,12 +2117,13 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1beta1.OrganizationSettings)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1beta1.OrganizationSettings)
-  private static final com.google.cloud.securitycenter.v1beta1.OrganizationSettings DEFAULT_INSTANCE;
+  private static final com.google.cloud.securitycenter.v1beta1.OrganizationSettings
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1beta1.OrganizationSettings();
   }
@@ -1848,16 +2132,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<OrganizationSettings>
-      PARSER = new com.google.protobuf.AbstractParser<OrganizationSettings>() {
-    @java.lang.Override
-    public OrganizationSettings parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new OrganizationSettings(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<OrganizationSettings> PARSER =
+      new com.google.protobuf.AbstractParser<OrganizationSettings>() {
+        @java.lang.Override
+        public OrganizationSettings parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new OrganizationSettings(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<OrganizationSettings> parser() {
     return PARSER;
@@ -1872,6 +2156,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.securitycenter.v1beta1.OrganizationSettings getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

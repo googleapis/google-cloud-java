@@ -3,16 +3,13 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface TimePartConfigOrBuilder extends
+public interface TimePartConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.TimePartConfig)
     com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code> */
   int getPartToExtractValue();
-  /**
-   * <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.TimePartConfig.TimePart part_to_extract = 1;</code> */
   com.google.privacy.dlp.v2.TimePartConfig.TimePart getPartToExtract();
 }

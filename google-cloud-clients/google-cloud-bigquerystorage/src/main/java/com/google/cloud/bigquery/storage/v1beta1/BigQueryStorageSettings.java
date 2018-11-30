@@ -80,8 +80,8 @@ public class BigQueryStorageSettings extends ClientSettings<BigQueryStorageSetti
 
   /** Returns the object with the settings used for calls to batchCreateReadSessionStreams. */
   public UnaryCallSettings<
-      BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
-  batchCreateReadSessionStreamsSettings() {
+          BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
+      batchCreateReadSessionStreamsSettings() {
     return getTypedStubSettings().batchCreateReadSessionStreamsSettings();
   }
 
@@ -92,7 +92,7 @@ public class BigQueryStorageSettings extends ClientSettings<BigQueryStorageSetti
 
   /** Returns the object with the settings used for calls to splitReadStream. */
   public UnaryCallSettings<SplitReadStreamRequest, SplitReadStreamResponse>
-  splitReadStreamSettings() {
+      splitReadStreamSettings() {
     return getTypedStubSettings().splitReadStreamSettings();
   }
 
@@ -199,20 +199,20 @@ public class BigQueryStorageSettings extends ClientSettings<BigQueryStorageSetti
 
     /** Returns the builder for the settings used for calls to createReadSession. */
     public UnaryCallSettings.Builder<CreateReadSessionRequest, ReadSession>
-    createReadSessionSettings() {
+        createReadSessionSettings() {
       return getStubSettingsBuilder().createReadSessionSettings();
     }
 
     /** Returns the builder for the settings used for calls to readRows. */
     public ServerStreamingCallSettings.Builder<ReadRowsRequest, ReadRowsResponse>
-    readRowsSettings() {
+        readRowsSettings() {
       return getStubSettingsBuilder().readRowsSettings();
     }
 
     /** Returns the builder for the settings used for calls to batchCreateReadSessionStreams. */
     public UnaryCallSettings.Builder<
-        BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
-    batchCreateReadSessionStreamsSettings() {
+            BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
+        batchCreateReadSessionStreamsSettings() {
       return getStubSettingsBuilder().batchCreateReadSessionStreamsSettings();
     }
 
@@ -223,7 +223,7 @@ public class BigQueryStorageSettings extends ClientSettings<BigQueryStorageSetti
 
     /** Returns the builder for the settings used for calls to splitReadStream. */
     public UnaryCallSettings.Builder<SplitReadStreamRequest, SplitReadStreamResponse>
-    splitReadStreamSettings() {
+        splitReadStreamSettings() {
       return getStubSettingsBuilder().splitReadStreamSettings();
     }
 

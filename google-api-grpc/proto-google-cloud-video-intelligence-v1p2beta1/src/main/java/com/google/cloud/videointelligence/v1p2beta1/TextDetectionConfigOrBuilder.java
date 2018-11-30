@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1p2beta1;
 
-public interface TextDetectionConfigOrBuilder extends
+public interface TextDetectionConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1p2beta1.TextDetectionConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Language hint can be specified if the language to be detected is known a
    * priori. It can increase the accuracy of the detection. Language hint must
@@ -17,9 +20,10 @@ public interface TextDetectionConfigOrBuilder extends
    *
    * <code>repeated string language_hints = 1;</code>
    */
-  java.util.List<java.lang.String>
-      getLanguageHintsList();
+  java.util.List<java.lang.String> getLanguageHintsList();
   /**
+   *
+   *
    * <pre>
    * Language hint can be specified if the language to be detected is known a
    * priori. It can increase the accuracy of the detection. Language hint must
@@ -31,6 +35,8 @@ public interface TextDetectionConfigOrBuilder extends
    */
   int getLanguageHintsCount();
   /**
+   *
+   *
    * <pre>
    * Language hint can be specified if the language to be detected is known a
    * priori. It can increase the accuracy of the detection. Language hint must
@@ -42,6 +48,8 @@ public interface TextDetectionConfigOrBuilder extends
    */
   java.lang.String getLanguageHints(int index);
   /**
+   *
+   *
    * <pre>
    * Language hint can be specified if the language to be detected is known a
    * priori. It can increase the accuracy of the detection. Language hint must
@@ -51,6 +59,5 @@ public interface TextDetectionConfigOrBuilder extends
    *
    * <code>repeated string language_hints = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageHintsBytes(int index);
+  com.google.protobuf.ByteString getLanguageHintsBytes(int index);
 }

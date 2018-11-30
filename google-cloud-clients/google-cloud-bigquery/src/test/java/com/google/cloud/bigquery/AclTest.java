@@ -26,7 +26,6 @@ import com.google.cloud.bigquery.Acl.Group;
 import com.google.cloud.bigquery.Acl.Role;
 import com.google.cloud.bigquery.Acl.User;
 import com.google.cloud.bigquery.Acl.View;
-
 import org.junit.Test;
 
 public class AclTest {
@@ -40,7 +39,6 @@ public class AclTest {
     assertEquals(entity, Entity.fromPb(pb));
   }
 
-
   @Test
   public void testGroupEntity() {
     Group entity = new Group("g1");
@@ -49,7 +47,6 @@ public class AclTest {
     Dataset.Access pb = entity.toPb();
     assertEquals(entity, Entity.fromPb(pb));
   }
-
 
   @Test
   public void testSpecialGroupEntity() {
@@ -63,7 +60,6 @@ public class AclTest {
     assertEquals("projectOwners", entity.getIdentifier());
   }
 
-
   @Test
   public void testUserEntity() {
     User entity = new User("u1");
@@ -72,7 +68,6 @@ public class AclTest {
     Dataset.Access pb = entity.toPb();
     assertEquals(entity, Entity.fromPb(pb));
   }
-
 
   @Test
   public void testViewEntity() {
@@ -83,7 +78,6 @@ public class AclTest {
     Dataset.Access pb = entity.toPb();
     assertEquals(entity, Entity.fromPb(pb));
   }
-
 
   @Test
   public void testOf() {
@@ -98,4 +92,3 @@ public class AclTest {
     assertEquals(null, acl.getRole());
   }
 }
-

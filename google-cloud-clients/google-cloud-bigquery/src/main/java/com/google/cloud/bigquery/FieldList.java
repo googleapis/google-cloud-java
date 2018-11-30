@@ -80,9 +80,7 @@ public final class FieldList extends AbstractList<Field> implements Serializable
     return index;
   }
 
-  /**
-   * Total number of fields (columns) in the schema.
-   */
+  /** Total number of fields (columns) in the schema. */
   @Override
   public int size() {
     return fields.size();

@@ -47,4 +47,3 @@ public class BooleanValueTest {
     assertTrue(value.excludeFromIndexes());
   }
 }
-

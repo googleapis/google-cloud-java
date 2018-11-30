@@ -19,24 +19,21 @@ package com.google.cloud.bigquery;
 import static org.junit.Assert.assertEquals;
 
 import com.google.common.collect.ImmutableList;
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class DatastoreBackupOptionsTest {
 
   private static final List<String> PROJECTION_FIELDS = ImmutableList.of("field1", "field2");
-  private static final DatastoreBackupOptions BACKUP_OPTIONS = DatastoreBackupOptions.newBuilder()
-      .setProjectionFields(PROJECTION_FIELDS)
-      .build();
+  private static final DatastoreBackupOptions BACKUP_OPTIONS =
+      DatastoreBackupOptions.newBuilder().setProjectionFields(PROJECTION_FIELDS).build();
 
   @Test
   public void testToBuilder() {
     compareDatastoreBackupOptions(BACKUP_OPTIONS, BACKUP_OPTIONS.toBuilder().build());
     List<String> fields = ImmutableList.of("field1", "field2");
-    DatastoreBackupOptions backupOptions = BACKUP_OPTIONS.toBuilder()
-        .setProjectionFields(fields)
-        .build();
+    DatastoreBackupOptions backupOptions =
+        BACKUP_OPTIONS.toBuilder().setProjectionFields(fields).build();
     assertEquals(fields, backupOptions.getProjectionFields());
     backupOptions = backupOptions.toBuilder().setProjectionFields(PROJECTION_FIELDS).build();
     compareDatastoreBackupOptions(BACKUP_OPTIONS, backupOptions);

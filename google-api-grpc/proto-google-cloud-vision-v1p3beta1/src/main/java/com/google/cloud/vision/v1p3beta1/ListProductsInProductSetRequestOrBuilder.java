@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface ListProductsInProductSetRequestOrBuilder extends
+public interface ListProductsInProductSetRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.ListProductsInProductSetRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The ProductSet resource for which to retrieve Products.
    * Format is:
@@ -18,6 +21,8 @@ public interface ListProductsInProductSetRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The ProductSet resource for which to retrieve Products.
    * Format is:
@@ -26,10 +31,11 @@ public interface ListProductsInProductSetRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of items to return. Default 10, maximum 100.
    * </pre>
@@ -39,6 +45,8 @@ public interface ListProductsInProductSetRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * The next_page_token returned from a previous List request, if any.
    * </pre>
@@ -47,12 +55,13 @@ public interface ListProductsInProductSetRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * The next_page_token returned from a previous List request, if any.
    * </pre>
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

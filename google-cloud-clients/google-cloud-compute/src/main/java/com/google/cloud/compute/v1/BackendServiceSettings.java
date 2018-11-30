@@ -72,7 +72,8 @@ public class BackendServiceSettings extends ClientSettings<BackendServiceSetting
 
   /** Returns the object with the settings used for calls to aggregatedListBackendServices. */
   public PagedCallSettings<
-          AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
+          AggregatedListBackendServicesHttpRequest,
+          BackendServiceAggregatedList,
           AggregatedListBackendServicesPagedResponse>
       aggregatedListBackendServicesSettings() {
     return ((BackendServiceStubSettings) getStubSettings()).aggregatedListBackendServicesSettings();
@@ -245,7 +246,8 @@ public class BackendServiceSettings extends ClientSettings<BackendServiceSetting
 
     /** Returns the builder for the settings used for calls to aggregatedListBackendServices. */
     public PagedCallSettings.Builder<
-            AggregatedListBackendServicesHttpRequest, BackendServiceAggregatedList,
+            AggregatedListBackendServicesHttpRequest,
+            BackendServiceAggregatedList,
             AggregatedListBackendServicesPagedResponse>
         aggregatedListBackendServicesSettings() {
       return getStubSettingsBuilder().aggregatedListBackendServicesSettings();

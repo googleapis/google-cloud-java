@@ -4,15 +4,18 @@
 package com.google.cloud.iot.v1;
 
 /**
+ *
+ *
  * <pre>
  * The supported formats for the public key.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.iot.v1.PublicKeyFormat}
  */
-public enum PublicKeyFormat
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum PublicKeyFormat implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * The format has not been specified. This is an invalid default value and
    * must not be used.
@@ -22,6 +25,8 @@ public enum PublicKeyFormat
    */
   UNSPECIFIED_PUBLIC_KEY_FORMAT(0),
   /**
+   *
+   *
    * <pre>
    * An RSA public key encoded in base64, and wrapped by
    * `-----BEGIN PUBLIC KEY-----` and `-----END PUBLIC KEY-----`. This can be
@@ -33,6 +38,8 @@ public enum PublicKeyFormat
    */
   RSA_PEM(3),
   /**
+   *
+   *
    * <pre>
    * As RSA_PEM, but wrapped in an X.509v3 certificate ([RFC5280](
    * https://www.ietf.org/rfc/rfc5280.txt)), encoded in base64, and wrapped by
@@ -43,6 +50,8 @@ public enum PublicKeyFormat
    */
   RSA_X509_PEM(1),
   /**
+   *
+   *
    * <pre>
    * Public key for the ECDSA algorithm using P-256 and SHA-256, encoded in
    * base64, and wrapped by `-----BEGIN PUBLIC KEY-----` and `-----END
@@ -55,6 +64,8 @@ public enum PublicKeyFormat
    */
   ES256_PEM(2),
   /**
+   *
+   *
    * <pre>
    * As ES256_PEM, but wrapped in an X.509v3 certificate ([RFC5280](
    * https://www.ietf.org/rfc/rfc5280.txt)), encoded in base64, and wrapped by
@@ -68,6 +79,8 @@ public enum PublicKeyFormat
   ;
 
   /**
+   *
+   *
    * <pre>
    * The format has not been specified. This is an invalid default value and
    * must not be used.
@@ -77,6 +90,8 @@ public enum PublicKeyFormat
    */
   public static final int UNSPECIFIED_PUBLIC_KEY_FORMAT_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * An RSA public key encoded in base64, and wrapped by
    * `-----BEGIN PUBLIC KEY-----` and `-----END PUBLIC KEY-----`. This can be
@@ -88,6 +103,8 @@ public enum PublicKeyFormat
    */
   public static final int RSA_PEM_VALUE = 3;
   /**
+   *
+   *
    * <pre>
    * As RSA_PEM, but wrapped in an X.509v3 certificate ([RFC5280](
    * https://www.ietf.org/rfc/rfc5280.txt)), encoded in base64, and wrapped by
@@ -98,6 +115,8 @@ public enum PublicKeyFormat
    */
   public static final int RSA_X509_PEM_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * Public key for the ECDSA algorithm using P-256 and SHA-256, encoded in
    * base64, and wrapped by `-----BEGIN PUBLIC KEY-----` and `-----END
@@ -110,6 +129,8 @@ public enum PublicKeyFormat
    */
   public static final int ES256_PEM_VALUE = 2;
   /**
+   *
+   *
    * <pre>
    * As ES256_PEM, but wrapped in an X.509v3 certificate ([RFC5280](
    * https://www.ietf.org/rfc/rfc5280.txt)), encoded in base64, and wrapped by
@@ -120,7 +141,6 @@ public enum PublicKeyFormat
    */
   public static final int ES256_X509_PEM_VALUE = 4;
 
-
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -129,9 +149,7 @@ public enum PublicKeyFormat
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static PublicKeyFormat valueOf(int value) {
     return forNumber(value);
@@ -139,47 +157,49 @@ public enum PublicKeyFormat
 
   public static PublicKeyFormat forNumber(int value) {
     switch (value) {
-      case 0: return UNSPECIFIED_PUBLIC_KEY_FORMAT;
-      case 3: return RSA_PEM;
-      case 1: return RSA_X509_PEM;
-      case 2: return ES256_PEM;
-      case 4: return ES256_X509_PEM;
-      default: return null;
+      case 0:
+        return UNSPECIFIED_PUBLIC_KEY_FORMAT;
+      case 3:
+        return RSA_PEM;
+      case 1:
+        return RSA_X509_PEM;
+      case 2:
+        return ES256_PEM;
+      case 4:
+        return ES256_X509_PEM;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<PublicKeyFormat>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<PublicKeyFormat> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      PublicKeyFormat> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<PublicKeyFormat>() {
-          public PublicKeyFormat findValueByNumber(int number) {
-            return PublicKeyFormat.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<PublicKeyFormat> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<PublicKeyFormat>() {
+        public PublicKeyFormat findValueByNumber(int number) {
+          return PublicKeyFormat.forNumber(number);
+        }
+      };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.iot.v1.ResourcesProto.getDescriptor().getEnumTypes().get(6);
   }
 
   private static final PublicKeyFormat[] VALUES = values();
 
-  public static PublicKeyFormat valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static PublicKeyFormat valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -195,4 +215,3 @@ public enum PublicKeyFormat
 
   // @@protoc_insertion_point(enum_scope:google.cloud.iot.v1.PublicKeyFormat)
 }
-

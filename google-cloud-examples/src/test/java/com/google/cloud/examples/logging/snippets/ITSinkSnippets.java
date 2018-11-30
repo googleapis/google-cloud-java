@@ -26,12 +26,10 @@ import com.google.cloud.logging.Sink;
 import com.google.cloud.logging.SinkInfo;
 import com.google.cloud.logging.SinkInfo.Destination;
 import com.google.cloud.logging.testing.RemoteLoggingHelper;
-
+import java.util.concurrent.ExecutionException;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import java.util.concurrent.ExecutionException;
 
 public class ITSinkSnippets {
 

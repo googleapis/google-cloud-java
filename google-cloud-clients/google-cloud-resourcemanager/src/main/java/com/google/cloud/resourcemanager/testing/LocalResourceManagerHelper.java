@@ -72,20 +72,20 @@ import org.joda.time.format.ISODateTimeFormat;
  * differences:
  *
  * <ul>
- * <li>This mock assumes you have adequate permissions for any action. Related to this,
- *     <i>testIamPermissions</i> always indicates that the caller has all permissions listed in the
- *     request.
- * <li>IAM policies are set to an empty policy with version 0 (only legacy roles supported) upon
- *     project creation. The actual service will not have an empty list of bindings and may also
- *     set your version to 1.
- * <li>There is no input validation for the policy provided when replacing a policy or calling
- *     testIamPermissions.
- * <li>In this mock, projects never move from the <i>DELETE_REQUESTED</i> lifecycle state to
- *     <i>DELETE_IN_PROGRESS</i> without an explicit call to the utility method
- *     {@link #changeLifecycleState}.  Similarly, a project is never completely removed without an
- *     explicit call to the utility method {@link #removeProject}.
- * <li>The messages in the error responses given by this mock do not necessarily match the messages
- *     given by the actual service.
+ *   <li>This mock assumes you have adequate permissions for any action. Related to this,
+ *       <i>testIamPermissions</i> always indicates that the caller has all permissions listed in
+ *       the request.
+ *   <li>IAM policies are set to an empty policy with version 0 (only legacy roles supported) upon
+ *       project creation. The actual service will not have an empty list of bindings and may also
+ *       set your version to 1.
+ *   <li>There is no input validation for the policy provided when replacing a policy or calling
+ *       testIamPermissions.
+ *   <li>In this mock, projects never move from the <i>DELETE_REQUESTED</i> lifecycle state to
+ *       <i>DELETE_IN_PROGRESS</i> without an explicit call to the utility method {@link
+ *       #changeLifecycleState}. Similarly, a project is never completely removed without an
+ *       explicit call to the utility method {@link #removeProject}.
+ *   <li>The messages in the error responses given by this mock do not necessarily match the
+ *       messages given by the actual service.
  * </ul>
  */
 @SuppressWarnings("restriction")
@@ -213,9 +213,12 @@ public class LocalResourceManagerHelper {
                 replace(projectIdFromUri(path), jsonFactory.fromString(requestBody, Project.class));
             break;
           default:
-            response = Error.BAD_REQUEST.response(
-                "The server could not understand the following request URI: " + requestMethod + " "
-                + path);
+            response =
+                Error.BAD_REQUEST.response(
+                    "The server could not understand the following request URI: "
+                        + requestMethod
+                        + " "
+                        + path);
         }
       } catch (IOException e) {
         response = Error.BAD_REQUEST.response(e.getMessage());
@@ -235,11 +238,14 @@ public class LocalResourceManagerHelper {
         case "getIamPolicy":
           return getPolicy(projectIdFromUri(path));
         case "setIamPolicy":
-          return replacePolicy(projectIdFromUri(path),
+          return replacePolicy(
+              projectIdFromUri(path),
               jsonFactory.fromString(requestBody, SetIamPolicyRequest.class).getPolicy());
         case "testIamPermissions":
-          return testPermissions(projectIdFromUri(path),
-              jsonFactory.fromString(requestBody, TestIamPermissionsRequest.class)
+          return testPermissions(
+              projectIdFromUri(path),
+              jsonFactory
+                  .fromString(requestBody, TestIamPermissionsRequest.class)
                   .getPermissions());
         default:
           return Error.BAD_REQUEST.response(
@@ -379,15 +385,22 @@ public class LocalResourceManagerHelper {
       return "Project ID cannot be empty.";
     }
     if (!isValidIdOrLabel(project.getProjectId(), 6, 30)) {
-      return "Project " + project.getProjectId() + " has an invalid ID."
-          + " See https://cloud.google.com/resource-manager/reference/rest/" + VERSION + "/projects"
+      return "Project "
+          + project.getProjectId()
+          + " has an invalid ID."
+          + " See https://cloud.google.com/resource-manager/reference/rest/"
+          + VERSION
+          + "/projects"
           + " for more information.";
     }
     if (project.getName() != null) {
       for (char c : project.getName().toCharArray()) {
         if (!PERMISSIBLE_PROJECT_NAME_PUNCTUATION.contains(c) && !Character.isLetterOrDigit(c)) {
-          return "Project " + project.getProjectId() + " has an invalid name."
-              + " See https://cloud.google.com/resource-manager/reference/rest/" + VERSION
+          return "Project "
+              + project.getProjectId()
+              + " has an invalid name."
+              + " See https://cloud.google.com/resource-manager/reference/rest/"
+              + VERSION
               + "/projects for more information.";
         }
       }
@@ -399,8 +412,11 @@ public class LocalResourceManagerHelper {
       for (Map.Entry<String, String> entry : project.getLabels().entrySet()) {
         if (!isValidIdOrLabel(entry.getKey(), 1, 63)
             || !isValidIdOrLabel(entry.getValue(), 0, 63)) {
-          return "Project " + project.getProjectId() + " has an invalid label entry."
-              + " See https://cloud.google.com/resource-manager/reference/rest/" + VERSION
+          return "Project "
+              + project.getProjectId()
+              + " has an invalid label entry."
+              + " See https://cloud.google.com/resource-manager/reference/rest/"
+              + VERSION
               + "/projects for more information.";
         }
       }
@@ -432,10 +448,11 @@ public class LocalResourceManagerHelper {
         return Error.ALREADY_EXISTS.response(
             "A project with the same project ID (" + project.getProjectId() + ") already exists.");
       }
-      Policy emptyPolicy = new Policy()
-          .setBindings(Collections.<Binding>emptyList())
-          .setEtag(UUID.randomUUID().toString())
-          .setVersion(0);
+      Policy emptyPolicy =
+          new Policy()
+              .setBindings(Collections.<Binding>emptyList())
+              .setEtag(UUID.randomUUID().toString())
+              .setVersion(0);
       policies.put(project.getProjectId(), emptyPolicy);
       try {
         // Pretend it's not done yet.
@@ -518,8 +535,8 @@ public class LocalResourceManagerHelper {
       Joiner.on(",").appendTo(responseBody, projectsSerialized);
       responseBody.append(']');
     }
-    if (nextPageToken != null && (listFields == null
-        || ImmutableSet.copyOf(listFields).contains("nextPageToken"))) {
+    if (nextPageToken != null
+        && (listFields == null || ImmutableSet.copyOf(listFields).contains("nextPageToken"))) {
       if (responseBody.length() > 1) {
         responseBody.append(',');
       }
@@ -620,7 +637,7 @@ public class LocalResourceManagerHelper {
     } else if (!Objects.equal(originalProject.getParent(), project.getParent())) {
       return Error.INVALID_ARGUMENT.response(
           "The server currently only supports setting the parent once "
-          + "and does not allow unsetting it.");
+              + "and does not allow unsetting it.");
     }
     project.setProjectId(projectId);
     project.setLifecycleState(originalProject.getLifecycleState());
@@ -639,11 +656,15 @@ public class LocalResourceManagerHelper {
     Project project = projects.get(projectId);
     Response response;
     if (project == null) {
-      response = Error.PERMISSION_DENIED.response(
-          "Error when undeleting " + projectId + " because the project was not found.");
+      response =
+          Error.PERMISSION_DENIED.response(
+              "Error when undeleting " + projectId + " because the project was not found.");
     } else if (!project.getLifecycleState().equals("DELETE_REQUESTED")) {
-      response = Error.FAILED_PRECONDITION.response("Error when undeleting " + projectId
-          + " because the lifecycle state was not DELETE_REQUESTED.");
+      response =
+          Error.FAILED_PRECONDITION.response(
+              "Error when undeleting "
+                  + projectId
+                  + " because the lifecycle state was not DELETE_REQUESTED.");
     } else {
       project.setLifecycleState("ACTIVE");
       response = new Response(HTTP_OK, "{}");
@@ -667,13 +688,17 @@ public class LocalResourceManagerHelper {
   synchronized Response replacePolicy(String projectId, Policy policy) {
     Policy originalPolicy = policies.get(projectId);
     if (originalPolicy == null) {
-      return Error.PERMISSION_DENIED.response("Error when replacing the policy for " + projectId
-          + " because the project was not found.");
+      return Error.PERMISSION_DENIED.response(
+          "Error when replacing the policy for "
+              + projectId
+              + " because the project was not found.");
     }
     String etag = policy.getEtag();
     if (etag != null && !originalPolicy.getEtag().equals(etag)) {
-      return Error.ABORTED.response("Policy etag mismatch when replacing the policy for project "
-          + projectId + ", please retry the read.");
+      return Error.ABORTED.response(
+          "Policy etag mismatch when replacing the policy for project "
+              + projectId
+              + ", please retry the read.");
     }
     policy.setEtag(UUID.randomUUID().toString());
     policy.setVersion(originalPolicy.getVersion());
@@ -691,7 +716,8 @@ public class LocalResourceManagerHelper {
       return Error.PERMISSION_DENIED.response("Project " + projectId + " not found.");
     }
     try {
-      return new Response(HTTP_OK,
+      return new Response(
+          HTTP_OK,
           jsonFactory.toString(new TestIamPermissionsResponse().setPermissions(permissions)));
     } catch (IOException e) {
       return Error.INTERNAL_ERROR.response("Error when serializing permissions " + permissions);
@@ -717,7 +743,6 @@ public class LocalResourceManagerHelper {
     return new LocalResourceManagerHelper();
   }
 
-
   /**
    * Returns a {@link ResourceManagerOptions} instance that sets the host to use the mock server.
    */
@@ -728,16 +753,12 @@ public class LocalResourceManagerHelper {
         .build();
   }
 
-  /**
-   * Starts the thread that runs the Resource Manager server.
-   */
+  /** Starts the thread that runs the Resource Manager server. */
   public void start() {
     server.start();
   }
 
-  /**
-   * Stops the thread that runs the mock Resource Manager server.
-   */
+  /** Stops the thread that runs the mock Resource Manager server. */
   public void stop() {
     server.stop(1);
   }
@@ -749,8 +770,9 @@ public class LocalResourceManagerHelper {
    */
   public synchronized boolean changeLifecycleState(String projectId, String lifecycleState) {
     checkArgument(
-        "ACTIVE".equals(lifecycleState) || "DELETE_REQUESTED".equals(lifecycleState)
-        || "DELETE_IN_PROGRESS".equals(lifecycleState),
+        "ACTIVE".equals(lifecycleState)
+            || "DELETE_REQUESTED".equals(lifecycleState)
+            || "DELETE_IN_PROGRESS".equals(lifecycleState),
         "Lifecycle state must be ACTIVE, DELETE_REQUESTED, or DELETE_IN_PROGRESS");
     Project project = projects.get(checkNotNull(projectId));
     if (project != null) {

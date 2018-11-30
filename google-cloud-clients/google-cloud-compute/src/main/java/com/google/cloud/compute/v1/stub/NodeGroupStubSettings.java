@@ -110,7 +110,8 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
   private final UnaryCallSettings<AddNodesNodeGroupHttpRequest, Operation>
       addNodesNodeGroupSettings;
   private final PagedCallSettings<
-          AggregatedListNodeGroupsHttpRequest, NodeGroupAggregatedList,
+          AggregatedListNodeGroupsHttpRequest,
+          NodeGroupAggregatedList,
           AggregatedListNodeGroupsPagedResponse>
       aggregatedListNodeGroupsSettings;
   private final UnaryCallSettings<DeleteNodeGroupHttpRequest, Operation> deleteNodeGroupSettings;
@@ -134,7 +135,8 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
 
   /** Returns the object with the settings used for calls to aggregatedListNodeGroups. */
   public PagedCallSettings<
-          AggregatedListNodeGroupsHttpRequest, NodeGroupAggregatedList,
+          AggregatedListNodeGroupsHttpRequest,
+          NodeGroupAggregatedList,
           AggregatedListNodeGroupsPagedResponse>
       aggregatedListNodeGroupsSettings() {
     return aggregatedListNodeGroupsSettings;
@@ -269,7 +271,8 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
           AggregatedListNodeGroupsHttpRequest, NodeGroupAggregatedList, NodeGroupsScopedList>
       AGGREGATED_LIST_NODE_GROUPS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              AggregatedListNodeGroupsHttpRequest, NodeGroupAggregatedList,
+              AggregatedListNodeGroupsHttpRequest,
+              NodeGroupAggregatedList,
               NodeGroupsScopedList>() {
             @Override
             public String emptyToken() {
@@ -392,11 +395,13 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListNodeGroupsHttpRequest, NodeGroupAggregatedList,
+          AggregatedListNodeGroupsHttpRequest,
+          NodeGroupAggregatedList,
           AggregatedListNodeGroupsPagedResponse>
       AGGREGATED_LIST_NODE_GROUPS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListNodeGroupsHttpRequest, NodeGroupAggregatedList,
+              AggregatedListNodeGroupsHttpRequest,
+              NodeGroupAggregatedList,
               AggregatedListNodeGroupsPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListNodeGroupsPagedResponse> getFuturePagedResponse(
@@ -406,7 +411,8 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
                 ApiCallContext context,
                 ApiFuture<NodeGroupAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListNodeGroupsHttpRequest, NodeGroupAggregatedList,
+                      AggregatedListNodeGroupsHttpRequest,
+                      NodeGroupAggregatedList,
                       NodeGroupsScopedList>
                   pageContext =
                       PageContext.create(
@@ -436,7 +442,8 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
           ListNodesNodeGroupsHttpRequest, NodeGroupsListNodes, ListNodesNodeGroupsPagedResponse>
       LIST_NODES_NODE_GROUPS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListNodesNodeGroupsHttpRequest, NodeGroupsListNodes,
+              ListNodesNodeGroupsHttpRequest,
+              NodeGroupsListNodes,
               ListNodesNodeGroupsPagedResponse>() {
             @Override
             public ApiFuture<ListNodesNodeGroupsPagedResponse> getFuturePagedResponse(
@@ -459,7 +466,8 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
     private final UnaryCallSettings.Builder<AddNodesNodeGroupHttpRequest, Operation>
         addNodesNodeGroupSettings;
     private final PagedCallSettings.Builder<
-            AggregatedListNodeGroupsHttpRequest, NodeGroupAggregatedList,
+            AggregatedListNodeGroupsHttpRequest,
+            NodeGroupAggregatedList,
             AggregatedListNodeGroupsPagedResponse>
         aggregatedListNodeGroupsSettings;
     private final UnaryCallSettings.Builder<DeleteNodeGroupHttpRequest, Operation>
@@ -664,7 +672,8 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListNodeGroups. */
     public PagedCallSettings.Builder<
-            AggregatedListNodeGroupsHttpRequest, NodeGroupAggregatedList,
+            AggregatedListNodeGroupsHttpRequest,
+            NodeGroupAggregatedList,
             AggregatedListNodeGroupsPagedResponse>
         aggregatedListNodeGroupsSettings() {
       return aggregatedListNodeGroupsSettings;

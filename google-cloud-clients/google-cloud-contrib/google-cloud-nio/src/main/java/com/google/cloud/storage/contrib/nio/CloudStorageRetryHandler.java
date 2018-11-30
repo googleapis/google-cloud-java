@@ -32,12 +32,10 @@ public class CloudStorageRetryHandler {
   private final int maxReopens;
   private final CloudStorageConfiguration config;
 
-
   /**
    * Create a CloudStorageRetryHandler with the maximum retries and reopens set to the same value.
    *
    * @param maxRetriesAndReopens value for both maxRetries and maxReopens
-   *
    * @deprecated use CloudStorageRetryHandler(CloudStorageConfiguration) instead.
    */
   @java.lang.Deprecated
@@ -48,12 +46,11 @@ public class CloudStorageRetryHandler {
     this.config = CloudStorageConfiguration.DEFAULT;
   }
 
-    /**
+  /**
    * Create a CloudStorageRetryHandler with the maximum retries and reopens set to different values.
    *
    * @param maxRetries maximum number of retries
    * @param maxReopens maximum number of reopens
-   *
    * @deprecated use CloudStorageRetryHandler(CloudStorageConfiguration) instead.
    */
   @java.lang.Deprecated
@@ -82,22 +79,19 @@ public class CloudStorageRetryHandler {
    * @param maxReopens maximum number of reopens (overrides what's in the config)
    * @param config http codes we'll retry on, and exceptions we'll reopen on.
    */
-  public CloudStorageRetryHandler(final int maxRetries, final int maxReopens, final CloudStorageConfiguration config) {
+  public CloudStorageRetryHandler(
+      final int maxRetries, final int maxReopens, final CloudStorageConfiguration config) {
     this.maxRetries = maxRetries;
     this.maxReopens = maxReopens;
     this.config = config;
   }
 
-  /**
-   * @return number of retries we've performed
-   */
+  /** @return number of retries we've performed */
   public int retries() {
     return retries;
   }
 
-  /**
-   * @return number of reopens we've performed
-   */
+  /** @return number of reopens we've performed */
   public int reopens() {
     return reopens;
   }
@@ -105,11 +99,11 @@ public class CloudStorageRetryHandler {
   /**
    * Checks whether we should retry, reopen, or give up.
    *
-   * In the latter case it throws an exception (this includes the scenario where
-   * we exhausted the retry count).
+   * <p>In the latter case it throws an exception (this includes the scenario where we exhausted the
+   * retry count).
    *
-   * Otherwise, it sleeps for a bit and returns whether we should reopen.
-   * The sleep time is dependent on the retry number.
+   * <p>Otherwise, it sleeps for a bit and returns whether we should reopen. The sleep time is
+   * dependent on the retry number.
    *
    * @param exs caught StorageException
    * @return True if you need to reopen and then try again. False if you can just try again.
@@ -129,31 +123,43 @@ public class CloudStorageRetryHandler {
   }
 
   /**
-   * Records a retry attempt for the given StorageException, sleeping for an amount of time dependent on the
-   * attempt number. Throws a StorageException if we've exhausted all retries.
+   * Records a retry attempt for the given StorageException, sleeping for an amount of time
+   * dependent on the attempt number. Throws a StorageException if we've exhausted all retries.
    *
    * @param exs The StorageException error that prompted this retry attempt.
    */
   private void handleRetryForStorageException(final StorageException exs) throws StorageException {
     retries++;
     if (retries > maxRetries) {
-      throw new StorageException(exs.getCode(),
-          "All " + maxRetries + " retries failed. Waited a total of " + totalWaitTime + " ms between attempts", exs);
+      throw new StorageException(
+          exs.getCode(),
+          "All "
+              + maxRetries
+              + " retries failed. Waited a total of "
+              + totalWaitTime
+              + " ms between attempts",
+          exs);
     }
     sleepForAttempt(retries);
   }
 
   /**
-   * Records a reopen attempt for the given StorageException, sleeping for an amount of time dependent on the
-   * attempt number. Throws a StorageException if we've exhausted all reopens.
+   * Records a reopen attempt for the given StorageException, sleeping for an amount of time
+   * dependent on the attempt number. Throws a StorageException if we've exhausted all reopens.
    *
    * @param exs The StorageException error that prompted this reopen attempt.
    */
   private void handleReopenForStorageException(final StorageException exs) throws StorageException {
     reopens++;
     if (reopens > maxReopens) {
-      throw new StorageException(exs.getCode(),
-          "All " + maxReopens + " reopens failed. Waited a total of " + totalWaitTime + " ms between attempts", exs);
+      throw new StorageException(
+          exs.getCode(),
+          "All "
+              + maxReopens
+              + " reopens failed. Waited a total of "
+              + totalWaitTime
+              + " ms between attempts",
+          exs);
     }
     sleepForAttempt(reopens);
   }

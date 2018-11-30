@@ -3,11 +3,14 @@
 
 package com.google.cloud.speech.v1p1beta1;
 
-public interface StreamingRecognitionResultOrBuilder extends
+public interface StreamingRecognitionResultOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1p1beta1.StreamingRecognitionResult)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
@@ -15,11 +18,14 @@ public interface StreamingRecognitionResultOrBuilder extends
    * alternative being the most probable, as ranked by the recognizer.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+   * </code>
    */
-  java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative> 
+  java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative>
       getAlternativesList();
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
@@ -27,10 +33,13 @@ public interface StreamingRecognitionResultOrBuilder extends
    * alternative being the most probable, as ranked by the recognizer.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+   * </code>
    */
   com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative getAlternatives(int index);
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
@@ -38,10 +47,13 @@ public interface StreamingRecognitionResultOrBuilder extends
    * alternative being the most probable, as ranked by the recognizer.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+   * </code>
    */
   int getAlternativesCount();
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
@@ -49,11 +61,14 @@ public interface StreamingRecognitionResultOrBuilder extends
    * alternative being the most probable, as ranked by the recognizer.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder> 
+  java.util.List<? extends com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder>
       getAlternativesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
@@ -61,12 +76,15 @@ public interface StreamingRecognitionResultOrBuilder extends
    * alternative being the most probable, as ranked by the recognizer.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+   * </code>
    */
   com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder getAlternativesOrBuilder(
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Output only. If `false`, this `StreamingRecognitionResult` represents an
    * interim result that may change. If `true`, this is the final time the
@@ -80,6 +98,8 @@ public interface StreamingRecognitionResultOrBuilder extends
   boolean getIsFinal();
 
   /**
+   *
+   *
    * <pre>
    * Output only. An estimate of the likelihood that the recognizer will not
    * change its guess about this interim result. Values range from 0.0
@@ -93,6 +113,8 @@ public interface StreamingRecognitionResultOrBuilder extends
   float getStability();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Time offset of the end of this result relative to the
    * beginning of the audio.
@@ -102,6 +124,8 @@ public interface StreamingRecognitionResultOrBuilder extends
    */
   boolean hasResultEndTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Time offset of the end of this result relative to the
    * beginning of the audio.
@@ -111,6 +135,8 @@ public interface StreamingRecognitionResultOrBuilder extends
    */
   com.google.protobuf.Duration getResultEndTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Time offset of the end of this result relative to the
    * beginning of the audio.
@@ -121,6 +147,8 @@ public interface StreamingRecognitionResultOrBuilder extends
   com.google.protobuf.DurationOrBuilder getResultEndTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * For multi-channel audio, this is the channel number corresponding to the
    * recognized result for the audio from that channel.
@@ -132,6 +160,8 @@ public interface StreamingRecognitionResultOrBuilder extends
   int getChannelTag();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
@@ -143,6 +173,8 @@ public interface StreamingRecognitionResultOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Output only. The
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
@@ -152,6 +184,5 @@ public interface StreamingRecognitionResultOrBuilder extends
    *
    * <code>string language_code = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 }

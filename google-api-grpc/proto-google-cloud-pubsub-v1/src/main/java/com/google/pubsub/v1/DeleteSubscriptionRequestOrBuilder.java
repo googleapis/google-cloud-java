@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface DeleteSubscriptionRequestOrBuilder extends
+public interface DeleteSubscriptionRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.DeleteSubscriptionRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The subscription to delete.
    * Format is `projects/{project}/subscriptions/{sub}`.
@@ -17,6 +20,8 @@ public interface DeleteSubscriptionRequestOrBuilder extends
    */
   java.lang.String getSubscription();
   /**
+   *
+   *
    * <pre>
    * The subscription to delete.
    * Format is `projects/{project}/subscriptions/{sub}`.
@@ -24,6 +29,5 @@ public interface DeleteSubscriptionRequestOrBuilder extends
    *
    * <code>string subscription = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSubscriptionBytes();
+  com.google.protobuf.ByteString getSubscriptionBytes();
 }

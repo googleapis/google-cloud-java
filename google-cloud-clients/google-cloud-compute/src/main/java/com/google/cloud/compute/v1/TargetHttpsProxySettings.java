@@ -83,7 +83,8 @@ public class TargetHttpsProxySettings extends ClientSettings<TargetHttpsProxySet
 
   /** Returns the object with the settings used for calls to listTargetHttpsProxies. */
   public PagedCallSettings<
-          ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList,
+          ListTargetHttpsProxiesHttpRequest,
+          TargetHttpsProxyList,
           ListTargetHttpsProxiesPagedResponse>
       listTargetHttpsProxiesSettings() {
     return ((TargetHttpsProxyStubSettings) getStubSettings()).listTargetHttpsProxiesSettings();
@@ -238,7 +239,8 @@ public class TargetHttpsProxySettings extends ClientSettings<TargetHttpsProxySet
 
     /** Returns the builder for the settings used for calls to listTargetHttpsProxies. */
     public PagedCallSettings.Builder<
-            ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList,
+            ListTargetHttpsProxiesHttpRequest,
+            TargetHttpsProxyList,
             ListTargetHttpsProxiesPagedResponse>
         listTargetHttpsProxiesSettings() {
       return getStubSettingsBuilder().listTargetHttpsProxiesSettings();

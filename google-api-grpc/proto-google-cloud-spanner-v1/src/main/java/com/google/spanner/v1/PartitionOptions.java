@@ -4,6 +4,8 @@
 package com.google.spanner.v1;
 
 /**
+ *
+ *
  * <pre>
  * Options for a PartitionQueryRequest and
  * PartitionReadRequest.
@@ -11,25 +13,26 @@ package com.google.spanner.v1;
  *
  * Protobuf type {@code google.spanner.v1.PartitionOptions}
  */
-public  final class PartitionOptions extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class PartitionOptions extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.spanner.v1.PartitionOptions)
     PartitionOptionsOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use PartitionOptions.newBuilder() to construct.
   private PartitionOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private PartitionOptions() {
     partitionSizeBytes_ = 0L;
     maxPartitions_ = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private PartitionOptions(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,51 +52,55 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-
-            partitionSizeBytes_ = input.readInt64();
-            break;
-          }
-          case 16: {
-
-            maxPartitions_ = input.readInt64();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 8:
+            {
+              partitionSizeBytes_ = input.readInt64();
+              break;
             }
-            break;
-          }
+          case 16:
+            {
+              maxPartitions_ = input.readInt64();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.spanner.v1.SpannerProto.internal_static_google_spanner_v1_PartitionOptions_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.spanner.v1.SpannerProto
+        .internal_static_google_spanner_v1_PartitionOptions_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.spanner.v1.SpannerProto.internal_static_google_spanner_v1_PartitionOptions_fieldAccessorTable
+    return com.google.spanner.v1.SpannerProto
+        .internal_static_google_spanner_v1_PartitionOptions_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.spanner.v1.PartitionOptions.class, com.google.spanner.v1.PartitionOptions.Builder.class);
+            com.google.spanner.v1.PartitionOptions.class,
+            com.google.spanner.v1.PartitionOptions.Builder.class);
   }
 
   public static final int PARTITION_SIZE_BYTES_FIELD_NUMBER = 1;
   private long partitionSizeBytes_;
   /**
+   *
+   *
    * <pre>
    * **Note:** This hint is currently ignored by PartitionQuery and
    * PartitionRead requests.
@@ -111,6 +118,8 @@ private static final long serialVersionUID = 0L;
   public static final int MAX_PARTITIONS_FIELD_NUMBER = 2;
   private long maxPartitions_;
   /**
+   *
+   *
    * <pre>
    * **Note:** This hint is currently ignored by PartitionQuery and
    * PartitionRead requests.
@@ -128,6 +137,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -139,8 +149,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (partitionSizeBytes_ != 0L) {
       output.writeInt64(1, partitionSizeBytes_);
     }
@@ -157,12 +166,10 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (partitionSizeBytes_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, partitionSizeBytes_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(1, partitionSizeBytes_);
     }
     if (maxPartitions_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, maxPartitions_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, maxPartitions_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -172,7 +179,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.spanner.v1.PartitionOptions)) {
       return super.equals(obj);
@@ -180,10 +187,8 @@ private static final long serialVersionUID = 0L;
     com.google.spanner.v1.PartitionOptions other = (com.google.spanner.v1.PartitionOptions) obj;
 
     boolean result = true;
-    result = result && (getPartitionSizeBytes()
-        == other.getPartitionSizeBytes());
-    result = result && (getMaxPartitions()
-        == other.getMaxPartitions());
+    result = result && (getPartitionSizeBytes() == other.getPartitionSizeBytes());
+    result = result && (getMaxPartitions() == other.getMaxPartitions());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -196,107 +201,112 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARTITION_SIZE_BYTES_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getPartitionSizeBytes());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPartitionSizeBytes());
     hash = (37 * hash) + MAX_PARTITIONS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getMaxPartitions());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxPartitions());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.spanner.v1.PartitionOptions parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.spanner.v1.PartitionOptions parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.PartitionOptions parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.PartitionOptions parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.PartitionOptions parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.PartitionOptions parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.PartitionOptions parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.PartitionOptions parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.PartitionOptions parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.spanner.v1.PartitionOptions parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.PartitionOptions parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.spanner.v1.PartitionOptions parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.PartitionOptions parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.spanner.v1.PartitionOptions prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Options for a PartitionQueryRequest and
    * PartitionReadRequest.
@@ -304,21 +314,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.spanner.v1.PartitionOptions}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.spanner.v1.PartitionOptions)
       com.google.spanner.v1.PartitionOptionsOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.spanner.v1.SpannerProto.internal_static_google_spanner_v1_PartitionOptions_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.spanner.v1.SpannerProto
+          .internal_static_google_spanner_v1_PartitionOptions_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.spanner.v1.SpannerProto.internal_static_google_spanner_v1_PartitionOptions_fieldAccessorTable
+      return com.google.spanner.v1.SpannerProto
+          .internal_static_google_spanner_v1_PartitionOptions_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.spanner.v1.PartitionOptions.class, com.google.spanner.v1.PartitionOptions.Builder.class);
+              com.google.spanner.v1.PartitionOptions.class,
+              com.google.spanner.v1.PartitionOptions.Builder.class);
     }
 
     // Construct using com.google.spanner.v1.PartitionOptions.newBuilder()
@@ -326,16 +338,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -347,9 +358,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.spanner.v1.SpannerProto.internal_static_google_spanner_v1_PartitionOptions_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.spanner.v1.SpannerProto
+          .internal_static_google_spanner_v1_PartitionOptions_descriptor;
     }
 
     @java.lang.Override
@@ -368,7 +379,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.spanner.v1.PartitionOptions buildPartial() {
-      com.google.spanner.v1.PartitionOptions result = new com.google.spanner.v1.PartitionOptions(this);
+      com.google.spanner.v1.PartitionOptions result =
+          new com.google.spanner.v1.PartitionOptions(this);
       result.partitionSizeBytes_ = partitionSizeBytes_;
       result.maxPartitions_ = maxPartitions_;
       onBuilt();
@@ -379,38 +391,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.spanner.v1.PartitionOptions) {
-        return mergeFrom((com.google.spanner.v1.PartitionOptions)other);
+        return mergeFrom((com.google.spanner.v1.PartitionOptions) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -454,8 +467,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long partitionSizeBytes_ ;
+    private long partitionSizeBytes_;
     /**
+     *
+     *
      * <pre>
      * **Note:** This hint is currently ignored by PartitionQuery and
      * PartitionRead requests.
@@ -470,6 +485,8 @@ private static final long serialVersionUID = 0L;
       return partitionSizeBytes_;
     }
     /**
+     *
+     *
      * <pre>
      * **Note:** This hint is currently ignored by PartitionQuery and
      * PartitionRead requests.
@@ -481,12 +498,14 @@ private static final long serialVersionUID = 0L;
      * <code>int64 partition_size_bytes = 1;</code>
      */
     public Builder setPartitionSizeBytes(long value) {
-      
+
       partitionSizeBytes_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * **Note:** This hint is currently ignored by PartitionQuery and
      * PartitionRead requests.
@@ -498,14 +517,16 @@ private static final long serialVersionUID = 0L;
      * <code>int64 partition_size_bytes = 1;</code>
      */
     public Builder clearPartitionSizeBytes() {
-      
+
       partitionSizeBytes_ = 0L;
       onChanged();
       return this;
     }
 
-    private long maxPartitions_ ;
+    private long maxPartitions_;
     /**
+     *
+     *
      * <pre>
      * **Note:** This hint is currently ignored by PartitionQuery and
      * PartitionRead requests.
@@ -522,6 +543,8 @@ private static final long serialVersionUID = 0L;
       return maxPartitions_;
     }
     /**
+     *
+     *
      * <pre>
      * **Note:** This hint is currently ignored by PartitionQuery and
      * PartitionRead requests.
@@ -535,12 +558,14 @@ private static final long serialVersionUID = 0L;
      * <code>int64 max_partitions = 2;</code>
      */
     public Builder setMaxPartitions(long value) {
-      
+
       maxPartitions_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * **Note:** This hint is currently ignored by PartitionQuery and
      * PartitionRead requests.
@@ -554,14 +579,14 @@ private static final long serialVersionUID = 0L;
      * <code>int64 max_partitions = 2;</code>
      */
     public Builder clearMaxPartitions() {
-      
+
       maxPartitions_ = 0L;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -571,12 +596,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.spanner.v1.PartitionOptions)
   }
 
   // @@protoc_insertion_point(class_scope:google.spanner.v1.PartitionOptions)
   private static final com.google.spanner.v1.PartitionOptions DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.spanner.v1.PartitionOptions();
   }
@@ -585,16 +610,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<PartitionOptions>
-      PARSER = new com.google.protobuf.AbstractParser<PartitionOptions>() {
-    @java.lang.Override
-    public PartitionOptions parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new PartitionOptions(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<PartitionOptions> PARSER =
+      new com.google.protobuf.AbstractParser<PartitionOptions>() {
+        @java.lang.Override
+        public PartitionOptions parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new PartitionOptions(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<PartitionOptions> parser() {
     return PARSER;
@@ -609,6 +634,4 @@ private static final long serialVersionUID = 0L;
   public com.google.spanner.v1.PartitionOptions getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

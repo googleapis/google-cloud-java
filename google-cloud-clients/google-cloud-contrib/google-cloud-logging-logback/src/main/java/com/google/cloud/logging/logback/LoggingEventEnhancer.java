@@ -16,13 +16,12 @@
 
 package com.google.cloud.logging.logback;
 
+import ch.qos.logback.classic.spi.ILoggingEvent;
 import com.google.cloud.logging.LogEntry;
 
-import ch.qos.logback.classic.spi.ILoggingEvent;
-
 /**
- * An enhancer for {@linkplain ILoggingEvent} log entries.
- * Used to add custom labels to the {@link LogEntry.Builder}.
+ * An enhancer for {@linkplain ILoggingEvent} log entries. Used to add custom labels to the {@link
+ * LogEntry.Builder}.
  */
 public interface LoggingEventEnhancer {
   void enhanceLogEntry(LogEntry.Builder builder, ILoggingEvent e);

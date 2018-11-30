@@ -23,9 +23,7 @@ public class EmptyTableResult extends TableResult {
 
   private static final long serialVersionUID = -4831062717210349819L;
 
-  /**
-   * An empty {@code TableResult} to avoid making API requests to unlistable tables.
-   */
+  /** An empty {@code TableResult} to avoid making API requests to unlistable tables. */
   @InternalApi("Exposed for testing")
   public EmptyTableResult() {
     super(null, 0, new PageImpl<FieldValueList>(null, "", null));

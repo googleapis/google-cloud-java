@@ -3,20 +3,24 @@
 
 package com.google.cloud.tasks.v2beta3;
 
-public interface ListTasksResponseOrBuilder extends
+public interface ListTasksResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta3.ListTasksResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of tasks.
    * </pre>
    *
    * <code>repeated .google.cloud.tasks.v2beta3.Task tasks = 1;</code>
    */
-  java.util.List<com.google.cloud.tasks.v2beta3.Task> 
-      getTasksList();
+  java.util.List<com.google.cloud.tasks.v2beta3.Task> getTasksList();
   /**
+   *
+   *
    * <pre>
    * The list of tasks.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListTasksResponseOrBuilder extends
    */
   com.google.cloud.tasks.v2beta3.Task getTasks(int index);
   /**
+   *
+   *
    * <pre>
    * The list of tasks.
    * </pre>
@@ -33,25 +39,29 @@ public interface ListTasksResponseOrBuilder extends
    */
   int getTasksCount();
   /**
+   *
+   *
    * <pre>
    * The list of tasks.
    * </pre>
    *
    * <code>repeated .google.cloud.tasks.v2beta3.Task tasks = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.tasks.v2beta3.TaskOrBuilder> 
-      getTasksOrBuilderList();
+  java.util.List<? extends com.google.cloud.tasks.v2beta3.TaskOrBuilder> getTasksOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of tasks.
    * </pre>
    *
    * <code>repeated .google.cloud.tasks.v2beta3.Task tasks = 1;</code>
    */
-  com.google.cloud.tasks.v2beta3.TaskOrBuilder getTasksOrBuilder(
-      int index);
+  com.google.cloud.tasks.v2beta3.TaskOrBuilder getTasksOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * A token to retrieve next page of results.
    * To return the next page of results, call
@@ -64,6 +74,8 @@ public interface ListTasksResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * A token to retrieve next page of results.
    * To return the next page of results, call
@@ -74,6 +86,5 @@ public interface ListTasksResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

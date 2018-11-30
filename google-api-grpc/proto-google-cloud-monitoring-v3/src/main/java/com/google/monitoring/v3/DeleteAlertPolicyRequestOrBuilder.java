@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface DeleteAlertPolicyRequestOrBuilder extends
+public interface DeleteAlertPolicyRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.DeleteAlertPolicyRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The alerting policy to delete. The format is:
    *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
@@ -18,6 +21,8 @@ public interface DeleteAlertPolicyRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The alerting policy to delete. The format is:
    *     projects/[PROJECT_ID]/alertPolicies/[ALERT_POLICY_ID]
@@ -26,6 +31,5 @@ public interface DeleteAlertPolicyRequestOrBuilder extends
    *
    * <code>string name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

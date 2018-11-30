@@ -4,21 +4,24 @@
 package com.google.cloud.vision.v1;
 
 /**
+ *
+ *
  * <pre>
  * Parameters for a product search request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vision.v1.ProductSearchParams}
  */
-public  final class ProductSearchParams extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ProductSearchParams extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.ProductSearchParams)
     ProductSearchParamsOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ProductSearchParams.newBuilder() to construct.
   private ProductSearchParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ProductSearchParams() {
     productSet_ = "";
     productCategories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -26,10 +29,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ProductSearchParams(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,54 +52,59 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            productSet_ = s;
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              productCategories_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000004;
+              productSet_ = s;
+              break;
             }
-            productCategories_.add(s);
-            break;
-          }
-          case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                productCategories_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              productCategories_.add(s);
+              break;
+            }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            filter_ = s;
-            break;
-          }
-          case 74: {
-            com.google.cloud.vision.v1.BoundingPoly.Builder subBuilder = null;
-            if (boundingPoly_ != null) {
-              subBuilder = boundingPoly_.toBuilder();
+              filter_ = s;
+              break;
             }
-            boundingPoly_ = input.readMessage(com.google.cloud.vision.v1.BoundingPoly.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(boundingPoly_);
-              boundingPoly_ = subBuilder.buildPartial();
-            }
+          case 74:
+            {
+              com.google.cloud.vision.v1.BoundingPoly.Builder subBuilder = null;
+              if (boundingPoly_ != null) {
+                subBuilder = boundingPoly_.toBuilder();
+              }
+              boundingPoly_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1.BoundingPoly.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(boundingPoly_);
+                boundingPoly_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         productCategories_ = productCategories_.getUnmodifiableView();
@@ -105,23 +113,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.vision.v1.ProductSearchProto.internal_static_google_cloud_vision_v1_ProductSearchParams_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.vision.v1.ProductSearchProto
+        .internal_static_google_cloud_vision_v1_ProductSearchParams_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.vision.v1.ProductSearchProto.internal_static_google_cloud_vision_v1_ProductSearchParams_fieldAccessorTable
+    return com.google.cloud.vision.v1.ProductSearchProto
+        .internal_static_google_cloud_vision_v1_ProductSearchParams_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vision.v1.ProductSearchParams.class, com.google.cloud.vision.v1.ProductSearchParams.Builder.class);
+            com.google.cloud.vision.v1.ProductSearchParams.class,
+            com.google.cloud.vision.v1.ProductSearchParams.Builder.class);
   }
 
   private int bitField0_;
   public static final int BOUNDING_POLY_FIELD_NUMBER = 9;
   private com.google.cloud.vision.v1.BoundingPoly boundingPoly_;
   /**
+   *
+   *
    * <pre>
    * The bounding polygon around the area of interest in the image.
    * Optional. If it is not specified, system discretion will be applied.
@@ -133,6 +146,8 @@ private static final long serialVersionUID = 0L;
     return boundingPoly_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The bounding polygon around the area of interest in the image.
    * Optional. If it is not specified, system discretion will be applied.
@@ -141,9 +156,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 9;</code>
    */
   public com.google.cloud.vision.v1.BoundingPoly getBoundingPoly() {
-    return boundingPoly_ == null ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance() : boundingPoly_;
+    return boundingPoly_ == null
+        ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
+        : boundingPoly_;
   }
   /**
+   *
+   *
    * <pre>
    * The bounding polygon around the area of interest in the image.
    * Optional. If it is not specified, system discretion will be applied.
@@ -158,6 +177,8 @@ private static final long serialVersionUID = 0L;
   public static final int PRODUCT_SET_FIELD_NUMBER = 6;
   private volatile java.lang.Object productSet_;
   /**
+   *
+   *
    * <pre>
    * The resource name of a [ProductSet][google.cloud.vision.v1.ProductSet] to be searched for similar images.
    * Format is:
@@ -171,14 +192,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       productSet_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The resource name of a [ProductSet][google.cloud.vision.v1.ProductSet] to be searched for similar images.
    * Format is:
@@ -187,13 +209,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string product_set = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getProductSetBytes() {
+  public com.google.protobuf.ByteString getProductSetBytes() {
     java.lang.Object ref = productSet_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       productSet_ = b;
       return b;
     } else {
@@ -204,6 +224,8 @@ private static final long serialVersionUID = 0L;
   public static final int PRODUCT_CATEGORIES_FIELD_NUMBER = 7;
   private com.google.protobuf.LazyStringList productCategories_;
   /**
+   *
+   *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
    * the first category, and either "homegoods", "apparel", or "toys" should be
@@ -212,11 +234,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string product_categories = 7;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getProductCategoriesList() {
+  public com.google.protobuf.ProtocolStringList getProductCategoriesList() {
     return productCategories_;
   }
   /**
+   *
+   *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
    * the first category, and either "homegoods", "apparel", or "toys" should be
@@ -229,6 +252,8 @@ private static final long serialVersionUID = 0L;
     return productCategories_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
    * the first category, and either "homegoods", "apparel", or "toys" should be
@@ -241,6 +266,8 @@ private static final long serialVersionUID = 0L;
     return productCategories_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The list of product categories to search in. Currently, we only consider
    * the first category, and either "homegoods", "apparel", or "toys" should be
@@ -249,14 +276,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string product_categories = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getProductCategoriesBytes(int index) {
+  public com.google.protobuf.ByteString getProductCategoriesBytes(int index) {
     return productCategories_.getByteString(index);
   }
 
   public static final int FILTER_FIELD_NUMBER = 8;
   private volatile java.lang.Object filter_;
   /**
+   *
+   *
    * <pre>
    * The filtering expression. This can be used to restrict search results based
    * on Product labels. We currently support an AND of OR of key-value
@@ -272,14 +300,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       filter_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The filtering expression. This can be used to restrict search results based
    * on Product labels. We currently support an AND of OR of key-value
@@ -290,13 +319,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string filter = 8;</code>
    */
-  public com.google.protobuf.ByteString
-      getFilterBytes() {
+  public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       filter_ = b;
       return b;
     } else {
@@ -305,6 +332,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -316,8 +344,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getProductSetBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, productSet_);
     }
@@ -354,8 +381,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, filter_);
     }
     if (boundingPoly_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getBoundingPoly());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getBoundingPoly());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -365,25 +391,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.vision.v1.ProductSearchParams)) {
       return super.equals(obj);
     }
-    com.google.cloud.vision.v1.ProductSearchParams other = (com.google.cloud.vision.v1.ProductSearchParams) obj;
+    com.google.cloud.vision.v1.ProductSearchParams other =
+        (com.google.cloud.vision.v1.ProductSearchParams) obj;
 
     boolean result = true;
     result = result && (hasBoundingPoly() == other.hasBoundingPoly());
     if (hasBoundingPoly()) {
-      result = result && getBoundingPoly()
-          .equals(other.getBoundingPoly());
+      result = result && getBoundingPoly().equals(other.getBoundingPoly());
     }
-    result = result && getProductSet()
-        .equals(other.getProductSet());
-    result = result && getProductCategoriesList()
-        .equals(other.getProductCategoriesList());
-    result = result && getFilter()
-        .equals(other.getFilter());
+    result = result && getProductSet().equals(other.getProductSet());
+    result = result && getProductCategoriesList().equals(other.getProductCategoriesList());
+    result = result && getFilter().equals(other.getFilter());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -412,118 +435,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.vision.v1.ProductSearchParams parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.vision.v1.ProductSearchParams parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.ProductSearchParams parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.ProductSearchParams parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.ProductSearchParams parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.ProductSearchParams parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.ProductSearchParams parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.ProductSearchParams parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1.ProductSearchParams parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.vision.v1.ProductSearchParams parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.vision.v1.ProductSearchParams parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.vision.v1.ProductSearchParams parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.vision.v1.ProductSearchParams parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1.ProductSearchParams parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.vision.v1.ProductSearchParams prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Parameters for a product search request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1.ProductSearchParams}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1.ProductSearchParams)
       com.google.cloud.vision.v1.ProductSearchParamsOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1.ProductSearchProto.internal_static_google_cloud_vision_v1_ProductSearchParams_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1.ProductSearchProto
+          .internal_static_google_cloud_vision_v1_ProductSearchParams_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1.ProductSearchProto.internal_static_google_cloud_vision_v1_ProductSearchParams_fieldAccessorTable
+      return com.google.cloud.vision.v1.ProductSearchProto
+          .internal_static_google_cloud_vision_v1_ProductSearchParams_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1.ProductSearchParams.class, com.google.cloud.vision.v1.ProductSearchParams.Builder.class);
+              com.google.cloud.vision.v1.ProductSearchParams.class,
+              com.google.cloud.vision.v1.ProductSearchParams.Builder.class);
     }
 
     // Construct using com.google.cloud.vision.v1.ProductSearchParams.newBuilder()
@@ -531,16 +563,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -560,9 +591,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.vision.v1.ProductSearchProto.internal_static_google_cloud_vision_v1_ProductSearchParams_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.vision.v1.ProductSearchProto
+          .internal_static_google_cloud_vision_v1_ProductSearchParams_descriptor;
     }
 
     @java.lang.Override
@@ -581,7 +612,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.vision.v1.ProductSearchParams buildPartial() {
-      com.google.cloud.vision.v1.ProductSearchParams result = new com.google.cloud.vision.v1.ProductSearchParams(this);
+      com.google.cloud.vision.v1.ProductSearchParams result =
+          new com.google.cloud.vision.v1.ProductSearchParams(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (boundingPolyBuilder_ == null) {
@@ -605,38 +637,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1.ProductSearchParams) {
-        return mergeFrom((com.google.cloud.vision.v1.ProductSearchParams)other);
+        return mergeFrom((com.google.cloud.vision.v1.ProductSearchParams) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -694,12 +727,18 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private com.google.cloud.vision.v1.BoundingPoly boundingPoly_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1.BoundingPoly, com.google.cloud.vision.v1.BoundingPoly.Builder, com.google.cloud.vision.v1.BoundingPolyOrBuilder> boundingPolyBuilder_;
+            com.google.cloud.vision.v1.BoundingPoly,
+            com.google.cloud.vision.v1.BoundingPoly.Builder,
+            com.google.cloud.vision.v1.BoundingPolyOrBuilder>
+        boundingPolyBuilder_;
     /**
+     *
+     *
      * <pre>
      * The bounding polygon around the area of interest in the image.
      * Optional. If it is not specified, system discretion will be applied.
@@ -711,6 +750,8 @@ private static final long serialVersionUID = 0L;
       return boundingPolyBuilder_ != null || boundingPoly_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The bounding polygon around the area of interest in the image.
      * Optional. If it is not specified, system discretion will be applied.
@@ -720,12 +761,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1.BoundingPoly getBoundingPoly() {
       if (boundingPolyBuilder_ == null) {
-        return boundingPoly_ == null ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance() : boundingPoly_;
+        return boundingPoly_ == null
+            ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
+            : boundingPoly_;
       } else {
         return boundingPolyBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The bounding polygon around the area of interest in the image.
      * Optional. If it is not specified, system discretion will be applied.
@@ -747,6 +792,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The bounding polygon around the area of interest in the image.
      * Optional. If it is not specified, system discretion will be applied.
@@ -766,6 +813,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The bounding polygon around the area of interest in the image.
      * Optional. If it is not specified, system discretion will be applied.
@@ -777,7 +826,9 @@ private static final long serialVersionUID = 0L;
       if (boundingPolyBuilder_ == null) {
         if (boundingPoly_ != null) {
           boundingPoly_ =
-            com.google.cloud.vision.v1.BoundingPoly.newBuilder(boundingPoly_).mergeFrom(value).buildPartial();
+              com.google.cloud.vision.v1.BoundingPoly.newBuilder(boundingPoly_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           boundingPoly_ = value;
         }
@@ -789,6 +840,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The bounding polygon around the area of interest in the image.
      * Optional. If it is not specified, system discretion will be applied.
@@ -808,6 +861,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The bounding polygon around the area of interest in the image.
      * Optional. If it is not specified, system discretion will be applied.
@@ -816,11 +871,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 9;</code>
      */
     public com.google.cloud.vision.v1.BoundingPoly.Builder getBoundingPolyBuilder() {
-      
+
       onChanged();
       return getBoundingPolyFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The bounding polygon around the area of interest in the image.
      * Optional. If it is not specified, system discretion will be applied.
@@ -832,11 +889,14 @@ private static final long serialVersionUID = 0L;
       if (boundingPolyBuilder_ != null) {
         return boundingPolyBuilder_.getMessageOrBuilder();
       } else {
-        return boundingPoly_ == null ?
-            com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance() : boundingPoly_;
+        return boundingPoly_ == null
+            ? com.google.cloud.vision.v1.BoundingPoly.getDefaultInstance()
+            : boundingPoly_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The bounding polygon around the area of interest in the image.
      * Optional. If it is not specified, system discretion will be applied.
@@ -845,14 +905,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1.BoundingPoly, com.google.cloud.vision.v1.BoundingPoly.Builder, com.google.cloud.vision.v1.BoundingPolyOrBuilder> 
+            com.google.cloud.vision.v1.BoundingPoly,
+            com.google.cloud.vision.v1.BoundingPoly.Builder,
+            com.google.cloud.vision.v1.BoundingPolyOrBuilder>
         getBoundingPolyFieldBuilder() {
       if (boundingPolyBuilder_ == null) {
-        boundingPolyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1.BoundingPoly, com.google.cloud.vision.v1.BoundingPoly.Builder, com.google.cloud.vision.v1.BoundingPolyOrBuilder>(
-                getBoundingPoly(),
-                getParentForChildren(),
-                isClean());
+        boundingPolyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1.BoundingPoly,
+                com.google.cloud.vision.v1.BoundingPoly.Builder,
+                com.google.cloud.vision.v1.BoundingPolyOrBuilder>(
+                getBoundingPoly(), getParentForChildren(), isClean());
         boundingPoly_ = null;
       }
       return boundingPolyBuilder_;
@@ -860,6 +923,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object productSet_ = "";
     /**
+     *
+     *
      * <pre>
      * The resource name of a [ProductSet][google.cloud.vision.v1.ProductSet] to be searched for similar images.
      * Format is:
@@ -871,8 +936,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getProductSet() {
       java.lang.Object ref = productSet_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         productSet_ = s;
         return s;
@@ -881,6 +945,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of a [ProductSet][google.cloud.vision.v1.ProductSet] to be searched for similar images.
      * Format is:
@@ -889,13 +955,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string product_set = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getProductSetBytes() {
+    public com.google.protobuf.ByteString getProductSetBytes() {
       java.lang.Object ref = productSet_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         productSet_ = b;
         return b;
       } else {
@@ -903,6 +967,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of a [ProductSet][google.cloud.vision.v1.ProductSet] to be searched for similar images.
      * Format is:
@@ -911,17 +977,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string product_set = 6;</code>
      */
-    public Builder setProductSet(
-        java.lang.String value) {
+    public Builder setProductSet(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       productSet_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of a [ProductSet][google.cloud.vision.v1.ProductSet] to be searched for similar images.
      * Format is:
@@ -931,12 +998,14 @@ private static final long serialVersionUID = 0L;
      * <code>string product_set = 6;</code>
      */
     public Builder clearProductSet() {
-      
+
       productSet_ = getDefaultInstance().getProductSet();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of a [ProductSet][google.cloud.vision.v1.ProductSet] to be searched for similar images.
      * Format is:
@@ -945,26 +1014,29 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string product_set = 6;</code>
      */
-    public Builder setProductSetBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setProductSetBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       productSet_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList productCategories_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList productCategories_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureProductCategoriesIsMutable() {
       if (!((bitField0_ & 0x00000004) == 0x00000004)) {
         productCategories_ = new com.google.protobuf.LazyStringArrayList(productCategories_);
         bitField0_ |= 0x00000004;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * The list of product categories to search in. Currently, we only consider
      * the first category, and either "homegoods", "apparel", or "toys" should be
@@ -973,11 +1045,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string product_categories = 7;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getProductCategoriesList() {
+    public com.google.protobuf.ProtocolStringList getProductCategoriesList() {
       return productCategories_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * The list of product categories to search in. Currently, we only consider
      * the first category, and either "homegoods", "apparel", or "toys" should be
@@ -990,6 +1063,8 @@ private static final long serialVersionUID = 0L;
       return productCategories_.size();
     }
     /**
+     *
+     *
      * <pre>
      * The list of product categories to search in. Currently, we only consider
      * the first category, and either "homegoods", "apparel", or "toys" should be
@@ -1002,6 +1077,8 @@ private static final long serialVersionUID = 0L;
       return productCategories_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * The list of product categories to search in. Currently, we only consider
      * the first category, and either "homegoods", "apparel", or "toys" should be
@@ -1010,11 +1087,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string product_categories = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getProductCategoriesBytes(int index) {
+    public com.google.protobuf.ByteString getProductCategoriesBytes(int index) {
       return productCategories_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * The list of product categories to search in. Currently, we only consider
      * the first category, and either "homegoods", "apparel", or "toys" should be
@@ -1023,17 +1101,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string product_categories = 7;</code>
      */
-    public Builder setProductCategories(
-        int index, java.lang.String value) {
+    public Builder setProductCategories(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureProductCategoriesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureProductCategoriesIsMutable();
       productCategories_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of product categories to search in. Currently, we only consider
      * the first category, and either "homegoods", "apparel", or "toys" should be
@@ -1042,17 +1121,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string product_categories = 7;</code>
      */
-    public Builder addProductCategories(
-        java.lang.String value) {
+    public Builder addProductCategories(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureProductCategoriesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureProductCategoriesIsMutable();
       productCategories_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of product categories to search in. Currently, we only consider
      * the first category, and either "homegoods", "apparel", or "toys" should be
@@ -1061,15 +1141,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string product_categories = 7;</code>
      */
-    public Builder addAllProductCategories(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllProductCategories(java.lang.Iterable<java.lang.String> values) {
       ensureProductCategoriesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, productCategories_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, productCategories_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of product categories to search in. Currently, we only consider
      * the first category, and either "homegoods", "apparel", or "toys" should be
@@ -1085,6 +1165,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of product categories to search in. Currently, we only consider
      * the first category, and either "homegoods", "apparel", or "toys" should be
@@ -1093,12 +1175,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string product_categories = 7;</code>
      */
-    public Builder addProductCategoriesBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addProductCategoriesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureProductCategoriesIsMutable();
       productCategories_.add(value);
       onChanged();
@@ -1107,6 +1188,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object filter_ = "";
     /**
+     *
+     *
      * <pre>
      * The filtering expression. This can be used to restrict search results based
      * on Product labels. We currently support an AND of OR of key-value
@@ -1120,8 +1203,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         filter_ = s;
         return s;
@@ -1130,6 +1212,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The filtering expression. This can be used to restrict search results based
      * on Product labels. We currently support an AND of OR of key-value
@@ -1140,13 +1224,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string filter = 8;</code>
      */
-    public com.google.protobuf.ByteString
-        getFilterBytes() {
+    public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         filter_ = b;
         return b;
       } else {
@@ -1154,6 +1236,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The filtering expression. This can be used to restrict search results based
      * on Product labels. We currently support an AND of OR of key-value
@@ -1164,17 +1248,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string filter = 8;</code>
      */
-    public Builder setFilter(
-        java.lang.String value) {
+    public Builder setFilter(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       filter_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The filtering expression. This can be used to restrict search results based
      * on Product labels. We currently support an AND of OR of key-value
@@ -1186,12 +1271,14 @@ private static final long serialVersionUID = 0L;
      * <code>string filter = 8;</code>
      */
     public Builder clearFilter() {
-      
+
       filter_ = getDefaultInstance().getFilter();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The filtering expression. This can be used to restrict search results based
      * on Product labels. We currently support an AND of OR of key-value
@@ -1202,20 +1289,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string filter = 8;</code>
      */
-    public Builder setFilterBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       filter_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1225,12 +1311,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1.ProductSearchParams)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.vision.v1.ProductSearchParams)
   private static final com.google.cloud.vision.v1.ProductSearchParams DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.vision.v1.ProductSearchParams();
   }
@@ -1239,16 +1325,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ProductSearchParams>
-      PARSER = new com.google.protobuf.AbstractParser<ProductSearchParams>() {
-    @java.lang.Override
-    public ProductSearchParams parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ProductSearchParams(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ProductSearchParams> PARSER =
+      new com.google.protobuf.AbstractParser<ProductSearchParams>() {
+        @java.lang.Override
+        public ProductSearchParams parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ProductSearchParams(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ProductSearchParams> parser() {
     return PARSER;
@@ -1263,6 +1349,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.vision.v1.ProductSearchParams getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -64,11 +64,12 @@ public class BlobReadChannelTest {
     storageRpcMock = createMock(StorageRpc.class);
     expect(rpcFactoryMock.create(anyObject(StorageOptions.class))).andReturn(storageRpcMock);
     replay(rpcFactoryMock);
-    options = StorageOptions.newBuilder()
-        .setProjectId("projectId")
-        .setServiceRpcFactory(rpcFactoryMock)
-        .setRetrySettings(ServiceOptions.getNoRetrySettings())
-        .build();
+    options =
+        StorageOptions.newBuilder()
+            .setProjectId("projectId")
+            .setServiceRpcFactory(rpcFactoryMock)
+            .setRetrySettings(ServiceOptions.getNoRetrySettings())
+            .build();
   }
 
   @After
@@ -96,8 +97,10 @@ public class BlobReadChannelTest {
     reader.read(secondReadBuffer);
     assertArrayEquals(Arrays.copyOf(result, firstReadBuffer.capacity()), firstReadBuffer.array());
     assertArrayEquals(
-        Arrays.copyOfRange(result, firstReadBuffer.capacity(), firstReadBuffer.capacity()
-            + secondReadBuffer.capacity()),
+        Arrays.copyOfRange(
+            result,
+            firstReadBuffer.capacity(),
+            firstReadBuffer.capacity() + secondReadBuffer.capacity()),
         secondReadBuffer.array());
   }
 
@@ -111,15 +114,16 @@ public class BlobReadChannelTest {
     ByteBuffer secondReadBuffer = ByteBuffer.allocate(42);
     expect(storageRpcMock.read(BLOB_ID.toPb(), EMPTY_RPC_OPTIONS, 0, DEFAULT_CHUNK_SIZE))
         .andReturn(Tuple.of("etag", firstResult));
-    expect(storageRpcMock.read(
-        BLOB_ID.toPb(), EMPTY_RPC_OPTIONS, DEFAULT_CHUNK_SIZE, CUSTOM_CHUNK_SIZE))
-            .andReturn(Tuple.of("etag", secondResult));
+    expect(
+            storageRpcMock.read(
+                BLOB_ID.toPb(), EMPTY_RPC_OPTIONS, DEFAULT_CHUNK_SIZE, CUSTOM_CHUNK_SIZE))
+        .andReturn(Tuple.of("etag", secondResult));
     replay(storageRpcMock);
     reader.read(firstReadBuffer);
     reader.read(secondReadBuffer);
     assertArrayEquals(firstResult, firstReadBuffer.array());
-    assertArrayEquals(Arrays.copyOf(secondResult, secondReadBuffer.capacity()),
-        secondReadBuffer.array());
+    assertArrayEquals(
+        Arrays.copyOf(secondResult, secondReadBuffer.capacity()), secondReadBuffer.array());
   }
 
   @Test
@@ -180,8 +184,9 @@ public class BlobReadChannelTest {
     expect(storageRpcMock.read(blobId.toPb(), EMPTY_RPC_OPTIONS, 0, DEFAULT_CHUNK_SIZE))
         .andReturn(Tuple.of("etag1", firstResult));
     expect(
-        storageRpcMock.read(blobId.toPb(), EMPTY_RPC_OPTIONS, DEFAULT_CHUNK_SIZE,
-            DEFAULT_CHUNK_SIZE)).andReturn(Tuple.of("etag2", secondResult));
+            storageRpcMock.read(
+                blobId.toPb(), EMPTY_RPC_OPTIONS, DEFAULT_CHUNK_SIZE, DEFAULT_CHUNK_SIZE))
+        .andReturn(Tuple.of("etag2", secondResult));
     replay(storageRpcMock);
     reader.read(firstReadBuffer);
     try {
@@ -210,8 +215,8 @@ public class BlobReadChannelTest {
     RestorableState<ReadChannel> readerState = reader.capture();
     ReadChannel restoredReader = readerState.restore();
     restoredReader.read(secondReadBuffer);
-    assertArrayEquals(Arrays.copyOf(firstResult, firstReadBuffer.capacity()),
-        firstReadBuffer.array());
+    assertArrayEquals(
+        Arrays.copyOf(firstResult, firstReadBuffer.capacity()), firstReadBuffer.array());
     assertArrayEquals(secondResult, secondReadBuffer.array());
   }
 
@@ -220,7 +225,7 @@ public class BlobReadChannelTest {
     replay(storageRpcMock);
     reader = new BlobReadChannel(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     @SuppressWarnings("resource") // avoid closing when you don't want partial writes to GCS
-        ReadChannel secondReader = new BlobReadChannel(options, BLOB_ID, EMPTY_RPC_OPTIONS);
+    ReadChannel secondReader = new BlobReadChannel(options, BLOB_ID, EMPTY_RPC_OPTIONS);
     RestorableState<ReadChannel> state = reader.capture();
     RestorableState<ReadChannel> secondState = secondReader.capture();
     assertEquals(state, secondState);

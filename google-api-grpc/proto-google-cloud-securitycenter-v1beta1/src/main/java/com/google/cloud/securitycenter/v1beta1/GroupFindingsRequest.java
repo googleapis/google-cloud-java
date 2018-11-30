@@ -4,21 +4,24 @@
 package com.google.cloud.securitycenter.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Request message for grouping by findings.
  * </pre>
  *
  * Protobuf type {@code google.cloud.securitycenter.v1beta1.GroupFindingsRequest}
  */
-public  final class GroupFindingsRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class GroupFindingsRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1beta1.GroupFindingsRequest)
     GroupFindingsRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use GroupFindingsRequest.newBuilder() to construct.
   private GroupFindingsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private GroupFindingsRequest() {
     parent_ = "";
     filter_ = "";
@@ -28,10 +31,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private GroupFindingsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -51,83 +54,93 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            parent_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            filter_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            groupBy_ = s;
-            break;
-          }
-          case 34: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (readTime_ != null) {
-              subBuilder = readTime_.toBuilder();
+              parent_ = s;
+              break;
             }
-            readTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(readTime_);
-              readTime_ = subBuilder.buildPartial();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              filter_ = s;
+              break;
             }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            pageToken_ = s;
-            break;
-          }
-          case 48: {
-
-            pageSize_ = input.readInt32();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              groupBy_ = s;
+              break;
             }
-            break;
-          }
+          case 34:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (readTime_ != null) {
+                subBuilder = readTime_.toBuilder();
+              }
+              readTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(readTime_);
+                readTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pageToken_ = s;
+              break;
+            }
+          case 48:
+            {
+              pageSize_ = input.readInt32();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_GroupFindingsRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+        .internal_static_google_cloud_securitycenter_v1beta1_GroupFindingsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_GroupFindingsRequest_fieldAccessorTable
+    return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+        .internal_static_google_cloud_securitycenter_v1beta1_GroupFindingsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest.class, com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest.Builder.class);
+            com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest.class,
+            com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
+   *
+   *
    * <pre>
    * Name of the source to groupBy. Its format is
    * "organizations/[organization_id]/sources/[source_id]". To groupBy across
@@ -142,14 +155,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       parent_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Name of the source to groupBy. Its format is
    * "organizations/[organization_id]/sources/[source_id]". To groupBy across
@@ -159,13 +173,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string parent = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getParentBytes() {
+  public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
       return b;
     } else {
@@ -176,6 +188,8 @@ private static final long serialVersionUID = 0L;
   public static final int FILTER_FIELD_NUMBER = 2;
   private volatile java.lang.Object filter_;
   /**
+   *
+   *
    * <pre>
    * Expression that defines the filter to apply across findings.
    * The expression is a list of one or more restrictions combined via logical
@@ -204,14 +218,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       filter_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Expression that defines the filter to apply across findings.
    * The expression is a list of one or more restrictions combined via logical
@@ -235,13 +250,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string filter = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getFilterBytes() {
+  public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       filter_ = b;
       return b;
     } else {
@@ -252,6 +265,8 @@ private static final long serialVersionUID = 0L;
   public static final int GROUP_BY_FIELD_NUMBER = 3;
   private volatile java.lang.Object groupBy_;
   /**
+   *
+   *
    * <pre>
    * Expression that defines what assets fields to use for grouping (including
    * `state`). The string value should follow SQL syntax: comma separated list
@@ -271,14 +286,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       groupBy_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Expression that defines what assets fields to use for grouping (including
    * `state`). The string value should follow SQL syntax: comma separated list
@@ -293,13 +309,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string group_by = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getGroupByBytes() {
+  public com.google.protobuf.ByteString getGroupByBytes() {
     java.lang.Object ref = groupBy_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       groupBy_ = b;
       return b;
     } else {
@@ -310,6 +324,8 @@ private static final long serialVersionUID = 0L;
   public static final int READ_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp readTime_;
   /**
+   *
+   *
    * <pre>
    * Time used as a reference point when filtering findings. The filter is
    * limited to findings existing at the supplied time and their values are
@@ -323,6 +339,8 @@ private static final long serialVersionUID = 0L;
     return readTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Time used as a reference point when filtering findings. The filter is
    * limited to findings existing at the supplied time and their values are
@@ -336,6 +354,8 @@ private static final long serialVersionUID = 0L;
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Time used as a reference point when filtering findings. The filter is
    * limited to findings existing at the supplied time and their values are
@@ -352,6 +372,8 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_TOKEN_FIELD_NUMBER = 5;
   private volatile java.lang.Object pageToken_;
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `GroupFindingsResponse`; indicates
    * that this is a continuation of a prior `GroupFindings` call, and
@@ -365,14 +387,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       pageToken_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The value returned by the last `GroupFindingsResponse`; indicates
    * that this is a continuation of a prior `GroupFindings` call, and
@@ -381,13 +404,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string page_token = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getPageTokenBytes() {
+  public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       pageToken_ = b;
       return b;
     } else {
@@ -398,6 +419,8 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_SIZE_FIELD_NUMBER = 6;
   private int pageSize_;
   /**
+   *
+   *
    * <pre>
    * The maximum number of results to return in a single response. Default is
    * 10, minimum is 1, maximum is 1000.
@@ -410,6 +433,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -421,8 +445,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
@@ -460,15 +483,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, groupBy_);
     }
     if (readTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getReadTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getReadTime());
     }
     if (!getPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, pageToken_);
     }
     if (pageSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, pageSize_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, pageSize_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -478,29 +499,24 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest other = (com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest) obj;
+    com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest other =
+        (com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest) obj;
 
     boolean result = true;
-    result = result && getParent()
-        .equals(other.getParent());
-    result = result && getFilter()
-        .equals(other.getFilter());
-    result = result && getGroupBy()
-        .equals(other.getGroupBy());
+    result = result && getParent().equals(other.getParent());
+    result = result && getFilter().equals(other.getFilter());
+    result = result && getGroupBy().equals(other.getGroupBy());
     result = result && (hasReadTime() == other.hasReadTime());
     if (hasReadTime()) {
-      result = result && getReadTime()
-          .equals(other.getReadTime());
+      result = result && getReadTime().equals(other.getReadTime());
     }
-    result = result && getPageToken()
-        .equals(other.getPageToken());
-    result = result && (getPageSize()
-        == other.getPageSize());
+    result = result && getPageToken().equals(other.getPageToken());
+    result = result && (getPageSize() == other.getPageSize());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -532,117 +548,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Request message for grouping by findings.
    * </pre>
    *
    * Protobuf type {@code google.cloud.securitycenter.v1beta1.GroupFindingsRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.securitycenter.v1beta1.GroupFindingsRequest)
       com.google.cloud.securitycenter.v1beta1.GroupFindingsRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_GroupFindingsRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+          .internal_static_google_cloud_securitycenter_v1beta1_GroupFindingsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_GroupFindingsRequest_fieldAccessorTable
+      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+          .internal_static_google_cloud_securitycenter_v1beta1_GroupFindingsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest.class, com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest.Builder.class);
+              com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest.class,
+              com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest.Builder.class);
     }
 
     // Construct using com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest.newBuilder()
@@ -650,16 +676,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -683,13 +708,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService.internal_static_google_cloud_securitycenter_v1beta1_GroupFindingsRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.securitycenter.v1beta1.SecuritycenterService
+          .internal_static_google_cloud_securitycenter_v1beta1_GroupFindingsRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest getDefaultInstanceForType() {
+    public com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest
+        getDefaultInstanceForType() {
       return com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest.getDefaultInstance();
     }
 
@@ -704,7 +730,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest buildPartial() {
-      com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest result = new com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest(this);
+      com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest result =
+          new com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest(this);
       result.parent_ = parent_;
       result.filter_ = filter_;
       result.groupBy_ = groupBy_;
@@ -723,38 +750,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest) {
-        return mergeFrom((com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest)other);
+        return mergeFrom((com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -762,7 +790,9 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest other) {
-      if (other == com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest.getDefaultInstance()) return this;
+      if (other
+          == com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest.getDefaultInstance())
+        return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         onChanged();
@@ -804,7 +834,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -816,6 +847,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object parent_ = "";
     /**
+     *
+     *
      * <pre>
      * Name of the source to groupBy. Its format is
      * "organizations/[organization_id]/sources/[source_id]". To groupBy across
@@ -828,8 +861,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         parent_ = s;
         return s;
@@ -838,6 +870,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Name of the source to groupBy. Its format is
      * "organizations/[organization_id]/sources/[source_id]". To groupBy across
@@ -847,13 +881,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
+    public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         parent_ = b;
         return b;
       } else {
@@ -861,6 +893,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Name of the source to groupBy. Its format is
      * "organizations/[organization_id]/sources/[source_id]". To groupBy across
@@ -870,17 +904,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParent(
-        java.lang.String value) {
+    public Builder setParent(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       parent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Name of the source to groupBy. Its format is
      * "organizations/[organization_id]/sources/[source_id]". To groupBy across
@@ -891,12 +926,14 @@ private static final long serialVersionUID = 0L;
      * <code>string parent = 1;</code>
      */
     public Builder clearParent() {
-      
+
       parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Name of the source to groupBy. Its format is
      * "organizations/[organization_id]/sources/[source_id]". To groupBy across
@@ -906,13 +943,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       parent_ = value;
       onChanged();
       return this;
@@ -920,6 +956,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object filter_ = "";
     /**
+     *
+     *
      * <pre>
      * Expression that defines the filter to apply across findings.
      * The expression is a list of one or more restrictions combined via logical
@@ -946,8 +984,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         filter_ = s;
         return s;
@@ -956,6 +993,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Expression that defines the filter to apply across findings.
      * The expression is a list of one or more restrictions combined via logical
@@ -979,13 +1018,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string filter = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getFilterBytes() {
+    public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         filter_ = b;
         return b;
       } else {
@@ -993,6 +1030,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Expression that defines the filter to apply across findings.
      * The expression is a list of one or more restrictions combined via logical
@@ -1016,17 +1055,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string filter = 2;</code>
      */
-    public Builder setFilter(
-        java.lang.String value) {
+    public Builder setFilter(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       filter_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Expression that defines the filter to apply across findings.
      * The expression is a list of one or more restrictions combined via logical
@@ -1051,12 +1091,14 @@ private static final long serialVersionUID = 0L;
      * <code>string filter = 2;</code>
      */
     public Builder clearFilter() {
-      
+
       filter_ = getDefaultInstance().getFilter();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Expression that defines the filter to apply across findings.
      * The expression is a list of one or more restrictions combined via logical
@@ -1080,13 +1122,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string filter = 2;</code>
      */
-    public Builder setFilterBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       filter_ = value;
       onChanged();
       return this;
@@ -1094,6 +1135,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object groupBy_ = "";
     /**
+     *
+     *
      * <pre>
      * Expression that defines what assets fields to use for grouping (including
      * `state`). The string value should follow SQL syntax: comma separated list
@@ -1111,8 +1154,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getGroupBy() {
       java.lang.Object ref = groupBy_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         groupBy_ = s;
         return s;
@@ -1121,6 +1163,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Expression that defines what assets fields to use for grouping (including
      * `state`). The string value should follow SQL syntax: comma separated list
@@ -1135,13 +1179,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string group_by = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getGroupByBytes() {
+    public com.google.protobuf.ByteString getGroupByBytes() {
       java.lang.Object ref = groupBy_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         groupBy_ = b;
         return b;
       } else {
@@ -1149,6 +1191,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Expression that defines what assets fields to use for grouping (including
      * `state`). The string value should follow SQL syntax: comma separated list
@@ -1163,17 +1207,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string group_by = 3;</code>
      */
-    public Builder setGroupBy(
-        java.lang.String value) {
+    public Builder setGroupBy(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       groupBy_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Expression that defines what assets fields to use for grouping (including
      * `state`). The string value should follow SQL syntax: comma separated list
@@ -1189,12 +1234,14 @@ private static final long serialVersionUID = 0L;
      * <code>string group_by = 3;</code>
      */
     public Builder clearGroupBy() {
-      
+
       groupBy_ = getDefaultInstance().getGroupBy();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Expression that defines what assets fields to use for grouping (including
      * `state`). The string value should follow SQL syntax: comma separated list
@@ -1209,13 +1256,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string group_by = 3;</code>
      */
-    public Builder setGroupByBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setGroupByBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       groupBy_ = value;
       onChanged();
       return this;
@@ -1223,8 +1269,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp readTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> readTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        readTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Time used as a reference point when filtering findings. The filter is
      * limited to findings existing at the supplied time and their values are
@@ -1238,6 +1289,8 @@ private static final long serialVersionUID = 0L;
       return readTimeBuilder_ != null || readTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Time used as a reference point when filtering findings. The filter is
      * limited to findings existing at the supplied time and their values are
@@ -1255,6 +1308,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Time used as a reference point when filtering findings. The filter is
      * limited to findings existing at the supplied time and their values are
@@ -1278,6 +1333,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time used as a reference point when filtering findings. The filter is
      * limited to findings existing at the supplied time and their values are
@@ -1287,8 +1344,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp read_time = 4;</code>
      */
-    public Builder setReadTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setReadTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (readTimeBuilder_ == null) {
         readTime_ = builderForValue.build();
         onChanged();
@@ -1299,6 +1355,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time used as a reference point when filtering findings. The filter is
      * limited to findings existing at the supplied time and their values are
@@ -1312,7 +1370,7 @@ private static final long serialVersionUID = 0L;
       if (readTimeBuilder_ == null) {
         if (readTime_ != null) {
           readTime_ =
-            com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
         } else {
           readTime_ = value;
         }
@@ -1324,6 +1382,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time used as a reference point when filtering findings. The filter is
      * limited to findings existing at the supplied time and their values are
@@ -1345,6 +1405,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Time used as a reference point when filtering findings. The filter is
      * limited to findings existing at the supplied time and their values are
@@ -1355,11 +1417,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp read_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
-      
+
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Time used as a reference point when filtering findings. The filter is
      * limited to findings existing at the supplied time and their values are
@@ -1373,11 +1437,12 @@ private static final long serialVersionUID = 0L;
       if (readTimeBuilder_ != null) {
         return readTimeBuilder_.getMessageOrBuilder();
       } else {
-        return readTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
+        return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Time used as a reference point when filtering findings. The filter is
      * limited to findings existing at the supplied time and their values are
@@ -1388,14 +1453,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp read_time = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getReadTimeFieldBuilder() {
       if (readTimeBuilder_ == null) {
-        readTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getReadTime(),
-                getParentForChildren(),
-                isClean());
+        readTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getReadTime(), getParentForChildren(), isClean());
         readTime_ = null;
       }
       return readTimeBuilder_;
@@ -1403,6 +1471,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object pageToken_ = "";
     /**
+     *
+     *
      * <pre>
      * The value returned by the last `GroupFindingsResponse`; indicates
      * that this is a continuation of a prior `GroupFindings` call, and
@@ -1414,8 +1484,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         pageToken_ = s;
         return s;
@@ -1424,6 +1493,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The value returned by the last `GroupFindingsResponse`; indicates
      * that this is a continuation of a prior `GroupFindings` call, and
@@ -1432,13 +1503,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string page_token = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getPageTokenBytes() {
+    public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         pageToken_ = b;
         return b;
       } else {
@@ -1446,6 +1515,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The value returned by the last `GroupFindingsResponse`; indicates
      * that this is a continuation of a prior `GroupFindings` call, and
@@ -1454,17 +1525,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string page_token = 5;</code>
      */
-    public Builder setPageToken(
-        java.lang.String value) {
+    public Builder setPageToken(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       pageToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The value returned by the last `GroupFindingsResponse`; indicates
      * that this is a continuation of a prior `GroupFindings` call, and
@@ -1474,12 +1546,14 @@ private static final long serialVersionUID = 0L;
      * <code>string page_token = 5;</code>
      */
     public Builder clearPageToken() {
-      
+
       pageToken_ = getDefaultInstance().getPageToken();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The value returned by the last `GroupFindingsResponse`; indicates
      * that this is a continuation of a prior `GroupFindings` call, and
@@ -1488,20 +1562,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string page_token = 5;</code>
      */
-    public Builder setPageTokenBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       pageToken_ = value;
       onChanged();
       return this;
     }
 
-    private int pageSize_ ;
+    private int pageSize_;
     /**
+     *
+     *
      * <pre>
      * The maximum number of results to return in a single response. Default is
      * 10, minimum is 1, maximum is 1000.
@@ -1513,6 +1588,8 @@ private static final long serialVersionUID = 0L;
       return pageSize_;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of results to return in a single response. Default is
      * 10, minimum is 1, maximum is 1000.
@@ -1521,12 +1598,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 page_size = 6;</code>
      */
     public Builder setPageSize(int value) {
-      
+
       pageSize_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of results to return in a single response. Default is
      * 10, minimum is 1, maximum is 1000.
@@ -1535,14 +1614,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 page_size = 6;</code>
      */
     public Builder clearPageSize() {
-      
+
       pageSize_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1552,12 +1631,13 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.securitycenter.v1beta1.GroupFindingsRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.securitycenter.v1beta1.GroupFindingsRequest)
-  private static final com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest DEFAULT_INSTANCE;
+  private static final com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest();
   }
@@ -1566,16 +1646,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<GroupFindingsRequest>
-      PARSER = new com.google.protobuf.AbstractParser<GroupFindingsRequest>() {
-    @java.lang.Override
-    public GroupFindingsRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new GroupFindingsRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<GroupFindingsRequest> PARSER =
+      new com.google.protobuf.AbstractParser<GroupFindingsRequest>() {
+        @java.lang.Override
+        public GroupFindingsRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new GroupFindingsRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<GroupFindingsRequest> parser() {
     return PARSER;
@@ -1590,6 +1670,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.securitycenter.v1beta1.GroupFindingsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

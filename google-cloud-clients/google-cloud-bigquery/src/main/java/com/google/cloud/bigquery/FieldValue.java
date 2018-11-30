@@ -41,28 +41,21 @@ public class FieldValue implements Serializable {
   private final Attribute attribute;
   private final Object value;
 
-  /**
-   * The field value's attribute, giving information on the field's content type.
-   */
+  /** The field value's attribute, giving information on the field's content type. */
   public enum Attribute {
     /**
      * A primitive field value. A {@code FieldValue} is primitive when the corresponding field has
-     * type {@link LegacySQLTypeName#BYTES}, {@link LegacySQLTypeName#BOOLEAN},
-     * {@link LegacySQLTypeName#STRING}, {@link LegacySQLTypeName#FLOAT},
-     * {@link LegacySQLTypeName#INTEGER}, {@link LegacySQLTypeName#NUMERIC},
-     * {@link LegacySQLTypeName#TIMESTAMP}, or the value is set to
-     * {@code null}.
+     * type {@link LegacySQLTypeName#BYTES}, {@link LegacySQLTypeName#BOOLEAN}, {@link
+     * LegacySQLTypeName#STRING}, {@link LegacySQLTypeName#FLOAT}, {@link
+     * LegacySQLTypeName#INTEGER}, {@link LegacySQLTypeName#NUMERIC}, {@link
+     * LegacySQLTypeName#TIMESTAMP}, or the value is set to {@code null}.
      */
     PRIMITIVE,
 
-    /**
-     * A {@code FieldValue} for a field with {@link Field.Mode#REPEATED} mode.
-     */
+    /** A {@code FieldValue} for a field with {@link Field.Mode#REPEATED} mode. */
     REPEATED,
 
-    /**
-     * A {@code FieldValue} for a field of type {@link LegacySQLTypeName#RECORD}.
-     */
+    /** A {@code FieldValue} for a field of type {@link LegacySQLTypeName#RECORD}. */
     RECORD
   }
 
@@ -71,30 +64,25 @@ public class FieldValue implements Serializable {
     this.value = value;
   }
 
-
   /**
    * Returns the attribute of this Field Value.
    *
-   * @return {@link Attribute#PRIMITIVE} if the field is a primitive type
-   *     ({@link LegacySQLTypeName#BYTES}, {@link LegacySQLTypeName#BOOLEAN}, {@link LegacySQLTypeName#STRING},
-   *     {@link LegacySQLTypeName#FLOAT}, {@link LegacySQLTypeName#INTEGER},
-   *     {@link LegacySQLTypeName#NUMERIC}, {@link LegacySQLTypeName#TIMESTAMP})
-   *     or is {@code null}. Returns {@link Attribute#REPEATED} if
-   *     the corresponding field has ({@link Field.Mode#REPEATED}) mode. Returns
-   *     {@link Attribute#RECORD} if the corresponding field is a
-   *     {@link LegacySQLTypeName#RECORD} type.
+   * @return {@link Attribute#PRIMITIVE} if the field is a primitive type ({@link
+   *     LegacySQLTypeName#BYTES}, {@link LegacySQLTypeName#BOOLEAN}, {@link
+   *     LegacySQLTypeName#STRING}, {@link LegacySQLTypeName#FLOAT}, {@link
+   *     LegacySQLTypeName#INTEGER}, {@link LegacySQLTypeName#NUMERIC}, {@link
+   *     LegacySQLTypeName#TIMESTAMP}) or is {@code null}. Returns {@link Attribute#REPEATED} if the
+   *     corresponding field has ({@link Field.Mode#REPEATED}) mode. Returns {@link
+   *     Attribute#RECORD} if the corresponding field is a {@link LegacySQLTypeName#RECORD} type.
    */
   public Attribute getAttribute() {
     return attribute;
   }
 
-  /**
-   * Returns {@code true} if this field's value is {@code null}, {@code false} otherwise.
-   */
+  /** Returns {@code true} if this field's value is {@code null}, {@code false} otherwise. */
   public boolean isNull() {
     return value == null;
   }
-
 
   /**
    * Returns this field's value as an {@link Object}. If {@link #isNull()} is {@code true} this
@@ -104,13 +92,12 @@ public class FieldValue implements Serializable {
     return value;
   }
 
-
   /**
    * Returns this field's value as a {@link String}. This method should only be used if the
-   * corresponding field has primitive type ({@link LegacySQLTypeName#BYTES},
-   * {@link LegacySQLTypeName#BOOLEAN}, {@link LegacySQLTypeName#STRING},
-   * {@link LegacySQLTypeName#FLOAT}, {@link LegacySQLTypeName#INTEGER},
-   * {@link LegacySQLTypeName#NUMERIC} {@link LegacySQLTypeName#TIMESTAMP}).
+   * corresponding field has primitive type ({@link LegacySQLTypeName#BYTES}, {@link
+   * LegacySQLTypeName#BOOLEAN}, {@link LegacySQLTypeName#STRING}, {@link LegacySQLTypeName#FLOAT},
+   * {@link LegacySQLTypeName#INTEGER}, {@link LegacySQLTypeName#NUMERIC} {@link
+   * LegacySQLTypeName#TIMESTAMP}).
    *
    * @throws ClassCastException if the field is not a primitive type
    * @throws NullPointerException if {@link #isNull()} returns {@code true}
@@ -120,7 +107,6 @@ public class FieldValue implements Serializable {
     checkNotNull(value);
     return (String) value;
   }
-
 
   /**
    * Returns this field's value as a byte array. This method should only be used if the
@@ -138,7 +124,6 @@ public class FieldValue implements Serializable {
     }
   }
 
-
   /**
    * Returns this field's value as a {@code long}. This method should only be used if the
    * corresponding field has {@link LegacySQLTypeName#INTEGER} type.
@@ -151,7 +136,6 @@ public class FieldValue implements Serializable {
   public long getLongValue() {
     return Long.parseLong(getStringValue());
   }
-
 
   /**
    * Returns this field's value as a {@link Double}. This method should only be used if the
@@ -166,7 +150,6 @@ public class FieldValue implements Serializable {
     return Double.parseDouble(getStringValue());
   }
 
-
   /**
    * Returns this field's value as a {@link Boolean}. This method should only be used if the
    * corresponding field has {@link LegacySQLTypeName#BOOLEAN} type.
@@ -178,16 +161,16 @@ public class FieldValue implements Serializable {
   @SuppressWarnings("unchecked")
   public boolean getBooleanValue() {
     String stringValue = getStringValue();
-    checkState(stringValue.equalsIgnoreCase("true") || stringValue.equalsIgnoreCase("false"),
+    checkState(
+        stringValue.equalsIgnoreCase("true") || stringValue.equalsIgnoreCase("false"),
         "Field value is not of boolean type");
     return Boolean.parseBoolean(stringValue);
   }
 
-
   /**
    * Returns this field's value as a {@code long}, representing a timestamp in microseconds since
-   * epoch (UNIX time). This method should only be used if the corresponding field has
-   * {@link LegacySQLTypeName#TIMESTAMP} type.
+   * epoch (UNIX time). This method should only be used if the corresponding field has {@link
+   * LegacySQLTypeName#TIMESTAMP} type.
    *
    * @throws ClassCastException if the field is not a primitive type
    * @throws NumberFormatException if the field's value could not be converted to {@link Long}
@@ -200,21 +183,19 @@ public class FieldValue implements Serializable {
     return new Double(Double.valueOf(getStringValue()) * MICROSECONDS).longValue();
   }
 
-
   /**
-   * Returns this field's value as a {@link java.math.BigDecimal}. This method should only be used if the
-   * corresponding field has {@link LegacySQLTypeName#NUMERIC} type.
+   * Returns this field's value as a {@link java.math.BigDecimal}. This method should only be used
+   * if the corresponding field has {@link LegacySQLTypeName#NUMERIC} type.
    *
    * @throws ClassCastException if the field is not a primitive type
-   * @throws NumberFormatException if the field's value could not be converted to
-   *   {@link java.math.BigDecimal}
+   * @throws NumberFormatException if the field's value could not be converted to {@link
+   *     java.math.BigDecimal}
    * @throws NullPointerException if {@link #isNull()} returns {@code true}
    */
   @SuppressWarnings("unchecked")
   public BigDecimal getNumericValue() {
     return new BigDecimal(getStringValue());
   }
-
 
   /**
    * Returns this field's value as a list of {@link FieldValue}. This method should only be used if
@@ -230,11 +211,10 @@ public class FieldValue implements Serializable {
     return (List<FieldValue>) value;
   }
 
-
   /**
-   * Returns this field's value as a {@link FieldValueList} instance. This method should only be used if
-   * the corresponding field has {@link LegacySQLTypeName#RECORD} type (i.e.
-   * {@link #getAttribute()} is {@link Attribute#RECORD}).
+   * Returns this field's value as a {@link FieldValueList} instance. This method should only be
+   * used if the corresponding field has {@link LegacySQLTypeName#RECORD} type (i.e. {@link
+   * #getAttribute()} is {@link Attribute#RECORD}).
    *
    * @throws ClassCastException if the field is not a {@link LegacySQLTypeName#RECORD} type
    * @throws NullPointerException if {@link #isNull()} returns {@code true}
@@ -280,8 +260,8 @@ public class FieldValue implements Serializable {
    * respectively.
    *
    * <p>This method is unstable. See <a
-   * href="https://github.com/googleapis/google-cloud-java/pull/2891">this discussion</a>
-   * for more context.
+   * href="https://github.com/googleapis/google-cloud-java/pull/2891">this discussion</a> for more
+   * context.
    */
   @BetaApi
   public static FieldValue of(Attribute attribute, Object value) {

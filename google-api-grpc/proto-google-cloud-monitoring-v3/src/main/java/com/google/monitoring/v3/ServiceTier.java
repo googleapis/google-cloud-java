@@ -4,6 +4,8 @@
 package com.google.monitoring.v3;
 
 /**
+ *
+ *
  * <pre>
  * The tier of service for a Stackdriver account. Please see the
  * [service tiers documentation](https://cloud.google.com/monitoring/accounts/tiers)
@@ -12,9 +14,10 @@ package com.google.monitoring.v3;
  *
  * Protobuf enum {@code google.monitoring.v3.ServiceTier}
  */
-public enum ServiceTier
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum ServiceTier implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * An invalid sentinel value, used to indicate that a tier has not
    * been provided explicitly.
@@ -24,6 +27,8 @@ public enum ServiceTier
    */
   SERVICE_TIER_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * The Stackdriver Basic tier, a free tier of service that provides basic
    * features, a moderate allotment of logs, and access to built-in metrics.
@@ -35,6 +40,8 @@ public enum ServiceTier
    */
   SERVICE_TIER_BASIC(1),
   /**
+   *
+   *
    * <pre>
    * The Stackdriver Premium tier, a higher, more expensive tier of service
    * that provides access to all Stackdriver features, lets you use Stackdriver
@@ -49,6 +56,8 @@ public enum ServiceTier
   ;
 
   /**
+   *
+   *
    * <pre>
    * An invalid sentinel value, used to indicate that a tier has not
    * been provided explicitly.
@@ -58,6 +67,8 @@ public enum ServiceTier
    */
   public static final int SERVICE_TIER_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * The Stackdriver Basic tier, a free tier of service that provides basic
    * features, a moderate allotment of logs, and access to built-in metrics.
@@ -69,6 +80,8 @@ public enum ServiceTier
    */
   public static final int SERVICE_TIER_BASIC_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * The Stackdriver Premium tier, a higher, more expensive tier of service
    * that provides access to all Stackdriver features, lets you use Stackdriver
@@ -80,7 +93,6 @@ public enum ServiceTier
    */
   public static final int SERVICE_TIER_PREMIUM_VALUE = 2;
 
-
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -89,9 +101,7 @@ public enum ServiceTier
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static ServiceTier valueOf(int value) {
     return forNumber(value);
@@ -99,45 +109,45 @@ public enum ServiceTier
 
   public static ServiceTier forNumber(int value) {
     switch (value) {
-      case 0: return SERVICE_TIER_UNSPECIFIED;
-      case 1: return SERVICE_TIER_BASIC;
-      case 2: return SERVICE_TIER_PREMIUM;
-      default: return null;
+      case 0:
+        return SERVICE_TIER_UNSPECIFIED;
+      case 1:
+        return SERVICE_TIER_BASIC;
+      case 2:
+        return SERVICE_TIER_PREMIUM;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<ServiceTier>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<ServiceTier> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      ServiceTier> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<ServiceTier>() {
-          public ServiceTier findValueByNumber(int number) {
-            return ServiceTier.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<ServiceTier> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<ServiceTier>() {
+        public ServiceTier findValueByNumber(int number) {
+          return ServiceTier.forNumber(number);
+        }
+      };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.monitoring.v3.CommonProto.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final ServiceTier[] VALUES = values();
 
-  public static ServiceTier valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static ServiceTier valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -153,4 +163,3 @@ public enum ServiceTier
 
   // @@protoc_insertion_point(enum_scope:google.monitoring.v3.ServiceTier)
 }
-

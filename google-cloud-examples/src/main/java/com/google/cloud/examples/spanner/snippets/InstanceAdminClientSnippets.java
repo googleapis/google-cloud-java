@@ -38,9 +38,7 @@ import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-/**
- * This class contains snippets for {@link InstanceAdminClient} interface.
- */
+/** This class contains snippets for {@link InstanceAdminClient} interface. */
 public class InstanceAdminClientSnippets {
 
   private final InstanceAdminClient instanceAdminClient;
@@ -49,9 +47,7 @@ public class InstanceAdminClientSnippets {
     this.instanceAdminClient = instanceAdminClient;
   }
 
-  /**
-   * Example to get instance config.
-   */
+  /** Example to get instance config. */
   public InstanceConfig getInstanceConfig(final String my_config_id) {
     // [START instance_admin_client_get_instance_config]
     final String configId = my_config_id;
@@ -60,50 +56,43 @@ public class InstanceAdminClientSnippets {
     return instanceConfig;
   }
 
-  /**
-   * Example to list instance configs.
-   */
+  /** Example to list instance configs. */
   public List<InstanceConfig> listInstanceConfigs() {
     // [START instance_admin_client_list_configs]
     List<InstanceConfig> configs =
-        Lists.newArrayList(instanceAdminClient.listInstanceConfigs(Options.pageSize(1)).iterateAll());
+        Lists.newArrayList(
+            instanceAdminClient.listInstanceConfigs(Options.pageSize(1)).iterateAll());
     // [END instance_admin_client_list_configs]
     return configs;
   }
 
-  /**
-   * Example to create an instance.
-   */
+  /** Example to create an instance. */
   public void createInstance(
-      final String my_instance_id,
-      final String my_config_id,
-      final String my_client_project) {
+      final String my_instance_id, final String my_config_id, final String my_client_project) {
     // [START instance_admin_client_create_instance]
     final String instanceId = my_instance_id;
     final String configId = my_config_id;
     final String clientProject = my_client_project;
 
     OperationFuture<Instance, CreateInstanceMetadata> op =
-        instanceAdminClient.createInstance(InstanceInfo
-            .newBuilder(InstanceId.of(clientProject, instanceId))
-            .setInstanceConfigId(InstanceConfigId.of(clientProject, configId))
-            .setDisplayName(instanceId)
-            .setNodeCount(1)
-            .build());
+        instanceAdminClient.createInstance(
+            InstanceInfo.newBuilder(InstanceId.of(clientProject, instanceId))
+                .setInstanceConfigId(InstanceConfigId.of(clientProject, configId))
+                .setDisplayName(instanceId)
+                .setNodeCount(1)
+                .build());
     try {
       op.get();
-    } catch(ExecutionException e) {
+    } catch (ExecutionException e) {
       throw (SpannerException) e.getCause();
-    } catch(InterruptedException e) {
+    } catch (InterruptedException e) {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
     // [END instance_admin_client_create_instance]
   }
 
-  /**
-   * Example to get an instance.
-   */
-  public Instance getInstance(final String my_instance_id)  {
+  /** Example to get an instance. */
+  public Instance getInstance(final String my_instance_id) {
     // [START instance_admin_client_get_instance]
     final String instanceId = my_instance_id;
     Instance ins = instanceAdminClient.getInstance(instanceId);
@@ -111,21 +100,16 @@ public class InstanceAdminClientSnippets {
     return ins;
   }
 
-  /**
-   * Example to list instances.
-   */
+  /** Example to list instances. */
   public List<Instance> listInstances() {
     // [START instance_admin_client_list_instances]
     List<Instance> instances =
-        Lists.newArrayList(
-            instanceAdminClient.listInstances(Options.pageSize(1)).iterateAll());
+        Lists.newArrayList(instanceAdminClient.listInstances(Options.pageSize(1)).iterateAll());
     // [END instance_admin_client_list_instances]
     return instances;
   }
 
-  /**
-   * Example to delete an instance.
-   */
+  /** Example to delete an instance. */
   public void deleteInstance(final String my_instance_id) {
     // [START instance_admin_client_delete_instance]
     final String instanceId = my_instance_id;
@@ -133,10 +117,9 @@ public class InstanceAdminClientSnippets {
     // [END instance_admin_client_delete_instance]
   }
 
-  /**
-   * Example to update an instance.
-   */
-  public void updateInstance(Instance my_instance,
+  /** Example to update an instance. */
+  public void updateInstance(
+      Instance my_instance,
       final String my_client_project,
       final String my_instance_id,
       final String my_display_name) {
@@ -157,12 +140,11 @@ public class InstanceAdminClientSnippets {
         instanceAdminClient.updateInstance(toUpdate, InstanceInfo.InstanceField.DISPLAY_NAME);
     try {
       op.get();
-    } catch(ExecutionException e) {
+    } catch (ExecutionException e) {
       throw (SpannerException) e.getCause();
-    } catch(InterruptedException e) {
+    } catch (InterruptedException e) {
       throw SpannerExceptionFactory.propagateInterrupt(e);
     }
     // [END instance_admin_client_update_instance]
   }
 }
-

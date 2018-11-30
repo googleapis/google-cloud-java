@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1;
 
-public interface ProductSearchResultsOrBuilder extends
+public interface ProductSearchResultsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.ProductSearchResults)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Timestamp of the index which provided these results. Changes made after
    * this time are not reflected in the current results.
@@ -17,6 +20,8 @@ public interface ProductSearchResultsOrBuilder extends
    */
   boolean hasIndexTime();
   /**
+   *
+   *
    * <pre>
    * Timestamp of the index which provided these results. Changes made after
    * this time are not reflected in the current results.
@@ -26,6 +31,8 @@ public interface ProductSearchResultsOrBuilder extends
    */
   com.google.protobuf.Timestamp getIndexTime();
   /**
+   *
+   *
    * <pre>
    * Timestamp of the index which provided these results. Changes made after
    * this time are not reflected in the current results.
@@ -36,15 +43,18 @@ public interface ProductSearchResultsOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getIndexTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * List of results, one for each product match.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.ProductSearchResults.Result results = 5;</code>
    */
-  java.util.List<com.google.cloud.vision.v1.ProductSearchResults.Result> 
-      getResultsList();
+  java.util.List<com.google.cloud.vision.v1.ProductSearchResults.Result> getResultsList();
   /**
+   *
+   *
    * <pre>
    * List of results, one for each product match.
    * </pre>
@@ -53,6 +63,8 @@ public interface ProductSearchResultsOrBuilder extends
    */
   com.google.cloud.vision.v1.ProductSearchResults.Result getResults(int index);
   /**
+   *
+   *
    * <pre>
    * List of results, one for each product match.
    * </pre>
@@ -61,25 +73,30 @@ public interface ProductSearchResultsOrBuilder extends
    */
   int getResultsCount();
   /**
+   *
+   *
    * <pre>
    * List of results, one for each product match.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.ProductSearchResults.Result results = 5;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1.ProductSearchResults.ResultOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1.ProductSearchResults.ResultOrBuilder>
       getResultsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * List of results, one for each product match.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.ProductSearchResults.Result results = 5;</code>
    */
-  com.google.cloud.vision.v1.ProductSearchResults.ResultOrBuilder getResultsOrBuilder(
-      int index);
+  com.google.cloud.vision.v1.ProductSearchResults.ResultOrBuilder getResultsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * List of results grouped by products detected in the query image. Each entry
    * corresponds to one bounding polygon in the query image, and contains the
@@ -87,11 +104,15 @@ public interface ProductSearchResultsOrBuilder extends
    * matches in the union of all the per-product results.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.ProductSearchResults.GroupedResult product_grouped_results = 6;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+   * </code>
    */
-  java.util.List<com.google.cloud.vision.v1.ProductSearchResults.GroupedResult> 
+  java.util.List<com.google.cloud.vision.v1.ProductSearchResults.GroupedResult>
       getProductGroupedResultsList();
   /**
+   *
+   *
    * <pre>
    * List of results grouped by products detected in the query image. Each entry
    * corresponds to one bounding polygon in the query image, and contains the
@@ -99,10 +120,14 @@ public interface ProductSearchResultsOrBuilder extends
    * matches in the union of all the per-product results.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.ProductSearchResults.GroupedResult product_grouped_results = 6;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+   * </code>
    */
   com.google.cloud.vision.v1.ProductSearchResults.GroupedResult getProductGroupedResults(int index);
   /**
+   *
+   *
    * <pre>
    * List of results grouped by products detected in the query image. Each entry
    * corresponds to one bounding polygon in the query image, and contains the
@@ -110,10 +135,14 @@ public interface ProductSearchResultsOrBuilder extends
    * matches in the union of all the per-product results.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.ProductSearchResults.GroupedResult product_grouped_results = 6;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+   * </code>
    */
   int getProductGroupedResultsCount();
   /**
+   *
+   *
    * <pre>
    * List of results grouped by products detected in the query image. Each entry
    * corresponds to one bounding polygon in the query image, and contains the
@@ -121,11 +150,15 @@ public interface ProductSearchResultsOrBuilder extends
    * matches in the union of all the per-product results.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.ProductSearchResults.GroupedResult product_grouped_results = 6;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1.ProductSearchResults.GroupedResultOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1.ProductSearchResults.GroupedResultOrBuilder>
       getProductGroupedResultsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * List of results grouped by products detected in the query image. Each entry
    * corresponds to one bounding polygon in the query image, and contains the
@@ -133,8 +166,10 @@ public interface ProductSearchResultsOrBuilder extends
    * matches in the union of all the per-product results.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.ProductSearchResults.GroupedResult product_grouped_results = 6;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1.ProductSearchResults.GroupedResult product_grouped_results = 6;
+   * </code>
    */
-  com.google.cloud.vision.v1.ProductSearchResults.GroupedResultOrBuilder getProductGroupedResultsOrBuilder(
-      int index);
+  com.google.cloud.vision.v1.ProductSearchResults.GroupedResultOrBuilder
+      getProductGroupedResultsOrBuilder(int index);
 }

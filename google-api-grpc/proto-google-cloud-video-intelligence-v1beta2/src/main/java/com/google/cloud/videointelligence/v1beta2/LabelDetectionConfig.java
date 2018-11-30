@@ -4,21 +4,24 @@
 package com.google.cloud.videointelligence.v1beta2;
 
 /**
+ *
+ *
  * <pre>
  * Config for LABEL_DETECTION.
  * </pre>
  *
  * Protobuf type {@code google.cloud.videointelligence.v1beta2.LabelDetectionConfig}
  */
-public  final class LabelDetectionConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1beta2.LabelDetectionConfig)
     LabelDetectionConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use LabelDetectionConfig.newBuilder() to construct.
   private LabelDetectionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private LabelDetectionConfig() {
     labelDetectionMode_ = 0;
     stationaryCamera_ = false;
@@ -26,10 +29,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private LabelDetectionConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,87 +52,102 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
+          case 8:
+            {
+              int rawValue = input.readEnum();
 
-            labelDetectionMode_ = rawValue;
-            break;
-          }
-          case 16: {
-
-            stationaryCamera_ = input.readBool();
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            model_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              labelDetectionMode_ = rawValue;
+              break;
             }
-            break;
-          }
+          case 16:
+            {
+              stationaryCamera_ = input.readBool();
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              model_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1beta2_LabelDetectionConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1beta2_LabelDetectionConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1beta2_LabelDetectionConfig_fieldAccessorTable
+    return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1beta2_LabelDetectionConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig.class, com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig.Builder.class);
+            com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig.class,
+            com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig.Builder.class);
   }
 
   public static final int LABEL_DETECTION_MODE_FIELD_NUMBER = 1;
   private int labelDetectionMode_;
   /**
+   *
+   *
    * <pre>
    * What labels should be detected with LABEL_DETECTION, in addition to
    * video-level labels or segment-level labels.
    * If unspecified, defaults to `SHOT_MODE`.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionMode label_detection_mode = 1;</code>
+   * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionMode label_detection_mode = 1;
+   * </code>
    */
   public int getLabelDetectionModeValue() {
     return labelDetectionMode_;
   }
   /**
+   *
+   *
    * <pre>
    * What labels should be detected with LABEL_DETECTION, in addition to
    * video-level labels or segment-level labels.
    * If unspecified, defaults to `SHOT_MODE`.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionMode label_detection_mode = 1;</code>
+   * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionMode label_detection_mode = 1;
+   * </code>
    */
   public com.google.cloud.videointelligence.v1beta2.LabelDetectionMode getLabelDetectionMode() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.videointelligence.v1beta2.LabelDetectionMode result = com.google.cloud.videointelligence.v1beta2.LabelDetectionMode.valueOf(labelDetectionMode_);
-    return result == null ? com.google.cloud.videointelligence.v1beta2.LabelDetectionMode.UNRECOGNIZED : result;
+    com.google.cloud.videointelligence.v1beta2.LabelDetectionMode result =
+        com.google.cloud.videointelligence.v1beta2.LabelDetectionMode.valueOf(labelDetectionMode_);
+    return result == null
+        ? com.google.cloud.videointelligence.v1beta2.LabelDetectionMode.UNRECOGNIZED
+        : result;
   }
 
   public static final int STATIONARY_CAMERA_FIELD_NUMBER = 2;
   private boolean stationaryCamera_;
   /**
+   *
+   *
    * <pre>
    * Whether the video has been shot from a stationary (i.e. non-moving) camera.
    * When set to true, might improve detection accuracy for moving objects.
@@ -145,6 +163,8 @@ private static final long serialVersionUID = 0L;
   public static final int MODEL_FIELD_NUMBER = 3;
   private volatile java.lang.Object model_;
   /**
+   *
+   *
    * <pre>
    * Model to use for label detection.
    * Supported values: "builtin/stable" (the default if unset) and
@@ -158,14 +178,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       model_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Model to use for label detection.
    * Supported values: "builtin/stable" (the default if unset) and
@@ -174,13 +195,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string model = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getModelBytes() {
+  public com.google.protobuf.ByteString getModelBytes() {
     java.lang.Object ref = model_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       model_ = b;
       return b;
     } else {
@@ -189,6 +208,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -200,9 +220,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    if (labelDetectionMode_ != com.google.cloud.videointelligence.v1beta2.LabelDetectionMode.LABEL_DETECTION_MODE_UNSPECIFIED.getNumber()) {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (labelDetectionMode_
+        != com.google.cloud.videointelligence.v1beta2.LabelDetectionMode
+            .LABEL_DETECTION_MODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, labelDetectionMode_);
     }
     if (stationaryCamera_ != false) {
@@ -220,13 +241,13 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (labelDetectionMode_ != com.google.cloud.videointelligence.v1beta2.LabelDetectionMode.LABEL_DETECTION_MODE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, labelDetectionMode_);
+    if (labelDetectionMode_
+        != com.google.cloud.videointelligence.v1beta2.LabelDetectionMode
+            .LABEL_DETECTION_MODE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, labelDetectionMode_);
     }
     if (stationaryCamera_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(2, stationaryCamera_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, stationaryCamera_);
     }
     if (!getModelBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, model_);
@@ -239,19 +260,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig other = (com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig) obj;
+    com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig other =
+        (com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig) obj;
 
     boolean result = true;
     result = result && labelDetectionMode_ == other.labelDetectionMode_;
-    result = result && (getStationaryCamera()
-        == other.getStationaryCamera());
-    result = result && getModel()
-        .equals(other.getModel());
+    result = result && (getStationaryCamera() == other.getStationaryCamera());
+    result = result && getModel().equals(other.getModel());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -266,8 +286,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + LABEL_DETECTION_MODE_FIELD_NUMBER;
     hash = (53 * hash) + labelDetectionMode_;
     hash = (37 * hash) + STATIONARY_CAMERA_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getStationaryCamera());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStationaryCamera());
     hash = (37 * hash) + MODEL_FIELD_NUMBER;
     hash = (53 * hash) + getModel().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -276,117 +295,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Config for LABEL_DETECTION.
    * </pre>
    *
    * Protobuf type {@code google.cloud.videointelligence.v1beta2.LabelDetectionConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.videointelligence.v1beta2.LabelDetectionConfig)
       com.google.cloud.videointelligence.v1beta2.LabelDetectionConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1beta2_LabelDetectionConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1beta2_LabelDetectionConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1beta2_LabelDetectionConfig_fieldAccessorTable
+      return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1beta2_LabelDetectionConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig.class, com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig.Builder.class);
+              com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig.class,
+              com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig.Builder.class);
     }
 
     // Construct using com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig.newBuilder()
@@ -394,16 +423,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -417,13 +445,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1beta2_LabelDetectionConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1beta2_LabelDetectionConfig_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig getDefaultInstanceForType() {
+    public com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig
+        getDefaultInstanceForType() {
       return com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig.getDefaultInstance();
     }
 
@@ -438,7 +467,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig buildPartial() {
-      com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig result = new com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig(this);
+      com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig result =
+          new com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig(this);
       result.labelDetectionMode_ = labelDetectionMode_;
       result.stationaryCamera_ = stationaryCamera_;
       result.model_ = model_;
@@ -450,46 +480,50 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig) {
-        return mergeFrom((com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig)other);
+        return mergeFrom((com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig other) {
-      if (other == com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig other) {
+      if (other
+          == com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig.getDefaultInstance())
+        return this;
       if (other.labelDetectionMode_ != 0) {
         setLabelDetectionModeValue(other.getLabelDetectionModeValue());
       }
@@ -519,7 +553,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -531,25 +567,31 @@ private static final long serialVersionUID = 0L;
 
     private int labelDetectionMode_ = 0;
     /**
+     *
+     *
      * <pre>
      * What labels should be detected with LABEL_DETECTION, in addition to
      * video-level labels or segment-level labels.
      * If unspecified, defaults to `SHOT_MODE`.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionMode label_detection_mode = 1;</code>
+     * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionMode label_detection_mode = 1;
+     * </code>
      */
     public int getLabelDetectionModeValue() {
       return labelDetectionMode_;
     }
     /**
+     *
+     *
      * <pre>
      * What labels should be detected with LABEL_DETECTION, in addition to
      * video-level labels or segment-level labels.
      * If unspecified, defaults to `SHOT_MODE`.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionMode label_detection_mode = 1;</code>
+     * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionMode label_detection_mode = 1;
+     * </code>
      */
     public Builder setLabelDetectionModeValue(int value) {
       labelDetectionMode_ = value;
@@ -557,55 +599,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * What labels should be detected with LABEL_DETECTION, in addition to
      * video-level labels or segment-level labels.
      * If unspecified, defaults to `SHOT_MODE`.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionMode label_detection_mode = 1;</code>
+     * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionMode label_detection_mode = 1;
+     * </code>
      */
     public com.google.cloud.videointelligence.v1beta2.LabelDetectionMode getLabelDetectionMode() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.videointelligence.v1beta2.LabelDetectionMode result = com.google.cloud.videointelligence.v1beta2.LabelDetectionMode.valueOf(labelDetectionMode_);
-      return result == null ? com.google.cloud.videointelligence.v1beta2.LabelDetectionMode.UNRECOGNIZED : result;
+      com.google.cloud.videointelligence.v1beta2.LabelDetectionMode result =
+          com.google.cloud.videointelligence.v1beta2.LabelDetectionMode.valueOf(
+              labelDetectionMode_);
+      return result == null
+          ? com.google.cloud.videointelligence.v1beta2.LabelDetectionMode.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * What labels should be detected with LABEL_DETECTION, in addition to
      * video-level labels or segment-level labels.
      * If unspecified, defaults to `SHOT_MODE`.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionMode label_detection_mode = 1;</code>
+     * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionMode label_detection_mode = 1;
+     * </code>
      */
-    public Builder setLabelDetectionMode(com.google.cloud.videointelligence.v1beta2.LabelDetectionMode value) {
+    public Builder setLabelDetectionMode(
+        com.google.cloud.videointelligence.v1beta2.LabelDetectionMode value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       labelDetectionMode_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * What labels should be detected with LABEL_DETECTION, in addition to
      * video-level labels or segment-level labels.
      * If unspecified, defaults to `SHOT_MODE`.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionMode label_detection_mode = 1;</code>
+     * <code>.google.cloud.videointelligence.v1beta2.LabelDetectionMode label_detection_mode = 1;
+     * </code>
      */
     public Builder clearLabelDetectionMode() {
-      
+
       labelDetectionMode_ = 0;
       onChanged();
       return this;
     }
 
-    private boolean stationaryCamera_ ;
+    private boolean stationaryCamera_;
     /**
+     *
+     *
      * <pre>
      * Whether the video has been shot from a stationary (i.e. non-moving) camera.
      * When set to true, might improve detection accuracy for moving objects.
@@ -618,6 +676,8 @@ private static final long serialVersionUID = 0L;
       return stationaryCamera_;
     }
     /**
+     *
+     *
      * <pre>
      * Whether the video has been shot from a stationary (i.e. non-moving) camera.
      * When set to true, might improve detection accuracy for moving objects.
@@ -627,12 +687,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool stationary_camera = 2;</code>
      */
     public Builder setStationaryCamera(boolean value) {
-      
+
       stationaryCamera_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Whether the video has been shot from a stationary (i.e. non-moving) camera.
      * When set to true, might improve detection accuracy for moving objects.
@@ -642,7 +704,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool stationary_camera = 2;</code>
      */
     public Builder clearStationaryCamera() {
-      
+
       stationaryCamera_ = false;
       onChanged();
       return this;
@@ -650,6 +712,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object model_ = "";
     /**
+     *
+     *
      * <pre>
      * Model to use for label detection.
      * Supported values: "builtin/stable" (the default if unset) and
@@ -661,8 +725,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getModel() {
       java.lang.Object ref = model_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         model_ = s;
         return s;
@@ -671,6 +734,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for label detection.
      * Supported values: "builtin/stable" (the default if unset) and
@@ -679,13 +744,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string model = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getModelBytes() {
+    public com.google.protobuf.ByteString getModelBytes() {
       java.lang.Object ref = model_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         model_ = b;
         return b;
       } else {
@@ -693,6 +756,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for label detection.
      * Supported values: "builtin/stable" (the default if unset) and
@@ -701,17 +766,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string model = 3;</code>
      */
-    public Builder setModel(
-        java.lang.String value) {
+    public Builder setModel(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       model_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for label detection.
      * Supported values: "builtin/stable" (the default if unset) and
@@ -721,12 +787,14 @@ private static final long serialVersionUID = 0L;
      * <code>string model = 3;</code>
      */
     public Builder clearModel() {
-      
+
       model_ = getDefaultInstance().getModel();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for label detection.
      * Supported values: "builtin/stable" (the default if unset) and
@@ -735,20 +803,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string model = 3;</code>
      */
-    public Builder setModelBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setModelBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       model_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -758,30 +825,32 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.videointelligence.v1beta2.LabelDetectionConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.videointelligence.v1beta2.LabelDetectionConfig)
-  private static final com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig DEFAULT_INSTANCE;
+  private static final com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig();
   }
 
-  public static com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig getDefaultInstance() {
+  public static com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LabelDetectionConfig>
-      PARSER = new com.google.protobuf.AbstractParser<LabelDetectionConfig>() {
-    @java.lang.Override
-    public LabelDetectionConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new LabelDetectionConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<LabelDetectionConfig> PARSER =
+      new com.google.protobuf.AbstractParser<LabelDetectionConfig>() {
+        @java.lang.Override
+        public LabelDetectionConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new LabelDetectionConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<LabelDetectionConfig> parser() {
     return PARSER;
@@ -793,9 +862,8 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig getDefaultInstanceForType() {
+  public com.google.cloud.videointelligence.v1beta2.LabelDetectionConfig
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

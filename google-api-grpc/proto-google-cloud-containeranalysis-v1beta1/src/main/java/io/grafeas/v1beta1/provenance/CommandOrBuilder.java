@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.provenance;
 
-public interface CommandOrBuilder extends
+public interface CommandOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.provenance.Command)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Name of the command, as presented on the command line, or if the command is
    * packaged as a Docker container, as presented to `docker pull`.
@@ -17,6 +20,8 @@ public interface CommandOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Name of the command, as presented on the command line, or if the command is
    * packaged as a Docker container, as presented to `docker pull`.
@@ -24,19 +29,21 @@ public interface CommandOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Environment variables set before running this command.
    * </pre>
    *
    * <code>repeated string env = 2;</code>
    */
-  java.util.List<java.lang.String>
-      getEnvList();
+  java.util.List<java.lang.String> getEnvList();
   /**
+   *
+   *
    * <pre>
    * Environment variables set before running this command.
    * </pre>
@@ -45,6 +52,8 @@ public interface CommandOrBuilder extends
    */
   int getEnvCount();
   /**
+   *
+   *
    * <pre>
    * Environment variables set before running this command.
    * </pre>
@@ -53,25 +62,29 @@ public interface CommandOrBuilder extends
    */
   java.lang.String getEnv(int index);
   /**
+   *
+   *
    * <pre>
    * Environment variables set before running this command.
    * </pre>
    *
    * <code>repeated string env = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getEnvBytes(int index);
+  com.google.protobuf.ByteString getEnvBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Command-line arguments used when executing this command.
    * </pre>
    *
    * <code>repeated string args = 3;</code>
    */
-  java.util.List<java.lang.String>
-      getArgsList();
+  java.util.List<java.lang.String> getArgsList();
   /**
+   *
+   *
    * <pre>
    * Command-line arguments used when executing this command.
    * </pre>
@@ -80,6 +93,8 @@ public interface CommandOrBuilder extends
    */
   int getArgsCount();
   /**
+   *
+   *
    * <pre>
    * Command-line arguments used when executing this command.
    * </pre>
@@ -88,16 +103,19 @@ public interface CommandOrBuilder extends
    */
   java.lang.String getArgs(int index);
   /**
+   *
+   *
    * <pre>
    * Command-line arguments used when executing this command.
    * </pre>
    *
    * <code>repeated string args = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getArgsBytes(int index);
+  com.google.protobuf.ByteString getArgsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Working directory (relative to project source root) used when running this
    * command.
@@ -107,6 +125,8 @@ public interface CommandOrBuilder extends
    */
   java.lang.String getDir();
   /**
+   *
+   *
    * <pre>
    * Working directory (relative to project source root) used when running this
    * command.
@@ -114,10 +134,11 @@ public interface CommandOrBuilder extends
    *
    * <code>string dir = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getDirBytes();
+  com.google.protobuf.ByteString getDirBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional unique identifier for this command, used in wait_for to reference
    * this command as a dependency.
@@ -127,6 +148,8 @@ public interface CommandOrBuilder extends
    */
   java.lang.String getId();
   /**
+   *
+   *
    * <pre>
    * Optional unique identifier for this command, used in wait_for to reference
    * this command as a dependency.
@@ -134,19 +157,21 @@ public interface CommandOrBuilder extends
    *
    * <code>string id = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getIdBytes();
+  com.google.protobuf.ByteString getIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The ID(s) of the command(s) that this command depends on.
    * </pre>
    *
    * <code>repeated string wait_for = 6;</code>
    */
-  java.util.List<java.lang.String>
-      getWaitForList();
+  java.util.List<java.lang.String> getWaitForList();
   /**
+   *
+   *
    * <pre>
    * The ID(s) of the command(s) that this command depends on.
    * </pre>
@@ -155,6 +180,8 @@ public interface CommandOrBuilder extends
    */
   int getWaitForCount();
   /**
+   *
+   *
    * <pre>
    * The ID(s) of the command(s) that this command depends on.
    * </pre>
@@ -163,12 +190,13 @@ public interface CommandOrBuilder extends
    */
   java.lang.String getWaitFor(int index);
   /**
+   *
+   *
    * <pre>
    * The ID(s) of the command(s) that this command depends on.
    * </pre>
    *
    * <code>repeated string wait_for = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getWaitForBytes(int index);
+  com.google.protobuf.ByteString getWaitForBytes(int index);
 }

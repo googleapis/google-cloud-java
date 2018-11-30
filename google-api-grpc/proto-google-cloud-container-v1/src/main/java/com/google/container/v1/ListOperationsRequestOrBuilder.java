@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface ListOperationsRequestOrBuilder extends
+public interface ListOperationsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.ListOperationsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
@@ -16,8 +19,11 @@ public interface ListOperationsRequestOrBuilder extends
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getProjectId();
+  @java.lang.Deprecated
+  java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The Google Developers Console [project ID or project
    * number](https://support.google.com/cloud/answer/6158840).
@@ -26,10 +32,12 @@ public interface ListOperationsRequestOrBuilder extends
    *
    * <code>string project_id = 1 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getProjectIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) to return operations for, or `-` for
@@ -38,8 +46,11 @@ public interface ListOperationsRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    */
-  @java.lang.Deprecated java.lang.String getZone();
+  @java.lang.Deprecated
+  java.lang.String getZone();
   /**
+   *
+   *
    * <pre>
    * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) to return operations for, or `-` for
@@ -48,10 +59,12 @@ public interface ListOperationsRequestOrBuilder extends
    *
    * <code>string zone = 2 [deprecated = true];</code>
    */
-  @java.lang.Deprecated com.google.protobuf.ByteString
-      getZoneBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getZoneBytes();
 
   /**
+   *
+   *
    * <pre>
    * The parent (project and location) where the operations will be listed.
    * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
@@ -62,6 +75,8 @@ public interface ListOperationsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The parent (project and location) where the operations will be listed.
    * Specified in the format 'projects/&#42;&#47;locations/&#42;'.
@@ -70,6 +85,5 @@ public interface ListOperationsRequestOrBuilder extends
    *
    * <code>string parent = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 }

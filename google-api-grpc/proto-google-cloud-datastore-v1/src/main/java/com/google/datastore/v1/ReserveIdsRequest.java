@@ -4,21 +4,24 @@
 package com.google.datastore.v1;
 
 /**
+ *
+ *
  * <pre>
  * The request for [Datastore.ReserveIds][google.datastore.v1.Datastore.ReserveIds].
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.ReserveIdsRequest}
  */
-public  final class ReserveIdsRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.datastore.v1.ReserveIdsRequest)
     ReserveIdsRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ReserveIdsRequest.newBuilder() to construct.
   private ReserveIdsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ReserveIdsRequest() {
     projectId_ = "";
     databaseId_ = "";
@@ -26,10 +29,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ReserveIdsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,41 +52,42 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              keys_ = new java.util.ArrayList<com.google.datastore.v1.Key>();
-              mutable_bitField0_ |= 0x00000004;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                keys_ = new java.util.ArrayList<com.google.datastore.v1.Key>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              keys_.add(input.readMessage(com.google.datastore.v1.Key.parser(), extensionRegistry));
+              break;
             }
-            keys_.add(
-                input.readMessage(com.google.datastore.v1.Key.parser(), extensionRegistry));
-            break;
-          }
-          case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            projectId_ = s;
-            break;
-          }
-          case 74: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            databaseId_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              projectId_ = s;
+              break;
             }
-            break;
-          }
+          case 74:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              databaseId_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         keys_ = java.util.Collections.unmodifiableList(keys_);
@@ -92,23 +96,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_ReserveIdsRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.datastore.v1.DatastoreProto
+        .internal_static_google_datastore_v1_ReserveIdsRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_ReserveIdsRequest_fieldAccessorTable
+    return com.google.datastore.v1.DatastoreProto
+        .internal_static_google_datastore_v1_ReserveIdsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.datastore.v1.ReserveIdsRequest.class, com.google.datastore.v1.ReserveIdsRequest.Builder.class);
+            com.google.datastore.v1.ReserveIdsRequest.class,
+            com.google.datastore.v1.ReserveIdsRequest.Builder.class);
   }
 
   private int bitField0_;
   public static final int PROJECT_ID_FIELD_NUMBER = 8;
   private volatile java.lang.Object projectId_;
   /**
+   *
+   *
    * <pre>
    * The ID of the project against which to make the request.
    * </pre>
@@ -120,27 +129,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       projectId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The ID of the project against which to make the request.
    * </pre>
    *
    * <code>string project_id = 8;</code>
    */
-  public com.google.protobuf.ByteString
-      getProjectIdBytes() {
+  public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       projectId_ = b;
       return b;
     } else {
@@ -151,6 +159,8 @@ private static final long serialVersionUID = 0L;
   public static final int DATABASE_ID_FIELD_NUMBER = 9;
   private volatile java.lang.Object databaseId_;
   /**
+   *
+   *
    * <pre>
    * If not empty, the ID of the database against which to make the request.
    * </pre>
@@ -162,27 +172,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       databaseId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * If not empty, the ID of the database against which to make the request.
    * </pre>
    *
    * <code>string database_id = 9;</code>
    */
-  public com.google.protobuf.ByteString
-      getDatabaseIdBytes() {
+  public com.google.protobuf.ByteString getDatabaseIdBytes() {
     java.lang.Object ref = databaseId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       databaseId_ = b;
       return b;
     } else {
@@ -193,6 +202,8 @@ private static final long serialVersionUID = 0L;
   public static final int KEYS_FIELD_NUMBER = 1;
   private java.util.List<com.google.datastore.v1.Key> keys_;
   /**
+   *
+   *
    * <pre>
    * A list of keys with complete key paths whose numeric IDs should not be
    * auto-allocated.
@@ -204,6 +215,8 @@ private static final long serialVersionUID = 0L;
     return keys_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of keys with complete key paths whose numeric IDs should not be
    * auto-allocated.
@@ -211,11 +224,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.datastore.v1.Key keys = 1;</code>
    */
-  public java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> 
-      getKeysOrBuilderList() {
+  public java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getKeysOrBuilderList() {
     return keys_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of keys with complete key paths whose numeric IDs should not be
    * auto-allocated.
@@ -227,6 +241,8 @@ private static final long serialVersionUID = 0L;
     return keys_.size();
   }
   /**
+   *
+   *
    * <pre>
    * A list of keys with complete key paths whose numeric IDs should not be
    * auto-allocated.
@@ -238,6 +254,8 @@ private static final long serialVersionUID = 0L;
     return keys_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * A list of keys with complete key paths whose numeric IDs should not be
    * auto-allocated.
@@ -245,12 +263,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.datastore.v1.Key keys = 1;</code>
    */
-  public com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(
-      int index) {
+  public com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(int index) {
     return keys_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -262,8 +280,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < keys_.size(); i++) {
       output.writeMessage(1, keys_.get(i));
     }
@@ -283,8 +300,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < keys_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, keys_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, keys_.get(i));
     }
     if (!getProjectIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, projectId_);
@@ -300,20 +316,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.datastore.v1.ReserveIdsRequest)) {
       return super.equals(obj);
     }
-    com.google.datastore.v1.ReserveIdsRequest other = (com.google.datastore.v1.ReserveIdsRequest) obj;
+    com.google.datastore.v1.ReserveIdsRequest other =
+        (com.google.datastore.v1.ReserveIdsRequest) obj;
 
     boolean result = true;
-    result = result && getProjectId()
-        .equals(other.getProjectId());
-    result = result && getDatabaseId()
-        .equals(other.getDatabaseId());
-    result = result && getKeysList()
-        .equals(other.getKeysList());
+    result = result && getProjectId().equals(other.getProjectId());
+    result = result && getDatabaseId().equals(other.getDatabaseId());
+    result = result && getKeysList().equals(other.getKeysList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -338,118 +352,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.datastore.v1.ReserveIdsRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.datastore.v1.ReserveIdsRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.ReserveIdsRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.ReserveIdsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.ReserveIdsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.ReserveIdsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.ReserveIdsRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.ReserveIdsRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.ReserveIdsRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.datastore.v1.ReserveIdsRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.datastore.v1.ReserveIdsRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.datastore.v1.ReserveIdsRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.datastore.v1.ReserveIdsRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.ReserveIdsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.datastore.v1.ReserveIdsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The request for [Datastore.ReserveIds][google.datastore.v1.Datastore.ReserveIds].
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.ReserveIdsRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.datastore.v1.ReserveIdsRequest)
       com.google.datastore.v1.ReserveIdsRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_ReserveIdsRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.datastore.v1.DatastoreProto
+          .internal_static_google_datastore_v1_ReserveIdsRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_ReserveIdsRequest_fieldAccessorTable
+      return com.google.datastore.v1.DatastoreProto
+          .internal_static_google_datastore_v1_ReserveIdsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.datastore.v1.ReserveIdsRequest.class, com.google.datastore.v1.ReserveIdsRequest.Builder.class);
+              com.google.datastore.v1.ReserveIdsRequest.class,
+              com.google.datastore.v1.ReserveIdsRequest.Builder.class);
     }
 
     // Construct using com.google.datastore.v1.ReserveIdsRequest.newBuilder()
@@ -457,17 +480,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getKeysFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -485,9 +508,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_ReserveIdsRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.datastore.v1.DatastoreProto
+          .internal_static_google_datastore_v1_ReserveIdsRequest_descriptor;
     }
 
     @java.lang.Override
@@ -506,7 +529,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.datastore.v1.ReserveIdsRequest buildPartial() {
-      com.google.datastore.v1.ReserveIdsRequest result = new com.google.datastore.v1.ReserveIdsRequest(this);
+      com.google.datastore.v1.ReserveIdsRequest result =
+          new com.google.datastore.v1.ReserveIdsRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.projectId_ = projectId_;
@@ -529,38 +553,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.datastore.v1.ReserveIdsRequest) {
-        return mergeFrom((com.google.datastore.v1.ReserveIdsRequest)other);
+        return mergeFrom((com.google.datastore.v1.ReserveIdsRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -595,9 +620,10 @@ private static final long serialVersionUID = 0L;
             keysBuilder_ = null;
             keys_ = other.keys_;
             bitField0_ = (bitField0_ & ~0x00000004);
-            keysBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getKeysFieldBuilder() : null;
+            keysBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getKeysFieldBuilder()
+                    : null;
           } else {
             keysBuilder_.addAllMessages(other.keys_);
           }
@@ -631,10 +657,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
     /**
+     *
+     *
      * <pre>
      * The ID of the project against which to make the request.
      * </pre>
@@ -644,8 +673,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         projectId_ = s;
         return s;
@@ -654,19 +682,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The ID of the project against which to make the request.
      * </pre>
      *
      * <code>string project_id = 8;</code>
      */
-    public com.google.protobuf.ByteString
-        getProjectIdBytes() {
+    public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         projectId_ = b;
         return b;
       } else {
@@ -674,23 +702,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The ID of the project against which to make the request.
      * </pre>
      *
      * <code>string project_id = 8;</code>
      */
-    public Builder setProjectId(
-        java.lang.String value) {
+    public Builder setProjectId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       projectId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The ID of the project against which to make the request.
      * </pre>
@@ -698,25 +729,26 @@ private static final long serialVersionUID = 0L;
      * <code>string project_id = 8;</code>
      */
     public Builder clearProjectId() {
-      
+
       projectId_ = getDefaultInstance().getProjectId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The ID of the project against which to make the request.
      * </pre>
      *
      * <code>string project_id = 8;</code>
      */
-    public Builder setProjectIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       projectId_ = value;
       onChanged();
       return this;
@@ -724,6 +756,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object databaseId_ = "";
     /**
+     *
+     *
      * <pre>
      * If not empty, the ID of the database against which to make the request.
      * </pre>
@@ -733,8 +767,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDatabaseId() {
       java.lang.Object ref = databaseId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         databaseId_ = s;
         return s;
@@ -743,19 +776,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If not empty, the ID of the database against which to make the request.
      * </pre>
      *
      * <code>string database_id = 9;</code>
      */
-    public com.google.protobuf.ByteString
-        getDatabaseIdBytes() {
+    public com.google.protobuf.ByteString getDatabaseIdBytes() {
       java.lang.Object ref = databaseId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         databaseId_ = b;
         return b;
       } else {
@@ -763,23 +796,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If not empty, the ID of the database against which to make the request.
      * </pre>
      *
      * <code>string database_id = 9;</code>
      */
-    public Builder setDatabaseId(
-        java.lang.String value) {
+    public Builder setDatabaseId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       databaseId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If not empty, the ID of the database against which to make the request.
      * </pre>
@@ -787,43 +823,49 @@ private static final long serialVersionUID = 0L;
      * <code>string database_id = 9;</code>
      */
     public Builder clearDatabaseId() {
-      
+
       databaseId_ = getDefaultInstance().getDatabaseId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If not empty, the ID of the database against which to make the request.
      * </pre>
      *
      * <code>string database_id = 9;</code>
      */
-    public Builder setDatabaseIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDatabaseIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       databaseId_ = value;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.google.datastore.v1.Key> keys_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.datastore.v1.Key> keys_ = java.util.Collections.emptyList();
+
     private void ensureKeysIsMutable() {
       if (!((bitField0_ & 0x00000004) == 0x00000004)) {
         keys_ = new java.util.ArrayList<com.google.datastore.v1.Key>(keys_);
         bitField0_ |= 0x00000004;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.Key, com.google.datastore.v1.Key.Builder, com.google.datastore.v1.KeyOrBuilder> keysBuilder_;
+            com.google.datastore.v1.Key,
+            com.google.datastore.v1.Key.Builder,
+            com.google.datastore.v1.KeyOrBuilder>
+        keysBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * A list of keys with complete key paths whose numeric IDs should not be
      * auto-allocated.
@@ -839,6 +881,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys with complete key paths whose numeric IDs should not be
      * auto-allocated.
@@ -854,6 +898,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys with complete key paths whose numeric IDs should not be
      * auto-allocated.
@@ -869,6 +915,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys with complete key paths whose numeric IDs should not be
      * auto-allocated.
@@ -876,8 +924,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key keys = 1;</code>
      */
-    public Builder setKeys(
-        int index, com.google.datastore.v1.Key value) {
+    public Builder setKeys(int index, com.google.datastore.v1.Key value) {
       if (keysBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -891,6 +938,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys with complete key paths whose numeric IDs should not be
      * auto-allocated.
@@ -898,8 +947,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key keys = 1;</code>
      */
-    public Builder setKeys(
-        int index, com.google.datastore.v1.Key.Builder builderForValue) {
+    public Builder setKeys(int index, com.google.datastore.v1.Key.Builder builderForValue) {
       if (keysBuilder_ == null) {
         ensureKeysIsMutable();
         keys_.set(index, builderForValue.build());
@@ -910,6 +958,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys with complete key paths whose numeric IDs should not be
      * auto-allocated.
@@ -931,6 +981,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys with complete key paths whose numeric IDs should not be
      * auto-allocated.
@@ -938,8 +990,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key keys = 1;</code>
      */
-    public Builder addKeys(
-        int index, com.google.datastore.v1.Key value) {
+    public Builder addKeys(int index, com.google.datastore.v1.Key value) {
       if (keysBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -953,6 +1004,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys with complete key paths whose numeric IDs should not be
      * auto-allocated.
@@ -960,8 +1013,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key keys = 1;</code>
      */
-    public Builder addKeys(
-        com.google.datastore.v1.Key.Builder builderForValue) {
+    public Builder addKeys(com.google.datastore.v1.Key.Builder builderForValue) {
       if (keysBuilder_ == null) {
         ensureKeysIsMutable();
         keys_.add(builderForValue.build());
@@ -972,6 +1024,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys with complete key paths whose numeric IDs should not be
      * auto-allocated.
@@ -979,8 +1033,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key keys = 1;</code>
      */
-    public Builder addKeys(
-        int index, com.google.datastore.v1.Key.Builder builderForValue) {
+    public Builder addKeys(int index, com.google.datastore.v1.Key.Builder builderForValue) {
       if (keysBuilder_ == null) {
         ensureKeysIsMutable();
         keys_.add(index, builderForValue.build());
@@ -991,6 +1044,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys with complete key paths whose numeric IDs should not be
      * auto-allocated.
@@ -998,12 +1053,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key keys = 1;</code>
      */
-    public Builder addAllKeys(
-        java.lang.Iterable<? extends com.google.datastore.v1.Key> values) {
+    public Builder addAllKeys(java.lang.Iterable<? extends com.google.datastore.v1.Key> values) {
       if (keysBuilder_ == null) {
         ensureKeysIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, keys_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, keys_);
         onChanged();
       } else {
         keysBuilder_.addAllMessages(values);
@@ -1011,6 +1064,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys with complete key paths whose numeric IDs should not be
      * auto-allocated.
@@ -1029,6 +1084,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys with complete key paths whose numeric IDs should not be
      * auto-allocated.
@@ -1047,6 +1104,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys with complete key paths whose numeric IDs should not be
      * auto-allocated.
@@ -1054,11 +1113,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key keys = 1;</code>
      */
-    public com.google.datastore.v1.Key.Builder getKeysBuilder(
-        int index) {
+    public com.google.datastore.v1.Key.Builder getKeysBuilder(int index) {
       return getKeysFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys with complete key paths whose numeric IDs should not be
      * auto-allocated.
@@ -1066,14 +1126,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key keys = 1;</code>
      */
-    public com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(
-        int index) {
+    public com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(int index) {
       if (keysBuilder_ == null) {
-        return keys_.get(index);  } else {
+        return keys_.get(index);
+      } else {
         return keysBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys with complete key paths whose numeric IDs should not be
      * auto-allocated.
@@ -1081,8 +1143,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key keys = 1;</code>
      */
-    public java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> 
-         getKeysOrBuilderList() {
+    public java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getKeysOrBuilderList() {
       if (keysBuilder_ != null) {
         return keysBuilder_.getMessageOrBuilderList();
       } else {
@@ -1090,6 +1151,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys with complete key paths whose numeric IDs should not be
      * auto-allocated.
@@ -1098,10 +1161,11 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.datastore.v1.Key keys = 1;</code>
      */
     public com.google.datastore.v1.Key.Builder addKeysBuilder() {
-      return getKeysFieldBuilder().addBuilder(
-          com.google.datastore.v1.Key.getDefaultInstance());
+      return getKeysFieldBuilder().addBuilder(com.google.datastore.v1.Key.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys with complete key paths whose numeric IDs should not be
      * auto-allocated.
@@ -1109,12 +1173,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key keys = 1;</code>
      */
-    public com.google.datastore.v1.Key.Builder addKeysBuilder(
-        int index) {
-      return getKeysFieldBuilder().addBuilder(
-          index, com.google.datastore.v1.Key.getDefaultInstance());
+    public com.google.datastore.v1.Key.Builder addKeysBuilder(int index) {
+      return getKeysFieldBuilder()
+          .addBuilder(index, com.google.datastore.v1.Key.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys with complete key paths whose numeric IDs should not be
      * auto-allocated.
@@ -1122,16 +1187,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key keys = 1;</code>
      */
-    public java.util.List<com.google.datastore.v1.Key.Builder> 
-         getKeysBuilderList() {
+    public java.util.List<com.google.datastore.v1.Key.Builder> getKeysBuilderList() {
       return getKeysFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.Key, com.google.datastore.v1.Key.Builder, com.google.datastore.v1.KeyOrBuilder> 
+            com.google.datastore.v1.Key,
+            com.google.datastore.v1.Key.Builder,
+            com.google.datastore.v1.KeyOrBuilder>
         getKeysFieldBuilder() {
       if (keysBuilder_ == null) {
-        keysBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.datastore.v1.Key, com.google.datastore.v1.Key.Builder, com.google.datastore.v1.KeyOrBuilder>(
+        keysBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.datastore.v1.Key,
+                com.google.datastore.v1.Key.Builder,
+                com.google.datastore.v1.KeyOrBuilder>(
                 keys_,
                 ((bitField0_ & 0x00000004) == 0x00000004),
                 getParentForChildren(),
@@ -1140,9 +1210,9 @@ private static final long serialVersionUID = 0L;
       }
       return keysBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1152,12 +1222,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.datastore.v1.ReserveIdsRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.datastore.v1.ReserveIdsRequest)
   private static final com.google.datastore.v1.ReserveIdsRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.datastore.v1.ReserveIdsRequest();
   }
@@ -1166,16 +1236,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ReserveIdsRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ReserveIdsRequest>() {
-    @java.lang.Override
-    public ReserveIdsRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ReserveIdsRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ReserveIdsRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ReserveIdsRequest>() {
+        @java.lang.Override
+        public ReserveIdsRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ReserveIdsRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ReserveIdsRequest> parser() {
     return PARSER;
@@ -1190,6 +1260,4 @@ private static final long serialVersionUID = 0L;
   public com.google.datastore.v1.ReserveIdsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

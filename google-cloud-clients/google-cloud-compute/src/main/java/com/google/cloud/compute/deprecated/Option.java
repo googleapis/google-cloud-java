@@ -20,13 +20,10 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.compute.deprecated.spi.v1.ComputeRpc;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * Base class for Compute operation option.
- */
+/** Base class for Compute operation option. */
 class Option implements Serializable {
 
   private static final long serialVersionUID = 4116849309806774350L;
@@ -53,8 +50,7 @@ class Option implements Serializable {
       return false;
     }
     Option other = (Option) obj;
-    return Objects.equals(rpcOption, other.rpcOption)
-        && Objects.equals(value, other.value);
+    return Objects.equals(rpcOption, other.rpcOption) && Objects.equals(value, other.value);
   }
 
   @Override

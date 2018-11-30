@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface StructTypeOrBuilder extends
+public interface StructTypeOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.StructType)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
@@ -19,9 +22,10 @@ public interface StructTypeOrBuilder extends
    *
    * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
    */
-  java.util.List<com.google.spanner.v1.StructType.Field> 
-      getFieldsList();
+  java.util.List<com.google.spanner.v1.StructType.Field> getFieldsList();
   /**
+   *
+   *
    * <pre>
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
@@ -35,6 +39,8 @@ public interface StructTypeOrBuilder extends
    */
   com.google.spanner.v1.StructType.Field getFields(int index);
   /**
+   *
+   *
    * <pre>
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
@@ -48,6 +54,8 @@ public interface StructTypeOrBuilder extends
    */
   int getFieldsCount();
   /**
+   *
+   *
    * <pre>
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
@@ -59,9 +67,11 @@ public interface StructTypeOrBuilder extends
    *
    * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
    */
-  java.util.List<? extends com.google.spanner.v1.StructType.FieldOrBuilder> 
+  java.util.List<? extends com.google.spanner.v1.StructType.FieldOrBuilder>
       getFieldsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of fields that make up this struct. Order is
    * significant, because values of this struct type are represented as
@@ -73,6 +83,5 @@ public interface StructTypeOrBuilder extends
    *
    * <code>repeated .google.spanner.v1.StructType.Field fields = 1;</code>
    */
-  com.google.spanner.v1.StructType.FieldOrBuilder getFieldsOrBuilder(
-      int index);
+  com.google.spanner.v1.StructType.FieldOrBuilder getFieldsOrBuilder(int index);
 }

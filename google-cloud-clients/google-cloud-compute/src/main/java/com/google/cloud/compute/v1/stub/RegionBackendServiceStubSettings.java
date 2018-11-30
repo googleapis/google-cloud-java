@@ -111,7 +111,8 @@ public class RegionBackendServiceStubSettings
   private final UnaryCallSettings<InsertRegionBackendServiceHttpRequest, Operation>
       insertRegionBackendServiceSettings;
   private final PagedCallSettings<
-          ListRegionBackendServicesHttpRequest, BackendServiceList,
+          ListRegionBackendServicesHttpRequest,
+          BackendServiceList,
           ListRegionBackendServicesPagedResponse>
       listRegionBackendServicesSettings;
   private final UnaryCallSettings<PatchRegionBackendServiceHttpRequest, Operation>
@@ -145,7 +146,8 @@ public class RegionBackendServiceStubSettings
 
   /** Returns the object with the settings used for calls to listRegionBackendServices. */
   public PagedCallSettings<
-          ListRegionBackendServicesHttpRequest, BackendServiceList,
+          ListRegionBackendServicesHttpRequest,
+          BackendServiceList,
           ListRegionBackendServicesPagedResponse>
       listRegionBackendServicesSettings() {
     return listRegionBackendServicesSettings;
@@ -296,11 +298,13 @@ public class RegionBackendServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListRegionBackendServicesHttpRequest, BackendServiceList,
+          ListRegionBackendServicesHttpRequest,
+          BackendServiceList,
           ListRegionBackendServicesPagedResponse>
       LIST_REGION_BACKEND_SERVICES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListRegionBackendServicesHttpRequest, BackendServiceList,
+              ListRegionBackendServicesHttpRequest,
+              BackendServiceList,
               ListRegionBackendServicesPagedResponse>() {
             @Override
             public ApiFuture<ListRegionBackendServicesPagedResponse> getFuturePagedResponse(
@@ -332,7 +336,8 @@ public class RegionBackendServiceStubSettings
     private final UnaryCallSettings.Builder<InsertRegionBackendServiceHttpRequest, Operation>
         insertRegionBackendServiceSettings;
     private final PagedCallSettings.Builder<
-            ListRegionBackendServicesHttpRequest, BackendServiceList,
+            ListRegionBackendServicesHttpRequest,
+            BackendServiceList,
             ListRegionBackendServicesPagedResponse>
         listRegionBackendServicesSettings;
     private final UnaryCallSettings.Builder<PatchRegionBackendServiceHttpRequest, Operation>
@@ -524,7 +529,8 @@ public class RegionBackendServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listRegionBackendServices. */
     public PagedCallSettings.Builder<
-            ListRegionBackendServicesHttpRequest, BackendServiceList,
+            ListRegionBackendServicesHttpRequest,
+            BackendServiceList,
             ListRegionBackendServicesPagedResponse>
         listRegionBackendServicesSettings() {
       return listRegionBackendServicesSettings;

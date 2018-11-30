@@ -19,7 +19,6 @@ package com.google.cloud.compute.deprecated;
 import com.google.api.services.compute.model.Network;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Lists;
-
 import java.util.List;
 import java.util.Objects;
 
@@ -45,17 +44,15 @@ public class SubnetNetworkConfiguration extends NetworkConfiguration {
 
   /**
    * Returns whether the subnetworks should be automatically created. When set to {@code true}, the
-   * network is created in "auto subnet mode". When set to {@code false}, the network is in
-   * "custom subnet mode". In "auto subnet mode", a subnetwork per region is automatically created.
-   * In "custom subnet mode", a custom topology of subnetworks can be created by the user.
+   * network is created in "auto subnet mode". When set to {@code false}, the network is in "custom
+   * subnet mode". In "auto subnet mode", a subnetwork per region is automatically created. In
+   * "custom subnet mode", a custom topology of subnetworks can be created by the user.
    */
   public Boolean autoCreateSubnetworks() {
     return autoCreateSubnetworks;
   }
 
-  /**
-   * Returns the identities of all networks in this network.
-   */
+  /** Returns the identities of all networks in this network. */
   public List<SubnetworkId> getSubnetworks() {
     return subnetworks;
   }
@@ -69,8 +66,8 @@ public class SubnetNetworkConfiguration extends NetworkConfiguration {
   public final boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(SubnetNetworkConfiguration.class)
-        && Objects.equals(toPb(), ((SubnetNetworkConfiguration) obj).toPb());
+            && obj.getClass().equals(SubnetNetworkConfiguration.class)
+            && Objects.equals(toPb(), ((SubnetNetworkConfiguration) obj).toPb());
   }
 
   @Override

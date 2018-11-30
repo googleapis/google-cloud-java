@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface InfoTypeStatsOrBuilder extends
+public interface InfoTypeStatsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.InfoTypeStats)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The type of finding this stat is for.
    * </pre>
@@ -16,6 +19,8 @@ public interface InfoTypeStatsOrBuilder extends
    */
   boolean hasInfoType();
   /**
+   *
+   *
    * <pre>
    * The type of finding this stat is for.
    * </pre>
@@ -24,6 +29,8 @@ public interface InfoTypeStatsOrBuilder extends
    */
   com.google.privacy.dlp.v2.InfoType getInfoType();
   /**
+   *
+   *
    * <pre>
    * The type of finding this stat is for.
    * </pre>
@@ -33,6 +40,8 @@ public interface InfoTypeStatsOrBuilder extends
   com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Number of findings for this infoType.
    * </pre>

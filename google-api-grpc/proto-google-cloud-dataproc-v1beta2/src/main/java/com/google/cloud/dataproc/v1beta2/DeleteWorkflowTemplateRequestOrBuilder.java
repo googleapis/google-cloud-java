@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface DeleteWorkflowTemplateRequestOrBuilder extends
+public interface DeleteWorkflowTemplateRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.DeleteWorkflowTemplateRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The "resource name" of the workflow template, as described
    * in https://cloud.google.com/apis/design/resource_names of the form
@@ -18,6 +21,8 @@ public interface DeleteWorkflowTemplateRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. The "resource name" of the workflow template, as described
    * in https://cloud.google.com/apis/design/resource_names of the form
@@ -26,10 +31,11 @@ public interface DeleteWorkflowTemplateRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The version of workflow template to delete. If specified,
    * will only delete the template if the current server version matches

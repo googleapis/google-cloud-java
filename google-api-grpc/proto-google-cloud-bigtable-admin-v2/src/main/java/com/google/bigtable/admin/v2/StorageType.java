@@ -4,15 +4,18 @@
 package com.google.bigtable.admin.v2;
 
 /**
+ *
+ *
  * <pre>
  * Storage media types for persisting Bigtable data.
  * </pre>
  *
  * Protobuf enum {@code google.bigtable.admin.v2.StorageType}
  */
-public enum StorageType
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum StorageType implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * The user did not specify a storage type.
    * </pre>
@@ -21,6 +24,8 @@ public enum StorageType
    */
   STORAGE_TYPE_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * Flash (SSD) storage should be used.
    * </pre>
@@ -29,6 +34,8 @@ public enum StorageType
    */
   SSD(1),
   /**
+   *
+   *
    * <pre>
    * Magnetic drive (HDD) storage should be used.
    * </pre>
@@ -40,6 +47,8 @@ public enum StorageType
   ;
 
   /**
+   *
+   *
    * <pre>
    * The user did not specify a storage type.
    * </pre>
@@ -48,6 +57,8 @@ public enum StorageType
    */
   public static final int STORAGE_TYPE_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * Flash (SSD) storage should be used.
    * </pre>
@@ -56,6 +67,8 @@ public enum StorageType
    */
   public static final int SSD_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * Magnetic drive (HDD) storage should be used.
    * </pre>
@@ -63,7 +76,6 @@ public enum StorageType
    * <code>HDD = 2;</code>
    */
   public static final int HDD_VALUE = 2;
-
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -73,9 +85,7 @@ public enum StorageType
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static StorageType valueOf(int value) {
     return forNumber(value);
@@ -83,45 +93,45 @@ public enum StorageType
 
   public static StorageType forNumber(int value) {
     switch (value) {
-      case 0: return STORAGE_TYPE_UNSPECIFIED;
-      case 1: return SSD;
-      case 2: return HDD;
-      default: return null;
+      case 0:
+        return STORAGE_TYPE_UNSPECIFIED;
+      case 1:
+        return SSD;
+      case 2:
+        return HDD;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<StorageType>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<StorageType> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      StorageType> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<StorageType>() {
-          public StorageType findValueByNumber(int number) {
-            return StorageType.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<StorageType> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<StorageType>() {
+        public StorageType findValueByNumber(int number) {
+          return StorageType.forNumber(number);
+        }
+      };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.bigtable.admin.v2.CommonProto.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final StorageType[] VALUES = values();
 
-  public static StorageType valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static StorageType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -137,4 +147,3 @@ public enum StorageType
 
   // @@protoc_insertion_point(enum_scope:google.bigtable.admin.v2.StorageType)
 }
-

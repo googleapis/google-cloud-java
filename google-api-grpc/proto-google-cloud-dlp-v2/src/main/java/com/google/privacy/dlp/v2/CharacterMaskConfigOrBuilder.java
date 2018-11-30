@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface CharacterMaskConfigOrBuilder extends
+public interface CharacterMaskConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CharacterMaskConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Character to mask the sensitive values&amp;mdash;for example, "*" for an
    * alphabetic string such as name, or "0" for a numeric string such as ZIP
@@ -19,6 +22,8 @@ public interface CharacterMaskConfigOrBuilder extends
    */
   java.lang.String getMaskingCharacter();
   /**
+   *
+   *
    * <pre>
    * Character to mask the sensitive values&amp;mdash;for example, "*" for an
    * alphabetic string such as name, or "0" for a numeric string such as ZIP
@@ -28,10 +33,11 @@ public interface CharacterMaskConfigOrBuilder extends
    *
    * <code>string masking_character = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getMaskingCharacterBytes();
+  com.google.protobuf.ByteString getMaskingCharacterBytes();
 
   /**
+   *
+   *
    * <pre>
    * Number of characters to mask. If not set, all matching chars will be
    * masked. Skipped characters do not count towards this tally.
@@ -42,6 +48,8 @@ public interface CharacterMaskConfigOrBuilder extends
   int getNumberToMask();
 
   /**
+   *
+   *
    * <pre>
    * Mask characters in reverse order. For example, if `masking_character` is
    * '0', number_to_mask is 14, and `reverse_order` is false, then
@@ -55,6 +63,8 @@ public interface CharacterMaskConfigOrBuilder extends
   boolean getReverseOrder();
 
   /**
+   *
+   *
    * <pre>
    * When masking a string, items in this list will be skipped when replacing.
    * For example, if your string is 555-555-5555 and you ask us to skip `-` and
@@ -63,9 +73,10 @@ public interface CharacterMaskConfigOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.CharsToIgnore characters_to_ignore = 4;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.CharsToIgnore> 
-      getCharactersToIgnoreList();
+  java.util.List<com.google.privacy.dlp.v2.CharsToIgnore> getCharactersToIgnoreList();
   /**
+   *
+   *
    * <pre>
    * When masking a string, items in this list will be skipped when replacing.
    * For example, if your string is 555-555-5555 and you ask us to skip `-` and
@@ -76,6 +87,8 @@ public interface CharacterMaskConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.CharsToIgnore getCharactersToIgnore(int index);
   /**
+   *
+   *
    * <pre>
    * When masking a string, items in this list will be skipped when replacing.
    * For example, if your string is 555-555-5555 and you ask us to skip `-` and
@@ -86,6 +99,8 @@ public interface CharacterMaskConfigOrBuilder extends
    */
   int getCharactersToIgnoreCount();
   /**
+   *
+   *
    * <pre>
    * When masking a string, items in this list will be skipped when replacing.
    * For example, if your string is 555-555-5555 and you ask us to skip `-` and
@@ -94,9 +109,11 @@ public interface CharacterMaskConfigOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.CharsToIgnore characters_to_ignore = 4;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.CharsToIgnoreOrBuilder> 
+  java.util.List<? extends com.google.privacy.dlp.v2.CharsToIgnoreOrBuilder>
       getCharactersToIgnoreOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * When masking a string, items in this list will be skipped when replacing.
    * For example, if your string is 555-555-5555 and you ask us to skip `-` and
@@ -105,6 +122,5 @@ public interface CharacterMaskConfigOrBuilder extends
    *
    * <code>repeated .google.privacy.dlp.v2.CharsToIgnore characters_to_ignore = 4;</code>
    */
-  com.google.privacy.dlp.v2.CharsToIgnoreOrBuilder getCharactersToIgnoreOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.CharsToIgnoreOrBuilder getCharactersToIgnoreOrBuilder(int index);
 }

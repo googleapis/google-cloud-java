@@ -22,11 +22,9 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.Collections;
 import java.util.List;
+import org.junit.Test;
 
 public class ListValueTest {
 
@@ -48,8 +46,8 @@ public class ListValueTest {
   private static final Key KEY2 = Key.newBuilder("project", "kind", "name2").build();
   private static final FullEntity<Key> ENTITY1 = FullEntity.newBuilder(KEY1).build();
   private static final FullEntity<Key> ENTITY2 = FullEntity.newBuilder(KEY2).build();
-  private static final Blob BLOB1 = Blob.copyFrom(new byte[]{0xD, 0xE, 0xA, 0xD});
-  private static final Blob BLOB2 = Blob.copyFrom(new byte[]{0xB, 0x0, 0x0, 0x0});
+  private static final Blob BLOB1 = Blob.copyFrom(new byte[] {0xD, 0xE, 0xA, 0xD});
+  private static final Blob BLOB2 = Blob.copyFrom(new byte[] {0xB, 0x0, 0x0, 0x0});
 
   @Test
   public void testToBuilder() throws Exception {
@@ -80,12 +78,13 @@ public class ListValueTest {
     value = ListValue.of(BOOLEAN1);
     assertEquals(ImmutableList.of(BooleanValue.of(BOOLEAN1)), value.get());
     value = ListValue.of(BOOLEAN1, BOOLEAN2);
-    assertEquals(ImmutableList.of(BooleanValue.of(BOOLEAN1), BooleanValue.of(BOOLEAN2)),
-        value.get());
+    assertEquals(
+        ImmutableList.of(BooleanValue.of(BOOLEAN1), BooleanValue.of(BOOLEAN2)), value.get());
     value = ListValue.of(TIMESTAMP1);
     assertEquals(ImmutableList.of(TimestampValue.of(TIMESTAMP1)), value.get());
     value = ListValue.of(TIMESTAMP1, TIMESTAMP2);
-    assertEquals(ImmutableList.of(TimestampValue.of(TIMESTAMP1), TimestampValue.of(TIMESTAMP2)),
+    assertEquals(
+        ImmutableList.of(TimestampValue.of(TIMESTAMP1), TimestampValue.of(TIMESTAMP2)),
         value.get());
     value = ListValue.of(LATLNG1);
     assertEquals(ImmutableList.of(LatLngValue.of(LATLNG1)), value.get());
@@ -128,8 +127,8 @@ public class ListValueTest {
     builder = builder.set(Collections.<Value<?>>emptyList());
 
     builder = builder.addValue(STRING1, STRING2);
-    assertEquals(ImmutableList.of(StringValue.of(STRING1), StringValue.of(STRING2)),
-        builder.build().get());
+    assertEquals(
+        ImmutableList.of(StringValue.of(STRING1), StringValue.of(STRING2)), builder.build().get());
     builder = builder.set(Collections.<Value<?>>emptyList());
 
     builder = builder.addValue(LONG1);
@@ -145,8 +144,8 @@ public class ListValueTest {
     builder = builder.set(Collections.<Value<?>>emptyList());
 
     builder = builder.addValue(DOUBLE1, DOUBLE2);
-    assertEquals(ImmutableList.of(DoubleValue.of(DOUBLE1), DoubleValue.of(DOUBLE2)),
-        builder.build().get());
+    assertEquals(
+        ImmutableList.of(DoubleValue.of(DOUBLE1), DoubleValue.of(DOUBLE2)), builder.build().get());
     builder = builder.set(Collections.<Value<?>>emptyList());
 
     builder = builder.addValue(BOOLEAN1);
@@ -154,7 +153,8 @@ public class ListValueTest {
     builder = builder.set(Collections.<Value<?>>emptyList());
 
     builder = builder.addValue(BOOLEAN1, BOOLEAN2);
-    assertEquals(ImmutableList.of(BooleanValue.of(BOOLEAN1), BooleanValue.of(BOOLEAN2)),
+    assertEquals(
+        ImmutableList.of(BooleanValue.of(BOOLEAN1), BooleanValue.of(BOOLEAN2)),
         builder.build().get());
     builder = builder.set(Collections.<Value<?>>emptyList());
 
@@ -163,7 +163,8 @@ public class ListValueTest {
     builder = builder.set(Collections.<Value<?>>emptyList());
 
     builder = builder.addValue(TIMESTAMP1, TIMESTAMP2);
-    assertEquals(ImmutableList.of(TimestampValue.of(TIMESTAMP1), TimestampValue.of(TIMESTAMP2)),
+    assertEquals(
+        ImmutableList.of(TimestampValue.of(TIMESTAMP1), TimestampValue.of(TIMESTAMP2)),
         builder.build().get());
     builder = builder.set(Collections.<Value<?>>emptyList());
 
@@ -172,8 +173,8 @@ public class ListValueTest {
     builder = builder.set(Collections.<Value<?>>emptyList());
 
     builder = builder.addValue(LATLNG1, LATLNG2);
-    assertEquals(ImmutableList.of(LatLngValue.of(LATLNG1), LatLngValue.of(LATLNG2)),
-        builder.build().get());
+    assertEquals(
+        ImmutableList.of(LatLngValue.of(LATLNG1), LatLngValue.of(LATLNG2)), builder.build().get());
     builder = builder.set(Collections.<Value<?>>emptyList());
 
     builder = builder.addValue(KEY1);
@@ -189,8 +190,8 @@ public class ListValueTest {
     builder = builder.set(Collections.<Value<?>>emptyList());
 
     builder = builder.addValue(ENTITY1, ENTITY2);
-    assertEquals(ImmutableList.of(EntityValue.of(ENTITY1), EntityValue.of(ENTITY2)),
-        builder.build().get());
+    assertEquals(
+        ImmutableList.of(EntityValue.of(ENTITY1), EntityValue.of(ENTITY2)), builder.build().get());
     builder = builder.set(Collections.<Value<?>>emptyList());
 
     builder = builder.addValue(BLOB1);

@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface ResultSetMetadataOrBuilder extends
+public interface ResultSetMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.ResultSetMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Indicates the field names and types for the rows in the result
    * set.  For example, a SQL query like `"SELECT UserId, UserName FROM
@@ -22,6 +25,8 @@ public interface ResultSetMetadataOrBuilder extends
    */
   boolean hasRowType();
   /**
+   *
+   *
    * <pre>
    * Indicates the field names and types for the rows in the result
    * set.  For example, a SQL query like `"SELECT UserId, UserName FROM
@@ -36,6 +41,8 @@ public interface ResultSetMetadataOrBuilder extends
    */
   com.google.spanner.v1.StructType getRowType();
   /**
+   *
+   *
    * <pre>
    * Indicates the field names and types for the rows in the result
    * set.  For example, a SQL query like `"SELECT UserId, UserName FROM
@@ -51,6 +58,8 @@ public interface ResultSetMetadataOrBuilder extends
   com.google.spanner.v1.StructTypeOrBuilder getRowTypeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * If the read or SQL query began a transaction as a side-effect, the
    * information about the new transaction is yielded here.
@@ -60,6 +69,8 @@ public interface ResultSetMetadataOrBuilder extends
    */
   boolean hasTransaction();
   /**
+   *
+   *
    * <pre>
    * If the read or SQL query began a transaction as a side-effect, the
    * information about the new transaction is yielded here.
@@ -69,6 +80,8 @@ public interface ResultSetMetadataOrBuilder extends
    */
   com.google.spanner.v1.Transaction getTransaction();
   /**
+   *
+   *
    * <pre>
    * If the read or SQL query began a transaction as a side-effect, the
    * information about the new transaction is yielded here.

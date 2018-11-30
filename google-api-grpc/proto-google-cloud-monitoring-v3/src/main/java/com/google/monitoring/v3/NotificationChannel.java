@@ -4,6 +4,8 @@
 package com.google.monitoring.v3;
 
 /**
+ *
+ *
  * <pre>
  * A `NotificationChannel` is a medium through which an alert is
  * delivered when a policy violation is detected. Examples of channels
@@ -14,15 +16,16 @@ package com.google.monitoring.v3;
  *
  * Protobuf type {@code google.monitoring.v3.NotificationChannel}
  */
-public  final class NotificationChannel extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class NotificationChannel extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.NotificationChannel)
     NotificationChannelOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use NotificationChannel.newBuilder() to construct.
   private NotificationChannel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private NotificationChannel() {
     type_ = "";
     name_ = "";
@@ -32,10 +35,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private NotificationChannel(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -55,122 +58,134 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            type_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            displayName_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            description_ = s;
-            break;
-          }
-          case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-              labels_ = com.google.protobuf.MapField.newMapField(
-                  LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000010;
+              type_ = s;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            labels__ = input.readMessage(
-                LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            labels_.getMutableMap().put(
-                labels__.getKey(), labels__.getValue());
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 66: {
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-              userLabels_ = com.google.protobuf.MapField.newMapField(
-                  UserLabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000020;
+              displayName_ = s;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            userLabels__ = input.readMessage(
-                UserLabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            userLabels_.getMutableMap().put(
-                userLabels__.getKey(), userLabels__.getValue());
-            break;
-          }
-          case 72: {
-            int rawValue = input.readEnum();
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            verificationStatus_ = rawValue;
-            break;
-          }
-          case 90: {
-            com.google.protobuf.BoolValue.Builder subBuilder = null;
-            if (enabled_ != null) {
-              subBuilder = enabled_.toBuilder();
+              description_ = s;
+              break;
             }
-            enabled_ = input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(enabled_);
-              enabled_ = subBuilder.buildPartial();
+          case 42:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000010;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                  input.readMessage(
+                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
             }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              name_ = s;
+              break;
             }
-            break;
-          }
+          case 66:
+            {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                userLabels_ =
+                    com.google.protobuf.MapField.newMapField(
+                        UserLabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000020;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
+                  input.readMessage(
+                      UserLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              userLabels_.getMutableMap().put(userLabels__.getKey(), userLabels__.getValue());
+              break;
+            }
+          case 72:
+            {
+              int rawValue = input.readEnum();
+
+              verificationStatus_ = rawValue;
+              break;
+            }
+          case 90:
+            {
+              com.google.protobuf.BoolValue.Builder subBuilder = null;
+              if (enabled_ != null) {
+                subBuilder = enabled_.toBuilder();
+              }
+              enabled_ =
+                  input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(enabled_);
+                enabled_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.monitoring.v3.NotificationProto.internal_static_google_monitoring_v3_NotificationChannel_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.monitoring.v3.NotificationProto
+        .internal_static_google_monitoring_v3_NotificationChannel_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 5:
         return internalGetLabels();
       case 8:
         return internalGetUserLabels();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.monitoring.v3.NotificationProto.internal_static_google_monitoring_v3_NotificationChannel_fieldAccessorTable
+    return com.google.monitoring.v3.NotificationProto
+        .internal_static_google_monitoring_v3_NotificationChannel_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.monitoring.v3.NotificationChannel.class, com.google.monitoring.v3.NotificationChannel.Builder.class);
+            com.google.monitoring.v3.NotificationChannel.class,
+            com.google.monitoring.v3.NotificationChannel.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Indicates whether the channel has been verified or not. It is illegal
    * to specify this field in a
@@ -182,9 +197,10 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf enum {@code google.monitoring.v3.NotificationChannel.VerificationStatus}
    */
-  public enum VerificationStatus
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum VerificationStatus implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Sentinel value used to indicate that the state is unknown, omitted, or
      * is not applicable (as in the case of channels that neither support
@@ -195,6 +211,8 @@ private static final long serialVersionUID = 0L;
      */
     VERIFICATION_STATUS_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * The channel has yet to be verified and requires verification to function.
      * Note that this state also applies to the case where the verification
@@ -206,6 +224,8 @@ private static final long serialVersionUID = 0L;
      */
     UNVERIFIED(1),
     /**
+     *
+     *
      * <pre>
      * It has been proven that notifications can be received on this
      * notification channel and that someone on the project has access
@@ -219,6 +239,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Sentinel value used to indicate that the state is unknown, omitted, or
      * is not applicable (as in the case of channels that neither support
@@ -229,6 +251,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int VERIFICATION_STATUS_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The channel has yet to be verified and requires verification to function.
      * Note that this state also applies to the case where the verification
@@ -240,6 +264,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int UNVERIFIED_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * It has been proven that notifications can be received on this
      * notification channel and that someone on the project has access
@@ -250,7 +276,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int VERIFIED_VALUE = 2;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -259,9 +284,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static VerificationStatus valueOf(int value) {
       return forNumber(value);
@@ -269,10 +292,14 @@ private static final long serialVersionUID = 0L;
 
     public static VerificationStatus forNumber(int value) {
       switch (value) {
-        case 0: return VERIFICATION_STATUS_UNSPECIFIED;
-        case 1: return UNVERIFIED;
-        case 2: return VERIFIED;
-        default: return null;
+        case 0:
+          return VERIFICATION_STATUS_UNSPECIFIED;
+        case 1:
+          return UNVERIFIED;
+        case 2:
+          return VERIFIED;
+        default:
+          return null;
       }
     }
 
@@ -280,24 +307,24 @@ private static final long serialVersionUID = 0L;
         internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        VerificationStatus> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<VerificationStatus>() {
-            public VerificationStatus findValueByNumber(int number) {
-              return VerificationStatus.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<VerificationStatus>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<VerificationStatus>() {
+              public VerificationStatus findValueByNumber(int number) {
+                return VerificationStatus.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.monitoring.v3.NotificationChannel.getDescriptor().getEnumTypes().get(0);
     }
 
@@ -306,8 +333,7 @@ private static final long serialVersionUID = 0L;
     public static VerificationStatus valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -328,6 +354,8 @@ private static final long serialVersionUID = 0L;
   public static final int TYPE_FIELD_NUMBER = 1;
   private volatile java.lang.Object type_;
   /**
+   *
+   *
    * <pre>
    * The type of the notification channel. This field matches the
    * value of the [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type] field.
@@ -340,14 +368,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       type_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The type of the notification channel. This field matches the
    * value of the [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type] field.
@@ -355,13 +384,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string type = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getTypeBytes() {
+  public com.google.protobuf.ByteString getTypeBytes() {
     java.lang.Object ref = type_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       type_ = b;
       return b;
     } else {
@@ -372,6 +399,8 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 6;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The full REST resource name for this channel. The syntax is:
    *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
@@ -385,14 +414,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The full REST resource name for this channel. The syntax is:
    *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
@@ -401,13 +431,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -418,6 +446,8 @@ private static final long serialVersionUID = 0L;
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
   private volatile java.lang.Object displayName_;
   /**
+   *
+   *
    * <pre>
    * An optional human-readable name for this notification channel. It is
    * recommended that you specify a non-empty and unique name in order to
@@ -432,14 +462,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       displayName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * An optional human-readable name for this notification channel. It is
    * recommended that you specify a non-empty and unique name in order to
@@ -449,13 +480,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string display_name = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getDisplayNameBytes() {
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       displayName_ = b;
       return b;
     } else {
@@ -466,6 +495,8 @@ private static final long serialVersionUID = 0L;
   public static final int DESCRIPTION_FIELD_NUMBER = 4;
   private volatile java.lang.Object description_;
   /**
+   *
+   *
    * <pre>
    * An optional human-readable description of this notification channel. This
    * description may provide additional details, beyond the display
@@ -479,14 +510,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       description_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * An optional human-readable description of this notification channel. This
    * description may provide additional details, beyond the display
@@ -495,13 +527,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string description = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getDescriptionBytes() {
+  public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       description_ = b;
       return b;
     } else {
@@ -510,24 +540,23 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LABELS_FIELD_NUMBER = 5;
+
   private static final class LabelsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.monitoring.v3.NotificationProto.internal_static_google_monitoring_v3_NotificationChannel_LabelsEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.monitoring.v3.NotificationProto
+                .internal_static_google_monitoring_v3_NotificationChannel_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> labels_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetLabels() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
     if (labels_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          LabelsDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
     }
     return labels_;
   }
@@ -536,6 +565,8 @@ private static final long serialVersionUID = 0L;
     return internalGetLabels().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Configuration fields that define the channel and its behavior. The
    * permissible and required labels are specified in the
@@ -545,20 +576,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
-
-  public boolean containsLabels(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetLabels().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
   /**
+   *
+   *
    * <pre>
    * Configuration fields that define the channel and its behavior. The
    * permissible and required labels are specified in the
@@ -568,11 +599,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Configuration fields that define the channel and its behavior. The
    * permissible and required labels are specified in the
@@ -582,16 +614,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
-
-  public java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration fields that define the channel and its behavior. The
    * permissible and required labels are specified in the
@@ -601,12 +633,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
-
-  public java.lang.String getLabelsOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -614,24 +645,23 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int USER_LABELS_FIELD_NUMBER = 8;
+
   private static final class UserLabelsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.monitoring.v3.NotificationProto.internal_static_google_monitoring_v3_NotificationChannel_UserLabelsEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.monitoring.v3.NotificationProto
+                .internal_static_google_monitoring_v3_NotificationChannel_UserLabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> userLabels_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetUserLabels() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetUserLabels() {
     if (userLabels_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          UserLabelsDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(UserLabelsDefaultEntryHolder.defaultEntry);
     }
     return userLabels_;
   }
@@ -640,6 +670,8 @@ private static final long serialVersionUID = 0L;
     return internalGetUserLabels().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * User-supplied key/value data that does not need to conform to
    * the corresponding `NotificationChannelDescriptor`'s schema, unlike
@@ -653,20 +685,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
-
-  public boolean containsUserLabels(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsUserLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetUserLabels().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getUserLabelsMap()} instead.
-   */
+  /** Use {@link #getUserLabelsMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
     return getUserLabelsMap();
   }
   /**
+   *
+   *
    * <pre>
    * User-supplied key/value data that does not need to conform to
    * the corresponding `NotificationChannelDescriptor`'s schema, unlike
@@ -680,11 +712,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
     return internalGetUserLabels().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * User-supplied key/value data that does not need to conform to
    * the corresponding `NotificationChannelDescriptor`'s schema, unlike
@@ -698,16 +731,17 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
-
   public java.lang.String getUserLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetUserLabels().getMap();
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * User-supplied key/value data that does not need to conform to
    * the corresponding `NotificationChannelDescriptor`'s schema, unlike
@@ -721,12 +755,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; user_labels = 8;</code>
    */
-
-  public java.lang.String getUserLabelsOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetUserLabels().getMap();
+  public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -736,6 +769,8 @@ private static final long serialVersionUID = 0L;
   public static final int VERIFICATION_STATUS_FIELD_NUMBER = 9;
   private int verificationStatus_;
   /**
+   *
+   *
    * <pre>
    * Indicates whether this channel has been verified or not. On a
    * [`ListNotificationChannels`][google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
@@ -755,12 +790,15 @@ private static final long serialVersionUID = 0L;
    * [`VerifyNotificationChannel`][google.monitoring.v3.NotificationChannelService.VerifyNotificationChannel].
    * </pre>
    *
-   * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;</code>
+   * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;
+   * </code>
    */
   public int getVerificationStatusValue() {
     return verificationStatus_;
   }
   /**
+   *
+   *
    * <pre>
    * Indicates whether this channel has been verified or not. On a
    * [`ListNotificationChannels`][google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
@@ -780,17 +818,24 @@ private static final long serialVersionUID = 0L;
    * [`VerifyNotificationChannel`][google.monitoring.v3.NotificationChannelService.VerifyNotificationChannel].
    * </pre>
    *
-   * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;</code>
+   * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;
+   * </code>
    */
   public com.google.monitoring.v3.NotificationChannel.VerificationStatus getVerificationStatus() {
     @SuppressWarnings("deprecation")
-    com.google.monitoring.v3.NotificationChannel.VerificationStatus result = com.google.monitoring.v3.NotificationChannel.VerificationStatus.valueOf(verificationStatus_);
-    return result == null ? com.google.monitoring.v3.NotificationChannel.VerificationStatus.UNRECOGNIZED : result;
+    com.google.monitoring.v3.NotificationChannel.VerificationStatus result =
+        com.google.monitoring.v3.NotificationChannel.VerificationStatus.valueOf(
+            verificationStatus_);
+    return result == null
+        ? com.google.monitoring.v3.NotificationChannel.VerificationStatus.UNRECOGNIZED
+        : result;
   }
 
   public static final int ENABLED_FIELD_NUMBER = 11;
   private com.google.protobuf.BoolValue enabled_;
   /**
+   *
+   *
    * <pre>
    * Whether notifications are forwarded to the described channel. This makes
    * it possible to disable delivery of notifications to a particular channel
@@ -806,6 +851,8 @@ private static final long serialVersionUID = 0L;
     return enabled_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Whether notifications are forwarded to the described channel. This makes
    * it possible to disable delivery of notifications to a particular channel
@@ -821,6 +868,8 @@ private static final long serialVersionUID = 0L;
     return enabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enabled_;
   }
   /**
+   *
+   *
    * <pre>
    * Whether notifications are forwarded to the described channel. This makes
    * it possible to disable delivery of notifications to a particular channel
@@ -837,6 +886,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -848,8 +898,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
     }
@@ -859,22 +908,16 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetLabels(),
-        LabelsDefaultEntryHolder.defaultEntry,
-        5);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 5);
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetUserLabels(),
-        UserLabelsDefaultEntryHolder.defaultEntry,
-        8);
-    if (verificationStatus_ != com.google.monitoring.v3.NotificationChannel.VerificationStatus.VERIFICATION_STATUS_UNSPECIFIED.getNumber()) {
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetUserLabels(), UserLabelsDefaultEntryHolder.defaultEntry, 8);
+    if (verificationStatus_
+        != com.google.monitoring.v3.NotificationChannel.VerificationStatus
+            .VERIFICATION_STATUS_UNSPECIFIED.getNumber()) {
       output.writeEnum(9, verificationStatus_);
     }
     if (enabled_ != null) {
@@ -898,36 +941,36 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetLabels().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      labels__ = LabelsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, labels__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, labels__);
     }
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetUserLabels().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      userLabels__ = UserLabelsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, userLabels__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetUserLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> userLabels__ =
+          UserLabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, userLabels__);
     }
-    if (verificationStatus_ != com.google.monitoring.v3.NotificationChannel.VerificationStatus.VERIFICATION_STATUS_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(9, verificationStatus_);
+    if (verificationStatus_
+        != com.google.monitoring.v3.NotificationChannel.VerificationStatus
+            .VERIFICATION_STATUS_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, verificationStatus_);
     }
     if (enabled_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getEnabled());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getEnabled());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -937,31 +980,25 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.monitoring.v3.NotificationChannel)) {
       return super.equals(obj);
     }
-    com.google.monitoring.v3.NotificationChannel other = (com.google.monitoring.v3.NotificationChannel) obj;
+    com.google.monitoring.v3.NotificationChannel other =
+        (com.google.monitoring.v3.NotificationChannel) obj;
 
     boolean result = true;
-    result = result && getType()
-        .equals(other.getType());
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getDisplayName()
-        .equals(other.getDisplayName());
-    result = result && getDescription()
-        .equals(other.getDescription());
-    result = result && internalGetLabels().equals(
-        other.internalGetLabels());
-    result = result && internalGetUserLabels().equals(
-        other.internalGetUserLabels());
+    result = result && getType().equals(other.getType());
+    result = result && getName().equals(other.getName());
+    result = result && getDisplayName().equals(other.getDisplayName());
+    result = result && getDescription().equals(other.getDescription());
+    result = result && internalGetLabels().equals(other.internalGetLabels());
+    result = result && internalGetUserLabels().equals(other.internalGetUserLabels());
     result = result && verificationStatus_ == other.verificationStatus_;
     result = result && (hasEnabled() == other.hasEnabled());
     if (hasEnabled()) {
-      result = result && getEnabled()
-          .equals(other.getEnabled());
+      result = result && getEnabled().equals(other.getEnabled());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -1001,97 +1038,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.monitoring.v3.NotificationChannel parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.monitoring.v3.NotificationChannel parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.NotificationChannel parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.NotificationChannel parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.NotificationChannel parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.NotificationChannel parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.NotificationChannel parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.NotificationChannel parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.monitoring.v3.NotificationChannel parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.monitoring.v3.NotificationChannel parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.monitoring.v3.NotificationChannel parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.monitoring.v3.NotificationChannel parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.monitoring.v3.NotificationChannel parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.monitoring.v3.NotificationChannel parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.monitoring.v3.NotificationChannel prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A `NotificationChannel` is a medium through which an alert is
    * delivered when a policy violation is detected. Examples of channels
@@ -1102,47 +1146,47 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.monitoring.v3.NotificationChannel}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.monitoring.v3.NotificationChannel)
       com.google.monitoring.v3.NotificationChannelOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.monitoring.v3.NotificationProto.internal_static_google_monitoring_v3_NotificationChannel_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.NotificationProto
+          .internal_static_google_monitoring_v3_NotificationChannel_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 5:
           return internalGetLabels();
         case 8:
           return internalGetUserLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 5:
           return internalGetMutableLabels();
         case 8:
           return internalGetMutableUserLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.monitoring.v3.NotificationProto.internal_static_google_monitoring_v3_NotificationChannel_fieldAccessorTable
+      return com.google.monitoring.v3.NotificationProto
+          .internal_static_google_monitoring_v3_NotificationChannel_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.monitoring.v3.NotificationChannel.class, com.google.monitoring.v3.NotificationChannel.Builder.class);
+              com.google.monitoring.v3.NotificationChannel.class,
+              com.google.monitoring.v3.NotificationChannel.Builder.class);
     }
 
     // Construct using com.google.monitoring.v3.NotificationChannel.newBuilder()
@@ -1150,16 +1194,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1185,9 +1228,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.monitoring.v3.NotificationProto.internal_static_google_monitoring_v3_NotificationChannel_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.monitoring.v3.NotificationProto
+          .internal_static_google_monitoring_v3_NotificationChannel_descriptor;
     }
 
     @java.lang.Override
@@ -1206,7 +1249,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.monitoring.v3.NotificationChannel buildPartial() {
-      com.google.monitoring.v3.NotificationChannel result = new com.google.monitoring.v3.NotificationChannel(this);
+      com.google.monitoring.v3.NotificationChannel result =
+          new com.google.monitoring.v3.NotificationChannel(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.type_ = type_;
@@ -1232,38 +1276,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.monitoring.v3.NotificationChannel) {
-        return mergeFrom((com.google.monitoring.v3.NotificationChannel)other);
+        return mergeFrom((com.google.monitoring.v3.NotificationChannel) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1288,10 +1333,8 @@ private static final long serialVersionUID = 0L;
         description_ = other.description_;
         onChanged();
       }
-      internalGetMutableLabels().mergeFrom(
-          other.internalGetLabels());
-      internalGetMutableUserLabels().mergeFrom(
-          other.internalGetUserLabels());
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      internalGetMutableUserLabels().mergeFrom(other.internalGetUserLabels());
       if (other.verificationStatus_ != 0) {
         setVerificationStatusValue(other.getVerificationStatusValue());
       }
@@ -1326,10 +1369,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object type_ = "";
     /**
+     *
+     *
      * <pre>
      * The type of the notification channel. This field matches the
      * value of the [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type] field.
@@ -1340,8 +1386,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getType() {
       java.lang.Object ref = type_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         type_ = s;
         return s;
@@ -1350,6 +1395,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The type of the notification channel. This field matches the
      * value of the [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type] field.
@@ -1357,13 +1404,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string type = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getTypeBytes() {
+    public com.google.protobuf.ByteString getTypeBytes() {
       java.lang.Object ref = type_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         type_ = b;
         return b;
       } else {
@@ -1371,6 +1416,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The type of the notification channel. This field matches the
      * value of the [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type] field.
@@ -1378,17 +1425,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string type = 1;</code>
      */
-    public Builder setType(
-        java.lang.String value) {
+    public Builder setType(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       type_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The type of the notification channel. This field matches the
      * value of the [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type] field.
@@ -1397,12 +1445,14 @@ private static final long serialVersionUID = 0L;
      * <code>string type = 1;</code>
      */
     public Builder clearType() {
-      
+
       type_ = getDefaultInstance().getType();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The type of the notification channel. This field matches the
      * value of the [NotificationChannelDescriptor.type][google.monitoring.v3.NotificationChannelDescriptor.type] field.
@@ -1410,13 +1460,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string type = 1;</code>
      */
-    public Builder setTypeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       type_ = value;
       onChanged();
       return this;
@@ -1424,6 +1473,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The full REST resource name for this channel. The syntax is:
      *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
@@ -1435,8 +1486,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1445,6 +1495,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The full REST resource name for this channel. The syntax is:
      *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
@@ -1453,13 +1505,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1467,6 +1517,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The full REST resource name for this channel. The syntax is:
      *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
@@ -1475,17 +1527,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 6;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The full REST resource name for this channel. The syntax is:
      *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
@@ -1495,12 +1548,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 6;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The full REST resource name for this channel. The syntax is:
      *     projects/[PROJECT_ID]/notificationChannels/[CHANNEL_ID]
@@ -1509,13 +1564,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 6;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1523,6 +1577,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object displayName_ = "";
     /**
+     *
+     *
      * <pre>
      * An optional human-readable name for this notification channel. It is
      * recommended that you specify a non-empty and unique name in order to
@@ -1535,8 +1591,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         displayName_ = s;
         return s;
@@ -1545,6 +1600,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * An optional human-readable name for this notification channel. It is
      * recommended that you specify a non-empty and unique name in order to
@@ -1554,13 +1611,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getDisplayNameBytes() {
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         displayName_ = b;
         return b;
       } else {
@@ -1568,6 +1623,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * An optional human-readable name for this notification channel. It is
      * recommended that you specify a non-empty and unique name in order to
@@ -1577,17 +1634,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 3;</code>
      */
-    public Builder setDisplayName(
-        java.lang.String value) {
+    public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       displayName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An optional human-readable name for this notification channel. It is
      * recommended that you specify a non-empty and unique name in order to
@@ -1598,12 +1656,14 @@ private static final long serialVersionUID = 0L;
      * <code>string display_name = 3;</code>
      */
     public Builder clearDisplayName() {
-      
+
       displayName_ = getDefaultInstance().getDisplayName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An optional human-readable name for this notification channel. It is
      * recommended that you specify a non-empty and unique name in order to
@@ -1613,13 +1673,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 3;</code>
      */
-    public Builder setDisplayNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       displayName_ = value;
       onChanged();
       return this;
@@ -1627,6 +1686,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
+     *
+     *
      * <pre>
      * An optional human-readable description of this notification channel. This
      * description may provide additional details, beyond the display
@@ -1638,8 +1699,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         description_ = s;
         return s;
@@ -1648,6 +1708,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * An optional human-readable description of this notification channel. This
      * description may provide additional details, beyond the display
@@ -1656,13 +1718,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
+    public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         description_ = b;
         return b;
       } else {
@@ -1670,6 +1730,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * An optional human-readable description of this notification channel. This
      * description may provide additional details, beyond the display
@@ -1678,17 +1740,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 4;</code>
      */
-    public Builder setDescription(
-        java.lang.String value) {
+    public Builder setDescription(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       description_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An optional human-readable description of this notification channel. This
      * description may provide additional details, beyond the display
@@ -1698,12 +1761,14 @@ private static final long serialVersionUID = 0L;
      * <code>string description = 4;</code>
      */
     public Builder clearDescription() {
-      
+
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An optional human-readable description of this notification channel. This
      * description may provide additional details, beyond the display
@@ -1712,34 +1777,32 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string description = 4;</code>
      */
-    public Builder setDescriptionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       description_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> labels_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetLabels() {
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
       if (labels_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       return labels_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableLabels() {
-      onChanged();;
+        internalGetMutableLabels() {
+      onChanged();
+      ;
       if (labels_ == null) {
-        labels_ = com.google.protobuf.MapField.newMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
@@ -1751,6 +1814,8 @@ private static final long serialVersionUID = 0L;
       return internalGetLabels().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Configuration fields that define the channel and its behavior. The
      * permissible and required labels are specified in the
@@ -1760,20 +1825,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
-
-    public boolean containsLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetLabels().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getLabelsMap()} instead.
-     */
+    /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
     /**
+     *
+     *
      * <pre>
      * Configuration fields that define the channel and its behavior. The
      * permissible and required labels are specified in the
@@ -1783,11 +1848,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Configuration fields that define the channel and its behavior. The
      * permissible and required labels are specified in the
@@ -1797,16 +1863,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
-
     public java.lang.String getLabelsOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration fields that define the channel and its behavior. The
      * permissible and required labels are specified in the
@@ -1816,12 +1883,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
-
-    public java.lang.String getLabelsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1829,11 +1895,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearLabels() {
-      internalGetMutableLabels().getMutableMap()
-          .clear();
+      internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration fields that define the channel and its behavior. The
      * permissible and required labels are specified in the
@@ -1843,23 +1910,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
-
-    public Builder removeLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .remove(key);
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableLabels() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       return internalGetMutableLabels().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Configuration fields that define the channel and its behavior. The
      * permissible and required labels are specified in the
@@ -1869,16 +1934,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
-    public Builder putLabels(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .put(key, value);
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration fields that define the channel and its behavior. The
      * permissible and required labels are specified in the
@@ -1888,30 +1956,29 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 5;</code>
      */
-
-    public Builder putAllLabels(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableLabels().getMutableMap()
-          .putAll(values);
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> userLabels_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> userLabels_;
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetUserLabels() {
+        internalGetUserLabels() {
       if (userLabels_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             UserLabelsDefaultEntryHolder.defaultEntry);
       }
       return userLabels_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableUserLabels() {
-      onChanged();;
+        internalGetMutableUserLabels() {
+      onChanged();
+      ;
       if (userLabels_ == null) {
-        userLabels_ = com.google.protobuf.MapField.newMapField(
-            UserLabelsDefaultEntryHolder.defaultEntry);
+        userLabels_ =
+            com.google.protobuf.MapField.newMapField(UserLabelsDefaultEntryHolder.defaultEntry);
       }
       if (!userLabels_.isMutable()) {
         userLabels_ = userLabels_.copy();
@@ -1923,6 +1990,8 @@ private static final long serialVersionUID = 0L;
       return internalGetUserLabels().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * User-supplied key/value data that does not need to conform to
      * the corresponding `NotificationChannelDescriptor`'s schema, unlike
@@ -1936,20 +2005,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; user_labels = 8;</code>
      */
-
-    public boolean containsUserLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsUserLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetUserLabels().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getUserLabelsMap()} instead.
-     */
+    /** Use {@link #getUserLabelsMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getUserLabels() {
       return getUserLabelsMap();
     }
     /**
+     *
+     *
      * <pre>
      * User-supplied key/value data that does not need to conform to
      * the corresponding `NotificationChannelDescriptor`'s schema, unlike
@@ -1963,11 +2032,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; user_labels = 8;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getUserLabelsMap() {
       return internalGetUserLabels().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * User-supplied key/value data that does not need to conform to
      * the corresponding `NotificationChannelDescriptor`'s schema, unlike
@@ -1981,16 +2051,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; user_labels = 8;</code>
      */
-
     public java.lang.String getUserLabelsOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetUserLabels().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * User-supplied key/value data that does not need to conform to
      * the corresponding `NotificationChannelDescriptor`'s schema, unlike
@@ -2004,12 +2075,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; user_labels = 8;</code>
      */
-
-    public java.lang.String getUserLabelsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetUserLabels().getMap();
+    public java.lang.String getUserLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetUserLabels().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -2017,11 +2087,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearUserLabels() {
-      internalGetMutableUserLabels().getMutableMap()
-          .clear();
+      internalGetMutableUserLabels().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * User-supplied key/value data that does not need to conform to
      * the corresponding `NotificationChannelDescriptor`'s schema, unlike
@@ -2035,23 +2106,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; user_labels = 8;</code>
      */
-
-    public Builder removeUserLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableUserLabels().getMutableMap()
-          .remove(key);
+    public Builder removeUserLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableUserLabels().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableUserLabels() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
       return internalGetMutableUserLabels().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * User-supplied key/value data that does not need to conform to
      * the corresponding `NotificationChannelDescriptor`'s schema, unlike
@@ -2065,16 +2134,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; user_labels = 8;</code>
      */
-    public Builder putUserLabels(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableUserLabels().getMutableMap()
-          .put(key, value);
+    public Builder putUserLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableUserLabels().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * User-supplied key/value data that does not need to conform to
      * the corresponding `NotificationChannelDescriptor`'s schema, unlike
@@ -2088,16 +2160,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; user_labels = 8;</code>
      */
-
-    public Builder putAllUserLabels(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableUserLabels().getMutableMap()
-          .putAll(values);
+    public Builder putAllUserLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableUserLabels().getMutableMap().putAll(values);
       return this;
     }
 
     private int verificationStatus_ = 0;
     /**
+     *
+     *
      * <pre>
      * Indicates whether this channel has been verified or not. On a
      * [`ListNotificationChannels`][google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
@@ -2117,12 +2188,15 @@ private static final long serialVersionUID = 0L;
      * [`VerifyNotificationChannel`][google.monitoring.v3.NotificationChannelService.VerifyNotificationChannel].
      * </pre>
      *
-     * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;</code>
+     * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;
+     * </code>
      */
     public int getVerificationStatusValue() {
       return verificationStatus_;
     }
     /**
+     *
+     *
      * <pre>
      * Indicates whether this channel has been verified or not. On a
      * [`ListNotificationChannels`][google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
@@ -2142,7 +2216,8 @@ private static final long serialVersionUID = 0L;
      * [`VerifyNotificationChannel`][google.monitoring.v3.NotificationChannelService.VerifyNotificationChannel].
      * </pre>
      *
-     * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;</code>
+     * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;
+     * </code>
      */
     public Builder setVerificationStatusValue(int value) {
       verificationStatus_ = value;
@@ -2150,6 +2225,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Indicates whether this channel has been verified or not. On a
      * [`ListNotificationChannels`][google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
@@ -2169,14 +2246,21 @@ private static final long serialVersionUID = 0L;
      * [`VerifyNotificationChannel`][google.monitoring.v3.NotificationChannelService.VerifyNotificationChannel].
      * </pre>
      *
-     * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;</code>
+     * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;
+     * </code>
      */
     public com.google.monitoring.v3.NotificationChannel.VerificationStatus getVerificationStatus() {
       @SuppressWarnings("deprecation")
-      com.google.monitoring.v3.NotificationChannel.VerificationStatus result = com.google.monitoring.v3.NotificationChannel.VerificationStatus.valueOf(verificationStatus_);
-      return result == null ? com.google.monitoring.v3.NotificationChannel.VerificationStatus.UNRECOGNIZED : result;
+      com.google.monitoring.v3.NotificationChannel.VerificationStatus result =
+          com.google.monitoring.v3.NotificationChannel.VerificationStatus.valueOf(
+              verificationStatus_);
+      return result == null
+          ? com.google.monitoring.v3.NotificationChannel.VerificationStatus.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Indicates whether this channel has been verified or not. On a
      * [`ListNotificationChannels`][google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
@@ -2196,18 +2280,22 @@ private static final long serialVersionUID = 0L;
      * [`VerifyNotificationChannel`][google.monitoring.v3.NotificationChannelService.VerifyNotificationChannel].
      * </pre>
      *
-     * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;</code>
+     * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;
+     * </code>
      */
-    public Builder setVerificationStatus(com.google.monitoring.v3.NotificationChannel.VerificationStatus value) {
+    public Builder setVerificationStatus(
+        com.google.monitoring.v3.NotificationChannel.VerificationStatus value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       verificationStatus_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Indicates whether this channel has been verified or not. On a
      * [`ListNotificationChannels`][google.monitoring.v3.NotificationChannelService.ListNotificationChannels]
@@ -2227,10 +2315,11 @@ private static final long serialVersionUID = 0L;
      * [`VerifyNotificationChannel`][google.monitoring.v3.NotificationChannelService.VerifyNotificationChannel].
      * </pre>
      *
-     * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;</code>
+     * <code>.google.monitoring.v3.NotificationChannel.VerificationStatus verification_status = 9;
+     * </code>
      */
     public Builder clearVerificationStatus() {
-      
+
       verificationStatus_ = 0;
       onChanged();
       return this;
@@ -2238,8 +2327,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.BoolValue enabled_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> enabledBuilder_;
+            com.google.protobuf.BoolValue,
+            com.google.protobuf.BoolValue.Builder,
+            com.google.protobuf.BoolValueOrBuilder>
+        enabledBuilder_;
     /**
+     *
+     *
      * <pre>
      * Whether notifications are forwarded to the described channel. This makes
      * it possible to disable delivery of notifications to a particular channel
@@ -2255,6 +2349,8 @@ private static final long serialVersionUID = 0L;
       return enabledBuilder_ != null || enabled_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Whether notifications are forwarded to the described channel. This makes
      * it possible to disable delivery of notifications to a particular channel
@@ -2274,6 +2370,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Whether notifications are forwarded to the described channel. This makes
      * it possible to disable delivery of notifications to a particular channel
@@ -2299,6 +2397,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Whether notifications are forwarded to the described channel. This makes
      * it possible to disable delivery of notifications to a particular channel
@@ -2310,8 +2410,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.BoolValue enabled = 11;</code>
      */
-    public Builder setEnabled(
-        com.google.protobuf.BoolValue.Builder builderForValue) {
+    public Builder setEnabled(com.google.protobuf.BoolValue.Builder builderForValue) {
       if (enabledBuilder_ == null) {
         enabled_ = builderForValue.build();
         onChanged();
@@ -2322,6 +2421,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Whether notifications are forwarded to the described channel. This makes
      * it possible to disable delivery of notifications to a particular channel
@@ -2337,7 +2438,7 @@ private static final long serialVersionUID = 0L;
       if (enabledBuilder_ == null) {
         if (enabled_ != null) {
           enabled_ =
-            com.google.protobuf.BoolValue.newBuilder(enabled_).mergeFrom(value).buildPartial();
+              com.google.protobuf.BoolValue.newBuilder(enabled_).mergeFrom(value).buildPartial();
         } else {
           enabled_ = value;
         }
@@ -2349,6 +2450,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Whether notifications are forwarded to the described channel. This makes
      * it possible to disable delivery of notifications to a particular channel
@@ -2372,6 +2475,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Whether notifications are forwarded to the described channel. This makes
      * it possible to disable delivery of notifications to a particular channel
@@ -2384,11 +2489,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.BoolValue enabled = 11;</code>
      */
     public com.google.protobuf.BoolValue.Builder getEnabledBuilder() {
-      
+
       onChanged();
       return getEnabledFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Whether notifications are forwarded to the described channel. This makes
      * it possible to disable delivery of notifications to a particular channel
@@ -2404,11 +2511,12 @@ private static final long serialVersionUID = 0L;
       if (enabledBuilder_ != null) {
         return enabledBuilder_.getMessageOrBuilder();
       } else {
-        return enabled_ == null ?
-            com.google.protobuf.BoolValue.getDefaultInstance() : enabled_;
+        return enabled_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : enabled_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Whether notifications are forwarded to the described channel. This makes
      * it possible to disable delivery of notifications to a particular channel
@@ -2421,21 +2529,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.BoolValue enabled = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+            com.google.protobuf.BoolValue,
+            com.google.protobuf.BoolValue.Builder,
+            com.google.protobuf.BoolValueOrBuilder>
         getEnabledFieldBuilder() {
       if (enabledBuilder_ == null) {
-        enabledBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
-                getEnabled(),
-                getParentForChildren(),
-                isClean());
+        enabledBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.BoolValue,
+                com.google.protobuf.BoolValue.Builder,
+                com.google.protobuf.BoolValueOrBuilder>(
+                getEnabled(), getParentForChildren(), isClean());
         enabled_ = null;
       }
       return enabledBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2445,12 +2556,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.monitoring.v3.NotificationChannel)
   }
 
   // @@protoc_insertion_point(class_scope:google.monitoring.v3.NotificationChannel)
   private static final com.google.monitoring.v3.NotificationChannel DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.monitoring.v3.NotificationChannel();
   }
@@ -2459,16 +2570,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<NotificationChannel>
-      PARSER = new com.google.protobuf.AbstractParser<NotificationChannel>() {
-    @java.lang.Override
-    public NotificationChannel parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new NotificationChannel(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<NotificationChannel> PARSER =
+      new com.google.protobuf.AbstractParser<NotificationChannel>() {
+        @java.lang.Override
+        public NotificationChannel parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new NotificationChannel(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<NotificationChannel> parser() {
     return PARSER;
@@ -2483,6 +2594,4 @@ private static final long serialVersionUID = 0L;
   public com.google.monitoring.v3.NotificationChannel getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

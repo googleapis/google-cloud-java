@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface GcsDestinationOrBuilder extends
+public interface GcsDestinationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.GcsDestination)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Google Cloud Storage URI where the results will be stored. Results will
    * be in JSON format and preceded by its corresponding input URI. This field
@@ -27,6 +30,8 @@ public interface GcsDestinationOrBuilder extends
    */
   java.lang.String getUri();
   /**
+   *
+   *
    * <pre>
    * Google Cloud Storage URI where the results will be stored. Results will
    * be in JSON format and preceded by its corresponding input URI. This field
@@ -44,6 +49,5 @@ public interface GcsDestinationOrBuilder extends
    *
    * <code>string uri = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getUriBytes();
+  com.google.protobuf.ByteString getUriBytes();
 }

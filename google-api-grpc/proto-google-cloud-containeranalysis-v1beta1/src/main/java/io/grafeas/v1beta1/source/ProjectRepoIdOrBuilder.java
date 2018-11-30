@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.source;
 
-public interface ProjectRepoIdOrBuilder extends
+public interface ProjectRepoIdOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.source.ProjectRepoId)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The ID of the project.
    * </pre>
@@ -16,16 +19,19 @@ public interface ProjectRepoIdOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * The ID of the project.
    * </pre>
    *
    * <code>string project_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The name of the repo. Leave empty for the default repo.
    * </pre>
@@ -34,12 +40,13 @@ public interface ProjectRepoIdOrBuilder extends
    */
   java.lang.String getRepoName();
   /**
+   *
+   *
    * <pre>
    * The name of the repo. Leave empty for the default repo.
    * </pre>
    *
    * <code>string repo_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getRepoNameBytes();
+  com.google.protobuf.ByteString getRepoNameBytes();
 }

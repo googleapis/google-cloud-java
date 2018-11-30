@@ -125,7 +125,8 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
       updateDeviceRegistrySettings;
   private final UnaryCallSettings<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistrySettings;
   private final PagedCallSettings<
-          ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
+          ListDeviceRegistriesRequest,
+          ListDeviceRegistriesResponse,
           ListDeviceRegistriesPagedResponse>
       listDeviceRegistriesSettings;
   private final UnaryCallSettings<CreateDeviceRequest, Device> createDeviceSettings;
@@ -175,7 +176,8 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
 
   /** Returns the object with the settings used for calls to listDeviceRegistries. */
   public PagedCallSettings<
-          ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
+          ListDeviceRegistriesRequest,
+          ListDeviceRegistriesResponse,
           ListDeviceRegistriesPagedResponse>
       listDeviceRegistriesSettings() {
     return listDeviceRegistriesSettings;
@@ -425,11 +427,13 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
           };
 
   private static final PagedListResponseFactory<
-          ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
+          ListDeviceRegistriesRequest,
+          ListDeviceRegistriesResponse,
           ListDeviceRegistriesPagedResponse>
       LIST_DEVICE_REGISTRIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
+              ListDeviceRegistriesRequest,
+              ListDeviceRegistriesResponse,
               ListDeviceRegistriesPagedResponse>() {
             @Override
             public ApiFuture<ListDeviceRegistriesPagedResponse> getFuturePagedResponse(
@@ -475,7 +479,8 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
     private final UnaryCallSettings.Builder<DeleteDeviceRegistryRequest, Empty>
         deleteDeviceRegistrySettings;
     private final PagedCallSettings.Builder<
-            ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
+            ListDeviceRegistriesRequest,
+            ListDeviceRegistriesResponse,
             ListDeviceRegistriesPagedResponse>
         listDeviceRegistriesSettings;
     private final UnaryCallSettings.Builder<CreateDeviceRequest, Device> createDeviceSettings;
@@ -824,7 +829,8 @@ public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSet
 
     /** Returns the builder for the settings used for calls to listDeviceRegistries. */
     public PagedCallSettings.Builder<
-            ListDeviceRegistriesRequest, ListDeviceRegistriesResponse,
+            ListDeviceRegistriesRequest,
+            ListDeviceRegistriesResponse,
             ListDeviceRegistriesPagedResponse>
         listDeviceRegistriesSettings() {
       return listDeviceRegistriesSettings;

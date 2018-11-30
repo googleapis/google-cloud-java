@@ -3,11 +3,14 @@
 
 package com.google.cloud.redis.v1beta1;
 
-public interface CreateInstanceRequestOrBuilder extends
+public interface CreateInstanceRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.redis.v1beta1.CreateInstanceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the instance location using the form:
    *     `projects/{project_id}/locations/{location_id}`
@@ -18,6 +21,8 @@ public interface CreateInstanceRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the instance location using the form:
    *     `projects/{project_id}/locations/{location_id}`
@@ -26,10 +31,11 @@ public interface CreateInstanceRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The logical name of the Redis instance in the customer project
    * with the following restrictions:
@@ -44,6 +50,8 @@ public interface CreateInstanceRequestOrBuilder extends
    */
   java.lang.String getInstanceId();
   /**
+   *
+   *
    * <pre>
    * Required. The logical name of the Redis instance in the customer project
    * with the following restrictions:
@@ -56,10 +64,11 @@ public interface CreateInstanceRequestOrBuilder extends
    *
    * <code>string instance_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getInstanceIdBytes();
+  com.google.protobuf.ByteString getInstanceIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. A Redis [Instance] resource
    * </pre>
@@ -68,6 +77,8 @@ public interface CreateInstanceRequestOrBuilder extends
    */
   boolean hasInstance();
   /**
+   *
+   *
    * <pre>
    * Required. A Redis [Instance] resource
    * </pre>
@@ -76,6 +87,8 @@ public interface CreateInstanceRequestOrBuilder extends
    */
   com.google.cloud.redis.v1beta1.Instance getInstance();
   /**
+   *
+   *
    * <pre>
    * Required. A Redis [Instance] resource
    * </pre>

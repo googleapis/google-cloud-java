@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface ProductSearchResultsOrBuilder extends
+public interface ProductSearchResultsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.ProductSearchResults)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Product category.
    * [Deprecated] Use `product_category`.
@@ -17,6 +20,8 @@ public interface ProductSearchResultsOrBuilder extends
    */
   int getCategoryValue();
   /**
+   *
+   *
    * <pre>
    * Product category.
    * [Deprecated] Use `product_category`.
@@ -27,6 +32,8 @@ public interface ProductSearchResultsOrBuilder extends
   com.google.cloud.vision.v1p3beta1.ProductSearchCategory getCategory();
 
   /**
+   *
+   *
    * <pre>
    * Product category.
    * Supported values are `bag` and `shoe`.
@@ -37,6 +44,8 @@ public interface ProductSearchResultsOrBuilder extends
    */
   java.lang.String getProductCategory();
   /**
+   *
+   *
    * <pre>
    * Product category.
    * Supported values are `bag` and `shoe`.
@@ -45,10 +54,11 @@ public interface ProductSearchResultsOrBuilder extends
    *
    * <code>string product_category = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getProductCategoryBytes();
+  com.google.protobuf.ByteString getProductCategoryBytes();
 
   /**
+   *
+   *
    * <pre>
    * Timestamp of the index which provided these results. Changes made after
    * this time are not reflected in the current results.
@@ -58,6 +68,8 @@ public interface ProductSearchResultsOrBuilder extends
    */
   boolean hasIndexTime();
   /**
+   *
+   *
    * <pre>
    * Timestamp of the index which provided these results. Changes made after
    * this time are not reflected in the current results.
@@ -67,6 +79,8 @@ public interface ProductSearchResultsOrBuilder extends
    */
   com.google.protobuf.Timestamp getIndexTime();
   /**
+   *
+   *
    * <pre>
    * Timestamp of the index which provided these results. Changes made after
    * this time are not reflected in the current results.
@@ -77,59 +91,78 @@ public interface ProductSearchResultsOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getIndexTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * List of detected products.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;</code>
+   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
+   * </code>
    */
-  java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo> 
+  java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo>
       getProductsList();
   /**
+   *
+   *
    * <pre>
    * List of detected products.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;</code>
+   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
+   * </code>
    */
   com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo getProducts(int index);
   /**
+   *
+   *
    * <pre>
    * List of detected products.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;</code>
+   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
+   * </code>
    */
   int getProductsCount();
   /**
+   *
+   *
    * <pre>
    * List of detected products.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;</code>
+   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfoOrBuilder> 
+  java.util.List<
+          ? extends com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfoOrBuilder>
       getProductsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * List of detected products.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;</code>
+   * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo products = 3;
+   * </code>
    */
   com.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfoOrBuilder getProductsOrBuilder(
       int index);
 
   /**
+   *
+   *
    * <pre>
    * List of results, one for each product match.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 5;</code>
    */
-  java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result> 
-      getResultsList();
+  java.util.List<com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result> getResultsList();
   /**
+   *
+   *
    * <pre>
    * List of results, one for each product match.
    * </pre>
@@ -138,6 +171,8 @@ public interface ProductSearchResultsOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.ProductSearchResults.Result getResults(int index);
   /**
+   *
+   *
    * <pre>
    * List of results, one for each product match.
    * </pre>
@@ -146,15 +181,19 @@ public interface ProductSearchResultsOrBuilder extends
    */
   int getResultsCount();
   /**
+   *
+   *
    * <pre>
    * List of results, one for each product match.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.ProductSearchResults.Result results = 5;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1p3beta1.ProductSearchResults.ResultOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1p3beta1.ProductSearchResults.ResultOrBuilder>
       getResultsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * List of results, one for each product match.
    * </pre>

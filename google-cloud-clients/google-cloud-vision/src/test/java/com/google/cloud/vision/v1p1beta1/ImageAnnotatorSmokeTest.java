@@ -15,7 +15,6 @@
  */
 package com.google.cloud.vision.v1p1beta1;
 
-import com.google.cloud.vision.v1p1beta1.Feature.Type;
 import com.google.common.base.Preconditions;
 import java.util.Arrays;
 import java.util.List;

@@ -3,11 +3,14 @@
 
 package com.google.cloud.scheduler.v1beta1;
 
-public interface RetryConfigOrBuilder extends
+public interface RetryConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.scheduler.v1beta1.RetryConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The number of attempts that the system will make to run a job using the
    * exponential backoff procedure described by
@@ -28,6 +31,8 @@ public interface RetryConfigOrBuilder extends
   int getRetryCount();
 
   /**
+   *
+   *
    * <pre>
    * The time limit for retrying a failed job, measured from time when an
    * execution was first attempted. If specified with
@@ -41,6 +46,8 @@ public interface RetryConfigOrBuilder extends
    */
   boolean hasMaxRetryDuration();
   /**
+   *
+   *
    * <pre>
    * The time limit for retrying a failed job, measured from time when an
    * execution was first attempted. If specified with
@@ -54,6 +61,8 @@ public interface RetryConfigOrBuilder extends
    */
   com.google.protobuf.Duration getMaxRetryDuration();
   /**
+   *
+   *
    * <pre>
    * The time limit for retrying a failed job, measured from time when an
    * execution was first attempted. If specified with
@@ -68,6 +77,8 @@ public interface RetryConfigOrBuilder extends
   com.google.protobuf.DurationOrBuilder getMaxRetryDurationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The minimum amount of time to wait before retrying a job after
    * it fails.
@@ -78,6 +89,8 @@ public interface RetryConfigOrBuilder extends
    */
   boolean hasMinBackoffDuration();
   /**
+   *
+   *
    * <pre>
    * The minimum amount of time to wait before retrying a job after
    * it fails.
@@ -88,6 +101,8 @@ public interface RetryConfigOrBuilder extends
    */
   com.google.protobuf.Duration getMinBackoffDuration();
   /**
+   *
+   *
    * <pre>
    * The minimum amount of time to wait before retrying a job after
    * it fails.
@@ -99,6 +114,8 @@ public interface RetryConfigOrBuilder extends
   com.google.protobuf.DurationOrBuilder getMinBackoffDurationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The maximum amount of time to wait before retrying a job after
    * it fails.
@@ -109,6 +126,8 @@ public interface RetryConfigOrBuilder extends
    */
   boolean hasMaxBackoffDuration();
   /**
+   *
+   *
    * <pre>
    * The maximum amount of time to wait before retrying a job after
    * it fails.
@@ -119,6 +138,8 @@ public interface RetryConfigOrBuilder extends
    */
   com.google.protobuf.Duration getMaxBackoffDuration();
   /**
+   *
+   *
    * <pre>
    * The maximum amount of time to wait before retrying a job after
    * it fails.
@@ -130,6 +151,8 @@ public interface RetryConfigOrBuilder extends
   com.google.protobuf.DurationOrBuilder getMaxBackoffDurationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time between retries will double `max_doublings` times.
    * A job's retry interval starts at

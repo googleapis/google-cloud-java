@@ -4,6 +4,8 @@
 package com.google.firestore.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * A set of field paths on a document.
  * Used to restrict a get or update operation on a document to a subset of its
@@ -14,24 +16,25 @@ package com.google.firestore.v1beta1;
  *
  * Protobuf type {@code google.firestore.v1beta1.DocumentMask}
  */
-public  final class DocumentMask extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class DocumentMask extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.firestore.v1beta1.DocumentMask)
     DocumentMaskOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use DocumentMask.newBuilder() to construct.
   private DocumentMask(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private DocumentMask() {
     fieldPaths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private DocumentMask(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -51,29 +54,29 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              fieldPaths_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                fieldPaths_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              fieldPaths_.add(s);
+              break;
             }
-            fieldPaths_.add(s);
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         fieldPaths_ = fieldPaths_.getUnmodifiableView();
@@ -82,22 +85,27 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.firestore.v1beta1.CommonProto.internal_static_google_firestore_v1beta1_DocumentMask_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.firestore.v1beta1.CommonProto
+        .internal_static_google_firestore_v1beta1_DocumentMask_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.firestore.v1beta1.CommonProto.internal_static_google_firestore_v1beta1_DocumentMask_fieldAccessorTable
+    return com.google.firestore.v1beta1.CommonProto
+        .internal_static_google_firestore_v1beta1_DocumentMask_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.firestore.v1beta1.DocumentMask.class, com.google.firestore.v1beta1.DocumentMask.Builder.class);
+            com.google.firestore.v1beta1.DocumentMask.class,
+            com.google.firestore.v1beta1.DocumentMask.Builder.class);
   }
 
   public static final int FIELD_PATHS_FIELD_NUMBER = 1;
   private com.google.protobuf.LazyStringList fieldPaths_;
   /**
+   *
+   *
    * <pre>
    * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
    * path syntax reference.
@@ -105,11 +113,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string field_paths = 1;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getFieldPathsList() {
+  public com.google.protobuf.ProtocolStringList getFieldPathsList() {
     return fieldPaths_;
   }
   /**
+   *
+   *
    * <pre>
    * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
    * path syntax reference.
@@ -121,6 +130,8 @@ private static final long serialVersionUID = 0L;
     return fieldPaths_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
    * path syntax reference.
@@ -132,6 +143,8 @@ private static final long serialVersionUID = 0L;
     return fieldPaths_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
    * path syntax reference.
@@ -139,12 +152,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string field_paths = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getFieldPathsBytes(int index) {
+  public com.google.protobuf.ByteString getFieldPathsBytes(int index) {
     return fieldPaths_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -156,8 +169,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < fieldPaths_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fieldPaths_.getRaw(i));
     }
@@ -186,16 +198,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.firestore.v1beta1.DocumentMask)) {
       return super.equals(obj);
     }
-    com.google.firestore.v1beta1.DocumentMask other = (com.google.firestore.v1beta1.DocumentMask) obj;
+    com.google.firestore.v1beta1.DocumentMask other =
+        (com.google.firestore.v1beta1.DocumentMask) obj;
 
     boolean result = true;
-    result = result && getFieldPathsList()
-        .equals(other.getFieldPathsList());
+    result = result && getFieldPathsList().equals(other.getFieldPathsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -216,97 +228,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.firestore.v1beta1.DocumentMask parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.firestore.v1beta1.DocumentMask parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.firestore.v1beta1.DocumentMask parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.firestore.v1beta1.DocumentMask parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.firestore.v1beta1.DocumentMask parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.firestore.v1beta1.DocumentMask parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.firestore.v1beta1.DocumentMask parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.firestore.v1beta1.DocumentMask parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.firestore.v1beta1.DocumentMask parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.firestore.v1beta1.DocumentMask parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.firestore.v1beta1.DocumentMask parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.firestore.v1beta1.DocumentMask parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.firestore.v1beta1.DocumentMask parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.firestore.v1beta1.DocumentMask parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.firestore.v1beta1.DocumentMask prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A set of field paths on a document.
    * Used to restrict a get or update operation on a document to a subset of its
@@ -317,21 +336,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.firestore.v1beta1.DocumentMask}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.firestore.v1beta1.DocumentMask)
       com.google.firestore.v1beta1.DocumentMaskOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.firestore.v1beta1.CommonProto.internal_static_google_firestore_v1beta1_DocumentMask_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.firestore.v1beta1.CommonProto
+          .internal_static_google_firestore_v1beta1_DocumentMask_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.firestore.v1beta1.CommonProto.internal_static_google_firestore_v1beta1_DocumentMask_fieldAccessorTable
+      return com.google.firestore.v1beta1.CommonProto
+          .internal_static_google_firestore_v1beta1_DocumentMask_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.firestore.v1beta1.DocumentMask.class, com.google.firestore.v1beta1.DocumentMask.Builder.class);
+              com.google.firestore.v1beta1.DocumentMask.class,
+              com.google.firestore.v1beta1.DocumentMask.Builder.class);
     }
 
     // Construct using com.google.firestore.v1beta1.DocumentMask.newBuilder()
@@ -339,16 +360,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -358,9 +378,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.firestore.v1beta1.CommonProto.internal_static_google_firestore_v1beta1_DocumentMask_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.firestore.v1beta1.CommonProto
+          .internal_static_google_firestore_v1beta1_DocumentMask_descriptor;
     }
 
     @java.lang.Override
@@ -379,7 +399,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.firestore.v1beta1.DocumentMask buildPartial() {
-      com.google.firestore.v1beta1.DocumentMask result = new com.google.firestore.v1beta1.DocumentMask(this);
+      com.google.firestore.v1beta1.DocumentMask result =
+          new com.google.firestore.v1beta1.DocumentMask(this);
       int from_bitField0_ = bitField0_;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         fieldPaths_ = fieldPaths_.getUnmodifiableView();
@@ -394,38 +415,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.firestore.v1beta1.DocumentMask) {
-        return mergeFrom((com.google.firestore.v1beta1.DocumentMask)other);
+        return mergeFrom((com.google.firestore.v1beta1.DocumentMask) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -472,16 +494,21 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
-    private com.google.protobuf.LazyStringList fieldPaths_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList fieldPaths_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureFieldPathsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         fieldPaths_ = new com.google.protobuf.LazyStringArrayList(fieldPaths_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
      * path syntax reference.
@@ -489,11 +516,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string field_paths = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getFieldPathsList() {
+    public com.google.protobuf.ProtocolStringList getFieldPathsList() {
       return fieldPaths_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
      * path syntax reference.
@@ -505,6 +533,8 @@ private static final long serialVersionUID = 0L;
       return fieldPaths_.size();
     }
     /**
+     *
+     *
      * <pre>
      * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
      * path syntax reference.
@@ -516,6 +546,8 @@ private static final long serialVersionUID = 0L;
       return fieldPaths_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
      * path syntax reference.
@@ -523,11 +555,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string field_paths = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getFieldPathsBytes(int index) {
+    public com.google.protobuf.ByteString getFieldPathsBytes(int index) {
       return fieldPaths_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
      * path syntax reference.
@@ -535,17 +568,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string field_paths = 1;</code>
      */
-    public Builder setFieldPaths(
-        int index, java.lang.String value) {
+    public Builder setFieldPaths(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureFieldPathsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureFieldPathsIsMutable();
       fieldPaths_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
      * path syntax reference.
@@ -553,17 +587,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string field_paths = 1;</code>
      */
-    public Builder addFieldPaths(
-        java.lang.String value) {
+    public Builder addFieldPaths(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureFieldPathsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureFieldPathsIsMutable();
       fieldPaths_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
      * path syntax reference.
@@ -571,15 +606,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string field_paths = 1;</code>
      */
-    public Builder addAllFieldPaths(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllFieldPaths(java.lang.Iterable<java.lang.String> values) {
       ensureFieldPathsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, fieldPaths_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fieldPaths_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
      * path syntax reference.
@@ -594,6 +629,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
      * path syntax reference.
@@ -601,20 +638,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string field_paths = 1;</code>
      */
-    public Builder addFieldPathsBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addFieldPathsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureFieldPathsIsMutable();
       fieldPaths_.add(value);
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -624,12 +660,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.firestore.v1beta1.DocumentMask)
   }
 
   // @@protoc_insertion_point(class_scope:google.firestore.v1beta1.DocumentMask)
   private static final com.google.firestore.v1beta1.DocumentMask DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.firestore.v1beta1.DocumentMask();
   }
@@ -638,16 +674,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DocumentMask>
-      PARSER = new com.google.protobuf.AbstractParser<DocumentMask>() {
-    @java.lang.Override
-    public DocumentMask parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new DocumentMask(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<DocumentMask> PARSER =
+      new com.google.protobuf.AbstractParser<DocumentMask>() {
+        @java.lang.Override
+        public DocumentMask parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new DocumentMask(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<DocumentMask> parser() {
     return PARSER;
@@ -662,6 +698,4 @@ private static final long serialVersionUID = 0L;
   public com.google.firestore.v1beta1.DocumentMask getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

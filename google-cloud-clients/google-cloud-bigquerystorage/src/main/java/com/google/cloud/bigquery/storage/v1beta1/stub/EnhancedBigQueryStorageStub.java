@@ -105,7 +105,7 @@ public class EnhancedBigQueryStorageStub implements BackgroundResource {
   }
 
   public UnaryCallable<BatchCreateReadSessionStreamsRequest, BatchCreateReadSessionStreamsResponse>
-  batchCreateReadSessionStreamsCallable() {
+      batchCreateReadSessionStreamsCallable() {
     return stub.batchCreateReadSessionStreamsCallable();
   }
 

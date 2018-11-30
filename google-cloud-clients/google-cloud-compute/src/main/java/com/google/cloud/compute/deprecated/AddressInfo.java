@@ -23,14 +23,12 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
-
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 
 /**
  * A Google Compute Engine address. With Compute Engine you can create static external IP addresses
@@ -38,11 +36,11 @@ import java.util.Objects;
  * can be assigned to a Compute Engine instance or to a regional forwarding rule. To create a region
  * address, use a {@link RegionAddressId} identity. Compute Engine also allows you to create global
  * addresses that are used for global forwarding rules. Both global addresses and global forwarding
- * rules can only be used for HTTP load balancing. To create a global address, use a
- * {@link GlobalAddressId} identity.
+ * rules can only be used for HTTP load balancing. To create a global address, use a {@link
+ * GlobalAddressId} identity.
  *
- * @see <a href="https://cloud.google.com/compute/docs/instances-and-network#reservedaddress">
- *     Static external IP addresses</a>
+ * @see <a href="https://cloud.google.com/compute/docs/instances-and-network#reservedaddress">Static
+ *     external IP addresses</a>
  * @see <a href="https://cloud.google.com/compute/docs/load-balancing/http/">HTTP Load Balancing</a>
  */
 public class AddressInfo implements Serializable {
@@ -73,29 +71,23 @@ public class AddressInfo implements Serializable {
   private final Status status;
   private final Usage usage;
 
-  /**
-   * The status of the address.
-   */
+  /** The status of the address. */
   public enum Status {
 
-    /**
-     * The address is reserved for the project and is available for use.
-     */
+    /** The address is reserved for the project and is available for use. */
     RESERVED,
 
-    /**
-     * The address is currently being used and thus not available.
-     */
+    /** The address is currently being used and thus not available. */
     IN_USE
   }
 
   /**
    * Base class for a Google Compute Engine address's usage information. Implementations of this
    * class represent different possible usages of a Compute Engine address. {@link InstanceUsage}
-   * contains information for region addresses assigned to a Google Compute Engine instance.
-   * {@link RegionForwardingUsage} contains information for region addresses assigned to one or more
-   * region forwarding rules. {@link GlobalForwardingUsage} contains information for global
-   * addresses assigned to one or more global forwarding rules.
+   * contains information for region addresses assigned to a Google Compute Engine instance. {@link
+   * RegionForwardingUsage} contains information for region addresses assigned to one or more region
+   * forwarding rules. {@link GlobalForwardingUsage} contains information for global addresses
+   * assigned to one or more global forwarding rules.
    */
   public abstract static class Usage implements Serializable {
 
@@ -103,9 +95,7 @@ public class AddressInfo implements Serializable {
 
     Usage() {}
 
-    /**
-     * Returns the identities of resources currently using this address.
-     */
+    /** Returns the identities of resources currently using this address. */
     public abstract List<? extends ResourceId> getUsers();
 
     final boolean baseEquals(Usage usage) {
@@ -113,12 +103,16 @@ public class AddressInfo implements Serializable {
     }
 
     Address toPb() {
-      return new Address().setUsers(Lists.transform(getUsers(), new Function<ResourceId, String>() {
-        @Override
-        public String apply(ResourceId resourceId) {
-          return resourceId.getSelfLink();
-        }
-      }));
+      return new Address()
+          .setUsers(
+              Lists.transform(
+                  getUsers(),
+                  new Function<ResourceId, String>() {
+                    @Override
+                    public String apply(ResourceId resourceId) {
+                      return resourceId.getSelfLink();
+                    }
+                  }));
     }
 
     @SuppressWarnings("unchecked")
@@ -150,9 +144,7 @@ public class AddressInfo implements Serializable {
       this.instance = checkNotNull(instance);
     }
 
-    /**
-     * Returns the identity of the instance using the address.
-     */
+    /** Returns the identity of the instance using the address. */
     public InstanceId getInstance() {
       return instance;
     }
@@ -279,21 +271,15 @@ public class AddressInfo implements Serializable {
     }
   }
 
-  /**
-   * A builder for {@code AddressInfo} objects.
-   */
+  /** A builder for {@code AddressInfo} objects. */
   public abstract static class Builder {
 
-    /**
-     * Sets the actual IP address.
-     */
+    /** Sets the actual IP address. */
     public abstract Builder setAddress(String address);
 
     abstract Builder setCreationTimestamp(Long creationTimestamp);
 
-    /**
-     * Sets an optional textual description of the address.
-     */
+    /** Sets an optional textual description of the address. */
     public abstract Builder setDescription(String description);
 
     abstract Builder setGeneratedId(String generatedId);
@@ -304,9 +290,7 @@ public class AddressInfo implements Serializable {
 
     abstract Builder setUsage(Usage usage);
 
-    /**
-     * Creates an {@code AddressInfo} object.
-     */
+    /** Creates an {@code AddressInfo} object. */
     public abstract AddressInfo build();
   }
 
@@ -412,30 +396,22 @@ public class AddressInfo implements Serializable {
     usage = builder.usage;
   }
 
-  /**
-   * Returns the static external IP address represented by this object.
-   */
+  /** Returns the static external IP address represented by this object. */
   public String getAddress() {
     return address;
   }
 
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
+  /** Returns the creation timestamp in milliseconds since epoch. */
   public Long getCreationTimestamp() {
     return creationTimestamp;
   }
 
-  /**
-   * Returns an optional textual description of the address.
-   */
+  /** Returns an optional textual description of the address. */
   public String getDescription() {
     return description;
   }
 
-  /**
-   * Returns the service-generated unique identifier for the address.
-   */
+  /** Returns the service-generated unique identifier for the address. */
   public String getGeneratedId() {
     return generatedId;
   }
@@ -449,9 +425,7 @@ public class AddressInfo implements Serializable {
     return (T) addressId;
   }
 
-  /**
-   * Returns the status of the address.
-   */
+  /** Returns the status of the address. */
   public Status getStatus() {
     return status;
   }
@@ -459,18 +433,16 @@ public class AddressInfo implements Serializable {
   /**
    * Returns the usage information of the address. Returns an {@link InstanceUsage} object for
    * region addresses that are assigned to VM instances. Returns a {@link RegionForwardingUsage}
-   * object for region addresses assigned to region forwarding rules. Returns a
-   * {@link GlobalForwardingUsage} object for global addresses assigned to global forwarding rules.
-   * Returns {@code null} if the address is not in use.
+   * object for region addresses assigned to region forwarding rules. Returns a {@link
+   * GlobalForwardingUsage} object for global addresses assigned to global forwarding rules. Returns
+   * {@code null} if the address is not in use.
    */
   @SuppressWarnings("unchecked")
   public <T extends Usage> T getUsage() {
     return (T) usage;
   }
 
-  /**
-   * Returns a builder for the {@code AddressInfo} object.
-   */
+  /** Returns a builder for the {@code AddressInfo} object. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
   }
@@ -490,16 +462,16 @@ public class AddressInfo implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, creationTimestamp, description, generatedId, addressId, status,
-        usage);
+    return Objects.hash(
+        address, creationTimestamp, description, generatedId, addressId, status, usage);
   }
 
   @Override
   public boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(AddressInfo.class)
-        && Objects.equals(toPb(), ((AddressInfo) obj).toPb());
+            && obj.getClass().equals(AddressInfo.class)
+            && Objects.equals(toPb(), ((AddressInfo) obj).toPb());
   }
 
   AddressInfo setProjectId(String projectId) {
@@ -530,16 +502,12 @@ public class AddressInfo implements Serializable {
     return addressPb;
   }
 
-  /**
-   * Returns a builder for the {@code AddressInfo} object given it's identity.
-   */
+  /** Returns a builder for the {@code AddressInfo} object given it's identity. */
   public static Builder newBuilder(AddressId addressId) {
     return new BuilderImpl().setAddressId(addressId);
   }
 
-  /**
-   * Returns an {@code AddressInfo} object for the provided identity.
-   */
+  /** Returns an {@code AddressInfo} object for the provided identity. */
   public static AddressInfo of(AddressId addressId) {
     return newBuilder(addressId).build();
   }

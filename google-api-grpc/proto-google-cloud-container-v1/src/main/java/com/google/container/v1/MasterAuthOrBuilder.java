@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface MasterAuthOrBuilder extends
+public interface MasterAuthOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.MasterAuth)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The username to use for HTTP basic authentication to the master endpoint.
    * For clusters v1.6.0 and later, you can disable basic authentication by
@@ -18,6 +21,8 @@ public interface MasterAuthOrBuilder extends
    */
   java.lang.String getUsername();
   /**
+   *
+   *
    * <pre>
    * The username to use for HTTP basic authentication to the master endpoint.
    * For clusters v1.6.0 and later, you can disable basic authentication by
@@ -26,10 +31,11 @@ public interface MasterAuthOrBuilder extends
    *
    * <code>string username = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getUsernameBytes();
+  com.google.protobuf.ByteString getUsernameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The password to use for HTTP basic authentication to the master endpoint.
    * Because the master endpoint is open to the Internet, you should create a
@@ -41,6 +47,8 @@ public interface MasterAuthOrBuilder extends
    */
   java.lang.String getPassword();
   /**
+   *
+   *
    * <pre>
    * The password to use for HTTP basic authentication to the master endpoint.
    * Because the master endpoint is open to the Internet, you should create a
@@ -50,10 +58,11 @@ public interface MasterAuthOrBuilder extends
    *
    * <code>string password = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getPasswordBytes();
+  com.google.protobuf.ByteString getPasswordBytes();
 
   /**
+   *
+   *
    * <pre>
    * Configuration for client certificate authentication on the cluster. For
    * clusters before v1.12, if no configuration is specified, a client
@@ -64,6 +73,8 @@ public interface MasterAuthOrBuilder extends
    */
   boolean hasClientCertificateConfig();
   /**
+   *
+   *
    * <pre>
    * Configuration for client certificate authentication on the cluster. For
    * clusters before v1.12, if no configuration is specified, a client
@@ -74,6 +85,8 @@ public interface MasterAuthOrBuilder extends
    */
   com.google.container.v1.ClientCertificateConfig getClientCertificateConfig();
   /**
+   *
+   *
    * <pre>
    * Configuration for client certificate authentication on the cluster. For
    * clusters before v1.12, if no configuration is specified, a client
@@ -85,6 +98,8 @@ public interface MasterAuthOrBuilder extends
   com.google.container.v1.ClientCertificateConfigOrBuilder getClientCertificateConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] Base64-encoded public certificate that is the root of
    * trust for the cluster.
@@ -94,6 +109,8 @@ public interface MasterAuthOrBuilder extends
    */
   java.lang.String getClusterCaCertificate();
   /**
+   *
+   *
    * <pre>
    * [Output only] Base64-encoded public certificate that is the root of
    * trust for the cluster.
@@ -101,10 +118,11 @@ public interface MasterAuthOrBuilder extends
    *
    * <code>string cluster_ca_certificate = 100;</code>
    */
-  com.google.protobuf.ByteString
-      getClusterCaCertificateBytes();
+  com.google.protobuf.ByteString getClusterCaCertificateBytes();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] Base64-encoded public certificate used by clients to
    * authenticate to the cluster endpoint.
@@ -114,6 +132,8 @@ public interface MasterAuthOrBuilder extends
    */
   java.lang.String getClientCertificate();
   /**
+   *
+   *
    * <pre>
    * [Output only] Base64-encoded public certificate used by clients to
    * authenticate to the cluster endpoint.
@@ -121,10 +141,11 @@ public interface MasterAuthOrBuilder extends
    *
    * <code>string client_certificate = 101;</code>
    */
-  com.google.protobuf.ByteString
-      getClientCertificateBytes();
+  com.google.protobuf.ByteString getClientCertificateBytes();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] Base64-encoded private key used by clients to authenticate
    * to the cluster endpoint.
@@ -134,6 +155,8 @@ public interface MasterAuthOrBuilder extends
    */
   java.lang.String getClientKey();
   /**
+   *
+   *
    * <pre>
    * [Output only] Base64-encoded private key used by clients to authenticate
    * to the cluster endpoint.
@@ -141,6 +164,5 @@ public interface MasterAuthOrBuilder extends
    *
    * <code>string client_key = 102;</code>
    */
-  com.google.protobuf.ByteString
-      getClientKeyBytes();
+  com.google.protobuf.ByteString getClientKeyBytes();
 }

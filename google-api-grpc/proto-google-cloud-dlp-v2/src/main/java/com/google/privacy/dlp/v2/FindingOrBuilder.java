@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface FindingOrBuilder extends
+public interface FindingOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Finding)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The content that was found. Even if the content is not textual, it
    * may be converted to a textual representation here.
@@ -20,6 +23,8 @@ public interface FindingOrBuilder extends
    */
   java.lang.String getQuote();
   /**
+   *
+   *
    * <pre>
    * The content that was found. Even if the content is not textual, it
    * may be converted to a textual representation here.
@@ -30,10 +35,11 @@ public interface FindingOrBuilder extends
    *
    * <code>string quote = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getQuoteBytes();
+  com.google.protobuf.ByteString getQuoteBytes();
 
   /**
+   *
+   *
    * <pre>
    * The type of content that might have been found.
    * Provided if `excluded_types` is false.
@@ -43,6 +49,8 @@ public interface FindingOrBuilder extends
    */
   boolean hasInfoType();
   /**
+   *
+   *
    * <pre>
    * The type of content that might have been found.
    * Provided if `excluded_types` is false.
@@ -52,6 +60,8 @@ public interface FindingOrBuilder extends
    */
   com.google.privacy.dlp.v2.InfoType getInfoType();
   /**
+   *
+   *
    * <pre>
    * The type of content that might have been found.
    * Provided if `excluded_types` is false.
@@ -62,6 +72,8 @@ public interface FindingOrBuilder extends
   com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Confidence of how likely it is that the `info_type` is correct.
    * </pre>
@@ -70,6 +82,8 @@ public interface FindingOrBuilder extends
    */
   int getLikelihoodValue();
   /**
+   *
+   *
    * <pre>
    * Confidence of how likely it is that the `info_type` is correct.
    * </pre>
@@ -79,6 +93,8 @@ public interface FindingOrBuilder extends
   com.google.privacy.dlp.v2.Likelihood getLikelihood();
 
   /**
+   *
+   *
    * <pre>
    * Where the content was found.
    * </pre>
@@ -87,6 +103,8 @@ public interface FindingOrBuilder extends
    */
   boolean hasLocation();
   /**
+   *
+   *
    * <pre>
    * Where the content was found.
    * </pre>
@@ -95,6 +113,8 @@ public interface FindingOrBuilder extends
    */
   com.google.privacy.dlp.v2.Location getLocation();
   /**
+   *
+   *
    * <pre>
    * Where the content was found.
    * </pre>
@@ -104,6 +124,8 @@ public interface FindingOrBuilder extends
   com.google.privacy.dlp.v2.LocationOrBuilder getLocationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Timestamp when finding was detected.
    * </pre>
@@ -112,6 +134,8 @@ public interface FindingOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * Timestamp when finding was detected.
    * </pre>
@@ -120,6 +144,8 @@ public interface FindingOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * Timestamp when finding was detected.
    * </pre>
@@ -129,6 +155,8 @@ public interface FindingOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Contains data parsed from quotes. Only populated if include_quote was set
    * to true and a supported infoType was requested. Currently supported
@@ -139,6 +167,8 @@ public interface FindingOrBuilder extends
    */
   boolean hasQuoteInfo();
   /**
+   *
+   *
    * <pre>
    * Contains data parsed from quotes. Only populated if include_quote was set
    * to true and a supported infoType was requested. Currently supported
@@ -149,6 +179,8 @@ public interface FindingOrBuilder extends
    */
   com.google.privacy.dlp.v2.QuoteInfo getQuoteInfo();
   /**
+   *
+   *
    * <pre>
    * Contains data parsed from quotes. Only populated if include_quote was set
    * to true and a supported infoType was requested. Currently supported

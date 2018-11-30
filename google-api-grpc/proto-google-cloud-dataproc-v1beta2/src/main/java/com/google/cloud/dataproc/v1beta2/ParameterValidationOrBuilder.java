@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface ParameterValidationOrBuilder extends
+public interface ParameterValidationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.ParameterValidation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Validation based on regular expressions.
    * </pre>
@@ -16,6 +19,8 @@ public interface ParameterValidationOrBuilder extends
    */
   boolean hasRegex();
   /**
+   *
+   *
    * <pre>
    * Validation based on regular expressions.
    * </pre>
@@ -24,6 +29,8 @@ public interface ParameterValidationOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.RegexValidation getRegex();
   /**
+   *
+   *
    * <pre>
    * Validation based on regular expressions.
    * </pre>
@@ -33,6 +40,8 @@ public interface ParameterValidationOrBuilder extends
   com.google.cloud.dataproc.v1beta2.RegexValidationOrBuilder getRegexOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Validation based on a list of allowed values.
    * </pre>
@@ -41,6 +50,8 @@ public interface ParameterValidationOrBuilder extends
    */
   boolean hasValues();
   /**
+   *
+   *
    * <pre>
    * Validation based on a list of allowed values.
    * </pre>
@@ -49,6 +60,8 @@ public interface ParameterValidationOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.ValueValidation getValues();
   /**
+   *
+   *
    * <pre>
    * Validation based on a list of allowed values.
    * </pre>
@@ -57,5 +70,6 @@ public interface ParameterValidationOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.ValueValidationOrBuilder getValuesOrBuilder();
 
-  public com.google.cloud.dataproc.v1beta2.ParameterValidation.ValidationTypeCase getValidationTypeCase();
+  public com.google.cloud.dataproc.v1beta2.ParameterValidation.ValidationTypeCase
+      getValidationTypeCase();
 }

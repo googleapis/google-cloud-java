@@ -4,21 +4,24 @@
 package com.google.cloud.websecurityscanner.v1alpha;
 
 /**
+ *
+ *
  * <pre>
  * A ScanRun is a output-only resource representing an actual run of the scan.
  * </pre>
  *
  * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.ScanRun}
  */
-public  final class ScanRun extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1alpha.ScanRun)
     ScanRunOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ScanRun.newBuilder() to construct.
   private ScanRun(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ScanRun() {
     name_ = "";
     executionState_ = 0;
@@ -30,10 +33,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ScanRun(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -53,112 +56,124 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 16: {
-            int rawValue = input.readEnum();
-
-            executionState_ = rawValue;
-            break;
-          }
-          case 24: {
-            int rawValue = input.readEnum();
-
-            resultState_ = rawValue;
-            break;
-          }
-          case 34: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (startTime_ != null) {
-              subBuilder = startTime_.toBuilder();
+              name_ = s;
+              break;
             }
-            startTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(startTime_);
-              startTime_ = subBuilder.buildPartial();
+          case 16:
+            {
+              int rawValue = input.readEnum();
+
+              executionState_ = rawValue;
+              break;
             }
+          case 24:
+            {
+              int rawValue = input.readEnum();
 
-            break;
-          }
-          case 42: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (endTime_ != null) {
-              subBuilder = endTime_.toBuilder();
+              resultState_ = rawValue;
+              break;
             }
-            endTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(endTime_);
-              endTime_ = subBuilder.buildPartial();
+          case 34:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (startTime_ != null) {
+                subBuilder = startTime_.toBuilder();
+              }
+              startTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(startTime_);
+                startTime_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
+          case 42:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (endTime_ != null) {
+                subBuilder = endTime_.toBuilder();
+              }
+              endTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(endTime_);
+                endTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 48: {
-
-            urlsCrawledCount_ = input.readInt64();
-            break;
-          }
-          case 56: {
-
-            urlsTestedCount_ = input.readInt64();
-            break;
-          }
-          case 64: {
-
-            hasVulnerabilities_ = input.readBool();
-            break;
-          }
-          case 72: {
-
-            progressPercent_ = input.readInt32();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 48:
+            {
+              urlsCrawledCount_ = input.readInt64();
+              break;
+            }
+          case 56:
+            {
+              urlsTestedCount_ = input.readInt64();
+              break;
+            }
+          case 64:
+            {
+              hasVulnerabilities_ = input.readBool();
+              break;
+            }
+          case 72:
+            {
+              progressPercent_ = input.readInt32();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.websecurityscanner.v1alpha.ScanRunProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanRun_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.websecurityscanner.v1alpha.ScanRunProto
+        .internal_static_google_cloud_websecurityscanner_v1alpha_ScanRun_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.websecurityscanner.v1alpha.ScanRunProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanRun_fieldAccessorTable
+    return com.google.cloud.websecurityscanner.v1alpha.ScanRunProto
+        .internal_static_google_cloud_websecurityscanner_v1alpha_ScanRun_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.websecurityscanner.v1alpha.ScanRun.class, com.google.cloud.websecurityscanner.v1alpha.ScanRun.Builder.class);
+            com.google.cloud.websecurityscanner.v1alpha.ScanRun.class,
+            com.google.cloud.websecurityscanner.v1alpha.ScanRun.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Types of ScanRun execution state.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState}
    */
-  public enum ExecutionState
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum ExecutionState implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Represents an invalid state caused by internal server error. This value
      * should never be returned.
@@ -168,6 +183,8 @@ private static final long serialVersionUID = 0L;
      */
     EXECUTION_STATE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * The scan is waiting in the queue.
      * </pre>
@@ -176,6 +193,8 @@ private static final long serialVersionUID = 0L;
      */
     QUEUED(1),
     /**
+     *
+     *
      * <pre>
      * The scan is in progress.
      * </pre>
@@ -184,6 +203,8 @@ private static final long serialVersionUID = 0L;
      */
     SCANNING(2),
     /**
+     *
+     *
      * <pre>
      * The scan is either finished or stopped by user.
      * </pre>
@@ -195,6 +216,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Represents an invalid state caused by internal server error. This value
      * should never be returned.
@@ -204,6 +227,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int EXECUTION_STATE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The scan is waiting in the queue.
      * </pre>
@@ -212,6 +237,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int QUEUED_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * The scan is in progress.
      * </pre>
@@ -220,6 +247,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SCANNING_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * The scan is either finished or stopped by user.
      * </pre>
@@ -227,7 +256,6 @@ private static final long serialVersionUID = 0L;
      * <code>FINISHED = 3;</code>
      */
     public static final int FINISHED_VALUE = 3;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -237,9 +265,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static ExecutionState valueOf(int value) {
       return forNumber(value);
@@ -247,46 +273,49 @@ private static final long serialVersionUID = 0L;
 
     public static ExecutionState forNumber(int value) {
       switch (value) {
-        case 0: return EXECUTION_STATE_UNSPECIFIED;
-        case 1: return QUEUED;
-        case 2: return SCANNING;
-        case 3: return FINISHED;
-        default: return null;
+        case 0:
+          return EXECUTION_STATE_UNSPECIFIED;
+        case 1:
+          return QUEUED;
+        case 2:
+          return SCANNING;
+        case 3:
+          return FINISHED;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<ExecutionState>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<ExecutionState> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        ExecutionState> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ExecutionState>() {
-            public ExecutionState findValueByNumber(int number) {
-              return ExecutionState.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<ExecutionState> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ExecutionState>() {
+          public ExecutionState findValueByNumber(int number) {
+            return ExecutionState.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.google.cloud.websecurityscanner.v1alpha.ScanRun.getDescriptor().getEnumTypes().get(0);
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.websecurityscanner.v1alpha.ScanRun.getDescriptor()
+          .getEnumTypes()
+          .get(0);
     }
 
     private static final ExecutionState[] VALUES = values();
 
-    public static ExecutionState valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static ExecutionState valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -304,15 +333,18 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
    * <pre>
    * Types of ScanRun result state.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState}
    */
-  public enum ResultState
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum ResultState implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Default value. This value is returned when the ScanRun is not yet
      * finished.
@@ -322,6 +354,8 @@ private static final long serialVersionUID = 0L;
      */
     RESULT_STATE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * The scan finished without errors.
      * </pre>
@@ -330,6 +364,8 @@ private static final long serialVersionUID = 0L;
      */
     SUCCESS(1),
     /**
+     *
+     *
      * <pre>
      * The scan finished with errors.
      * </pre>
@@ -338,6 +374,8 @@ private static final long serialVersionUID = 0L;
      */
     ERROR(2),
     /**
+     *
+     *
      * <pre>
      * The scan was terminated by user.
      * </pre>
@@ -349,6 +387,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Default value. This value is returned when the ScanRun is not yet
      * finished.
@@ -358,6 +398,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RESULT_STATE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The scan finished without errors.
      * </pre>
@@ -366,6 +408,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SUCCESS_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * The scan finished with errors.
      * </pre>
@@ -374,6 +418,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ERROR_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * The scan was terminated by user.
      * </pre>
@@ -381,7 +427,6 @@ private static final long serialVersionUID = 0L;
      * <code>KILLED = 3;</code>
      */
     public static final int KILLED_VALUE = 3;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -391,9 +436,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static ResultState valueOf(int value) {
       return forNumber(value);
@@ -401,46 +444,49 @@ private static final long serialVersionUID = 0L;
 
     public static ResultState forNumber(int value) {
       switch (value) {
-        case 0: return RESULT_STATE_UNSPECIFIED;
-        case 1: return SUCCESS;
-        case 2: return ERROR;
-        case 3: return KILLED;
-        default: return null;
+        case 0:
+          return RESULT_STATE_UNSPECIFIED;
+        case 1:
+          return SUCCESS;
+        case 2:
+          return ERROR;
+        case 3:
+          return KILLED;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<ResultState>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<ResultState> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        ResultState> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ResultState>() {
-            public ResultState findValueByNumber(int number) {
-              return ResultState.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<ResultState> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ResultState>() {
+          public ResultState findValueByNumber(int number) {
+            return ResultState.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.google.cloud.websecurityscanner.v1alpha.ScanRun.getDescriptor().getEnumTypes().get(1);
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.websecurityscanner.v1alpha.ScanRun.getDescriptor()
+          .getEnumTypes()
+          .get(1);
     }
 
     private static final ResultState[] VALUES = values();
 
-    public static ResultState valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static ResultState valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -460,6 +506,8 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The resource name of the ScanRun. The name follows the format of
@@ -474,14 +522,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The resource name of the ScanRun. The name follows the format of
@@ -491,13 +540,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -508,33 +555,44 @@ private static final long serialVersionUID = 0L;
   public static final int EXECUTION_STATE_FIELD_NUMBER = 2;
   private int executionState_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The execution state of the ScanRun.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;</code>
+   * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;
+   * </code>
    */
   public int getExecutionStateValue() {
     return executionState_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The execution state of the ScanRun.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;</code>
+   * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;
+   * </code>
    */
   public com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState getExecutionState() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState result = com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState.valueOf(executionState_);
-    return result == null ? com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState.UNRECOGNIZED : result;
+    com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState result =
+        com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState.valueOf(executionState_);
+    return result == null
+        ? com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState.UNRECOGNIZED
+        : result;
   }
 
   public static final int RESULT_STATE_FIELD_NUMBER = 3;
   private int resultState_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The result state of the ScanRun. This field is only available after the
@@ -547,6 +605,8 @@ private static final long serialVersionUID = 0L;
     return resultState_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The result state of the ScanRun. This field is only available after the
@@ -557,13 +617,18 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState getResultState() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState result = com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState.valueOf(resultState_);
-    return result == null ? com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState.UNRECOGNIZED : result;
+    com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState result =
+        com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState.valueOf(resultState_);
+    return result == null
+        ? com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState.UNRECOGNIZED
+        : result;
   }
 
   public static final int START_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp startTime_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The time at which the ScanRun started.
@@ -575,6 +640,8 @@ private static final long serialVersionUID = 0L;
     return startTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The time at which the ScanRun started.
@@ -586,6 +653,8 @@ private static final long serialVersionUID = 0L;
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The time at which the ScanRun started.
@@ -600,6 +669,8 @@ private static final long serialVersionUID = 0L;
   public static final int END_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp endTime_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The time at which the ScanRun reached termination state - that the ScanRun
@@ -612,6 +683,8 @@ private static final long serialVersionUID = 0L;
     return endTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The time at which the ScanRun reached termination state - that the ScanRun
@@ -624,6 +697,8 @@ private static final long serialVersionUID = 0L;
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The time at which the ScanRun reached termination state - that the ScanRun
@@ -639,6 +714,8 @@ private static final long serialVersionUID = 0L;
   public static final int URLS_CRAWLED_COUNT_FIELD_NUMBER = 6;
   private long urlsCrawledCount_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The number of URLs crawled during this ScanRun. If the scan is in progress,
@@ -654,6 +731,8 @@ private static final long serialVersionUID = 0L;
   public static final int URLS_TESTED_COUNT_FIELD_NUMBER = 7;
   private long urlsTestedCount_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The number of URLs tested during this ScanRun. If the scan is in progress,
@@ -671,6 +750,8 @@ private static final long serialVersionUID = 0L;
   public static final int HAS_VULNERABILITIES_FIELD_NUMBER = 8;
   private boolean hasVulnerabilities_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Whether the scan run has found any vulnerabilities.
@@ -685,6 +766,8 @@ private static final long serialVersionUID = 0L;
   public static final int PROGRESS_PERCENT_FIELD_NUMBER = 9;
   private int progressPercent_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The percentage of total completion ranging from 0 to 100.
@@ -700,6 +783,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -711,15 +795,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (executionState_ != com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState.EXECUTION_STATE_UNSPECIFIED.getNumber()) {
+    if (executionState_
+        != com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState
+            .EXECUTION_STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, executionState_);
     }
-    if (resultState_ != com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState.RESULT_STATE_UNSPECIFIED.getNumber()) {
+    if (resultState_
+        != com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState.RESULT_STATE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(3, resultState_);
     }
     if (startTime_ != null) {
@@ -752,37 +839,33 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (executionState_ != com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState.EXECUTION_STATE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, executionState_);
+    if (executionState_
+        != com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState
+            .EXECUTION_STATE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, executionState_);
     }
-    if (resultState_ != com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState.RESULT_STATE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, resultState_);
+    if (resultState_
+        != com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState.RESULT_STATE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, resultState_);
     }
     if (startTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getStartTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getStartTime());
     }
     if (endTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getEndTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getEndTime());
     }
     if (urlsCrawledCount_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(6, urlsCrawledCount_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, urlsCrawledCount_);
     }
     if (urlsTestedCount_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, urlsTestedCount_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(7, urlsTestedCount_);
     }
     if (hasVulnerabilities_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(8, hasVulnerabilities_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, hasVulnerabilities_);
     }
     if (progressPercent_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(9, progressPercent_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(9, progressPercent_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -792,36 +875,30 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.websecurityscanner.v1alpha.ScanRun)) {
       return super.equals(obj);
     }
-    com.google.cloud.websecurityscanner.v1alpha.ScanRun other = (com.google.cloud.websecurityscanner.v1alpha.ScanRun) obj;
+    com.google.cloud.websecurityscanner.v1alpha.ScanRun other =
+        (com.google.cloud.websecurityscanner.v1alpha.ScanRun) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
+    result = result && getName().equals(other.getName());
     result = result && executionState_ == other.executionState_;
     result = result && resultState_ == other.resultState_;
     result = result && (hasStartTime() == other.hasStartTime());
     if (hasStartTime()) {
-      result = result && getStartTime()
-          .equals(other.getStartTime());
+      result = result && getStartTime().equals(other.getStartTime());
     }
     result = result && (hasEndTime() == other.hasEndTime());
     if (hasEndTime()) {
-      result = result && getEndTime()
-          .equals(other.getEndTime());
+      result = result && getEndTime().equals(other.getEndTime());
     }
-    result = result && (getUrlsCrawledCount()
-        == other.getUrlsCrawledCount());
-    result = result && (getUrlsTestedCount()
-        == other.getUrlsTestedCount());
-    result = result && (getHasVulnerabilities()
-        == other.getHasVulnerabilities());
-    result = result && (getProgressPercent()
-        == other.getProgressPercent());
+    result = result && (getUrlsCrawledCount() == other.getUrlsCrawledCount());
+    result = result && (getUrlsTestedCount() == other.getUrlsTestedCount());
+    result = result && (getHasVulnerabilities() == other.getHasVulnerabilities());
+    result = result && (getProgressPercent() == other.getProgressPercent());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -848,14 +925,11 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getEndTime().hashCode();
     }
     hash = (37 * hash) + URLS_CRAWLED_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getUrlsCrawledCount());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getUrlsCrawledCount());
     hash = (37 * hash) + URLS_TESTED_COUNT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getUrlsTestedCount());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getUrlsTestedCount());
     hash = (37 * hash) + HAS_VULNERABILITIES_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getHasVulnerabilities());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHasVulnerabilities());
     hash = (37 * hash) + PROGRESS_PERCENT_FIELD_NUMBER;
     hash = (53 * hash) + getProgressPercent();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -864,117 +938,126 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.websecurityscanner.v1alpha.ScanRun parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ScanRun parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ScanRun parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ScanRun parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ScanRun parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ScanRun parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.websecurityscanner.v1alpha.ScanRun parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ScanRun parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.websecurityscanner.v1alpha.ScanRun parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.websecurityscanner.v1alpha.ScanRun parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ScanRun parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.websecurityscanner.v1alpha.ScanRun parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ScanRun parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ScanRun parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.websecurityscanner.v1alpha.ScanRun prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A ScanRun is a output-only resource representing an actual run of the scan.
    * </pre>
    *
    * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.ScanRun}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.websecurityscanner.v1alpha.ScanRun)
       com.google.cloud.websecurityscanner.v1alpha.ScanRunOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.websecurityscanner.v1alpha.ScanRunProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanRun_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.websecurityscanner.v1alpha.ScanRunProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_ScanRun_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.websecurityscanner.v1alpha.ScanRunProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanRun_fieldAccessorTable
+      return com.google.cloud.websecurityscanner.v1alpha.ScanRunProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_ScanRun_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.websecurityscanner.v1alpha.ScanRun.class, com.google.cloud.websecurityscanner.v1alpha.ScanRun.Builder.class);
+              com.google.cloud.websecurityscanner.v1alpha.ScanRun.class,
+              com.google.cloud.websecurityscanner.v1alpha.ScanRun.Builder.class);
     }
 
     // Construct using com.google.cloud.websecurityscanner.v1alpha.ScanRun.newBuilder()
@@ -982,16 +1065,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1025,9 +1107,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.websecurityscanner.v1alpha.ScanRunProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanRun_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.websecurityscanner.v1alpha.ScanRunProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_ScanRun_descriptor;
     }
 
     @java.lang.Override
@@ -1046,7 +1128,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.websecurityscanner.v1alpha.ScanRun buildPartial() {
-      com.google.cloud.websecurityscanner.v1alpha.ScanRun result = new com.google.cloud.websecurityscanner.v1alpha.ScanRun(this);
+      com.google.cloud.websecurityscanner.v1alpha.ScanRun result =
+          new com.google.cloud.websecurityscanner.v1alpha.ScanRun(this);
       result.name_ = name_;
       result.executionState_ = executionState_;
       result.resultState_ = resultState_;
@@ -1072,38 +1155,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.websecurityscanner.v1alpha.ScanRun) {
-        return mergeFrom((com.google.cloud.websecurityscanner.v1alpha.ScanRun)other);
+        return mergeFrom((com.google.cloud.websecurityscanner.v1alpha.ScanRun) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1111,7 +1195,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.websecurityscanner.v1alpha.ScanRun other) {
-      if (other == com.google.cloud.websecurityscanner.v1alpha.ScanRun.getDefaultInstance()) return this;
+      if (other == com.google.cloud.websecurityscanner.v1alpha.ScanRun.getDefaultInstance())
+        return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -1159,7 +1244,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.websecurityscanner.v1alpha.ScanRun) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.websecurityscanner.v1alpha.ScanRun) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1171,6 +1257,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The resource name of the ScanRun. The name follows the format of
@@ -1183,8 +1271,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1193,6 +1280,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The resource name of the ScanRun. The name follows the format of
@@ -1202,13 +1291,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1216,6 +1303,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The resource name of the ScanRun. The name follows the format of
@@ -1225,17 +1314,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The resource name of the ScanRun. The name follows the format of
@@ -1246,12 +1336,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The resource name of the ScanRun. The name follows the format of
@@ -1261,13 +1353,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1275,23 +1366,29 @@ private static final long serialVersionUID = 0L;
 
     private int executionState_ = 0;
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The execution state of the ScanRun.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;
+     * </code>
      */
     public int getExecutionStateValue() {
       return executionState_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The execution state of the ScanRun.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;
+     * </code>
      */
     public Builder setExecutionStateValue(int value) {
       executionState_ = value;
@@ -1299,45 +1396,59 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The execution state of the ScanRun.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;
+     * </code>
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState getExecutionState() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState result = com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState.valueOf(executionState_);
-      return result == null ? com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState.UNRECOGNIZED : result;
+      com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState result =
+          com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState.valueOf(
+              executionState_);
+      return result == null
+          ? com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The execution state of the ScanRun.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;
+     * </code>
      */
-    public Builder setExecutionState(com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState value) {
+    public Builder setExecutionState(
+        com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       executionState_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The execution state of the ScanRun.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;
+     * </code>
      */
     public Builder clearExecutionState() {
-      
+
       executionState_ = 0;
       onChanged();
       return this;
@@ -1345,6 +1456,8 @@ private static final long serialVersionUID = 0L;
 
     private int resultState_ = 0;
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The result state of the ScanRun. This field is only available after the
@@ -1357,6 +1470,8 @@ private static final long serialVersionUID = 0L;
       return resultState_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The result state of the ScanRun. This field is only available after the
@@ -1371,6 +1486,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The result state of the ScanRun. This field is only available after the
@@ -1381,10 +1498,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState getResultState() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState result = com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState.valueOf(resultState_);
-      return result == null ? com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState.UNRECOGNIZED : result;
+      com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState result =
+          com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState.valueOf(resultState_);
+      return result == null
+          ? com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The result state of the ScanRun. This field is only available after the
@@ -1393,16 +1515,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState result_state = 3;</code>
      */
-    public Builder setResultState(com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState value) {
+    public Builder setResultState(
+        com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       resultState_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The result state of the ScanRun. This field is only available after the
@@ -1412,7 +1537,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState result_state = 3;</code>
      */
     public Builder clearResultState() {
-      
+
       resultState_ = 0;
       onChanged();
       return this;
@@ -1420,8 +1545,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp startTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        startTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The time at which the ScanRun started.
@@ -1433,6 +1563,8 @@ private static final long serialVersionUID = 0L;
       return startTimeBuilder_ != null || startTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The time at which the ScanRun started.
@@ -1448,6 +1580,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The time at which the ScanRun started.
@@ -1469,6 +1603,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The time at which the ScanRun started.
@@ -1476,8 +1612,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp start_time = 4;</code>
      */
-    public Builder setStartTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
         onChanged();
@@ -1488,6 +1623,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The time at which the ScanRun started.
@@ -1499,7 +1636,7 @@ private static final long serialVersionUID = 0L;
       if (startTimeBuilder_ == null) {
         if (startTime_ != null) {
           startTime_ =
-            com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
         } else {
           startTime_ = value;
         }
@@ -1511,6 +1648,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The time at which the ScanRun started.
@@ -1530,6 +1669,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The time at which the ScanRun started.
@@ -1538,11 +1679,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp start_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-      
+
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The time at which the ScanRun started.
@@ -1554,11 +1697,12 @@ private static final long serialVersionUID = 0L;
       if (startTimeBuilder_ != null) {
         return startTimeBuilder_.getMessageOrBuilder();
       } else {
-        return startTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The time at which the ScanRun started.
@@ -1567,14 +1711,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp start_time = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getStartTimeFieldBuilder() {
       if (startTimeBuilder_ == null) {
-        startTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getStartTime(),
-                getParentForChildren(),
-                isClean());
+        startTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getStartTime(), getParentForChildren(), isClean());
         startTime_ = null;
       }
       return startTimeBuilder_;
@@ -1582,8 +1729,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp endTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> endTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        endTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The time at which the ScanRun reached termination state - that the ScanRun
@@ -1596,6 +1748,8 @@ private static final long serialVersionUID = 0L;
       return endTimeBuilder_ != null || endTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The time at which the ScanRun reached termination state - that the ScanRun
@@ -1612,6 +1766,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The time at which the ScanRun reached termination state - that the ScanRun
@@ -1634,6 +1790,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The time at which the ScanRun reached termination state - that the ScanRun
@@ -1642,8 +1800,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
      */
-    public Builder setEndTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
         onChanged();
@@ -1654,6 +1811,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The time at which the ScanRun reached termination state - that the ScanRun
@@ -1666,7 +1825,7 @@ private static final long serialVersionUID = 0L;
       if (endTimeBuilder_ == null) {
         if (endTime_ != null) {
           endTime_ =
-            com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
         } else {
           endTime_ = value;
         }
@@ -1678,6 +1837,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The time at which the ScanRun reached termination state - that the ScanRun
@@ -1698,6 +1859,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The time at which the ScanRun reached termination state - that the ScanRun
@@ -1707,11 +1870,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      
+
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The time at which the ScanRun reached termination state - that the ScanRun
@@ -1724,11 +1889,12 @@ private static final long serialVersionUID = 0L;
       if (endTimeBuilder_ != null) {
         return endTimeBuilder_.getMessageOrBuilder();
       } else {
-        return endTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The time at which the ScanRun reached termination state - that the ScanRun
@@ -1738,21 +1904,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp end_time = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getEndTimeFieldBuilder() {
       if (endTimeBuilder_ == null) {
-        endTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getEndTime(),
-                getParentForChildren(),
-                isClean());
+        endTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getEndTime(), getParentForChildren(), isClean());
         endTime_ = null;
       }
       return endTimeBuilder_;
     }
 
-    private long urlsCrawledCount_ ;
+    private long urlsCrawledCount_;
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The number of URLs crawled during this ScanRun. If the scan is in progress,
@@ -1765,6 +1936,8 @@ private static final long serialVersionUID = 0L;
       return urlsCrawledCount_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The number of URLs crawled during this ScanRun. If the scan is in progress,
@@ -1774,12 +1947,14 @@ private static final long serialVersionUID = 0L;
      * <code>int64 urls_crawled_count = 6;</code>
      */
     public Builder setUrlsCrawledCount(long value) {
-      
+
       urlsCrawledCount_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The number of URLs crawled during this ScanRun. If the scan is in progress,
@@ -1789,14 +1964,16 @@ private static final long serialVersionUID = 0L;
      * <code>int64 urls_crawled_count = 6;</code>
      */
     public Builder clearUrlsCrawledCount() {
-      
+
       urlsCrawledCount_ = 0L;
       onChanged();
       return this;
     }
 
-    private long urlsTestedCount_ ;
+    private long urlsTestedCount_;
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The number of URLs tested during this ScanRun. If the scan is in progress,
@@ -1811,6 +1988,8 @@ private static final long serialVersionUID = 0L;
       return urlsTestedCount_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The number of URLs tested during this ScanRun. If the scan is in progress,
@@ -1822,12 +2001,14 @@ private static final long serialVersionUID = 0L;
      * <code>int64 urls_tested_count = 7;</code>
      */
     public Builder setUrlsTestedCount(long value) {
-      
+
       urlsTestedCount_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The number of URLs tested during this ScanRun. If the scan is in progress,
@@ -1839,14 +2020,16 @@ private static final long serialVersionUID = 0L;
      * <code>int64 urls_tested_count = 7;</code>
      */
     public Builder clearUrlsTestedCount() {
-      
+
       urlsTestedCount_ = 0L;
       onChanged();
       return this;
     }
 
-    private boolean hasVulnerabilities_ ;
+    private boolean hasVulnerabilities_;
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Whether the scan run has found any vulnerabilities.
@@ -1858,6 +2041,8 @@ private static final long serialVersionUID = 0L;
       return hasVulnerabilities_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Whether the scan run has found any vulnerabilities.
@@ -1866,12 +2051,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool has_vulnerabilities = 8;</code>
      */
     public Builder setHasVulnerabilities(boolean value) {
-      
+
       hasVulnerabilities_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Whether the scan run has found any vulnerabilities.
@@ -1880,14 +2067,16 @@ private static final long serialVersionUID = 0L;
      * <code>bool has_vulnerabilities = 8;</code>
      */
     public Builder clearHasVulnerabilities() {
-      
+
       hasVulnerabilities_ = false;
       onChanged();
       return this;
     }
 
-    private int progressPercent_ ;
+    private int progressPercent_;
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The percentage of total completion ranging from 0 to 100.
@@ -1902,6 +2091,8 @@ private static final long serialVersionUID = 0L;
       return progressPercent_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The percentage of total completion ranging from 0 to 100.
@@ -1913,12 +2104,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 progress_percent = 9;</code>
      */
     public Builder setProgressPercent(int value) {
-      
+
       progressPercent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * The percentage of total completion ranging from 0 to 100.
@@ -1930,14 +2123,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 progress_percent = 9;</code>
      */
     public Builder clearProgressPercent() {
-      
+
       progressPercent_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1947,12 +2140,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.websecurityscanner.v1alpha.ScanRun)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.websecurityscanner.v1alpha.ScanRun)
   private static final com.google.cloud.websecurityscanner.v1alpha.ScanRun DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.websecurityscanner.v1alpha.ScanRun();
   }
@@ -1961,16 +2154,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ScanRun>
-      PARSER = new com.google.protobuf.AbstractParser<ScanRun>() {
-    @java.lang.Override
-    public ScanRun parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ScanRun(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ScanRun> PARSER =
+      new com.google.protobuf.AbstractParser<ScanRun>() {
+        @java.lang.Override
+        public ScanRun parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ScanRun(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ScanRun> parser() {
     return PARSER;
@@ -1985,6 +2178,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.websecurityscanner.v1alpha.ScanRun getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

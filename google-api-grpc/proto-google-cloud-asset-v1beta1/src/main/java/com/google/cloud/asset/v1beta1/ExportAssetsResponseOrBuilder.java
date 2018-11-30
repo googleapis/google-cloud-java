@@ -3,11 +3,14 @@
 
 package com.google.cloud.asset.v1beta1;
 
-public interface ExportAssetsResponseOrBuilder extends
+public interface ExportAssetsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.asset.v1beta1.ExportAssetsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Time the snapshot was taken.
    * </pre>
@@ -16,6 +19,8 @@ public interface ExportAssetsResponseOrBuilder extends
    */
   boolean hasReadTime();
   /**
+   *
+   *
    * <pre>
    * Time the snapshot was taken.
    * </pre>
@@ -24,6 +29,8 @@ public interface ExportAssetsResponseOrBuilder extends
    */
   com.google.protobuf.Timestamp getReadTime();
   /**
+   *
+   *
    * <pre>
    * Time the snapshot was taken.
    * </pre>
@@ -33,6 +40,8 @@ public interface ExportAssetsResponseOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output configuration indicating where the results were output to.
    * All results are in JSON format.
@@ -42,6 +51,8 @@ public interface ExportAssetsResponseOrBuilder extends
    */
   boolean hasOutputConfig();
   /**
+   *
+   *
    * <pre>
    * Output configuration indicating where the results were output to.
    * All results are in JSON format.
@@ -51,6 +62,8 @@ public interface ExportAssetsResponseOrBuilder extends
    */
   com.google.cloud.asset.v1beta1.OutputConfig getOutputConfig();
   /**
+   *
+   *
    * <pre>
    * Output configuration indicating where the results were output to.
    * All results are in JSON format.

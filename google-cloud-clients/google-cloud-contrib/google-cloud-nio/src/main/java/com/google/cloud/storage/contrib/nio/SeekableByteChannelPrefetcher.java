@@ -18,7 +18,7 @@ package com.google.cloud.storage.contrib.nio;
 
 import com.google.common.base.Preconditions;
 import com.google.common.base.Stopwatch;
-
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import java.io.Closeable;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -36,16 +36,12 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
-
-
 /**
- * SeekableByteChannelPrefetcher wraps an existing SeekableByteChannel to add prefetching.
- * The prefetching is done on a different thread, so you can write simple code that repeatedly
- * calls read() to get data, processes it, and then calls read again -- and yet this
- * simple code overlaps computation and communication for you.
- * (Of course this is only worthwhile if the underlying SeekableByteChannel doesn't already
- * implement prefetching).
+ * SeekableByteChannelPrefetcher wraps an existing SeekableByteChannel to add prefetching. The
+ * prefetching is done on a different thread, so you can write simple code that repeatedly calls
+ * read() to get data, processes it, and then calls read again -- and yet this simple code overlaps
+ * computation and communication for you. (Of course this is only worthwhile if the underlying
+ * SeekableByteChannel doesn't already implement prefetching).
  */
 public final class SeekableByteChannelPrefetcher implements SeekableByteChannel {
 
@@ -58,7 +54,7 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
   private final List<WorkUnit> full = new ArrayList<>();
   private WorkUnit fetching;
   // total number of buffers
-  private final static int BUF_COUNT = 2;
+  private static final int BUF_COUNT = 2;
   // where we pretend to be, wrt returning bytes from read()
   private long position;
   private boolean open;
@@ -70,18 +66,22 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
   private long msWaitingForData;
   // time spent blocking the user because we're copying bytes
   private long msCopyingData;
-  // total number of bytes returned by read (if the user asks for the same bytes multiple times, they count)
+  // total number of bytes returned by read (if the user asks for the same bytes multiple times,
+  // they count)
   private long bytesReturned;
   // total number of bytes read over the network (whether returned to the user or not)
-  private long bytesRead ;
-  // time spend in between calls to Read, ie. presumably while the user is processing the data we returned.
-  private long msBetweenCallsToRead ;
+  private long bytesRead;
+  // time spend in between calls to Read, ie. presumably while the user is processing the data we
+  // returned.
+  private long msBetweenCallsToRead;
   // number of times we had the user's data already ready, didn't have to grab it from the net.
   private long nbHit;
   // number of times we had already started to prefetch the user's data (but it hadn't arrived yet).
   private long nbNearHit;
-  // number of times we don't have what the user's asking for, we have to wait for a prefetch to finish,
-  // and the prefetch didn't return what the user wanted (either they are going backward, or jumping forward)
+  // number of times we don't have what the user's asking for, we have to wait for a prefetch to
+  // finish,
+  // and the prefetch didn't return what the user wanted (either they are going backward, or jumping
+  // forward)
   private long nbMiss;
   // number of times the user asks for data with a lower index than what we already have
   // (so they're not following the expected pattern of increasing indexes)
@@ -92,25 +92,29 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
   // issues.
   private static final boolean trackTime = false;
 
-
   public static class Statistics {
     // statistics, for profiling.
     // time spent blocking the user because we're waiting on the network
     public final long msWaitingForData;
     // time spent blocking the user because we're copying bytes
     public final long msCopyingData;
-    // total number of bytes returned by read (if the user asks for the same bytes multiple times, they count)
+    // total number of bytes returned by read (if the user asks for the same bytes multiple times,
+    // they count)
     public final long bytesReturned;
     // total number of bytes read over the network (whether returned to the user or not)
     public final long bytesRead;
-    // time spend in between calls to Read, ie. presumably while the user is processing the data we returned.
+    // time spend in between calls to Read, ie. presumably while the user is processing the data we
+    // returned.
     public final long msBetweenCallsToRead;
     // number of times we had the user's data already ready, didn't have to grab it from the net.
     public final long nbHit;
-    // number of times we had already started to prefetch the user's data (but it hadn't arrived yet).
+    // number of times we had already started to prefetch the user's data (but it hadn't arrived
+    // yet).
     public final long nbNearHit;
-    // number of times we don't have what the user's asking for, we have to wait for a prefetch to finish,
-    // and the prefetch didn't return what the user wanted (either they are going backward, or jumping forward)
+    // number of times we don't have what the user's asking for, we have to wait for a prefetch to
+    // finish,
+    // and the prefetch didn't return what the user wanted (either they are going backward, or
+    // jumping forward)
     public final long nbMiss;
     // number of times the user asks for data with a lower index than what we already have
     // (so they're not following the expected pattern of increasing indexes)
@@ -118,9 +122,17 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
     // number of times the user asks for data past the end of the file
     public final long nbReadsPastEnd;
 
-    private Statistics(long msWaitingForData, long msCopyingData, long bytesReturned,
-                       long bytesRead, long msBetweenCallsToRead, long nbHit,
-                       long nbNearHit, long nbMiss, long nbGoingBack, long nbReadsPastEnd) {
+    private Statistics(
+        long msWaitingForData,
+        long msCopyingData,
+        long bytesReturned,
+        long bytesRead,
+        long msBetweenCallsToRead,
+        long nbHit,
+        long nbNearHit,
+        long nbMiss,
+        long nbGoingBack,
+        long nbReadsPastEnd) {
       this.msWaitingForData = msWaitingForData;
       this.msCopyingData = msCopyingData;
       this.bytesReturned = bytesReturned;
@@ -136,34 +148,33 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
     public String toString() {
       try {
         double returnedPct = (bytesRead > 0 ? 100.0 * bytesReturned / bytesRead : 100.0);
-        return String
-            .format("Bytes read: %12d\n  returned: %12d ( %3.2f %% )", bytesRead, bytesReturned,
-                returnedPct)
+        return String.format(
+                "Bytes read: %12d\n  returned: %12d ( %3.2f %% )",
+                bytesRead, bytesReturned, returnedPct)
             + String.format("\nReads past the end: %3d", nbReadsPastEnd)
             + String.format("\nReads forcing re-fetching of an earlier block: %3d", nbGoingBack)
             // A near-hit is when we're already fetching the data the user is asking for,
             // but we're not done loading it in.
-            + String
-            .format("\nCache\n hits:      %12d\n near-hits: %12d\n misses:    %12d", nbHit,
-                nbNearHit, nbMiss);
+            + String.format(
+                "\nCache\n hits:      %12d\n near-hits: %12d\n misses:    %12d",
+                nbHit, nbNearHit, nbMiss);
       } catch (UnknownFormatConversionException x) {
         // let's not crash the whole program, instead just return no info
         return "(error while formatting statistics)";
       }
     }
-
-
   }
 
-
   /**
-   * Wraps the provided SeekableByteChannel within a SeekableByteChannelPrefetcher, using the provided buffer size
+   * Wraps the provided SeekableByteChannel within a SeekableByteChannelPrefetcher, using the
+   * provided buffer size
    *
    * @param bufferSizeMB buffer size in MB
    * @param channel channel to wrap in the prefetcher
    * @return wrapped channel
    */
-  public static SeekableByteChannel addPrefetcher(int bufferSizeMB, SeekableByteChannel channel) throws IOException {
+  public static SeekableByteChannel addPrefetcher(int bufferSizeMB, SeekableByteChannel channel)
+      throws IOException {
     return new SeekableByteChannelPrefetcher(channel, bufferSizeMB * 1024 * 1024);
   }
 
@@ -171,11 +182,12 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
    * WorkUnit holds a buffer and the instructions for what to put in it.
    *
    * <p>Use it like this:
+   *
    * <ol>
-   *   <li> call()
-   *   <li> the data is now in buf, you can access it directly
-   *   <li> if need more, call resetForIndex(...) and go back to the top.
-   *   <li> else, call close()
+   *   <li>call()
+   *   <li>the data is now in buf, you can access it directly
+   *   <li>if need more, call resetForIndex(...) and go back to the top.
+   *   <li>else, call close()
    * </ol>
    */
   private static class WorkUnit implements Callable<ByteBuffer>, Closeable {
@@ -195,13 +207,18 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
 
     @Override
     public ByteBuffer call() throws IOException {
-      long pos = ((long)blockSize) * blockIndex;
+      long pos = ((long) blockSize) * blockIndex;
       if (pos > chan.size()) {
         return null;
       }
       if (pos < 0) {
         // This should never happen, if the code's correct.
-        throw new IllegalArgumentException("blockIndex " + blockIndex + " has position " + pos + ": negative position is not valid.");
+        throw new IllegalArgumentException(
+            "blockIndex "
+                + blockIndex
+                + " has position "
+                + pos
+                + ": negative position is not valid.");
       }
       chan.position(pos);
       // read until buffer is full, or EOF
@@ -220,7 +237,6 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
       return this;
     }
 
-
     @Override
     public void close() throws IOException {
       chan.close();
@@ -228,14 +244,16 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
   }
 
   /**
-   * Wraps the provided SeekableByteChannel within a SeekableByteChannelPrefetcher,
-   * using the provided buffer size.
+   * Wraps the provided SeekableByteChannel within a SeekableByteChannelPrefetcher, using the
+   * provided buffer size.
    *
    * @param bufSize buffer size in bytes
    * @param chan channel to wrap in the prefetcher
    */
   private SeekableByteChannelPrefetcher(SeekableByteChannel chan, int bufSize) throws IOException {
-    Preconditions.checkArgument(!(chan instanceof SeekableByteChannelPrefetcher),"Cannot wrap a prefetcher with a prefetcher.");
+    Preconditions.checkArgument(
+        !(chan instanceof SeekableByteChannelPrefetcher),
+        "Cannot wrap a prefetcher with a prefetcher.");
 
     if (!chan.isOpen()) {
       throw new IllegalArgumentException("channel must be open");
@@ -246,7 +264,7 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
     }
     this.size = chan.size();
     if (bufSize > this.size) {
-      this.bufSize = (int)this.size;
+      this.bufSize = (int) this.size;
     } else {
       this.bufSize = bufSize;
     }
@@ -255,18 +273,24 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
     // Make sure the prefetching thread's name indicate what it is and
     // which prefetcher it belongs to (for debugging purposes only, naturally).
     String nameFormat = "nio-prefetcher-" + prefetcherIndex + "-thread-%d";
-    ThreadFactory threadFactory = new ThreadFactoryBuilder()
-        .setNameFormat(nameFormat)
-        .setDaemon(true)
-        .build();
+    ThreadFactory threadFactory =
+        new ThreadFactoryBuilder().setNameFormat(nameFormat).setDaemon(true).build();
     // Single thread to ensure no concurrent access to chan.
     exec = Executors.newFixedThreadPool(1, threadFactory);
   }
 
   public Statistics getStatistics() {
-    return new Statistics(msWaitingForData, msCopyingData, bytesReturned,
-        bytesRead, msBetweenCallsToRead, nbHit,
-        nbNearHit, nbMiss, nbGoingBack, nbReadsPastEnd);
+    return new Statistics(
+        msWaitingForData,
+        msCopyingData,
+        bytesReturned,
+        bytesRead,
+        msBetweenCallsToRead,
+        nbHit,
+        nbNearHit,
+        nbMiss,
+        nbGoingBack,
+        nbReadsPastEnd);
   }
 
   // if we don't already have that block and the fetching thread is idle,
@@ -303,7 +327,7 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
     boolean goingBack = false;
     for (WorkUnit w : full) {
       if (w.blockIndex == blockIndex) {
-        ensureFetching(blockIndex+1);
+        ensureFetching(blockIndex + 1);
         nbHit++;
         return w.buf;
       } else if (w.blockIndex > blockIndex) {
@@ -326,7 +350,7 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
     if (candidate.blockIndex == blockIndex) {
       // this is who we were waiting for
       nbNearHit++;
-      ensureFetching(blockIndex+1);
+      ensureFetching(blockIndex + 1);
       return buf;
     } else {
       // wrong block. Let's fetch the right one now.
@@ -336,19 +360,17 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
       buf = candidate.getBuf();
       full.add(candidate);
       fetching = null;
-      ensureFetching(blockIndex+1);
+      ensureFetching(blockIndex + 1);
       return buf;
     }
   }
 
-
   /**
    * Reads a sequence of bytes from this channel into the given buffer.
    *
-   * <p> Bytes are read starting at this channel's current position, and
-   * then the position is updated with the number of bytes actually read.
-   * Otherwise this method behaves exactly as specified in the {@link
-   * java.nio.channels.ReadableByteChannel} interface.
+   * <p>Bytes are read starting at this channel's current position, and then the position is updated
+   * with the number of bytes actually read. Otherwise this method behaves exactly as specified in
+   * the {@link java.nio.channels.ReadableByteChannel} interface.
    *
    * @param dst buffer to write into
    */
@@ -389,7 +411,7 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
       }
       // src.position is how far we've written into the array
       long blockIndex = position / bufSize;
-      int offset = (int)(position - (blockIndex * bufSize));
+      int offset = (int) (position - (blockIndex * bufSize));
       // src |==============---------------------|
       //     :<---src.pos-->------src.limit----->:
       // |---:--position->
@@ -425,9 +447,7 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
     }
   }
 
-  /**
-   * Writing isn't supported.
-   */
+  /** Writing isn't supported. */
   @Override
   public int write(ByteBuffer src) throws IOException {
     throw new NonWritableChannelException();
@@ -436,11 +456,10 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
   /**
    * Returns this channel's position.
    *
-   * @return This channel's position,
-   * a non-negative integer counting the number of bytes
-   * from the beginning of the entity to the current position
+   * @return This channel's position, a non-negative integer counting the number of bytes from the
+   *     beginning of the entity to the current position
    * @throws ClosedChannelException If this channel is closed
-   * @throws IOException            If some other I/O error occurs
+   * @throws IOException If some other I/O error occurs
    */
   @Override
   public long position() throws IOException {
@@ -450,26 +469,25 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
 
   /**
    * Sets this channel's position.
+   *
    * <p>
-   * <p> Setting the position to a value that is greater than the current size
-   * is legal but does not change the size of the entity.  A later attempt to
-   * read bytes at such a position will immediately return an end-of-file
-   * indication.  A later attempt to write bytes at such a position will cause
-   * the entity to grow to accommodate the new bytes; the values of any bytes
-   * between the previous end-of-file and the newly-written bytes are
-   * unspecified.
    *
-   * <p> Setting the channel's position is not recommended when connected to
-   * an entity, typically a file, that is opened with the {@link
-   * java.nio.file.StandardOpenOption#APPEND APPEND} option. When opened for
-   * append, the position is first advanced to the end before writing.
+   * <p>Setting the position to a value that is greater than the current size is legal but does not
+   * change the size of the entity. A later attempt to read bytes at such a position will
+   * immediately return an end-of-file indication. A later attempt to write bytes at such a position
+   * will cause the entity to grow to accommodate the new bytes; the values of any bytes between the
+   * previous end-of-file and the newly-written bytes are unspecified.
    *
-   * @param newPosition The new position, a non-negative integer counting
-   *                    the number of bytes from the beginning of the entity
+   * <p>Setting the channel's position is not recommended when connected to an entity, typically a
+   * file, that is opened with the {@link java.nio.file.StandardOpenOption#APPEND APPEND} option.
+   * When opened for append, the position is first advanced to the end before writing.
+   *
+   * @param newPosition The new position, a non-negative integer counting the number of bytes from
+   *     the beginning of the entity
    * @return This channel
-   * @throws ClosedChannelException   If this channel is closed
+   * @throws ClosedChannelException If this channel is closed
    * @throws IllegalArgumentException If the new position is negative
-   * @throws IOException              If some other I/O error occurs
+   * @throws IOException If some other I/O error occurs
    */
   @Override
   public SeekableByteChannel position(long newPosition) throws IOException {
@@ -483,7 +501,7 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
    *
    * @return The current size, measured in bytes
    * @throws ClosedChannelException If this channel is closed
-   * @throws IOException            If some other I/O error occurs
+   * @throws IOException If some other I/O error occurs
    */
   @Override
   public long size() throws IOException {
@@ -491,9 +509,7 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
     return size;
   }
 
-  /**
-   * Not supported.
-   */
+  /** Not supported. */
   @Override
   public SeekableByteChannel truncate(long size) throws IOException {
     throw new NonWritableChannelException();
@@ -511,18 +527,21 @@ public final class SeekableByteChannelPrefetcher implements SeekableByteChannel 
 
   /**
    * Closes this channel.
+   *
    * <p>
-   * <p> After a channel is closed, any further attempt to invoke I/O
-   * operations upon it will cause a {@link ClosedChannelException} to be
-   * thrown.
+   *
+   * <p>After a channel is closed, any further attempt to invoke I/O operations upon it will cause a
+   * {@link ClosedChannelException} to be thrown.
+   *
    * <p>
-   * <p> If this channel is already closed then invoking this method has no
-   * effect.
+   *
+   * <p>If this channel is already closed then invoking this method has no effect.
+   *
    * <p>
-   * <p> This method may be invoked at any time.  If some other thread has
-   * already invoked it, however, then another invocation will block until
-   * the first invocation is complete, after which it will return without
-   * effect. </p>
+   *
+   * <p>This method may be invoked at any time. If some other thread has already invoked it,
+   * however, then another invocation will block until the first invocation is complete, after which
+   * it will return without effect.
    *
    * @throws IOException If an I/O error occurs
    */

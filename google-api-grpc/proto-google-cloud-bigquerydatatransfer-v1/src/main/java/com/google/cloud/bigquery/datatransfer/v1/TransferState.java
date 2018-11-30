@@ -4,15 +4,18 @@
 package com.google.cloud.bigquery.datatransfer.v1;
 
 /**
+ *
+ *
  * <pre>
  * Represents data transfer run state.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.bigquery.datatransfer.v1.TransferState}
  */
-public enum TransferState
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum TransferState implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * State placeholder.
    * </pre>
@@ -21,6 +24,8 @@ public enum TransferState
    */
   TRANSFER_STATE_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * Data transfer is scheduled and is waiting to be picked up by
    * data transfer backend.
@@ -30,6 +35,8 @@ public enum TransferState
    */
   PENDING(2),
   /**
+   *
+   *
    * <pre>
    * Data transfer is in progress.
    * </pre>
@@ -38,6 +45,8 @@ public enum TransferState
    */
   RUNNING(3),
   /**
+   *
+   *
    * <pre>
    * Data transfer completed successsfully.
    * </pre>
@@ -46,6 +55,8 @@ public enum TransferState
    */
   SUCCEEDED(4),
   /**
+   *
+   *
    * <pre>
    * Data transfer failed.
    * </pre>
@@ -54,6 +65,8 @@ public enum TransferState
    */
   FAILED(5),
   /**
+   *
+   *
    * <pre>
    * Data transfer is cancelled.
    * </pre>
@@ -65,6 +78,8 @@ public enum TransferState
   ;
 
   /**
+   *
+   *
    * <pre>
    * State placeholder.
    * </pre>
@@ -73,6 +88,8 @@ public enum TransferState
    */
   public static final int TRANSFER_STATE_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * Data transfer is scheduled and is waiting to be picked up by
    * data transfer backend.
@@ -82,6 +99,8 @@ public enum TransferState
    */
   public static final int PENDING_VALUE = 2;
   /**
+   *
+   *
    * <pre>
    * Data transfer is in progress.
    * </pre>
@@ -90,6 +109,8 @@ public enum TransferState
    */
   public static final int RUNNING_VALUE = 3;
   /**
+   *
+   *
    * <pre>
    * Data transfer completed successsfully.
    * </pre>
@@ -98,6 +119,8 @@ public enum TransferState
    */
   public static final int SUCCEEDED_VALUE = 4;
   /**
+   *
+   *
    * <pre>
    * Data transfer failed.
    * </pre>
@@ -106,6 +129,8 @@ public enum TransferState
    */
   public static final int FAILED_VALUE = 5;
   /**
+   *
+   *
    * <pre>
    * Data transfer is cancelled.
    * </pre>
@@ -113,7 +138,6 @@ public enum TransferState
    * <code>CANCELLED = 6;</code>
    */
   public static final int CANCELLED_VALUE = 6;
-
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -123,9 +147,7 @@ public enum TransferState
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static TransferState valueOf(int value) {
     return forNumber(value);
@@ -133,48 +155,53 @@ public enum TransferState
 
   public static TransferState forNumber(int value) {
     switch (value) {
-      case 0: return TRANSFER_STATE_UNSPECIFIED;
-      case 2: return PENDING;
-      case 3: return RUNNING;
-      case 4: return SUCCEEDED;
-      case 5: return FAILED;
-      case 6: return CANCELLED;
-      default: return null;
+      case 0:
+        return TRANSFER_STATE_UNSPECIFIED;
+      case 2:
+        return PENDING;
+      case 3:
+        return RUNNING;
+      case 4:
+        return SUCCEEDED;
+      case 5:
+        return FAILED;
+      case 6:
+        return CANCELLED;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<TransferState>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<TransferState> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      TransferState> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<TransferState>() {
-          public TransferState findValueByNumber(int number) {
-            return TransferState.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<TransferState> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<TransferState>() {
+        public TransferState findValueByNumber(int number) {
+          return TransferState.forNumber(number);
+        }
+      };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
-    return com.google.cloud.bigquery.datatransfer.v1.TransferProto.getDescriptor().getEnumTypes().get(1);
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+    return com.google.cloud.bigquery.datatransfer.v1.TransferProto.getDescriptor()
+        .getEnumTypes()
+        .get(1);
   }
 
   private static final TransferState[] VALUES = values();
 
-  public static TransferState valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static TransferState valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -190,4 +217,3 @@ public enum TransferState
 
   // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.datatransfer.v1.TransferState)
 }
-

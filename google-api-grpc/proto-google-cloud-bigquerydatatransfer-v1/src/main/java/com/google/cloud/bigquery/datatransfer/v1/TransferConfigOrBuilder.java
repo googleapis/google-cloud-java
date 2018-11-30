@@ -3,11 +3,14 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-public interface TransferConfigOrBuilder extends
+public interface TransferConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.datatransfer.v1.TransferConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resource name of the transfer config.
    * Transfer config names have the form
@@ -21,6 +24,8 @@ public interface TransferConfigOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The resource name of the transfer config.
    * Transfer config names have the form
@@ -32,10 +37,11 @@ public interface TransferConfigOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The BigQuery target dataset id.
    * </pre>
@@ -44,16 +50,19 @@ public interface TransferConfigOrBuilder extends
    */
   java.lang.String getDestinationDatasetId();
   /**
+   *
+   *
    * <pre>
    * The BigQuery target dataset id.
    * </pre>
    *
    * <code>string destination_dataset_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDestinationDatasetIdBytes();
+  com.google.protobuf.ByteString getDestinationDatasetIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * User specified display name for the data transfer.
    * </pre>
@@ -62,16 +71,19 @@ public interface TransferConfigOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * User specified display name for the data transfer.
    * </pre>
    *
    * <code>string display_name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Data source id. Cannot be changed once data transfer is created.
    * </pre>
@@ -80,16 +92,19 @@ public interface TransferConfigOrBuilder extends
    */
   java.lang.String getDataSourceId();
   /**
+   *
+   *
    * <pre>
    * Data source id. Cannot be changed once data transfer is created.
    * </pre>
    *
    * <code>string data_source_id = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getDataSourceIdBytes();
+  com.google.protobuf.ByteString getDataSourceIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Data transfer specific parameters.
    * </pre>
@@ -98,6 +113,8 @@ public interface TransferConfigOrBuilder extends
    */
   boolean hasParams();
   /**
+   *
+   *
    * <pre>
    * Data transfer specific parameters.
    * </pre>
@@ -106,6 +123,8 @@ public interface TransferConfigOrBuilder extends
    */
   com.google.protobuf.Struct getParams();
   /**
+   *
+   *
    * <pre>
    * Data transfer specific parameters.
    * </pre>
@@ -115,6 +134,8 @@ public interface TransferConfigOrBuilder extends
   com.google.protobuf.StructOrBuilder getParamsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Data transfer schedule.
    * If the data source does not support a custom schedule, this should be
@@ -134,6 +155,8 @@ public interface TransferConfigOrBuilder extends
    */
   java.lang.String getSchedule();
   /**
+   *
+   *
    * <pre>
    * Data transfer schedule.
    * If the data source does not support a custom schedule, this should be
@@ -151,10 +174,11 @@ public interface TransferConfigOrBuilder extends
    *
    * <code>string schedule = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getScheduleBytes();
+  com.google.protobuf.ByteString getScheduleBytes();
 
   /**
+   *
+   *
    * <pre>
    * The number of days to look back to automatically refresh the data.
    * For example, if `data_refresh_window_days = 10`, then every day
@@ -169,6 +193,8 @@ public interface TransferConfigOrBuilder extends
   int getDataRefreshWindowDays();
 
   /**
+   *
+   *
    * <pre>
    * Is this config disabled. When set to true, no runs are scheduled
    * for a given transfer.
@@ -179,6 +205,8 @@ public interface TransferConfigOrBuilder extends
   boolean getDisabled();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Data transfer modification time. Ignored by server on input.
    * </pre>
@@ -187,6 +215,8 @@ public interface TransferConfigOrBuilder extends
    */
   boolean hasUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Data transfer modification time. Ignored by server on input.
    * </pre>
@@ -195,6 +225,8 @@ public interface TransferConfigOrBuilder extends
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Data transfer modification time. Ignored by server on input.
    * </pre>
@@ -204,6 +236,8 @@ public interface TransferConfigOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Next time when data transfer will run.
    * </pre>
@@ -212,6 +246,8 @@ public interface TransferConfigOrBuilder extends
    */
   boolean hasNextRunTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Next time when data transfer will run.
    * </pre>
@@ -220,6 +256,8 @@ public interface TransferConfigOrBuilder extends
    */
   com.google.protobuf.Timestamp getNextRunTime();
   /**
+   *
+   *
    * <pre>
    * Output only. Next time when data transfer will run.
    * </pre>
@@ -229,6 +267,8 @@ public interface TransferConfigOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getNextRunTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. State of the most recently updated transfer run.
    * </pre>
@@ -237,6 +277,8 @@ public interface TransferConfigOrBuilder extends
    */
   int getStateValue();
   /**
+   *
+   *
    * <pre>
    * Output only. State of the most recently updated transfer run.
    * </pre>
@@ -246,6 +288,8 @@ public interface TransferConfigOrBuilder extends
   com.google.cloud.bigquery.datatransfer.v1.TransferState getState();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Unique ID of the user on whose behalf transfer is done.
    * Applicable only to data sources that do not support service accounts.
@@ -259,6 +303,8 @@ public interface TransferConfigOrBuilder extends
   long getUserId();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Region in which BigQuery dataset is located.
    * </pre>
@@ -267,12 +313,13 @@ public interface TransferConfigOrBuilder extends
    */
   java.lang.String getDatasetRegion();
   /**
+   *
+   *
    * <pre>
    * Output only. Region in which BigQuery dataset is located.
    * </pre>
    *
    * <code>string dataset_region = 14;</code>
    */
-  com.google.protobuf.ByteString
-      getDatasetRegionBytes();
+  com.google.protobuf.ByteString getDatasetRegionBytes();
 }

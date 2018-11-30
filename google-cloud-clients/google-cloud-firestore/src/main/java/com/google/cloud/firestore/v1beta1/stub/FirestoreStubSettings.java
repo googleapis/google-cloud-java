@@ -378,7 +378,8 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
           ListCollectionIdsRequest, ListCollectionIdsResponse, ListCollectionIdsPagedResponse>
       LIST_COLLECTION_IDS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListCollectionIdsRequest, ListCollectionIdsResponse,
+              ListCollectionIdsRequest,
+              ListCollectionIdsResponse,
               ListCollectionIdsPagedResponse>() {
             @Override
             public ApiFuture<ListCollectionIdsPagedResponse> getFuturePagedResponse(

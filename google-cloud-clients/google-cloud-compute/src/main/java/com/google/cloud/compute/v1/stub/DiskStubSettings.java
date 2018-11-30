@@ -325,7 +325,8 @@ public class DiskStubSettings extends StubSettings<DiskStubSettings> {
           AggregatedListDisksHttpRequest, DiskAggregatedList, AggregatedListDisksPagedResponse>
       AGGREGATED_LIST_DISKS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListDisksHttpRequest, DiskAggregatedList,
+              AggregatedListDisksHttpRequest,
+              DiskAggregatedList,
               AggregatedListDisksPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListDisksPagedResponse> getFuturePagedResponse(

@@ -19,15 +19,14 @@ package com.google.cloud.compute.deprecated;
 import com.google.api.services.compute.model.Network;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
-
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Base class for Google Compute Engine network configuration. Use
- * {@link StandardNetworkConfiguration} to create a standard network with associated address range.
- * Use {@link SubnetNetworkConfiguration} to create a network that supports subnetworks, up to one
- * per region, each with its own address range.
+ * Base class for Google Compute Engine network configuration. Use {@link
+ * StandardNetworkConfiguration} to create a standard network with associated address range. Use
+ * {@link SubnetNetworkConfiguration} to create a network that supports subnetworks, up to one per
+ * region, each with its own address range.
  *
  * @see <a href="https://cloud.google.com/compute/docs/networking">Using Networks and Firewalls</a>
  */
@@ -37,13 +36,9 @@ public abstract class NetworkConfiguration implements Serializable {
 
   private final Type type;
 
-  /**
-   * Type of a Google Compute Engine disk configuration.
-   */
+  /** Type of a Google Compute Engine disk configuration. */
   public enum Type {
-    /**
-     * A Google Compute Engine network with no subnetworks.
-     */
+    /** A Google Compute Engine network with no subnetworks. */
     STANDARD,
 
     /**
