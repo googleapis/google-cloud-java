@@ -680,7 +680,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a new notification channel, representing a single notification endpoint such as an
-   * email address, SMS number, or pagerduty service.
+   * email address, SMS number, or PagerDuty service.
    *
    * <p>Sample code:
    *
@@ -715,7 +715,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a new notification channel, representing a single notification endpoint such as an
-   * email address, SMS number, or pagerduty service.
+   * email address, SMS number, or PagerDuty service.
    *
    * <p>Sample code:
    *
@@ -750,7 +750,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a new notification channel, representing a single notification endpoint such as an
-   * email address, SMS number, or pagerduty service.
+   * email address, SMS number, or PagerDuty service.
    *
    * <p>Sample code:
    *
@@ -777,7 +777,7 @@ public class NotificationChannelServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a new notification channel, representing a single notification endpoint such as an
-   * email address, SMS number, or pagerduty service.
+   * email address, SMS number, or PagerDuty service.
    *
    * <p>Sample code:
    *

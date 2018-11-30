@@ -291,7 +291,9 @@ public class NotificationChannelServiceStubSettings
             @Override
             public Iterable<NotificationChannelDescriptor> extractResources(
                 ListNotificationChannelDescriptorsResponse payload) {
-              return payload.getChannelDescriptorsList();
+              return payload.getChannelDescriptorsList() != null
+                  ? payload.getChannelDescriptorsList()
+                  : ImmutableList.<NotificationChannelDescriptor>of();
             }
           };
 
@@ -336,7 +338,9 @@ public class NotificationChannelServiceStubSettings
             @Override
             public Iterable<NotificationChannel> extractResources(
                 ListNotificationChannelsResponse payload) {
-              return payload.getNotificationChannelsList();
+              return payload.getNotificationChannelsList() != null
+                  ? payload.getNotificationChannelsList()
+                  : ImmutableList.<NotificationChannel>of();
             }
           };
 

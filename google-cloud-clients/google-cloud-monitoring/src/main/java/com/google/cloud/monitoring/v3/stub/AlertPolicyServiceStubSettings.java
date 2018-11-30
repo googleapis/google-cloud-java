@@ -237,7 +237,9 @@ public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServ
 
             @Override
             public Iterable<AlertPolicy> extractResources(ListAlertPoliciesResponse payload) {
-              return payload.getAlertPoliciesList();
+              return payload.getAlertPoliciesList() != null
+                  ? payload.getAlertPoliciesList()
+                  : ImmutableList.<AlertPolicy>of();
             }
           };
 
