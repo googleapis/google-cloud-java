@@ -52,8 +52,7 @@ import java.util.TreeMap;
  *   Entity entity = results.next();
  *   ...
  * }
- * }
- * </pre>
+ * }</pre>
  *
  * <p>When the type of the results is unknown you can use this approach:
  *
@@ -67,8 +66,7 @@ import java.util.TreeMap;
  *     ...
  *   }
  * }
- * }
- * </pre>
+ * }</pre>
  *
  * @param <V> the type of the result values this query will produce
  * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>

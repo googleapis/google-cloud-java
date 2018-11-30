@@ -25,15 +25,13 @@
  * LocalDatastoreHelper helper = LocalDatastoreHelper.create();
  * helper.start();
  * Datastore localDatastore = helper.getOptions().getService();
- * }
- * </pre>
+ * }</pre>
  *
  * <p>After the test:
  *
  * <pre>{@code
  * helper.stop();
- * }
- * </pre>
+ * }</pre>
  *
  * @see <a
  *     href="https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-datastore">

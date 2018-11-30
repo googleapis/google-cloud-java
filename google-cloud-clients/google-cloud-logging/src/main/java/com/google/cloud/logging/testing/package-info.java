@@ -24,15 +24,13 @@
  * <pre>{@code
  * RemoteLoggingHelper helper = RemoteLoggingHelper.create();
  * Logging logging = helper.getOptions().getService();
- * }
- * </pre>
+ * }</pre>
  *
  * <p>Format resource names to avoid name clashes:
  *
  * <pre>{@code
  * String metricName = RemoteLoggingHelper.formatForTest("test-metric");
- * }
- * </pre>
+ * }</pre>
  *
  * @see <a
  *     href="https://github.com/googleapis/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-logging">

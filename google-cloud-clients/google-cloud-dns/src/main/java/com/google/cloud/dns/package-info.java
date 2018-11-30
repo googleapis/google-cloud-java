@@ -32,8 +32,7 @@
  * String description = "This is a google-cloud-dns sample zone.";
  * ZoneInfo zoneInfo = ZoneInfo.of(zoneName, domainName, description);
  * Zone createdZone = dns.create(zoneInfo);
- * }
- * </pre>
+ * }</pre>
  *
  * <p>The second example shows how to create records inside a zone. The complete code can be found
  * on <a href=
@@ -51,8 +50,7 @@
  *   .build();
  * ChangeRequestInfo changeRequest = ChangeRequestInfo.newBuilder().add(toCreate).build();
  * zone.applyChangeRequest(changeRequest);
- * }
- * </pre>
+ * }</pre>
  *
  * <p>When using google-cloud from outside of App/Compute Engine, you have to <a
  * href="https://github.com/googleapis/google-cloud-java#specifying-a-project-id">specify a project

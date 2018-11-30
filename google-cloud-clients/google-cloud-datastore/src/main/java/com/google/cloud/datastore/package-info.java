@@ -32,8 +32,7 @@
  *     .set("access_time", Timestamp.now())
  *     .build();
  * datastore.put(entity);
- * }
- * </pre>
+ * }</pre>
  *
  * <p>This second example shows how to get and update a Datastore entity if it exists. For the
  * complete source code see <a
@@ -51,8 +50,8 @@
  *       .set("access_time", Timestamp.now())
  *       .build();
  *   datastore.update(entity);
- * }}
- * </pre>
+ * }
+ * }</pre>
  *
  * <p>When using google-cloud from outside of App/Compute Engine, you have to <a
  * href="https://github.com/googleapis/google-cloud-java#specifying-a-project-id">specify a project

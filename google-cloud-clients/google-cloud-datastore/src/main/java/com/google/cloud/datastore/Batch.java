@@ -31,8 +31,7 @@ import java.util.List;
  * batch.update(entity1);
  * batch.add(entity2, entity3);
  * batch.submit();
- * }
- * </pre>
+ * }</pre>
  */
 public interface Batch extends DatastoreBatchWriter {
 

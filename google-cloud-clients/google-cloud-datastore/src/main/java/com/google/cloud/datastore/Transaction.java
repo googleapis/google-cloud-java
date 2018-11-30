@@ -48,8 +48,7 @@ import java.util.List;
  *     transaction.rollback();
  *   }
  * }
- * }
- * </pre>
+ * }</pre>
  *
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/transactions">Google Cloud
  *     Datastore transactions</a>

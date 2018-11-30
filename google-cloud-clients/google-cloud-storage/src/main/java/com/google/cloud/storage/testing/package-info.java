@@ -26,15 +26,13 @@
  * Storage storage = helper.getOptions().getService();
  * String bucket = RemoteStorageHelper.generateBucketName();
  * storage.create(BucketInfo.of(bucket));
- * }
- * </pre>
+ * }</pre>
  *
  * <p>After the test:
  *
  * <pre>{@code
  * RemoteStorageHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
- * }
- * </pre>
+ * }</pre>
  *
  * @see <a
  *     href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-storage">
