@@ -3,11 +3,14 @@
 
 package com.google.cloud.speech.v1p1beta1;
 
-public interface RecognitionConfigOrBuilder extends
+public interface RecognitionConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1p1beta1.RecognitionConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
@@ -18,6 +21,8 @@ public interface RecognitionConfigOrBuilder extends
    */
   int getEncodingValue();
   /**
+   *
+   *
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
@@ -29,6 +34,8 @@ public interface RecognitionConfigOrBuilder extends
   com.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding getEncoding();
 
   /**
+   *
+   *
    * <pre>
    * Sample rate in Hertz of the audio data sent in all
    * `RecognitionAudio` messages. Valid values are: 8000-48000.
@@ -44,6 +51,8 @@ public interface RecognitionConfigOrBuilder extends
   int getSampleRateHertz();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* The number of channels in the input audio data.
    * ONLY set this for MULTI-CHANNEL recognition.
@@ -61,6 +70,8 @@ public interface RecognitionConfigOrBuilder extends
   int getAudioChannelCount();
 
   /**
+   *
+   *
    * <pre>
    * This needs to be set to ‘true’ explicitly and `audio_channel_count` &gt; 1
    * to get each channel recognized separately. The recognition result will
@@ -75,6 +86,8 @@ public interface RecognitionConfigOrBuilder extends
   boolean getEnableSeparateRecognitionPerChannel();
 
   /**
+   *
+   *
    * <pre>
    * *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -87,6 +100,8 @@ public interface RecognitionConfigOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -97,10 +112,11 @@ public interface RecognitionConfigOrBuilder extends
    *
    * <code>string language_code = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* A list of up to 3 additional
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
@@ -118,9 +134,10 @@ public interface RecognitionConfigOrBuilder extends
    *
    * <code>repeated string alternative_language_codes = 18;</code>
    */
-  java.util.List<java.lang.String>
-      getAlternativeLanguageCodesList();
+  java.util.List<java.lang.String> getAlternativeLanguageCodesList();
   /**
+   *
+   *
    * <pre>
    * *Optional* A list of up to 3 additional
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
@@ -140,6 +157,8 @@ public interface RecognitionConfigOrBuilder extends
    */
   int getAlternativeLanguageCodesCount();
   /**
+   *
+   *
    * <pre>
    * *Optional* A list of up to 3 additional
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
@@ -159,6 +178,8 @@ public interface RecognitionConfigOrBuilder extends
    */
   java.lang.String getAlternativeLanguageCodes(int index);
   /**
+   *
+   *
    * <pre>
    * *Optional* A list of up to 3 additional
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags,
@@ -176,10 +197,11 @@ public interface RecognitionConfigOrBuilder extends
    *
    * <code>repeated string alternative_language_codes = 18;</code>
    */
-  com.google.protobuf.ByteString
-      getAlternativeLanguageCodesBytes(int index);
+  com.google.protobuf.ByteString getAlternativeLanguageCodesBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * *Optional* Maximum number of recognition hypotheses to be returned.
    * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
@@ -194,6 +216,8 @@ public interface RecognitionConfigOrBuilder extends
   int getMaxAlternatives();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* If set to `true`, the server will attempt to filter out
    * profanities, replacing all but the initial character in each filtered word
@@ -206,6 +230,8 @@ public interface RecognitionConfigOrBuilder extends
   boolean getProfanityFilter();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
@@ -214,9 +240,10 @@ public interface RecognitionConfigOrBuilder extends
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
    */
-  java.util.List<com.google.cloud.speech.v1p1beta1.SpeechContext> 
-      getSpeechContextsList();
+  java.util.List<com.google.cloud.speech.v1p1beta1.SpeechContext> getSpeechContextsList();
   /**
+   *
+   *
    * <pre>
    * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
@@ -227,6 +254,8 @@ public interface RecognitionConfigOrBuilder extends
    */
   com.google.cloud.speech.v1p1beta1.SpeechContext getSpeechContexts(int index);
   /**
+   *
+   *
    * <pre>
    * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
@@ -237,6 +266,8 @@ public interface RecognitionConfigOrBuilder extends
    */
   int getSpeechContextsCount();
   /**
+   *
+   *
    * <pre>
    * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
@@ -245,9 +276,11 @@ public interface RecognitionConfigOrBuilder extends
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
    */
-  java.util.List<? extends com.google.cloud.speech.v1p1beta1.SpeechContextOrBuilder> 
+  java.util.List<? extends com.google.cloud.speech.v1p1beta1.SpeechContextOrBuilder>
       getSpeechContextsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
@@ -256,10 +289,11 @@ public interface RecognitionConfigOrBuilder extends
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
    */
-  com.google.cloud.speech.v1p1beta1.SpeechContextOrBuilder getSpeechContextsOrBuilder(
-      int index);
+  com.google.cloud.speech.v1p1beta1.SpeechContextOrBuilder getSpeechContextsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * *Optional* If `true`, the top result includes a list of words and
    * the start and end time offsets (timestamps) for those words. If
@@ -272,6 +306,8 @@ public interface RecognitionConfigOrBuilder extends
   boolean getEnableWordTimeOffsets();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* If `true`, the top result includes a list of words and the
    * confidence for those words. If `false`, no word-level confidence
@@ -283,6 +319,8 @@ public interface RecognitionConfigOrBuilder extends
   boolean getEnableWordConfidence();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* If 'true', adds punctuation to recognition result hypotheses.
    * This feature is only available in select languages. Setting this for
@@ -298,6 +336,8 @@ public interface RecognitionConfigOrBuilder extends
   boolean getEnableAutomaticPunctuation();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* If 'true', enables speaker detection for each recognized word in
    * the top alternative of the recognition result using a speaker_tag provided
@@ -315,6 +355,8 @@ public interface RecognitionConfigOrBuilder extends
   boolean getEnableSpeakerDiarization();
 
   /**
+   *
+   *
    * <pre>
    * *Optional*
    * If set, specifies the estimated number of speakers in the conversation.
@@ -327,6 +369,8 @@ public interface RecognitionConfigOrBuilder extends
   int getDiarizationSpeakerCount();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* Metadata regarding this request.
    * </pre>
@@ -335,6 +379,8 @@ public interface RecognitionConfigOrBuilder extends
    */
   boolean hasMetadata();
   /**
+   *
+   *
    * <pre>
    * *Optional* Metadata regarding this request.
    * </pre>
@@ -343,6 +389,8 @@ public interface RecognitionConfigOrBuilder extends
    */
   com.google.cloud.speech.v1p1beta1.RecognitionMetadata getMetadata();
   /**
+   *
+   *
    * <pre>
    * *Optional* Metadata regarding this request.
    * </pre>
@@ -352,6 +400,8 @@ public interface RecognitionConfigOrBuilder extends
   com.google.cloud.speech.v1p1beta1.RecognitionMetadataOrBuilder getMetadataOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* Which model to select for the given request. Select the model
    * best suited to your domain to get best results. If a model is not
@@ -391,6 +441,8 @@ public interface RecognitionConfigOrBuilder extends
    */
   java.lang.String getModel();
   /**
+   *
+   *
    * <pre>
    * *Optional* Which model to select for the given request. Select the model
    * best suited to your domain to get best results. If a model is not
@@ -428,10 +480,11 @@ public interface RecognitionConfigOrBuilder extends
    *
    * <code>string model = 13;</code>
    */
-  com.google.protobuf.ByteString
-      getModelBytes();
+  com.google.protobuf.ByteString getModelBytes();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* Set to true to use an enhanced model for speech recognition.
    * If `use_enhanced` is set to true and the `model` field is not set, then
