@@ -66,13 +66,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -734,8 +734,11 @@ public class SessionEntityTypesClient implements BackgroundResource {
 
   public static class ListSessionEntityTypesPagedResponse
       extends AbstractPagedListResponse<
-          ListSessionEntityTypesRequest, ListSessionEntityTypesResponse, SessionEntityType,
-          ListSessionEntityTypesPage, ListSessionEntityTypesFixedSizeCollection> {
+          ListSessionEntityTypesRequest,
+          ListSessionEntityTypesResponse,
+          SessionEntityType,
+          ListSessionEntityTypesPage,
+          ListSessionEntityTypesFixedSizeCollection> {
 
     public static ApiFuture<ListSessionEntityTypesPagedResponse> createAsync(
         PageContext<
@@ -761,7 +764,9 @@ public class SessionEntityTypesClient implements BackgroundResource {
 
   public static class ListSessionEntityTypesPage
       extends AbstractPage<
-          ListSessionEntityTypesRequest, ListSessionEntityTypesResponse, SessionEntityType,
+          ListSessionEntityTypesRequest,
+          ListSessionEntityTypesResponse,
+          SessionEntityType,
           ListSessionEntityTypesPage> {
 
     private ListSessionEntityTypesPage(
@@ -797,8 +802,11 @@ public class SessionEntityTypesClient implements BackgroundResource {
 
   public static class ListSessionEntityTypesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListSessionEntityTypesRequest, ListSessionEntityTypesResponse, SessionEntityType,
-          ListSessionEntityTypesPage, ListSessionEntityTypesFixedSizeCollection> {
+          ListSessionEntityTypesRequest,
+          ListSessionEntityTypesResponse,
+          SessionEntityType,
+          ListSessionEntityTypesPage,
+          ListSessionEntityTypesFixedSizeCollection> {
 
     private ListSessionEntityTypesFixedSizeCollection(
         List<ListSessionEntityTypesPage> pages, int collectionSize) {

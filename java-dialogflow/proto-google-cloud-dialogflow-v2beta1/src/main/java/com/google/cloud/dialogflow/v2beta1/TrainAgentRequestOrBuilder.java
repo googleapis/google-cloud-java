@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface TrainAgentRequestOrBuilder extends
+public interface TrainAgentRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.TrainAgentRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The project that the agent to train is associated with.
    * Format: `projects/&lt;Project ID&gt;`.
@@ -17,6 +20,8 @@ public interface TrainAgentRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The project that the agent to train is associated with.
    * Format: `projects/&lt;Project ID&gt;`.
@@ -24,6 +29,5 @@ public interface TrainAgentRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 }

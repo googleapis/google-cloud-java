@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface DetectIntentResponseOrBuilder extends
+public interface DetectIntentResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.DetectIntentResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique identifier of the response. It can be used to
    * locate a response in the training example set or for reporting issues.
@@ -17,6 +20,8 @@ public interface DetectIntentResponseOrBuilder extends
    */
   java.lang.String getResponseId();
   /**
+   *
+   *
    * <pre>
    * The unique identifier of the response. It can be used to
    * locate a response in the training example set or for reporting issues.
@@ -24,10 +29,11 @@ public interface DetectIntentResponseOrBuilder extends
    *
    * <code>string response_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getResponseIdBytes();
+  com.google.protobuf.ByteString getResponseIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The selected results of the conversational query or event processing.
    * See `alternative_query_results` for additional potential results.
@@ -37,6 +43,8 @@ public interface DetectIntentResponseOrBuilder extends
    */
   boolean hasQueryResult();
   /**
+   *
+   *
    * <pre>
    * The selected results of the conversational query or event processing.
    * See `alternative_query_results` for additional potential results.
@@ -46,6 +54,8 @@ public interface DetectIntentResponseOrBuilder extends
    */
   com.google.cloud.dialogflow.v2beta1.QueryResult getQueryResult();
   /**
+   *
+   *
    * <pre>
    * The selected results of the conversational query or event processing.
    * See `alternative_query_results` for additional potential results.
@@ -56,6 +66,8 @@ public interface DetectIntentResponseOrBuilder extends
   com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder getQueryResultOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
    * returned for a given query or event, and this field will contain all
@@ -67,11 +79,13 @@ public interface DetectIntentResponseOrBuilder extends
    * surfaced here.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+   * </code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> 
-      getAlternativeQueryResultsList();
+  java.util.List<com.google.cloud.dialogflow.v2beta1.QueryResult> getAlternativeQueryResultsList();
   /**
+   *
+   *
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
    * returned for a given query or event, and this field will contain all
@@ -83,10 +97,13 @@ public interface DetectIntentResponseOrBuilder extends
    * surfaced here.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.QueryResult getAlternativeQueryResults(int index);
   /**
+   *
+   *
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
    * returned for a given query or event, and this field will contain all
@@ -98,10 +115,13 @@ public interface DetectIntentResponseOrBuilder extends
    * surfaced here.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+   * </code>
    */
   int getAlternativeQueryResultsCount();
   /**
+   *
+   *
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
    * returned for a given query or event, and this field will contain all
@@ -113,11 +133,14 @@ public interface DetectIntentResponseOrBuilder extends
    * surfaced here.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder>
       getAlternativeQueryResultsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * If Knowledge Connectors are enabled, there could be more than one result
    * returned for a given query or event, and this field will contain all
@@ -129,12 +152,15 @@ public interface DetectIntentResponseOrBuilder extends
    * surfaced here.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.QueryResult alternative_query_results = 5;
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.QueryResultOrBuilder getAlternativeQueryResultsOrBuilder(
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Specifies the status of the webhook request. `webhook_status`
    * is never populated in webhook requests.
@@ -144,6 +170,8 @@ public interface DetectIntentResponseOrBuilder extends
    */
   boolean hasWebhookStatus();
   /**
+   *
+   *
    * <pre>
    * Specifies the status of the webhook request. `webhook_status`
    * is never populated in webhook requests.
@@ -153,6 +181,8 @@ public interface DetectIntentResponseOrBuilder extends
    */
   com.google.rpc.Status getWebhookStatus();
   /**
+   *
+   *
    * <pre>
    * Specifies the status of the webhook request. `webhook_status`
    * is never populated in webhook requests.
@@ -163,6 +193,8 @@ public interface DetectIntentResponseOrBuilder extends
   com.google.rpc.StatusOrBuilder getWebhookStatusOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The audio data bytes encoded as specified in the request.
    * </pre>
@@ -172,6 +204,8 @@ public interface DetectIntentResponseOrBuilder extends
   com.google.protobuf.ByteString getOutputAudio();
 
   /**
+   *
+   *
    * <pre>
    * Instructs the speech synthesizer how to generate the output audio. This
    * field is populated from the agent-level speech synthesizer configuration,
@@ -182,6 +216,8 @@ public interface DetectIntentResponseOrBuilder extends
    */
   boolean hasOutputAudioConfig();
   /**
+   *
+   *
    * <pre>
    * Instructs the speech synthesizer how to generate the output audio. This
    * field is populated from the agent-level speech synthesizer configuration,
@@ -192,6 +228,8 @@ public interface DetectIntentResponseOrBuilder extends
    */
   com.google.cloud.dialogflow.v2beta1.OutputAudioConfig getOutputAudioConfig();
   /**
+   *
+   *
    * <pre>
    * Instructs the speech synthesizer how to generate the output audio. This
    * field is populated from the agent-level speech synthesizer configuration,

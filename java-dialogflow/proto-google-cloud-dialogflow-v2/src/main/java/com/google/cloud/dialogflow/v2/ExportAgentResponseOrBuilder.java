@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface ExportAgentResponseOrBuilder extends
+public interface ExportAgentResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.ExportAgentResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The URI to a file containing the exported agent. This field is populated
    * only if `agent_uri` is specified in `ExportAgentRequest`.
@@ -17,6 +20,8 @@ public interface ExportAgentResponseOrBuilder extends
    */
   java.lang.String getAgentUri();
   /**
+   *
+   *
    * <pre>
    * The URI to a file containing the exported agent. This field is populated
    * only if `agent_uri` is specified in `ExportAgentRequest`.
@@ -24,10 +29,11 @@ public interface ExportAgentResponseOrBuilder extends
    *
    * <code>string agent_uri = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getAgentUriBytes();
+  com.google.protobuf.ByteString getAgentUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * The exported agent.
    * Example for how to export an agent to a zip file via a command line:

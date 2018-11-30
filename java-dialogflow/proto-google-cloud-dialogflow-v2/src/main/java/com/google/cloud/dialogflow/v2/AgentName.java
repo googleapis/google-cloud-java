@@ -14,13 +14,13 @@
 
 package com.google.cloud.dialogflow.v2;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +56,11 @@ public class AgentName implements ResourceName {
   }
 
   public static AgentName of(String project, String agent) {
-    return newBuilder()
-      .setProject(project)
-      .setAgent(agent)
-      .build();
+    return newBuilder().setProject(project).setAgent(agent).build();
   }
 
   public static String format(String project, String agent) {
-    return newBuilder()
-      .setProject(project)
-      .setAgent(agent)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setAgent(agent).build().toString();
   }
 
   public static AgentName parse(String formattedString) {
@@ -75,7 +68,8 @@ public class AgentName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "AgentName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "AgentName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("agent"));
   }
 
@@ -150,8 +144,7 @@ public class AgentName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(AgentName agentName) {
       project = agentName.project;
@@ -170,8 +163,7 @@ public class AgentName implements ResourceName {
     }
     if (o instanceof AgentName) {
       AgentName that = (AgentName) o;
-      return (this.project.equals(that.project))
-          && (this.agent.equals(that.agent));
+      return (this.project.equals(that.project)) && (this.agent.equals(that.agent));
     }
     return false;
   }
@@ -186,4 +178,3 @@ public class AgentName implements ResourceName {
     return h;
   }
 }
-

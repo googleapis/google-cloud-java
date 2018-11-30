@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface QueryParametersOrBuilder extends
+public interface QueryParametersOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.QueryParameters)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional. The time zone of this conversational query from the
    * [time zone database](https://www.iana.org/time-zones), e.g.,
@@ -19,6 +22,8 @@ public interface QueryParametersOrBuilder extends
    */
   java.lang.String getTimeZone();
   /**
+   *
+   *
    * <pre>
    * Optional. The time zone of this conversational query from the
    * [time zone database](https://www.iana.org/time-zones), e.g.,
@@ -28,10 +33,11 @@ public interface QueryParametersOrBuilder extends
    *
    * <code>string time_zone = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getTimeZoneBytes();
+  com.google.protobuf.ByteString getTimeZoneBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The geo location of this conversational query.
    * </pre>
@@ -40,6 +46,8 @@ public interface QueryParametersOrBuilder extends
    */
   boolean hasGeoLocation();
   /**
+   *
+   *
    * <pre>
    * Optional. The geo location of this conversational query.
    * </pre>
@@ -48,6 +56,8 @@ public interface QueryParametersOrBuilder extends
    */
   com.google.type.LatLng getGeoLocation();
   /**
+   *
+   *
    * <pre>
    * Optional. The geo location of this conversational query.
    * </pre>
@@ -57,6 +67,8 @@ public interface QueryParametersOrBuilder extends
   com.google.type.LatLngOrBuilder getGeoLocationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of contexts to be activated before this query is
    * executed.
@@ -64,9 +76,10 @@ public interface QueryParametersOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context contexts = 3;</code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2beta1.Context> 
-      getContextsList();
+  java.util.List<com.google.cloud.dialogflow.v2beta1.Context> getContextsList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of contexts to be activated before this query is
    * executed.
@@ -76,6 +89,8 @@ public interface QueryParametersOrBuilder extends
    */
   com.google.cloud.dialogflow.v2beta1.Context getContexts(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of contexts to be activated before this query is
    * executed.
@@ -85,6 +100,8 @@ public interface QueryParametersOrBuilder extends
    */
   int getContextsCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of contexts to be activated before this query is
    * executed.
@@ -92,9 +109,11 @@ public interface QueryParametersOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context contexts = 3;</code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ContextOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>
       getContextsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of contexts to be activated before this query is
    * executed.
@@ -102,10 +121,11 @@ public interface QueryParametersOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context contexts = 3;</code>
    */
-  com.google.cloud.dialogflow.v2beta1.ContextOrBuilder getContextsOrBuilder(
-      int index);
+  com.google.cloud.dialogflow.v2beta1.ContextOrBuilder getContextsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. Specifies whether to delete all contexts in the current session
    * before the new ones are activated.
@@ -116,60 +136,76 @@ public interface QueryParametersOrBuilder extends
   boolean getResetContexts();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of session entity types to replace or extend
    * developer entities with for this query only. The entity synonyms apply
    * to all languages.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
+   * </code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2beta1.SessionEntityType> 
-      getSessionEntityTypesList();
+  java.util.List<com.google.cloud.dialogflow.v2beta1.SessionEntityType> getSessionEntityTypesList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of session entity types to replace or extend
    * developer entities with for this query only. The entity synonyms apply
    * to all languages.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.SessionEntityType getSessionEntityTypes(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of session entity types to replace or extend
    * developer entities with for this query only. The entity synonyms apply
    * to all languages.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
+   * </code>
    */
   int getSessionEntityTypesCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of session entity types to replace or extend
    * developer entities with for this query only. The entity synonyms apply
    * to all languages.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder>
       getSessionEntityTypesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of session entity types to replace or extend
    * developer entities with for this query only. The entity synonyms apply
    * to all languages.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_types = 5;
+   * </code>
    */
   com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder getSessionEntityTypesOrBuilder(
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. This field can be used to pass custom data into the webhook
    * associated with the agent. Arbitrary JSON objects are supported.
@@ -179,6 +215,8 @@ public interface QueryParametersOrBuilder extends
    */
   boolean hasPayload();
   /**
+   *
+   *
    * <pre>
    * Optional. This field can be used to pass custom data into the webhook
    * associated with the agent. Arbitrary JSON objects are supported.
@@ -188,6 +226,8 @@ public interface QueryParametersOrBuilder extends
    */
   com.google.protobuf.Struct getPayload();
   /**
+   *
+   *
    * <pre>
    * Optional. This field can be used to pass custom data into the webhook
    * associated with the agent. Arbitrary JSON objects are supported.
@@ -198,6 +238,8 @@ public interface QueryParametersOrBuilder extends
   com.google.protobuf.StructOrBuilder getPayloadOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. KnowledgeBases to get alternative results from. If not set, the
    * KnowledgeBases enabled in the agent (through UI) will be used.
@@ -209,9 +251,10 @@ public interface QueryParametersOrBuilder extends
    *
    * <code>repeated string knowledge_base_names = 12;</code>
    */
-  java.util.List<java.lang.String>
-      getKnowledgeBaseNamesList();
+  java.util.List<java.lang.String> getKnowledgeBaseNamesList();
   /**
+   *
+   *
    * <pre>
    * Optional. KnowledgeBases to get alternative results from. If not set, the
    * KnowledgeBases enabled in the agent (through UI) will be used.
@@ -225,6 +268,8 @@ public interface QueryParametersOrBuilder extends
    */
   int getKnowledgeBaseNamesCount();
   /**
+   *
+   *
    * <pre>
    * Optional. KnowledgeBases to get alternative results from. If not set, the
    * KnowledgeBases enabled in the agent (through UI) will be used.
@@ -238,6 +283,8 @@ public interface QueryParametersOrBuilder extends
    */
   java.lang.String getKnowledgeBaseNames(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. KnowledgeBases to get alternative results from. If not set, the
    * KnowledgeBases enabled in the agent (through UI) will be used.
@@ -249,10 +296,11 @@ public interface QueryParametersOrBuilder extends
    *
    * <code>repeated string knowledge_base_names = 12;</code>
    */
-  com.google.protobuf.ByteString
-      getKnowledgeBaseNamesBytes(int index);
+  com.google.protobuf.ByteString getKnowledgeBaseNamesBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. Configures the type of sentiment analysis to perform. If not
    * provided, sentiment analysis is not performed.
@@ -260,10 +308,14 @@ public interface QueryParametersOrBuilder extends
    * agents.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+   * </code>
    */
   boolean hasSentimentAnalysisRequestConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. Configures the type of sentiment analysis to perform. If not
    * provided, sentiment analysis is not performed.
@@ -271,10 +323,15 @@ public interface QueryParametersOrBuilder extends
    * agents.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+   * </code>
    */
-  com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig getSentimentAnalysisRequestConfig();
+  com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig
+      getSentimentAnalysisRequestConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. Configures the type of sentiment analysis to perform. If not
    * provided, sentiment analysis is not performed.
@@ -282,7 +339,10 @@ public interface QueryParametersOrBuilder extends
    * agents.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfig sentiment_analysis_request_config = 10;
+   * </code>
    */
-  com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfigOrBuilder getSentimentAnalysisRequestConfigOrBuilder();
+  com.google.cloud.dialogflow.v2beta1.SentimentAnalysisRequestConfigOrBuilder
+      getSentimentAnalysisRequestConfigOrBuilder();
 }

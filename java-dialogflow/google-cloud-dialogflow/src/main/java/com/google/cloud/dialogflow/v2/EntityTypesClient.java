@@ -27,7 +27,6 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.dialogflow.v2.EntityType.Entity;
 import com.google.cloud.dialogflow.v2.stub.EntityTypesStub;
 import com.google.cloud.dialogflow.v2.stub.EntityTypesStubSettings;
 import com.google.longrunning.Operation;
@@ -86,13 +85,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1907,7 +1906,10 @@ public class EntityTypesClient implements BackgroundResource {
 
   public static class ListEntityTypesPagedResponse
       extends AbstractPagedListResponse<
-          ListEntityTypesRequest, ListEntityTypesResponse, EntityType, ListEntityTypesPage,
+          ListEntityTypesRequest,
+          ListEntityTypesResponse,
+          EntityType,
+          ListEntityTypesPage,
           ListEntityTypesFixedSizeCollection> {
 
     public static ApiFuture<ListEntityTypesPagedResponse> createAsync(
@@ -1961,7 +1963,10 @@ public class EntityTypesClient implements BackgroundResource {
 
   public static class ListEntityTypesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListEntityTypesRequest, ListEntityTypesResponse, EntityType, ListEntityTypesPage,
+          ListEntityTypesRequest,
+          ListEntityTypesResponse,
+          EntityType,
+          ListEntityTypesPage,
           ListEntityTypesFixedSizeCollection> {
 
     private ListEntityTypesFixedSizeCollection(

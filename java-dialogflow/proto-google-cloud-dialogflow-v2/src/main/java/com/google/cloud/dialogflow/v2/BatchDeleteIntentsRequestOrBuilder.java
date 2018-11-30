@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface BatchDeleteIntentsRequestOrBuilder extends
+public interface BatchDeleteIntentsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.BatchDeleteIntentsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the agent to delete all entities types for. Format:
    * `projects/&lt;Project ID&gt;/agent`.
@@ -17,6 +20,8 @@ public interface BatchDeleteIntentsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the agent to delete all entities types for. Format:
    * `projects/&lt;Project ID&gt;/agent`.
@@ -24,10 +29,11 @@ public interface BatchDeleteIntentsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The collection of intents to delete. Only intent `name` must be
    * filled in.
@@ -35,9 +41,10 @@ public interface BatchDeleteIntentsRequestOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 2;</code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2.Intent> 
-      getIntentsList();
+  java.util.List<com.google.cloud.dialogflow.v2.Intent> getIntentsList();
   /**
+   *
+   *
    * <pre>
    * Required. The collection of intents to delete. Only intent `name` must be
    * filled in.
@@ -47,6 +54,8 @@ public interface BatchDeleteIntentsRequestOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.Intent getIntents(int index);
   /**
+   *
+   *
    * <pre>
    * Required. The collection of intents to delete. Only intent `name` must be
    * filled in.
@@ -56,6 +65,8 @@ public interface BatchDeleteIntentsRequestOrBuilder extends
    */
   int getIntentsCount();
   /**
+   *
+   *
    * <pre>
    * Required. The collection of intents to delete. Only intent `name` must be
    * filled in.
@@ -63,9 +74,11 @@ public interface BatchDeleteIntentsRequestOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 2;</code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2.IntentOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2.IntentOrBuilder>
       getIntentsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Required. The collection of intents to delete. Only intent `name` must be
    * filled in.
@@ -73,6 +86,5 @@ public interface BatchDeleteIntentsRequestOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 2;</code>
    */
-  com.google.cloud.dialogflow.v2.IntentOrBuilder getIntentsOrBuilder(
-      int index);
+  com.google.cloud.dialogflow.v2.IntentOrBuilder getIntentsOrBuilder(int index);
 }
