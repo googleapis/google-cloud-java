@@ -3,11 +3,14 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface InputConfigOrBuilder extends
+public interface InputConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.InputConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The GCS location for the input content.
    * </pre>
@@ -16,6 +19,8 @@ public interface InputConfigOrBuilder extends
    */
   boolean hasGcsSource();
   /**
+   *
+   *
    * <pre>
    * The GCS location for the input content.
    * </pre>
@@ -24,6 +29,8 @@ public interface InputConfigOrBuilder extends
    */
   com.google.cloud.automl.v1beta1.GcsSource getGcsSource();
   /**
+   *
+   *
    * <pre>
    * The GCS location for the input content.
    * </pre>
