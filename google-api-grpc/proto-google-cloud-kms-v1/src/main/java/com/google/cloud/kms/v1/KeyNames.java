@@ -14,7 +14,6 @@
 
 package com.google.cloud.kms.v1;
 
-
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class KeyNames {

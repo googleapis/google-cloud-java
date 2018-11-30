@@ -14,7 +14,6 @@
 
 package com.google.privacy.dlp.v2;
 
-
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class StoredInfoTypeNames {

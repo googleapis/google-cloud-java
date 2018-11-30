@@ -14,7 +14,6 @@
 
 package com.google.containeranalysis.v1beta1;
 
-
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class IamResourceNames {
