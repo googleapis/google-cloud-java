@@ -4,30 +4,33 @@
 package com.google.cloud.iot.v1;
 
 /**
+ *
+ *
  * <pre>
  * Response for `ListDeviceStates`.
  * </pre>
  *
  * Protobuf type {@code google.cloud.iot.v1.ListDeviceStatesResponse}
  */
-public  final class ListDeviceStatesResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListDeviceStatesResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.ListDeviceStatesResponse)
     ListDeviceStatesResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListDeviceStatesResponse.newBuilder() to construct.
   private ListDeviceStatesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListDeviceStatesResponse() {
     deviceStates_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListDeviceStatesResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,29 +50,30 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              deviceStates_ = new java.util.ArrayList<com.google.cloud.iot.v1.DeviceState>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                deviceStates_ = new java.util.ArrayList<com.google.cloud.iot.v1.DeviceState>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              deviceStates_.add(
+                  input.readMessage(
+                      com.google.cloud.iot.v1.DeviceState.parser(), extensionRegistry));
+              break;
             }
-            deviceStates_.add(
-                input.readMessage(com.google.cloud.iot.v1.DeviceState.parser(), extensionRegistry));
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         deviceStates_ = java.util.Collections.unmodifiableList(deviceStates_);
@@ -78,22 +82,27 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_ListDeviceStatesResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.iot.v1.DeviceManagerProto
+        .internal_static_google_cloud_iot_v1_ListDeviceStatesResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_ListDeviceStatesResponse_fieldAccessorTable
+    return com.google.cloud.iot.v1.DeviceManagerProto
+        .internal_static_google_cloud_iot_v1_ListDeviceStatesResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.iot.v1.ListDeviceStatesResponse.class, com.google.cloud.iot.v1.ListDeviceStatesResponse.Builder.class);
+            com.google.cloud.iot.v1.ListDeviceStatesResponse.class,
+            com.google.cloud.iot.v1.ListDeviceStatesResponse.Builder.class);
   }
 
   public static final int DEVICE_STATES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.iot.v1.DeviceState> deviceStates_;
   /**
+   *
+   *
    * <pre>
    * The last few device states. States are listed in descending order of server
    * update time, starting from the most recent one.
@@ -105,6 +114,8 @@ private static final long serialVersionUID = 0L;
     return deviceStates_;
   }
   /**
+   *
+   *
    * <pre>
    * The last few device states. States are listed in descending order of server
    * update time, starting from the most recent one.
@@ -112,11 +123,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
    */
-  public java.util.List<? extends com.google.cloud.iot.v1.DeviceStateOrBuilder> 
+  public java.util.List<? extends com.google.cloud.iot.v1.DeviceStateOrBuilder>
       getDeviceStatesOrBuilderList() {
     return deviceStates_;
   }
   /**
+   *
+   *
    * <pre>
    * The last few device states. States are listed in descending order of server
    * update time, starting from the most recent one.
@@ -128,6 +141,8 @@ private static final long serialVersionUID = 0L;
     return deviceStates_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The last few device states. States are listed in descending order of server
    * update time, starting from the most recent one.
@@ -139,6 +154,8 @@ private static final long serialVersionUID = 0L;
     return deviceStates_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The last few device states. States are listed in descending order of server
    * update time, starting from the most recent one.
@@ -146,12 +163,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
    */
-  public com.google.cloud.iot.v1.DeviceStateOrBuilder getDeviceStatesOrBuilder(
-      int index) {
+  public com.google.cloud.iot.v1.DeviceStateOrBuilder getDeviceStatesOrBuilder(int index) {
     return deviceStates_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -163,8 +180,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < deviceStates_.size(); i++) {
       output.writeMessage(1, deviceStates_.get(i));
     }
@@ -178,8 +194,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < deviceStates_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, deviceStates_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, deviceStates_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -189,16 +204,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.iot.v1.ListDeviceStatesResponse)) {
       return super.equals(obj);
     }
-    com.google.cloud.iot.v1.ListDeviceStatesResponse other = (com.google.cloud.iot.v1.ListDeviceStatesResponse) obj;
+    com.google.cloud.iot.v1.ListDeviceStatesResponse other =
+        (com.google.cloud.iot.v1.ListDeviceStatesResponse) obj;
 
     boolean result = true;
-    result = result && getDeviceStatesList()
-        .equals(other.getDeviceStatesList());
+    result = result && getDeviceStatesList().equals(other.getDeviceStatesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -219,118 +234,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.iot.v1.ListDeviceStatesResponse parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.iot.v1.ListDeviceStatesResponse parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.ListDeviceStatesResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.ListDeviceStatesResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.ListDeviceStatesResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.ListDeviceStatesResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.ListDeviceStatesResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.iot.v1.ListDeviceStatesResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.iot.v1.ListDeviceStatesResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.iot.v1.ListDeviceStatesResponse parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.iot.v1.ListDeviceStatesResponse parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.ListDeviceStatesResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.iot.v1.ListDeviceStatesResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.iot.v1.ListDeviceStatesResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.iot.v1.ListDeviceStatesResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.iot.v1.ListDeviceStatesResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Response for `ListDeviceStates`.
    * </pre>
    *
    * Protobuf type {@code google.cloud.iot.v1.ListDeviceStatesResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.iot.v1.ListDeviceStatesResponse)
       com.google.cloud.iot.v1.ListDeviceStatesResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_ListDeviceStatesResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.iot.v1.DeviceManagerProto
+          .internal_static_google_cloud_iot_v1_ListDeviceStatesResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_ListDeviceStatesResponse_fieldAccessorTable
+      return com.google.cloud.iot.v1.DeviceManagerProto
+          .internal_static_google_cloud_iot_v1_ListDeviceStatesResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.iot.v1.ListDeviceStatesResponse.class, com.google.cloud.iot.v1.ListDeviceStatesResponse.Builder.class);
+              com.google.cloud.iot.v1.ListDeviceStatesResponse.class,
+              com.google.cloud.iot.v1.ListDeviceStatesResponse.Builder.class);
     }
 
     // Construct using com.google.cloud.iot.v1.ListDeviceStatesResponse.newBuilder()
@@ -338,17 +362,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getDeviceStatesFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -362,9 +386,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.iot.v1.DeviceManagerProto.internal_static_google_cloud_iot_v1_ListDeviceStatesResponse_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.iot.v1.DeviceManagerProto
+          .internal_static_google_cloud_iot_v1_ListDeviceStatesResponse_descriptor;
     }
 
     @java.lang.Override
@@ -383,7 +407,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.iot.v1.ListDeviceStatesResponse buildPartial() {
-      com.google.cloud.iot.v1.ListDeviceStatesResponse result = new com.google.cloud.iot.v1.ListDeviceStatesResponse(this);
+      com.google.cloud.iot.v1.ListDeviceStatesResponse result =
+          new com.google.cloud.iot.v1.ListDeviceStatesResponse(this);
       int from_bitField0_ = bitField0_;
       if (deviceStatesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -402,38 +427,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.iot.v1.ListDeviceStatesResponse) {
-        return mergeFrom((com.google.cloud.iot.v1.ListDeviceStatesResponse)other);
+        return mergeFrom((com.google.cloud.iot.v1.ListDeviceStatesResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -441,7 +467,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.iot.v1.ListDeviceStatesResponse other) {
-      if (other == com.google.cloud.iot.v1.ListDeviceStatesResponse.getDefaultInstance()) return this;
+      if (other == com.google.cloud.iot.v1.ListDeviceStatesResponse.getDefaultInstance())
+        return this;
       if (deviceStatesBuilder_ == null) {
         if (!other.deviceStates_.isEmpty()) {
           if (deviceStates_.isEmpty()) {
@@ -460,9 +487,10 @@ private static final long serialVersionUID = 0L;
             deviceStatesBuilder_ = null;
             deviceStates_ = other.deviceStates_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            deviceStatesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getDeviceStatesFieldBuilder() : null;
+            deviceStatesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDeviceStatesFieldBuilder()
+                    : null;
           } else {
             deviceStatesBuilder_.addAllMessages(other.deviceStates_);
           }
@@ -496,21 +524,28 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.cloud.iot.v1.DeviceState> deviceStates_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureDeviceStatesIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         deviceStates_ = new java.util.ArrayList<com.google.cloud.iot.v1.DeviceState>(deviceStates_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.iot.v1.DeviceState, com.google.cloud.iot.v1.DeviceState.Builder, com.google.cloud.iot.v1.DeviceStateOrBuilder> deviceStatesBuilder_;
+            com.google.cloud.iot.v1.DeviceState,
+            com.google.cloud.iot.v1.DeviceState.Builder,
+            com.google.cloud.iot.v1.DeviceStateOrBuilder>
+        deviceStatesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The last few device states. States are listed in descending order of server
      * update time, starting from the most recent one.
@@ -526,6 +561,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The last few device states. States are listed in descending order of server
      * update time, starting from the most recent one.
@@ -541,6 +578,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The last few device states. States are listed in descending order of server
      * update time, starting from the most recent one.
@@ -556,6 +595,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The last few device states. States are listed in descending order of server
      * update time, starting from the most recent one.
@@ -563,8 +604,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
      */
-    public Builder setDeviceStates(
-        int index, com.google.cloud.iot.v1.DeviceState value) {
+    public Builder setDeviceStates(int index, com.google.cloud.iot.v1.DeviceState value) {
       if (deviceStatesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -578,6 +618,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The last few device states. States are listed in descending order of server
      * update time, starting from the most recent one.
@@ -597,6 +639,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The last few device states. States are listed in descending order of server
      * update time, starting from the most recent one.
@@ -618,6 +662,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The last few device states. States are listed in descending order of server
      * update time, starting from the most recent one.
@@ -625,8 +671,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
      */
-    public Builder addDeviceStates(
-        int index, com.google.cloud.iot.v1.DeviceState value) {
+    public Builder addDeviceStates(int index, com.google.cloud.iot.v1.DeviceState value) {
       if (deviceStatesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -640,6 +685,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The last few device states. States are listed in descending order of server
      * update time, starting from the most recent one.
@@ -647,8 +694,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
      */
-    public Builder addDeviceStates(
-        com.google.cloud.iot.v1.DeviceState.Builder builderForValue) {
+    public Builder addDeviceStates(com.google.cloud.iot.v1.DeviceState.Builder builderForValue) {
       if (deviceStatesBuilder_ == null) {
         ensureDeviceStatesIsMutable();
         deviceStates_.add(builderForValue.build());
@@ -659,6 +705,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The last few device states. States are listed in descending order of server
      * update time, starting from the most recent one.
@@ -678,6 +726,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The last few device states. States are listed in descending order of server
      * update time, starting from the most recent one.
@@ -689,8 +739,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.iot.v1.DeviceState> values) {
       if (deviceStatesBuilder_ == null) {
         ensureDeviceStatesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, deviceStates_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, deviceStates_);
         onChanged();
       } else {
         deviceStatesBuilder_.addAllMessages(values);
@@ -698,6 +747,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The last few device states. States are listed in descending order of server
      * update time, starting from the most recent one.
@@ -716,6 +767,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The last few device states. States are listed in descending order of server
      * update time, starting from the most recent one.
@@ -734,6 +787,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The last few device states. States are listed in descending order of server
      * update time, starting from the most recent one.
@@ -741,11 +796,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
      */
-    public com.google.cloud.iot.v1.DeviceState.Builder getDeviceStatesBuilder(
-        int index) {
+    public com.google.cloud.iot.v1.DeviceState.Builder getDeviceStatesBuilder(int index) {
       return getDeviceStatesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The last few device states. States are listed in descending order of server
      * update time, starting from the most recent one.
@@ -753,14 +809,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
      */
-    public com.google.cloud.iot.v1.DeviceStateOrBuilder getDeviceStatesOrBuilder(
-        int index) {
+    public com.google.cloud.iot.v1.DeviceStateOrBuilder getDeviceStatesOrBuilder(int index) {
       if (deviceStatesBuilder_ == null) {
-        return deviceStates_.get(index);  } else {
+        return deviceStates_.get(index);
+      } else {
         return deviceStatesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The last few device states. States are listed in descending order of server
      * update time, starting from the most recent one.
@@ -768,8 +826,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
      */
-    public java.util.List<? extends com.google.cloud.iot.v1.DeviceStateOrBuilder> 
-         getDeviceStatesOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.iot.v1.DeviceStateOrBuilder>
+        getDeviceStatesOrBuilderList() {
       if (deviceStatesBuilder_ != null) {
         return deviceStatesBuilder_.getMessageOrBuilderList();
       } else {
@@ -777,6 +835,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The last few device states. States are listed in descending order of server
      * update time, starting from the most recent one.
@@ -785,10 +845,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
      */
     public com.google.cloud.iot.v1.DeviceState.Builder addDeviceStatesBuilder() {
-      return getDeviceStatesFieldBuilder().addBuilder(
-          com.google.cloud.iot.v1.DeviceState.getDefaultInstance());
+      return getDeviceStatesFieldBuilder()
+          .addBuilder(com.google.cloud.iot.v1.DeviceState.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The last few device states. States are listed in descending order of server
      * update time, starting from the most recent one.
@@ -796,12 +858,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
      */
-    public com.google.cloud.iot.v1.DeviceState.Builder addDeviceStatesBuilder(
-        int index) {
-      return getDeviceStatesFieldBuilder().addBuilder(
-          index, com.google.cloud.iot.v1.DeviceState.getDefaultInstance());
+    public com.google.cloud.iot.v1.DeviceState.Builder addDeviceStatesBuilder(int index) {
+      return getDeviceStatesFieldBuilder()
+          .addBuilder(index, com.google.cloud.iot.v1.DeviceState.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The last few device states. States are listed in descending order of server
      * update time, starting from the most recent one.
@@ -809,16 +872,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.DeviceState device_states = 1;</code>
      */
-    public java.util.List<com.google.cloud.iot.v1.DeviceState.Builder> 
-         getDeviceStatesBuilderList() {
+    public java.util.List<com.google.cloud.iot.v1.DeviceState.Builder>
+        getDeviceStatesBuilderList() {
       return getDeviceStatesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.iot.v1.DeviceState, com.google.cloud.iot.v1.DeviceState.Builder, com.google.cloud.iot.v1.DeviceStateOrBuilder> 
+            com.google.cloud.iot.v1.DeviceState,
+            com.google.cloud.iot.v1.DeviceState.Builder,
+            com.google.cloud.iot.v1.DeviceStateOrBuilder>
         getDeviceStatesFieldBuilder() {
       if (deviceStatesBuilder_ == null) {
-        deviceStatesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.iot.v1.DeviceState, com.google.cloud.iot.v1.DeviceState.Builder, com.google.cloud.iot.v1.DeviceStateOrBuilder>(
+        deviceStatesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.iot.v1.DeviceState,
+                com.google.cloud.iot.v1.DeviceState.Builder,
+                com.google.cloud.iot.v1.DeviceStateOrBuilder>(
                 deviceStates_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -827,9 +896,9 @@ private static final long serialVersionUID = 0L;
       }
       return deviceStatesBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -839,12 +908,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.iot.v1.ListDeviceStatesResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.iot.v1.ListDeviceStatesResponse)
   private static final com.google.cloud.iot.v1.ListDeviceStatesResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.iot.v1.ListDeviceStatesResponse();
   }
@@ -853,16 +922,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListDeviceStatesResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ListDeviceStatesResponse>() {
-    @java.lang.Override
-    public ListDeviceStatesResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ListDeviceStatesResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListDeviceStatesResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ListDeviceStatesResponse>() {
+        @java.lang.Override
+        public ListDeviceStatesResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListDeviceStatesResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListDeviceStatesResponse> parser() {
     return PARSER;
@@ -877,6 +946,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.iot.v1.ListDeviceStatesResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

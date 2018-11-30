@@ -4,6 +4,8 @@
 package com.google.cloud.iot.v1;
 
 /**
+ *
+ *
  * <pre>
  * The gateway authorization/authentication method. This setting determines how
  * Cloud IoT Core authorizes/authenticate devices to access the gateway.
@@ -11,9 +13,10 @@ package com.google.cloud.iot.v1;
  *
  * Protobuf enum {@code google.cloud.iot.v1.GatewayAuthMethod}
  */
-public enum GatewayAuthMethod
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum GatewayAuthMethod implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * No authentication/authorization method specified. No devices are allowed to
    * access the gateway.
@@ -23,6 +26,8 @@ public enum GatewayAuthMethod
    */
   GATEWAY_AUTH_METHOD_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * The device is authenticated through the gateway association only. Device
    * credentials are ignored even if provided.
@@ -32,6 +37,8 @@ public enum GatewayAuthMethod
    */
   ASSOCIATION_ONLY(1),
   /**
+   *
+   *
    * <pre>
    * The device is authenticated through its own credentials. Gateway
    * association is not checked.
@@ -41,6 +48,8 @@ public enum GatewayAuthMethod
    */
   DEVICE_AUTH_TOKEN_ONLY(2),
   /**
+   *
+   *
    * <pre>
    * The device is authenticated through both device credentials and gateway
    * association. The device must be bound to the gateway and must provide its
@@ -54,6 +63,8 @@ public enum GatewayAuthMethod
   ;
 
   /**
+   *
+   *
    * <pre>
    * No authentication/authorization method specified. No devices are allowed to
    * access the gateway.
@@ -63,6 +74,8 @@ public enum GatewayAuthMethod
    */
   public static final int GATEWAY_AUTH_METHOD_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * The device is authenticated through the gateway association only. Device
    * credentials are ignored even if provided.
@@ -72,6 +85,8 @@ public enum GatewayAuthMethod
    */
   public static final int ASSOCIATION_ONLY_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * The device is authenticated through its own credentials. Gateway
    * association is not checked.
@@ -81,6 +96,8 @@ public enum GatewayAuthMethod
    */
   public static final int DEVICE_AUTH_TOKEN_ONLY_VALUE = 2;
   /**
+   *
+   *
    * <pre>
    * The device is authenticated through both device credentials and gateway
    * association. The device must be bound to the gateway and must provide its
@@ -91,7 +108,6 @@ public enum GatewayAuthMethod
    */
   public static final int ASSOCIATION_AND_DEVICE_AUTH_TOKEN_VALUE = 3;
 
-
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -100,9 +116,7 @@ public enum GatewayAuthMethod
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static GatewayAuthMethod valueOf(int value) {
     return forNumber(value);
@@ -110,36 +124,40 @@ public enum GatewayAuthMethod
 
   public static GatewayAuthMethod forNumber(int value) {
     switch (value) {
-      case 0: return GATEWAY_AUTH_METHOD_UNSPECIFIED;
-      case 1: return ASSOCIATION_ONLY;
-      case 2: return DEVICE_AUTH_TOKEN_ONLY;
-      case 3: return ASSOCIATION_AND_DEVICE_AUTH_TOKEN;
-      default: return null;
+      case 0:
+        return GATEWAY_AUTH_METHOD_UNSPECIFIED;
+      case 1:
+        return ASSOCIATION_ONLY;
+      case 2:
+        return DEVICE_AUTH_TOKEN_ONLY;
+      case 3:
+        return ASSOCIATION_AND_DEVICE_AUTH_TOKEN;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<GatewayAuthMethod>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<GatewayAuthMethod> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      GatewayAuthMethod> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<GatewayAuthMethod>() {
-          public GatewayAuthMethod findValueByNumber(int number) {
-            return GatewayAuthMethod.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<GatewayAuthMethod>
+      internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<GatewayAuthMethod>() {
+            public GatewayAuthMethod findValueByNumber(int number) {
+              return GatewayAuthMethod.forNumber(number);
+            }
+          };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.iot.v1.ResourcesProto.getDescriptor().getEnumTypes().get(4);
   }
 
@@ -148,8 +166,7 @@ public enum GatewayAuthMethod
   public static GatewayAuthMethod valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -165,4 +182,3 @@ public enum GatewayAuthMethod
 
   // @@protoc_insertion_point(enum_scope:google.cloud.iot.v1.GatewayAuthMethod)
 }
-

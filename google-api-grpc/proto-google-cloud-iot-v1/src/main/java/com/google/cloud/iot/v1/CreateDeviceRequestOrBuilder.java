@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface CreateDeviceRequestOrBuilder extends
+public interface CreateDeviceRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.CreateDeviceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the device registry where this device should be created.
    * For example,
@@ -18,6 +21,8 @@ public interface CreateDeviceRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The name of the device registry where this device should be created.
    * For example,
@@ -26,10 +31,11 @@ public interface CreateDeviceRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The device registration details. The field `name` must be empty. The server
    * generates `name` from the device registry `id` and the
@@ -40,6 +46,8 @@ public interface CreateDeviceRequestOrBuilder extends
    */
   boolean hasDevice();
   /**
+   *
+   *
    * <pre>
    * The device registration details. The field `name` must be empty. The server
    * generates `name` from the device registry `id` and the
@@ -50,6 +58,8 @@ public interface CreateDeviceRequestOrBuilder extends
    */
   com.google.cloud.iot.v1.Device getDevice();
   /**
+   *
+   *
    * <pre>
    * The device registration details. The field `name` must be empty. The server
    * generates `name` from the device registry `id` and the
