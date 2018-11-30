@@ -3,11 +3,14 @@
 
 package com.google.cloud.redis.v1beta1;
 
-public interface DeleteInstanceRequestOrBuilder extends
+public interface DeleteInstanceRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.redis.v1beta1.DeleteInstanceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. Redis instance resource name using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
@@ -18,6 +21,8 @@ public interface DeleteInstanceRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. Redis instance resource name using the form:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
@@ -26,6 +31,5 @@ public interface DeleteInstanceRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }
