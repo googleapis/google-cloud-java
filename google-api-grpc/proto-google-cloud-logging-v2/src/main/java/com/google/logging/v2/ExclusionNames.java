@@ -14,6 +14,7 @@
 
 package com.google.logging.v2;
 
+
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class ExclusionNames {
