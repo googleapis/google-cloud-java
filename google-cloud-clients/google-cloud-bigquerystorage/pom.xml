@@ -34,11 +34,14 @@
             <groupId>com.google.api.grpc</groupId>
             <artifactId>grpc-google-cloud-bigquerystorage-v1beta1</artifactId>
         </dependency>
+
+        <!-- Test dependencies -->
         <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>gax-grpc</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- Need testing utility classes for generated gRPC clients tests -->
         <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>gax-grpc</artifactId>
@@ -50,7 +53,6 @@
             <artifactId>gax</artifactId>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

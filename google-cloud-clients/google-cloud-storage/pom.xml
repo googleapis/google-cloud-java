@@ -41,6 +41,8 @@
         </exclusion>
       </exclusions>
     </dependency>
+
+    <!-- Test dependencies -->
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty-shaded</artifactId>
