@@ -1766,7 +1766,7 @@ public class ITStorageTest {
         .setHttpTransportFactory(new CustomHttpTransportFactory()).build();
     Storage storageWithPool =
         StorageOptions.newBuilder().setTransportOptions(transportOptions).build().getService();
-    String blobName = "test-read-and-write-channels-blob";
+    String blobName = "test-custom-pool-management";
     BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
     byte[] stringBytes;
     try (WriteChannel writer = storageWithPool.writer(blob)) {
