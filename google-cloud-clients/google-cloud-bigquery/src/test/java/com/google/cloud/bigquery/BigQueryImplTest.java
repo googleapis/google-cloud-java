@@ -858,8 +858,7 @@ public class BigQueryImplTest {
   public void testInsertAllWithoutRowIdShouldNotRetry() {
     Map<String, Object> row1 = ImmutableMap.<String, Object>of("field", "value1");
     Map<String, Object> row2 = ImmutableMap.<String, Object>of("field", "value2");
-    List<RowToInsert> rows =
-        ImmutableList.of(RowToInsert.of(row1), RowToInsert.of(row2));
+    List<RowToInsert> rows = ImmutableList.of(RowToInsert.of(row1), RowToInsert.of(row2));
     InsertAllRequest request =
         InsertAllRequest.newBuilder(TABLE_ID)
             .setRows(rows)
