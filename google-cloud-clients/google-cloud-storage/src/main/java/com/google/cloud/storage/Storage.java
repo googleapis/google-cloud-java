@@ -347,6 +347,14 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
+     * Returns an option for blob's data diabledGzipContent. If this option is used the request will
+     * create an with disabled Gzip Content.
+     */
+    public static BlobTargetOption disableGzipContent() {
+      return new BlobTargetOption(StorageRpc.Option.IF_DISABLE_GZIP_CONTENT, true);
+    }
+
+    /**
      * Returns an option to set a customer-supplied AES256 key for server-side encryption of the
      * blob.
      */

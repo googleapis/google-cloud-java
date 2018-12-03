@@ -16,6 +16,7 @@
 
 package com.google.cloud.storage.spi.v1;
 
+import static com.google.cloud.storage.spi.v1.StorageRpc.Option.IF_DISABLE_GZIP_CONTENT;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
@@ -287,6 +288,9 @@ public class HttpStorageRpc implements StorageRpc {
                   storageObject,
                   new InputStreamContent(storageObject.getContentType(), content));
       insert.getMediaHttpUploader().setDirectUploadEnabled(true);
+      Boolean disableGzipContent = Option.IF_DISABLE_GZIP_CONTENT.getBoolean(options);
+      if (disableGzipContent != null)
+        insert.getMediaHttpUploader().setDisableGZipContent(disableGzipContent);
       setEncryptionHeaders(insert.getRequestHeaders(), ENCRYPTION_KEY_PREFIX, options);
       return insert
           .setProjection(DEFAULT_PROJECTION)
