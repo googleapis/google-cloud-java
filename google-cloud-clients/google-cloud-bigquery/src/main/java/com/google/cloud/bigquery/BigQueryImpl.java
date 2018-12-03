@@ -41,6 +41,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.base.Strings;
 import com.google.common.base.Supplier;
+import com.google.common.collect.FluentIterable;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -548,17 +549,18 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     // an anonymous inner class.
     final boolean[] allInsertIdsSet = {true};
     List<Rows> rowsPb =
-        Lists.transform(
-            request.getRows(),
-            new Function<RowToInsert, Rows>() {
-              @Override
-              public Rows apply(RowToInsert rowToInsert) {
-                allInsertIdsSet[0] &= rowToInsert.getId() != null;
-                return new Rows()
-                    .setInsertId(rowToInsert.getId())
-                    .setJson(rowToInsert.getContent());
-              }
-            });
+        FluentIterable.from(request.getRows())
+            .transform(
+                new Function<RowToInsert, Rows>() {
+                  @Override
+                  public Rows apply(RowToInsert rowToInsert) {
+                    allInsertIdsSet[0] &= rowToInsert.getId() != null;
+                    return new Rows()
+                        .setInsertId(rowToInsert.getId())
+                        .setJson(rowToInsert.getContent());
+                  }
+                })
+            .toList();
     requestPb.setRows(rowsPb);
 
     TableDataInsertAllResponse responsePb;

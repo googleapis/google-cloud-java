@@ -801,7 +801,7 @@ public class BigQueryImplTest {
   }
 
   @Test
-  public void testInsertAll() {
+  public void testInsertAllWithRowIdShouldRetry() {
     Map<String, Object> row1 = ImmutableMap.<String, Object>of("field", "value1");
     Map<String, Object> row2 = ImmutableMap.<String, Object>of("field", "value2");
     List<RowToInsert> rows =
@@ -837,14 +837,63 @@ public class BigQueryImplTest {
                         .setIndex(0L)
                         .setErrors(ImmutableList.of(new ErrorProto().setMessage("ErrorMessage")))));
     EasyMock.expect(bigqueryRpcMock.insertAll(PROJECT, DATASET, TABLE, requestPb))
+        .andThrow(new BigQueryException(500, "InternalError"));
+    EasyMock.expect(bigqueryRpcMock.insertAll(PROJECT, DATASET, TABLE, requestPb))
         .andReturn(responsePb);
     EasyMock.replay(bigqueryRpcMock);
-    bigquery = options.getService();
+    bigquery =
+        options
+            .toBuilder()
+            .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
+            .build()
+            .getService();
     InsertAllResponse response = bigquery.insertAll(request);
     assertNotNull(response.getErrorsFor(0L));
     assertNull(response.getErrorsFor(1L));
     assertEquals(1, response.getErrorsFor(0L).size());
     assertEquals("ErrorMessage", response.getErrorsFor(0L).get(0).getMessage());
+  }
+
+  @Test
+  public void testInsertAllWithoutRowIdShouldNotRetry() {
+    Map<String, Object> row1 = ImmutableMap.<String, Object>of("field", "value1");
+    Map<String, Object> row2 = ImmutableMap.<String, Object>of("field", "value2");
+    List<RowToInsert> rows =
+        ImmutableList.of(RowToInsert.of(row1), RowToInsert.of(row2));
+    InsertAllRequest request =
+        InsertAllRequest.newBuilder(TABLE_ID)
+            .setRows(rows)
+            .setSkipInvalidRows(false)
+            .setIgnoreUnknownValues(true)
+            .setTemplateSuffix("suffix")
+            .build();
+    TableDataInsertAllRequest requestPb =
+        new TableDataInsertAllRequest()
+            .setRows(
+                Lists.transform(
+                    rows,
+                    new Function<RowToInsert, TableDataInsertAllRequest.Rows>() {
+                      @Override
+                      public TableDataInsertAllRequest.Rows apply(RowToInsert rowToInsert) {
+                        return new TableDataInsertAllRequest.Rows()
+                            .setInsertId(rowToInsert.getId())
+                            .setJson(rowToInsert.getContent());
+                      }
+                    }))
+            .setSkipInvalidRows(false)
+            .setIgnoreUnknownValues(true)
+            .setTemplateSuffix("suffix");
+    EasyMock.expect(bigqueryRpcMock.insertAll(PROJECT, DATASET, TABLE, requestPb))
+        .andThrow(new BigQueryException(500, "InternalError"));
+    EasyMock.replay(bigqueryRpcMock);
+    bigquery =
+        options
+            .toBuilder()
+            .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
+            .build()
+            .getService();
+    thrown.expect(BigQueryException.class);
+    bigquery.insertAll(request);
   }
 
   @Test
