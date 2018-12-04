@@ -28,15 +28,20 @@ import static org.junit.Assert.fail;
 import static org.junit.Assume.assumeFalse;
 import static org.junit.Assume.assumeTrue;
 
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.apache.ApacheHttpTransport;
 import com.google.api.client.util.DateTime;
 import com.google.api.gax.paging.Page;
 import com.google.auth.ServiceAccountSigner;
+import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RestorableState;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.WriteChannel;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
 import com.google.cloud.kms.v1.CreateKeyRingRequest;
 import com.google.cloud.kms.v1.CryptoKey;
@@ -111,6 +116,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.GZIPInputStream;
 import javax.crypto.spec.SecretKeySpec;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -181,6 +188,15 @@ public class ITStorageTest {
       if (!wasDeleted && log.isLoggable(Level.WARNING)) {
         log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
       }
+    }
+  }
+
+  private static class CustomHttpTransportFactory implements HttpTransportFactory {
+    @Override
+    public HttpTransport create() {
+      PoolingHttpClientConnectionManager manager = new PoolingHttpClientConnectionManager();
+      manager.setMaxTotal(1);
+      return new ApacheHttpTransport(HttpClients.createMinimal(manager));
     }
   }
 
@@ -1742,6 +1758,29 @@ public class ITStorageTest {
     }
     assertArrayEquals(stringBytes, storage.readAllBytes(blob.getBlobId()));
     assertTrue(storage.delete(BUCKET, blobName));
+  }
+
+  @Test(timeout = 5000)
+  public void testWriteChannelWithConnectionPool() throws IOException {
+    TransportOptions transportOptions =
+        HttpTransportOptions.newBuilder()
+            .setHttpTransportFactory(new CustomHttpTransportFactory())
+            .build();
+    Storage storageWithPool =
+        StorageOptions.newBuilder().setTransportOptions(transportOptions).build().getService();
+    String blobName = "test-custom-pool-management";
+    BlobInfo blob = BlobInfo.newBuilder(BUCKET, blobName).build();
+    byte[] stringBytes;
+    try (WriteChannel writer = storageWithPool.writer(blob)) {
+      stringBytes = BLOB_STRING_CONTENT.getBytes(UTF_8);
+      writer.write(ByteBuffer.wrap(BLOB_BYTE_CONTENT));
+      writer.write(ByteBuffer.wrap(stringBytes));
+    }
+    try (WriteChannel writer = storageWithPool.writer(blob)) {
+      stringBytes = BLOB_STRING_CONTENT.getBytes(UTF_8);
+      writer.write(ByteBuffer.wrap(BLOB_BYTE_CONTENT));
+      writer.write(ByteBuffer.wrap(stringBytes));
+    }
   }
 
   @Test

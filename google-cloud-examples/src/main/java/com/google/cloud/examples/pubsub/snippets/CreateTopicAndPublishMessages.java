@@ -22,6 +22,7 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.pubsub.v1.Publisher;
 import com.google.cloud.pubsub.v1.TopicAdminClient;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PubsubMessage;
@@ -120,7 +121,8 @@ public class CreateTopicAndPublishMessages {
                 // Once published, returns server-assigned message ids (unique within the topic)
                 System.out.println(messageId);
               }
-            });
+            },
+            MoreExecutors.directExecutor());
       }
     } finally {
       if (publisher != null) {
