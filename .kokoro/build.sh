@@ -25,7 +25,7 @@ mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=tr
 
 # prepend Kokoro root directory onto GOOGLE_APPLICATION_CREDENTIALS path
 if [ ! -z "$GOOGLE_APPLICATION_CREDENTIALS" ]; then
-    export GOOGLE_APPLICATION_CREDENTIALS=realpath(${KOKORO_ROOT}/src/${GOOGLE_APPLICATION_CREDENTIALS})
+    export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_ROOT}/src/${GOOGLE_APPLICATION_CREDENTIALS})
 fi
 
 case $JOB_TYPE in
