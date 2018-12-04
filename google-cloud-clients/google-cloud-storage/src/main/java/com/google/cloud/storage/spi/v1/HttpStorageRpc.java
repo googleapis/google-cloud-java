@@ -725,7 +725,7 @@ public class HttpStorageRpc implements StorageRpc {
         code = ex.getStatusCode();
         message = ex.getStatusMessage();
       } finally {
-        if (response != null ) {
+        if (response != null) {
           response.disconnect();
         }
       }

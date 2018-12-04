@@ -39,7 +39,9 @@ import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RestorableState;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.WriteChannel;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
 import com.google.cloud.kms.v1.CreateKeyRingRequest;
 import com.google.cloud.kms.v1.CryptoKey;
@@ -49,8 +51,6 @@ import com.google.cloud.kms.v1.GetKeyRingRequest;
 import com.google.cloud.kms.v1.KeyManagementServiceGrpc;
 import com.google.cloud.kms.v1.KeyManagementServiceGrpc.KeyManagementServiceBlockingStub;
 import com.google.cloud.kms.v1.KeyRingName;
-import com.google.cloud.TransportOptions;
-import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.kms.v1.LocationName;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.Role;
@@ -1762,8 +1762,10 @@ public class ITStorageTest {
 
   @Test(timeout = 5000)
   public void testWriteChannelWithConnectionPool() throws IOException {
-    TransportOptions transportOptions = HttpTransportOptions.newBuilder()
-        .setHttpTransportFactory(new CustomHttpTransportFactory()).build();
+    TransportOptions transportOptions =
+        HttpTransportOptions.newBuilder()
+            .setHttpTransportFactory(new CustomHttpTransportFactory())
+            .build();
     Storage storageWithPool =
         StorageOptions.newBuilder().setTransportOptions(transportOptions).build().getService();
     String blobName = "test-custom-pool-management";
