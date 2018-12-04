@@ -715,14 +715,19 @@ public class HttpStorageRpc implements StorageRpc {
       int code;
       String message;
       IOException exception = null;
+      HttpResponse response = null;
       try {
-        HttpResponse response = httpRequest.execute();
+        response = httpRequest.execute();
         code = response.getStatusCode();
         message = response.getStatusMessage();
       } catch (HttpResponseException ex) {
         exception = ex;
         code = ex.getStatusCode();
         message = ex.getStatusMessage();
+      } finally {
+        if (response != null) {
+          response.disconnect();
+        }
       }
       if (!last && code != 308 || last && !(code == 200 || code == 201)) {
         if (exception != null) {
