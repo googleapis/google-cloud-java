@@ -341,12 +341,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-core</artifactId>
-        <version>1.54.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
-        <type>test-jar</type>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core-grpc</artifactId>
         <version>1.54.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core-grpc:current} -->
       </dependency>
