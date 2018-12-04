@@ -134,7 +134,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>2.10.3</version>
+            <version>3.0.1</version>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
@@ -147,6 +147,7 @@
               <links>
                 <link>http://google.github.io/google-auth-library-java/releases/latest/apidocs/</link>
               </links>
+              <doclint>false</doclint>
             </configuration>
           </plugin>
           <plugin>
