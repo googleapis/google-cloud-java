@@ -24,10 +24,10 @@ import com.google.api.gax.rpc.ServerStream;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
-import com.google.cloud.bigtable.data.v2.models.Filters.Filter;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
+import com.google.cloud.bigtable.data.v2.models.Filters.Filter;
+import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
@@ -202,8 +202,8 @@ public class BigtableDataClient implements AutoCloseable {
   }
 
   /**
-   * Convenience method for synchronously reading a single row. If the row does not exist, the
-   * value will be null.
+   * Convenience method for synchronously reading a single row. If the row does not exist, the value
+   * will be null.
    *
    * <p>Sample code:
    *
@@ -238,8 +238,8 @@ public class BigtableDataClient implements AutoCloseable {
   }
 
   /**
-   * Convenience method for synchronously reading a single row. If the row does not exist, the
-   * value will be null.
+   * Convenience method for synchronously reading a single row. If the row does not exist, the value
+   * will be null.
    *
    * <p>Sample code:
    *
@@ -416,9 +416,10 @@ public class BigtableDataClient implements AutoCloseable {
    * }</pre>
    */
   public ApiFuture<Row> readRowAsync(String tableId, ByteString rowKey, @Nullable Filter filter) {
-    return readRowsCallable().first().futureCall(Query.create(tableId).rowKey(rowKey).filter(filter));
+    return readRowsCallable()
+        .first()
+        .futureCall(Query.create(tableId).rowKey(rowKey).filter(filter));
   }
-
 
   /**
    * Convenience method for synchronous streaming the results of a {@link Query}.
