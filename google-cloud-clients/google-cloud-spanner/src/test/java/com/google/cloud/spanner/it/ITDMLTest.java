@@ -86,12 +86,12 @@ public final class ITDMLTest {
           public Long run(TransactionContext transaction) {
             long rowCount = 0;
             for (String stmt : stmts) {
-              rowCount += transaction.executeUpdate(Statement.of(stmt));
-
               if (throwAbortOnce) {
                 throwAbortOnce = false;
                 throw SpannerExceptionFactory.newSpannerException(ErrorCode.ABORTED, "Abort in test");
               }
+
+              rowCount += transaction.executeUpdate(Statement.of(stmt));
             }
             return rowCount;
           }
@@ -106,6 +106,7 @@ public final class ITDMLTest {
     try {
       throwAbortOnce = true;
       executeUpdate(DML_COUNT, INSERT_DML);
+      assertThat(throwAbortOnce).isFalse();
     } catch (AbortedException e) {
       fail("Abort Exception not caught and retried");
     }
