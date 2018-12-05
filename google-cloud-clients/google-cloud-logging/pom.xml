@@ -46,6 +46,8 @@
       <groupId>io.grpc</groupId>
       <artifactId>grpc-auth</artifactId>
     </dependency>
+
+    <!-- Test dependencies -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
@@ -82,6 +84,7 @@
       <artifactId>objenesis</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>

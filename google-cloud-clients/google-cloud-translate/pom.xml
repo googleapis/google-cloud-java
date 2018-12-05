@@ -31,6 +31,8 @@
       <artifactId>google-api-services-translate</artifactId>
       <scope>compile</scope>
     </dependency>
+
+    <!-- Test dependencies -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>

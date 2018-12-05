@@ -31,6 +31,8 @@
       <artifactId>google-api-services-storage</artifactId>
       <scope>compile</scope>
     </dependency>
+
+    <!-- Test dependencies -->
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty-shaded</artifactId>

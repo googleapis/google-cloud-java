@@ -42,12 +42,8 @@
       <groupId>io.grpc</groupId>
       <artifactId>grpc-auth</artifactId>
     </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-core</artifactId>
-      <type>test-jar</type>
-      <scope>test</scope>
-    </dependency>
+
+    <!-- Test dependencies -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>

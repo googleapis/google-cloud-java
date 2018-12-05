@@ -42,12 +42,8 @@
       <groupId>io.grpc</groupId>
       <artifactId>grpc-auth</artifactId>
     </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-core</artifactId>
-      <type>test-jar</type>
-      <scope>test</scope>
-    </dependency>
+
+    <!-- Test dependencies -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -58,6 +54,7 @@
       <artifactId>grpc-google-cloud-asset-v1beta1</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>
