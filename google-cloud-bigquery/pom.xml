@@ -41,6 +41,8 @@
       <artifactId>google-api-services-bigquery</artifactId>
       <scope>compile</scope>
     </dependency>
+
+    <!-- Test dependencies -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
