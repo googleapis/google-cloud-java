@@ -38,6 +38,8 @@
       <groupId>io.grpc</groupId>
       <artifactId>grpc-core</artifactId>
     </dependency>
+
+    <!-- Test dependencies -->
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
