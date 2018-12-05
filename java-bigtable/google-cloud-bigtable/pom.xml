@@ -53,13 +53,7 @@
       <scope>provided</scope>
     </dependency>
 
-    <!-- Test -->
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-core</artifactId>
-      <type>test-jar</type>
-      <scope>test</scope>
-    </dependency>
+    <!-- Test dependencies -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-bigtable-v2</artifactId>
@@ -85,6 +79,7 @@
       <artifactId>truth</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>
