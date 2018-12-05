@@ -154,6 +154,8 @@ public class StorageImplTest {
   private static final BlobTargetOption BLOB_TARGET_GENERATION = BlobTargetOption.generationMatch();
   private static final BlobTargetOption BLOB_TARGET_METAGENERATION =
       BlobTargetOption.metagenerationMatch();
+  private static final BlobTargetOption BLOB_TARGET_DISABLE_GZIP_CONTENT =
+      BlobTargetOption.disableGzipContent();
   private static final BlobTargetOption BLOB_TARGET_NOT_EXIST = BlobTargetOption.doesNotExist();
   private static final BlobTargetOption BLOB_TARGET_PREDEFINED_ACL =
       BlobTargetOption.predefinedAcl(Storage.PredefinedAcl.PRIVATE);
@@ -162,6 +164,8 @@ public class StorageImplTest {
           StorageRpc.Option.IF_METAGENERATION_MATCH, BLOB_INFO1.getMetageneration(),
           StorageRpc.Option.IF_GENERATION_MATCH, 0L,
           StorageRpc.Option.PREDEFINED_ACL, BUCKET_TARGET_PREDEFINED_ACL.getValue());
+  private static final Map<StorageRpc.Option, ?> BLOB_TARGET_OPTIONS_CREATE_DISABLE_GZIP_CONTENT =
+      ImmutableMap.of(StorageRpc.Option.IF_DISABLE_GZIP_CONTENT, true);
   private static final Map<StorageRpc.Option, ?> BLOB_TARGET_OPTIONS_UPDATE =
       ImmutableMap.of(
           StorageRpc.Option.IF_METAGENERATION_MATCH, BLOB_INFO1.getMetageneration(),
@@ -537,6 +541,32 @@ public class StorageImplTest {
             BLOB_TARGET_METAGENERATION,
             BLOB_TARGET_NOT_EXIST,
             BLOB_TARGET_PREDEFINED_ACL);
+    assertEquals(expectedBlob1, blob);
+    ByteArrayInputStream byteStream = capturedStream.getValue();
+    byte[] streamBytes = new byte[BLOB_CONTENT.length];
+    assertEquals(BLOB_CONTENT.length, byteStream.read(streamBytes));
+    assertArrayEquals(BLOB_CONTENT, streamBytes);
+    assertEquals(-1, byteStream.read(streamBytes));
+  }
+
+  @Test
+  public void testCreateBlobWithDisabledGzipContent() throws IOException {
+    Capture<ByteArrayInputStream> capturedStream = Capture.newInstance();
+    EasyMock.expect(
+            storageRpcMock.create(
+                EasyMock.eq(
+                    BLOB_INFO1
+                        .toBuilder()
+                        .setMd5(CONTENT_MD5)
+                        .setCrc32c(CONTENT_CRC32C)
+                        .build()
+                        .toPb()),
+                EasyMock.capture(capturedStream),
+                EasyMock.eq(BLOB_TARGET_OPTIONS_CREATE_DISABLE_GZIP_CONTENT)))
+        .andReturn(BLOB_INFO1.toPb());
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    Blob blob = storage.create(BLOB_INFO1, BLOB_CONTENT, BLOB_TARGET_DISABLE_GZIP_CONTENT);
     assertEquals(expectedBlob1, blob);
     ByteArrayInputStream byteStream = capturedStream.getValue();
     byte[] streamBytes = new byte[BLOB_CONTENT.length];
