@@ -56,13 +56,19 @@ public abstract class StandardTableDefinition extends TableDefinition {
       this.oldestEntryTime = oldestEntryTime;
     }
 
-    /** Returns a lower-bound estimate of the number of rows currently in the streaming buffer. */
-    public long getEstimatedRows() {
+    /**
+     * Returns a lower-bound estimate of the number of rows currently in the streaming buffer.
+     * Returns {@code null} if the streaming buffer is empty.
+     */
+    public Long getEstimatedRows() {
       return estimatedRows;
     }
 
-    /** Returns a lower-bound estimate of the number of bytes currently in the streaming buffer. */
-    public long getEstimatedBytes() {
+    /**
+     * Returns a lower-bound estimate of the number of bytes currently in the streaming buffer.
+     * Returns {@code null} if the streaming buffer is empty.
+     */
+    public Long getEstimatedBytes() {
       return estimatedBytes;
     }
 
