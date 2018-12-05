@@ -25,7 +25,7 @@ mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=tr
 
 # prepend Kokoro root directory onto GOOGLE_APPLICATION_CREDENTIALS path
 if [ ! -z "$GOOGLE_APPLICATION_CREDENTIALS" ]; then
-    export GOOGLE_APPLICATION_CREDENTIALS=${KOKORO_ROOT}/src/${GOOGLE_APPLICATION_CREDENTIALS}
+    export GOOGLE_APPLICATION_CREDENTIALS=$(realpath ${KOKORO_ROOT}/src/${GOOGLE_APPLICATION_CREDENTIALS})
 fi
 
 case $JOB_TYPE in
@@ -40,7 +40,7 @@ javadoc)
     mvn javadoc:javadoc javadoc:test-javadoc
     ;;
 integration)
-    ./utilities/verify_single_it.sh $INTEGRATION_TEST_ARGS
+    mvn -B -pl ${INTEGRATION_TEST_ARGS} -DtrimStackTrace=false -fae verify
     ;;
 *)
     ;;

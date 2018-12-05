@@ -287,6 +287,9 @@ public class HttpStorageRpc implements StorageRpc {
                   storageObject,
                   new InputStreamContent(storageObject.getContentType(), content));
       insert.getMediaHttpUploader().setDirectUploadEnabled(true);
+      Boolean disableGzipContent = Option.IF_DISABLE_GZIP_CONTENT.getBoolean(options);
+      if (disableGzipContent != null)
+        insert.getMediaHttpUploader().setDisableGZipContent(disableGzipContent);
       setEncryptionHeaders(insert.getRequestHeaders(), ENCRYPTION_KEY_PREFIX, options);
       return insert
           .setProjection(DEFAULT_PROJECTION)
