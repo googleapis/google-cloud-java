@@ -88,7 +88,8 @@ public final class ITDMLTest {
             for (String stmt : stmts) {
               if (throwAbortOnce) {
                 throwAbortOnce = false;
-                throw SpannerExceptionFactory.newSpannerException(ErrorCode.ABORTED, "Abort in test");
+                throw SpannerExceptionFactory.newSpannerException(
+                    ErrorCode.ABORTED, "Abort in test");
               }
 
               rowCount += transaction.executeUpdate(Statement.of(stmt));
