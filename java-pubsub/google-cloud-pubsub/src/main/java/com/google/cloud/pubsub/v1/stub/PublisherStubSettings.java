@@ -292,7 +292,9 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
             @Override
             public Iterable<Topic> extractResources(ListTopicsResponse payload) {
-              return payload.getTopicsList();
+              return payload.getTopicsList() != null
+                  ? payload.getTopicsList()
+                  : ImmutableList.<Topic>of();
             }
           };
 
@@ -332,7 +334,9 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
             @Override
             public Iterable<String> extractResources(ListTopicSubscriptionsResponse payload) {
-              return payload.getSubscriptionsList();
+              return payload.getSubscriptionsList() != null
+                  ? payload.getSubscriptionsList()
+                  : ImmutableList.<String>of();
             }
           };
 
@@ -473,11 +477,6 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
           ImmutableMap.builder();
       definitions.put(
           "idempotent",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "http_get",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
