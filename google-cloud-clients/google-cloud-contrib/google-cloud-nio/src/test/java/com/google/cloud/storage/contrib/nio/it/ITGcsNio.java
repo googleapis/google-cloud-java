@@ -157,7 +157,6 @@ public class ITGcsNio {
   }
 
   // Start of tests related to the "requester pays" feature
-  @Ignore("blocked by #3448")
   @Test
   public void testFileExistsRequesterPaysNoUserProject() throws IOException {
     CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, "");
@@ -187,17 +186,16 @@ public class ITGcsNio {
     Files.exists(path);
   }
 
-  @Ignore("blocked by #3448")
   @Test
   public void testCantCreateWithoutUserProject() throws IOException {
     CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, "");
-    Path path = testBucket.getPath(SML_FILE);
+    Path path = testBucket.getPath(TMP_FILE);
     try {
       // fails
       Files.write(path, "I would like to write".getBytes());
       Assert.fail("It should have thrown an exception.");
-    } catch (StorageException sex) {
-      assertIsRequesterPaysException("testCantCreateWithoutUserProject", sex);
+    } catch (IOException ioex) {
+      assertIsRequesterPaysException("testCantCreateWithoutUserProject", ioex);
     }
   }
 
@@ -209,7 +207,6 @@ public class ITGcsNio {
     Files.write(path, "I would like to write, please?".getBytes());
   }
 
-  @Ignore("blocked by #3448")
   @Test
   public void testCantReadWithoutUserProject() throws IOException {
     CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, "");
@@ -231,7 +228,6 @@ public class ITGcsNio {
     Files.readAllBytes(path);
   }
 
-  @Ignore("blocked by #3448")
   @Test
   public void testCantCopyWithoutUserProject() throws IOException {
     CloudStorageFileSystem testRPBucket = getRequesterPaysBucket(false, "");
@@ -322,6 +318,13 @@ public class ITGcsNio {
     Assert.assertTrue(
         message,
         sex.getMessage().contains("Bucket is requester pays bucket but no user project provided"));
+  }
+
+  private void assertIsRequesterPaysException(String message, IOException ioex) {
+    Assert.assertTrue(message, ioex.getMessage().startsWith("400"));
+    Assert.assertTrue(
+        message,
+        ioex.getMessage().contains("Bucket is requester pays bucket but no user project provided"));
   }
 
   // End of tests related to the "requester pays" feature
