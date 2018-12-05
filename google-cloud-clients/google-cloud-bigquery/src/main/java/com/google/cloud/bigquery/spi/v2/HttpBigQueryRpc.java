@@ -246,7 +246,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
       if (serviceException.getCode() == HTTP_NOT_FOUND) {
-        return null;
+        throw new BigQueryException(HTTP_NOT_FOUND, "Table not found");
       }
       throw serviceException;
     }

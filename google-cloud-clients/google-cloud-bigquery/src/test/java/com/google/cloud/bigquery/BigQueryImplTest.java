@@ -603,6 +603,18 @@ public class BigQueryImplTest {
   }
 
   @Test
+  public void testGetTableFromTableIdWithTableNotFound() {
+    EasyMock.expect(
+            bigqueryRpcMock.getTable(PROJECT, DATASET, "table-not-found", EMPTY_RPC_OPTIONS))
+        .andThrow(new BigQueryException(404, "Table not found"));
+    EasyMock.replay(bigqueryRpcMock);
+    bigquery = options.getService();
+    thrown.expect(BigQueryException.class);
+    bigquery.getTable(TableId.of(DATASET, "table-not-found"));
+    EasyMock.verify(bigqueryRpcMock);
+  }
+
+  @Test
   public void testGetTableFromTableIdWithProject() {
     TableInfo tableInfo = TABLE_INFO.setProjectId(OTHER_PROJECT);
     TableId tableId = TABLE_ID.setProjectId(OTHER_PROJECT);
