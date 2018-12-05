@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.bigquery.model.JobConfigurationLoad;
 import com.google.common.base.MoreObjects.ToStringHelper;
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Ints;
 import java.util.List;
@@ -398,7 +399,10 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
 
   @Override
   LoadJobConfiguration setProjectId(String projectId) {
-    return toBuilder().setDestinationTable(getDestinationTable().setProjectId(projectId)).build();
+    if (Strings.isNullOrEmpty(getDestinationTable().getProject())) {
+      return toBuilder().setDestinationTable(getDestinationTable().setProjectId(projectId)).build();
+    }
+    return this;
   }
 
   @Override
