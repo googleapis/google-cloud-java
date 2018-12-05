@@ -238,21 +238,14 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
    */
   static <T> T runWithRetries(Callable<T> callable, RetrySettings retrySettings) {
     // Use same backoff setting as abort, somewhat arbitrarily.
-    Instant start = Instant.now();
-    Instant end;
-
     Span span = tracer.getCurrentSpan();
     ExponentialBackOff backOff = newBackOff();
     Context context = Context.current();
 
     int attempt = 0;
-    int maxAttempt = Integer.MAX_VALUE;
-
-    Duration duration ;
-    Duration totalTimeout = Duration.ofSeconds(50);
+    int maxAttempt = 6;
 
     if(retrySettings != null) {
-      totalTimeout = retrySettings.getTotalTimeout();
       maxAttempt = retrySettings.getMaxAttempts();
     }
 
@@ -260,11 +253,6 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       attempt++;
       if (attempt >= maxAttempt) {
         throw newSpannerException(ErrorCode.INTERNAL, "Exceeded maxAttempt " + maxAttempt);
-      }
-      end = Instant.now();
-      duration = Duration.between(start, end);
-      if (duration.compareTo(totalTimeout) > 0) {
-        throw newSpannerException(ErrorCode.INTERNAL, "totalTimeout "+ totalTimeout.toMillis());
       }
 
       try {
