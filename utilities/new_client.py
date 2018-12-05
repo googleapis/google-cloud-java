@@ -1,4 +1,5 @@
-# Copyright 2018 Google LLC
+#!/usr/bin/env python3
+#  Copyright 2018 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,11 +21,14 @@ import os
 import re
 import sys
 import subprocess
+
+import attr
 from jinja2 import Environment, FileSystemLoader
 from lxml import etree
 from releasetool.commands.start import java as releasetool
 from typing import List
 
+@attr.s(auto_attribs=True)
 class Context:
     service: str = None
     api_version: str = None
@@ -39,14 +43,12 @@ class Context:
     description: str = "FIXME"
     name: str = "FIXME"
     versions: List[str] = None
+    jinja_env: Environment = None
 
-    def __init__(self, service: str, api_version: str, artman_config: str):
-        self.service = service
-        self.api_version = api_version
-        self.artman_config = artman_config
-        self.google_cloud_artifact = f'google-cloud-{service}'
-        self.grpc_artifact = f'grpc-google-cloud-{service}-{api_version}'
-        self.proto_artifact = f'proto-google-cloud-{service}-{api_version}'
+    def __attrs_post_init__(self):
+        self.google_cloud_artifact = f'google-cloud-{self.service}'
+        self.grpc_artifact = f'grpc-google-cloud-{self.service}-{self.api_version}'
+        self.proto_artifact = f'proto-google-cloud-{self.service}-{self.api_version}'
         self.root_directory = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..'))
         self.jinja_env = Environment(
             loader=FileSystemLoader(self.path('utilities/templates'))
