@@ -26,6 +26,7 @@ import org.junit.Test;
 
 public class ExtractJobConfigurationTest {
 
+  private static final String TEST_PROJECT_ID = "test-project-id";
   private static final List<String> DESTINATION_URIS = ImmutableList.of("uri1", "uri2");
   private static final String DESTINATION_URI = "uri1";
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
@@ -118,8 +119,19 @@ public class ExtractJobConfigurationTest {
 
   @Test
   public void testSetProjectId() {
-    ExtractJobConfiguration configuration = EXTRACT_CONFIGURATION.setProjectId("p");
-    assertEquals("p", configuration.getSourceTable().getProject());
+    ExtractJobConfiguration configuration = EXTRACT_CONFIGURATION.setProjectId(TEST_PROJECT_ID);
+    assertEquals(TEST_PROJECT_ID, configuration.getSourceTable().getProject());
+  }
+
+  @Test
+  public void testSetProjectIdDoNotOverride() {
+    ExtractJobConfiguration configuration =
+        EXTRACT_CONFIGURATION
+            .toBuilder()
+            .setSourceTable(TABLE_ID.setProjectId(TEST_PROJECT_ID))
+            .build()
+            .setProjectId("do-not-update");
+    assertEquals(TEST_PROJECT_ID, configuration.getSourceTable().getProject());
   }
 
   @Test
