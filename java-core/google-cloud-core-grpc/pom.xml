@@ -77,6 +77,8 @@
       <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>
     </dependency>
+
+    <!-- Test dependencies -->
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>

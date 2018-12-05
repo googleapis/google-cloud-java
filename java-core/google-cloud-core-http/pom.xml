@@ -63,6 +63,8 @@
       <groupId>com.google.api</groupId>
       <artifactId>gax-httpjson</artifactId>
     </dependency>
+
+    <!-- Test dependencies -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
