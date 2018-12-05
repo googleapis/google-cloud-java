@@ -23,13 +23,10 @@
 package com.google.cloud.examples.logging.snippets;
 
 import com.google.cloud.logging.Metric;
-
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
-/**
- * This class contains a number of snippets for the {@link Metric} class.
- */
+/** This class contains a number of snippets for the {@link Metric} class. */
 public class MetricSnippets {
 
   private final Metric metric;
@@ -38,9 +35,7 @@ public class MetricSnippets {
     this.metric = metric;
   }
 
-  /**
-   * Example of getting the metric's latest information.
-   */
+  /** Example of getting the metric's latest information. */
   // [TARGET reload()]
   public Metric reload() {
     // [START reload]
@@ -52,9 +47,7 @@ public class MetricSnippets {
     return latestMetric;
   }
 
-  /**
-   * Example of asynchronously getting the metric's latest information.
-   */
+  /** Example of asynchronously getting the metric's latest information. */
   // [TARGET reloadAsync()]
   public Metric reloadAsync() throws ExecutionException, InterruptedException {
     // [START reloadAsync]
@@ -68,39 +61,29 @@ public class MetricSnippets {
     return latestMetric;
   }
 
-  /**
-   * Example of updating the metric's information.
-   */
+  /** Example of updating the metric's information. */
   // [TARGET update()]
   public Metric update() {
     // [START update]
-    Metric updatedMetric = metric.toBuilder()
-        .setDescription("A more detailed description")
-        .build()
-        .update();
+    Metric updatedMetric =
+        metric.toBuilder().setDescription("A more detailed description").build().update();
     // [END update]
     return updatedMetric;
   }
 
-  /**
-   * Example of asynchronously updating the metric's information.
-   */
+  /** Example of asynchronously updating the metric's information. */
   // [TARGET updateAsync()]
   public Metric updateAsync() throws ExecutionException, InterruptedException {
     // [START updateAsync]
-    Future<Metric> future = metric.toBuilder()
-        .setDescription("A more detailed description")
-        .build()
-        .updateAsync();
+    Future<Metric> future =
+        metric.toBuilder().setDescription("A more detailed description").build().updateAsync();
     // ...
     Metric updatedMetric = future.get();
     // [END updateAsync]
     return updatedMetric;
   }
 
-  /**
-   * Example of deleting the metric.
-   */
+  /** Example of deleting the metric. */
   // [TARGET delete()]
   public boolean delete() {
     // [START delete]
@@ -114,9 +97,7 @@ public class MetricSnippets {
     return deleted;
   }
 
-  /**
-   * Example of asynchronously deleting the metric.
-   */
+  /** Example of asynchronously deleting the metric. */
   // [TARGET deleteAsync()]
   public boolean deleteAsync() throws ExecutionException, InterruptedException {
     // [START deleteAsync]

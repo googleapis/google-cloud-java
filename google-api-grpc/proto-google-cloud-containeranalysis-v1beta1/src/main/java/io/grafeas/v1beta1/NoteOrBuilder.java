@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1;
 
-public interface NoteOrBuilder extends
+public interface NoteOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.Note)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. The name of the note in the form of
    * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
@@ -17,6 +20,8 @@ public interface NoteOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Output only. The name of the note in the form of
    * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
@@ -24,10 +29,11 @@ public interface NoteOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * A one sentence description of this note.
    * </pre>
@@ -36,16 +42,19 @@ public interface NoteOrBuilder extends
    */
   java.lang.String getShortDescription();
   /**
+   *
+   *
    * <pre>
    * A one sentence description of this note.
    * </pre>
    *
    * <code>string short_description = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getShortDescriptionBytes();
+  com.google.protobuf.ByteString getShortDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * A detailed description of this note.
    * </pre>
@@ -54,16 +63,19 @@ public interface NoteOrBuilder extends
    */
   java.lang.String getLongDescription();
   /**
+   *
+   *
    * <pre>
    * A detailed description of this note.
    * </pre>
    *
    * <code>string long_description = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getLongDescriptionBytes();
+  com.google.protobuf.ByteString getLongDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The type of analysis. This field can be used as a filter in
    * list requests.
@@ -73,6 +85,8 @@ public interface NoteOrBuilder extends
    */
   int getKindValue();
   /**
+   *
+   *
    * <pre>
    * Output only. The type of analysis. This field can be used as a filter in
    * list requests.
@@ -83,15 +97,18 @@ public interface NoteOrBuilder extends
   io.grafeas.v1beta1.common.NoteKind getKind();
 
   /**
+   *
+   *
    * <pre>
    * URLs associated with this note.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.RelatedUrl related_url = 5;</code>
    */
-  java.util.List<io.grafeas.v1beta1.common.RelatedUrl> 
-      getRelatedUrlList();
+  java.util.List<io.grafeas.v1beta1.common.RelatedUrl> getRelatedUrlList();
   /**
+   *
+   *
    * <pre>
    * URLs associated with this note.
    * </pre>
@@ -100,6 +117,8 @@ public interface NoteOrBuilder extends
    */
   io.grafeas.v1beta1.common.RelatedUrl getRelatedUrl(int index);
   /**
+   *
+   *
    * <pre>
    * URLs associated with this note.
    * </pre>
@@ -108,25 +127,30 @@ public interface NoteOrBuilder extends
    */
   int getRelatedUrlCount();
   /**
+   *
+   *
    * <pre>
    * URLs associated with this note.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.RelatedUrl related_url = 5;</code>
    */
-  java.util.List<? extends io.grafeas.v1beta1.common.RelatedUrlOrBuilder> 
+  java.util.List<? extends io.grafeas.v1beta1.common.RelatedUrlOrBuilder>
       getRelatedUrlOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * URLs associated with this note.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.RelatedUrl related_url = 5;</code>
    */
-  io.grafeas.v1beta1.common.RelatedUrlOrBuilder getRelatedUrlOrBuilder(
-      int index);
+  io.grafeas.v1beta1.common.RelatedUrlOrBuilder getRelatedUrlOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Time of expiration for this note. Empty if note does not expire.
    * </pre>
@@ -135,6 +159,8 @@ public interface NoteOrBuilder extends
    */
   boolean hasExpirationTime();
   /**
+   *
+   *
    * <pre>
    * Time of expiration for this note. Empty if note does not expire.
    * </pre>
@@ -143,6 +169,8 @@ public interface NoteOrBuilder extends
    */
   com.google.protobuf.Timestamp getExpirationTime();
   /**
+   *
+   *
    * <pre>
    * Time of expiration for this note. Empty if note does not expire.
    * </pre>
@@ -152,6 +180,8 @@ public interface NoteOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getExpirationTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time this note was created. This field can be used as a
    * filter in list requests.
@@ -161,6 +191,8 @@ public interface NoteOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time this note was created. This field can be used as a
    * filter in list requests.
@@ -170,6 +202,8 @@ public interface NoteOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time this note was created. This field can be used as a
    * filter in list requests.
@@ -180,6 +214,8 @@ public interface NoteOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time this note was last updated. This field can be used as
    * a filter in list requests.
@@ -189,6 +225,8 @@ public interface NoteOrBuilder extends
    */
   boolean hasUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time this note was last updated. This field can be used as
    * a filter in list requests.
@@ -198,6 +236,8 @@ public interface NoteOrBuilder extends
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time this note was last updated. This field can be used as
    * a filter in list requests.
@@ -208,15 +248,18 @@ public interface NoteOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Other notes related to this note.
    * </pre>
    *
    * <code>repeated string related_note_names = 9;</code>
    */
-  java.util.List<java.lang.String>
-      getRelatedNoteNamesList();
+  java.util.List<java.lang.String> getRelatedNoteNamesList();
   /**
+   *
+   *
    * <pre>
    * Other notes related to this note.
    * </pre>
@@ -225,6 +268,8 @@ public interface NoteOrBuilder extends
    */
   int getRelatedNoteNamesCount();
   /**
+   *
+   *
    * <pre>
    * Other notes related to this note.
    * </pre>
@@ -233,16 +278,19 @@ public interface NoteOrBuilder extends
    */
   java.lang.String getRelatedNoteNames(int index);
   /**
+   *
+   *
    * <pre>
    * Other notes related to this note.
    * </pre>
    *
    * <code>repeated string related_note_names = 9;</code>
    */
-  com.google.protobuf.ByteString
-      getRelatedNoteNamesBytes(int index);
+  com.google.protobuf.ByteString getRelatedNoteNamesBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * A note describing a package vulnerability.
    * </pre>
@@ -251,6 +299,8 @@ public interface NoteOrBuilder extends
    */
   boolean hasVulnerability();
   /**
+   *
+   *
    * <pre>
    * A note describing a package vulnerability.
    * </pre>
@@ -259,6 +309,8 @@ public interface NoteOrBuilder extends
    */
   io.grafeas.v1beta1.vulnerability.Vulnerability getVulnerability();
   /**
+   *
+   *
    * <pre>
    * A note describing a package vulnerability.
    * </pre>
@@ -268,6 +320,8 @@ public interface NoteOrBuilder extends
   io.grafeas.v1beta1.vulnerability.VulnerabilityOrBuilder getVulnerabilityOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A note describing build provenance for a verifiable build.
    * </pre>
@@ -276,6 +330,8 @@ public interface NoteOrBuilder extends
    */
   boolean hasBuild();
   /**
+   *
+   *
    * <pre>
    * A note describing build provenance for a verifiable build.
    * </pre>
@@ -284,6 +340,8 @@ public interface NoteOrBuilder extends
    */
   io.grafeas.v1beta1.build.Build getBuild();
   /**
+   *
+   *
    * <pre>
    * A note describing build provenance for a verifiable build.
    * </pre>
@@ -293,6 +351,8 @@ public interface NoteOrBuilder extends
   io.grafeas.v1beta1.build.BuildOrBuilder getBuildOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A note describing a base image.
    * </pre>
@@ -301,6 +361,8 @@ public interface NoteOrBuilder extends
    */
   boolean hasBaseImage();
   /**
+   *
+   *
    * <pre>
    * A note describing a base image.
    * </pre>
@@ -309,6 +371,8 @@ public interface NoteOrBuilder extends
    */
   io.grafeas.v1beta1.image.Basis getBaseImage();
   /**
+   *
+   *
    * <pre>
    * A note describing a base image.
    * </pre>
@@ -318,6 +382,8 @@ public interface NoteOrBuilder extends
   io.grafeas.v1beta1.image.BasisOrBuilder getBaseImageOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A note describing a package hosted by various package managers.
    * </pre>
@@ -326,6 +392,8 @@ public interface NoteOrBuilder extends
    */
   boolean hasPackage();
   /**
+   *
+   *
    * <pre>
    * A note describing a package hosted by various package managers.
    * </pre>
@@ -334,6 +402,8 @@ public interface NoteOrBuilder extends
    */
   io.grafeas.v1beta1.pkg.Package getPackage();
   /**
+   *
+   *
    * <pre>
    * A note describing a package hosted by various package managers.
    * </pre>
@@ -343,6 +413,8 @@ public interface NoteOrBuilder extends
   io.grafeas.v1beta1.pkg.PackageOrBuilder getPackageOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A note describing something that can be deployed.
    * </pre>
@@ -351,6 +423,8 @@ public interface NoteOrBuilder extends
    */
   boolean hasDeployable();
   /**
+   *
+   *
    * <pre>
    * A note describing something that can be deployed.
    * </pre>
@@ -359,6 +433,8 @@ public interface NoteOrBuilder extends
    */
   io.grafeas.v1beta1.deployment.Deployable getDeployable();
   /**
+   *
+   *
    * <pre>
    * A note describing something that can be deployed.
    * </pre>
@@ -368,6 +444,8 @@ public interface NoteOrBuilder extends
   io.grafeas.v1beta1.deployment.DeployableOrBuilder getDeployableOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A note describing the initial analysis of a resource.
    * </pre>
@@ -376,6 +454,8 @@ public interface NoteOrBuilder extends
    */
   boolean hasDiscovery();
   /**
+   *
+   *
    * <pre>
    * A note describing the initial analysis of a resource.
    * </pre>
@@ -384,6 +464,8 @@ public interface NoteOrBuilder extends
    */
   io.grafeas.v1beta1.discovery.Discovery getDiscovery();
   /**
+   *
+   *
    * <pre>
    * A note describing the initial analysis of a resource.
    * </pre>
@@ -393,6 +475,8 @@ public interface NoteOrBuilder extends
   io.grafeas.v1beta1.discovery.DiscoveryOrBuilder getDiscoveryOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A note describing an attestation role.
    * </pre>
@@ -401,6 +485,8 @@ public interface NoteOrBuilder extends
    */
   boolean hasAttestationAuthority();
   /**
+   *
+   *
    * <pre>
    * A note describing an attestation role.
    * </pre>
@@ -409,6 +495,8 @@ public interface NoteOrBuilder extends
    */
   io.grafeas.v1beta1.attestation.Authority getAttestationAuthority();
   /**
+   *
+   *
    * <pre>
    * A note describing an attestation role.
    * </pre>

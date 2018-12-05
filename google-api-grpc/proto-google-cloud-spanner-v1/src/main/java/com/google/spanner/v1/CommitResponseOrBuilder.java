@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface CommitResponseOrBuilder extends
+public interface CommitResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.CommitResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The Cloud Spanner timestamp at which the transaction committed.
    * </pre>
@@ -16,6 +19,8 @@ public interface CommitResponseOrBuilder extends
    */
   boolean hasCommitTimestamp();
   /**
+   *
+   *
    * <pre>
    * The Cloud Spanner timestamp at which the transaction committed.
    * </pre>
@@ -24,6 +29,8 @@ public interface CommitResponseOrBuilder extends
    */
   com.google.protobuf.Timestamp getCommitTimestamp();
   /**
+   *
+   *
    * <pre>
    * The Cloud Spanner timestamp at which the transaction committed.
    * </pre>

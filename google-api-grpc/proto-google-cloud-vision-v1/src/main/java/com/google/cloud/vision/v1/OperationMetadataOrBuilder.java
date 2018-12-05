@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1;
 
-public interface OperationMetadataOrBuilder extends
+public interface OperationMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.OperationMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Current state of the batch operation.
    * </pre>
@@ -16,6 +19,8 @@ public interface OperationMetadataOrBuilder extends
    */
   int getStateValue();
   /**
+   *
+   *
    * <pre>
    * Current state of the batch operation.
    * </pre>
@@ -25,6 +30,8 @@ public interface OperationMetadataOrBuilder extends
   com.google.cloud.vision.v1.OperationMetadata.State getState();
 
   /**
+   *
+   *
    * <pre>
    * The time when the batch request was received.
    * </pre>
@@ -33,6 +40,8 @@ public interface OperationMetadataOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * The time when the batch request was received.
    * </pre>
@@ -41,6 +50,8 @@ public interface OperationMetadataOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * The time when the batch request was received.
    * </pre>
@@ -50,6 +61,8 @@ public interface OperationMetadataOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time when the operation result was last updated.
    * </pre>
@@ -58,6 +71,8 @@ public interface OperationMetadataOrBuilder extends
    */
   boolean hasUpdateTime();
   /**
+   *
+   *
    * <pre>
    * The time when the operation result was last updated.
    * </pre>
@@ -66,6 +81,8 @@ public interface OperationMetadataOrBuilder extends
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
+   *
+   *
    * <pre>
    * The time when the operation result was last updated.
    * </pre>

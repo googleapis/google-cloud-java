@@ -3,11 +3,14 @@
 
 package com.google.cloud.scheduler.v1beta1;
 
-public interface JobOrBuilder extends
+public interface JobOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.scheduler.v1beta1.Job)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The job name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
@@ -27,6 +30,8 @@ public interface JobOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The job name. For example:
    * `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
@@ -44,10 +49,11 @@ public interface JobOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * A human-readable description for the job. This string must not contain
    * more than 500 characters.
@@ -57,6 +63,8 @@ public interface JobOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * A human-readable description for the job. This string must not contain
    * more than 500 characters.
@@ -64,10 +72,11 @@ public interface JobOrBuilder extends
    *
    * <code>string description = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Pub/Sub target.
    * </pre>
@@ -76,6 +85,8 @@ public interface JobOrBuilder extends
    */
   boolean hasPubsubTarget();
   /**
+   *
+   *
    * <pre>
    * Pub/Sub target.
    * </pre>
@@ -84,6 +95,8 @@ public interface JobOrBuilder extends
    */
   com.google.cloud.scheduler.v1beta1.PubsubTarget getPubsubTarget();
   /**
+   *
+   *
    * <pre>
    * Pub/Sub target.
    * </pre>
@@ -93,6 +106,8 @@ public interface JobOrBuilder extends
   com.google.cloud.scheduler.v1beta1.PubsubTargetOrBuilder getPubsubTargetOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * App Engine HTTP target.
    * </pre>
@@ -101,6 +116,8 @@ public interface JobOrBuilder extends
    */
   boolean hasAppEngineHttpTarget();
   /**
+   *
+   *
    * <pre>
    * App Engine HTTP target.
    * </pre>
@@ -109,6 +126,8 @@ public interface JobOrBuilder extends
    */
   com.google.cloud.scheduler.v1beta1.AppEngineHttpTarget getAppEngineHttpTarget();
   /**
+   *
+   *
    * <pre>
    * App Engine HTTP target.
    * </pre>
@@ -118,6 +137,8 @@ public interface JobOrBuilder extends
   com.google.cloud.scheduler.v1beta1.AppEngineHttpTargetOrBuilder getAppEngineHttpTargetOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * HTTP target.
    * </pre>
@@ -126,6 +147,8 @@ public interface JobOrBuilder extends
    */
   boolean hasHttpTarget();
   /**
+   *
+   *
    * <pre>
    * HTTP target.
    * </pre>
@@ -134,6 +157,8 @@ public interface JobOrBuilder extends
    */
   com.google.cloud.scheduler.v1beta1.HttpTarget getHttpTarget();
   /**
+   *
+   *
    * <pre>
    * HTTP target.
    * </pre>
@@ -143,6 +168,8 @@ public interface JobOrBuilder extends
   com.google.cloud.scheduler.v1beta1.HttpTargetOrBuilder getHttpTargetOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * Describes the schedule on which the job will be executed.
@@ -167,6 +194,8 @@ public interface JobOrBuilder extends
    */
   java.lang.String getSchedule();
   /**
+   *
+   *
    * <pre>
    * Required.
    * Describes the schedule on which the job will be executed.
@@ -189,10 +218,11 @@ public interface JobOrBuilder extends
    *
    * <code>string schedule = 20;</code>
    */
-  com.google.protobuf.ByteString
-      getScheduleBytes();
+  com.google.protobuf.ByteString getScheduleBytes();
 
   /**
+   *
+   *
    * <pre>
    * Specifies the time zone to be used in interpreting
    * [schedule][google.cloud.scheduler.v1beta1.Job.schedule]. The value of this field must be a time
@@ -208,6 +238,8 @@ public interface JobOrBuilder extends
    */
   java.lang.String getTimeZone();
   /**
+   *
+   *
    * <pre>
    * Specifies the time zone to be used in interpreting
    * [schedule][google.cloud.scheduler.v1beta1.Job.schedule]. The value of this field must be a time
@@ -221,10 +253,11 @@ public interface JobOrBuilder extends
    *
    * <code>string time_zone = 21;</code>
    */
-  com.google.protobuf.ByteString
-      getTimeZoneBytes();
+  com.google.protobuf.ByteString getTimeZoneBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The creation time of the job.
    * </pre>
@@ -233,6 +266,8 @@ public interface JobOrBuilder extends
    */
   boolean hasUserUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The creation time of the job.
    * </pre>
@@ -241,6 +276,8 @@ public interface JobOrBuilder extends
    */
   com.google.protobuf.Timestamp getUserUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The creation time of the job.
    * </pre>
@@ -250,6 +287,8 @@ public interface JobOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getUserUpdateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. State of the job.
    * </pre>
@@ -258,6 +297,8 @@ public interface JobOrBuilder extends
    */
   int getStateValue();
   /**
+   *
+   *
    * <pre>
    * Output only. State of the job.
    * </pre>
@@ -267,6 +308,8 @@ public interface JobOrBuilder extends
   com.google.cloud.scheduler.v1beta1.Job.State getState();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The response from the target for the last attempted execution.
    * </pre>
@@ -275,6 +318,8 @@ public interface JobOrBuilder extends
    */
   boolean hasStatus();
   /**
+   *
+   *
    * <pre>
    * Output only. The response from the target for the last attempted execution.
    * </pre>
@@ -283,6 +328,8 @@ public interface JobOrBuilder extends
    */
   com.google.rpc.Status getStatus();
   /**
+   *
+   *
    * <pre>
    * Output only. The response from the target for the last attempted execution.
    * </pre>
@@ -292,6 +339,8 @@ public interface JobOrBuilder extends
   com.google.rpc.StatusOrBuilder getStatusOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The next time the job is scheduled. Note that this may be a
    * retry of a previously failed attempt or the next execution time
@@ -302,6 +351,8 @@ public interface JobOrBuilder extends
    */
   boolean hasScheduleTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The next time the job is scheduled. Note that this may be a
    * retry of a previously failed attempt or the next execution time
@@ -312,6 +363,8 @@ public interface JobOrBuilder extends
    */
   com.google.protobuf.Timestamp getScheduleTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The next time the job is scheduled. Note that this may be a
    * retry of a previously failed attempt or the next execution time
@@ -323,6 +376,8 @@ public interface JobOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getScheduleTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time the last job attempt started.
    * </pre>
@@ -331,6 +386,8 @@ public interface JobOrBuilder extends
    */
   boolean hasLastAttemptTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time the last job attempt started.
    * </pre>
@@ -339,6 +396,8 @@ public interface JobOrBuilder extends
    */
   com.google.protobuf.Timestamp getLastAttemptTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time the last job attempt started.
    * </pre>
@@ -348,6 +407,8 @@ public interface JobOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getLastAttemptTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Settings that determine the retry behavior.
    * </pre>
@@ -356,6 +417,8 @@ public interface JobOrBuilder extends
    */
   boolean hasRetryConfig();
   /**
+   *
+   *
    * <pre>
    * Settings that determine the retry behavior.
    * </pre>
@@ -364,6 +427,8 @@ public interface JobOrBuilder extends
    */
   com.google.cloud.scheduler.v1beta1.RetryConfig getRetryConfig();
   /**
+   *
+   *
    * <pre>
    * Settings that determine the retry behavior.
    * </pre>

@@ -14,20 +14,21 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class EnvironmentContextName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}/contexts/{context}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -73,25 +74,27 @@ public class EnvironmentContextName implements ResourceName {
     context = Preconditions.checkNotNull(builder.getContext());
   }
 
-  public static EnvironmentContextName of(String project, String environment, String user, String session, String context) {
+  public static EnvironmentContextName of(
+      String project, String environment, String user, String session, String context) {
     return newBuilder()
-      .setProject(project)
-      .setEnvironment(environment)
-      .setUser(user)
-      .setSession(session)
-      .setContext(context)
-      .build();
+        .setProject(project)
+        .setEnvironment(environment)
+        .setUser(user)
+        .setSession(session)
+        .setContext(context)
+        .build();
   }
 
-  public static String format(String project, String environment, String user, String session, String context) {
+  public static String format(
+      String project, String environment, String user, String session, String context) {
     return newBuilder()
-      .setProject(project)
-      .setEnvironment(environment)
-      .setUser(user)
-      .setSession(session)
-      .setContext(context)
-      .build()
-      .toString();
+        .setProject(project)
+        .setEnvironment(environment)
+        .setUser(user)
+        .setSession(session)
+        .setContext(context)
+        .build()
+        .toString();
   }
 
   public static EnvironmentContextName parse(String formattedString) {
@@ -99,8 +102,14 @@ public class EnvironmentContextName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "EnvironmentContextName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("environment"), matchMap.get("user"), matchMap.get("session"), matchMap.get("context"));
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "EnvironmentContextName.parse: formattedString not in valid format");
+    return of(
+        matchMap.get("project"),
+        matchMap.get("environment"),
+        matchMap.get("user"),
+        matchMap.get("session"),
+        matchMap.get("context"));
   }
 
   public static List<EnvironmentContextName> parseList(List<String> formattedStrings) {
@@ -150,7 +159,17 @@ public class EnvironmentContextName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "environment", environment, "user", user, "session", session, "context", context);
+    return PATH_TEMPLATE.instantiate(
+        "project",
+        project,
+        "environment",
+        environment,
+        "user",
+        user,
+        "session",
+        session,
+        "context",
+        context);
   }
 
   /** Builder for EnvironmentContextName. */
@@ -207,8 +226,7 @@ public class EnvironmentContextName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(EnvironmentContextName environmentContextName) {
       project = environmentContextName.project;
@@ -255,4 +273,3 @@ public class EnvironmentContextName implements ResourceName {
     return h;
   }
 }
-

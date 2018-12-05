@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface CreateInspectTemplateRequestOrBuilder extends
+public interface CreateInspectTemplateRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CreateInspectTemplateRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The parent resource name, for example projects/my-project-id or
    * organizations/my-org-id.
@@ -17,6 +20,8 @@ public interface CreateInspectTemplateRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The parent resource name, for example projects/my-project-id or
    * organizations/my-org-id.
@@ -24,10 +29,11 @@ public interface CreateInspectTemplateRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The InspectTemplate to create.
    * </pre>
@@ -36,6 +42,8 @@ public interface CreateInspectTemplateRequestOrBuilder extends
    */
   boolean hasInspectTemplate();
   /**
+   *
+   *
    * <pre>
    * The InspectTemplate to create.
    * </pre>
@@ -44,6 +52,8 @@ public interface CreateInspectTemplateRequestOrBuilder extends
    */
   com.google.privacy.dlp.v2.InspectTemplate getInspectTemplate();
   /**
+   *
+   *
    * <pre>
    * The InspectTemplate to create.
    * </pre>
@@ -53,6 +63,8 @@ public interface CreateInspectTemplateRequestOrBuilder extends
   com.google.privacy.dlp.v2.InspectTemplateOrBuilder getInspectTemplateOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The template id can contain uppercase and lowercase letters,
    * numbers, and hyphens; that is, it must match the regular
@@ -64,6 +76,8 @@ public interface CreateInspectTemplateRequestOrBuilder extends
    */
   java.lang.String getTemplateId();
   /**
+   *
+   *
    * <pre>
    * The template id can contain uppercase and lowercase letters,
    * numbers, and hyphens; that is, it must match the regular
@@ -73,6 +87,5 @@ public interface CreateInspectTemplateRequestOrBuilder extends
    *
    * <code>string template_id = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getTemplateIdBytes();
+  com.google.protobuf.ByteString getTemplateIdBytes();
 }

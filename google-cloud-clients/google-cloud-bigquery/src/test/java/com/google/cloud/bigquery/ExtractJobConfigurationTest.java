@@ -21,10 +21,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class ExtractJobConfigurationTest {
 
@@ -55,9 +53,8 @@ public class ExtractJobConfigurationTest {
   public void testToBuilder() {
     compareExtractJobConfiguration(
         EXTRACT_CONFIGURATION, EXTRACT_CONFIGURATION.toBuilder().build());
-    ExtractJobConfiguration job = EXTRACT_CONFIGURATION.toBuilder()
-        .setSourceTable(TableId.of("dataset", "newTable"))
-        .build();
+    ExtractJobConfiguration job =
+        EXTRACT_CONFIGURATION.toBuilder().setSourceTable(TableId.of("dataset", "newTable")).build();
     assertEquals("newTable", job.getSourceTable().getTable());
     job = job.toBuilder().setSourceTable(TABLE_ID).build();
     compareExtractJobConfiguration(EXTRACT_CONFIGURATION, job);
@@ -96,14 +93,13 @@ public class ExtractJobConfigurationTest {
     assertEquals(PRINT_HEADER, EXTRACT_CONFIGURATION.printHeader());
     assertEquals(FORMAT, EXTRACT_CONFIGURATION.getFormat());
     assertEquals(TABLE_ID, EXTRACT_CONFIGURATION_ONE_URI.getSourceTable());
-    assertEquals(ImmutableList.of(DESTINATION_URI),
-        EXTRACT_CONFIGURATION_ONE_URI.getDestinationUris());
+    assertEquals(
+        ImmutableList.of(DESTINATION_URI), EXTRACT_CONFIGURATION_ONE_URI.getDestinationUris());
     assertEquals(FIELD_DELIMITER, EXTRACT_CONFIGURATION_ONE_URI.getFieldDelimiter());
     assertEquals(COMPRESSION, EXTRACT_CONFIGURATION_ONE_URI.getCompression());
     assertEquals(PRINT_HEADER, EXTRACT_CONFIGURATION_ONE_URI.printHeader());
     assertEquals(FORMAT, EXTRACT_CONFIGURATION_ONE_URI.getFormat());
   }
-
 
   @Test
   public void testToPbAndFromPb() {
@@ -111,9 +107,10 @@ public class ExtractJobConfigurationTest {
     assertNull(EXTRACT_CONFIGURATION.toPb().getCopy());
     assertNull(EXTRACT_CONFIGURATION.toPb().getLoad());
     assertNull(EXTRACT_CONFIGURATION.toPb().getQuery());
-    compareExtractJobConfiguration(EXTRACT_CONFIGURATION,
-        ExtractJobConfiguration.fromPb(EXTRACT_CONFIGURATION.toPb()));
-    compareExtractJobConfiguration(EXTRACT_CONFIGURATION_ONE_URI,
+    compareExtractJobConfiguration(
+        EXTRACT_CONFIGURATION, ExtractJobConfiguration.fromPb(EXTRACT_CONFIGURATION.toPb()));
+    compareExtractJobConfiguration(
+        EXTRACT_CONFIGURATION_ONE_URI,
         ExtractJobConfiguration.fromPb(EXTRACT_CONFIGURATION_ONE_URI.toPb()));
     ExtractJobConfiguration job = ExtractJobConfiguration.of(TABLE_ID, DESTINATION_URIS);
     compareExtractJobConfiguration(job, ExtractJobConfiguration.fromPb(job.toPb()));
@@ -131,8 +128,8 @@ public class ExtractJobConfigurationTest {
     assertEquals(JobConfiguration.Type.EXTRACT, EXTRACT_CONFIGURATION_ONE_URI.getType());
   }
 
-  private void compareExtractJobConfiguration(ExtractJobConfiguration expected,
-      ExtractJobConfiguration value) {
+  private void compareExtractJobConfiguration(
+      ExtractJobConfiguration expected, ExtractJobConfiguration value) {
     assertEquals(expected, value);
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());

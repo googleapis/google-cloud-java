@@ -4,6 +4,8 @@
 package com.google.monitoring.v3;
 
 /**
+ *
+ *
  * <pre>
  * This message configures which resources and services to monitor for
  * availability.
@@ -11,15 +13,16 @@ package com.google.monitoring.v3;
  *
  * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig}
  */
-public  final class UptimeCheckConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class UptimeCheckConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.UptimeCheckConfig)
     UptimeCheckConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use UptimeCheckConfig.newBuilder() to construct.
   private UptimeCheckConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private UptimeCheckConfig() {
     name_ = "";
     displayName_ = "";
@@ -30,10 +33,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private UptimeCheckConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -53,160 +56,193 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+              name_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            displayName_ = s;
-            break;
-          }
-          case 26: {
-            com.google.api.MonitoredResource.Builder subBuilder = null;
-            if (resourceCase_ == 3) {
-              subBuilder = ((com.google.api.MonitoredResource) resource_).toBuilder();
+              displayName_ = s;
+              break;
             }
-            resource_ =
-                input.readMessage(com.google.api.MonitoredResource.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.api.MonitoredResource) resource_);
-              resource_ = subBuilder.buildPartial();
+          case 26:
+            {
+              com.google.api.MonitoredResource.Builder subBuilder = null;
+              if (resourceCase_ == 3) {
+                subBuilder = ((com.google.api.MonitoredResource) resource_).toBuilder();
+              }
+              resource_ =
+                  input.readMessage(com.google.api.MonitoredResource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.api.MonitoredResource) resource_);
+                resource_ = subBuilder.buildPartial();
+              }
+              resourceCase_ = 3;
+              break;
             }
-            resourceCase_ = 3;
-            break;
-          }
-          case 34: {
-            com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.Builder subBuilder = null;
-            if (resourceCase_ == 4) {
-              subBuilder = ((com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) resource_).toBuilder();
+          case 34:
+            {
+              com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.Builder subBuilder = null;
+              if (resourceCase_ == 4) {
+                subBuilder =
+                    ((com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) resource_)
+                        .toBuilder();
+              }
+              resource_ =
+                  input.readMessage(
+                      com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) resource_);
+                resource_ = subBuilder.buildPartial();
+              }
+              resourceCase_ = 4;
+              break;
             }
-            resource_ =
-                input.readMessage(com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) resource_);
-              resource_ = subBuilder.buildPartial();
+          case 42:
+            {
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.Builder subBuilder = null;
+              if (checkRequestTypeCase_ == 5) {
+                subBuilder =
+                    ((com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) checkRequestType_)
+                        .toBuilder();
+              }
+              checkRequestType_ =
+                  input.readMessage(
+                      com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) checkRequestType_);
+                checkRequestType_ = subBuilder.buildPartial();
+              }
+              checkRequestTypeCase_ = 5;
+              break;
             }
-            resourceCase_ = 4;
-            break;
-          }
-          case 42: {
-            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.Builder subBuilder = null;
-            if (checkRequestTypeCase_ == 5) {
-              subBuilder = ((com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) checkRequestType_).toBuilder();
+          case 50:
+            {
+              com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.Builder subBuilder = null;
+              if (checkRequestTypeCase_ == 6) {
+                subBuilder =
+                    ((com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) checkRequestType_)
+                        .toBuilder();
+              }
+              checkRequestType_ =
+                  input.readMessage(
+                      com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) checkRequestType_);
+                checkRequestType_ = subBuilder.buildPartial();
+              }
+              checkRequestTypeCase_ = 6;
+              break;
             }
-            checkRequestType_ =
-                input.readMessage(com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) checkRequestType_);
-              checkRequestType_ = subBuilder.buildPartial();
-            }
-            checkRequestTypeCase_ = 5;
-            break;
-          }
-          case 50: {
-            com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.Builder subBuilder = null;
-            if (checkRequestTypeCase_ == 6) {
-              subBuilder = ((com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) checkRequestType_).toBuilder();
-            }
-            checkRequestType_ =
-                input.readMessage(com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) checkRequestType_);
-              checkRequestType_ = subBuilder.buildPartial();
-            }
-            checkRequestTypeCase_ = 6;
-            break;
-          }
-          case 58: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (period_ != null) {
-              subBuilder = period_.toBuilder();
-            }
-            period_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(period_);
-              period_ = subBuilder.buildPartial();
-            }
+          case 58:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (period_ != null) {
+                subBuilder = period_.toBuilder();
+              }
+              period_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(period_);
+                period_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 66: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (timeout_ != null) {
-              subBuilder = timeout_.toBuilder();
+              break;
             }
-            timeout_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(timeout_);
-              timeout_ = subBuilder.buildPartial();
-            }
+          case 66:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (timeout_ != null) {
+                subBuilder = timeout_.toBuilder();
+              }
+              timeout_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(timeout_);
+                timeout_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 74: {
-            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-              contentMatchers_ = new java.util.ArrayList<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher>();
-              mutable_bitField0_ |= 0x00000100;
+              break;
             }
-            contentMatchers_.add(
-                input.readMessage(com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.parser(), extensionRegistry));
-            break;
-          }
-          case 80: {
-            int rawValue = input.readEnum();
-            if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
-              selectedRegions_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000200;
+          case 74:
+            {
+              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+                contentMatchers_ =
+                    new java.util.ArrayList<
+                        com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher>();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              contentMatchers_.add(
+                  input.readMessage(
+                      com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.parser(),
+                      extensionRegistry));
+              break;
             }
-            selectedRegions_.add(rawValue);
-            break;
-          }
-          case 82: {
-            int length = input.readRawVarint32();
-            int oldLimit = input.pushLimit(length);
-            while(input.getBytesUntilLimit() > 0) {
+          case 80:
+            {
               int rawValue = input.readEnum();
               if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
                 selectedRegions_ = new java.util.ArrayList<java.lang.Integer>();
                 mutable_bitField0_ |= 0x00000200;
               }
               selectedRegions_.add(rawValue);
+              break;
             }
-            input.popLimit(oldLimit);
-            break;
-          }
-          case 114: {
-            if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
-              internalCheckers_ = new java.util.ArrayList<com.google.monitoring.v3.InternalChecker>();
-              mutable_bitField0_ |= 0x00000800;
+          case 82:
+            {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while (input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+                  selectedRegions_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000200;
+                }
+                selectedRegions_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
+              break;
             }
-            internalCheckers_.add(
-                input.readMessage(com.google.monitoring.v3.InternalChecker.parser(), extensionRegistry));
-            break;
-          }
-          case 120: {
-
-            isInternal_ = input.readBool();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 114:
+            {
+              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+                internalCheckers_ =
+                    new java.util.ArrayList<com.google.monitoring.v3.InternalChecker>();
+                mutable_bitField0_ |= 0x00000800;
+              }
+              internalCheckers_.add(
+                  input.readMessage(
+                      com.google.monitoring.v3.InternalChecker.parser(), extensionRegistry));
+              break;
             }
-            break;
-          }
+          case 120:
+            {
+              isInternal_ = input.readBool();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
         contentMatchers_ = java.util.Collections.unmodifiableList(contentMatchers_);
@@ -221,24 +257,30 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.monitoring.v3.UptimeProto
+        .internal_static_google_monitoring_v3_UptimeCheckConfig_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_fieldAccessorTable
+    return com.google.monitoring.v3.UptimeProto
+        .internal_static_google_monitoring_v3_UptimeCheckConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.monitoring.v3.UptimeCheckConfig.class, com.google.monitoring.v3.UptimeCheckConfig.Builder.class);
+            com.google.monitoring.v3.UptimeCheckConfig.class,
+            com.google.monitoring.v3.UptimeCheckConfig.Builder.class);
   }
 
-  public interface ResourceGroupOrBuilder extends
+  public interface ResourceGroupOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.monitoring.v3.UptimeCheckConfig.ResourceGroup)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * The group of resources being monitored. Should be only the
      * group_id, not projects/&lt;project_id&gt;/groups/&lt;group_id&gt;.
@@ -248,6 +290,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getGroupId();
     /**
+     *
+     *
      * <pre>
      * The group of resources being monitored. Should be only the
      * group_id, not projects/&lt;project_id&gt;/groups/&lt;group_id&gt;.
@@ -255,10 +299,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string group_id = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getGroupIdBytes();
+    com.google.protobuf.ByteString getGroupIdBytes();
 
     /**
+     *
+     *
      * <pre>
      * The resource type of the group members.
      * </pre>
@@ -267,6 +312,8 @@ private static final long serialVersionUID = 0L;
      */
     int getResourceTypeValue();
     /**
+     *
+     *
      * <pre>
      * The resource type of the group members.
      * </pre>
@@ -276,6 +323,8 @@ private static final long serialVersionUID = 0L;
     com.google.monitoring.v3.GroupResourceType getResourceType();
   }
   /**
+   *
+   *
    * <pre>
    * The resource submessage for group checks. It can be used instead of a
    * monitored resource, when multiple resources are being monitored.
@@ -283,25 +332,26 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.ResourceGroup}
    */
-  public  static final class ResourceGroup extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class ResourceGroup extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.monitoring.v3.UptimeCheckConfig.ResourceGroup)
       ResourceGroupOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use ResourceGroup.newBuilder() to construct.
     private ResourceGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private ResourceGroup() {
       groupId_ = "";
       resourceType_ = 0;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private ResourceGroup(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -321,53 +371,59 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              groupId_ = s;
-              break;
-            }
-            case 16: {
-              int rawValue = input.readEnum();
-
-              resourceType_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                groupId_ = s;
+                break;
               }
-              break;
-            }
+            case 16:
+              {
+                int rawValue = input.readEnum();
+
+                resourceType_ = rawValue;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_ResourceGroup_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.UptimeProto
+          .internal_static_google_monitoring_v3_UptimeCheckConfig_ResourceGroup_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_ResourceGroup_fieldAccessorTable
+      return com.google.monitoring.v3.UptimeProto
+          .internal_static_google_monitoring_v3_UptimeCheckConfig_ResourceGroup_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.class, com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.Builder.class);
+              com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.class,
+              com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.Builder.class);
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object groupId_;
     /**
+     *
+     *
      * <pre>
      * The group of resources being monitored. Should be only the
      * group_id, not projects/&lt;project_id&gt;/groups/&lt;group_id&gt;.
@@ -380,14 +436,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         groupId_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The group of resources being monitored. Should be only the
      * group_id, not projects/&lt;project_id&gt;/groups/&lt;group_id&gt;.
@@ -395,13 +452,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string group_id = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getGroupIdBytes() {
+    public com.google.protobuf.ByteString getGroupIdBytes() {
       java.lang.Object ref = groupId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         groupId_ = b;
         return b;
       } else {
@@ -412,6 +467,8 @@ private static final long serialVersionUID = 0L;
     public static final int RESOURCE_TYPE_FIELD_NUMBER = 2;
     private int resourceType_;
     /**
+     *
+     *
      * <pre>
      * The resource type of the group members.
      * </pre>
@@ -422,6 +479,8 @@ private static final long serialVersionUID = 0L;
       return resourceType_;
     }
     /**
+     *
+     *
      * <pre>
      * The resource type of the group members.
      * </pre>
@@ -430,11 +489,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.monitoring.v3.GroupResourceType getResourceType() {
       @SuppressWarnings("deprecation")
-      com.google.monitoring.v3.GroupResourceType result = com.google.monitoring.v3.GroupResourceType.valueOf(resourceType_);
+      com.google.monitoring.v3.GroupResourceType result =
+          com.google.monitoring.v3.GroupResourceType.valueOf(resourceType_);
       return result == null ? com.google.monitoring.v3.GroupResourceType.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -446,12 +507,12 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getGroupIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, groupId_);
       }
-      if (resourceType_ != com.google.monitoring.v3.GroupResourceType.RESOURCE_TYPE_UNSPECIFIED.getNumber()) {
+      if (resourceType_
+          != com.google.monitoring.v3.GroupResourceType.RESOURCE_TYPE_UNSPECIFIED.getNumber()) {
         output.writeEnum(2, resourceType_);
       }
       unknownFields.writeTo(output);
@@ -466,9 +527,9 @@ private static final long serialVersionUID = 0L;
       if (!getGroupIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, groupId_);
       }
-      if (resourceType_ != com.google.monitoring.v3.GroupResourceType.RESOURCE_TYPE_UNSPECIFIED.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, resourceType_);
+      if (resourceType_
+          != com.google.monitoring.v3.GroupResourceType.RESOURCE_TYPE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, resourceType_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -478,16 +539,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup)) {
         return super.equals(obj);
       }
-      com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup other = (com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) obj;
+      com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup other =
+          (com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) obj;
 
       boolean result = true;
-      result = result && getGroupId()
-          .equals(other.getGroupId());
+      result = result && getGroupId().equals(other.getGroupId());
       result = result && resourceType_ == other.resourceType_;
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -510,87 +571,94 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup prototype) {
+
+    public static Builder newBuilder(
+        com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -600,6 +668,8 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * The resource submessage for group checks. It can be used instead of a
      * monitored resource, when multiple resources are being monitored.
@@ -607,21 +677,24 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.ResourceGroup}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.monitoring.v3.UptimeCheckConfig.ResourceGroup)
         com.google.monitoring.v3.UptimeCheckConfig.ResourceGroupOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_ResourceGroup_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_ResourceGroup_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_ResourceGroup_fieldAccessorTable
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_ResourceGroup_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.class, com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.Builder.class);
+                com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.class,
+                com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.Builder.class);
       }
 
       // Construct using com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.newBuilder()
@@ -629,16 +702,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -650,9 +722,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_ResourceGroup_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_ResourceGroup_descriptor;
       }
 
       @java.lang.Override
@@ -671,7 +743,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup buildPartial() {
-        com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup result = new com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup(this);
+        com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup result =
+            new com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup(this);
         result.groupId_ = groupId_;
         result.resourceType_ = resourceType_;
         onBuilt();
@@ -682,38 +755,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) {
-          return mergeFrom((com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup)other);
+          return mergeFrom((com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -721,7 +797,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup other) {
-        if (other == com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.getDefaultInstance()) return this;
+        if (other == com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.getDefaultInstance())
+          return this;
         if (!other.getGroupId().isEmpty()) {
           groupId_ = other.groupId_;
           onChanged();
@@ -748,7 +825,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -760,6 +838,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object groupId_ = "";
       /**
+       *
+       *
        * <pre>
        * The group of resources being monitored. Should be only the
        * group_id, not projects/&lt;project_id&gt;/groups/&lt;group_id&gt;.
@@ -770,8 +850,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getGroupId() {
         java.lang.Object ref = groupId_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           groupId_ = s;
           return s;
@@ -780,6 +859,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The group of resources being monitored. Should be only the
        * group_id, not projects/&lt;project_id&gt;/groups/&lt;group_id&gt;.
@@ -787,13 +868,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string group_id = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getGroupIdBytes() {
+      public com.google.protobuf.ByteString getGroupIdBytes() {
         java.lang.Object ref = groupId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           groupId_ = b;
           return b;
         } else {
@@ -801,6 +880,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The group of resources being monitored. Should be only the
        * group_id, not projects/&lt;project_id&gt;/groups/&lt;group_id&gt;.
@@ -808,17 +889,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string group_id = 1;</code>
        */
-      public Builder setGroupId(
-          java.lang.String value) {
+      public Builder setGroupId(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         groupId_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The group of resources being monitored. Should be only the
        * group_id, not projects/&lt;project_id&gt;/groups/&lt;group_id&gt;.
@@ -827,12 +909,14 @@ private static final long serialVersionUID = 0L;
        * <code>string group_id = 1;</code>
        */
       public Builder clearGroupId() {
-        
+
         groupId_ = getDefaultInstance().getGroupId();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The group of resources being monitored. Should be only the
        * group_id, not projects/&lt;project_id&gt;/groups/&lt;group_id&gt;.
@@ -840,13 +924,12 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string group_id = 1;</code>
        */
-      public Builder setGroupIdBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setGroupIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         groupId_ = value;
         onChanged();
         return this;
@@ -854,6 +937,8 @@ private static final long serialVersionUID = 0L;
 
       private int resourceType_ = 0;
       /**
+       *
+       *
        * <pre>
        * The resource type of the group members.
        * </pre>
@@ -864,6 +949,8 @@ private static final long serialVersionUID = 0L;
         return resourceType_;
       }
       /**
+       *
+       *
        * <pre>
        * The resource type of the group members.
        * </pre>
@@ -876,6 +963,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The resource type of the group members.
        * </pre>
@@ -884,10 +973,13 @@ private static final long serialVersionUID = 0L;
        */
       public com.google.monitoring.v3.GroupResourceType getResourceType() {
         @SuppressWarnings("deprecation")
-        com.google.monitoring.v3.GroupResourceType result = com.google.monitoring.v3.GroupResourceType.valueOf(resourceType_);
+        com.google.monitoring.v3.GroupResourceType result =
+            com.google.monitoring.v3.GroupResourceType.valueOf(resourceType_);
         return result == null ? com.google.monitoring.v3.GroupResourceType.UNRECOGNIZED : result;
       }
       /**
+       *
+       *
        * <pre>
        * The resource type of the group members.
        * </pre>
@@ -898,12 +990,14 @@ private static final long serialVersionUID = 0L;
         if (value == null) {
           throw new NullPointerException();
         }
-        
+
         resourceType_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The resource type of the group members.
        * </pre>
@@ -911,11 +1005,12 @@ private static final long serialVersionUID = 0L;
        * <code>.google.monitoring.v3.GroupResourceType resource_type = 2;</code>
        */
       public Builder clearResourceType() {
-        
+
         resourceType_ = 0;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -928,12 +1023,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.monitoring.v3.UptimeCheckConfig.ResourceGroup)
     }
 
     // @@protoc_insertion_point(class_scope:google.monitoring.v3.UptimeCheckConfig.ResourceGroup)
     private static final com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup();
     }
@@ -942,16 +1037,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ResourceGroup>
-        PARSER = new com.google.protobuf.AbstractParser<ResourceGroup>() {
-      @java.lang.Override
-      public ResourceGroup parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ResourceGroup(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<ResourceGroup> PARSER =
+        new com.google.protobuf.AbstractParser<ResourceGroup>() {
+          @java.lang.Override
+          public ResourceGroup parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ResourceGroup(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<ResourceGroup> parser() {
       return PARSER;
@@ -966,14 +1061,16 @@ private static final long serialVersionUID = 0L;
     public com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface HttpCheckOrBuilder extends
+  public interface HttpCheckOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.monitoring.v3.UptimeCheckConfig.HttpCheck)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * If true, use HTTPS instead of HTTP to run the check.
      * </pre>
@@ -983,6 +1080,8 @@ private static final long serialVersionUID = 0L;
     boolean getUseSsl();
 
     /**
+     *
+     *
      * <pre>
      * The path to the page to run the check against. Will be combined with the
      * host (specified within the MonitoredResource) and port to construct the
@@ -993,6 +1092,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getPath();
     /**
+     *
+     *
      * <pre>
      * The path to the page to run the check against. Will be combined with the
      * host (specified within the MonitoredResource) and port to construct the
@@ -1001,10 +1102,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string path = 2;</code>
      */
-    com.google.protobuf.ByteString
-        getPathBytes();
+    com.google.protobuf.ByteString getPathBytes();
 
     /**
+     *
+     *
      * <pre>
      * The port to the page to run the check against. Will be combined with host
      * (specified within the MonitoredResource) and path to construct the full
@@ -1016,34 +1118,46 @@ private static final long serialVersionUID = 0L;
     int getPort();
 
     /**
+     *
+     *
      * <pre>
      * The authentication information. Optional when creating an HTTP check;
      * defaults to empty.
      * </pre>
      *
-     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;</code>
+     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
+     * </code>
      */
     boolean hasAuthInfo();
     /**
+     *
+     *
      * <pre>
      * The authentication information. Optional when creating an HTTP check;
      * defaults to empty.
      * </pre>
      *
-     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;</code>
+     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
+     * </code>
      */
     com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication getAuthInfo();
     /**
+     *
+     *
      * <pre>
      * The authentication information. Optional when creating an HTTP check;
      * defaults to empty.
      * </pre>
      *
-     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;</code>
+     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
+     * </code>
      */
-    com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthenticationOrBuilder getAuthInfoOrBuilder();
+    com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthenticationOrBuilder
+        getAuthInfoOrBuilder();
 
     /**
+     *
+     *
      * <pre>
      * Boolean specifiying whether to encrypt the header information.
      * Encryption should be specified for any headers related to authentication
@@ -1058,6 +1172,8 @@ private static final long serialVersionUID = 0L;
     boolean getMaskHeaders();
 
     /**
+     *
+     *
      * <pre>
      * The list of headers to send as part of the uptime check request.
      * If two headers have the same key and different values, they should
@@ -1073,6 +1189,8 @@ private static final long serialVersionUID = 0L;
      */
     int getHeadersCount();
     /**
+     *
+     *
      * <pre>
      * The list of headers to send as part of the uptime check request.
      * If two headers have the same key and different values, they should
@@ -1086,15 +1204,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; headers = 6;</code>
      */
-    boolean containsHeaders(
-        java.lang.String key);
-    /**
-     * Use {@link #getHeadersMap()} instead.
-     */
+    boolean containsHeaders(java.lang.String key);
+    /** Use {@link #getHeadersMap()} instead. */
     @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getHeaders();
+    java.util.Map<java.lang.String, java.lang.String> getHeaders();
     /**
+     *
+     *
      * <pre>
      * The list of headers to send as part of the uptime check request.
      * If two headers have the same key and different values, they should
@@ -1108,9 +1224,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; headers = 6;</code>
      */
-    java.util.Map<java.lang.String, java.lang.String>
-    getHeadersMap();
+    java.util.Map<java.lang.String, java.lang.String> getHeadersMap();
     /**
+     *
+     *
      * <pre>
      * The list of headers to send as part of the uptime check request.
      * If two headers have the same key and different values, they should
@@ -1124,11 +1241,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; headers = 6;</code>
      */
-
-    java.lang.String getHeadersOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
+    java.lang.String getHeadersOrDefault(java.lang.String key, java.lang.String defaultValue);
     /**
+     *
+     *
      * <pre>
      * The list of headers to send as part of the uptime check request.
      * If two headers have the same key and different values, they should
@@ -1142,26 +1258,27 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; headers = 6;</code>
      */
-
-    java.lang.String getHeadersOrThrow(
-        java.lang.String key);
+    java.lang.String getHeadersOrThrow(java.lang.String key);
   }
   /**
+   *
+   *
    * <pre>
    * Information involved in an HTTP/HTTPS uptime check request.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.HttpCheck}
    */
-  public  static final class HttpCheck extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class HttpCheck extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.monitoring.v3.UptimeCheckConfig.HttpCheck)
       HttpCheckOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use HttpCheck.newBuilder() to construct.
     private HttpCheck(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private HttpCheck() {
       useSsl_ = false;
       path_ = "";
@@ -1170,10 +1287,10 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private HttpCheck(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1193,102 +1310,115 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 8: {
-
-              useSsl_ = input.readBool();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              path_ = s;
-              break;
-            }
-            case 24: {
-
-              port_ = input.readInt32();
-              break;
-            }
-            case 34: {
-              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.Builder subBuilder = null;
-              if (authInfo_ != null) {
-                subBuilder = authInfo_.toBuilder();
+            case 8:
+              {
+                useSsl_ = input.readBool();
+                break;
               }
-              authInfo_ = input.readMessage(com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(authInfo_);
-                authInfo_ = subBuilder.buildPartial();
-              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              break;
-            }
-            case 40: {
+                path_ = s;
+                break;
+              }
+            case 24:
+              {
+                port_ = input.readInt32();
+                break;
+              }
+            case 34:
+              {
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.Builder
+                    subBuilder = null;
+                if (authInfo_ != null) {
+                  subBuilder = authInfo_.toBuilder();
+                }
+                authInfo_ =
+                    input.readMessage(
+                        com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+                            .parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(authInfo_);
+                  authInfo_ = subBuilder.buildPartial();
+                }
 
-              maskHeaders_ = input.readBool();
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                headers_ = com.google.protobuf.MapField.newMapField(
-                    HeadersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000020;
+                break;
               }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              headers__ = input.readMessage(
-                  HeadersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              headers_.getMutableMap().put(
-                  headers__.getKey(), headers__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 40:
+              {
+                maskHeaders_ = input.readBool();
+                break;
               }
-              break;
-            }
+            case 50:
+              {
+                if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                  headers_ =
+                      com.google.protobuf.MapField.newMapField(
+                          HeadersDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000020;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> headers__ =
+                    input.readMessage(
+                        HeadersDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                headers_.getMutableMap().put(headers__.getKey(), headers__.getValue());
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.UptimeProto
+          .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
     @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 6:
           return internalGetHeaders();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_fieldAccessorTable
+      return com.google.monitoring.v3.UptimeProto
+          .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.class, com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.Builder.class);
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.class,
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.Builder.class);
     }
 
-    public interface BasicAuthenticationOrBuilder extends
+    public interface BasicAuthenticationOrBuilder
+        extends
         // @@protoc_insertion_point(interface_extends:google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication)
         com.google.protobuf.MessageOrBuilder {
 
       /**
+       *
+       *
        * <pre>
        * The username to authenticate.
        * </pre>
@@ -1297,16 +1427,19 @@ private static final long serialVersionUID = 0L;
        */
       java.lang.String getUsername();
       /**
+       *
+       *
        * <pre>
        * The username to authenticate.
        * </pre>
        *
        * <code>string username = 1;</code>
        */
-      com.google.protobuf.ByteString
-          getUsernameBytes();
+      com.google.protobuf.ByteString getUsernameBytes();
 
       /**
+       *
+       *
        * <pre>
        * The password to authenticate.
        * </pre>
@@ -1315,16 +1448,19 @@ private static final long serialVersionUID = 0L;
        */
       java.lang.String getPassword();
       /**
+       *
+       *
        * <pre>
        * The password to authenticate.
        * </pre>
        *
        * <code>string password = 2;</code>
        */
-      com.google.protobuf.ByteString
-          getPasswordBytes();
+      com.google.protobuf.ByteString getPasswordBytes();
     }
     /**
+     *
+     *
      * <pre>
      * A type of authentication to perform against the specified resource or URL
      * that uses username and password.
@@ -1333,25 +1469,26 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication}
      */
-    public  static final class BasicAuthentication extends
-        com.google.protobuf.GeneratedMessageV3 implements
+    public static final class BasicAuthentication extends com.google.protobuf.GeneratedMessageV3
+        implements
         // @@protoc_insertion_point(message_implements:google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication)
         BasicAuthenticationOrBuilder {
-    private static final long serialVersionUID = 0L;
+      private static final long serialVersionUID = 0L;
       // Use BasicAuthentication.newBuilder() to construct.
       private BasicAuthentication(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
+
       private BasicAuthentication() {
         username_ = "";
         password_ = "";
       }
 
       @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
+
       private BasicAuthentication(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1371,53 +1508,61 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
 
-                username_ = s;
-                break;
-              }
-              case 18: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                password_ = s;
-                break;
-              }
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
+                  username_ = s;
+                  break;
                 }
-                break;
-              }
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  password_ = s;
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
         } finally {
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_BasicAuthentication_descriptor;
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_BasicAuthentication_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_BasicAuthentication_fieldAccessorTable
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_BasicAuthentication_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.class, com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.Builder.class);
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.class,
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.Builder
+                    .class);
       }
 
       public static final int USERNAME_FIELD_NUMBER = 1;
       private volatile java.lang.Object username_;
       /**
+       *
+       *
        * <pre>
        * The username to authenticate.
        * </pre>
@@ -1429,27 +1574,26 @@ private static final long serialVersionUID = 0L;
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           username_ = s;
           return s;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The username to authenticate.
        * </pre>
        *
        * <code>string username = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getUsernameBytes() {
+      public com.google.protobuf.ByteString getUsernameBytes() {
         java.lang.Object ref = username_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           username_ = b;
           return b;
         } else {
@@ -1460,6 +1604,8 @@ private static final long serialVersionUID = 0L;
       public static final int PASSWORD_FIELD_NUMBER = 2;
       private volatile java.lang.Object password_;
       /**
+       *
+       *
        * <pre>
        * The password to authenticate.
        * </pre>
@@ -1471,27 +1617,26 @@ private static final long serialVersionUID = 0L;
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           password_ = s;
           return s;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The password to authenticate.
        * </pre>
        *
        * <code>string password = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getPasswordBytes() {
+      public com.google.protobuf.ByteString getPasswordBytes() {
         java.lang.Object ref = password_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           password_ = b;
           return b;
         } else {
@@ -1500,6 +1645,7 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+
       @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -1511,8 +1657,7 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
         if (!getUsernameBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
         }
@@ -1542,18 +1687,18 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public boolean equals(final java.lang.Object obj) {
         if (obj == this) {
-         return true;
+          return true;
         }
-        if (!(obj instanceof com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication)) {
+        if (!(obj
+            instanceof com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication)) {
           return super.equals(obj);
         }
-        com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication other = (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication) obj;
+        com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication other =
+            (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication) obj;
 
         boolean result = true;
-        result = result && getUsername()
-            .equals(other.getUsername());
-        result = result && getPassword()
-            .equals(other.getPassword());
+        result = result && getUsername().equals(other.getUsername());
+        result = result && getPassword().equals(other.getPassword());
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -1574,88 +1719,103 @@ private static final long serialVersionUID = 0L;
         return hash;
       }
 
-      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
       }
-      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
       }
-      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
       }
-      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
       }
-      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
       }
-      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
+
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
       }
 
       @java.lang.Override
-      public Builder newBuilderForType() { return newBuilder(); }
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication prototype) {
+
+      public static Builder newBuilder(
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+
       @java.lang.Override
       public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
       }
 
       @java.lang.Override
@@ -1665,6 +1825,8 @@ private static final long serialVersionUID = 0L;
         return builder;
       }
       /**
+       *
+       *
        * <pre>
        * A type of authentication to perform against the specified resource or URL
        * that uses username and password.
@@ -1673,38 +1835,42 @@ private static final long serialVersionUID = 0L;
        *
        * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication}
        */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
           // @@protoc_insertion_point(builder_implements:google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication)
           com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthenticationOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_BasicAuthentication_descriptor;
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.monitoring.v3.UptimeProto
+              .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_BasicAuthentication_descriptor;
         }
 
         @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_BasicAuthentication_fieldAccessorTable
+          return com.google.monitoring.v3.UptimeProto
+              .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_BasicAuthentication_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.class, com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.Builder.class);
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.class,
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.Builder
+                      .class);
         }
 
-        // Construct using com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.newBuilder()
+        // Construct using
+        // com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
+
         private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
+
         @java.lang.Override
         public Builder clear() {
           super.clear();
@@ -1716,19 +1882,22 @@ private static final long serialVersionUID = 0L;
         }
 
         @java.lang.Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_BasicAuthentication_descriptor;
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.monitoring.v3.UptimeProto
+              .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_BasicAuthentication_descriptor;
         }
 
         @java.lang.Override
-        public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication getDefaultInstanceForType() {
-          return com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.getDefaultInstance();
+        public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+            getDefaultInstanceForType() {
+          return com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+              .getDefaultInstance();
         }
 
         @java.lang.Override
         public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication build() {
-          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication result = buildPartial();
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication result =
+              buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
@@ -1736,8 +1905,10 @@ private static final long serialVersionUID = 0L;
         }
 
         @java.lang.Override
-        public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication buildPartial() {
-          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication result = new com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication(this);
+        public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+            buildPartial() {
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication result =
+              new com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication(this);
           result.username_ = username_;
           result.password_ = password_;
           onBuilt();
@@ -1748,46 +1919,54 @@ private static final long serialVersionUID = 0L;
         public Builder clone() {
           return (Builder) super.clone();
         }
+
         @java.lang.Override
         public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
+
         @java.lang.Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
+
         @java.lang.Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+
         @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
+            int index,
+            java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+
         @java.lang.Override
         public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+
         @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication) {
-            return mergeFrom((com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication)other);
+          if (other
+              instanceof com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication) {
+            return mergeFrom(
+                (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication) other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication other) {
-          if (other == com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.getDefaultInstance()) return this;
+        public Builder mergeFrom(
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication other) {
+          if (other
+              == com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+                  .getDefaultInstance()) return this;
           if (!other.getUsername().isEmpty()) {
             username_ = other.username_;
             onChanged();
@@ -1811,11 +1990,14 @@ private static final long serialVersionUID = 0L;
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication parsedMessage = null;
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication parsedMessage =
+              null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication) e.getUnfinishedMessage();
+            parsedMessage =
+                (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication)
+                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
@@ -1827,6 +2009,8 @@ private static final long serialVersionUID = 0L;
 
         private java.lang.Object username_ = "";
         /**
+         *
+         *
          * <pre>
          * The username to authenticate.
          * </pre>
@@ -1836,8 +2020,7 @@ private static final long serialVersionUID = 0L;
         public java.lang.String getUsername() {
           java.lang.Object ref = username_;
           if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             username_ = s;
             return s;
@@ -1846,19 +2029,19 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * The username to authenticate.
          * </pre>
          *
          * <code>string username = 1;</code>
          */
-        public com.google.protobuf.ByteString
-            getUsernameBytes() {
+        public com.google.protobuf.ByteString getUsernameBytes() {
           java.lang.Object ref = username_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
             username_ = b;
             return b;
           } else {
@@ -1866,23 +2049,26 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * The username to authenticate.
          * </pre>
          *
          * <code>string username = 1;</code>
          */
-        public Builder setUsername(
-            java.lang.String value) {
+        public Builder setUsername(java.lang.String value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  
+            throw new NullPointerException();
+          }
+
           username_ = value;
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * The username to authenticate.
          * </pre>
@@ -1890,25 +2076,26 @@ private static final long serialVersionUID = 0L;
          * <code>string username = 1;</code>
          */
         public Builder clearUsername() {
-          
+
           username_ = getDefaultInstance().getUsername();
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * The username to authenticate.
          * </pre>
          *
          * <code>string username = 1;</code>
          */
-        public Builder setUsernameBytes(
-            com.google.protobuf.ByteString value) {
+        public Builder setUsernameBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
           username_ = value;
           onChanged();
           return this;
@@ -1916,6 +2103,8 @@ private static final long serialVersionUID = 0L;
 
         private java.lang.Object password_ = "";
         /**
+         *
+         *
          * <pre>
          * The password to authenticate.
          * </pre>
@@ -1925,8 +2114,7 @@ private static final long serialVersionUID = 0L;
         public java.lang.String getPassword() {
           java.lang.Object ref = password_;
           if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             password_ = s;
             return s;
@@ -1935,19 +2123,19 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * The password to authenticate.
          * </pre>
          *
          * <code>string password = 2;</code>
          */
-        public com.google.protobuf.ByteString
-            getPasswordBytes() {
+        public com.google.protobuf.ByteString getPasswordBytes() {
           java.lang.Object ref = password_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
             password_ = b;
             return b;
           } else {
@@ -1955,23 +2143,26 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * The password to authenticate.
          * </pre>
          *
          * <code>string password = 2;</code>
          */
-        public Builder setPassword(
-            java.lang.String value) {
+        public Builder setPassword(java.lang.String value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  
+            throw new NullPointerException();
+          }
+
           password_ = value;
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * The password to authenticate.
          * </pre>
@@ -1979,29 +2170,31 @@ private static final long serialVersionUID = 0L;
          * <code>string password = 2;</code>
          */
         public Builder clearPassword() {
-          
+
           password_ = getDefaultInstance().getPassword();
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * The password to authenticate.
          * </pre>
          *
          * <code>string password = 2;</code>
          */
-        public Builder setPasswordBytes(
-            com.google.protobuf.ByteString value) {
+        public Builder setPasswordBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
           password_ = value;
           onChanged();
           return this;
         }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2014,30 +2207,33 @@ private static final long serialVersionUID = 0L;
           return super.mergeUnknownFields(unknownFields);
         }
 
-
         // @@protoc_insertion_point(builder_scope:google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication)
       }
 
       // @@protoc_insertion_point(class_scope:google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication)
-      private static final com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication DEFAULT_INSTANCE;
+      private static final com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+          DEFAULT_INSTANCE;
+
       static {
-        DEFAULT_INSTANCE = new com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication();
+        DEFAULT_INSTANCE =
+            new com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication();
       }
 
-      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication getDefaultInstance() {
+      public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+          getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<BasicAuthentication>
-          PARSER = new com.google.protobuf.AbstractParser<BasicAuthentication>() {
-        @java.lang.Override
-        public BasicAuthentication parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BasicAuthentication(input, extensionRegistry);
-        }
-      };
+      private static final com.google.protobuf.Parser<BasicAuthentication> PARSER =
+          new com.google.protobuf.AbstractParser<BasicAuthentication>() {
+            @java.lang.Override
+            public BasicAuthentication parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new BasicAuthentication(input, extensionRegistry);
+            }
+          };
 
       public static com.google.protobuf.Parser<BasicAuthentication> parser() {
         return PARSER;
@@ -2049,16 +2245,18 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication getDefaultInstanceForType() {
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+          getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
-
     }
 
     private int bitField0_;
     public static final int USE_SSL_FIELD_NUMBER = 1;
     private boolean useSsl_;
     /**
+     *
+     *
      * <pre>
      * If true, use HTTPS instead of HTTP to run the check.
      * </pre>
@@ -2072,6 +2270,8 @@ private static final long serialVersionUID = 0L;
     public static final int PATH_FIELD_NUMBER = 2;
     private volatile java.lang.Object path_;
     /**
+     *
+     *
      * <pre>
      * The path to the page to run the check against. Will be combined with the
      * host (specified within the MonitoredResource) and port to construct the
@@ -2085,14 +2285,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         path_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The path to the page to run the check against. Will be combined with the
      * host (specified within the MonitoredResource) and port to construct the
@@ -2101,13 +2302,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string path = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getPathBytes() {
+    public com.google.protobuf.ByteString getPathBytes() {
       java.lang.Object ref = path_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         path_ = b;
         return b;
       } else {
@@ -2118,6 +2317,8 @@ private static final long serialVersionUID = 0L;
     public static final int PORT_FIELD_NUMBER = 3;
     private int port_;
     /**
+     *
+     *
      * <pre>
      * The port to the page to run the check against. Will be combined with host
      * (specified within the MonitoredResource) and path to construct the full
@@ -2133,42 +2334,57 @@ private static final long serialVersionUID = 0L;
     public static final int AUTH_INFO_FIELD_NUMBER = 4;
     private com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication authInfo_;
     /**
+     *
+     *
      * <pre>
      * The authentication information. Optional when creating an HTTP check;
      * defaults to empty.
      * </pre>
      *
-     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;</code>
+     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
+     * </code>
      */
     public boolean hasAuthInfo() {
       return authInfo_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The authentication information. Optional when creating an HTTP check;
      * defaults to empty.
      * </pre>
      *
-     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;</code>
+     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
+     * </code>
      */
     public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication getAuthInfo() {
-      return authInfo_ == null ? com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.getDefaultInstance() : authInfo_;
+      return authInfo_ == null
+          ? com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+              .getDefaultInstance()
+          : authInfo_;
     }
     /**
+     *
+     *
      * <pre>
      * The authentication information. Optional when creating an HTTP check;
      * defaults to empty.
      * </pre>
      *
-     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;</code>
+     * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
+     * </code>
      */
-    public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthenticationOrBuilder getAuthInfoOrBuilder() {
+    public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthenticationOrBuilder
+        getAuthInfoOrBuilder() {
       return getAuthInfo();
     }
 
     public static final int MASK_HEADERS_FIELD_NUMBER = 5;
     private boolean maskHeaders_;
     /**
+     *
+     *
      * <pre>
      * Boolean specifiying whether to encrypt the header information.
      * Encryption should be specified for any headers related to authentication
@@ -2185,24 +2401,23 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int HEADERS_FIELD_NUMBER = 6;
+
     private static final class HeadersDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_HeadersEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+              com.google.monitoring.v3.UptimeProto
+                  .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_HeadersEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "");
     }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> headers_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetHeaders() {
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> headers_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetHeaders() {
       if (headers_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            HeadersDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(HeadersDefaultEntryHolder.defaultEntry);
       }
       return headers_;
     }
@@ -2211,6 +2426,8 @@ private static final long serialVersionUID = 0L;
       return internalGetHeaders().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * The list of headers to send as part of the uptime check request.
      * If two headers have the same key and different values, they should
@@ -2224,20 +2441,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; headers = 6;</code>
      */
-
-    public boolean containsHeaders(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsHeaders(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetHeaders().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getHeadersMap()} instead.
-     */
+    /** Use {@link #getHeadersMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
       return getHeadersMap();
     }
     /**
+     *
+     *
      * <pre>
      * The list of headers to send as part of the uptime check request.
      * If two headers have the same key and different values, they should
@@ -2251,11 +2468,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; headers = 6;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
       return internalGetHeaders().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * The list of headers to send as part of the uptime check request.
      * If two headers have the same key and different values, they should
@@ -2269,16 +2487,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; headers = 6;</code>
      */
-
     public java.lang.String getHeadersOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetHeaders().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * The list of headers to send as part of the uptime check request.
      * If two headers have the same key and different values, they should
@@ -2292,12 +2511,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; headers = 6;</code>
      */
-
-    public java.lang.String getHeadersOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetHeaders().getMap();
+    public java.lang.String getHeadersOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -2305,6 +2523,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -2316,8 +2535,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (useSsl_ != false) {
         output.writeBool(1, useSsl_);
       }
@@ -2333,12 +2551,8 @@ private static final long serialVersionUID = 0L;
       if (maskHeaders_ != false) {
         output.writeBool(5, maskHeaders_);
       }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetHeaders(),
-          HeadersDefaultEntryHolder.defaultEntry,
-          6);
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetHeaders(), HeadersDefaultEntryHolder.defaultEntry, 6);
       unknownFields.writeTo(output);
     }
 
@@ -2349,33 +2563,29 @@ private static final long serialVersionUID = 0L;
 
       size = 0;
       if (useSsl_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, useSsl_);
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, useSsl_);
       }
       if (!getPathBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, path_);
       }
       if (port_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, port_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, port_);
       }
       if (authInfo_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getAuthInfo());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getAuthInfo());
       }
       if (maskHeaders_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, maskHeaders_);
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, maskHeaders_);
       }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetHeaders().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        headers__ = HeadersDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(6, headers__);
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+          internalGetHeaders().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> headers__ =
+            HeadersDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, headers__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2385,29 +2595,24 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.monitoring.v3.UptimeCheckConfig.HttpCheck)) {
         return super.equals(obj);
       }
-      com.google.monitoring.v3.UptimeCheckConfig.HttpCheck other = (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) obj;
+      com.google.monitoring.v3.UptimeCheckConfig.HttpCheck other =
+          (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) obj;
 
       boolean result = true;
-      result = result && (getUseSsl()
-          == other.getUseSsl());
-      result = result && getPath()
-          .equals(other.getPath());
-      result = result && (getPort()
-          == other.getPort());
+      result = result && (getUseSsl() == other.getUseSsl());
+      result = result && getPath().equals(other.getPath());
+      result = result && (getPort() == other.getPort());
       result = result && (hasAuthInfo() == other.hasAuthInfo());
       if (hasAuthInfo()) {
-        result = result && getAuthInfo()
-            .equals(other.getAuthInfo());
+        result = result && getAuthInfo().equals(other.getAuthInfo());
       }
-      result = result && (getMaskHeaders()
-          == other.getMaskHeaders());
-      result = result && internalGetHeaders().equals(
-          other.internalGetHeaders());
+      result = result && (getMaskHeaders() == other.getMaskHeaders());
+      result = result && internalGetHeaders().equals(other.internalGetHeaders());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -2420,8 +2625,7 @@ private static final long serialVersionUID = 0L;
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + USE_SSL_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getUseSsl());
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseSsl());
       hash = (37 * hash) + PATH_FIELD_NUMBER;
       hash = (53 * hash) + getPath().hashCode();
       hash = (37 * hash) + PORT_FIELD_NUMBER;
@@ -2431,8 +2635,7 @@ private static final long serialVersionUID = 0L;
         hash = (53 * hash) + getAuthInfo().hashCode();
       }
       hash = (37 * hash) + MASK_HEADERS_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getMaskHeaders());
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMaskHeaders());
       if (!internalGetHeaders().getMap().isEmpty()) {
         hash = (37 * hash) + HEADERS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetHeaders().hashCode();
@@ -2443,87 +2646,94 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.HttpCheck parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.monitoring.v3.UptimeCheckConfig.HttpCheck prototype) {
+
+    public static Builder newBuilder(
+        com.google.monitoring.v3.UptimeCheckConfig.HttpCheck prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -2533,49 +2743,52 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Information involved in an HTTP/HTTPS uptime check request.
      * </pre>
      *
      * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.HttpCheck}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.monitoring.v3.UptimeCheckConfig.HttpCheck)
         com.google.monitoring.v3.UptimeCheckConfig.HttpCheckOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
+      protected com.google.protobuf.MapField internalGetMapField(int number) {
         switch (number) {
           case 6:
             return internalGetHeaders();
           default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+            throw new RuntimeException("Invalid map field number: " + number);
         }
       }
+
       @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
+      protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
         switch (number) {
           case 6:
             return internalGetMutableHeaders();
           default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+            throw new RuntimeException("Invalid map field number: " + number);
         }
       }
+
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_fieldAccessorTable
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.class, com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.Builder.class);
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.class,
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.Builder.class);
       }
 
       // Construct using com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.newBuilder()
@@ -2583,16 +2796,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -2615,9 +2827,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_HttpCheck_descriptor;
       }
 
       @java.lang.Override
@@ -2636,7 +2848,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck buildPartial() {
-        com.google.monitoring.v3.UptimeCheckConfig.HttpCheck result = new com.google.monitoring.v3.UptimeCheckConfig.HttpCheck(this);
+        com.google.monitoring.v3.UptimeCheckConfig.HttpCheck result =
+            new com.google.monitoring.v3.UptimeCheckConfig.HttpCheck(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.useSsl_ = useSsl_;
@@ -2659,38 +2872,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) {
-          return mergeFrom((com.google.monitoring.v3.UptimeCheckConfig.HttpCheck)other);
+          return mergeFrom((com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -2698,7 +2914,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.monitoring.v3.UptimeCheckConfig.HttpCheck other) {
-        if (other == com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.getDefaultInstance()) return this;
+        if (other == com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.getDefaultInstance())
+          return this;
         if (other.getUseSsl() != false) {
           setUseSsl(other.getUseSsl());
         }
@@ -2715,8 +2932,7 @@ private static final long serialVersionUID = 0L;
         if (other.getMaskHeaders() != false) {
           setMaskHeaders(other.getMaskHeaders());
         }
-        internalGetMutableHeaders().mergeFrom(
-            other.internalGetHeaders());
+        internalGetMutableHeaders().mergeFrom(other.internalGetHeaders());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -2736,7 +2952,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2745,10 +2962,13 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+
       private int bitField0_;
 
-      private boolean useSsl_ ;
+      private boolean useSsl_;
       /**
+       *
+       *
        * <pre>
        * If true, use HTTPS instead of HTTP to run the check.
        * </pre>
@@ -2759,6 +2979,8 @@ private static final long serialVersionUID = 0L;
         return useSsl_;
       }
       /**
+       *
+       *
        * <pre>
        * If true, use HTTPS instead of HTTP to run the check.
        * </pre>
@@ -2766,12 +2988,14 @@ private static final long serialVersionUID = 0L;
        * <code>bool use_ssl = 1;</code>
        */
       public Builder setUseSsl(boolean value) {
-        
+
         useSsl_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * If true, use HTTPS instead of HTTP to run the check.
        * </pre>
@@ -2779,7 +3003,7 @@ private static final long serialVersionUID = 0L;
        * <code>bool use_ssl = 1;</code>
        */
       public Builder clearUseSsl() {
-        
+
         useSsl_ = false;
         onChanged();
         return this;
@@ -2787,6 +3011,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object path_ = "";
       /**
+       *
+       *
        * <pre>
        * The path to the page to run the check against. Will be combined with the
        * host (specified within the MonitoredResource) and port to construct the
@@ -2798,8 +3024,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getPath() {
         java.lang.Object ref = path_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           path_ = s;
           return s;
@@ -2808,6 +3033,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The path to the page to run the check against. Will be combined with the
        * host (specified within the MonitoredResource) and port to construct the
@@ -2816,13 +3043,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string path = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getPathBytes() {
+      public com.google.protobuf.ByteString getPathBytes() {
         java.lang.Object ref = path_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           path_ = b;
           return b;
         } else {
@@ -2830,6 +3055,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The path to the page to run the check against. Will be combined with the
        * host (specified within the MonitoredResource) and port to construct the
@@ -2838,17 +3065,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string path = 2;</code>
        */
-      public Builder setPath(
-          java.lang.String value) {
+      public Builder setPath(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         path_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The path to the page to run the check against. Will be combined with the
        * host (specified within the MonitoredResource) and port to construct the
@@ -2858,12 +3086,14 @@ private static final long serialVersionUID = 0L;
        * <code>string path = 2;</code>
        */
       public Builder clearPath() {
-        
+
         path_ = getDefaultInstance().getPath();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The path to the page to run the check against. Will be combined with the
        * host (specified within the MonitoredResource) and port to construct the
@@ -2872,20 +3102,21 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string path = 2;</code>
        */
-      public Builder setPathBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setPathBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         path_ = value;
         onChanged();
         return this;
       }
 
-      private int port_ ;
+      private int port_;
       /**
+       *
+       *
        * <pre>
        * The port to the page to run the check against. Will be combined with host
        * (specified within the MonitoredResource) and path to construct the full
@@ -2898,6 +3129,8 @@ private static final long serialVersionUID = 0L;
         return port_;
       }
       /**
+       *
+       *
        * <pre>
        * The port to the page to run the check against. Will be combined with host
        * (specified within the MonitoredResource) and path to construct the full
@@ -2907,12 +3140,14 @@ private static final long serialVersionUID = 0L;
        * <code>int32 port = 3;</code>
        */
       public Builder setPort(int value) {
-        
+
         port_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The port to the page to run the check against. Will be combined with host
        * (specified within the MonitoredResource) and path to construct the full
@@ -2922,50 +3157,68 @@ private static final long serialVersionUID = 0L;
        * <code>int32 port = 3;</code>
        */
       public Builder clearPort() {
-        
+
         port_ = 0;
         onChanged();
         return this;
       }
 
-      private com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication authInfo_ = null;
+      private com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication authInfo_ =
+          null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication, com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.Builder, com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthenticationOrBuilder> authInfoBuilder_;
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication,
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.Builder,
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthenticationOrBuilder>
+          authInfoBuilder_;
       /**
+       *
+       *
        * <pre>
        * The authentication information. Optional when creating an HTTP check;
        * defaults to empty.
        * </pre>
        *
-       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;</code>
+       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
+       * </code>
        */
       public boolean hasAuthInfo() {
         return authInfoBuilder_ != null || authInfo_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * The authentication information. Optional when creating an HTTP check;
        * defaults to empty.
        * </pre>
        *
-       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;</code>
+       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
+       * </code>
        */
-      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication getAuthInfo() {
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+          getAuthInfo() {
         if (authInfoBuilder_ == null) {
-          return authInfo_ == null ? com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.getDefaultInstance() : authInfo_;
+          return authInfo_ == null
+              ? com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+                  .getDefaultInstance()
+              : authInfo_;
         } else {
           return authInfoBuilder_.getMessage();
         }
       }
       /**
+       *
+       *
        * <pre>
        * The authentication information. Optional when creating an HTTP check;
        * defaults to empty.
        * </pre>
        *
-       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;</code>
+       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
+       * </code>
        */
-      public Builder setAuthInfo(com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication value) {
+      public Builder setAuthInfo(
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication value) {
         if (authInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2979,15 +3232,19 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The authentication information. Optional when creating an HTTP check;
        * defaults to empty.
        * </pre>
        *
-       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;</code>
+       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
+       * </code>
        */
       public Builder setAuthInfo(
-          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.Builder builderForValue) {
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.Builder
+              builderForValue) {
         if (authInfoBuilder_ == null) {
           authInfo_ = builderForValue.build();
           onChanged();
@@ -2998,18 +3255,25 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The authentication information. Optional when creating an HTTP check;
        * defaults to empty.
        * </pre>
        *
-       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;</code>
+       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
+       * </code>
        */
-      public Builder mergeAuthInfo(com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication value) {
+      public Builder mergeAuthInfo(
+          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication value) {
         if (authInfoBuilder_ == null) {
           if (authInfo_ != null) {
             authInfo_ =
-              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.newBuilder(authInfo_).mergeFrom(value).buildPartial();
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.newBuilder(
+                        authInfo_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             authInfo_ = value;
           }
@@ -3021,12 +3285,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The authentication information. Optional when creating an HTTP check;
        * defaults to empty.
        * </pre>
        *
-       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;</code>
+       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
+       * </code>
        */
       public Builder clearAuthInfo() {
         if (authInfoBuilder_ == null) {
@@ -3040,58 +3307,77 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The authentication information. Optional when creating an HTTP check;
        * defaults to empty.
        * </pre>
        *
-       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;</code>
+       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
+       * </code>
        */
-      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.Builder getAuthInfoBuilder() {
-        
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.Builder
+          getAuthInfoBuilder() {
+
         onChanged();
         return getAuthInfoFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * The authentication information. Optional when creating an HTTP check;
        * defaults to empty.
        * </pre>
        *
-       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;</code>
+       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
+       * </code>
        */
-      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthenticationOrBuilder getAuthInfoOrBuilder() {
+      public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthenticationOrBuilder
+          getAuthInfoOrBuilder() {
         if (authInfoBuilder_ != null) {
           return authInfoBuilder_.getMessageOrBuilder();
         } else {
-          return authInfo_ == null ?
-              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.getDefaultInstance() : authInfo_;
+          return authInfo_ == null
+              ? com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication
+                  .getDefaultInstance()
+              : authInfo_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The authentication information. Optional when creating an HTTP check;
        * defaults to empty.
        * </pre>
        *
-       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;</code>
+       * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication auth_info = 4;
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication, com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.Builder, com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthenticationOrBuilder> 
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication,
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.Builder,
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthenticationOrBuilder>
           getAuthInfoFieldBuilder() {
         if (authInfoBuilder_ == null) {
-          authInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication, com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.Builder, com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthenticationOrBuilder>(
-                  getAuthInfo(),
-                  getParentForChildren(),
-                  isClean());
+          authInfoBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication,
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.BasicAuthentication.Builder,
+                  com.google.monitoring.v3.UptimeCheckConfig.HttpCheck
+                      .BasicAuthenticationOrBuilder>(
+                  getAuthInfo(), getParentForChildren(), isClean());
           authInfo_ = null;
         }
         return authInfoBuilder_;
       }
 
-      private boolean maskHeaders_ ;
+      private boolean maskHeaders_;
       /**
+       *
+       *
        * <pre>
        * Boolean specifiying whether to encrypt the header information.
        * Encryption should be specified for any headers related to authentication
@@ -3107,6 +3393,8 @@ private static final long serialVersionUID = 0L;
         return maskHeaders_;
       }
       /**
+       *
+       *
        * <pre>
        * Boolean specifiying whether to encrypt the header information.
        * Encryption should be specified for any headers related to authentication
@@ -3119,12 +3407,14 @@ private static final long serialVersionUID = 0L;
        * <code>bool mask_headers = 5;</code>
        */
       public Builder setMaskHeaders(boolean value) {
-        
+
         maskHeaders_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Boolean specifiying whether to encrypt the header information.
        * Encryption should be specified for any headers related to authentication
@@ -3137,28 +3427,29 @@ private static final long serialVersionUID = 0L;
        * <code>bool mask_headers = 5;</code>
        */
       public Builder clearMaskHeaders() {
-        
+
         maskHeaders_ = false;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> headers_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> headers_;
+
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetHeaders() {
+          internalGetHeaders() {
         if (headers_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              HeadersDefaultEntryHolder.defaultEntry);
+          return com.google.protobuf.MapField.emptyMapField(HeadersDefaultEntryHolder.defaultEntry);
         }
         return headers_;
       }
+
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableHeaders() {
-        onChanged();;
+          internalGetMutableHeaders() {
+        onChanged();
+        ;
         if (headers_ == null) {
-          headers_ = com.google.protobuf.MapField.newMapField(
-              HeadersDefaultEntryHolder.defaultEntry);
+          headers_ =
+              com.google.protobuf.MapField.newMapField(HeadersDefaultEntryHolder.defaultEntry);
         }
         if (!headers_.isMutable()) {
           headers_ = headers_.copy();
@@ -3170,6 +3461,8 @@ private static final long serialVersionUID = 0L;
         return internalGetHeaders().getMap().size();
       }
       /**
+       *
+       *
        * <pre>
        * The list of headers to send as part of the uptime check request.
        * If two headers have the same key and different values, they should
@@ -3183,20 +3476,20 @@ private static final long serialVersionUID = 0L;
        *
        * <code>map&lt;string, string&gt; headers = 6;</code>
        */
-
-      public boolean containsHeaders(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+      public boolean containsHeaders(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
         return internalGetHeaders().getMap().containsKey(key);
       }
-      /**
-       * Use {@link #getHeadersMap()} instead.
-       */
+      /** Use {@link #getHeadersMap()} instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
         return getHeadersMap();
       }
       /**
+       *
+       *
        * <pre>
        * The list of headers to send as part of the uptime check request.
        * If two headers have the same key and different values, they should
@@ -3210,11 +3503,12 @@ private static final long serialVersionUID = 0L;
        *
        * <code>map&lt;string, string&gt; headers = 6;</code>
        */
-
       public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
         return internalGetHeaders().getMap();
       }
       /**
+       *
+       *
        * <pre>
        * The list of headers to send as part of the uptime check request.
        * If two headers have the same key and different values, they should
@@ -3228,16 +3522,17 @@ private static final long serialVersionUID = 0L;
        *
        * <code>map&lt;string, string&gt; headers = 6;</code>
        */
-
       public java.lang.String getHeadersOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetHeaders().getMap();
+          java.lang.String key, java.lang.String defaultValue) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
+       *
+       *
        * <pre>
        * The list of headers to send as part of the uptime check request.
        * If two headers have the same key and different values, they should
@@ -3251,12 +3546,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>map&lt;string, string&gt; headers = 6;</code>
        */
-
-      public java.lang.String getHeadersOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetHeaders().getMap();
+      public java.lang.String getHeadersOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetHeaders().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
@@ -3264,11 +3558,12 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder clearHeaders() {
-        internalGetMutableHeaders().getMutableMap()
-            .clear();
+        internalGetMutableHeaders().getMutableMap().clear();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The list of headers to send as part of the uptime check request.
        * If two headers have the same key and different values, they should
@@ -3282,23 +3577,21 @@ private static final long serialVersionUID = 0L;
        *
        * <code>map&lt;string, string&gt; headers = 6;</code>
        */
-
-      public Builder removeHeaders(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableHeaders().getMutableMap()
-            .remove(key);
+      public Builder removeHeaders(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        internalGetMutableHeaders().getMutableMap().remove(key);
         return this;
       }
-      /**
-       * Use alternate mutation accessors instead.
-       */
+      /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableHeaders() {
+      public java.util.Map<java.lang.String, java.lang.String> getMutableHeaders() {
         return internalGetMutableHeaders().getMutableMap();
       }
       /**
+       *
+       *
        * <pre>
        * The list of headers to send as part of the uptime check request.
        * If two headers have the same key and different values, they should
@@ -3312,16 +3605,19 @@ private static final long serialVersionUID = 0L;
        *
        * <code>map&lt;string, string&gt; headers = 6;</code>
        */
-      public Builder putHeaders(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableHeaders().getMutableMap()
-            .put(key, value);
+      public Builder putHeaders(java.lang.String key, java.lang.String value) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        if (value == null) {
+          throw new java.lang.NullPointerException();
+        }
+        internalGetMutableHeaders().getMutableMap().put(key, value);
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The list of headers to send as part of the uptime check request.
        * If two headers have the same key and different values, they should
@@ -3335,13 +3631,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>map&lt;string, string&gt; headers = 6;</code>
        */
-
-      public Builder putAllHeaders(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableHeaders().getMutableMap()
-            .putAll(values);
+      public Builder putAllHeaders(java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableHeaders().getMutableMap().putAll(values);
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3354,12 +3648,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.monitoring.v3.UptimeCheckConfig.HttpCheck)
     }
 
     // @@protoc_insertion_point(class_scope:google.monitoring.v3.UptimeCheckConfig.HttpCheck)
     private static final com.google.monitoring.v3.UptimeCheckConfig.HttpCheck DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.monitoring.v3.UptimeCheckConfig.HttpCheck();
     }
@@ -3368,16 +3662,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<HttpCheck>
-        PARSER = new com.google.protobuf.AbstractParser<HttpCheck>() {
-      @java.lang.Override
-      public HttpCheck parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HttpCheck(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<HttpCheck> PARSER =
+        new com.google.protobuf.AbstractParser<HttpCheck>() {
+          @java.lang.Override
+          public HttpCheck parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new HttpCheck(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<HttpCheck> parser() {
       return PARSER;
@@ -3392,14 +3686,16 @@ private static final long serialVersionUID = 0L;
     public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface TcpCheckOrBuilder extends
+  public interface TcpCheckOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.monitoring.v3.UptimeCheckConfig.TcpCheck)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * The port to the page to run the check against. Will be combined with host
      * (specified within the MonitoredResource) to construct the full URL.
@@ -3411,30 +3707,33 @@ private static final long serialVersionUID = 0L;
     int getPort();
   }
   /**
+   *
+   *
    * <pre>
    * Information required for a TCP uptime check request.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.TcpCheck}
    */
-  public  static final class TcpCheck extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class TcpCheck extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.monitoring.v3.UptimeCheckConfig.TcpCheck)
       TcpCheckOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use TcpCheck.newBuilder() to construct.
     private TcpCheck(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private TcpCheck() {
       port_ = 0;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private TcpCheck(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3454,46 +3753,50 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 8: {
-
-              port_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 8:
+              {
+                port_ = input.readInt32();
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_TcpCheck_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.UptimeProto
+          .internal_static_google_monitoring_v3_UptimeCheckConfig_TcpCheck_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_TcpCheck_fieldAccessorTable
+      return com.google.monitoring.v3.UptimeProto
+          .internal_static_google_monitoring_v3_UptimeCheckConfig_TcpCheck_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.class, com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.Builder.class);
+              com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.class,
+              com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.Builder.class);
     }
 
     public static final int PORT_FIELD_NUMBER = 1;
     private int port_;
     /**
+     *
+     *
      * <pre>
      * The port to the page to run the check against. Will be combined with host
      * (specified within the MonitoredResource) to construct the full URL.
@@ -3507,6 +3810,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -3518,8 +3822,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (port_ != 0) {
         output.writeInt32(1, port_);
       }
@@ -3533,8 +3836,7 @@ private static final long serialVersionUID = 0L;
 
       size = 0;
       if (port_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, port_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, port_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3544,16 +3846,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.monitoring.v3.UptimeCheckConfig.TcpCheck)) {
         return super.equals(obj);
       }
-      com.google.monitoring.v3.UptimeCheckConfig.TcpCheck other = (com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) obj;
+      com.google.monitoring.v3.UptimeCheckConfig.TcpCheck other =
+          (com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) obj;
 
       boolean result = true;
-      result = result && (getPort()
-          == other.getPort());
+      result = result && (getPort() == other.getPort());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -3573,87 +3875,94 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.monitoring.v3.UptimeCheckConfig.TcpCheck parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.TcpCheck parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.TcpCheck parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.TcpCheck parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.TcpCheck parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.TcpCheck parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.monitoring.v3.UptimeCheckConfig.TcpCheck parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.TcpCheck parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.monitoring.v3.UptimeCheckConfig.TcpCheck parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.TcpCheck parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.TcpCheck parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.TcpCheck parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.TcpCheck parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.TcpCheck parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.monitoring.v3.UptimeCheckConfig.TcpCheck prototype) {
+
+    public static Builder newBuilder(
+        com.google.monitoring.v3.UptimeCheckConfig.TcpCheck prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -3663,27 +3972,32 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Information required for a TCP uptime check request.
      * </pre>
      *
      * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.TcpCheck}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.monitoring.v3.UptimeCheckConfig.TcpCheck)
         com.google.monitoring.v3.UptimeCheckConfig.TcpCheckOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_TcpCheck_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_TcpCheck_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_TcpCheck_fieldAccessorTable
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_TcpCheck_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.class, com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.Builder.class);
+                com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.class,
+                com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.Builder.class);
       }
 
       // Construct using com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.newBuilder()
@@ -3691,16 +4005,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -3710,9 +4023,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_TcpCheck_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_TcpCheck_descriptor;
       }
 
       @java.lang.Override
@@ -3731,7 +4044,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.monitoring.v3.UptimeCheckConfig.TcpCheck buildPartial() {
-        com.google.monitoring.v3.UptimeCheckConfig.TcpCheck result = new com.google.monitoring.v3.UptimeCheckConfig.TcpCheck(this);
+        com.google.monitoring.v3.UptimeCheckConfig.TcpCheck result =
+            new com.google.monitoring.v3.UptimeCheckConfig.TcpCheck(this);
         result.port_ = port_;
         onBuilt();
         return result;
@@ -3741,38 +4055,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) {
-          return mergeFrom((com.google.monitoring.v3.UptimeCheckConfig.TcpCheck)other);
+          return mergeFrom((com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -3780,7 +4097,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.monitoring.v3.UptimeCheckConfig.TcpCheck other) {
-        if (other == com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.getDefaultInstance()) return this;
+        if (other == com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.getDefaultInstance())
+          return this;
         if (other.getPort() != 0) {
           setPort(other.getPort());
         }
@@ -3803,7 +4121,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3813,8 +4132,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      private int port_ ;
+      private int port_;
       /**
+       *
+       *
        * <pre>
        * The port to the page to run the check against. Will be combined with host
        * (specified within the MonitoredResource) to construct the full URL.
@@ -3827,6 +4148,8 @@ private static final long serialVersionUID = 0L;
         return port_;
       }
       /**
+       *
+       *
        * <pre>
        * The port to the page to run the check against. Will be combined with host
        * (specified within the MonitoredResource) to construct the full URL.
@@ -3836,12 +4159,14 @@ private static final long serialVersionUID = 0L;
        * <code>int32 port = 1;</code>
        */
       public Builder setPort(int value) {
-        
+
         port_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The port to the page to run the check against. Will be combined with host
        * (specified within the MonitoredResource) to construct the full URL.
@@ -3851,11 +4176,12 @@ private static final long serialVersionUID = 0L;
        * <code>int32 port = 1;</code>
        */
       public Builder clearPort() {
-        
+
         port_ = 0;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3868,12 +4194,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.monitoring.v3.UptimeCheckConfig.TcpCheck)
     }
 
     // @@protoc_insertion_point(class_scope:google.monitoring.v3.UptimeCheckConfig.TcpCheck)
     private static final com.google.monitoring.v3.UptimeCheckConfig.TcpCheck DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.monitoring.v3.UptimeCheckConfig.TcpCheck();
     }
@@ -3882,16 +4208,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<TcpCheck>
-        PARSER = new com.google.protobuf.AbstractParser<TcpCheck>() {
-      @java.lang.Override
-      public TcpCheck parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TcpCheck(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<TcpCheck> PARSER =
+        new com.google.protobuf.AbstractParser<TcpCheck>() {
+          @java.lang.Override
+          public TcpCheck parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new TcpCheck(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<TcpCheck> parser() {
       return PARSER;
@@ -3906,14 +4232,16 @@ private static final long serialVersionUID = 0L;
     public com.google.monitoring.v3.UptimeCheckConfig.TcpCheck getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface ContentMatcherOrBuilder extends
+  public interface ContentMatcherOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.monitoring.v3.UptimeCheckConfig.ContentMatcher)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * String content to match (max 1024 bytes)
      * </pre>
@@ -3922,16 +4250,19 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getContent();
     /**
+     *
+     *
      * <pre>
      * String content to match (max 1024 bytes)
      * </pre>
      *
      * <code>string content = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getContentBytes();
+    com.google.protobuf.ByteString getContentBytes();
   }
   /**
+   *
+   *
    * <pre>
    * Used to perform string matching. Currently, this matches on the exact
    * content. In the future, it can be expanded to allow for regular expressions
@@ -3940,24 +4271,25 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.ContentMatcher}
    */
-  public  static final class ContentMatcher extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class ContentMatcher extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.monitoring.v3.UptimeCheckConfig.ContentMatcher)
       ContentMatcherOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use ContentMatcher.newBuilder() to construct.
     private ContentMatcher(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private ContentMatcher() {
       content_ = "";
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private ContentMatcher(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3977,47 +4309,52 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              content_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                content_ = s;
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_ContentMatcher_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.UptimeProto
+          .internal_static_google_monitoring_v3_UptimeCheckConfig_ContentMatcher_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_ContentMatcher_fieldAccessorTable
+      return com.google.monitoring.v3.UptimeProto
+          .internal_static_google_monitoring_v3_UptimeCheckConfig_ContentMatcher_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.class, com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder.class);
+              com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.class,
+              com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder.class);
     }
 
     public static final int CONTENT_FIELD_NUMBER = 1;
     private volatile java.lang.Object content_;
     /**
+     *
+     *
      * <pre>
      * String content to match (max 1024 bytes)
      * </pre>
@@ -4029,27 +4366,26 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         content_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * String content to match (max 1024 bytes)
      * </pre>
      *
      * <code>string content = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getContentBytes() {
+    public com.google.protobuf.ByteString getContentBytes() {
       java.lang.Object ref = content_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         content_ = b;
         return b;
       } else {
@@ -4058,6 +4394,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -4069,8 +4406,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getContentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, content_);
       }
@@ -4094,16 +4430,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher)) {
         return super.equals(obj);
       }
-      com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher other = (com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher) obj;
+      com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher other =
+          (com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher) obj;
 
       boolean result = true;
-      result = result && getContent()
-          .equals(other.getContent());
+      result = result && getContent().equals(other.getContent());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -4123,87 +4459,94 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher prototype) {
+
+    public static Builder newBuilder(
+        com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -4213,6 +4556,8 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Used to perform string matching. Currently, this matches on the exact
      * content. In the future, it can be expanded to allow for regular expressions
@@ -4221,21 +4566,24 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig.ContentMatcher}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.monitoring.v3.UptimeCheckConfig.ContentMatcher)
         com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_ContentMatcher_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_ContentMatcher_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_ContentMatcher_fieldAccessorTable
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_ContentMatcher_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.class, com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder.class);
+                com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.class,
+                com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder.class);
       }
 
       // Construct using com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.newBuilder()
@@ -4243,16 +4591,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -4262,9 +4609,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_ContentMatcher_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.monitoring.v3.UptimeProto
+            .internal_static_google_monitoring_v3_UptimeCheckConfig_ContentMatcher_descriptor;
       }
 
       @java.lang.Override
@@ -4283,7 +4630,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher buildPartial() {
-        com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher result = new com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher(this);
+        com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher result =
+            new com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher(this);
         result.content_ = content_;
         onBuilt();
         return result;
@@ -4293,38 +4641,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher) {
-          return mergeFrom((com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher)other);
+          return mergeFrom((com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -4332,7 +4683,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher other) {
-        if (other == com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.getDefaultInstance()) return this;
+        if (other == com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.getDefaultInstance())
+          return this;
         if (!other.getContent().isEmpty()) {
           content_ = other.content_;
           onChanged();
@@ -4356,7 +4708,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4368,6 +4721,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object content_ = "";
       /**
+       *
+       *
        * <pre>
        * String content to match (max 1024 bytes)
        * </pre>
@@ -4377,8 +4732,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getContent() {
         java.lang.Object ref = content_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           content_ = s;
           return s;
@@ -4387,19 +4741,19 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * String content to match (max 1024 bytes)
        * </pre>
        *
        * <code>string content = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getContentBytes() {
+      public com.google.protobuf.ByteString getContentBytes() {
         java.lang.Object ref = content_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           content_ = b;
           return b;
         } else {
@@ -4407,23 +4761,26 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * String content to match (max 1024 bytes)
        * </pre>
        *
        * <code>string content = 1;</code>
        */
-      public Builder setContent(
-          java.lang.String value) {
+      public Builder setContent(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         content_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * String content to match (max 1024 bytes)
        * </pre>
@@ -4431,29 +4788,31 @@ private static final long serialVersionUID = 0L;
        * <code>string content = 1;</code>
        */
       public Builder clearContent() {
-        
+
         content_ = getDefaultInstance().getContent();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * String content to match (max 1024 bytes)
        * </pre>
        *
        * <code>string content = 1;</code>
        */
-      public Builder setContentBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setContentBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         content_ = value;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4466,12 +4825,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.monitoring.v3.UptimeCheckConfig.ContentMatcher)
     }
 
     // @@protoc_insertion_point(class_scope:google.monitoring.v3.UptimeCheckConfig.ContentMatcher)
     private static final com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher();
     }
@@ -4480,16 +4839,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ContentMatcher>
-        PARSER = new com.google.protobuf.AbstractParser<ContentMatcher>() {
-      @java.lang.Override
-      public ContentMatcher parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ContentMatcher(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<ContentMatcher> PARSER =
+        new com.google.protobuf.AbstractParser<ContentMatcher>() {
+          @java.lang.Override
+          public ContentMatcher parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new ContentMatcher(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<ContentMatcher> parser() {
       return PARSER;
@@ -4504,24 +4863,22 @@ private static final long serialVersionUID = 0L;
     public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private int bitField0_;
   private int resourceCase_ = 0;
   private java.lang.Object resource_;
-  public enum ResourceCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum ResourceCase implements com.google.protobuf.Internal.EnumLite {
     MONITORED_RESOURCE(3),
     RESOURCE_GROUP(4),
     RESOURCE_NOT_SET(0);
     private final int value;
+
     private ResourceCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static ResourceCase valueOf(int value) {
       return forNumber(value);
@@ -4529,37 +4886,39 @@ private static final long serialVersionUID = 0L;
 
     public static ResourceCase forNumber(int value) {
       switch (value) {
-        case 3: return MONITORED_RESOURCE;
-        case 4: return RESOURCE_GROUP;
-        case 0: return RESOURCE_NOT_SET;
-        default: return null;
+        case 3:
+          return MONITORED_RESOURCE;
+        case 4:
+          return RESOURCE_GROUP;
+        case 0:
+          return RESOURCE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public ResourceCase
-  getResourceCase() {
-    return ResourceCase.forNumber(
-        resourceCase_);
+  public ResourceCase getResourceCase() {
+    return ResourceCase.forNumber(resourceCase_);
   }
 
   private int checkRequestTypeCase_ = 0;
   private java.lang.Object checkRequestType_;
-  public enum CheckRequestTypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum CheckRequestTypeCase implements com.google.protobuf.Internal.EnumLite {
     HTTP_CHECK(5),
     TCP_CHECK(6),
     CHECKREQUESTTYPE_NOT_SET(0);
     private final int value;
+
     private CheckRequestTypeCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static CheckRequestTypeCase valueOf(int value) {
       return forNumber(value);
@@ -4567,26 +4926,31 @@ private static final long serialVersionUID = 0L;
 
     public static CheckRequestTypeCase forNumber(int value) {
       switch (value) {
-        case 5: return HTTP_CHECK;
-        case 6: return TCP_CHECK;
-        case 0: return CHECKREQUESTTYPE_NOT_SET;
-        default: return null;
+        case 5:
+          return HTTP_CHECK;
+        case 6:
+          return TCP_CHECK;
+        case 0:
+          return CHECKREQUESTTYPE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public CheckRequestTypeCase
-  getCheckRequestTypeCase() {
-    return CheckRequestTypeCase.forNumber(
-        checkRequestTypeCase_);
+  public CheckRequestTypeCase getCheckRequestTypeCase() {
+    return CheckRequestTypeCase.forNumber(checkRequestTypeCase_);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * A unique resource name for this UptimeCheckConfig. The format is:
    *   `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
@@ -4602,14 +4966,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A unique resource name for this UptimeCheckConfig. The format is:
    *   `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
@@ -4620,13 +4985,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -4637,6 +5000,8 @@ private static final long serialVersionUID = 0L;
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object displayName_;
   /**
+   *
+   *
    * <pre>
    * A human-friendly name for the uptime check configuration. The display name
    * should be unique within a Stackdriver Account in order to make it easier
@@ -4650,14 +5015,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       displayName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A human-friendly name for the uptime check configuration. The display name
    * should be unique within a Stackdriver Account in order to make it easier
@@ -4666,13 +5032,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string display_name = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getDisplayNameBytes() {
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       displayName_ = b;
       return b;
     } else {
@@ -4682,6 +5046,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int MONITORED_RESOURCE_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * The [monitored
    * resource](https://cloud.google.com/monitoring/api/resources) associated
@@ -4700,6 +5066,8 @@ private static final long serialVersionUID = 0L;
     return resourceCase_ == 3;
   }
   /**
+   *
+   *
    * <pre>
    * The [monitored
    * resource](https://cloud.google.com/monitoring/api/resources) associated
@@ -4716,11 +5084,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.api.MonitoredResource getMonitoredResource() {
     if (resourceCase_ == 3) {
-       return (com.google.api.MonitoredResource) resource_;
+      return (com.google.api.MonitoredResource) resource_;
     }
     return com.google.api.MonitoredResource.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * The [monitored
    * resource](https://cloud.google.com/monitoring/api/resources) associated
@@ -4737,13 +5107,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.api.MonitoredResourceOrBuilder getMonitoredResourceOrBuilder() {
     if (resourceCase_ == 3) {
-       return (com.google.api.MonitoredResource) resource_;
+      return (com.google.api.MonitoredResource) resource_;
     }
     return com.google.api.MonitoredResource.getDefaultInstance();
   }
 
   public static final int RESOURCE_GROUP_FIELD_NUMBER = 4;
   /**
+   *
+   *
    * <pre>
    * The group resource associated with the configuration.
    * </pre>
@@ -4754,6 +5126,8 @@ private static final long serialVersionUID = 0L;
     return resourceCase_ == 4;
   }
   /**
+   *
+   *
    * <pre>
    * The group resource associated with the configuration.
    * </pre>
@@ -4762,26 +5136,31 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup getResourceGroup() {
     if (resourceCase_ == 4) {
-       return (com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) resource_;
+      return (com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) resource_;
     }
     return com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * The group resource associated with the configuration.
    * </pre>
    *
    * <code>.google.monitoring.v3.UptimeCheckConfig.ResourceGroup resource_group = 4;</code>
    */
-  public com.google.monitoring.v3.UptimeCheckConfig.ResourceGroupOrBuilder getResourceGroupOrBuilder() {
+  public com.google.monitoring.v3.UptimeCheckConfig.ResourceGroupOrBuilder
+      getResourceGroupOrBuilder() {
     if (resourceCase_ == 4) {
-       return (com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) resource_;
+      return (com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) resource_;
     }
     return com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.getDefaultInstance();
   }
 
   public static final int HTTP_CHECK_FIELD_NUMBER = 5;
   /**
+   *
+   *
    * <pre>
    * Contains information needed to make an HTTP or HTTPS check.
    * </pre>
@@ -4792,6 +5171,8 @@ private static final long serialVersionUID = 0L;
     return checkRequestTypeCase_ == 5;
   }
   /**
+   *
+   *
    * <pre>
    * Contains information needed to make an HTTP or HTTPS check.
    * </pre>
@@ -4800,11 +5181,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.monitoring.v3.UptimeCheckConfig.HttpCheck getHttpCheck() {
     if (checkRequestTypeCase_ == 5) {
-       return (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) checkRequestType_;
+      return (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) checkRequestType_;
     }
     return com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Contains information needed to make an HTTP or HTTPS check.
    * </pre>
@@ -4813,13 +5196,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.monitoring.v3.UptimeCheckConfig.HttpCheckOrBuilder getHttpCheckOrBuilder() {
     if (checkRequestTypeCase_ == 5) {
-       return (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) checkRequestType_;
+      return (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) checkRequestType_;
     }
     return com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.getDefaultInstance();
   }
 
   public static final int TCP_CHECK_FIELD_NUMBER = 6;
   /**
+   *
+   *
    * <pre>
    * Contains information needed to make a TCP check.
    * </pre>
@@ -4830,6 +5215,8 @@ private static final long serialVersionUID = 0L;
     return checkRequestTypeCase_ == 6;
   }
   /**
+   *
+   *
    * <pre>
    * Contains information needed to make a TCP check.
    * </pre>
@@ -4838,11 +5225,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.monitoring.v3.UptimeCheckConfig.TcpCheck getTcpCheck() {
     if (checkRequestTypeCase_ == 6) {
-       return (com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) checkRequestType_;
+      return (com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) checkRequestType_;
     }
     return com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Contains information needed to make a TCP check.
    * </pre>
@@ -4851,7 +5240,7 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.monitoring.v3.UptimeCheckConfig.TcpCheckOrBuilder getTcpCheckOrBuilder() {
     if (checkRequestTypeCase_ == 6) {
-       return (com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) checkRequestType_;
+      return (com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) checkRequestType_;
     }
     return com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.getDefaultInstance();
   }
@@ -4859,6 +5248,8 @@ private static final long serialVersionUID = 0L;
   public static final int PERIOD_FIELD_NUMBER = 7;
   private com.google.protobuf.Duration period_;
   /**
+   *
+   *
    * <pre>
    * How often, in seconds, the uptime check is performed.
    * Currently, the only supported values are `60s` (1 minute), `300s`
@@ -4872,6 +5263,8 @@ private static final long serialVersionUID = 0L;
     return period_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * How often, in seconds, the uptime check is performed.
    * Currently, the only supported values are `60s` (1 minute), `300s`
@@ -4885,6 +5278,8 @@ private static final long serialVersionUID = 0L;
     return period_ == null ? com.google.protobuf.Duration.getDefaultInstance() : period_;
   }
   /**
+   *
+   *
    * <pre>
    * How often, in seconds, the uptime check is performed.
    * Currently, the only supported values are `60s` (1 minute), `300s`
@@ -4901,6 +5296,8 @@ private static final long serialVersionUID = 0L;
   public static final int TIMEOUT_FIELD_NUMBER = 8;
   private com.google.protobuf.Duration timeout_;
   /**
+   *
+   *
    * <pre>
    * The maximum amount of time to wait for the request to complete (must be
    * between 1 and 60 seconds). Required.
@@ -4912,6 +5309,8 @@ private static final long serialVersionUID = 0L;
     return timeout_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The maximum amount of time to wait for the request to complete (must be
    * between 1 and 60 seconds). Required.
@@ -4923,6 +5322,8 @@ private static final long serialVersionUID = 0L;
     return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
   }
   /**
+   *
+   *
    * <pre>
    * The maximum amount of time to wait for the request to complete (must be
    * between 1 and 60 seconds). Required.
@@ -4935,8 +5336,11 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CONTENT_MATCHERS_FIELD_NUMBER = 9;
-  private java.util.List<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher> contentMatchers_;
+  private java.util.List<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher>
+      contentMatchers_;
   /**
+   *
+   *
    * <pre>
    * The expected content on the page the check is run against.
    * Currently, only the first entry in the list is supported, and other entries
@@ -4945,12 +5349,16 @@ private static final long serialVersionUID = 0L;
    * specified if a content match is required.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+   * </code>
    */
-  public java.util.List<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher> getContentMatchersList() {
+  public java.util.List<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher>
+      getContentMatchersList() {
     return contentMatchers_;
   }
   /**
+   *
+   *
    * <pre>
    * The expected content on the page the check is run against.
    * Currently, only the first entry in the list is supported, and other entries
@@ -4959,13 +5367,17 @@ private static final long serialVersionUID = 0L;
    * specified if a content match is required.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+   * </code>
    */
-  public java.util.List<? extends com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder> 
+  public java.util.List<
+          ? extends com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder>
       getContentMatchersOrBuilderList() {
     return contentMatchers_;
   }
   /**
+   *
+   *
    * <pre>
    * The expected content on the page the check is run against.
    * Currently, only the first entry in the list is supported, and other entries
@@ -4974,12 +5386,15 @@ private static final long serialVersionUID = 0L;
    * specified if a content match is required.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+   * </code>
    */
   public int getContentMatchersCount() {
     return contentMatchers_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The expected content on the page the check is run against.
    * Currently, only the first entry in the list is supported, and other entries
@@ -4988,12 +5403,15 @@ private static final long serialVersionUID = 0L;
    * specified if a content match is required.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+   * </code>
    */
   public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher getContentMatchers(int index) {
     return contentMatchers_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The expected content on the page the check is run against.
    * Currently, only the first entry in the list is supported, and other entries
@@ -5002,26 +5420,33 @@ private static final long serialVersionUID = 0L;
    * specified if a content match is required.
    * </pre>
    *
-   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+   * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+   * </code>
    */
-  public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder getContentMatchersOrBuilder(
-      int index) {
+  public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder
+      getContentMatchersOrBuilder(int index) {
     return contentMatchers_.get(index);
   }
 
   public static final int SELECTED_REGIONS_FIELD_NUMBER = 10;
   private java.util.List<java.lang.Integer> selectedRegions_;
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
-      java.lang.Integer, com.google.monitoring.v3.UptimeCheckRegion> selectedRegions_converter_ =
+          java.lang.Integer, com.google.monitoring.v3.UptimeCheckRegion>
+      selectedRegions_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.monitoring.v3.UptimeCheckRegion>() {
             public com.google.monitoring.v3.UptimeCheckRegion convert(java.lang.Integer from) {
               @SuppressWarnings("deprecation")
-              com.google.monitoring.v3.UptimeCheckRegion result = com.google.monitoring.v3.UptimeCheckRegion.valueOf(from);
-              return result == null ? com.google.monitoring.v3.UptimeCheckRegion.UNRECOGNIZED : result;
+              com.google.monitoring.v3.UptimeCheckRegion result =
+                  com.google.monitoring.v3.UptimeCheckRegion.valueOf(from);
+              return result == null
+                  ? com.google.monitoring.v3.UptimeCheckRegion.UNRECOGNIZED
+                  : result;
             }
           };
   /**
+   *
+   *
    * <pre>
    * The list of regions from which the check will be run.
    * If this field is specified, enough regions to include a minimum of
@@ -5034,9 +5459,12 @@ private static final long serialVersionUID = 0L;
    */
   public java.util.List<com.google.monitoring.v3.UptimeCheckRegion> getSelectedRegionsList() {
     return new com.google.protobuf.Internal.ListAdapter<
-        java.lang.Integer, com.google.monitoring.v3.UptimeCheckRegion>(selectedRegions_, selectedRegions_converter_);
+        java.lang.Integer, com.google.monitoring.v3.UptimeCheckRegion>(
+        selectedRegions_, selectedRegions_converter_);
   }
   /**
+   *
+   *
    * <pre>
    * The list of regions from which the check will be run.
    * If this field is specified, enough regions to include a minimum of
@@ -5051,6 +5479,8 @@ private static final long serialVersionUID = 0L;
     return selectedRegions_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The list of regions from which the check will be run.
    * If this field is specified, enough regions to include a minimum of
@@ -5065,6 +5495,8 @@ private static final long serialVersionUID = 0L;
     return selectedRegions_converter_.convert(selectedRegions_.get(index));
   }
   /**
+   *
+   *
    * <pre>
    * The list of regions from which the check will be run.
    * If this field is specified, enough regions to include a minimum of
@@ -5075,11 +5507,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
    */
-  public java.util.List<java.lang.Integer>
-  getSelectedRegionsValueList() {
+  public java.util.List<java.lang.Integer> getSelectedRegionsValueList() {
     return selectedRegions_;
   }
   /**
+   *
+   *
    * <pre>
    * The list of regions from which the check will be run.
    * If this field is specified, enough regions to include a minimum of
@@ -5093,11 +5526,14 @@ private static final long serialVersionUID = 0L;
   public int getSelectedRegionsValue(int index) {
     return selectedRegions_.get(index);
   }
+
   private int selectedRegionsMemoizedSerializedSize;
 
   public static final int IS_INTERNAL_FIELD_NUMBER = 15;
   private boolean isInternal_;
   /**
+   *
+   *
    * <pre>
    * Denotes whether this is a check that egresses from InternalCheckers.
    * </pre>
@@ -5111,6 +5547,8 @@ private static final long serialVersionUID = 0L;
   public static final int INTERNAL_CHECKERS_FIELD_NUMBER = 14;
   private java.util.List<com.google.monitoring.v3.InternalChecker> internalCheckers_;
   /**
+   *
+   *
    * <pre>
    * The internal checkers that this check will egress from. If `is_internal` is
    * true and this list is empty, the check will egress from all
@@ -5123,6 +5561,8 @@ private static final long serialVersionUID = 0L;
     return internalCheckers_;
   }
   /**
+   *
+   *
    * <pre>
    * The internal checkers that this check will egress from. If `is_internal` is
    * true and this list is empty, the check will egress from all
@@ -5131,11 +5571,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
    */
-  public java.util.List<? extends com.google.monitoring.v3.InternalCheckerOrBuilder> 
+  public java.util.List<? extends com.google.monitoring.v3.InternalCheckerOrBuilder>
       getInternalCheckersOrBuilderList() {
     return internalCheckers_;
   }
   /**
+   *
+   *
    * <pre>
    * The internal checkers that this check will egress from. If `is_internal` is
    * true and this list is empty, the check will egress from all
@@ -5148,6 +5590,8 @@ private static final long serialVersionUID = 0L;
     return internalCheckers_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The internal checkers that this check will egress from. If `is_internal` is
    * true and this list is empty, the check will egress from all
@@ -5160,6 +5604,8 @@ private static final long serialVersionUID = 0L;
     return internalCheckers_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The internal checkers that this check will egress from. If `is_internal` is
    * true and this list is empty, the check will egress from all
@@ -5168,12 +5614,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
    */
-  public com.google.monitoring.v3.InternalCheckerOrBuilder getInternalCheckersOrBuilder(
-      int index) {
+  public com.google.monitoring.v3.InternalCheckerOrBuilder getInternalCheckersOrBuilder(int index) {
     return internalCheckers_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -5185,8 +5631,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
@@ -5201,10 +5646,12 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(4, (com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) resource_);
     }
     if (checkRequestTypeCase_ == 5) {
-      output.writeMessage(5, (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) checkRequestType_);
+      output.writeMessage(
+          5, (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) checkRequestType_);
     }
     if (checkRequestTypeCase_ == 6) {
-      output.writeMessage(6, (com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) checkRequestType_);
+      output.writeMessage(
+          6, (com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) checkRequestType_);
     }
     if (period_ != null) {
       output.writeMessage(7, getPeriod());
@@ -5244,52 +5691,53 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
     if (resourceCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.api.MonitoredResource) resource_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.api.MonitoredResource) resource_);
     }
     if (resourceCase_ == 4) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) resource_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) resource_);
     }
     if (checkRequestTypeCase_ == 5) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) checkRequestType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) checkRequestType_);
     }
     if (checkRequestTypeCase_ == 6) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, (com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) checkRequestType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) checkRequestType_);
     }
     if (period_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getPeriod());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getPeriod());
     }
     if (timeout_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getTimeout());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getTimeout());
     }
     for (int i = 0; i < contentMatchers_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, contentMatchers_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, contentMatchers_.get(i));
     }
     {
       int dataSize = 0;
       for (int i = 0; i < selectedRegions_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeEnumSizeNoTag(selectedRegions_.get(i));
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(selectedRegions_.get(i));
       }
       size += dataSize;
-      if (!getSelectedRegionsList().isEmpty()) {  size += 1;
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32SizeNoTag(dataSize);
-      }selectedRegionsMemoizedSerializedSize = dataSize;
+      if (!getSelectedRegionsList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      selectedRegionsMemoizedSerializedSize = dataSize;
     }
     for (int i = 0; i < internalCheckers_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(14, internalCheckers_.get(i));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(14, internalCheckers_.get(i));
     }
     if (isInternal_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(15, isInternal_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, isInternal_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -5299,61 +5747,49 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.monitoring.v3.UptimeCheckConfig)) {
       return super.equals(obj);
     }
-    com.google.monitoring.v3.UptimeCheckConfig other = (com.google.monitoring.v3.UptimeCheckConfig) obj;
+    com.google.monitoring.v3.UptimeCheckConfig other =
+        (com.google.monitoring.v3.UptimeCheckConfig) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getDisplayName()
-        .equals(other.getDisplayName());
+    result = result && getName().equals(other.getName());
+    result = result && getDisplayName().equals(other.getDisplayName());
     result = result && (hasPeriod() == other.hasPeriod());
     if (hasPeriod()) {
-      result = result && getPeriod()
-          .equals(other.getPeriod());
+      result = result && getPeriod().equals(other.getPeriod());
     }
     result = result && (hasTimeout() == other.hasTimeout());
     if (hasTimeout()) {
-      result = result && getTimeout()
-          .equals(other.getTimeout());
+      result = result && getTimeout().equals(other.getTimeout());
     }
-    result = result && getContentMatchersList()
-        .equals(other.getContentMatchersList());
+    result = result && getContentMatchersList().equals(other.getContentMatchersList());
     result = result && selectedRegions_.equals(other.selectedRegions_);
-    result = result && (getIsInternal()
-        == other.getIsInternal());
-    result = result && getInternalCheckersList()
-        .equals(other.getInternalCheckersList());
-    result = result && getResourceCase().equals(
-        other.getResourceCase());
+    result = result && (getIsInternal() == other.getIsInternal());
+    result = result && getInternalCheckersList().equals(other.getInternalCheckersList());
+    result = result && getResourceCase().equals(other.getResourceCase());
     if (!result) return false;
     switch (resourceCase_) {
       case 3:
-        result = result && getMonitoredResource()
-            .equals(other.getMonitoredResource());
+        result = result && getMonitoredResource().equals(other.getMonitoredResource());
         break;
       case 4:
-        result = result && getResourceGroup()
-            .equals(other.getResourceGroup());
+        result = result && getResourceGroup().equals(other.getResourceGroup());
         break;
       case 0:
       default:
     }
-    result = result && getCheckRequestTypeCase().equals(
-        other.getCheckRequestTypeCase());
+    result = result && getCheckRequestTypeCase().equals(other.getCheckRequestTypeCase());
     if (!result) return false;
     switch (checkRequestTypeCase_) {
       case 5:
-        result = result && getHttpCheck()
-            .equals(other.getHttpCheck());
+        result = result && getHttpCheck().equals(other.getHttpCheck());
         break;
       case 6:
-        result = result && getTcpCheck()
-            .equals(other.getTcpCheck());
+        result = result && getTcpCheck().equals(other.getTcpCheck());
         break;
       case 0:
       default:
@@ -5390,8 +5826,7 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + selectedRegions_.hashCode();
     }
     hash = (37 * hash) + IS_INTERNAL_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsInternal());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsInternal());
     if (getInternalCheckersCount() > 0) {
       hash = (37 * hash) + INTERNAL_CHECKERS_FIELD_NUMBER;
       hash = (53 * hash) + getInternalCheckersList().hashCode();
@@ -5425,97 +5860,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.monitoring.v3.UptimeCheckConfig parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.monitoring.v3.UptimeCheckConfig parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.UptimeCheckConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.UptimeCheckConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.UptimeCheckConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.UptimeCheckConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.UptimeCheckConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.UptimeCheckConfig parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.monitoring.v3.UptimeCheckConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.monitoring.v3.UptimeCheckConfig parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.monitoring.v3.UptimeCheckConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.monitoring.v3.UptimeCheckConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.monitoring.v3.UptimeCheckConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.monitoring.v3.UptimeCheckConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.monitoring.v3.UptimeCheckConfig prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * This message configures which resources and services to monitor for
    * availability.
@@ -5523,21 +5965,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.monitoring.v3.UptimeCheckConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.monitoring.v3.UptimeCheckConfig)
       com.google.monitoring.v3.UptimeCheckConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.UptimeProto
+          .internal_static_google_monitoring_v3_UptimeCheckConfig_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_fieldAccessorTable
+      return com.google.monitoring.v3.UptimeProto
+          .internal_static_google_monitoring_v3_UptimeCheckConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.monitoring.v3.UptimeCheckConfig.class, com.google.monitoring.v3.UptimeCheckConfig.Builder.class);
+              com.google.monitoring.v3.UptimeCheckConfig.class,
+              com.google.monitoring.v3.UptimeCheckConfig.Builder.class);
     }
 
     // Construct using com.google.monitoring.v3.UptimeCheckConfig.newBuilder()
@@ -5545,18 +5989,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getContentMatchersFieldBuilder();
         getInternalCheckersFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -5600,9 +6044,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.monitoring.v3.UptimeProto.internal_static_google_monitoring_v3_UptimeCheckConfig_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.monitoring.v3.UptimeProto
+          .internal_static_google_monitoring_v3_UptimeCheckConfig_descriptor;
     }
 
     @java.lang.Override
@@ -5621,7 +6065,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.monitoring.v3.UptimeCheckConfig buildPartial() {
-      com.google.monitoring.v3.UptimeCheckConfig result = new com.google.monitoring.v3.UptimeCheckConfig(this);
+      com.google.monitoring.v3.UptimeCheckConfig result =
+          new com.google.monitoring.v3.UptimeCheckConfig(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.name_ = name_;
@@ -5699,38 +6144,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.monitoring.v3.UptimeCheckConfig) {
-        return mergeFrom((com.google.monitoring.v3.UptimeCheckConfig)other);
+        return mergeFrom((com.google.monitoring.v3.UptimeCheckConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -5771,9 +6217,10 @@ private static final long serialVersionUID = 0L;
             contentMatchersBuilder_ = null;
             contentMatchers_ = other.contentMatchers_;
             bitField0_ = (bitField0_ & ~0x00000100);
-            contentMatchersBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getContentMatchersFieldBuilder() : null;
+            contentMatchersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getContentMatchersFieldBuilder()
+                    : null;
           } else {
             contentMatchersBuilder_.addAllMessages(other.contentMatchers_);
           }
@@ -5810,39 +6257,46 @@ private static final long serialVersionUID = 0L;
             internalCheckersBuilder_ = null;
             internalCheckers_ = other.internalCheckers_;
             bitField0_ = (bitField0_ & ~0x00000800);
-            internalCheckersBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getInternalCheckersFieldBuilder() : null;
+            internalCheckersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getInternalCheckersFieldBuilder()
+                    : null;
           } else {
             internalCheckersBuilder_.addAllMessages(other.internalCheckers_);
           }
         }
       }
       switch (other.getResourceCase()) {
-        case MONITORED_RESOURCE: {
-          mergeMonitoredResource(other.getMonitoredResource());
-          break;
-        }
-        case RESOURCE_GROUP: {
-          mergeResourceGroup(other.getResourceGroup());
-          break;
-        }
-        case RESOURCE_NOT_SET: {
-          break;
-        }
+        case MONITORED_RESOURCE:
+          {
+            mergeMonitoredResource(other.getMonitoredResource());
+            break;
+          }
+        case RESOURCE_GROUP:
+          {
+            mergeResourceGroup(other.getResourceGroup());
+            break;
+          }
+        case RESOURCE_NOT_SET:
+          {
+            break;
+          }
       }
       switch (other.getCheckRequestTypeCase()) {
-        case HTTP_CHECK: {
-          mergeHttpCheck(other.getHttpCheck());
-          break;
-        }
-        case TCP_CHECK: {
-          mergeTcpCheck(other.getTcpCheck());
-          break;
-        }
-        case CHECKREQUESTTYPE_NOT_SET: {
-          break;
-        }
+        case HTTP_CHECK:
+          {
+            mergeHttpCheck(other.getHttpCheck());
+            break;
+          }
+        case TCP_CHECK:
+          {
+            mergeTcpCheck(other.getTcpCheck());
+            break;
+          }
+        case CHECKREQUESTTYPE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5872,12 +6326,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int resourceCase_ = 0;
     private java.lang.Object resource_;
-    public ResourceCase
-        getResourceCase() {
-      return ResourceCase.forNumber(
-          resourceCase_);
+
+    public ResourceCase getResourceCase() {
+      return ResourceCase.forNumber(resourceCase_);
     }
 
     public Builder clearResource() {
@@ -5889,10 +6343,9 @@ private static final long serialVersionUID = 0L;
 
     private int checkRequestTypeCase_ = 0;
     private java.lang.Object checkRequestType_;
-    public CheckRequestTypeCase
-        getCheckRequestTypeCase() {
-      return CheckRequestTypeCase.forNumber(
-          checkRequestTypeCase_);
+
+    public CheckRequestTypeCase getCheckRequestTypeCase() {
+      return CheckRequestTypeCase.forNumber(checkRequestTypeCase_);
     }
 
     public Builder clearCheckRequestType() {
@@ -5906,6 +6359,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * A unique resource name for this UptimeCheckConfig. The format is:
      *   `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
@@ -5919,8 +6374,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -5929,6 +6383,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A unique resource name for this UptimeCheckConfig. The format is:
      *   `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
@@ -5939,13 +6395,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -5953,6 +6407,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A unique resource name for this UptimeCheckConfig. The format is:
      *   `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
@@ -5963,17 +6419,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A unique resource name for this UptimeCheckConfig. The format is:
      *   `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
@@ -5985,12 +6442,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A unique resource name for this UptimeCheckConfig. The format is:
      *   `projects/[PROJECT_ID]/uptimeCheckConfigs/[UPTIME_CHECK_ID]`.
@@ -6001,13 +6460,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -6015,6 +6473,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object displayName_ = "";
     /**
+     *
+     *
      * <pre>
      * A human-friendly name for the uptime check configuration. The display name
      * should be unique within a Stackdriver Account in order to make it easier
@@ -6026,8 +6486,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         displayName_ = s;
         return s;
@@ -6036,6 +6495,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A human-friendly name for the uptime check configuration. The display name
      * should be unique within a Stackdriver Account in order to make it easier
@@ -6044,13 +6505,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getDisplayNameBytes() {
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         displayName_ = b;
         return b;
       } else {
@@ -6058,6 +6517,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A human-friendly name for the uptime check configuration. The display name
      * should be unique within a Stackdriver Account in order to make it easier
@@ -6066,17 +6527,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 2;</code>
      */
-    public Builder setDisplayName(
-        java.lang.String value) {
+    public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       displayName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A human-friendly name for the uptime check configuration. The display name
      * should be unique within a Stackdriver Account in order to make it easier
@@ -6086,12 +6548,14 @@ private static final long serialVersionUID = 0L;
      * <code>string display_name = 2;</code>
      */
     public Builder clearDisplayName() {
-      
+
       displayName_ = getDefaultInstance().getDisplayName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A human-friendly name for the uptime check configuration. The display name
      * should be unique within a Stackdriver Account in order to make it easier
@@ -6100,21 +6564,25 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 2;</code>
      */
-    public Builder setDisplayNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       displayName_ = value;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.api.MonitoredResource, com.google.api.MonitoredResource.Builder, com.google.api.MonitoredResourceOrBuilder> monitoredResourceBuilder_;
+            com.google.api.MonitoredResource,
+            com.google.api.MonitoredResource.Builder,
+            com.google.api.MonitoredResourceOrBuilder>
+        monitoredResourceBuilder_;
     /**
+     *
+     *
      * <pre>
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
@@ -6133,6 +6601,8 @@ private static final long serialVersionUID = 0L;
       return resourceCase_ == 3;
     }
     /**
+     *
+     *
      * <pre>
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
@@ -6161,6 +6631,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
@@ -6189,6 +6661,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
@@ -6203,8 +6677,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
      */
-    public Builder setMonitoredResource(
-        com.google.api.MonitoredResource.Builder builderForValue) {
+    public Builder setMonitoredResource(com.google.api.MonitoredResource.Builder builderForValue) {
       if (monitoredResourceBuilder_ == null) {
         resource_ = builderForValue.build();
         onChanged();
@@ -6215,6 +6688,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
@@ -6231,10 +6706,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeMonitoredResource(com.google.api.MonitoredResource value) {
       if (monitoredResourceBuilder_ == null) {
-        if (resourceCase_ == 3 &&
-            resource_ != com.google.api.MonitoredResource.getDefaultInstance()) {
-          resource_ = com.google.api.MonitoredResource.newBuilder((com.google.api.MonitoredResource) resource_)
-              .mergeFrom(value).buildPartial();
+        if (resourceCase_ == 3
+            && resource_ != com.google.api.MonitoredResource.getDefaultInstance()) {
+          resource_ =
+              com.google.api.MonitoredResource.newBuilder(
+                      (com.google.api.MonitoredResource) resource_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           resource_ = value;
         }
@@ -6249,6 +6727,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
@@ -6280,6 +6760,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
@@ -6298,6 +6780,8 @@ private static final long serialVersionUID = 0L;
       return getMonitoredResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
@@ -6323,6 +6807,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The [monitored
      * resource](https://cloud.google.com/monitoring/api/resources) associated
@@ -6338,27 +6824,36 @@ private static final long serialVersionUID = 0L;
      * <code>.google.api.MonitoredResource monitored_resource = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.api.MonitoredResource, com.google.api.MonitoredResource.Builder, com.google.api.MonitoredResourceOrBuilder> 
+            com.google.api.MonitoredResource,
+            com.google.api.MonitoredResource.Builder,
+            com.google.api.MonitoredResourceOrBuilder>
         getMonitoredResourceFieldBuilder() {
       if (monitoredResourceBuilder_ == null) {
         if (!(resourceCase_ == 3)) {
           resource_ = com.google.api.MonitoredResource.getDefaultInstance();
         }
-        monitoredResourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.api.MonitoredResource, com.google.api.MonitoredResource.Builder, com.google.api.MonitoredResourceOrBuilder>(
-                (com.google.api.MonitoredResource) resource_,
-                getParentForChildren(),
-                isClean());
+        monitoredResourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.api.MonitoredResource,
+                com.google.api.MonitoredResource.Builder,
+                com.google.api.MonitoredResourceOrBuilder>(
+                (com.google.api.MonitoredResource) resource_, getParentForChildren(), isClean());
         resource_ = null;
       }
       resourceCase_ = 3;
-      onChanged();;
+      onChanged();
+      ;
       return monitoredResourceBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup, com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.Builder, com.google.monitoring.v3.UptimeCheckConfig.ResourceGroupOrBuilder> resourceGroupBuilder_;
+            com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup,
+            com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.Builder,
+            com.google.monitoring.v3.UptimeCheckConfig.ResourceGroupOrBuilder>
+        resourceGroupBuilder_;
     /**
+     *
+     *
      * <pre>
      * The group resource associated with the configuration.
      * </pre>
@@ -6369,6 +6864,8 @@ private static final long serialVersionUID = 0L;
       return resourceCase_ == 4;
     }
     /**
+     *
+     *
      * <pre>
      * The group resource associated with the configuration.
      * </pre>
@@ -6389,13 +6886,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The group resource associated with the configuration.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.ResourceGroup resource_group = 4;</code>
      */
-    public Builder setResourceGroup(com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup value) {
+    public Builder setResourceGroup(
+        com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup value) {
       if (resourceGroupBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -6409,6 +6909,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The group resource associated with the configuration.
      * </pre>
@@ -6427,18 +6929,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The group resource associated with the configuration.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.ResourceGroup resource_group = 4;</code>
      */
-    public Builder mergeResourceGroup(com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup value) {
+    public Builder mergeResourceGroup(
+        com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup value) {
       if (resourceGroupBuilder_ == null) {
-        if (resourceCase_ == 4 &&
-            resource_ != com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.getDefaultInstance()) {
-          resource_ = com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.newBuilder((com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) resource_)
-              .mergeFrom(value).buildPartial();
+        if (resourceCase_ == 4
+            && resource_
+                != com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.getDefaultInstance()) {
+          resource_ =
+              com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.newBuilder(
+                      (com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) resource_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           resource_ = value;
         }
@@ -6453,6 +6962,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The group resource associated with the configuration.
      * </pre>
@@ -6476,23 +6987,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The group resource associated with the configuration.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.ResourceGroup resource_group = 4;</code>
      */
-    public com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.Builder getResourceGroupBuilder() {
+    public com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.Builder
+        getResourceGroupBuilder() {
       return getResourceGroupFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The group resource associated with the configuration.
      * </pre>
      *
      * <code>.google.monitoring.v3.UptimeCheckConfig.ResourceGroup resource_group = 4;</code>
      */
-    public com.google.monitoring.v3.UptimeCheckConfig.ResourceGroupOrBuilder getResourceGroupOrBuilder() {
+    public com.google.monitoring.v3.UptimeCheckConfig.ResourceGroupOrBuilder
+        getResourceGroupOrBuilder() {
       if ((resourceCase_ == 4) && (resourceGroupBuilder_ != null)) {
         return resourceGroupBuilder_.getMessageOrBuilder();
       } else {
@@ -6503,6 +7020,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The group resource associated with the configuration.
      * </pre>
@@ -6510,27 +7029,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.monitoring.v3.UptimeCheckConfig.ResourceGroup resource_group = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup, com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.Builder, com.google.monitoring.v3.UptimeCheckConfig.ResourceGroupOrBuilder> 
+            com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup,
+            com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.Builder,
+            com.google.monitoring.v3.UptimeCheckConfig.ResourceGroupOrBuilder>
         getResourceGroupFieldBuilder() {
       if (resourceGroupBuilder_ == null) {
         if (!(resourceCase_ == 4)) {
           resource_ = com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.getDefaultInstance();
         }
-        resourceGroupBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup, com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.Builder, com.google.monitoring.v3.UptimeCheckConfig.ResourceGroupOrBuilder>(
+        resourceGroupBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup,
+                com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup.Builder,
+                com.google.monitoring.v3.UptimeCheckConfig.ResourceGroupOrBuilder>(
                 (com.google.monitoring.v3.UptimeCheckConfig.ResourceGroup) resource_,
                 getParentForChildren(),
                 isClean());
         resource_ = null;
       }
       resourceCase_ = 4;
-      onChanged();;
+      onChanged();
+      ;
       return resourceGroupBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.monitoring.v3.UptimeCheckConfig.HttpCheck, com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.Builder, com.google.monitoring.v3.UptimeCheckConfig.HttpCheckOrBuilder> httpCheckBuilder_;
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck,
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.Builder,
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheckOrBuilder>
+        httpCheckBuilder_;
     /**
+     *
+     *
      * <pre>
      * Contains information needed to make an HTTP or HTTPS check.
      * </pre>
@@ -6541,6 +7071,8 @@ private static final long serialVersionUID = 0L;
       return checkRequestTypeCase_ == 5;
     }
     /**
+     *
+     *
      * <pre>
      * Contains information needed to make an HTTP or HTTPS check.
      * </pre>
@@ -6561,6 +7093,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Contains information needed to make an HTTP or HTTPS check.
      * </pre>
@@ -6581,6 +7115,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Contains information needed to make an HTTP or HTTPS check.
      * </pre>
@@ -6599,6 +7135,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Contains information needed to make an HTTP or HTTPS check.
      * </pre>
@@ -6607,10 +7145,14 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeHttpCheck(com.google.monitoring.v3.UptimeCheckConfig.HttpCheck value) {
       if (httpCheckBuilder_ == null) {
-        if (checkRequestTypeCase_ == 5 &&
-            checkRequestType_ != com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.getDefaultInstance()) {
-          checkRequestType_ = com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.newBuilder((com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) checkRequestType_)
-              .mergeFrom(value).buildPartial();
+        if (checkRequestTypeCase_ == 5
+            && checkRequestType_
+                != com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.getDefaultInstance()) {
+          checkRequestType_ =
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.newBuilder(
+                      (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) checkRequestType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           checkRequestType_ = value;
         }
@@ -6625,6 +7167,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Contains information needed to make an HTTP or HTTPS check.
      * </pre>
@@ -6648,6 +7192,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Contains information needed to make an HTTP or HTTPS check.
      * </pre>
@@ -6658,6 +7204,8 @@ private static final long serialVersionUID = 0L;
       return getHttpCheckFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Contains information needed to make an HTTP or HTTPS check.
      * </pre>
@@ -6675,6 +7223,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Contains information needed to make an HTTP or HTTPS check.
      * </pre>
@@ -6682,27 +7232,39 @@ private static final long serialVersionUID = 0L;
      * <code>.google.monitoring.v3.UptimeCheckConfig.HttpCheck http_check = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.monitoring.v3.UptimeCheckConfig.HttpCheck, com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.Builder, com.google.monitoring.v3.UptimeCheckConfig.HttpCheckOrBuilder> 
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck,
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.Builder,
+            com.google.monitoring.v3.UptimeCheckConfig.HttpCheckOrBuilder>
         getHttpCheckFieldBuilder() {
       if (httpCheckBuilder_ == null) {
         if (!(checkRequestTypeCase_ == 5)) {
-          checkRequestType_ = com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.getDefaultInstance();
+          checkRequestType_ =
+              com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.getDefaultInstance();
         }
-        httpCheckBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.monitoring.v3.UptimeCheckConfig.HttpCheck, com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.Builder, com.google.monitoring.v3.UptimeCheckConfig.HttpCheckOrBuilder>(
+        httpCheckBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck,
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheck.Builder,
+                com.google.monitoring.v3.UptimeCheckConfig.HttpCheckOrBuilder>(
                 (com.google.monitoring.v3.UptimeCheckConfig.HttpCheck) checkRequestType_,
                 getParentForChildren(),
                 isClean());
         checkRequestType_ = null;
       }
       checkRequestTypeCase_ = 5;
-      onChanged();;
+      onChanged();
+      ;
       return httpCheckBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.monitoring.v3.UptimeCheckConfig.TcpCheck, com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.Builder, com.google.monitoring.v3.UptimeCheckConfig.TcpCheckOrBuilder> tcpCheckBuilder_;
+            com.google.monitoring.v3.UptimeCheckConfig.TcpCheck,
+            com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.Builder,
+            com.google.monitoring.v3.UptimeCheckConfig.TcpCheckOrBuilder>
+        tcpCheckBuilder_;
     /**
+     *
+     *
      * <pre>
      * Contains information needed to make a TCP check.
      * </pre>
@@ -6713,6 +7275,8 @@ private static final long serialVersionUID = 0L;
       return checkRequestTypeCase_ == 6;
     }
     /**
+     *
+     *
      * <pre>
      * Contains information needed to make a TCP check.
      * </pre>
@@ -6733,6 +7297,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Contains information needed to make a TCP check.
      * </pre>
@@ -6753,6 +7319,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Contains information needed to make a TCP check.
      * </pre>
@@ -6771,6 +7339,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Contains information needed to make a TCP check.
      * </pre>
@@ -6779,10 +7349,14 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeTcpCheck(com.google.monitoring.v3.UptimeCheckConfig.TcpCheck value) {
       if (tcpCheckBuilder_ == null) {
-        if (checkRequestTypeCase_ == 6 &&
-            checkRequestType_ != com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.getDefaultInstance()) {
-          checkRequestType_ = com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.newBuilder((com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) checkRequestType_)
-              .mergeFrom(value).buildPartial();
+        if (checkRequestTypeCase_ == 6
+            && checkRequestType_
+                != com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.getDefaultInstance()) {
+          checkRequestType_ =
+              com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.newBuilder(
+                      (com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) checkRequestType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           checkRequestType_ = value;
         }
@@ -6797,6 +7371,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Contains information needed to make a TCP check.
      * </pre>
@@ -6820,6 +7396,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Contains information needed to make a TCP check.
      * </pre>
@@ -6830,6 +7408,8 @@ private static final long serialVersionUID = 0L;
       return getTcpCheckFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Contains information needed to make a TCP check.
      * </pre>
@@ -6847,6 +7427,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Contains information needed to make a TCP check.
      * </pre>
@@ -6854,28 +7436,40 @@ private static final long serialVersionUID = 0L;
      * <code>.google.monitoring.v3.UptimeCheckConfig.TcpCheck tcp_check = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.monitoring.v3.UptimeCheckConfig.TcpCheck, com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.Builder, com.google.monitoring.v3.UptimeCheckConfig.TcpCheckOrBuilder> 
+            com.google.monitoring.v3.UptimeCheckConfig.TcpCheck,
+            com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.Builder,
+            com.google.monitoring.v3.UptimeCheckConfig.TcpCheckOrBuilder>
         getTcpCheckFieldBuilder() {
       if (tcpCheckBuilder_ == null) {
         if (!(checkRequestTypeCase_ == 6)) {
-          checkRequestType_ = com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.getDefaultInstance();
+          checkRequestType_ =
+              com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.getDefaultInstance();
         }
-        tcpCheckBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.monitoring.v3.UptimeCheckConfig.TcpCheck, com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.Builder, com.google.monitoring.v3.UptimeCheckConfig.TcpCheckOrBuilder>(
+        tcpCheckBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.UptimeCheckConfig.TcpCheck,
+                com.google.monitoring.v3.UptimeCheckConfig.TcpCheck.Builder,
+                com.google.monitoring.v3.UptimeCheckConfig.TcpCheckOrBuilder>(
                 (com.google.monitoring.v3.UptimeCheckConfig.TcpCheck) checkRequestType_,
                 getParentForChildren(),
                 isClean());
         checkRequestType_ = null;
       }
       checkRequestTypeCase_ = 6;
-      onChanged();;
+      onChanged();
+      ;
       return tcpCheckBuilder_;
     }
 
     private com.google.protobuf.Duration period_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> periodBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        periodBuilder_;
     /**
+     *
+     *
      * <pre>
      * How often, in seconds, the uptime check is performed.
      * Currently, the only supported values are `60s` (1 minute), `300s`
@@ -6889,6 +7483,8 @@ private static final long serialVersionUID = 0L;
       return periodBuilder_ != null || period_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * How often, in seconds, the uptime check is performed.
      * Currently, the only supported values are `60s` (1 minute), `300s`
@@ -6906,6 +7502,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * How often, in seconds, the uptime check is performed.
      * Currently, the only supported values are `60s` (1 minute), `300s`
@@ -6929,6 +7527,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * How often, in seconds, the uptime check is performed.
      * Currently, the only supported values are `60s` (1 minute), `300s`
@@ -6938,8 +7538,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Duration period = 7;</code>
      */
-    public Builder setPeriod(
-        com.google.protobuf.Duration.Builder builderForValue) {
+    public Builder setPeriod(com.google.protobuf.Duration.Builder builderForValue) {
       if (periodBuilder_ == null) {
         period_ = builderForValue.build();
         onChanged();
@@ -6950,6 +7549,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * How often, in seconds, the uptime check is performed.
      * Currently, the only supported values are `60s` (1 minute), `300s`
@@ -6963,7 +7564,7 @@ private static final long serialVersionUID = 0L;
       if (periodBuilder_ == null) {
         if (period_ != null) {
           period_ =
-            com.google.protobuf.Duration.newBuilder(period_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(period_).mergeFrom(value).buildPartial();
         } else {
           period_ = value;
         }
@@ -6975,6 +7576,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * How often, in seconds, the uptime check is performed.
      * Currently, the only supported values are `60s` (1 minute), `300s`
@@ -6996,6 +7599,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * How often, in seconds, the uptime check is performed.
      * Currently, the only supported values are `60s` (1 minute), `300s`
@@ -7006,11 +7611,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration period = 7;</code>
      */
     public com.google.protobuf.Duration.Builder getPeriodBuilder() {
-      
+
       onChanged();
       return getPeriodFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * How often, in seconds, the uptime check is performed.
      * Currently, the only supported values are `60s` (1 minute), `300s`
@@ -7024,11 +7631,12 @@ private static final long serialVersionUID = 0L;
       if (periodBuilder_ != null) {
         return periodBuilder_.getMessageOrBuilder();
       } else {
-        return period_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : period_;
+        return period_ == null ? com.google.protobuf.Duration.getDefaultInstance() : period_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * How often, in seconds, the uptime check is performed.
      * Currently, the only supported values are `60s` (1 minute), `300s`
@@ -7039,14 +7647,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration period = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getPeriodFieldBuilder() {
       if (periodBuilder_ == null) {
-        periodBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                getPeriod(),
-                getParentForChildren(),
-                isClean());
+        periodBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getPeriod(), getParentForChildren(), isClean());
         period_ = null;
       }
       return periodBuilder_;
@@ -7054,8 +7665,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Duration timeout_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> timeoutBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        timeoutBuilder_;
     /**
+     *
+     *
      * <pre>
      * The maximum amount of time to wait for the request to complete (must be
      * between 1 and 60 seconds). Required.
@@ -7067,6 +7683,8 @@ private static final long serialVersionUID = 0L;
       return timeoutBuilder_ != null || timeout_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum amount of time to wait for the request to complete (must be
      * between 1 and 60 seconds). Required.
@@ -7082,6 +7700,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The maximum amount of time to wait for the request to complete (must be
      * between 1 and 60 seconds). Required.
@@ -7103,6 +7723,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum amount of time to wait for the request to complete (must be
      * between 1 and 60 seconds). Required.
@@ -7110,8 +7732,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Duration timeout = 8;</code>
      */
-    public Builder setTimeout(
-        com.google.protobuf.Duration.Builder builderForValue) {
+    public Builder setTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (timeoutBuilder_ == null) {
         timeout_ = builderForValue.build();
         onChanged();
@@ -7122,6 +7743,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum amount of time to wait for the request to complete (must be
      * between 1 and 60 seconds). Required.
@@ -7133,7 +7756,7 @@ private static final long serialVersionUID = 0L;
       if (timeoutBuilder_ == null) {
         if (timeout_ != null) {
           timeout_ =
-            com.google.protobuf.Duration.newBuilder(timeout_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(timeout_).mergeFrom(value).buildPartial();
         } else {
           timeout_ = value;
         }
@@ -7145,6 +7768,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum amount of time to wait for the request to complete (must be
      * between 1 and 60 seconds). Required.
@@ -7164,6 +7789,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum amount of time to wait for the request to complete (must be
      * between 1 and 60 seconds). Required.
@@ -7172,11 +7799,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration timeout = 8;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
-      
+
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The maximum amount of time to wait for the request to complete (must be
      * between 1 and 60 seconds). Required.
@@ -7188,11 +7817,12 @@ private static final long serialVersionUID = 0L;
       if (timeoutBuilder_ != null) {
         return timeoutBuilder_.getMessageOrBuilder();
       } else {
-        return timeout_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : timeout_;
+        return timeout_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeout_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The maximum amount of time to wait for the request to complete (must be
      * between 1 and 60 seconds). Required.
@@ -7201,32 +7831,43 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration timeout = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getTimeoutFieldBuilder() {
       if (timeoutBuilder_ == null) {
-        timeoutBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                getTimeout(),
-                getParentForChildren(),
-                isClean());
+        timeoutBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getTimeout(), getParentForChildren(), isClean());
         timeout_ = null;
       }
       return timeoutBuilder_;
     }
 
-    private java.util.List<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher> contentMatchers_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher>
+        contentMatchers_ = java.util.Collections.emptyList();
+
     private void ensureContentMatchersIsMutable() {
       if (!((bitField0_ & 0x00000100) == 0x00000100)) {
-        contentMatchers_ = new java.util.ArrayList<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher>(contentMatchers_);
+        contentMatchers_ =
+            new java.util.ArrayList<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher>(
+                contentMatchers_);
         bitField0_ |= 0x00000100;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher, com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder, com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder> contentMatchersBuilder_;
+            com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher,
+            com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder,
+            com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder>
+        contentMatchersBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The expected content on the page the check is run against.
      * Currently, only the first entry in the list is supported, and other entries
@@ -7235,9 +7876,11 @@ private static final long serialVersionUID = 0L;
      * specified if a content match is required.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+     * </code>
      */
-    public java.util.List<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher> getContentMatchersList() {
+    public java.util.List<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher>
+        getContentMatchersList() {
       if (contentMatchersBuilder_ == null) {
         return java.util.Collections.unmodifiableList(contentMatchers_);
       } else {
@@ -7245,6 +7888,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The expected content on the page the check is run against.
      * Currently, only the first entry in the list is supported, and other entries
@@ -7253,7 +7898,8 @@ private static final long serialVersionUID = 0L;
      * specified if a content match is required.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+     * </code>
      */
     public int getContentMatchersCount() {
       if (contentMatchersBuilder_ == null) {
@@ -7263,6 +7909,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The expected content on the page the check is run against.
      * Currently, only the first entry in the list is supported, and other entries
@@ -7271,7 +7919,8 @@ private static final long serialVersionUID = 0L;
      * specified if a content match is required.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+     * </code>
      */
     public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher getContentMatchers(int index) {
       if (contentMatchersBuilder_ == null) {
@@ -7281,6 +7930,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The expected content on the page the check is run against.
      * Currently, only the first entry in the list is supported, and other entries
@@ -7289,7 +7940,8 @@ private static final long serialVersionUID = 0L;
      * specified if a content match is required.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+     * </code>
      */
     public Builder setContentMatchers(
         int index, com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher value) {
@@ -7306,6 +7958,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The expected content on the page the check is run against.
      * Currently, only the first entry in the list is supported, and other entries
@@ -7314,10 +7968,12 @@ private static final long serialVersionUID = 0L;
      * specified if a content match is required.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+     * </code>
      */
     public Builder setContentMatchers(
-        int index, com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder builderForValue) {
+        int index,
+        com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder builderForValue) {
       if (contentMatchersBuilder_ == null) {
         ensureContentMatchersIsMutable();
         contentMatchers_.set(index, builderForValue.build());
@@ -7328,6 +7984,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The expected content on the page the check is run against.
      * Currently, only the first entry in the list is supported, and other entries
@@ -7336,9 +7994,11 @@ private static final long serialVersionUID = 0L;
      * specified if a content match is required.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+     * </code>
      */
-    public Builder addContentMatchers(com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher value) {
+    public Builder addContentMatchers(
+        com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher value) {
       if (contentMatchersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -7352,6 +8012,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The expected content on the page the check is run against.
      * Currently, only the first entry in the list is supported, and other entries
@@ -7360,7 +8022,8 @@ private static final long serialVersionUID = 0L;
      * specified if a content match is required.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+     * </code>
      */
     public Builder addContentMatchers(
         int index, com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher value) {
@@ -7377,6 +8040,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The expected content on the page the check is run against.
      * Currently, only the first entry in the list is supported, and other entries
@@ -7385,7 +8050,8 @@ private static final long serialVersionUID = 0L;
      * specified if a content match is required.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+     * </code>
      */
     public Builder addContentMatchers(
         com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder builderForValue) {
@@ -7399,6 +8065,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The expected content on the page the check is run against.
      * Currently, only the first entry in the list is supported, and other entries
@@ -7407,10 +8075,12 @@ private static final long serialVersionUID = 0L;
      * specified if a content match is required.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+     * </code>
      */
     public Builder addContentMatchers(
-        int index, com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder builderForValue) {
+        int index,
+        com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder builderForValue) {
       if (contentMatchersBuilder_ == null) {
         ensureContentMatchersIsMutable();
         contentMatchers_.add(index, builderForValue.build());
@@ -7421,6 +8091,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The expected content on the page the check is run against.
      * Currently, only the first entry in the list is supported, and other entries
@@ -7429,14 +8101,15 @@ private static final long serialVersionUID = 0L;
      * specified if a content match is required.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+     * </code>
      */
     public Builder addAllContentMatchers(
-        java.lang.Iterable<? extends com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher> values) {
+        java.lang.Iterable<? extends com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher>
+            values) {
       if (contentMatchersBuilder_ == null) {
         ensureContentMatchersIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, contentMatchers_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, contentMatchers_);
         onChanged();
       } else {
         contentMatchersBuilder_.addAllMessages(values);
@@ -7444,6 +8117,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The expected content on the page the check is run against.
      * Currently, only the first entry in the list is supported, and other entries
@@ -7452,7 +8127,8 @@ private static final long serialVersionUID = 0L;
      * specified if a content match is required.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+     * </code>
      */
     public Builder clearContentMatchers() {
       if (contentMatchersBuilder_ == null) {
@@ -7465,6 +8141,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The expected content on the page the check is run against.
      * Currently, only the first entry in the list is supported, and other entries
@@ -7473,7 +8151,8 @@ private static final long serialVersionUID = 0L;
      * specified if a content match is required.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+     * </code>
      */
     public Builder removeContentMatchers(int index) {
       if (contentMatchersBuilder_ == null) {
@@ -7486,6 +8165,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The expected content on the page the check is run against.
      * Currently, only the first entry in the list is supported, and other entries
@@ -7494,13 +8175,16 @@ private static final long serialVersionUID = 0L;
      * specified if a content match is required.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+     * </code>
      */
-    public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder getContentMatchersBuilder(
-        int index) {
+    public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder
+        getContentMatchersBuilder(int index) {
       return getContentMatchersFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The expected content on the page the check is run against.
      * Currently, only the first entry in the list is supported, and other entries
@@ -7509,16 +8193,20 @@ private static final long serialVersionUID = 0L;
      * specified if a content match is required.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+     * </code>
      */
-    public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder getContentMatchersOrBuilder(
-        int index) {
+    public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder
+        getContentMatchersOrBuilder(int index) {
       if (contentMatchersBuilder_ == null) {
-        return contentMatchers_.get(index);  } else {
+        return contentMatchers_.get(index);
+      } else {
         return contentMatchersBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The expected content on the page the check is run against.
      * Currently, only the first entry in the list is supported, and other entries
@@ -7527,10 +8215,12 @@ private static final long serialVersionUID = 0L;
      * specified if a content match is required.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+     * </code>
      */
-    public java.util.List<? extends com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder> 
-         getContentMatchersOrBuilderList() {
+    public java.util.List<
+            ? extends com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder>
+        getContentMatchersOrBuilderList() {
       if (contentMatchersBuilder_ != null) {
         return contentMatchersBuilder_.getMessageOrBuilderList();
       } else {
@@ -7538,6 +8228,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The expected content on the page the check is run against.
      * Currently, only the first entry in the list is supported, and other entries
@@ -7546,13 +8238,18 @@ private static final long serialVersionUID = 0L;
      * specified if a content match is required.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+     * </code>
      */
-    public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder addContentMatchersBuilder() {
-      return getContentMatchersFieldBuilder().addBuilder(
-          com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.getDefaultInstance());
+    public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder
+        addContentMatchersBuilder() {
+      return getContentMatchersFieldBuilder()
+          .addBuilder(
+              com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The expected content on the page the check is run against.
      * Currently, only the first entry in the list is supported, and other entries
@@ -7561,14 +8258,19 @@ private static final long serialVersionUID = 0L;
      * specified if a content match is required.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+     * </code>
      */
-    public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder addContentMatchersBuilder(
-        int index) {
-      return getContentMatchersFieldBuilder().addBuilder(
-          index, com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.getDefaultInstance());
+    public com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder
+        addContentMatchersBuilder(int index) {
+      return getContentMatchersFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The expected content on the page the check is run against.
      * Currently, only the first entry in the list is supported, and other entries
@@ -7577,18 +8279,25 @@ private static final long serialVersionUID = 0L;
      * specified if a content match is required.
      * </pre>
      *
-     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;</code>
+     * <code>repeated .google.monitoring.v3.UptimeCheckConfig.ContentMatcher content_matchers = 9;
+     * </code>
      */
-    public java.util.List<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder> 
-         getContentMatchersBuilderList() {
+    public java.util.List<com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder>
+        getContentMatchersBuilderList() {
       return getContentMatchersFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher, com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder, com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder> 
+            com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher,
+            com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder,
+            com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder>
         getContentMatchersFieldBuilder() {
       if (contentMatchersBuilder_ == null) {
-        contentMatchersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher, com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder, com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder>(
+        contentMatchersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher,
+                com.google.monitoring.v3.UptimeCheckConfig.ContentMatcher.Builder,
+                com.google.monitoring.v3.UptimeCheckConfig.ContentMatcherOrBuilder>(
                 contentMatchers_,
                 ((bitField0_ & 0x00000100) == 0x00000100),
                 getParentForChildren(),
@@ -7598,8 +8307,8 @@ private static final long serialVersionUID = 0L;
       return contentMatchersBuilder_;
     }
 
-    private java.util.List<java.lang.Integer> selectedRegions_ =
-      java.util.Collections.emptyList();
+    private java.util.List<java.lang.Integer> selectedRegions_ = java.util.Collections.emptyList();
+
     private void ensureSelectedRegionsIsMutable() {
       if (!((bitField0_ & 0x00000200) == 0x00000200)) {
         selectedRegions_ = new java.util.ArrayList<java.lang.Integer>(selectedRegions_);
@@ -7607,6 +8316,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of regions from which the check will be run.
      * If this field is specified, enough regions to include a minimum of
@@ -7619,9 +8330,12 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<com.google.monitoring.v3.UptimeCheckRegion> getSelectedRegionsList() {
       return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer, com.google.monitoring.v3.UptimeCheckRegion>(selectedRegions_, selectedRegions_converter_);
+          java.lang.Integer, com.google.monitoring.v3.UptimeCheckRegion>(
+          selectedRegions_, selectedRegions_converter_);
     }
     /**
+     *
+     *
      * <pre>
      * The list of regions from which the check will be run.
      * If this field is specified, enough regions to include a minimum of
@@ -7636,6 +8350,8 @@ private static final long serialVersionUID = 0L;
       return selectedRegions_.size();
     }
     /**
+     *
+     *
      * <pre>
      * The list of regions from which the check will be run.
      * If this field is specified, enough regions to include a minimum of
@@ -7650,6 +8366,8 @@ private static final long serialVersionUID = 0L;
       return selectedRegions_converter_.convert(selectedRegions_.get(index));
     }
     /**
+     *
+     *
      * <pre>
      * The list of regions from which the check will be run.
      * If this field is specified, enough regions to include a minimum of
@@ -7660,8 +8378,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
      */
-    public Builder setSelectedRegions(
-        int index, com.google.monitoring.v3.UptimeCheckRegion value) {
+    public Builder setSelectedRegions(int index, com.google.monitoring.v3.UptimeCheckRegion value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -7671,6 +8388,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of regions from which the check will be run.
      * If this field is specified, enough regions to include a minimum of
@@ -7691,6 +8410,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of regions from which the check will be run.
      * If this field is specified, enough regions to include a minimum of
@@ -7711,6 +8432,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of regions from which the check will be run.
      * If this field is specified, enough regions to include a minimum of
@@ -7728,6 +8451,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of regions from which the check will be run.
      * If this field is specified, enough regions to include a minimum of
@@ -7738,11 +8463,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
      */
-    public java.util.List<java.lang.Integer>
-    getSelectedRegionsValueList() {
+    public java.util.List<java.lang.Integer> getSelectedRegionsValueList() {
       return java.util.Collections.unmodifiableList(selectedRegions_);
     }
     /**
+     *
+     *
      * <pre>
      * The list of regions from which the check will be run.
      * If this field is specified, enough regions to include a minimum of
@@ -7757,6 +8483,8 @@ private static final long serialVersionUID = 0L;
       return selectedRegions_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * The list of regions from which the check will be run.
      * If this field is specified, enough regions to include a minimum of
@@ -7767,14 +8495,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
      */
-    public Builder setSelectedRegionsValue(
-        int index, int value) {
+    public Builder setSelectedRegionsValue(int index, int value) {
       ensureSelectedRegionsIsMutable();
       selectedRegions_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of regions from which the check will be run.
      * If this field is specified, enough regions to include a minimum of
@@ -7792,6 +8521,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of regions from which the check will be run.
      * If this field is specified, enough regions to include a minimum of
@@ -7802,8 +8533,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckRegion selected_regions = 10;</code>
      */
-    public Builder addAllSelectedRegionsValue(
-        java.lang.Iterable<java.lang.Integer> values) {
+    public Builder addAllSelectedRegionsValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureSelectedRegionsIsMutable();
       for (int value : values) {
         selectedRegions_.add(value);
@@ -7812,8 +8542,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean isInternal_ ;
+    private boolean isInternal_;
     /**
+     *
+     *
      * <pre>
      * Denotes whether this is a check that egresses from InternalCheckers.
      * </pre>
@@ -7824,6 +8556,8 @@ private static final long serialVersionUID = 0L;
       return isInternal_;
     }
     /**
+     *
+     *
      * <pre>
      * Denotes whether this is a check that egresses from InternalCheckers.
      * </pre>
@@ -7831,12 +8565,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool is_internal = 15;</code>
      */
     public Builder setIsInternal(boolean value) {
-      
+
       isInternal_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Denotes whether this is a check that egresses from InternalCheckers.
      * </pre>
@@ -7844,25 +8580,32 @@ private static final long serialVersionUID = 0L;
      * <code>bool is_internal = 15;</code>
      */
     public Builder clearIsInternal() {
-      
+
       isInternal_ = false;
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.monitoring.v3.InternalChecker> internalCheckers_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureInternalCheckersIsMutable() {
       if (!((bitField0_ & 0x00000800) == 0x00000800)) {
-        internalCheckers_ = new java.util.ArrayList<com.google.monitoring.v3.InternalChecker>(internalCheckers_);
+        internalCheckers_ =
+            new java.util.ArrayList<com.google.monitoring.v3.InternalChecker>(internalCheckers_);
         bitField0_ |= 0x00000800;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.monitoring.v3.InternalChecker, com.google.monitoring.v3.InternalChecker.Builder, com.google.monitoring.v3.InternalCheckerOrBuilder> internalCheckersBuilder_;
+            com.google.monitoring.v3.InternalChecker,
+            com.google.monitoring.v3.InternalChecker.Builder,
+            com.google.monitoring.v3.InternalCheckerOrBuilder>
+        internalCheckersBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
      * true and this list is empty, the check will egress from all
@@ -7879,6 +8622,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
      * true and this list is empty, the check will egress from all
@@ -7895,6 +8640,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
      * true and this list is empty, the check will egress from all
@@ -7911,6 +8658,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
      * true and this list is empty, the check will egress from all
@@ -7919,8 +8668,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
-    public Builder setInternalCheckers(
-        int index, com.google.monitoring.v3.InternalChecker value) {
+    public Builder setInternalCheckers(int index, com.google.monitoring.v3.InternalChecker value) {
       if (internalCheckersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -7934,6 +8682,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
      * true and this list is empty, the check will egress from all
@@ -7954,6 +8704,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
      * true and this list is empty, the check will egress from all
@@ -7976,6 +8728,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
      * true and this list is empty, the check will egress from all
@@ -7984,8 +8738,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
-    public Builder addInternalCheckers(
-        int index, com.google.monitoring.v3.InternalChecker value) {
+    public Builder addInternalCheckers(int index, com.google.monitoring.v3.InternalChecker value) {
       if (internalCheckersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -7999,6 +8752,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
      * true and this list is empty, the check will egress from all
@@ -8019,6 +8774,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
      * true and this list is empty, the check will egress from all
@@ -8039,6 +8796,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
      * true and this list is empty, the check will egress from all
@@ -8051,8 +8810,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.monitoring.v3.InternalChecker> values) {
       if (internalCheckersBuilder_ == null) {
         ensureInternalCheckersIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, internalCheckers_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, internalCheckers_);
         onChanged();
       } else {
         internalCheckersBuilder_.addAllMessages(values);
@@ -8060,6 +8818,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
      * true and this list is empty, the check will egress from all
@@ -8079,6 +8839,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
      * true and this list is empty, the check will egress from all
@@ -8098,6 +8860,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
      * true and this list is empty, the check will egress from all
@@ -8106,11 +8870,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
-    public com.google.monitoring.v3.InternalChecker.Builder getInternalCheckersBuilder(
-        int index) {
+    public com.google.monitoring.v3.InternalChecker.Builder getInternalCheckersBuilder(int index) {
       return getInternalCheckersFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
      * true and this list is empty, the check will egress from all
@@ -8122,11 +8887,14 @@ private static final long serialVersionUID = 0L;
     public com.google.monitoring.v3.InternalCheckerOrBuilder getInternalCheckersOrBuilder(
         int index) {
       if (internalCheckersBuilder_ == null) {
-        return internalCheckers_.get(index);  } else {
+        return internalCheckers_.get(index);
+      } else {
         return internalCheckersBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
      * true and this list is empty, the check will egress from all
@@ -8135,8 +8903,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
-    public java.util.List<? extends com.google.monitoring.v3.InternalCheckerOrBuilder> 
-         getInternalCheckersOrBuilderList() {
+    public java.util.List<? extends com.google.monitoring.v3.InternalCheckerOrBuilder>
+        getInternalCheckersOrBuilderList() {
       if (internalCheckersBuilder_ != null) {
         return internalCheckersBuilder_.getMessageOrBuilderList();
       } else {
@@ -8144,6 +8912,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
      * true and this list is empty, the check will egress from all
@@ -8153,10 +8923,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
     public com.google.monitoring.v3.InternalChecker.Builder addInternalCheckersBuilder() {
-      return getInternalCheckersFieldBuilder().addBuilder(
-          com.google.monitoring.v3.InternalChecker.getDefaultInstance());
+      return getInternalCheckersFieldBuilder()
+          .addBuilder(com.google.monitoring.v3.InternalChecker.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
      * true and this list is empty, the check will egress from all
@@ -8165,12 +8937,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
-    public com.google.monitoring.v3.InternalChecker.Builder addInternalCheckersBuilder(
-        int index) {
-      return getInternalCheckersFieldBuilder().addBuilder(
-          index, com.google.monitoring.v3.InternalChecker.getDefaultInstance());
+    public com.google.monitoring.v3.InternalChecker.Builder addInternalCheckersBuilder(int index) {
+      return getInternalCheckersFieldBuilder()
+          .addBuilder(index, com.google.monitoring.v3.InternalChecker.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The internal checkers that this check will egress from. If `is_internal` is
      * true and this list is empty, the check will egress from all
@@ -8179,16 +8952,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.monitoring.v3.InternalChecker internal_checkers = 14;</code>
      */
-    public java.util.List<com.google.monitoring.v3.InternalChecker.Builder> 
-         getInternalCheckersBuilderList() {
+    public java.util.List<com.google.monitoring.v3.InternalChecker.Builder>
+        getInternalCheckersBuilderList() {
       return getInternalCheckersFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.monitoring.v3.InternalChecker, com.google.monitoring.v3.InternalChecker.Builder, com.google.monitoring.v3.InternalCheckerOrBuilder> 
+            com.google.monitoring.v3.InternalChecker,
+            com.google.monitoring.v3.InternalChecker.Builder,
+            com.google.monitoring.v3.InternalCheckerOrBuilder>
         getInternalCheckersFieldBuilder() {
       if (internalCheckersBuilder_ == null) {
-        internalCheckersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.monitoring.v3.InternalChecker, com.google.monitoring.v3.InternalChecker.Builder, com.google.monitoring.v3.InternalCheckerOrBuilder>(
+        internalCheckersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.monitoring.v3.InternalChecker,
+                com.google.monitoring.v3.InternalChecker.Builder,
+                com.google.monitoring.v3.InternalCheckerOrBuilder>(
                 internalCheckers_,
                 ((bitField0_ & 0x00000800) == 0x00000800),
                 getParentForChildren(),
@@ -8197,9 +8976,9 @@ private static final long serialVersionUID = 0L;
       }
       return internalCheckersBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -8209,12 +8988,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.monitoring.v3.UptimeCheckConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.monitoring.v3.UptimeCheckConfig)
   private static final com.google.monitoring.v3.UptimeCheckConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.monitoring.v3.UptimeCheckConfig();
   }
@@ -8223,16 +9002,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UptimeCheckConfig>
-      PARSER = new com.google.protobuf.AbstractParser<UptimeCheckConfig>() {
-    @java.lang.Override
-    public UptimeCheckConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new UptimeCheckConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<UptimeCheckConfig> PARSER =
+      new com.google.protobuf.AbstractParser<UptimeCheckConfig>() {
+        @java.lang.Override
+        public UptimeCheckConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new UptimeCheckConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<UptimeCheckConfig> parser() {
     return PARSER;
@@ -8247,6 +9026,4 @@ private static final long serialVersionUID = 0L;
   public com.google.monitoring.v3.UptimeCheckConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta3;
 
-public interface ListTasksRequestOrBuilder extends
+public interface ListTasksRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta3.ListTasksRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue name. For example:
@@ -18,6 +21,8 @@ public interface ListTasksRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue name. For example:
@@ -26,10 +31,11 @@ public interface ListTasksRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] will be
    * returned.
@@ -47,6 +53,8 @@ public interface ListTasksRequestOrBuilder extends
    */
   int getResponseViewValue();
   /**
+   *
+   *
    * <pre>
    * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] will be
    * returned.
@@ -65,6 +73,8 @@ public interface ListTasksRequestOrBuilder extends
   com.google.cloud.tasks.v2beta3.Task.View getResponseView();
 
   /**
+   *
+   *
    * <pre>
    * Requested page size. Fewer tasks than requested might be returned.
    * The maximum page size is 1000. If unspecified, the page size will
@@ -79,6 +89,8 @@ public interface ListTasksRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * A token identifying the page of results to return.
    * To request the first page results, page_token must be empty. To
@@ -93,6 +105,8 @@ public interface ListTasksRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * A token identifying the page of results to return.
    * To request the first page results, page_token must be empty. To
@@ -105,6 +119,5 @@ public interface ListTasksRequestOrBuilder extends
    *
    * <code>string page_token = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

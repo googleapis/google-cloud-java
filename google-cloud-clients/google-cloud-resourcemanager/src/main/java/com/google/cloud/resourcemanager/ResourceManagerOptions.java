@@ -16,16 +16,15 @@
 
 package com.google.cloud.resourcemanager;
 
-import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
+import com.google.cloud.http.HttpTransportOptions;
+import com.google.cloud.resourcemanager.spi.ResourceManagerRpcFactory;
 import com.google.cloud.resourcemanager.spi.v1beta1.HttpResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
-import com.google.cloud.resourcemanager.spi.ResourceManagerRpcFactory;
 import com.google.common.collect.ImmutableSet;
-
 import java.util.Set;
 
 public class ResourceManagerOptions
@@ -46,10 +45,7 @@ public class ResourceManagerOptions
     }
   }
 
-
-  /**
-   * Returns a default {@code ResourceManagerOptions} instance.
-   */
+  /** Returns a default {@code ResourceManagerOptions} instance. */
   public static ResourceManagerOptions getDefaultInstance() {
     return newBuilder().build();
   }
@@ -69,8 +65,8 @@ public class ResourceManagerOptions
     return DEFAULT_HOST;
   }
 
-  public static class Builder extends ServiceOptions.Builder<ResourceManager,
-      ResourceManagerOptions, Builder> {
+  public static class Builder
+      extends ServiceOptions.Builder<ResourceManager, ResourceManagerOptions, Builder> {
 
     private Builder() {}
 
@@ -94,7 +90,10 @@ public class ResourceManagerOptions
   }
 
   private ResourceManagerOptions(Builder builder) {
-    super(ResourceManagerFactory.class, ResourceManagerRpcFactory.class, builder,
+    super(
+        ResourceManagerFactory.class,
+        ResourceManagerRpcFactory.class,
+        builder,
         new ResourceManagerDefaults());
   }
 
@@ -103,8 +102,8 @@ public class ResourceManagerOptions
     return false;
   }
 
-  private static class ResourceManagerDefaults implements
-      ServiceDefaults<ResourceManager, ResourceManagerOptions> {
+  private static class ResourceManagerDefaults
+      implements ServiceDefaults<ResourceManager, ResourceManagerOptions> {
 
     @Override
     public ResourceManagerFactory getDefaultServiceFactory() {
@@ -150,7 +149,6 @@ public class ResourceManagerOptions
   public Builder toBuilder() {
     return new Builder(this);
   }
-
 
   public static Builder newBuilder() {
     return new Builder();

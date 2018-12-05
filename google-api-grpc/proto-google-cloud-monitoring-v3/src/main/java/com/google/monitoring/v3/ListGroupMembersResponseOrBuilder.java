@@ -3,20 +3,24 @@
 
 package com.google.monitoring.v3;
 
-public interface ListGroupMembersResponseOrBuilder extends
+public interface ListGroupMembersResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.ListGroupMembersResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A set of monitored resources in the group.
    * </pre>
    *
    * <code>repeated .google.api.MonitoredResource members = 1;</code>
    */
-  java.util.List<com.google.api.MonitoredResource> 
-      getMembersList();
+  java.util.List<com.google.api.MonitoredResource> getMembersList();
   /**
+   *
+   *
    * <pre>
    * A set of monitored resources in the group.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListGroupMembersResponseOrBuilder extends
    */
   com.google.api.MonitoredResource getMembers(int index);
   /**
+   *
+   *
    * <pre>
    * A set of monitored resources in the group.
    * </pre>
@@ -33,25 +39,29 @@ public interface ListGroupMembersResponseOrBuilder extends
    */
   int getMembersCount();
   /**
+   *
+   *
    * <pre>
    * A set of monitored resources in the group.
    * </pre>
    *
    * <code>repeated .google.api.MonitoredResource members = 1;</code>
    */
-  java.util.List<? extends com.google.api.MonitoredResourceOrBuilder> 
-      getMembersOrBuilderList();
+  java.util.List<? extends com.google.api.MonitoredResourceOrBuilder> getMembersOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A set of monitored resources in the group.
    * </pre>
    *
    * <code>repeated .google.api.MonitoredResource members = 1;</code>
    */
-  com.google.api.MonitoredResourceOrBuilder getMembersOrBuilder(
-      int index);
+  com.google.api.MonitoredResourceOrBuilder getMembersOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If there are more results than have been returned, then this field is
    * set to a non-empty value.  To see the additional results, use that value as
@@ -62,6 +72,8 @@ public interface ListGroupMembersResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If there are more results than have been returned, then this field is
    * set to a non-empty value.  To see the additional results, use that value as
@@ -70,10 +82,11 @@ public interface ListGroupMembersResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * The total number of elements matching this request.
    * </pre>

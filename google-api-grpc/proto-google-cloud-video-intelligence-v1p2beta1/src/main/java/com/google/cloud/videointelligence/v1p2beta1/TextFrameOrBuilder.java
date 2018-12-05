@@ -3,36 +3,52 @@
 
 package com.google.cloud.videointelligence.v1p2beta1;
 
-public interface TextFrameOrBuilder extends
+public interface TextFrameOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1p2beta1.TextFrame)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Bounding polygon of the detected text for this frame.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPoly rotated_bounding_box = 1;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPoly rotated_bounding_box = 1;
+   * </code>
    */
   boolean hasRotatedBoundingBox();
   /**
+   *
+   *
    * <pre>
    * Bounding polygon of the detected text for this frame.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPoly rotated_bounding_box = 1;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPoly rotated_bounding_box = 1;
+   * </code>
    */
   com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPoly getRotatedBoundingBox();
   /**
+   *
+   *
    * <pre>
    * Bounding polygon of the detected text for this frame.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPoly rotated_bounding_box = 1;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPoly rotated_bounding_box = 1;
+   * </code>
    */
-  com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPolyOrBuilder getRotatedBoundingBoxOrBuilder();
+  com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingPolyOrBuilder
+      getRotatedBoundingBoxOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Timestamp of this frame.
    * </pre>
@@ -41,6 +57,8 @@ public interface TextFrameOrBuilder extends
    */
   boolean hasTimeOffset();
   /**
+   *
+   *
    * <pre>
    * Timestamp of this frame.
    * </pre>
@@ -49,6 +67,8 @@ public interface TextFrameOrBuilder extends
    */
   com.google.protobuf.Duration getTimeOffset();
   /**
+   *
+   *
    * <pre>
    * Timestamp of this frame.
    * </pre>

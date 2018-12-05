@@ -22,7 +22,6 @@ import com.google.api.core.ApiFunction;
 import com.google.api.services.bigquery.model.Dataset.Access;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -57,23 +56,15 @@ public final class Acl implements Serializable {
           }
         };
 
-    private static final StringEnumType<Role> type = new StringEnumType(
-        Role.class,
-        CONSTRUCTOR);
+    private static final StringEnumType<Role> type = new StringEnumType(Role.class, CONSTRUCTOR);
 
-    /**
-     * Can read, query, copy or export tables in the dataset.
-     */
+    /** Can read, query, copy or export tables in the dataset. */
     public static final Role READER = type.createAndRegister("READER");
 
-    /**
-     * Same as {@link #READER} plus can edit or append data in the dataset.
-     */
+    /** Same as {@link #READER} plus can edit or append data in the dataset. */
     public static final Role WRITER = type.createAndRegister("WRITER");
 
-    /**
-     * Same as {@link #WRITER} plus can update and delete the dataset.
-     */
+    /** Same as {@link #WRITER} plus can update and delete the dataset. */
     public static final Role OWNER = type.createAndRegister("OWNER");
 
     private Role(String constant) {
@@ -81,48 +72,42 @@ public final class Acl implements Serializable {
     }
 
     /**
-     * Get the Role for the given String constant, and throw an exception if the constant is
-     * not recognized.
+     * Get the Role for the given String constant, and throw an exception if the constant is not
+     * recognized.
      */
     public static Role valueOfStrict(String constant) {
       return type.valueOfStrict(constant);
     }
 
-    /**
-     * Get the Role for the given String constant, and allow unrecognized values.
-     */
+    /** Get the Role for the given String constant, and allow unrecognized values. */
     public static Role valueOf(String constant) {
       return type.valueOf(constant);
     }
 
-    /**
-     * Return the known values for Role.
-     */
+    /** Return the known values for Role. */
     public static Role[] values() {
       return type.values();
     }
   }
 
-  /**
-   * Base class for BigQuery entities that can be grant access to the dataset.
-   */
+  /** Base class for BigQuery entities that can be grant access to the dataset. */
   public abstract static class Entity implements Serializable {
 
     private static final long serialVersionUID = 8111776788607959944L;
 
     private final Type type;
 
-    /**
-     * Types of BigQuery entities.
-     */
+    /** Types of BigQuery entities. */
     public enum Type {
-      DOMAIN, GROUP, USER, VIEW
+      DOMAIN,
+      GROUP,
+      USER,
+      VIEW
     }
 
     Entity(Type type) {
       this.type = type;
     }
-
 
     public Type getType() {
       return type;
@@ -147,8 +132,8 @@ public final class Acl implements Serializable {
         return new View(TableId.fromPb(access.getView()));
       }
       // Unreachable
-      throw new BigQueryException(BigQueryException.UNKNOWN_CODE,
-          "Unrecognized access configuration");
+      throw new BigQueryException(
+          BigQueryException.UNKNOWN_CODE, "Unrecognized access configuration");
     }
   }
 
@@ -159,21 +144,16 @@ public final class Acl implements Serializable {
   public static final class Domain extends Entity {
 
     private static final long serialVersionUID = -3033025857280447253L;
-    
+
     private final String domain;
 
-    /**
-     * Creates a Domain entity given the domain name.
-     */
+    /** Creates a Domain entity given the domain name. */
     public Domain(String domain) {
       super(Type.DOMAIN);
       this.domain = domain;
     }
 
-
-    /**
-     * Returns the domain name.
-     */
+    /** Returns the domain name. */
     public String getDomain() {
       return domain;
     }
@@ -209,9 +189,9 @@ public final class Acl implements Serializable {
 
   /**
    * Class for a BigQuery Group entity. Objects of this class represent a group to granted access
-   * to. A Group entity can be created given the group's email or can be a special group:
-   * {@link #ofProjectOwners()}, {@link #ofProjectReaders()}, {@link #ofProjectWriters()} or
-   * {@link #ofAllAuthenticatedUsers()}.
+   * to. A Group entity can be created given the group's email or can be a special group: {@link
+   * #ofProjectOwners()}, {@link #ofProjectReaders()}, {@link #ofProjectWriters()} or {@link
+   * #ofAllAuthenticatedUsers()}.
    */
   public static final class Group extends Entity {
 
@@ -220,24 +200,23 @@ public final class Acl implements Serializable {
     private static final String PROJECT_WRITERS = "projectWriters";
     private static final String ALL_AUTHENTICATED_USERS = "allAuthenticatedUsers";
     private static final long serialVersionUID = 5146829352398103029L;
-    
+
     private final String identifier;
 
     /**
-     * Creates a Group entity given its identifier. Identifier can be either a
-     * <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#access.specialGroup">
-     *     special group identifier</a> or a group email.
+     * Creates a Group entity given its identifier. Identifier can be either a <a
+     * href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#access.specialGroup">
+     * special group identifier</a> or a group email.
      */
     public Group(String identifier) {
       super(Type.GROUP);
       this.identifier = identifier;
     }
 
-
     /**
-     * Returns group's identifier, can be either a
-     * <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#access.specialGroup">
-     *     special group identifier</a> or a group email.
+     * Returns group's identifier, can be either a <a
+     * href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#access.specialGroup">
+     * special group identifier</a> or a group email.
      */
     public String getIdentifier() {
       return identifier;
@@ -282,30 +261,22 @@ public final class Acl implements Serializable {
       }
     }
 
-    /**
-     * Returns a Group entity representing all project's owners.
-     */
+    /** Returns a Group entity representing all project's owners. */
     public static Group ofProjectOwners() {
       return new Group(PROJECT_OWNERS);
     }
 
-    /**
-     * Returns a Group entity representing all project's readers.
-     */
+    /** Returns a Group entity representing all project's readers. */
     public static Group ofProjectReaders() {
       return new Group(PROJECT_READERS);
     }
 
-    /**
-     * Returns a Group entity representing all project's writers.
-     */
+    /** Returns a Group entity representing all project's writers. */
     public static Group ofProjectWriters() {
       return new Group(PROJECT_WRITERS);
     }
 
-    /**
-     * Returns a Group entity representing all BigQuery authenticated users.
-     */
+    /** Returns a Group entity representing all BigQuery authenticated users. */
     public static Group ofAllAuthenticatedUsers() {
       return new Group(ALL_AUTHENTICATED_USERS);
     }
@@ -316,23 +287,18 @@ public final class Acl implements Serializable {
    * given the email address.
    */
   public static final class User extends Entity {
-    
+
     private static final long serialVersionUID = -4942821351073996141L;
-    
+
     private final String email;
 
-    /**
-     * Creates a User entity given the user's email.
-     */
+    /** Creates a User entity given the user's email. */
     public User(String email) {
       super(Type.USER);
       this.email = email;
     }
 
-
-    /**
-     * Returns user's email.
-     */
+    /** Returns user's email. */
     public String getEmail() {
       return email;
     }
@@ -377,18 +343,13 @@ public final class Acl implements Serializable {
 
     private final TableId id;
 
-    /**
-     * Creates a View entity given the view's id.
-     */
+    /** Creates a View entity given the view's id. */
     public View(TableId id) {
       super(Type.VIEW);
       this.id = id;
     }
 
-
-    /**
-     * Returns table's identity.
-     */
+    /** Returns table's identity. */
     public TableId getId() {
       return id;
     }
@@ -426,18 +387,12 @@ public final class Acl implements Serializable {
     this.role = role;
   }
 
-
-  /**
-   * Returns the entity for this ACL.
-   */
+  /** Returns the entity for this ACL. */
   public Entity getEntity() {
     return entity;
   }
 
-
-  /**
-   * Returns the role specified by this ACL.
-   */
+  /** Returns the role specified by this ACL. */
   public Role getRole() {
     return role;
   }
@@ -452,9 +407,7 @@ public final class Acl implements Serializable {
     return new Acl(entity, role);
   }
 
-  /**
-   * Returns an Acl object for a view entity.
-   */
+  /** Returns an Acl object for a view entity. */
   public static Acl of(View view) {
     return new Acl(view, null);
   }
@@ -478,8 +431,7 @@ public final class Acl implements Serializable {
       return false;
     }
     final Acl other = (Acl) obj;
-    return Objects.equals(this.entity, other.entity)
-        && Objects.equals(this.role, other.role);
+    return Objects.equals(this.entity, other.entity) && Objects.equals(this.role, other.role);
   }
 
   Access toPb() {
@@ -491,7 +443,7 @@ public final class Acl implements Serializable {
   }
 
   static Acl fromPb(Access access) {
-    return Acl.of(Entity.fromPb(access),
-        access.getRole() != null ? Role.valueOf(access.getRole()) : null);
+    return Acl.of(
+        Entity.fromPb(access), access.getRole() != null ? Role.valueOf(access.getRole()) : null);
   }
 }

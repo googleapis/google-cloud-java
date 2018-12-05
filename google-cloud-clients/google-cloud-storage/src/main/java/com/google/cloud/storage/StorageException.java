@@ -29,20 +29,21 @@ import java.util.Set;
  * Storage service exception.
  *
  * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/status-codes">Google Cloud
- *      Storage error codes</a>
+ *     Storage error codes</a>
  */
 @InternalApi
 public final class StorageException extends BaseHttpServiceException {
 
   // see: https://cloud.google.com/storage/docs/resumable-uploads-xml#practices
-  private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
-      new Error(504, null),
-      new Error(503, null),
-      new Error(502, null),
-      new Error(500, null),
-      new Error(429, null),
-      new Error(408, null),
-      new Error(null, "internalError"));
+  private static final Set<Error> RETRYABLE_ERRORS =
+      ImmutableSet.of(
+          new Error(504, null),
+          new Error(503, null),
+          new Error(502, null),
+          new Error(500, null),
+          new Error(429, null),
+          new Error(408, null),
+          new Error(null, "internalError"));
 
   private static final long serialVersionUID = -4168430271327813063L;
 

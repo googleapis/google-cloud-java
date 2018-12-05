@@ -3,20 +3,24 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface ListInfoTypesResponseOrBuilder extends
+public interface ListInfoTypesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ListInfoTypesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Set of sensitive infoTypes.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.InfoTypeDescription> 
-      getInfoTypesList();
+  java.util.List<com.google.privacy.dlp.v2.InfoTypeDescription> getInfoTypesList();
   /**
+   *
+   *
    * <pre>
    * Set of sensitive infoTypes.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListInfoTypesResponseOrBuilder extends
    */
   com.google.privacy.dlp.v2.InfoTypeDescription getInfoTypes(int index);
   /**
+   *
+   *
    * <pre>
    * Set of sensitive infoTypes.
    * </pre>
@@ -33,21 +39,24 @@ public interface ListInfoTypesResponseOrBuilder extends
    */
   int getInfoTypesCount();
   /**
+   *
+   *
    * <pre>
    * Set of sensitive infoTypes.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder> 
+  java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder>
       getInfoTypesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Set of sensitive infoTypes.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
    */
-  com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder getInfoTypesOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder getInfoTypesOrBuilder(int index);
 }

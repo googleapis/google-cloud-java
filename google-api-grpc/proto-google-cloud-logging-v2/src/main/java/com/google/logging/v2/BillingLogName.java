@@ -14,13 +14,12 @@
 
 package com.google.logging.v2;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +55,11 @@ public class BillingLogName extends LogName {
   }
 
   public static BillingLogName of(String billingAccount, String log) {
-    return newBuilder()
-      .setBillingAccount(billingAccount)
-      .setLog(log)
-      .build();
+    return newBuilder().setBillingAccount(billingAccount).setLog(log).build();
   }
 
   public static String format(String billingAccount, String log) {
-    return newBuilder()
-      .setBillingAccount(billingAccount)
-      .setLog(log)
-      .build()
-      .toString();
+    return newBuilder().setBillingAccount(billingAccount).setLog(log).build().toString();
   }
 
   public static BillingLogName parse(String formattedString) {
@@ -75,7 +67,8 @@ public class BillingLogName extends LogName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "BillingLogName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "BillingLogName.parse: formattedString not in valid format");
     return of(matchMap.get("billing_account"), matchMap.get("log"));
   }
 
@@ -150,8 +143,7 @@ public class BillingLogName extends LogName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(BillingLogName billingLogName) {
       billingAccount = billingLogName.billingAccount;
@@ -170,8 +162,7 @@ public class BillingLogName extends LogName {
     }
     if (o instanceof BillingLogName) {
       BillingLogName that = (BillingLogName) o;
-      return (this.billingAccount.equals(that.billingAccount))
-          && (this.log.equals(that.log));
+      return (this.billingAccount.equals(that.billingAccount)) && (this.log.equals(that.log));
     }
     return false;
   }
@@ -186,4 +177,3 @@ public class BillingLogName extends LogName {
     return h;
   }
 }
-

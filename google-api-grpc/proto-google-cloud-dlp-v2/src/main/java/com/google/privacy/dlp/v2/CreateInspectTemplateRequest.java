@@ -4,31 +4,34 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Request message for CreateInspectTemplate.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.CreateInspectTemplateRequest}
  */
-public  final class CreateInspectTemplateRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class CreateInspectTemplateRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CreateInspectTemplateRequest)
     CreateInspectTemplateRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use CreateInspectTemplateRequest.newBuilder() to construct.
   private CreateInspectTemplateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private CreateInspectTemplateRequest() {
     parent_ = "";
     templateId_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private CreateInspectTemplateRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,66 +51,75 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            parent_ = s;
-            break;
-          }
-          case 18: {
-            com.google.privacy.dlp.v2.InspectTemplate.Builder subBuilder = null;
-            if (inspectTemplate_ != null) {
-              subBuilder = inspectTemplate_.toBuilder();
+              parent_ = s;
+              break;
             }
-            inspectTemplate_ = input.readMessage(com.google.privacy.dlp.v2.InspectTemplate.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(inspectTemplate_);
-              inspectTemplate_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.privacy.dlp.v2.InspectTemplate.Builder subBuilder = null;
+              if (inspectTemplate_ != null) {
+                subBuilder = inspectTemplate_.toBuilder();
+              }
+              inspectTemplate_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.InspectTemplate.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(inspectTemplate_);
+                inspectTemplate_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            templateId_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              templateId_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CreateInspectTemplateRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_CreateInspectTemplateRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CreateInspectTemplateRequest_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_CreateInspectTemplateRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.CreateInspectTemplateRequest.class, com.google.privacy.dlp.v2.CreateInspectTemplateRequest.Builder.class);
+            com.google.privacy.dlp.v2.CreateInspectTemplateRequest.class,
+            com.google.privacy.dlp.v2.CreateInspectTemplateRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
+   *
+   *
    * <pre>
    * The parent resource name, for example projects/my-project-id or
    * organizations/my-org-id.
@@ -120,14 +132,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       parent_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The parent resource name, for example projects/my-project-id or
    * organizations/my-org-id.
@@ -135,13 +148,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string parent = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getParentBytes() {
+  public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
       return b;
     } else {
@@ -152,6 +163,8 @@ private static final long serialVersionUID = 0L;
   public static final int INSPECT_TEMPLATE_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.InspectTemplate inspectTemplate_;
   /**
+   *
+   *
    * <pre>
    * The InspectTemplate to create.
    * </pre>
@@ -162,6 +175,8 @@ private static final long serialVersionUID = 0L;
     return inspectTemplate_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The InspectTemplate to create.
    * </pre>
@@ -169,9 +184,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
    */
   public com.google.privacy.dlp.v2.InspectTemplate getInspectTemplate() {
-    return inspectTemplate_ == null ? com.google.privacy.dlp.v2.InspectTemplate.getDefaultInstance() : inspectTemplate_;
+    return inspectTemplate_ == null
+        ? com.google.privacy.dlp.v2.InspectTemplate.getDefaultInstance()
+        : inspectTemplate_;
   }
   /**
+   *
+   *
    * <pre>
    * The InspectTemplate to create.
    * </pre>
@@ -185,6 +204,8 @@ private static final long serialVersionUID = 0L;
   public static final int TEMPLATE_ID_FIELD_NUMBER = 3;
   private volatile java.lang.Object templateId_;
   /**
+   *
+   *
    * <pre>
    * The template id can contain uppercase and lowercase letters,
    * numbers, and hyphens; that is, it must match the regular
@@ -199,14 +220,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       templateId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The template id can contain uppercase and lowercase letters,
    * numbers, and hyphens; that is, it must match the regular
@@ -216,13 +238,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string template_id = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getTemplateIdBytes() {
+  public com.google.protobuf.ByteString getTemplateIdBytes() {
     java.lang.Object ref = templateId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       templateId_ = b;
       return b;
     } else {
@@ -231,6 +251,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -242,8 +263,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
@@ -266,8 +286,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (inspectTemplate_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getInspectTemplate());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getInspectTemplate());
     }
     if (!getTemplateIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, templateId_);
@@ -280,23 +299,21 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.CreateInspectTemplateRequest)) {
       return super.equals(obj);
     }
-    com.google.privacy.dlp.v2.CreateInspectTemplateRequest other = (com.google.privacy.dlp.v2.CreateInspectTemplateRequest) obj;
+    com.google.privacy.dlp.v2.CreateInspectTemplateRequest other =
+        (com.google.privacy.dlp.v2.CreateInspectTemplateRequest) obj;
 
     boolean result = true;
-    result = result && getParent()
-        .equals(other.getParent());
+    result = result && getParent().equals(other.getParent());
     result = result && (hasInspectTemplate() == other.hasInspectTemplate());
     if (hasInspectTemplate()) {
-      result = result && getInspectTemplate()
-          .equals(other.getInspectTemplate());
+      result = result && getInspectTemplate().equals(other.getInspectTemplate());
     }
-    result = result && getTemplateId()
-        .equals(other.getTemplateId());
+    result = result && getTemplateId().equals(other.getTemplateId());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -322,117 +339,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.privacy.dlp.v2.CreateInspectTemplateRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.CreateInspectTemplateRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.CreateInspectTemplateRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.CreateInspectTemplateRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.CreateInspectTemplateRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.CreateInspectTemplateRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.CreateInspectTemplateRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.privacy.dlp.v2.CreateInspectTemplateRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.privacy.dlp.v2.CreateInspectTemplateRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.privacy.dlp.v2.CreateInspectTemplateRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.CreateInspectTemplateRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.privacy.dlp.v2.CreateInspectTemplateRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.privacy.dlp.v2.CreateInspectTemplateRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.CreateInspectTemplateRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.privacy.dlp.v2.CreateInspectTemplateRequest prototype) {
+
+  public static Builder newBuilder(
+      com.google.privacy.dlp.v2.CreateInspectTemplateRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Request message for CreateInspectTemplate.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.CreateInspectTemplateRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CreateInspectTemplateRequest)
       com.google.privacy.dlp.v2.CreateInspectTemplateRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CreateInspectTemplateRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_CreateInspectTemplateRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CreateInspectTemplateRequest_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_CreateInspectTemplateRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.CreateInspectTemplateRequest.class, com.google.privacy.dlp.v2.CreateInspectTemplateRequest.Builder.class);
+              com.google.privacy.dlp.v2.CreateInspectTemplateRequest.class,
+              com.google.privacy.dlp.v2.CreateInspectTemplateRequest.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.CreateInspectTemplateRequest.newBuilder()
@@ -440,16 +467,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -467,9 +493,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_CreateInspectTemplateRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_CreateInspectTemplateRequest_descriptor;
     }
 
     @java.lang.Override
@@ -488,7 +514,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.privacy.dlp.v2.CreateInspectTemplateRequest buildPartial() {
-      com.google.privacy.dlp.v2.CreateInspectTemplateRequest result = new com.google.privacy.dlp.v2.CreateInspectTemplateRequest(this);
+      com.google.privacy.dlp.v2.CreateInspectTemplateRequest result =
+          new com.google.privacy.dlp.v2.CreateInspectTemplateRequest(this);
       result.parent_ = parent_;
       if (inspectTemplateBuilder_ == null) {
         result.inspectTemplate_ = inspectTemplate_;
@@ -504,38 +531,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.CreateInspectTemplateRequest) {
-        return mergeFrom((com.google.privacy.dlp.v2.CreateInspectTemplateRequest)other);
+        return mergeFrom((com.google.privacy.dlp.v2.CreateInspectTemplateRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -543,7 +571,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.privacy.dlp.v2.CreateInspectTemplateRequest other) {
-      if (other == com.google.privacy.dlp.v2.CreateInspectTemplateRequest.getDefaultInstance()) return this;
+      if (other == com.google.privacy.dlp.v2.CreateInspectTemplateRequest.getDefaultInstance())
+        return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         onChanged();
@@ -574,7 +603,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.privacy.dlp.v2.CreateInspectTemplateRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.privacy.dlp.v2.CreateInspectTemplateRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -586,6 +616,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object parent_ = "";
     /**
+     *
+     *
      * <pre>
      * The parent resource name, for example projects/my-project-id or
      * organizations/my-org-id.
@@ -596,8 +628,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         parent_ = s;
         return s;
@@ -606,6 +637,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The parent resource name, for example projects/my-project-id or
      * organizations/my-org-id.
@@ -613,13 +646,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
+    public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         parent_ = b;
         return b;
       } else {
@@ -627,6 +658,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The parent resource name, for example projects/my-project-id or
      * organizations/my-org-id.
@@ -634,17 +667,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParent(
-        java.lang.String value) {
+    public Builder setParent(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       parent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The parent resource name, for example projects/my-project-id or
      * organizations/my-org-id.
@@ -653,12 +687,14 @@ private static final long serialVersionUID = 0L;
      * <code>string parent = 1;</code>
      */
     public Builder clearParent() {
-      
+
       parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The parent resource name, for example projects/my-project-id or
      * organizations/my-org-id.
@@ -666,13 +702,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       parent_ = value;
       onChanged();
       return this;
@@ -680,8 +715,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.privacy.dlp.v2.InspectTemplate inspectTemplate_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.InspectTemplate, com.google.privacy.dlp.v2.InspectTemplate.Builder, com.google.privacy.dlp.v2.InspectTemplateOrBuilder> inspectTemplateBuilder_;
+            com.google.privacy.dlp.v2.InspectTemplate,
+            com.google.privacy.dlp.v2.InspectTemplate.Builder,
+            com.google.privacy.dlp.v2.InspectTemplateOrBuilder>
+        inspectTemplateBuilder_;
     /**
+     *
+     *
      * <pre>
      * The InspectTemplate to create.
      * </pre>
@@ -692,6 +732,8 @@ private static final long serialVersionUID = 0L;
       return inspectTemplateBuilder_ != null || inspectTemplate_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The InspectTemplate to create.
      * </pre>
@@ -700,12 +742,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.InspectTemplate getInspectTemplate() {
       if (inspectTemplateBuilder_ == null) {
-        return inspectTemplate_ == null ? com.google.privacy.dlp.v2.InspectTemplate.getDefaultInstance() : inspectTemplate_;
+        return inspectTemplate_ == null
+            ? com.google.privacy.dlp.v2.InspectTemplate.getDefaultInstance()
+            : inspectTemplate_;
       } else {
         return inspectTemplateBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The InspectTemplate to create.
      * </pre>
@@ -726,6 +772,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The InspectTemplate to create.
      * </pre>
@@ -744,6 +792,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The InspectTemplate to create.
      * </pre>
@@ -754,7 +804,9 @@ private static final long serialVersionUID = 0L;
       if (inspectTemplateBuilder_ == null) {
         if (inspectTemplate_ != null) {
           inspectTemplate_ =
-            com.google.privacy.dlp.v2.InspectTemplate.newBuilder(inspectTemplate_).mergeFrom(value).buildPartial();
+              com.google.privacy.dlp.v2.InspectTemplate.newBuilder(inspectTemplate_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           inspectTemplate_ = value;
         }
@@ -766,6 +818,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The InspectTemplate to create.
      * </pre>
@@ -784,6 +838,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The InspectTemplate to create.
      * </pre>
@@ -791,11 +847,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
      */
     public com.google.privacy.dlp.v2.InspectTemplate.Builder getInspectTemplateBuilder() {
-      
+
       onChanged();
       return getInspectTemplateFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The InspectTemplate to create.
      * </pre>
@@ -806,11 +864,14 @@ private static final long serialVersionUID = 0L;
       if (inspectTemplateBuilder_ != null) {
         return inspectTemplateBuilder_.getMessageOrBuilder();
       } else {
-        return inspectTemplate_ == null ?
-            com.google.privacy.dlp.v2.InspectTemplate.getDefaultInstance() : inspectTemplate_;
+        return inspectTemplate_ == null
+            ? com.google.privacy.dlp.v2.InspectTemplate.getDefaultInstance()
+            : inspectTemplate_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The InspectTemplate to create.
      * </pre>
@@ -818,14 +879,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.InspectTemplate inspect_template = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.InspectTemplate, com.google.privacy.dlp.v2.InspectTemplate.Builder, com.google.privacy.dlp.v2.InspectTemplateOrBuilder> 
+            com.google.privacy.dlp.v2.InspectTemplate,
+            com.google.privacy.dlp.v2.InspectTemplate.Builder,
+            com.google.privacy.dlp.v2.InspectTemplateOrBuilder>
         getInspectTemplateFieldBuilder() {
       if (inspectTemplateBuilder_ == null) {
-        inspectTemplateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.InspectTemplate, com.google.privacy.dlp.v2.InspectTemplate.Builder, com.google.privacy.dlp.v2.InspectTemplateOrBuilder>(
-                getInspectTemplate(),
-                getParentForChildren(),
-                isClean());
+        inspectTemplateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.InspectTemplate,
+                com.google.privacy.dlp.v2.InspectTemplate.Builder,
+                com.google.privacy.dlp.v2.InspectTemplateOrBuilder>(
+                getInspectTemplate(), getParentForChildren(), isClean());
         inspectTemplate_ = null;
       }
       return inspectTemplateBuilder_;
@@ -833,6 +897,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object templateId_ = "";
     /**
+     *
+     *
      * <pre>
      * The template id can contain uppercase and lowercase letters,
      * numbers, and hyphens; that is, it must match the regular
@@ -845,8 +911,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getTemplateId() {
       java.lang.Object ref = templateId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         templateId_ = s;
         return s;
@@ -855,6 +920,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The template id can contain uppercase and lowercase letters,
      * numbers, and hyphens; that is, it must match the regular
@@ -864,13 +931,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string template_id = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getTemplateIdBytes() {
+    public com.google.protobuf.ByteString getTemplateIdBytes() {
       java.lang.Object ref = templateId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         templateId_ = b;
         return b;
       } else {
@@ -878,6 +943,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The template id can contain uppercase and lowercase letters,
      * numbers, and hyphens; that is, it must match the regular
@@ -887,17 +954,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string template_id = 3;</code>
      */
-    public Builder setTemplateId(
-        java.lang.String value) {
+    public Builder setTemplateId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       templateId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The template id can contain uppercase and lowercase letters,
      * numbers, and hyphens; that is, it must match the regular
@@ -908,12 +976,14 @@ private static final long serialVersionUID = 0L;
      * <code>string template_id = 3;</code>
      */
     public Builder clearTemplateId() {
-      
+
       templateId_ = getDefaultInstance().getTemplateId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The template id can contain uppercase and lowercase letters,
      * numbers, and hyphens; that is, it must match the regular
@@ -923,20 +993,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string template_id = 3;</code>
      */
-    public Builder setTemplateIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTemplateIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       templateId_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -946,12 +1015,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CreateInspectTemplateRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CreateInspectTemplateRequest)
   private static final com.google.privacy.dlp.v2.CreateInspectTemplateRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.CreateInspectTemplateRequest();
   }
@@ -960,16 +1029,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CreateInspectTemplateRequest>
-      PARSER = new com.google.protobuf.AbstractParser<CreateInspectTemplateRequest>() {
-    @java.lang.Override
-    public CreateInspectTemplateRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CreateInspectTemplateRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<CreateInspectTemplateRequest> PARSER =
+      new com.google.protobuf.AbstractParser<CreateInspectTemplateRequest>() {
+        @java.lang.Override
+        public CreateInspectTemplateRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CreateInspectTemplateRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<CreateInspectTemplateRequest> parser() {
     return PARSER;
@@ -984,6 +1053,4 @@ private static final long serialVersionUID = 0L;
   public com.google.privacy.dlp.v2.CreateInspectTemplateRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

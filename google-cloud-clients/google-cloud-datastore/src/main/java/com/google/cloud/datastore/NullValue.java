@@ -49,8 +49,7 @@ public final class NullValue extends Value<Void> {
         }
       };
 
-  public static final class Builder 
-      extends Value.BaseBuilder<Void, NullValue, Builder> {
+  public static final class Builder extends Value.BaseBuilder<Void, NullValue, Builder> {
 
     private Builder() {
       super(ValueType.NULL);
@@ -84,7 +83,6 @@ public final class NullValue extends Value<Void> {
   public static NullValue of() {
     return new NullValue();
   }
-
 
   public static Builder newBuilder() {
     return new Builder();

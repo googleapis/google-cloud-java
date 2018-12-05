@@ -3,11 +3,14 @@
 
 package com.google.cloud.language.v1;
 
-public interface SentimentOrBuilder extends
+public interface SentimentOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.language.v1.Sentiment)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A non-negative number in the [0, +inf) range, which represents
    * the absolute magnitude of sentiment regardless of score (positive or
@@ -19,6 +22,8 @@ public interface SentimentOrBuilder extends
   float getMagnitude();
 
   /**
+   *
+   *
    * <pre>
    * Sentiment score between -1.0 (negative sentiment) and 1.0
    * (positive sentiment).

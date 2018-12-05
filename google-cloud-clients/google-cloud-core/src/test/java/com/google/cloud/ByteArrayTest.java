@@ -21,15 +21,13 @@ import static org.junit.Assert.assertEquals;
 
 import com.google.common.io.ByteStreams;
 import com.google.protobuf.ByteString;
-
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class ByteArrayTest {
 

@@ -59,9 +59,10 @@ import java.util.concurrent.TimeUnit;
  *
  * <p>This example demonstrates a simple/typical storage usage.
  *
- * <p>See the
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
+ * <p>See the <a
+ * href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
+ *
  * <pre>{@code target/appassembler/bin/StorageExample [<project_id>]
  *  list [<bucket>] |
  *  info [<bucket> [<file>]] |
@@ -161,18 +162,17 @@ public class StorageExample {
   }
 
   /**
-   * This class demonstrates how to retrieve Bucket or Blob metadata.
-   * If more than one blob is supplied a Batch operation would be used to get all blobs metadata
-   * in a single RPC.
+   * This class demonstrates how to retrieve Bucket or Blob metadata. If more than one blob is
+   * supplied a Batch operation would be used to get all blobs metadata in a single RPC.
    *
    * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/get">Objects: get</a>
    */
   private static class InfoAction extends BlobsAction {
 
     /**
-     * Gets information for the provided blobs, using the {@code storage} service. If
-     * {@code blobIds} contains only one blob identity and {@code blobIds[0].name()} is empty, this
-     * method gets information for the bucket identified by {@code blobIds[0].bucket()}.
+     * Gets information for the provided blobs, using the {@code storage} service. If {@code
+     * blobIds} contains only one blob identity and {@code blobIds[0].name()} is empty, this method
+     * gets information for the bucket identified by {@code blobIds[0].bucket()}.
      */
     @Override
     public void run(Storage storage, BlobId... blobIds) {
@@ -220,12 +220,11 @@ public class StorageExample {
   }
 
   /**
-   * This class demonstrates how to delete a blob.
-   * If more than one blob is supplied a Batch operation would be used to delete all requested
-   * blobs in a single RPC.
+   * This class demonstrates how to delete a blob. If more than one blob is supplied a Batch
+   * operation would be used to delete all requested blobs in a single RPC.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/delete">
-   *     Objects: delete</a>
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/delete">Objects:
+   *     delete</a>
    */
   private static class DeleteAction extends BlobsAction {
     @Override
@@ -290,8 +289,8 @@ public class StorageExample {
   /**
    * This class demonstrates how to create a new Blob or to update its content.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/insert">
-   *     Objects: insert</a>
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/insert">Objects:
+   *     insert</a>
    */
   private static class UploadAction extends StorageAction<Tuple<Path, BlobInfo>> {
     @Override
@@ -342,9 +341,8 @@ public class StorageExample {
   }
 
   /**
-   * This class demonstrates how read a blob's content.
-   * The example will dump the content to a local file if one was given or write
-   * it to stdout otherwise.
+   * This class demonstrates how read a blob's content. The example will dump the content to a local
+   * file if one was given or write it to stdout otherwise.
    *
    * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/get">Objects: get</a>
    */
@@ -355,7 +353,8 @@ public class StorageExample {
       run(storage, tuple.x().getBucket(), tuple.x().getName(), tuple.y());
     }
 
-    private void run(Storage storage, String bucketName, String objectName, Path downloadTo) throws IOException {
+    private void run(Storage storage, String bucketName, String objectName, Path downloadTo)
+        throws IOException {
       BlobId blobId = BlobId.of(bucketName, objectName);
       Blob blob = storage.get(blobId);
       if (blob == null) {
@@ -441,8 +440,8 @@ public class StorageExample {
   /**
    * This class demonstrates how to use the compose command.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/compose">
-   *     Objects: compose</a>
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/compose">Objects:
+   *     compose</a>
    */
   private static class ComposeAction extends StorageAction<ComposeRequest> {
     @Override
@@ -473,15 +472,14 @@ public class StorageExample {
   /**
    * This class demonstrates how to update a blob's metadata.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/update">
-   *     Objects: update</a>
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/update">Objects:
+   *     update</a>
    */
-  private static class UpdateMetadataAction extends
-      StorageAction<Tuple<BlobId, Map<String, String>>> {
+  private static class UpdateMetadataAction
+      extends StorageAction<Tuple<BlobId, Map<String, String>>> {
 
     @Override
-    public void run(Storage storage, Tuple<BlobId, Map<String, String>> tuple)
-        throws IOException {
+    public void run(Storage storage, Tuple<BlobId, Map<String, String>> tuple) throws IOException {
       run(storage, tuple.x(), tuple.y());
     }
 
@@ -520,13 +518,12 @@ public class StorageExample {
   }
 
   /**
-   * This class demonstrates how to sign a url.
-   * URL will be valid for 1 day.
+   * This class demonstrates how to sign a url. URL will be valid for 1 day.
    *
    * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed URLs</a>
    */
-  private static class SignUrlAction extends
-      StorageAction<Tuple<ServiceAccountCredentials, BlobInfo>> {
+  private static class SignUrlAction
+      extends StorageAction<Tuple<ServiceAccountCredentials, BlobInfo>> {
 
     private static final char[] PASSWORD = "notasecret".toCharArray();
 
@@ -538,24 +535,25 @@ public class StorageExample {
 
     private void run(Storage storage, ServiceAccountCredentials cred, BlobInfo blobInfo) {
       Blob blob = storage.get(blobInfo.getBlobId());
-      System.out.printf("Signed URL: %s%n",
-          blob.signUrl(1, TimeUnit.DAYS, SignUrlOption.signWith(cred)));
+      System.out.printf(
+          "Signed URL: %s%n", blob.signUrl(1, TimeUnit.DAYS, SignUrlOption.signWith(cred)));
     }
 
     @Override
-    Tuple<ServiceAccountCredentials, BlobInfo> parse(String... args) throws IOException,
-        KeyStoreException, CertificateException, NoSuchAlgorithmException,
-        UnrecoverableKeyException {
+    Tuple<ServiceAccountCredentials, BlobInfo> parse(String... args)
+        throws IOException, KeyStoreException, CertificateException, NoSuchAlgorithmException,
+            UnrecoverableKeyException {
       if (args.length != 4) {
         throw new IllegalArgumentException();
       }
       KeyStore keystore = KeyStore.getInstance("PKCS12");
       keystore.load(Files.newInputStream(Paths.get(args[0])), PASSWORD);
       PrivateKey privateKey = (PrivateKey) keystore.getKey("privatekey", PASSWORD);
-      ServiceAccountCredentials credentials = ServiceAccountCredentials.newBuilder()
-          .setClientEmail(args[1])
-          .setPrivateKey(privateKey)
-          .build();
+      ServiceAccountCredentials credentials =
+          ServiceAccountCredentials.newBuilder()
+              .setClientEmail(args[1])
+              .setPrivateKey(privateKey)
+              .build();
       return Tuple.of(credentials, BlobInfo.newBuilder(BlobId.of(args[2], args[3])).build());
     }
 
@@ -775,7 +773,8 @@ public class StorageExample {
         actionAndParams.append(' ').append(param.replace("\n", "\n\t\t"));
       }
     }
-    System.out.printf("Usage: %s [<project_id>] operation [entity] <args>*%s%n",
+    System.out.printf(
+        "Usage: %s [<project_id>] operation [entity] <args>*%s%n",
         StorageExample.class.getSimpleName(), actionAndParams);
   }
 

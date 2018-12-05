@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface ListLogsResponseOrBuilder extends
+public interface ListLogsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.ListLogsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A list of log names. For example,
    * `"projects/my-project/syslog"` or
@@ -16,9 +19,10 @@ public interface ListLogsResponseOrBuilder extends
    *
    * <code>repeated string log_names = 3;</code>
    */
-  java.util.List<java.lang.String>
-      getLogNamesList();
+  java.util.List<java.lang.String> getLogNamesList();
   /**
+   *
+   *
    * <pre>
    * A list of log names. For example,
    * `"projects/my-project/syslog"` or
@@ -29,6 +33,8 @@ public interface ListLogsResponseOrBuilder extends
    */
   int getLogNamesCount();
   /**
+   *
+   *
    * <pre>
    * A list of log names. For example,
    * `"projects/my-project/syslog"` or
@@ -39,6 +45,8 @@ public interface ListLogsResponseOrBuilder extends
    */
   java.lang.String getLogNames(int index);
   /**
+   *
+   *
    * <pre>
    * A list of log names. For example,
    * `"projects/my-project/syslog"` or
@@ -47,10 +55,11 @@ public interface ListLogsResponseOrBuilder extends
    *
    * <code>repeated string log_names = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getLogNamesBytes(int index);
+  com.google.protobuf.ByteString getLogNamesBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * If there might be more results than those appearing in this response, then
    * `nextPageToken` is included.  To get the next set of results, call this
@@ -61,6 +70,8 @@ public interface ListLogsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * If there might be more results than those appearing in this response, then
    * `nextPageToken` is included.  To get the next set of results, call this
@@ -69,6 +80,5 @@ public interface ListLogsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

@@ -14,20 +14,21 @@
 
 package com.google.cloud.vision.v1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class ImageName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}/products/{product}/referenceImages/{image}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/products/{product}/referenceImages/{image}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -69,21 +70,21 @@ public class ImageName implements ResourceName {
 
   public static ImageName of(String project, String location, String product, String image) {
     return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setProduct(product)
-      .setImage(image)
-      .build();
+        .setProject(project)
+        .setLocation(location)
+        .setProduct(product)
+        .setImage(image)
+        .build();
   }
 
   public static String format(String project, String location, String product, String image) {
     return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setProduct(product)
-      .setImage(image)
-      .build()
-      .toString();
+        .setProject(project)
+        .setLocation(location)
+        .setProduct(product)
+        .setImage(image)
+        .build()
+        .toString();
   }
 
   public static ImageName parse(String formattedString) {
@@ -91,8 +92,13 @@ public class ImageName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ImageName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("product"), matchMap.get("image"));
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ImageName.parse: formattedString not in valid format");
+    return of(
+        matchMap.get("project"),
+        matchMap.get("location"),
+        matchMap.get("product"),
+        matchMap.get("image"));
   }
 
   public static List<ImageName> parseList(List<String> formattedStrings) {
@@ -141,7 +147,8 @@ public class ImageName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "location", location, "product", product, "image", image);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "location", location, "product", product, "image", image);
   }
 
   /** Builder for ImageName. */
@@ -188,8 +195,7 @@ public class ImageName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ImageName imageName) {
       project = imageName.project;
@@ -232,4 +238,3 @@ public class ImageName implements ResourceName {
     return h;
   }
 }
-

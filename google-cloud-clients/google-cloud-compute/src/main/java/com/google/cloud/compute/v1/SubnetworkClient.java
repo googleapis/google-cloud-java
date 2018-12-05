@@ -55,13 +55,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1278,12 +1278,16 @@ public class SubnetworkClient implements BackgroundResource {
 
   public static class AggregatedListSubnetworksPagedResponse
       extends AbstractPagedListResponse<
-          AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList, SubnetworksScopedList,
-          AggregatedListSubnetworksPage, AggregatedListSubnetworksFixedSizeCollection> {
+          AggregatedListSubnetworksHttpRequest,
+          SubnetworkAggregatedList,
+          SubnetworksScopedList,
+          AggregatedListSubnetworksPage,
+          AggregatedListSubnetworksFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListSubnetworksPagedResponse> createAsync(
         PageContext<
-                AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList,
+                AggregatedListSubnetworksHttpRequest,
+                SubnetworkAggregatedList,
                 SubnetworksScopedList>
             context,
         ApiFuture<SubnetworkAggregatedList> futureResponse) {
@@ -1307,12 +1311,15 @@ public class SubnetworkClient implements BackgroundResource {
 
   public static class AggregatedListSubnetworksPage
       extends AbstractPage<
-          AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList, SubnetworksScopedList,
+          AggregatedListSubnetworksHttpRequest,
+          SubnetworkAggregatedList,
+          SubnetworksScopedList,
           AggregatedListSubnetworksPage> {
 
     private AggregatedListSubnetworksPage(
         PageContext<
-                AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList,
+                AggregatedListSubnetworksHttpRequest,
+                SubnetworkAggregatedList,
                 SubnetworksScopedList>
             context,
         SubnetworkAggregatedList response) {
@@ -1326,7 +1333,8 @@ public class SubnetworkClient implements BackgroundResource {
     @Override
     protected AggregatedListSubnetworksPage createPage(
         PageContext<
-                AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList,
+                AggregatedListSubnetworksHttpRequest,
+                SubnetworkAggregatedList,
                 SubnetworksScopedList>
             context,
         SubnetworkAggregatedList response) {
@@ -1336,7 +1344,8 @@ public class SubnetworkClient implements BackgroundResource {
     @Override
     public ApiFuture<AggregatedListSubnetworksPage> createPageAsync(
         PageContext<
-                AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList,
+                AggregatedListSubnetworksHttpRequest,
+                SubnetworkAggregatedList,
                 SubnetworksScopedList>
             context,
         ApiFuture<SubnetworkAggregatedList> futureResponse) {
@@ -1346,8 +1355,11 @@ public class SubnetworkClient implements BackgroundResource {
 
   public static class AggregatedListSubnetworksFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList, SubnetworksScopedList,
-          AggregatedListSubnetworksPage, AggregatedListSubnetworksFixedSizeCollection> {
+          AggregatedListSubnetworksHttpRequest,
+          SubnetworkAggregatedList,
+          SubnetworksScopedList,
+          AggregatedListSubnetworksPage,
+          AggregatedListSubnetworksFixedSizeCollection> {
 
     private AggregatedListSubnetworksFixedSizeCollection(
         List<AggregatedListSubnetworksPage> pages, int collectionSize) {
@@ -1367,7 +1379,10 @@ public class SubnetworkClient implements BackgroundResource {
 
   public static class ListSubnetworksPagedResponse
       extends AbstractPagedListResponse<
-          ListSubnetworksHttpRequest, SubnetworkList, Subnetwork, ListSubnetworksPage,
+          ListSubnetworksHttpRequest,
+          SubnetworkList,
+          Subnetwork,
+          ListSubnetworksPage,
           ListSubnetworksFixedSizeCollection> {
 
     public static ApiFuture<ListSubnetworksPagedResponse> createAsync(
@@ -1421,7 +1436,10 @@ public class SubnetworkClient implements BackgroundResource {
 
   public static class ListSubnetworksFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListSubnetworksHttpRequest, SubnetworkList, Subnetwork, ListSubnetworksPage,
+          ListSubnetworksHttpRequest,
+          SubnetworkList,
+          Subnetwork,
+          ListSubnetworksPage,
           ListSubnetworksFixedSizeCollection> {
 
     private ListSubnetworksFixedSizeCollection(
@@ -1442,8 +1460,11 @@ public class SubnetworkClient implements BackgroundResource {
 
   public static class ListUsableSubnetworksPagedResponse
       extends AbstractPagedListResponse<
-          ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList, UsableSubnetwork,
-          ListUsableSubnetworksPage, ListUsableSubnetworksFixedSizeCollection> {
+          ListUsableSubnetworksHttpRequest,
+          UsableSubnetworksAggregatedList,
+          UsableSubnetwork,
+          ListUsableSubnetworksPage,
+          ListUsableSubnetworksFixedSizeCollection> {
 
     public static ApiFuture<ListUsableSubnetworksPagedResponse> createAsync(
         PageContext<
@@ -1469,7 +1490,9 @@ public class SubnetworkClient implements BackgroundResource {
 
   public static class ListUsableSubnetworksPage
       extends AbstractPage<
-          ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList, UsableSubnetwork,
+          ListUsableSubnetworksHttpRequest,
+          UsableSubnetworksAggregatedList,
+          UsableSubnetwork,
           ListUsableSubnetworksPage> {
 
     private ListUsableSubnetworksPage(
@@ -1505,8 +1528,11 @@ public class SubnetworkClient implements BackgroundResource {
 
   public static class ListUsableSubnetworksFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList, UsableSubnetwork,
-          ListUsableSubnetworksPage, ListUsableSubnetworksFixedSizeCollection> {
+          ListUsableSubnetworksHttpRequest,
+          UsableSubnetworksAggregatedList,
+          UsableSubnetwork,
+          ListUsableSubnetworksPage,
+          ListUsableSubnetworksFixedSizeCollection> {
 
     private ListUsableSubnetworksFixedSizeCollection(
         List<ListUsableSubnetworksPage> pages, int collectionSize) {

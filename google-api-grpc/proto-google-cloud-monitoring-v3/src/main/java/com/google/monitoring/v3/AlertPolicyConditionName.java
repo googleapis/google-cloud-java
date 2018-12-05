@@ -14,20 +14,21 @@
 
 package com.google.monitoring.v3;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class AlertPolicyConditionName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/alertPolicies/{alert_policy}/conditions/{condition}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/alertPolicies/{alert_policy}/conditions/{condition}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -63,19 +64,19 @@ public class AlertPolicyConditionName implements ResourceName {
 
   public static AlertPolicyConditionName of(String project, String alertPolicy, String condition) {
     return newBuilder()
-      .setProject(project)
-      .setAlertPolicy(alertPolicy)
-      .setCondition(condition)
-      .build();
+        .setProject(project)
+        .setAlertPolicy(alertPolicy)
+        .setCondition(condition)
+        .build();
   }
 
   public static String format(String project, String alertPolicy, String condition) {
     return newBuilder()
-      .setProject(project)
-      .setAlertPolicy(alertPolicy)
-      .setCondition(condition)
-      .build()
-      .toString();
+        .setProject(project)
+        .setAlertPolicy(alertPolicy)
+        .setCondition(condition)
+        .build()
+        .toString();
   }
 
   public static AlertPolicyConditionName parse(String formattedString) {
@@ -83,7 +84,8 @@ public class AlertPolicyConditionName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "AlertPolicyConditionName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "AlertPolicyConditionName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("alert_policy"), matchMap.get("condition"));
   }
 
@@ -132,7 +134,8 @@ public class AlertPolicyConditionName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "alert_policy", alertPolicy, "condition", condition);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "alert_policy", alertPolicy, "condition", condition);
   }
 
   /** Builder for AlertPolicyConditionName. */
@@ -169,8 +172,7 @@ public class AlertPolicyConditionName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(AlertPolicyConditionName alertPolicyConditionName) {
       project = alertPolicyConditionName.project;
@@ -209,4 +211,3 @@ public class AlertPolicyConditionName implements ResourceName {
     return h;
   }
 }
-

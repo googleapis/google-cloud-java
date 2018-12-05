@@ -29,18 +29,19 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Monitored resource construction utilities to detect resource type and add labels.
- * Used by logging framework adapters to configure default resource.
- * See usage in {@link LoggingHandler}.
+ * Monitored resource construction utilities to detect resource type and add labels. Used by logging
+ * framework adapters to configure default resource. See usage in {@link LoggingHandler}.
  */
 public class MonitoredResourceUtil {
 
   private enum Label {
     AppId("app_id"),
     ClusterName("cluster_name"),
+    ContainerName("container_name"),
     InstanceId("instance_id"),
     InstanceName("instance_name"),
     ModuleId("module_id"),
+    NamespaceId("namespace_id"),
     PodId("pod_id"),
     ProjectId("project_id"),
     VersionId("version_id"),
@@ -84,14 +85,15 @@ public class MonitoredResourceUtil {
           .putAll(
               Resource.Container.getKey(),
               Label.ClusterName,
+              Label.ContainerName,
               Label.InstanceId,
+              Label.NamespaceId,
               Label.PodId,
               Label.Zone)
           .putAll(Resource.GceInstance.getKey(), Label.InstanceId, Label.Zone)
           .build();
 
-  private MonitoredResourceUtil() {
-  }
+  private MonitoredResourceUtil() {}
 
   /* Return a self-configured monitored Resource. */
   public static MonitoredResource getResource(String projectId, String resourceTypeParam) {
@@ -101,7 +103,8 @@ public class MonitoredResourceUtil {
       resourceType = detectedResourceType.getKey();
     }
     // Currently, "gae_app" is the supported logging Resource type, but we distinguish
-    // between "gae_app_flex", "gae_app_standard" to support zone id, instance name logging on flex VMs.
+    // between "gae_app_flex", "gae_app_standard" to support zone id, instance name logging on flex
+    // VMs.
     // Hence, "gae_app_flex", "gae_app_standard" are trimmed to "gae_app"
     String resourceName = resourceType.startsWith("gae_app") ? "gae_app" : resourceType;
     MonitoredResource.Builder builder =
@@ -135,6 +138,9 @@ public class MonitoredResourceUtil {
       case ClusterName:
         value = MetadataConfig.getClusterName();
         break;
+      case ContainerName:
+        value = MetadataConfig.getContainerName();
+        break;
       case InstanceId:
         value = MetadataConfig.getInstanceId();
         break;
@@ -143,6 +149,9 @@ public class MonitoredResourceUtil {
         break;
       case ModuleId:
         value = getAppEngineModuleId();
+        break;
+      case NamespaceId:
+        value = MetadataConfig.getNamespaceId();
         break;
       case PodId:
         value = System.getenv("HOSTNAME");
@@ -193,10 +202,11 @@ public class MonitoredResourceUtil {
   private static List<LoggingEnhancer> createEnhancers(Resource resourceType) {
     List<LoggingEnhancer> enhancers = new ArrayList<>(2);
     switch (resourceType) {
-      // Trace logging enhancer is supported on GAE Flex and Standard.
+        // Trace logging enhancer is supported on GAE Flex and Standard.
       case GaeAppFlex:
-        enhancers.add(new LabelLoggingEnhancer(
-            APPENGINE_LABEL_PREFIX, Collections.singletonList(Label.InstanceName)));
+        enhancers.add(
+            new LabelLoggingEnhancer(
+                APPENGINE_LABEL_PREFIX, Collections.singletonList(Label.InstanceName)));
         enhancers.add(new TraceLoggingEnhancer(APPENGINE_LABEL_PREFIX));
         break;
       case GaeAppStandard:
@@ -209,9 +219,9 @@ public class MonitoredResourceUtil {
   }
 
   /**
-   * Adds additional resource-based labels to log entries.
-   * Labels that can be provided with {@link MonitoredResource.Builder#addLabel(String, String)}
-   * are restricted to a supported set per resource.
+   * Adds additional resource-based labels to log entries. Labels that can be provided with {@link
+   * MonitoredResource.Builder#addLabel(String, String)} are restricted to a supported set per
+   * resource.
    *
    * @see <a href="https://cloud.google.com/logging/docs/api/v2/resource-list">Logging Labels</a>
    */
@@ -225,8 +235,8 @@ public class MonitoredResourceUtil {
         for (Label labelName : labelNames) {
           String labelValue = MonitoredResourceUtil.getValue(labelName);
           if (labelValue != null) {
-            String fullLabelName = (prefix != null) ?
-                prefix + labelName.getKey() : labelName.getKey();
+            String fullLabelName =
+                (prefix != null) ? prefix + labelName.getKey() : labelName.getKey();
             labels.put(fullLabelName, labelValue);
           }
         }

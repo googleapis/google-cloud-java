@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface InstanceOrBuilder extends
+public interface InstanceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Instance)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The unique name of the instance. Values are of the form
@@ -18,6 +21,8 @@ public interface InstanceOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The unique name of the instance. Values are of the form
@@ -26,10 +31,11 @@ public interface InstanceOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The descriptive name for this instance as it appears in UIs.
    * Can be changed at any time, but should be kept globally unique
@@ -40,6 +46,8 @@ public interface InstanceOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * The descriptive name for this instance as it appears in UIs.
    * Can be changed at any time, but should be kept globally unique
@@ -48,10 +56,11 @@ public interface InstanceOrBuilder extends
    *
    * <code>string display_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The current state of the instance.
@@ -61,6 +70,8 @@ public interface InstanceOrBuilder extends
    */
   int getStateValue();
   /**
+   *
+   *
    * <pre>
    * (`OutputOnly`)
    * The current state of the instance.
@@ -71,6 +82,8 @@ public interface InstanceOrBuilder extends
   com.google.bigtable.admin.v2.Instance.State getState();
 
   /**
+   *
+   *
    * <pre>
    * The type of the instance. Defaults to `PRODUCTION`.
    * </pre>
@@ -79,6 +92,8 @@ public interface InstanceOrBuilder extends
    */
   int getTypeValue();
   /**
+   *
+   *
    * <pre>
    * The type of the instance. Defaults to `PRODUCTION`.
    * </pre>
@@ -88,6 +103,8 @@ public interface InstanceOrBuilder extends
   com.google.bigtable.admin.v2.Instance.Type getType();
 
   /**
+   *
+   *
    * <pre>
    * Labels are a flexible and lightweight mechanism for organizing cloud
    * resources into groups that reflect a customer's organizational needs and
@@ -105,6 +122,8 @@ public interface InstanceOrBuilder extends
    */
   int getLabelsCount();
   /**
+   *
+   *
    * <pre>
    * Labels are a flexible and lightweight mechanism for organizing cloud
    * resources into groups that reflect a customer's organizational needs and
@@ -120,15 +139,13 @@ public interface InstanceOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
-  boolean containsLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabels();
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
   /**
+   *
+   *
    * <pre>
    * Labels are a flexible and lightweight mechanism for organizing cloud
    * resources into groups that reflect a customer's organizational needs and
@@ -144,9 +161,10 @@ public interface InstanceOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
+   *
+   *
    * <pre>
    * Labels are a flexible and lightweight mechanism for organizing cloud
    * resources into groups that reflect a customer's organizational needs and
@@ -162,11 +180,10 @@ public interface InstanceOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
-
-  java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Labels are a flexible and lightweight mechanism for organizing cloud
    * resources into groups that reflect a customer's organizational needs and
@@ -182,7 +199,5 @@ public interface InstanceOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
-
-  java.lang.String getLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 }

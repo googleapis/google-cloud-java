@@ -19,18 +19,16 @@ package com.google.cloud.translate;
 import com.google.api.services.translate.model.LanguagesResource;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Information about a language supported by Google Translation. Objects of this class contain
- * the language's code and the language name.
+ * Information about a language supported by Google Translation. Objects of this class contain the
+ * language's code and the language name.
  *
  * @see <a href="https://cloud.google.com/translate/v2/discovering-supported-languages-with-rest">
  *     Discovering Supported Languages</a>
- * @see <a href="https://cloud.google.com/translate/docs/languages">
- *     Supported Languages</a>
+ * @see <a href="https://cloud.google.com/translate/docs/languages">Supported Languages</a>
  */
 public class Language implements Serializable {
 
@@ -51,28 +49,19 @@ public class Language implements Serializable {
     this.name = name;
   }
 
-
-  /**
-   * Returns the code of the language.
-   */
+  /** Returns the code of the language. */
   public String getCode() {
     return code;
   }
 
-
-  /**
-   * Returns the name of the language.
-   */
+  /** Returns the name of the language. */
   public String getName() {
     return name;
   }
 
   @Override
   public String toString() {
-    return MoreObjects.toStringHelper(this)
-        .add("code", code)
-        .add("name", name)
-        .toString();
+    return MoreObjects.toStringHelper(this).add("code", code).add("name", name).toString();
   }
 
   @Override
@@ -89,8 +78,7 @@ public class Language implements Serializable {
       return false;
     }
     Language other = (Language) obj;
-    return Objects.equals(code, other.code)
-        && Objects.equals(name, other.name);
+    return Objects.equals(code, other.code) && Objects.equals(name, other.name);
   }
 
   static Language fromPb(LanguagesResource languagePb) {

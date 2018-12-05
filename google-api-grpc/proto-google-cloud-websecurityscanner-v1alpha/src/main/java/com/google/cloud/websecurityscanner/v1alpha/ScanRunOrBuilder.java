@@ -3,11 +3,14 @@
 
 package com.google.cloud.websecurityscanner.v1alpha;
 
-public interface ScanRunOrBuilder extends
+public interface ScanRunOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1alpha.ScanRun)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The resource name of the ScanRun. The name follows the format of
@@ -19,6 +22,8 @@ public interface ScanRunOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The resource name of the ScanRun. The name follows the format of
@@ -28,29 +33,36 @@ public interface ScanRunOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The execution state of the ScanRun.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;</code>
+   * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;
+   * </code>
    */
   int getExecutionStateValue();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The execution state of the ScanRun.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;</code>
+   * <code>.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState execution_state = 2;
+   * </code>
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState getExecutionState();
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The result state of the ScanRun. This field is only available after the
@@ -61,6 +73,8 @@ public interface ScanRunOrBuilder extends
    */
   int getResultStateValue();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The result state of the ScanRun. This field is only available after the
@@ -72,6 +86,8 @@ public interface ScanRunOrBuilder extends
   com.google.cloud.websecurityscanner.v1alpha.ScanRun.ResultState getResultState();
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The time at which the ScanRun started.
@@ -81,6 +97,8 @@ public interface ScanRunOrBuilder extends
    */
   boolean hasStartTime();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The time at which the ScanRun started.
@@ -90,6 +108,8 @@ public interface ScanRunOrBuilder extends
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The time at which the ScanRun started.
@@ -100,6 +120,8 @@ public interface ScanRunOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The time at which the ScanRun reached termination state - that the ScanRun
@@ -110,6 +132,8 @@ public interface ScanRunOrBuilder extends
    */
   boolean hasEndTime();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The time at which the ScanRun reached termination state - that the ScanRun
@@ -120,6 +144,8 @@ public interface ScanRunOrBuilder extends
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The time at which the ScanRun reached termination state - that the ScanRun
@@ -131,6 +157,8 @@ public interface ScanRunOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The number of URLs crawled during this ScanRun. If the scan is in progress,
@@ -142,6 +170,8 @@ public interface ScanRunOrBuilder extends
   long getUrlsCrawledCount();
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The number of URLs tested during this ScanRun. If the scan is in progress,
@@ -155,6 +185,8 @@ public interface ScanRunOrBuilder extends
   long getUrlsTestedCount();
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Whether the scan run has found any vulnerabilities.
@@ -165,6 +197,8 @@ public interface ScanRunOrBuilder extends
   boolean getHasVulnerabilities();
 
   /**
+   *
+   *
    * <pre>
    * Output only.
    * The percentage of total completion ranging from 0 to 100.

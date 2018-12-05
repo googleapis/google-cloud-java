@@ -14,13 +14,13 @@
 
 package com.google.pubsub.v1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +56,11 @@ public class ProjectSubscriptionName implements ResourceName {
   }
 
   public static ProjectSubscriptionName of(String project, String subscription) {
-    return newBuilder()
-      .setProject(project)
-      .setSubscription(subscription)
-      .build();
+    return newBuilder().setProject(project).setSubscription(subscription).build();
   }
 
   public static String format(String project, String subscription) {
-    return newBuilder()
-      .setProject(project)
-      .setSubscription(subscription)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setSubscription(subscription).build().toString();
   }
 
   public static ProjectSubscriptionName parse(String formattedString) {
@@ -75,7 +68,8 @@ public class ProjectSubscriptionName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectSubscriptionName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ProjectSubscriptionName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("subscription"));
   }
 
@@ -150,8 +144,7 @@ public class ProjectSubscriptionName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ProjectSubscriptionName projectSubscriptionName) {
       project = projectSubscriptionName.project;
@@ -170,8 +163,7 @@ public class ProjectSubscriptionName implements ResourceName {
     }
     if (o instanceof ProjectSubscriptionName) {
       ProjectSubscriptionName that = (ProjectSubscriptionName) o;
-      return (this.project.equals(that.project))
-          && (this.subscription.equals(that.subscription));
+      return (this.project.equals(that.project)) && (this.subscription.equals(that.subscription));
     }
     return false;
   }
@@ -186,4 +178,3 @@ public class ProjectSubscriptionName implements ResourceName {
     return h;
   }
 }
-

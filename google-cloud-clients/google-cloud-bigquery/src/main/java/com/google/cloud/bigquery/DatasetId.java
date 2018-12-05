@@ -19,13 +19,10 @@ package com.google.cloud.bigquery;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.bigquery.model.DatasetReference;
-
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * Google BigQuery Dataset identity.
- */
+/** Google BigQuery Dataset identity. */
 public final class DatasetId implements Serializable {
 
   private static final long serialVersionUID = -6186254820908152300L;
@@ -33,18 +30,12 @@ public final class DatasetId implements Serializable {
   private final String project;
   private final String dataset;
 
-
-  /**
-   * Returns project's user-defined id.
-   */
+  /** Returns project's user-defined id. */
   public String getProject() {
     return project;
   }
 
-
-  /**
-   * Returns dataset's user-defined id.
-   */
+  /** Returns dataset's user-defined id. */
   public String getDataset() {
     return dataset;
   }
@@ -54,16 +45,12 @@ public final class DatasetId implements Serializable {
     this.dataset = dataset;
   }
 
-  /**
-   * Creates a dataset identity given project's and dataset's user-defined ids.
-   */
+  /** Creates a dataset identity given project's and dataset's user-defined ids. */
   public static DatasetId of(String project, String dataset) {
     return new DatasetId(checkNotNull(project), checkNotNull(dataset));
   }
 
-  /**
-   * Creates a dataset identity given only its user-defined id.
-   */
+  /** Creates a dataset identity given only its user-defined id. */
   public static DatasetId of(String dataset) {
     return new DatasetId(null, checkNotNull(dataset));
   }
@@ -71,8 +58,7 @@ public final class DatasetId implements Serializable {
   @Override
   public boolean equals(Object obj) {
     return obj == this
-        || obj instanceof DatasetId
-        && Objects.equals(toPb(), ((DatasetId) obj).toPb());
+        || obj instanceof DatasetId && Objects.equals(toPb(), ((DatasetId) obj).toPb());
   }
 
   @Override
@@ -94,8 +80,6 @@ public final class DatasetId implements Serializable {
   }
 
   static DatasetId fromPb(DatasetReference datasetRef) {
-    return new DatasetId(
-        datasetRef.getProjectId(),
-        datasetRef.getDatasetId());
+    return new DatasetId(datasetRef.getProjectId(), datasetRef.getDatasetId());
   }
 }

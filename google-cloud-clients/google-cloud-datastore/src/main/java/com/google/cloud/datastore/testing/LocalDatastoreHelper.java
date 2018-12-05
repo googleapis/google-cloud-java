@@ -79,7 +79,9 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
   }
 
   private LocalDatastoreHelper(double consistency) {
-    super("datastore", BaseEmulatorHelper.findAvailablePort(DEFAULT_PORT),
+    super(
+        "datastore",
+        BaseEmulatorHelper.findAvailablePort(DEFAULT_PORT),
         PROJECT_ID_PREFIX + UUID.randomUUID().toString());
     Path tmpDirectory = null;
     try {
@@ -129,7 +131,6 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
         .setRetrySettings(ServiceOptions.getNoRetrySettings());
   }
 
-
   /**
    * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
    * localhost.
@@ -139,7 +140,6 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     return optionsBuilder().build();
   }
 
-
   /**
    * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
    * localhost. The default namespace is set to {@code namespace}.
@@ -148,11 +148,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     return optionsBuilder().setNamespace(namespace).build();
   }
 
-
-
-  /**
-   * Returns the consistency setting for the local Datastore emulator.
-   */
+  /** Returns the consistency setting for the local Datastore emulator. */
   public double getConsistency() {
     return consistency;
   }
@@ -161,10 +157,9 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
    * Creates a local Datastore helper with the specified settings for project ID and consistency.
    *
    * @param consistency the fraction of Datastore writes that are immediately visible to global
-   *     queries, with 0.0 meaning no writes are immediately visible and 1.0 meaning all writes
-   *     are immediately visible. Note that setting this to 1.0 may mask incorrect assumptions
-   *     about the consistency of non-ancestor queries; non-ancestor queries are eventually
-   *     consistent.
+   *     queries, with 0.0 meaning no writes are immediately visible and 1.0 meaning all writes are
+   *     immediately visible. Note that setting this to 1.0 may mask incorrect assumptions about the
+   *     consistency of non-ancestor queries; non-ancestor queries are eventually consistent.
    */
   public static LocalDatastoreHelper create(double consistency) {
     return new LocalDatastoreHelper(consistency);
@@ -238,18 +233,21 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     if (path == null || !Files.exists(path)) {
       return;
     }
-    Files.walkFileTree(path, new SimpleFileVisitor<Path>() {
-      @Override
-      public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
-        Files.delete(dir);
-        return FileVisitResult.CONTINUE;
-      }
+    Files.walkFileTree(
+        path,
+        new SimpleFileVisitor<Path>() {
+          @Override
+          public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+            Files.delete(dir);
+            return FileVisitResult.CONTINUE;
+          }
 
-      @Override
-      public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-        Files.delete(file);
-        return FileVisitResult.CONTINUE;
-      }
-    });
+          @Override
+          public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
+              throws IOException {
+            Files.delete(file);
+            return FileVisitResult.CONTINUE;
+          }
+        });
   }
 }

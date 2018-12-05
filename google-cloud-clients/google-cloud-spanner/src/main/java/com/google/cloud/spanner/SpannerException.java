@@ -76,5 +76,4 @@ public class SpannerException extends BaseGrpcServiceException {
     }
     return -1L;
   }
-
 }

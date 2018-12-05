@@ -117,7 +117,8 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
   private final PagedCallSettings<ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
       listTopicsSettings;
   private final PagedCallSettings<
-          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+          ListTopicSubscriptionsRequest,
+          ListTopicSubscriptionsResponse,
           ListTopicSubscriptionsPagedResponse>
       listTopicSubscriptionsSettings;
   private final UnaryCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings;
@@ -154,7 +155,8 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
   /** Returns the object with the settings used for calls to listTopicSubscriptions. */
   public PagedCallSettings<
-          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+          ListTopicSubscriptionsRequest,
+          ListTopicSubscriptionsResponse,
           ListTopicSubscriptionsPagedResponse>
       listTopicSubscriptionsSettings() {
     return listTopicSubscriptionsSettings;
@@ -290,7 +292,9 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
             @Override
             public Iterable<Topic> extractResources(ListTopicsResponse payload) {
-              return payload.getTopicsList();
+              return payload.getTopicsList() != null
+                  ? payload.getTopicsList()
+                  : ImmutableList.<Topic>of();
             }
           };
 
@@ -330,7 +334,9 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
             @Override
             public Iterable<String> extractResources(ListTopicSubscriptionsResponse payload) {
-              return payload.getSubscriptionsList();
+              return payload.getSubscriptionsList() != null
+                  ? payload.getSubscriptionsList()
+                  : ImmutableList.<String>of();
             }
           };
 
@@ -352,11 +358,13 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+          ListTopicSubscriptionsRequest,
+          ListTopicSubscriptionsResponse,
           ListTopicSubscriptionsPagedResponse>
       LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+              ListTopicSubscriptionsRequest,
+              ListTopicSubscriptionsResponse,
               ListTopicSubscriptionsPagedResponse>() {
             @Override
             public ApiFuture<ListTopicSubscriptionsPagedResponse> getFuturePagedResponse(
@@ -451,7 +459,8 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
             ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
         listTopicsSettings;
     private final PagedCallSettings.Builder<
-            ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+            ListTopicSubscriptionsRequest,
+            ListTopicSubscriptionsResponse,
             ListTopicSubscriptionsPagedResponse>
         listTopicSubscriptionsSettings;
     private final UnaryCallSettings.Builder<DeleteTopicRequest, Empty> deleteTopicSettings;
@@ -468,11 +477,6 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
           ImmutableMap.builder();
       definitions.put(
           "idempotent",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "http_get",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
@@ -715,7 +719,8 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
     /** Returns the builder for the settings used for calls to listTopicSubscriptions. */
     public PagedCallSettings.Builder<
-            ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+            ListTopicSubscriptionsRequest,
+            ListTopicSubscriptionsResponse,
             ListTopicSubscriptionsPagedResponse>
         listTopicSubscriptionsSettings() {
       return listTopicSubscriptionsSettings;

@@ -3,11 +3,14 @@
 
 package com.google.cloud.kms.v1;
 
-public interface DigestOrBuilder extends
+public interface DigestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.Digest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A message digest produced with the SHA-256 algorithm.
    * </pre>
@@ -17,6 +20,8 @@ public interface DigestOrBuilder extends
   com.google.protobuf.ByteString getSha256();
 
   /**
+   *
+   *
    * <pre>
    * A message digest produced with the SHA-384 algorithm.
    * </pre>
@@ -26,6 +31,8 @@ public interface DigestOrBuilder extends
   com.google.protobuf.ByteString getSha384();
 
   /**
+   *
+   *
    * <pre>
    * A message digest produced with the SHA-512 algorithm.
    * </pre>

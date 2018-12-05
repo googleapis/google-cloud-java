@@ -4,6 +4,8 @@
 package com.google.cloud.videointelligence.v1p2beta1;
 
 /**
+ *
+ *
  * <pre>
  * A vertex represents a 2D point in the image.
  * NOTE: the normalized vertex coordinates are relative to the original image
@@ -12,25 +14,26 @@ package com.google.cloud.videointelligence.v1p2beta1;
  *
  * Protobuf type {@code google.cloud.videointelligence.v1p2beta1.NormalizedVertex}
  */
-public  final class NormalizedVertex extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class NormalizedVertex extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p2beta1.NormalizedVertex)
     NormalizedVertexOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use NormalizedVertex.newBuilder() to construct.
   private NormalizedVertex(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private NormalizedVertex() {
     x_ = 0F;
     y_ = 0F;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private NormalizedVertex(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,51 +53,55 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 13: {
-
-            x_ = input.readFloat();
-            break;
-          }
-          case 21: {
-
-            y_ = input.readFloat();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 13:
+            {
+              x_ = input.readFloat();
+              break;
             }
-            break;
-          }
+          case 21:
+            {
+              y_ = input.readFloat();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p2beta1_NormalizedVertex_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1p2beta1_NormalizedVertex_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p2beta1_NormalizedVertex_fieldAccessorTable
+    return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1p2beta1_NormalizedVertex_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex.class, com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex.Builder.class);
+            com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex.class,
+            com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex.Builder.class);
   }
 
   public static final int X_FIELD_NUMBER = 1;
   private float x_;
   /**
+   *
+   *
    * <pre>
    * X coordinate.
    * </pre>
@@ -108,6 +115,8 @@ private static final long serialVersionUID = 0L;
   public static final int Y_FIELD_NUMBER = 2;
   private float y_;
   /**
+   *
+   *
    * <pre>
    * Y coordinate.
    * </pre>
@@ -119,6 +128,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -130,8 +140,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (x_ != 0F) {
       output.writeFloat(1, x_);
     }
@@ -148,12 +157,10 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (x_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(1, x_);
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, x_);
     }
     if (y_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(2, y_);
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, y_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -163,22 +170,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex)) {
       return super.equals(obj);
     }
-    com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex other = (com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex) obj;
+    com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex other =
+        (com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex) obj;
 
     boolean result = true;
-    result = result && (
-        java.lang.Float.floatToIntBits(getX())
-        == java.lang.Float.floatToIntBits(
-            other.getX()));
-    result = result && (
-        java.lang.Float.floatToIntBits(getY())
-        == java.lang.Float.floatToIntBits(
-            other.getY()));
+    result =
+        result
+            && (java.lang.Float.floatToIntBits(getX())
+                == java.lang.Float.floatToIntBits(other.getX()));
+    result =
+        result
+            && (java.lang.Float.floatToIntBits(getY())
+                == java.lang.Float.floatToIntBits(other.getY()));
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -191,107 +199,113 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + X_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getX());
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getX());
     hash = (37 * hash) + Y_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getY());
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getY());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
   public static com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A vertex represents a 2D point in the image.
    * NOTE: the normalized vertex coordinates are relative to the original image
@@ -300,21 +314,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.videointelligence.v1p2beta1.NormalizedVertex}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.videointelligence.v1p2beta1.NormalizedVertex)
       com.google.cloud.videointelligence.v1p2beta1.NormalizedVertexOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p2beta1_NormalizedVertex_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1p2beta1_NormalizedVertex_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p2beta1_NormalizedVertex_fieldAccessorTable
+      return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1p2beta1_NormalizedVertex_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex.class, com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex.Builder.class);
+              com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex.class,
+              com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex.Builder.class);
     }
 
     // Construct using com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex.newBuilder()
@@ -322,16 +338,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -343,13 +358,14 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p2beta1_NormalizedVertex_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.videointelligence.v1p2beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1p2beta1_NormalizedVertex_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex getDefaultInstanceForType() {
+    public com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex
+        getDefaultInstanceForType() {
       return com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex.getDefaultInstance();
     }
 
@@ -364,7 +380,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex buildPartial() {
-      com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex result = new com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex(this);
+      com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex result =
+          new com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex(this);
       result.x_ = x_;
       result.y_ = y_;
       onBuilt();
@@ -375,38 +392,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex) {
-        return mergeFrom((com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex)other);
+        return mergeFrom((com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -414,7 +432,9 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex other) {
-      if (other == com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex.getDefaultInstance()) return this;
+      if (other
+          == com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex.getDefaultInstance())
+        return this;
       if (other.getX() != 0F) {
         setX(other.getX());
       }
@@ -440,7 +460,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -450,8 +472,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private float x_ ;
+    private float x_;
     /**
+     *
+     *
      * <pre>
      * X coordinate.
      * </pre>
@@ -462,6 +486,8 @@ private static final long serialVersionUID = 0L;
       return x_;
     }
     /**
+     *
+     *
      * <pre>
      * X coordinate.
      * </pre>
@@ -469,12 +495,14 @@ private static final long serialVersionUID = 0L;
      * <code>float x = 1;</code>
      */
     public Builder setX(float value) {
-      
+
       x_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * X coordinate.
      * </pre>
@@ -482,14 +510,16 @@ private static final long serialVersionUID = 0L;
      * <code>float x = 1;</code>
      */
     public Builder clearX() {
-      
+
       x_ = 0F;
       onChanged();
       return this;
     }
 
-    private float y_ ;
+    private float y_;
     /**
+     *
+     *
      * <pre>
      * Y coordinate.
      * </pre>
@@ -500,6 +530,8 @@ private static final long serialVersionUID = 0L;
       return y_;
     }
     /**
+     *
+     *
      * <pre>
      * Y coordinate.
      * </pre>
@@ -507,12 +539,14 @@ private static final long serialVersionUID = 0L;
      * <code>float y = 2;</code>
      */
     public Builder setY(float value) {
-      
+
       y_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Y coordinate.
      * </pre>
@@ -520,14 +554,14 @@ private static final long serialVersionUID = 0L;
      * <code>float y = 2;</code>
      */
     public Builder clearY() {
-      
+
       y_ = 0F;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -537,12 +571,13 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.videointelligence.v1p2beta1.NormalizedVertex)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.videointelligence.v1p2beta1.NormalizedVertex)
-  private static final com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex DEFAULT_INSTANCE;
+  private static final com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex();
   }
@@ -551,16 +586,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<NormalizedVertex>
-      PARSER = new com.google.protobuf.AbstractParser<NormalizedVertex>() {
-    @java.lang.Override
-    public NormalizedVertex parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new NormalizedVertex(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<NormalizedVertex> PARSER =
+      new com.google.protobuf.AbstractParser<NormalizedVertex>() {
+        @java.lang.Override
+        public NormalizedVertex parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new NormalizedVertex(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<NormalizedVertex> parser() {
     return PARSER;
@@ -575,6 +610,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.videointelligence.v1p2beta1.NormalizedVertex getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -253,7 +253,8 @@ public class InstanceAdminSettings extends ClientSettings<InstanceAdminSettings>
 
     /** Returns the builder for the settings used for calls to listInstanceConfigs. */
     public PagedCallSettings.Builder<
-            ListInstanceConfigsRequest, ListInstanceConfigsResponse,
+            ListInstanceConfigsRequest,
+            ListInstanceConfigsResponse,
             ListInstanceConfigsPagedResponse>
         listInstanceConfigsSettings() {
       return getStubSettingsBuilder().listInstanceConfigsSettings();

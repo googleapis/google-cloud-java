@@ -4,31 +4,34 @@
 package com.google.cloud.automl.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Dataset metadata that is specific to translation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.TranslationDatasetMetadata}
  */
-public  final class TranslationDatasetMetadata extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class TranslationDatasetMetadata extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.TranslationDatasetMetadata)
     TranslationDatasetMetadataOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use TranslationDatasetMetadata.newBuilder() to construct.
   private TranslationDatasetMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private TranslationDatasetMetadata() {
     sourceLanguageCode_ = "";
     targetLanguageCode_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private TranslationDatasetMetadata(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -48,53 +51,59 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            sourceLanguageCode_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            targetLanguageCode_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              sourceLanguageCode_ = s;
+              break;
             }
-            break;
-          }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              targetLanguageCode_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.automl.v1beta1.TranslationProto.internal_static_google_cloud_automl_v1beta1_TranslationDatasetMetadata_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.automl.v1beta1.TranslationProto
+        .internal_static_google_cloud_automl_v1beta1_TranslationDatasetMetadata_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.automl.v1beta1.TranslationProto.internal_static_google_cloud_automl_v1beta1_TranslationDatasetMetadata_fieldAccessorTable
+    return com.google.cloud.automl.v1beta1.TranslationProto
+        .internal_static_google_cloud_automl_v1beta1_TranslationDatasetMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.automl.v1beta1.TranslationDatasetMetadata.class, com.google.cloud.automl.v1beta1.TranslationDatasetMetadata.Builder.class);
+            com.google.cloud.automl.v1beta1.TranslationDatasetMetadata.class,
+            com.google.cloud.automl.v1beta1.TranslationDatasetMetadata.Builder.class);
   }
 
   public static final int SOURCE_LANGUAGE_CODE_FIELD_NUMBER = 1;
   private volatile java.lang.Object sourceLanguageCode_;
   /**
+   *
+   *
    * <pre>
    * Required. The BCP-47 language code of the source language.
    * </pre>
@@ -106,27 +115,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       sourceLanguageCode_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The BCP-47 language code of the source language.
    * </pre>
    *
    * <code>string source_language_code = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getSourceLanguageCodeBytes() {
+  public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
     java.lang.Object ref = sourceLanguageCode_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       sourceLanguageCode_ = b;
       return b;
     } else {
@@ -137,6 +145,8 @@ private static final long serialVersionUID = 0L;
   public static final int TARGET_LANGUAGE_CODE_FIELD_NUMBER = 2;
   private volatile java.lang.Object targetLanguageCode_;
   /**
+   *
+   *
    * <pre>
    * Required. The BCP-47 language code of the target language.
    * </pre>
@@ -148,27 +158,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       targetLanguageCode_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The BCP-47 language code of the target language.
    * </pre>
    *
    * <code>string target_language_code = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getTargetLanguageCodeBytes() {
+  public com.google.protobuf.ByteString getTargetLanguageCodeBytes() {
     java.lang.Object ref = targetLanguageCode_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       targetLanguageCode_ = b;
       return b;
     } else {
@@ -177,6 +186,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -188,8 +198,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getSourceLanguageCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sourceLanguageCode_);
     }
@@ -219,18 +228,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.automl.v1beta1.TranslationDatasetMetadata)) {
       return super.equals(obj);
     }
-    com.google.cloud.automl.v1beta1.TranslationDatasetMetadata other = (com.google.cloud.automl.v1beta1.TranslationDatasetMetadata) obj;
+    com.google.cloud.automl.v1beta1.TranslationDatasetMetadata other =
+        (com.google.cloud.automl.v1beta1.TranslationDatasetMetadata) obj;
 
     boolean result = true;
-    result = result && getSourceLanguageCode()
-        .equals(other.getSourceLanguageCode());
-    result = result && getTargetLanguageCode()
-        .equals(other.getTargetLanguageCode());
+    result = result && getSourceLanguageCode().equals(other.getSourceLanguageCode());
+    result = result && getTargetLanguageCode().equals(other.getTargetLanguageCode());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -252,117 +260,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.automl.v1beta1.TranslationDatasetMetadata parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.TranslationDatasetMetadata parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.TranslationDatasetMetadata parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.TranslationDatasetMetadata parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.TranslationDatasetMetadata parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.TranslationDatasetMetadata parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.automl.v1beta1.TranslationDatasetMetadata parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.automl.v1beta1.TranslationDatasetMetadata parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.automl.v1beta1.TranslationDatasetMetadata parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.automl.v1beta1.TranslationDatasetMetadata parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.TranslationDatasetMetadata parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.automl.v1beta1.TranslationDatasetMetadata parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.automl.v1beta1.TranslationDatasetMetadata parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.automl.v1beta1.TranslationDatasetMetadata parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.automl.v1beta1.TranslationDatasetMetadata prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.automl.v1beta1.TranslationDatasetMetadata prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Dataset metadata that is specific to translation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.TranslationDatasetMetadata}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.automl.v1beta1.TranslationDatasetMetadata)
       com.google.cloud.automl.v1beta1.TranslationDatasetMetadataOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.automl.v1beta1.TranslationProto.internal_static_google_cloud_automl_v1beta1_TranslationDatasetMetadata_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.automl.v1beta1.TranslationProto
+          .internal_static_google_cloud_automl_v1beta1_TranslationDatasetMetadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.automl.v1beta1.TranslationProto.internal_static_google_cloud_automl_v1beta1_TranslationDatasetMetadata_fieldAccessorTable
+      return com.google.cloud.automl.v1beta1.TranslationProto
+          .internal_static_google_cloud_automl_v1beta1_TranslationDatasetMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.automl.v1beta1.TranslationDatasetMetadata.class, com.google.cloud.automl.v1beta1.TranslationDatasetMetadata.Builder.class);
+              com.google.cloud.automl.v1beta1.TranslationDatasetMetadata.class,
+              com.google.cloud.automl.v1beta1.TranslationDatasetMetadata.Builder.class);
     }
 
     // Construct using com.google.cloud.automl.v1beta1.TranslationDatasetMetadata.newBuilder()
@@ -370,16 +388,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -391,9 +408,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.automl.v1beta1.TranslationProto.internal_static_google_cloud_automl_v1beta1_TranslationDatasetMetadata_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.automl.v1beta1.TranslationProto
+          .internal_static_google_cloud_automl_v1beta1_TranslationDatasetMetadata_descriptor;
     }
 
     @java.lang.Override
@@ -412,7 +429,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.automl.v1beta1.TranslationDatasetMetadata buildPartial() {
-      com.google.cloud.automl.v1beta1.TranslationDatasetMetadata result = new com.google.cloud.automl.v1beta1.TranslationDatasetMetadata(this);
+      com.google.cloud.automl.v1beta1.TranslationDatasetMetadata result =
+          new com.google.cloud.automl.v1beta1.TranslationDatasetMetadata(this);
       result.sourceLanguageCode_ = sourceLanguageCode_;
       result.targetLanguageCode_ = targetLanguageCode_;
       onBuilt();
@@ -423,38 +441,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.automl.v1beta1.TranslationDatasetMetadata) {
-        return mergeFrom((com.google.cloud.automl.v1beta1.TranslationDatasetMetadata)other);
+        return mergeFrom((com.google.cloud.automl.v1beta1.TranslationDatasetMetadata) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -462,7 +481,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.automl.v1beta1.TranslationDatasetMetadata other) {
-      if (other == com.google.cloud.automl.v1beta1.TranslationDatasetMetadata.getDefaultInstance()) return this;
+      if (other == com.google.cloud.automl.v1beta1.TranslationDatasetMetadata.getDefaultInstance())
+        return this;
       if (!other.getSourceLanguageCode().isEmpty()) {
         sourceLanguageCode_ = other.sourceLanguageCode_;
         onChanged();
@@ -490,7 +510,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.automl.v1beta1.TranslationDatasetMetadata) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.automl.v1beta1.TranslationDatasetMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -502,6 +523,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object sourceLanguageCode_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The BCP-47 language code of the source language.
      * </pre>
@@ -511,8 +534,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSourceLanguageCode() {
       java.lang.Object ref = sourceLanguageCode_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         sourceLanguageCode_ = s;
         return s;
@@ -521,19 +543,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The BCP-47 language code of the source language.
      * </pre>
      *
      * <code>string source_language_code = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getSourceLanguageCodeBytes() {
+    public com.google.protobuf.ByteString getSourceLanguageCodeBytes() {
       java.lang.Object ref = sourceLanguageCode_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         sourceLanguageCode_ = b;
         return b;
       } else {
@@ -541,23 +563,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The BCP-47 language code of the source language.
      * </pre>
      *
      * <code>string source_language_code = 1;</code>
      */
-    public Builder setSourceLanguageCode(
-        java.lang.String value) {
+    public Builder setSourceLanguageCode(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       sourceLanguageCode_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The BCP-47 language code of the source language.
      * </pre>
@@ -565,25 +590,26 @@ private static final long serialVersionUID = 0L;
      * <code>string source_language_code = 1;</code>
      */
     public Builder clearSourceLanguageCode() {
-      
+
       sourceLanguageCode_ = getDefaultInstance().getSourceLanguageCode();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The BCP-47 language code of the source language.
      * </pre>
      *
      * <code>string source_language_code = 1;</code>
      */
-    public Builder setSourceLanguageCodeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setSourceLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       sourceLanguageCode_ = value;
       onChanged();
       return this;
@@ -591,6 +617,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object targetLanguageCode_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The BCP-47 language code of the target language.
      * </pre>
@@ -600,8 +628,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getTargetLanguageCode() {
       java.lang.Object ref = targetLanguageCode_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         targetLanguageCode_ = s;
         return s;
@@ -610,19 +637,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The BCP-47 language code of the target language.
      * </pre>
      *
      * <code>string target_language_code = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getTargetLanguageCodeBytes() {
+    public com.google.protobuf.ByteString getTargetLanguageCodeBytes() {
       java.lang.Object ref = targetLanguageCode_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         targetLanguageCode_ = b;
         return b;
       } else {
@@ -630,23 +657,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The BCP-47 language code of the target language.
      * </pre>
      *
      * <code>string target_language_code = 2;</code>
      */
-    public Builder setTargetLanguageCode(
-        java.lang.String value) {
+    public Builder setTargetLanguageCode(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       targetLanguageCode_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The BCP-47 language code of the target language.
      * </pre>
@@ -654,32 +684,33 @@ private static final long serialVersionUID = 0L;
      * <code>string target_language_code = 2;</code>
      */
     public Builder clearTargetLanguageCode() {
-      
+
       targetLanguageCode_ = getDefaultInstance().getTargetLanguageCode();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The BCP-47 language code of the target language.
      * </pre>
      *
      * <code>string target_language_code = 2;</code>
      */
-    public Builder setTargetLanguageCodeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTargetLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       targetLanguageCode_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -689,12 +720,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.automl.v1beta1.TranslationDatasetMetadata)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.automl.v1beta1.TranslationDatasetMetadata)
   private static final com.google.cloud.automl.v1beta1.TranslationDatasetMetadata DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.automl.v1beta1.TranslationDatasetMetadata();
   }
@@ -703,16 +734,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<TranslationDatasetMetadata>
-      PARSER = new com.google.protobuf.AbstractParser<TranslationDatasetMetadata>() {
-    @java.lang.Override
-    public TranslationDatasetMetadata parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new TranslationDatasetMetadata(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<TranslationDatasetMetadata> PARSER =
+      new com.google.protobuf.AbstractParser<TranslationDatasetMetadata>() {
+        @java.lang.Override
+        public TranslationDatasetMetadata parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TranslationDatasetMetadata(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<TranslationDatasetMetadata> parser() {
     return PARSER;
@@ -727,6 +758,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.automl.v1beta1.TranslationDatasetMetadata getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

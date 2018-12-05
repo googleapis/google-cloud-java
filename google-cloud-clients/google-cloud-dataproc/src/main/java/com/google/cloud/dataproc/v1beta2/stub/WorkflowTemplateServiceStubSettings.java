@@ -46,6 +46,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataproc.v1beta2.CreateWorkflowTemplateRequest;
 import com.google.cloud.dataproc.v1beta2.DeleteWorkflowTemplateRequest;
 import com.google.cloud.dataproc.v1beta2.GetWorkflowTemplateRequest;
+import com.google.cloud.dataproc.v1beta2.InstantiateInlineWorkflowTemplateRequest;
 import com.google.cloud.dataproc.v1beta2.InstantiateWorkflowTemplateRequest;
 import com.google.cloud.dataproc.v1beta2.ListWorkflowTemplatesRequest;
 import com.google.cloud.dataproc.v1beta2.ListWorkflowTemplatesResponse;
@@ -105,10 +106,16 @@ public class WorkflowTemplateServiceStubSettings
       instantiateWorkflowTemplateSettings;
   private final OperationCallSettings<InstantiateWorkflowTemplateRequest, Empty, WorkflowMetadata>
       instantiateWorkflowTemplateOperationSettings;
+  private final UnaryCallSettings<InstantiateInlineWorkflowTemplateRequest, Operation>
+      instantiateInlineWorkflowTemplateSettings;
+  private final OperationCallSettings<
+          InstantiateInlineWorkflowTemplateRequest, Empty, WorkflowMetadata>
+      instantiateInlineWorkflowTemplateOperationSettings;
   private final UnaryCallSettings<UpdateWorkflowTemplateRequest, WorkflowTemplate>
       updateWorkflowTemplateSettings;
   private final PagedCallSettings<
-          ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse,
+          ListWorkflowTemplatesRequest,
+          ListWorkflowTemplatesResponse,
           ListWorkflowTemplatesPagedResponse>
       listWorkflowTemplatesSettings;
   private final UnaryCallSettings<DeleteWorkflowTemplateRequest, Empty>
@@ -139,6 +146,19 @@ public class WorkflowTemplateServiceStubSettings
     return instantiateWorkflowTemplateOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to instantiateInlineWorkflowTemplate. */
+  public UnaryCallSettings<InstantiateInlineWorkflowTemplateRequest, Operation>
+      instantiateInlineWorkflowTemplateSettings() {
+    return instantiateInlineWorkflowTemplateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to instantiateInlineWorkflowTemplate. */
+  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public OperationCallSettings<InstantiateInlineWorkflowTemplateRequest, Empty, WorkflowMetadata>
+      instantiateInlineWorkflowTemplateOperationSettings() {
+    return instantiateInlineWorkflowTemplateOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateWorkflowTemplate. */
   public UnaryCallSettings<UpdateWorkflowTemplateRequest, WorkflowTemplate>
       updateWorkflowTemplateSettings() {
@@ -147,7 +167,8 @@ public class WorkflowTemplateServiceStubSettings
 
   /** Returns the object with the settings used for calls to listWorkflowTemplates. */
   public PagedCallSettings<
-          ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse,
+          ListWorkflowTemplatesRequest,
+          ListWorkflowTemplatesResponse,
           ListWorkflowTemplatesPagedResponse>
       listWorkflowTemplatesSettings() {
     return listWorkflowTemplatesSettings;
@@ -232,6 +253,10 @@ public class WorkflowTemplateServiceStubSettings
         settingsBuilder.instantiateWorkflowTemplateSettings().build();
     instantiateWorkflowTemplateOperationSettings =
         settingsBuilder.instantiateWorkflowTemplateOperationSettings().build();
+    instantiateInlineWorkflowTemplateSettings =
+        settingsBuilder.instantiateInlineWorkflowTemplateSettings().build();
+    instantiateInlineWorkflowTemplateOperationSettings =
+        settingsBuilder.instantiateInlineWorkflowTemplateOperationSettings().build();
     updateWorkflowTemplateSettings = settingsBuilder.updateWorkflowTemplateSettings().build();
     listWorkflowTemplatesSettings = settingsBuilder.listWorkflowTemplatesSettings().build();
     deleteWorkflowTemplateSettings = settingsBuilder.deleteWorkflowTemplateSettings().build();
@@ -279,11 +304,13 @@ public class WorkflowTemplateServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse,
+          ListWorkflowTemplatesRequest,
+          ListWorkflowTemplatesResponse,
           ListWorkflowTemplatesPagedResponse>
       LIST_WORKFLOW_TEMPLATES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse,
+              ListWorkflowTemplatesRequest,
+              ListWorkflowTemplatesResponse,
               ListWorkflowTemplatesPagedResponse>() {
             @Override
             public ApiFuture<ListWorkflowTemplatesPagedResponse> getFuturePagedResponse(
@@ -314,10 +341,16 @@ public class WorkflowTemplateServiceStubSettings
     private final OperationCallSettings.Builder<
             InstantiateWorkflowTemplateRequest, Empty, WorkflowMetadata>
         instantiateWorkflowTemplateOperationSettings;
+    private final UnaryCallSettings.Builder<InstantiateInlineWorkflowTemplateRequest, Operation>
+        instantiateInlineWorkflowTemplateSettings;
+    private final OperationCallSettings.Builder<
+            InstantiateInlineWorkflowTemplateRequest, Empty, WorkflowMetadata>
+        instantiateInlineWorkflowTemplateOperationSettings;
     private final UnaryCallSettings.Builder<UpdateWorkflowTemplateRequest, WorkflowTemplate>
         updateWorkflowTemplateSettings;
     private final PagedCallSettings.Builder<
-            ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse,
+            ListWorkflowTemplatesRequest,
+            ListWorkflowTemplatesResponse,
             ListWorkflowTemplatesPagedResponse>
         listWorkflowTemplatesSettings;
     private final UnaryCallSettings.Builder<DeleteWorkflowTemplateRequest, Empty>
@@ -333,8 +366,12 @@ public class WorkflowTemplateServiceStubSettings
           "idempotent",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+                  StatusCode.Code.DEADLINE_EXCEEDED,
+                  StatusCode.Code.INTERNAL,
+                  StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "non_idempotent",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -372,6 +409,10 @@ public class WorkflowTemplateServiceStubSettings
 
       instantiateWorkflowTemplateOperationSettings = OperationCallSettings.newBuilder();
 
+      instantiateInlineWorkflowTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      instantiateInlineWorkflowTemplateOperationSettings = OperationCallSettings.newBuilder();
+
       updateWorkflowTemplateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listWorkflowTemplatesSettings =
@@ -384,6 +425,7 @@ public class WorkflowTemplateServiceStubSettings
               createWorkflowTemplateSettings,
               getWorkflowTemplateSettings,
               instantiateWorkflowTemplateSettings,
+              instantiateInlineWorkflowTemplateSettings,
               updateWorkflowTemplateSettings,
               listWorkflowTemplatesSettings,
               deleteWorkflowTemplateSettings);
@@ -418,8 +460,13 @@ public class WorkflowTemplateServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .instantiateInlineWorkflowTemplateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .updateWorkflowTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -429,13 +476,37 @@ public class WorkflowTemplateServiceStubSettings
 
       builder
           .deleteWorkflowTemplateSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
       builder
           .instantiateWorkflowTemplateOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<InstantiateWorkflowTemplateRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(WorkflowMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(1000L))
+                      .setRetryDelayMultiplier(2.0)
+                      .setMaxRetryDelay(Duration.ofMillis(10000L))
+                      .setInitialRpcTimeout(Duration.ZERO) // ignored
+                      .setRpcTimeoutMultiplier(1.0) // ignored
+                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setTotalTimeout(Duration.ofMillis(43200000L))
+                      .build()));
+      builder
+          .instantiateInlineWorkflowTemplateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<InstantiateInlineWorkflowTemplateRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"))
@@ -468,6 +539,10 @@ public class WorkflowTemplateServiceStubSettings
           settings.instantiateWorkflowTemplateSettings.toBuilder();
       instantiateWorkflowTemplateOperationSettings =
           settings.instantiateWorkflowTemplateOperationSettings.toBuilder();
+      instantiateInlineWorkflowTemplateSettings =
+          settings.instantiateInlineWorkflowTemplateSettings.toBuilder();
+      instantiateInlineWorkflowTemplateOperationSettings =
+          settings.instantiateInlineWorkflowTemplateOperationSettings.toBuilder();
       updateWorkflowTemplateSettings = settings.updateWorkflowTemplateSettings.toBuilder();
       listWorkflowTemplatesSettings = settings.listWorkflowTemplatesSettings.toBuilder();
       deleteWorkflowTemplateSettings = settings.deleteWorkflowTemplateSettings.toBuilder();
@@ -477,6 +552,7 @@ public class WorkflowTemplateServiceStubSettings
               createWorkflowTemplateSettings,
               getWorkflowTemplateSettings,
               instantiateWorkflowTemplateSettings,
+              instantiateInlineWorkflowTemplateSettings,
               updateWorkflowTemplateSettings,
               listWorkflowTemplatesSettings,
               deleteWorkflowTemplateSettings);
@@ -525,6 +601,21 @@ public class WorkflowTemplateServiceStubSettings
       return instantiateWorkflowTemplateOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to instantiateInlineWorkflowTemplate. */
+    public UnaryCallSettings.Builder<InstantiateInlineWorkflowTemplateRequest, Operation>
+        instantiateInlineWorkflowTemplateSettings() {
+      return instantiateInlineWorkflowTemplateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to instantiateInlineWorkflowTemplate. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            InstantiateInlineWorkflowTemplateRequest, Empty, WorkflowMetadata>
+        instantiateInlineWorkflowTemplateOperationSettings() {
+      return instantiateInlineWorkflowTemplateOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to updateWorkflowTemplate. */
     public UnaryCallSettings.Builder<UpdateWorkflowTemplateRequest, WorkflowTemplate>
         updateWorkflowTemplateSettings() {
@@ -533,7 +624,8 @@ public class WorkflowTemplateServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listWorkflowTemplates. */
     public PagedCallSettings.Builder<
-            ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse,
+            ListWorkflowTemplatesRequest,
+            ListWorkflowTemplatesResponse,
             ListWorkflowTemplatesPagedResponse>
         listWorkflowTemplatesSettings() {
       return listWorkflowTemplatesSettings;

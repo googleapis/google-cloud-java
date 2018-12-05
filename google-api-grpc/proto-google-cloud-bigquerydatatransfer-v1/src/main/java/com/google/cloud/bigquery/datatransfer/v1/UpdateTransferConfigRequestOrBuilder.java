@@ -3,11 +3,14 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-public interface UpdateTransferConfigRequestOrBuilder extends
+public interface UpdateTransferConfigRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Data transfer configuration to create.
    * </pre>
@@ -16,6 +19,8 @@ public interface UpdateTransferConfigRequestOrBuilder extends
    */
   boolean hasTransferConfig();
   /**
+   *
+   *
    * <pre>
    * Data transfer configuration to create.
    * </pre>
@@ -24,6 +29,8 @@ public interface UpdateTransferConfigRequestOrBuilder extends
    */
   com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig();
   /**
+   *
+   *
    * <pre>
    * Data transfer configuration to create.
    * </pre>
@@ -33,6 +40,8 @@ public interface UpdateTransferConfigRequestOrBuilder extends
   com.google.cloud.bigquery.datatransfer.v1.TransferConfigOrBuilder getTransferConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional OAuth2 authorization code to use with this transfer configuration.
    * If it is provided, the transfer configuration will be associated with the
@@ -55,6 +64,8 @@ public interface UpdateTransferConfigRequestOrBuilder extends
    */
   java.lang.String getAuthorizationCode();
   /**
+   *
+   *
    * <pre>
    * Optional OAuth2 authorization code to use with this transfer configuration.
    * If it is provided, the transfer configuration will be associated with the
@@ -75,10 +86,11 @@ public interface UpdateTransferConfigRequestOrBuilder extends
    *
    * <code>string authorization_code = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getAuthorizationCodeBytes();
+  com.google.protobuf.ByteString getAuthorizationCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required list of fields to be updated in this request.
    * </pre>
@@ -87,6 +99,8 @@ public interface UpdateTransferConfigRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Required list of fields to be updated in this request.
    * </pre>
@@ -95,6 +109,8 @@ public interface UpdateTransferConfigRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Required list of fields to be updated in this request.
    * </pre>

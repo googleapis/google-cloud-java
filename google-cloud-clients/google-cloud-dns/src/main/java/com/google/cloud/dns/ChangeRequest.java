@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.dns.model.Change;
 import com.google.common.base.Function;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
@@ -39,9 +38,7 @@ public class ChangeRequest extends ChangeRequestInfo {
   private final String zone;
   private transient Dns dns;
 
-  /**
-   * A builder for {@code ChangeRequest}s.
-   */
+  /** A builder for {@code ChangeRequest}s. */
   public static class Builder extends ChangeRequestInfo.Builder {
 
     private final Dns dns;
@@ -54,13 +51,11 @@ public class ChangeRequest extends ChangeRequestInfo {
       this.infoBuilder = new ChangeRequestInfo.BuilderImpl(cr);
     }
 
-
     @Override
     public Builder setAdditions(List<RecordSet> additions) {
       infoBuilder.setAdditions(additions);
       return this;
     }
-
 
     @Override
     public Builder setDeletions(List<RecordSet> deletions) {
@@ -135,18 +130,12 @@ public class ChangeRequest extends ChangeRequestInfo {
     this.options = dns.getOptions();
   }
 
-
-  /**
-   * Returns the name of the {@link Zone} associated with this change request.
-   */
+  /** Returns the name of the {@link Zone} associated with this change request. */
   public String getZone() {
     return this.zone;
   }
 
-
-  /**
-   * Returns the change request's {@code Dns} object used to issue requests.
-   */
+  /** Returns the change request's {@code Dns} object used to issue requests. */
   public Dns getDns() {
     return dns;
   }

@@ -20,13 +20,10 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.dns.spi.v1.DnsRpc;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * A base class for options.
- */
+/** A base class for options. */
 abstract class Option implements Serializable {
 
   private static final long serialVersionUID = -5912727967831484228L;

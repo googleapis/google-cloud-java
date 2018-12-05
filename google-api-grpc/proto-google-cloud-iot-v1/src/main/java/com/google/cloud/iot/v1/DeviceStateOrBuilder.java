@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface DeviceStateOrBuilder extends
+public interface DeviceStateOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.DeviceState)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The time at which this state version was updated in Cloud
    * IoT Core.
@@ -17,6 +20,8 @@ public interface DeviceStateOrBuilder extends
    */
   boolean hasUpdateTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The time at which this state version was updated in Cloud
    * IoT Core.
@@ -26,6 +31,8 @@ public interface DeviceStateOrBuilder extends
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The time at which this state version was updated in Cloud
    * IoT Core.
@@ -36,6 +43,8 @@ public interface DeviceStateOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The device state data.
    * </pre>

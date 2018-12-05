@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface CreateIntentRequestOrBuilder extends
+public interface CreateIntentRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.CreateIntentRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The agent to create a intent for.
    * Format: `projects/&lt;Project ID&gt;/agent`.
@@ -17,6 +20,8 @@ public interface CreateIntentRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The agent to create a intent for.
    * Format: `projects/&lt;Project ID&gt;/agent`.
@@ -24,10 +29,11 @@ public interface CreateIntentRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The intent to create.
    * </pre>
@@ -36,6 +42,8 @@ public interface CreateIntentRequestOrBuilder extends
    */
   boolean hasIntent();
   /**
+   *
+   *
    * <pre>
    * Required. The intent to create.
    * </pre>
@@ -44,6 +52,8 @@ public interface CreateIntentRequestOrBuilder extends
    */
   com.google.cloud.dialogflow.v2beta1.Intent getIntent();
   /**
+   *
+   *
    * <pre>
    * Required. The intent to create.
    * </pre>
@@ -53,6 +63,8 @@ public interface CreateIntentRequestOrBuilder extends
   com.google.cloud.dialogflow.v2beta1.IntentOrBuilder getIntentOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The language of training phrases, parameters and rich messages
    * defined in `intent`. If not specified, the agent's default language is
@@ -65,6 +77,8 @@ public interface CreateIntentRequestOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Optional. The language of training phrases, parameters and rich messages
    * defined in `intent`. If not specified, the agent's default language is
@@ -75,10 +89,11 @@ public interface CreateIntentRequestOrBuilder extends
    *
    * <code>string language_code = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The resource view to apply to the returned intent.
    * </pre>
@@ -87,6 +102,8 @@ public interface CreateIntentRequestOrBuilder extends
    */
   int getIntentViewValue();
   /**
+   *
+   *
    * <pre>
    * Optional. The resource view to apply to the returned intent.
    * </pre>

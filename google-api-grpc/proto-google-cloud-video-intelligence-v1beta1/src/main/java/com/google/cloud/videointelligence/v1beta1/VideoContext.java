@@ -4,21 +4,24 @@
 package com.google.cloud.videointelligence.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Video context and/or feature-specific parameters.
  * </pre>
  *
  * Protobuf type {@code google.cloud.videointelligence.v1beta1.VideoContext}
  */
-public  final class VideoContext extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1beta1.VideoContext)
     VideoContextOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use VideoContext.newBuilder() to construct.
   private VideoContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private VideoContext() {
     segments_ = java.util.Collections.emptyList();
     labelDetectionMode_ = 0;
@@ -30,10 +33,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private VideoContext(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -53,64 +56,73 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              segments_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1beta1.VideoSegment>();
-              mutable_bitField0_ |= 0x00000001;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                segments_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.videointelligence.v1beta1.VideoSegment>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              segments_.add(
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1beta1.VideoSegment.parser(),
+                      extensionRegistry));
+              break;
             }
-            segments_.add(
-                input.readMessage(com.google.cloud.videointelligence.v1beta1.VideoSegment.parser(), extensionRegistry));
-            break;
-          }
-          case 16: {
-            int rawValue = input.readEnum();
+          case 16:
+            {
+              int rawValue = input.readEnum();
 
-            labelDetectionMode_ = rawValue;
-            break;
-          }
-          case 24: {
-
-            stationaryCamera_ = input.readBool();
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            labelDetectionModel_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            faceDetectionModel_ = s;
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            shotChangeDetectionModel_ = s;
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            safeSearchDetectionModel_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              labelDetectionMode_ = rawValue;
+              break;
             }
-            break;
-          }
+          case 24:
+            {
+              stationaryCamera_ = input.readBool();
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              labelDetectionModel_ = s;
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              faceDetectionModel_ = s;
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              shotChangeDetectionModel_ = s;
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              safeSearchDetectionModel_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         segments_ = java.util.Collections.unmodifiableList(segments_);
@@ -119,23 +131,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.videointelligence.v1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1beta1_VideoContext_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.videointelligence.v1beta1.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1beta1_VideoContext_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.videointelligence.v1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1beta1_VideoContext_fieldAccessorTable
+    return com.google.cloud.videointelligence.v1beta1.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1beta1_VideoContext_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.videointelligence.v1beta1.VideoContext.class, com.google.cloud.videointelligence.v1beta1.VideoContext.Builder.class);
+            com.google.cloud.videointelligence.v1beta1.VideoContext.class,
+            com.google.cloud.videointelligence.v1beta1.VideoContext.Builder.class);
   }
 
   private int bitField0_;
   public static final int SEGMENTS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.videointelligence.v1beta1.VideoSegment> segments_;
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video
@@ -148,6 +165,8 @@ private static final long serialVersionUID = 0L;
     return segments_;
   }
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video
@@ -156,11 +175,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.videointelligence.v1beta1.VideoSegment segments = 1;</code>
    */
-  public java.util.List<? extends com.google.cloud.videointelligence.v1beta1.VideoSegmentOrBuilder> 
+  public java.util.List<? extends com.google.cloud.videointelligence.v1beta1.VideoSegmentOrBuilder>
       getSegmentsOrBuilderList() {
     return segments_;
   }
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video
@@ -173,6 +194,8 @@ private static final long serialVersionUID = 0L;
     return segments_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video
@@ -185,6 +208,8 @@ private static final long serialVersionUID = 0L;
     return segments_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Video segments to annotate. The segments may overlap and are not required
    * to be contiguous or span the whole video. If unspecified, each video
@@ -201,35 +226,46 @@ private static final long serialVersionUID = 0L;
   public static final int LABEL_DETECTION_MODE_FIELD_NUMBER = 2;
   private int labelDetectionMode_;
   /**
+   *
+   *
    * <pre>
    * If label detection has been requested, what labels should be detected
    * in addition to video-level labels or segment-level labels. If unspecified,
    * defaults to `SHOT_MODE`.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1beta1.LabelDetectionMode label_detection_mode = 2;</code>
+   * <code>.google.cloud.videointelligence.v1beta1.LabelDetectionMode label_detection_mode = 2;
+   * </code>
    */
   public int getLabelDetectionModeValue() {
     return labelDetectionMode_;
   }
   /**
+   *
+   *
    * <pre>
    * If label detection has been requested, what labels should be detected
    * in addition to video-level labels or segment-level labels. If unspecified,
    * defaults to `SHOT_MODE`.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1beta1.LabelDetectionMode label_detection_mode = 2;</code>
+   * <code>.google.cloud.videointelligence.v1beta1.LabelDetectionMode label_detection_mode = 2;
+   * </code>
    */
   public com.google.cloud.videointelligence.v1beta1.LabelDetectionMode getLabelDetectionMode() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.videointelligence.v1beta1.LabelDetectionMode result = com.google.cloud.videointelligence.v1beta1.LabelDetectionMode.valueOf(labelDetectionMode_);
-    return result == null ? com.google.cloud.videointelligence.v1beta1.LabelDetectionMode.UNRECOGNIZED : result;
+    com.google.cloud.videointelligence.v1beta1.LabelDetectionMode result =
+        com.google.cloud.videointelligence.v1beta1.LabelDetectionMode.valueOf(labelDetectionMode_);
+    return result == null
+        ? com.google.cloud.videointelligence.v1beta1.LabelDetectionMode.UNRECOGNIZED
+        : result;
   }
 
   public static final int STATIONARY_CAMERA_FIELD_NUMBER = 3;
   private boolean stationaryCamera_;
   /**
+   *
+   *
    * <pre>
    * Whether the video has been shot from a stationary (i.e. non-moving) camera.
    * When set to true, might improve detection accuracy for moving objects.
@@ -244,6 +280,8 @@ private static final long serialVersionUID = 0L;
   public static final int LABEL_DETECTION_MODEL_FIELD_NUMBER = 4;
   private volatile java.lang.Object labelDetectionModel_;
   /**
+   *
+   *
    * <pre>
    * Model to use for label detection.
    * Supported values: "latest" and "stable" (the default).
@@ -256,14 +294,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       labelDetectionModel_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Model to use for label detection.
    * Supported values: "latest" and "stable" (the default).
@@ -271,13 +310,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string label_detection_model = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getLabelDetectionModelBytes() {
+  public com.google.protobuf.ByteString getLabelDetectionModelBytes() {
     java.lang.Object ref = labelDetectionModel_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       labelDetectionModel_ = b;
       return b;
     } else {
@@ -288,6 +325,8 @@ private static final long serialVersionUID = 0L;
   public static final int FACE_DETECTION_MODEL_FIELD_NUMBER = 5;
   private volatile java.lang.Object faceDetectionModel_;
   /**
+   *
+   *
    * <pre>
    * Model to use for face detection.
    * Supported values: "latest" and "stable" (the default).
@@ -300,14 +339,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       faceDetectionModel_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Model to use for face detection.
    * Supported values: "latest" and "stable" (the default).
@@ -315,13 +355,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string face_detection_model = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getFaceDetectionModelBytes() {
+  public com.google.protobuf.ByteString getFaceDetectionModelBytes() {
     java.lang.Object ref = faceDetectionModel_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       faceDetectionModel_ = b;
       return b;
     } else {
@@ -332,6 +370,8 @@ private static final long serialVersionUID = 0L;
   public static final int SHOT_CHANGE_DETECTION_MODEL_FIELD_NUMBER = 6;
   private volatile java.lang.Object shotChangeDetectionModel_;
   /**
+   *
+   *
    * <pre>
    * Model to use for shot change detection.
    * Supported values: "latest" and "stable" (the default).
@@ -344,14 +384,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       shotChangeDetectionModel_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Model to use for shot change detection.
    * Supported values: "latest" and "stable" (the default).
@@ -359,13 +400,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string shot_change_detection_model = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getShotChangeDetectionModelBytes() {
+  public com.google.protobuf.ByteString getShotChangeDetectionModelBytes() {
     java.lang.Object ref = shotChangeDetectionModel_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       shotChangeDetectionModel_ = b;
       return b;
     } else {
@@ -376,6 +415,8 @@ private static final long serialVersionUID = 0L;
   public static final int SAFE_SEARCH_DETECTION_MODEL_FIELD_NUMBER = 7;
   private volatile java.lang.Object safeSearchDetectionModel_;
   /**
+   *
+   *
    * <pre>
    * Model to use for safe search detection.
    * Supported values: "latest" and "stable" (the default).
@@ -388,14 +429,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       safeSearchDetectionModel_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Model to use for safe search detection.
    * Supported values: "latest" and "stable" (the default).
@@ -403,13 +445,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string safe_search_detection_model = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getSafeSearchDetectionModelBytes() {
+  public com.google.protobuf.ByteString getSafeSearchDetectionModelBytes() {
     java.lang.Object ref = safeSearchDetectionModel_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       safeSearchDetectionModel_ = b;
       return b;
     } else {
@@ -418,6 +458,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -429,12 +470,13 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < segments_.size(); i++) {
       output.writeMessage(1, segments_.get(i));
     }
-    if (labelDetectionMode_ != com.google.cloud.videointelligence.v1beta1.LabelDetectionMode.LABEL_DETECTION_MODE_UNSPECIFIED.getNumber()) {
+    if (labelDetectionMode_
+        != com.google.cloud.videointelligence.v1beta1.LabelDetectionMode
+            .LABEL_DETECTION_MODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, labelDetectionMode_);
     }
     if (stationaryCamera_ != false) {
@@ -462,16 +504,15 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     for (int i = 0; i < segments_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, segments_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, segments_.get(i));
     }
-    if (labelDetectionMode_ != com.google.cloud.videointelligence.v1beta1.LabelDetectionMode.LABEL_DETECTION_MODE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, labelDetectionMode_);
+    if (labelDetectionMode_
+        != com.google.cloud.videointelligence.v1beta1.LabelDetectionMode
+            .LABEL_DETECTION_MODE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, labelDetectionMode_);
     }
     if (stationaryCamera_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, stationaryCamera_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, stationaryCamera_);
     }
     if (!getLabelDetectionModelBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, labelDetectionModel_);
@@ -480,10 +521,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, faceDetectionModel_);
     }
     if (!getShotChangeDetectionModelBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, shotChangeDetectionModel_);
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(6, shotChangeDetectionModel_);
     }
     if (!getSafeSearchDetectionModelBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, safeSearchDetectionModel_);
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(7, safeSearchDetectionModel_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -493,27 +536,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.videointelligence.v1beta1.VideoContext)) {
       return super.equals(obj);
     }
-    com.google.cloud.videointelligence.v1beta1.VideoContext other = (com.google.cloud.videointelligence.v1beta1.VideoContext) obj;
+    com.google.cloud.videointelligence.v1beta1.VideoContext other =
+        (com.google.cloud.videointelligence.v1beta1.VideoContext) obj;
 
     boolean result = true;
-    result = result && getSegmentsList()
-        .equals(other.getSegmentsList());
+    result = result && getSegmentsList().equals(other.getSegmentsList());
     result = result && labelDetectionMode_ == other.labelDetectionMode_;
-    result = result && (getStationaryCamera()
-        == other.getStationaryCamera());
-    result = result && getLabelDetectionModel()
-        .equals(other.getLabelDetectionModel());
-    result = result && getFaceDetectionModel()
-        .equals(other.getFaceDetectionModel());
-    result = result && getShotChangeDetectionModel()
-        .equals(other.getShotChangeDetectionModel());
-    result = result && getSafeSearchDetectionModel()
-        .equals(other.getSafeSearchDetectionModel());
+    result = result && (getStationaryCamera() == other.getStationaryCamera());
+    result = result && getLabelDetectionModel().equals(other.getLabelDetectionModel());
+    result = result && getFaceDetectionModel().equals(other.getFaceDetectionModel());
+    result = result && getShotChangeDetectionModel().equals(other.getShotChangeDetectionModel());
+    result = result && getSafeSearchDetectionModel().equals(other.getSafeSearchDetectionModel());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -532,8 +570,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + LABEL_DETECTION_MODE_FIELD_NUMBER;
     hash = (53 * hash) + labelDetectionMode_;
     hash = (37 * hash) + STATIONARY_CAMERA_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getStationaryCamera());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getStationaryCamera());
     hash = (37 * hash) + LABEL_DETECTION_MODEL_FIELD_NUMBER;
     hash = (53 * hash) + getLabelDetectionModel().hashCode();
     hash = (37 * hash) + FACE_DETECTION_MODEL_FIELD_NUMBER;
@@ -548,117 +585,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.videointelligence.v1beta1.VideoContext parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1beta1.VideoContext parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1beta1.VideoContext parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1beta1.VideoContext parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1beta1.VideoContext parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1beta1.VideoContext parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.videointelligence.v1beta1.VideoContext parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.videointelligence.v1beta1.VideoContext parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.videointelligence.v1beta1.VideoContext parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.videointelligence.v1beta1.VideoContext parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1beta1.VideoContext parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.videointelligence.v1beta1.VideoContext parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.videointelligence.v1beta1.VideoContext parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.videointelligence.v1beta1.VideoContext parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.videointelligence.v1beta1.VideoContext prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.videointelligence.v1beta1.VideoContext prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Video context and/or feature-specific parameters.
    * </pre>
    *
    * Protobuf type {@code google.cloud.videointelligence.v1beta1.VideoContext}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.videointelligence.v1beta1.VideoContext)
       com.google.cloud.videointelligence.v1beta1.VideoContextOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.videointelligence.v1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1beta1_VideoContext_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.videointelligence.v1beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1beta1_VideoContext_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.videointelligence.v1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1beta1_VideoContext_fieldAccessorTable
+      return com.google.cloud.videointelligence.v1beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1beta1_VideoContext_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.videointelligence.v1beta1.VideoContext.class, com.google.cloud.videointelligence.v1beta1.VideoContext.Builder.class);
+              com.google.cloud.videointelligence.v1beta1.VideoContext.class,
+              com.google.cloud.videointelligence.v1beta1.VideoContext.Builder.class);
     }
 
     // Construct using com.google.cloud.videointelligence.v1beta1.VideoContext.newBuilder()
@@ -666,17 +713,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getSegmentsFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -702,9 +749,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.videointelligence.v1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1beta1_VideoContext_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.videointelligence.v1beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1beta1_VideoContext_descriptor;
     }
 
     @java.lang.Override
@@ -723,7 +770,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.videointelligence.v1beta1.VideoContext buildPartial() {
-      com.google.cloud.videointelligence.v1beta1.VideoContext result = new com.google.cloud.videointelligence.v1beta1.VideoContext(this);
+      com.google.cloud.videointelligence.v1beta1.VideoContext result =
+          new com.google.cloud.videointelligence.v1beta1.VideoContext(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (segmentsBuilder_ == null) {
@@ -750,38 +798,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.videointelligence.v1beta1.VideoContext) {
-        return mergeFrom((com.google.cloud.videointelligence.v1beta1.VideoContext)other);
+        return mergeFrom((com.google.cloud.videointelligence.v1beta1.VideoContext) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -789,7 +838,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.videointelligence.v1beta1.VideoContext other) {
-      if (other == com.google.cloud.videointelligence.v1beta1.VideoContext.getDefaultInstance()) return this;
+      if (other == com.google.cloud.videointelligence.v1beta1.VideoContext.getDefaultInstance())
+        return this;
       if (segmentsBuilder_ == null) {
         if (!other.segments_.isEmpty()) {
           if (segments_.isEmpty()) {
@@ -808,9 +858,10 @@ private static final long serialVersionUID = 0L;
             segmentsBuilder_ = null;
             segments_ = other.segments_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            segmentsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getSegmentsFieldBuilder() : null;
+            segmentsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSegmentsFieldBuilder()
+                    : null;
           } else {
             segmentsBuilder_.addAllMessages(other.segments_);
           }
@@ -857,7 +908,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.videointelligence.v1beta1.VideoContext) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.videointelligence.v1beta1.VideoContext) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -866,21 +918,30 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.cloud.videointelligence.v1beta1.VideoSegment> segments_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureSegmentsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        segments_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1beta1.VideoSegment>(segments_);
+        segments_ =
+            new java.util.ArrayList<com.google.cloud.videointelligence.v1beta1.VideoSegment>(
+                segments_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.videointelligence.v1beta1.VideoSegment, com.google.cloud.videointelligence.v1beta1.VideoSegment.Builder, com.google.cloud.videointelligence.v1beta1.VideoSegmentOrBuilder> segmentsBuilder_;
+            com.google.cloud.videointelligence.v1beta1.VideoSegment,
+            com.google.cloud.videointelligence.v1beta1.VideoSegment.Builder,
+            com.google.cloud.videointelligence.v1beta1.VideoSegmentOrBuilder>
+        segmentsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video
@@ -889,7 +950,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.videointelligence.v1beta1.VideoSegment segments = 1;</code>
      */
-    public java.util.List<com.google.cloud.videointelligence.v1beta1.VideoSegment> getSegmentsList() {
+    public java.util.List<com.google.cloud.videointelligence.v1beta1.VideoSegment>
+        getSegmentsList() {
       if (segmentsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(segments_);
       } else {
@@ -897,6 +959,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video
@@ -913,6 +977,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video
@@ -929,6 +995,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video
@@ -952,6 +1020,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video
@@ -961,7 +1031,8 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.videointelligence.v1beta1.VideoSegment segments = 1;</code>
      */
     public Builder setSegments(
-        int index, com.google.cloud.videointelligence.v1beta1.VideoSegment.Builder builderForValue) {
+        int index,
+        com.google.cloud.videointelligence.v1beta1.VideoSegment.Builder builderForValue) {
       if (segmentsBuilder_ == null) {
         ensureSegmentsIsMutable();
         segments_.set(index, builderForValue.build());
@@ -972,6 +1043,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video
@@ -994,6 +1067,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video
@@ -1017,6 +1092,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video
@@ -1037,6 +1114,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video
@@ -1046,7 +1125,8 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.videointelligence.v1beta1.VideoSegment segments = 1;</code>
      */
     public Builder addSegments(
-        int index, com.google.cloud.videointelligence.v1beta1.VideoSegment.Builder builderForValue) {
+        int index,
+        com.google.cloud.videointelligence.v1beta1.VideoSegment.Builder builderForValue) {
       if (segmentsBuilder_ == null) {
         ensureSegmentsIsMutable();
         segments_.add(index, builderForValue.build());
@@ -1057,6 +1137,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video
@@ -1066,11 +1148,11 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.videointelligence.v1beta1.VideoSegment segments = 1;</code>
      */
     public Builder addAllSegments(
-        java.lang.Iterable<? extends com.google.cloud.videointelligence.v1beta1.VideoSegment> values) {
+        java.lang.Iterable<? extends com.google.cloud.videointelligence.v1beta1.VideoSegment>
+            values) {
       if (segmentsBuilder_ == null) {
         ensureSegmentsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, segments_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, segments_);
         onChanged();
       } else {
         segmentsBuilder_.addAllMessages(values);
@@ -1078,6 +1160,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video
@@ -1097,6 +1181,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video
@@ -1116,6 +1202,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video
@@ -1129,6 +1217,8 @@ private static final long serialVersionUID = 0L;
       return getSegmentsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video
@@ -1140,11 +1230,14 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.videointelligence.v1beta1.VideoSegmentOrBuilder getSegmentsOrBuilder(
         int index) {
       if (segmentsBuilder_ == null) {
-        return segments_.get(index);  } else {
+        return segments_.get(index);
+      } else {
         return segmentsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video
@@ -1153,8 +1246,9 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.videointelligence.v1beta1.VideoSegment segments = 1;</code>
      */
-    public java.util.List<? extends com.google.cloud.videointelligence.v1beta1.VideoSegmentOrBuilder> 
-         getSegmentsOrBuilderList() {
+    public java.util.List<
+            ? extends com.google.cloud.videointelligence.v1beta1.VideoSegmentOrBuilder>
+        getSegmentsOrBuilderList() {
       if (segmentsBuilder_ != null) {
         return segmentsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1162,6 +1256,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video
@@ -1171,10 +1267,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.videointelligence.v1beta1.VideoSegment segments = 1;</code>
      */
     public com.google.cloud.videointelligence.v1beta1.VideoSegment.Builder addSegmentsBuilder() {
-      return getSegmentsFieldBuilder().addBuilder(
-          com.google.cloud.videointelligence.v1beta1.VideoSegment.getDefaultInstance());
+      return getSegmentsFieldBuilder()
+          .addBuilder(com.google.cloud.videointelligence.v1beta1.VideoSegment.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video
@@ -1185,10 +1283,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.videointelligence.v1beta1.VideoSegment.Builder addSegmentsBuilder(
         int index) {
-      return getSegmentsFieldBuilder().addBuilder(
-          index, com.google.cloud.videointelligence.v1beta1.VideoSegment.getDefaultInstance());
+      return getSegmentsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.videointelligence.v1beta1.VideoSegment.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Video segments to annotate. The segments may overlap and are not required
      * to be contiguous or span the whole video. If unspecified, each video
@@ -1197,16 +1298,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.videointelligence.v1beta1.VideoSegment segments = 1;</code>
      */
-    public java.util.List<com.google.cloud.videointelligence.v1beta1.VideoSegment.Builder> 
-         getSegmentsBuilderList() {
+    public java.util.List<com.google.cloud.videointelligence.v1beta1.VideoSegment.Builder>
+        getSegmentsBuilderList() {
       return getSegmentsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.videointelligence.v1beta1.VideoSegment, com.google.cloud.videointelligence.v1beta1.VideoSegment.Builder, com.google.cloud.videointelligence.v1beta1.VideoSegmentOrBuilder> 
+            com.google.cloud.videointelligence.v1beta1.VideoSegment,
+            com.google.cloud.videointelligence.v1beta1.VideoSegment.Builder,
+            com.google.cloud.videointelligence.v1beta1.VideoSegmentOrBuilder>
         getSegmentsFieldBuilder() {
       if (segmentsBuilder_ == null) {
-        segmentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.videointelligence.v1beta1.VideoSegment, com.google.cloud.videointelligence.v1beta1.VideoSegment.Builder, com.google.cloud.videointelligence.v1beta1.VideoSegmentOrBuilder>(
+        segmentsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.videointelligence.v1beta1.VideoSegment,
+                com.google.cloud.videointelligence.v1beta1.VideoSegment.Builder,
+                com.google.cloud.videointelligence.v1beta1.VideoSegmentOrBuilder>(
                 segments_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -1218,25 +1325,31 @@ private static final long serialVersionUID = 0L;
 
     private int labelDetectionMode_ = 0;
     /**
+     *
+     *
      * <pre>
      * If label detection has been requested, what labels should be detected
      * in addition to video-level labels or segment-level labels. If unspecified,
      * defaults to `SHOT_MODE`.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1beta1.LabelDetectionMode label_detection_mode = 2;</code>
+     * <code>.google.cloud.videointelligence.v1beta1.LabelDetectionMode label_detection_mode = 2;
+     * </code>
      */
     public int getLabelDetectionModeValue() {
       return labelDetectionMode_;
     }
     /**
+     *
+     *
      * <pre>
      * If label detection has been requested, what labels should be detected
      * in addition to video-level labels or segment-level labels. If unspecified,
      * defaults to `SHOT_MODE`.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1beta1.LabelDetectionMode label_detection_mode = 2;</code>
+     * <code>.google.cloud.videointelligence.v1beta1.LabelDetectionMode label_detection_mode = 2;
+     * </code>
      */
     public Builder setLabelDetectionModeValue(int value) {
       labelDetectionMode_ = value;
@@ -1244,55 +1357,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If label detection has been requested, what labels should be detected
      * in addition to video-level labels or segment-level labels. If unspecified,
      * defaults to `SHOT_MODE`.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1beta1.LabelDetectionMode label_detection_mode = 2;</code>
+     * <code>.google.cloud.videointelligence.v1beta1.LabelDetectionMode label_detection_mode = 2;
+     * </code>
      */
     public com.google.cloud.videointelligence.v1beta1.LabelDetectionMode getLabelDetectionMode() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.videointelligence.v1beta1.LabelDetectionMode result = com.google.cloud.videointelligence.v1beta1.LabelDetectionMode.valueOf(labelDetectionMode_);
-      return result == null ? com.google.cloud.videointelligence.v1beta1.LabelDetectionMode.UNRECOGNIZED : result;
+      com.google.cloud.videointelligence.v1beta1.LabelDetectionMode result =
+          com.google.cloud.videointelligence.v1beta1.LabelDetectionMode.valueOf(
+              labelDetectionMode_);
+      return result == null
+          ? com.google.cloud.videointelligence.v1beta1.LabelDetectionMode.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * If label detection has been requested, what labels should be detected
      * in addition to video-level labels or segment-level labels. If unspecified,
      * defaults to `SHOT_MODE`.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1beta1.LabelDetectionMode label_detection_mode = 2;</code>
+     * <code>.google.cloud.videointelligence.v1beta1.LabelDetectionMode label_detection_mode = 2;
+     * </code>
      */
-    public Builder setLabelDetectionMode(com.google.cloud.videointelligence.v1beta1.LabelDetectionMode value) {
+    public Builder setLabelDetectionMode(
+        com.google.cloud.videointelligence.v1beta1.LabelDetectionMode value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       labelDetectionMode_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If label detection has been requested, what labels should be detected
      * in addition to video-level labels or segment-level labels. If unspecified,
      * defaults to `SHOT_MODE`.
      * </pre>
      *
-     * <code>.google.cloud.videointelligence.v1beta1.LabelDetectionMode label_detection_mode = 2;</code>
+     * <code>.google.cloud.videointelligence.v1beta1.LabelDetectionMode label_detection_mode = 2;
+     * </code>
      */
     public Builder clearLabelDetectionMode() {
-      
+
       labelDetectionMode_ = 0;
       onChanged();
       return this;
     }
 
-    private boolean stationaryCamera_ ;
+    private boolean stationaryCamera_;
     /**
+     *
+     *
      * <pre>
      * Whether the video has been shot from a stationary (i.e. non-moving) camera.
      * When set to true, might improve detection accuracy for moving objects.
@@ -1304,6 +1433,8 @@ private static final long serialVersionUID = 0L;
       return stationaryCamera_;
     }
     /**
+     *
+     *
      * <pre>
      * Whether the video has been shot from a stationary (i.e. non-moving) camera.
      * When set to true, might improve detection accuracy for moving objects.
@@ -1312,12 +1443,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool stationary_camera = 3;</code>
      */
     public Builder setStationaryCamera(boolean value) {
-      
+
       stationaryCamera_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Whether the video has been shot from a stationary (i.e. non-moving) camera.
      * When set to true, might improve detection accuracy for moving objects.
@@ -1326,7 +1459,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool stationary_camera = 3;</code>
      */
     public Builder clearStationaryCamera() {
-      
+
       stationaryCamera_ = false;
       onChanged();
       return this;
@@ -1334,6 +1467,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object labelDetectionModel_ = "";
     /**
+     *
+     *
      * <pre>
      * Model to use for label detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1344,8 +1479,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getLabelDetectionModel() {
       java.lang.Object ref = labelDetectionModel_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         labelDetectionModel_ = s;
         return s;
@@ -1354,6 +1488,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for label detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1361,13 +1497,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string label_detection_model = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getLabelDetectionModelBytes() {
+    public com.google.protobuf.ByteString getLabelDetectionModelBytes() {
       java.lang.Object ref = labelDetectionModel_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         labelDetectionModel_ = b;
         return b;
       } else {
@@ -1375,6 +1509,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for label detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1382,17 +1518,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string label_detection_model = 4;</code>
      */
-    public Builder setLabelDetectionModel(
-        java.lang.String value) {
+    public Builder setLabelDetectionModel(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       labelDetectionModel_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for label detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1401,12 +1538,14 @@ private static final long serialVersionUID = 0L;
      * <code>string label_detection_model = 4;</code>
      */
     public Builder clearLabelDetectionModel() {
-      
+
       labelDetectionModel_ = getDefaultInstance().getLabelDetectionModel();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for label detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1414,13 +1553,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string label_detection_model = 4;</code>
      */
-    public Builder setLabelDetectionModelBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setLabelDetectionModelBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       labelDetectionModel_ = value;
       onChanged();
       return this;
@@ -1428,6 +1566,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object faceDetectionModel_ = "";
     /**
+     *
+     *
      * <pre>
      * Model to use for face detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1438,8 +1578,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getFaceDetectionModel() {
       java.lang.Object ref = faceDetectionModel_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         faceDetectionModel_ = s;
         return s;
@@ -1448,6 +1587,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for face detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1455,13 +1596,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string face_detection_model = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getFaceDetectionModelBytes() {
+    public com.google.protobuf.ByteString getFaceDetectionModelBytes() {
       java.lang.Object ref = faceDetectionModel_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         faceDetectionModel_ = b;
         return b;
       } else {
@@ -1469,6 +1608,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for face detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1476,17 +1617,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string face_detection_model = 5;</code>
      */
-    public Builder setFaceDetectionModel(
-        java.lang.String value) {
+    public Builder setFaceDetectionModel(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       faceDetectionModel_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for face detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1495,12 +1637,14 @@ private static final long serialVersionUID = 0L;
      * <code>string face_detection_model = 5;</code>
      */
     public Builder clearFaceDetectionModel() {
-      
+
       faceDetectionModel_ = getDefaultInstance().getFaceDetectionModel();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for face detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1508,13 +1652,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string face_detection_model = 5;</code>
      */
-    public Builder setFaceDetectionModelBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setFaceDetectionModelBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       faceDetectionModel_ = value;
       onChanged();
       return this;
@@ -1522,6 +1665,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object shotChangeDetectionModel_ = "";
     /**
+     *
+     *
      * <pre>
      * Model to use for shot change detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1532,8 +1677,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getShotChangeDetectionModel() {
       java.lang.Object ref = shotChangeDetectionModel_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         shotChangeDetectionModel_ = s;
         return s;
@@ -1542,6 +1686,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for shot change detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1549,13 +1695,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string shot_change_detection_model = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getShotChangeDetectionModelBytes() {
+    public com.google.protobuf.ByteString getShotChangeDetectionModelBytes() {
       java.lang.Object ref = shotChangeDetectionModel_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         shotChangeDetectionModel_ = b;
         return b;
       } else {
@@ -1563,6 +1707,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for shot change detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1570,17 +1716,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string shot_change_detection_model = 6;</code>
      */
-    public Builder setShotChangeDetectionModel(
-        java.lang.String value) {
+    public Builder setShotChangeDetectionModel(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       shotChangeDetectionModel_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for shot change detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1589,12 +1736,14 @@ private static final long serialVersionUID = 0L;
      * <code>string shot_change_detection_model = 6;</code>
      */
     public Builder clearShotChangeDetectionModel() {
-      
+
       shotChangeDetectionModel_ = getDefaultInstance().getShotChangeDetectionModel();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for shot change detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1602,13 +1751,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string shot_change_detection_model = 6;</code>
      */
-    public Builder setShotChangeDetectionModelBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setShotChangeDetectionModelBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       shotChangeDetectionModel_ = value;
       onChanged();
       return this;
@@ -1616,6 +1764,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object safeSearchDetectionModel_ = "";
     /**
+     *
+     *
      * <pre>
      * Model to use for safe search detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1626,8 +1776,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSafeSearchDetectionModel() {
       java.lang.Object ref = safeSearchDetectionModel_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         safeSearchDetectionModel_ = s;
         return s;
@@ -1636,6 +1785,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for safe search detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1643,13 +1794,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string safe_search_detection_model = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getSafeSearchDetectionModelBytes() {
+    public com.google.protobuf.ByteString getSafeSearchDetectionModelBytes() {
       java.lang.Object ref = safeSearchDetectionModel_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         safeSearchDetectionModel_ = b;
         return b;
       } else {
@@ -1657,6 +1806,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for safe search detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1664,17 +1815,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string safe_search_detection_model = 7;</code>
      */
-    public Builder setSafeSearchDetectionModel(
-        java.lang.String value) {
+    public Builder setSafeSearchDetectionModel(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       safeSearchDetectionModel_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for safe search detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1683,12 +1835,14 @@ private static final long serialVersionUID = 0L;
      * <code>string safe_search_detection_model = 7;</code>
      */
     public Builder clearSafeSearchDetectionModel() {
-      
+
       safeSearchDetectionModel_ = getDefaultInstance().getSafeSearchDetectionModel();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Model to use for safe search detection.
      * Supported values: "latest" and "stable" (the default).
@@ -1696,20 +1850,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string safe_search_detection_model = 7;</code>
      */
-    public Builder setSafeSearchDetectionModelBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setSafeSearchDetectionModelBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       safeSearchDetectionModel_ = value;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1719,12 +1872,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.videointelligence.v1beta1.VideoContext)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.videointelligence.v1beta1.VideoContext)
   private static final com.google.cloud.videointelligence.v1beta1.VideoContext DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.videointelligence.v1beta1.VideoContext();
   }
@@ -1733,16 +1886,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<VideoContext>
-      PARSER = new com.google.protobuf.AbstractParser<VideoContext>() {
-    @java.lang.Override
-    public VideoContext parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new VideoContext(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<VideoContext> PARSER =
+      new com.google.protobuf.AbstractParser<VideoContext>() {
+        @java.lang.Override
+        public VideoContext parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new VideoContext(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<VideoContext> parser() {
     return PARSER;
@@ -1757,6 +1910,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.videointelligence.v1beta1.VideoContext getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

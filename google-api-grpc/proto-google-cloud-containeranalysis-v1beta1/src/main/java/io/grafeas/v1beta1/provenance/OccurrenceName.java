@@ -14,13 +14,12 @@
 
 package io.grafeas.v1beta1.provenance;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +55,11 @@ public class OccurrenceName extends IamResourceName {
   }
 
   public static OccurrenceName of(String project, String occurrence) {
-    return newBuilder()
-      .setProject(project)
-      .setOccurrence(occurrence)
-      .build();
+    return newBuilder().setProject(project).setOccurrence(occurrence).build();
   }
 
   public static String format(String project, String occurrence) {
-    return newBuilder()
-      .setProject(project)
-      .setOccurrence(occurrence)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setOccurrence(occurrence).build().toString();
   }
 
   public static OccurrenceName parse(String formattedString) {
@@ -75,7 +67,8 @@ public class OccurrenceName extends IamResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "OccurrenceName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "OccurrenceName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("occurrence"));
   }
 
@@ -150,8 +143,7 @@ public class OccurrenceName extends IamResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(OccurrenceName occurrenceName) {
       project = occurrenceName.project;
@@ -170,8 +162,7 @@ public class OccurrenceName extends IamResourceName {
     }
     if (o instanceof OccurrenceName) {
       OccurrenceName that = (OccurrenceName) o;
-      return (this.project.equals(that.project))
-          && (this.occurrence.equals(that.occurrence));
+      return (this.project.equals(that.project)) && (this.occurrence.equals(that.occurrence));
     }
     return false;
   }
@@ -186,4 +177,3 @@ public class OccurrenceName extends IamResourceName {
     return h;
   }
 }
-

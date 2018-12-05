@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface PublicKeyCredentialOrBuilder extends
+public interface PublicKeyCredentialOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.PublicKeyCredential)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The format of the key.
    * </pre>
@@ -16,6 +19,8 @@ public interface PublicKeyCredentialOrBuilder extends
    */
   int getFormatValue();
   /**
+   *
+   *
    * <pre>
    * The format of the key.
    * </pre>
@@ -25,6 +30,8 @@ public interface PublicKeyCredentialOrBuilder extends
   com.google.cloud.iot.v1.PublicKeyFormat getFormat();
 
   /**
+   *
+   *
    * <pre>
    * The key data.
    * </pre>
@@ -33,12 +40,13 @@ public interface PublicKeyCredentialOrBuilder extends
    */
   java.lang.String getKey();
   /**
+   *
+   *
    * <pre>
    * The key data.
    * </pre>
    *
    * <code>string key = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getKeyBytes();
+  com.google.protobuf.ByteString getKeyBytes();
 }

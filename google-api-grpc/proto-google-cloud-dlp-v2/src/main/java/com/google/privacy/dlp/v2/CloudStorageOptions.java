@@ -4,6 +4,8 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Options defining a file or a set of files within a Google Cloud Storage
  * bucket.
@@ -11,15 +13,16 @@ package com.google.privacy.dlp.v2;
  *
  * Protobuf type {@code google.privacy.dlp.v2.CloudStorageOptions}
  */
-public  final class CloudStorageOptions extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class CloudStorageOptions extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CloudStorageOptions)
     CloudStorageOptionsOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use CloudStorageOptions.newBuilder() to construct.
   private CloudStorageOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private CloudStorageOptions() {
     bytesLimitPerFile_ = 0L;
     bytesLimitPerFilePercent_ = 0;
@@ -29,10 +32,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private CloudStorageOptions(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -52,77 +55,83 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.Builder subBuilder = null;
-            if (fileSet_ != null) {
-              subBuilder = fileSet_.toBuilder();
-            }
-            fileSet_ = input.readMessage(com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(fileSet_);
-              fileSet_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.Builder subBuilder = null;
+              if (fileSet_ != null) {
+                subBuilder = fileSet_.toBuilder();
+              }
+              fileSet_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(fileSet_);
+                fileSet_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 32: {
-
-            bytesLimitPerFile_ = input.readInt64();
-            break;
-          }
-          case 40: {
-            int rawValue = input.readEnum();
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              fileTypes_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000008;
+              break;
             }
-            fileTypes_.add(rawValue);
-            break;
-          }
-          case 42: {
-            int length = input.readRawVarint32();
-            int oldLimit = input.pushLimit(length);
-            while(input.getBytesUntilLimit() > 0) {
+          case 32:
+            {
+              bytesLimitPerFile_ = input.readInt64();
+              break;
+            }
+          case 40:
+            {
               int rawValue = input.readEnum();
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
                 fileTypes_ = new java.util.ArrayList<java.lang.Integer>();
                 mutable_bitField0_ |= 0x00000008;
               }
               fileTypes_.add(rawValue);
+              break;
             }
-            input.popLimit(oldLimit);
-            break;
-          }
-          case 48: {
-            int rawValue = input.readEnum();
-
-            sampleMethod_ = rawValue;
-            break;
-          }
-          case 56: {
-
-            filesLimitPercent_ = input.readInt32();
-            break;
-          }
-          case 64: {
-
-            bytesLimitPerFilePercent_ = input.readInt32();
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 42:
+            {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while (input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                  fileTypes_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000008;
+                }
+                fileTypes_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
+              break;
             }
-            break;
-          }
+          case 48:
+            {
+              int rawValue = input.readEnum();
+
+              sampleMethod_ = rawValue;
+              break;
+            }
+          case 56:
+            {
+              filesLimitPercent_ = input.readInt32();
+              break;
+            }
+          case 64:
+            {
+              bytesLimitPerFilePercent_ = input.readInt32();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         fileTypes_ = java.util.Collections.unmodifiableList(fileTypes_);
@@ -131,20 +140,25 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CloudStorageOptions_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpStorage
+        .internal_static_google_privacy_dlp_v2_CloudStorageOptions_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CloudStorageOptions_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpStorage
+        .internal_static_google_privacy_dlp_v2_CloudStorageOptions_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.CloudStorageOptions.class, com.google.privacy.dlp.v2.CloudStorageOptions.Builder.class);
+            com.google.privacy.dlp.v2.CloudStorageOptions.class,
+            com.google.privacy.dlp.v2.CloudStorageOptions.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * How to sample bytes if not all bytes are scanned. Meaningful only when used
    * in conjunction with bytes_limit_per_file. If not specified, scanning would
@@ -153,13 +167,12 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf enum {@code google.privacy.dlp.v2.CloudStorageOptions.SampleMethod}
    */
-  public enum SampleMethod
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>SAMPLE_METHOD_UNSPECIFIED = 0;</code>
-     */
+  public enum SampleMethod implements com.google.protobuf.ProtocolMessageEnum {
+    /** <code>SAMPLE_METHOD_UNSPECIFIED = 0;</code> */
     SAMPLE_METHOD_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Scan from the top (default).
      * </pre>
@@ -168,6 +181,8 @@ private static final long serialVersionUID = 0L;
      */
     TOP(1),
     /**
+     *
+     *
      * <pre>
      * For each file larger than bytes_limit_per_file, randomly pick the offset
      * to start scanning. The scanned bytes are contiguous.
@@ -179,11 +194,11 @@ private static final long serialVersionUID = 0L;
     UNRECOGNIZED(-1),
     ;
 
-    /**
-     * <code>SAMPLE_METHOD_UNSPECIFIED = 0;</code>
-     */
+    /** <code>SAMPLE_METHOD_UNSPECIFIED = 0;</code> */
     public static final int SAMPLE_METHOD_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Scan from the top (default).
      * </pre>
@@ -192,6 +207,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int TOP_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * For each file larger than bytes_limit_per_file, randomly pick the offset
      * to start scanning. The scanned bytes are contiguous.
@@ -201,7 +218,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RANDOM_START_VALUE = 2;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -210,9 +226,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static SampleMethod valueOf(int value) {
       return forNumber(value);
@@ -220,45 +234,45 @@ private static final long serialVersionUID = 0L;
 
     public static SampleMethod forNumber(int value) {
       switch (value) {
-        case 0: return SAMPLE_METHOD_UNSPECIFIED;
-        case 1: return TOP;
-        case 2: return RANDOM_START;
-        default: return null;
+        case 0:
+          return SAMPLE_METHOD_UNSPECIFIED;
+        case 1:
+          return TOP;
+        case 2:
+          return RANDOM_START;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<SampleMethod>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<SampleMethod> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        SampleMethod> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<SampleMethod>() {
-            public SampleMethod findValueByNumber(int number) {
-              return SampleMethod.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<SampleMethod> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<SampleMethod>() {
+          public SampleMethod findValueByNumber(int number) {
+            return SampleMethod.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.privacy.dlp.v2.CloudStorageOptions.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final SampleMethod[] VALUES = values();
 
-    public static SampleMethod valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static SampleMethod valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -275,11 +289,14 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.privacy.dlp.v2.CloudStorageOptions.SampleMethod)
   }
 
-  public interface FileSetOrBuilder extends
+  public interface FileSetOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CloudStorageOptions.FileSet)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * The Cloud Storage url of the file(s) to scan, in the format
      * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed. Exactly
@@ -290,6 +307,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getUrl();
     /**
+     *
+     *
      * <pre>
      * The Cloud Storage url of the file(s) to scan, in the format
      * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed. Exactly
@@ -298,10 +317,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string url = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getUrlBytes();
+    com.google.protobuf.ByteString getUrlBytes();
 
     /**
+     *
+     *
      * <pre>
      * The regex-filtered set of files to scan. Exactly one of `url` or
      * `regex_file_set` must be set.
@@ -311,6 +331,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasRegexFileSet();
     /**
+     *
+     *
      * <pre>
      * The regex-filtered set of files to scan. Exactly one of `url` or
      * `regex_file_set` must be set.
@@ -320,6 +342,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.privacy.dlp.v2.CloudStorageRegexFileSet getRegexFileSet();
     /**
+     *
+     *
      * <pre>
      * The regex-filtered set of files to scan. Exactly one of `url` or
      * `regex_file_set` must be set.
@@ -330,30 +354,33 @@ private static final long serialVersionUID = 0L;
     com.google.privacy.dlp.v2.CloudStorageRegexFileSetOrBuilder getRegexFileSetOrBuilder();
   }
   /**
+   *
+   *
    * <pre>
    * Set of files to scan.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.CloudStorageOptions.FileSet}
    */
-  public  static final class FileSet extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class FileSet extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CloudStorageOptions.FileSet)
       FileSetOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use FileSet.newBuilder() to construct.
     private FileSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private FileSet() {
       url_ = "";
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private FileSet(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -373,60 +400,69 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              url_ = s;
-              break;
-            }
-            case 18: {
-              com.google.privacy.dlp.v2.CloudStorageRegexFileSet.Builder subBuilder = null;
-              if (regexFileSet_ != null) {
-                subBuilder = regexFileSet_.toBuilder();
+                url_ = s;
+                break;
               }
-              regexFileSet_ = input.readMessage(com.google.privacy.dlp.v2.CloudStorageRegexFileSet.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(regexFileSet_);
-                regexFileSet_ = subBuilder.buildPartial();
-              }
+            case 18:
+              {
+                com.google.privacy.dlp.v2.CloudStorageRegexFileSet.Builder subBuilder = null;
+                if (regexFileSet_ != null) {
+                  subBuilder = regexFileSet_.toBuilder();
+                }
+                regexFileSet_ =
+                    input.readMessage(
+                        com.google.privacy.dlp.v2.CloudStorageRegexFileSet.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(regexFileSet_);
+                  regexFileSet_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+                break;
               }
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CloudStorageOptions_FileSet_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CloudStorageOptions_FileSet_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CloudStorageOptions_FileSet_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CloudStorageOptions_FileSet_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.class, com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.Builder.class);
+              com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.class,
+              com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.Builder.class);
     }
 
     public static final int URL_FIELD_NUMBER = 1;
     private volatile java.lang.Object url_;
     /**
+     *
+     *
      * <pre>
      * The Cloud Storage url of the file(s) to scan, in the format
      * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed. Exactly
@@ -440,14 +476,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         url_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The Cloud Storage url of the file(s) to scan, in the format
      * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed. Exactly
@@ -456,13 +493,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string url = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getUrlBytes() {
+    public com.google.protobuf.ByteString getUrlBytes() {
       java.lang.Object ref = url_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         url_ = b;
         return b;
       } else {
@@ -473,6 +508,8 @@ private static final long serialVersionUID = 0L;
     public static final int REGEX_FILE_SET_FIELD_NUMBER = 2;
     private com.google.privacy.dlp.v2.CloudStorageRegexFileSet regexFileSet_;
     /**
+     *
+     *
      * <pre>
      * The regex-filtered set of files to scan. Exactly one of `url` or
      * `regex_file_set` must be set.
@@ -484,6 +521,8 @@ private static final long serialVersionUID = 0L;
       return regexFileSet_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The regex-filtered set of files to scan. Exactly one of `url` or
      * `regex_file_set` must be set.
@@ -492,9 +531,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.CloudStorageRegexFileSet regex_file_set = 2;</code>
      */
     public com.google.privacy.dlp.v2.CloudStorageRegexFileSet getRegexFileSet() {
-      return regexFileSet_ == null ? com.google.privacy.dlp.v2.CloudStorageRegexFileSet.getDefaultInstance() : regexFileSet_;
+      return regexFileSet_ == null
+          ? com.google.privacy.dlp.v2.CloudStorageRegexFileSet.getDefaultInstance()
+          : regexFileSet_;
     }
     /**
+     *
+     *
      * <pre>
      * The regex-filtered set of files to scan. Exactly one of `url` or
      * `regex_file_set` must be set.
@@ -507,6 +550,7 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -518,8 +562,7 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, url_);
       }
@@ -539,8 +582,7 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, url_);
       }
       if (regexFileSet_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getRegexFileSet());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRegexFileSet());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -550,20 +592,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.privacy.dlp.v2.CloudStorageOptions.FileSet)) {
         return super.equals(obj);
       }
-      com.google.privacy.dlp.v2.CloudStorageOptions.FileSet other = (com.google.privacy.dlp.v2.CloudStorageOptions.FileSet) obj;
+      com.google.privacy.dlp.v2.CloudStorageOptions.FileSet other =
+          (com.google.privacy.dlp.v2.CloudStorageOptions.FileSet) obj;
 
       boolean result = true;
-      result = result && getUrl()
-          .equals(other.getUrl());
+      result = result && getUrl().equals(other.getUrl());
       result = result && (hasRegexFileSet() == other.hasRegexFileSet());
       if (hasRegexFileSet()) {
-        result = result && getRegexFileSet()
-            .equals(other.getRegexFileSet());
+        result = result && getRegexFileSet().equals(other.getRegexFileSet());
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -588,87 +629,94 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.privacy.dlp.v2.CloudStorageOptions.FileSet parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.CloudStorageOptions.FileSet parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.CloudStorageOptions.FileSet parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.CloudStorageOptions.FileSet parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.CloudStorageOptions.FileSet parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.privacy.dlp.v2.CloudStorageOptions.FileSet parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.privacy.dlp.v2.CloudStorageOptions.FileSet parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.privacy.dlp.v2.CloudStorageOptions.FileSet parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.privacy.dlp.v2.CloudStorageOptions.FileSet parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.privacy.dlp.v2.CloudStorageOptions.FileSet parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.privacy.dlp.v2.CloudStorageOptions.FileSet parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.privacy.dlp.v2.CloudStorageOptions.FileSet parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.privacy.dlp.v2.CloudStorageOptions.FileSet parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.privacy.dlp.v2.CloudStorageOptions.FileSet parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.privacy.dlp.v2.CloudStorageOptions.FileSet prototype) {
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.CloudStorageOptions.FileSet prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -678,27 +726,32 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Set of files to scan.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.CloudStorageOptions.FileSet}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CloudStorageOptions.FileSet)
         com.google.privacy.dlp.v2.CloudStorageOptions.FileSetOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CloudStorageOptions_FileSet_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CloudStorageOptions_FileSet_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CloudStorageOptions_FileSet_fieldAccessorTable
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CloudStorageOptions_FileSet_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.class, com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.Builder.class);
+                com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.class,
+                com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.Builder.class);
       }
 
       // Construct using com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.newBuilder()
@@ -706,16 +759,15 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -731,9 +783,9 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CloudStorageOptions_FileSet_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpStorage
+            .internal_static_google_privacy_dlp_v2_CloudStorageOptions_FileSet_descriptor;
       }
 
       @java.lang.Override
@@ -752,7 +804,8 @@ private static final long serialVersionUID = 0L;
 
       @java.lang.Override
       public com.google.privacy.dlp.v2.CloudStorageOptions.FileSet buildPartial() {
-        com.google.privacy.dlp.v2.CloudStorageOptions.FileSet result = new com.google.privacy.dlp.v2.CloudStorageOptions.FileSet(this);
+        com.google.privacy.dlp.v2.CloudStorageOptions.FileSet result =
+            new com.google.privacy.dlp.v2.CloudStorageOptions.FileSet(this);
         result.url_ = url_;
         if (regexFileSetBuilder_ == null) {
           result.regexFileSet_ = regexFileSet_;
@@ -767,38 +820,41 @@ private static final long serialVersionUID = 0L;
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.privacy.dlp.v2.CloudStorageOptions.FileSet) {
-          return mergeFrom((com.google.privacy.dlp.v2.CloudStorageOptions.FileSet)other);
+          return mergeFrom((com.google.privacy.dlp.v2.CloudStorageOptions.FileSet) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -806,7 +862,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.privacy.dlp.v2.CloudStorageOptions.FileSet other) {
-        if (other == com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.getDefaultInstance()) return this;
+        if (other == com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.getDefaultInstance())
+          return this;
         if (!other.getUrl().isEmpty()) {
           url_ = other.url_;
           onChanged();
@@ -833,7 +890,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.privacy.dlp.v2.CloudStorageOptions.FileSet) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.privacy.dlp.v2.CloudStorageOptions.FileSet) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -845,6 +903,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object url_ = "";
       /**
+       *
+       *
        * <pre>
        * The Cloud Storage url of the file(s) to scan, in the format
        * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed. Exactly
@@ -856,8 +916,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getUrl() {
         java.lang.Object ref = url_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           url_ = s;
           return s;
@@ -866,6 +925,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The Cloud Storage url of the file(s) to scan, in the format
        * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed. Exactly
@@ -874,13 +935,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string url = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getUrlBytes() {
+      public com.google.protobuf.ByteString getUrlBytes() {
         java.lang.Object ref = url_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           url_ = b;
           return b;
         } else {
@@ -888,6 +947,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The Cloud Storage url of the file(s) to scan, in the format
        * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed. Exactly
@@ -896,17 +957,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string url = 1;</code>
        */
-      public Builder setUrl(
-          java.lang.String value) {
+      public Builder setUrl(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         url_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The Cloud Storage url of the file(s) to scan, in the format
        * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed. Exactly
@@ -916,12 +978,14 @@ private static final long serialVersionUID = 0L;
        * <code>string url = 1;</code>
        */
       public Builder clearUrl() {
-        
+
         url_ = getDefaultInstance().getUrl();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The Cloud Storage url of the file(s) to scan, in the format
        * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed. Exactly
@@ -930,13 +994,12 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string url = 1;</code>
        */
-      public Builder setUrlBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setUrlBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         url_ = value;
         onChanged();
         return this;
@@ -944,8 +1007,13 @@ private static final long serialVersionUID = 0L;
 
       private com.google.privacy.dlp.v2.CloudStorageRegexFileSet regexFileSet_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.CloudStorageRegexFileSet, com.google.privacy.dlp.v2.CloudStorageRegexFileSet.Builder, com.google.privacy.dlp.v2.CloudStorageRegexFileSetOrBuilder> regexFileSetBuilder_;
+              com.google.privacy.dlp.v2.CloudStorageRegexFileSet,
+              com.google.privacy.dlp.v2.CloudStorageRegexFileSet.Builder,
+              com.google.privacy.dlp.v2.CloudStorageRegexFileSetOrBuilder>
+          regexFileSetBuilder_;
       /**
+       *
+       *
        * <pre>
        * The regex-filtered set of files to scan. Exactly one of `url` or
        * `regex_file_set` must be set.
@@ -957,6 +1025,8 @@ private static final long serialVersionUID = 0L;
         return regexFileSetBuilder_ != null || regexFileSet_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * The regex-filtered set of files to scan. Exactly one of `url` or
        * `regex_file_set` must be set.
@@ -966,12 +1036,16 @@ private static final long serialVersionUID = 0L;
        */
       public com.google.privacy.dlp.v2.CloudStorageRegexFileSet getRegexFileSet() {
         if (regexFileSetBuilder_ == null) {
-          return regexFileSet_ == null ? com.google.privacy.dlp.v2.CloudStorageRegexFileSet.getDefaultInstance() : regexFileSet_;
+          return regexFileSet_ == null
+              ? com.google.privacy.dlp.v2.CloudStorageRegexFileSet.getDefaultInstance()
+              : regexFileSet_;
         } else {
           return regexFileSetBuilder_.getMessage();
         }
       }
       /**
+       *
+       *
        * <pre>
        * The regex-filtered set of files to scan. Exactly one of `url` or
        * `regex_file_set` must be set.
@@ -993,6 +1067,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The regex-filtered set of files to scan. Exactly one of `url` or
        * `regex_file_set` must be set.
@@ -1012,6 +1088,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The regex-filtered set of files to scan. Exactly one of `url` or
        * `regex_file_set` must be set.
@@ -1023,7 +1101,9 @@ private static final long serialVersionUID = 0L;
         if (regexFileSetBuilder_ == null) {
           if (regexFileSet_ != null) {
             regexFileSet_ =
-              com.google.privacy.dlp.v2.CloudStorageRegexFileSet.newBuilder(regexFileSet_).mergeFrom(value).buildPartial();
+                com.google.privacy.dlp.v2.CloudStorageRegexFileSet.newBuilder(regexFileSet_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             regexFileSet_ = value;
           }
@@ -1035,6 +1115,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The regex-filtered set of files to scan. Exactly one of `url` or
        * `regex_file_set` must be set.
@@ -1054,6 +1136,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The regex-filtered set of files to scan. Exactly one of `url` or
        * `regex_file_set` must be set.
@@ -1062,11 +1146,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.CloudStorageRegexFileSet regex_file_set = 2;</code>
        */
       public com.google.privacy.dlp.v2.CloudStorageRegexFileSet.Builder getRegexFileSetBuilder() {
-        
+
         onChanged();
         return getRegexFileSetFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * The regex-filtered set of files to scan. Exactly one of `url` or
        * `regex_file_set` must be set.
@@ -1074,15 +1160,19 @@ private static final long serialVersionUID = 0L;
        *
        * <code>.google.privacy.dlp.v2.CloudStorageRegexFileSet regex_file_set = 2;</code>
        */
-      public com.google.privacy.dlp.v2.CloudStorageRegexFileSetOrBuilder getRegexFileSetOrBuilder() {
+      public com.google.privacy.dlp.v2.CloudStorageRegexFileSetOrBuilder
+          getRegexFileSetOrBuilder() {
         if (regexFileSetBuilder_ != null) {
           return regexFileSetBuilder_.getMessageOrBuilder();
         } else {
-          return regexFileSet_ == null ?
-              com.google.privacy.dlp.v2.CloudStorageRegexFileSet.getDefaultInstance() : regexFileSet_;
+          return regexFileSet_ == null
+              ? com.google.privacy.dlp.v2.CloudStorageRegexFileSet.getDefaultInstance()
+              : regexFileSet_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The regex-filtered set of files to scan. Exactly one of `url` or
        * `regex_file_set` must be set.
@@ -1091,18 +1181,22 @@ private static final long serialVersionUID = 0L;
        * <code>.google.privacy.dlp.v2.CloudStorageRegexFileSet regex_file_set = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.privacy.dlp.v2.CloudStorageRegexFileSet, com.google.privacy.dlp.v2.CloudStorageRegexFileSet.Builder, com.google.privacy.dlp.v2.CloudStorageRegexFileSetOrBuilder> 
+              com.google.privacy.dlp.v2.CloudStorageRegexFileSet,
+              com.google.privacy.dlp.v2.CloudStorageRegexFileSet.Builder,
+              com.google.privacy.dlp.v2.CloudStorageRegexFileSetOrBuilder>
           getRegexFileSetFieldBuilder() {
         if (regexFileSetBuilder_ == null) {
-          regexFileSetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.privacy.dlp.v2.CloudStorageRegexFileSet, com.google.privacy.dlp.v2.CloudStorageRegexFileSet.Builder, com.google.privacy.dlp.v2.CloudStorageRegexFileSetOrBuilder>(
-                  getRegexFileSet(),
-                  getParentForChildren(),
-                  isClean());
+          regexFileSetBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.CloudStorageRegexFileSet,
+                  com.google.privacy.dlp.v2.CloudStorageRegexFileSet.Builder,
+                  com.google.privacy.dlp.v2.CloudStorageRegexFileSetOrBuilder>(
+                  getRegexFileSet(), getParentForChildren(), isClean());
           regexFileSet_ = null;
         }
         return regexFileSetBuilder_;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1115,12 +1209,12 @@ private static final long serialVersionUID = 0L;
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CloudStorageOptions.FileSet)
     }
 
     // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CloudStorageOptions.FileSet)
     private static final com.google.privacy.dlp.v2.CloudStorageOptions.FileSet DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.CloudStorageOptions.FileSet();
     }
@@ -1129,16 +1223,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<FileSet>
-        PARSER = new com.google.protobuf.AbstractParser<FileSet>() {
-      @java.lang.Override
-      public FileSet parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FileSet(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<FileSet> PARSER =
+        new com.google.protobuf.AbstractParser<FileSet>() {
+          @java.lang.Override
+          public FileSet parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new FileSet(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<FileSet> parser() {
       return PARSER;
@@ -1153,13 +1247,14 @@ private static final long serialVersionUID = 0L;
     public com.google.privacy.dlp.v2.CloudStorageOptions.FileSet getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private int bitField0_;
   public static final int FILE_SET_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.CloudStorageOptions.FileSet fileSet_;
   /**
+   *
+   *
    * <pre>
    * The set of one or more files to scan.
    * </pre>
@@ -1170,6 +1265,8 @@ private static final long serialVersionUID = 0L;
     return fileSet_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The set of one or more files to scan.
    * </pre>
@@ -1177,9 +1274,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
    */
   public com.google.privacy.dlp.v2.CloudStorageOptions.FileSet getFileSet() {
-    return fileSet_ == null ? com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.getDefaultInstance() : fileSet_;
+    return fileSet_ == null
+        ? com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.getDefaultInstance()
+        : fileSet_;
   }
   /**
+   *
+   *
    * <pre>
    * The set of one or more files to scan.
    * </pre>
@@ -1193,6 +1294,8 @@ private static final long serialVersionUID = 0L;
   public static final int BYTES_LIMIT_PER_FILE_FIELD_NUMBER = 4;
   private long bytesLimitPerFile_;
   /**
+   *
+   *
    * <pre>
    * Max number of bytes to scan from a file. If a scanned file's size is bigger
    * than this value then the rest of the bytes are omitted. Only one
@@ -1208,6 +1311,8 @@ private static final long serialVersionUID = 0L;
   public static final int BYTES_LIMIT_PER_FILE_PERCENT_FIELD_NUMBER = 8;
   private int bytesLimitPerFilePercent_;
   /**
+   *
+   *
    * <pre>
    * Max percentage of bytes to scan from a file. The rest are omitted. The
    * number of bytes scanned is rounded down. Must be between 0 and 100,
@@ -1224,16 +1329,20 @@ private static final long serialVersionUID = 0L;
   public static final int FILE_TYPES_FIELD_NUMBER = 5;
   private java.util.List<java.lang.Integer> fileTypes_;
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
-      java.lang.Integer, com.google.privacy.dlp.v2.FileType> fileTypes_converter_ =
+          java.lang.Integer, com.google.privacy.dlp.v2.FileType>
+      fileTypes_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.privacy.dlp.v2.FileType>() {
             public com.google.privacy.dlp.v2.FileType convert(java.lang.Integer from) {
               @SuppressWarnings("deprecation")
-              com.google.privacy.dlp.v2.FileType result = com.google.privacy.dlp.v2.FileType.valueOf(from);
+              com.google.privacy.dlp.v2.FileType result =
+                  com.google.privacy.dlp.v2.FileType.valueOf(from);
               return result == null ? com.google.privacy.dlp.v2.FileType.UNRECOGNIZED : result;
             }
           };
   /**
+   *
+   *
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
@@ -1248,6 +1357,8 @@ private static final long serialVersionUID = 0L;
         java.lang.Integer, com.google.privacy.dlp.v2.FileType>(fileTypes_, fileTypes_converter_);
   }
   /**
+   *
+   *
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
@@ -1261,6 +1372,8 @@ private static final long serialVersionUID = 0L;
     return fileTypes_.size();
   }
   /**
+   *
+   *
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
@@ -1274,6 +1387,8 @@ private static final long serialVersionUID = 0L;
     return fileTypes_converter_.convert(fileTypes_.get(index));
   }
   /**
+   *
+   *
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
@@ -1283,11 +1398,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
    */
-  public java.util.List<java.lang.Integer>
-  getFileTypesValueList() {
+  public java.util.List<java.lang.Integer> getFileTypesValueList() {
     return fileTypes_;
   }
   /**
+   *
+   *
    * <pre>
    * List of file type groups to include in the scan.
    * If empty, all files are scanned and available data format processors
@@ -1300,28 +1416,30 @@ private static final long serialVersionUID = 0L;
   public int getFileTypesValue(int index) {
     return fileTypes_.get(index);
   }
+
   private int fileTypesMemoizedSerializedSize;
 
   public static final int SAMPLE_METHOD_FIELD_NUMBER = 6;
   private int sampleMethod_;
-  /**
-   * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code> */
   public int getSampleMethodValue() {
     return sampleMethod_;
   }
-  /**
-   * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code> */
   public com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod getSampleMethod() {
     @SuppressWarnings("deprecation")
-    com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod result = com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.valueOf(sampleMethod_);
-    return result == null ? com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.UNRECOGNIZED : result;
+    com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod result =
+        com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.valueOf(sampleMethod_);
+    return result == null
+        ? com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.UNRECOGNIZED
+        : result;
   }
 
   public static final int FILES_LIMIT_PERCENT_FIELD_NUMBER = 7;
   private int filesLimitPercent_;
   /**
+   *
+   *
    * <pre>
    * Limits the number of files to scan to this percentage of the input FileSet.
    * Number of files scanned is rounded down. Must be between 0 and 100,
@@ -1335,6 +1453,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -1346,8 +1465,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
     if (fileSet_ != null) {
       output.writeMessage(1, getFileSet());
@@ -1362,7 +1480,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < fileTypes_.size(); i++) {
       output.writeEnumNoTag(fileTypes_.get(i));
     }
-    if (sampleMethod_ != com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.SAMPLE_METHOD_UNSPECIFIED.getNumber()) {
+    if (sampleMethod_
+        != com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.SAMPLE_METHOD_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(6, sampleMethod_);
     }
     if (filesLimitPercent_ != 0) {
@@ -1381,36 +1501,33 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (fileSet_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getFileSet());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getFileSet());
     }
     if (bytesLimitPerFile_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(4, bytesLimitPerFile_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, bytesLimitPerFile_);
     }
     {
       int dataSize = 0;
       for (int i = 0; i < fileTypes_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeEnumSizeNoTag(fileTypes_.get(i));
+        dataSize += com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(fileTypes_.get(i));
       }
       size += dataSize;
-      if (!getFileTypesList().isEmpty()) {  size += 1;
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32SizeNoTag(dataSize);
-      }fileTypesMemoizedSerializedSize = dataSize;
+      if (!getFileTypesList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      fileTypesMemoizedSerializedSize = dataSize;
     }
-    if (sampleMethod_ != com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.SAMPLE_METHOD_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(6, sampleMethod_);
+    if (sampleMethod_
+        != com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.SAMPLE_METHOD_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, sampleMethod_);
     }
     if (filesLimitPercent_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(7, filesLimitPercent_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(7, filesLimitPercent_);
     }
     if (bytesLimitPerFilePercent_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(8, bytesLimitPerFilePercent_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, bytesLimitPerFilePercent_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1420,27 +1537,24 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.CloudStorageOptions)) {
       return super.equals(obj);
     }
-    com.google.privacy.dlp.v2.CloudStorageOptions other = (com.google.privacy.dlp.v2.CloudStorageOptions) obj;
+    com.google.privacy.dlp.v2.CloudStorageOptions other =
+        (com.google.privacy.dlp.v2.CloudStorageOptions) obj;
 
     boolean result = true;
     result = result && (hasFileSet() == other.hasFileSet());
     if (hasFileSet()) {
-      result = result && getFileSet()
-          .equals(other.getFileSet());
+      result = result && getFileSet().equals(other.getFileSet());
     }
-    result = result && (getBytesLimitPerFile()
-        == other.getBytesLimitPerFile());
-    result = result && (getBytesLimitPerFilePercent()
-        == other.getBytesLimitPerFilePercent());
+    result = result && (getBytesLimitPerFile() == other.getBytesLimitPerFile());
+    result = result && (getBytesLimitPerFilePercent() == other.getBytesLimitPerFilePercent());
     result = result && fileTypes_.equals(other.fileTypes_);
     result = result && sampleMethod_ == other.sampleMethod_;
-    result = result && (getFilesLimitPercent()
-        == other.getFilesLimitPercent());
+    result = result && (getFilesLimitPercent() == other.getFilesLimitPercent());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1457,8 +1571,7 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getFileSet().hashCode();
     }
     hash = (37 * hash) + BYTES_LIMIT_PER_FILE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getBytesLimitPerFile());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getBytesLimitPerFile());
     hash = (37 * hash) + BYTES_LIMIT_PER_FILE_PERCENT_FIELD_NUMBER;
     hash = (53 * hash) + getBytesLimitPerFilePercent();
     if (getFileTypesCount() > 0) {
@@ -1474,97 +1587,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.privacy.dlp.v2.CloudStorageOptions parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.privacy.dlp.v2.CloudStorageOptions parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.CloudStorageOptions parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.CloudStorageOptions parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.CloudStorageOptions parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.CloudStorageOptions parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.CloudStorageOptions parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.CloudStorageOptions parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.CloudStorageOptions parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.CloudStorageOptions parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.privacy.dlp.v2.CloudStorageOptions parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.privacy.dlp.v2.CloudStorageOptions parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.privacy.dlp.v2.CloudStorageOptions parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.CloudStorageOptions parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.privacy.dlp.v2.CloudStorageOptions prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Options defining a file or a set of files within a Google Cloud Storage
    * bucket.
@@ -1572,21 +1692,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.CloudStorageOptions}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.CloudStorageOptions)
       com.google.privacy.dlp.v2.CloudStorageOptionsOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CloudStorageOptions_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CloudStorageOptions_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CloudStorageOptions_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CloudStorageOptions_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.CloudStorageOptions.class, com.google.privacy.dlp.v2.CloudStorageOptions.Builder.class);
+              com.google.privacy.dlp.v2.CloudStorageOptions.class,
+              com.google.privacy.dlp.v2.CloudStorageOptions.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.CloudStorageOptions.newBuilder()
@@ -1594,16 +1716,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1627,9 +1748,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpStorage.internal_static_google_privacy_dlp_v2_CloudStorageOptions_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpStorage
+          .internal_static_google_privacy_dlp_v2_CloudStorageOptions_descriptor;
     }
 
     @java.lang.Override
@@ -1648,7 +1769,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.privacy.dlp.v2.CloudStorageOptions buildPartial() {
-      com.google.privacy.dlp.v2.CloudStorageOptions result = new com.google.privacy.dlp.v2.CloudStorageOptions(this);
+      com.google.privacy.dlp.v2.CloudStorageOptions result =
+          new com.google.privacy.dlp.v2.CloudStorageOptions(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (fileSetBuilder_ == null) {
@@ -1674,38 +1796,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.CloudStorageOptions) {
-        return mergeFrom((com.google.privacy.dlp.v2.CloudStorageOptions)other);
+        return mergeFrom((com.google.privacy.dlp.v2.CloudStorageOptions) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1767,12 +1890,18 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private com.google.privacy.dlp.v2.CloudStorageOptions.FileSet fileSet_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.CloudStorageOptions.FileSet, com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.Builder, com.google.privacy.dlp.v2.CloudStorageOptions.FileSetOrBuilder> fileSetBuilder_;
+            com.google.privacy.dlp.v2.CloudStorageOptions.FileSet,
+            com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.Builder,
+            com.google.privacy.dlp.v2.CloudStorageOptions.FileSetOrBuilder>
+        fileSetBuilder_;
     /**
+     *
+     *
      * <pre>
      * The set of one or more files to scan.
      * </pre>
@@ -1783,6 +1912,8 @@ private static final long serialVersionUID = 0L;
       return fileSetBuilder_ != null || fileSet_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The set of one or more files to scan.
      * </pre>
@@ -1791,12 +1922,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.CloudStorageOptions.FileSet getFileSet() {
       if (fileSetBuilder_ == null) {
-        return fileSet_ == null ? com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.getDefaultInstance() : fileSet_;
+        return fileSet_ == null
+            ? com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.getDefaultInstance()
+            : fileSet_;
       } else {
         return fileSetBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The set of one or more files to scan.
      * </pre>
@@ -1817,6 +1952,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The set of one or more files to scan.
      * </pre>
@@ -1835,6 +1972,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The set of one or more files to scan.
      * </pre>
@@ -1845,7 +1984,9 @@ private static final long serialVersionUID = 0L;
       if (fileSetBuilder_ == null) {
         if (fileSet_ != null) {
           fileSet_ =
-            com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.newBuilder(fileSet_).mergeFrom(value).buildPartial();
+              com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.newBuilder(fileSet_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           fileSet_ = value;
         }
@@ -1857,6 +1998,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The set of one or more files to scan.
      * </pre>
@@ -1875,6 +2018,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The set of one or more files to scan.
      * </pre>
@@ -1882,11 +2027,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
      */
     public com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.Builder getFileSetBuilder() {
-      
+
       onChanged();
       return getFileSetFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The set of one or more files to scan.
      * </pre>
@@ -1897,11 +2044,14 @@ private static final long serialVersionUID = 0L;
       if (fileSetBuilder_ != null) {
         return fileSetBuilder_.getMessageOrBuilder();
       } else {
-        return fileSet_ == null ?
-            com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.getDefaultInstance() : fileSet_;
+        return fileSet_ == null
+            ? com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.getDefaultInstance()
+            : fileSet_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The set of one or more files to scan.
      * </pre>
@@ -1909,21 +2059,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.CloudStorageOptions.FileSet file_set = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.CloudStorageOptions.FileSet, com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.Builder, com.google.privacy.dlp.v2.CloudStorageOptions.FileSetOrBuilder> 
+            com.google.privacy.dlp.v2.CloudStorageOptions.FileSet,
+            com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.Builder,
+            com.google.privacy.dlp.v2.CloudStorageOptions.FileSetOrBuilder>
         getFileSetFieldBuilder() {
       if (fileSetBuilder_ == null) {
-        fileSetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.CloudStorageOptions.FileSet, com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.Builder, com.google.privacy.dlp.v2.CloudStorageOptions.FileSetOrBuilder>(
-                getFileSet(),
-                getParentForChildren(),
-                isClean());
+        fileSetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.CloudStorageOptions.FileSet,
+                com.google.privacy.dlp.v2.CloudStorageOptions.FileSet.Builder,
+                com.google.privacy.dlp.v2.CloudStorageOptions.FileSetOrBuilder>(
+                getFileSet(), getParentForChildren(), isClean());
         fileSet_ = null;
       }
       return fileSetBuilder_;
     }
 
-    private long bytesLimitPerFile_ ;
+    private long bytesLimitPerFile_;
     /**
+     *
+     *
      * <pre>
      * Max number of bytes to scan from a file. If a scanned file's size is bigger
      * than this value then the rest of the bytes are omitted. Only one
@@ -1936,6 +2091,8 @@ private static final long serialVersionUID = 0L;
       return bytesLimitPerFile_;
     }
     /**
+     *
+     *
      * <pre>
      * Max number of bytes to scan from a file. If a scanned file's size is bigger
      * than this value then the rest of the bytes are omitted. Only one
@@ -1945,12 +2102,14 @@ private static final long serialVersionUID = 0L;
      * <code>int64 bytes_limit_per_file = 4;</code>
      */
     public Builder setBytesLimitPerFile(long value) {
-      
+
       bytesLimitPerFile_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Max number of bytes to scan from a file. If a scanned file's size is bigger
      * than this value then the rest of the bytes are omitted. Only one
@@ -1960,14 +2119,16 @@ private static final long serialVersionUID = 0L;
      * <code>int64 bytes_limit_per_file = 4;</code>
      */
     public Builder clearBytesLimitPerFile() {
-      
+
       bytesLimitPerFile_ = 0L;
       onChanged();
       return this;
     }
 
-    private int bytesLimitPerFilePercent_ ;
+    private int bytesLimitPerFilePercent_;
     /**
+     *
+     *
      * <pre>
      * Max percentage of bytes to scan from a file. The rest are omitted. The
      * number of bytes scanned is rounded down. Must be between 0 and 100,
@@ -1981,6 +2142,8 @@ private static final long serialVersionUID = 0L;
       return bytesLimitPerFilePercent_;
     }
     /**
+     *
+     *
      * <pre>
      * Max percentage of bytes to scan from a file. The rest are omitted. The
      * number of bytes scanned is rounded down. Must be between 0 and 100,
@@ -1991,12 +2154,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 bytes_limit_per_file_percent = 8;</code>
      */
     public Builder setBytesLimitPerFilePercent(int value) {
-      
+
       bytesLimitPerFilePercent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Max percentage of bytes to scan from a file. The rest are omitted. The
      * number of bytes scanned is rounded down. Must be between 0 and 100,
@@ -2007,14 +2172,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 bytes_limit_per_file_percent = 8;</code>
      */
     public Builder clearBytesLimitPerFilePercent() {
-      
+
       bytesLimitPerFilePercent_ = 0;
       onChanged();
       return this;
     }
 
-    private java.util.List<java.lang.Integer> fileTypes_ =
-      java.util.Collections.emptyList();
+    private java.util.List<java.lang.Integer> fileTypes_ = java.util.Collections.emptyList();
+
     private void ensureFileTypesIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
         fileTypes_ = new java.util.ArrayList<java.lang.Integer>(fileTypes_);
@@ -2022,6 +2187,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
@@ -2036,6 +2203,8 @@ private static final long serialVersionUID = 0L;
           java.lang.Integer, com.google.privacy.dlp.v2.FileType>(fileTypes_, fileTypes_converter_);
     }
     /**
+     *
+     *
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
@@ -2049,6 +2218,8 @@ private static final long serialVersionUID = 0L;
       return fileTypes_.size();
     }
     /**
+     *
+     *
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
@@ -2062,6 +2233,8 @@ private static final long serialVersionUID = 0L;
       return fileTypes_converter_.convert(fileTypes_.get(index));
     }
     /**
+     *
+     *
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
@@ -2071,8 +2244,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
      */
-    public Builder setFileTypes(
-        int index, com.google.privacy.dlp.v2.FileType value) {
+    public Builder setFileTypes(int index, com.google.privacy.dlp.v2.FileType value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -2082,6 +2254,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
@@ -2101,6 +2275,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
@@ -2120,6 +2296,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
@@ -2136,6 +2314,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
@@ -2145,11 +2325,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
      */
-    public java.util.List<java.lang.Integer>
-    getFileTypesValueList() {
+    public java.util.List<java.lang.Integer> getFileTypesValueList() {
       return java.util.Collections.unmodifiableList(fileTypes_);
     }
     /**
+     *
+     *
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
@@ -2163,6 +2344,8 @@ private static final long serialVersionUID = 0L;
       return fileTypes_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
@@ -2172,14 +2355,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
      */
-    public Builder setFileTypesValue(
-        int index, int value) {
+    public Builder setFileTypesValue(int index, int value) {
       ensureFileTypesIsMutable();
       fileTypes_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
@@ -2196,6 +2380,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of file type groups to include in the scan.
      * If empty, all files are scanned and available data format processors
@@ -2205,8 +2391,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.FileType file_types = 5;</code>
      */
-    public Builder addAllFileTypesValue(
-        java.lang.Iterable<java.lang.Integer> values) {
+    public Builder addAllFileTypesValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureFileTypesIsMutable();
       for (int value : values) {
         fileTypes_.add(value);
@@ -2216,52 +2401,48 @@ private static final long serialVersionUID = 0L;
     }
 
     private int sampleMethod_ = 0;
-    /**
-     * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code> */
     public int getSampleMethodValue() {
       return sampleMethod_;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code> */
     public Builder setSampleMethodValue(int value) {
       sampleMethod_ = value;
       onChanged();
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code> */
     public com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod getSampleMethod() {
       @SuppressWarnings("deprecation")
-      com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod result = com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.valueOf(sampleMethod_);
-      return result == null ? com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.UNRECOGNIZED : result;
+      com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod result =
+          com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.valueOf(sampleMethod_);
+      return result == null
+          ? com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod.UNRECOGNIZED
+          : result;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
-     */
-    public Builder setSampleMethod(com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod value) {
+    /** <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code> */
+    public Builder setSampleMethod(
+        com.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       sampleMethod_ = value.getNumber();
       onChanged();
       return this;
     }
-    /**
-     * <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code>
-     */
+    /** <code>.google.privacy.dlp.v2.CloudStorageOptions.SampleMethod sample_method = 6;</code> */
     public Builder clearSampleMethod() {
-      
+
       sampleMethod_ = 0;
       onChanged();
       return this;
     }
 
-    private int filesLimitPercent_ ;
+    private int filesLimitPercent_;
     /**
+     *
+     *
      * <pre>
      * Limits the number of files to scan to this percentage of the input FileSet.
      * Number of files scanned is rounded down. Must be between 0 and 100,
@@ -2274,6 +2455,8 @@ private static final long serialVersionUID = 0L;
       return filesLimitPercent_;
     }
     /**
+     *
+     *
      * <pre>
      * Limits the number of files to scan to this percentage of the input FileSet.
      * Number of files scanned is rounded down. Must be between 0 and 100,
@@ -2283,12 +2466,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 files_limit_percent = 7;</code>
      */
     public Builder setFilesLimitPercent(int value) {
-      
+
       filesLimitPercent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Limits the number of files to scan to this percentage of the input FileSet.
      * Number of files scanned is rounded down. Must be between 0 and 100,
@@ -2298,14 +2483,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 files_limit_percent = 7;</code>
      */
     public Builder clearFilesLimitPercent() {
-      
+
       filesLimitPercent_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2315,12 +2500,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.CloudStorageOptions)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.CloudStorageOptions)
   private static final com.google.privacy.dlp.v2.CloudStorageOptions DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.CloudStorageOptions();
   }
@@ -2329,16 +2514,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CloudStorageOptions>
-      PARSER = new com.google.protobuf.AbstractParser<CloudStorageOptions>() {
-    @java.lang.Override
-    public CloudStorageOptions parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CloudStorageOptions(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<CloudStorageOptions> PARSER =
+      new com.google.protobuf.AbstractParser<CloudStorageOptions>() {
+        @java.lang.Override
+        public CloudStorageOptions parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CloudStorageOptions(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<CloudStorageOptions> parser() {
     return PARSER;
@@ -2353,6 +2538,4 @@ private static final long serialVersionUID = 0L;
   public com.google.privacy.dlp.v2.CloudStorageOptions getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

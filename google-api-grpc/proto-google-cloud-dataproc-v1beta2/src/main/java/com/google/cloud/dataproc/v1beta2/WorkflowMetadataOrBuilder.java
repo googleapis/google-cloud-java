@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface WorkflowMetadataOrBuilder extends
+public interface WorkflowMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.WorkflowMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. The "resource name" of the template.
    * </pre>
@@ -16,16 +19,19 @@ public interface WorkflowMetadataOrBuilder extends
    */
   java.lang.String getTemplate();
   /**
+   *
+   *
    * <pre>
    * Output only. The "resource name" of the template.
    * </pre>
    *
    * <code>string template = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getTemplateBytes();
+  com.google.protobuf.ByteString getTemplateBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The version of template at the time of
    * workflow instantiation.
@@ -36,6 +42,8 @@ public interface WorkflowMetadataOrBuilder extends
   int getVersion();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The create cluster operation metadata.
    * </pre>
@@ -44,6 +52,8 @@ public interface WorkflowMetadataOrBuilder extends
    */
   boolean hasCreateCluster();
   /**
+   *
+   *
    * <pre>
    * Output only. The create cluster operation metadata.
    * </pre>
@@ -52,6 +62,8 @@ public interface WorkflowMetadataOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.ClusterOperation getCreateCluster();
   /**
+   *
+   *
    * <pre>
    * Output only. The create cluster operation metadata.
    * </pre>
@@ -61,6 +73,8 @@ public interface WorkflowMetadataOrBuilder extends
   com.google.cloud.dataproc.v1beta2.ClusterOperationOrBuilder getCreateClusterOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The workflow graph.
    * </pre>
@@ -69,6 +83,8 @@ public interface WorkflowMetadataOrBuilder extends
    */
   boolean hasGraph();
   /**
+   *
+   *
    * <pre>
    * Output only. The workflow graph.
    * </pre>
@@ -77,6 +93,8 @@ public interface WorkflowMetadataOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.WorkflowGraph getGraph();
   /**
+   *
+   *
    * <pre>
    * Output only. The workflow graph.
    * </pre>
@@ -86,6 +104,8 @@ public interface WorkflowMetadataOrBuilder extends
   com.google.cloud.dataproc.v1beta2.WorkflowGraphOrBuilder getGraphOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The delete cluster operation metadata.
    * </pre>
@@ -94,6 +114,8 @@ public interface WorkflowMetadataOrBuilder extends
    */
   boolean hasDeleteCluster();
   /**
+   *
+   *
    * <pre>
    * Output only. The delete cluster operation metadata.
    * </pre>
@@ -102,6 +124,8 @@ public interface WorkflowMetadataOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.ClusterOperation getDeleteCluster();
   /**
+   *
+   *
    * <pre>
    * Output only. The delete cluster operation metadata.
    * </pre>
@@ -111,6 +135,8 @@ public interface WorkflowMetadataOrBuilder extends
   com.google.cloud.dataproc.v1beta2.ClusterOperationOrBuilder getDeleteClusterOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The workflow state.
    * </pre>
@@ -119,6 +145,8 @@ public interface WorkflowMetadataOrBuilder extends
    */
   int getStateValue();
   /**
+   *
+   *
    * <pre>
    * Output only. The workflow state.
    * </pre>
@@ -128,24 +156,29 @@ public interface WorkflowMetadataOrBuilder extends
   com.google.cloud.dataproc.v1beta2.WorkflowMetadata.State getState();
 
   /**
+   *
+   *
    * <pre>
-   * Output only. The name of the managed cluster.
+   * Output only. The name of the target cluster.
    * </pre>
    *
    * <code>string cluster_name = 7;</code>
    */
   java.lang.String getClusterName();
   /**
+   *
+   *
    * <pre>
-   * Output only. The name of the managed cluster.
+   * Output only. The name of the target cluster.
    * </pre>
    *
    * <code>string cluster_name = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getClusterNameBytes();
+  com.google.protobuf.ByteString getClusterNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Map from parameter names to values that were used for those parameters.
    * </pre>
@@ -154,48 +187,129 @@ public interface WorkflowMetadataOrBuilder extends
    */
   int getParametersCount();
   /**
+   *
+   *
    * <pre>
    * Map from parameter names to values that were used for those parameters.
    * </pre>
    *
    * <code>map&lt;string, string&gt; parameters = 8;</code>
    */
-  boolean containsParameters(
-      java.lang.String key);
-  /**
-   * Use {@link #getParametersMap()} instead.
-   */
+  boolean containsParameters(java.lang.String key);
+  /** Use {@link #getParametersMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getParameters();
+  java.util.Map<java.lang.String, java.lang.String> getParameters();
   /**
+   *
+   *
    * <pre>
    * Map from parameter names to values that were used for those parameters.
    * </pre>
    *
    * <code>map&lt;string, string&gt; parameters = 8;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getParametersMap();
+  java.util.Map<java.lang.String, java.lang.String> getParametersMap();
   /**
+   *
+   *
    * <pre>
    * Map from parameter names to values that were used for those parameters.
    * </pre>
    *
    * <code>map&lt;string, string&gt; parameters = 8;</code>
    */
+  java.lang.String getParametersOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Map from parameter names to values that were used for those parameters.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; parameters = 8;</code>
+   */
+  java.lang.String getParametersOrThrow(java.lang.String key);
 
-  java.lang.String getParametersOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
-   * Map from parameter names to values that were used for those parameters.
+   * Output only. Workflow start time.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; parameters = 8;</code>
+   * <code>.google.protobuf.Timestamp start_time = 9;</code>
    */
+  boolean hasStartTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Workflow start time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 9;</code>
+   */
+  com.google.protobuf.Timestamp getStartTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Workflow start time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 9;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
-  java.lang.String getParametersOrThrow(
-      java.lang.String key);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Workflow end time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 10;</code>
+   */
+  boolean hasEndTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Workflow end time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 10;</code>
+   */
+  com.google.protobuf.Timestamp getEndTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Workflow end time.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 10;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The UUID of target cluster.
+   * </pre>
+   *
+   * <code>string cluster_uuid = 11;</code>
+   */
+  java.lang.String getClusterUuid();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The UUID of target cluster.
+   * </pre>
+   *
+   * <code>string cluster_uuid = 11;</code>
+   */
+  com.google.protobuf.ByteString getClusterUuidBytes();
 }

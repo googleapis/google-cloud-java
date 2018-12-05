@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface QueryInputOrBuilder extends
+public interface QueryInputOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.QueryInput)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Instructs the speech recognizer how to process the speech audio.
    * </pre>
@@ -16,6 +19,8 @@ public interface QueryInputOrBuilder extends
    */
   boolean hasAudioConfig();
   /**
+   *
+   *
    * <pre>
    * Instructs the speech recognizer how to process the speech audio.
    * </pre>
@@ -24,6 +29,8 @@ public interface QueryInputOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.InputAudioConfig getAudioConfig();
   /**
+   *
+   *
    * <pre>
    * Instructs the speech recognizer how to process the speech audio.
    * </pre>
@@ -33,6 +40,8 @@ public interface QueryInputOrBuilder extends
   com.google.cloud.dialogflow.v2.InputAudioConfigOrBuilder getAudioConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The natural language text to be processed.
    * </pre>
@@ -41,6 +50,8 @@ public interface QueryInputOrBuilder extends
    */
   boolean hasText();
   /**
+   *
+   *
    * <pre>
    * The natural language text to be processed.
    * </pre>
@@ -49,6 +60,8 @@ public interface QueryInputOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.TextInput getText();
   /**
+   *
+   *
    * <pre>
    * The natural language text to be processed.
    * </pre>
@@ -58,6 +71,8 @@ public interface QueryInputOrBuilder extends
   com.google.cloud.dialogflow.v2.TextInputOrBuilder getTextOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The event to be processed.
    * </pre>
@@ -66,6 +81,8 @@ public interface QueryInputOrBuilder extends
    */
   boolean hasEvent();
   /**
+   *
+   *
    * <pre>
    * The event to be processed.
    * </pre>
@@ -74,6 +91,8 @@ public interface QueryInputOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.EventInput getEvent();
   /**
+   *
+   *
    * <pre>
    * The event to be processed.
    * </pre>

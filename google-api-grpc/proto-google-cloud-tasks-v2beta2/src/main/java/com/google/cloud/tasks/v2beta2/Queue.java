@@ -4,6 +4,8 @@
 package com.google.cloud.tasks.v2beta2;
 
 /**
+ *
+ *
  * <pre>
  * A queue is a container of related tasks. Queues are configured to manage
  * how those tasks are dispatched. Configurable properties include rate limits,
@@ -12,25 +14,26 @@ package com.google.cloud.tasks.v2beta2;
  *
  * Protobuf type {@code google.cloud.tasks.v2beta2.Queue}
  */
-public  final class Queue extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Queue extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta2.Queue)
     QueueOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Queue.newBuilder() to construct.
   private Queue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Queue() {
     name_ = "";
     state_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Queue(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,127 +53,149 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 26: {
-            com.google.cloud.tasks.v2beta2.AppEngineHttpTarget.Builder subBuilder = null;
-            if (targetTypeCase_ == 3) {
-              subBuilder = ((com.google.cloud.tasks.v2beta2.AppEngineHttpTarget) targetType_).toBuilder();
+              name_ = s;
+              break;
             }
-            targetType_ =
-                input.readMessage(com.google.cloud.tasks.v2beta2.AppEngineHttpTarget.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.tasks.v2beta2.AppEngineHttpTarget) targetType_);
-              targetType_ = subBuilder.buildPartial();
+          case 26:
+            {
+              com.google.cloud.tasks.v2beta2.AppEngineHttpTarget.Builder subBuilder = null;
+              if (targetTypeCase_ == 3) {
+                subBuilder =
+                    ((com.google.cloud.tasks.v2beta2.AppEngineHttpTarget) targetType_).toBuilder();
+              }
+              targetType_ =
+                  input.readMessage(
+                      com.google.cloud.tasks.v2beta2.AppEngineHttpTarget.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.tasks.v2beta2.AppEngineHttpTarget) targetType_);
+                targetType_ = subBuilder.buildPartial();
+              }
+              targetTypeCase_ = 3;
+              break;
             }
-            targetTypeCase_ = 3;
-            break;
-          }
-          case 34: {
-            com.google.cloud.tasks.v2beta2.PullTarget.Builder subBuilder = null;
-            if (targetTypeCase_ == 4) {
-              subBuilder = ((com.google.cloud.tasks.v2beta2.PullTarget) targetType_).toBuilder();
+          case 34:
+            {
+              com.google.cloud.tasks.v2beta2.PullTarget.Builder subBuilder = null;
+              if (targetTypeCase_ == 4) {
+                subBuilder = ((com.google.cloud.tasks.v2beta2.PullTarget) targetType_).toBuilder();
+              }
+              targetType_ =
+                  input.readMessage(
+                      com.google.cloud.tasks.v2beta2.PullTarget.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.tasks.v2beta2.PullTarget) targetType_);
+                targetType_ = subBuilder.buildPartial();
+              }
+              targetTypeCase_ = 4;
+              break;
             }
-            targetType_ =
-                input.readMessage(com.google.cloud.tasks.v2beta2.PullTarget.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.tasks.v2beta2.PullTarget) targetType_);
-              targetType_ = subBuilder.buildPartial();
-            }
-            targetTypeCase_ = 4;
-            break;
-          }
-          case 42: {
-            com.google.cloud.tasks.v2beta2.RateLimits.Builder subBuilder = null;
-            if (rateLimits_ != null) {
-              subBuilder = rateLimits_.toBuilder();
-            }
-            rateLimits_ = input.readMessage(com.google.cloud.tasks.v2beta2.RateLimits.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(rateLimits_);
-              rateLimits_ = subBuilder.buildPartial();
-            }
+          case 42:
+            {
+              com.google.cloud.tasks.v2beta2.RateLimits.Builder subBuilder = null;
+              if (rateLimits_ != null) {
+                subBuilder = rateLimits_.toBuilder();
+              }
+              rateLimits_ =
+                  input.readMessage(
+                      com.google.cloud.tasks.v2beta2.RateLimits.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(rateLimits_);
+                rateLimits_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 50: {
-            com.google.cloud.tasks.v2beta2.RetryConfig.Builder subBuilder = null;
-            if (retryConfig_ != null) {
-              subBuilder = retryConfig_.toBuilder();
+              break;
             }
-            retryConfig_ = input.readMessage(com.google.cloud.tasks.v2beta2.RetryConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(retryConfig_);
-              retryConfig_ = subBuilder.buildPartial();
-            }
+          case 50:
+            {
+              com.google.cloud.tasks.v2beta2.RetryConfig.Builder subBuilder = null;
+              if (retryConfig_ != null) {
+                subBuilder = retryConfig_.toBuilder();
+              }
+              retryConfig_ =
+                  input.readMessage(
+                      com.google.cloud.tasks.v2beta2.RetryConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(retryConfig_);
+                retryConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 56: {
-            int rawValue = input.readEnum();
+              break;
+            }
+          case 56:
+            {
+              int rawValue = input.readEnum();
 
-            state_ = rawValue;
-            break;
-          }
-          case 66: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (purgeTime_ != null) {
-              subBuilder = purgeTime_.toBuilder();
+              state_ = rawValue;
+              break;
             }
-            purgeTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(purgeTime_);
-              purgeTime_ = subBuilder.buildPartial();
-            }
+          case 66:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (purgeTime_ != null) {
+                subBuilder = purgeTime_.toBuilder();
+              }
+              purgeTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(purgeTime_);
+                purgeTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.tasks.v2beta2.QueueProto.internal_static_google_cloud_tasks_v2beta2_Queue_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.tasks.v2beta2.QueueProto
+        .internal_static_google_cloud_tasks_v2beta2_Queue_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.tasks.v2beta2.QueueProto.internal_static_google_cloud_tasks_v2beta2_Queue_fieldAccessorTable
+    return com.google.cloud.tasks.v2beta2.QueueProto
+        .internal_static_google_cloud_tasks_v2beta2_Queue_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.tasks.v2beta2.Queue.class, com.google.cloud.tasks.v2beta2.Queue.Builder.class);
+            com.google.cloud.tasks.v2beta2.Queue.class,
+            com.google.cloud.tasks.v2beta2.Queue.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * State of the queue.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.tasks.v2beta2.Queue.State}
    */
-  public enum State
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Unspecified state.
      * </pre>
@@ -179,6 +204,8 @@ private static final long serialVersionUID = 0L;
      */
     STATE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * The queue is running. Tasks can be dispatched.
      * If the queue was created using Cloud Tasks and the queue has
@@ -193,6 +220,8 @@ private static final long serialVersionUID = 0L;
      */
     RUNNING(1),
     /**
+     *
+     *
      * <pre>
      * Tasks are paused by the user. If the queue is paused then Cloud
      * Tasks will stop delivering tasks from it, but more tasks can
@@ -205,6 +234,8 @@ private static final long serialVersionUID = 0L;
      */
     PAUSED(2),
     /**
+     *
+     *
      * <pre>
      * The queue is disabled.
      * A queue becomes `DISABLED` when
@@ -226,6 +257,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Unspecified state.
      * </pre>
@@ -234,6 +267,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The queue is running. Tasks can be dispatched.
      * If the queue was created using Cloud Tasks and the queue has
@@ -248,6 +283,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RUNNING_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Tasks are paused by the user. If the queue is paused then Cloud
      * Tasks will stop delivering tasks from it, but more tasks can
@@ -260,6 +297,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PAUSED_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * The queue is disabled.
      * A queue becomes `DISABLED` when
@@ -278,7 +317,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DISABLED_VALUE = 3;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -287,9 +325,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
@@ -297,46 +333,47 @@ private static final long serialVersionUID = 0L;
 
     public static State forNumber(int value) {
       switch (value) {
-        case 0: return STATE_UNSPECIFIED;
-        case 1: return RUNNING;
-        case 2: return PAUSED;
-        case 3: return DISABLED;
-        default: return null;
+        case 0:
+          return STATE_UNSPECIFIED;
+        case 1:
+          return RUNNING;
+        case 2:
+          return PAUSED;
+        case 3:
+          return DISABLED;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<State>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        State> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<State>() {
-            public State findValueByNumber(int number) {
-              return State.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.tasks.v2beta2.Queue.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final State[] VALUES = values();
 
-    public static State valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -355,18 +392,17 @@ private static final long serialVersionUID = 0L;
 
   private int targetTypeCase_ = 0;
   private java.lang.Object targetType_;
-  public enum TargetTypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum TargetTypeCase implements com.google.protobuf.Internal.EnumLite {
     APP_ENGINE_HTTP_TARGET(3),
     PULL_TARGET(4),
     TARGETTYPE_NOT_SET(0);
     private final int value;
+
     private TargetTypeCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static TargetTypeCase valueOf(int value) {
       return forNumber(value);
@@ -374,26 +410,31 @@ private static final long serialVersionUID = 0L;
 
     public static TargetTypeCase forNumber(int value) {
       switch (value) {
-        case 3: return APP_ENGINE_HTTP_TARGET;
-        case 4: return PULL_TARGET;
-        case 0: return TARGETTYPE_NOT_SET;
-        default: return null;
+        case 3:
+          return APP_ENGINE_HTTP_TARGET;
+        case 4:
+          return PULL_TARGET;
+        case 0:
+          return TARGETTYPE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public TargetTypeCase
-  getTargetTypeCase() {
-    return TargetTypeCase.forNumber(
-        targetTypeCase_);
+  public TargetTypeCase getTargetTypeCase() {
+    return TargetTypeCase.forNumber(targetTypeCase_);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * Caller-specified and required in [CreateQueue][google.cloud.tasks.v2beta2.CloudTasks.CreateQueue],
    * after which it becomes output only.
@@ -419,14 +460,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Caller-specified and required in [CreateQueue][google.cloud.tasks.v2beta2.CloudTasks.CreateQueue],
    * after which it becomes output only.
@@ -447,13 +489,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -463,6 +503,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int APP_ENGINE_HTTP_TARGET_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * App Engine HTTP target.
    * An App Engine queue is a queue that has an [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget].
@@ -474,6 +516,8 @@ private static final long serialVersionUID = 0L;
     return targetTypeCase_ == 3;
   }
   /**
+   *
+   *
    * <pre>
    * App Engine HTTP target.
    * An App Engine queue is a queue that has an [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget].
@@ -483,11 +527,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.tasks.v2beta2.AppEngineHttpTarget getAppEngineHttpTarget() {
     if (targetTypeCase_ == 3) {
-       return (com.google.cloud.tasks.v2beta2.AppEngineHttpTarget) targetType_;
+      return (com.google.cloud.tasks.v2beta2.AppEngineHttpTarget) targetType_;
     }
     return com.google.cloud.tasks.v2beta2.AppEngineHttpTarget.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * App Engine HTTP target.
    * An App Engine queue is a queue that has an [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget].
@@ -495,15 +541,18 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.cloud.tasks.v2beta2.AppEngineHttpTarget app_engine_http_target = 3;</code>
    */
-  public com.google.cloud.tasks.v2beta2.AppEngineHttpTargetOrBuilder getAppEngineHttpTargetOrBuilder() {
+  public com.google.cloud.tasks.v2beta2.AppEngineHttpTargetOrBuilder
+      getAppEngineHttpTargetOrBuilder() {
     if (targetTypeCase_ == 3) {
-       return (com.google.cloud.tasks.v2beta2.AppEngineHttpTarget) targetType_;
+      return (com.google.cloud.tasks.v2beta2.AppEngineHttpTarget) targetType_;
     }
     return com.google.cloud.tasks.v2beta2.AppEngineHttpTarget.getDefaultInstance();
   }
 
   public static final int PULL_TARGET_FIELD_NUMBER = 4;
   /**
+   *
+   *
    * <pre>
    * Pull target.
    * A pull queue is a queue that has a [PullTarget][google.cloud.tasks.v2beta2.PullTarget].
@@ -515,6 +564,8 @@ private static final long serialVersionUID = 0L;
     return targetTypeCase_ == 4;
   }
   /**
+   *
+   *
    * <pre>
    * Pull target.
    * A pull queue is a queue that has a [PullTarget][google.cloud.tasks.v2beta2.PullTarget].
@@ -524,11 +575,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.tasks.v2beta2.PullTarget getPullTarget() {
     if (targetTypeCase_ == 4) {
-       return (com.google.cloud.tasks.v2beta2.PullTarget) targetType_;
+      return (com.google.cloud.tasks.v2beta2.PullTarget) targetType_;
     }
     return com.google.cloud.tasks.v2beta2.PullTarget.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Pull target.
    * A pull queue is a queue that has a [PullTarget][google.cloud.tasks.v2beta2.PullTarget].
@@ -538,7 +591,7 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.tasks.v2beta2.PullTargetOrBuilder getPullTargetOrBuilder() {
     if (targetTypeCase_ == 4) {
-       return (com.google.cloud.tasks.v2beta2.PullTarget) targetType_;
+      return (com.google.cloud.tasks.v2beta2.PullTarget) targetType_;
     }
     return com.google.cloud.tasks.v2beta2.PullTarget.getDefaultInstance();
   }
@@ -546,6 +599,8 @@ private static final long serialVersionUID = 0L;
   public static final int RATE_LIMITS_FIELD_NUMBER = 5;
   private com.google.cloud.tasks.v2beta2.RateLimits rateLimits_;
   /**
+   *
+   *
    * <pre>
    * Rate limits for task dispatches.
    * [rate_limits][google.cloud.tasks.v2beta2.Queue.rate_limits] and
@@ -568,6 +623,8 @@ private static final long serialVersionUID = 0L;
     return rateLimits_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Rate limits for task dispatches.
    * [rate_limits][google.cloud.tasks.v2beta2.Queue.rate_limits] and
@@ -587,9 +644,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.tasks.v2beta2.RateLimits rate_limits = 5;</code>
    */
   public com.google.cloud.tasks.v2beta2.RateLimits getRateLimits() {
-    return rateLimits_ == null ? com.google.cloud.tasks.v2beta2.RateLimits.getDefaultInstance() : rateLimits_;
+    return rateLimits_ == null
+        ? com.google.cloud.tasks.v2beta2.RateLimits.getDefaultInstance()
+        : rateLimits_;
   }
   /**
+   *
+   *
    * <pre>
    * Rate limits for task dispatches.
    * [rate_limits][google.cloud.tasks.v2beta2.Queue.rate_limits] and
@@ -615,6 +676,8 @@ private static final long serialVersionUID = 0L;
   public static final int RETRY_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.tasks.v2beta2.RetryConfig retryConfig_;
   /**
+   *
+   *
    * <pre>
    * Settings that determine the retry behavior.
    * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -632,6 +695,8 @@ private static final long serialVersionUID = 0L;
     return retryConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Settings that determine the retry behavior.
    * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -646,9 +711,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.tasks.v2beta2.RetryConfig retry_config = 6;</code>
    */
   public com.google.cloud.tasks.v2beta2.RetryConfig getRetryConfig() {
-    return retryConfig_ == null ? com.google.cloud.tasks.v2beta2.RetryConfig.getDefaultInstance() : retryConfig_;
+    return retryConfig_ == null
+        ? com.google.cloud.tasks.v2beta2.RetryConfig.getDefaultInstance()
+        : retryConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Settings that determine the retry behavior.
    * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -669,6 +738,8 @@ private static final long serialVersionUID = 0L;
   public static final int STATE_FIELD_NUMBER = 7;
   private int state_;
   /**
+   *
+   *
    * <pre>
    * Output only. The state of the queue.
    * `state` can only be changed by called
@@ -684,6 +755,8 @@ private static final long serialVersionUID = 0L;
     return state_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The state of the queue.
    * `state` can only be changed by called
@@ -697,13 +770,16 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.tasks.v2beta2.Queue.State getState() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.tasks.v2beta2.Queue.State result = com.google.cloud.tasks.v2beta2.Queue.State.valueOf(state_);
+    com.google.cloud.tasks.v2beta2.Queue.State result =
+        com.google.cloud.tasks.v2beta2.Queue.State.valueOf(state_);
     return result == null ? com.google.cloud.tasks.v2beta2.Queue.State.UNRECOGNIZED : result;
   }
 
   public static final int PURGE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp purgeTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. The last time this queue was purged.
    * All tasks that were [created][google.cloud.tasks.v2beta2.Task.create_time] before this time
@@ -720,6 +796,8 @@ private static final long serialVersionUID = 0L;
     return purgeTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The last time this queue was purged.
    * All tasks that were [created][google.cloud.tasks.v2beta2.Task.create_time] before this time
@@ -736,6 +814,8 @@ private static final long serialVersionUID = 0L;
     return purgeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : purgeTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The last time this queue was purged.
    * All tasks that were [created][google.cloud.tasks.v2beta2.Task.create_time] before this time
@@ -753,6 +833,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -764,8 +845,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -800,28 +880,26 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (targetTypeCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.cloud.tasks.v2beta2.AppEngineHttpTarget) targetType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.tasks.v2beta2.AppEngineHttpTarget) targetType_);
     }
     if (targetTypeCase_ == 4) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (com.google.cloud.tasks.v2beta2.PullTarget) targetType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.tasks.v2beta2.PullTarget) targetType_);
     }
     if (rateLimits_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getRateLimits());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getRateLimits());
     }
     if (retryConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getRetryConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getRetryConfig());
     }
     if (state_ != com.google.cloud.tasks.v2beta2.Queue.State.STATE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(7, state_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, state_);
     }
     if (purgeTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getPurgeTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getPurgeTime());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -831,7 +909,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.tasks.v2beta2.Queue)) {
       return super.equals(obj);
@@ -839,35 +917,28 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.tasks.v2beta2.Queue other = (com.google.cloud.tasks.v2beta2.Queue) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
+    result = result && getName().equals(other.getName());
     result = result && (hasRateLimits() == other.hasRateLimits());
     if (hasRateLimits()) {
-      result = result && getRateLimits()
-          .equals(other.getRateLimits());
+      result = result && getRateLimits().equals(other.getRateLimits());
     }
     result = result && (hasRetryConfig() == other.hasRetryConfig());
     if (hasRetryConfig()) {
-      result = result && getRetryConfig()
-          .equals(other.getRetryConfig());
+      result = result && getRetryConfig().equals(other.getRetryConfig());
     }
     result = result && state_ == other.state_;
     result = result && (hasPurgeTime() == other.hasPurgeTime());
     if (hasPurgeTime()) {
-      result = result && getPurgeTime()
-          .equals(other.getPurgeTime());
+      result = result && getPurgeTime().equals(other.getPurgeTime());
     }
-    result = result && getTargetTypeCase().equals(
-        other.getTargetTypeCase());
+    result = result && getTargetTypeCase().equals(other.getTargetTypeCase());
     if (!result) return false;
     switch (targetTypeCase_) {
       case 3:
-        result = result && getAppEngineHttpTarget()
-            .equals(other.getAppEngineHttpTarget());
+        result = result && getAppEngineHttpTarget().equals(other.getAppEngineHttpTarget());
         break;
       case 4:
-        result = result && getPullTarget()
-            .equals(other.getPullTarget());
+        result = result && getPullTarget().equals(other.getPullTarget());
         break;
       case 0:
       default:
@@ -916,97 +987,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.tasks.v2beta2.Queue parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.tasks.v2beta2.Queue parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.Queue parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.tasks.v2beta2.Queue parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.cloud.tasks.v2beta2.Queue parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.Queue parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.Queue parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.Queue parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.Queue parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta2.Queue parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.Queue parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta2.Queue parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.Queue parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta2.Queue parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.tasks.v2beta2.Queue prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A queue is a container of related tasks. Queues are configured to manage
    * how those tasks are dispatched. Configurable properties include rate limits,
@@ -1015,21 +1092,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.tasks.v2beta2.Queue}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.tasks.v2beta2.Queue)
       com.google.cloud.tasks.v2beta2.QueueOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.tasks.v2beta2.QueueProto.internal_static_google_cloud_tasks_v2beta2_Queue_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.tasks.v2beta2.QueueProto
+          .internal_static_google_cloud_tasks_v2beta2_Queue_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.tasks.v2beta2.QueueProto.internal_static_google_cloud_tasks_v2beta2_Queue_fieldAccessorTable
+      return com.google.cloud.tasks.v2beta2.QueueProto
+          .internal_static_google_cloud_tasks_v2beta2_Queue_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.tasks.v2beta2.Queue.class, com.google.cloud.tasks.v2beta2.Queue.Builder.class);
+              com.google.cloud.tasks.v2beta2.Queue.class,
+              com.google.cloud.tasks.v2beta2.Queue.Builder.class);
     }
 
     // Construct using com.google.cloud.tasks.v2beta2.Queue.newBuilder()
@@ -1037,16 +1116,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -1078,9 +1156,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.tasks.v2beta2.QueueProto.internal_static_google_cloud_tasks_v2beta2_Queue_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.tasks.v2beta2.QueueProto
+          .internal_static_google_cloud_tasks_v2beta2_Queue_descriptor;
     }
 
     @java.lang.Override
@@ -1140,38 +1218,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.tasks.v2beta2.Queue) {
-        return mergeFrom((com.google.cloud.tasks.v2beta2.Queue)other);
+        return mergeFrom((com.google.cloud.tasks.v2beta2.Queue) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1197,17 +1276,20 @@ private static final long serialVersionUID = 0L;
         mergePurgeTime(other.getPurgeTime());
       }
       switch (other.getTargetTypeCase()) {
-        case APP_ENGINE_HTTP_TARGET: {
-          mergeAppEngineHttpTarget(other.getAppEngineHttpTarget());
-          break;
-        }
-        case PULL_TARGET: {
-          mergePullTarget(other.getPullTarget());
-          break;
-        }
-        case TARGETTYPE_NOT_SET: {
-          break;
-        }
+        case APP_ENGINE_HTTP_TARGET:
+          {
+            mergeAppEngineHttpTarget(other.getAppEngineHttpTarget());
+            break;
+          }
+        case PULL_TARGET:
+          {
+            mergePullTarget(other.getPullTarget());
+            break;
+          }
+        case TARGETTYPE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1237,12 +1319,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int targetTypeCase_ = 0;
     private java.lang.Object targetType_;
-    public TargetTypeCase
-        getTargetTypeCase() {
-      return TargetTypeCase.forNumber(
-          targetTypeCase_);
+
+    public TargetTypeCase getTargetTypeCase() {
+      return TargetTypeCase.forNumber(targetTypeCase_);
     }
 
     public Builder clearTargetType() {
@@ -1252,9 +1334,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * Caller-specified and required in [CreateQueue][google.cloud.tasks.v2beta2.CloudTasks.CreateQueue],
      * after which it becomes output only.
@@ -1278,8 +1361,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1288,6 +1370,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Caller-specified and required in [CreateQueue][google.cloud.tasks.v2beta2.CloudTasks.CreateQueue],
      * after which it becomes output only.
@@ -1308,13 +1392,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1322,6 +1404,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Caller-specified and required in [CreateQueue][google.cloud.tasks.v2beta2.CloudTasks.CreateQueue],
      * after which it becomes output only.
@@ -1342,17 +1426,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Caller-specified and required in [CreateQueue][google.cloud.tasks.v2beta2.CloudTasks.CreateQueue],
      * after which it becomes output only.
@@ -1374,12 +1459,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Caller-specified and required in [CreateQueue][google.cloud.tasks.v2beta2.CloudTasks.CreateQueue],
      * after which it becomes output only.
@@ -1400,21 +1487,25 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta2.AppEngineHttpTarget, com.google.cloud.tasks.v2beta2.AppEngineHttpTarget.Builder, com.google.cloud.tasks.v2beta2.AppEngineHttpTargetOrBuilder> appEngineHttpTargetBuilder_;
+            com.google.cloud.tasks.v2beta2.AppEngineHttpTarget,
+            com.google.cloud.tasks.v2beta2.AppEngineHttpTarget.Builder,
+            com.google.cloud.tasks.v2beta2.AppEngineHttpTargetOrBuilder>
+        appEngineHttpTargetBuilder_;
     /**
+     *
+     *
      * <pre>
      * App Engine HTTP target.
      * An App Engine queue is a queue that has an [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget].
@@ -1426,6 +1517,8 @@ private static final long serialVersionUID = 0L;
       return targetTypeCase_ == 3;
     }
     /**
+     *
+     *
      * <pre>
      * App Engine HTTP target.
      * An App Engine queue is a queue that has an [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget].
@@ -1447,6 +1540,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * App Engine HTTP target.
      * An App Engine queue is a queue that has an [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget].
@@ -1454,7 +1549,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineHttpTarget app_engine_http_target = 3;</code>
      */
-    public Builder setAppEngineHttpTarget(com.google.cloud.tasks.v2beta2.AppEngineHttpTarget value) {
+    public Builder setAppEngineHttpTarget(
+        com.google.cloud.tasks.v2beta2.AppEngineHttpTarget value) {
       if (appEngineHttpTargetBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1468,6 +1564,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * App Engine HTTP target.
      * An App Engine queue is a queue that has an [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget].
@@ -1487,6 +1585,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * App Engine HTTP target.
      * An App Engine queue is a queue that has an [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget].
@@ -1494,12 +1594,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineHttpTarget app_engine_http_target = 3;</code>
      */
-    public Builder mergeAppEngineHttpTarget(com.google.cloud.tasks.v2beta2.AppEngineHttpTarget value) {
+    public Builder mergeAppEngineHttpTarget(
+        com.google.cloud.tasks.v2beta2.AppEngineHttpTarget value) {
       if (appEngineHttpTargetBuilder_ == null) {
-        if (targetTypeCase_ == 3 &&
-            targetType_ != com.google.cloud.tasks.v2beta2.AppEngineHttpTarget.getDefaultInstance()) {
-          targetType_ = com.google.cloud.tasks.v2beta2.AppEngineHttpTarget.newBuilder((com.google.cloud.tasks.v2beta2.AppEngineHttpTarget) targetType_)
-              .mergeFrom(value).buildPartial();
+        if (targetTypeCase_ == 3
+            && targetType_
+                != com.google.cloud.tasks.v2beta2.AppEngineHttpTarget.getDefaultInstance()) {
+          targetType_ =
+              com.google.cloud.tasks.v2beta2.AppEngineHttpTarget.newBuilder(
+                      (com.google.cloud.tasks.v2beta2.AppEngineHttpTarget) targetType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           targetType_ = value;
         }
@@ -1514,6 +1619,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * App Engine HTTP target.
      * An App Engine queue is a queue that has an [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget].
@@ -1538,6 +1645,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * App Engine HTTP target.
      * An App Engine queue is a queue that has an [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget].
@@ -1545,10 +1654,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineHttpTarget app_engine_http_target = 3;</code>
      */
-    public com.google.cloud.tasks.v2beta2.AppEngineHttpTarget.Builder getAppEngineHttpTargetBuilder() {
+    public com.google.cloud.tasks.v2beta2.AppEngineHttpTarget.Builder
+        getAppEngineHttpTargetBuilder() {
       return getAppEngineHttpTargetFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * App Engine HTTP target.
      * An App Engine queue is a queue that has an [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget].
@@ -1556,7 +1668,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.tasks.v2beta2.AppEngineHttpTarget app_engine_http_target = 3;</code>
      */
-    public com.google.cloud.tasks.v2beta2.AppEngineHttpTargetOrBuilder getAppEngineHttpTargetOrBuilder() {
+    public com.google.cloud.tasks.v2beta2.AppEngineHttpTargetOrBuilder
+        getAppEngineHttpTargetOrBuilder() {
       if ((targetTypeCase_ == 3) && (appEngineHttpTargetBuilder_ != null)) {
         return appEngineHttpTargetBuilder_.getMessageOrBuilder();
       } else {
@@ -1567,6 +1680,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * App Engine HTTP target.
      * An App Engine queue is a queue that has an [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget].
@@ -1575,27 +1690,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.tasks.v2beta2.AppEngineHttpTarget app_engine_http_target = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta2.AppEngineHttpTarget, com.google.cloud.tasks.v2beta2.AppEngineHttpTarget.Builder, com.google.cloud.tasks.v2beta2.AppEngineHttpTargetOrBuilder> 
+            com.google.cloud.tasks.v2beta2.AppEngineHttpTarget,
+            com.google.cloud.tasks.v2beta2.AppEngineHttpTarget.Builder,
+            com.google.cloud.tasks.v2beta2.AppEngineHttpTargetOrBuilder>
         getAppEngineHttpTargetFieldBuilder() {
       if (appEngineHttpTargetBuilder_ == null) {
         if (!(targetTypeCase_ == 3)) {
           targetType_ = com.google.cloud.tasks.v2beta2.AppEngineHttpTarget.getDefaultInstance();
         }
-        appEngineHttpTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.tasks.v2beta2.AppEngineHttpTarget, com.google.cloud.tasks.v2beta2.AppEngineHttpTarget.Builder, com.google.cloud.tasks.v2beta2.AppEngineHttpTargetOrBuilder>(
+        appEngineHttpTargetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2beta2.AppEngineHttpTarget,
+                com.google.cloud.tasks.v2beta2.AppEngineHttpTarget.Builder,
+                com.google.cloud.tasks.v2beta2.AppEngineHttpTargetOrBuilder>(
                 (com.google.cloud.tasks.v2beta2.AppEngineHttpTarget) targetType_,
                 getParentForChildren(),
                 isClean());
         targetType_ = null;
       }
       targetTypeCase_ = 3;
-      onChanged();;
+      onChanged();
+      ;
       return appEngineHttpTargetBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta2.PullTarget, com.google.cloud.tasks.v2beta2.PullTarget.Builder, com.google.cloud.tasks.v2beta2.PullTargetOrBuilder> pullTargetBuilder_;
+            com.google.cloud.tasks.v2beta2.PullTarget,
+            com.google.cloud.tasks.v2beta2.PullTarget.Builder,
+            com.google.cloud.tasks.v2beta2.PullTargetOrBuilder>
+        pullTargetBuilder_;
     /**
+     *
+     *
      * <pre>
      * Pull target.
      * A pull queue is a queue that has a [PullTarget][google.cloud.tasks.v2beta2.PullTarget].
@@ -1607,6 +1733,8 @@ private static final long serialVersionUID = 0L;
       return targetTypeCase_ == 4;
     }
     /**
+     *
+     *
      * <pre>
      * Pull target.
      * A pull queue is a queue that has a [PullTarget][google.cloud.tasks.v2beta2.PullTarget].
@@ -1628,6 +1756,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Pull target.
      * A pull queue is a queue that has a [PullTarget][google.cloud.tasks.v2beta2.PullTarget].
@@ -1649,6 +1779,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Pull target.
      * A pull queue is a queue that has a [PullTarget][google.cloud.tasks.v2beta2.PullTarget].
@@ -1668,6 +1800,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Pull target.
      * A pull queue is a queue that has a [PullTarget][google.cloud.tasks.v2beta2.PullTarget].
@@ -1677,10 +1811,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergePullTarget(com.google.cloud.tasks.v2beta2.PullTarget value) {
       if (pullTargetBuilder_ == null) {
-        if (targetTypeCase_ == 4 &&
-            targetType_ != com.google.cloud.tasks.v2beta2.PullTarget.getDefaultInstance()) {
-          targetType_ = com.google.cloud.tasks.v2beta2.PullTarget.newBuilder((com.google.cloud.tasks.v2beta2.PullTarget) targetType_)
-              .mergeFrom(value).buildPartial();
+        if (targetTypeCase_ == 4
+            && targetType_ != com.google.cloud.tasks.v2beta2.PullTarget.getDefaultInstance()) {
+          targetType_ =
+              com.google.cloud.tasks.v2beta2.PullTarget.newBuilder(
+                      (com.google.cloud.tasks.v2beta2.PullTarget) targetType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           targetType_ = value;
         }
@@ -1695,6 +1832,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Pull target.
      * A pull queue is a queue that has a [PullTarget][google.cloud.tasks.v2beta2.PullTarget].
@@ -1719,6 +1858,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Pull target.
      * A pull queue is a queue that has a [PullTarget][google.cloud.tasks.v2beta2.PullTarget].
@@ -1730,6 +1871,8 @@ private static final long serialVersionUID = 0L;
       return getPullTargetFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Pull target.
      * A pull queue is a queue that has a [PullTarget][google.cloud.tasks.v2beta2.PullTarget].
@@ -1748,6 +1891,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Pull target.
      * A pull queue is a queue that has a [PullTarget][google.cloud.tasks.v2beta2.PullTarget].
@@ -1756,28 +1901,39 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.tasks.v2beta2.PullTarget pull_target = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta2.PullTarget, com.google.cloud.tasks.v2beta2.PullTarget.Builder, com.google.cloud.tasks.v2beta2.PullTargetOrBuilder> 
+            com.google.cloud.tasks.v2beta2.PullTarget,
+            com.google.cloud.tasks.v2beta2.PullTarget.Builder,
+            com.google.cloud.tasks.v2beta2.PullTargetOrBuilder>
         getPullTargetFieldBuilder() {
       if (pullTargetBuilder_ == null) {
         if (!(targetTypeCase_ == 4)) {
           targetType_ = com.google.cloud.tasks.v2beta2.PullTarget.getDefaultInstance();
         }
-        pullTargetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.tasks.v2beta2.PullTarget, com.google.cloud.tasks.v2beta2.PullTarget.Builder, com.google.cloud.tasks.v2beta2.PullTargetOrBuilder>(
+        pullTargetBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2beta2.PullTarget,
+                com.google.cloud.tasks.v2beta2.PullTarget.Builder,
+                com.google.cloud.tasks.v2beta2.PullTargetOrBuilder>(
                 (com.google.cloud.tasks.v2beta2.PullTarget) targetType_,
                 getParentForChildren(),
                 isClean());
         targetType_ = null;
       }
       targetTypeCase_ = 4;
-      onChanged();;
+      onChanged();
+      ;
       return pullTargetBuilder_;
     }
 
     private com.google.cloud.tasks.v2beta2.RateLimits rateLimits_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta2.RateLimits, com.google.cloud.tasks.v2beta2.RateLimits.Builder, com.google.cloud.tasks.v2beta2.RateLimitsOrBuilder> rateLimitsBuilder_;
+            com.google.cloud.tasks.v2beta2.RateLimits,
+            com.google.cloud.tasks.v2beta2.RateLimits.Builder,
+            com.google.cloud.tasks.v2beta2.RateLimitsOrBuilder>
+        rateLimitsBuilder_;
     /**
+     *
+     *
      * <pre>
      * Rate limits for task dispatches.
      * [rate_limits][google.cloud.tasks.v2beta2.Queue.rate_limits] and
@@ -1800,6 +1956,8 @@ private static final long serialVersionUID = 0L;
       return rateLimitsBuilder_ != null || rateLimits_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Rate limits for task dispatches.
      * [rate_limits][google.cloud.tasks.v2beta2.Queue.rate_limits] and
@@ -1820,12 +1978,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.tasks.v2beta2.RateLimits getRateLimits() {
       if (rateLimitsBuilder_ == null) {
-        return rateLimits_ == null ? com.google.cloud.tasks.v2beta2.RateLimits.getDefaultInstance() : rateLimits_;
+        return rateLimits_ == null
+            ? com.google.cloud.tasks.v2beta2.RateLimits.getDefaultInstance()
+            : rateLimits_;
       } else {
         return rateLimitsBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Rate limits for task dispatches.
      * [rate_limits][google.cloud.tasks.v2beta2.Queue.rate_limits] and
@@ -1858,6 +2020,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Rate limits for task dispatches.
      * [rate_limits][google.cloud.tasks.v2beta2.Queue.rate_limits] and
@@ -1888,6 +2052,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Rate limits for task dispatches.
      * [rate_limits][google.cloud.tasks.v2beta2.Queue.rate_limits] and
@@ -1910,7 +2076,9 @@ private static final long serialVersionUID = 0L;
       if (rateLimitsBuilder_ == null) {
         if (rateLimits_ != null) {
           rateLimits_ =
-            com.google.cloud.tasks.v2beta2.RateLimits.newBuilder(rateLimits_).mergeFrom(value).buildPartial();
+              com.google.cloud.tasks.v2beta2.RateLimits.newBuilder(rateLimits_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           rateLimits_ = value;
         }
@@ -1922,6 +2090,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Rate limits for task dispatches.
      * [rate_limits][google.cloud.tasks.v2beta2.Queue.rate_limits] and
@@ -1952,6 +2122,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Rate limits for task dispatches.
      * [rate_limits][google.cloud.tasks.v2beta2.Queue.rate_limits] and
@@ -1971,11 +2143,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.tasks.v2beta2.RateLimits rate_limits = 5;</code>
      */
     public com.google.cloud.tasks.v2beta2.RateLimits.Builder getRateLimitsBuilder() {
-      
+
       onChanged();
       return getRateLimitsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Rate limits for task dispatches.
      * [rate_limits][google.cloud.tasks.v2beta2.Queue.rate_limits] and
@@ -1998,11 +2172,14 @@ private static final long serialVersionUID = 0L;
       if (rateLimitsBuilder_ != null) {
         return rateLimitsBuilder_.getMessageOrBuilder();
       } else {
-        return rateLimits_ == null ?
-            com.google.cloud.tasks.v2beta2.RateLimits.getDefaultInstance() : rateLimits_;
+        return rateLimits_ == null
+            ? com.google.cloud.tasks.v2beta2.RateLimits.getDefaultInstance()
+            : rateLimits_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Rate limits for task dispatches.
      * [rate_limits][google.cloud.tasks.v2beta2.Queue.rate_limits] and
@@ -2022,14 +2199,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.tasks.v2beta2.RateLimits rate_limits = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta2.RateLimits, com.google.cloud.tasks.v2beta2.RateLimits.Builder, com.google.cloud.tasks.v2beta2.RateLimitsOrBuilder> 
+            com.google.cloud.tasks.v2beta2.RateLimits,
+            com.google.cloud.tasks.v2beta2.RateLimits.Builder,
+            com.google.cloud.tasks.v2beta2.RateLimitsOrBuilder>
         getRateLimitsFieldBuilder() {
       if (rateLimitsBuilder_ == null) {
-        rateLimitsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.tasks.v2beta2.RateLimits, com.google.cloud.tasks.v2beta2.RateLimits.Builder, com.google.cloud.tasks.v2beta2.RateLimitsOrBuilder>(
-                getRateLimits(),
-                getParentForChildren(),
-                isClean());
+        rateLimitsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2beta2.RateLimits,
+                com.google.cloud.tasks.v2beta2.RateLimits.Builder,
+                com.google.cloud.tasks.v2beta2.RateLimitsOrBuilder>(
+                getRateLimits(), getParentForChildren(), isClean());
         rateLimits_ = null;
       }
       return rateLimitsBuilder_;
@@ -2037,8 +2217,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.tasks.v2beta2.RetryConfig retryConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta2.RetryConfig, com.google.cloud.tasks.v2beta2.RetryConfig.Builder, com.google.cloud.tasks.v2beta2.RetryConfigOrBuilder> retryConfigBuilder_;
+            com.google.cloud.tasks.v2beta2.RetryConfig,
+            com.google.cloud.tasks.v2beta2.RetryConfig.Builder,
+            com.google.cloud.tasks.v2beta2.RetryConfigOrBuilder>
+        retryConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -2056,6 +2241,8 @@ private static final long serialVersionUID = 0L;
       return retryConfigBuilder_ != null || retryConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -2071,12 +2258,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.tasks.v2beta2.RetryConfig getRetryConfig() {
       if (retryConfigBuilder_ == null) {
-        return retryConfig_ == null ? com.google.cloud.tasks.v2beta2.RetryConfig.getDefaultInstance() : retryConfig_;
+        return retryConfig_ == null
+            ? com.google.cloud.tasks.v2beta2.RetryConfig.getDefaultInstance()
+            : retryConfig_;
       } else {
         return retryConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -2104,6 +2295,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -2129,6 +2322,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -2146,7 +2341,9 @@ private static final long serialVersionUID = 0L;
       if (retryConfigBuilder_ == null) {
         if (retryConfig_ != null) {
           retryConfig_ =
-            com.google.cloud.tasks.v2beta2.RetryConfig.newBuilder(retryConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.tasks.v2beta2.RetryConfig.newBuilder(retryConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           retryConfig_ = value;
         }
@@ -2158,6 +2355,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -2183,6 +2382,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -2197,11 +2398,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.tasks.v2beta2.RetryConfig retry_config = 6;</code>
      */
     public com.google.cloud.tasks.v2beta2.RetryConfig.Builder getRetryConfigBuilder() {
-      
+
       onChanged();
       return getRetryConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -2219,11 +2422,14 @@ private static final long serialVersionUID = 0L;
       if (retryConfigBuilder_ != null) {
         return retryConfigBuilder_.getMessageOrBuilder();
       } else {
-        return retryConfig_ == null ?
-            com.google.cloud.tasks.v2beta2.RetryConfig.getDefaultInstance() : retryConfig_;
+        return retryConfig_ == null
+            ? com.google.cloud.tasks.v2beta2.RetryConfig.getDefaultInstance()
+            : retryConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Settings that determine the retry behavior.
      * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -2238,14 +2444,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.tasks.v2beta2.RetryConfig retry_config = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.tasks.v2beta2.RetryConfig, com.google.cloud.tasks.v2beta2.RetryConfig.Builder, com.google.cloud.tasks.v2beta2.RetryConfigOrBuilder> 
+            com.google.cloud.tasks.v2beta2.RetryConfig,
+            com.google.cloud.tasks.v2beta2.RetryConfig.Builder,
+            com.google.cloud.tasks.v2beta2.RetryConfigOrBuilder>
         getRetryConfigFieldBuilder() {
       if (retryConfigBuilder_ == null) {
-        retryConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.tasks.v2beta2.RetryConfig, com.google.cloud.tasks.v2beta2.RetryConfig.Builder, com.google.cloud.tasks.v2beta2.RetryConfigOrBuilder>(
-                getRetryConfig(),
-                getParentForChildren(),
-                isClean());
+        retryConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2beta2.RetryConfig,
+                com.google.cloud.tasks.v2beta2.RetryConfig.Builder,
+                com.google.cloud.tasks.v2beta2.RetryConfigOrBuilder>(
+                getRetryConfig(), getParentForChildren(), isClean());
         retryConfig_ = null;
       }
       return retryConfigBuilder_;
@@ -2253,6 +2462,8 @@ private static final long serialVersionUID = 0L;
 
     private int state_ = 0;
     /**
+     *
+     *
      * <pre>
      * Output only. The state of the queue.
      * `state` can only be changed by called
@@ -2268,6 +2479,8 @@ private static final long serialVersionUID = 0L;
       return state_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The state of the queue.
      * `state` can only be changed by called
@@ -2285,6 +2498,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The state of the queue.
      * `state` can only be changed by called
@@ -2298,10 +2513,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.tasks.v2beta2.Queue.State getState() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.tasks.v2beta2.Queue.State result = com.google.cloud.tasks.v2beta2.Queue.State.valueOf(state_);
+      com.google.cloud.tasks.v2beta2.Queue.State result =
+          com.google.cloud.tasks.v2beta2.Queue.State.valueOf(state_);
       return result == null ? com.google.cloud.tasks.v2beta2.Queue.State.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The state of the queue.
      * `state` can only be changed by called
@@ -2317,12 +2535,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       state_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The state of the queue.
      * `state` can only be changed by called
@@ -2335,7 +2555,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.tasks.v2beta2.Queue.State state = 7;</code>
      */
     public Builder clearState() {
-      
+
       state_ = 0;
       onChanged();
       return this;
@@ -2343,8 +2563,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp purgeTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> purgeTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        purgeTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The last time this queue was purged.
      * All tasks that were [created][google.cloud.tasks.v2beta2.Task.create_time] before this time
@@ -2361,6 +2586,8 @@ private static final long serialVersionUID = 0L;
       return purgeTimeBuilder_ != null || purgeTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The last time this queue was purged.
      * All tasks that were [created][google.cloud.tasks.v2beta2.Task.create_time] before this time
@@ -2381,6 +2608,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The last time this queue was purged.
      * All tasks that were [created][google.cloud.tasks.v2beta2.Task.create_time] before this time
@@ -2407,6 +2636,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The last time this queue was purged.
      * All tasks that were [created][google.cloud.tasks.v2beta2.Task.create_time] before this time
@@ -2419,8 +2650,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp purge_time = 8;</code>
      */
-    public Builder setPurgeTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setPurgeTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (purgeTimeBuilder_ == null) {
         purgeTime_ = builderForValue.build();
         onChanged();
@@ -2431,6 +2661,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The last time this queue was purged.
      * All tasks that were [created][google.cloud.tasks.v2beta2.Task.create_time] before this time
@@ -2447,7 +2679,7 @@ private static final long serialVersionUID = 0L;
       if (purgeTimeBuilder_ == null) {
         if (purgeTime_ != null) {
           purgeTime_ =
-            com.google.protobuf.Timestamp.newBuilder(purgeTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(purgeTime_).mergeFrom(value).buildPartial();
         } else {
           purgeTime_ = value;
         }
@@ -2459,6 +2691,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The last time this queue was purged.
      * All tasks that were [created][google.cloud.tasks.v2beta2.Task.create_time] before this time
@@ -2483,6 +2717,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The last time this queue was purged.
      * All tasks that were [created][google.cloud.tasks.v2beta2.Task.create_time] before this time
@@ -2496,11 +2732,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp purge_time = 8;</code>
      */
     public com.google.protobuf.Timestamp.Builder getPurgeTimeBuilder() {
-      
+
       onChanged();
       return getPurgeTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The last time this queue was purged.
      * All tasks that were [created][google.cloud.tasks.v2beta2.Task.create_time] before this time
@@ -2517,11 +2755,12 @@ private static final long serialVersionUID = 0L;
       if (purgeTimeBuilder_ != null) {
         return purgeTimeBuilder_.getMessageOrBuilder();
       } else {
-        return purgeTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : purgeTime_;
+        return purgeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : purgeTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The last time this queue was purged.
      * All tasks that were [created][google.cloud.tasks.v2beta2.Task.create_time] before this time
@@ -2535,21 +2774,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp purge_time = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getPurgeTimeFieldBuilder() {
       if (purgeTimeBuilder_ == null) {
-        purgeTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getPurgeTime(),
-                getParentForChildren(),
-                isClean());
+        purgeTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getPurgeTime(), getParentForChildren(), isClean());
         purgeTime_ = null;
       }
       return purgeTimeBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2559,12 +2801,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.tasks.v2beta2.Queue)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.tasks.v2beta2.Queue)
   private static final com.google.cloud.tasks.v2beta2.Queue DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.tasks.v2beta2.Queue();
   }
@@ -2573,16 +2815,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Queue>
-      PARSER = new com.google.protobuf.AbstractParser<Queue>() {
-    @java.lang.Override
-    public Queue parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Queue(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Queue> PARSER =
+      new com.google.protobuf.AbstractParser<Queue>() {
+        @java.lang.Override
+        public Queue parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Queue(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Queue> parser() {
     return PARSER;
@@ -2597,6 +2839,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.tasks.v2beta2.Queue getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -3,11 +3,14 @@
 
 package com.google.cloud.language.v1;
 
-public interface AnalyzeSentimentResponseOrBuilder extends
+public interface AnalyzeSentimentResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.language.v1.AnalyzeSentimentResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The overall sentiment of the input document.
    * </pre>
@@ -16,6 +19,8 @@ public interface AnalyzeSentimentResponseOrBuilder extends
    */
   boolean hasDocumentSentiment();
   /**
+   *
+   *
    * <pre>
    * The overall sentiment of the input document.
    * </pre>
@@ -24,6 +29,8 @@ public interface AnalyzeSentimentResponseOrBuilder extends
    */
   com.google.cloud.language.v1.Sentiment getDocumentSentiment();
   /**
+   *
+   *
    * <pre>
    * The overall sentiment of the input document.
    * </pre>
@@ -33,6 +40,8 @@ public interface AnalyzeSentimentResponseOrBuilder extends
   com.google.cloud.language.v1.SentimentOrBuilder getDocumentSentimentOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The language of the text, which will be the same as the language specified
    * in the request or, if not specified, the automatically-detected language.
@@ -43,6 +52,8 @@ public interface AnalyzeSentimentResponseOrBuilder extends
    */
   java.lang.String getLanguage();
   /**
+   *
+   *
    * <pre>
    * The language of the text, which will be the same as the language specified
    * in the request or, if not specified, the automatically-detected language.
@@ -51,19 +62,21 @@ public interface AnalyzeSentimentResponseOrBuilder extends
    *
    * <code>string language = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageBytes();
+  com.google.protobuf.ByteString getLanguageBytes();
 
   /**
+   *
+   *
    * <pre>
    * The sentiment for all the sentences in the document.
    * </pre>
    *
    * <code>repeated .google.cloud.language.v1.Sentence sentences = 3;</code>
    */
-  java.util.List<com.google.cloud.language.v1.Sentence> 
-      getSentencesList();
+  java.util.List<com.google.cloud.language.v1.Sentence> getSentencesList();
   /**
+   *
+   *
    * <pre>
    * The sentiment for all the sentences in the document.
    * </pre>
@@ -72,6 +85,8 @@ public interface AnalyzeSentimentResponseOrBuilder extends
    */
   com.google.cloud.language.v1.Sentence getSentences(int index);
   /**
+   *
+   *
    * <pre>
    * The sentiment for all the sentences in the document.
    * </pre>
@@ -80,21 +95,24 @@ public interface AnalyzeSentimentResponseOrBuilder extends
    */
   int getSentencesCount();
   /**
+   *
+   *
    * <pre>
    * The sentiment for all the sentences in the document.
    * </pre>
    *
    * <code>repeated .google.cloud.language.v1.Sentence sentences = 3;</code>
    */
-  java.util.List<? extends com.google.cloud.language.v1.SentenceOrBuilder> 
+  java.util.List<? extends com.google.cloud.language.v1.SentenceOrBuilder>
       getSentencesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The sentiment for all the sentences in the document.
    * </pre>
    *
    * <code>repeated .google.cloud.language.v1.Sentence sentences = 3;</code>
    */
-  com.google.cloud.language.v1.SentenceOrBuilder getSentencesOrBuilder(
-      int index);
+  com.google.cloud.language.v1.SentenceOrBuilder getSentencesOrBuilder(int index);
 }

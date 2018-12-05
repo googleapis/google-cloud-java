@@ -43,7 +43,6 @@ public class BigQueryErrorTest {
     assertEquals(MESSAGE, ERROR_INCOMPLETE.getMessage());
   }
 
-
   @Test
   public void testToAndFromPb() {
     compareBigQueryError(ERROR, BigQueryError.fromPb(ERROR.toPb()));

@@ -4,22 +4,25 @@
 package com.google.cloud.dataproc.v1;
 
 /**
+ *
+ *
  * <pre>
  * Describes the identifying information, config, and status of
- * a cluster of Google Compute Engine instances.
+ * a cluster of Compute Engine instances.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.Cluster}
  */
-public  final class Cluster extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Cluster extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.Cluster)
     ClusterOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Cluster.newBuilder() to construct.
   private Cluster(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Cluster() {
     projectId_ = "";
     clusterName_ = "";
@@ -28,10 +31,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Cluster(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -51,99 +54,113 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            projectId_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+              projectId_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            clusterName_ = s;
-            break;
-          }
-          case 26: {
-            com.google.cloud.dataproc.v1.ClusterConfig.Builder subBuilder = null;
-            if (config_ != null) {
-              subBuilder = config_.toBuilder();
+              clusterName_ = s;
+              break;
             }
-            config_ = input.readMessage(com.google.cloud.dataproc.v1.ClusterConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(config_);
-              config_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.cloud.dataproc.v1.ClusterConfig.Builder subBuilder = null;
+              if (config_ != null) {
+                subBuilder = config_.toBuilder();
+              }
+              config_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1.ClusterConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(config_);
+                config_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 34: {
-            com.google.cloud.dataproc.v1.ClusterStatus.Builder subBuilder = null;
-            if (status_ != null) {
-              subBuilder = status_.toBuilder();
+              break;
             }
-            status_ = input.readMessage(com.google.cloud.dataproc.v1.ClusterStatus.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(status_);
-              status_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.cloud.dataproc.v1.ClusterStatus.Builder subBuilder = null;
+              if (status_ != null) {
+                subBuilder = status_.toBuilder();
+              }
+              status_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1.ClusterStatus.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(status_);
+                status_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            clusterUuid_ = s;
-            break;
-          }
-          case 58: {
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-              statusHistory_ = new java.util.ArrayList<com.google.cloud.dataproc.v1.ClusterStatus>();
-              mutable_bitField0_ |= 0x00000020;
+              clusterUuid_ = s;
+              break;
             }
-            statusHistory_.add(
-                input.readMessage(com.google.cloud.dataproc.v1.ClusterStatus.parser(), extensionRegistry));
-            break;
-          }
-          case 66: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              labels_ = com.google.protobuf.MapField.newMapField(
-                  LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000008;
+          case 58:
+            {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                statusHistory_ =
+                    new java.util.ArrayList<com.google.cloud.dataproc.v1.ClusterStatus>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              statusHistory_.add(
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1.ClusterStatus.parser(), extensionRegistry));
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            labels__ = input.readMessage(
-                LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            labels_.getMutableMap().put(
-                labels__.getKey(), labels__.getValue());
-            break;
-          }
-          case 74: {
-            com.google.cloud.dataproc.v1.ClusterMetrics.Builder subBuilder = null;
-            if (metrics_ != null) {
-              subBuilder = metrics_.toBuilder();
+          case 66:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                  input.readMessage(
+                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
             }
-            metrics_ = input.readMessage(com.google.cloud.dataproc.v1.ClusterMetrics.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(metrics_);
-              metrics_ = subBuilder.buildPartial();
-            }
+          case 74:
+            {
+              com.google.cloud.dataproc.v1.ClusterMetrics.Builder subBuilder = null;
+              if (metrics_ != null) {
+                subBuilder = metrics_.toBuilder();
+              }
+              metrics_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1.ClusterMetrics.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metrics_);
+                metrics_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
         statusHistory_ = java.util.Collections.unmodifiableList(statusHistory_);
@@ -152,35 +169,39 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1.ClustersProto.internal_static_google_cloud_dataproc_v1_Cluster_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1.ClustersProto
+        .internal_static_google_cloud_dataproc_v1_Cluster_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   @java.lang.Override
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 8:
         return internalGetLabels();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1.ClustersProto.internal_static_google_cloud_dataproc_v1_Cluster_fieldAccessorTable
+    return com.google.cloud.dataproc.v1.ClustersProto
+        .internal_static_google_cloud_dataproc_v1_Cluster_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1.Cluster.class, com.google.cloud.dataproc.v1.Cluster.Builder.class);
+            com.google.cloud.dataproc.v1.Cluster.class,
+            com.google.cloud.dataproc.v1.Cluster.Builder.class);
   }
 
   private int bitField0_;
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object projectId_;
   /**
+   *
+   *
    * <pre>
    * Required. The Google Cloud Platform project ID that the cluster belongs to.
    * </pre>
@@ -192,27 +213,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       projectId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The Google Cloud Platform project ID that the cluster belongs to.
    * </pre>
    *
    * <code>string project_id = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getProjectIdBytes() {
+  public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       projectId_ = b;
       return b;
     } else {
@@ -223,6 +243,8 @@ private static final long serialVersionUID = 0L;
   public static final int CLUSTER_NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object clusterName_;
   /**
+   *
+   *
    * <pre>
    * Required. The cluster name. Cluster names within a project must be
    * unique. Names of deleted clusters can be reused.
@@ -235,14 +257,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       clusterName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The cluster name. Cluster names within a project must be
    * unique. Names of deleted clusters can be reused.
@@ -250,13 +273,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string cluster_name = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getClusterNameBytes() {
+  public com.google.protobuf.ByteString getClusterNameBytes() {
     java.lang.Object ref = clusterName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       clusterName_ = b;
       return b;
     } else {
@@ -267,6 +288,8 @@ private static final long serialVersionUID = 0L;
   public static final int CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.dataproc.v1.ClusterConfig config_;
   /**
+   *
+   *
    * <pre>
    * Required. The cluster config. Note that Cloud Dataproc may set
    * default values, and values may change when clusters are updated.
@@ -278,6 +301,8 @@ private static final long serialVersionUID = 0L;
     return config_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The cluster config. Note that Cloud Dataproc may set
    * default values, and values may change when clusters are updated.
@@ -286,9 +311,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
    */
   public com.google.cloud.dataproc.v1.ClusterConfig getConfig() {
-    return config_ == null ? com.google.cloud.dataproc.v1.ClusterConfig.getDefaultInstance() : config_;
+    return config_ == null
+        ? com.google.cloud.dataproc.v1.ClusterConfig.getDefaultInstance()
+        : config_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The cluster config. Note that Cloud Dataproc may set
    * default values, and values may change when clusters are updated.
@@ -301,24 +330,23 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LABELS_FIELD_NUMBER = 8;
+
   private static final class LabelsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.cloud.dataproc.v1.ClustersProto.internal_static_google_cloud_dataproc_v1_Cluster_LabelsEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dataproc.v1.ClustersProto
+                .internal_static_google_cloud_dataproc_v1_Cluster_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> labels_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetLabels() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
     if (labels_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          LabelsDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
     }
     return labels_;
   }
@@ -327,6 +355,8 @@ private static final long serialVersionUID = 0L;
     return internalGetLabels().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this cluster.
    * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -338,20 +368,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
-
-  public boolean containsLabels(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetLabels().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this cluster.
    * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -363,11 +393,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this cluster.
    * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -379,16 +410,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
-
-  public java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The labels to associate with this cluster.
    * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -400,12 +431,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
-
-  public java.lang.String getLabelsOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -415,8 +445,10 @@ private static final long serialVersionUID = 0L;
   public static final int STATUS_FIELD_NUMBER = 4;
   private com.google.cloud.dataproc.v1.ClusterStatus status_;
   /**
+   *
+   *
    * <pre>
-   * Output-only. Cluster status.
+   * Output only. Cluster status.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -425,18 +457,24 @@ private static final long serialVersionUID = 0L;
     return status_ != null;
   }
   /**
+   *
+   *
    * <pre>
-   * Output-only. Cluster status.
+   * Output only. Cluster status.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
    */
   public com.google.cloud.dataproc.v1.ClusterStatus getStatus() {
-    return status_ == null ? com.google.cloud.dataproc.v1.ClusterStatus.getDefaultInstance() : status_;
+    return status_ == null
+        ? com.google.cloud.dataproc.v1.ClusterStatus.getDefaultInstance()
+        : status_;
   }
   /**
+   *
+   *
    * <pre>
-   * Output-only. Cluster status.
+   * Output only. Cluster status.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -448,8 +486,10 @@ private static final long serialVersionUID = 0L;
   public static final int STATUS_HISTORY_FIELD_NUMBER = 7;
   private java.util.List<com.google.cloud.dataproc.v1.ClusterStatus> statusHistory_;
   /**
+   *
+   *
    * <pre>
-   * Output-only. The previous cluster status.
+   * Output only. The previous cluster status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -458,19 +498,23 @@ private static final long serialVersionUID = 0L;
     return statusHistory_;
   }
   /**
+   *
+   *
    * <pre>
-   * Output-only. The previous cluster status.
+   * Output only. The previous cluster status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
    */
-  public java.util.List<? extends com.google.cloud.dataproc.v1.ClusterStatusOrBuilder> 
+  public java.util.List<? extends com.google.cloud.dataproc.v1.ClusterStatusOrBuilder>
       getStatusHistoryOrBuilderList() {
     return statusHistory_;
   }
   /**
+   *
+   *
    * <pre>
-   * Output-only. The previous cluster status.
+   * Output only. The previous cluster status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -479,8 +523,10 @@ private static final long serialVersionUID = 0L;
     return statusHistory_.size();
   }
   /**
+   *
+   *
    * <pre>
-   * Output-only. The previous cluster status.
+   * Output only. The previous cluster status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -489,22 +535,25 @@ private static final long serialVersionUID = 0L;
     return statusHistory_.get(index);
   }
   /**
+   *
+   *
    * <pre>
-   * Output-only. The previous cluster status.
+   * Output only. The previous cluster status.
    * </pre>
    *
    * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
    */
-  public com.google.cloud.dataproc.v1.ClusterStatusOrBuilder getStatusHistoryOrBuilder(
-      int index) {
+  public com.google.cloud.dataproc.v1.ClusterStatusOrBuilder getStatusHistoryOrBuilder(int index) {
     return statusHistory_.get(index);
   }
 
   public static final int CLUSTER_UUID_FIELD_NUMBER = 6;
   private volatile java.lang.Object clusterUuid_;
   /**
+   *
+   *
    * <pre>
-   * Output-only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+   * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
    * generates this value when it creates the cluster.
    * </pre>
    *
@@ -515,28 +564,27 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       clusterUuid_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * Output-only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+   * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
    * generates this value when it creates the cluster.
    * </pre>
    *
    * <code>string cluster_uuid = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getClusterUuidBytes() {
+  public com.google.protobuf.ByteString getClusterUuidBytes() {
     java.lang.Object ref = clusterUuid_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       clusterUuid_ = b;
       return b;
     } else {
@@ -547,6 +595,8 @@ private static final long serialVersionUID = 0L;
   public static final int METRICS_FIELD_NUMBER = 9;
   private com.google.cloud.dataproc.v1.ClusterMetrics metrics_;
   /**
+   *
+   *
    * <pre>
    * Contains cluster daemon metrics such as HDFS and YARN stats.
    * **Beta Feature**: This report is available for testing purposes only. It may
@@ -559,6 +609,8 @@ private static final long serialVersionUID = 0L;
     return metrics_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Contains cluster daemon metrics such as HDFS and YARN stats.
    * **Beta Feature**: This report is available for testing purposes only. It may
@@ -568,9 +620,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
    */
   public com.google.cloud.dataproc.v1.ClusterMetrics getMetrics() {
-    return metrics_ == null ? com.google.cloud.dataproc.v1.ClusterMetrics.getDefaultInstance() : metrics_;
+    return metrics_ == null
+        ? com.google.cloud.dataproc.v1.ClusterMetrics.getDefaultInstance()
+        : metrics_;
   }
   /**
+   *
+   *
    * <pre>
    * Contains cluster daemon metrics such as HDFS and YARN stats.
    * **Beta Feature**: This report is available for testing purposes only. It may
@@ -584,6 +640,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -595,8 +652,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getProjectIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
@@ -615,12 +671,8 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < statusHistory_.size(); i++) {
       output.writeMessage(7, statusHistory_.get(i));
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetLabels(),
-        LabelsDefaultEntryHolder.defaultEntry,
-        8);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 8);
     if (metrics_ != null) {
       output.writeMessage(9, getMetrics());
     }
@@ -640,33 +692,29 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clusterName_);
     }
     if (config_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getConfig());
     }
     if (status_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getStatus());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getStatus());
     }
     if (!getClusterUuidBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, clusterUuid_);
     }
     for (int i = 0; i < statusHistory_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, statusHistory_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, statusHistory_.get(i));
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetLabels().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      labels__ = LabelsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, labels__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, labels__);
     }
     if (metrics_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getMetrics());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getMetrics());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -676,7 +724,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dataproc.v1.Cluster)) {
       return super.equals(obj);
@@ -684,30 +732,22 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.dataproc.v1.Cluster other = (com.google.cloud.dataproc.v1.Cluster) obj;
 
     boolean result = true;
-    result = result && getProjectId()
-        .equals(other.getProjectId());
-    result = result && getClusterName()
-        .equals(other.getClusterName());
+    result = result && getProjectId().equals(other.getProjectId());
+    result = result && getClusterName().equals(other.getClusterName());
     result = result && (hasConfig() == other.hasConfig());
     if (hasConfig()) {
-      result = result && getConfig()
-          .equals(other.getConfig());
+      result = result && getConfig().equals(other.getConfig());
     }
-    result = result && internalGetLabels().equals(
-        other.internalGetLabels());
+    result = result && internalGetLabels().equals(other.internalGetLabels());
     result = result && (hasStatus() == other.hasStatus());
     if (hasStatus()) {
-      result = result && getStatus()
-          .equals(other.getStatus());
+      result = result && getStatus().equals(other.getStatus());
     }
-    result = result && getStatusHistoryList()
-        .equals(other.getStatusHistoryList());
-    result = result && getClusterUuid()
-        .equals(other.getClusterUuid());
+    result = result && getStatusHistoryList().equals(other.getStatusHistoryList());
+    result = result && getClusterUuid().equals(other.getClusterUuid());
     result = result && (hasMetrics() == other.hasMetrics());
     if (hasMetrics()) {
-      result = result && getMetrics()
-          .equals(other.getMetrics());
+      result = result && getMetrics().equals(other.getMetrics());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -751,141 +791,147 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.dataproc.v1.Cluster parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.dataproc.v1.Cluster parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1.Cluster parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1.Cluster parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.cloud.dataproc.v1.Cluster parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1.Cluster parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.Cluster parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1.Cluster parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.Cluster parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1.Cluster parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.Cluster parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1.Cluster parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.Cluster parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1.Cluster parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.dataproc.v1.Cluster prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Describes the identifying information, config, and status of
-   * a cluster of Google Compute Engine instances.
+   * a cluster of Compute Engine instances.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.Cluster}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1.Cluster)
       com.google.cloud.dataproc.v1.ClusterOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1.ClustersProto.internal_static_google_cloud_dataproc_v1_Cluster_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1.ClustersProto
+          .internal_static_google_cloud_dataproc_v1_Cluster_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 8:
           return internalGetLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 8:
           return internalGetMutableLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1.ClustersProto.internal_static_google_cloud_dataproc_v1_Cluster_fieldAccessorTable
+      return com.google.cloud.dataproc.v1.ClustersProto
+          .internal_static_google_cloud_dataproc_v1_Cluster_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1.Cluster.class, com.google.cloud.dataproc.v1.Cluster.Builder.class);
+              com.google.cloud.dataproc.v1.Cluster.class,
+              com.google.cloud.dataproc.v1.Cluster.Builder.class);
     }
 
     // Construct using com.google.cloud.dataproc.v1.Cluster.newBuilder()
@@ -893,17 +939,17 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getStatusHistoryFieldBuilder();
       }
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -942,9 +988,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1.ClustersProto.internal_static_google_cloud_dataproc_v1_Cluster_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1.ClustersProto
+          .internal_static_google_cloud_dataproc_v1_Cluster_descriptor;
     }
 
     @java.lang.Override
@@ -1004,38 +1050,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dataproc.v1.Cluster) {
-        return mergeFrom((com.google.cloud.dataproc.v1.Cluster)other);
+        return mergeFrom((com.google.cloud.dataproc.v1.Cluster) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1055,8 +1102,7 @@ private static final long serialVersionUID = 0L;
       if (other.hasConfig()) {
         mergeConfig(other.getConfig());
       }
-      internalGetMutableLabels().mergeFrom(
-          other.internalGetLabels());
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (other.hasStatus()) {
         mergeStatus(other.getStatus());
       }
@@ -1078,9 +1124,10 @@ private static final long serialVersionUID = 0L;
             statusHistoryBuilder_ = null;
             statusHistory_ = other.statusHistory_;
             bitField0_ = (bitField0_ & ~0x00000020);
-            statusHistoryBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getStatusHistoryFieldBuilder() : null;
+            statusHistoryBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getStatusHistoryFieldBuilder()
+                    : null;
           } else {
             statusHistoryBuilder_.addAllMessages(other.statusHistory_);
           }
@@ -1121,10 +1168,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
@@ -1134,8 +1184,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         projectId_ = s;
         return s;
@@ -1144,19 +1193,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
      *
      * <code>string project_id = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getProjectIdBytes() {
+    public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         projectId_ = b;
         return b;
       } else {
@@ -1164,23 +1213,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
      *
      * <code>string project_id = 1;</code>
      */
-    public Builder setProjectId(
-        java.lang.String value) {
+    public Builder setProjectId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       projectId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
@@ -1188,25 +1240,26 @@ private static final long serialVersionUID = 0L;
      * <code>string project_id = 1;</code>
      */
     public Builder clearProjectId() {
-      
+
       projectId_ = getDefaultInstance().getProjectId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Google Cloud Platform project ID that the cluster belongs to.
      * </pre>
      *
      * <code>string project_id = 1;</code>
      */
-    public Builder setProjectIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       projectId_ = value;
       onChanged();
       return this;
@@ -1214,6 +1267,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object clusterName_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The cluster name. Cluster names within a project must be
      * unique. Names of deleted clusters can be reused.
@@ -1224,8 +1279,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getClusterName() {
       java.lang.Object ref = clusterName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         clusterName_ = s;
         return s;
@@ -1234,6 +1288,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The cluster name. Cluster names within a project must be
      * unique. Names of deleted clusters can be reused.
@@ -1241,13 +1297,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_name = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getClusterNameBytes() {
+    public com.google.protobuf.ByteString getClusterNameBytes() {
       java.lang.Object ref = clusterName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         clusterName_ = b;
         return b;
       } else {
@@ -1255,6 +1309,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The cluster name. Cluster names within a project must be
      * unique. Names of deleted clusters can be reused.
@@ -1262,17 +1318,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_name = 2;</code>
      */
-    public Builder setClusterName(
-        java.lang.String value) {
+    public Builder setClusterName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       clusterName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The cluster name. Cluster names within a project must be
      * unique. Names of deleted clusters can be reused.
@@ -1281,12 +1338,14 @@ private static final long serialVersionUID = 0L;
      * <code>string cluster_name = 2;</code>
      */
     public Builder clearClusterName() {
-      
+
       clusterName_ = getDefaultInstance().getClusterName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The cluster name. Cluster names within a project must be
      * unique. Names of deleted clusters can be reused.
@@ -1294,13 +1353,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_name = 2;</code>
      */
-    public Builder setClusterNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setClusterNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       clusterName_ = value;
       onChanged();
       return this;
@@ -1308,8 +1366,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dataproc.v1.ClusterConfig config_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1.ClusterConfig, com.google.cloud.dataproc.v1.ClusterConfig.Builder, com.google.cloud.dataproc.v1.ClusterConfigOrBuilder> configBuilder_;
+            com.google.cloud.dataproc.v1.ClusterConfig,
+            com.google.cloud.dataproc.v1.ClusterConfig.Builder,
+            com.google.cloud.dataproc.v1.ClusterConfigOrBuilder>
+        configBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required. The cluster config. Note that Cloud Dataproc may set
      * default values, and values may change when clusters are updated.
@@ -1321,6 +1384,8 @@ private static final long serialVersionUID = 0L;
       return configBuilder_ != null || config_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The cluster config. Note that Cloud Dataproc may set
      * default values, and values may change when clusters are updated.
@@ -1330,12 +1395,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1.ClusterConfig getConfig() {
       if (configBuilder_ == null) {
-        return config_ == null ? com.google.cloud.dataproc.v1.ClusterConfig.getDefaultInstance() : config_;
+        return config_ == null
+            ? com.google.cloud.dataproc.v1.ClusterConfig.getDefaultInstance()
+            : config_;
       } else {
         return configBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The cluster config. Note that Cloud Dataproc may set
      * default values, and values may change when clusters are updated.
@@ -1357,6 +1426,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The cluster config. Note that Cloud Dataproc may set
      * default values, and values may change when clusters are updated.
@@ -1364,8 +1435,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
      */
-    public Builder setConfig(
-        com.google.cloud.dataproc.v1.ClusterConfig.Builder builderForValue) {
+    public Builder setConfig(com.google.cloud.dataproc.v1.ClusterConfig.Builder builderForValue) {
       if (configBuilder_ == null) {
         config_ = builderForValue.build();
         onChanged();
@@ -1376,6 +1446,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The cluster config. Note that Cloud Dataproc may set
      * default values, and values may change when clusters are updated.
@@ -1387,7 +1459,9 @@ private static final long serialVersionUID = 0L;
       if (configBuilder_ == null) {
         if (config_ != null) {
           config_ =
-            com.google.cloud.dataproc.v1.ClusterConfig.newBuilder(config_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1.ClusterConfig.newBuilder(config_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           config_ = value;
         }
@@ -1399,6 +1473,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The cluster config. Note that Cloud Dataproc may set
      * default values, and values may change when clusters are updated.
@@ -1418,6 +1494,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The cluster config. Note that Cloud Dataproc may set
      * default values, and values may change when clusters are updated.
@@ -1426,11 +1504,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
      */
     public com.google.cloud.dataproc.v1.ClusterConfig.Builder getConfigBuilder() {
-      
+
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required. The cluster config. Note that Cloud Dataproc may set
      * default values, and values may change when clusters are updated.
@@ -1442,11 +1522,14 @@ private static final long serialVersionUID = 0L;
       if (configBuilder_ != null) {
         return configBuilder_.getMessageOrBuilder();
       } else {
-        return config_ == null ?
-            com.google.cloud.dataproc.v1.ClusterConfig.getDefaultInstance() : config_;
+        return config_ == null
+            ? com.google.cloud.dataproc.v1.ClusterConfig.getDefaultInstance()
+            : config_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The cluster config. Note that Cloud Dataproc may set
      * default values, and values may change when clusters are updated.
@@ -1455,35 +1538,37 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1.ClusterConfig config = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1.ClusterConfig, com.google.cloud.dataproc.v1.ClusterConfig.Builder, com.google.cloud.dataproc.v1.ClusterConfigOrBuilder> 
+            com.google.cloud.dataproc.v1.ClusterConfig,
+            com.google.cloud.dataproc.v1.ClusterConfig.Builder,
+            com.google.cloud.dataproc.v1.ClusterConfigOrBuilder>
         getConfigFieldBuilder() {
       if (configBuilder_ == null) {
-        configBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1.ClusterConfig, com.google.cloud.dataproc.v1.ClusterConfig.Builder, com.google.cloud.dataproc.v1.ClusterConfigOrBuilder>(
-                getConfig(),
-                getParentForChildren(),
-                isClean());
+        configBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.ClusterConfig,
+                com.google.cloud.dataproc.v1.ClusterConfig.Builder,
+                com.google.cloud.dataproc.v1.ClusterConfigOrBuilder>(
+                getConfig(), getParentForChildren(), isClean());
         config_ = null;
       }
       return configBuilder_;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> labels_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetLabels() {
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
       if (labels_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       return labels_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableLabels() {
-      onChanged();;
+        internalGetMutableLabels() {
+      onChanged();
+      ;
       if (labels_ == null) {
-        labels_ = com.google.protobuf.MapField.newMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
@@ -1495,6 +1580,8 @@ private static final long serialVersionUID = 0L;
       return internalGetLabels().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this cluster.
      * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -1506,20 +1593,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
      */
-
-    public boolean containsLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetLabels().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getLabelsMap()} instead.
-     */
+    /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this cluster.
      * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -1531,11 +1618,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this cluster.
      * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -1547,16 +1635,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
      */
-
     public java.lang.String getLabelsOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this cluster.
      * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -1568,12 +1657,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
      */
-
-    public java.lang.String getLabelsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1581,11 +1669,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearLabels() {
-      internalGetMutableLabels().getMutableMap()
-          .clear();
+      internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this cluster.
      * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -1597,23 +1686,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
      */
-
-    public Builder removeLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .remove(key);
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableLabels() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       return internalGetMutableLabels().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this cluster.
      * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -1625,16 +1712,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
      */
-    public Builder putLabels(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .put(key, value);
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The labels to associate with this cluster.
      * Label **keys** must contain 1 to 63 characters, and must conform to
@@ -1646,20 +1736,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
      */
-
-    public Builder putAllLabels(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableLabels().getMutableMap()
-          .putAll(values);
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
     }
 
     private com.google.cloud.dataproc.v1.ClusterStatus status_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1.ClusterStatus, com.google.cloud.dataproc.v1.ClusterStatus.Builder, com.google.cloud.dataproc.v1.ClusterStatusOrBuilder> statusBuilder_;
+            com.google.cloud.dataproc.v1.ClusterStatus,
+            com.google.cloud.dataproc.v1.ClusterStatus.Builder,
+            com.google.cloud.dataproc.v1.ClusterStatusOrBuilder>
+        statusBuilder_;
     /**
+     *
+     *
      * <pre>
-     * Output-only. Cluster status.
+     * Output only. Cluster status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -1668,22 +1760,28 @@ private static final long serialVersionUID = 0L;
       return statusBuilder_ != null || status_ != null;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Cluster status.
+     * Output only. Cluster status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
      */
     public com.google.cloud.dataproc.v1.ClusterStatus getStatus() {
       if (statusBuilder_ == null) {
-        return status_ == null ? com.google.cloud.dataproc.v1.ClusterStatus.getDefaultInstance() : status_;
+        return status_ == null
+            ? com.google.cloud.dataproc.v1.ClusterStatus.getDefaultInstance()
+            : status_;
       } else {
         return statusBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Cluster status.
+     * Output only. Cluster status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -1702,14 +1800,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Cluster status.
+     * Output only. Cluster status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
      */
-    public Builder setStatus(
-        com.google.cloud.dataproc.v1.ClusterStatus.Builder builderForValue) {
+    public Builder setStatus(com.google.cloud.dataproc.v1.ClusterStatus.Builder builderForValue) {
       if (statusBuilder_ == null) {
         status_ = builderForValue.build();
         onChanged();
@@ -1720,8 +1819,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Cluster status.
+     * Output only. Cluster status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -1730,7 +1831,9 @@ private static final long serialVersionUID = 0L;
       if (statusBuilder_ == null) {
         if (status_ != null) {
           status_ =
-            com.google.cloud.dataproc.v1.ClusterStatus.newBuilder(status_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1.ClusterStatus.newBuilder(status_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           status_ = value;
         }
@@ -1742,8 +1845,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Cluster status.
+     * Output only. Cluster status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -1760,20 +1865,24 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Cluster status.
+     * Output only. Cluster status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
      */
     public com.google.cloud.dataproc.v1.ClusterStatus.Builder getStatusBuilder() {
-      
+
       onChanged();
       return getStatusFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Cluster status.
+     * Output only. Cluster status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
@@ -1782,46 +1891,59 @@ private static final long serialVersionUID = 0L;
       if (statusBuilder_ != null) {
         return statusBuilder_.getMessageOrBuilder();
       } else {
-        return status_ == null ?
-            com.google.cloud.dataproc.v1.ClusterStatus.getDefaultInstance() : status_;
+        return status_ == null
+            ? com.google.cloud.dataproc.v1.ClusterStatus.getDefaultInstance()
+            : status_;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Cluster status.
+     * Output only. Cluster status.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus status = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1.ClusterStatus, com.google.cloud.dataproc.v1.ClusterStatus.Builder, com.google.cloud.dataproc.v1.ClusterStatusOrBuilder> 
+            com.google.cloud.dataproc.v1.ClusterStatus,
+            com.google.cloud.dataproc.v1.ClusterStatus.Builder,
+            com.google.cloud.dataproc.v1.ClusterStatusOrBuilder>
         getStatusFieldBuilder() {
       if (statusBuilder_ == null) {
-        statusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1.ClusterStatus, com.google.cloud.dataproc.v1.ClusterStatus.Builder, com.google.cloud.dataproc.v1.ClusterStatusOrBuilder>(
-                getStatus(),
-                getParentForChildren(),
-                isClean());
+        statusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.ClusterStatus,
+                com.google.cloud.dataproc.v1.ClusterStatus.Builder,
+                com.google.cloud.dataproc.v1.ClusterStatusOrBuilder>(
+                getStatus(), getParentForChildren(), isClean());
         status_ = null;
       }
       return statusBuilder_;
     }
 
     private java.util.List<com.google.cloud.dataproc.v1.ClusterStatus> statusHistory_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureStatusHistoryIsMutable() {
       if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-        statusHistory_ = new java.util.ArrayList<com.google.cloud.dataproc.v1.ClusterStatus>(statusHistory_);
+        statusHistory_ =
+            new java.util.ArrayList<com.google.cloud.dataproc.v1.ClusterStatus>(statusHistory_);
         bitField0_ |= 0x00000020;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dataproc.v1.ClusterStatus, com.google.cloud.dataproc.v1.ClusterStatus.Builder, com.google.cloud.dataproc.v1.ClusterStatusOrBuilder> statusHistoryBuilder_;
+            com.google.cloud.dataproc.v1.ClusterStatus,
+            com.google.cloud.dataproc.v1.ClusterStatus.Builder,
+            com.google.cloud.dataproc.v1.ClusterStatusOrBuilder>
+        statusHistoryBuilder_;
 
     /**
+     *
+     *
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -1834,8 +1956,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -1848,8 +1972,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -1862,14 +1988,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
      */
-    public Builder setStatusHistory(
-        int index, com.google.cloud.dataproc.v1.ClusterStatus value) {
+    public Builder setStatusHistory(int index, com.google.cloud.dataproc.v1.ClusterStatus value) {
       if (statusHistoryBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1883,8 +2010,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -1901,8 +2030,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -1921,14 +2052,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
      */
-    public Builder addStatusHistory(
-        int index, com.google.cloud.dataproc.v1.ClusterStatus value) {
+    public Builder addStatusHistory(int index, com.google.cloud.dataproc.v1.ClusterStatus value) {
       if (statusHistoryBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1942,8 +2074,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -1960,8 +2094,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -1978,8 +2114,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -1988,8 +2126,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.dataproc.v1.ClusterStatus> values) {
       if (statusHistoryBuilder_ == null) {
         ensureStatusHistoryIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, statusHistory_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, statusHistory_);
         onChanged();
       } else {
         statusHistoryBuilder_.addAllMessages(values);
@@ -1997,8 +2134,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -2014,8 +2153,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -2031,19 +2172,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
      */
-    public com.google.cloud.dataproc.v1.ClusterStatus.Builder getStatusHistoryBuilder(
-        int index) {
+    public com.google.cloud.dataproc.v1.ClusterStatus.Builder getStatusHistoryBuilder(int index) {
       return getStatusHistoryFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
@@ -2051,19 +2195,22 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dataproc.v1.ClusterStatusOrBuilder getStatusHistoryOrBuilder(
         int index) {
       if (statusHistoryBuilder_ == null) {
-        return statusHistory_.get(index);  } else {
+        return statusHistory_.get(index);
+      } else {
         return statusHistoryBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
      */
-    public java.util.List<? extends com.google.cloud.dataproc.v1.ClusterStatusOrBuilder> 
-         getStatusHistoryOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.dataproc.v1.ClusterStatusOrBuilder>
+        getStatusHistoryOrBuilderList() {
       if (statusHistoryBuilder_ != null) {
         return statusHistoryBuilder_.getMessageOrBuilderList();
       } else {
@@ -2071,45 +2218,56 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
      */
     public com.google.cloud.dataproc.v1.ClusterStatus.Builder addStatusHistoryBuilder() {
-      return getStatusHistoryFieldBuilder().addBuilder(
-          com.google.cloud.dataproc.v1.ClusterStatus.getDefaultInstance());
+      return getStatusHistoryFieldBuilder()
+          .addBuilder(com.google.cloud.dataproc.v1.ClusterStatus.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
      */
-    public com.google.cloud.dataproc.v1.ClusterStatus.Builder addStatusHistoryBuilder(
-        int index) {
-      return getStatusHistoryFieldBuilder().addBuilder(
-          index, com.google.cloud.dataproc.v1.ClusterStatus.getDefaultInstance());
+    public com.google.cloud.dataproc.v1.ClusterStatus.Builder addStatusHistoryBuilder(int index) {
+      return getStatusHistoryFieldBuilder()
+          .addBuilder(index, com.google.cloud.dataproc.v1.ClusterStatus.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The previous cluster status.
+     * Output only. The previous cluster status.
      * </pre>
      *
      * <code>repeated .google.cloud.dataproc.v1.ClusterStatus status_history = 7;</code>
      */
-    public java.util.List<com.google.cloud.dataproc.v1.ClusterStatus.Builder> 
-         getStatusHistoryBuilderList() {
+    public java.util.List<com.google.cloud.dataproc.v1.ClusterStatus.Builder>
+        getStatusHistoryBuilderList() {
       return getStatusHistoryFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dataproc.v1.ClusterStatus, com.google.cloud.dataproc.v1.ClusterStatus.Builder, com.google.cloud.dataproc.v1.ClusterStatusOrBuilder> 
+            com.google.cloud.dataproc.v1.ClusterStatus,
+            com.google.cloud.dataproc.v1.ClusterStatus.Builder,
+            com.google.cloud.dataproc.v1.ClusterStatusOrBuilder>
         getStatusHistoryFieldBuilder() {
       if (statusHistoryBuilder_ == null) {
-        statusHistoryBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.dataproc.v1.ClusterStatus, com.google.cloud.dataproc.v1.ClusterStatus.Builder, com.google.cloud.dataproc.v1.ClusterStatusOrBuilder>(
+        statusHistoryBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dataproc.v1.ClusterStatus,
+                com.google.cloud.dataproc.v1.ClusterStatus.Builder,
+                com.google.cloud.dataproc.v1.ClusterStatusOrBuilder>(
                 statusHistory_,
                 ((bitField0_ & 0x00000020) == 0x00000020),
                 getParentForChildren(),
@@ -2121,8 +2279,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object clusterUuid_ = "";
     /**
+     *
+     *
      * <pre>
-     * Output-only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
@@ -2131,8 +2291,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getClusterUuid() {
       java.lang.Object ref = clusterUuid_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         clusterUuid_ = s;
         return s;
@@ -2141,20 +2300,20 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
      * <code>string cluster_uuid = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getClusterUuidBytes() {
+    public com.google.protobuf.ByteString getClusterUuidBytes() {
       java.lang.Object ref = clusterUuid_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         clusterUuid_ = b;
         return b;
       } else {
@@ -2162,52 +2321,56 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
      * <code>string cluster_uuid = 6;</code>
      */
-    public Builder setClusterUuid(
-        java.lang.String value) {
+    public Builder setClusterUuid(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       clusterUuid_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
      * <code>string cluster_uuid = 6;</code>
      */
     public Builder clearClusterUuid() {
-      
+
       clusterUuid_ = getDefaultInstance().getClusterUuid();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
+     * Output only. A cluster UUID (Unique Universal Identifier). Cloud Dataproc
      * generates this value when it creates the cluster.
      * </pre>
      *
      * <code>string cluster_uuid = 6;</code>
      */
-    public Builder setClusterUuidBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setClusterUuidBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       clusterUuid_ = value;
       onChanged();
       return this;
@@ -2215,8 +2378,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dataproc.v1.ClusterMetrics metrics_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1.ClusterMetrics, com.google.cloud.dataproc.v1.ClusterMetrics.Builder, com.google.cloud.dataproc.v1.ClusterMetricsOrBuilder> metricsBuilder_;
+            com.google.cloud.dataproc.v1.ClusterMetrics,
+            com.google.cloud.dataproc.v1.ClusterMetrics.Builder,
+            com.google.cloud.dataproc.v1.ClusterMetricsOrBuilder>
+        metricsBuilder_;
     /**
+     *
+     *
      * <pre>
      * Contains cluster daemon metrics such as HDFS and YARN stats.
      * **Beta Feature**: This report is available for testing purposes only. It may
@@ -2229,6 +2397,8 @@ private static final long serialVersionUID = 0L;
       return metricsBuilder_ != null || metrics_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Contains cluster daemon metrics such as HDFS and YARN stats.
      * **Beta Feature**: This report is available for testing purposes only. It may
@@ -2239,12 +2409,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1.ClusterMetrics getMetrics() {
       if (metricsBuilder_ == null) {
-        return metrics_ == null ? com.google.cloud.dataproc.v1.ClusterMetrics.getDefaultInstance() : metrics_;
+        return metrics_ == null
+            ? com.google.cloud.dataproc.v1.ClusterMetrics.getDefaultInstance()
+            : metrics_;
       } else {
         return metricsBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Contains cluster daemon metrics such as HDFS and YARN stats.
      * **Beta Feature**: This report is available for testing purposes only. It may
@@ -2267,6 +2441,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Contains cluster daemon metrics such as HDFS and YARN stats.
      * **Beta Feature**: This report is available for testing purposes only. It may
@@ -2275,8 +2451,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
      */
-    public Builder setMetrics(
-        com.google.cloud.dataproc.v1.ClusterMetrics.Builder builderForValue) {
+    public Builder setMetrics(com.google.cloud.dataproc.v1.ClusterMetrics.Builder builderForValue) {
       if (metricsBuilder_ == null) {
         metrics_ = builderForValue.build();
         onChanged();
@@ -2287,6 +2462,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Contains cluster daemon metrics such as HDFS and YARN stats.
      * **Beta Feature**: This report is available for testing purposes only. It may
@@ -2299,7 +2476,9 @@ private static final long serialVersionUID = 0L;
       if (metricsBuilder_ == null) {
         if (metrics_ != null) {
           metrics_ =
-            com.google.cloud.dataproc.v1.ClusterMetrics.newBuilder(metrics_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1.ClusterMetrics.newBuilder(metrics_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           metrics_ = value;
         }
@@ -2311,6 +2490,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Contains cluster daemon metrics such as HDFS and YARN stats.
      * **Beta Feature**: This report is available for testing purposes only. It may
@@ -2331,6 +2512,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Contains cluster daemon metrics such as HDFS and YARN stats.
      * **Beta Feature**: This report is available for testing purposes only. It may
@@ -2340,11 +2523,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
      */
     public com.google.cloud.dataproc.v1.ClusterMetrics.Builder getMetricsBuilder() {
-      
+
       onChanged();
       return getMetricsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Contains cluster daemon metrics such as HDFS and YARN stats.
      * **Beta Feature**: This report is available for testing purposes only. It may
@@ -2357,11 +2542,14 @@ private static final long serialVersionUID = 0L;
       if (metricsBuilder_ != null) {
         return metricsBuilder_.getMessageOrBuilder();
       } else {
-        return metrics_ == null ?
-            com.google.cloud.dataproc.v1.ClusterMetrics.getDefaultInstance() : metrics_;
+        return metrics_ == null
+            ? com.google.cloud.dataproc.v1.ClusterMetrics.getDefaultInstance()
+            : metrics_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Contains cluster daemon metrics such as HDFS and YARN stats.
      * **Beta Feature**: This report is available for testing purposes only. It may
@@ -2371,21 +2559,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1.ClusterMetrics metrics = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1.ClusterMetrics, com.google.cloud.dataproc.v1.ClusterMetrics.Builder, com.google.cloud.dataproc.v1.ClusterMetricsOrBuilder> 
+            com.google.cloud.dataproc.v1.ClusterMetrics,
+            com.google.cloud.dataproc.v1.ClusterMetrics.Builder,
+            com.google.cloud.dataproc.v1.ClusterMetricsOrBuilder>
         getMetricsFieldBuilder() {
       if (metricsBuilder_ == null) {
-        metricsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1.ClusterMetrics, com.google.cloud.dataproc.v1.ClusterMetrics.Builder, com.google.cloud.dataproc.v1.ClusterMetricsOrBuilder>(
-                getMetrics(),
-                getParentForChildren(),
-                isClean());
+        metricsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.ClusterMetrics,
+                com.google.cloud.dataproc.v1.ClusterMetrics.Builder,
+                com.google.cloud.dataproc.v1.ClusterMetricsOrBuilder>(
+                getMetrics(), getParentForChildren(), isClean());
         metrics_ = null;
       }
       return metricsBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -2395,12 +2586,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1.Cluster)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1.Cluster)
   private static final com.google.cloud.dataproc.v1.Cluster DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1.Cluster();
   }
@@ -2409,16 +2600,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Cluster>
-      PARSER = new com.google.protobuf.AbstractParser<Cluster>() {
-    @java.lang.Override
-    public Cluster parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new Cluster(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Cluster> PARSER =
+      new com.google.protobuf.AbstractParser<Cluster>() {
+        @java.lang.Override
+        public Cluster parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Cluster(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Cluster> parser() {
     return PARSER;
@@ -2433,6 +2624,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dataproc.v1.Cluster getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery;
 
-
 import com.google.api.services.bigquery.model.QueryParameterType;
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Function;
@@ -210,8 +209,10 @@ public abstract class QueryParameterValue implements Serializable {
     return of(value, StandardSQLTypeName.TIME);
   }
 
-  /** Creates a {@code QueryParameterValue} object with a type of DATETIME.
-   * Must be in the format "yyyy-MM-dd HH:mm:ss.SSSSSS", e.g. ""2014-08-19 12:41:35.220000". */
+  /**
+   * Creates a {@code QueryParameterValue} object with a type of DATETIME. Must be in the format
+   * "yyyy-MM-dd HH:mm:ss.SSSSSS", e.g. ""2014-08-19 12:41:35.220000".
+   */
   public static QueryParameterValue dateTime(String value) {
     return of(value, StandardSQLTypeName.DATETIME);
   }

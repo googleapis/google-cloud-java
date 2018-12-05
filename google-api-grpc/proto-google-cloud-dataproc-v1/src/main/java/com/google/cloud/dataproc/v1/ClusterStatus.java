@@ -4,21 +4,24 @@
 package com.google.cloud.dataproc.v1;
 
 /**
+ *
+ *
  * <pre>
  * The status of a cluster and its instances.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.ClusterStatus}
  */
-public  final class ClusterStatus extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.ClusterStatus)
     ClusterStatusOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ClusterStatus.newBuilder() to construct.
   private ClusterStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ClusterStatus() {
     state_ = 0;
     detail_ = "";
@@ -26,10 +29,10 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ClusterStatus(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -49,79 +52,89 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
+          case 8:
+            {
+              int rawValue = input.readEnum();
 
-            state_ = rawValue;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            detail_ = s;
-            break;
-          }
-          case 26: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (stateStartTime_ != null) {
-              subBuilder = stateStartTime_.toBuilder();
+              state_ = rawValue;
+              break;
             }
-            stateStartTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(stateStartTime_);
-              stateStartTime_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 32: {
-            int rawValue = input.readEnum();
-
-            substate_ = rawValue;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              detail_ = s;
+              break;
             }
-            break;
-          }
+          case 26:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (stateStartTime_ != null) {
+                subBuilder = stateStartTime_.toBuilder();
+              }
+              stateStartTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(stateStartTime_);
+                stateStartTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 32:
+            {
+              int rawValue = input.readEnum();
+
+              substate_ = rawValue;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1.ClustersProto.internal_static_google_cloud_dataproc_v1_ClusterStatus_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1.ClustersProto
+        .internal_static_google_cloud_dataproc_v1_ClusterStatus_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1.ClustersProto.internal_static_google_cloud_dataproc_v1_ClusterStatus_fieldAccessorTable
+    return com.google.cloud.dataproc.v1.ClustersProto
+        .internal_static_google_cloud_dataproc_v1_ClusterStatus_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1.ClusterStatus.class, com.google.cloud.dataproc.v1.ClusterStatus.Builder.class);
+            com.google.cloud.dataproc.v1.ClusterStatus.class,
+            com.google.cloud.dataproc.v1.ClusterStatus.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * The cluster state.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.dataproc.v1.ClusterStatus.State}
    */
-  public enum State
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * The cluster state is unknown.
      * </pre>
@@ -130,6 +143,8 @@ private static final long serialVersionUID = 0L;
      */
     UNKNOWN(0),
     /**
+     *
+     *
      * <pre>
      * The cluster is being created and set up. It is not ready for use.
      * </pre>
@@ -138,6 +153,8 @@ private static final long serialVersionUID = 0L;
      */
     CREATING(1),
     /**
+     *
+     *
      * <pre>
      * The cluster is currently running and healthy. It is ready for use.
      * </pre>
@@ -146,6 +163,8 @@ private static final long serialVersionUID = 0L;
      */
     RUNNING(2),
     /**
+     *
+     *
      * <pre>
      * The cluster encountered an error. It is not ready for use.
      * </pre>
@@ -154,6 +173,8 @@ private static final long serialVersionUID = 0L;
      */
     ERROR(3),
     /**
+     *
+     *
      * <pre>
      * The cluster is being deleted. It cannot be used.
      * </pre>
@@ -162,6 +183,8 @@ private static final long serialVersionUID = 0L;
      */
     DELETING(4),
     /**
+     *
+     *
      * <pre>
      * The cluster is being updated. It continues to accept and process jobs.
      * </pre>
@@ -173,6 +196,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * The cluster state is unknown.
      * </pre>
@@ -181,6 +206,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int UNKNOWN_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The cluster is being created and set up. It is not ready for use.
      * </pre>
@@ -189,6 +216,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CREATING_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * The cluster is currently running and healthy. It is ready for use.
      * </pre>
@@ -197,6 +226,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RUNNING_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * The cluster encountered an error. It is not ready for use.
      * </pre>
@@ -205,6 +236,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ERROR_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * The cluster is being deleted. It cannot be used.
      * </pre>
@@ -213,6 +246,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DELETING_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * The cluster is being updated. It continues to accept and process jobs.
      * </pre>
@@ -220,7 +255,6 @@ private static final long serialVersionUID = 0L;
      * <code>UPDATING = 5;</code>
      */
     public static final int UPDATING_VALUE = 5;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -230,9 +264,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
@@ -240,48 +272,51 @@ private static final long serialVersionUID = 0L;
 
     public static State forNumber(int value) {
       switch (value) {
-        case 0: return UNKNOWN;
-        case 1: return CREATING;
-        case 2: return RUNNING;
-        case 3: return ERROR;
-        case 4: return DELETING;
-        case 5: return UPDATING;
-        default: return null;
+        case 0:
+          return UNKNOWN;
+        case 1:
+          return CREATING;
+        case 2:
+          return RUNNING;
+        case 3:
+          return ERROR;
+        case 4:
+          return DELETING;
+        case 5:
+          return UPDATING;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<State>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        State> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<State>() {
-            public State findValueByNumber(int number) {
-              return State.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.dataproc.v1.ClusterStatus.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final State[] VALUES = values();
 
-    public static State valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -299,15 +334,28 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
+   * <pre>
+   * The cluster substate.
+   * </pre>
+   *
    * Protobuf enum {@code google.cloud.dataproc.v1.ClusterStatus.Substate}
    */
-  public enum Substate
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Substate implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
+     * <pre>
+     * The cluster substate is unknown.
+     * </pre>
+     *
      * <code>UNSPECIFIED = 0;</code>
      */
     UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * The cluster is known to be in an unhealthy state
      * (for example, critical daemons are not running or HDFS capacity is
@@ -319,6 +367,8 @@ private static final long serialVersionUID = 0L;
      */
     UNHEALTHY(1),
     /**
+     *
+     *
      * <pre>
      * The agent-reported status is out of date (may occur if
      * Cloud Dataproc loses communication with Agent).
@@ -332,10 +382,18 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
+     * <pre>
+     * The cluster substate is unknown.
+     * </pre>
+     *
      * <code>UNSPECIFIED = 0;</code>
      */
     public static final int UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The cluster is known to be in an unhealthy state
      * (for example, critical daemons are not running or HDFS capacity is
@@ -347,6 +405,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int UNHEALTHY_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * The agent-reported status is out of date (may occur if
      * Cloud Dataproc loses communication with Agent).
@@ -357,7 +417,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int STALE_STATUS_VALUE = 2;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -366,9 +425,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Substate valueOf(int value) {
       return forNumber(value);
@@ -376,45 +433,45 @@ private static final long serialVersionUID = 0L;
 
     public static Substate forNumber(int value) {
       switch (value) {
-        case 0: return UNSPECIFIED;
-        case 1: return UNHEALTHY;
-        case 2: return STALE_STATUS;
-        default: return null;
+        case 0:
+          return UNSPECIFIED;
+        case 1:
+          return UNHEALTHY;
+        case 2:
+          return STALE_STATUS;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Substate>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Substate> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Substate> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Substate>() {
-            public Substate findValueByNumber(int number) {
-              return Substate.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Substate> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Substate>() {
+          public Substate findValueByNumber(int number) {
+            return Substate.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.dataproc.v1.ClusterStatus.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final Substate[] VALUES = values();
 
-    public static Substate valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Substate valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -434,8 +491,10 @@ private static final long serialVersionUID = 0L;
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_;
   /**
+   *
+   *
    * <pre>
-   * Output-only. The cluster's state.
+   * Output only. The cluster's state.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterStatus.State state = 1;</code>
@@ -444,23 +503,28 @@ private static final long serialVersionUID = 0L;
     return state_;
   }
   /**
+   *
+   *
    * <pre>
-   * Output-only. The cluster's state.
+   * Output only. The cluster's state.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1.ClusterStatus.State state = 1;</code>
    */
   public com.google.cloud.dataproc.v1.ClusterStatus.State getState() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.dataproc.v1.ClusterStatus.State result = com.google.cloud.dataproc.v1.ClusterStatus.State.valueOf(state_);
+    com.google.cloud.dataproc.v1.ClusterStatus.State result =
+        com.google.cloud.dataproc.v1.ClusterStatus.State.valueOf(state_);
     return result == null ? com.google.cloud.dataproc.v1.ClusterStatus.State.UNRECOGNIZED : result;
   }
 
   public static final int DETAIL_FIELD_NUMBER = 2;
   private volatile java.lang.Object detail_;
   /**
+   *
+   *
    * <pre>
-   * Output-only. Optional details of cluster's state.
+   * Output only. Optional details of cluster's state.
    * </pre>
    *
    * <code>string detail = 2;</code>
@@ -470,27 +534,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       detail_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * Output-only. Optional details of cluster's state.
+   * Output only. Optional details of cluster's state.
    * </pre>
    *
    * <code>string detail = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getDetailBytes() {
+  public com.google.protobuf.ByteString getDetailBytes() {
     java.lang.Object ref = detail_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       detail_ = b;
       return b;
     } else {
@@ -501,8 +564,10 @@ private static final long serialVersionUID = 0L;
   public static final int STATE_START_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp stateStartTime_;
   /**
+   *
+   *
    * <pre>
-   * Output-only. Time when this state was entered.
+   * Output only. Time when this state was entered.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
@@ -511,18 +576,24 @@ private static final long serialVersionUID = 0L;
     return stateStartTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
-   * Output-only. Time when this state was entered.
+   * Output only. Time when this state was entered.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
    */
   public com.google.protobuf.Timestamp getStateStartTime() {
-    return stateStartTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : stateStartTime_;
+    return stateStartTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : stateStartTime_;
   }
   /**
+   *
+   *
    * <pre>
-   * Output-only. Time when this state was entered.
+   * Output only. Time when this state was entered.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
@@ -534,8 +605,10 @@ private static final long serialVersionUID = 0L;
   public static final int SUBSTATE_FIELD_NUMBER = 4;
   private int substate_;
   /**
+   *
+   *
    * <pre>
-   * Output-only. Additional state information that includes
+   * Output only. Additional state information that includes
    * status reported by the agent.
    * </pre>
    *
@@ -545,8 +618,10 @@ private static final long serialVersionUID = 0L;
     return substate_;
   }
   /**
+   *
+   *
    * <pre>
-   * Output-only. Additional state information that includes
+   * Output only. Additional state information that includes
    * status reported by the agent.
    * </pre>
    *
@@ -554,11 +629,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1.ClusterStatus.Substate getSubstate() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.dataproc.v1.ClusterStatus.Substate result = com.google.cloud.dataproc.v1.ClusterStatus.Substate.valueOf(substate_);
-    return result == null ? com.google.cloud.dataproc.v1.ClusterStatus.Substate.UNRECOGNIZED : result;
+    com.google.cloud.dataproc.v1.ClusterStatus.Substate result =
+        com.google.cloud.dataproc.v1.ClusterStatus.Substate.valueOf(substate_);
+    return result == null
+        ? com.google.cloud.dataproc.v1.ClusterStatus.Substate.UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -570,8 +649,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (state_ != com.google.cloud.dataproc.v1.ClusterStatus.State.UNKNOWN.getNumber()) {
       output.writeEnum(1, state_);
     }
@@ -594,19 +672,16 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (state_ != com.google.cloud.dataproc.v1.ClusterStatus.State.UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, state_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, state_);
     }
     if (!getDetailBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, detail_);
     }
     if (stateStartTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getStateStartTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getStateStartTime());
     }
     if (substate_ != com.google.cloud.dataproc.v1.ClusterStatus.Substate.UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, substate_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, substate_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -616,21 +691,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dataproc.v1.ClusterStatus)) {
       return super.equals(obj);
     }
-    com.google.cloud.dataproc.v1.ClusterStatus other = (com.google.cloud.dataproc.v1.ClusterStatus) obj;
+    com.google.cloud.dataproc.v1.ClusterStatus other =
+        (com.google.cloud.dataproc.v1.ClusterStatus) obj;
 
     boolean result = true;
     result = result && state_ == other.state_;
-    result = result && getDetail()
-        .equals(other.getDetail());
+    result = result && getDetail().equals(other.getDetail());
     result = result && (hasStateStartTime() == other.hasStateStartTime());
     if (hasStateStartTime()) {
-      result = result && getStateStartTime()
-          .equals(other.getStateStartTime());
+      result = result && getStateStartTime().equals(other.getStateStartTime());
     }
     result = result && substate_ == other.substate_;
     result = result && unknownFields.equals(other.unknownFields);
@@ -659,118 +733,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.dataproc.v1.ClusterStatus parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.dataproc.v1.ClusterStatus parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1.ClusterStatus parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.ClusterStatus parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1.ClusterStatus parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.ClusterStatus parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1.ClusterStatus parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.ClusterStatus parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1.ClusterStatus parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1.ClusterStatus parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dataproc.v1.ClusterStatus parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dataproc.v1.ClusterStatus parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dataproc.v1.ClusterStatus parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1.ClusterStatus parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
+
   public static Builder newBuilder(com.google.cloud.dataproc.v1.ClusterStatus prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   @java.lang.Override
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The status of a cluster and its instances.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.ClusterStatus}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1.ClusterStatus)
       com.google.cloud.dataproc.v1.ClusterStatusOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1.ClustersProto.internal_static_google_cloud_dataproc_v1_ClusterStatus_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1.ClustersProto
+          .internal_static_google_cloud_dataproc_v1_ClusterStatus_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1.ClustersProto.internal_static_google_cloud_dataproc_v1_ClusterStatus_fieldAccessorTable
+      return com.google.cloud.dataproc.v1.ClustersProto
+          .internal_static_google_cloud_dataproc_v1_ClusterStatus_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1.ClusterStatus.class, com.google.cloud.dataproc.v1.ClusterStatus.Builder.class);
+              com.google.cloud.dataproc.v1.ClusterStatus.class,
+              com.google.cloud.dataproc.v1.ClusterStatus.Builder.class);
     }
 
     // Construct using com.google.cloud.dataproc.v1.ClusterStatus.newBuilder()
@@ -778,16 +861,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -807,9 +889,9 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1.ClustersProto.internal_static_google_cloud_dataproc_v1_ClusterStatus_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1.ClustersProto
+          .internal_static_google_cloud_dataproc_v1_ClusterStatus_descriptor;
     }
 
     @java.lang.Override
@@ -828,7 +910,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dataproc.v1.ClusterStatus buildPartial() {
-      com.google.cloud.dataproc.v1.ClusterStatus result = new com.google.cloud.dataproc.v1.ClusterStatus(this);
+      com.google.cloud.dataproc.v1.ClusterStatus result =
+          new com.google.cloud.dataproc.v1.ClusterStatus(this);
       result.state_ = state_;
       result.detail_ = detail_;
       if (stateStartTimeBuilder_ == null) {
@@ -845,38 +928,39 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dataproc.v1.ClusterStatus) {
-        return mergeFrom((com.google.cloud.dataproc.v1.ClusterStatus)other);
+        return mergeFrom((com.google.cloud.dataproc.v1.ClusterStatus) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -929,8 +1013,10 @@ private static final long serialVersionUID = 0L;
 
     private int state_ = 0;
     /**
+     *
+     *
      * <pre>
-     * Output-only. The cluster's state.
+     * Output only. The cluster's state.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus.State state = 1;</code>
@@ -939,8 +1025,10 @@ private static final long serialVersionUID = 0L;
       return state_;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The cluster's state.
+     * Output only. The cluster's state.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus.State state = 1;</code>
@@ -951,20 +1039,27 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The cluster's state.
+     * Output only. The cluster's state.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus.State state = 1;</code>
      */
     public com.google.cloud.dataproc.v1.ClusterStatus.State getState() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.dataproc.v1.ClusterStatus.State result = com.google.cloud.dataproc.v1.ClusterStatus.State.valueOf(state_);
-      return result == null ? com.google.cloud.dataproc.v1.ClusterStatus.State.UNRECOGNIZED : result;
+      com.google.cloud.dataproc.v1.ClusterStatus.State result =
+          com.google.cloud.dataproc.v1.ClusterStatus.State.valueOf(state_);
+      return result == null
+          ? com.google.cloud.dataproc.v1.ClusterStatus.State.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The cluster's state.
+     * Output only. The cluster's state.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus.State state = 1;</code>
@@ -973,20 +1068,22 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       state_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. The cluster's state.
+     * Output only. The cluster's state.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus.State state = 1;</code>
      */
     public Builder clearState() {
-      
+
       state_ = 0;
       onChanged();
       return this;
@@ -994,8 +1091,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object detail_ = "";
     /**
+     *
+     *
      * <pre>
-     * Output-only. Optional details of cluster's state.
+     * Output only. Optional details of cluster's state.
      * </pre>
      *
      * <code>string detail = 2;</code>
@@ -1003,8 +1102,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDetail() {
       java.lang.Object ref = detail_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         detail_ = s;
         return s;
@@ -1013,19 +1111,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Optional details of cluster's state.
+     * Output only. Optional details of cluster's state.
      * </pre>
      *
      * <code>string detail = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getDetailBytes() {
+    public com.google.protobuf.ByteString getDetailBytes() {
       java.lang.Object ref = detail_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         detail_ = b;
         return b;
       } else {
@@ -1033,49 +1131,53 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Optional details of cluster's state.
+     * Output only. Optional details of cluster's state.
      * </pre>
      *
      * <code>string detail = 2;</code>
      */
-    public Builder setDetail(
-        java.lang.String value) {
+    public Builder setDetail(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       detail_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Optional details of cluster's state.
+     * Output only. Optional details of cluster's state.
      * </pre>
      *
      * <code>string detail = 2;</code>
      */
     public Builder clearDetail() {
-      
+
       detail_ = getDefaultInstance().getDetail();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Optional details of cluster's state.
+     * Output only. Optional details of cluster's state.
      * </pre>
      *
      * <code>string detail = 2;</code>
      */
-    public Builder setDetailBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDetailBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       detail_ = value;
       onChanged();
       return this;
@@ -1083,10 +1185,15 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp stateStartTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> stateStartTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        stateStartTimeBuilder_;
     /**
+     *
+     *
      * <pre>
-     * Output-only. Time when this state was entered.
+     * Output only. Time when this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
@@ -1095,22 +1202,28 @@ private static final long serialVersionUID = 0L;
       return stateStartTimeBuilder_ != null || stateStartTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Time when this state was entered.
+     * Output only. Time when this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
      */
     public com.google.protobuf.Timestamp getStateStartTime() {
       if (stateStartTimeBuilder_ == null) {
-        return stateStartTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : stateStartTime_;
+        return stateStartTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : stateStartTime_;
       } else {
         return stateStartTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Time when this state was entered.
+     * Output only. Time when this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
@@ -1129,14 +1242,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Time when this state was entered.
+     * Output only. Time when this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
      */
-    public Builder setStateStartTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setStateStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (stateStartTimeBuilder_ == null) {
         stateStartTime_ = builderForValue.build();
         onChanged();
@@ -1147,8 +1261,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Time when this state was entered.
+     * Output only. Time when this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
@@ -1157,7 +1273,9 @@ private static final long serialVersionUID = 0L;
       if (stateStartTimeBuilder_ == null) {
         if (stateStartTime_ != null) {
           stateStartTime_ =
-            com.google.protobuf.Timestamp.newBuilder(stateStartTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(stateStartTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           stateStartTime_ = value;
         }
@@ -1169,8 +1287,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Time when this state was entered.
+     * Output only. Time when this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
@@ -1187,20 +1307,24 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Time when this state was entered.
+     * Output only. Time when this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStateStartTimeBuilder() {
-      
+
       onChanged();
       return getStateStartTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Time when this state was entered.
+     * Output only. Time when this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
@@ -1209,26 +1333,32 @@ private static final long serialVersionUID = 0L;
       if (stateStartTimeBuilder_ != null) {
         return stateStartTimeBuilder_.getMessageOrBuilder();
       } else {
-        return stateStartTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : stateStartTime_;
+        return stateStartTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : stateStartTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Time when this state was entered.
+     * Output only. Time when this state was entered.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp state_start_time = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getStateStartTimeFieldBuilder() {
       if (stateStartTimeBuilder_ == null) {
-        stateStartTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getStateStartTime(),
-                getParentForChildren(),
-                isClean());
+        stateStartTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getStateStartTime(), getParentForChildren(), isClean());
         stateStartTime_ = null;
       }
       return stateStartTimeBuilder_;
@@ -1236,8 +1366,10 @@ private static final long serialVersionUID = 0L;
 
     private int substate_ = 0;
     /**
+     *
+     *
      * <pre>
-     * Output-only. Additional state information that includes
+     * Output only. Additional state information that includes
      * status reported by the agent.
      * </pre>
      *
@@ -1247,8 +1379,10 @@ private static final long serialVersionUID = 0L;
       return substate_;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Additional state information that includes
+     * Output only. Additional state information that includes
      * status reported by the agent.
      * </pre>
      *
@@ -1260,8 +1394,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Additional state information that includes
+     * Output only. Additional state information that includes
      * status reported by the agent.
      * </pre>
      *
@@ -1269,12 +1405,17 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1.ClusterStatus.Substate getSubstate() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.dataproc.v1.ClusterStatus.Substate result = com.google.cloud.dataproc.v1.ClusterStatus.Substate.valueOf(substate_);
-      return result == null ? com.google.cloud.dataproc.v1.ClusterStatus.Substate.UNRECOGNIZED : result;
+      com.google.cloud.dataproc.v1.ClusterStatus.Substate result =
+          com.google.cloud.dataproc.v1.ClusterStatus.Substate.valueOf(substate_);
+      return result == null
+          ? com.google.cloud.dataproc.v1.ClusterStatus.Substate.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Additional state information that includes
+     * Output only. Additional state information that includes
      * status reported by the agent.
      * </pre>
      *
@@ -1284,28 +1425,30 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       substate_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Output-only. Additional state information that includes
+     * Output only. Additional state information that includes
      * status reported by the agent.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.ClusterStatus.Substate substate = 4;</code>
      */
     public Builder clearSubstate() {
-      
+
       substate_ = 0;
       onChanged();
       return this;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -1315,12 +1458,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1.ClusterStatus)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1.ClusterStatus)
   private static final com.google.cloud.dataproc.v1.ClusterStatus DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1.ClusterStatus();
   }
@@ -1329,16 +1472,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ClusterStatus>
-      PARSER = new com.google.protobuf.AbstractParser<ClusterStatus>() {
-    @java.lang.Override
-    public ClusterStatus parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ClusterStatus(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ClusterStatus> PARSER =
+      new com.google.protobuf.AbstractParser<ClusterStatus>() {
+        @java.lang.Override
+        public ClusterStatus parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ClusterStatus(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ClusterStatus> parser() {
     return PARSER;
@@ -1353,6 +1496,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.dataproc.v1.ClusterStatus getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

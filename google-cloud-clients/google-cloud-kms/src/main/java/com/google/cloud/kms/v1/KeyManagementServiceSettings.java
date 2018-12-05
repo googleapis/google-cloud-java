@@ -84,7 +84,8 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
 
   /** Returns the object with the settings used for calls to listCryptoKeyVersions. */
   public PagedCallSettings<
-          ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+          ListCryptoKeyVersionsRequest,
+          ListCryptoKeyVersionsResponse,
           ListCryptoKeyVersionsPagedResponse>
       listCryptoKeyVersionsSettings() {
     return ((KeyManagementServiceStubSettings) getStubSettings()).listCryptoKeyVersionsSettings();
@@ -308,7 +309,8 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
 
     /** Returns the builder for the settings used for calls to listCryptoKeyVersions. */
     public PagedCallSettings.Builder<
-            ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+            ListCryptoKeyVersionsRequest,
+            ListCryptoKeyVersionsResponse,
             ListCryptoKeyVersionsPagedResponse>
         listCryptoKeyVersionsSettings() {
       return getStubSettingsBuilder().listCryptoKeyVersionsSettings();

@@ -68,7 +68,6 @@ public interface BigQuery extends Service<BigQueryOptions> {
       this.selector = selector;
     }
 
-
     @Override
     public String getSelector() {
       return selector;
@@ -111,7 +110,6 @@ public interface BigQuery extends Service<BigQueryOptions> {
       this.selector = selector;
     }
 
-
     @Override
     public String getSelector() {
       return selector;
@@ -143,16 +141,13 @@ public interface BigQuery extends Service<BigQueryOptions> {
       this.selector = selector;
     }
 
-
     @Override
     public String getSelector() {
       return selector;
     }
   }
 
-  /**
-   * Class for specifying dataset list options.
-   */
+  /** Class for specifying dataset list options. */
   class DatasetListOption extends Option {
 
     private static final long serialVersionUID = 8660294969063340498L;
@@ -161,31 +156,23 @@ public interface BigQuery extends Service<BigQueryOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify the maximum number of datasets returned per page.
-     */
+    /** Returns an option to specify the maximum number of datasets returned per page. */
     public static DatasetListOption pageSize(long pageSize) {
       return new DatasetListOption(BigQueryRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing datasets.
-     */
+    /** Returns an option to specify the page token from which to start listing datasets. */
     public static DatasetListOption pageToken(String pageToken) {
       return new DatasetListOption(BigQueryRpc.Option.PAGE_TOKEN, pageToken);
     }
 
-    /**
-     * Returns an options to list all datasets, even hidden ones.
-     */
+    /** Returns an options to list all datasets, even hidden ones. */
     public static DatasetListOption all() {
       return new DatasetListOption(BigQueryRpc.Option.ALL_DATASETS, true);
     }
   }
 
-  /**
-   * Class for specifying dataset get, create and update options.
-   */
+  /** Class for specifying dataset get, create and update options. */
   class DatasetOption extends Option {
 
     private static final long serialVersionUID = 1674133909259913250L;
@@ -196,19 +183,17 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
     /**
      * Returns an option to specify the dataset's fields to be returned by the RPC call. If this
-     * option is not provided all dataset's fields are returned. {@code DatasetOption.fields} can
-     * be used to specify only the fields of interest. {@link Dataset#getDatasetId()} is always
+     * option is not provided all dataset's fields are returned. {@code DatasetOption.fields} can be
+     * used to specify only the fields of interest. {@link Dataset#getDatasetId()} is always
      * returned, even if not specified.
      */
     public static DatasetOption fields(DatasetField... fields) {
-      return new DatasetOption(BigQueryRpc.Option.FIELDS,
-          Helper.selector(DatasetField.REQUIRED_FIELDS, fields));
+      return new DatasetOption(
+          BigQueryRpc.Option.FIELDS, Helper.selector(DatasetField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying dataset delete options.
-   */
+  /** Class for specifying dataset delete options. */
   class DatasetDeleteOption extends Option {
 
     private static final long serialVersionUID = -7166083569900951337L;
@@ -226,9 +211,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
   }
 
-  /**
-   * Class for specifying table list options.
-   */
+  /** Class for specifying table list options. */
   class TableListOption extends Option {
 
     private static final long serialVersionUID = 8660294969063340498L;
@@ -237,25 +220,19 @@ public interface BigQuery extends Service<BigQueryOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify the maximum number of tables returned per page.
-     */
+    /** Returns an option to specify the maximum number of tables returned per page. */
     public static TableListOption pageSize(long pageSize) {
       checkArgument(pageSize >= 0);
       return new TableListOption(BigQueryRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing tables.
-     */
+    /** Returns an option to specify the page token from which to start listing tables. */
     public static TableListOption pageToken(String pageToken) {
       return new TableListOption(BigQueryRpc.Option.PAGE_TOKEN, pageToken);
     }
   }
 
-  /**
-   * Class for specifying table get, create and update options.
-   */
+  /** Class for specifying table get, create and update options. */
   class TableOption extends Option {
 
     private static final long serialVersionUID = -1723870134095936772L;
@@ -267,18 +244,16 @@ public interface BigQuery extends Service<BigQueryOptions> {
     /**
      * Returns an option to specify the table's fields to be returned by the RPC call. If this
      * option is not provided all table's fields are returned. {@code TableOption.fields} can be
-     * used to specify only the fields of interest. {@link Table#getTableId()} and type (which is part
-     * of {@link Table#getDefinition()}) are always returned, even if not specified.
+     * used to specify only the fields of interest. {@link Table#getTableId()} and type (which is
+     * part of {@link Table#getDefinition()}) are always returned, even if not specified.
      */
     public static TableOption fields(TableField... fields) {
-      return new TableOption(BigQueryRpc.Option.FIELDS,
-          Helper.selector(TableField.REQUIRED_FIELDS, fields));
+      return new TableOption(
+          BigQueryRpc.Option.FIELDS, Helper.selector(TableField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying table data list options.
-   */
+  /** Class for specifying table data list options. */
   class TableDataListOption extends Option {
 
     private static final long serialVersionUID = 8488823381738864434L;
@@ -287,17 +262,13 @@ public interface BigQuery extends Service<BigQueryOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify the maximum number of rows returned per page.
-     */
+    /** Returns an option to specify the maximum number of rows returned per page. */
     public static TableDataListOption pageSize(long pageSize) {
       checkArgument(pageSize >= 0);
       return new TableDataListOption(BigQueryRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing table data.
-     */
+    /** Returns an option to specify the page token from which to start listing table data. */
     public static TableDataListOption pageToken(String pageToken) {
       return new TableDataListOption(BigQueryRpc.Option.PAGE_TOKEN, pageToken);
     }
@@ -312,9 +283,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
   }
 
-  /**
-   * Class for specifying job list options.
-   */
+  /** Class for specifying job list options. */
   class JobListOption extends Option {
 
     private static final long serialVersionUID = -8207122131226481423L;
@@ -323,38 +292,32 @@ public interface BigQuery extends Service<BigQueryOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to list all jobs, even the ones issued by other users.
-     */
+    /** Returns an option to list all jobs, even the ones issued by other users. */
     public static JobListOption allUsers() {
       return new JobListOption(BigQueryRpc.Option.ALL_USERS, true);
     }
 
-    /**
-     * Returns an option to list only jobs that match the provided state filters.
-     */
+    /** Returns an option to list only jobs that match the provided state filters. */
     public static JobListOption stateFilter(JobStatus.State... stateFilters) {
-      List<String> stringFilters = Lists.transform(ImmutableList.copyOf(stateFilters),
-          new Function<JobStatus.State, String>() {
-            @Override
-            public String apply(JobStatus.State state) {
-              return state.name().toLowerCase();
-            }
-          });
+      List<String> stringFilters =
+          Lists.transform(
+              ImmutableList.copyOf(stateFilters),
+              new Function<JobStatus.State, String>() {
+                @Override
+                public String apply(JobStatus.State state) {
+                  return state.name().toLowerCase();
+                }
+              });
       return new JobListOption(BigQueryRpc.Option.STATE_FILTER, stringFilters);
     }
 
-    /**
-     * Returns an option to specify the maximum number of jobs returned per page.
-     */
+    /** Returns an option to specify the maximum number of jobs returned per page. */
     public static JobListOption pageSize(long pageSize) {
       checkArgument(pageSize >= 0);
       return new JobListOption(BigQueryRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start listing jobs.
-     */
+    /** Returns an option to specify the page token from which to start listing jobs. */
     public static JobListOption pageToken(String pageToken) {
       return new JobListOption(BigQueryRpc.Option.PAGE_TOKEN, pageToken);
     }
@@ -363,20 +326,18 @@ public interface BigQuery extends Service<BigQueryOptions> {
      * Returns an option to specify the job's fields to be returned by the RPC call. If this option
      * is not provided all job's fields are returned. {@code JobOption.fields()} can be used to
      * specify only the fields of interest. {@link Job#getJobId()}, {@link JobStatus#getState()},
-     * {@link JobStatus#getError()} as well as type-specific configuration (e.g.
-     * {@link QueryJobConfiguration#getQuery()} for Query Jobs) are always returned, even if not
-     * specified. {@link JobField#SELF_LINK} and {@link JobField#ETAG} can not be selected when
-     * listing jobs.
+     * {@link JobStatus#getError()} as well as type-specific configuration (e.g. {@link
+     * QueryJobConfiguration#getQuery()} for Query Jobs) are always returned, even if not specified.
+     * {@link JobField#SELF_LINK} and {@link JobField#ETAG} can not be selected when listing jobs.
      */
     public static JobListOption fields(JobField... fields) {
-      return new JobListOption(BigQueryRpc.Option.FIELDS,
+      return new JobListOption(
+          BigQueryRpc.Option.FIELDS,
           Helper.listSelector("jobs", JobField.REQUIRED_FIELDS, fields, "state", "errorResult"));
     }
   }
 
-  /**
-   * Class for specifying table get and create options.
-   */
+  /** Class for specifying table get and create options. */
   class JobOption extends Option {
 
     private static final long serialVersionUID = -3111736712316353665L;
@@ -393,14 +354,12 @@ public interface BigQuery extends Service<BigQueryOptions> {
      * returned, even if not specified.
      */
     public static JobOption fields(JobField... fields) {
-      return new JobOption(BigQueryRpc.Option.FIELDS,
-          Helper.selector(JobField.REQUIRED_FIELDS, fields));
+      return new JobOption(
+          BigQueryRpc.Option.FIELDS, Helper.selector(JobField.REQUIRED_FIELDS, fields));
     }
   }
 
-  /**
-   * Class for specifying query results options.
-   */
+  /** Class for specifying query results options. */
   class QueryResultsOption extends Option {
 
     private static final long serialVersionUID = 3788898503226985525L;
@@ -409,17 +368,13 @@ public interface BigQuery extends Service<BigQueryOptions> {
       super(option, value);
     }
 
-    /**
-     * Returns an option to specify the maximum number of rows returned per page.
-     */
+    /** Returns an option to specify the maximum number of rows returned per page. */
     public static QueryResultsOption pageSize(long pageSize) {
       checkArgument(pageSize >= 0);
       return new QueryResultsOption(BigQueryRpc.Option.MAX_RESULTS, pageSize);
     }
 
-    /**
-     * Returns an option to specify the page token from which to start getting query results.
-     */
+    /** Returns an option to specify the page token from which to start getting query results. */
     public static QueryResultsOption pageToken(String pageToken) {
       return new QueryResultsOption(BigQueryRpc.Option.PAGE_TOKEN, pageToken);
     }
@@ -508,12 +463,12 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
   }
 
-
   /**
    * Creates a new dataset.
    *
    * <p>Example of creating a dataset.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * Dataset dataset = null;
    * DatasetInfo datasetInfo = DatasetInfo.newBuilder(datasetName).build();
@@ -533,7 +488,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Creates a new table.
    *
    * <p>Example of creating a table.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * String fieldName = "string_field";
@@ -555,7 +511,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Creates a new job.
    *
    * <p>Example of loading a newline-delimited-json file with textual fields from GCS to a table.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * String sourceUri = "gs://cloud-samples-data/bigquery/us-states/us-states.json";
@@ -583,7 +540,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * }</pre>
    *
    * <p>Example of creating a query job.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String query = "SELECT field FROM my_dataset_name.my_table_name";
    * Job job = null;
    * JobConfiguration jobConfiguration = QueryJobConfiguration.of(query);
@@ -603,7 +561,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Returns the requested dataset or {@code null} if not found.
    *
    * <p>Example of getting a dataset.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset";
    * Dataset dataset = bigquery.getDataset(datasetName);
    * }</pre>
@@ -616,7 +575,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Returns the requested dataset or {@code null} if not found.
    *
    * <p>Example of getting a dataset.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String projectId = "my_project_id";
    * String datasetName = "my_dataset_name";
    * DatasetId datasetId = DatasetId.of(projectId, datasetName);
@@ -628,14 +588,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Dataset getDataset(DatasetId datasetId, DatasetOption... options);
 
   /**
-   * Lists the project's datasets. This method returns partial information on each dataset:
-   * ({@link Dataset#getDatasetId()}, {@link Dataset#getFriendlyName()} and
-   * {@link Dataset#getGeneratedId()}). To get complete information use either
-   * {@link #getDataset(String, DatasetOption...)} or
-   * {@link #getDataset(DatasetId, DatasetOption...)}.
+   * Lists the project's datasets. This method returns partial information on each dataset: ({@link
+   * Dataset#getDatasetId()}, {@link Dataset#getFriendlyName()} and {@link
+   * Dataset#getGeneratedId()}). To get complete information use either {@link #getDataset(String,
+   * DatasetOption...)} or {@link #getDataset(DatasetId, DatasetOption...)}.
    *
    * <p>Example of listing datasets, specifying the page size.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * // List datasets in the default project
    * Page<Dataset> datasets = bigquery.listDatasets(DatasetListOption.pageSize(100));
    * for (Dataset dataset : datasets.iterateAll()) {
@@ -649,13 +609,13 @@ public interface BigQuery extends Service<BigQueryOptions> {
 
   /**
    * Lists the datasets in the provided project. This method returns partial information on each
-   * dataset: ({@link Dataset#getDatasetId()}, {@link Dataset#getFriendlyName()} and
-   * {@link Dataset#getGeneratedId()}). To get complete information use either
-   * {@link #getDataset(String, DatasetOption...)} or
-   * {@link #getDataset(DatasetId, DatasetOption...)}.
+   * dataset: ({@link Dataset#getDatasetId()}, {@link Dataset#getFriendlyName()} and {@link
+   * Dataset#getGeneratedId()}). To get complete information use either {@link #getDataset(String,
+   * DatasetOption...)} or {@link #getDataset(DatasetId, DatasetOption...)}.
    *
    * <p>Example of listing datasets in a project, specifying the page size.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String projectId = "my_project_id";
    * // List datasets in a specified project
    * Page<Dataset> datasets = bigquery.listDatasets(projectId, DatasetListOption.pageSize(100));
@@ -672,7 +632,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Deletes the requested dataset.
    *
    * <p>Example of deleting a dataset from its id, even if non-empty.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * boolean deleted = bigquery.delete(datasetName, DatasetDeleteOption.deleteContents());
    * if (deleted) {
@@ -691,7 +652,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Deletes the requested dataset.
    *
    * <p>Example of deleting a dataset, even if non-empty.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String projectId = "my_project_id";
    * String datasetName = "my_dataset_name";
    * DatasetId datasetId = DatasetId.of(projectId, datasetName);
@@ -712,7 +674,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Deletes the requested table.
    *
    * <p>Example of deleting a table.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * boolean deleted = bigquery.delete(datasetName, tableName);
@@ -732,7 +695,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Deletes the requested table.
    *
    * <p>Example of deleting a table.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String projectId = "my_project_id";
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
@@ -755,17 +719,20 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * <p>Example of updating a dataset by changing its description.
    * <!--SNIPPET bigquery_update_table_description-->
-   * <pre>{@code
-   *    // String datasetName = "my_dataset_name";
-   *    // String tableName = "my_table_name";
-   *    // String newDescription = "new_description";
    *
-   *    Table beforeTable = bigquery.getTable(datasetName, tableName);
-   *    TableInfo tableInfo = beforeTable.toBuilder()
-   *        .setDescription(newDescription)
-   *        .build();
-   *    Table afterTable = bigquery.update(tableInfo);
-   *     }</pre>
+   * <pre>{@code
+   * // String datasetName = "my_dataset_name";
+   * // String tableName = "my_table_name";
+   * // String newDescription = "new_description";
+   *
+   * Table beforeTable = bigquery.getTable(datasetName, tableName);
+   * TableInfo tableInfo = beforeTable.toBuilder()
+   *     .setDescription(newDescription)
+   *     .build();
+   * Table afterTable = bigquery.update(tableInfo);
+   *
+   * }</pre>
+   *
    * <!--SNIPPET bigquery_update_table_description-->
    *
    * @throws BigQueryException upon failure
@@ -776,7 +743,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Updates table information.
    *
    * <p>Example of updating a table by changing its description.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * String newDescription = "new_description";
@@ -788,7 +756,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * }</pre>
    *
    * <p>Example of updating a table by changing its expiration.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * Table beforeTable = bigquery.getTable(datasetName, tableName);
@@ -809,7 +778,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Returns the requested table or {@code null} if not found.
    *
    * <p>Example of getting a table.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * Table table = bigquery.getTable(datasetName, tableName);
@@ -823,7 +793,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Returns the requested table or {@code null} if not found.
    *
    * <p>Example of getting a table.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String projectId = "my_project_id";
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
@@ -836,14 +807,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Table getTable(TableId tableId, TableOption... options);
 
   /**
-   * Lists the tables in the dataset. This method returns partial information on each table:
-   * ({@link Table#getTableId()}, {@link Table#getFriendlyName()}, {@link Table#getGeneratedId()} and type,
-   * which is part of {@link Table#getDefinition()}). To get complete information use either
-   * {@link #getTable(TableId, TableOption...)} or
-   * {@link #getTable(String, String, TableOption...)}.
+   * Lists the tables in the dataset. This method returns partial information on each table: ({@link
+   * Table#getTableId()}, {@link Table#getFriendlyName()}, {@link Table#getGeneratedId()} and type,
+   * which is part of {@link Table#getDefinition()}). To get complete information use either {@link
+   * #getTable(TableId, TableOption...)} or {@link #getTable(String, String, TableOption...)}.
    *
    * <p>Example of listing the tables in a dataset, specifying the page size.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * Page<Table> tables = bigquery.listTables(datasetName, TableListOption.pageSize(100));
    * for (Table table : tables.iterateAll()) {
@@ -856,14 +827,14 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Page<Table> listTables(String datasetId, TableListOption... options);
 
   /**
-   * Lists the tables in the dataset. This method returns partial information on each table:
-   * ({@link Table#getTableId()}, {@link Table#getFriendlyName()}, {@link Table#getGeneratedId()}
-   * and type, which is part of {@link Table#getDefinition()}). To get complete information use either
-   * {@link #getTable(TableId, TableOption...)} or
-   * {@link #getTable(String, String, TableOption...)}.
+   * Lists the tables in the dataset. This method returns partial information on each table: ({@link
+   * Table#getTableId()}, {@link Table#getFriendlyName()}, {@link Table#getGeneratedId()} and type,
+   * which is part of {@link Table#getDefinition()}). To get complete information use either {@link
+   * #getTable(TableId, TableOption...)} or {@link #getTable(String, String, TableOption...)}.
    *
    * <p>Example of listing the tables in a dataset.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String projectId = "my_project_id";
    * String datasetName = "my_dataset_name";
    * DatasetId datasetId = DatasetId.of(projectId, datasetName);
@@ -881,7 +852,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Sends an insert all request.
    *
    * <p>Example of inserting rows into a table without running a load job.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * TableId tableId = TableId.of(datasetName, tableName);
@@ -916,7 +888,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Lists the table's rows.
    *
    * <p>Example of listing table rows, specifying the page size.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
@@ -936,7 +909,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Lists the table's rows.
    *
    * <p>Example of listing table rows, specifying the page size.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * TableId tableIdObject = TableId.of(datasetName, tableName);
@@ -958,7 +932,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * {@link FieldValueList} iterated over.
    *
    * <p>Example of listing table rows with schema.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * Schema schema = ...;
@@ -979,7 +954,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * {@link FieldValueList} iterated over.
    *
    * <p>Example of listing table rows with schema.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Schema schema =
    *     Schema.of(
    *         Field.of("word", LegacySQLTypeName.STRING),
@@ -1002,7 +978,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * or "EU", {@link #getJob(JobId, JobOption...)} must be used instead.
    *
    * <p>Example of getting a job.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String jobName = "my_job_name";
    * Job job = bigquery.getJob(jobName);
    * if (job == null) {
@@ -1019,7 +996,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * or "EU", the {@code jobId} must specify the job location.
    *
    * <p>Example of getting a job.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String jobName = "my_job_name";
    * JobId jobIdObject = JobId.of(jobName);
    * Job job = bigquery.getJob(jobIdObject);
@@ -1036,7 +1014,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Lists the jobs.
    *
    * <p>Example of listing jobs, specifying the page size.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Page<Job> jobs = bigquery.listJobs(JobListOption.pageSize(100));
    * for (Job job : jobs.iterateAll()) {
    *   // do something with the job
@@ -1055,7 +1034,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * <p>If the location of the job is not "US" or "EU", {@link #cancel(JobId)} must be used instead.
    *
    * <p>Example of cancelling a job.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String jobName = "my_job_name";
    * boolean success = bigquery.cancel(jobName);
    * if (success) {
@@ -1080,7 +1060,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * location.
    *
    * <p>Example of cancelling a job.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String jobName = "my_job_name";
    * JobId jobId = JobId.of(jobName);
    * boolean success = bigquery.cancel(jobId);
@@ -1107,7 +1088,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * queries. Since dry-run queries are not actually executed, there's no way to retrieve results.
    *
    * <p>Example of running a query.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
    * String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
    * QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query).build();
@@ -1163,7 +1145,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * not in "US" or "EU", {@link #writer(JobId, WriteChannelConfiguration)} must be used instead.
    *
    * <p>Example of creating a channel with which to write to a table.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * String csvData = "StringValue1\nStringValue2\n";
@@ -1185,7 +1168,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * }</pre>
    *
    * <p>Example of writing a local file to a table.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * Path csvPath = FileSystems.getDefault().getPath(".", "my-data.csv");
@@ -1217,7 +1201,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * not in "US" or "EU", the {@code jobId} must contain the location of the job.
    *
    * <p>Example of creating a channel with which to write to a table.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
    * String csvData = "StringValue1\nStringValue2\n";
@@ -1240,7 +1225,6 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * LoadStatistics stats = job.getStatistics();
    * return stats.getOutputRows();
    * }</pre>
-   *
    */
   TableDataWriteChannel writer(JobId jobId, WriteChannelConfiguration writeChannelConfiguration);
 }

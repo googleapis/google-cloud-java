@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface GatewayListOptionsOrBuilder extends
+public interface GatewayListOptionsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.GatewayListOptions)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY`
    * is specified, only non-gateway devices are returned. If
@@ -18,6 +21,8 @@ public interface GatewayListOptionsOrBuilder extends
    */
   int getGatewayTypeValue();
   /**
+   *
+   *
    * <pre>
    * If `GATEWAY` is specified, only gateways are returned. If `NON_GATEWAY`
    * is specified, only non-gateway devices are returned. If
@@ -29,6 +34,8 @@ public interface GatewayListOptionsOrBuilder extends
   com.google.cloud.iot.v1.GatewayType getGatewayType();
 
   /**
+   *
+   *
    * <pre>
    * If set, only devices associated with the specified gateway are returned.
    * The gateway ID can be numeric (`num_id`) or the user-defined string
@@ -40,6 +47,8 @@ public interface GatewayListOptionsOrBuilder extends
    */
   java.lang.String getAssociationsGatewayId();
   /**
+   *
+   *
    * <pre>
    * If set, only devices associated with the specified gateway are returned.
    * The gateway ID can be numeric (`num_id`) or the user-defined string
@@ -49,10 +58,11 @@ public interface GatewayListOptionsOrBuilder extends
    *
    * <code>string associations_gateway_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getAssociationsGatewayIdBytes();
+  com.google.protobuf.ByteString getAssociationsGatewayIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * If set, returns only the gateways with which the specified device is
    * associated. The device ID can be numeric (`num_id`) or the user-defined
@@ -64,6 +74,8 @@ public interface GatewayListOptionsOrBuilder extends
    */
   java.lang.String getAssociationsDeviceId();
   /**
+   *
+   *
    * <pre>
    * If set, returns only the gateways with which the specified device is
    * associated. The device ID can be numeric (`num_id`) or the user-defined
@@ -73,8 +85,7 @@ public interface GatewayListOptionsOrBuilder extends
    *
    * <code>string associations_device_id = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getAssociationsDeviceIdBytes();
+  com.google.protobuf.ByteString getAssociationsDeviceIdBytes();
 
   public com.google.cloud.iot.v1.GatewayListOptions.FilterCase getFilterCase();
 }

@@ -4,30 +4,34 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 /**
+ *
+ *
  * <pre>
  * The request message for [SessionEntityTypes.CreateSessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityTypes.CreateSessionEntityType].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest}
  */
-public  final class CreateSessionEntityTypeRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class CreateSessionEntityTypeRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest)
     CreateSessionEntityTypeRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use CreateSessionEntityTypeRequest.newBuilder() to construct.
-  private CreateSessionEntityTypeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private CreateSessionEntityTypeRequest(
+      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private CreateSessionEntityTypeRequest() {
     parent_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private CreateSessionEntityTypeRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -47,60 +51,69 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            parent_ = s;
-            break;
-          }
-          case 18: {
-            com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder subBuilder = null;
-            if (sessionEntityType_ != null) {
-              subBuilder = sessionEntityType_.toBuilder();
+              parent_ = s;
+              break;
             }
-            sessionEntityType_ = input.readMessage(com.google.cloud.dialogflow.v2beta1.SessionEntityType.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(sessionEntityType_);
-              sessionEntityType_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder subBuilder = null;
+              if (sessionEntityType_ != null) {
+                subBuilder = sessionEntityType_.toBuilder();
+              }
+              sessionEntityType_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.SessionEntityType.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sessionEntityType_);
+                sessionEntityType_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+              break;
             }
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto.internal_static_google_cloud_dialogflow_v2beta1_CreateSessionEntityTypeRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto
+        .internal_static_google_cloud_dialogflow_v2beta1_CreateSessionEntityTypeRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto.internal_static_google_cloud_dialogflow_v2beta1_CreateSessionEntityTypeRequest_fieldAccessorTable
+    return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto
+        .internal_static_google_cloud_dialogflow_v2beta1_CreateSessionEntityTypeRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest.class, com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest.Builder.class);
+            com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest.class,
+            com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
+   *
+   *
    * <pre>
    * Required. The session to create a session entity type for.
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
@@ -117,14 +130,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       parent_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The session to create a session entity type for.
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
@@ -136,13 +150,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string parent = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getParentBytes() {
+  public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
       return b;
     } else {
@@ -153,6 +165,8 @@ private static final long serialVersionUID = 0L;
   public static final int SESSION_ENTITY_TYPE_FIELD_NUMBER = 2;
   private com.google.cloud.dialogflow.v2beta1.SessionEntityType sessionEntityType_;
   /**
+   *
+   *
    * <pre>
    * Required. The session entity type to create.
    * </pre>
@@ -163,6 +177,8 @@ private static final long serialVersionUID = 0L;
     return sessionEntityType_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The session entity type to create.
    * </pre>
@@ -170,20 +186,26 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
    */
   public com.google.cloud.dialogflow.v2beta1.SessionEntityType getSessionEntityType() {
-    return sessionEntityType_ == null ? com.google.cloud.dialogflow.v2beta1.SessionEntityType.getDefaultInstance() : sessionEntityType_;
+    return sessionEntityType_ == null
+        ? com.google.cloud.dialogflow.v2beta1.SessionEntityType.getDefaultInstance()
+        : sessionEntityType_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The session entity type to create.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
    */
-  public com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder getSessionEntityTypeOrBuilder() {
+  public com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder
+      getSessionEntityTypeOrBuilder() {
     return getSessionEntityType();
   }
 
   private byte memoizedIsInitialized = -1;
+
   @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -195,8 +217,7 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
@@ -216,8 +237,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (sessionEntityType_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getSessionEntityType());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getSessionEntityType());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -227,20 +247,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest other = (com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest) obj;
+    com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest other =
+        (com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest) obj;
 
     boolean result = true;
-    result = result && getParent()
-        .equals(other.getParent());
+    result = result && getParent().equals(other.getParent());
     result = result && (hasSessionEntityType() == other.hasSessionEntityType());
     if (hasSessionEntityType()) {
-      result = result && getSessionEntityType()
-          .equals(other.getSessionEntityType());
+      result = result && getSessionEntityType().equals(other.getSessionEntityType());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -265,134 +284,145 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
+
   public static com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
+  public static com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+  }
+
+  public static com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
+  public static com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest parseFrom(
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+  }
+
   public static com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  @java.lang.Override
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The request message for [SessionEntityTypes.CreateSessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityTypes.CreateSessionEntityType].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest)
       com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto.internal_static_google_cloud_dialogflow_v2beta1_CreateSessionEntityTypeRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto
+          .internal_static_google_cloud_dialogflow_v2beta1_CreateSessionEntityTypeRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto.internal_static_google_cloud_dialogflow_v2beta1_CreateSessionEntityTypeRequest_fieldAccessorTable
+      return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto
+          .internal_static_google_cloud_dialogflow_v2beta1_CreateSessionEntityTypeRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest.class, com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest.Builder.class);
+              com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest.class,
+              com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest.newBuilder()
+    // Construct using
+    // com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     @java.lang.Override
     public Builder clear() {
       super.clear();
@@ -408,14 +438,16 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto.internal_static_google_cloud_dialogflow_v2beta1_CreateSessionEntityTypeRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto
+          .internal_static_google_cloud_dialogflow_v2beta1_CreateSessionEntityTypeRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest getDefaultInstanceForType() {
-      return com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest.getDefaultInstance();
+    public com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest
+        getDefaultInstanceForType() {
+      return com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest
+          .getDefaultInstance();
     }
 
     @java.lang.Override
@@ -429,7 +461,8 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest buildPartial() {
-      com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest result = new com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest(this);
+      com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest result =
+          new com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest(this);
       result.parent_ = parent_;
       if (sessionEntityTypeBuilder_ == null) {
         result.sessionEntityType_ = sessionEntityType_;
@@ -444,46 +477,51 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+
     @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+
     @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest) {
-        return mergeFrom((com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest)other);
+        return mergeFrom(
+            (com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest other) {
-      if (other == com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest other) {
+      if (other
+          == com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest
+              .getDefaultInstance()) return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         onChanged();
@@ -510,7 +548,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -522,6 +562,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object parent_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The session to create a session entity type for.
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
@@ -536,8 +578,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         parent_ = s;
         return s;
@@ -546,6 +587,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session to create a session entity type for.
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
@@ -557,13 +600,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
+    public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         parent_ = b;
         return b;
       } else {
@@ -571,6 +612,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session to create a session entity type for.
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
@@ -582,17 +625,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParent(
-        java.lang.String value) {
+    public Builder setParent(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       parent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session to create a session entity type for.
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
@@ -605,12 +649,14 @@ private static final long serialVersionUID = 0L;
      * <code>string parent = 1;</code>
      */
     public Builder clearParent() {
-      
+
       parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session to create a session entity type for.
      * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
@@ -622,13 +668,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       parent_ = value;
       onChanged();
       return this;
@@ -636,8 +681,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dialogflow.v2beta1.SessionEntityType sessionEntityType_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.SessionEntityType, com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder, com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder> sessionEntityTypeBuilder_;
+            com.google.cloud.dialogflow.v2beta1.SessionEntityType,
+            com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder,
+            com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder>
+        sessionEntityTypeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required. The session entity type to create.
      * </pre>
@@ -648,6 +698,8 @@ private static final long serialVersionUID = 0L;
       return sessionEntityTypeBuilder_ != null || sessionEntityType_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session entity type to create.
      * </pre>
@@ -656,19 +708,24 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dialogflow.v2beta1.SessionEntityType getSessionEntityType() {
       if (sessionEntityTypeBuilder_ == null) {
-        return sessionEntityType_ == null ? com.google.cloud.dialogflow.v2beta1.SessionEntityType.getDefaultInstance() : sessionEntityType_;
+        return sessionEntityType_ == null
+            ? com.google.cloud.dialogflow.v2beta1.SessionEntityType.getDefaultInstance()
+            : sessionEntityType_;
       } else {
         return sessionEntityTypeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session entity type to create.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
      */
-    public Builder setSessionEntityType(com.google.cloud.dialogflow.v2beta1.SessionEntityType value) {
+    public Builder setSessionEntityType(
+        com.google.cloud.dialogflow.v2beta1.SessionEntityType value) {
       if (sessionEntityTypeBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -682,6 +739,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session entity type to create.
      * </pre>
@@ -700,17 +759,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session entity type to create.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
      */
-    public Builder mergeSessionEntityType(com.google.cloud.dialogflow.v2beta1.SessionEntityType value) {
+    public Builder mergeSessionEntityType(
+        com.google.cloud.dialogflow.v2beta1.SessionEntityType value) {
       if (sessionEntityTypeBuilder_ == null) {
         if (sessionEntityType_ != null) {
           sessionEntityType_ =
-            com.google.cloud.dialogflow.v2beta1.SessionEntityType.newBuilder(sessionEntityType_).mergeFrom(value).buildPartial();
+              com.google.cloud.dialogflow.v2beta1.SessionEntityType.newBuilder(sessionEntityType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           sessionEntityType_ = value;
         }
@@ -722,6 +786,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session entity type to create.
      * </pre>
@@ -740,33 +806,42 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session entity type to create.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
      */
-    public com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder getSessionEntityTypeBuilder() {
-      
+    public com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder
+        getSessionEntityTypeBuilder() {
+
       onChanged();
       return getSessionEntityTypeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session entity type to create.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
      */
-    public com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder getSessionEntityTypeOrBuilder() {
+    public com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder
+        getSessionEntityTypeOrBuilder() {
       if (sessionEntityTypeBuilder_ != null) {
         return sessionEntityTypeBuilder_.getMessageOrBuilder();
       } else {
-        return sessionEntityType_ == null ?
-            com.google.cloud.dialogflow.v2beta1.SessionEntityType.getDefaultInstance() : sessionEntityType_;
+        return sessionEntityType_ == null
+            ? com.google.cloud.dialogflow.v2beta1.SessionEntityType.getDefaultInstance()
+            : sessionEntityType_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The session entity type to create.
      * </pre>
@@ -774,21 +849,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.SessionEntityType, com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder, com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder> 
+            com.google.cloud.dialogflow.v2beta1.SessionEntityType,
+            com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder,
+            com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder>
         getSessionEntityTypeFieldBuilder() {
       if (sessionEntityTypeBuilder_ == null) {
-        sessionEntityTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.v2beta1.SessionEntityType, com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder, com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder>(
-                getSessionEntityType(),
-                getParentForChildren(),
-                isClean());
+        sessionEntityTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.SessionEntityType,
+                com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder,
+                com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder>(
+                getSessionEntityType(), getParentForChildren(), isClean());
         sessionEntityType_ = null;
       }
       return sessionEntityTypeBuilder_;
     }
+
     @java.lang.Override
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -798,30 +876,32 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest)
-  private static final com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest DEFAULT_INSTANCE;
+  private static final com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest();
   }
 
-  public static com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest getDefaultInstance() {
+  public static com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CreateSessionEntityTypeRequest>
-      PARSER = new com.google.protobuf.AbstractParser<CreateSessionEntityTypeRequest>() {
-    @java.lang.Override
-    public CreateSessionEntityTypeRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new CreateSessionEntityTypeRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<CreateSessionEntityTypeRequest> PARSER =
+      new com.google.protobuf.AbstractParser<CreateSessionEntityTypeRequest>() {
+        @java.lang.Override
+        public CreateSessionEntityTypeRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CreateSessionEntityTypeRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<CreateSessionEntityTypeRequest> parser() {
     return PARSER;
@@ -833,9 +913,8 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest getDefaultInstanceForType() {
+  public com.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

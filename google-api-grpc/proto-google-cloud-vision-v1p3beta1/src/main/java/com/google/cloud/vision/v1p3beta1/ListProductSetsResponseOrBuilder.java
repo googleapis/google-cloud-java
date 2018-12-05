@@ -3,20 +3,24 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface ListProductSetsResponseOrBuilder extends
+public interface ListProductSetsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.ListProductSetsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * List of ProductSets.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.ProductSet product_sets = 1;</code>
    */
-  java.util.List<com.google.cloud.vision.v1p3beta1.ProductSet> 
-      getProductSetsList();
+  java.util.List<com.google.cloud.vision.v1p3beta1.ProductSet> getProductSetsList();
   /**
+   *
+   *
    * <pre>
    * List of ProductSets.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListProductSetsResponseOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.ProductSet getProductSets(int index);
   /**
+   *
+   *
    * <pre>
    * List of ProductSets.
    * </pre>
@@ -33,25 +39,30 @@ public interface ListProductSetsResponseOrBuilder extends
    */
   int getProductSetsCount();
   /**
+   *
+   *
    * <pre>
    * List of ProductSets.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.ProductSet product_sets = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1p3beta1.ProductSetOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1p3beta1.ProductSetOrBuilder>
       getProductSetsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * List of ProductSets.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.ProductSet product_sets = 1;</code>
    */
-  com.google.cloud.vision.v1p3beta1.ProductSetOrBuilder getProductSetsOrBuilder(
-      int index);
+  com.google.cloud.vision.v1p3beta1.ProductSetOrBuilder getProductSetsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no more
    * results in the list.
@@ -61,6 +72,8 @@ public interface ListProductSetsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no more
    * results in the list.
@@ -68,6 +81,5 @@ public interface ListProductSetsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

@@ -3,32 +3,48 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface LifecycleConfigOrBuilder extends
+public interface LifecycleConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.LifecycleConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
-   * Optional. The longest duration that cluster would keep alive while staying
-   *  idle; passing this threshold will cause cluster to be auto-deleted.
+   * Optional. The duration to keep the cluster alive while idling.
+   * Passing this threshold will cause the cluster to be
+   * deleted. Valid range: **[10m, 14d]**.
+   * Example: **"10m"**, the minimum value, to delete the
+   * cluster when it has had no jobs running for 10 minutes.
    * </pre>
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
    */
   boolean hasIdleDeleteTtl();
   /**
+   *
+   *
    * <pre>
-   * Optional. The longest duration that cluster would keep alive while staying
-   *  idle; passing this threshold will cause cluster to be auto-deleted.
+   * Optional. The duration to keep the cluster alive while idling.
+   * Passing this threshold will cause the cluster to be
+   * deleted. Valid range: **[10m, 14d]**.
+   * Example: **"10m"**, the minimum value, to delete the
+   * cluster when it has had no jobs running for 10 minutes.
    * </pre>
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
    */
   com.google.protobuf.Duration getIdleDeleteTtl();
   /**
+   *
+   *
    * <pre>
-   * Optional. The longest duration that cluster would keep alive while staying
-   *  idle; passing this threshold will cause cluster to be auto-deleted.
+   * Optional. The duration to keep the cluster alive while idling.
+   * Passing this threshold will cause the cluster to be
+   * deleted. Valid range: **[10m, 14d]**.
+   * Example: **"10m"**, the minimum value, to delete the
+   * cluster when it has had no jobs running for 10 minutes.
    * </pre>
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -36,6 +52,8 @@ public interface LifecycleConfigOrBuilder extends
   com.google.protobuf.DurationOrBuilder getIdleDeleteTtlOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The time when cluster will be auto-deleted.
    * </pre>
@@ -44,6 +62,8 @@ public interface LifecycleConfigOrBuilder extends
    */
   boolean hasAutoDeleteTime();
   /**
+   *
+   *
    * <pre>
    * Optional. The time when cluster will be auto-deleted.
    * </pre>
@@ -52,6 +72,8 @@ public interface LifecycleConfigOrBuilder extends
    */
   com.google.protobuf.Timestamp getAutoDeleteTime();
   /**
+   *
+   *
    * <pre>
    * Optional. The time when cluster will be auto-deleted.
    * </pre>
@@ -61,27 +83,36 @@ public interface LifecycleConfigOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getAutoDeleteTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
-   * Optional. The life duration of cluster, the cluster will be auto-deleted
-   * at the end of this duration.
+   * Optional. The lifetime duration of cluster. The cluster will be
+   * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+   * Example: **"1d"**, to delete the cluster 1 day after its creation..
    * </pre>
    *
    * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
    */
   boolean hasAutoDeleteTtl();
   /**
+   *
+   *
    * <pre>
-   * Optional. The life duration of cluster, the cluster will be auto-deleted
-   * at the end of this duration.
+   * Optional. The lifetime duration of cluster. The cluster will be
+   * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+   * Example: **"1d"**, to delete the cluster 1 day after its creation..
    * </pre>
    *
    * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
    */
   com.google.protobuf.Duration getAutoDeleteTtl();
   /**
+   *
+   *
    * <pre>
-   * Optional. The life duration of cluster, the cluster will be auto-deleted
-   * at the end of this duration.
+   * Optional. The lifetime duration of cluster. The cluster will be
+   * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+   * Example: **"1d"**, to delete the cluster 1 day after its creation..
    * </pre>
    *
    * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>

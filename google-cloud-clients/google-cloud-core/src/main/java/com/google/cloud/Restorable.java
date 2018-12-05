@@ -20,14 +20,16 @@ package com.google.cloud;
  * Implementation of this interface can persist their state and restore from it.
  *
  * <p>A typical capture usage:
- * <pre> {@code
+ *
+ * <pre>{@code
  * X restorableObj; // X instanceof Restorable<X>
  * RestorableState<X> state = restorableObj.capture();
  * .. persist state
  * }</pre>
  *
  * <p>A typical restore usage:
- * <pre> {@code
+ *
+ * <pre>{@code
  * RestorableState<X> state = ... // read from persistence
  * X restorableObj = state.restore();
  * ...

@@ -3,11 +3,14 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-public interface UpdateSourceRequestOrBuilder extends
+public interface UpdateSourceRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.UpdateSourceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The source resource to update.
    * </pre>
@@ -16,6 +19,8 @@ public interface UpdateSourceRequestOrBuilder extends
    */
   boolean hasSource();
   /**
+   *
+   *
    * <pre>
    * The source resource to update.
    * </pre>
@@ -24,6 +29,8 @@ public interface UpdateSourceRequestOrBuilder extends
    */
   com.google.cloud.securitycenter.v1beta1.Source getSource();
   /**
+   *
+   *
    * <pre>
    * The source resource to update.
    * </pre>
@@ -33,6 +40,8 @@ public interface UpdateSourceRequestOrBuilder extends
   com.google.cloud.securitycenter.v1beta1.SourceOrBuilder getSourceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The FieldMask to use when updating the source resource.
    * </pre>
@@ -41,6 +50,8 @@ public interface UpdateSourceRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The FieldMask to use when updating the source resource.
    * </pre>
@@ -49,6 +60,8 @@ public interface UpdateSourceRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The FieldMask to use when updating the source resource.
    * </pre>

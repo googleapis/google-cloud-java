@@ -3,36 +3,52 @@
 
 package com.google.cloud.videointelligence.v1p2beta1;
 
-public interface ObjectTrackingFrameOrBuilder extends
+public interface ObjectTrackingFrameOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1p2beta1.ObjectTrackingFrame)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The normalized bounding box location of this object track for the frame.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;
+   * </code>
    */
   boolean hasNormalizedBoundingBox();
   /**
+   *
+   *
    * <pre>
    * The normalized bounding box location of this object track for the frame.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;
+   * </code>
    */
   com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox getNormalizedBoundingBox();
   /**
+   *
+   *
    * <pre>
    * The normalized bounding box location of this object track for the frame.
    * </pre>
    *
-   * <code>.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;</code>
+   * <code>
+   * .google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBox normalized_bounding_box = 1;
+   * </code>
    */
-  com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBoxOrBuilder getNormalizedBoundingBoxOrBuilder();
+  com.google.cloud.videointelligence.v1p2beta1.NormalizedBoundingBoxOrBuilder
+      getNormalizedBoundingBoxOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The timestamp of the frame in microseconds.
    * </pre>
@@ -41,6 +57,8 @@ public interface ObjectTrackingFrameOrBuilder extends
    */
   boolean hasTimeOffset();
   /**
+   *
+   *
    * <pre>
    * The timestamp of the frame in microseconds.
    * </pre>
@@ -49,6 +67,8 @@ public interface ObjectTrackingFrameOrBuilder extends
    */
   com.google.protobuf.Duration getTimeOffset();
   /**
+   *
+   *
    * <pre>
    * The timestamp of the frame in microseconds.
    * </pre>

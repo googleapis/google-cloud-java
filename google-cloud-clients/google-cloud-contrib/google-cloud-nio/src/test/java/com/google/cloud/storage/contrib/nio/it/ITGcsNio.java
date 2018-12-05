@@ -22,27 +22,18 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.client.http.HttpResponseException;
+import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Bucket;
+import com.google.cloud.storage.BucketInfo;
+import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobTargetOption;
 import com.google.cloud.storage.StorageException;
+import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.contrib.nio.CloudStorageConfiguration;
 import com.google.cloud.storage.contrib.nio.CloudStorageFileSystem;
 import com.google.cloud.storage.contrib.nio.CloudStoragePath;
-import com.google.common.collect.ImmutableList;
-import com.google.cloud.storage.BlobInfo;
-import com.google.cloud.storage.BucketInfo;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
-
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
-
+import com.google.common.collect.ImmutableList;
 import java.io.ByteArrayOutputStream;
 import java.io.EOFException;
 import java.io.IOException;
@@ -68,6 +59,13 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 /**
  * Integration test for google-cloud-nio.
@@ -82,21 +80,22 @@ import java.util.logging.Logger;
  *
  * <p>The short version is this: go to cloud.google.com/console, select your project, search for
  * "API manager", click "Credentials", click "create credentials/service account key", new service
- * account, JSON. The contents of the file that's sent to your browsers is your
- * "Service Account JSON Key".
+ * account, JSON. The contents of the file that's sent to your browsers is your "Service Account
+ * JSON Key".
  */
 @RunWith(JUnit4.class)
 public class ITGcsNio {
 
   private static final List<String> FILE_CONTENTS =
       ImmutableList.of(
-        "Tous les êtres humains naissent libres et égaux en dignité et en droits.",
-        "Ils sont doués de raison et de conscience et doivent agir ",
-        "les uns envers les autres dans un esprit de fraternité.");
+          "Tous les êtres humains naissent libres et égaux en dignité et en droits.",
+          "Ils sont doués de raison et de conscience et doivent agir ",
+          "les uns envers les autres dans un esprit de fraternité.");
 
   private static final Logger log = Logger.getLogger(ITGcsNio.class.getName());
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
-  private static final String REQUESTER_PAYS_BUCKET = RemoteStorageHelper.generateBucketName()+"_rp";
+  private static final String REQUESTER_PAYS_BUCKET =
+      RemoteStorageHelper.generateBucketName() + "_rp";
   private static final String SML_FILE = "tmp-test-small-file.txt";
   private static final String TMP_FILE = "tmp/tmp-test-rnd-file.txt";
   private static final int SML_SIZE = 100;
@@ -120,7 +119,8 @@ public class ITGcsNio {
     storage.create(BucketInfo.of(BUCKET));
     fillFile(storage, BUCKET, SML_FILE, SML_SIZE);
     fillFile(storage, BUCKET, BIG_FILE, BIG_SIZE);
-    BucketInfo requesterPaysBucket = BucketInfo.newBuilder(REQUESTER_PAYS_BUCKET).setRequesterPays(true).build();
+    BucketInfo requesterPaysBucket =
+        BucketInfo.newBuilder(REQUESTER_PAYS_BUCKET).setRequesterPays(true).build();
     storage.create(requesterPaysBucket);
     fillRequesterPaysFile(storage, SML_FILE, SML_SIZE);
   }
@@ -128,9 +128,9 @@ public class ITGcsNio {
   @AfterClass
   public static void afterClass() throws ExecutionException, InterruptedException {
     if (storage != null) {
-      for (String bucket : new String[]{BUCKET, REQUESTER_PAYS_BUCKET}) {
-        if (!RemoteStorageHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS, project) &&
-            log.isLoggable(Level.WARNING)) {
+      for (String bucket : new String[] {BUCKET, REQUESTER_PAYS_BUCKET}) {
+        if (!RemoteStorageHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS, project)
+            && log.isLoggable(Level.WARNING)) {
           log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", bucket);
         }
       }
@@ -143,12 +143,16 @@ public class ITGcsNio {
     return bytes;
   }
 
-  private static void fillFile(Storage storage, String bucket, String fname, int size) throws IOException {
+  private static void fillFile(Storage storage, String bucket, String fname, int size)
+      throws IOException {
     storage.create(BlobInfo.newBuilder(bucket, fname).build(), randomContents(size));
   }
 
-  private static void fillRequesterPaysFile(Storage storage, String fname, int size) throws IOException {
-    storage.create(BlobInfo.newBuilder(REQUESTER_PAYS_BUCKET, fname).build(), randomContents(size),
+  private static void fillRequesterPaysFile(Storage storage, String fname, int size)
+      throws IOException {
+    storage.create(
+        BlobInfo.newBuilder(REQUESTER_PAYS_BUCKET, fname).build(),
+        randomContents(size),
         BlobTargetOption.userProject(project));
   }
 
@@ -204,7 +208,7 @@ public class ITGcsNio {
     // should succeed because we specified a project
     Files.write(path, "I would like to write, please?".getBytes());
   }
-  
+
   @Ignore("blocked by #3448")
   @Test
   public void testCantReadWithoutUserProject() throws IOException {
@@ -232,23 +236,26 @@ public class ITGcsNio {
   public void testCantCopyWithoutUserProject() throws IOException {
     CloudStorageFileSystem testRPBucket = getRequesterPaysBucket(false, "");
     CloudStorageFileSystem testBucket = getTestBucket();
-    CloudStoragePath[] sources = new CloudStoragePath[] { testBucket.getPath(SML_FILE), testRPBucket.getPath(SML_FILE) };
-    CloudStoragePath[] dests = new CloudStoragePath[] {testBucket.getPath(TMP_FILE), testRPBucket.getPath(TMP_FILE) };
-    for (int s=0; s<2; s++) {
-      for (int d=0; d<2; d++) {
+    CloudStoragePath[] sources =
+        new CloudStoragePath[] {testBucket.getPath(SML_FILE), testRPBucket.getPath(SML_FILE)};
+    CloudStoragePath[] dests =
+        new CloudStoragePath[] {testBucket.getPath(TMP_FILE), testRPBucket.getPath(TMP_FILE)};
+    for (int s = 0; s < 2; s++) {
+      for (int d = 0; d < 2; d++) {
         // normal to normal is out of scope of RP testing.
-        if (s==0 && d==0) {
+        if (s == 0 && d == 0) {
           continue;
         }
-        innerTestCantCopyWithoutUserProject(s==0, d==0, sources[s], dests[d]);
+        innerTestCantCopyWithoutUserProject(s == 0, d == 0, sources[s], dests[d]);
       }
     }
   }
 
   // Try to copy the file, make sure that we were prevented.
-  private void innerTestCantCopyWithoutUserProject(boolean sourceNormal, boolean destNormal, Path source, Path dest) throws IOException {
-    String sdesc = (sourceNormal?"normal bucket":"requester-pays bucket");
-    String ddesc = (destNormal?"normal bucket":"requester-pays bucket");
+  private void innerTestCantCopyWithoutUserProject(
+      boolean sourceNormal, boolean destNormal, Path source, Path dest) throws IOException {
+    String sdesc = (sourceNormal ? "normal bucket" : "requester-pays bucket");
+    String ddesc = (destNormal ? "normal bucket" : "requester-pays bucket");
     String description = "Copying from " + sdesc + " to " + ddesc;
     try {
       Files.copy(source, dest);
@@ -258,7 +265,10 @@ public class ITGcsNio {
       // normal StorageException.
     } catch (HttpResponseException hex) {
       Assert.assertEquals(description, hex.getStatusCode(), 400);
-      Assert.assertTrue(description, hex.getMessage().contains("Bucket is requester pays bucket but no user project provided"));
+      Assert.assertTrue(
+          description,
+          hex.getMessage()
+              .contains("Bucket is requester pays bucket but no user project provided"));
     } catch (StorageException sex) {
       assertIsRequesterPaysException(description, sex);
     }
@@ -268,8 +278,10 @@ public class ITGcsNio {
   public void testCanCopyWithUserProject() throws IOException {
     CloudStorageFileSystem testRPBucket = getRequesterPaysBucket(false, project);
     CloudStorageFileSystem testBucket = getTestBucket();
-    CloudStoragePath[] sources = new CloudStoragePath[] {testBucket.getPath(SML_FILE), testRPBucket.getPath(SML_FILE)};
-    CloudStoragePath[] dests = new CloudStoragePath[] {testBucket.getPath(TMP_FILE), testRPBucket.getPath(TMP_FILE)};
+    CloudStoragePath[] sources =
+        new CloudStoragePath[] {testBucket.getPath(SML_FILE), testRPBucket.getPath(SML_FILE)};
+    CloudStoragePath[] dests =
+        new CloudStoragePath[] {testBucket.getPath(TMP_FILE), testRPBucket.getPath(TMP_FILE)};
     for (int s = 0; s < 2; s++) {
       for (int d = 0; d < 2; d++) {
         // normal to normal is out of scope of RP testing.
@@ -284,22 +296,32 @@ public class ITGcsNio {
   @Test
   public void testAutodetectWhenRequesterPays() throws IOException {
     CloudStorageFileSystem testRPBucket = getRequesterPaysBucket(true, project);
-    Assert.assertEquals("Autodetect should have detected the RP bucket", testRPBucket.config().userProject(), project);
-
+    Assert.assertEquals(
+        "Autodetect should have detected the RP bucket",
+        testRPBucket.config().userProject(),
+        project);
   }
 
   @Test
   public void testAutodetectWhenNotRequesterPays() throws IOException {
-    CloudStorageConfiguration config = CloudStorageConfiguration.builder()
-        .autoDetectRequesterPays(true)
-        .userProject(project).build();
-    CloudStorageFileSystem testBucket = CloudStorageFileSystem.forBucket(BUCKET, config, storageOptions);
-    Assert.assertEquals("Autodetect should have detected the bucket is not RP", testBucket.config().userProject(), "");
+    CloudStorageConfiguration config =
+        CloudStorageConfiguration.builder()
+            .autoDetectRequesterPays(true)
+            .userProject(project)
+            .build();
+    CloudStorageFileSystem testBucket =
+        CloudStorageFileSystem.forBucket(BUCKET, config, storageOptions);
+    Assert.assertEquals(
+        "Autodetect should have detected the bucket is not RP",
+        testBucket.config().userProject(),
+        "");
   }
 
   private void assertIsRequesterPaysException(String message, StorageException sex) {
     Assert.assertEquals(message, sex.getCode(), 400);
-    Assert.assertTrue(message, sex.getMessage().contains("Bucket is requester pays bucket but no user project provided"));
+    Assert.assertTrue(
+        message,
+        sex.getMessage().contains("Bucket is requester pays bucket but no user project provided"));
   }
 
   // End of tests related to the "requester pays" feature
@@ -312,12 +334,11 @@ public class ITGcsNio {
       bucketFound |= BUCKET.equals(b.getName());
       rpBucketFound |= REQUESTER_PAYS_BUCKET.equals(b.getName());
     }
-    assertWithMessage("listBucket should have found the test bucket")
-        .that(bucketFound).isTrue();
+    assertWithMessage("listBucket should have found the test bucket").that(bucketFound).isTrue();
     assertWithMessage("listBucket should have found the test requester-pays bucket")
-        .that(rpBucketFound).isTrue();
+        .that(rpBucketFound)
+        .isTrue();
   }
-
 
   @Test
   public void testFileExists() throws IOException {
@@ -542,14 +563,15 @@ public class ITGcsNio {
       }
 
       List<Path> got = new ArrayList<>();
-      for (String folder : new String[]{"/dir/", "/dir", "dir/", "dir"}) {
+      for (String folder : new String[] {"/dir/", "/dir", "dir/", "dir"}) {
         got.clear();
         for (Path path : Files.newDirectoryStream(fs.getPath(folder))) {
           got.add(path);
         }
-        assertWithMessage("Listing " + folder+": ").that(got).containsExactlyElementsIn(goodPaths);
+        assertWithMessage("Listing " + folder + ": ")
+            .that(got)
+            .containsExactlyElementsIn(goodPaths);
       }
-
 
       // clean up
       for (Path path : paths) {
@@ -590,7 +612,9 @@ public class ITGcsNio {
       // Given a relative path as starting point, walkFileTree must return only relative paths.
       List<Path> relativePaths = PostTraversalWalker.walkFileTree(fs.getPath("dir/"));
       for (Path p : relativePaths) {
-        assertWithMessage("Should have been relative: " + p.toString()).that(p.isAbsolute()).isFalse();
+        assertWithMessage("Should have been relative: " + p.toString())
+            .that(p.isAbsolute())
+            .isFalse();
       }
       // The 5 paths are:
       // dir/, dir/angel, dir/alone, dir/dir2/, dir/dir2/another_angel.
@@ -599,12 +623,13 @@ public class ITGcsNio {
       // Given an absolute path as starting point, walkFileTree must return only relative paths.
       List<Path> absolutePaths = PostTraversalWalker.walkFileTree(fs.getPath("/dir/"));
       for (Path p : absolutePaths) {
-        assertWithMessage("Should have been absolute: " + p.toString()).that(p.isAbsolute()).isTrue();
+        assertWithMessage("Should have been absolute: " + p.toString())
+            .that(p.isAbsolute())
+            .isTrue();
       }
       assertThat(absolutePaths.size()).isEqualTo(5);
     }
   }
-
 
   @Test
   public void testDeleteRecursive() throws IOException {
@@ -629,24 +654,29 @@ public class ITGcsNio {
   public void testListFilesInRootDirectory() throws IOException {
     // We must explicitly set the storageOptions, because the unit tests
     // set the fake storage as default but we want to access the real storage.
-    CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket(
-      BUCKET, CloudStorageConfiguration.builder().permitEmptyPathComponents(true)
-      .build(), storageOptions);
+    CloudStorageFileSystem fs =
+        CloudStorageFileSystem.forBucket(
+            BUCKET,
+            CloudStorageConfiguration.builder().permitEmptyPathComponents(true).build(),
+            storageOptions);
 
     // test absolute path, relative path.
-    for (String check : new String[]{".", "/", ""}) {
+    for (String check : new String[] {".", "/", ""}) {
       Path rootPath = fs.getPath(check);
       List<Path> pathsFound = new ArrayList<>();
       for (Path path : Files.newDirectoryStream(rootPath)) {
         // The returned paths will match the absolute-ness of the root path
         // (this matches the behavior of the built-in UNIX file system).
         assertWithMessage("Absolute/relative for " + check + ": ")
-            .that(path.isAbsolute()).isEqualTo(rootPath.isAbsolute());
+            .that(path.isAbsolute())
+            .isEqualTo(rootPath.isAbsolute());
         // To simplify the check that we found our files, we normalize here.
         pathsFound.add(path.toAbsolutePath());
       }
-      assertWithMessage("Listing " + check + ": ").that(pathsFound).containsExactly(
-          fs.getPath(BIG_FILE).toAbsolutePath(), fs.getPath(SML_FILE).toAbsolutePath());
+      assertWithMessage("Listing " + check + ": ")
+          .that(pathsFound)
+          .containsExactly(
+              fs.getPath(BIG_FILE).toAbsolutePath(), fs.getPath(SML_FILE).toAbsolutePath());
     }
   }
 
@@ -704,22 +734,27 @@ public class ITGcsNio {
 
   /**
    * Delete the given directory and all of its contents if non-empty.
+   *
    * @param directory the directory to delete
    * @throws IOException
    */
   private static void deleteRecursive(Path directory) throws IOException {
-    Files.walkFileTree(directory, new SimpleFileVisitor<Path>() {
-      @Override
-      public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-        Files.delete(file);
-        return FileVisitResult.CONTINUE;
-      }
-      @Override
-      public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
-        Files.delete(dir);
-        return FileVisitResult.CONTINUE;
-      }
-    });
+    Files.walkFileTree(
+        directory,
+        new SimpleFileVisitor<Path>() {
+          @Override
+          public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
+              throws IOException {
+            Files.delete(file);
+            return FileVisitResult.CONTINUE;
+          }
+
+          @Override
+          public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+            Files.delete(dir);
+            return FileVisitResult.CONTINUE;
+          }
+        });
   }
 
   private int readFully(ReadableByteChannel chan, byte[] outputBuf) throws IOException {
@@ -744,7 +779,7 @@ public class ITGcsNio {
     private final List<Path> paths = new ArrayList<>();
 
     // Traverse the tree, return the list of files and folders.
-    static public ImmutableList<Path> walkFileTree(Path start) throws IOException {
+    public static ImmutableList<Path> walkFileTree(Path start) throws IOException {
       PostTraversalWalker walker = new PostTraversalWalker();
       Files.walkFileTree(start, walker);
       return walker.getPaths();
@@ -781,11 +816,13 @@ public class ITGcsNio {
   }
 
   // same as getTestBucket, but for the requester-pays bucket.
-  private CloudStorageFileSystem getRequesterPaysBucket(boolean autodetect, String userProject) throws IOException {
-    CloudStorageConfiguration config = CloudStorageConfiguration.builder()
-        .autoDetectRequesterPays(autodetect)
-        .userProject(userProject).build();
-    return CloudStorageFileSystem.forBucket(
-        REQUESTER_PAYS_BUCKET, config, storageOptions);
+  private CloudStorageFileSystem getRequesterPaysBucket(boolean autodetect, String userProject)
+      throws IOException {
+    CloudStorageConfiguration config =
+        CloudStorageConfiguration.builder()
+            .autoDetectRequesterPays(autodetect)
+            .userProject(userProject)
+            .build();
+    return CloudStorageFileSystem.forBucket(REQUESTER_PAYS_BUCKET, config, storageOptions);
   }
 }

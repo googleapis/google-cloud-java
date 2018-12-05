@@ -3,11 +3,14 @@
 
 package com.google.devtools.cloudtrace.v1;
 
-public interface ListTracesRequestOrBuilder extends
+public interface ListTracesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.cloudtrace.v1.ListTracesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * ID of the Cloud project where the trace data is stored.
    * </pre>
@@ -16,16 +19,19 @@ public interface ListTracesRequestOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * ID of the Cloud project where the trace data is stored.
    * </pre>
    *
    * <code>string project_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Type of data returned for traces in the list. Optional. Default is
    * `MINIMAL`.
@@ -35,6 +41,8 @@ public interface ListTracesRequestOrBuilder extends
    */
   int getViewValue();
   /**
+   *
+   *
    * <pre>
    * Type of data returned for traces in the list. Optional. Default is
    * `MINIMAL`.
@@ -45,6 +53,8 @@ public interface ListTracesRequestOrBuilder extends
   com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType getView();
 
   /**
+   *
+   *
    * <pre>
    * Maximum number of traces to return. If not specified or &lt;= 0, the
    * implementation selects a reasonable value.  The implementation may
@@ -56,6 +66,8 @@ public interface ListTracesRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * Token identifying the page of results to return. If provided, use the
    * value of the `next_page_token` field from a previous request. Optional.
@@ -65,6 +77,8 @@ public interface ListTracesRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * Token identifying the page of results to return. If provided, use the
    * value of the `next_page_token` field from a previous request. Optional.
@@ -72,10 +86,11 @@ public interface ListTracesRequestOrBuilder extends
    *
    * <code>string page_token = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * Start of the time interval (inclusive) during which the trace data was
    * collected from the application.
@@ -85,6 +100,8 @@ public interface ListTracesRequestOrBuilder extends
    */
   boolean hasStartTime();
   /**
+   *
+   *
    * <pre>
    * Start of the time interval (inclusive) during which the trace data was
    * collected from the application.
@@ -94,6 +111,8 @@ public interface ListTracesRequestOrBuilder extends
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
+   *
+   *
    * <pre>
    * Start of the time interval (inclusive) during which the trace data was
    * collected from the application.
@@ -104,6 +123,8 @@ public interface ListTracesRequestOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * End of the time interval (inclusive) during which the trace data was
    * collected from the application.
@@ -113,6 +134,8 @@ public interface ListTracesRequestOrBuilder extends
    */
   boolean hasEndTime();
   /**
+   *
+   *
    * <pre>
    * End of the time interval (inclusive) during which the trace data was
    * collected from the application.
@@ -122,6 +145,8 @@ public interface ListTracesRequestOrBuilder extends
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
+   *
+   *
    * <pre>
    * End of the time interval (inclusive) during which the trace data was
    * collected from the application.
@@ -132,6 +157,8 @@ public interface ListTracesRequestOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * An optional filter against labels for the request.
    * By default, searches use prefix matching. To specify exact match, prepend
@@ -167,6 +194,8 @@ public interface ListTracesRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * An optional filter against labels for the request.
    * By default, searches use prefix matching. To specify exact match, prepend
@@ -200,10 +229,11 @@ public interface ListTracesRequestOrBuilder extends
    *
    * <code>string filter = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * Field used to sort the returned traces. Optional.
    * Can be one of the following:
@@ -221,6 +251,8 @@ public interface ListTracesRequestOrBuilder extends
    */
   java.lang.String getOrderBy();
   /**
+   *
+   *
    * <pre>
    * Field used to sort the returned traces. Optional.
    * Can be one of the following:
@@ -236,6 +268,5 @@ public interface ListTracesRequestOrBuilder extends
    *
    * <code>string order_by = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getOrderByBytes();
+  com.google.protobuf.ByteString getOrderByBytes();
 }

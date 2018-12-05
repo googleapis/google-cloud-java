@@ -22,14 +22,12 @@ import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 
 import com.google.common.collect.ImmutableList;
-
+import java.util.LinkedList;
+import java.util.List;
 import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.LinkedList;
-import java.util.List;
 
 public class BaseDatastoreBatchWriterTest {
 
@@ -60,7 +58,6 @@ public class BaseDatastoreBatchWriterTest {
       replay(datastore);
     }
 
-
     @Override
     protected Datastore getDatastore() {
       return datastore;
@@ -87,13 +84,17 @@ public class BaseDatastoreBatchWriterTest {
         Entity.newBuilder(ENTITY2).setKey(Key.newBuilder(KEY1).setName("name2").build()).build();
     List<com.google.datastore.v1.Mutation> pbs = new LinkedList<>();
     pbs.add(com.google.datastore.v1.Mutation.newBuilder().setInsert(ENTITY1.toPb()).build());
-    pbs.add(com.google.datastore.v1.Mutation.newBuilder()
-        .setInsert(Entity.newBuilder(KEY2, INCOMPLETE_ENTITY_1).build().toPb()).build());
-    pbs.add(com.google.datastore.v1.Mutation.newBuilder()
-        .setInsert(Entity.newBuilder(KEY3, INCOMPLETE_ENTITY_2).build().toPb()).build());
+    pbs.add(
+        com.google.datastore.v1.Mutation.newBuilder()
+            .setInsert(Entity.newBuilder(KEY2, INCOMPLETE_ENTITY_1).build().toPb())
+            .build());
+    pbs.add(
+        com.google.datastore.v1.Mutation.newBuilder()
+            .setInsert(Entity.newBuilder(KEY3, INCOMPLETE_ENTITY_2).build().toPb())
+            .build());
     pbs.add(com.google.datastore.v1.Mutation.newBuilder().setInsert(entity2.toPb()).build());
-    List<Entity> entities = batchWriter
-        .add(ENTITY1, INCOMPLETE_ENTITY_1, INCOMPLETE_ENTITY_2, entity2);
+    List<Entity> entities =
+        batchWriter.add(ENTITY1, INCOMPLETE_ENTITY_1, INCOMPLETE_ENTITY_2, entity2);
     assertEquals(pbs, batchWriter.toMutationPbList());
     assertEquals(ENTITY1, entities.get(0));
     assertEquals(Entity.newBuilder(KEY2, INCOMPLETE_ENTITY_1).build(), entities.get(1));
@@ -137,10 +138,14 @@ public class BaseDatastoreBatchWriterTest {
   @Test
   public void testAddWithDeferredAllocation() throws Exception {
     List<com.google.datastore.v1.Mutation> pbs = new LinkedList<>();
-    pbs.add(com.google.datastore.v1.Mutation.newBuilder()
-        .setInsert(INCOMPLETE_ENTITY_1.toPb()).build());
-    pbs.add(com.google.datastore.v1.Mutation.newBuilder()
-        .setInsert(INCOMPLETE_ENTITY_2.toPb()).build());
+    pbs.add(
+        com.google.datastore.v1.Mutation.newBuilder()
+            .setInsert(INCOMPLETE_ENTITY_1.toPb())
+            .build());
+    pbs.add(
+        com.google.datastore.v1.Mutation.newBuilder()
+            .setInsert(INCOMPLETE_ENTITY_2.toPb())
+            .build());
     pbs.add(com.google.datastore.v1.Mutation.newBuilder().setInsert(ENTITY1.toPb()).build());
     batchWriter.addWithDeferredIdAllocation(ENTITY1, INCOMPLETE_ENTITY_1);
     batchWriter.addWithDeferredIdAllocation(INCOMPLETE_ENTITY_2);
@@ -224,12 +229,14 @@ public class BaseDatastoreBatchWriterTest {
   public void testPutIncompleteKey() throws Exception {
     List<com.google.datastore.v1.Mutation> pbs = new LinkedList<>();
     pbs.add(com.google.datastore.v1.Mutation.newBuilder().setUpsert(ENTITY1.toPb()).build());
-    pbs.add(com.google.datastore.v1.Mutation.newBuilder()
-        .setUpsert(Entity.newBuilder(KEY2, INCOMPLETE_ENTITY_1).build().toPb())
-        .build());
-    pbs.add(com.google.datastore.v1.Mutation.newBuilder()
-        .setUpsert(Entity.newBuilder(KEY3, INCOMPLETE_ENTITY_2).build().toPb())
-        .build());
+    pbs.add(
+        com.google.datastore.v1.Mutation.newBuilder()
+            .setUpsert(Entity.newBuilder(KEY2, INCOMPLETE_ENTITY_1).build().toPb())
+            .build());
+    pbs.add(
+        com.google.datastore.v1.Mutation.newBuilder()
+            .setUpsert(Entity.newBuilder(KEY3, INCOMPLETE_ENTITY_2).build().toPb())
+            .build());
     Entity putEntity = batchWriter.put(ENTITY1);
     List<Entity> putEntities = batchWriter.put(INCOMPLETE_ENTITY_1, INCOMPLETE_ENTITY_2);
     assertEquals(ENTITY1, putEntity);
@@ -241,12 +248,14 @@ public class BaseDatastoreBatchWriterTest {
   @Test
   public void testPutWithDeferredAllocation() throws Exception {
     List<com.google.datastore.v1.Mutation> pbs = new LinkedList<>();
-    pbs.add(com.google.datastore.v1.Mutation.newBuilder()
-        .setInsert(INCOMPLETE_ENTITY_1.toPb())
-        .build());
-    pbs.add(com.google.datastore.v1.Mutation.newBuilder()
-        .setInsert(INCOMPLETE_ENTITY_2.toPb())
-        .build());
+    pbs.add(
+        com.google.datastore.v1.Mutation.newBuilder()
+            .setInsert(INCOMPLETE_ENTITY_1.toPb())
+            .build());
+    pbs.add(
+        com.google.datastore.v1.Mutation.newBuilder()
+            .setInsert(INCOMPLETE_ENTITY_2.toPb())
+            .build());
     pbs.add(com.google.datastore.v1.Mutation.newBuilder().setUpsert(ENTITY1.toPb()).build());
     batchWriter.put(ENTITY1);
     batchWriter.putWithDeferredIdAllocation(INCOMPLETE_ENTITY_1, INCOMPLETE_ENTITY_2);
@@ -317,15 +326,16 @@ public class BaseDatastoreBatchWriterTest {
   @Test
   public void testDeleteAfterAdd() throws Exception {
     List<com.google.datastore.v1.Mutation> pbs = new LinkedList<>();
-    pbs.add(com.google.datastore.v1.Mutation.newBuilder()
-        .setInsert(INCOMPLETE_ENTITY_1.toPb()).build());
+    pbs.add(
+        com.google.datastore.v1.Mutation.newBuilder()
+            .setInsert(INCOMPLETE_ENTITY_1.toPb())
+            .build());
     pbs.add(com.google.datastore.v1.Mutation.newBuilder().setDelete(KEY1.toPb()).build());
     batchWriter.add(ENTITY1);
     batchWriter.addWithDeferredIdAllocation(INCOMPLETE_ENTITY_1);
     batchWriter.delete(KEY1);
     assertEquals(pbs, batchWriter.toMutationPbList());
   }
-
 
   @Test
   public void testDeleteAfterUpdate() throws Exception {
@@ -351,4 +361,3 @@ public class BaseDatastoreBatchWriterTest {
     batchWriter.delete(KEY1);
   }
 }
-

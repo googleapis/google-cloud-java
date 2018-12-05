@@ -21,18 +21,14 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.common.base.MoreObjects;
-
 import java.io.IOException;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.attribute.BasicFileAttributeView;
 import java.nio.file.attribute.FileTime;
 import java.util.Objects;
-
 import javax.annotation.concurrent.Immutable;
 
-/**
- * Metadata view for a Google Cloud Storage object.
- */
+/** Metadata view for a Google Cloud Storage object. */
 @Immutable
 public final class CloudStorageFileAttributeView implements BasicFileAttributeView {
 
@@ -44,9 +40,7 @@ public final class CloudStorageFileAttributeView implements BasicFileAttributeVi
     this.path = checkNotNull(path);
   }
 
-  /**
-   * Returns {@value CloudStorageFileSystem#GCS_VIEW}.
-   */
+  /** Returns {@value CloudStorageFileSystem#GCS_VIEW}. */
   @Override
   public String name() {
     return CloudStorageFileSystem.GCS_VIEW;
@@ -65,9 +59,7 @@ public final class CloudStorageFileAttributeView implements BasicFileAttributeVi
     return new CloudStorageObjectAttributes(blobInfo);
   }
 
-  /**
-   * This feature is not supported, since Cloud Storage objects are immutable.
-   */
+  /** This feature is not supported, since Cloud Storage objects are immutable. */
   @Override
   public void setTimes(FileTime lastModifiedTime, FileTime lastAccessTime, FileTime createTime) {
     throw new CloudStorageObjectImmutableException();

@@ -3,11 +3,14 @@
 
 package com.google.bigtable.v2;
 
-public interface ReadRowsRequestOrBuilder extends
+public interface ReadRowsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.v2.ReadRowsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the table from which to read.
    * Values are of the form
@@ -18,6 +21,8 @@ public interface ReadRowsRequestOrBuilder extends
    */
   java.lang.String getTableName();
   /**
+   *
+   *
    * <pre>
    * The unique name of the table from which to read.
    * Values are of the form
@@ -26,10 +31,11 @@ public interface ReadRowsRequestOrBuilder extends
    *
    * <code>string table_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getTableNameBytes();
+  com.google.protobuf.ByteString getTableNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * This value specifies routing for replication. If not specified, the
    * "default" application profile will be used.
@@ -39,6 +45,8 @@ public interface ReadRowsRequestOrBuilder extends
    */
   java.lang.String getAppProfileId();
   /**
+   *
+   *
    * <pre>
    * This value specifies routing for replication. If not specified, the
    * "default" application profile will be used.
@@ -46,10 +54,11 @@ public interface ReadRowsRequestOrBuilder extends
    *
    * <code>string app_profile_id = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getAppProfileIdBytes();
+  com.google.protobuf.ByteString getAppProfileIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The row keys and/or ranges to read. If not specified, reads from all rows.
    * </pre>
@@ -58,6 +67,8 @@ public interface ReadRowsRequestOrBuilder extends
    */
   boolean hasRows();
   /**
+   *
+   *
    * <pre>
    * The row keys and/or ranges to read. If not specified, reads from all rows.
    * </pre>
@@ -66,6 +77,8 @@ public interface ReadRowsRequestOrBuilder extends
    */
   com.google.bigtable.v2.RowSet getRows();
   /**
+   *
+   *
    * <pre>
    * The row keys and/or ranges to read. If not specified, reads from all rows.
    * </pre>
@@ -75,6 +88,8 @@ public interface ReadRowsRequestOrBuilder extends
   com.google.bigtable.v2.RowSetOrBuilder getRowsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The filter to apply to the contents of the specified row(s). If unset,
    * reads the entirety of each row.
@@ -84,6 +99,8 @@ public interface ReadRowsRequestOrBuilder extends
    */
   boolean hasFilter();
   /**
+   *
+   *
    * <pre>
    * The filter to apply to the contents of the specified row(s). If unset,
    * reads the entirety of each row.
@@ -93,6 +110,8 @@ public interface ReadRowsRequestOrBuilder extends
    */
   com.google.bigtable.v2.RowFilter getFilter();
   /**
+   *
+   *
    * <pre>
    * The filter to apply to the contents of the specified row(s). If unset,
    * reads the entirety of each row.
@@ -103,6 +122,8 @@ public interface ReadRowsRequestOrBuilder extends
   com.google.bigtable.v2.RowFilterOrBuilder getFilterOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The read will terminate after committing to N rows' worth of results. The
    * default (zero) is to return all results.

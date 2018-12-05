@@ -5,20 +5,21 @@ package google.monitoring.v3;
 
 public final class DroppedLabelsOuterClass {
   private DroppedLabelsOuterClass() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface DroppedLabelsOrBuilder extends
+  public interface DroppedLabelsOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.monitoring.v3.DroppedLabels)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Map from label to its value, for all labels dropped in any aggregation.
      * </pre>
@@ -27,52 +28,52 @@ public final class DroppedLabelsOuterClass {
      */
     int getLabelCount();
     /**
+     *
+     *
      * <pre>
      * Map from label to its value, for all labels dropped in any aggregation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; label = 1;</code>
      */
-    boolean containsLabel(
-        java.lang.String key);
-    /**
-     * Use {@link #getLabelMap()} instead.
-     */
+    boolean containsLabel(java.lang.String key);
+    /** Use {@link #getLabelMap()} instead. */
     @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getLabel();
+    java.util.Map<java.lang.String, java.lang.String> getLabel();
     /**
+     *
+     *
      * <pre>
      * Map from label to its value, for all labels dropped in any aggregation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; label = 1;</code>
      */
-    java.util.Map<java.lang.String, java.lang.String>
-    getLabelMap();
+    java.util.Map<java.lang.String, java.lang.String> getLabelMap();
     /**
+     *
+     *
      * <pre>
      * Map from label to its value, for all labels dropped in any aggregation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; label = 1;</code>
      */
-
-    java.lang.String getLabelOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
+    java.lang.String getLabelOrDefault(java.lang.String key, java.lang.String defaultValue);
     /**
+     *
+     *
      * <pre>
      * Map from label to its value, for all labels dropped in any aggregation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; label = 1;</code>
      */
-
-    java.lang.String getLabelOrThrow(
-        java.lang.String key);
+    java.lang.String getLabelOrThrow(java.lang.String key);
   }
   /**
+   *
+   *
    * <pre>
    * A set of (label, value) pairs which were dropped during aggregation, attached
    * to google.api.Distribution.Exemplars in google.api.Distribution values during
@@ -91,23 +92,23 @@ public final class DroppedLabelsOuterClass {
    *
    * Protobuf type {@code google.monitoring.v3.DroppedLabels}
    */
-  public  static final class DroppedLabels extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class DroppedLabels extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.monitoring.v3.DroppedLabels)
       DroppedLabelsOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use DroppedLabels.newBuilder() to construct.
     private DroppedLabels(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private DroppedLabels() {
-    }
+
+    private DroppedLabels() {}
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private DroppedLabels(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -127,82 +128,83 @@ public final class DroppedLabelsOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                label_ = com.google.protobuf.MapField.newMapField(
-                    LabelDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
+            case 10:
+              {
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  label_ =
+                      com.google.protobuf.MapField.newMapField(
+                          LabelDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> label__ =
+                    input.readMessage(
+                        LabelDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                label_.getMutableMap().put(label__.getKey(), label__.getValue());
+                break;
               }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              label__ = input.readMessage(
-                  LabelDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              label_.getMutableMap().put(
-                  label__.getKey(), label__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
               }
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return google.monitoring.v3.DroppedLabelsOuterClass.internal_static_google_monitoring_v3_DroppedLabels_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return google.monitoring.v3.DroppedLabelsOuterClass
+          .internal_static_google_monitoring_v3_DroppedLabels_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
     @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 1:
           return internalGetLabel();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return google.monitoring.v3.DroppedLabelsOuterClass.internal_static_google_monitoring_v3_DroppedLabels_fieldAccessorTable
+      return google.monitoring.v3.DroppedLabelsOuterClass
+          .internal_static_google_monitoring_v3_DroppedLabels_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels.class, google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels.Builder.class);
+              google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels.class,
+              google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels.Builder.class);
     }
 
     public static final int LABEL_FIELD_NUMBER = 1;
+
     private static final class LabelDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  google.monitoring.v3.DroppedLabelsOuterClass.internal_static_google_monitoring_v3_DroppedLabels_LabelEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+              google.monitoring.v3.DroppedLabelsOuterClass
+                  .internal_static_google_monitoring_v3_DroppedLabels_LabelEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "");
     }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> label_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetLabel() {
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> label_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabel() {
       if (label_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            LabelDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(LabelDefaultEntryHolder.defaultEntry);
       }
       return label_;
     }
@@ -211,65 +213,67 @@ public final class DroppedLabelsOuterClass {
       return internalGetLabel().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Map from label to its value, for all labels dropped in any aggregation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; label = 1;</code>
      */
-
-    public boolean containsLabel(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsLabel(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetLabel().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getLabelMap()} instead.
-     */
+    /** Use {@link #getLabelMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabel() {
       return getLabelMap();
     }
     /**
+     *
+     *
      * <pre>
      * Map from label to its value, for all labels dropped in any aggregation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; label = 1;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getLabelMap() {
       return internalGetLabel().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Map from label to its value, for all labels dropped in any aggregation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; label = 1;</code>
      */
-
-    public java.lang.String getLabelOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabel().getMap();
+    public java.lang.String getLabelOrDefault(java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabel().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Map from label to its value, for all labels dropped in any aggregation.
      * </pre>
      *
      * <code>map&lt;string, string&gt; label = 1;</code>
      */
-
-    public java.lang.String getLabelOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabel().getMap();
+    public java.lang.String getLabelOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabel().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -277,6 +281,7 @@ public final class DroppedLabelsOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -288,14 +293,9 @@ public final class DroppedLabelsOuterClass {
     }
 
     @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetLabel(),
-          LabelDefaultEntryHolder.defaultEntry,
-          1);
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetLabel(), LabelDefaultEntryHolder.defaultEntry, 1);
       unknownFields.writeTo(output);
     }
 
@@ -305,15 +305,15 @@ public final class DroppedLabelsOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetLabel().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        label__ = LabelDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, label__);
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+          internalGetLabel().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> label__ =
+            LabelDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, label__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -323,16 +323,16 @@ public final class DroppedLabelsOuterClass {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels)) {
         return super.equals(obj);
       }
-      google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels other = (google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels) obj;
+      google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels other =
+          (google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels) obj;
 
       boolean result = true;
-      result = result && internalGetLabel().equals(
-          other.internalGetLabel());
+      result = result && internalGetLabel().equals(other.internalGetLabel());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -354,87 +354,94 @@ public final class DroppedLabelsOuterClass {
     }
 
     public static google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels parseDelimitedFrom(java.io.InputStream input)
+
+    public static google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels prototype) {
+
+    public static Builder newBuilder(
+        google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
     @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -444,6 +451,8 @@ public final class DroppedLabelsOuterClass {
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * A set of (label, value) pairs which were dropped during aggregation, attached
      * to google.api.Distribution.Exemplars in google.api.Distribution values during
@@ -462,43 +471,44 @@ public final class DroppedLabelsOuterClass {
      *
      * Protobuf type {@code google.monitoring.v3.DroppedLabels}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.monitoring.v3.DroppedLabels)
         google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabelsOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return google.monitoring.v3.DroppedLabelsOuterClass.internal_static_google_monitoring_v3_DroppedLabels_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return google.monitoring.v3.DroppedLabelsOuterClass
+            .internal_static_google_monitoring_v3_DroppedLabels_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
+      protected com.google.protobuf.MapField internalGetMapField(int number) {
         switch (number) {
           case 1:
             return internalGetLabel();
           default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+            throw new RuntimeException("Invalid map field number: " + number);
         }
       }
+
       @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
+      protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
         switch (number) {
           case 1:
             return internalGetMutableLabel();
           default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
+            throw new RuntimeException("Invalid map field number: " + number);
         }
       }
+
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return google.monitoring.v3.DroppedLabelsOuterClass.internal_static_google_monitoring_v3_DroppedLabels_fieldAccessorTable
+        return google.monitoring.v3.DroppedLabelsOuterClass
+            .internal_static_google_monitoring_v3_DroppedLabels_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels.class, google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels.Builder.class);
+                google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels.class,
+                google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels.Builder.class);
       }
 
       // Construct using google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels.newBuilder()
@@ -506,16 +516,15 @@ public final class DroppedLabelsOuterClass {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -524,13 +533,14 @@ public final class DroppedLabelsOuterClass {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return google.monitoring.v3.DroppedLabelsOuterClass.internal_static_google_monitoring_v3_DroppedLabels_descriptor;
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return google.monitoring.v3.DroppedLabelsOuterClass
+            .internal_static_google_monitoring_v3_DroppedLabels_descriptor;
       }
 
       @java.lang.Override
-      public google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels getDefaultInstanceForType() {
+      public google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels
+          getDefaultInstanceForType() {
         return google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels.getDefaultInstance();
       }
 
@@ -545,7 +555,8 @@ public final class DroppedLabelsOuterClass {
 
       @java.lang.Override
       public google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels buildPartial() {
-        google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels result = new google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels(this);
+        google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels result =
+            new google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels(this);
         int from_bitField0_ = bitField0_;
         result.label_ = internalGetLabel();
         result.label_.makeImmutable();
@@ -557,38 +568,41 @@ public final class DroppedLabelsOuterClass {
       public Builder clone() {
         return (Builder) super.clone();
       }
+
       @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+
       @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+
       @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
       @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels) {
-          return mergeFrom((google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels)other);
+          return mergeFrom((google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -596,9 +610,10 @@ public final class DroppedLabelsOuterClass {
       }
 
       public Builder mergeFrom(google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels other) {
-        if (other == google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels.getDefaultInstance()) return this;
-        internalGetMutableLabel().mergeFrom(
-            other.internalGetLabel());
+        if (other
+            == google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels.getDefaultInstance())
+          return this;
+        internalGetMutableLabel().mergeFrom(other.internalGetLabel());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -618,7 +633,8 @@ public final class DroppedLabelsOuterClass {
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels) e.getUnfinishedMessage();
+          parsedMessage =
+              (google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -627,24 +643,24 @@ public final class DroppedLabelsOuterClass {
         }
         return this;
       }
+
       private int bitField0_;
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> label_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetLabel() {
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> label_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabel() {
         if (label_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              LabelDefaultEntryHolder.defaultEntry);
+          return com.google.protobuf.MapField.emptyMapField(LabelDefaultEntryHolder.defaultEntry);
         }
         return label_;
       }
+
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableLabel() {
-        onChanged();;
+          internalGetMutableLabel() {
+        onChanged();
+        ;
         if (label_ == null) {
-          label_ = com.google.protobuf.MapField.newMapField(
-              LabelDefaultEntryHolder.defaultEntry);
+          label_ = com.google.protobuf.MapField.newMapField(LabelDefaultEntryHolder.defaultEntry);
         }
         if (!label_.isMutable()) {
           label_ = label_.copy();
@@ -656,65 +672,68 @@ public final class DroppedLabelsOuterClass {
         return internalGetLabel().getMap().size();
       }
       /**
+       *
+       *
        * <pre>
        * Map from label to its value, for all labels dropped in any aggregation.
        * </pre>
        *
        * <code>map&lt;string, string&gt; label = 1;</code>
        */
-
-      public boolean containsLabel(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
+      public boolean containsLabel(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
         return internalGetLabel().getMap().containsKey(key);
       }
-      /**
-       * Use {@link #getLabelMap()} instead.
-       */
+      /** Use {@link #getLabelMap()} instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getLabel() {
         return getLabelMap();
       }
       /**
+       *
+       *
        * <pre>
        * Map from label to its value, for all labels dropped in any aggregation.
        * </pre>
        *
        * <code>map&lt;string, string&gt; label = 1;</code>
        */
-
       public java.util.Map<java.lang.String, java.lang.String> getLabelMap() {
         return internalGetLabel().getMap();
       }
       /**
+       *
+       *
        * <pre>
        * Map from label to its value, for all labels dropped in any aggregation.
        * </pre>
        *
        * <code>map&lt;string, string&gt; label = 1;</code>
        */
-
       public java.lang.String getLabelOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetLabel().getMap();
+          java.lang.String key, java.lang.String defaultValue) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetLabel().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
+       *
+       *
        * <pre>
        * Map from label to its value, for all labels dropped in any aggregation.
        * </pre>
        *
        * <code>map&lt;string, string&gt; label = 1;</code>
        */
-
-      public java.lang.String getLabelOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetLabel().getMap();
+      public java.lang.String getLabelOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetLabel().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
@@ -722,63 +741,63 @@ public final class DroppedLabelsOuterClass {
       }
 
       public Builder clearLabel() {
-        internalGetMutableLabel().getMutableMap()
-            .clear();
+        internalGetMutableLabel().getMutableMap().clear();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Map from label to its value, for all labels dropped in any aggregation.
        * </pre>
        *
        * <code>map&lt;string, string&gt; label = 1;</code>
        */
-
-      public Builder removeLabel(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableLabel().getMutableMap()
-            .remove(key);
+      public Builder removeLabel(java.lang.String key) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        internalGetMutableLabel().getMutableMap().remove(key);
         return this;
       }
-      /**
-       * Use alternate mutation accessors instead.
-       */
+      /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableLabel() {
+      public java.util.Map<java.lang.String, java.lang.String> getMutableLabel() {
         return internalGetMutableLabel().getMutableMap();
       }
       /**
+       *
+       *
        * <pre>
        * Map from label to its value, for all labels dropped in any aggregation.
        * </pre>
        *
        * <code>map&lt;string, string&gt; label = 1;</code>
        */
-      public Builder putLabel(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableLabel().getMutableMap()
-            .put(key, value);
+      public Builder putLabel(java.lang.String key, java.lang.String value) {
+        if (key == null) {
+          throw new java.lang.NullPointerException();
+        }
+        if (value == null) {
+          throw new java.lang.NullPointerException();
+        }
+        internalGetMutableLabel().getMutableMap().put(key, value);
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Map from label to its value, for all labels dropped in any aggregation.
        * </pre>
        *
        * <code>map&lt;string, string&gt; label = 1;</code>
        */
-
-      public Builder putAllLabel(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableLabel().getMutableMap()
-            .putAll(values);
+      public Builder putAllLabel(java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableLabel().getMutableMap().putAll(values);
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -791,12 +810,13 @@ public final class DroppedLabelsOuterClass {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.monitoring.v3.DroppedLabels)
     }
 
     // @@protoc_insertion_point(class_scope:google.monitoring.v3.DroppedLabels)
-    private static final google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels DEFAULT_INSTANCE;
+    private static final google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels
+        DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels();
     }
@@ -805,16 +825,16 @@ public final class DroppedLabelsOuterClass {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<DroppedLabels>
-        PARSER = new com.google.protobuf.AbstractParser<DroppedLabels>() {
-      @java.lang.Override
-      public DroppedLabels parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DroppedLabels(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<DroppedLabels> PARSER =
+        new com.google.protobuf.AbstractParser<DroppedLabels>() {
+          @java.lang.Override
+          public DroppedLabels parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new DroppedLabels(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<DroppedLabels> parser() {
       return PARSER;
@@ -829,62 +849,64 @@ public final class DroppedLabelsOuterClass {
     public google.monitoring.v3.DroppedLabelsOuterClass.DroppedLabels getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_monitoring_v3_DroppedLabels_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_DroppedLabels_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_monitoring_v3_DroppedLabels_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_monitoring_v3_DroppedLabels_LabelEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_monitoring_v3_DroppedLabels_LabelEntry_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_monitoring_v3_DroppedLabels_LabelEntry_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+  public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+
+  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
   static {
     java.lang.String[] descriptorData = {
-      "\n)google/monitoring/v3/dropped_labels.pr" +
-      "oto\022\024google.monitoring.v3\032\034google/api/an" +
-      "notations.proto\"|\n\rDroppedLabels\022=\n\005labe" +
-      "l\030\001 \003(\0132..google.monitoring.v3.DroppedLa" +
-      "bels.LabelEntry\032,\n\nLabelEntry\022\013\n\003key\030\001 \001" +
-      "(\t\022\r\n\005value\030\002 \001(\t:\0028\001B@Z>google.golang.o" +
-      "rg/genproto/googleapis/monitoring/v3;mon" +
-      "itoringb\006proto3"
+      "\n)google/monitoring/v3/dropped_labels.pr"
+          + "oto\022\024google.monitoring.v3\032\034google/api/an"
+          + "notations.proto\"|\n\rDroppedLabels\022=\n\005labe"
+          + "l\030\001 \003(\0132..google.monitoring.v3.DroppedLa"
+          + "bels.LabelEntry\032,\n\nLabelEntry\022\013\n\003key\030\001 \001"
+          + "(\t\022\r\n\005value\030\002 \001(\t:\0028\001B@Z>google.golang.o"
+          + "rg/genproto/googleapis/monitoring/v3;mon"
+          + "itoringb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
           public com.google.protobuf.ExtensionRegistry assignDescriptors(
               com.google.protobuf.Descriptors.FileDescriptor root) {
             descriptor = root;
             return null;
           }
         };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
+    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+        descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
-        }, assigner);
+        },
+        assigner);
     internal_static_google_monitoring_v3_DroppedLabels_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_google_monitoring_v3_DroppedLabels_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_monitoring_v3_DroppedLabels_descriptor,
-        new java.lang.String[] { "Label", });
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_google_monitoring_v3_DroppedLabels_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_DroppedLabels_descriptor,
+            new java.lang.String[] {
+              "Label",
+            });
     internal_static_google_monitoring_v3_DroppedLabels_LabelEntry_descriptor =
-      internal_static_google_monitoring_v3_DroppedLabels_descriptor.getNestedTypes().get(0);
-    internal_static_google_monitoring_v3_DroppedLabels_LabelEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_monitoring_v3_DroppedLabels_LabelEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        internal_static_google_monitoring_v3_DroppedLabels_descriptor.getNestedTypes().get(0);
+    internal_static_google_monitoring_v3_DroppedLabels_LabelEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_monitoring_v3_DroppedLabels_LabelEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
     com.google.api.AnnotationsProto.getDescriptor();
   }
 

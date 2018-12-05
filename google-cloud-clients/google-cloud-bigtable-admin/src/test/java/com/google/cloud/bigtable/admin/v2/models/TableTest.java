@@ -42,16 +42,15 @@ public class TableTest {
                 "cluster1",
                 com.google.bigtable.admin.v2.Table.ClusterState.newBuilder()
                     .setReplicationState(
-                        com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.READY
-                    ).build()
-            )
+                        com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.READY)
+                    .build())
             .putClusterStates(
                 "cluster2",
                 com.google.bigtable.admin.v2.Table.ClusterState.newBuilder()
                     .setReplicationState(
-                        com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.INITIALIZING
-                    ).build()
-            )
+                        com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState
+                            .INITIALIZING)
+                    .build())
             .putColumnFamilies("cf1", ColumnFamily.newBuilder().build())
             .putColumnFamilies(
                 "cf2",
@@ -74,17 +73,17 @@ public class TableTest {
 
     assertThat(result.getInstanceId()).isEqualTo("my-instance");
     assertThat(result.getId()).isEqualTo("my-table");
-    assertThat(result.getReplicationStatesByClusterId()).containsExactly(
-        "cluster1", Table.ReplicationState.READY,
-        "cluster2", Table.ReplicationState.INITIALIZING
-    );
+    assertThat(result.getReplicationStatesByClusterId())
+        .containsExactly(
+            "cluster1", Table.ReplicationState.READY,
+            "cluster2", Table.ReplicationState.INITIALIZING);
     assertThat(result.getColumnFamilies()).hasSize(3);
 
     for (Entry<String, ColumnFamily> entry : proto.getColumnFamiliesMap().entrySet()) {
-      assertThat(result.getColumnFamilies()).contains(
-          com.google.cloud.bigtable.admin.v2.models.ColumnFamily
-              .fromProto(entry.getKey(), entry.getValue())
-      );
+      assertThat(result.getColumnFamilies())
+          .contains(
+              com.google.cloud.bigtable.admin.v2.models.ColumnFamily.fromProto(
+                  entry.getKey(), entry.getValue()));
     }
   }
 
@@ -94,12 +93,13 @@ public class TableTest {
         Lists.newArrayList(
             com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.values());
 
-    List<Table.ReplicationState> validModelValues = Lists
-        .newArrayList(Table.ReplicationState.values());
+    List<Table.ReplicationState> validModelValues =
+        Lists.newArrayList(Table.ReplicationState.values());
 
     List<Table.ReplicationState> actualModelValues = Lists.newArrayList();
 
-    for (com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState protoValue : validProtoValues) {
+    for (com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState protoValue :
+        validProtoValues) {
       Table.ReplicationState modelValue = Table.ReplicationState.fromProto(protoValue);
       actualModelValues.add(modelValue);
     }

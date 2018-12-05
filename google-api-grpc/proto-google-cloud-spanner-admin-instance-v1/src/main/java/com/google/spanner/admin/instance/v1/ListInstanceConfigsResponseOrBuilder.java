@@ -3,20 +3,24 @@
 
 package com.google.spanner.admin.instance.v1;
 
-public interface ListInstanceConfigsResponseOrBuilder extends
+public interface ListInstanceConfigsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.admin.instance.v1.ListInstanceConfigsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of requested instance configurations.
    * </pre>
    *
    * <code>repeated .google.spanner.admin.instance.v1.InstanceConfig instance_configs = 1;</code>
    */
-  java.util.List<com.google.spanner.admin.instance.v1.InstanceConfig> 
-      getInstanceConfigsList();
+  java.util.List<com.google.spanner.admin.instance.v1.InstanceConfig> getInstanceConfigsList();
   /**
+   *
+   *
    * <pre>
    * The list of requested instance configurations.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListInstanceConfigsResponseOrBuilder extends
    */
   com.google.spanner.admin.instance.v1.InstanceConfig getInstanceConfigs(int index);
   /**
+   *
+   *
    * <pre>
    * The list of requested instance configurations.
    * </pre>
@@ -33,15 +39,19 @@ public interface ListInstanceConfigsResponseOrBuilder extends
    */
   int getInstanceConfigsCount();
   /**
+   *
+   *
    * <pre>
    * The list of requested instance configurations.
    * </pre>
    *
    * <code>repeated .google.spanner.admin.instance.v1.InstanceConfig instance_configs = 1;</code>
    */
-  java.util.List<? extends com.google.spanner.admin.instance.v1.InstanceConfigOrBuilder> 
+  java.util.List<? extends com.google.spanner.admin.instance.v1.InstanceConfigOrBuilder>
       getInstanceConfigsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of requested instance configurations.
    * </pre>
@@ -52,6 +62,8 @@ public interface ListInstanceConfigsResponseOrBuilder extends
       int index);
 
   /**
+   *
+   *
    * <pre>
    * `next_page_token` can be sent in a subsequent
    * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs] call to
@@ -62,6 +74,8 @@ public interface ListInstanceConfigsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * `next_page_token` can be sent in a subsequent
    * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs] call to
@@ -70,6 +84,5 @@ public interface ListInstanceConfigsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

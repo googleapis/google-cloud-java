@@ -48,96 +48,111 @@ public class LoggingHandlerTest {
   private static final String PROJECT = "project";
   private static final MonitoredResource DEFAULT_RESOURCE =
       MonitoredResource.of("global", ImmutableMap.of("project_id", PROJECT));
-  private static final LogEntry FINEST_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
-      .setSeverity(Severity.DEBUG)
-      .addLabel("levelName", "FINEST")
-      .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
-      .setTimestamp(123456789L)
-      .build();
-  private static final LogEntry FINEST_ENHANCED_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
-      .setSeverity(Severity.DEBUG)
-      .addLabel("levelName", "FINEST")
-      .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
-      .addLabel("enhanced", "true")
-      .setTimestamp(123456789L)
-      .build();
-  private static final LogEntry FINER_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
-      .setSeverity(Severity.DEBUG)
-      .addLabel("levelName", "FINER")
-      .addLabel("levelValue", String.valueOf(Level.FINER.intValue()))
-      .setTimestamp(123456789L)
-      .build();
-  private static final LogEntry FINE_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
-      .setSeverity(Severity.DEBUG)
-      .addLabel("levelName", "FINE")
-      .addLabel("levelValue", String.valueOf(Level.FINE.intValue()))
-      .setTimestamp(123456789L)
-      .build();
-  private static final LogEntry CONFIG_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
-      .setSeverity(Severity.INFO)
-      .addLabel("levelName", "CONFIG")
-      .addLabel("levelValue", String.valueOf(Level.CONFIG.intValue()))
-      .setTimestamp(123456789L)
-      .build();
-  private static final LogEntry INFO_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
-      .setSeverity(Severity.INFO)
-      .setTimestamp(123456789L)
-      .build();
-  private static final LogEntry WARNING_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
-      .setSeverity(Severity.WARNING)
-      .addLabel("levelName", "WARNING")
-      .addLabel("levelValue", String.valueOf(Level.WARNING.intValue()))
-      .setTimestamp(123456789L)
-      .build();
-  private static final LogEntry SEVERE_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
-      .setSeverity(Severity.ERROR)
-      .addLabel("levelName", "SEVERE")
-      .addLabel("levelValue", String.valueOf(Level.SEVERE.intValue()))
-      .setTimestamp(123456789L)
-      .build();
-  private static final LogEntry DEBUG_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
-      .setSeverity(Severity.DEBUG)
-      .addLabel("levelName", "DEBUG")
-      .addLabel("levelValue", String.valueOf(LoggingLevel.DEBUG.intValue()))
-      .setTimestamp(123456789L)
-      .build();
-  private static final LogEntry NOTICE_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
-      .setSeverity(Severity.NOTICE)
-      .addLabel("levelName", "NOTICE")
-      .addLabel("levelValue", String.valueOf(LoggingLevel.NOTICE.intValue()))
-      .setTimestamp(123456789L)
-      .build();
-  private static final LogEntry ERROR_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
-      .setSeverity(Severity.ERROR)
-      .addLabel("levelName", "ERROR")
-      .addLabel("levelValue", String.valueOf(LoggingLevel.ERROR.intValue()))
-      .setTimestamp(123456789L)
-      .build();
-  private static final LogEntry CRITICAL_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
-      .setSeverity(Severity.CRITICAL)
-      .addLabel("levelName", "CRITICAL")
-      .addLabel("levelValue", String.valueOf(LoggingLevel.CRITICAL.intValue()))
-      .setTimestamp(123456789L)
-      .build();
-  private static final LogEntry ALERT_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
-      .setSeverity(Severity.ALERT)
-      .addLabel("levelName", "ALERT")
-      .addLabel("levelValue", String.valueOf(LoggingLevel.ALERT.intValue()))
-      .setTimestamp(123456789L)
-      .build();
-  private static final LogEntry EMERGENCY_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
-      .setSeverity(Severity.EMERGENCY)
-      .addLabel("levelName", "EMERGENCY")
-      .addLabel("levelValue", String.valueOf(LoggingLevel.EMERGENCY.intValue()))
-      .setTimestamp(123456789L)
-      .build();
-  private static final LogEntry TRACE_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
-      .setSeverity(Severity.DEBUG)
-      .addLabel("levelName", "FINEST")
-      .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
-      .setTrace("projects/projectId/traces/traceId")
-      .setTimestamp(123456789L)
-      .build();
+  private static final LogEntry FINEST_ENTRY =
+      LogEntry.newBuilder(StringPayload.of(MESSAGE))
+          .setSeverity(Severity.DEBUG)
+          .addLabel("levelName", "FINEST")
+          .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
+          .setTimestamp(123456789L)
+          .build();
+  private static final LogEntry FINEST_ENHANCED_ENTRY =
+      LogEntry.newBuilder(StringPayload.of(MESSAGE))
+          .setSeverity(Severity.DEBUG)
+          .addLabel("levelName", "FINEST")
+          .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
+          .addLabel("enhanced", "true")
+          .setTimestamp(123456789L)
+          .build();
+  private static final LogEntry FINER_ENTRY =
+      LogEntry.newBuilder(StringPayload.of(MESSAGE))
+          .setSeverity(Severity.DEBUG)
+          .addLabel("levelName", "FINER")
+          .addLabel("levelValue", String.valueOf(Level.FINER.intValue()))
+          .setTimestamp(123456789L)
+          .build();
+  private static final LogEntry FINE_ENTRY =
+      LogEntry.newBuilder(StringPayload.of(MESSAGE))
+          .setSeverity(Severity.DEBUG)
+          .addLabel("levelName", "FINE")
+          .addLabel("levelValue", String.valueOf(Level.FINE.intValue()))
+          .setTimestamp(123456789L)
+          .build();
+  private static final LogEntry CONFIG_ENTRY =
+      LogEntry.newBuilder(StringPayload.of(MESSAGE))
+          .setSeverity(Severity.INFO)
+          .addLabel("levelName", "CONFIG")
+          .addLabel("levelValue", String.valueOf(Level.CONFIG.intValue()))
+          .setTimestamp(123456789L)
+          .build();
+  private static final LogEntry INFO_ENTRY =
+      LogEntry.newBuilder(StringPayload.of(MESSAGE))
+          .setSeverity(Severity.INFO)
+          .setTimestamp(123456789L)
+          .build();
+  private static final LogEntry WARNING_ENTRY =
+      LogEntry.newBuilder(StringPayload.of(MESSAGE))
+          .setSeverity(Severity.WARNING)
+          .addLabel("levelName", "WARNING")
+          .addLabel("levelValue", String.valueOf(Level.WARNING.intValue()))
+          .setTimestamp(123456789L)
+          .build();
+  private static final LogEntry SEVERE_ENTRY =
+      LogEntry.newBuilder(StringPayload.of(MESSAGE))
+          .setSeverity(Severity.ERROR)
+          .addLabel("levelName", "SEVERE")
+          .addLabel("levelValue", String.valueOf(Level.SEVERE.intValue()))
+          .setTimestamp(123456789L)
+          .build();
+  private static final LogEntry DEBUG_ENTRY =
+      LogEntry.newBuilder(StringPayload.of(MESSAGE))
+          .setSeverity(Severity.DEBUG)
+          .addLabel("levelName", "DEBUG")
+          .addLabel("levelValue", String.valueOf(LoggingLevel.DEBUG.intValue()))
+          .setTimestamp(123456789L)
+          .build();
+  private static final LogEntry NOTICE_ENTRY =
+      LogEntry.newBuilder(StringPayload.of(MESSAGE))
+          .setSeverity(Severity.NOTICE)
+          .addLabel("levelName", "NOTICE")
+          .addLabel("levelValue", String.valueOf(LoggingLevel.NOTICE.intValue()))
+          .setTimestamp(123456789L)
+          .build();
+  private static final LogEntry ERROR_ENTRY =
+      LogEntry.newBuilder(StringPayload.of(MESSAGE))
+          .setSeverity(Severity.ERROR)
+          .addLabel("levelName", "ERROR")
+          .addLabel("levelValue", String.valueOf(LoggingLevel.ERROR.intValue()))
+          .setTimestamp(123456789L)
+          .build();
+  private static final LogEntry CRITICAL_ENTRY =
+      LogEntry.newBuilder(StringPayload.of(MESSAGE))
+          .setSeverity(Severity.CRITICAL)
+          .addLabel("levelName", "CRITICAL")
+          .addLabel("levelValue", String.valueOf(LoggingLevel.CRITICAL.intValue()))
+          .setTimestamp(123456789L)
+          .build();
+  private static final LogEntry ALERT_ENTRY =
+      LogEntry.newBuilder(StringPayload.of(MESSAGE))
+          .setSeverity(Severity.ALERT)
+          .addLabel("levelName", "ALERT")
+          .addLabel("levelValue", String.valueOf(LoggingLevel.ALERT.intValue()))
+          .setTimestamp(123456789L)
+          .build();
+  private static final LogEntry EMERGENCY_ENTRY =
+      LogEntry.newBuilder(StringPayload.of(MESSAGE))
+          .setSeverity(Severity.EMERGENCY)
+          .addLabel("levelName", "EMERGENCY")
+          .addLabel("levelValue", String.valueOf(LoggingLevel.EMERGENCY.intValue()))
+          .setTimestamp(123456789L)
+          .build();
+  private static final LogEntry TRACE_ENTRY =
+      LogEntry.newBuilder(StringPayload.of(MESSAGE))
+          .setSeverity(Severity.DEBUG)
+          .addLabel("levelName", "FINEST")
+          .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
+          .setTrace("projects/projectId/traces/traceId")
+          .setTimestamp(123456789L)
+          .build();
   private static final String CONFIG_NAMESPACE = "com.google.cloud.logging.LoggingHandler";
   private static final ImmutableMap<String, String> CONFIG_MAP =
       ImmutableMap.<String, String>builder()
@@ -308,12 +323,13 @@ public class LoggingHandlerTest {
         WriteOption.labels(BASE_SEVERITY_MAP));
     expectLastCall().once();
     replay(options, logging);
-    LoggingEnhancer enhancer = new LoggingEnhancer() {
-      @Override
-      public void enhanceLogEntry(Builder builder) {
-        builder.addLabel("enhanced", "true");
-      }
-    };
+    LoggingEnhancer enhancer =
+        new LoggingEnhancer() {
+          @Override
+          public void enhanceLogEntry(Builder builder) {
+            builder.addLabel("enhanced", "true");
+          }
+        };
     Handler handler =
         new LoggingHandler(LOG_NAME, options, resource, Collections.singletonList(enhancer));
     handler.setLevel(Level.ALL);
@@ -493,12 +509,13 @@ public class LoggingHandlerTest {
     logging.write(ImmutableList.of(FINEST_ENTRY), DEFAULT_OPTIONS);
     expectLastCall().once();
     replay(options, logging);
-    LoggingHandler handler = new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE) {
-      @Override
-      public void close() {
-        // Make close NOOP to avoid mock close exception
-      }
-    };
+    LoggingHandler handler =
+        new LoggingHandler(LOG_NAME, options, DEFAULT_RESOURCE) {
+          @Override
+          public void close() {
+            // Make close NOOP to avoid mock close exception
+          }
+        };
     handler.setLevel(Level.ALL);
     handler.setFormatter(new TestFormatter());
     Logger logger = Logger.getLogger(getClass().getName());

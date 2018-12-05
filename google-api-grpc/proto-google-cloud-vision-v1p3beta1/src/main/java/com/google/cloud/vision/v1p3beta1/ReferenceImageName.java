@@ -14,20 +14,21 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class ReferenceImageName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}/products/{product}/referenceImages/{reference_image}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/products/{product}/referenceImages/{reference_image}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -67,23 +68,25 @@ public class ReferenceImageName implements ResourceName {
     referenceImage = Preconditions.checkNotNull(builder.getReferenceImage());
   }
 
-  public static ReferenceImageName of(String project, String location, String product, String referenceImage) {
+  public static ReferenceImageName of(
+      String project, String location, String product, String referenceImage) {
     return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setProduct(product)
-      .setReferenceImage(referenceImage)
-      .build();
+        .setProject(project)
+        .setLocation(location)
+        .setProduct(product)
+        .setReferenceImage(referenceImage)
+        .build();
   }
 
-  public static String format(String project, String location, String product, String referenceImage) {
+  public static String format(
+      String project, String location, String product, String referenceImage) {
     return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setProduct(product)
-      .setReferenceImage(referenceImage)
-      .build()
-      .toString();
+        .setProject(project)
+        .setLocation(location)
+        .setProduct(product)
+        .setReferenceImage(referenceImage)
+        .build()
+        .toString();
   }
 
   public static ReferenceImageName parse(String formattedString) {
@@ -91,8 +94,13 @@ public class ReferenceImageName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ReferenceImageName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("product"), matchMap.get("reference_image"));
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ReferenceImageName.parse: formattedString not in valid format");
+    return of(
+        matchMap.get("project"),
+        matchMap.get("location"),
+        matchMap.get("product"),
+        matchMap.get("reference_image"));
   }
 
   public static List<ReferenceImageName> parseList(List<String> formattedStrings) {
@@ -141,7 +149,15 @@ public class ReferenceImageName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "location", location, "product", product, "reference_image", referenceImage);
+    return PATH_TEMPLATE.instantiate(
+        "project",
+        project,
+        "location",
+        location,
+        "product",
+        product,
+        "reference_image",
+        referenceImage);
   }
 
   /** Builder for ReferenceImageName. */
@@ -188,8 +204,7 @@ public class ReferenceImageName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ReferenceImageName referenceImageName) {
       project = referenceImageName.project;
@@ -232,4 +247,3 @@ public class ReferenceImageName implements ResourceName {
     return h;
   }
 }
-

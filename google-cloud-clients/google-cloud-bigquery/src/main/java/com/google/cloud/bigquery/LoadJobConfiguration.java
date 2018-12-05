@@ -49,8 +49,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   private final TimePartitioning timePartitioning;
   private final Clustering clustering;
 
-  public static final class Builder
-      extends JobConfiguration.Builder<LoadJobConfiguration, Builder>
+  public static final class Builder extends JobConfiguration.Builder<LoadJobConfiguration, Builder>
       implements LoadConfiguration.Builder {
 
     private List<String> sourceUris;
@@ -116,10 +115,11 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
           || loadConfigurationPb.getFieldDelimiter() != null
           || loadConfigurationPb.getQuote() != null
           || loadConfigurationPb.getSkipLeadingRows() != null) {
-        CsvOptions.Builder builder = CsvOptions.newBuilder()
-            .setEncoding(loadConfigurationPb.getEncoding())
-            .setFieldDelimiter(loadConfigurationPb.getFieldDelimiter())
-            .setQuote(loadConfigurationPb.getQuote());
+        CsvOptions.Builder builder =
+            CsvOptions.newBuilder()
+                .setEncoding(loadConfigurationPb.getEncoding())
+                .setFieldDelimiter(loadConfigurationPb.getFieldDelimiter())
+                .setQuote(loadConfigurationPb.getQuote());
         if (loadConfigurationPb.getAllowJaggedRows() != null) {
           builder.setAllowJaggedRows(loadConfigurationPb.getAllowJaggedRows());
         }
@@ -141,7 +141,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         this.sourceUris = ImmutableList.copyOf(configurationPb.getLoad().getSourceUris());
       }
       if (loadConfigurationPb.getSchemaUpdateOptions() != null) {
-        ImmutableList.Builder<JobInfo.SchemaUpdateOption> schemaUpdateOptionsBuilder = new ImmutableList.Builder<>();
+        ImmutableList.Builder<JobInfo.SchemaUpdateOption> schemaUpdateOptionsBuilder =
+            new ImmutableList.Builder<>();
         for (String rawSchemaUpdateOption : loadConfigurationPb.getSchemaUpdateOptions()) {
           schemaUpdateOptionsBuilder.add(JobInfo.SchemaUpdateOption.valueOf(rawSchemaUpdateOption));
         }
@@ -155,11 +156,12 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       }
       this.autodetect = loadConfigurationPb.getAutodetect();
       if (loadConfigurationPb.getDestinationEncryptionConfiguration() != null) {
-        this.destinationEncryptionConfiguration = new EncryptionConfiguration.Builder(
-            loadConfigurationPb.getDestinationEncryptionConfiguration()).build();
+        this.destinationEncryptionConfiguration =
+            new EncryptionConfiguration.Builder(
+                    loadConfigurationPb.getDestinationEncryptionConfiguration())
+                .build();
       }
     }
-
 
     @Override
     public Builder setDestinationTable(TableId destinationTable) {
@@ -174,13 +176,11 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
-
     @Override
     public Builder setCreateDisposition(JobInfo.CreateDisposition createDisposition) {
       this.createDisposition = createDisposition;
       return this;
     }
-
 
     @Override
     public Builder setWriteDisposition(JobInfo.WriteDisposition writeDisposition) {
@@ -188,13 +188,11 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
-
     @Override
     public Builder setFormatOptions(FormatOptions formatOptions) {
       this.formatOptions = formatOptions;
       return this;
     }
-
 
     @Override
     public Builder setNullMarker(String nullMarker) {
@@ -202,20 +200,17 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       return this;
     }
 
-
     @Override
     public Builder setMaxBadRecords(Integer maxBadRecords) {
       this.maxBadRecords = maxBadRecords;
       return this;
     }
 
-
     @Override
     public Builder setSchema(Schema schema) {
       this.schema = schema;
       return this;
     }
-
 
     @Override
     public Builder setIgnoreUnknownValues(Boolean ignoreUnknownValues) {
@@ -253,7 +248,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     @Override
     public Builder setSchemaUpdateOptions(List<JobInfo.SchemaUpdateOption> schemaUpdateOptions) {
       this.schemaUpdateOptions =
-              schemaUpdateOptions != null ? ImmutableList.copyOf(schemaUpdateOptions) : null;
+          schemaUpdateOptions != null ? ImmutableList.copyOf(schemaUpdateOptions) : null;
       return this;
     }
 
@@ -281,36 +276,30 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     this.clustering = builder.clustering;
   }
 
-
   @Override
   public TableId getDestinationTable() {
     return destinationTable;
   }
-
 
   @Override
   public EncryptionConfiguration getDestinationEncryptionConfiguration() {
     return destinationEncryptionConfiguration;
   }
 
-
   @Override
   public JobInfo.CreateDisposition getCreateDisposition() {
     return this.createDisposition;
   }
-
 
   @Override
   public JobInfo.WriteDisposition getWriteDisposition() {
     return writeDisposition;
   }
 
-
   @Override
   public String getNullMarker() {
     return nullMarker;
   }
-
 
   @Override
   public CsvOptions getCsvOptions() {
@@ -319,22 +308,20 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
 
   @Override
   public DatastoreBackupOptions getDatastoreBackupOptions() {
-    return formatOptions instanceof DatastoreBackupOptions ?
-        (DatastoreBackupOptions) formatOptions : null;
+    return formatOptions instanceof DatastoreBackupOptions
+        ? (DatastoreBackupOptions) formatOptions
+        : null;
   }
-
 
   @Override
   public String getFormat() {
     return formatOptions != null ? formatOptions.getType() : null;
   }
 
-
   @Override
   public Integer getMaxBadRecords() {
     return maxBadRecords;
   }
-
 
   @Override
   public Schema getSchema() {
@@ -360,10 +347,14 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   }
 
   @Override
-  public TimePartitioning getTimePartitioning() { return timePartitioning; }
+  public TimePartitioning getTimePartitioning() {
+    return timePartitioning;
+  }
 
   @Override
-  public Clustering getClustering() { return clustering; }
+  public Clustering getClustering() {
+    return clustering;
+  }
 
   @Override
   public List<JobInfo.SchemaUpdateOption> getSchemaUpdateOptions() {
@@ -397,8 +388,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   @Override
   public boolean equals(Object obj) {
     return obj == this
-        || obj instanceof LoadJobConfiguration
-        && baseEquals((LoadJobConfiguration) obj);
+        || obj instanceof LoadJobConfiguration && baseEquals((LoadJobConfiguration) obj);
   }
 
   @Override
@@ -426,7 +416,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     }
     if (getCsvOptions() != null) {
       CsvOptions csvOptions = getCsvOptions();
-      loadConfigurationPb.setFieldDelimiter(csvOptions.getFieldDelimiter())
+      loadConfigurationPb
+          .setFieldDelimiter(csvOptions.getFieldDelimiter())
           .setAllowJaggedRows(csvOptions.allowJaggedRows())
           .setAllowQuotedNewlines(csvOptions.allowQuotedNewLines())
           .setEncoding(csvOptions.getEncoding())
@@ -473,7 +464,6 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         .setLoad(loadConfigurationPb);
   }
 
-
   /**
    * Creates a builder for a BigQuery Load Job configuration given the destination table and source
    * URIs.
@@ -498,36 +488,30 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return newBuilder(destinationTable, ImmutableList.of(sourceUri));
   }
 
-
   /**
    * Creates a builder for a BigQuery Load Job configuration given the destination table, format and
    * source URIs.
    */
-  public static Builder newBuilder(TableId destinationTable, List<String> sourceUris,
-      FormatOptions format) {
+  public static Builder newBuilder(
+      TableId destinationTable, List<String> sourceUris, FormatOptions format) {
     return newBuilder(destinationTable, sourceUris).setFormatOptions(format);
   }
-
 
   /**
    * Creates a builder for a BigQuery Load Job configuration given the destination table, format and
    * source URI.
    */
-  public static Builder newBuilder(TableId destinationTable, String sourceUri,
-      FormatOptions format) {
+  public static Builder newBuilder(
+      TableId destinationTable, String sourceUri, FormatOptions format) {
     return newBuilder(destinationTable, ImmutableList.of(sourceUri), format);
   }
 
-  /**
-   * Returns a BigQuery Load Job Configuration for the given destination table and source URIs.
-   */
+  /** Returns a BigQuery Load Job Configuration for the given destination table and source URIs. */
   public static LoadJobConfiguration of(TableId destinationTable, List<String> sourceUris) {
     return newBuilder(destinationTable, sourceUris).build();
   }
 
-  /**
-   * Returns a BigQuery Load Job Configuration for the given destination table and source URI.
-   */
+  /** Returns a BigQuery Load Job Configuration for the given destination table and source URI. */
   public static LoadJobConfiguration of(TableId destinationTable, String sourceUri) {
     return of(destinationTable, ImmutableList.of(sourceUri));
   }
@@ -536,8 +520,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
    * Returns a BigQuery Load Job Configuration for the given destination table, format and source
    * URI.
    */
-  public static LoadJobConfiguration of(TableId destinationTable, List<String> sourceUris,
-      FormatOptions format) {
+  public static LoadJobConfiguration of(
+      TableId destinationTable, List<String> sourceUris, FormatOptions format) {
     return newBuilder(destinationTable, sourceUris, format).build();
   }
 
@@ -545,8 +529,8 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
    * Returns a BigQuery Load Job Configuration for the given destination table, format and source
    * URI.
    */
-  public static LoadJobConfiguration of(TableId destinationTable, String sourceUri,
-      FormatOptions format) {
+  public static LoadJobConfiguration of(
+      TableId destinationTable, String sourceUri, FormatOptions format) {
     return of(destinationTable, ImmutableList.of(sourceUri), format);
   }
 

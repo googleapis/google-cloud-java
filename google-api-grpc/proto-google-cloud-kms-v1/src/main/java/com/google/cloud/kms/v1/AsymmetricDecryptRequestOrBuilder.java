@@ -3,11 +3,14 @@
 
 package com.google.cloud.kms.v1;
 
-public interface AsymmetricDecryptRequestOrBuilder extends
+public interface AsymmetricDecryptRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.AsymmetricDecryptRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
    * decryption.
@@ -17,6 +20,8 @@ public interface AsymmetricDecryptRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
    * decryption.
@@ -24,10 +29,11 @@ public interface AsymmetricDecryptRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The data encrypted with the named [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s public
    * key using OAEP.

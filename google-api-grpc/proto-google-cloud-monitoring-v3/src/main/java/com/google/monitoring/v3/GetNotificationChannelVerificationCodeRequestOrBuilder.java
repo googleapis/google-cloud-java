@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface GetNotificationChannelVerificationCodeRequestOrBuilder extends
+public interface GetNotificationChannelVerificationCodeRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.GetNotificationChannelVerificationCodeRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The notification channel for which a verification code is to be generated
    * and retrieved. This must name a channel that is already verified; if
@@ -18,6 +21,8 @@ public interface GetNotificationChannelVerificationCodeRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The notification channel for which a verification code is to be generated
    * and retrieved. This must name a channel that is already verified; if
@@ -26,10 +31,11 @@ public interface GetNotificationChannelVerificationCodeRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The desired expiration time. If specified, the API will guarantee that
    * the returned code will not be valid after the specified timestamp;
@@ -46,6 +52,8 @@ public interface GetNotificationChannelVerificationCodeRequestOrBuilder extends
    */
   boolean hasExpireTime();
   /**
+   *
+   *
    * <pre>
    * The desired expiration time. If specified, the API will guarantee that
    * the returned code will not be valid after the specified timestamp;
@@ -62,6 +70,8 @@ public interface GetNotificationChannelVerificationCodeRequestOrBuilder extends
    */
   com.google.protobuf.Timestamp getExpireTime();
   /**
+   *
+   *
    * <pre>
    * The desired expiration time. If specified, the API will guarantee that
    * the returned code will not be valid after the specified timestamp;

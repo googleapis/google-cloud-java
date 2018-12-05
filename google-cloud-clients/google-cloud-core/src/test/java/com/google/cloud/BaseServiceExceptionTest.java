@@ -32,9 +32,7 @@ import com.google.common.collect.ImmutableSet;
 import java.util.Set;
 import org.junit.Test;
 
-/**
- * Tests for {@link BaseServiceException}.
- */
+/** Tests for {@link BaseServiceException}. */
 public class BaseServiceExceptionTest {
 
   private static final int CODE = 1;
@@ -52,14 +50,17 @@ public class BaseServiceExceptionTest {
     private static final long serialVersionUID = -195251309124875103L;
 
     public CustomServiceException(int code, String message, String reason, boolean idempotent) {
-      super(ExceptionData.from(code, message, reason,
-          BaseServiceException.isRetryable(code, reason, idempotent, RETRYABLE_ERRORS)));
+      super(
+          ExceptionData.from(
+              code,
+              message,
+              reason,
+              BaseServiceException.isRetryable(code, reason, idempotent, RETRYABLE_ERRORS)));
     }
 
-    private static final Set RETRYABLE_ERRORS = ImmutableSet
-        .of(new Error(CODE, REASON),
-            new Error(null, REASON),
-            new Error(CODE_NO_REASON, null));
+    private static final Set RETRYABLE_ERRORS =
+        ImmutableSet.of(
+            new Error(CODE, REASON), new Error(null, REASON), new Error(CODE_NO_REASON, null));
   }
 
   @Test
@@ -84,8 +85,12 @@ public class BaseServiceExceptionTest {
     serviceException =
         new BaseServiceException(
             ExceptionData.newBuilder()
-                .setMessage(MESSAGE).setCause(cause).setCode(CODE)
-                .setReason(REASON).setRetryable(RETRYABLE).setDebugInfo(DEBUG_INFO)
+                .setMessage(MESSAGE)
+                .setCause(cause)
+                .setCode(CODE)
+                .setReason(REASON)
+                .setRetryable(RETRYABLE)
+                .setDebugInfo(DEBUG_INFO)
                 .setLocation(LOCATION)
                 .build());
     assertEquals(CODE, serviceException.getCode());

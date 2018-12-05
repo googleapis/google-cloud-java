@@ -19,56 +19,54 @@ package com.google.cloud;
 import static org.junit.Assert.assertEquals;
 
 import com.google.common.collect.ImmutableMap;
-
-import org.junit.Test;
-
 import java.util.Map;
+import org.junit.Test;
 
 public class MonitoredResourceTest {
 
   private static final String TYPE = "cloudsql_database";
   private static final Map<String, String> LABELS =
       ImmutableMap.of("dataset-id", "myDataset", "zone", "myZone");
-  private static final MonitoredResource MONITORED_RESOURCE = MonitoredResource.newBuilder(TYPE)
-      .setLabels(LABELS)
-      .build();
+  private static final MonitoredResource MONITORED_RESOURCE =
+      MonitoredResource.newBuilder(TYPE).setLabels(LABELS).build();
 
   @Test
   public void testBuilder() {
     assertEquals(TYPE, MONITORED_RESOURCE.getType());
     assertEquals(LABELS, MONITORED_RESOURCE.getLabels());
-    MonitoredResource monitoredResource = MonitoredResource.newBuilder(TYPE)
-        .addLabel("dataset-id", "myDataset")
-        .addLabel("zone", "myZone")
-        .build();
+    MonitoredResource monitoredResource =
+        MonitoredResource.newBuilder(TYPE)
+            .addLabel("dataset-id", "myDataset")
+            .addLabel("zone", "myZone")
+            .build();
     assertEquals(TYPE, monitoredResource.getType());
     assertEquals(LABELS, monitoredResource.getLabels());
     compareMonitoredResource(MONITORED_RESOURCE, monitoredResource);
-    monitoredResource = MonitoredResource.newBuilder(TYPE)
-        .setType("global")
-        .addLabel("dataset-id", "myDataset")
-        .addLabel("zone", "myZone")
-        .clearLabels()
-        .build();
+    monitoredResource =
+        MonitoredResource.newBuilder(TYPE)
+            .setType("global")
+            .addLabel("dataset-id", "myDataset")
+            .addLabel("zone", "myZone")
+            .clearLabels()
+            .build();
     assertEquals("global", monitoredResource.getType());
     assertEquals(ImmutableMap.of(), monitoredResource.getLabels());
   }
 
-
   @Test
   public void testToBuilder() {
     compareMonitoredResource(MONITORED_RESOURCE, MONITORED_RESOURCE.toBuilder().build());
-    MonitoredResource monitoredResource = MONITORED_RESOURCE.toBuilder()
-        .setType("global")
-        .clearLabels()
-        .build();
+    MonitoredResource monitoredResource =
+        MONITORED_RESOURCE.toBuilder().setType("global").clearLabels().build();
     assertEquals("global", monitoredResource.getType());
     assertEquals(ImmutableMap.of(), monitoredResource.getLabels());
-    monitoredResource = monitoredResource.toBuilder()
-        .setType(TYPE)
-        .setLabels(ImmutableMap.of("dataset-id", "myDataset"))
-        .addLabel("zone", "myZone")
-        .build();
+    monitoredResource =
+        monitoredResource
+            .toBuilder()
+            .setType(TYPE)
+            .setLabels(ImmutableMap.of("dataset-id", "myDataset"))
+            .addLabel("zone", "myZone")
+            .build();
     compareMonitoredResource(MONITORED_RESOURCE, monitoredResource);
   }
 
@@ -82,8 +80,8 @@ public class MonitoredResourceTest {
 
   @Test
   public void testToAndFromPb() {
-    compareMonitoredResource(MONITORED_RESOURCE,
-        MonitoredResource.fromPb(MONITORED_RESOURCE.toPb()));
+    compareMonitoredResource(
+        MONITORED_RESOURCE, MonitoredResource.fromPb(MONITORED_RESOURCE.toPb()));
     MonitoredResource monitoredResource =
         MonitoredResource.of(TYPE, ImmutableMap.<String, String>of());
     compareMonitoredResource(monitoredResource, MonitoredResource.fromPb(monitoredResource.toPb()));

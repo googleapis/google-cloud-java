@@ -18,21 +18,15 @@ package com.google.cloud.storage.contrib.nio;
 
 import com.google.cloud.storage.Acl;
 
-/**
- * Helper class for specifying options when opening and copying Cloud Storage files.
- */
+/** Helper class for specifying options when opening and copying Cloud Storage files. */
 public final class CloudStorageOptions {
 
-  /**
-   * Sets the mime type header on an object, e.g. {@code "text/plain"}.
-   */
+  /** Sets the mime type header on an object, e.g. {@code "text/plain"}. */
   public static CloudStorageOption.OpenCopy withMimeType(String mimeType) {
     return OptionMimeType.create(mimeType);
   }
 
-  /**
-   * Disables caching on an object. Same as: {@code withCacheControl("no-cache")}.
-   */
+  /** Disables caching on an object. Same as: {@code withCacheControl("no-cache")}. */
   public static CloudStorageOption.OpenCopy withoutCaching() {
     return withCacheControl("no-cache");
   }
@@ -92,8 +86,8 @@ public final class CloudStorageOptions {
   }
 
   /**
-   * Sets the max number of times that the channel can be reopened if reading
-   * fails because the channel unexpectedly closes.
+   * Sets the max number of times that the channel can be reopened if reading fails because the
+   * channel unexpectedly closes.
    *
    * <p>The default is 0.
    */

@@ -24,9 +24,7 @@ import java.io.IOException;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 
-/**
- * Compute Engine service exception.
- */
+/** Compute Engine service exception. */
 public class ComputeException extends BaseHttpServiceException {
 
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(new Error(500, null));

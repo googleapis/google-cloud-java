@@ -35,22 +35,22 @@ import com.google.cloud.PageImpl;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
-
+import java.util.List;
 import java.util.Map;
 import org.junit.After;
 import org.junit.Test;
 
-import java.util.List;
-
 public class DatasetTest {
 
   private static final DatasetId DATASET_ID = DatasetId.of("dataset");
-  private static final List<Acl> ACCESS_RULES = ImmutableList.of(
-      Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
-      Acl.of(new Acl.View(TableId.of("dataset", "table"))));
-  private static final Map<String, String> LABELS = ImmutableMap.of(
-      "example-label1", "example-value1",
-      "example-label2", "example-value2");
+  private static final List<Acl> ACCESS_RULES =
+      ImmutableList.of(
+          Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
+          Acl.of(new Acl.View(TableId.of("dataset", "table"))));
+  private static final Map<String, String> LABELS =
+      ImmutableMap.of(
+          "example-label1", "example-value1",
+          "example-label2", "example-value2");
   private static final Long CREATION_TIME = System.currentTimeMillis();
   private static final Long DEFAULT_TABLE_EXPIRATION = CREATION_TIME + 100;
   private static final String DESCRIPTION = "description";
@@ -100,19 +100,20 @@ public class DatasetTest {
   public void testBuilder() {
     initializeExpectedDataset(2);
     replay(bigquery);
-    Dataset builtDataset = new Dataset.Builder(serviceMockReturnsOptions, DATASET_ID)
-        .setAcl(ACCESS_RULES)
-        .setCreationTime(CREATION_TIME)
-        .setDefaultTableLifetime(DEFAULT_TABLE_EXPIRATION)
-        .setDescription(DESCRIPTION)
-        .setEtag(ETAG)
-        .setFriendlyName(FRIENDLY_NAME)
-        .setGeneratedId(GENERATED_ID)
-        .setLastModified(LAST_MODIFIED)
-        .setLocation(LOCATION)
-        .setSelfLink(SELF_LINK)
-        .setLabels(LABELS)
-        .build();
+    Dataset builtDataset =
+        new Dataset.Builder(serviceMockReturnsOptions, DATASET_ID)
+            .setAcl(ACCESS_RULES)
+            .setCreationTime(CREATION_TIME)
+            .setDefaultTableLifetime(DEFAULT_TABLE_EXPIRATION)
+            .setDescription(DESCRIPTION)
+            .setEtag(ETAG)
+            .setFriendlyName(FRIENDLY_NAME)
+            .setGeneratedId(GENERATED_ID)
+            .setLastModified(LAST_MODIFIED)
+            .setLocation(LOCATION)
+            .setSelfLink(SELF_LINK)
+            .setLabels(LABELS)
+            .build();
     assertEquals(DATASET_ID, builtDataset.getDatasetId());
     assertEquals(ACCESS_RULES, builtDataset.getAcl());
     assertEquals(CREATION_TIME, builtDataset.getCreationTime());
@@ -126,7 +127,6 @@ public class DatasetTest {
     assertEquals(SELF_LINK, builtDataset.getSelfLink());
     assertEquals(LABELS, builtDataset.getLabels());
   }
-
 
   @Test
   public void testToBuilder() {
@@ -165,8 +165,8 @@ public class DatasetTest {
     Dataset expectedDataset =
         new Dataset(serviceMockReturnsOptions, new DatasetInfo.BuilderImpl(updatedInfo));
     expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(
-        bigquery.getDataset(DATASET_INFO.getDatasetId().getDataset())).andReturn(expectedDataset);
+    expect(bigquery.getDataset(DATASET_INFO.getDatasetId().getDataset()))
+        .andReturn(expectedDataset);
     replay(bigquery);
     initializeDataset();
     Dataset updatedDataset = dataset.reload();
@@ -190,8 +190,10 @@ public class DatasetTest {
     Dataset expectedDataset =
         new Dataset(serviceMockReturnsOptions, new DatasetInfo.BuilderImpl(updatedInfo));
     expect(bigquery.getOptions()).andReturn(mockOptions);
-    expect(bigquery.getDataset(DATASET_INFO.getDatasetId().getDataset(),
-        BigQuery.DatasetOption.fields())).andReturn(expectedDataset);
+    expect(
+            bigquery.getDataset(
+                DATASET_INFO.getDatasetId().getDataset(), BigQuery.DatasetOption.fields()))
+        .andReturn(expectedDataset);
     replay(bigquery);
     initializeDataset();
     Dataset updatedDataset = dataset.reload(BigQuery.DatasetOption.fields());
@@ -248,28 +250,30 @@ public class DatasetTest {
   @Test
   public void testList() throws Exception {
     initializeExpectedDataset(4);
-    List<Table> tableResults = ImmutableList.of(
-        new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO1)),
-        new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO2)),
-        new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO3)));
+    List<Table> tableResults =
+        ImmutableList.of(
+            new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO1)),
+            new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO2)),
+            new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO3)));
     PageImpl<Table> expectedPage = new PageImpl<>(null, "c", tableResults);
     expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(bigquery.listTables(DATASET_INFO.getDatasetId())).andReturn(expectedPage);
     replay(bigquery);
     initializeDataset();
     Page<Table> tablePage = dataset.list();
-    assertArrayEquals(tableResults.toArray(),
-        Iterables.toArray(tablePage.getValues(), Table.class));
+    assertArrayEquals(
+        tableResults.toArray(), Iterables.toArray(tablePage.getValues(), Table.class));
     assertEquals(expectedPage.getNextPageToken(), tablePage.getNextPageToken());
   }
 
   @Test
   public void testListWithOptions() throws Exception {
     initializeExpectedDataset(4);
-    List<Table> tableResults = ImmutableList.of(
-        new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO1)),
-        new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO2)),
-        new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO3)));
+    List<Table> tableResults =
+        ImmutableList.of(
+            new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO1)),
+            new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO2)),
+            new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO3)));
     PageImpl<Table> expectedPage = new PageImpl<>(null, "c", tableResults);
     expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(bigquery.listTables(DATASET_INFO.getDatasetId(), BigQuery.TableListOption.pageSize(10L)))
@@ -277,8 +281,8 @@ public class DatasetTest {
     replay(bigquery);
     initializeDataset();
     Page<Table> tablePage = dataset.list(BigQuery.TableListOption.pageSize(10L));
-    assertArrayEquals(tableResults.toArray(),
-        Iterables.toArray(tablePage.getValues(), Table.class));
+    assertArrayEquals(
+        tableResults.toArray(), Iterables.toArray(tablePage.getValues(), Table.class));
     assertEquals(expectedPage.getNextPageToken(), tablePage.getNextPageToken());
   }
 
@@ -343,8 +347,9 @@ public class DatasetTest {
     expect(bigquery.create(TABLE_INFO1, BigQuery.TableOption.fields())).andReturn(expectedTable);
     replay(bigquery);
     initializeDataset();
-    Table table = dataset.create(TABLE_INFO1.getTableId().getTable(), TABLE_DEFINITION,
-        BigQuery.TableOption.fields());
+    Table table =
+        dataset.create(
+            TABLE_INFO1.getTableId().getTable(), TABLE_DEFINITION, BigQuery.TableOption.fields());
     assertEquals(expectedTable, table);
   }
 
@@ -355,13 +360,12 @@ public class DatasetTest {
     assertSame(serviceMockReturnsOptions, expectedDataset.getBigQuery());
   }
 
-
   @Test
   public void testToAndFromPb() {
     initializeExpectedDataset(4);
     replay(bigquery);
-    compareDataset(expectedDataset,
-        Dataset.fromPb(serviceMockReturnsOptions, expectedDataset.toPb()));
+    compareDataset(
+        expectedDataset, Dataset.fromPb(serviceMockReturnsOptions, expectedDataset.toPb()));
   }
 
   private void compareDataset(Dataset expected, Dataset value) {

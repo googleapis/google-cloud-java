@@ -18,8 +18,5 @@ package com.google.cloud.bigquery;
 
 import com.google.cloud.ServiceFactory;
 
-/**
- * An interface for BigQuery factories.
- */
-public interface BigQueryFactory extends ServiceFactory<BigQuery, BigQueryOptions> {
-}
+/** An interface for BigQuery factories. */
+public interface BigQueryFactory extends ServiceFactory<BigQuery, BigQueryOptions> {}

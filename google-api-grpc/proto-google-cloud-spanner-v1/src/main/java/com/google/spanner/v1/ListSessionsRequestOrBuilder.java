@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface ListSessionsRequestOrBuilder extends
+public interface ListSessionsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.ListSessionsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The database in which to list sessions.
    * </pre>
@@ -16,16 +19,19 @@ public interface ListSessionsRequestOrBuilder extends
    */
   java.lang.String getDatabase();
   /**
+   *
+   *
    * <pre>
    * Required. The database in which to list sessions.
    * </pre>
    *
    * <code>string database = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getDatabaseBytes();
+  com.google.protobuf.ByteString getDatabaseBytes();
 
   /**
+   *
+   *
    * <pre>
    * Number of sessions to be returned in the response. If 0 or less, defaults
    * to the server's maximum allowed page size.
@@ -36,6 +42,8 @@ public interface ListSessionsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * If non-empty, `page_token` should contain a
    * [next_page_token][google.spanner.v1.ListSessionsResponse.next_page_token] from a previous
@@ -46,6 +54,8 @@ public interface ListSessionsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * If non-empty, `page_token` should contain a
    * [next_page_token][google.spanner.v1.ListSessionsResponse.next_page_token] from a previous
@@ -54,10 +64,11 @@ public interface ListSessionsRequestOrBuilder extends
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * An expression for filtering the results of the request. Filter rules are
    * case insensitive. The fields eligible for filtering are:
@@ -72,6 +83,8 @@ public interface ListSessionsRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * An expression for filtering the results of the request. Filter rules are
    * case insensitive. The fields eligible for filtering are:
@@ -84,6 +97,5 @@ public interface ListSessionsRequestOrBuilder extends
    *
    * <code>string filter = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 }

@@ -22,10 +22,12 @@ import com.google.auto.value.AutoValue;
 import javax.annotation.Nullable;
 
 /**
- * A Google BigQuery Model table definition. This definition is used to represent a BigQuery
- * ML model.
+ * A Google BigQuery Model table definition. This definition is used to represent a BigQuery ML
+ * model.
  *
- * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create#models_in_bqml_name">BigQuery ML Model</a>
+ * @see <a
+ *     href="https://cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create#models_in_bqml_name">BigQuery
+ *     ML Model</a>
  */
 @AutoValue
 @BetaApi
@@ -62,9 +64,7 @@ public abstract class ModelTableDefinition extends TableDefinition {
   @Nullable
   public abstract String getLocation();
 
-  /**
-   * Returns a builder for a BigQuery ML model table definition.
-   */
+  /** Returns a builder for a BigQuery ML model table definition. */
   public static Builder newBuilder() {
     return new AutoValue_ModelTableDefinition.Builder().setType(Type.MODEL);
   }

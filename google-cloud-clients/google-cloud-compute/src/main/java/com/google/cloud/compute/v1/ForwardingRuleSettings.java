@@ -66,7 +66,8 @@ import javax.annotation.Generated;
 public class ForwardingRuleSettings extends ClientSettings<ForwardingRuleSettings> {
   /** Returns the object with the settings used for calls to aggregatedListForwardingRules. */
   public PagedCallSettings<
-          AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+          AggregatedListForwardingRulesHttpRequest,
+          ForwardingRuleAggregatedList,
           AggregatedListForwardingRulesPagedResponse>
       aggregatedListForwardingRulesSettings() {
     return ((ForwardingRuleStubSettings) getStubSettings()).aggregatedListForwardingRulesSettings();
@@ -207,7 +208,8 @@ public class ForwardingRuleSettings extends ClientSettings<ForwardingRuleSetting
 
     /** Returns the builder for the settings used for calls to aggregatedListForwardingRules. */
     public PagedCallSettings.Builder<
-            AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+            AggregatedListForwardingRulesHttpRequest,
+            ForwardingRuleAggregatedList,
             AggregatedListForwardingRulesPagedResponse>
         aggregatedListForwardingRulesSettings() {
       return getStubSettingsBuilder().aggregatedListForwardingRulesSettings();

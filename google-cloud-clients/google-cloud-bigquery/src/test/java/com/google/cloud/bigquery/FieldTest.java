@@ -33,29 +33,29 @@ public class FieldTest {
   private static final String FIELD_DESCRIPTION1 = "FieldDescription1";
   private static final String FIELD_DESCRIPTION2 = "FieldDescription2";
   private static final String FIELD_DESCRIPTION3 = "FieldDescription3";
-  private static final Field FIELD_SCHEMA1 = Field.newBuilder(FIELD_NAME1, FIELD_TYPE1)
-      .setMode(FIELD_MODE1)
-      .setDescription(FIELD_DESCRIPTION1)
-      .build();
-  private static final Field FIELD_SCHEMA2 = Field.newBuilder(FIELD_NAME2, FIELD_TYPE2)
-      .setMode(FIELD_MODE2)
-      .setDescription(FIELD_DESCRIPTION2)
-      .build();
+  private static final Field FIELD_SCHEMA1 =
+      Field.newBuilder(FIELD_NAME1, FIELD_TYPE1)
+          .setMode(FIELD_MODE1)
+          .setDescription(FIELD_DESCRIPTION1)
+          .build();
+  private static final Field FIELD_SCHEMA2 =
+      Field.newBuilder(FIELD_NAME2, FIELD_TYPE2)
+          .setMode(FIELD_MODE2)
+          .setDescription(FIELD_DESCRIPTION2)
+          .build();
   private static final LegacySQLTypeName FIELD_TYPE3 = LegacySQLTypeName.RECORD;
-  private static final Field FIELD_SCHEMA3 = Field
-      .newBuilder(FIELD_NAME3, FIELD_TYPE3, FIELD_SCHEMA1, FIELD_SCHEMA2)
-      .setMode(FIELD_MODE3)
-      .setDescription(FIELD_DESCRIPTION3)
-      .build();
+  private static final Field FIELD_SCHEMA3 =
+      Field.newBuilder(FIELD_NAME3, FIELD_TYPE3, FIELD_SCHEMA1, FIELD_SCHEMA2)
+          .setMode(FIELD_MODE3)
+          .setDescription(FIELD_DESCRIPTION3)
+          .build();
 
   @Test
   public void testToBuilder() {
     compareFieldSchemas(FIELD_SCHEMA1, FIELD_SCHEMA1.toBuilder().build());
     compareFieldSchemas(FIELD_SCHEMA2, FIELD_SCHEMA2.toBuilder().build());
     compareFieldSchemas(FIELD_SCHEMA3, FIELD_SCHEMA3.toBuilder().build());
-    Field field = FIELD_SCHEMA1.toBuilder()
-        .setDescription("New Description")
-        .build();
+    Field field = FIELD_SCHEMA1.toBuilder().setDescription("New Description").build();
     assertEquals("New Description", field.getDescription());
     field = field.toBuilder().setDescription(FIELD_DESCRIPTION1).build();
     compareFieldSchemas(FIELD_SCHEMA1, field);
@@ -82,7 +82,6 @@ public class FieldTest {
     assertEquals(FIELD_DESCRIPTION3, FIELD_SCHEMA3.getDescription());
     assertEquals(FieldList.of(FIELD_SCHEMA1, FIELD_SCHEMA2), FIELD_SCHEMA3.getSubFields());
   }
-
 
   @Test
   public void testToAndFromPb() {

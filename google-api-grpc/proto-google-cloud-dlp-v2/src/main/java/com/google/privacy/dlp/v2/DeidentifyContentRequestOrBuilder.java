@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface DeidentifyContentRequestOrBuilder extends
+public interface DeidentifyContentRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DeidentifyContentRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The parent resource name, for example projects/my-project-id.
    * </pre>
@@ -16,16 +19,19 @@ public interface DeidentifyContentRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The parent resource name, for example projects/my-project-id.
    * </pre>
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Configuration for the de-identification of the content item.
    * Items specified here will override the template referenced by the
@@ -36,6 +42,8 @@ public interface DeidentifyContentRequestOrBuilder extends
    */
   boolean hasDeidentifyConfig();
   /**
+   *
+   *
    * <pre>
    * Configuration for the de-identification of the content item.
    * Items specified here will override the template referenced by the
@@ -46,6 +54,8 @@ public interface DeidentifyContentRequestOrBuilder extends
    */
   com.google.privacy.dlp.v2.DeidentifyConfig getDeidentifyConfig();
   /**
+   *
+   *
    * <pre>
    * Configuration for the de-identification of the content item.
    * Items specified here will override the template referenced by the
@@ -57,6 +67,8 @@ public interface DeidentifyContentRequestOrBuilder extends
   com.google.privacy.dlp.v2.DeidentifyConfigOrBuilder getDeidentifyConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Configuration for the inspector.
    * Items specified here will override the template referenced by the
@@ -67,6 +79,8 @@ public interface DeidentifyContentRequestOrBuilder extends
    */
   boolean hasInspectConfig();
   /**
+   *
+   *
    * <pre>
    * Configuration for the inspector.
    * Items specified here will override the template referenced by the
@@ -77,6 +91,8 @@ public interface DeidentifyContentRequestOrBuilder extends
    */
   com.google.privacy.dlp.v2.InspectConfig getInspectConfig();
   /**
+   *
+   *
    * <pre>
    * Configuration for the inspector.
    * Items specified here will override the template referenced by the
@@ -88,6 +104,8 @@ public interface DeidentifyContentRequestOrBuilder extends
   com.google.privacy.dlp.v2.InspectConfigOrBuilder getInspectConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The item to de-identify. Will be treated as text.
    * </pre>
@@ -96,6 +114,8 @@ public interface DeidentifyContentRequestOrBuilder extends
    */
   boolean hasItem();
   /**
+   *
+   *
    * <pre>
    * The item to de-identify. Will be treated as text.
    * </pre>
@@ -104,6 +124,8 @@ public interface DeidentifyContentRequestOrBuilder extends
    */
   com.google.privacy.dlp.v2.ContentItem getItem();
   /**
+   *
+   *
    * <pre>
    * The item to de-identify. Will be treated as text.
    * </pre>
@@ -113,6 +135,8 @@ public interface DeidentifyContentRequestOrBuilder extends
   com.google.privacy.dlp.v2.ContentItemOrBuilder getItemOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional template to use. Any configuration directly specified in
    * inspect_config will override those set in the template. Singular fields
@@ -125,6 +149,8 @@ public interface DeidentifyContentRequestOrBuilder extends
    */
   java.lang.String getInspectTemplateName();
   /**
+   *
+   *
    * <pre>
    * Optional template to use. Any configuration directly specified in
    * inspect_config will override those set in the template. Singular fields
@@ -135,10 +161,11 @@ public interface DeidentifyContentRequestOrBuilder extends
    *
    * <code>string inspect_template_name = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getInspectTemplateNameBytes();
+  com.google.protobuf.ByteString getInspectTemplateNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional template to use. Any configuration directly specified in
    * deidentify_config will override those set in the template. Singular fields
@@ -151,6 +178,8 @@ public interface DeidentifyContentRequestOrBuilder extends
    */
   java.lang.String getDeidentifyTemplateName();
   /**
+   *
+   *
    * <pre>
    * Optional template to use. Any configuration directly specified in
    * deidentify_config will override those set in the template. Singular fields
@@ -161,6 +190,5 @@ public interface DeidentifyContentRequestOrBuilder extends
    *
    * <code>string deidentify_template_name = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getDeidentifyTemplateNameBytes();
+  com.google.protobuf.ByteString getDeidentifyTemplateNameBytes();
 }

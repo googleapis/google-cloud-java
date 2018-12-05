@@ -3,11 +3,14 @@
 
 package com.google.cloud.securitycenter.v1beta1;
 
-public interface RunAssetDiscoveryRequestOrBuilder extends
+public interface RunAssetDiscoveryRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.securitycenter.v1beta1.RunAssetDiscoveryRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Name of the organization to run asset discovery for. Its format is
    * "organizations/[organization_id]".
@@ -17,6 +20,8 @@ public interface RunAssetDiscoveryRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Name of the organization to run asset discovery for. Its format is
    * "organizations/[organization_id]".
@@ -24,6 +29,5 @@ public interface RunAssetDiscoveryRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 }

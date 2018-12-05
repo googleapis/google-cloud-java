@@ -23,13 +23,11 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 public class BigQueryOptionsTest {
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testInvalidTransport() {
     thrown.expect(IllegalArgumentException.class);
     BigQueryOptions.newBuilder().setTransportOptions(EasyMock.createMock(TransportOptions.class));
   }
-
 }

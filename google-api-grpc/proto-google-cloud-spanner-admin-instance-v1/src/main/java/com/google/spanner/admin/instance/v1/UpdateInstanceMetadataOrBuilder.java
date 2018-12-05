@@ -3,11 +3,14 @@
 
 package com.google.spanner.admin.instance.v1;
 
-public interface UpdateInstanceMetadataOrBuilder extends
+public interface UpdateInstanceMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.admin.instance.v1.UpdateInstanceMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The desired end state of the update.
    * </pre>
@@ -16,6 +19,8 @@ public interface UpdateInstanceMetadataOrBuilder extends
    */
   boolean hasInstance();
   /**
+   *
+   *
    * <pre>
    * The desired end state of the update.
    * </pre>
@@ -24,6 +29,8 @@ public interface UpdateInstanceMetadataOrBuilder extends
    */
   com.google.spanner.admin.instance.v1.Instance getInstance();
   /**
+   *
+   *
    * <pre>
    * The desired end state of the update.
    * </pre>
@@ -33,6 +40,8 @@ public interface UpdateInstanceMetadataOrBuilder extends
   com.google.spanner.admin.instance.v1.InstanceOrBuilder getInstanceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time at which [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
    * request was received.
@@ -42,6 +51,8 @@ public interface UpdateInstanceMetadataOrBuilder extends
    */
   boolean hasStartTime();
   /**
+   *
+   *
    * <pre>
    * The time at which [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
    * request was received.
@@ -51,6 +62,8 @@ public interface UpdateInstanceMetadataOrBuilder extends
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
+   *
+   *
    * <pre>
    * The time at which [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
    * request was received.
@@ -61,6 +74,8 @@ public interface UpdateInstanceMetadataOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time at which this operation was cancelled. If set, this operation is
    * in the process of undoing itself (which is guaranteed to succeed) and
@@ -71,6 +86,8 @@ public interface UpdateInstanceMetadataOrBuilder extends
    */
   boolean hasCancelTime();
   /**
+   *
+   *
    * <pre>
    * The time at which this operation was cancelled. If set, this operation is
    * in the process of undoing itself (which is guaranteed to succeed) and
@@ -81,6 +98,8 @@ public interface UpdateInstanceMetadataOrBuilder extends
    */
   com.google.protobuf.Timestamp getCancelTime();
   /**
+   *
+   *
    * <pre>
    * The time at which this operation was cancelled. If set, this operation is
    * in the process of undoing itself (which is guaranteed to succeed) and
@@ -92,6 +111,8 @@ public interface UpdateInstanceMetadataOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCancelTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time at which this operation failed or was completed successfully.
    * </pre>
@@ -100,6 +121,8 @@ public interface UpdateInstanceMetadataOrBuilder extends
    */
   boolean hasEndTime();
   /**
+   *
+   *
    * <pre>
    * The time at which this operation failed or was completed successfully.
    * </pre>
@@ -108,6 +131,8 @@ public interface UpdateInstanceMetadataOrBuilder extends
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
+   *
+   *
    * <pre>
    * The time at which this operation failed or was completed successfully.
    * </pre>

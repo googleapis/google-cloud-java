@@ -20,7 +20,6 @@ import static com.google.cloud.storage.contrib.nio.CloudStorageOptions.withMimeT
 import static com.google.cloud.storage.contrib.nio.CloudStorageOptions.withoutCaching;
 
 import com.google.cloud.storage.contrib.nio.CloudStorageOptions;
-
 import java.io.IOException;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
@@ -39,9 +38,12 @@ public class WriteFileWithAttributes {
   private static final String[] LINES = {"value1,", "value"};
 
   public static void main(String... args) throws IOException {
-    List<String> csvLines =  Arrays.asList(LINES);
+    List<String> csvLines = Arrays.asList(LINES);
     Path path = Paths.get(URI.create("gs://bucket/lolcat.csv"));
-    Files.write(path, csvLines, StandardCharsets.UTF_8,
+    Files.write(
+        path,
+        csvLines,
+        StandardCharsets.UTF_8,
         withMimeType("text/csv; charset=UTF-8"),
         withoutCaching());
   }

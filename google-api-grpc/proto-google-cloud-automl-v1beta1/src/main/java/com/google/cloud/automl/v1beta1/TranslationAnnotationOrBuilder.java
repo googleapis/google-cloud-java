@@ -3,11 +3,14 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface TranslationAnnotationOrBuilder extends
+public interface TranslationAnnotationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.TranslationAnnotation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only . The translated content.
    * </pre>
@@ -16,6 +19,8 @@ public interface TranslationAnnotationOrBuilder extends
    */
   boolean hasTranslatedContent();
   /**
+   *
+   *
    * <pre>
    * Output only . The translated content.
    * </pre>
@@ -24,6 +29,8 @@ public interface TranslationAnnotationOrBuilder extends
    */
   com.google.cloud.automl.v1beta1.TextSnippet getTranslatedContent();
   /**
+   *
+   *
    * <pre>
    * Output only . The translated content.
    * </pre>

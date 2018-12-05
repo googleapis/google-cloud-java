@@ -54,8 +54,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   DatastoreImpl(DatastoreOptions options) {
     super(options);
     this.datastoreRpc = options.getDatastoreRpcV1();
-    retrySettings = MoreObjects
-        .firstNonNull(options.getRetrySettings(), ServiceOptions.getNoRetrySettings());
+    retrySettings =
+        MoreObjects.firstNonNull(options.getRetrySettings(), ServiceOptions.getNoRetrySettings());
   }
 
   @Override
@@ -79,7 +79,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     private volatile TransactionOptions options;
     private volatile Transaction transaction;
 
-    ReadWriteTransactionCallable(Datastore datastore, TransactionCallable<T> callable, TransactionOptions options) {
+    ReadWriteTransactionCallable(
+        Datastore datastore, TransactionCallable<T> callable, TransactionOptions options) {
       this.datastore = datastore;
       this.callable = callable;
       this.options = options;
@@ -118,7 +119,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
         if (transaction.isActive()) {
           transaction.rollback();
         }
-        if (options != null && options.getModeCase().equals(TransactionOptions.ModeCase.READ_WRITE)) {
+        if (options != null
+            && options.getModeCase().equals(TransactionOptions.ModeCase.READ_WRITE)) {
           setPrevTransactionId(transaction.getTransactionId());
         }
       }
@@ -140,14 +142,15 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   }
 
   @Override
-  public <T> T runInTransaction(final TransactionCallable<T> callable, TransactionOptions transactionOptions) {
+  public <T> T runInTransaction(
+      final TransactionCallable<T> callable, TransactionOptions transactionOptions) {
     final DatastoreImpl self = this;
     try {
       return RetryHelper.runWithRetries(
-              new ReadWriteTransactionCallable<T>(self, callable, transactionOptions),
-              retrySettings,
-              TRANSACTION_EXCEPTION_HANDLER,
-              getOptions().getClock());
+          new ReadWriteTransactionCallable<T>(self, callable, transactionOptions),
+          retrySettings,
+          TRANSACTION_EXCEPTION_HANDLER,
+          getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -173,11 +176,13 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       return RetryHelper.runWithRetries(
           new Callable<com.google.datastore.v1.RunQueryResponse>() {
             @Override
-            public com.google.datastore.v1.RunQueryResponse call()
-                throws DatastoreException {
+            public com.google.datastore.v1.RunQueryResponse call() throws DatastoreException {
               return datastoreRpc.runQuery(requestPb);
             }
-          }, retrySettings, EXCEPTION_HANDLER, getOptions().getClock());
+          },
+          retrySettings,
+          EXCEPTION_HANDLER,
+          getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -199,7 +204,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   @Override
   public List<Key> allocateId(IncompleteKey... keys) {
-    Preconditions.checkArgument(verifyIncompleteKeyType(keys), "keys must be IncompleteKey instances");
+    Preconditions.checkArgument(
+        verifyIncompleteKeyType(keys), "keys must be IncompleteKey instances");
     if (keys.length == 0) {
       return Collections.emptyList();
     }
@@ -222,11 +228,13 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       return RetryHelper.runWithRetries(
           new Callable<com.google.datastore.v1.AllocateIdsResponse>() {
             @Override
-            public com.google.datastore.v1.AllocateIdsResponse call()
-                throws DatastoreException {
+            public com.google.datastore.v1.AllocateIdsResponse call() throws DatastoreException {
               return datastoreRpc.allocateIds(requestPb);
             }
-          }, retrySettings, EXCEPTION_HANDLER, getOptions().getClock());
+          },
+          retrySettings,
+          EXCEPTION_HANDLER,
+          getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -265,8 +273,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       } else {
         Preconditions.checkArgument(entity.hasKey(), "Entity %s is missing a key", entity);
       }
-      mutationsPb.add(com.google.datastore.v1.Mutation.newBuilder()
-          .setInsert(entity.toPb()).build());
+      mutationsPb.add(
+          com.google.datastore.v1.Mutation.newBuilder().setInsert(entity.toPb()).build());
     }
     com.google.datastore.v1.CommitResponse commitResponse = commitMutation(mutationsPb);
     Iterator<com.google.datastore.v1.MutationResult> mutationResults =
@@ -309,9 +317,10 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     com.google.datastore.v1.ReadOptions readOptionsPb = null;
     if (options != null
         && ReadOption.asImmutableMap(options).containsKey(EventualConsistency.class)) {
-      readOptionsPb = com.google.datastore.v1.ReadOptions.newBuilder()
-          .setReadConsistency(ReadConsistency.EVENTUAL)
-          .build();
+      readOptionsPb =
+          com.google.datastore.v1.ReadOptions.newBuilder()
+              .setReadConsistency(ReadConsistency.EVENTUAL)
+              .build();
     }
     return readOptionsPb;
   }
@@ -379,11 +388,13 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       return RetryHelper.runWithRetries(
           new Callable<com.google.datastore.v1.LookupResponse>() {
             @Override
-            public com.google.datastore.v1.LookupResponse call()
-                throws DatastoreException {
+            public com.google.datastore.v1.LookupResponse call() throws DatastoreException {
               return datastoreRpc.lookup(requestPb);
             }
-          }, retrySettings, EXCEPTION_HANDLER, getOptions().getClock());
+          },
+          retrySettings,
+          EXCEPTION_HANDLER,
+          getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -486,7 +497,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
             }
           },
           retrySettings,
-          EXCEPTION_HANDLER, getOptions().getClock());
+          EXCEPTION_HANDLER,
+          getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -509,7 +521,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
             }
           },
           retrySettings,
-          EXCEPTION_HANDLER, getOptions().getClock());
+          EXCEPTION_HANDLER,
+          getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -524,13 +537,17 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   void rollback(final com.google.datastore.v1.RollbackRequest requestPb) {
     try {
-      RetryHelper.runWithRetries(new Callable<Void>() {
-        @Override
-        public Void call() throws DatastoreException {
-          datastoreRpc.rollback(requestPb);
-          return null;
-        }
-      }, retrySettings, EXCEPTION_HANDLER, getOptions().getClock());
+      RetryHelper.runWithRetries(
+          new Callable<Void>() {
+            @Override
+            public Void call() throws DatastoreException {
+              datastoreRpc.rollback(requestPb);
+              return null;
+            }
+          },
+          retrySettings,
+          EXCEPTION_HANDLER,
+          getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }

@@ -3,33 +3,31 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface ErrorOrBuilder extends
+public interface ErrorOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.Error)
     com.google.protobuf.MessageOrBuilder {
 
-  /**
-   * <code>.google.rpc.Status details = 1;</code>
-   */
+  /** <code>.google.rpc.Status details = 1;</code> */
   boolean hasDetails();
-  /**
-   * <code>.google.rpc.Status details = 1;</code>
-   */
+  /** <code>.google.rpc.Status details = 1;</code> */
   com.google.rpc.Status getDetails();
-  /**
-   * <code>.google.rpc.Status details = 1;</code>
-   */
+  /** <code>.google.rpc.Status details = 1;</code> */
   com.google.rpc.StatusOrBuilder getDetailsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The times the error occurred.
    * </pre>
    *
    * <code>repeated .google.protobuf.Timestamp timestamps = 2;</code>
    */
-  java.util.List<com.google.protobuf.Timestamp> 
-      getTimestampsList();
+  java.util.List<com.google.protobuf.Timestamp> getTimestampsList();
   /**
+   *
+   *
    * <pre>
    * The times the error occurred.
    * </pre>
@@ -38,6 +36,8 @@ public interface ErrorOrBuilder extends
    */
   com.google.protobuf.Timestamp getTimestamps(int index);
   /**
+   *
+   *
    * <pre>
    * The times the error occurred.
    * </pre>
@@ -46,21 +46,23 @@ public interface ErrorOrBuilder extends
    */
   int getTimestampsCount();
   /**
+   *
+   *
    * <pre>
    * The times the error occurred.
    * </pre>
    *
    * <code>repeated .google.protobuf.Timestamp timestamps = 2;</code>
    */
-  java.util.List<? extends com.google.protobuf.TimestampOrBuilder> 
-      getTimestampsOrBuilderList();
+  java.util.List<? extends com.google.protobuf.TimestampOrBuilder> getTimestampsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The times the error occurred.
    * </pre>
    *
    * <code>repeated .google.protobuf.Timestamp timestamps = 2;</code>
    */
-  com.google.protobuf.TimestampOrBuilder getTimestampsOrBuilder(
-      int index);
+  com.google.protobuf.TimestampOrBuilder getTimestampsOrBuilder(int index);
 }

@@ -23,22 +23,22 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
-import org.junit.Test;
-
 import java.util.List;
 import java.util.Map;
+import org.junit.Test;
 
 public class InsertAllResponseTest {
 
-  private static final List<BigQueryError> ERRORS1 = ImmutableList.of(
-      new BigQueryError("reason1", "location1", "message1"),
-      new BigQueryError("reason2", "location2", "message2"));
-  private static final List<BigQueryError> ERRORS2 = ImmutableList.of(
-      new BigQueryError("reason3", "location3", "message3"),
-      new BigQueryError("reason4", "location4", "message4"));
-  private static final Map<Long, List<BigQueryError>> ERRORS_MAP = ImmutableMap.of(
-      0L, ERRORS1, 1L, ERRORS2);
+  private static final List<BigQueryError> ERRORS1 =
+      ImmutableList.of(
+          new BigQueryError("reason1", "location1", "message1"),
+          new BigQueryError("reason2", "location2", "message2"));
+  private static final List<BigQueryError> ERRORS2 =
+      ImmutableList.of(
+          new BigQueryError("reason3", "location3", "message3"),
+          new BigQueryError("reason4", "location4", "message4"));
+  private static final Map<Long, List<BigQueryError>> ERRORS_MAP =
+      ImmutableMap.of(0L, ERRORS1, 1L, ERRORS2);
   private static final InsertAllResponse INSERT_ALL_RESPONSE = new InsertAllResponse(ERRORS_MAP);
   private static final InsertAllResponse EMPTY_INSERT_ALL_RESPONSE = new InsertAllResponse(null);
 
@@ -55,7 +55,6 @@ public class InsertAllResponseTest {
     assertNull(INSERT_ALL_RESPONSE.getErrorsFor(2L));
   }
 
-
   @Test
   public void testHasErrors() {
     assertTrue(INSERT_ALL_RESPONSE.hasErrors());
@@ -64,10 +63,10 @@ public class InsertAllResponseTest {
 
   @Test
   public void testToPbAndFromPb() {
-    compareInsertAllResponse(INSERT_ALL_RESPONSE,
-        InsertAllResponse.fromPb(INSERT_ALL_RESPONSE.toPb()));
-    compareInsertAllResponse(EMPTY_INSERT_ALL_RESPONSE,
-        InsertAllResponse.fromPb(EMPTY_INSERT_ALL_RESPONSE.toPb()));
+    compareInsertAllResponse(
+        INSERT_ALL_RESPONSE, InsertAllResponse.fromPb(INSERT_ALL_RESPONSE.toPb()));
+    compareInsertAllResponse(
+        EMPTY_INSERT_ALL_RESPONSE, InsertAllResponse.fromPb(EMPTY_INSERT_ALL_RESPONSE.toPb()));
   }
 
   private void compareInsertAllResponse(InsertAllResponse expected, InsertAllResponse value) {

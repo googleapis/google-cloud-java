@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface ProductOrBuilder extends
+public interface ProductOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.Product)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resource name of the product.
    * Format is:
@@ -19,6 +22,8 @@ public interface ProductOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The resource name of the product.
    * Format is:
@@ -28,10 +33,11 @@ public interface ProductOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The user-provided name for this Product. Must not be empty. Must be at most
    * 4096 characters long.
@@ -41,6 +47,8 @@ public interface ProductOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * The user-provided name for this Product. Must not be empty. Must be at most
    * 4096 characters long.
@@ -48,10 +56,11 @@ public interface ProductOrBuilder extends
    *
    * <code>string display_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * User-provided metadata to be stored with this product. Must be at most 4096
    * characters long.
@@ -61,6 +70,8 @@ public interface ProductOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * User-provided metadata to be stored with this product. Must be at most 4096
    * characters long.
@@ -68,10 +79,11 @@ public interface ProductOrBuilder extends
    *
    * <code>string description = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * The category for the product identified by the reference image. This should
    * be either "homegoods" or "apparel".
@@ -82,6 +94,8 @@ public interface ProductOrBuilder extends
    */
   java.lang.String getProductCategory();
   /**
+   *
+   *
    * <pre>
    * The category for the product identified by the reference image. This should
    * be either "homegoods" or "apparel".
@@ -90,10 +104,11 @@ public interface ProductOrBuilder extends
    *
    * <code>string product_category = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getProductCategoryBytes();
+  com.google.protobuf.ByteString getProductCategoryBytes();
 
   /**
+   *
+   *
    * <pre>
    * Key-value pairs that can be attached to a product. At query time,
    * constraints can be specified based on the product_labels.
@@ -106,9 +121,10 @@ public interface ProductOrBuilder extends
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.Product.KeyValue product_labels = 5;</code>
    */
-  java.util.List<com.google.cloud.vision.v1p3beta1.Product.KeyValue> 
-      getProductLabelsList();
+  java.util.List<com.google.cloud.vision.v1p3beta1.Product.KeyValue> getProductLabelsList();
   /**
+   *
+   *
    * <pre>
    * Key-value pairs that can be attached to a product. At query time,
    * constraints can be specified based on the product_labels.
@@ -123,6 +139,8 @@ public interface ProductOrBuilder extends
    */
   com.google.cloud.vision.v1p3beta1.Product.KeyValue getProductLabels(int index);
   /**
+   *
+   *
    * <pre>
    * Key-value pairs that can be attached to a product. At query time,
    * constraints can be specified based on the product_labels.
@@ -137,6 +155,8 @@ public interface ProductOrBuilder extends
    */
   int getProductLabelsCount();
   /**
+   *
+   *
    * <pre>
    * Key-value pairs that can be attached to a product. At query time,
    * constraints can be specified based on the product_labels.
@@ -149,9 +169,11 @@ public interface ProductOrBuilder extends
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.Product.KeyValue product_labels = 5;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1p3beta1.Product.KeyValueOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1p3beta1.Product.KeyValueOrBuilder>
       getProductLabelsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Key-value pairs that can be attached to a product. At query time,
    * constraints can be specified based on the product_labels.
@@ -164,6 +186,5 @@ public interface ProductOrBuilder extends
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.Product.KeyValue product_labels = 5;</code>
    */
-  com.google.cloud.vision.v1p3beta1.Product.KeyValueOrBuilder getProductLabelsOrBuilder(
-      int index);
+  com.google.cloud.vision.v1p3beta1.Product.KeyValueOrBuilder getProductLabelsOrBuilder(int index);
 }

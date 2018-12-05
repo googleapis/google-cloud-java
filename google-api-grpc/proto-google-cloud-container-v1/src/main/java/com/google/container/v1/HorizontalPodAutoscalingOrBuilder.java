@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface HorizontalPodAutoscalingOrBuilder extends
+public interface HorizontalPodAutoscalingOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.HorizontalPodAutoscaling)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Whether the Horizontal Pod Autoscaling feature is enabled in the cluster.
    * When enabled, it ensures that a Heapster pod is running in the cluster,

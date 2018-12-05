@@ -20,7 +20,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 import com.google.api.services.translate.model.LanguagesResource;
-
 import org.junit.Test;
 
 public class LanguageTest {
@@ -40,7 +39,6 @@ public class LanguageTest {
     assertNull(language.getName());
     compareLanguage(LANGUAGE, Language.fromPb(LANGUAGE_PB));
   }
-
 
   private void compareLanguage(Language expected, Language value) {
     assertEquals(expected, value);
