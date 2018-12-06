@@ -46,16 +46,20 @@ public class HelloWorld {
 
     // [START connecting_to_bigtable]
     // Create the settings to configure a bigtable data client
-    BigtableDataSettings settings = BigtableDataSettings.newBuilder()
-        .setInstanceName(InstanceName.of(GCLOUD_PROJECT_ID, INSTANCE_ID)).build();
+    BigtableDataSettings settings =
+        BigtableDataSettings.newBuilder()
+            .setInstanceName(InstanceName.of(GCLOUD_PROJECT_ID, INSTANCE_ID))
+            .build();
 
     // Create bigtable data client
     BigtableDataClient dataClient = BigtableDataClient.create(settings);
 
     // Create the settings to configure a bigtable admin client
-    BigtableTableAdminSettings adminSettings = BigtableTableAdminSettings.newBuilder()
-        .setInstanceName(
-            com.google.bigtable.admin.v2.InstanceName.of(GCLOUD_PROJECT_ID, INSTANCE_ID)).build();
+    BigtableTableAdminSettings adminSettings =
+        BigtableTableAdminSettings.newBuilder()
+            .setInstanceName(
+                com.google.bigtable.admin.v2.InstanceName.of(GCLOUD_PROJECT_ID, INSTANCE_ID))
+            .build();
 
     // Create bigtable admin client
     BigtableTableAdminClient adminClient = BigtableTableAdminClient.create(adminSettings);
@@ -84,8 +88,8 @@ public class HelloWorld {
     }
   }
 
-  public static Table createTable(BigtableTableAdminClient adminClient, String TABLE_ID,
-      String COLUMN_FAMILY_ID) {
+  public static Table createTable(
+      BigtableTableAdminClient adminClient, String TABLE_ID, String COLUMN_FAMILY_ID) {
     // [START creating_a_table]
     Table table;
     if (!adminClient.exists(TABLE_ID)) {
@@ -100,8 +104,8 @@ public class HelloWorld {
     // [END creating_a_table]
   }
 
-  private static Table creatingTable(BigtableTableAdminClient adminClient, String TABLE_ID,
-      String COLUMN_FAMILY_ID) {
+  private static Table creatingTable(
+      BigtableTableAdminClient adminClient, String TABLE_ID, String COLUMN_FAMILY_ID) {
     CreateTableRequest createTableRequest =
         CreateTableRequest.of(TABLE_ID).addFamily(COLUMN_FAMILY_ID);
     System.out.println("Creating table: " + TABLE_ID);
@@ -109,13 +113,17 @@ public class HelloWorld {
     return table;
   }
 
-  public static RowMutation writeToTable(BigtableDataClient dataClient, String TABLE_ID,
-      String ROW_KEY_PREFIX, String COLUMN_FAMILY_ID, String COLUMN_QUALIFIER) {
+  public static RowMutation writeToTable(
+      BigtableDataClient dataClient,
+      String TABLE_ID,
+      String ROW_KEY_PREFIX,
+      String COLUMN_FAMILY_ID,
+      String COLUMN_QUALIFIER) {
     // [START writing_rows]
     RowMutation mutation = null;
     try {
       System.out.println("Write some greetings to the table:");
-      String[] greetings = { "Hello World!", "Hello Bigtable!", "Hello Java!" };
+      String[] greetings = {"Hello World!", "Hello Bigtable!", "Hello Java!"};
       for (int i = 0; i < greetings.length; i++) {
         RowMutation rowMutation = RowMutation.create(TABLE_ID, ROW_KEY_PREFIX + i);
         mutation = rowMutation.setCell(COLUMN_FAMILY_ID, COLUMN_QUALIFIER, greetings[i]);
@@ -129,8 +137,8 @@ public class HelloWorld {
     // [END writing_rows]
   }
 
-  public static Row readSingleRow(BigtableDataClient dataClient, String TABLE_ID,
-      String ROW_KEY_PREFIX) {
+  public static Row readSingleRow(
+      BigtableDataClient dataClient, String TABLE_ID, String ROW_KEY_PREFIX) {
     // [START reading_a_row]
     Row row = null;
     try {
@@ -138,8 +146,9 @@ public class HelloWorld {
       row = dataClient.readRow(TABLE_ID, ROW_KEY_PREFIX + 0);
       System.out.println("Row: " + row.getKey().toStringUtf8());
       for (RowCell cell : row.getCells()) {
-        System.out.printf("Family: %s    Qualifier: %s    Value: %s", cell.getFamily(),
-            cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
+        System.out.printf(
+            "Family: %s    Qualifier: %s    Value: %s",
+            cell.getFamily(), cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
       }
     } catch (Exception e) {
       System.out.println("Exception while reading a single row: " + e.getMessage());
@@ -158,8 +167,9 @@ public class HelloWorld {
       for (Row r : rowStream) {
         System.out.println("Row Key: " + r.getKey());
         for (RowCell cell : r.getCells()) {
-          System.out.printf("Family: %s    Qualifier: %s    Value: %s", cell.getFamily(),
-              cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
+          System.out.printf(
+              "Family: %s    Qualifier: %s    Value: %s",
+              cell.getFamily(), cell.getQualifier().toStringUtf8(), cell.getValue().toStringUtf8());
         }
       }
     } catch (Exception e) {

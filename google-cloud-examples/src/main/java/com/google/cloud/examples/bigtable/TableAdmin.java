@@ -42,9 +42,11 @@ public class TableAdmin {
 
     try {
       // Create the settings to configure a bigtable admin client
-      BigtableTableAdminSettings adminSettings = BigtableTableAdminSettings.newBuilder()
-          .setInstanceName(
-              com.google.bigtable.admin.v2.InstanceName.of(GCLOUD_PROJECT, INSTANCE_ID)).build();
+      BigtableTableAdminSettings adminSettings =
+          BigtableTableAdminSettings.newBuilder()
+              .setInstanceName(
+                  com.google.bigtable.admin.v2.InstanceName.of(GCLOUD_PROJECT, INSTANCE_ID))
+              .build();
 
       // Create bigtable admin client
       BigtableTableAdminClient adminClient = BigtableTableAdminClient.create(adminSettings);
@@ -175,8 +177,8 @@ public class TableAdmin {
     return table;
   }
 
-  public static Table maxVersionsRule(BigtableTableAdminClient adminClient, String TABLE_ID,
-      String cf) {
+  public static Table maxVersionsRule(
+      BigtableTableAdminClient adminClient, String TABLE_ID, String cf) {
     System.out.printf("\nCreating column family %s with max versions GC rule:\n", cf);
     // [START bigtable_create_family_gc_max_versions]
     // Create a column family with GC policy : most recent N versions
@@ -224,8 +226,8 @@ public class TableAdmin {
     return table;
   }
 
-  public static Table intersectionRule(BigtableTableAdminClient adminClient, String TABLE_ID,
-      String cf) {
+  public static Table intersectionRule(
+      BigtableTableAdminClient adminClient, String TABLE_ID, String cf) {
     System.out.printf("\nCreating column family %s with intersection GC rule:\n", cf);
     // [START bigtable_create_family_gc_intersection]
     // Create a column family with GC policy to drop data that matches all conditions
@@ -279,8 +281,8 @@ public class TableAdmin {
     return table;
   }
 
-  public static Collection<ColumnFamily> listColumnFamilies(BigtableTableAdminClient adminClient,
-      String TABLE_ID) {
+  public static Collection<ColumnFamily> listColumnFamilies(
+      BigtableTableAdminClient adminClient, String TABLE_ID) {
     System.out.println("\nPrinting ID and GC Rule for all column families:");
     // [START bigtable_list_column_families]
     // List all families in the table with GC rules
@@ -298,8 +300,8 @@ public class TableAdmin {
     return columnFamilies;
   }
 
-  public static Table modifyColumnFamilyRule(BigtableTableAdminClient adminClient, String TABLE_ID,
-      String cf) {
+  public static Table modifyColumnFamilyRule(
+      BigtableTableAdminClient adminClient, String TABLE_ID, String cf) {
     System.out.printf("\nUpdating column family %s GC rule:\n", cf);
     // [START bigtable_update_gc_rule]
     // Update the column family metadata to update the GC rule
@@ -319,8 +321,8 @@ public class TableAdmin {
     return table;
   }
 
-  public static ColumnFamily printModifiedColumnFamily(BigtableTableAdminClient adminClient,
-      String TABLE_ID, String cf) {
+  public static ColumnFamily printModifiedColumnFamily(
+      BigtableTableAdminClient adminClient, String TABLE_ID, String cf) {
     System.out.printf("\nPrint updated GC rule for column family: %s\n", cf);
     // [START bigtable_family_get_gc_rule]
     ColumnFamily colFamily = null;
@@ -334,15 +336,15 @@ public class TableAdmin {
         }
       }
     } catch (Exception ex) {
-      System.out
-          .printf("Error retrieving metadata for column family: %s\n%s\n", cf, ex.getMessage());
+      System.out.printf(
+          "Error retrieving metadata for column family: %s\n%s\n", cf, ex.getMessage());
     }
     // [END bigtable_family_get_gc_rule]
     return colFamily;
   }
 
-  public static Table deleteColumnFamily(BigtableTableAdminClient adminClient, String TABLE_ID,
-      String cf) {
+  public static Table deleteColumnFamily(
+      BigtableTableAdminClient adminClient, String TABLE_ID, String cf) {
     System.out.println("\nDelete column family: " + cf);
     // [START bigtable_delete_family]
     // Delete a column family
@@ -372,7 +374,8 @@ public class TableAdmin {
   }
 
   private static void printColumnFamily(ColumnFamily columnFamily) {
-    System.out.printf("Column family: %s\nMetadata: %s\n", columnFamily.getId(),
-        columnFamily.getGCRule().toString());
+    System.out.printf(
+        "Column family: %s\nMetadata: %s\n",
+        columnFamily.getId(), columnFamily.getGCRule().toString());
   }
 }

@@ -40,9 +40,11 @@ public class TableAdminTest {
 
   @BeforeClass
   public static void beforeClass() throws IOException {
-    adminSettings = BigtableTableAdminSettings.newBuilder()
-        .setInstanceName(com.google.bigtable.admin.v2.InstanceName.of(GCLOUD_PROJECT, INSTANCE_ID))
-        .build();
+    adminSettings =
+        BigtableTableAdminSettings.newBuilder()
+            .setInstanceName(
+                com.google.bigtable.admin.v2.InstanceName.of(GCLOUD_PROJECT, INSTANCE_ID))
+            .build();
     adminClient = BigtableTableAdminClient.create(adminSettings);
     if (!adminClient.exists(TABLE_ID)) {
       adminClient.createTable(CreateTableRequest.of(TABLE_ID).addFamily("cf"));

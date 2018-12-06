@@ -44,13 +44,16 @@ public class InstanceAdminTest {
   @BeforeClass
   public static void beforeClass() throws IOException {
     instanceAdminSettings =
-        BigtableInstanceAdminSettings.newBuilder().setProjectName(ProjectName.of(GCLOUD_PROJECT))
+        BigtableInstanceAdminSettings.newBuilder()
+            .setProjectName(ProjectName.of(GCLOUD_PROJECT))
             .build();
     adminClient = BigtableInstanceAdminClient.create(instanceAdminSettings);
     if (!adminClient.exists(PRODUCTION_INSTANCE)) {
-      adminClient.createInstance(CreateInstanceRequest.of(PRODUCTION_INSTANCE)
-          .addCluster(PRODUCTION_INSTANCE, "us-central1-f", 3, StorageType.SSD)
-          .setType(Type.PRODUCTION).addLabel("example", "instance_admin"));
+      adminClient.createInstance(
+          CreateInstanceRequest.of(PRODUCTION_INSTANCE)
+              .addCluster(PRODUCTION_INSTANCE, "us-central1-f", 3, StorageType.SSD)
+              .setType(Type.PRODUCTION)
+              .addLabel("example", "instance_admin"));
     }
   }
 

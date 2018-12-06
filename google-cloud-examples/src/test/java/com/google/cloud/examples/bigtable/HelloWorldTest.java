@@ -49,12 +49,14 @@ public class HelloWorldTest {
   @BeforeClass
   public static void beforeClass() throws IOException {
     settings =
-        BigtableDataSettings.newBuilder().setInstanceName(InstanceName.of(PROJECT_ID, INSTANCE_ID))
+        BigtableDataSettings.newBuilder()
+            .setInstanceName(InstanceName.of(PROJECT_ID, INSTANCE_ID))
             .build();
     dataClient = BigtableDataClient.create(settings);
-    adminSettings = BigtableTableAdminSettings.newBuilder()
-        .setInstanceName(com.google.bigtable.admin.v2.InstanceName.of(PROJECT_ID, INSTANCE_ID))
-        .build();
+    adminSettings =
+        BigtableTableAdminSettings.newBuilder()
+            .setInstanceName(com.google.bigtable.admin.v2.InstanceName.of(PROJECT_ID, INSTANCE_ID))
+            .build();
     adminClient = BigtableTableAdminClient.create(adminSettings);
     if (!adminClient.exists(TABLE_ID)) {
       adminClient.createTable(CreateTableRequest.of(TABLE_ID).addFamily(COLUMN_FAMILY_ID));
@@ -82,8 +84,9 @@ public class HelloWorldTest {
   @Test
   public void testWriteToAndReadFromTable() {
     // Write to table
-    RowMutation rowMutation = HelloWorld
-        .writeToTable(dataClient, TABLE_ID, ROW_KEY_PREFIX, COLUMN_FAMILY_ID, COLUMN_QUALIFIER);
+    RowMutation rowMutation =
+        HelloWorld.writeToTable(
+            dataClient, TABLE_ID, ROW_KEY_PREFIX, COLUMN_FAMILY_ID, COLUMN_QUALIFIER);
     assertNotNull(rowMutation);
 
     // Read a single row

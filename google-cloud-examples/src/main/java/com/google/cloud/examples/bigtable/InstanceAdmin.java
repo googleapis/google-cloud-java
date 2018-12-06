@@ -45,7 +45,8 @@ public class InstanceAdmin {
     try {
       // Create the settings to configure a bigtable admin client
       BigtableInstanceAdminSettings instanceAdminSettings =
-          BigtableInstanceAdminSettings.newBuilder().setProjectName(ProjectName.of(GCLOUD_PROJECT))
+          BigtableInstanceAdminSettings.newBuilder()
+              .setProjectName(ProjectName.of(GCLOUD_PROJECT))
               .build();
 
       // Create bigtable admin client
@@ -78,8 +79,8 @@ public class InstanceAdmin {
     }
   }
 
-  public static Instance createProdInstance(BigtableInstanceAdminClient adminClient,
-      String instanceID, String clusterID) {
+  public static Instance createProdInstance(
+      BigtableInstanceAdminClient adminClient, String instanceID, String clusterID) {
     System.out.println("Check if instance exists:");
     // [START bigtable_check_instance_exists]
     boolean found = false;
@@ -97,9 +98,11 @@ public class InstanceAdmin {
       // [START bigtable_create_prod_instance]
       // Create a Production Instance with the ID "ssd-instance"
       // cluster id "ssd-cluster", 3 nodes and location us-central1-f
-      CreateInstanceRequest createInstanceRequest = CreateInstanceRequest.of(instanceID)
-          .addCluster(clusterID, "us-central1-f", 3, StorageType.SSD).setType(Type.PRODUCTION)
-          .addLabel("example", "instance_admin");
+      CreateInstanceRequest createInstanceRequest =
+          CreateInstanceRequest.of(instanceID)
+              .addCluster(clusterID, "us-central1-f", 3, StorageType.SSD)
+              .setType(Type.PRODUCTION)
+              .addLabel("example", "instance_admin");
       // Create production instance with given request
       try {
         instance = adminClient.createInstance(createInstanceRequest);
@@ -155,8 +158,8 @@ public class InstanceAdmin {
     return instance;
   }
 
-  public static List<Cluster> listClusters(BigtableInstanceAdminClient adminClient,
-      String instanceID) {
+  public static List<Cluster> listClusters(
+      BigtableInstanceAdminClient adminClient, String instanceID) {
     System.out.println("\nListing Clusters:");
     // [START bigtable_get_clusters]
     List<Cluster> clusters = null;
@@ -185,15 +188,18 @@ public class InstanceAdmin {
     // [END bigtable_delete_instance]
   }
 
-  public static Cluster addCluster(BigtableInstanceAdminClient adminClient, String instanceID,
-      String clusterID) {
+  public static Cluster addCluster(
+      BigtableInstanceAdminClient adminClient, String instanceID, String clusterID) {
     Cluster cluster = null;
     System.out.println("\nAdding cluster to instance: " + instanceID);
     // [START bigtable_create_cluster]
     try {
-      cluster = adminClient.createCluster(
-          CreateClusterRequest.of(instanceID, clusterID).setZone("us-central1-c").setServeNodes(3)
-              .setStorageType(StorageType.SSD));
+      cluster =
+          adminClient.createCluster(
+              CreateClusterRequest.of(instanceID, clusterID)
+                  .setZone("us-central1-c")
+                  .setServeNodes(3)
+                  .setStorageType(StorageType.SSD));
       System.out.printf("Cluster: %s created successfully", cluster.getId());
     } catch (Exception e) {
       System.out.println("Error creating cluster: " + e.getMessage());
@@ -202,8 +208,8 @@ public class InstanceAdmin {
     return cluster;
   }
 
-  public static void deleteCluster(BigtableInstanceAdminClient adminClient, String instanceID,
-      String clusterID) {
+  public static void deleteCluster(
+      BigtableInstanceAdminClient adminClient, String instanceID, String clusterID) {
     System.out.println("\nDeleting Cluster");
     // [START bigtable_delete_cluster]
     try {
