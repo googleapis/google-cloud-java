@@ -95,6 +95,12 @@ def add_to_versions(ctx: Context) -> None:
     ctx.versions = versions
 
 def add_module_to_pom(pom: str, module_name: str) -> None:
+    """
+    Insert a new <module>name</module> into a pom.xml file.
+
+    This assumes that the modules are in alphabetical order and inserts it
+    in the correct place
+    """
     tree = etree.parse(pom)
     root = tree.getroot()
     modules = root.find("{http://maven.apache.org/POM/4.0.0}modules")
@@ -114,6 +120,7 @@ def add_module_to_pom(pom: str, module_name: str) -> None:
     tree.write(pom, pretty_print=True, xml_declaration=True, encoding="utf-8")
 
 def add_dependency_management_to_pom(pom: str, group: str, artifact: str, version: str) -> None:
+    """Adds a <dependency>...</depedency> section into a pom.xml file."""
     tree = etree.parse(pom)
     root = tree.getroot()
     dependencies = root.find("{http://maven.apache.org/POM/4.0.0}dependencyManagement/{http://maven.apache.org/POM/4.0.0}dependencies")
@@ -143,6 +150,7 @@ def add_dependency_management_to_pom(pom: str, group: str, artifact: str, versio
 
 
 def write_synthfile(ctx: Context) -> None:
+    """Creates a synth.py file from a template."""
     template = ctx.jinja_env.get_template("synth.py")
     synth = template.stream(
         version=ctx.api_version,
@@ -156,6 +164,7 @@ def write_synthfile(ctx: Context) -> None:
     synth.dump(str(path))
 
 def write_pom(template: str, path: str, ctx: Context, version: str) -> None:
+    """Creates a pom.xml file from a template."""
     template = ctx.jinja_env.get_template(template)
     pom = template.stream(
         api_version=ctx.api_version,
@@ -170,6 +179,7 @@ def write_pom(template: str, path: str, ctx: Context, version: str) -> None:
     pom.dump(str(path))
 
 def run_synthtool(ctx: Context) -> None:
+    """Runs synthtool for the initial client generation."""
     subprocess.run(
         [sys.executable, "synth.py"],
         check=True,
@@ -177,6 +187,7 @@ def run_synthtool(ctx: Context) -> None:
     )
 
 def update_stub_packages(ctx: Context) -> None:
+    """Updates the pom.xml documentation section to scrub certain packages."""
     # open google-cloud-clients/pom.xml and fix the Stub packages list
     pom = ctx.root_directory / "google-cloud-clients/pom.xml"
     tree = etree.parse(pom)
@@ -194,6 +205,7 @@ def update_stub_packages(ctx: Context) -> None:
     tree.write(pom, pretty_print=True, xml_declaration=True, encoding="utf-8")
 
 def write_readme(ctx: Context) -> None:
+    """Creates a README.md from a template."""
     template = ctx.jinja_env.get_template("README.md")
     pom = template.stream(
         api_version=ctx.api_version,
