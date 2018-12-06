@@ -118,7 +118,8 @@ public class CopyJobConfigurationTest {
 
   @Test
   public void testSetProjectId() {
-    CopyJobConfiguration configuration = COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.setProjectId(TEST_PROJECT_ID);
+    CopyJobConfiguration configuration =
+        COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.setProjectId(TEST_PROJECT_ID);
     assertEquals(TEST_PROJECT_ID, configuration.getDestinationTable().getProject());
     for (TableId sourceTable : configuration.getSourceTables()) {
       assertEquals(TEST_PROJECT_ID, sourceTable.getProject());
