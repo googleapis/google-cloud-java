@@ -21,6 +21,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.services.bigquery.model.JobConfigurationTableCopy;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects.ToStringHelper;
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.util.List;
@@ -216,10 +217,15 @@ public final class CopyJobConfiguration extends JobConfiguration {
             new Function<TableId, TableId>() {
               @Override
               public TableId apply(TableId tableId) {
-                return tableId.setProjectId(projectId);
+                if (Strings.isNullOrEmpty(tableId.getProject())) {
+                  return tableId.setProjectId(projectId);
+                }
+                return tableId;
               }
             }));
-    builder.setDestinationTable(getDestinationTable().setProjectId(projectId));
+    if (Strings.isNullOrEmpty(getDestinationTable().getProject())) {
+      builder.setDestinationTable(getDestinationTable().setProjectId(projectId));
+    }
     return builder.build();
   }
 
