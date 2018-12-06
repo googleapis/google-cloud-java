@@ -26,6 +26,7 @@ import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects.ToStringHelper;
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
@@ -769,7 +770,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
   @Override
   QueryJobConfiguration setProjectId(String projectId) {
     Builder builder = toBuilder();
-    if (getDestinationTable() != null) {
+    if (getDestinationTable() != null
+        && Strings.isNullOrEmpty(getDestinationTable().getProject())) {
       builder.setDestinationTable(getDestinationTable().setProjectId(projectId));
     }
     if (getDefaultDataset() != null) {
