@@ -946,6 +946,56 @@ public class BigQueryImplTest {
   }
 
   @Test
+  public void testInsertAllWithoutProject() {
+    Map<String, Object> row1 = ImmutableMap.<String, Object>of("field", "value1");
+    Map<String, Object> row2 = ImmutableMap.<String, Object>of("field", "value2");
+    List<RowToInsert> rows =
+        ImmutableList.of(new RowToInsert("row1", row1), new RowToInsert("row2", row2));
+    TableId tableId = TableId.of("", DATASET, TABLE);
+    InsertAllRequest request =
+        InsertAllRequest.newBuilder(tableId)
+            .setRows(rows)
+            .setSkipInvalidRows(false)
+            .setIgnoreUnknownValues(true)
+            .setTemplateSuffix("suffix")
+            .build();
+    TableDataInsertAllRequest requestPb =
+        new TableDataInsertAllRequest()
+            .setRows(
+                Lists.transform(
+                    rows,
+                    new Function<RowToInsert, TableDataInsertAllRequest.Rows>() {
+                      @Override
+                      public TableDataInsertAllRequest.Rows apply(RowToInsert rowToInsert) {
+                        return new TableDataInsertAllRequest.Rows()
+                            .setInsertId(rowToInsert.getId())
+                            .setJson(rowToInsert.getContent());
+                      }
+                    }))
+            .setSkipInvalidRows(false)
+            .setIgnoreUnknownValues(true)
+            .setTemplateSuffix("suffix");
+    TableDataInsertAllResponse responsePb =
+        new TableDataInsertAllResponse()
+            .setInsertErrors(
+                ImmutableList.of(
+                    new TableDataInsertAllResponse.InsertErrors()
+                        .setIndex(0L)
+                        .setErrors(ImmutableList.of(new ErrorProto().setMessage("ErrorMessage")))));
+    EasyMock.expect(bigqueryRpcMock.insertAll(OTHER_PROJECT, DATASET, TABLE, requestPb))
+        .andReturn(responsePb);
+    EasyMock.replay(bigqueryRpcMock);
+    BigQueryOptions bigQueryOptions =
+        createBigQueryOptionsForProject(OTHER_PROJECT, rpcFactoryMock);
+    bigquery = bigQueryOptions.getService();
+    InsertAllResponse response = bigquery.insertAll(request);
+    assertNotNull(response.getErrorsFor(0L));
+    assertNull(response.getErrorsFor(1L));
+    assertEquals(1, response.getErrorsFor(0L).size());
+    assertEquals("ErrorMessage", response.getErrorsFor(0L).get(0).getMessage());
+  }
+
+  @Test
   public void testListTableData() {
     EasyMock.expect(bigqueryRpcMock.listTableData(PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS))
         .andReturn(TABLE_DATA_PB);
