@@ -34,6 +34,10 @@
             <groupId>com.google.api.grpc</groupId>
             <artifactId>grpc-google-cloud-bigquerystorage-v1beta1</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.google.api</groupId>
+            <artifactId>gax-grpc</artifactId>
+        </dependency>
 
         <!-- Test dependencies -->
         <dependency>
@@ -46,11 +50,6 @@
             <groupId>com.google.api</groupId>
             <artifactId>gax-grpc</artifactId>
             <classifier>testlib</classifier>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.api</groupId>
-            <artifactId>gax</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -73,14 +72,6 @@
             <groupId>io.grpc</groupId>
             <artifactId>grpc-testing</artifactId>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.api</groupId>
-            <artifactId>gax</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.google.api</groupId>
-            <artifactId>gax-grpc</artifactId>
         </dependency>
     </dependencies>
 </project>
