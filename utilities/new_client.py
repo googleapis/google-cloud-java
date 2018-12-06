@@ -55,9 +55,11 @@ class Context:
         )
 
     def path(self, suffix) -> str:
+        """Helper to generate a path from the repository root."""
         return os.path.join(self.root_directory, suffix)
 
 def add_to_versions(ctx: Context) -> None:
+    """Add the new artifact's versions to the versions.txt manifest."""
     versions = []
 
     # read from versions.txt
@@ -70,28 +72,21 @@ def add_to_versions(ctx: Context) -> None:
 
             versions.append(releasetool.ArtifactVersions(version_line))
 
+    # Add new versions unless the artifacts already exist in the versions.txt manifest
     ctx.google_cloud_version = next((v for v in versions if v.module == ctx.google_cloud_artifact), None)
     if not ctx.google_cloud_version:
-        # insert new versions
-        # use scheduler API for new api versions
-        version = copy.deepcopy(next(v for v in versions if v.module == 'google-cloud-scheduler'))
-        version.module = ctx.google_cloud_artifact
-        versions.append(version)
-        ctx.google_cloud_version = version
+        ctx.google_cloud_version = releasetool.ArtifactVersions(f"{ctx.google_cloud_artifact}:0.0.0-alpha:0.0.1-alpha-SNAPSHOT")
+        versions.append(ctx.google_cloud_version)
 
     ctx.proto_version = next((v for v in versions if v.module == ctx.proto_artifact), None)
     if not ctx.proto_version:
-        version = copy.deepcopy(next(v for v in versions if v.module == 'proto-google-cloud-scheduler-v1beta1'))
-        version.module = ctx.proto_artifact
-        versions.append(version)
-        ctx.proto_version = version
+        ctx.proto_version = releasetool.ArtifactVersions(f"{ctx.proto_artifact}:0.0.0-alpha:0.0.1-alpha-SNAPSHOT")
+        versions.append(ctx.proto_version)
 
     ctx.grpc_version = next((v for v in versions if v.module == ctx.grpc_artifact), None)
     if not ctx.grpc_version:
-        version = copy.deepcopy(next(v for v in versions if v.module == 'grpc-google-cloud-scheduler-v1beta1'))
-        version.module = ctx.grpc_artifact
-        versions.append(version)
-        ctx.grpc_version = version
+        ctx.grpc_version = releasetool.ArtifactVersions(f"{ctx.grpc_artifact}:0.0.0-alpha:0.0.1-alpha-SNAPSHOT")
+        versions.append(ctx.grpc_version)
 
     # sort by name
     versions.sort(key=lambda v: v.module)
