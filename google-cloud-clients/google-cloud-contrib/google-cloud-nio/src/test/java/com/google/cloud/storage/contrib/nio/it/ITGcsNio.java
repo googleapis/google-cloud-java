@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright 2016 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -72,17 +72,17 @@ import java.util.logging.Logger;
 /**
  * Integration test for google-cloud-nio.
  *
- * <p>This test actually talks to Google Cloud Storage (you need an account) and tests both reading
+ * <p>This test talks to Google Cloud Storage (you need an account) and tests both reading
  * and writing. You *must* set the {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable for
  * this test to work. It must contain the name of a local file that contains your Service Account
- * JSON Key. We use the project in those credentials.
+ * JSON Key. 
  *
  * <p>See <a href="https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts">
  * Service Accounts</a> for instructions on how to get the Service Account JSON Key.
  *
  * <p>The short version is this: go to cloud.google.com/console, select your project, search for
  * "API manager", click "Credentials", click "create credentials/service account key", new service
- * account, JSON. The contents of the file that's sent to your browsers is your
+ * account, JSON. The contents of the file that's sent to your browser is your
  * "Service Account JSON Key".
  */
 @RunWith(JUnit4.class)
@@ -100,8 +100,8 @@ public class ITGcsNio {
   private static final String SML_FILE = "tmp-test-small-file.txt";
   private static final String TMP_FILE = "tmp/tmp-test-rnd-file.txt";
   private static final int SML_SIZE = 100;
-  private static final String BIG_FILE = "tmp-test-big-file.txt"; // it's big, relatively speaking.
-  private static final int BIG_SIZE = 2 * 1024 * 1024 - 50; // arbitrary size that's not too round.
+  private static final String BIG_FILE = "tmp-test-big-file.txt"; // This indicates a big file size.
+  private static final int BIG_SIZE = 2 * 1024 * 1024 - 50; // This indicates an arbitrary size that's not too round.
   private static final String PREFIX = "tmp-test-file";
   private static String project;
   private static Storage storage;
@@ -111,12 +111,12 @@ public class ITGcsNio {
 
   @BeforeClass
   public static void beforeClass() throws IOException {
-    // loads the credentials from local disk as par README
+    // Loads the credentials from the local disk as per README. 
     RemoteStorageHelper gcsHelper = RemoteStorageHelper.create();
     storageOptions = gcsHelper.getOptions();
     project = storageOptions.getProjectId();
     storage = storageOptions.getService();
-    // create and populate test bucket
+    // Creates and populates the test bucket. 
     storage.create(BucketInfo.of(BUCKET));
     fillFile(storage, BUCKET, SML_FILE, SML_SIZE);
     fillFile(storage, BUCKET, BIG_FILE, BIG_SIZE);
@@ -152,14 +152,14 @@ public class ITGcsNio {
         BlobTargetOption.userProject(project));
   }
 
-  // Start of tests related to the "requester pays" feature
+  // Starts the tests for the "requester pays" feature.
   @Ignore("blocked by #3448")
   @Test
   public void testFileExistsRequesterPaysNoUserProject() throws IOException {
     CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, "");
     Path path = testBucket.getPath(SML_FILE);
     try {
-      // fails because we must pay for every access, including metadata.
+      // The test fails because the requester must pay for every access, including metadata.
       Files.exists(path);
       Assert.fail("It should have thrown an exception.");
     } catch (StorageException sex) {
@@ -171,7 +171,7 @@ public class ITGcsNio {
   public void testFileExistsRequesterPays() throws IOException {
     CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, project);
     Path path = testBucket.getPath(SML_FILE);
-    // should succeed because we specified a project
+    // The test succeeds when the requester specifies a project.
     Files.exists(path);
   }
 
@@ -179,7 +179,7 @@ public class ITGcsNio {
   public void testFileExistsRequesterPaysWithAutodetect() throws IOException {
     CloudStorageFileSystem testBucket = getRequesterPaysBucket(true, project);
     Path path = testBucket.getPath(SML_FILE);
-    // should succeed because we specified a project
+    // The test succeeds when the requester specifies a project.
     Files.exists(path);
   }
 
@@ -201,7 +201,7 @@ public class ITGcsNio {
   public void testCanCreateWithUserProject() throws IOException {
     CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, project);
     Path path = testBucket.getPath(TMP_FILE);
-    // should succeed because we specified a project
+    // The test succeeds when the requester specifies a project.
     Files.write(path, "I would like to write, please?".getBytes());
   }
   
@@ -211,7 +211,7 @@ public class ITGcsNio {
     CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, "");
     Path path = testBucket.getPath(SML_FILE);
     try {
-      // fails
+      // The test fails.
       Files.readAllBytes(path);
       Assert.fail("It should have thrown an exception.");
     } catch (StorageException sex) {
@@ -223,7 +223,7 @@ public class ITGcsNio {
   public void testCanReadWithUserProject() throws IOException {
     CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, project);
     Path path = testBucket.getPath(SML_FILE);
-    // should succeed because we specified a project
+    // The test succeeds when requester specifies a project
     Files.readAllBytes(path);
   }
 
@@ -236,7 +236,7 @@ public class ITGcsNio {
     CloudStoragePath[] dests = new CloudStoragePath[] {testBucket.getPath(TMP_FILE), testRPBucket.getPath(TMP_FILE) };
     for (int s=0; s<2; s++) {
       for (int d=0; d<2; d++) {
-        // normal to normal is out of scope of RP testing.
+        // Normal to normal is out of scope of RP testing.
         if (s==0 && d==0) {
           continue;
         }
@@ -245,7 +245,7 @@ public class ITGcsNio {
     }
   }
 
-  // Try to copy the file, make sure that we were prevented.
+  // Copy the file, and make sure that it fails.
   private void innerTestCantCopyWithoutUserProject(boolean sourceNormal, boolean destNormal, Path source, Path dest) throws IOException {
     String sdesc = (sourceNormal?"normal bucket":"requester-pays bucket");
     String ddesc = (destNormal?"normal bucket":"requester-pays bucket");
@@ -253,8 +253,8 @@ public class ITGcsNio {
     try {
       Files.copy(source, dest);
       Assert.fail("Shouldn't have been able to copy from " + sdesc + " to " + ddesc);
-      // for some reason this throws "GoogleJsonResponseException" instead of "StorageException"
-      // when going from requester pays bucket to requester pays bucket, but otherwise we get a
+      // This throws "GoogleJsonResponseException" instead of "StorageException"
+      // when going from requester pays bucket to requester pays bucket, but otherwise requester gets a
       // normal StorageException.
     } catch (HttpResponseException hex) {
       Assert.assertEquals(description, hex.getStatusCode(), 400);
@@ -272,7 +272,7 @@ public class ITGcsNio {
     CloudStoragePath[] dests = new CloudStoragePath[] {testBucket.getPath(TMP_FILE), testRPBucket.getPath(TMP_FILE)};
     for (int s = 0; s < 2; s++) {
       for (int d = 0; d < 2; d++) {
-        // normal to normal is out of scope of RP testing.
+        // Normal to normal is out of scope of RP testing.
         if (s == 0 && d == 0) {
           continue;
         }
@@ -302,7 +302,7 @@ public class ITGcsNio {
     Assert.assertTrue(message, sex.getMessage().contains("Bucket is requester pays bucket but no user project provided"));
   }
 
-  // End of tests related to the "requester pays" feature
+  // End of tests for the "requester pays" feature
 
   @Test
   public void testListBuckets() throws IOException {
@@ -371,7 +371,7 @@ public class ITGcsNio {
     SeekableByteChannel chan = Files.newByteChannel(path, StandardOpenOption.READ);
     assertThat(chan.size()).isEqualTo(size);
 
-    // check seek
+    // Checks the seek function. 
     int dest = size / 2;
     chan.position(dest);
     readFully(chan, sample);
@@ -392,7 +392,7 @@ public class ITGcsNio {
   public void testCreate() throws IOException {
     CloudStorageFileSystem testBucket = getTestBucket();
     Path path = testBucket.getPath(PREFIX + randomSuffix());
-    // file shouldn't exist initially. If it does it's either because it's a leftover
+    // file shouldn't exist initially. If it does, it's either because it's a leftover
     // from a previous run (so we should delete the file)
     // or because we're misconfigured and pointing to an actually important file
     // (so we should absolutely not delete it).
