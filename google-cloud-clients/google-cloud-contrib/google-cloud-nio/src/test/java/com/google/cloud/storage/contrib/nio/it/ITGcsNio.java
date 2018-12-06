@@ -326,7 +326,6 @@ public class ITGcsNio {
         message,
         ioex.getMessage().contains("Bucket is requester pays bucket but no user project provided"));
   }
-
   // End of tests related to the "requester pays" feature
 
   @Test
