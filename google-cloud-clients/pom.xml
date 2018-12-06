@@ -744,7 +744,7 @@
                 </reportSet>
               </reportSets>
               <configuration>
-                <doclint>false</doclint>
+                <doclint>none</doclint>
                 <aggregate>true</aggregate>
                 <show>protected</show>
                 <nohelp>true</nohelp>
@@ -853,7 +853,7 @@
           </reportSet>
         </reportSets>
         <configuration>
-          <doclint>false</doclint>
+          <doclint>none</doclint>
           <show>protected</show>
           <nohelp>true</nohelp>
           <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
@@ -928,7 +928,7 @@
               <links>
                 <link>http://google.github.io/google-auth-library-java/releases/latest/apidocs/</link>
               </links>
-              <doclint>false</doclint>
+              <doclint>none</doclint>
             </configuration>
           </plugin>
           <plugin>
