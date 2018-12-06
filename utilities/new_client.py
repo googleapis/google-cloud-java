@@ -16,8 +16,8 @@
 # Usage: python new_client.py -v <api version> -s <service name> -c <path to config>
 
 import argparse
-import copy
 import os
+import pathlib
 import re
 import sys
 import subprocess
@@ -39,7 +39,8 @@ class Context:
     grpc_version: releasetool.Version = None
     proto_artifact: str = None
     proto_version: releasetool.Version = None
-    root_directory: str = None
+    root_directory: pathlib.Path = \
+        pathlib.Path(os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..')))
     description: str = "FIXME"
     name: str = "FIXME"
     versions: List[str] = None
@@ -49,21 +50,16 @@ class Context:
         self.google_cloud_artifact = f'google-cloud-{self.service}'
         self.grpc_artifact = f'grpc-google-cloud-{self.service}-{self.api_version}'
         self.proto_artifact = f'proto-google-cloud-{self.service}-{self.api_version}'
-        self.root_directory = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..'))
         self.jinja_env = Environment(
-            loader=FileSystemLoader(self.path('utilities/templates'))
+            loader=FileSystemLoader(str(self.root_directory / 'utilities/templates'))
         )
-
-    def path(self, suffix) -> str:
-        """Helper to generate a path from the repository root."""
-        return os.path.join(self.root_directory, suffix)
 
 def add_to_versions(ctx: Context) -> None:
     """Add the new artifact's versions to the versions.txt manifest."""
     versions = []
 
     # read from versions.txt
-    versions_path = ctx.path('versions.txt')
+    versions_path = ctx.root_directory / 'versions.txt'
     with open(versions_path) as f:
         for line in f:
             version_line = line.strip()
@@ -155,11 +151,11 @@ def write_synthfile(ctx: Context) -> None:
         service=ctx.service,
         config_path=ctx.artman_config,
     )
-    path = ctx.path(f'google-cloud-clients/{ctx.google_cloud_artifact}/synth.py')
+    path = ctx.root_directory / 'google-cloud-clients' / ctx.google_cloud_artifact / 'synth.py'
     directory = os.path.dirname(path)
     if not os.path.isdir(directory):
         os.makedirs(directory)
-    synth.dump(path)
+    synth.dump(str(path))
 
 def write_pom(template: str, path: str, ctx: Context, version: str) -> None:
     template = ctx.jinja_env.get_template(template)
@@ -173,18 +169,18 @@ def write_pom(template: str, path: str, ctx: Context, version: str) -> None:
     directory = os.path.dirname(path)
     if not os.path.isdir(directory):
         os.makedirs(directory)
-    pom.dump(path)
+    pom.dump(str(path))
 
 def run_synthtool(ctx: Context) -> None:
     subprocess.run(
         [sys.executable, 'synth.py'],
         check=True,
-        cwd=ctx.path(f'google-cloud-clients/{ctx.google_cloud_artifact}')
+        cwd=ctx.root_directory / 'google-cloud-clients' / ctx.google_cloud_artifact
     )
 
 def update_stub_packages(ctx: Context) -> None:
     # open google-cloud-clients/pom.xml and fix the Stub packages list
-    pom = ctx.path('google-cloud-clients/pom.xml')
+    pom = ctx.root_directory / 'google-cloud-clients/pom.xml'
     tree = etree.parse(pom)
 
     grpc_artifacts = [v.module for v in ctx.versions if v.module.startswith('grpc-')]
@@ -208,7 +204,7 @@ def write_readme(ctx: Context) -> None:
         service=ctx.service,
         version=ctx.google_cloud_version
     )
-    path = ctx.path(f'google-cloud-clients/{ctx.google_cloud_artifact}/README.md')
+    path = ctx.root_directory / 'google-cloud-clients' / ctx.google_cloud_artifact / 'README.md'
     directory = os.path.dirname(path)
     if not os.path.isdir(directory):
         os.makedirs(directory)
@@ -233,39 +229,39 @@ run_synthtool(ctx)
 write_pom(
     ctx=ctx,
     template="cloud_pom.xml",
-    path=ctx.path(f'google-cloud-clients/{ctx.google_cloud_artifact}/pom.xml'),
+    path=ctx.root_directory / 'google-cloud-clients' / ctx.google_cloud_artifact / 'pom.xml',
     version=ctx.google_cloud_version.current
 )
 add_module_to_pom(
-    pom=ctx.path('google-cloud-clients/pom.xml'),
+    pom=ctx.root_directory / 'google-cloud-clients/pom.xml',
     module_name='google-cloud-iamcredentials'
 )
 add_dependency_management_to_pom(
-    pom=ctx.path('google-api-grpc/pom.xml'),
+    pom=ctx.root_directory /  'google-api-grpc/pom.xml',
     group='com.google.api.grpc',
     artifact=ctx.proto_artifact,
     version=str(ctx.proto_version.current)
 )
 add_dependency_management_to_pom(
-    pom=ctx.path('google-api-grpc/pom.xml'),
+    pom=ctx.root_directory / 'google-api-grpc/pom.xml',
     group='com.google.api.grpc',
     artifact=ctx.grpc_artifact,
     version=str(ctx.grpc_version.current)
 )
 add_dependency_management_to_pom(
-    pom=ctx.path('google-cloud-bom/pom.xml'),
+    pom=ctx.root_directory / 'google-cloud-bom/pom.xml',
     group='com.google.api.grpc',
     artifact=ctx.proto_artifact,
     version=str(ctx.proto_version.current)
 )
 add_dependency_management_to_pom(
-    pom=ctx.path('google-cloud-bom/pom.xml'),
+    pom=ctx.root_directory / 'google-cloud-bom/pom.xml',
     group='com.google.api.grpc',
     artifact=ctx.grpc_artifact,
     version=str(ctx.grpc_version.current)
 )
 add_dependency_management_to_pom(
-    pom=ctx.path('google-cloud-bom/pom.xml'),
+    pom=ctx.root_directory / 'google-cloud-bom/pom.xml',
     group='com.google.cloud',
     artifact=ctx.google_cloud_artifact,
     version=str(ctx.google_cloud_version.current)
@@ -273,21 +269,21 @@ add_dependency_management_to_pom(
 write_pom(
     ctx=ctx,
     template="proto_pom.xml",
-    path=ctx.path(f'google-api-grpc/{ctx.proto_artifact}/pom.xml'),
+    path=ctx.root_directory / 'google-api-grpc' / ctx.proto_artifact / 'pom.xml',
     version=ctx.proto_version.current
 )
 write_pom(
     ctx=ctx,
     template="grpc_pom.xml",
-    path=ctx.path(f'google-api-grpc/{ctx.grpc_artifact}/pom.xml'),
+    path=ctx.root_directory / 'google-api-grpc' / ctx.grpc_artifact / 'pom.xml',
     version=ctx.grpc_version.current
 )
 add_module_to_pom(
-    pom=ctx.path('google-api-grpc/pom.xml'),
+    pom=ctx.root_directory /  'google-api-grpc/pom.xml',
     module_name=ctx.grpc_artifact
 )
 add_module_to_pom(
-    pom=ctx.path('google-api-grpc/pom.xml'),
+    pom=ctx.root_directory / 'google-api-grpc/pom.xml',
     module_name=ctx.proto_artifact
 )
 update_stub_packages(ctx)
