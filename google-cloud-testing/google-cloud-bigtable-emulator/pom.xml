@@ -2,13 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <parent>
-    <artifactId>google-cloud-testing</artifactId>
-    <groupId>com.google.cloud</groupId>
-    <version>0.72.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-testing:current} -->
-  </parent>
   <modelVersion>4.0.0</modelVersion>
 
+  <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigtable-emulator</artifactId>
   <version>0.72.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
 
@@ -25,6 +21,18 @@
 
   <build>
     <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+          <encoding>UTF-8</encoding>
+          <compilerArgument>-Xlint:unchecked</compilerArgument>
+          <compilerArgument>-Xlint:deprecation</compilerArgument>
+          <showDeprecation>true</showDeprecation>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gcloud-maven-plugin</artifactId>
@@ -66,6 +74,18 @@
     </plugins>
   </build>
 
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-bom</artifactId>
+        <version>0.72.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bom:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
     <!-- grpc deps are provided by the client -->
     <dependency>
@@ -91,6 +111,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
+      <version>4.12</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
@@ -98,6 +119,7 @@
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
+      <version>0.30</version>
       <scope>test</scope>
     </dependency>
 
