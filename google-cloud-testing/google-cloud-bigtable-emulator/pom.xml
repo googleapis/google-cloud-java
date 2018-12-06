@@ -6,7 +6,7 @@
 
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigtable-emulator</artifactId>
-  <version>0.74.0-alpha</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
+  <version>0.73.0-alpha</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
 
   <properties>
     <site.installationModule>google-cloud-testing</site.installationModule>
@@ -40,7 +40,7 @@
       <plugin>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gcloud-maven-plugin</artifactId>
-        <version>0.74.0-alpha</version><!-- {x-version-update:google-cloud-gcloud-maven-plugin:current} -->
+        <version>0.73.0-alpha</version><!-- {x-version-update:google-cloud-gcloud-maven-plugin:current} -->
 
         <executions>
           <execution>
@@ -92,7 +92,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.74.0-alpha</version><!-- {x-version-update:google-cloud-bom:current} -->
+        <version>0.73.0-alpha</version><!-- {x-version-update:google-cloud-bom:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
