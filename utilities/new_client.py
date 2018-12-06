@@ -210,81 +210,84 @@ def write_readme(ctx: Context) -> None:
         os.makedirs(directory)
     pom.dump(path)
 
+def main():
+    parser = argparse.ArgumentParser(description='Create a new client')
+    parser.add_argument('-v', required=True, help='API version (i.e. v1)')
+    parser.add_argument('-c', required=True, help='Path to config in googleapis/googleapis')
+    parser.add_argument('-s', required=True, help='Service name')
+    args = parser.parse_args()
 
-parser = argparse.ArgumentParser(description='Create a new client')
-parser.add_argument('-v', required=True, help='API version (i.e. v1)')
-parser.add_argument('-c', required=True, help='Path to config in googleapis/googleapis')
-parser.add_argument('-s', required=True, help='Service name')
-args = parser.parse_args()
+    ctx = Context(
+        api_version=args.v,
+        service=args.s,
+        artman_config=args.c
+    )
 
-ctx = Context(
-    api_version=args.v,
-    service=args.s,
-    artman_config=args.c
-)
+    add_to_versions(ctx)
+    write_synthfile(ctx)
+    run_synthtool(ctx)
+    write_pom(
+        ctx=ctx,
+        template="cloud_pom.xml",
+        path=ctx.root_directory / 'google-cloud-clients' / ctx.google_cloud_artifact / 'pom.xml',
+        version=ctx.google_cloud_version.current
+    )
+    add_module_to_pom(
+        pom=ctx.root_directory / 'google-cloud-clients/pom.xml',
+        module_name='google-cloud-iamcredentials'
+    )
+    add_dependency_management_to_pom(
+        pom=ctx.root_directory /  'google-api-grpc/pom.xml',
+        group='com.google.api.grpc',
+        artifact=ctx.proto_artifact,
+        version=str(ctx.proto_version.current)
+    )
+    add_dependency_management_to_pom(
+        pom=ctx.root_directory / 'google-api-grpc/pom.xml',
+        group='com.google.api.grpc',
+        artifact=ctx.grpc_artifact,
+        version=str(ctx.grpc_version.current)
+    )
+    add_dependency_management_to_pom(
+        pom=ctx.root_directory / 'google-cloud-bom/pom.xml',
+        group='com.google.api.grpc',
+        artifact=ctx.proto_artifact,
+        version=str(ctx.proto_version.current)
+    )
+    add_dependency_management_to_pom(
+        pom=ctx.root_directory / 'google-cloud-bom/pom.xml',
+        group='com.google.api.grpc',
+        artifact=ctx.grpc_artifact,
+        version=str(ctx.grpc_version.current)
+    )
+    add_dependency_management_to_pom(
+        pom=ctx.root_directory / 'google-cloud-bom/pom.xml',
+        group='com.google.cloud',
+        artifact=ctx.google_cloud_artifact,
+        version=str(ctx.google_cloud_version.current)
+    )
+    write_pom(
+        ctx=ctx,
+        template="proto_pom.xml",
+        path=ctx.root_directory / 'google-api-grpc' / ctx.proto_artifact / 'pom.xml',
+        version=ctx.proto_version.current
+    )
+    write_pom(
+        ctx=ctx,
+        template="grpc_pom.xml",
+        path=ctx.root_directory / 'google-api-grpc' / ctx.grpc_artifact / 'pom.xml',
+        version=ctx.grpc_version.current
+    )
+    add_module_to_pom(
+        pom=ctx.root_directory /  'google-api-grpc/pom.xml',
+        module_name=ctx.grpc_artifact
+    )
+    add_module_to_pom(
+        pom=ctx.root_directory / 'google-api-grpc/pom.xml',
+        module_name=ctx.proto_artifact
+    )
+    update_stub_packages(ctx)
+    write_readme(ctx)
 
-add_to_versions(ctx)
-write_synthfile(ctx)
-run_synthtool(ctx)
-write_pom(
-    ctx=ctx,
-    template="cloud_pom.xml",
-    path=ctx.root_directory / 'google-cloud-clients' / ctx.google_cloud_artifact / 'pom.xml',
-    version=ctx.google_cloud_version.current
-)
-add_module_to_pom(
-    pom=ctx.root_directory / 'google-cloud-clients/pom.xml',
-    module_name='google-cloud-iamcredentials'
-)
-add_dependency_management_to_pom(
-    pom=ctx.root_directory /  'google-api-grpc/pom.xml',
-    group='com.google.api.grpc',
-    artifact=ctx.proto_artifact,
-    version=str(ctx.proto_version.current)
-)
-add_dependency_management_to_pom(
-    pom=ctx.root_directory / 'google-api-grpc/pom.xml',
-    group='com.google.api.grpc',
-    artifact=ctx.grpc_artifact,
-    version=str(ctx.grpc_version.current)
-)
-add_dependency_management_to_pom(
-    pom=ctx.root_directory / 'google-cloud-bom/pom.xml',
-    group='com.google.api.grpc',
-    artifact=ctx.proto_artifact,
-    version=str(ctx.proto_version.current)
-)
-add_dependency_management_to_pom(
-    pom=ctx.root_directory / 'google-cloud-bom/pom.xml',
-    group='com.google.api.grpc',
-    artifact=ctx.grpc_artifact,
-    version=str(ctx.grpc_version.current)
-)
-add_dependency_management_to_pom(
-    pom=ctx.root_directory / 'google-cloud-bom/pom.xml',
-    group='com.google.cloud',
-    artifact=ctx.google_cloud_artifact,
-    version=str(ctx.google_cloud_version.current)
-)
-write_pom(
-    ctx=ctx,
-    template="proto_pom.xml",
-    path=ctx.root_directory / 'google-api-grpc' / ctx.proto_artifact / 'pom.xml',
-    version=ctx.proto_version.current
-)
-write_pom(
-    ctx=ctx,
-    template="grpc_pom.xml",
-    path=ctx.root_directory / 'google-api-grpc' / ctx.grpc_artifact / 'pom.xml',
-    version=ctx.grpc_version.current
-)
-add_module_to_pom(
-    pom=ctx.root_directory /  'google-api-grpc/pom.xml',
-    module_name=ctx.grpc_artifact
-)
-add_module_to_pom(
-    pom=ctx.root_directory / 'google-api-grpc/pom.xml',
-    module_name=ctx.proto_artifact
-)
-update_stub_packages(ctx)
-write_readme(ctx)
+if __name__ == "__main__":
+    main()
