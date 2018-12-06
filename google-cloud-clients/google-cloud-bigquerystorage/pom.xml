@@ -40,11 +40,6 @@
         </dependency>
 
         <!-- Test dependencies -->
-        <dependency>
-            <groupId>com.google.api</groupId>
-            <artifactId>gax-grpc</artifactId>
-            <scope>test</scope>
-        </dependency>
         <!-- Need testing utility classes for generated gRPC clients tests -->
         <dependency>
             <groupId>com.google.api</groupId>
