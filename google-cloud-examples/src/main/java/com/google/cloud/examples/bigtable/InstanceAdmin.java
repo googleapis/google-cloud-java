@@ -88,14 +88,15 @@ public class InstanceAdmin {
     } catch (Exception e) {
       System.out.println("Error checking if instance exists: " + e.getMessage());
     }
+    // [END bigtable_check_instance_exists]
 
     Instance instance = null;
-    // Create instance if does not exists
+    // Create an instance if does not exists
     if (!found) {
       System.out.println("Instance does not exist, creating a PRODUCTION instance:");
       // [START bigtable_create_prod_instance]
-      // Creates a Production Instance with the ID "ssd-instance"
-      // with cluster id "ssd-cluster", 3 nodes and location us-central1-f
+      // Create a Production Instance with the ID "ssd-instance"
+      // cluster id "ssd-cluster", 3 nodes and location us-central1-f
       CreateInstanceRequest createInstanceRequest = CreateInstanceRequest.of(instanceID)
           .addCluster(clusterID, "us-central1-f", 3, StorageType.SSD).setType(Type.PRODUCTION)
           .addLabel("example", "instance_admin");
@@ -203,7 +204,6 @@ public class InstanceAdmin {
 
   public static void deleteCluster(BigtableInstanceAdminClient adminClient, String instanceID,
       String clusterID) {
-    // [START bigtable_delete_cluster]
     System.out.println("\nDeleting Cluster");
     // [START bigtable_delete_cluster]
     try {

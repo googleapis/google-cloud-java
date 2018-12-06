@@ -71,11 +71,11 @@ public class HelloWorldTest {
   @Test
   public void testCreateAndDeleteTable() {
     // Create table
-    Table table = TableAdmin.createTable(adminClient, "fake-table");
+    Table table = HelloWorld.createTable(adminClient, "fake-table", "fake-column-family-id");
     assertNotNull(table);
 
     // Delete table
-    TableAdmin.deleteTable(adminClient, "fake-table");
+    HelloWorld.deleteTable(adminClient, "fake-table");
     assertTrue(!adminClient.exists("fake-table"));
   }
 

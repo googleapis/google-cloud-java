@@ -45,7 +45,7 @@ public class HelloWorld {
     }
 
     // [START connecting_to_bigtable]
-    // create the settings to configure a bigtable data client
+    // Create the settings to configure a bigtable data client
     BigtableDataSettings settings = BigtableDataSettings.newBuilder()
         .setInstanceName(InstanceName.of(GCLOUD_PROJECT_ID, INSTANCE_ID)).build();
 
@@ -87,15 +87,26 @@ public class HelloWorld {
   public static Table createTable(BigtableTableAdminClient adminClient, String TABLE_ID,
       String COLUMN_FAMILY_ID) {
     // [START creating_a_table]
-    Table table = null;
+    Table table;
     if (!adminClient.exists(TABLE_ID)) {
-      CreateTableRequest createTableRequest =
-          CreateTableRequest.of(TABLE_ID).addFamily(COLUMN_FAMILY_ID);
-      System.out.println("Creating table: " + TABLE_ID);
-      table = adminClient.createTable(createTableRequest);
+      table = creatingTable(adminClient, TABLE_ID, COLUMN_FAMILY_ID);
+    } else {
+      // Delete and recreate table
+      System.out.println("Deleting existing table and creating new one");
+      adminClient.deleteTable(TABLE_ID);
+      table = creatingTable(adminClient, TABLE_ID, COLUMN_FAMILY_ID);
     }
     return table;
     // [END creating_a_table]
+  }
+
+  private static Table creatingTable(BigtableTableAdminClient adminClient, String TABLE_ID,
+      String COLUMN_FAMILY_ID) {
+    CreateTableRequest createTableRequest =
+        CreateTableRequest.of(TABLE_ID).addFamily(COLUMN_FAMILY_ID);
+    System.out.println("Creating table: " + TABLE_ID);
+    Table table = adminClient.createTable(createTableRequest);
+    return table;
   }
 
   public static RowMutation writeToTable(BigtableDataClient dataClient, String TABLE_ID,
