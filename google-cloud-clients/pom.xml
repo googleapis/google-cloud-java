@@ -237,6 +237,12 @@
         <version>v2-rev20170525-1.27.0</version>
       </dependency>
       <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-core</artifactId>
+        <version>1.54.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
+        <type>test-jar</type>
+      </dependency>
+      <dependency>
         <groupId>org.json</groupId>
         <artifactId>json</artifactId>
         <version>20160810</version>
@@ -350,11 +356,6 @@
         <groupId>com.google.auth</groupId>
         <artifactId>google-auth-library-oauth2-http</artifactId>
         <version>${google.auth.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.netty</groupId>
-        <artifactId>netty-tcnative-boringssl-static</artifactId>
-        <version>${nettyssl.version}</version>
       </dependency>
       <dependency>
         <groupId>io.opencensus</groupId>
@@ -582,7 +583,7 @@
           </execution>
         </executions>
         <configuration>
-          <forkedProcessTimeoutInSeconds>600</forkedProcessTimeoutInSeconds>
+          <forkedProcessTimeoutInSeconds>1200</forkedProcessTimeoutInSeconds>
           <reportNameSuffix>sponge_log</reportNameSuffix>
         </configuration>
       </plugin>
@@ -733,7 +734,7 @@
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-javadoc-plugin</artifactId>
-              <version>2.10.3</version>
+              <version>3.0.1</version>
               <reportSets>
                 <reportSet>
                   <id>html</id>
@@ -743,6 +744,7 @@
                 </reportSet>
               </reportSets>
               <configuration>
+                <doclint>false</doclint>
                 <aggregate>true</aggregate>
                 <show>protected</show>
                 <nohelp>true</nohelp>
@@ -851,6 +853,7 @@
           </reportSet>
         </reportSets>
         <configuration>
+          <doclint>false</doclint>
           <show>protected</show>
           <nohelp>true</nohelp>
           <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
@@ -912,7 +915,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
-            <version>2.10.3</version>
+            <version>3.0.1</version>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
@@ -925,6 +928,7 @@
               <links>
                 <link>http://google.github.io/google-auth-library-java/releases/latest/apidocs/</link>
               </links>
+              <doclint>false</doclint>
             </configuration>
           </plugin>
           <plugin>

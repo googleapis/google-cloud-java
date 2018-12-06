@@ -22,12 +22,15 @@ import static org.junit.Assert.assertNull;
 
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
+import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
 import java.util.List;
 import org.junit.Test;
 
 public class CopyJobConfigurationTest {
 
+  private static final String TEST_PROJECT_ID = "test-project-id";
   private static final TableId SOURCE_TABLE = TableId.of("dataset", "sourceTable");
   private static final List<TableId> SOURCE_TABLES =
       ImmutableList.of(
@@ -115,10 +118,34 @@ public class CopyJobConfigurationTest {
 
   @Test
   public void testSetProjectId() {
-    CopyJobConfiguration configuration = COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.setProjectId("p");
-    assertEquals("p", configuration.getDestinationTable().getProject());
+    CopyJobConfiguration configuration =
+        COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.setProjectId(TEST_PROJECT_ID);
+    assertEquals(TEST_PROJECT_ID, configuration.getDestinationTable().getProject());
     for (TableId sourceTable : configuration.getSourceTables()) {
-      assertEquals("p", sourceTable.getProject());
+      assertEquals(TEST_PROJECT_ID, sourceTable.getProject());
+    }
+  }
+
+  @Test
+  public void testSetProjectIdDoNotOverride() {
+    CopyJobConfiguration configuration =
+        COPY_JOB_CONFIGURATION_MULTIPLE_TABLES
+            .toBuilder()
+            .setSourceTables(
+                Lists.transform(
+                    SOURCE_TABLES,
+                    new Function<TableId, TableId>() {
+                      @Override
+                      public TableId apply(TableId tableId) {
+                        return tableId.setProjectId(TEST_PROJECT_ID);
+                      }
+                    }))
+            .setDestinationTable(DESTINATION_TABLE.setProjectId(TEST_PROJECT_ID))
+            .build()
+            .setProjectId("do-not-update");
+    assertEquals(TEST_PROJECT_ID, configuration.getDestinationTable().getProject());
+    for (TableId sourceTable : configuration.getSourceTables()) {
+      assertEquals(TEST_PROJECT_ID, sourceTable.getProject());
     }
   }
 

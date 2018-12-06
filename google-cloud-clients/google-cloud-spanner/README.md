@@ -41,12 +41,10 @@ section in the base directory's README.
 
 ## About Cloud Spanner
 
-[Cloud Spanner][cloud-spanner] is a fully managed, mission-critical relational database service
-built from the ground up and battle tested for transactional consistency, high
-availability, and global scale. With traditional relational semantics (schemas,
-ACID transactions, SQL) and automatic, synchronous replication for high
-availability, Cloud Spanner is the only database service of its kind on the
-market.
+[Cloud Spanner][cloud-spanner] is a fully managed, mission-critical, 
+relational database service that offers transactional consistency at global scale, 
+schemas, SQL (ANSI 2011 with extensions), and automatic, synchronous replication 
+for high availability.
 
 Be sure to activate the Cloud Spanner API on the Developer's Console to
 use Cloud Spanner from your project.

@@ -287,6 +287,9 @@ public class HttpStorageRpc implements StorageRpc {
                   storageObject,
                   new InputStreamContent(storageObject.getContentType(), content));
       insert.getMediaHttpUploader().setDirectUploadEnabled(true);
+      Boolean disableGzipContent = Option.IF_DISABLE_GZIP_CONTENT.getBoolean(options);
+      if (disableGzipContent != null)
+        insert.getMediaHttpUploader().setDisableGZipContent(disableGzipContent);
       setEncryptionHeaders(insert.getRequestHeaders(), ENCRYPTION_KEY_PREFIX, options);
       return insert
           .setProjection(DEFAULT_PROJECTION)
@@ -715,14 +718,19 @@ public class HttpStorageRpc implements StorageRpc {
       int code;
       String message;
       IOException exception = null;
+      HttpResponse response = null;
       try {
-        HttpResponse response = httpRequest.execute();
+        response = httpRequest.execute();
         code = response.getStatusCode();
         message = response.getStatusMessage();
       } catch (HttpResponseException ex) {
         exception = ex;
         code = ex.getStatusCode();
         message = ex.getStatusMessage();
+      } finally {
+        if (response != null) {
+          response.disconnect();
+        }
       }
       if (!last && code != 308 || last && !(code == 200 || code == 201)) {
         if (exception != null) {

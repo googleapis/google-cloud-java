@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.bigquery.model.JobConfigurationExtract;
 import com.google.common.base.MoreObjects.ToStringHelper;
+import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
 import java.util.Objects;
@@ -215,7 +216,10 @@ public final class ExtractJobConfiguration extends JobConfiguration {
 
   @Override
   ExtractJobConfiguration setProjectId(String projectId) {
-    return toBuilder().setSourceTable(getSourceTable().setProjectId(projectId)).build();
+    if (Strings.isNullOrEmpty(getSourceTable().getProject())) {
+      return toBuilder().setSourceTable(getSourceTable().setProjectId(projectId)).build();
+    }
+    return this;
   }
 
   @Override

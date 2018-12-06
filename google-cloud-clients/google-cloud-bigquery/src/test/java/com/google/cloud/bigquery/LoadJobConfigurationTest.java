@@ -29,6 +29,7 @@ import org.junit.Test;
 
 public class LoadJobConfigurationTest {
 
+  private static final String TEST_PROJECT_ID = "test-project-id";
   private static final CsvOptions CSV_OPTIONS =
       CsvOptions.newBuilder()
           .setAllowJaggedRows(true)
@@ -146,8 +147,19 @@ public class LoadJobConfigurationTest {
 
   @Test
   public void testSetProjectId() {
-    LoadConfiguration configuration = LOAD_CONFIGURATION_CSV.setProjectId("p");
-    assertEquals("p", configuration.getDestinationTable().getProject());
+    LoadConfiguration configuration = LOAD_CONFIGURATION_CSV.setProjectId(TEST_PROJECT_ID);
+    assertEquals(TEST_PROJECT_ID, configuration.getDestinationTable().getProject());
+  }
+
+  @Test
+  public void testSetProjectIdDoNotOverride() {
+    LoadConfiguration configuration =
+        LOAD_CONFIGURATION_CSV
+            .toBuilder()
+            .setDestinationTable(TABLE_ID.setProjectId(TEST_PROJECT_ID))
+            .build()
+            .setProjectId("do-not-update");
+    assertEquals(TEST_PROJECT_ID, configuration.getDestinationTable().getProject());
   }
 
   @Test
