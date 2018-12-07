@@ -167,7 +167,7 @@ public class BigtableDataClient implements AutoCloseable {
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
    */
   public Row readRow(String tableId, ByteString rowKey) {
-    return ApiExceptions.callAndTranslateApiException(readRowAsync(tableId, rowKey));
+    return ApiExceptions.callAndTranslateApiException(readRowAsync(tableId, rowKey, null));
   }
 
   /**
@@ -198,7 +198,8 @@ public class BigtableDataClient implements AutoCloseable {
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
    */
   public Row readRow(String tableId, String rowKey) {
-    return ApiExceptions.callAndTranslateApiException(readRowAsync(tableId, rowKey));
+    return ApiExceptions.callAndTranslateApiException(
+        readRowAsync(tableId, ByteString.copyFromUtf8(rowKey), null));
   }
 
   /**
@@ -234,7 +235,8 @@ public class BigtableDataClient implements AutoCloseable {
    * @throws com.google.api.gax.rpc.ApiException when a serverside error occurs
    */
   public Row readRow(String tableId, String rowKey, @Nullable Filter filter) {
-    return readRow(tableId, ByteString.copyFromUtf8(rowKey), filter);
+    return ApiExceptions.callAndTranslateApiException(
+        readRowAsync(tableId, ByteString.copyFromUtf8(rowKey), filter));
   }
 
   /**
@@ -304,7 +306,7 @@ public class BigtableDataClient implements AutoCloseable {
    * }</pre>
    */
   public ApiFuture<Row> readRowAsync(String tableId, String rowKey) {
-    return readRowAsync(tableId, ByteString.copyFromUtf8(rowKey));
+    return readRowAsync(tableId, ByteString.copyFromUtf8(rowKey), null);
   }
 
   /**
@@ -338,7 +340,7 @@ public class BigtableDataClient implements AutoCloseable {
    * }</pre>
    */
   public ApiFuture<Row> readRowAsync(String tableId, ByteString rowKey) {
-    return readRowsCallable().first().futureCall(Query.create(tableId).rowKey(rowKey));
+    return readRowAsync(tableId, rowKey, null);
   }
 
   /**
@@ -416,9 +418,9 @@ public class BigtableDataClient implements AutoCloseable {
    * }</pre>
    */
   public ApiFuture<Row> readRowAsync(String tableId, ByteString rowKey, @Nullable Filter filter) {
-    return readRowsCallable()
-        .first()
-        .futureCall(Query.create(tableId).rowKey(rowKey).filter(filter));
+    Query baseQuery = Query.create(tableId).rowKey(rowKey);
+    Query query = (filter != null) ? baseQuery.filter(filter) : baseQuery;
+    return readRowsCallable().first().futureCall(query);
   }
 
   /**
