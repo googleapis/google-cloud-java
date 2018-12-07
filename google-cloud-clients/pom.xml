@@ -157,6 +157,7 @@
     <bom.version>0.73.1-alpha-SNAPSHOT</bom.version><!-- {x-version-update:google-cloud-bom:current} -->
     <api-client.version>1.27.0</api-client.version>
     <gax.version>1.35.0</gax.version>
+    <api.common.java.version>1.7.0</api.common.java.version>
     <google.auth.version>0.12.0</google.auth.version>
     <grpc.version>1.16.1</grpc.version>
     <nettyssl.version>2.0.7.Final</nettyssl.version>
@@ -779,7 +780,7 @@
                   <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
                   <link>http://google.github.io/google-auth-library-java/releases/latest/apidocs/</link>
                   <link>http://googleapis.github.io/gax-java/${gax.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/all/latest/apidocs/</link>
+                  <link>https://googleapis.github.io/api-common-java/${api.common.java.version}/apidocs/</link>
                 </links>
               </configuration>
             </plugin>
