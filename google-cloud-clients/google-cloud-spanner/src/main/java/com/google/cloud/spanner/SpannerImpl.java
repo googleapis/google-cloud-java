@@ -1319,7 +1319,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           shouldRollback = false;
         } catch (Exception e) {
           txnLogger.log(Level.FINE, "User-provided TransactionCallable raised exception", e);
-          if (txn.isAborted()) {
+          if (txn.isAborted() || (e instanceof AbortedException)) {
             span.addAnnotation(
                 "Transaction Attempt Aborted in user operation. Retrying",
                 ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
