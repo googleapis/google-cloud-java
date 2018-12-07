@@ -166,8 +166,8 @@ public class ITGcsNio {
       // fails because we must pay for every access, including metadata.
       Files.exists(path);
       Assert.fail("It should have thrown an exception.");
-    } catch (StorageException sex) {
-      assertIsRequesterPaysException("testFileExistsRequesterPaysNoUserProject", sex);
+    } catch (StorageException ex) {
+      assertIsRequesterPaysException("testFileExistsRequesterPaysNoUserProject", ex);
     }
   }
 
@@ -196,8 +196,8 @@ public class ITGcsNio {
       // fails
       Files.write(path, "I would like to write".getBytes());
       Assert.fail("It should have thrown an exception.");
-    } catch (StorageException sex) {
-      assertIsRequesterPaysException("testCantCreateWithoutUserProject", sex);
+    } catch (StorageException ex) {
+      assertIsRequesterPaysException("testCantCreateWithoutUserProject", ex);
     }
   }
 
@@ -218,8 +218,8 @@ public class ITGcsNio {
       // fails
       Files.readAllBytes(path);
       Assert.fail("It should have thrown an exception.");
-    } catch (StorageException sex) {
-      assertIsRequesterPaysException("testCantReadWithoutUserProject", sex);
+    } catch (StorageException ex) {
+      assertIsRequesterPaysException("testCantReadWithoutUserProject", ex);
     }
   }
 
@@ -269,8 +269,8 @@ public class ITGcsNio {
           description,
           hex.getMessage()
               .contains("Bucket is requester pays bucket but no user project provided"));
-    } catch (StorageException sex) {
-      assertIsRequesterPaysException(description, sex);
+    } catch (StorageException ex) {
+      assertIsRequesterPaysException(description, ex);
     }
   }
 
@@ -317,11 +317,11 @@ public class ITGcsNio {
         "");
   }
 
-  private void assertIsRequesterPaysException(String message, StorageException sex) {
-    Assert.assertEquals(message, sex.getCode(), 400);
+  private void assertIsRequesterPaysException(String message, StorageException ex) {
+    Assert.assertEquals(message, ex.getCode(), 400);
     Assert.assertTrue(
         message,
-        sex.getMessage().contains("Bucket is requester pays bucket but no user project provided"));
+        ex.getMessage().contains("Bucket is requester pays bucket but no user project provided"));
   }
 
   // End of tests related to the "requester pays" feature
