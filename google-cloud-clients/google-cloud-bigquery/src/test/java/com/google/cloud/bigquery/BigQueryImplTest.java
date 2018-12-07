@@ -39,6 +39,7 @@ import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.google.api.services.bigquery.model.TableDataList;
 import com.google.api.services.bigquery.model.TableRow;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.ServiceRpc;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
@@ -951,7 +952,7 @@ public class BigQueryImplTest {
     Map<String, Object> row2 = ImmutableMap.<String, Object>of("field", "value2");
     List<RowToInsert> rows =
         ImmutableList.of(new RowToInsert("row1", row1), new RowToInsert("row2", row2));
-    TableId tableId = TableId.of("", DATASET, TABLE);
+    TableId tableId = TableId.of("p1", DATASET, TABLE);
     InsertAllRequest request =
         InsertAllRequest.newBuilder(tableId)
             .setRows(rows)
@@ -989,6 +990,7 @@ public class BigQueryImplTest {
         createBigQueryOptionsForProject(OTHER_PROJECT, rpcFactoryMock);
     bigquery = bigQueryOptions.getService();
     InsertAllResponse response = bigquery.insertAll(request);
+    assertEquals("p1", request.getTable().getProject());
     assertNotNull(response.getErrorsFor(0L));
     assertNull(response.getErrorsFor(1L));
     assertEquals(1, response.getErrorsFor(0L).size());

@@ -578,7 +578,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                   @Override
                   public TableDataInsertAllResponse call() throws Exception {
                     return bigQueryRpc.insertAll(
-                        tableId.getProject(), tableId.getDataset(), tableId.getTable(), requestPb);
+                    		getOptions().getProjectId(), tableId.getDataset(), tableId.getTable(), requestPb);
                   }
                 },
                 getOptions().getRetrySettings(),
@@ -590,7 +590,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     } else {
       responsePb =
           bigQueryRpc.insertAll(
-              tableId.getProject(), tableId.getDataset(), tableId.getTable(), requestPb);
+        		  getOptions().getProjectId(), tableId.getDataset(), tableId.getTable(), requestPb);
     }
 
     return InsertAllResponse.fromPb(responsePb);
