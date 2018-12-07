@@ -6,7 +6,30 @@
 
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigtable-emulator</artifactId>
-  <version>0.72.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
+  <version>0.73.0-alpha</version><!-- {x-version-update:google-cloud-bigtable-emulator:current} -->
+  <name>Google Cloud Java - Bigtable Emulator</name>
+  <url>https://github.com/googleapis/google-cloud-java</url>
+  <description>
+    A Java wrapper for the Cloud Bigtable emulator.
+  </description>
+  <scm>
+    <connection>scm:git:git@github.com:googleapis/google-cloud-java.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git</developerConnection>
+    <url>https://github.com/googleapis/google-cloud-java</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <developers>
+    <developer>
+      <id>igorberstein</id>
+      <name>Igor Bernstein</name>
+      <email>igorbernstein@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
 
   <properties>
     <site.installationModule>google-cloud-testing</site.installationModule>
@@ -22,6 +45,12 @@
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
   </distributionManagement>
+  <licenses>
+    <license>
+      <name>Apache-2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
 
   <build>
     <plugins>
@@ -40,7 +69,7 @@
       <plugin>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-gcloud-maven-plugin</artifactId>
-        <version>0.72.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-gcloud-maven-plugin:current} -->
+        <version>0.73.0-alpha</version><!-- {x-version-update:google-cloud-gcloud-maven-plugin:current} -->
 
         <executions>
           <execution>
@@ -92,7 +121,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.72.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-bom:current} -->
+        <version>0.73.0-alpha</version><!-- {x-version-update:google-cloud-bom:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -182,7 +211,7 @@
               <links>
                 <link>http://google.github.io/google-auth-library-java/releases/latest/apidocs/</link>
               </links>
-              <doclint>false</doclint>
+              <doclint>none</doclint>
             </configuration>
           </plugin>
           <plugin>
