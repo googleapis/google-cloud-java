@@ -245,10 +245,13 @@ public class AddressClientTest {
   public void getAddressTest() {
     ProjectGlobalAddressName address2 = ProjectGlobalAddressName.of("[PROJECT]", "[ADDRESS]");
     String networkTier = "networkTier-19473069";
+    String purpose = "purpose-220463842";
     String addressType = "addressType264307877";
     String kind = "kind3292052";
     String description = "description-1724546052";
+    ProjectGlobalNetworkName network = ProjectGlobalNetworkName.of("[PROJECT]", "[NETWORK]");
     String selfLink = "selfLink-1691268851";
+    Integer prefixLength = 1157046989;
     String ipVersion = "ipVersion-1315653184";
     ProjectRegionSubnetworkName subnetwork =
         ProjectRegionSubnetworkName.of("[PROJECT]", "[REGION]", "[SUBNETWORK]");
@@ -261,10 +264,13 @@ public class AddressClientTest {
         Address.newBuilder()
             .setAddress(address2.toString())
             .setNetworkTier(networkTier)
+            .setPurpose(purpose)
             .setAddressType(addressType)
             .setKind(kind)
             .setDescription(description)
+            .setNetwork(network.toString())
             .setSelfLink(selfLink)
+            .setPrefixLength(prefixLength)
             .setIpVersion(ipVersion)
             .setSubnetwork(subnetwork.toString())
             .setCreationTimestamp(creationTimestamp)

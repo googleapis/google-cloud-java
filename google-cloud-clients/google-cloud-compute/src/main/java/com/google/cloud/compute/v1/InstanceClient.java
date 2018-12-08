@@ -786,8 +786,9 @@ public class InstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param instance Instance name.
-   * @param deviceName Disk device name to detach.
+   * @param instance Instance name for this request.
+   * @param deviceName The device name of the disk to detach. Make a get() request on the instance
+   *     to view currently attached disks and device names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -815,8 +816,9 @@ public class InstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param instance Instance name.
-   * @param deviceName Disk device name to detach.
+   * @param instance Instance name for this request.
+   * @param deviceName The device name of the disk to detach. Make a get() request on the instance
+   *     to view currently attached disks and device names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1615,7 +1617,7 @@ public class InstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource Name of the resource for this request.
+   * @param resource Name or id of the resource for this request.
    * @param deletionProtection Whether the resource should be protected against deletion.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1645,7 +1647,7 @@ public class InstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource Name of the resource for this request.
+   * @param resource Name or id of the resource for this request.
    * @param deletionProtection Whether the resource should be protected against deletion.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1729,9 +1731,10 @@ public class InstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param instance The instance name.
+   * @param instance The instance name for this request.
    * @param autoDelete Whether to auto-delete the disk when the instance is deleted.
-   * @param deviceName The device name of the disk to modify.
+   * @param deviceName The device name of the disk to modify. Make a get() request on the instance
+   *     to view currently attached disks and device names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -1762,9 +1765,10 @@ public class InstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param instance The instance name.
+   * @param instance The instance name for this request.
    * @param autoDelete Whether to auto-delete the disk when the instance is deleted.
-   * @param deviceName The device name of the disk to modify.
+   * @param deviceName The device name of the disk to modify. Make a get() request on the instance
+   *     to view currently attached disks and device names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -2429,7 +2433,7 @@ public class InstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param instance Instance name.
+   * @param instance Instance name for this request.
    * @param schedulingResource Sets the scheduling options for an Instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2459,7 +2463,7 @@ public class InstanceClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param instance Instance name.
+   * @param instance Instance name for this request.
    * @param schedulingResource Sets the scheduling options for an Instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
