@@ -87,6 +87,9 @@ import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
+import org.threeten.bp.Duration;
+import org.threeten.bp.Instant;
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.AbstractList;
@@ -119,10 +122,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   private static final int MIN_BACKOFF_MS = 1000;
   private static final int MAX_BACKOFF_MS = 32000;
   private static final PathTemplate OP_NAME_TEMPLATE =
-          PathTemplate.create(
-                  "projects/{project}/instances/{instance}/databases/{database}/operations/{operation}");
+      PathTemplate.create(
+          "projects/{project}/instances/{instance}/databases/{database}/operations/{operation}");
   private static final PathTemplate PROJECT_NAME_TEMPLATE =
-          PathTemplate.create("projects/{project}");
+      PathTemplate.create("projects/{project}");
 
   private static final Logger logger = Logger.getLogger(SpannerImpl.class.getName());
   private static final Logger txnLogger = Logger.getLogger(TransactionRunner.class.getName());
@@ -135,17 +138,16 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   private static final String QUERY = "CloudSpannerOperation.ExecuteStreamingQuery";
   private static final String READ = "CloudSpannerOperation.ExecuteStreamingRead";
 
-  private static final ThreadLocal<Boolean> hasPendingTransaction =
-          new ThreadLocal<Boolean>() {
-            @Override
-            protected Boolean initialValue() {
-              return false;
-            }
-          };
+  private static final ThreadLocal<Boolean> hasPendingTransaction = new ThreadLocal<Boolean>() {
+    @Override
+    protected Boolean initialValue() {
+      return false;
+    }
+  };
 
   private static void throwIfTransactionsPending() {
     if (hasPendingTransaction.get() == Boolean.TRUE) {
-      throw newSpannerException(ErrorCode.INTERNAL, "Nested transactions are not supported");
+        throw newSpannerException(ErrorCode.INTERNAL, "Nested transactions are not supported");
     }
   }
 
@@ -172,7 +174,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     this.defaultPrefetchChunks = defaultPrefetchChunks;
     this.dbAdminClient = new DatabaseAdminClientImpl(options.getProjectId(), gapicRpc);
     this.instanceClient =
-            new InstanceAdminClientImpl(options.getProjectId(), gapicRpc, dbAdminClient);
+        new InstanceAdminClientImpl(options.getProjectId(), gapicRpc, dbAdminClient);
   }
 
   SpannerImpl(SpannerOptions options) {
@@ -181,10 +183,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
   private static ExponentialBackOff newBackOff() {
     return new ExponentialBackOff.Builder()
-            .setInitialIntervalMillis(MIN_BACKOFF_MS)
-            .setMaxIntervalMillis(MAX_BACKOFF_MS)
-            .setMaxElapsedTimeMillis(Integer.MAX_VALUE) // Prevent Backoff.STOP from getting returned.
-            .build();
+        .setInitialIntervalMillis(MIN_BACKOFF_MS)
+        .setMaxIntervalMillis(MAX_BACKOFF_MS)
+        .setMaxElapsedTimeMillis(Integer.MAX_VALUE) // Prevent Backoff.STOP from getting returned.
+        .build();
   }
 
   private static void backoffSleep(Context context, BackOff backoff) throws SpannerException {
@@ -200,20 +202,17 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   private static void backoffSleep(Context context, long backoffMillis) throws SpannerException {
-    tracer
-            .getCurrentSpan()
-            .addAnnotation(
-                    "Backing off",
-                    ImmutableMap.of("Delay", AttributeValue.longAttributeValue(backoffMillis)));
+    tracer.getCurrentSpan().addAnnotation("Backing off",
+        ImmutableMap.of("Delay", AttributeValue.longAttributeValue(backoffMillis)));
     final CountDownLatch latch = new CountDownLatch(1);
     final Context.CancellationListener listener =
-            new Context.CancellationListener() {
-              @Override
-              public void cancelled(Context context) {
-                // Wakeup on cancellation / DEADLINE_EXCEEDED.
-                latch.countDown();
-              }
-            };
+        new Context.CancellationListener() {
+          @Override
+          public void cancelled(Context context) {
+            // Wakeup on cancellation / DEADLINE_EXCEEDED.
+            latch.countDown();
+          }
+        };
 
     context.addListener(listener, DirectExecutor.INSTANCE);
     try {
@@ -246,7 +245,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     int attempt = 0;
     int maxAttempt = 6;
 
-    if (retrySettings != null) {
+    if(retrySettings != null) {
       maxAttempt = retrySettings.getMaxAttempts();
     }
 
@@ -257,9 +256,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       }
 
       try {
-        span.addAnnotation(
-                "Starting operation",
-                ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
+        span.addAnnotation("Starting operation",
+            ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
         T result = callable.call();
         return result;
       } catch (SpannerException e) {
@@ -283,19 +281,18 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   // TODO(user): change this to return SessionImpl and modify all corresponding references.
   Session createSession(final DatabaseId db) throws SpannerException {
     final Map<SpannerRpc.Option, ?> options =
-            optionMap(SessionOption.channelHint(random.nextLong()));
+        optionMap(SessionOption.channelHint(random.nextLong()));
     Span span = tracer.spanBuilder(CREATE_SESSION).startSpan();
     try (Scope s = tracer.withSpan(span)) {
       com.google.spanner.v1.Session session =
-              runWithRetries(
-                      new Callable<com.google.spanner.v1.Session>() {
-                        @Override
-                        public com.google.spanner.v1.Session call() throws Exception {
-                          return gapicRpc.createSession(
-                                  db.getName(), getOptions().getSessionLabels(), options);
-                        }
-                      },
-                      getOptions().getRetrySettings());
+          runWithRetries(
+              new Callable<com.google.spanner.v1.Session>() {
+                @Override
+                public com.google.spanner.v1.Session call() throws Exception {
+                  return gapicRpc.createSession(
+                      db.getName(), getOptions().getSessionLabels(), options);
+                }
+              }, getOptions().getRetrySettings());
       span.end();
       return new SessionImpl(session.getName(), options);
     } catch (RuntimeException e) {
@@ -306,7 +303,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
   SessionImpl sessionWithId(String name) {
     final Map<SpannerRpc.Option, ?> options =
-            SpannerImpl.optionMap(SessionOption.channelHint(random.nextLong()));
+        SpannerImpl.optionMap(SessionOption.channelHint(random.nextLong()));
     return new SessionImpl(name, options);
   }
 
@@ -412,30 +409,28 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     return ImmutableMap.copyOf(tmp);
   }
 
-  private static <T extends Message> T unpack(Any response, Class<T> clazz)
-          throws SpannerException {
+  private static <T extends Message> T unpack(Any response, Class<T> clazz) throws SpannerException {
     try {
       return response.unpack(clazz);
     } catch (InvalidProtocolBufferException e) {
       throw SpannerExceptionFactory.newSpannerException(
-              ErrorCode.INTERNAL, "Error unpacking response", e);
+          ErrorCode.INTERNAL, "Error unpacking response", e);
     }
   }
 
-  private abstract static class PageFetcher<S, T> implements NextPageFetcher<S> {
+  private static abstract class PageFetcher<S, T> implements NextPageFetcher<S> {
     private String nextPageToken;
 
     @Override
     public Page<S> getNextPage() {
       Paginated<T> nextPage =
-              runWithRetries(
-                      new Callable<Paginated<T>>() {
-                        @Override
-                        public Paginated<T> call() {
-                          return getNextPage(nextPageToken);
-                        }
-                      },
-                      null);
+          runWithRetries(
+              new Callable<Paginated<T>>() {
+                @Override
+                public Paginated<T> call() {
+                  return getNextPage(nextPageToken);
+                }
+              }, null);
       this.nextPageToken = nextPage.getNextPageToken();
       List<S> results = new ArrayList<>();
       for (T proto : nextPage.getResults()) {
@@ -466,87 +461,87 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     @Override
     public OperationFuture<Database, CreateDatabaseMetadata> createDatabase(
-            String instanceId, String databaseId, Iterable<String> statements) throws SpannerException {
+        String instanceId, String databaseId, Iterable<String> statements) throws SpannerException {
       // CreateDatabase() is not idempotent, so we're not retrying this request.
       String instanceName = getInstanceName(instanceId);
       String createStatement = "CREATE DATABASE `" + databaseId + "`";
       OperationFuture<com.google.spanner.admin.database.v1.Database, CreateDatabaseMetadata>
-              rawOperationFuture = rpc.createDatabase(instanceName, createStatement, statements);
+          rawOperationFuture = rpc.createDatabase(instanceName, createStatement, statements);
       return new OperationFutureImpl(
-              rawOperationFuture.getPollingFuture(),
-              rawOperationFuture.getInitialFuture(),
-              new ApiFunction<OperationSnapshot, Database>() {
-                @Override
-                public Database apply(OperationSnapshot snapshot) {
-                  return Database.fromProto(
-                          ProtoOperationTransformers.ResponseTransformer.create(
-                                  com.google.spanner.admin.database.v1.Database.class)
-                                  .apply(snapshot),
-                          DatabaseAdminClientImpl.this);
-                }
-              },
-              ProtoOperationTransformers.MetadataTransformer.create(CreateDatabaseMetadata.class),
-              new ApiFunction<Exception, Database>() {
-                @Override
-                public Database apply(Exception e) {
-                  throw SpannerExceptionFactory.newSpannerException(e);
-                }
-              });
+          rawOperationFuture.getPollingFuture(),
+          rawOperationFuture.getInitialFuture(),
+          new ApiFunction<OperationSnapshot, Database>() {
+            @Override
+            public Database apply(OperationSnapshot snapshot) {
+              return Database.fromProto(
+                  ProtoOperationTransformers.ResponseTransformer.create(
+                          com.google.spanner.admin.database.v1.Database.class)
+                      .apply(snapshot),
+                  DatabaseAdminClientImpl.this);
+            }
+          },
+          ProtoOperationTransformers.MetadataTransformer.create(CreateDatabaseMetadata.class),
+          new ApiFunction<Exception, Database>() {
+            @Override
+            public Database apply(Exception e) {
+              throw SpannerExceptionFactory.newSpannerException(e);
+            }
+          });
     }
 
     @Override
     public Database getDatabase(String instanceId, String databaseId) throws SpannerException {
       final String dbName = getDatabaseName(instanceId, databaseId);
       Callable<Database> callable =
-              new Callable<Database>() {
-                @Override
-                public Database call() throws Exception {
-                  return Database.fromProto(rpc.getDatabase(dbName), DatabaseAdminClientImpl.this);
-                }
-              };
+          new Callable<Database>() {
+            @Override
+            public Database call() throws Exception {
+              return Database.fromProto(rpc.getDatabase(dbName), DatabaseAdminClientImpl.this);
+            }
+          };
       return runWithRetries(callable, null);
     }
 
     @Override
     public OperationFuture<Void, UpdateDatabaseDdlMetadata> updateDatabaseDdl(
-            final String instanceId,
-            final String databaseId,
-            final Iterable<String> statements,
-            @Nullable String operationId)
-            throws SpannerException {
+        final String instanceId,
+        final String databaseId,
+        final Iterable<String> statements,
+        @Nullable String operationId)
+        throws SpannerException {
       final String dbName = getDatabaseName(instanceId, databaseId);
       final String opId = operationId != null ? operationId : randomOperationId();
       OperationFuture<Empty, UpdateDatabaseDdlMetadata> rawOperationFuture =
-              rpc.updateDatabaseDdl(dbName, statements, opId);
+          rpc.updateDatabaseDdl(dbName, statements, opId);
       return new OperationFutureImpl(
-              rawOperationFuture.getPollingFuture(),
-              rawOperationFuture.getInitialFuture(),
-              new ApiFunction<OperationSnapshot, Void>() {
-                @Override
-                public Void apply(OperationSnapshot snapshot) {
-                  return null;
-                }
-              },
-              ProtoOperationTransformers.MetadataTransformer.create(UpdateDatabaseDdlMetadata.class),
-              new ApiFunction<Exception, Database>() {
-                @Override
-                public Database apply(Exception e) {
-                  throw SpannerExceptionFactory.newSpannerException(e);
-                }
-              });
+          rawOperationFuture.getPollingFuture(),
+          rawOperationFuture.getInitialFuture(),
+          new ApiFunction<OperationSnapshot, Void>() {
+            @Override
+            public Void apply(OperationSnapshot snapshot) {
+              return null;
+            }
+          },
+          ProtoOperationTransformers.MetadataTransformer.create(UpdateDatabaseDdlMetadata.class),
+          new ApiFunction<Exception, Database>() {
+            @Override
+            public Database apply(Exception e) {
+              throw SpannerExceptionFactory.newSpannerException(e);
+            }
+          });
     }
 
     @Override
     public void dropDatabase(String instanceId, String databaseId) throws SpannerException {
       final String dbName = getDatabaseName(instanceId, databaseId);
       Callable<Void> callable =
-              new Callable<Void>() {
-                @Override
-                public Void call() throws Exception {
-                  rpc.dropDatabase(dbName);
-                  return null;
-                }
-              };
+          new Callable<Void>() {
+            @Override
+            public Void call() throws Exception {
+              rpc.dropDatabase(dbName);
+              return null;
+            }
+          };
       runWithRetries(callable, null);
     }
 
@@ -554,12 +549,12 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     public List<String> getDatabaseDdl(String instanceId, String databaseId) {
       final String dbName = getDatabaseName(instanceId, databaseId);
       Callable<List<String>> callable =
-              new Callable<List<String>>() {
-                @Override
-                public List<String> call() throws Exception {
-                  return rpc.getDatabaseDdl(dbName);
-                }
-              };
+          new Callable<List<String>>() {
+            @Override
+            public List<String> call() throws Exception {
+              return rpc.getDatabaseDdl(dbName);
+            }
+          };
       return runWithRetries(callable, null);
     }
 
@@ -568,21 +563,21 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       final String instanceName = getInstanceName(instanceId);
       final Options listOptions = Options.fromListOptions(options);
       Preconditions.checkArgument(
-              !listOptions.hasFilter(), "Filter option is not support by" + "listDatabases");
+          !listOptions.hasFilter(), "Filter option is not support by" + "listDatabases");
       final int pageSize = listOptions.hasPageSize() ? listOptions.pageSize() : 0;
       PageFetcher<Database, com.google.spanner.admin.database.v1.Database> pageFetcher =
-              new PageFetcher<Database, com.google.spanner.admin.database.v1.Database>() {
-                @Override
-                public Paginated<com.google.spanner.admin.database.v1.Database> getNextPage(
-                        String nextPageToken) {
-                  return rpc.listDatabases(instanceName, pageSize, nextPageToken);
-                }
+          new PageFetcher<Database, com.google.spanner.admin.database.v1.Database>() {
+            @Override
+            public Paginated<com.google.spanner.admin.database.v1.Database> getNextPage(
+                String nextPageToken) {
+              return rpc.listDatabases(instanceName, pageSize, nextPageToken);
+            }
 
-                @Override
-                public Database fromProto(com.google.spanner.admin.database.v1.Database proto) {
-                  return Database.fromProto(proto, DatabaseAdminClientImpl.this);
-                }
-              };
+            @Override
+            public Database fromProto(com.google.spanner.admin.database.v1.Database proto) {
+              return Database.fromProto(proto, DatabaseAdminClientImpl.this);
+            }
+          };
       if (listOptions.hasPageToken()) {
         pageFetcher.nextPageToken = listOptions.pageToken();
       }
@@ -613,36 +608,35 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     public InstanceConfig getInstanceConfig(String configId) throws SpannerException {
       final String instanceConfigName = new InstanceConfigId(projectId, configId).getName();
       return runWithRetries(
-              new Callable<InstanceConfig>() {
-                @Override
-                public InstanceConfig call() {
-                  return InstanceConfig.fromProto(
-                          rpc.getInstanceConfig(instanceConfigName), InstanceAdminClientImpl.this);
-                }
-              },
-              null);
+          new Callable<InstanceConfig>() {
+            @Override
+            public InstanceConfig call() {
+              return InstanceConfig.fromProto(
+                  rpc.getInstanceConfig(instanceConfigName), InstanceAdminClientImpl.this);
+            }
+          }, null);
     }
 
     @Override
     public Page<InstanceConfig> listInstanceConfigs(ListOption... options) {
       final Options listOptions = Options.fromListOptions(options);
       Preconditions.checkArgument(
-              !listOptions.hasFilter(), "Filter option is not supported by listInstanceConfigs");
+          !listOptions.hasFilter(), "Filter option is not supported by listInstanceConfigs");
       final int pageSize = listOptions.hasPageSize() ? listOptions.pageSize() : 0;
       PageFetcher<InstanceConfig, com.google.spanner.admin.instance.v1.InstanceConfig> pageFetcher =
-              new PageFetcher<InstanceConfig, com.google.spanner.admin.instance.v1.InstanceConfig>() {
-                @Override
-                public Paginated<com.google.spanner.admin.instance.v1.InstanceConfig> getNextPage(
-                        String nextPageToken) {
-                  return rpc.listInstanceConfigs(pageSize, nextPageToken);
-                }
+          new PageFetcher<InstanceConfig, com.google.spanner.admin.instance.v1.InstanceConfig>() {
+            @Override
+            public Paginated<com.google.spanner.admin.instance.v1.InstanceConfig> getNextPage(
+                String nextPageToken) {
+              return rpc.listInstanceConfigs(pageSize, nextPageToken);
+            }
 
-                @Override
-                public InstanceConfig fromProto(
-                        com.google.spanner.admin.instance.v1.InstanceConfig proto) {
-                  return InstanceConfig.fromProto(proto, InstanceAdminClientImpl.this);
-                }
-              };
+            @Override
+            public InstanceConfig fromProto(
+                com.google.spanner.admin.instance.v1.InstanceConfig proto) {
+              return InstanceConfig.fromProto(proto, InstanceAdminClientImpl.this);
+            }
+          };
       if (listOptions.hasPageToken()) {
         pageFetcher.nextPageToken = listOptions.pageToken();
       }
@@ -651,47 +645,46 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     @Override
     public OperationFuture<Instance, CreateInstanceMetadata> createInstance(InstanceInfo instance)
-            throws SpannerException {
+        throws SpannerException {
       String projectName = PROJECT_NAME_TEMPLATE.instantiate("project", projectId);
       OperationFuture<com.google.spanner.admin.instance.v1.Instance, CreateInstanceMetadata>
-              rawOperationFuture =
+          rawOperationFuture =
               rpc.createInstance(projectName, instance.getId().getInstance(), instance.toProto());
 
       return new OperationFutureImpl<Instance, CreateInstanceMetadata>(
-              rawOperationFuture.getPollingFuture(),
-              rawOperationFuture.getInitialFuture(),
-              new ApiFunction<OperationSnapshot, Instance>() {
-                @Override
-                public Instance apply(OperationSnapshot snapshot) {
-                  return Instance.fromProto(
-                          ProtoOperationTransformers.ResponseTransformer.create(
-                                  com.google.spanner.admin.instance.v1.Instance.class)
-                                  .apply(snapshot),
-                          InstanceAdminClientImpl.this,
-                          dbClient);
-                }
-              },
-              ProtoOperationTransformers.MetadataTransformer.create(CreateInstanceMetadata.class),
-              new ApiFunction<Exception, Instance>() {
-                @Override
-                public Instance apply(Exception e) {
-                  throw SpannerExceptionFactory.newSpannerException(e);
-                }
-              });
+          rawOperationFuture.getPollingFuture(),
+          rawOperationFuture.getInitialFuture(),
+          new ApiFunction<OperationSnapshot, Instance>() {
+            @Override
+            public Instance apply(OperationSnapshot snapshot) {
+              return Instance.fromProto(
+                  ProtoOperationTransformers.ResponseTransformer.create(
+                          com.google.spanner.admin.instance.v1.Instance.class)
+                      .apply(snapshot),
+                  InstanceAdminClientImpl.this,
+                  dbClient);
+            }
+          },
+          ProtoOperationTransformers.MetadataTransformer.create(CreateInstanceMetadata.class),
+          new ApiFunction<Exception, Instance>() {
+            @Override
+            public Instance apply(Exception e) {
+              throw SpannerExceptionFactory.newSpannerException(e);
+            }
+          });
     }
 
     @Override
     public Instance getInstance(String instanceId) throws SpannerException {
       final String instanceName = new InstanceId(projectId, instanceId).getName();
       return runWithRetries(
-              new Callable<Instance>() {
-                @Override
-                public Instance call() {
-                  return Instance.fromProto(
-                          rpc.getInstance(instanceName), InstanceAdminClientImpl.this, dbClient);
-                }
-              },
-              null);
+          new Callable<Instance>() {
+            @Override
+            public Instance call() {
+              return Instance.fromProto(
+                  rpc.getInstance(instanceName), InstanceAdminClientImpl.this, dbClient);
+            }
+          }, null);
     }
 
     @Override
@@ -700,18 +693,18 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       final int pageSize = listOptions.hasPageSize() ? listOptions.pageSize() : 0;
       final String filter = listOptions.filter();
       PageFetcher<Instance, com.google.spanner.admin.instance.v1.Instance> pageFetcher =
-              new PageFetcher<Instance, com.google.spanner.admin.instance.v1.Instance>() {
-                @Override
-                public Paginated<com.google.spanner.admin.instance.v1.Instance> getNextPage(
-                        String nextPageToken) {
-                  return rpc.listInstances(pageSize, nextPageToken, filter);
-                }
+          new PageFetcher<Instance, com.google.spanner.admin.instance.v1.Instance>() {
+            @Override
+            public Paginated<com.google.spanner.admin.instance.v1.Instance> getNextPage(
+                String nextPageToken) {
+              return rpc.listInstances(pageSize, nextPageToken, filter);
+            }
 
-                @Override
-                public Instance fromProto(com.google.spanner.admin.instance.v1.Instance proto) {
-                  return Instance.fromProto(proto, InstanceAdminClientImpl.this, dbClient);
-                }
-              };
+            @Override
+            public Instance fromProto(com.google.spanner.admin.instance.v1.Instance proto) {
+              return Instance.fromProto(proto, InstanceAdminClientImpl.this, dbClient);
+            }
+          };
       if (listOptions.hasPageToken()) {
         pageFetcher.nextPageToken = listOptions.pageToken();
       }
@@ -721,47 +714,47 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Override
     public void deleteInstance(final String instanceId) throws SpannerException {
       runWithRetries(
-              new Callable<Void>() {
-                @Override
-                public Void call() {
-                  rpc.deleteInstance(new InstanceId(projectId, instanceId).getName());
-                  return null;
-                }
-              },
-              null);
+          new Callable<Void>() {
+            @Override
+            public Void call() {
+              rpc.deleteInstance(new InstanceId(projectId, instanceId).getName());
+              return null;
+            }
+          },
+          null);
     }
 
     @Override
     public OperationFuture<Instance, UpdateInstanceMetadata> updateInstance(
-            InstanceInfo instance, InstanceInfo.InstanceField... fieldsToUpdate) {
+        InstanceInfo instance, InstanceInfo.InstanceField... fieldsToUpdate) {
       FieldMask fieldMask =
-              fieldsToUpdate.length == 0
-                      ? InstanceInfo.InstanceField.toFieldMask(InstanceInfo.InstanceField.values())
-                      : InstanceInfo.InstanceField.toFieldMask(fieldsToUpdate);
+          fieldsToUpdate.length == 0
+              ? InstanceInfo.InstanceField.toFieldMask(InstanceInfo.InstanceField.values())
+              : InstanceInfo.InstanceField.toFieldMask(fieldsToUpdate);
 
       OperationFuture<com.google.spanner.admin.instance.v1.Instance, UpdateInstanceMetadata>
-              rawOperationFuture = rpc.updateInstance(instance.toProto(), fieldMask);
+          rawOperationFuture = rpc.updateInstance(instance.toProto(), fieldMask);
       return new OperationFutureImpl<Instance, UpdateInstanceMetadata>(
-              rawOperationFuture.getPollingFuture(),
-              rawOperationFuture.getInitialFuture(),
-              new ApiFunction<OperationSnapshot, Instance>() {
-                @Override
-                public Instance apply(OperationSnapshot snapshot) {
-                  return Instance.fromProto(
-                          ProtoOperationTransformers.ResponseTransformer.create(
-                                  com.google.spanner.admin.instance.v1.Instance.class)
-                                  .apply(snapshot),
-                          InstanceAdminClientImpl.this,
-                          dbClient);
-                }
-              },
-              ProtoOperationTransformers.MetadataTransformer.create(UpdateInstanceMetadata.class),
-              new ApiFunction<Exception, Instance>() {
-                @Override
-                public Instance apply(Exception e) {
-                  throw SpannerExceptionFactory.newSpannerException(e);
-                }
-              });
+          rawOperationFuture.getPollingFuture(),
+          rawOperationFuture.getInitialFuture(),
+          new ApiFunction<OperationSnapshot, Instance>() {
+            @Override
+            public Instance apply(OperationSnapshot snapshot) {
+              return Instance.fromProto(
+                  ProtoOperationTransformers.ResponseTransformer.create(
+                          com.google.spanner.admin.instance.v1.Instance.class)
+                      .apply(snapshot),
+                  InstanceAdminClientImpl.this,
+                  dbClient);
+            }
+          },
+          ProtoOperationTransformers.MetadataTransformer.create(UpdateInstanceMetadata.class),
+          new ApiFunction<Exception, Instance>() {
+            @Override
+            public Instance apply(Exception e) {
+              throw SpannerExceptionFactory.newSpannerException(e);
+            }
+          });
     }
 
     @Override
@@ -801,17 +794,17 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     public Timestamp write(Iterable<Mutation> mutations) throws SpannerException {
       TransactionRunner runner = readWriteTransaction();
       final Collection<Mutation> finalMutations =
-              mutations instanceof java.util.Collection<?>
-                      ? (Collection<Mutation>) mutations
-                      : Lists.newArrayList(mutations);
+          mutations instanceof java.util.Collection<?>
+              ? (Collection<Mutation>) mutations
+              : Lists.newArrayList(mutations);
       runner.run(
-              new TransactionRunner.TransactionCallable<Void>() {
-                @Override
-                public Void run(TransactionContext ctx) {
-                  ctx.buffer(finalMutations);
-                  return null;
-                }
-              });
+          new TransactionRunner.TransactionCallable<Void>() {
+            @Override
+            public Void run(TransactionContext ctx) {
+              ctx.buffer(finalMutations);
+              return null;
+            }
+          });
       return runner.getCommitTimestamp();
     }
 
@@ -821,24 +814,23 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       List<com.google.spanner.v1.Mutation> mutationsProto = new ArrayList<>();
       Mutation.toProto(mutations, mutationsProto);
       final CommitRequest request =
-              CommitRequest.newBuilder()
-                      .setSession(name)
-                      .addAllMutations(mutationsProto)
-                      .setSingleUseTransaction(
-                              TransactionOptions.newBuilder()
-                                      .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
-                      .build();
+          CommitRequest.newBuilder()
+          .setSession(name)
+          .addAllMutations(mutationsProto)
+          .setSingleUseTransaction(
+              TransactionOptions.newBuilder()
+              .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
+          .build();
       Span span = tracer.spanBuilder(COMMIT).startSpan();
       try (Scope s = tracer.withSpan(span)) {
         CommitResponse response =
-                runWithRetries(
-                        new Callable<CommitResponse>() {
-                          @Override
-                          public CommitResponse call() throws Exception {
-                            return gapicRpc.commit(request, options);
-                          }
-                        },
-                        null);
+            runWithRetries(
+                new Callable<CommitResponse>() {
+                  @Override
+                  public CommitResponse call() throws Exception {
+                    return gapicRpc.commit(request, options);
+                  }
+                }, null);
         Timestamp t = Timestamp.fromProto(response.getCommitTimestamp());
         span.end();
         return t;
@@ -869,7 +861,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Override
     public ReadOnlyTransaction singleUseReadOnlyTransaction(TimestampBound bound) {
       return setActive(
-              new SingleUseReadOnlyTransaction(this, bound, gapicRpc, defaultPrefetchChunks));
+          new SingleUseReadOnlyTransaction(this, bound, gapicRpc, defaultPrefetchChunks));
     }
 
     @Override
@@ -880,7 +872,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Override
     public ReadOnlyTransaction readOnlyTransaction(TimestampBound bound) {
       return setActive(
-              new MultiUseReadOnlyTransaction(this, bound, gapicRpc, defaultPrefetchChunks));
+          new MultiUseReadOnlyTransaction(this, bound, gapicRpc, defaultPrefetchChunks));
     }
 
     @Override
@@ -899,14 +891,13 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       Span span = tracer.spanBuilder(DELETE_SESSION).startSpan();
       try (Scope s = tracer.withSpan(span)) {
         runWithRetries(
-                new Callable<Void>() {
-                  @Override
-                  public Void call() throws Exception {
-                    gapicRpc.deleteSession(name, options);
-                    return null;
-                  }
-                },
-                null);
+            new Callable<Void>() {
+              @Override
+              public Void call() throws Exception {
+                gapicRpc.deleteSession(name, options);
+                return null;
+              }
+            }, null);
         span.end();
       } catch (RuntimeException e) {
         TraceUtil.endSpanWithFailure(span, e);
@@ -918,21 +909,20 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       Span span = tracer.spanBuilder(BEGIN_TRANSACTION).startSpan();
       try (Scope s = tracer.withSpan(span)) {
         final BeginTransactionRequest request =
-                BeginTransactionRequest.newBuilder()
-                        .setSession(name)
-                        .setOptions(
-                                TransactionOptions.newBuilder()
-                                        .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
-                        .build();
+            BeginTransactionRequest.newBuilder()
+            .setSession(name)
+            .setOptions(
+                TransactionOptions.newBuilder()
+                .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
+            .build();
         Transaction txn =
-                runWithRetries(
-                        new Callable<Transaction>() {
-                          @Override
-                          public Transaction call() throws Exception {
-                            return gapicRpc.beginTransaction(request, options);
-                          }
-                        },
-                        null);
+            runWithRetries(
+                new Callable<Transaction>() {
+                  @Override
+                  public Transaction call() throws Exception {
+                    return gapicRpc.beginTransaction(request, options);
+                  }
+                }, null);
         if (txn.getId().isEmpty()) {
           throw newSpannerException(ErrorCode.INTERNAL, "Missing id in transaction\n" + getName());
         }
@@ -946,7 +936,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     TransactionContextImpl newTransaction() {
       TransactionContextImpl txn =
-              new TransactionContextImpl(this, readyTransactionId, gapicRpc, defaultPrefetchChunks);
+          new TransactionContextImpl(this, readyTransactionId, gapicRpc, defaultPrefetchChunks);
       return txn;
     }
 
@@ -979,7 +969,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   abstract static class AbstractReadContext
-          implements ReadContext, AbstractResultSet.Listener, SessionTransaction {
+      implements ReadContext, AbstractResultSet.Listener, SessionTransaction {
     final Object lock = new Object();
     final SessionImpl session;
     final SpannerRpc rpc;
@@ -1004,8 +994,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       this(session, rpc, defaultPrefetchChunks, Tracing.getTracer().getCurrentSpan());
     }
 
-    private AbstractReadContext(
-            SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks, Span span) {
+    private AbstractReadContext(SessionImpl session, SpannerRpc rpc, int defaultPrefetchChunks,
+        Span span) {
       this.session = session;
       this.rpc = rpc;
       this.defaultPrefetchChunks = defaultPrefetchChunks;
@@ -1018,13 +1008,13 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     @Override
     public final ResultSet read(
-            String table, KeySet keys, Iterable<String> columns, ReadOption... options) {
+        String table, KeySet keys, Iterable<String> columns, ReadOption... options) {
       return readInternal(table, null, keys, columns, options);
     }
 
     @Override
     public final ResultSet readUsingIndex(
-            String table, String index, KeySet keys, Iterable<String> columns, ReadOption... options) {
+        String table, String index, KeySet keys, Iterable<String> columns, ReadOption... options) {
       return readInternal(table, checkNotNull(index), keys, columns, options);
     }
 
@@ -1039,7 +1029,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Nullable
     @Override
     public final Struct readRowUsingIndex(
-            String table, String index, Key key, Iterable<String> columns) {
+        String table, String index, Key key, Iterable<String> columns) {
       try (ResultSet resultSet = readUsingIndex(table, index, KeySet.singleKey(key), columns)) {
         return consumeSingleRow(resultSet);
       }
@@ -1048,41 +1038,42 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Override
     public final ResultSet executeQuery(Statement statement, QueryOption... options) {
       return executeQueryInternal(
-              statement, com.google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL, options);
+          statement, com.google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL, options);
     }
 
     @Override
     public final ResultSet analyzeQuery(
-            Statement statement, QueryAnalyzeMode readContextQueryMode) {
+        Statement statement, QueryAnalyzeMode readContextQueryMode) {
       switch (readContextQueryMode) {
         case PROFILE:
           return executeQueryInternal(
-                  statement, com.google.spanner.v1.ExecuteSqlRequest.QueryMode.PROFILE);
+              statement, com.google.spanner.v1.ExecuteSqlRequest.QueryMode.PROFILE);
         case PLAN:
           return executeQueryInternal(
-                  statement, com.google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN);
+              statement, com.google.spanner.v1.ExecuteSqlRequest.QueryMode.PLAN);
         default:
           throw new IllegalStateException(
-                  "Unknown value for QueryAnalyzeMode : " + readContextQueryMode);
+              "Unknown value for QueryAnalyzeMode : " + readContextQueryMode);
       }
     }
 
     private ResultSet executeQueryInternal(
-            Statement statement,
-            com.google.spanner.v1.ExecuteSqlRequest.QueryMode queryMode,
-            QueryOption... options) {
+        Statement statement,
+        com.google.spanner.v1.ExecuteSqlRequest.QueryMode queryMode,
+        QueryOption... options) {
       Options readOptions = Options.fromQueryOptions(options);
       return executeQueryInternalWithOptions(
-              statement, queryMode, readOptions, null /*partitionToken*/);
+          statement, queryMode, readOptions, null /*partitionToken*/);
     }
 
     ExecuteSqlRequest.Builder getExecuteSqlRequestBuilder(
-            Statement statement, QueryMode queryMode) {
+        Statement statement,
+        QueryMode queryMode) {
       ExecuteSqlRequest.Builder builder =
-              ExecuteSqlRequest.newBuilder()
-                      .setSql(statement.getSql())
-                      .setQueryMode(queryMode)
-                      .setSession(session.name);
+          ExecuteSqlRequest.newBuilder()
+              .setSql(statement.getSql())
+              .setQueryMode(queryMode)
+              .setSession(session.name);
       Map<String, Value> stmtParameters = statement.getParameters();
       if (!stmtParameters.isEmpty()) {
         com.google.protobuf.Struct.Builder paramsBuilder = builder.getParamsBuilder();
@@ -1100,32 +1091,33 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     ResultSet executeQueryInternalWithOptions(
-            Statement statement,
-            com.google.spanner.v1.ExecuteSqlRequest.QueryMode queryMode,
-            Options readOptions,
-            ByteString partitionToken) {
+        Statement statement,
+        com.google.spanner.v1.ExecuteSqlRequest.QueryMode queryMode,
+        Options readOptions,
+        ByteString partitionToken) {
       beforeReadOrQuery();
-      final ExecuteSqlRequest.Builder request = getExecuteSqlRequestBuilder(statement, queryMode);
+      final ExecuteSqlRequest.Builder request =
+          getExecuteSqlRequestBuilder(statement, queryMode);
       if (partitionToken != null) {
         request.setPartitionToken(partitionToken);
       }
       final int prefetchChunks =
-              readOptions.hasPrefetchChunks() ? readOptions.prefetchChunks() : defaultPrefetchChunks;
+          readOptions.hasPrefetchChunks() ? readOptions.prefetchChunks() : defaultPrefetchChunks;
       ResumableStreamIterator stream =
-              new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, QUERY, span) {
-                @Override
-                CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
-                  GrpcStreamIterator stream = new GrpcStreamIterator(prefetchChunks);
-                  if (resumeToken != null) {
-                    request.setResumeToken(resumeToken);
-                  }
-                  SpannerRpc.StreamingCall call =
-                          rpc.executeQuery(request.build(), stream.consumer(), session.options);
-                  call.request(prefetchChunks);
-                  stream.setCall(call);
-                  return stream;
-                }
-              };
+          new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, QUERY, span) {
+            @Override
+            CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
+              GrpcStreamIterator stream = new GrpcStreamIterator(prefetchChunks);
+              if (resumeToken != null) {
+                request.setResumeToken(resumeToken);
+              }
+              SpannerRpc.StreamingCall call =
+                  rpc.executeQuery(request.build(), stream.consumer(), session.options);
+              call.request(prefetchChunks);
+              stream.setCall(call);
+              return stream;
+            }
+          };
       return new GrpcResultSet(stream, this, queryMode);
     }
 
@@ -1178,29 +1170,29 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     public void onDone() {}
 
     private ResultSet readInternal(
-            String table,
-            @Nullable String index,
-            KeySet keys,
-            Iterable<String> columns,
-            ReadOption... options) {
+        String table,
+        @Nullable String index,
+        KeySet keys,
+        Iterable<String> columns,
+        ReadOption... options) {
       Options readOptions = Options.fromReadOptions(options);
       return readInternalWithOptions(
-              table, index, keys, columns, readOptions, null /*partitionToken*/);
+          table, index, keys, columns, readOptions, null /*partitionToken*/);
     }
 
     ResultSet readInternalWithOptions(
-            String table,
-            @Nullable String index,
-            KeySet keys,
-            Iterable<String> columns,
-            Options readOptions,
-            ByteString partitionToken) {
+        String table,
+        @Nullable String index,
+        KeySet keys,
+        Iterable<String> columns,
+        Options readOptions,
+        ByteString partitionToken) {
       beforeReadOrQuery();
       final ReadRequest.Builder builder =
-              ReadRequest.newBuilder()
-                      .setSession(session.name)
-                      .setTable(checkNotNull(table))
-                      .addAllColumns(columns);
+          ReadRequest.newBuilder()
+              .setSession(session.name)
+              .setTable(checkNotNull(table))
+              .addAllColumns(columns);
       if (readOptions.hasLimit()) {
         builder.setLimit(readOptions.limit());
       }
@@ -1217,24 +1209,24 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         builder.setPartitionToken(partitionToken);
       }
       final int prefetchChunks =
-              readOptions.hasPrefetchChunks() ? readOptions.prefetchChunks() : defaultPrefetchChunks;
+          readOptions.hasPrefetchChunks() ? readOptions.prefetchChunks() : defaultPrefetchChunks;
       ResumableStreamIterator stream =
-              new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, READ, span) {
-                @Override
-                CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
-                  GrpcStreamIterator stream = new GrpcStreamIterator(prefetchChunks);
-                  if (resumeToken != null) {
-                    builder.setResumeToken(resumeToken);
-                  }
-                  SpannerRpc.StreamingCall call =
-                          rpc.read(builder.build(), stream.consumer(), session.options);
-                  call.request(prefetchChunks);
-                  stream.setCall(call);
-                  return stream;
-                }
-              };
+          new ResumableStreamIterator(MAX_BUFFERED_CHUNKS, READ, span) {
+            @Override
+            CloseableIterator<PartialResultSet> startStream(@Nullable ByteString resumeToken) {
+              GrpcStreamIterator stream = new GrpcStreamIterator(prefetchChunks);
+              if (resumeToken != null) {
+                builder.setResumeToken(resumeToken);
+              }
+              SpannerRpc.StreamingCall call =
+                  rpc.read(builder.build(), stream.consumer(), session.options);
+              call.request(prefetchChunks);
+              stream.setCall(call);
+              return stream;
+            }
+          };
       GrpcResultSet resultSet =
-              new GrpcResultSet(stream, this, com.google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL);
+          new GrpcResultSet(stream, this, com.google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL);
       return resultSet;
     }
 
@@ -1282,7 +1274,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
 
     TransactionRunnerImpl(
-            SessionImpl session, SpannerRpc rpc, Sleeper sleeper, int defaultPrefetchChunks) {
+        SessionImpl session, SpannerRpc rpc, Sleeper sleeper, int defaultPrefetchChunks) {
       this.session = session;
       this.sleeper = sleeper;
       this.span = Tracing.getTracer().getCurrentSpan();
@@ -1321,14 +1313,13 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       // TODO: Change this to use TransactionManager.
       while (true) {
         checkState(
-                isValid, "TransactionRunner has been invalidated by a new operation on the session");
+            isValid, "TransactionRunner has been invalidated by a new operation on the session");
         checkContext(context);
         attempt++;
         // TODO(user): When using streaming reads, consider using the first read to begin
         // the txn.
-        span.addAnnotation(
-                "Starting Transaction Attempt",
-                ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
+        span.addAnnotation("Starting Transaction Attempt",
+            ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
         txn.ensureTxn();
 
         T result;
@@ -1339,9 +1330,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         } catch (Exception e) {
           txnLogger.log(Level.FINE, "User-provided TransactionCallable raised exception", e);
           if (txn.isAborted()) {
-            span.addAnnotation(
-                    "Transaction Attempt Aborted in user operation. Retrying",
-                    ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
+            span.addAnnotation("Transaction Attempt Aborted in user operation. Retrying",
+                ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
             shouldRollback = false;
             backoff(context, backoff);
             continue;
@@ -1352,12 +1342,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           } else {
             toThrow = newSpannerException(ErrorCode.UNKNOWN, e.getMessage(), e);
           }
-          span.addAnnotation(
-                  "Transaction Attempt Failed in user operation",
-                  ImmutableMap.<String, AttributeValue>builder()
-                          .putAll(TraceUtil.getExceptionAnnotations(toThrow))
-                          .put("Attempt", AttributeValue.longAttributeValue(attempt))
-                          .build());
+          span.addAnnotation("Transaction Attempt Failed in user operation",
+              ImmutableMap.<String, AttributeValue>builder()
+              .putAll(TraceUtil.getExceptionAnnotations(toThrow))
+              .put("Attempt", AttributeValue.longAttributeValue(attempt)).build());
           throw toThrow;
         } finally {
           if (shouldRollback) {
@@ -1367,23 +1355,19 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
         try {
           txn.commit();
-          span.addAnnotation(
-                  "Transaction Attempt Succeeded",
-                  ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
+          span.addAnnotation("Transaction Attempt Succeeded",
+              ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
           return result;
         } catch (AbortedException e) {
           txnLogger.log(Level.FINE, "Commit aborted", e);
-          span.addAnnotation(
-                  "Transaction Attempt Aborted in Commit. Retrying",
-                  ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
+          span.addAnnotation("Transaction Attempt Aborted in Commit. Retrying",
+              ImmutableMap.of("Attempt", AttributeValue.longAttributeValue(attempt)));
           backoff(context, backoff);
         } catch (SpannerException e) {
-          span.addAnnotation(
-                  "Transaction Attempt Failed in Commit",
-                  ImmutableMap.<String, AttributeValue>builder()
-                          .putAll(TraceUtil.getExceptionAnnotations(e))
-                          .put("Attempt", AttributeValue.longAttributeValue(attempt))
-                          .build());
+          span.addAnnotation("Transaction Attempt Failed in Commit",
+              ImmutableMap.<String, AttributeValue>builder()
+              .putAll(TraceUtil.getExceptionAnnotations(e))
+              .put("Attempt", AttributeValue.longAttributeValue(attempt)).build());
           throw e;
         }
       }
@@ -1402,8 +1386,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private void backoff(Context context, BackOff backoff) {
       long delay = txn.getRetryDelayInMillis(backoff);
       txn = session.newTransaction();
-      span.addAnnotation(
-              "Backing off", ImmutableMap.of("Delay", AttributeValue.longAttributeValue(delay)));
+      span.addAnnotation("Backing off",
+          ImmutableMap.of("Delay", AttributeValue.longAttributeValue(delay)));
       sleeper.backoffSleep(context, delay);
     }
   }
@@ -1414,7 +1398,9 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private final SpannerRpc rpc;
     private volatile boolean isValid = true;
 
-    PartitionedDMLTransaction(SessionImpl session, SpannerRpc rpc) {
+    PartitionedDMLTransaction(
+        SessionImpl session,
+        SpannerRpc rpc) {
       this.session = session;
       this.rpc = rpc;
       this.transactionId = initTransaction();
@@ -1422,37 +1408,37 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
 
     ByteString initTransaction() {
       final BeginTransactionRequest request =
-              BeginTransactionRequest.newBuilder()
-                      .setSession(session.getName())
-                      .setOptions(
-                              TransactionOptions.newBuilder()
-                                      .setPartitionedDml(TransactionOptions.PartitionedDml.getDefaultInstance()))
-                      .build();
+          BeginTransactionRequest.newBuilder()
+              .setSession(session.getName())
+              .setOptions(
+                  TransactionOptions.newBuilder()
+                      .setPartitionedDml(TransactionOptions.PartitionedDml.getDefaultInstance()))
+              .build();
       Transaction txn =
-              runWithRetries(
-                      new Callable<Transaction>() {
-                        @Override
-                        public Transaction call() throws Exception {
-                          return rpc.beginTransaction(request, session.options);
-                        }
-                      },
-                      null);
+          runWithRetries(
+              new Callable<Transaction>() {
+                @Override
+                public Transaction call() throws Exception {
+                  return rpc.beginTransaction(request, session.options);
+                }
+              }, null);
       if (txn.getId().isEmpty()) {
         throw SpannerExceptionFactory.newSpannerException(
-                ErrorCode.INTERNAL,
-                "Failed to init transaction, missing transaction id\n" + session.getName());
+            ErrorCode.INTERNAL,
+            "Failed to init transaction, missing transaction id\n" + session.getName());
       }
       return txn.getId();
     }
 
     public long executePartitionedUpdate(Statement statement) {
-      checkState(isValid, "Partitioned DML has been invalidated by a new operation on the session");
+      checkState(
+            isValid, "Partitioned DML has been invalidated by a new operation on the session");
       final ExecuteSqlRequest.Builder builder =
-              ExecuteSqlRequest.newBuilder()
-                      .setSql(statement.getSql())
-                      .setQueryMode(QueryMode.NORMAL)
-                      .setSession(session.name)
-                      .setTransaction(TransactionSelector.newBuilder().setId(transactionId).build());
+          ExecuteSqlRequest.newBuilder()
+              .setSql(statement.getSql())
+              .setQueryMode(QueryMode.NORMAL)
+              .setSession(session.name)
+              .setTransaction(TransactionSelector.newBuilder().setId(transactionId).build());
       Map<String, Value> stmtParameters = statement.getParameters();
       if (!stmtParameters.isEmpty()) {
         com.google.protobuf.Struct.Builder paramsBuilder = builder.getParamsBuilder();
@@ -1462,17 +1448,16 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         }
       }
       com.google.spanner.v1.ResultSet resultSet =
-              runWithRetries(
-                      new Callable<com.google.spanner.v1.ResultSet>() {
-                        @Override
-                        public com.google.spanner.v1.ResultSet call() throws Exception {
-                          return rpc.executeQuery(builder.build(), session.options);
-                        }
-                      },
-                      null);
+          runWithRetries(
+              new Callable<com.google.spanner.v1.ResultSet>() {
+                @Override
+                public com.google.spanner.v1.ResultSet call() throws Exception {
+                  return rpc.executeQuery(builder.build(), session.options);
+                }
+              }, null);
       if (!resultSet.hasStats()) {
         throw new IllegalArgumentException(
-                "Partitioned DML response missing stats possibly due to non-DML statement as input");
+            "Partitioned DML response missing stats possibly due to non-DML statement as input");
       }
       // For partitioned DML, using the row count lower bound.
       return resultSet.getStats().getRowCountLowerBound();
@@ -1500,10 +1485,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private Timestamp commitTimestamp;
 
     TransactionContextImpl(
-            SessionImpl session,
-            @Nullable ByteString transactionId,
-            SpannerRpc rpc,
-            int defaultPrefetchChunks) {
+        SessionImpl session,
+        @Nullable ByteString transactionId,
+        SpannerRpc rpc,
+        int defaultPrefetchChunks) {
       super(session, rpc, defaultPrefetchChunks);
       this.transactionId = transactionId;
     }
@@ -1513,34 +1498,31 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         span.addAnnotation("Creating Transaction");
         try {
           transactionId = session.beginTransaction();
-          span.addAnnotation(
-                  "Transaction Creation Done",
-                  ImmutableMap.of(
-                          "Id", AttributeValue.stringAttributeValue(transactionId.toStringUtf8())));
+          span.addAnnotation("Transaction Creation Done", ImmutableMap.of("Id",
+              AttributeValue.stringAttributeValue(transactionId.toStringUtf8())));
           txnLogger.log(
-                  Level.FINER,
-                  "Started transaction {0}",
-                  txnLogger.isLoggable(Level.FINER) ? transactionId.asReadOnlyByteBuffer() : null);
+              Level.FINER,
+              "Started transaction {0}",
+              txnLogger.isLoggable(Level.FINER) ? transactionId.asReadOnlyByteBuffer() : null);
         } catch (SpannerException e) {
           span.addAnnotation("Transaction Creation Failed", TraceUtil.getExceptionAnnotations(e));
           throw e;
         }
       } else {
-        span.addAnnotation(
-                "Transaction Initialized",
-                ImmutableMap.of(
-                        "Id", AttributeValue.stringAttributeValue(transactionId.toStringUtf8())));
+        span.addAnnotation("Transaction Initialized",
+            ImmutableMap.of("Id",  AttributeValue.stringAttributeValue(
+                transactionId.toStringUtf8())));
         txnLogger.log(
-                Level.FINER,
-                "Using prepared transaction {0}",
-                txnLogger.isLoggable(Level.FINER) ? transactionId.asReadOnlyByteBuffer() : null);
+            Level.FINER,
+            "Using prepared transaction {0}",
+            txnLogger.isLoggable(Level.FINER) ? transactionId.asReadOnlyByteBuffer() : null);
       }
     }
 
     void commit() {
       span.addAnnotation("Starting Commit");
       CommitRequest.Builder builder =
-              CommitRequest.newBuilder().setSession(session.getName()).setTransactionId(transactionId);
+          CommitRequest.newBuilder().setSession(session.getName()).setTransactionId(transactionId);
       synchronized (lock) {
         if (!mutations.isEmpty()) {
           List<com.google.spanner.v1.Mutation> mutationsProto = new ArrayList<>();
@@ -1554,18 +1536,17 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       Span opSpan = tracer.spanBuilderWithExplicitParent(COMMIT, span).startSpan();
       try (Scope s = tracer.withSpan(opSpan)) {
         CommitResponse commitResponse =
-                runWithRetries(
-                        new Callable<CommitResponse>() {
-                          @Override
-                          public CommitResponse call() throws Exception {
-                            return rpc.commit(commitRequest, session.options);
-                          }
-                        },
-                        null);
+            runWithRetries(
+                new Callable<CommitResponse>() {
+                  @Override
+                  public CommitResponse call() throws Exception {
+                    return rpc.commit(commitRequest, session.options);
+                  }
+                }, null);
 
         if (!commitResponse.hasCommitTimestamp()) {
           throw newSpannerException(
-                  ErrorCode.INTERNAL, "Missing commitTimestamp:\n" + session.getName());
+              ErrorCode.INTERNAL, "Missing commitTimestamp:\n" + session.getName());
         }
         commitTimestamp = Timestamp.fromProto(commitResponse.getCommitTimestamp());
         opSpan.end();
@@ -1609,11 +1590,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         // transaction attempt, which should implicitly abort this one.
         span.addAnnotation("Starting Rollback");
         rpc.rollback(
-                RollbackRequest.newBuilder()
-                        .setSession(session.getName())
-                        .setTransactionId(transactionId)
-                        .build(),
-                session.options);
+            RollbackRequest.newBuilder()
+                .setSession(session.getName())
+                .setTransactionId(transactionId)
+                .build(),
+            session.options);
         span.addAnnotation("Rollback Done");
       } catch (SpannerException e) {
         txnLogger.log(Level.FINE, "Exception during rollback", e);
@@ -1667,19 +1648,20 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     public long executeUpdate(Statement statement) {
       beforeReadOrQuery();
       final ExecuteSqlRequest.Builder builder =
-              getExecuteSqlRequestBuilder(statement, QueryMode.NORMAL);
+          getExecuteSqlRequestBuilder(
+              statement,
+              QueryMode.NORMAL);
       com.google.spanner.v1.ResultSet resultSet =
-              runWithRetries(
-                      new Callable<com.google.spanner.v1.ResultSet>() {
-                        @Override
-                        public com.google.spanner.v1.ResultSet call() throws Exception {
-                          return rpc.executeQuery(builder.build(), session.options);
-                        }
-                      },
-                      null);
+          runWithRetries(
+              new Callable<com.google.spanner.v1.ResultSet>() {
+                @Override
+                public com.google.spanner.v1.ResultSet call() throws Exception {
+                  return rpc.executeQuery(builder.build(), session.options);
+                }
+              }, null);
       if (!resultSet.hasStats()) {
         throw new IllegalArgumentException(
-                "DML response missing stats possibly due to non-DML statement as input");
+            "DML response missing stats possibly due to non-DML statement as input");
       }
       // For standard DML, using the exact row count.
       return resultSet.getStats().getRowCountExact();
@@ -1697,7 +1679,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private boolean used;
 
     private SingleReadContext(
-            SessionImpl session, TimestampBound bound, SpannerRpc rpc, int defaultPrefetchChunks) {
+        SessionImpl session, TimestampBound bound, SpannerRpc rpc, int defaultPrefetchChunks) {
       super(session, rpc, defaultPrefetchChunks);
       this.bound = bound;
     }
@@ -1718,8 +1700,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         return null;
       }
       return TransactionSelector.newBuilder()
-              .setSingleUse(TransactionOptions.newBuilder().setReadOnly(bound.toProto()))
-              .build();
+          .setSingleUse(TransactionOptions.newBuilder().setReadOnly(bound.toProto()))
+          .build();
     }
   }
 
@@ -1728,12 +1710,12 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   }
 
   private class SingleUseReadOnlyTransaction extends SingleReadContext
-          implements ReadOnlyTransaction {
+      implements ReadOnlyTransaction {
     @GuardedBy("lock")
     private Timestamp timestamp;
 
     private SingleUseReadOnlyTransaction(
-            SessionImpl session, TimestampBound bound, SpannerRpc rpc, int defaultPrefetchChunks) {
+        SessionImpl session, TimestampBound bound, SpannerRpc rpc, int defaultPrefetchChunks) {
       super(session, bound, rpc, defaultPrefetchChunks);
     }
 
@@ -1758,20 +1740,20 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       synchronized (lock) {
         if (!transaction.hasReadTimestamp()) {
           throw newSpannerException(
-                  ErrorCode.INTERNAL, "Missing expected transaction.read_timestamp metadata field");
+              ErrorCode.INTERNAL, "Missing expected transaction.read_timestamp metadata field");
         }
         try {
           timestamp = Timestamp.fromProto(transaction.getReadTimestamp());
         } catch (IllegalArgumentException e) {
           throw newSpannerException(
-                  ErrorCode.INTERNAL, "Bad value in transaction.read_timestamp metadata field", e);
+              ErrorCode.INTERNAL, "Bad value in transaction.read_timestamp metadata field", e);
         }
       }
     }
   }
 
   static class MultiUseReadOnlyTransaction extends AbstractReadContext
-          implements ReadOnlyTransaction {
+      implements ReadOnlyTransaction {
     private TimestampBound bound;
     private final Object txnLock = new Object();
 
@@ -1782,23 +1764,23 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private ByteString transactionId;
 
     MultiUseReadOnlyTransaction(
-            SessionImpl session, TimestampBound bound, SpannerRpc rpc, int defaultPrefetchChunks) {
+        SessionImpl session, TimestampBound bound, SpannerRpc rpc, int defaultPrefetchChunks) {
       super(session, rpc, defaultPrefetchChunks);
       checkArgument(
-              bound.getMode() != TimestampBound.Mode.MAX_STALENESS
-                      && bound.getMode() != TimestampBound.Mode.MIN_READ_TIMESTAMP,
-              "Bounded staleness mode %s is not supported for multi-use read-only transactions."
-                      + " Create a single-use read or read-only transaction instead.",
-              bound.getMode());
+          bound.getMode() != TimestampBound.Mode.MAX_STALENESS
+              && bound.getMode() != TimestampBound.Mode.MIN_READ_TIMESTAMP,
+          "Bounded staleness mode %s is not supported for multi-use read-only transactions."
+              + " Create a single-use read or read-only transaction instead.",
+          bound.getMode());
       this.bound = bound;
     }
 
     MultiUseReadOnlyTransaction(
-            SessionImpl session,
-            ByteString transactionId,
-            Timestamp timestamp,
-            SpannerRpc rpc,
-            int defaultPrefetchChunks) {
+        SessionImpl session,
+        ByteString transactionId,
+        Timestamp timestamp,
+        SpannerRpc rpc,
+        int defaultPrefetchChunks) {
       super(session, rpc, defaultPrefetchChunks);
       this.transactionId = transactionId;
       this.timestamp = timestamp;
@@ -1855,36 +1837,35 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           TransactionOptions.Builder options = TransactionOptions.newBuilder();
           bound.applyToBuilder(options.getReadOnlyBuilder()).setReturnReadTimestamp(true);
           final BeginTransactionRequest request =
-                  BeginTransactionRequest.newBuilder()
-                          .setSession(session.getName())
-                          .setOptions(options)
-                          .build();
+              BeginTransactionRequest.newBuilder()
+              .setSession(session.getName())
+              .setOptions(options)
+              .build();
           Transaction transaction =
-                  runWithRetries(
-                          new Callable<Transaction>() {
-                            @Override
-                            public Transaction call() throws Exception {
-                              return rpc.beginTransaction(request, session.options);
-                            }
-                          },
-                          null);
+              runWithRetries(
+                  new Callable<Transaction>() {
+                    @Override
+                    public Transaction call() throws Exception {
+                      return rpc.beginTransaction(request, session.options);
+                    }
+                  }, null);
           if (!transaction.hasReadTimestamp()) {
             throw SpannerExceptionFactory.newSpannerException(
-                    ErrorCode.INTERNAL, "Missing expected transaction.read_timestamp metadata field");
+                ErrorCode.INTERNAL, "Missing expected transaction.read_timestamp metadata field");
           }
           if (transaction.getId().isEmpty()) {
             throw SpannerExceptionFactory.newSpannerException(
-                    ErrorCode.INTERNAL, "Missing expected transaction.id metadata field");
+                ErrorCode.INTERNAL, "Missing expected transaction.id metadata field");
           }
           try {
             timestamp = Timestamp.fromProto(transaction.getReadTimestamp());
           } catch (IllegalArgumentException e) {
             throw SpannerExceptionFactory.newSpannerException(
-                    ErrorCode.INTERNAL, "Bad value in transaction.read_timestamp metadata field", e);
+                ErrorCode.INTERNAL, "Bad value in transaction.read_timestamp metadata field", e);
           }
           transactionId = transaction.getId();
-          span.addAnnotation(
-                  "Transaction Creation Done", TraceUtil.getTransactionAnnotations(transaction));
+          span.addAnnotation("Transaction Creation Done",
+              TraceUtil.getTransactionAnnotations(transaction));
         } catch (SpannerException e) {
           span.addAnnotation("Transaction Creation Failed", TraceUtil.getExceptionAnnotations(e));
           throw e;
@@ -2023,7 +2004,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private boolean closed;
 
     GrpcResultSet(
-            CloseableIterator<PartialResultSet> iterator, Listener listener, QueryMode queryMode) {
+        CloseableIterator<PartialResultSet> iterator, Listener listener, QueryMode queryMode) {
       this.iterator = new GrpcValueIterator(iterator);
       this.listener = listener;
       this.queryMode = queryMode;
@@ -2090,8 +2071,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     protected final List<Object> rowData;
 
     /**
-     * Builds an immutable version of this struct using {@link Struct#newBuilder()} which is used as
-     * a serialization proxy.
+     * Builds an immutable version of this struct using {@link Struct#newBuilder()} which is used
+     * as a serialization proxy.
      */
     private Object writeReplace() {
       Builder builder = Struct.newBuilder();
@@ -2148,12 +2129,12 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 break;
               case STRUCT:
                 builder
-                        .set(fieldName)
-                        .toStructArray(fieldType.getArrayElementType(), (Iterable<Struct>) value);
+                    .set(fieldName)
+                    .toStructArray(fieldType.getArrayElementType(), (Iterable<Struct>) value);
                 break;
               default:
                 throw new AssertionError(
-                        "Unhandled array type code: " + fieldType.getArrayElementType());
+                    "Unhandled array type code: " + fieldType.getArrayElementType());
             }
             break;
           case STRUCT:
@@ -2166,6 +2147,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           default:
             throw new AssertionError("Unhandled type code: " + fieldType.getCode());
         }
+
       }
       return builder.build();
     }
@@ -2188,8 +2170,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       for (Type.StructField fieldType : getType().getStructFields()) {
         if (!iterator.hasNext()) {
           throw newSpannerException(
-                  ErrorCode.INTERNAL,
-                  "Invalid value stream: end of stream reached before row is complete");
+              ErrorCode.INTERNAL,
+              "Invalid value stream: end of stream reached before row is complete");
         }
         com.google.protobuf.Value value = iterator.next();
         rowData.add(decodeValue(fieldType.getType(), value));
@@ -2238,8 +2220,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     private static Struct decodeStructValue(Type structType, ListValue structValue) {
       List<Type.StructField> fieldTypes = structType.getStructFields();
       checkArgument(
-              structValue.getValuesCount() == fieldTypes.size(),
-              "Size mismatch between type descriptor and actual values.");
+          structValue.getValuesCount() == fieldTypes.size(),
+          "Size mismatch between type descriptor and actual values.");
       List<Object> fields = new ArrayList<>(fieldTypes.size());
       List<com.google.protobuf.Value> fieldValues = structValue.getValuesList();
       for (int i = 0; i < fieldTypes.size(); ++i) {
@@ -2253,13 +2235,13 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         case BOOL:
           // Use a view: element conversion is virtually free.
           return Lists.transform(
-                  listValue.getValuesList(),
-                  new Function<com.google.protobuf.Value, Boolean>() {
-                    @Override
-                    public Boolean apply(com.google.protobuf.Value input) {
-                      return input.getKindCase() == KindCase.NULL_VALUE ? null : input.getBoolValue();
-                    }
-                  });
+              listValue.getValuesList(),
+              new Function<com.google.protobuf.Value, Boolean>() {
+                @Override
+                public Boolean apply(com.google.protobuf.Value input) {
+                  return input.getKindCase() == KindCase.NULL_VALUE ? null : input.getBoolValue();
+                }
+              });
         case INT64:
           // For int64/float64 types, use custom containers.  These avoid wrapper object
           // creation for non-null arrays.
@@ -2268,79 +2250,79 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           return new Float64Array(listValue);
         case STRING:
           return Lists.transform(
-                  listValue.getValuesList(),
-                  new Function<com.google.protobuf.Value, String>() {
-                    @Override
-                    public String apply(com.google.protobuf.Value input) {
-                      return input.getKindCase() == KindCase.NULL_VALUE ? null : input.getStringValue();
-                    }
-                  });
+              listValue.getValuesList(),
+              new Function<com.google.protobuf.Value, String>() {
+                @Override
+                public String apply(com.google.protobuf.Value input) {
+                  return input.getKindCase() == KindCase.NULL_VALUE ? null : input.getStringValue();
+                }
+              });
         case BYTES:
-        {
-          // Materialize list: element conversion is expensive and should happen only once.
-          ArrayList<Object> list = new ArrayList<>(listValue.getValuesCount());
-          for (com.google.protobuf.Value value : listValue.getValuesList()) {
-            list.add(
-                    value.getKindCase() == KindCase.NULL_VALUE
-                            ? null
-                            : ByteArray.fromBase64(value.getStringValue()));
+          {
+            // Materialize list: element conversion is expensive and should happen only once.
+            ArrayList<Object> list = new ArrayList<>(listValue.getValuesCount());
+            for (com.google.protobuf.Value value : listValue.getValuesList()) {
+              list.add(
+                  value.getKindCase() == KindCase.NULL_VALUE
+                      ? null
+                      : ByteArray.fromBase64(value.getStringValue()));
+            }
+            return list;
           }
-          return list;
-        }
         case TIMESTAMP:
-        {
-          // Materialize list: element conversion is expensive and should happen only once.
-          ArrayList<Object> list = new ArrayList<>(listValue.getValuesCount());
-          for (com.google.protobuf.Value value : listValue.getValuesList()) {
-            list.add(
-                    value.getKindCase() == KindCase.NULL_VALUE
-                            ? null
-                            : Timestamp.parseTimestamp(value.getStringValue()));
+          {
+            // Materialize list: element conversion is expensive and should happen only once.
+            ArrayList<Object> list = new ArrayList<>(listValue.getValuesCount());
+            for (com.google.protobuf.Value value : listValue.getValuesList()) {
+              list.add(
+                  value.getKindCase() == KindCase.NULL_VALUE
+                      ? null
+                      : Timestamp.parseTimestamp(value.getStringValue()));
+            }
+            return list;
           }
-          return list;
-        }
         case DATE:
-        {
-          // Materialize list: element conversion is expensive and should happen only once.
-          ArrayList<Object> list = new ArrayList<>(listValue.getValuesCount());
-          for (com.google.protobuf.Value value : listValue.getValuesList()) {
-            list.add(
-                    value.getKindCase() == KindCase.NULL_VALUE
-                            ? null
-                            : Date.parseDate(value.getStringValue()));
+          {
+            // Materialize list: element conversion is expensive and should happen only once.
+            ArrayList<Object> list = new ArrayList<>(listValue.getValuesCount());
+            for (com.google.protobuf.Value value : listValue.getValuesList()) {
+              list.add(
+                  value.getKindCase() == KindCase.NULL_VALUE
+                      ? null
+                      : Date.parseDate(value.getStringValue()));
+            }
+            return list;
           }
-          return list;
-        }
 
         case STRUCT:
-        {
-          ArrayList<Struct> list = new ArrayList<>(listValue.getValuesCount());
-          for (com.google.protobuf.Value value : listValue.getValuesList()) {
-            if (value.getKindCase() == KindCase.NULL_VALUE) {
-              list.add(null);
-            } else {
-              ListValue structValue = value.getListValue();
-              list.add(decodeStructValue(elementType, structValue));
+          {
+            ArrayList<Struct> list = new ArrayList<>(listValue.getValuesCount());
+            for (com.google.protobuf.Value value : listValue.getValuesList()) {
+              if (value.getKindCase() == KindCase.NULL_VALUE) {
+                list.add(null);
+              } else {
+                ListValue structValue = value.getListValue();
+                list.add(decodeStructValue(elementType, structValue));
+              }
             }
+            return list;
           }
-          return list;
-        }
         default:
           throw new AssertionError("Unhandled type code: " + elementType.getCode());
       }
     }
 
     private static void checkType(
-            Type fieldType, com.google.protobuf.Value proto, KindCase expected) {
+        Type fieldType, com.google.protobuf.Value proto, KindCase expected) {
       if (proto.getKindCase() != expected) {
         throw newSpannerException(
-                ErrorCode.INTERNAL,
-                "Invalid value for column type "
-                        + fieldType
-                        + " expected "
-                        + expected
-                        + " but was "
-                        + proto.getKindCase());
+            ErrorCode.INTERNAL,
+            "Invalid value for column type "
+                + fieldType
+                + " expected "
+                + expected
+                + " but was "
+                + proto.getKindCase());
       }
     }
 
@@ -2401,7 +2383,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     @Override
     protected boolean[] getBooleanArrayInternal(int columnIndex) {
       @SuppressWarnings("unchecked") // We know ARRAY<BOOL> produces a List<Boolean>.
-              List<Boolean> values = (List<Boolean>) rowData.get(columnIndex);
+      List<Boolean> values = (List<Boolean>) rowData.get(columnIndex);
       boolean[] r = new boolean[values.size()];
       for (int i = 0; i < values.size(); ++i) {
         if (values.get(i) == null) {
@@ -2526,7 +2508,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   /** Adapts a streaming read/query call into an iterator over partial result sets. */
   @VisibleForTesting
   static class GrpcStreamIterator extends AbstractIterator<PartialResultSet>
-          implements CloseableIterator<PartialResultSet> {
+      implements CloseableIterator<PartialResultSet> {
     private static final PartialResultSet END_OF_STREAM = PartialResultSet.newBuilder().build();
 
     private final ConsumerImpl consumer = new ConsumerImpl();
@@ -2623,7 +2605,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
    */
   @VisibleForTesting
   abstract static class ResumableStreamIterator extends AbstractIterator<PartialResultSet>
-          implements CloseableIterator<PartialResultSet> {
+      implements CloseableIterator<PartialResultSet> {
     private final BackOff backOff = newBackOff();
     private final LinkedList<PartialResultSet> buffer = new LinkedList<>();
     private final int maxBufferSize;
@@ -2660,12 +2642,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       while (true) {
         // Eagerly start stream before consuming any buffered items.
         if (stream == null) {
-          span.addAnnotation(
-                  "Starting/Resuming stream",
-                  ImmutableMap.of(
-                          "ResumeToken",
-                          AttributeValue.stringAttributeValue(
-                                  resumeToken == null ? "null" : resumeToken.toStringUtf8())));
+          span.addAnnotation("Starting/Resuming stream",
+              ImmutableMap.of("ResumeToken",
+                  AttributeValue.stringAttributeValue(
+                      resumeToken == null ? "null" : resumeToken.toStringUtf8())));
           try (Scope s = tracer.withSpan(span)) {
             // When start a new stream set the Span as current to make the gRPC Span a child of
             // this Span.
@@ -2674,7 +2654,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
         }
         // Buffer contains items up to a resume token or has reached capacity: flush.
         if (!buffer.isEmpty()
-                && (finished || !safeToRetry || !buffer.getLast().getResumeToken().isEmpty())) {
+            && (finished || !safeToRetry || !buffer.getLast().getResumeToken().isEmpty())) {
           return buffer.pop();
         }
         try {
@@ -2706,8 +2686,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           }
         } catch (SpannerException e) {
           if (safeToRetry && e.isRetryable()) {
-            span.addAnnotation(
-                    "Stream broken. Safe to retry", TraceUtil.getExceptionAnnotations(e));
+            span.addAnnotation("Stream broken. Safe to retry",
+                TraceUtil.getExceptionAnnotations(e));
             logger.log(Level.FINE, "Retryable exception, will sleep and retry", e);
             // Truncate any items in the buffer before the last retry token.
             while (!buffer.isEmpty() && buffer.getLast().getResumeToken().isEmpty()) {
@@ -2779,37 +2759,37 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       }
 
       Object merged =
-              kind == KindCase.STRING_VALUE
-                      ? value.getStringValue()
-                      : new ArrayList<com.google.protobuf.Value>(value.getListValue().getValuesList());
+          kind == KindCase.STRING_VALUE
+              ? value.getStringValue()
+              : new ArrayList<com.google.protobuf.Value>(value.getListValue().getValuesList());
       while (current.getChunkedValue() && pos == current.getValuesCount()) {
         if (!ensureReady(StreamValue.RESULT)) {
           throw newSpannerException(
-                  ErrorCode.INTERNAL, "Stream closed in the middle of chunked value");
+              ErrorCode.INTERNAL, "Stream closed in the middle of chunked value");
         }
         com.google.protobuf.Value newValue = current.getValues(pos++);
         if (newValue.getKindCase() != kind) {
           throw newSpannerException(
-                  ErrorCode.INTERNAL,
-                  "Unexpected type in middle of chunked value. Expected: "
-                          + kind
-                          + " but got: "
-                          + newValue.getKindCase());
+              ErrorCode.INTERNAL,
+              "Unexpected type in middle of chunked value. Expected: "
+                  + kind
+                  + " but got: "
+                  + newValue.getKindCase());
         }
         if (kind == KindCase.STRING_VALUE) {
           merged = (String) merged + newValue.getStringValue();
         } else {
           concatLists(
-                  (List<com.google.protobuf.Value>) merged, newValue.getListValue().getValuesList());
+              (List<com.google.protobuf.Value>) merged, newValue.getListValue().getValuesList());
         }
       }
       if (kind == KindCase.STRING_VALUE) {
         return com.google.protobuf.Value.newBuilder().setStringValue((String) merged).build();
       } else {
         return com.google.protobuf.Value.newBuilder()
-                .setListValue(
-                        ListValue.newBuilder().addAllValues((List<com.google.protobuf.Value>) merged))
-                .build();
+            .setListValue(
+                ListValue.newBuilder().addAllValues((List<com.google.protobuf.Value>) merged))
+            .build();
       }
     }
 
@@ -2851,15 +2831,15 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
           }
           metadata = current.getMetadata();
           com.google.spanner.v1.Type typeProto =
-                  com.google.spanner.v1.Type.newBuilder()
-                          .setCode(TypeCode.STRUCT)
-                          .setStructType(metadata.getRowType())
-                          .build();
+              com.google.spanner.v1.Type.newBuilder()
+                  .setCode(TypeCode.STRUCT)
+                  .setStructType(metadata.getRowType())
+                  .build();
           try {
             type = Type.fromProto(typeProto);
           } catch (IllegalArgumentException e) {
             throw newSpannerException(
-                    ErrorCode.INTERNAL, "Invalid type metadata: " + e.getMessage(), e);
+                ErrorCode.INTERNAL, "Invalid type metadata: " + e.getMessage(), e);
           }
         }
         if (current.hasStats()) {
@@ -2894,15 +2874,15 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             String lastStr = last.getStringValue();
             String firstStr = first.getStringValue();
             merged =
-                    com.google.protobuf.Value.newBuilder().setStringValue(lastStr + firstStr).build();
+                com.google.protobuf.Value.newBuilder().setStringValue(lastStr + firstStr).build();
           } else { // List
             List<com.google.protobuf.Value> mergedList = new ArrayList<>();
             mergedList.addAll(last.getListValue().getValuesList());
             concatLists(mergedList, first.getListValue().getValuesList());
             merged =
-                    com.google.protobuf.Value.newBuilder()
-                            .setListValue(ListValue.newBuilder().addAllValues(mergedList))
-                            .build();
+                com.google.protobuf.Value.newBuilder()
+                    .setListValue(ListValue.newBuilder().addAllValues(mergedList))
+                    .build();
           }
           a.set(a.size() - 1, merged);
           a.addAll(b.subList(1, b.size()));
@@ -2932,22 +2912,22 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
     if (proto.getKindCase() != KindCase.NUMBER_VALUE) {
       throw newSpannerException(
-              ErrorCode.INTERNAL,
-              "Invalid value for column type "
-                      + Type.float64()
-                      + " expected NUMBER_VALUE or STRING_VALUE with value one of"
-                      + " \"Infinity\", \"-Infinity\", or \"NaN\" but was "
-                      + proto.getKindCase()
-                      + (proto.getKindCase() == KindCase.STRING_VALUE
-                      ? " with value \"" + proto.getStringValue() + "\""
-                      : ""));
+          ErrorCode.INTERNAL,
+          "Invalid value for column type "
+              + Type.float64()
+              + " expected NUMBER_VALUE or STRING_VALUE with value one of"
+              + " \"Infinity\", \"-Infinity\", or \"NaN\" but was "
+              + proto.getKindCase()
+              + (proto.getKindCase() == KindCase.STRING_VALUE
+                  ? " with value \"" + proto.getStringValue() + "\""
+                  : ""));
     }
     return proto.getNumberValue();
   }
 
   private static NullPointerException throwNotNull(int columnIndex) {
     throw new NullPointerException(
-            "Cannot call array getter for column " + columnIndex + " with null elements");
+        "Cannot call array getter for column " + columnIndex + " with null elements");
   }
 
   /**
