@@ -292,7 +292,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                   return gapicRpc.createSession(
                       db.getName(), getOptions().getSessionLabels(), options);
                 }
-              }, getOptions().getRetrySettings());
+              },
+              getOptions().getRetrySettings());
       span.end();
       return new SessionImpl(session.getName(), options);
     } catch (RuntimeException e) {
@@ -430,7 +431,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 public Paginated<T> call() {
                   return getNextPage(nextPageToken);
                 }
-              }, null);
+              },
+              null);
       this.nextPageToken = nextPage.getNextPageToken();
       List<S> results = new ArrayList<>();
       for (T proto : nextPage.getResults()) {
@@ -614,7 +616,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               return InstanceConfig.fromProto(
                   rpc.getInstanceConfig(instanceConfigName), InstanceAdminClientImpl.this);
             }
-          }, null);
+          },
+          null);
     }
 
     @Override
@@ -684,7 +687,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               return Instance.fromProto(
                   rpc.getInstance(instanceName), InstanceAdminClientImpl.this, dbClient);
             }
-          }, null);
+          },
+          null);
     }
 
     @Override
@@ -830,7 +834,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                   public CommitResponse call() throws Exception {
                     return gapicRpc.commit(request, options);
                   }
-                }, null);
+                },
+                null);
         Timestamp t = Timestamp.fromProto(response.getCommitTimestamp());
         span.end();
         return t;
@@ -897,7 +902,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 gapicRpc.deleteSession(name, options);
                 return null;
               }
-            }, null);
+            },
+            null);
         span.end();
       } catch (RuntimeException e) {
         TraceUtil.endSpanWithFailure(span, e);
@@ -922,7 +928,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                   public Transaction call() throws Exception {
                     return gapicRpc.beginTransaction(request, options);
                   }
-                }, null);
+                },
+                null);
         if (txn.getId().isEmpty()) {
           throw newSpannerException(ErrorCode.INTERNAL, "Missing id in transaction\n" + getName());
         }
@@ -1421,7 +1428,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 public Transaction call() throws Exception {
                   return rpc.beginTransaction(request, session.options);
                 }
-              }, null);
+              },
+              null);
       if (txn.getId().isEmpty()) {
         throw SpannerExceptionFactory.newSpannerException(
             ErrorCode.INTERNAL,
@@ -1454,7 +1462,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 public com.google.spanner.v1.ResultSet call() throws Exception {
                   return rpc.executeQuery(builder.build(), session.options);
                 }
-              }, null);
+              },
+              null);
       if (!resultSet.hasStats()) {
         throw new IllegalArgumentException(
             "Partitioned DML response missing stats possibly due to non-DML statement as input");
@@ -1542,7 +1551,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                   public CommitResponse call() throws Exception {
                     return rpc.commit(commitRequest, session.options);
                   }
-                }, null);
+                },
+                null);
 
         if (!commitResponse.hasCommitTimestamp()) {
           throw newSpannerException(
@@ -1658,7 +1668,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 public com.google.spanner.v1.ResultSet call() throws Exception {
                   return rpc.executeQuery(builder.build(), session.options);
                 }
-              }, null);
+              },
+              null);
       if (!resultSet.hasStats()) {
         throw new IllegalArgumentException(
             "DML response missing stats possibly due to non-DML statement as input");
@@ -1848,7 +1859,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                     public Transaction call() throws Exception {
                       return rpc.beginTransaction(request, session.options);
                     }
-                  }, null);
+                  },
+                  null);
           if (!transaction.hasReadTimestamp()) {
             throw SpannerExceptionFactory.newSpannerException(
                 ErrorCode.INTERNAL, "Missing expected transaction.read_timestamp metadata field");
