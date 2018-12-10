@@ -424,7 +424,7 @@ public class BigtableDataClient implements AutoCloseable {
   }
 
   /**
-   * Convenience method for synchronous streaming the results of a {@link Query}.
+   * Convenience method for synchronously streaming the results of a {@link Query}.
    *
    * <p>Sample code:
    *
@@ -462,7 +462,7 @@ public class BigtableDataClient implements AutoCloseable {
   }
 
   /**
-   * Convenience method for asynchronous streaming the results of a {@link Query}.
+   * Convenience method for asynchronously streaming the results of a {@link Query}.
    *
    * <p>Sample code:
    *
