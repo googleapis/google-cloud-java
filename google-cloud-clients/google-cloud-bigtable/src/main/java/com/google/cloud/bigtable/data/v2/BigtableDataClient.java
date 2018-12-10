@@ -418,8 +418,10 @@ public class BigtableDataClient implements AutoCloseable {
    * }</pre>
    */
   public ApiFuture<Row> readRowAsync(String tableId, ByteString rowKey, @Nullable Filter filter) {
-    Query baseQuery = Query.create(tableId).rowKey(rowKey);
-    Query query = (filter != null) ? baseQuery.filter(filter) : baseQuery;
+    Query query = Query.create(tableId).rowKey(rowKey);
+    if (filter != null) {
+      query = query.filter(filter);
+    }
     return readRowsCallable().first().futureCall(query);
   }
 
