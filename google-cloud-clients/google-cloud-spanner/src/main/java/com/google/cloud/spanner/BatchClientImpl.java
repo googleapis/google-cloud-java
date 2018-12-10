@@ -54,8 +54,7 @@ public class BatchClientImpl implements BatchClient {
 
   @Override
   public BatchReadOnlyTransaction batchReadOnlyTransaction(BatchTransactionId batchTransactionId) {
-    SessionImpl session =
-        spanner.sessionWithId(checkNotNull(batchTransactionId).getSessionId());
+    SessionImpl session = spanner.sessionWithId(checkNotNull(batchTransactionId).getSessionId());
     return new BatchReadOnlyTransactionImpl(spanner, session, batchTransactionId);
   }
 
@@ -98,7 +97,8 @@ public class BatchClientImpl implements BatchClient {
         String table,
         KeySet keys,
         Iterable<String> columns,
-        ReadOption... options) throws SpannerException {
+        ReadOption... options)
+        throws SpannerException {
       return partitionReadUsingIndex(
           partitionOptions, table, null /*index*/, keys, columns, options);
     }
@@ -110,7 +110,8 @@ public class BatchClientImpl implements BatchClient {
         String index,
         KeySet keys,
         Iterable<String> columns,
-        ReadOption... option) throws SpannerException {
+        ReadOption... option)
+        throws SpannerException {
       Options readOptions = Options.fromReadOptions(option);
       Preconditions.checkArgument(
           !readOptions.hasLimit(),
@@ -143,7 +144,8 @@ public class BatchClientImpl implements BatchClient {
                 public PartitionResponse call() throws Exception {
                   return rpc.partitionRead(request, options);
                 }
-              }, null);
+              },
+              null);
       ImmutableList.Builder<Partition> partitions = ImmutableList.builder();
       for (com.google.spanner.v1.Partition p : response.getPartitionsList()) {
         Partition partition =
@@ -160,9 +162,7 @@ public class BatchClientImpl implements BatchClient {
         throws SpannerException {
       Options queryOptions = Options.fromQueryOptions(option);
       final PartitionQueryRequest.Builder builder =
-          PartitionQueryRequest.newBuilder()
-              .setSession(sessionName)
-              .setSql(statement.getSql());
+          PartitionQueryRequest.newBuilder().setSession(sessionName).setSql(statement.getSql());
       Map<String, Value> stmtParameters = statement.getParameters();
       if (!stmtParameters.isEmpty()) {
         Struct.Builder paramsBuilder = builder.getParamsBuilder();
@@ -190,7 +190,8 @@ public class BatchClientImpl implements BatchClient {
                 public PartitionResponse call() throws Exception {
                   return rpc.partitionQuery(request, options);
                 }
-              }, null);
+              },
+              null);
       ImmutableList.Builder<Partition> partitions = ImmutableList.builder();
       for (com.google.spanner.v1.Partition p : response.getPartitionsList()) {
         Partition partition =

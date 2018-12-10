@@ -720,7 +720,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               rpc.deleteInstance(new InstanceId(projectId, instanceId).getName());
               return null;
             }
-          }, null);
+          },
+          null);
     }
 
     @Override
@@ -1118,7 +1119,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
             }
           };
       return new GrpcResultSet(stream, this, queryMode);
-    } 
+    }
 
     /**
      * Called before any read or query is started to perform state checks and initializations.
@@ -1664,7 +1665,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       }
       // For standard DML, using the exact row count.
       return resultSet.getStats().getRowCountExact();
-    } 
+    }
   }
 
   /**
@@ -2807,7 +2808,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
      * results will return null.
      */
     @Nullable
-    ResultSetStats getStats() { 
+    ResultSetStats getStats() {
       return statistics;
     }
 

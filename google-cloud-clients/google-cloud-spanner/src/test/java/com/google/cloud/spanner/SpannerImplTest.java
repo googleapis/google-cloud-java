@@ -60,11 +60,11 @@ public class SpannerImplTest {
 
     com.google.spanner.v1.Session sessionProto =
         com.google.spanner.v1.Session.newBuilder()
-          .setName(sessionName)
-          .putAllLabels(labels)
-          .build();
+            .setName(sessionName)
+            .putAllLabels(labels)
+            .build();
     Mockito.when(rpc.createSession(Mockito.eq(dbName), Mockito.eq(labels), options.capture()))
-      .thenReturn(sessionProto);
+        .thenReturn(sessionProto);
     Session session = impl.createSession(db);
     assertThat(session.getName()).isEqualTo(sessionName);
 
@@ -127,7 +127,8 @@ public class SpannerImplTest {
             public Void call() throws Exception {
               throw new Exception("Should be translated to SpannerException");
             }
-          }, null);
+          },
+          null);
     } catch (SpannerException e) {
       assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
       assertThat(e.getMessage().contains("Unexpected exception thrown"));
