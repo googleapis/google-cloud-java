@@ -48,9 +48,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
- *   String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+ *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
  *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
- *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(formattedParent, template);
+ *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(parent, template);
  * }
  * </code>
  * </pre>
@@ -182,9 +182,40 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
    *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(formattedParent, template);
+   *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(parent, template);
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The "resource name" of the region, as described in
+   *     https://cloud.google.com/apis/design/resource_names of the form
+   *     `projects/{project_id}/regions/{region}`
+   * @param template Required. The Dataproc workflow template to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WorkflowTemplate createWorkflowTemplate(
+      RegionName parent, WorkflowTemplate template) {
+
+    CreateWorkflowTemplateRequest request =
+        CreateWorkflowTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setTemplate(template)
+            .build();
+    return createWorkflowTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Creates new workflow template.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
+   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
+   *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
+   *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(parent.toString(), template);
    * }
    * </code></pre>
    *
@@ -209,10 +240,10 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
    *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
    *   CreateWorkflowTemplateRequest request = CreateWorkflowTemplateRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setTemplate(template)
    *     .build();
    *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(request);
@@ -234,10 +265,10 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
    *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
    *   CreateWorkflowTemplateRequest request = CreateWorkflowTemplateRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .setTemplate(template)
    *     .build();
    *   ApiFuture&lt;WorkflowTemplate&gt; future = workflowTemplateServiceClient.createWorkflowTemplateCallable().futureCall(request);
@@ -261,8 +292,37 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedName = WorkflowTemplateName.format("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   WorkflowTemplate response = workflowTemplateServiceClient.getWorkflowTemplate(formattedName);
+   *   WorkflowTemplateName name = WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *   WorkflowTemplate response = workflowTemplateServiceClient.getWorkflowTemplate(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The "resource name" of the workflow template, as described in
+   *     https://cloud.google.com/apis/design/resource_names of the form
+   *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final WorkflowTemplate getWorkflowTemplate(WorkflowTemplateName name) {
+
+    GetWorkflowTemplateRequest request =
+        GetWorkflowTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getWorkflowTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves the latest workflow template.
+   *
+   * <p>Can retrieve previously instantiated template by specifying optional version parameter.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
+   *   WorkflowTemplateName name = WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *   WorkflowTemplate response = workflowTemplateServiceClient.getWorkflowTemplate(name.toString());
    * }
    * </code></pre>
    *
@@ -288,9 +348,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedName = WorkflowTemplateName.format("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *   WorkflowTemplateName name = WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
    *   GetWorkflowTemplateRequest request = GetWorkflowTemplateRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   WorkflowTemplate response = workflowTemplateServiceClient.getWorkflowTemplate(request);
    * }
@@ -313,9 +373,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedName = WorkflowTemplateName.format("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *   WorkflowTemplateName name = WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
    *   GetWorkflowTemplateRequest request = GetWorkflowTemplateRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;WorkflowTemplate&gt; future = workflowTemplateServiceClient.getWorkflowTemplateCallable().futureCall(request);
    *   // Do something
@@ -350,8 +410,52 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedName = WorkflowTemplateName.format("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   Empty response = workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(formattedName).get();
+   *   WorkflowTemplateName name = WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *   Empty response = workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(name).get();
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The "resource name" of the workflow template, as described in
+   *     https://cloud.google.com/apis/design/resource_names of the form
+   *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi(
+      "The surface for long-running operations is not stable yet and may change in the future.")
+  public final OperationFuture<Empty, WorkflowMetadata> instantiateWorkflowTemplateAsync(
+      WorkflowTemplateName name) {
+
+    InstantiateWorkflowTemplateRequest request =
+        InstantiateWorkflowTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return instantiateWorkflowTemplateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Instantiates a template and begins execution.
+   *
+   * <p>The returned Operation can be used to track execution of workflow by polling
+   * [operations.get][google.longrunning.Operations.GetOperation]. The Operation will complete when
+   * entire workflow is finished.
+   *
+   * <p>The running workflow can be aborted via
+   * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
+   * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
+   *
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
+   * [WorkflowMetadata][google.cloud.dataproc.v1beta2.WorkflowMetadata].
+   *
+   * <p>On successful completion, [Operation.response][google.longrunning.Operation.response] will
+   * be [Empty][google.protobuf.Empty].
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
+   *   WorkflowTemplateName name = WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *   Empty response = workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(name.toString()).get();
    * }
    * </code></pre>
    *
@@ -433,9 +537,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedName = WorkflowTemplateName.format("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *   WorkflowTemplateName name = WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
    *   InstantiateWorkflowTemplateRequest request = InstantiateWorkflowTemplateRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   Empty response = workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(request).get();
    * }
@@ -473,9 +577,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedName = WorkflowTemplateName.format("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *   WorkflowTemplateName name = WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
    *   InstantiateWorkflowTemplateRequest request = InstantiateWorkflowTemplateRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   OperationFuture&lt;Operation&gt; future = workflowTemplateServiceClient.instantiateWorkflowTemplateOperationCallable().futureCall(request);
    *   // Do something
@@ -511,9 +615,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedName = WorkflowTemplateName.format("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *   WorkflowTemplateName name = WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
    *   InstantiateWorkflowTemplateRequest request = InstantiateWorkflowTemplateRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = workflowTemplateServiceClient.instantiateWorkflowTemplateCallable().futureCall(request);
    *   // Do something
@@ -795,8 +899,36 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
-   *   for (WorkflowTemplate element : workflowTemplateServiceClient.listWorkflowTemplates(formattedParent).iterateAll()) {
+   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
+   *   for (WorkflowTemplate element : workflowTemplateServiceClient.listWorkflowTemplates(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The "resource name" of the region, as described in
+   *     https://cloud.google.com/apis/design/resource_names of the form
+   *     `projects/{project_id}/regions/{region}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListWorkflowTemplatesPagedResponse listWorkflowTemplates(RegionName parent) {
+    ListWorkflowTemplatesRequest request =
+        ListWorkflowTemplatesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listWorkflowTemplates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists workflows that match the specified filter in the request.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
+   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
+   *   for (WorkflowTemplate element : workflowTemplateServiceClient.listWorkflowTemplates(parent.toString()).iterateAll()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -821,9 +953,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
    *   ListWorkflowTemplatesRequest request = ListWorkflowTemplatesRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   for (WorkflowTemplate element : workflowTemplateServiceClient.listWorkflowTemplates(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -847,9 +979,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
    *   ListWorkflowTemplatesRequest request = ListWorkflowTemplatesRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   ApiFuture&lt;ListWorkflowTemplatesPagedResponse&gt; future = workflowTemplateServiceClient.listWorkflowTemplatesPagedCallable().futureCall(request);
    *   // Do something
@@ -872,9 +1004,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
+   *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
    *   ListWorkflowTemplatesRequest request = ListWorkflowTemplatesRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParent(parent.toString())
    *     .build();
    *   while (true) {
    *     ListWorkflowTemplatesResponse response = workflowTemplateServiceClient.listWorkflowTemplatesCallable().call(request);
@@ -904,8 +1036,35 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedName = WorkflowTemplateName.format("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   workflowTemplateServiceClient.deleteWorkflowTemplate(formattedName);
+   *   WorkflowTemplateName name = WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *   workflowTemplateServiceClient.deleteWorkflowTemplate(name);
+   * }
+   * </code></pre>
+   *
+   * @param name Required. The "resource name" of the workflow template, as described in
+   *     https://cloud.google.com/apis/design/resource_names of the form
+   *     `projects/{project_id}/regions/{region}/workflowTemplates/{template_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteWorkflowTemplate(WorkflowTemplateName name) {
+
+    DeleteWorkflowTemplateRequest request =
+        DeleteWorkflowTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteWorkflowTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Deletes a workflow template. It does not cancel in-progress workflows.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
+   *   WorkflowTemplateName name = WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *   workflowTemplateServiceClient.deleteWorkflowTemplate(name.toString());
    * }
    * </code></pre>
    *
@@ -929,9 +1088,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedName = WorkflowTemplateName.format("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *   WorkflowTemplateName name = WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
    *   DeleteWorkflowTemplateRequest request = DeleteWorkflowTemplateRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   workflowTemplateServiceClient.deleteWorkflowTemplate(request);
    * }
@@ -952,9 +1111,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
-   *   String formattedName = WorkflowTemplateName.format("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
+   *   WorkflowTemplateName name = WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
    *   DeleteWorkflowTemplateRequest request = DeleteWorkflowTemplateRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setName(name.toString())
    *     .build();
    *   ApiFuture&lt;Void&gt; future = workflowTemplateServiceClient.deleteWorkflowTemplateCallable().futureCall(request);
    *   // Do something
