@@ -16,9 +16,11 @@
 package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.RouterClient.AggregatedListRoutersPagedResponse;
+import static com.google.cloud.compute.v1.RouterClient.GetNatMappingInfoRoutersPagedResponse;
 import static com.google.cloud.compute.v1.RouterClient.ListRoutersPagedResponse;
 import static com.google.cloud.compute.v1.stub.HttpJsonRouterStub.aggregatedListRoutersMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonRouterStub.deleteRouterMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonRouterStub.getNatMappingInfoRoutersMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonRouterStub.getRouterMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonRouterStub.getRouterStatusRouterMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonRouterStub.insertRouterMethodDescriptor;
@@ -61,6 +63,7 @@ public class RouterClientTest {
               aggregatedListRoutersMethodDescriptor,
               deleteRouterMethodDescriptor,
               getRouterMethodDescriptor,
+              getNatMappingInfoRoutersMethodDescriptor,
               getRouterStatusRouterMethodDescriptor,
               insertRouterMethodDescriptor,
               listRoutersMethodDescriptor,
@@ -306,6 +309,69 @@ public class RouterClientTest {
           ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
 
       client.getRouter(router);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getNatMappingInfoRoutersTest() {
+    String kind = "kind3292052";
+    String nextPageToken = "";
+    String id = "id3355";
+    String selfLink = "selfLink-1691268851";
+    VmEndpointNatMappings resultElement = VmEndpointNatMappings.newBuilder().build();
+    List<VmEndpointNatMappings> result = Arrays.asList(resultElement);
+    VmEndpointNatMappingsList expectedResponse =
+        VmEndpointNatMappingsList.newBuilder()
+            .setKind(kind)
+            .setNextPageToken(nextPageToken)
+            .setId(id)
+            .setSelfLink(selfLink)
+            .addAllResult(result)
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectRegionRouterName router =
+        ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+
+    GetNatMappingInfoRoutersPagedResponse pagedListResponse =
+        client.getNatMappingInfoRouters(router);
+
+    List<VmEndpointNatMappings> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResultList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getNatMappingInfoRoutersExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectRegionRouterName router =
+          ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+
+      client.getNatMappingInfoRouters(router);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

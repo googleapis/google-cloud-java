@@ -16,6 +16,7 @@
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RouterClient.AggregatedListRoutersPagedResponse;
+import static com.google.cloud.compute.v1.RouterClient.GetNatMappingInfoRoutersPagedResponse;
 import static com.google.cloud.compute.v1.RouterClient.ListRoutersPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -23,6 +24,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListRoutersHttpRequest;
 import com.google.cloud.compute.v1.DeleteRouterHttpRequest;
+import com.google.cloud.compute.v1.GetNatMappingInfoRoutersHttpRequest;
 import com.google.cloud.compute.v1.GetRouterHttpRequest;
 import com.google.cloud.compute.v1.GetRouterStatusRouterHttpRequest;
 import com.google.cloud.compute.v1.InsertRouterHttpRequest;
@@ -36,6 +38,7 @@ import com.google.cloud.compute.v1.RouterList;
 import com.google.cloud.compute.v1.RouterStatusResponse;
 import com.google.cloud.compute.v1.RoutersPreviewResponse;
 import com.google.cloud.compute.v1.UpdateRouterHttpRequest;
+import com.google.cloud.compute.v1.VmEndpointNatMappingsList;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -69,6 +72,19 @@ public abstract class RouterStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<GetRouterHttpRequest, Router> getRouterCallable() {
     throw new UnsupportedOperationException("Not implemented: getRouterCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<GetNatMappingInfoRoutersHttpRequest, GetNatMappingInfoRoutersPagedResponse>
+      getNatMappingInfoRoutersPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getNatMappingInfoRoutersPagedCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList>
+      getNatMappingInfoRoutersCallable() {
+    throw new UnsupportedOperationException("Not implemented: getNatMappingInfoRoutersCallable()");
   }
 
   @BetaApi

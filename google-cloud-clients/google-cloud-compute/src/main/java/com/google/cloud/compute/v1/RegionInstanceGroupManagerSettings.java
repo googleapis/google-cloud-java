@@ -127,6 +127,13 @@ public class RegionInstanceGroupManagerSettings
         .listManagedInstancesRegionInstanceGroupManagersSettings();
   }
 
+  /** Returns the object with the settings used for calls to patchRegionInstanceGroupManager. */
+  public UnaryCallSettings<PatchRegionInstanceGroupManagerHttpRequest, Operation>
+      patchRegionInstanceGroupManagerSettings() {
+    return ((RegionInstanceGroupManagerStubSettings) getStubSettings())
+        .patchRegionInstanceGroupManagerSettings();
+  }
+
   /**
    * Returns the object with the settings used for calls to
    * recreateInstancesRegionInstanceGroupManager.
@@ -323,6 +330,12 @@ public class RegionInstanceGroupManagerSettings
             RegionInstanceGroupManagersListInstancesResponse>
         listManagedInstancesRegionInstanceGroupManagersSettings() {
       return getStubSettingsBuilder().listManagedInstancesRegionInstanceGroupManagersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchRegionInstanceGroupManager. */
+    public UnaryCallSettings.Builder<PatchRegionInstanceGroupManagerHttpRequest, Operation>
+        patchRegionInstanceGroupManagerSettings() {
+      return getStubSettingsBuilder().patchRegionInstanceGroupManagerSettings();
     }
 
     /**

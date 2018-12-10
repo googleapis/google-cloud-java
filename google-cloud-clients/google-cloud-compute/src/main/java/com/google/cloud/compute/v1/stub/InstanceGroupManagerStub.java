@@ -34,6 +34,7 @@ import com.google.cloud.compute.v1.InstanceGroupManagersListManagedInstancesResp
 import com.google.cloud.compute.v1.ListInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.RecreateInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.ResizeInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.SetInstanceTemplateInstanceGroupManagerHttpRequest;
@@ -121,6 +122,12 @@ public abstract class InstanceGroupManagerStub implements BackgroundResource {
       listManagedInstancesInstanceGroupManagersCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listManagedInstancesInstanceGroupManagersCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<PatchInstanceGroupManagerHttpRequest, Operation>
+      patchInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException("Not implemented: patchInstanceGroupManagerCallable()");
   }
 
   @BetaApi

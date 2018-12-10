@@ -83,6 +83,12 @@ public class NodeTemplateSettings extends ClientSettings<NodeTemplateSettings> {
     return ((NodeTemplateStubSettings) getStubSettings()).getNodeTemplateSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicyNodeTemplate. */
+  public UnaryCallSettings<GetIamPolicyNodeTemplateHttpRequest, Policy>
+      getIamPolicyNodeTemplateSettings() {
+    return ((NodeTemplateStubSettings) getStubSettings()).getIamPolicyNodeTemplateSettings();
+  }
+
   /** Returns the object with the settings used for calls to insertNodeTemplate. */
   public UnaryCallSettings<InsertNodeTemplateHttpRequest, Operation> insertNodeTemplateSettings() {
     return ((NodeTemplateStubSettings) getStubSettings()).insertNodeTemplateSettings();
@@ -93,6 +99,18 @@ public class NodeTemplateSettings extends ClientSettings<NodeTemplateSettings> {
           ListNodeTemplatesHttpRequest, NodeTemplateList, ListNodeTemplatesPagedResponse>
       listNodeTemplatesSettings() {
     return ((NodeTemplateStubSettings) getStubSettings()).listNodeTemplatesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicyNodeTemplate. */
+  public UnaryCallSettings<SetIamPolicyNodeTemplateHttpRequest, Policy>
+      setIamPolicyNodeTemplateSettings() {
+    return ((NodeTemplateStubSettings) getStubSettings()).setIamPolicyNodeTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissionsNodeTemplate. */
+  public UnaryCallSettings<TestIamPermissionsNodeTemplateHttpRequest, TestPermissionsResponse>
+      testIamPermissionsNodeTemplateSettings() {
+    return ((NodeTemplateStubSettings) getStubSettings()).testIamPermissionsNodeTemplateSettings();
   }
 
   public static final NodeTemplateSettings create(NodeTemplateStubSettings stub)
@@ -218,6 +236,12 @@ public class NodeTemplateSettings extends ClientSettings<NodeTemplateSettings> {
       return getStubSettingsBuilder().getNodeTemplateSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicyNodeTemplate. */
+    public UnaryCallSettings.Builder<GetIamPolicyNodeTemplateHttpRequest, Policy>
+        getIamPolicyNodeTemplateSettings() {
+      return getStubSettingsBuilder().getIamPolicyNodeTemplateSettings();
+    }
+
     /** Returns the builder for the settings used for calls to insertNodeTemplate. */
     public UnaryCallSettings.Builder<InsertNodeTemplateHttpRequest, Operation>
         insertNodeTemplateSettings() {
@@ -229,6 +253,19 @@ public class NodeTemplateSettings extends ClientSettings<NodeTemplateSettings> {
             ListNodeTemplatesHttpRequest, NodeTemplateList, ListNodeTemplatesPagedResponse>
         listNodeTemplatesSettings() {
       return getStubSettingsBuilder().listNodeTemplatesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicyNodeTemplate. */
+    public UnaryCallSettings.Builder<SetIamPolicyNodeTemplateHttpRequest, Policy>
+        setIamPolicyNodeTemplateSettings() {
+      return getStubSettingsBuilder().setIamPolicyNodeTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissionsNodeTemplate. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsNodeTemplateHttpRequest, TestPermissionsResponse>
+        testIamPermissionsNodeTemplateSettings() {
+      return getStubSettingsBuilder().testIamPermissionsNodeTemplateSettings();
     }
 
     @Override

@@ -38,15 +38,20 @@ import com.google.cloud.compute.v1.Disk;
 import com.google.cloud.compute.v1.DiskAggregatedList;
 import com.google.cloud.compute.v1.DiskList;
 import com.google.cloud.compute.v1.GetDiskHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyDiskHttpRequest;
 import com.google.cloud.compute.v1.InsertDiskHttpRequest;
 import com.google.cloud.compute.v1.ListDisksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectZoneDiskName;
 import com.google.cloud.compute.v1.ProjectZoneDiskResourceName;
 import com.google.cloud.compute.v1.ProjectZoneName;
 import com.google.cloud.compute.v1.ResizeDiskHttpRequest;
+import com.google.cloud.compute.v1.SetIamPolicyDiskHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsDiskHttpRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsDiskHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.Sets;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -139,6 +144,27 @@ public class HttpJsonDiskStub extends DiskStub {
           .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<GetIamPolicyDiskHttpRequest, Policy>
+      getIamPolicyDiskMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyDiskHttpRequest, Policy>newBuilder()
+              .setFullMethodName("compute.disks.getIamPolicy")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<GetIamPolicyDiskHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/disks/{resource}/getIamPolicy"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectZoneDiskResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Policy>newBuilder()
+                      .setResponseInstance(Policy.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<InsertDiskHttpRequest, Operation>
       insertDiskMethodDescriptor =
           ApiMethodDescriptor.<InsertDiskHttpRequest, Operation>newBuilder()
@@ -198,6 +224,27 @@ public class HttpJsonDiskStub extends DiskStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<SetIamPolicyDiskHttpRequest, Policy>
+      setIamPolicyDiskMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyDiskHttpRequest, Policy>newBuilder()
+              .setFullMethodName("compute.disks.setIamPolicy")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<SetIamPolicyDiskHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/disks/{resource}/setIamPolicy"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectZoneDiskResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Policy>newBuilder()
+                      .setResponseInstance(Policy.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<SetLabelsDiskHttpRequest, Operation>
       setLabelsDiskMethodDescriptor =
           ApiMethodDescriptor.<SetLabelsDiskHttpRequest, Operation>newBuilder()
@@ -217,6 +264,29 @@ public class HttpJsonDiskStub extends DiskStub {
                       .build())
               .build();
 
+  @InternalApi
+  public static final ApiMethodDescriptor<
+          TestIamPermissionsDiskHttpRequest, TestPermissionsResponse>
+      testIamPermissionsDiskMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsDiskHttpRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("compute.disks.testIamPermissions")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<TestIamPermissionsDiskHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/disks/{resource}/testIamPermissions"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectZoneDiskResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setResponseInstance(TestPermissionsResponse.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<AggregatedListDisksHttpRequest, DiskAggregatedList>
@@ -226,11 +296,15 @@ public class HttpJsonDiskStub extends DiskStub {
   private final UnaryCallable<CreateSnapshotDiskHttpRequest, Operation> createSnapshotDiskCallable;
   private final UnaryCallable<DeleteDiskHttpRequest, Operation> deleteDiskCallable;
   private final UnaryCallable<GetDiskHttpRequest, Disk> getDiskCallable;
+  private final UnaryCallable<GetIamPolicyDiskHttpRequest, Policy> getIamPolicyDiskCallable;
   private final UnaryCallable<InsertDiskHttpRequest, Operation> insertDiskCallable;
   private final UnaryCallable<ListDisksHttpRequest, DiskList> listDisksCallable;
   private final UnaryCallable<ListDisksHttpRequest, ListDisksPagedResponse> listDisksPagedCallable;
   private final UnaryCallable<ResizeDiskHttpRequest, Operation> resizeDiskCallable;
+  private final UnaryCallable<SetIamPolicyDiskHttpRequest, Policy> setIamPolicyDiskCallable;
   private final UnaryCallable<SetLabelsDiskHttpRequest, Operation> setLabelsDiskCallable;
+  private final UnaryCallable<TestIamPermissionsDiskHttpRequest, TestPermissionsResponse>
+      testIamPermissionsDiskCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
 
@@ -286,6 +360,10 @@ public class HttpJsonDiskStub extends DiskStub {
         HttpJsonCallSettings.<GetDiskHttpRequest, Disk>newBuilder()
             .setMethodDescriptor(getDiskMethodDescriptor)
             .build();
+    HttpJsonCallSettings<GetIamPolicyDiskHttpRequest, Policy> getIamPolicyDiskTransportSettings =
+        HttpJsonCallSettings.<GetIamPolicyDiskHttpRequest, Policy>newBuilder()
+            .setMethodDescriptor(getIamPolicyDiskMethodDescriptor)
+            .build();
     HttpJsonCallSettings<InsertDiskHttpRequest, Operation> insertDiskTransportSettings =
         HttpJsonCallSettings.<InsertDiskHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(insertDiskMethodDescriptor)
@@ -298,10 +376,20 @@ public class HttpJsonDiskStub extends DiskStub {
         HttpJsonCallSettings.<ResizeDiskHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(resizeDiskMethodDescriptor)
             .build();
+    HttpJsonCallSettings<SetIamPolicyDiskHttpRequest, Policy> setIamPolicyDiskTransportSettings =
+        HttpJsonCallSettings.<SetIamPolicyDiskHttpRequest, Policy>newBuilder()
+            .setMethodDescriptor(setIamPolicyDiskMethodDescriptor)
+            .build();
     HttpJsonCallSettings<SetLabelsDiskHttpRequest, Operation> setLabelsDiskTransportSettings =
         HttpJsonCallSettings.<SetLabelsDiskHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(setLabelsDiskMethodDescriptor)
             .build();
+    HttpJsonCallSettings<TestIamPermissionsDiskHttpRequest, TestPermissionsResponse>
+        testIamPermissionsDiskTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsDiskHttpRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsDiskMethodDescriptor)
+                .build();
 
     this.aggregatedListDisksCallable =
         callableFactory.createUnaryCallable(
@@ -324,6 +412,9 @@ public class HttpJsonDiskStub extends DiskStub {
     this.getDiskCallable =
         callableFactory.createUnaryCallable(
             getDiskTransportSettings, settings.getDiskSettings(), clientContext);
+    this.getIamPolicyDiskCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyDiskTransportSettings, settings.getIamPolicyDiskSettings(), clientContext);
     this.insertDiskCallable =
         callableFactory.createUnaryCallable(
             insertDiskTransportSettings, settings.insertDiskSettings(), clientContext);
@@ -336,9 +427,17 @@ public class HttpJsonDiskStub extends DiskStub {
     this.resizeDiskCallable =
         callableFactory.createUnaryCallable(
             resizeDiskTransportSettings, settings.resizeDiskSettings(), clientContext);
+    this.setIamPolicyDiskCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyDiskTransportSettings, settings.setIamPolicyDiskSettings(), clientContext);
     this.setLabelsDiskCallable =
         callableFactory.createUnaryCallable(
             setLabelsDiskTransportSettings, settings.setLabelsDiskSettings(), clientContext);
+    this.testIamPermissionsDiskCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsDiskTransportSettings,
+            settings.testIamPermissionsDiskSettings(),
+            clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
@@ -371,6 +470,11 @@ public class HttpJsonDiskStub extends DiskStub {
   }
 
   @BetaApi
+  public UnaryCallable<GetIamPolicyDiskHttpRequest, Policy> getIamPolicyDiskCallable() {
+    return getIamPolicyDiskCallable;
+  }
+
+  @BetaApi
   public UnaryCallable<InsertDiskHttpRequest, Operation> insertDiskCallable() {
     return insertDiskCallable;
   }
@@ -391,8 +495,19 @@ public class HttpJsonDiskStub extends DiskStub {
   }
 
   @BetaApi
+  public UnaryCallable<SetIamPolicyDiskHttpRequest, Policy> setIamPolicyDiskCallable() {
+    return setIamPolicyDiskCallable;
+  }
+
+  @BetaApi
   public UnaryCallable<SetLabelsDiskHttpRequest, Operation> setLabelsDiskCallable() {
     return setLabelsDiskCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<TestIamPermissionsDiskHttpRequest, TestPermissionsResponse>
+      testIamPermissionsDiskCallable() {
+    return testIamPermissionsDiskCallable;
   }
 
   @Override
