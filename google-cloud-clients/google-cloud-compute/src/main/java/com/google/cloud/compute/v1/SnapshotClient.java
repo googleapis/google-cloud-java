@@ -157,7 +157,7 @@ public class SnapshotClient implements BackgroundResource {
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
    * corresponding snapshot.
    *
-   * <p>For more information, see Deleting snaphots.
+   * <p>For more information, see Deleting snapshots.
    *
    * <p>Sample code:
    *
@@ -188,7 +188,7 @@ public class SnapshotClient implements BackgroundResource {
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
    * corresponding snapshot.
    *
-   * <p>For more information, see Deleting snaphots.
+   * <p>For more information, see Deleting snapshots.
    *
    * <p>Sample code:
    *
@@ -217,7 +217,7 @@ public class SnapshotClient implements BackgroundResource {
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
    * corresponding snapshot.
    *
-   * <p>For more information, see Deleting snaphots.
+   * <p>For more information, see Deleting snapshots.
    *
    * <p>Sample code:
    *
@@ -246,7 +246,7 @@ public class SnapshotClient implements BackgroundResource {
    * for deletion is needed for subsequent snapshots, the data will be moved to the next
    * corresponding snapshot.
    *
-   * <p>For more information, see Deleting snaphots.
+   * <p>For more information, see Deleting snapshots.
    *
    * <p>Sample code:
    *
@@ -519,7 +519,7 @@ public class SnapshotClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource Name of the resource for this request.
+   * @param resource Name or id of the resource for this request.
    * @param globalSetLabelsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -551,7 +551,7 @@ public class SnapshotClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource Name of the resource for this request.
+   * @param resource Name or id of the resource for this request.
    * @param globalSetLabelsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

@@ -33,6 +33,7 @@ import org.junit.Test;
 
 public class QueryJobConfigurationTest {
 
+  private static final String TEST_PROJECT_ID = "test-project-id";
   private static final String QUERY = "BigQuery SQL";
   private static final DatasetId DATASET_ID = DatasetId.of("dataset");
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
@@ -140,9 +141,21 @@ public class QueryJobConfigurationTest {
 
   @Test
   public void testSetProjectId() {
-    QueryJobConfiguration configuration = QUERY_JOB_CONFIGURATION.setProjectId("p");
-    assertEquals("p", configuration.getDefaultDataset().getProject());
-    assertEquals("p", configuration.getDestinationTable().getProject());
+    QueryJobConfiguration configuration = QUERY_JOB_CONFIGURATION.setProjectId(TEST_PROJECT_ID);
+    assertEquals(TEST_PROJECT_ID, configuration.getDefaultDataset().getProject());
+    assertEquals(TEST_PROJECT_ID, configuration.getDestinationTable().getProject());
+  }
+
+  @Test
+  public void testSetProjectIdDoNotOverride() {
+    QueryJobConfiguration configuration =
+        QUERY_JOB_CONFIGURATION
+            .toBuilder()
+            .setDestinationTable(TABLE_ID.setProjectId(TEST_PROJECT_ID))
+            .build()
+            .setProjectId("update-only-on-dataset");
+    assertEquals("update-only-on-dataset", configuration.getDefaultDataset().getProject());
+    assertEquals(TEST_PROJECT_ID, configuration.getDestinationTable().getProject());
   }
 
   @Test

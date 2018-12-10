@@ -62,7 +62,6 @@ import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -157,7 +156,6 @@ public class ITGcsNio {
   }
 
   // Start of tests related to the "requester pays" feature
-  @Ignore("blocked by #3448")
   @Test
   public void testFileExistsRequesterPaysNoUserProject() throws IOException {
     CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, "");
@@ -166,8 +164,8 @@ public class ITGcsNio {
       // fails because we must pay for every access, including metadata.
       Files.exists(path);
       Assert.fail("It should have thrown an exception.");
-    } catch (StorageException sex) {
-      assertIsRequesterPaysException("testFileExistsRequesterPaysNoUserProject", sex);
+    } catch (StorageException ex) {
+      assertIsRequesterPaysException("testFileExistsRequesterPaysNoUserProject", ex);
     }
   }
 
@@ -187,17 +185,16 @@ public class ITGcsNio {
     Files.exists(path);
   }
 
-  @Ignore("blocked by #3448")
   @Test
   public void testCantCreateWithoutUserProject() throws IOException {
     CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, "");
-    Path path = testBucket.getPath(SML_FILE);
+    Path path = testBucket.getPath(TMP_FILE);
     try {
       // fails
       Files.write(path, "I would like to write".getBytes());
       Assert.fail("It should have thrown an exception.");
-    } catch (StorageException sex) {
-      assertIsRequesterPaysException("testCantCreateWithoutUserProject", sex);
+    } catch (IOException ex) {
+      assertIsRequesterPaysException("testCantCreateWithoutUserProject", ex);
     }
   }
 
@@ -209,7 +206,6 @@ public class ITGcsNio {
     Files.write(path, "I would like to write, please?".getBytes());
   }
 
-  @Ignore("blocked by #3448")
   @Test
   public void testCantReadWithoutUserProject() throws IOException {
     CloudStorageFileSystem testBucket = getRequesterPaysBucket(false, "");
@@ -218,8 +214,8 @@ public class ITGcsNio {
       // fails
       Files.readAllBytes(path);
       Assert.fail("It should have thrown an exception.");
-    } catch (StorageException sex) {
-      assertIsRequesterPaysException("testCantReadWithoutUserProject", sex);
+    } catch (StorageException ex) {
+      assertIsRequesterPaysException("testCantReadWithoutUserProject", ex);
     }
   }
 
@@ -231,7 +227,6 @@ public class ITGcsNio {
     Files.readAllBytes(path);
   }
 
-  @Ignore("blocked by #3448")
   @Test
   public void testCantCopyWithoutUserProject() throws IOException {
     CloudStorageFileSystem testRPBucket = getRequesterPaysBucket(false, "");
@@ -269,8 +264,8 @@ public class ITGcsNio {
           description,
           hex.getMessage()
               .contains("Bucket is requester pays bucket but no user project provided"));
-    } catch (StorageException sex) {
-      assertIsRequesterPaysException(description, sex);
+    } catch (StorageException ex) {
+      assertIsRequesterPaysException(description, ex);
     }
   }
 
@@ -317,13 +312,19 @@ public class ITGcsNio {
         "");
   }
 
-  private void assertIsRequesterPaysException(String message, StorageException sex) {
-    Assert.assertEquals(message, sex.getCode(), 400);
+  private void assertIsRequesterPaysException(String message, StorageException ex) {
+    Assert.assertEquals(message, ex.getCode(), 400);
     Assert.assertTrue(
         message,
-        sex.getMessage().contains("Bucket is requester pays bucket but no user project provided"));
+        ex.getMessage().contains("Bucket is requester pays bucket but no user project provided"));
   }
 
+  private void assertIsRequesterPaysException(String message, IOException ioex) {
+    Assert.assertTrue(message, ioex.getMessage().startsWith("400"));
+    Assert.assertTrue(
+        message,
+        ioex.getMessage().contains("Bucket is requester pays bucket but no user project provided"));
+  }
   // End of tests related to the "requester pays" feature
 
   @Test
