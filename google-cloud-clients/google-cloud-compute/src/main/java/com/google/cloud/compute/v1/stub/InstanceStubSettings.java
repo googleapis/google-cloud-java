@@ -47,6 +47,7 @@ import com.google.cloud.compute.v1.AttachDiskInstanceHttpRequest;
 import com.google.cloud.compute.v1.DeleteAccessConfigInstanceHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstanceHttpRequest;
 import com.google.cloud.compute.v1.DetachDiskInstanceHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyInstanceHttpRequest;
 import com.google.cloud.compute.v1.GetInstanceHttpRequest;
 import com.google.cloud.compute.v1.GetSerialPortOutputInstanceHttpRequest;
 import com.google.cloud.compute.v1.InsertInstanceHttpRequest;
@@ -58,11 +59,13 @@ import com.google.cloud.compute.v1.InstancesScopedList;
 import com.google.cloud.compute.v1.ListInstancesHttpRequest;
 import com.google.cloud.compute.v1.ListReferrersInstancesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.Reference;
 import com.google.cloud.compute.v1.ResetInstanceHttpRequest;
 import com.google.cloud.compute.v1.SerialPortOutput;
 import com.google.cloud.compute.v1.SetDeletionProtectionInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetDiskAutoDeleteInstanceHttpRequest;
+import com.google.cloud.compute.v1.SetIamPolicyInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetMachineResourcesInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetMachineTypeInstanceHttpRequest;
@@ -75,6 +78,8 @@ import com.google.cloud.compute.v1.SimulateMaintenanceEventInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceHttpRequest;
 import com.google.cloud.compute.v1.StopInstanceHttpRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsInstanceHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateAccessConfigInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceHttpRequest;
 import com.google.common.collect.ImmutableList;
@@ -130,8 +135,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
   private final UnaryCallSettings<AddAccessConfigInstanceHttpRequest, Operation>
       addAccessConfigInstanceSettings;
   private final PagedCallSettings<
-          AggregatedListInstancesHttpRequest,
-          InstanceAggregatedList,
+          AggregatedListInstancesHttpRequest, InstanceAggregatedList,
           AggregatedListInstancesPagedResponse>
       aggregatedListInstancesSettings;
   private final UnaryCallSettings<AttachDiskInstanceHttpRequest, Operation>
@@ -142,6 +146,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
   private final UnaryCallSettings<DetachDiskInstanceHttpRequest, Operation>
       detachDiskInstanceSettings;
   private final UnaryCallSettings<GetInstanceHttpRequest, Instance> getInstanceSettings;
+  private final UnaryCallSettings<GetIamPolicyInstanceHttpRequest, Policy>
+      getIamPolicyInstanceSettings;
   private final UnaryCallSettings<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
       getSerialPortOutputInstanceSettings;
   private final UnaryCallSettings<InsertInstanceHttpRequest, Operation> insertInstanceSettings;
@@ -149,8 +155,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
           ListInstancesHttpRequest, InstanceList, ListInstancesPagedResponse>
       listInstancesSettings;
   private final PagedCallSettings<
-          ListReferrersInstancesHttpRequest,
-          InstanceListReferrers,
+          ListReferrersInstancesHttpRequest, InstanceListReferrers,
           ListReferrersInstancesPagedResponse>
       listReferrersInstancesSettings;
   private final UnaryCallSettings<ResetInstanceHttpRequest, Operation> resetInstanceSettings;
@@ -158,6 +163,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       setDeletionProtectionInstanceSettings;
   private final UnaryCallSettings<SetDiskAutoDeleteInstanceHttpRequest, Operation>
       setDiskAutoDeleteInstanceSettings;
+  private final UnaryCallSettings<SetIamPolicyInstanceHttpRequest, Policy>
+      setIamPolicyInstanceSettings;
   private final UnaryCallSettings<SetLabelsInstanceHttpRequest, Operation>
       setLabelsInstanceSettings;
   private final UnaryCallSettings<SetMachineResourcesInstanceHttpRequest, Operation>
@@ -179,6 +186,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
   private final UnaryCallSettings<StartWithEncryptionKeyInstanceHttpRequest, Operation>
       startWithEncryptionKeyInstanceSettings;
   private final UnaryCallSettings<StopInstanceHttpRequest, Operation> stopInstanceSettings;
+  private final UnaryCallSettings<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
+      testIamPermissionsInstanceSettings;
   private final UnaryCallSettings<UpdateAccessConfigInstanceHttpRequest, Operation>
       updateAccessConfigInstanceSettings;
   private final UnaryCallSettings<UpdateNetworkInterfaceInstanceHttpRequest, Operation>
@@ -192,8 +201,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
   /** Returns the object with the settings used for calls to aggregatedListInstances. */
   public PagedCallSettings<
-          AggregatedListInstancesHttpRequest,
-          InstanceAggregatedList,
+          AggregatedListInstancesHttpRequest, InstanceAggregatedList,
           AggregatedListInstancesPagedResponse>
       aggregatedListInstancesSettings() {
     return aggregatedListInstancesSettings;
@@ -225,6 +233,11 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     return getInstanceSettings;
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicyInstance. */
+  public UnaryCallSettings<GetIamPolicyInstanceHttpRequest, Policy> getIamPolicyInstanceSettings() {
+    return getIamPolicyInstanceSettings;
+  }
+
   /** Returns the object with the settings used for calls to getSerialPortOutputInstance. */
   public UnaryCallSettings<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
       getSerialPortOutputInstanceSettings() {
@@ -244,8 +257,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
   /** Returns the object with the settings used for calls to listReferrersInstances. */
   public PagedCallSettings<
-          ListReferrersInstancesHttpRequest,
-          InstanceListReferrers,
+          ListReferrersInstancesHttpRequest, InstanceListReferrers,
           ListReferrersInstancesPagedResponse>
       listReferrersInstancesSettings() {
     return listReferrersInstancesSettings;
@@ -266,6 +278,11 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
   public UnaryCallSettings<SetDiskAutoDeleteInstanceHttpRequest, Operation>
       setDiskAutoDeleteInstanceSettings() {
     return setDiskAutoDeleteInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicyInstance. */
+  public UnaryCallSettings<SetIamPolicyInstanceHttpRequest, Policy> setIamPolicyInstanceSettings() {
+    return setIamPolicyInstanceSettings;
   }
 
   /** Returns the object with the settings used for calls to setLabelsInstance. */
@@ -334,6 +351,12 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
   /** Returns the object with the settings used for calls to stopInstance. */
   public UnaryCallSettings<StopInstanceHttpRequest, Operation> stopInstanceSettings() {
     return stopInstanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissionsInstance. */
+  public UnaryCallSettings<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
+      testIamPermissionsInstanceSettings() {
+    return testIamPermissionsInstanceSettings;
   }
 
   /** Returns the object with the settings used for calls to updateAccessConfigInstance. */
@@ -430,6 +453,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
         settingsBuilder.deleteAccessConfigInstanceSettings().build();
     detachDiskInstanceSettings = settingsBuilder.detachDiskInstanceSettings().build();
     getInstanceSettings = settingsBuilder.getInstanceSettings().build();
+    getIamPolicyInstanceSettings = settingsBuilder.getIamPolicyInstanceSettings().build();
     getSerialPortOutputInstanceSettings =
         settingsBuilder.getSerialPortOutputInstanceSettings().build();
     insertInstanceSettings = settingsBuilder.insertInstanceSettings().build();
@@ -439,6 +463,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     setDeletionProtectionInstanceSettings =
         settingsBuilder.setDeletionProtectionInstanceSettings().build();
     setDiskAutoDeleteInstanceSettings = settingsBuilder.setDiskAutoDeleteInstanceSettings().build();
+    setIamPolicyInstanceSettings = settingsBuilder.setIamPolicyInstanceSettings().build();
     setLabelsInstanceSettings = settingsBuilder.setLabelsInstanceSettings().build();
     setMachineResourcesInstanceSettings =
         settingsBuilder.setMachineResourcesInstanceSettings().build();
@@ -454,6 +479,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     startWithEncryptionKeyInstanceSettings =
         settingsBuilder.startWithEncryptionKeyInstanceSettings().build();
     stopInstanceSettings = settingsBuilder.stopInstanceSettings().build();
+    testIamPermissionsInstanceSettings =
+        settingsBuilder.testIamPermissionsInstanceSettings().build();
     updateAccessConfigInstanceSettings =
         settingsBuilder.updateAccessConfigInstanceSettings().build();
     updateNetworkInterfaceInstanceSettings =
@@ -587,13 +614,11 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListInstancesHttpRequest,
-          InstanceAggregatedList,
+          AggregatedListInstancesHttpRequest, InstanceAggregatedList,
           AggregatedListInstancesPagedResponse>
       AGGREGATED_LIST_INSTANCES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListInstancesHttpRequest,
-              InstanceAggregatedList,
+              AggregatedListInstancesHttpRequest, InstanceAggregatedList,
               AggregatedListInstancesPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListInstancesPagedResponse> getFuturePagedResponse(
@@ -602,8 +627,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
                 ApiCallContext context,
                 ApiFuture<InstanceAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListInstancesHttpRequest,
-                      InstanceAggregatedList,
+                      AggregatedListInstancesHttpRequest, InstanceAggregatedList,
                       InstancesScopedList>
                   pageContext =
                       PageContext.create(
@@ -630,13 +654,11 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          ListReferrersInstancesHttpRequest,
-          InstanceListReferrers,
+          ListReferrersInstancesHttpRequest, InstanceListReferrers,
           ListReferrersInstancesPagedResponse>
       LIST_REFERRERS_INSTANCES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListReferrersInstancesHttpRequest,
-              InstanceListReferrers,
+              ListReferrersInstancesHttpRequest, InstanceListReferrers,
               ListReferrersInstancesPagedResponse>() {
             @Override
             public ApiFuture<ListReferrersInstancesPagedResponse> getFuturePagedResponse(
@@ -659,8 +681,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     private final UnaryCallSettings.Builder<AddAccessConfigInstanceHttpRequest, Operation>
         addAccessConfigInstanceSettings;
     private final PagedCallSettings.Builder<
-            AggregatedListInstancesHttpRequest,
-            InstanceAggregatedList,
+            AggregatedListInstancesHttpRequest, InstanceAggregatedList,
             AggregatedListInstancesPagedResponse>
         aggregatedListInstancesSettings;
     private final UnaryCallSettings.Builder<AttachDiskInstanceHttpRequest, Operation>
@@ -672,6 +693,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     private final UnaryCallSettings.Builder<DetachDiskInstanceHttpRequest, Operation>
         detachDiskInstanceSettings;
     private final UnaryCallSettings.Builder<GetInstanceHttpRequest, Instance> getInstanceSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyInstanceHttpRequest, Policy>
+        getIamPolicyInstanceSettings;
     private final UnaryCallSettings.Builder<
             GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
         getSerialPortOutputInstanceSettings;
@@ -681,8 +704,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
             ListInstancesHttpRequest, InstanceList, ListInstancesPagedResponse>
         listInstancesSettings;
     private final PagedCallSettings.Builder<
-            ListReferrersInstancesHttpRequest,
-            InstanceListReferrers,
+            ListReferrersInstancesHttpRequest, InstanceListReferrers,
             ListReferrersInstancesPagedResponse>
         listReferrersInstancesSettings;
     private final UnaryCallSettings.Builder<ResetInstanceHttpRequest, Operation>
@@ -691,6 +713,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
         setDeletionProtectionInstanceSettings;
     private final UnaryCallSettings.Builder<SetDiskAutoDeleteInstanceHttpRequest, Operation>
         setDiskAutoDeleteInstanceSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyInstanceHttpRequest, Policy>
+        setIamPolicyInstanceSettings;
     private final UnaryCallSettings.Builder<SetLabelsInstanceHttpRequest, Operation>
         setLabelsInstanceSettings;
     private final UnaryCallSettings.Builder<SetMachineResourcesInstanceHttpRequest, Operation>
@@ -715,6 +739,9 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
         startWithEncryptionKeyInstanceSettings;
     private final UnaryCallSettings.Builder<StopInstanceHttpRequest, Operation>
         stopInstanceSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
+        testIamPermissionsInstanceSettings;
     private final UnaryCallSettings.Builder<UpdateAccessConfigInstanceHttpRequest, Operation>
         updateAccessConfigInstanceSettings;
     private final UnaryCallSettings.Builder<UpdateNetworkInterfaceInstanceHttpRequest, Operation>
@@ -776,6 +803,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
       getInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getIamPolicyInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       getSerialPortOutputInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       insertInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -790,6 +819,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       setDeletionProtectionInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       setDiskAutoDeleteInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      setIamPolicyInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       setLabelsInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -815,6 +846,8 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
       stopInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      testIamPermissionsInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       updateAccessConfigInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       updateNetworkInterfaceInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -828,6 +861,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               deleteAccessConfigInstanceSettings,
               detachDiskInstanceSettings,
               getInstanceSettings,
+              getIamPolicyInstanceSettings,
               getSerialPortOutputInstanceSettings,
               insertInstanceSettings,
               listInstancesSettings,
@@ -835,6 +869,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               resetInstanceSettings,
               setDeletionProtectionInstanceSettings,
               setDiskAutoDeleteInstanceSettings,
+              setIamPolicyInstanceSettings,
               setLabelsInstanceSettings,
               setMachineResourcesInstanceSettings,
               setMachineTypeInstanceSettings,
@@ -847,6 +882,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               startInstanceSettings,
               startWithEncryptionKeyInstanceSettings,
               stopInstanceSettings,
+              testIamPermissionsInstanceSettings,
               updateAccessConfigInstanceSettings,
               updateNetworkInterfaceInstanceSettings);
 
@@ -900,6 +936,11 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .getIamPolicyInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .getSerialPortOutputInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -931,6 +972,11 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
       builder
           .setDiskAutoDeleteInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .setIamPolicyInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -995,6 +1041,11 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .testIamPermissionsInstanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .updateAccessConfigInstanceSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -1017,6 +1068,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       deleteAccessConfigInstanceSettings = settings.deleteAccessConfigInstanceSettings.toBuilder();
       detachDiskInstanceSettings = settings.detachDiskInstanceSettings.toBuilder();
       getInstanceSettings = settings.getInstanceSettings.toBuilder();
+      getIamPolicyInstanceSettings = settings.getIamPolicyInstanceSettings.toBuilder();
       getSerialPortOutputInstanceSettings =
           settings.getSerialPortOutputInstanceSettings.toBuilder();
       insertInstanceSettings = settings.insertInstanceSettings.toBuilder();
@@ -1026,6 +1078,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       setDeletionProtectionInstanceSettings =
           settings.setDeletionProtectionInstanceSettings.toBuilder();
       setDiskAutoDeleteInstanceSettings = settings.setDiskAutoDeleteInstanceSettings.toBuilder();
+      setIamPolicyInstanceSettings = settings.setIamPolicyInstanceSettings.toBuilder();
       setLabelsInstanceSettings = settings.setLabelsInstanceSettings.toBuilder();
       setMachineResourcesInstanceSettings =
           settings.setMachineResourcesInstanceSettings.toBuilder();
@@ -1041,6 +1094,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       startWithEncryptionKeyInstanceSettings =
           settings.startWithEncryptionKeyInstanceSettings.toBuilder();
       stopInstanceSettings = settings.stopInstanceSettings.toBuilder();
+      testIamPermissionsInstanceSettings = settings.testIamPermissionsInstanceSettings.toBuilder();
       updateAccessConfigInstanceSettings = settings.updateAccessConfigInstanceSettings.toBuilder();
       updateNetworkInterfaceInstanceSettings =
           settings.updateNetworkInterfaceInstanceSettings.toBuilder();
@@ -1054,6 +1108,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               deleteAccessConfigInstanceSettings,
               detachDiskInstanceSettings,
               getInstanceSettings,
+              getIamPolicyInstanceSettings,
               getSerialPortOutputInstanceSettings,
               insertInstanceSettings,
               listInstancesSettings,
@@ -1061,6 +1116,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               resetInstanceSettings,
               setDeletionProtectionInstanceSettings,
               setDiskAutoDeleteInstanceSettings,
+              setIamPolicyInstanceSettings,
               setLabelsInstanceSettings,
               setMachineResourcesInstanceSettings,
               setMachineTypeInstanceSettings,
@@ -1073,6 +1129,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
               startInstanceSettings,
               startWithEncryptionKeyInstanceSettings,
               stopInstanceSettings,
+              testIamPermissionsInstanceSettings,
               updateAccessConfigInstanceSettings,
               updateNetworkInterfaceInstanceSettings);
     }
@@ -1101,8 +1158,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListInstances. */
     public PagedCallSettings.Builder<
-            AggregatedListInstancesHttpRequest,
-            InstanceAggregatedList,
+            AggregatedListInstancesHttpRequest, InstanceAggregatedList,
             AggregatedListInstancesPagedResponse>
         aggregatedListInstancesSettings() {
       return aggregatedListInstancesSettings;
@@ -1137,6 +1193,12 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
       return getInstanceSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicyInstance. */
+    public UnaryCallSettings.Builder<GetIamPolicyInstanceHttpRequest, Policy>
+        getIamPolicyInstanceSettings() {
+      return getIamPolicyInstanceSettings;
+    }
+
     /** Returns the builder for the settings used for calls to getSerialPortOutputInstance. */
     public UnaryCallSettings.Builder<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
         getSerialPortOutputInstanceSettings() {
@@ -1158,8 +1220,7 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
 
     /** Returns the builder for the settings used for calls to listReferrersInstances. */
     public PagedCallSettings.Builder<
-            ListReferrersInstancesHttpRequest,
-            InstanceListReferrers,
+            ListReferrersInstancesHttpRequest, InstanceListReferrers,
             ListReferrersInstancesPagedResponse>
         listReferrersInstancesSettings() {
       return listReferrersInstancesSettings;
@@ -1180,6 +1241,12 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     public UnaryCallSettings.Builder<SetDiskAutoDeleteInstanceHttpRequest, Operation>
         setDiskAutoDeleteInstanceSettings() {
       return setDiskAutoDeleteInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicyInstance. */
+    public UnaryCallSettings.Builder<SetIamPolicyInstanceHttpRequest, Policy>
+        setIamPolicyInstanceSettings() {
+      return setIamPolicyInstanceSettings;
     }
 
     /** Returns the builder for the settings used for calls to setLabelsInstance. */
@@ -1250,6 +1317,12 @@ public class InstanceStubSettings extends StubSettings<InstanceStubSettings> {
     /** Returns the builder for the settings used for calls to stopInstance. */
     public UnaryCallSettings.Builder<StopInstanceHttpRequest, Operation> stopInstanceSettings() {
       return stopInstanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissionsInstance. */
+    public UnaryCallSettings.Builder<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
+        testIamPermissionsInstanceSettings() {
+      return testIamPermissionsInstanceSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateAccessConfigInstance. */

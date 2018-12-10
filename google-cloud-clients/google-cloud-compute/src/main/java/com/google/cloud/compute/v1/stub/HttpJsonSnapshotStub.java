@@ -31,15 +31,20 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteSnapshotHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicySnapshotHttpRequest;
 import com.google.cloud.compute.v1.GetSnapshotHttpRequest;
 import com.google.cloud.compute.v1.ListSnapshotsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.ProjectGlobalSnapshotName;
 import com.google.cloud.compute.v1.ProjectGlobalSnapshotResourceName;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.SetIamPolicySnapshotHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsSnapshotHttpRequest;
 import com.google.cloud.compute.v1.Snapshot;
 import com.google.cloud.compute.v1.SnapshotList;
+import com.google.cloud.compute.v1.TestIamPermissionsSnapshotHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.Sets;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -93,6 +98,26 @@ public class HttpJsonSnapshotStub extends SnapshotStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<GetIamPolicySnapshotHttpRequest, Policy>
+      getIamPolicySnapshotMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicySnapshotHttpRequest, Policy>newBuilder()
+              .setFullMethodName("compute.snapshots.getIamPolicy")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<GetIamPolicySnapshotHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/global/snapshots/{resource}/getIamPolicy"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectGlobalSnapshotResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Policy>newBuilder()
+                      .setResponseInstance(Policy.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<ListSnapshotsHttpRequest, SnapshotList>
       listSnapshotsMethodDescriptor =
           ApiMethodDescriptor.<ListSnapshotsHttpRequest, SnapshotList>newBuilder()
@@ -109,6 +134,26 @@ public class HttpJsonSnapshotStub extends SnapshotStub {
               .setResponseParser(
                   ApiMessageHttpResponseParser.<SnapshotList>newBuilder()
                       .setResponseInstance(SnapshotList.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
+  public static final ApiMethodDescriptor<SetIamPolicySnapshotHttpRequest, Policy>
+      setIamPolicySnapshotMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicySnapshotHttpRequest, Policy>newBuilder()
+              .setFullMethodName("compute.snapshots.setIamPolicy")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<SetIamPolicySnapshotHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/global/snapshots/{resource}/setIamPolicy"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectGlobalSnapshotResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Policy>newBuilder()
+                      .setResponseInstance(Policy.getDefaultInstance())
                       .build())
               .build();
 
@@ -132,14 +177,41 @@ public class HttpJsonSnapshotStub extends SnapshotStub {
                       .build())
               .build();
 
+  @InternalApi
+  public static final ApiMethodDescriptor<
+          TestIamPermissionsSnapshotHttpRequest, TestPermissionsResponse>
+      testIamPermissionsSnapshotMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsSnapshotHttpRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("compute.snapshots.testIamPermissions")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<TestIamPermissionsSnapshotHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/global/snapshots/{resource}/testIamPermissions"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectGlobalSnapshotResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setResponseInstance(TestPermissionsResponse.getDefaultInstance())
+                      .build())
+              .build();
+
   private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<DeleteSnapshotHttpRequest, Operation> deleteSnapshotCallable;
   private final UnaryCallable<GetSnapshotHttpRequest, Snapshot> getSnapshotCallable;
+  private final UnaryCallable<GetIamPolicySnapshotHttpRequest, Policy> getIamPolicySnapshotCallable;
   private final UnaryCallable<ListSnapshotsHttpRequest, SnapshotList> listSnapshotsCallable;
   private final UnaryCallable<ListSnapshotsHttpRequest, ListSnapshotsPagedResponse>
       listSnapshotsPagedCallable;
+  private final UnaryCallable<SetIamPolicySnapshotHttpRequest, Policy> setIamPolicySnapshotCallable;
   private final UnaryCallable<SetLabelsSnapshotHttpRequest, Operation> setLabelsSnapshotCallable;
+  private final UnaryCallable<TestIamPermissionsSnapshotHttpRequest, TestPermissionsResponse>
+      testIamPermissionsSnapshotCallable;
 
   private final HttpJsonStubCallableFactory callableFactory;
 
@@ -188,14 +260,30 @@ public class HttpJsonSnapshotStub extends SnapshotStub {
         HttpJsonCallSettings.<GetSnapshotHttpRequest, Snapshot>newBuilder()
             .setMethodDescriptor(getSnapshotMethodDescriptor)
             .build();
+    HttpJsonCallSettings<GetIamPolicySnapshotHttpRequest, Policy>
+        getIamPolicySnapshotTransportSettings =
+            HttpJsonCallSettings.<GetIamPolicySnapshotHttpRequest, Policy>newBuilder()
+                .setMethodDescriptor(getIamPolicySnapshotMethodDescriptor)
+                .build();
     HttpJsonCallSettings<ListSnapshotsHttpRequest, SnapshotList> listSnapshotsTransportSettings =
         HttpJsonCallSettings.<ListSnapshotsHttpRequest, SnapshotList>newBuilder()
             .setMethodDescriptor(listSnapshotsMethodDescriptor)
             .build();
+    HttpJsonCallSettings<SetIamPolicySnapshotHttpRequest, Policy>
+        setIamPolicySnapshotTransportSettings =
+            HttpJsonCallSettings.<SetIamPolicySnapshotHttpRequest, Policy>newBuilder()
+                .setMethodDescriptor(setIamPolicySnapshotMethodDescriptor)
+                .build();
     HttpJsonCallSettings<SetLabelsSnapshotHttpRequest, Operation>
         setLabelsSnapshotTransportSettings =
             HttpJsonCallSettings.<SetLabelsSnapshotHttpRequest, Operation>newBuilder()
                 .setMethodDescriptor(setLabelsSnapshotMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<TestIamPermissionsSnapshotHttpRequest, TestPermissionsResponse>
+        testIamPermissionsSnapshotTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsSnapshotHttpRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsSnapshotMethodDescriptor)
                 .build();
 
     this.deleteSnapshotCallable =
@@ -204,16 +292,31 @@ public class HttpJsonSnapshotStub extends SnapshotStub {
     this.getSnapshotCallable =
         callableFactory.createUnaryCallable(
             getSnapshotTransportSettings, settings.getSnapshotSettings(), clientContext);
+    this.getIamPolicySnapshotCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicySnapshotTransportSettings,
+            settings.getIamPolicySnapshotSettings(),
+            clientContext);
     this.listSnapshotsCallable =
         callableFactory.createUnaryCallable(
             listSnapshotsTransportSettings, settings.listSnapshotsSettings(), clientContext);
     this.listSnapshotsPagedCallable =
         callableFactory.createPagedCallable(
             listSnapshotsTransportSettings, settings.listSnapshotsSettings(), clientContext);
+    this.setIamPolicySnapshotCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicySnapshotTransportSettings,
+            settings.setIamPolicySnapshotSettings(),
+            clientContext);
     this.setLabelsSnapshotCallable =
         callableFactory.createUnaryCallable(
             setLabelsSnapshotTransportSettings,
             settings.setLabelsSnapshotSettings(),
+            clientContext);
+    this.testIamPermissionsSnapshotCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsSnapshotTransportSettings,
+            settings.testIamPermissionsSnapshotSettings(),
             clientContext);
 
     backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -230,6 +333,11 @@ public class HttpJsonSnapshotStub extends SnapshotStub {
   }
 
   @BetaApi
+  public UnaryCallable<GetIamPolicySnapshotHttpRequest, Policy> getIamPolicySnapshotCallable() {
+    return getIamPolicySnapshotCallable;
+  }
+
+  @BetaApi
   public UnaryCallable<ListSnapshotsHttpRequest, ListSnapshotsPagedResponse>
       listSnapshotsPagedCallable() {
     return listSnapshotsPagedCallable;
@@ -241,8 +349,19 @@ public class HttpJsonSnapshotStub extends SnapshotStub {
   }
 
   @BetaApi
+  public UnaryCallable<SetIamPolicySnapshotHttpRequest, Policy> setIamPolicySnapshotCallable() {
+    return setIamPolicySnapshotCallable;
+  }
+
+  @BetaApi
   public UnaryCallable<SetLabelsSnapshotHttpRequest, Operation> setLabelsSnapshotCallable() {
     return setLabelsSnapshotCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<TestIamPermissionsSnapshotHttpRequest, TestPermissionsResponse>
+      testIamPermissionsSnapshotCallable() {
+    return testIamPermissionsSnapshotCallable;
   }
 
   @Override

@@ -17,9 +17,12 @@ package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.SnapshotClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.deleteSnapshotMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.getIamPolicySnapshotMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.getSnapshotMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.listSnapshotsMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.setIamPolicySnapshotMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.setLabelsSnapshotMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSnapshotStub.testIamPermissionsSnapshotMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
@@ -51,8 +54,11 @@ public class SnapshotClientTest {
           Lists.<ApiMethodDescriptor>newArrayList(
               deleteSnapshotMethodDescriptor,
               getSnapshotMethodDescriptor,
+              getIamPolicySnapshotMethodDescriptor,
               listSnapshotsMethodDescriptor,
-              setLabelsSnapshotMethodDescriptor));
+              setIamPolicySnapshotMethodDescriptor,
+              setLabelsSnapshotMethodDescriptor,
+              testIamPermissionsSnapshotMethodDescriptor));
   private static final MockHttpService mockService =
       new MockHttpService(METHOD_DESCRIPTORS, SnapshotStubSettings.getDefaultEndpoint());
 
@@ -244,6 +250,56 @@ public class SnapshotClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getIamPolicySnapshotTest() {
+    Boolean iamOwned = false;
+    String etag = "etag3123477";
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setIamOwned(iamOwned).setEtag(etag).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalSnapshotResourceName resource =
+        ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+
+    Policy actualResponse = client.getIamPolicySnapshot(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicySnapshotExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalSnapshotResourceName resource =
+          ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+
+      client.getIamPolicySnapshot(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void listSnapshotsTest() {
     String kind = "kind3292052";
     String nextPageToken = "";
@@ -296,6 +352,60 @@ public class SnapshotClientTest {
       ProjectName project = ProjectName.of("[PROJECT]");
 
       client.listSnapshots(project);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicySnapshotTest() {
+    Boolean iamOwned = false;
+    String etag = "etag3123477";
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setIamOwned(iamOwned).setEtag(etag).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalSnapshotResourceName resource =
+        ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+    GlobalSetPolicyRequest globalSetPolicyRequestResource =
+        GlobalSetPolicyRequest.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicySnapshot(resource, globalSetPolicyRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicySnapshotExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalSnapshotResourceName resource =
+          ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+      GlobalSetPolicyRequest globalSetPolicyRequestResource =
+          GlobalSetPolicyRequest.newBuilder().build();
+
+      client.setIamPolicySnapshot(resource, globalSetPolicyRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -390,6 +500,57 @@ public class SnapshotClientTest {
           GlobalSetLabelsRequest.newBuilder().build();
 
       client.setLabelsSnapshot(resource, globalSetLabelsRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsSnapshotTest() {
+    TestPermissionsResponse expectedResponse = TestPermissionsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalSnapshotResourceName resource =
+        ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+    TestPermissionsRequest testPermissionsRequestResource =
+        TestPermissionsRequest.newBuilder().build();
+
+    TestPermissionsResponse actualResponse =
+        client.testIamPermissionsSnapshot(resource, testPermissionsRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsSnapshotExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalSnapshotResourceName resource =
+          ProjectGlobalSnapshotResourceName.of("[PROJECT]", "[RESOURCE]");
+      TestPermissionsRequest testPermissionsRequestResource =
+          TestPermissionsRequest.newBuilder().build();
+
+      client.testIamPermissionsSnapshot(resource, testPermissionsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

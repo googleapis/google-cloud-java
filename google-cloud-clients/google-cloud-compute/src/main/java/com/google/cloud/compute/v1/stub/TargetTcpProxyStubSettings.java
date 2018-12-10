@@ -282,8 +282,7 @@ public class TargetTcpProxyStubSettings extends StubSettings<TargetTcpProxyStubS
           ListTargetTcpProxiesHttpRequest, TargetTcpProxyList, ListTargetTcpProxiesPagedResponse>
       LIST_TARGET_TCP_PROXIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListTargetTcpProxiesHttpRequest,
-              TargetTcpProxyList,
+              ListTargetTcpProxiesHttpRequest, TargetTcpProxyList,
               ListTargetTcpProxiesPagedResponse>() {
             @Override
             public ApiFuture<ListTargetTcpProxiesPagedResponse> getFuturePagedResponse(

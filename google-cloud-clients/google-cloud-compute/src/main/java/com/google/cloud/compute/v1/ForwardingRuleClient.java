@@ -55,13 +55,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -901,16 +901,13 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   public static class AggregatedListForwardingRulesPagedResponse
       extends AbstractPagedListResponse<
-          AggregatedListForwardingRulesHttpRequest,
-          ForwardingRuleAggregatedList,
-          ForwardingRulesScopedList,
-          AggregatedListForwardingRulesPage,
+          AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+          ForwardingRulesScopedList, AggregatedListForwardingRulesPage,
           AggregatedListForwardingRulesFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListForwardingRulesPagedResponse> createAsync(
         PageContext<
-                AggregatedListForwardingRulesHttpRequest,
-                ForwardingRuleAggregatedList,
+                AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
                 ForwardingRulesScopedList>
             context,
         ApiFuture<ForwardingRuleAggregatedList> futureResponse) {
@@ -936,15 +933,12 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   public static class AggregatedListForwardingRulesPage
       extends AbstractPage<
-          AggregatedListForwardingRulesHttpRequest,
-          ForwardingRuleAggregatedList,
-          ForwardingRulesScopedList,
-          AggregatedListForwardingRulesPage> {
+          AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+          ForwardingRulesScopedList, AggregatedListForwardingRulesPage> {
 
     private AggregatedListForwardingRulesPage(
         PageContext<
-                AggregatedListForwardingRulesHttpRequest,
-                ForwardingRuleAggregatedList,
+                AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
                 ForwardingRulesScopedList>
             context,
         ForwardingRuleAggregatedList response) {
@@ -958,8 +952,7 @@ public class ForwardingRuleClient implements BackgroundResource {
     @Override
     protected AggregatedListForwardingRulesPage createPage(
         PageContext<
-                AggregatedListForwardingRulesHttpRequest,
-                ForwardingRuleAggregatedList,
+                AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
                 ForwardingRulesScopedList>
             context,
         ForwardingRuleAggregatedList response) {
@@ -969,8 +962,7 @@ public class ForwardingRuleClient implements BackgroundResource {
     @Override
     public ApiFuture<AggregatedListForwardingRulesPage> createPageAsync(
         PageContext<
-                AggregatedListForwardingRulesHttpRequest,
-                ForwardingRuleAggregatedList,
+                AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
                 ForwardingRulesScopedList>
             context,
         ApiFuture<ForwardingRuleAggregatedList> futureResponse) {
@@ -980,10 +972,8 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   public static class AggregatedListForwardingRulesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AggregatedListForwardingRulesHttpRequest,
-          ForwardingRuleAggregatedList,
-          ForwardingRulesScopedList,
-          AggregatedListForwardingRulesPage,
+          AggregatedListForwardingRulesHttpRequest, ForwardingRuleAggregatedList,
+          ForwardingRulesScopedList, AggregatedListForwardingRulesPage,
           AggregatedListForwardingRulesFixedSizeCollection> {
 
     private AggregatedListForwardingRulesFixedSizeCollection(
@@ -1004,11 +994,8 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   public static class ListForwardingRulesPagedResponse
       extends AbstractPagedListResponse<
-          ListForwardingRulesHttpRequest,
-          ForwardingRuleList,
-          ForwardingRule,
-          ListForwardingRulesPage,
-          ListForwardingRulesFixedSizeCollection> {
+          ListForwardingRulesHttpRequest, ForwardingRuleList, ForwardingRule,
+          ListForwardingRulesPage, ListForwardingRulesFixedSizeCollection> {
 
     public static ApiFuture<ListForwardingRulesPagedResponse> createAsync(
         PageContext<ListForwardingRulesHttpRequest, ForwardingRuleList, ForwardingRule> context,
@@ -1032,9 +1019,7 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   public static class ListForwardingRulesPage
       extends AbstractPage<
-          ListForwardingRulesHttpRequest,
-          ForwardingRuleList,
-          ForwardingRule,
+          ListForwardingRulesHttpRequest, ForwardingRuleList, ForwardingRule,
           ListForwardingRulesPage> {
 
     private ListForwardingRulesPage(
@@ -1064,11 +1049,8 @@ public class ForwardingRuleClient implements BackgroundResource {
 
   public static class ListForwardingRulesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListForwardingRulesHttpRequest,
-          ForwardingRuleList,
-          ForwardingRule,
-          ListForwardingRulesPage,
-          ListForwardingRulesFixedSizeCollection> {
+          ListForwardingRulesHttpRequest, ForwardingRuleList, ForwardingRule,
+          ListForwardingRulesPage, ListForwardingRulesFixedSizeCollection> {
 
     private ListForwardingRulesFixedSizeCollection(
         List<ListForwardingRulesPage> pages, int collectionSize) {

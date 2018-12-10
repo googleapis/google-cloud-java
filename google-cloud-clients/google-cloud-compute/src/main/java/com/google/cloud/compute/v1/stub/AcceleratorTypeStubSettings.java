@@ -98,8 +98,7 @@ public class AcceleratorTypeStubSettings extends StubSettings<AcceleratorTypeStu
           .build();
 
   private final PagedCallSettings<
-          AggregatedListAcceleratorTypesHttpRequest,
-          AcceleratorTypeAggregatedList,
+          AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
           AggregatedListAcceleratorTypesPagedResponse>
       aggregatedListAcceleratorTypesSettings;
   private final UnaryCallSettings<GetAcceleratorTypeHttpRequest, AcceleratorType>
@@ -110,8 +109,7 @@ public class AcceleratorTypeStubSettings extends StubSettings<AcceleratorTypeStu
 
   /** Returns the object with the settings used for calls to aggregatedListAcceleratorTypes. */
   public PagedCallSettings<
-          AggregatedListAcceleratorTypesHttpRequest,
-          AcceleratorTypeAggregatedList,
+          AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
           AggregatedListAcceleratorTypesPagedResponse>
       aggregatedListAcceleratorTypesSettings() {
     return aggregatedListAcceleratorTypesSettings;
@@ -212,13 +210,11 @@ public class AcceleratorTypeStubSettings extends StubSettings<AcceleratorTypeStu
   }
 
   private static final PagedListDescriptor<
-          AggregatedListAcceleratorTypesHttpRequest,
-          AcceleratorTypeAggregatedList,
+          AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
           AcceleratorTypesScopedList>
       AGGREGATED_LIST_ACCELERATOR_TYPES_PAGE_STR_DESC =
           new PagedListDescriptor<
-              AggregatedListAcceleratorTypesHttpRequest,
-              AcceleratorTypeAggregatedList,
+              AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
               AcceleratorTypesScopedList>() {
             @Override
             public String emptyToken() {
@@ -305,13 +301,11 @@ public class AcceleratorTypeStubSettings extends StubSettings<AcceleratorTypeStu
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListAcceleratorTypesHttpRequest,
-          AcceleratorTypeAggregatedList,
+          AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
           AggregatedListAcceleratorTypesPagedResponse>
       AGGREGATED_LIST_ACCELERATOR_TYPES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListAcceleratorTypesHttpRequest,
-              AcceleratorTypeAggregatedList,
+              AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
               AggregatedListAcceleratorTypesPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListAcceleratorTypesPagedResponse> getFuturePagedResponse(
@@ -322,8 +316,7 @@ public class AcceleratorTypeStubSettings extends StubSettings<AcceleratorTypeStu
                 ApiCallContext context,
                 ApiFuture<AcceleratorTypeAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListAcceleratorTypesHttpRequest,
-                      AcceleratorTypeAggregatedList,
+                      AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
                       AcceleratorTypesScopedList>
                   pageContext =
                       PageContext.create(
@@ -340,8 +333,7 @@ public class AcceleratorTypeStubSettings extends StubSettings<AcceleratorTypeStu
           ListAcceleratorTypesHttpRequest, AcceleratorTypeList, ListAcceleratorTypesPagedResponse>
       LIST_ACCELERATOR_TYPES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListAcceleratorTypesHttpRequest,
-              AcceleratorTypeList,
+              ListAcceleratorTypesHttpRequest, AcceleratorTypeList,
               ListAcceleratorTypesPagedResponse>() {
             @Override
             public ApiFuture<ListAcceleratorTypesPagedResponse> getFuturePagedResponse(
@@ -362,8 +354,7 @@ public class AcceleratorTypeStubSettings extends StubSettings<AcceleratorTypeStu
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            AggregatedListAcceleratorTypesHttpRequest,
-            AcceleratorTypeAggregatedList,
+            AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
             AggregatedListAcceleratorTypesPagedResponse>
         aggregatedListAcceleratorTypesSettings;
     private final UnaryCallSettings.Builder<GetAcceleratorTypeHttpRequest, AcceleratorType>
@@ -492,8 +483,7 @@ public class AcceleratorTypeStubSettings extends StubSettings<AcceleratorTypeStu
 
     /** Returns the builder for the settings used for calls to aggregatedListAcceleratorTypes. */
     public PagedCallSettings.Builder<
-            AggregatedListAcceleratorTypesHttpRequest,
-            AcceleratorTypeAggregatedList,
+            AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
             AggregatedListAcceleratorTypesPagedResponse>
         aggregatedListAcceleratorTypesSettings() {
       return aggregatedListAcceleratorTypesSettings;

@@ -16,6 +16,7 @@
 package com.google.cloud.compute.v1.stub;
 
 import static com.google.cloud.compute.v1.RouterClient.AggregatedListRoutersPagedResponse;
+import static com.google.cloud.compute.v1.RouterClient.GetNatMappingInfoRoutersPagedResponse;
 import static com.google.cloud.compute.v1.RouterClient.ListRoutersPagedResponse;
 
 import com.google.api.client.http.HttpMethods;
@@ -33,6 +34,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListRoutersHttpRequest;
 import com.google.cloud.compute.v1.DeleteRouterHttpRequest;
+import com.google.cloud.compute.v1.GetNatMappingInfoRoutersHttpRequest;
 import com.google.cloud.compute.v1.GetRouterHttpRequest;
 import com.google.cloud.compute.v1.GetRouterStatusRouterHttpRequest;
 import com.google.cloud.compute.v1.InsertRouterHttpRequest;
@@ -49,6 +51,7 @@ import com.google.cloud.compute.v1.RouterList;
 import com.google.cloud.compute.v1.RouterStatusResponse;
 import com.google.cloud.compute.v1.RoutersPreviewResponse;
 import com.google.cloud.compute.v1.UpdateRouterHttpRequest;
+import com.google.cloud.compute.v1.VmEndpointNatMappingsList;
 import com.google.common.collect.Sets;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -121,6 +124,30 @@ public class HttpJsonRouterStub extends RouterStub {
                   .setResponseInstance(Router.getDefaultInstance())
                   .build())
           .build();
+
+  @InternalApi
+  public static final ApiMethodDescriptor<
+          GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList>
+      getNatMappingInfoRoutersMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList>newBuilder()
+              .setFullMethodName("compute.routers.getNatMappingInfo")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<GetNatMappingInfoRoutersHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/regions/{region}/routers/{router}/getNatMappingInfo"))
+                      .setQueryParams(
+                          Sets.<String>newHashSet("filter", "maxResults", "orderBy", "pageToken"))
+                      .setResourceNameFactory(ProjectRegionRouterName.newFactory())
+                      .setResourceNameField("router")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<VmEndpointNatMappingsList>newBuilder()
+                      .setResponseInstance(VmEndpointNatMappingsList.getDefaultInstance())
+                      .build())
+              .build();
 
   @InternalApi
   public static final ApiMethodDescriptor<GetRouterStatusRouterHttpRequest, RouterStatusResponse>
@@ -251,6 +278,11 @@ public class HttpJsonRouterStub extends RouterStub {
       aggregatedListRoutersPagedCallable;
   private final UnaryCallable<DeleteRouterHttpRequest, Operation> deleteRouterCallable;
   private final UnaryCallable<GetRouterHttpRequest, Router> getRouterCallable;
+  private final UnaryCallable<GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList>
+      getNatMappingInfoRoutersCallable;
+  private final UnaryCallable<
+          GetNatMappingInfoRoutersHttpRequest, GetNatMappingInfoRoutersPagedResponse>
+      getNatMappingInfoRoutersPagedCallable;
   private final UnaryCallable<GetRouterStatusRouterHttpRequest, RouterStatusResponse>
       getRouterStatusRouterCallable;
   private final UnaryCallable<InsertRouterHttpRequest, Operation> insertRouterCallable;
@@ -314,6 +346,12 @@ public class HttpJsonRouterStub extends RouterStub {
         HttpJsonCallSettings.<GetRouterHttpRequest, Router>newBuilder()
             .setMethodDescriptor(getRouterMethodDescriptor)
             .build();
+    HttpJsonCallSettings<GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList>
+        getNatMappingInfoRoutersTransportSettings =
+            HttpJsonCallSettings
+                .<GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList>newBuilder()
+                .setMethodDescriptor(getNatMappingInfoRoutersMethodDescriptor)
+                .build();
     HttpJsonCallSettings<GetRouterStatusRouterHttpRequest, RouterStatusResponse>
         getRouterStatusRouterTransportSettings =
             HttpJsonCallSettings
@@ -358,6 +396,16 @@ public class HttpJsonRouterStub extends RouterStub {
     this.getRouterCallable =
         callableFactory.createUnaryCallable(
             getRouterTransportSettings, settings.getRouterSettings(), clientContext);
+    this.getNatMappingInfoRoutersCallable =
+        callableFactory.createUnaryCallable(
+            getNatMappingInfoRoutersTransportSettings,
+            settings.getNatMappingInfoRoutersSettings(),
+            clientContext);
+    this.getNatMappingInfoRoutersPagedCallable =
+        callableFactory.createPagedCallable(
+            getNatMappingInfoRoutersTransportSettings,
+            settings.getNatMappingInfoRoutersSettings(),
+            clientContext);
     this.getRouterStatusRouterCallable =
         callableFactory.createUnaryCallable(
             getRouterStatusRouterTransportSettings,
@@ -405,6 +453,18 @@ public class HttpJsonRouterStub extends RouterStub {
   @BetaApi
   public UnaryCallable<GetRouterHttpRequest, Router> getRouterCallable() {
     return getRouterCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<GetNatMappingInfoRoutersHttpRequest, GetNatMappingInfoRoutersPagedResponse>
+      getNatMappingInfoRoutersPagedCallable() {
+    return getNatMappingInfoRoutersPagedCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList>
+      getNatMappingInfoRoutersCallable() {
+    return getNatMappingInfoRoutersCallable;
   }
 
   @BetaApi

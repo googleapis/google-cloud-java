@@ -22,11 +22,14 @@ import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.addNodesNod
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.aggregatedListNodeGroupsMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.deleteNodeGroupMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.deleteNodesNodeGroupMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.getIamPolicyNodeGroupMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.getNodeGroupMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.insertNodeGroupMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.listNodeGroupsMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.listNodesNodeGroupsMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.setIamPolicyNodeGroupMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.setNodeTemplateNodeGroupMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNodeGroupStub.testIamPermissionsNodeGroupMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
@@ -63,10 +66,13 @@ public class NodeGroupClientTest {
               deleteNodeGroupMethodDescriptor,
               deleteNodesNodeGroupMethodDescriptor,
               getNodeGroupMethodDescriptor,
+              getIamPolicyNodeGroupMethodDescriptor,
               insertNodeGroupMethodDescriptor,
               listNodeGroupsMethodDescriptor,
               listNodesNodeGroupsMethodDescriptor,
-              setNodeTemplateNodeGroupMethodDescriptor));
+              setIamPolicyNodeGroupMethodDescriptor,
+              setNodeTemplateNodeGroupMethodDescriptor,
+              testIamPermissionsNodeGroupMethodDescriptor));
   private static final MockHttpService mockService =
       new MockHttpService(METHOD_DESCRIPTORS, NodeGroupStubSettings.getDefaultEndpoint());
 
@@ -510,6 +516,56 @@ public class NodeGroupClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getIamPolicyNodeGroupTest() {
+    Boolean iamOwned = false;
+    String etag = "etag3123477";
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setIamOwned(iamOwned).setEtag(etag).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectZoneNodeGroupResourceName resource =
+        ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+
+    Policy actualResponse = client.getIamPolicyNodeGroup(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicyNodeGroupExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectZoneNodeGroupResourceName resource =
+          ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+
+      client.getIamPolicyNodeGroup(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void insertNodeGroupTest() {
     String httpErrorMessage = "httpErrorMessage1276263769";
     String targetId = "targetId-815576439";
@@ -724,6 +780,58 @@ public class NodeGroupClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void setIamPolicyNodeGroupTest() {
+    Boolean iamOwned = false;
+    String etag = "etag3123477";
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setIamOwned(iamOwned).setEtag(etag).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectZoneNodeGroupResourceName resource =
+        ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+    ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicyNodeGroup(resource, zoneSetPolicyRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyNodeGroupExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectZoneNodeGroupResourceName resource =
+          ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+      ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
+
+      client.setIamPolicyNodeGroup(resource, zoneSetPolicyRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void setNodeTemplateNodeGroupTest() {
     String httpErrorMessage = "httpErrorMessage1276263769";
     String targetId = "targetId-815576439";
@@ -811,6 +919,57 @@ public class NodeGroupClientTest {
           NodeGroupsSetNodeTemplateRequest.newBuilder().build();
 
       client.setNodeTemplateNodeGroup(nodeGroup, nodeGroupsSetNodeTemplateRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsNodeGroupTest() {
+    TestPermissionsResponse expectedResponse = TestPermissionsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectZoneNodeGroupResourceName resource =
+        ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+    TestPermissionsRequest testPermissionsRequestResource =
+        TestPermissionsRequest.newBuilder().build();
+
+    TestPermissionsResponse actualResponse =
+        client.testIamPermissionsNodeGroup(resource, testPermissionsRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsNodeGroupExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectZoneNodeGroupResourceName resource =
+          ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+      TestPermissionsRequest testPermissionsRequestResource =
+          TestPermissionsRequest.newBuilder().build();
+
+      client.testIamPermissionsNodeGroup(resource, testPermissionsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

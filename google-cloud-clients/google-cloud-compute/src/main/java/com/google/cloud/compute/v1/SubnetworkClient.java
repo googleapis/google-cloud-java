@@ -55,13 +55,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -603,6 +603,108 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   ProjectRegionSubnetworkResourceName resource = ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   Policy response = subnetworkClient.getIamPolicySubnetwork(resource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicySubnetwork(ProjectRegionSubnetworkResourceName resource) {
+
+    GetIamPolicySubnetworkHttpRequest request =
+        GetIamPolicySubnetworkHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return getIamPolicySubnetwork(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   ProjectRegionSubnetworkResourceName resource = ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   Policy response = subnetworkClient.getIamPolicySubnetwork(resource.toString());
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicySubnetwork(String resource) {
+
+    GetIamPolicySubnetworkHttpRequest request =
+        GetIamPolicySubnetworkHttpRequest.newBuilder().setResource(resource).build();
+    return getIamPolicySubnetwork(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   ProjectRegionSubnetworkResourceName resource = ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   GetIamPolicySubnetworkHttpRequest request = GetIamPolicySubnetworkHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   Policy response = subnetworkClient.getIamPolicySubnetwork(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicySubnetwork(GetIamPolicySubnetworkHttpRequest request) {
+    return getIamPolicySubnetworkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   ProjectRegionSubnetworkResourceName resource = ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   GetIamPolicySubnetworkHttpRequest request = GetIamPolicySubnetworkHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = subnetworkClient.getIamPolicySubnetworkCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<GetIamPolicySubnetworkHttpRequest, Policy>
+      getIamPolicySubnetworkCallable() {
+    return stub.getIamPolicySubnetworkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Creates a subnetwork in the specified project using the data included in the request.
    *
    * <p>Sample code:
@@ -1121,6 +1223,119 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   ProjectRegionSubnetworkResourceName resource = ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
+   *   Policy response = subnetworkClient.setIamPolicySubnetwork(resource, regionSetPolicyRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param regionSetPolicyRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicySubnetwork(
+      ProjectRegionSubnetworkResourceName resource,
+      RegionSetPolicyRequest regionSetPolicyRequestResource) {
+
+    SetIamPolicySubnetworkHttpRequest request =
+        SetIamPolicySubnetworkHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
+            .build();
+    return setIamPolicySubnetwork(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   ProjectRegionSubnetworkResourceName resource = ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
+   *   Policy response = subnetworkClient.setIamPolicySubnetwork(resource.toString(), regionSetPolicyRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param regionSetPolicyRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicySubnetwork(
+      String resource, RegionSetPolicyRequest regionSetPolicyRequestResource) {
+
+    SetIamPolicySubnetworkHttpRequest request =
+        SetIamPolicySubnetworkHttpRequest.newBuilder()
+            .setResource(resource)
+            .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
+            .build();
+    return setIamPolicySubnetwork(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   ProjectRegionSubnetworkResourceName resource = ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
+   *   SetIamPolicySubnetworkHttpRequest request = SetIamPolicySubnetworkHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
+   *     .build();
+   *   Policy response = subnetworkClient.setIamPolicySubnetwork(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicySubnetwork(SetIamPolicySubnetworkHttpRequest request) {
+    return setIamPolicySubnetworkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   ProjectRegionSubnetworkResourceName resource = ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
+   *   SetIamPolicySubnetworkHttpRequest request = SetIamPolicySubnetworkHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = subnetworkClient.setIamPolicySubnetworkCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SetIamPolicySubnetworkHttpRequest, Policy>
+      setIamPolicySubnetworkCallable() {
+    return stub.setIamPolicySubnetworkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Set whether VMs in this subnet can access Google services without assigning external IP
    * addresses through Private Google Access.
    *
@@ -1242,6 +1457,120 @@ public class SubnetworkClient implements BackgroundResource {
     return stub.setPrivateIpGoogleAccessSubnetworkCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   ProjectRegionSubnetworkResourceName resource = ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response = subnetworkClient.testIamPermissionsSubnetwork(resource, testPermissionsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param testPermissionsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final TestPermissionsResponse testIamPermissionsSubnetwork(
+      ProjectRegionSubnetworkResourceName resource,
+      TestPermissionsRequest testPermissionsRequestResource) {
+
+    TestIamPermissionsSubnetworkHttpRequest request =
+        TestIamPermissionsSubnetworkHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setTestPermissionsRequestResource(testPermissionsRequestResource)
+            .build();
+    return testIamPermissionsSubnetwork(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   ProjectRegionSubnetworkResourceName resource = ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response = subnetworkClient.testIamPermissionsSubnetwork(resource.toString(), testPermissionsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param testPermissionsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final TestPermissionsResponse testIamPermissionsSubnetwork(
+      String resource, TestPermissionsRequest testPermissionsRequestResource) {
+
+    TestIamPermissionsSubnetworkHttpRequest request =
+        TestIamPermissionsSubnetworkHttpRequest.newBuilder()
+            .setResource(resource)
+            .setTestPermissionsRequestResource(testPermissionsRequestResource)
+            .build();
+    return testIamPermissionsSubnetwork(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   ProjectRegionSubnetworkResourceName resource = ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestIamPermissionsSubnetworkHttpRequest request = TestIamPermissionsSubnetworkHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
+   *     .build();
+   *   TestPermissionsResponse response = subnetworkClient.testIamPermissionsSubnetwork(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final TestPermissionsResponse testIamPermissionsSubnetwork(
+      TestIamPermissionsSubnetworkHttpRequest request) {
+    return testIamPermissionsSubnetworkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubnetworkClient subnetworkClient = SubnetworkClient.create()) {
+   *   ProjectRegionSubnetworkResourceName resource = ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestIamPermissionsSubnetworkHttpRequest request = TestIamPermissionsSubnetworkHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
+   *     .build();
+   *   ApiFuture&lt;TestPermissionsResponse&gt; future = subnetworkClient.testIamPermissionsSubnetworkCallable().futureCall(request);
+   *   // Do something
+   *   TestPermissionsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<TestIamPermissionsSubnetworkHttpRequest, TestPermissionsResponse>
+      testIamPermissionsSubnetworkCallable() {
+    return stub.testIamPermissionsSubnetworkCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -1274,16 +1603,12 @@ public class SubnetworkClient implements BackgroundResource {
 
   public static class AggregatedListSubnetworksPagedResponse
       extends AbstractPagedListResponse<
-          AggregatedListSubnetworksHttpRequest,
-          SubnetworkAggregatedList,
-          SubnetworksScopedList,
-          AggregatedListSubnetworksPage,
-          AggregatedListSubnetworksFixedSizeCollection> {
+          AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList, SubnetworksScopedList,
+          AggregatedListSubnetworksPage, AggregatedListSubnetworksFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListSubnetworksPagedResponse> createAsync(
         PageContext<
-                AggregatedListSubnetworksHttpRequest,
-                SubnetworkAggregatedList,
+                AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList,
                 SubnetworksScopedList>
             context,
         ApiFuture<SubnetworkAggregatedList> futureResponse) {
@@ -1307,15 +1632,12 @@ public class SubnetworkClient implements BackgroundResource {
 
   public static class AggregatedListSubnetworksPage
       extends AbstractPage<
-          AggregatedListSubnetworksHttpRequest,
-          SubnetworkAggregatedList,
-          SubnetworksScopedList,
+          AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList, SubnetworksScopedList,
           AggregatedListSubnetworksPage> {
 
     private AggregatedListSubnetworksPage(
         PageContext<
-                AggregatedListSubnetworksHttpRequest,
-                SubnetworkAggregatedList,
+                AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList,
                 SubnetworksScopedList>
             context,
         SubnetworkAggregatedList response) {
@@ -1329,8 +1651,7 @@ public class SubnetworkClient implements BackgroundResource {
     @Override
     protected AggregatedListSubnetworksPage createPage(
         PageContext<
-                AggregatedListSubnetworksHttpRequest,
-                SubnetworkAggregatedList,
+                AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList,
                 SubnetworksScopedList>
             context,
         SubnetworkAggregatedList response) {
@@ -1340,8 +1661,7 @@ public class SubnetworkClient implements BackgroundResource {
     @Override
     public ApiFuture<AggregatedListSubnetworksPage> createPageAsync(
         PageContext<
-                AggregatedListSubnetworksHttpRequest,
-                SubnetworkAggregatedList,
+                AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList,
                 SubnetworksScopedList>
             context,
         ApiFuture<SubnetworkAggregatedList> futureResponse) {
@@ -1351,11 +1671,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   public static class AggregatedListSubnetworksFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AggregatedListSubnetworksHttpRequest,
-          SubnetworkAggregatedList,
-          SubnetworksScopedList,
-          AggregatedListSubnetworksPage,
-          AggregatedListSubnetworksFixedSizeCollection> {
+          AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList, SubnetworksScopedList,
+          AggregatedListSubnetworksPage, AggregatedListSubnetworksFixedSizeCollection> {
 
     private AggregatedListSubnetworksFixedSizeCollection(
         List<AggregatedListSubnetworksPage> pages, int collectionSize) {
@@ -1375,10 +1692,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   public static class ListSubnetworksPagedResponse
       extends AbstractPagedListResponse<
-          ListSubnetworksHttpRequest,
-          SubnetworkList,
-          Subnetwork,
-          ListSubnetworksPage,
+          ListSubnetworksHttpRequest, SubnetworkList, Subnetwork, ListSubnetworksPage,
           ListSubnetworksFixedSizeCollection> {
 
     public static ApiFuture<ListSubnetworksPagedResponse> createAsync(
@@ -1432,10 +1746,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   public static class ListSubnetworksFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListSubnetworksHttpRequest,
-          SubnetworkList,
-          Subnetwork,
-          ListSubnetworksPage,
+          ListSubnetworksHttpRequest, SubnetworkList, Subnetwork, ListSubnetworksPage,
           ListSubnetworksFixedSizeCollection> {
 
     private ListSubnetworksFixedSizeCollection(
@@ -1456,11 +1767,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   public static class ListUsableSubnetworksPagedResponse
       extends AbstractPagedListResponse<
-          ListUsableSubnetworksHttpRequest,
-          UsableSubnetworksAggregatedList,
-          UsableSubnetwork,
-          ListUsableSubnetworksPage,
-          ListUsableSubnetworksFixedSizeCollection> {
+          ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList, UsableSubnetwork,
+          ListUsableSubnetworksPage, ListUsableSubnetworksFixedSizeCollection> {
 
     public static ApiFuture<ListUsableSubnetworksPagedResponse> createAsync(
         PageContext<
@@ -1486,9 +1794,7 @@ public class SubnetworkClient implements BackgroundResource {
 
   public static class ListUsableSubnetworksPage
       extends AbstractPage<
-          ListUsableSubnetworksHttpRequest,
-          UsableSubnetworksAggregatedList,
-          UsableSubnetwork,
+          ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList, UsableSubnetwork,
           ListUsableSubnetworksPage> {
 
     private ListUsableSubnetworksPage(
@@ -1524,11 +1830,8 @@ public class SubnetworkClient implements BackgroundResource {
 
   public static class ListUsableSubnetworksFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListUsableSubnetworksHttpRequest,
-          UsableSubnetworksAggregatedList,
-          UsableSubnetwork,
-          ListUsableSubnetworksPage,
-          ListUsableSubnetworksFixedSizeCollection> {
+          ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList, UsableSubnetwork,
+          ListUsableSubnetworksPage, ListUsableSubnetworksFixedSizeCollection> {
 
     private ListUsableSubnetworksFixedSizeCollection(
         List<ListUsableSubnetworksPage> pages, int collectionSize) {

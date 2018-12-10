@@ -55,13 +55,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -345,6 +345,107 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LicenseClient licenseClient = LicenseClient.create()) {
+   *   ProjectGlobalLicenseResourceName resource = ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   Policy response = licenseClient.getIamPolicyLicense(resource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicyLicense(ProjectGlobalLicenseResourceName resource) {
+
+    GetIamPolicyLicenseHttpRequest request =
+        GetIamPolicyLicenseHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return getIamPolicyLicense(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LicenseClient licenseClient = LicenseClient.create()) {
+   *   ProjectGlobalLicenseResourceName resource = ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   Policy response = licenseClient.getIamPolicyLicense(resource.toString());
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicyLicense(String resource) {
+
+    GetIamPolicyLicenseHttpRequest request =
+        GetIamPolicyLicenseHttpRequest.newBuilder().setResource(resource).build();
+    return getIamPolicyLicense(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LicenseClient licenseClient = LicenseClient.create()) {
+   *   ProjectGlobalLicenseResourceName resource = ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GetIamPolicyLicenseHttpRequest request = GetIamPolicyLicenseHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   Policy response = licenseClient.getIamPolicyLicense(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicyLicense(GetIamPolicyLicenseHttpRequest request) {
+    return getIamPolicyLicenseCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LicenseClient licenseClient = LicenseClient.create()) {
+   *   ProjectGlobalLicenseResourceName resource = ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GetIamPolicyLicenseHttpRequest request = GetIamPolicyLicenseHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = licenseClient.getIamPolicyLicenseCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<GetIamPolicyLicenseHttpRequest, Policy> getIamPolicyLicenseCallable() {
+    return stub.getIamPolicyLicenseCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Create a License resource in the specified project.
    *
    * <p>Sample code:
@@ -610,6 +711,118 @@ public class LicenseClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LicenseClient licenseClient = LicenseClient.create()) {
+   *   ProjectGlobalLicenseResourceName resource = ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
+   *   Policy response = licenseClient.setIamPolicyLicense(resource, globalSetPolicyRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param globalSetPolicyRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicyLicense(
+      ProjectGlobalLicenseResourceName resource,
+      GlobalSetPolicyRequest globalSetPolicyRequestResource) {
+
+    SetIamPolicyLicenseHttpRequest request =
+        SetIamPolicyLicenseHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
+            .build();
+    return setIamPolicyLicense(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LicenseClient licenseClient = LicenseClient.create()) {
+   *   ProjectGlobalLicenseResourceName resource = ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
+   *   Policy response = licenseClient.setIamPolicyLicense(resource.toString(), globalSetPolicyRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param globalSetPolicyRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicyLicense(
+      String resource, GlobalSetPolicyRequest globalSetPolicyRequestResource) {
+
+    SetIamPolicyLicenseHttpRequest request =
+        SetIamPolicyLicenseHttpRequest.newBuilder()
+            .setResource(resource)
+            .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
+            .build();
+    return setIamPolicyLicense(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LicenseClient licenseClient = LicenseClient.create()) {
+   *   ProjectGlobalLicenseResourceName resource = ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
+   *   SetIamPolicyLicenseHttpRequest request = SetIamPolicyLicenseHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
+   *     .build();
+   *   Policy response = licenseClient.setIamPolicyLicense(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicyLicense(SetIamPolicyLicenseHttpRequest request) {
+    return setIamPolicyLicenseCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LicenseClient licenseClient = LicenseClient.create()) {
+   *   ProjectGlobalLicenseResourceName resource = ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
+   *   SetIamPolicyLicenseHttpRequest request = SetIamPolicyLicenseHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = licenseClient.setIamPolicyLicenseCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SetIamPolicyLicenseHttpRequest, Policy> setIamPolicyLicenseCallable() {
+    return stub.setIamPolicyLicenseCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Returns permissions that a caller has on the specified resource.
    *
    * <p>Sample code:
@@ -754,10 +967,7 @@ public class LicenseClient implements BackgroundResource {
 
   public static class ListLicensesPagedResponse
       extends AbstractPagedListResponse<
-          ListLicensesHttpRequest,
-          LicensesListResponse,
-          License,
-          ListLicensesPage,
+          ListLicensesHttpRequest, LicensesListResponse, License, ListLicensesPage,
           ListLicensesFixedSizeCollection> {
 
     public static ApiFuture<ListLicensesPagedResponse> createAsync(
@@ -811,10 +1021,7 @@ public class LicenseClient implements BackgroundResource {
 
   public static class ListLicensesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListLicensesHttpRequest,
-          LicensesListResponse,
-          License,
-          ListLicensesPage,
+          ListLicensesHttpRequest, LicensesListResponse, License, ListLicensesPage,
           ListLicensesFixedSizeCollection> {
 
     private ListLicensesFixedSizeCollection(List<ListLicensesPage> pages, int collectionSize) {

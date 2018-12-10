@@ -19,9 +19,12 @@ import static com.google.cloud.compute.v1.NodeTemplateClient.AggregatedListNodeT
 import static com.google.cloud.compute.v1.NodeTemplateClient.ListNodeTemplatesPagedResponse;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeTemplateStub.aggregatedListNodeTemplatesMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeTemplateStub.deleteNodeTemplateMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNodeTemplateStub.getIamPolicyNodeTemplateMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeTemplateStub.getNodeTemplateMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeTemplateStub.insertNodeTemplateMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonNodeTemplateStub.listNodeTemplatesMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNodeTemplateStub.setIamPolicyNodeTemplateMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonNodeTemplateStub.testIamPermissionsNodeTemplateMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
@@ -56,8 +59,11 @@ public class NodeTemplateClientTest {
               aggregatedListNodeTemplatesMethodDescriptor,
               deleteNodeTemplateMethodDescriptor,
               getNodeTemplateMethodDescriptor,
+              getIamPolicyNodeTemplateMethodDescriptor,
               insertNodeTemplateMethodDescriptor,
-              listNodeTemplatesMethodDescriptor));
+              listNodeTemplatesMethodDescriptor,
+              setIamPolicyNodeTemplateMethodDescriptor,
+              testIamPermissionsNodeTemplateMethodDescriptor));
   private static final MockHttpService mockService =
       new MockHttpService(METHOD_DESCRIPTORS, NodeTemplateStubSettings.getDefaultEndpoint());
 
@@ -311,6 +317,56 @@ public class NodeTemplateClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getIamPolicyNodeTemplateTest() {
+    Boolean iamOwned = false;
+    String etag = "etag3123477";
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setIamOwned(iamOwned).setEtag(etag).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectRegionNodeTemplateResourceName resource =
+        ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+
+    Policy actualResponse = client.getIamPolicyNodeTemplate(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicyNodeTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectRegionNodeTemplateResourceName resource =
+          ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+
+      client.getIamPolicyNodeTemplate(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void insertNodeTemplateTest() {
     String httpErrorMessage = "httpErrorMessage1276263769";
     String targetId = "targetId-815576439";
@@ -453,6 +509,112 @@ public class NodeTemplateClientTest {
       ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
 
       client.listNodeTemplates(region);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyNodeTemplateTest() {
+    Boolean iamOwned = false;
+    String etag = "etag3123477";
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setIamOwned(iamOwned).setEtag(etag).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectRegionNodeTemplateResourceName resource =
+        ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+    RegionSetPolicyRequest regionSetPolicyRequestResource =
+        RegionSetPolicyRequest.newBuilder().build();
+
+    Policy actualResponse =
+        client.setIamPolicyNodeTemplate(resource, regionSetPolicyRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyNodeTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectRegionNodeTemplateResourceName resource =
+          ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+      RegionSetPolicyRequest regionSetPolicyRequestResource =
+          RegionSetPolicyRequest.newBuilder().build();
+
+      client.setIamPolicyNodeTemplate(resource, regionSetPolicyRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsNodeTemplateTest() {
+    TestPermissionsResponse expectedResponse = TestPermissionsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectRegionNodeTemplateResourceName resource =
+        ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+    TestPermissionsRequest testPermissionsRequestResource =
+        TestPermissionsRequest.newBuilder().build();
+
+    TestPermissionsResponse actualResponse =
+        client.testIamPermissionsNodeTemplate(resource, testPermissionsRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsNodeTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectRegionNodeTemplateResourceName resource =
+          ProjectRegionNodeTemplateResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+      TestPermissionsRequest testPermissionsRequestResource =
+          TestPermissionsRequest.newBuilder().build();
+
+      client.testIamPermissionsNodeTemplate(resource, testPermissionsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -54,6 +54,7 @@ import com.google.cloud.compute.v1.InstanceGroupManagersScopedList;
 import com.google.cloud.compute.v1.ListInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.RecreateInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.ResizeInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.SetInstanceTemplateInstanceGroupManagerHttpRequest;
@@ -112,8 +113,7 @@ public class InstanceGroupManagerStubSettings
   private final UnaryCallSettings<AbandonInstancesInstanceGroupManagerHttpRequest, Operation>
       abandonInstancesInstanceGroupManagerSettings;
   private final PagedCallSettings<
-          AggregatedListInstanceGroupManagersHttpRequest,
-          InstanceGroupManagerAggregatedList,
+          AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
           AggregatedListInstanceGroupManagersPagedResponse>
       aggregatedListInstanceGroupManagersSettings;
   private final UnaryCallSettings<DeleteInstanceGroupManagerHttpRequest, Operation>
@@ -125,14 +125,15 @@ public class InstanceGroupManagerStubSettings
   private final UnaryCallSettings<InsertInstanceGroupManagerHttpRequest, Operation>
       insertInstanceGroupManagerSettings;
   private final PagedCallSettings<
-          ListInstanceGroupManagersHttpRequest,
-          InstanceGroupManagerList,
+          ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
           ListInstanceGroupManagersPagedResponse>
       listInstanceGroupManagersSettings;
   private final UnaryCallSettings<
           ListManagedInstancesInstanceGroupManagersHttpRequest,
           InstanceGroupManagersListManagedInstancesResponse>
       listManagedInstancesInstanceGroupManagersSettings;
+  private final UnaryCallSettings<PatchInstanceGroupManagerHttpRequest, Operation>
+      patchInstanceGroupManagerSettings;
   private final UnaryCallSettings<RecreateInstancesInstanceGroupManagerHttpRequest, Operation>
       recreateInstancesInstanceGroupManagerSettings;
   private final UnaryCallSettings<ResizeInstanceGroupManagerHttpRequest, Operation>
@@ -152,8 +153,7 @@ public class InstanceGroupManagerStubSettings
 
   /** Returns the object with the settings used for calls to aggregatedListInstanceGroupManagers. */
   public PagedCallSettings<
-          AggregatedListInstanceGroupManagersHttpRequest,
-          InstanceGroupManagerAggregatedList,
+          AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
           AggregatedListInstanceGroupManagersPagedResponse>
       aggregatedListInstanceGroupManagersSettings() {
     return aggregatedListInstanceGroupManagersSettings;
@@ -185,8 +185,7 @@ public class InstanceGroupManagerStubSettings
 
   /** Returns the object with the settings used for calls to listInstanceGroupManagers. */
   public PagedCallSettings<
-          ListInstanceGroupManagersHttpRequest,
-          InstanceGroupManagerList,
+          ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
           ListInstanceGroupManagersPagedResponse>
       listInstanceGroupManagersSettings() {
     return listInstanceGroupManagersSettings;
@@ -201,6 +200,12 @@ public class InstanceGroupManagerStubSettings
           InstanceGroupManagersListManagedInstancesResponse>
       listManagedInstancesInstanceGroupManagersSettings() {
     return listManagedInstancesInstanceGroupManagersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to patchInstanceGroupManager. */
+  public UnaryCallSettings<PatchInstanceGroupManagerHttpRequest, Operation>
+      patchInstanceGroupManagerSettings() {
+    return patchInstanceGroupManagerSettings;
   }
 
   /**
@@ -320,6 +325,7 @@ public class InstanceGroupManagerStubSettings
     listInstanceGroupManagersSettings = settingsBuilder.listInstanceGroupManagersSettings().build();
     listManagedInstancesInstanceGroupManagersSettings =
         settingsBuilder.listManagedInstancesInstanceGroupManagersSettings().build();
+    patchInstanceGroupManagerSettings = settingsBuilder.patchInstanceGroupManagerSettings().build();
     recreateInstancesInstanceGroupManagerSettings =
         settingsBuilder.recreateInstancesInstanceGroupManagerSettings().build();
     resizeInstanceGroupManagerSettings =
@@ -331,13 +337,11 @@ public class InstanceGroupManagerStubSettings
   }
 
   private static final PagedListDescriptor<
-          AggregatedListInstanceGroupManagersHttpRequest,
-          InstanceGroupManagerAggregatedList,
+          AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
           InstanceGroupManagersScopedList>
       AGGREGATED_LIST_INSTANCE_GROUP_MANAGERS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              AggregatedListInstanceGroupManagersHttpRequest,
-              InstanceGroupManagerAggregatedList,
+              AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
               InstanceGroupManagersScopedList>() {
             @Override
             public String emptyToken() {
@@ -383,8 +387,7 @@ public class InstanceGroupManagerStubSettings
           ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList, InstanceGroupManager>
       LIST_INSTANCE_GROUP_MANAGERS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListInstanceGroupManagersHttpRequest,
-              InstanceGroupManagerList,
+              ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
               InstanceGroupManager>() {
             @Override
             public String emptyToken() {
@@ -427,13 +430,11 @@ public class InstanceGroupManagerStubSettings
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListInstanceGroupManagersHttpRequest,
-          InstanceGroupManagerAggregatedList,
+          AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
           AggregatedListInstanceGroupManagersPagedResponse>
       AGGREGATED_LIST_INSTANCE_GROUP_MANAGERS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListInstanceGroupManagersHttpRequest,
-              InstanceGroupManagerAggregatedList,
+              AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
               AggregatedListInstanceGroupManagersPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListInstanceGroupManagersPagedResponse>
@@ -447,8 +448,7 @@ public class InstanceGroupManagerStubSettings
                     ApiFuture<InstanceGroupManagerAggregatedList> futureResponse) {
               PageContext<
                       AggregatedListInstanceGroupManagersHttpRequest,
-                      InstanceGroupManagerAggregatedList,
-                      InstanceGroupManagersScopedList>
+                      InstanceGroupManagerAggregatedList, InstanceGroupManagersScopedList>
                   pageContext =
                       PageContext.create(
                           callable,
@@ -461,13 +461,11 @@ public class InstanceGroupManagerStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListInstanceGroupManagersHttpRequest,
-          InstanceGroupManagerList,
+          ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
           ListInstanceGroupManagersPagedResponse>
       LIST_INSTANCE_GROUP_MANAGERS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListInstanceGroupManagersHttpRequest,
-              InstanceGroupManagerList,
+              ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
               ListInstanceGroupManagersPagedResponse>() {
             @Override
             public ApiFuture<ListInstanceGroupManagersPagedResponse> getFuturePagedResponse(
@@ -477,8 +475,7 @@ public class InstanceGroupManagerStubSettings
                 ApiCallContext context,
                 ApiFuture<InstanceGroupManagerList> futureResponse) {
               PageContext<
-                      ListInstanceGroupManagersHttpRequest,
-                      InstanceGroupManagerList,
+                      ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
                       InstanceGroupManager>
                   pageContext =
                       PageContext.create(
@@ -497,8 +494,7 @@ public class InstanceGroupManagerStubSettings
             AbandonInstancesInstanceGroupManagerHttpRequest, Operation>
         abandonInstancesInstanceGroupManagerSettings;
     private final PagedCallSettings.Builder<
-            AggregatedListInstanceGroupManagersHttpRequest,
-            InstanceGroupManagerAggregatedList,
+            AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
             AggregatedListInstanceGroupManagersPagedResponse>
         aggregatedListInstanceGroupManagersSettings;
     private final UnaryCallSettings.Builder<DeleteInstanceGroupManagerHttpRequest, Operation>
@@ -512,14 +508,15 @@ public class InstanceGroupManagerStubSettings
     private final UnaryCallSettings.Builder<InsertInstanceGroupManagerHttpRequest, Operation>
         insertInstanceGroupManagerSettings;
     private final PagedCallSettings.Builder<
-            ListInstanceGroupManagersHttpRequest,
-            InstanceGroupManagerList,
+            ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
             ListInstanceGroupManagersPagedResponse>
         listInstanceGroupManagersSettings;
     private final UnaryCallSettings.Builder<
             ListManagedInstancesInstanceGroupManagersHttpRequest,
             InstanceGroupManagersListManagedInstancesResponse>
         listManagedInstancesInstanceGroupManagersSettings;
+    private final UnaryCallSettings.Builder<PatchInstanceGroupManagerHttpRequest, Operation>
+        patchInstanceGroupManagerSettings;
     private final UnaryCallSettings.Builder<
             RecreateInstancesInstanceGroupManagerHttpRequest, Operation>
         recreateInstancesInstanceGroupManagerSettings;
@@ -593,6 +590,8 @@ public class InstanceGroupManagerStubSettings
       listManagedInstancesInstanceGroupManagersSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      patchInstanceGroupManagerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       recreateInstancesInstanceGroupManagerSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -613,6 +612,7 @@ public class InstanceGroupManagerStubSettings
               insertInstanceGroupManagerSettings,
               listInstanceGroupManagersSettings,
               listManagedInstancesInstanceGroupManagersSettings,
+              patchInstanceGroupManagerSettings,
               recreateInstancesInstanceGroupManagerSettings,
               resizeInstanceGroupManagerSettings,
               setInstanceTemplateInstanceGroupManagerSettings,
@@ -673,6 +673,11 @@ public class InstanceGroupManagerStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .patchInstanceGroupManagerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .recreateInstancesInstanceGroupManagerSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -710,6 +715,7 @@ public class InstanceGroupManagerStubSettings
       listInstanceGroupManagersSettings = settings.listInstanceGroupManagersSettings.toBuilder();
       listManagedInstancesInstanceGroupManagersSettings =
           settings.listManagedInstancesInstanceGroupManagersSettings.toBuilder();
+      patchInstanceGroupManagerSettings = settings.patchInstanceGroupManagerSettings.toBuilder();
       recreateInstancesInstanceGroupManagerSettings =
           settings.recreateInstancesInstanceGroupManagerSettings.toBuilder();
       resizeInstanceGroupManagerSettings = settings.resizeInstanceGroupManagerSettings.toBuilder();
@@ -728,6 +734,7 @@ public class InstanceGroupManagerStubSettings
               insertInstanceGroupManagerSettings,
               listInstanceGroupManagersSettings,
               listManagedInstancesInstanceGroupManagersSettings,
+              patchInstanceGroupManagerSettings,
               recreateInstancesInstanceGroupManagerSettings,
               resizeInstanceGroupManagerSettings,
               setInstanceTemplateInstanceGroupManagerSettings,
@@ -762,8 +769,7 @@ public class InstanceGroupManagerStubSettings
      * Returns the builder for the settings used for calls to aggregatedListInstanceGroupManagers.
      */
     public PagedCallSettings.Builder<
-            AggregatedListInstanceGroupManagersHttpRequest,
-            InstanceGroupManagerAggregatedList,
+            AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
             AggregatedListInstanceGroupManagersPagedResponse>
         aggregatedListInstanceGroupManagersSettings() {
       return aggregatedListInstanceGroupManagersSettings;
@@ -797,8 +803,7 @@ public class InstanceGroupManagerStubSettings
 
     /** Returns the builder for the settings used for calls to listInstanceGroupManagers. */
     public PagedCallSettings.Builder<
-            ListInstanceGroupManagersHttpRequest,
-            InstanceGroupManagerList,
+            ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
             ListInstanceGroupManagersPagedResponse>
         listInstanceGroupManagersSettings() {
       return listInstanceGroupManagersSettings;
@@ -813,6 +818,12 @@ public class InstanceGroupManagerStubSettings
             InstanceGroupManagersListManagedInstancesResponse>
         listManagedInstancesInstanceGroupManagersSettings() {
       return listManagedInstancesInstanceGroupManagersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patchInstanceGroupManager. */
+    public UnaryCallSettings.Builder<PatchInstanceGroupManagerHttpRequest, Operation>
+        patchInstanceGroupManagerSettings() {
+      return patchInstanceGroupManagerSettings;
     }
 
     /**

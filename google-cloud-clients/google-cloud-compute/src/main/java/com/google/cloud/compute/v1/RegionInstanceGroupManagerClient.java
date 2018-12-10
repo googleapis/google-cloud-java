@@ -57,13 +57,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1093,6 +1093,156 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Updates a managed instance group using the information that you specify in the request. This
+   * operation is marked as DONE when the group is patched even if the instances in the group are
+   * still in the process of being patched. You must separately verify the status of the individual
+   * instances with the listmanagedinstances method. This method supports PATCH semantics and uses
+   * the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = regionInstanceGroupManagerClient.patchRegionInstanceGroupManager(instanceGroupManager, instanceGroupManagerResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the instance group manager.
+   * @param instanceGroupManagerResource An Instance Group Manager resource. (== resource_for
+   *     beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
+   *     resource_for beta.regionInstanceGroupManagers ==) (== resource_for
+   *     v1.regionInstanceGroupManagers ==)
+   * @param fieldMask
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchRegionInstanceGroupManager(
+      ProjectRegionInstanceGroupManagerName instanceGroupManager,
+      InstanceGroupManager instanceGroupManagerResource,
+      List<String> fieldMask) {
+
+    PatchRegionInstanceGroupManagerHttpRequest request =
+        PatchRegionInstanceGroupManagerHttpRequest.newBuilder()
+            .setInstanceGroupManager(
+                instanceGroupManager == null ? null : instanceGroupManager.toString())
+            .setInstanceGroupManagerResource(instanceGroupManagerResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return patchRegionInstanceGroupManager(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a managed instance group using the information that you specify in the request. This
+   * operation is marked as DONE when the group is patched even if the instances in the group are
+   * still in the process of being patched. You must separately verify the status of the individual
+   * instances with the listmanagedinstances method. This method supports PATCH semantics and uses
+   * the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = regionInstanceGroupManagerClient.patchRegionInstanceGroupManager(instanceGroupManager.toString(), instanceGroupManagerResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the instance group manager.
+   * @param instanceGroupManagerResource An Instance Group Manager resource. (== resource_for
+   *     beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
+   *     resource_for beta.regionInstanceGroupManagers ==) (== resource_for
+   *     v1.regionInstanceGroupManagers ==)
+   * @param fieldMask
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchRegionInstanceGroupManager(
+      String instanceGroupManager,
+      InstanceGroupManager instanceGroupManagerResource,
+      List<String> fieldMask) {
+
+    PatchRegionInstanceGroupManagerHttpRequest request =
+        PatchRegionInstanceGroupManagerHttpRequest.newBuilder()
+            .setInstanceGroupManager(instanceGroupManager)
+            .setInstanceGroupManagerResource(instanceGroupManagerResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return patchRegionInstanceGroupManager(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a managed instance group using the information that you specify in the request. This
+   * operation is marked as DONE when the group is patched even if the instances in the group are
+   * still in the process of being patched. You must separately verify the status of the individual
+   * instances with the listmanagedinstances method. This method supports PATCH semantics and uses
+   * the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   PatchRegionInstanceGroupManagerHttpRequest request = PatchRegionInstanceGroupManagerHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   Operation response = regionInstanceGroupManagerClient.patchRegionInstanceGroupManager(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchRegionInstanceGroupManager(
+      PatchRegionInstanceGroupManagerHttpRequest request) {
+    return patchRegionInstanceGroupManagerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a managed instance group using the information that you specify in the request. This
+   * operation is marked as DONE when the group is patched even if the instances in the group are
+   * still in the process of being patched. You must separately verify the status of the individual
+   * instances with the listmanagedinstances method. This method supports PATCH semantics and uses
+   * the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RegionInstanceGroupManagerClient regionInstanceGroupManagerClient = RegionInstanceGroupManagerClient.create()) {
+   *   ProjectRegionInstanceGroupManagerName instanceGroupManager = ProjectRegionInstanceGroupManagerName.of("[PROJECT]", "[REGION]", "[INSTANCE_GROUP_MANAGER]");
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   PatchRegionInstanceGroupManagerHttpRequest request = PatchRegionInstanceGroupManagerHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagerClient.patchRegionInstanceGroupManagerCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<PatchRegionInstanceGroupManagerHttpRequest, Operation>
+      patchRegionInstanceGroupManagerCallable() {
+    return stub.patchRegionInstanceGroupManagerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Flags the specified instances in the managed instance group to be immediately recreated. The
    * instances are deleted and recreated using the current instance template for the managed
    * instance group. This operation is marked as DONE when the flag is set even if the instances
@@ -1685,16 +1835,13 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   public static class ListRegionInstanceGroupManagersPagedResponse
       extends AbstractPagedListResponse<
-          ListRegionInstanceGroupManagersHttpRequest,
-          RegionInstanceGroupManagerList,
-          InstanceGroupManager,
-          ListRegionInstanceGroupManagersPage,
+          ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
+          InstanceGroupManager, ListRegionInstanceGroupManagersPage,
           ListRegionInstanceGroupManagersFixedSizeCollection> {
 
     public static ApiFuture<ListRegionInstanceGroupManagersPagedResponse> createAsync(
         PageContext<
-                ListRegionInstanceGroupManagersHttpRequest,
-                RegionInstanceGroupManagerList,
+                ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
                 InstanceGroupManager>
             context,
         ApiFuture<RegionInstanceGroupManagerList> futureResponse) {
@@ -1720,15 +1867,12 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   public static class ListRegionInstanceGroupManagersPage
       extends AbstractPage<
-          ListRegionInstanceGroupManagersHttpRequest,
-          RegionInstanceGroupManagerList,
-          InstanceGroupManager,
-          ListRegionInstanceGroupManagersPage> {
+          ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
+          InstanceGroupManager, ListRegionInstanceGroupManagersPage> {
 
     private ListRegionInstanceGroupManagersPage(
         PageContext<
-                ListRegionInstanceGroupManagersHttpRequest,
-                RegionInstanceGroupManagerList,
+                ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
                 InstanceGroupManager>
             context,
         RegionInstanceGroupManagerList response) {
@@ -1742,8 +1886,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
     @Override
     protected ListRegionInstanceGroupManagersPage createPage(
         PageContext<
-                ListRegionInstanceGroupManagersHttpRequest,
-                RegionInstanceGroupManagerList,
+                ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
                 InstanceGroupManager>
             context,
         RegionInstanceGroupManagerList response) {
@@ -1753,8 +1896,7 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
     @Override
     public ApiFuture<ListRegionInstanceGroupManagersPage> createPageAsync(
         PageContext<
-                ListRegionInstanceGroupManagersHttpRequest,
-                RegionInstanceGroupManagerList,
+                ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
                 InstanceGroupManager>
             context,
         ApiFuture<RegionInstanceGroupManagerList> futureResponse) {
@@ -1764,10 +1906,8 @@ public class RegionInstanceGroupManagerClient implements BackgroundResource {
 
   public static class ListRegionInstanceGroupManagersFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListRegionInstanceGroupManagersHttpRequest,
-          RegionInstanceGroupManagerList,
-          InstanceGroupManager,
-          ListRegionInstanceGroupManagersPage,
+          ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
+          InstanceGroupManager, ListRegionInstanceGroupManagersPage,
           ListRegionInstanceGroupManagersFixedSizeCollection> {
 
     private ListRegionInstanceGroupManagersFixedSizeCollection(

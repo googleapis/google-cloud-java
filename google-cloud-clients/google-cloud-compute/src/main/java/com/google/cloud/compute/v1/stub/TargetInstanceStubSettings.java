@@ -101,8 +101,7 @@ public class TargetInstanceStubSettings extends StubSettings<TargetInstanceStubS
           .build();
 
   private final PagedCallSettings<
-          AggregatedListTargetInstancesHttpRequest,
-          TargetInstanceAggregatedList,
+          AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
           AggregatedListTargetInstancesPagedResponse>
       aggregatedListTargetInstancesSettings;
   private final UnaryCallSettings<DeleteTargetInstanceHttpRequest, Operation>
@@ -117,8 +116,7 @@ public class TargetInstanceStubSettings extends StubSettings<TargetInstanceStubS
 
   /** Returns the object with the settings used for calls to aggregatedListTargetInstances. */
   public PagedCallSettings<
-          AggregatedListTargetInstancesHttpRequest,
-          TargetInstanceAggregatedList,
+          AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
           AggregatedListTargetInstancesPagedResponse>
       aggregatedListTargetInstancesSettings() {
     return aggregatedListTargetInstancesSettings;
@@ -233,13 +231,11 @@ public class TargetInstanceStubSettings extends StubSettings<TargetInstanceStubS
   }
 
   private static final PagedListDescriptor<
-          AggregatedListTargetInstancesHttpRequest,
-          TargetInstanceAggregatedList,
+          AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
           TargetInstancesScopedList>
       AGGREGATED_LIST_TARGET_INSTANCES_PAGE_STR_DESC =
           new PagedListDescriptor<
-              AggregatedListTargetInstancesHttpRequest,
-              TargetInstanceAggregatedList,
+              AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
               TargetInstancesScopedList>() {
             @Override
             public String emptyToken() {
@@ -324,13 +320,11 @@ public class TargetInstanceStubSettings extends StubSettings<TargetInstanceStubS
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListTargetInstancesHttpRequest,
-          TargetInstanceAggregatedList,
+          AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
           AggregatedListTargetInstancesPagedResponse>
       AGGREGATED_LIST_TARGET_INSTANCES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListTargetInstancesHttpRequest,
-              TargetInstanceAggregatedList,
+              AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
               AggregatedListTargetInstancesPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListTargetInstancesPagedResponse> getFuturePagedResponse(
@@ -341,8 +335,7 @@ public class TargetInstanceStubSettings extends StubSettings<TargetInstanceStubS
                 ApiCallContext context,
                 ApiFuture<TargetInstanceAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListTargetInstancesHttpRequest,
-                      TargetInstanceAggregatedList,
+                      AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
                       TargetInstancesScopedList>
                   pageContext =
                       PageContext.create(
@@ -359,8 +352,7 @@ public class TargetInstanceStubSettings extends StubSettings<TargetInstanceStubS
           ListTargetInstancesHttpRequest, TargetInstanceList, ListTargetInstancesPagedResponse>
       LIST_TARGET_INSTANCES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListTargetInstancesHttpRequest,
-              TargetInstanceList,
+              ListTargetInstancesHttpRequest, TargetInstanceList,
               ListTargetInstancesPagedResponse>() {
             @Override
             public ApiFuture<ListTargetInstancesPagedResponse> getFuturePagedResponse(
@@ -381,8 +373,7 @@ public class TargetInstanceStubSettings extends StubSettings<TargetInstanceStubS
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            AggregatedListTargetInstancesHttpRequest,
-            TargetInstanceAggregatedList,
+            AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
             AggregatedListTargetInstancesPagedResponse>
         aggregatedListTargetInstancesSettings;
     private final UnaryCallSettings.Builder<DeleteTargetInstanceHttpRequest, Operation>
@@ -535,8 +526,7 @@ public class TargetInstanceStubSettings extends StubSettings<TargetInstanceStubS
 
     /** Returns the builder for the settings used for calls to aggregatedListTargetInstances. */
     public PagedCallSettings.Builder<
-            AggregatedListTargetInstancesHttpRequest,
-            TargetInstanceAggregatedList,
+            AggregatedListTargetInstancesHttpRequest, TargetInstanceAggregatedList,
             AggregatedListTargetInstancesPagedResponse>
         aggregatedListTargetInstancesSettings() {
       return aggregatedListTargetInstancesSettings;

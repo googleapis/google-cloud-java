@@ -107,8 +107,7 @@ public class RegionInstanceGroupManagerSettings
 
   /** Returns the object with the settings used for calls to listRegionInstanceGroupManagers. */
   public PagedCallSettings<
-          ListRegionInstanceGroupManagersHttpRequest,
-          RegionInstanceGroupManagerList,
+          ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
           ListRegionInstanceGroupManagersPagedResponse>
       listRegionInstanceGroupManagersSettings() {
     return ((RegionInstanceGroupManagerStubSettings) getStubSettings())
@@ -125,6 +124,13 @@ public class RegionInstanceGroupManagerSettings
       listManagedInstancesRegionInstanceGroupManagersSettings() {
     return ((RegionInstanceGroupManagerStubSettings) getStubSettings())
         .listManagedInstancesRegionInstanceGroupManagersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patchRegionInstanceGroupManager. */
+  public UnaryCallSettings<PatchRegionInstanceGroupManagerHttpRequest, Operation>
+      patchRegionInstanceGroupManagerSettings() {
+    return ((RegionInstanceGroupManagerStubSettings) getStubSettings())
+        .patchRegionInstanceGroupManagerSettings();
   }
 
   /**
@@ -307,8 +313,7 @@ public class RegionInstanceGroupManagerSettings
 
     /** Returns the builder for the settings used for calls to listRegionInstanceGroupManagers. */
     public PagedCallSettings.Builder<
-            ListRegionInstanceGroupManagersHttpRequest,
-            RegionInstanceGroupManagerList,
+            ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
             ListRegionInstanceGroupManagersPagedResponse>
         listRegionInstanceGroupManagersSettings() {
       return getStubSettingsBuilder().listRegionInstanceGroupManagersSettings();
@@ -323,6 +328,12 @@ public class RegionInstanceGroupManagerSettings
             RegionInstanceGroupManagersListInstancesResponse>
         listManagedInstancesRegionInstanceGroupManagersSettings() {
       return getStubSettingsBuilder().listManagedInstancesRegionInstanceGroupManagersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchRegionInstanceGroupManager. */
+    public UnaryCallSettings.Builder<PatchRegionInstanceGroupManagerHttpRequest, Operation>
+        patchRegionInstanceGroupManagerSettings() {
+      return getStubSettingsBuilder().patchRegionInstanceGroupManagerSettings();
     }
 
     /**

@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListNodeTemplatesHttpRequest;
 import com.google.cloud.compute.v1.DeleteNodeTemplateHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyNodeTemplateHttpRequest;
 import com.google.cloud.compute.v1.GetNodeTemplateHttpRequest;
 import com.google.cloud.compute.v1.InsertNodeTemplateHttpRequest;
 import com.google.cloud.compute.v1.ListNodeTemplatesHttpRequest;
@@ -30,6 +31,10 @@ import com.google.cloud.compute.v1.NodeTemplate;
 import com.google.cloud.compute.v1.NodeTemplateAggregatedList;
 import com.google.cloud.compute.v1.NodeTemplateList;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicyNodeTemplateHttpRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsNodeTemplateHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -68,6 +73,12 @@ public abstract class NodeTemplateStub implements BackgroundResource {
   }
 
   @BetaApi
+  public UnaryCallable<GetIamPolicyNodeTemplateHttpRequest, Policy>
+      getIamPolicyNodeTemplateCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyNodeTemplateCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<InsertNodeTemplateHttpRequest, Operation> insertNodeTemplateCallable() {
     throw new UnsupportedOperationException("Not implemented: insertNodeTemplateCallable()");
   }
@@ -81,6 +92,19 @@ public abstract class NodeTemplateStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<ListNodeTemplatesHttpRequest, NodeTemplateList> listNodeTemplatesCallable() {
     throw new UnsupportedOperationException("Not implemented: listNodeTemplatesCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<SetIamPolicyNodeTemplateHttpRequest, Policy>
+      setIamPolicyNodeTemplateCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyNodeTemplateCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<TestIamPermissionsNodeTemplateHttpRequest, TestPermissionsResponse>
+      testIamPermissionsNodeTemplateCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: testIamPermissionsNodeTemplateCallable()");
   }
 
   @Override

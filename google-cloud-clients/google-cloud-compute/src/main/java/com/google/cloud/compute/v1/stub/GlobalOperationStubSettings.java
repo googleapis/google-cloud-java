@@ -99,8 +99,7 @@ public class GlobalOperationStubSettings extends StubSettings<GlobalOperationStu
           .build();
 
   private final PagedCallSettings<
-          AggregatedListGlobalOperationsHttpRequest,
-          OperationAggregatedList,
+          AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList,
           AggregatedListGlobalOperationsPagedResponse>
       aggregatedListGlobalOperationsSettings;
   private final UnaryCallSettings<DeleteGlobalOperationHttpRequest, Void>
@@ -113,8 +112,7 @@ public class GlobalOperationStubSettings extends StubSettings<GlobalOperationStu
 
   /** Returns the object with the settings used for calls to aggregatedListGlobalOperations. */
   public PagedCallSettings<
-          AggregatedListGlobalOperationsHttpRequest,
-          OperationAggregatedList,
+          AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList,
           AggregatedListGlobalOperationsPagedResponse>
       aggregatedListGlobalOperationsSettings() {
     return aggregatedListGlobalOperationsSettings;
@@ -223,8 +221,7 @@ public class GlobalOperationStubSettings extends StubSettings<GlobalOperationStu
           AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList, OperationsScopedList>
       AGGREGATED_LIST_GLOBAL_OPERATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              AggregatedListGlobalOperationsHttpRequest,
-              OperationAggregatedList,
+              AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList,
               OperationsScopedList>() {
             @Override
             public String emptyToken() {
@@ -310,13 +307,11 @@ public class GlobalOperationStubSettings extends StubSettings<GlobalOperationStu
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListGlobalOperationsHttpRequest,
-          OperationAggregatedList,
+          AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList,
           AggregatedListGlobalOperationsPagedResponse>
       AGGREGATED_LIST_GLOBAL_OPERATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListGlobalOperationsHttpRequest,
-              OperationAggregatedList,
+              AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList,
               AggregatedListGlobalOperationsPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListGlobalOperationsPagedResponse> getFuturePagedResponse(
@@ -326,8 +321,7 @@ public class GlobalOperationStubSettings extends StubSettings<GlobalOperationStu
                 ApiCallContext context,
                 ApiFuture<OperationAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListGlobalOperationsHttpRequest,
-                      OperationAggregatedList,
+                      AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList,
                       OperationsScopedList>
                   pageContext =
                       PageContext.create(
@@ -363,8 +357,7 @@ public class GlobalOperationStubSettings extends StubSettings<GlobalOperationStu
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            AggregatedListGlobalOperationsHttpRequest,
-            OperationAggregatedList,
+            AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList,
             AggregatedListGlobalOperationsPagedResponse>
         aggregatedListGlobalOperationsSettings;
     private final UnaryCallSettings.Builder<DeleteGlobalOperationHttpRequest, Void>
@@ -505,8 +498,7 @@ public class GlobalOperationStubSettings extends StubSettings<GlobalOperationStu
 
     /** Returns the builder for the settings used for calls to aggregatedListGlobalOperations. */
     public PagedCallSettings.Builder<
-            AggregatedListGlobalOperationsHttpRequest,
-            OperationAggregatedList,
+            AggregatedListGlobalOperationsHttpRequest, OperationAggregatedList,
             AggregatedListGlobalOperationsPagedResponse>
         aggregatedListGlobalOperationsSettings() {
       return aggregatedListGlobalOperationsSettings;

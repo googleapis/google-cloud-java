@@ -31,10 +31,12 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteInterconnectHttpRequest;
+import com.google.cloud.compute.v1.GetDiagnosticsInterconnectHttpRequest;
 import com.google.cloud.compute.v1.GetInterconnectHttpRequest;
 import com.google.cloud.compute.v1.InsertInterconnectHttpRequest;
 import com.google.cloud.compute.v1.Interconnect;
 import com.google.cloud.compute.v1.InterconnectList;
+import com.google.cloud.compute.v1.InterconnectsGetDiagnosticsResponse;
 import com.google.cloud.compute.v1.ListInterconnectsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchInterconnectHttpRequest;
@@ -91,6 +93,30 @@ public class HttpJsonInterconnectStub extends InterconnectStub {
               .setResponseParser(
                   ApiMessageHttpResponseParser.<Interconnect>newBuilder()
                       .setResponseInstance(Interconnect.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
+  public static final ApiMethodDescriptor<
+          GetDiagnosticsInterconnectHttpRequest, InterconnectsGetDiagnosticsResponse>
+      getDiagnosticsInterconnectMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetDiagnosticsInterconnectHttpRequest, InterconnectsGetDiagnosticsResponse>
+                  newBuilder()
+              .setFullMethodName("compute.interconnects.getDiagnostics")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<GetDiagnosticsInterconnectHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/global/interconnects/{interconnect}/getDiagnostics"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectGlobalInterconnectName.newFactory())
+                      .setResourceNameField("interconnect")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<InterconnectsGetDiagnosticsResponse>newBuilder()
+                      .setResponseInstance(InterconnectsGetDiagnosticsResponse.getDefaultInstance())
                       .build())
               .build();
 
@@ -157,6 +183,9 @@ public class HttpJsonInterconnectStub extends InterconnectStub {
 
   private final UnaryCallable<DeleteInterconnectHttpRequest, Operation> deleteInterconnectCallable;
   private final UnaryCallable<GetInterconnectHttpRequest, Interconnect> getInterconnectCallable;
+  private final UnaryCallable<
+          GetDiagnosticsInterconnectHttpRequest, InterconnectsGetDiagnosticsResponse>
+      getDiagnosticsInterconnectCallable;
   private final UnaryCallable<InsertInterconnectHttpRequest, Operation> insertInterconnectCallable;
   private final UnaryCallable<ListInterconnectsHttpRequest, InterconnectList>
       listInterconnectsCallable;
@@ -215,6 +244,13 @@ public class HttpJsonInterconnectStub extends InterconnectStub {
             HttpJsonCallSettings.<GetInterconnectHttpRequest, Interconnect>newBuilder()
                 .setMethodDescriptor(getInterconnectMethodDescriptor)
                 .build();
+    HttpJsonCallSettings<GetDiagnosticsInterconnectHttpRequest, InterconnectsGetDiagnosticsResponse>
+        getDiagnosticsInterconnectTransportSettings =
+            HttpJsonCallSettings
+                .<GetDiagnosticsInterconnectHttpRequest, InterconnectsGetDiagnosticsResponse>
+                    newBuilder()
+                .setMethodDescriptor(getDiagnosticsInterconnectMethodDescriptor)
+                .build();
     HttpJsonCallSettings<InsertInterconnectHttpRequest, Operation>
         insertInterconnectTransportSettings =
             HttpJsonCallSettings.<InsertInterconnectHttpRequest, Operation>newBuilder()
@@ -239,6 +275,11 @@ public class HttpJsonInterconnectStub extends InterconnectStub {
     this.getInterconnectCallable =
         callableFactory.createUnaryCallable(
             getInterconnectTransportSettings, settings.getInterconnectSettings(), clientContext);
+    this.getDiagnosticsInterconnectCallable =
+        callableFactory.createUnaryCallable(
+            getDiagnosticsInterconnectTransportSettings,
+            settings.getDiagnosticsInterconnectSettings(),
+            clientContext);
     this.insertInterconnectCallable =
         callableFactory.createUnaryCallable(
             insertInterconnectTransportSettings,
@@ -271,6 +312,12 @@ public class HttpJsonInterconnectStub extends InterconnectStub {
   @BetaApi
   public UnaryCallable<GetInterconnectHttpRequest, Interconnect> getInterconnectCallable() {
     return getInterconnectCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<GetDiagnosticsInterconnectHttpRequest, InterconnectsGetDiagnosticsResponse>
+      getDiagnosticsInterconnectCallable() {
+    return getDiagnosticsInterconnectCallable;
   }
 
   @BetaApi

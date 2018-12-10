@@ -71,8 +71,7 @@ public class InterconnectLocationSettings extends ClientSettings<InterconnectLoc
 
   /** Returns the object with the settings used for calls to listInterconnectLocations. */
   public PagedCallSettings<
-          ListInterconnectLocationsHttpRequest,
-          InterconnectLocationList,
+          ListInterconnectLocationsHttpRequest, InterconnectLocationList,
           ListInterconnectLocationsPagedResponse>
       listInterconnectLocationsSettings() {
     return ((InterconnectLocationStubSettings) getStubSettings())
@@ -190,8 +189,7 @@ public class InterconnectLocationSettings extends ClientSettings<InterconnectLoc
 
     /** Returns the builder for the settings used for calls to listInterconnectLocations. */
     public PagedCallSettings.Builder<
-            ListInterconnectLocationsHttpRequest,
-            InterconnectLocationList,
+            ListInterconnectLocationsHttpRequest, InterconnectLocationList,
             ListInterconnectLocationsPagedResponse>
         listInterconnectLocationsSettings() {
       return getStubSettingsBuilder().listInterconnectLocationsSettings();
