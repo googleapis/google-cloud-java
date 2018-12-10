@@ -847,7 +847,7 @@ public class ImageClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource Name of the resource for this request.
+   * @param resource Name or id of the resource for this request.
    * @param globalSetLabelsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -879,7 +879,7 @@ public class ImageClient implements BackgroundResource {
    * }
    * </code></pre>
    *
-   * @param resource Name of the resource for this request.
+   * @param resource Name or id of the resource for this request.
    * @param globalSetLabelsRequestResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

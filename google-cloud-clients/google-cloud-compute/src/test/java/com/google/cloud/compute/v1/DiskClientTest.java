@@ -353,6 +353,7 @@ public class DiskClientTest {
     String kind = "kind3292052";
     String lastAttachTimestamp = "lastAttachTimestamp-2105323995";
     String selfLink = "selfLink-1691268851";
+    String physicalBlockSizeBytes = "physicalBlockSizeBytes-1190604793";
     String name = "name3373707";
     String sourceImage = "sourceImage1661056055";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
@@ -374,6 +375,7 @@ public class DiskClientTest {
             .setKind(kind)
             .setLastAttachTimestamp(lastAttachTimestamp)
             .setSelfLink(selfLink)
+            .setPhysicalBlockSizeBytes(physicalBlockSizeBytes)
             .setName(name)
             .setSourceImage(sourceImage)
             .setRegion(region.toString())

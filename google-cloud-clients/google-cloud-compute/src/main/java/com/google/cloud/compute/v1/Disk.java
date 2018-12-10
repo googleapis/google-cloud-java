@@ -41,6 +41,7 @@ public final class Disk implements ApiMessage {
   private final List<String> licenses;
   private final String name;
   private final String options;
+  private final String physicalBlockSizeBytes;
   private final String region;
   private final List<String> replicaZones;
   private final String selfLink;
@@ -71,6 +72,7 @@ public final class Disk implements ApiMessage {
     this.licenses = null;
     this.name = null;
     this.options = null;
+    this.physicalBlockSizeBytes = null;
     this.region = null;
     this.replicaZones = null;
     this.selfLink = null;
@@ -102,6 +104,7 @@ public final class Disk implements ApiMessage {
       List<String> licenses,
       String name,
       String options,
+      String physicalBlockSizeBytes,
       String region,
       List<String> replicaZones,
       String selfLink,
@@ -130,6 +133,7 @@ public final class Disk implements ApiMessage {
     this.licenses = licenses;
     this.name = name;
     this.options = options;
+    this.physicalBlockSizeBytes = physicalBlockSizeBytes;
     this.region = region;
     this.replicaZones = replicaZones;
     this.selfLink = selfLink;
@@ -189,6 +193,9 @@ public final class Disk implements ApiMessage {
     }
     if (fieldName.equals("options")) {
       return options;
+    }
+    if (fieldName.equals("physicalBlockSizeBytes")) {
+      return physicalBlockSizeBytes;
     }
     if (fieldName.equals("region")) {
       return region;
@@ -303,6 +310,10 @@ public final class Disk implements ApiMessage {
     return options;
   }
 
+  public String getPhysicalBlockSizeBytes() {
+    return physicalBlockSizeBytes;
+  }
+
   public String getRegion() {
     return region;
   }
@@ -396,6 +407,7 @@ public final class Disk implements ApiMessage {
     private List<String> licenses;
     private String name;
     private String options;
+    private String physicalBlockSizeBytes;
     private String region;
     private List<String> replicaZones;
     private String selfLink;
@@ -457,6 +469,9 @@ public final class Disk implements ApiMessage {
       if (other.getOptions() != null) {
         this.options = other.options;
       }
+      if (other.getPhysicalBlockSizeBytes() != null) {
+        this.physicalBlockSizeBytes = other.physicalBlockSizeBytes;
+      }
       if (other.getRegion() != null) {
         this.region = other.region;
       }
@@ -517,6 +532,7 @@ public final class Disk implements ApiMessage {
       this.licenses = source.licenses;
       this.name = source.name;
       this.options = source.options;
+      this.physicalBlockSizeBytes = source.physicalBlockSizeBytes;
       this.region = source.region;
       this.replicaZones = source.replicaZones;
       this.selfLink = source.selfLink;
@@ -692,6 +708,15 @@ public final class Disk implements ApiMessage {
       return this;
     }
 
+    public String getPhysicalBlockSizeBytes() {
+      return physicalBlockSizeBytes;
+    }
+
+    public Builder setPhysicalBlockSizeBytes(String physicalBlockSizeBytes) {
+      this.physicalBlockSizeBytes = physicalBlockSizeBytes;
+      return this;
+    }
+
     public String getRegion() {
       return region;
     }
@@ -858,6 +883,7 @@ public final class Disk implements ApiMessage {
           licenses,
           name,
           options,
+          physicalBlockSizeBytes,
           region,
           replicaZones,
           selfLink,
@@ -890,6 +916,7 @@ public final class Disk implements ApiMessage {
       newBuilder.addAllLicenses(this.licenses);
       newBuilder.setName(this.name);
       newBuilder.setOptions(this.options);
+      newBuilder.setPhysicalBlockSizeBytes(this.physicalBlockSizeBytes);
       newBuilder.setRegion(this.region);
       newBuilder.addAllReplicaZones(this.replicaZones);
       newBuilder.setSelfLink(this.selfLink);
@@ -952,6 +979,9 @@ public final class Disk implements ApiMessage {
         + ", "
         + "options="
         + options
+        + ", "
+        + "physicalBlockSizeBytes="
+        + physicalBlockSizeBytes
         + ", "
         + "region="
         + region
@@ -1018,6 +1048,7 @@ public final class Disk implements ApiMessage {
           && Objects.equals(this.licenses, that.getLicensesList())
           && Objects.equals(this.name, that.getName())
           && Objects.equals(this.options, that.getOptions())
+          && Objects.equals(this.physicalBlockSizeBytes, that.getPhysicalBlockSizeBytes())
           && Objects.equals(this.region, that.getRegion())
           && Objects.equals(this.replicaZones, that.getReplicaZonesList())
           && Objects.equals(this.selfLink, that.getSelfLink())
@@ -1053,6 +1084,7 @@ public final class Disk implements ApiMessage {
         licenses,
         name,
         options,
+        physicalBlockSizeBytes,
         region,
         replicaZones,
         selfLink,

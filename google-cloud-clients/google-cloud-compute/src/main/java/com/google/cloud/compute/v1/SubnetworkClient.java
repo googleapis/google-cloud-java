@@ -988,10 +988,9 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified subnetwork with the data included in the request. Only the following
-   * fields within the subnetwork resource can be specified in the request: secondary_ip_range,
-   * allow_subnet_cidr_routes_overlap and role. It is also mandatory to specify the current
-   * fingeprint of the subnetwork resource being patched.
+   * Patches the specified subnetwork with the data included in the request. Only certain fields can
+   * up updated with a patch request as indicated in the field descriptions. You must specify the
+   * current fingeprint of the subnetwork resource being patched.
    *
    * <p>Sample code:
    *
@@ -1027,10 +1026,9 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified subnetwork with the data included in the request. Only the following
-   * fields within the subnetwork resource can be specified in the request: secondary_ip_range,
-   * allow_subnet_cidr_routes_overlap and role. It is also mandatory to specify the current
-   * fingeprint of the subnetwork resource being patched.
+   * Patches the specified subnetwork with the data included in the request. Only certain fields can
+   * up updated with a patch request as indicated in the field descriptions. You must specify the
+   * current fingeprint of the subnetwork resource being patched.
    *
    * <p>Sample code:
    *
@@ -1064,10 +1062,9 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified subnetwork with the data included in the request. Only the following
-   * fields within the subnetwork resource can be specified in the request: secondary_ip_range,
-   * allow_subnet_cidr_routes_overlap and role. It is also mandatory to specify the current
-   * fingeprint of the subnetwork resource being patched.
+   * Patches the specified subnetwork with the data included in the request. Only certain fields can
+   * up updated with a patch request as indicated in the field descriptions. You must specify the
+   * current fingeprint of the subnetwork resource being patched.
    *
    * <p>Sample code:
    *
@@ -1095,10 +1092,9 @@ public class SubnetworkClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified subnetwork with the data included in the request. Only the following
-   * fields within the subnetwork resource can be specified in the request: secondary_ip_range,
-   * allow_subnet_cidr_routes_overlap and role. It is also mandatory to specify the current
-   * fingeprint of the subnetwork resource being patched.
+   * Patches the specified subnetwork with the data included in the request. Only certain fields can
+   * up updated with a patch request as indicated in the field descriptions. You must specify the
+   * current fingeprint of the subnetwork resource being patched.
    *
    * <p>Sample code:
    *
