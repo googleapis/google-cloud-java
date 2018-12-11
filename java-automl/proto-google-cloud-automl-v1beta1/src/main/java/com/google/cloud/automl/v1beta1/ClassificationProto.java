@@ -6496,11 +6496,11 @@ public final class ClassificationProto {
           + "luationMetrics.ConfusionMatrix.Row\032\034\n\003Ro"
           + "w\022\025\n\rexample_count\030\001 \003(\005*Y\n\022Classificati"
           + "onType\022#\n\037CLASSIFICATION_TYPE_UNSPECIFIE"
-          + "D\020\000\022\016\n\nMULTICLASS\020\001\022\016\n\nMULTILABEL\020\002By\n\037c"
-          + "om.google.cloud.automl.v1beta1B\023Classifi"
-          + "cationProtoZAgoogle.golang.org/genproto/"
-          + "googleapis/cloud/automl/v1beta1;automlb\006"
-          + "proto3"
+          + "D\020\000\022\016\n\nMULTICLASS\020\001\022\016\n\nMULTILABEL\020\002B\227\001\n\037"
+          + "com.google.cloud.automl.v1beta1B\023Classif"
+          + "icationProtoZAgoogle.golang.org/genproto"
+          + "/googleapis/cloud/automl/v1beta1;automl\312"
+          + "\002\033Google\\Cloud\\AutoMl\\V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

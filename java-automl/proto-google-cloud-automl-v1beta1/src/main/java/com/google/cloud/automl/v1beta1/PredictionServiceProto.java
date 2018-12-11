@@ -57,11 +57,11 @@ public final class PredictionServiceProto {
           + "gle.cloud.automl.v1beta1.PredictRequest\032"
           + ",.google.cloud.automl.v1beta1.PredictRes"
           + "ponse\"B\202\323\344\223\002<\"7/v1beta1/{name=projects/*"
-          + "/locations/*/models/*}:predict:\001*B~\n\037com"
-          + ".google.cloud.automl.v1beta1B\026Prediction"
-          + "ServiceProtoP\001ZAgoogle.golang.org/genpro"
-          + "to/googleapis/cloud/automl/v1beta1;autom"
-          + "lb\006proto3"
+          + "/locations/*/models/*}:predict:\001*B\234\001\n\037co"
+          + "m.google.cloud.automl.v1beta1B\026Predictio"
+          + "nServiceProtoP\001ZAgoogle.golang.org/genpr"
+          + "oto/googleapis/cloud/automl/v1beta1;auto"
+          + "ml\312\002\033Google\\Cloud\\AutoMl\\V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
