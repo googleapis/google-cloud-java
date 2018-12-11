@@ -17,7 +17,9 @@
 package com.google.cloud.pubsub.it;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assume.assumeTrue;
 
+import com.google.api.gax.rpc.PermissionDeniedException;
 import com.google.auto.value.AutoValue;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.pubsub.v1.AckReplyConsumer;
@@ -40,6 +42,7 @@ import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
+import junit.framework.Assert;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -52,6 +55,9 @@ public class ITPubSubTest {
   private static TopicAdminClient topicAdminClient;
   private static SubscriptionAdminClient subscriptionAdminClient;
   private static String projectId;
+  private static final boolean IS_VPC_TEST =
+      System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") != null
+          && System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC").equalsIgnoreCase("true");
 
   @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
@@ -103,6 +109,31 @@ public class ITPubSubTest {
             .testIamPermissions(topicName.toString(), Collections.singletonList(permissionName))
             .getPermissionsList();
     assertThat(permissions).contains(permissionName);
+
+    topicAdminClient.deleteTopic(topicName);
+  }
+
+  @Test
+  public void testVPCPushSubscriber() throws Exception {
+    assumeTrue(IS_VPC_TEST);
+    ProjectTopicName topicName =
+        ProjectTopicName.of(projectId, formatForTest("testing-vpc-push-subscriber-topic"));
+    ProjectSubscriptionName subscriptionName =
+        ProjectSubscriptionName.of(
+            projectId, formatForTest("testing-vpc-push-subscriber-subscription"));
+    topicAdminClient.createTopic(topicName);
+
+    try {
+      subscriptionAdminClient.createSubscription(
+          subscriptionName,
+          topicName,
+          PushConfig.newBuilder().setPushEndpoint("random_point").build(),
+          10);
+      subscriptionAdminClient.deleteSubscription(subscriptionName);
+      Assert.fail("No exception raised");
+    } catch (PermissionDeniedException e) {
+      // expected
+    }
 
     topicAdminClient.deleteTopic(topicName);
   }
