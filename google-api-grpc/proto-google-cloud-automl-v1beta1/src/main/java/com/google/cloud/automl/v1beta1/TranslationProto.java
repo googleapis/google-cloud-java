@@ -50,10 +50,11 @@ public final class TranslationProto {
           + "\024target_language_code\030\003 \001(\t\"]\n\025Translati"
           + "onAnnotation\022D\n\022translated_content\030\001 \001(\013"
           + "2(.google.cloud.automl.v1beta1.TextSnipp"
-          + "etBx\n\037com.google.cloud.automl.v1beta1B\020T"
-          + "ranslationProtoP\001ZAgoogle.golang.org/gen"
-          + "proto/googleapis/cloud/automl/v1beta1;au"
-          + "tomlb\006proto3"
+          + "etB\226\001\n\037com.google.cloud.automl.v1beta1B\020"
+          + "TranslationProtoP\001ZAgoogle.golang.org/ge"
+          + "nproto/googleapis/cloud/automl/v1beta1;a"
+          + "utoml\312\002\033Google\\Cloud\\AutoMl\\V1beta1b\006pro"
+          + "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

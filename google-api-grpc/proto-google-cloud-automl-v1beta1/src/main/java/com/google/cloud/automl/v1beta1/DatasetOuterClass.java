@@ -45,10 +45,11 @@ public final class DatasetOuterClass {
           + "nDatasetMetadataH\000\022\014\n\004name\030\001 \001(\t\022\024\n\014disp"
           + "lay_name\030\002 \001(\t\022\025\n\rexample_count\030\025 \001(\005\022/\n"
           + "\013create_time\030\016 \001(\0132\032.google.protobuf.Tim"
-          + "estampB\022\n\020dataset_metadataBf\n\037com.google"
-          + ".cloud.automl.v1beta1P\001ZAgoogle.golang.o"
-          + "rg/genproto/googleapis/cloud/automl/v1be"
-          + "ta1;automlb\006proto3"
+          + "estampB\022\n\020dataset_metadataB\204\001\n\037com.googl"
+          + "e.cloud.automl.v1beta1P\001ZAgoogle.golang."
+          + "org/genproto/googleapis/cloud/automl/v1b"
+          + "eta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1beta"
+          + "1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

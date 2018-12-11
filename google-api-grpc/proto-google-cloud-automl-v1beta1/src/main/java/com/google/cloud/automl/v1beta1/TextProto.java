@@ -36,10 +36,11 @@ public final class TextProto {
           + "ssificationDatasetMetadata\022L\n\023classifica"
           + "tion_type\030\001 \001(\0162/.google.cloud.automl.v1"
           + "beta1.ClassificationType\"!\n\037TextClassifi"
-          + "cationModelMetadataBq\n\037com.google.cloud."
-          + "automl.v1beta1B\tTextProtoP\001ZAgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/automl/"
-          + "v1beta1;automlb\006proto3"
+          + "cationModelMetadataB\217\001\n\037com.google.cloud"
+          + ".automl.v1beta1B\tTextProtoP\001ZAgoogle.gol"
+          + "ang.org/genproto/googleapis/cloud/automl"
+          + "/v1beta1;automl\312\002\033Google\\Cloud\\AutoMl\\V1"
+          + "beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

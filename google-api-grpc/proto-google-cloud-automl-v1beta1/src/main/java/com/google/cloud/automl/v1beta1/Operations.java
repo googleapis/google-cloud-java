@@ -44,10 +44,10 @@ public final class Operations {
           + "_time\030\003 \001(\0132\032.google.protobuf.Timestamp\022"
           + "/\n\013update_time\030\004 \001(\0132\032.google.protobuf.T"
           + "imestampB\t\n\007details\"\036\n\034CreateModelOperat"
-          + "ionMetadataBf\n\037com.google.cloud.automl.v"
-          + "1beta1P\001ZAgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/automl/v1beta1;automlb\006pro"
-          + "to3"
+          + "ionMetadataB\204\001\n\037com.google.cloud.automl."
+          + "v1beta1P\001ZAgoogle.golang.org/genproto/go"
+          + "ogleapis/cloud/automl/v1beta1;automl\312\002\033G"
+          + "oogle\\Cloud\\AutoMl\\V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
