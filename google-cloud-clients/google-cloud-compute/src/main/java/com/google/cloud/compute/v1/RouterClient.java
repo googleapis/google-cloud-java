@@ -487,6 +487,146 @@ public class RouterClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Retrieves runtime Nat mapping information of VM endpoints.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RouterClient routerClient = RouterClient.create()) {
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   for (VmEndpointNatMappings element : routerClient.getNatMappingInfoRouters(router).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param router Name of the Router resource to query for Nat Mapping information of VM endpoints.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final GetNatMappingInfoRoutersPagedResponse getNatMappingInfoRouters(
+      ProjectRegionRouterName router) {
+    GetNatMappingInfoRoutersHttpRequest request =
+        GetNatMappingInfoRoutersHttpRequest.newBuilder()
+            .setRouter(router == null ? null : router.toString())
+            .build();
+    return getNatMappingInfoRouters(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves runtime Nat mapping information of VM endpoints.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RouterClient routerClient = RouterClient.create()) {
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   for (VmEndpointNatMappings element : routerClient.getNatMappingInfoRouters(router.toString()).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param router Name of the Router resource to query for Nat Mapping information of VM endpoints.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final GetNatMappingInfoRoutersPagedResponse getNatMappingInfoRouters(String router) {
+    GetNatMappingInfoRoutersHttpRequest request =
+        GetNatMappingInfoRoutersHttpRequest.newBuilder().setRouter(router).build();
+    return getNatMappingInfoRouters(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves runtime Nat mapping information of VM endpoints.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RouterClient routerClient = RouterClient.create()) {
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   GetNatMappingInfoRoutersHttpRequest request = GetNatMappingInfoRoutersHttpRequest.newBuilder()
+   *     .setRouter(router.toString())
+   *     .build();
+   *   for (VmEndpointNatMappings element : routerClient.getNatMappingInfoRouters(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final GetNatMappingInfoRoutersPagedResponse getNatMappingInfoRouters(
+      GetNatMappingInfoRoutersHttpRequest request) {
+    return getNatMappingInfoRoutersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves runtime Nat mapping information of VM endpoints.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RouterClient routerClient = RouterClient.create()) {
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   GetNatMappingInfoRoutersHttpRequest request = GetNatMappingInfoRoutersHttpRequest.newBuilder()
+   *     .setRouter(router.toString())
+   *     .build();
+   *   ApiFuture&lt;GetNatMappingInfoRoutersPagedResponse&gt; future = routerClient.getNatMappingInfoRoutersPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (VmEndpointNatMappings element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<
+          GetNatMappingInfoRoutersHttpRequest, GetNatMappingInfoRoutersPagedResponse>
+      getNatMappingInfoRoutersPagedCallable() {
+    return stub.getNatMappingInfoRoutersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Retrieves runtime Nat mapping information of VM endpoints.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (RouterClient routerClient = RouterClient.create()) {
+   *   ProjectRegionRouterName router = ProjectRegionRouterName.of("[PROJECT]", "[REGION]", "[ROUTER]");
+   *   GetNatMappingInfoRoutersHttpRequest request = GetNatMappingInfoRoutersHttpRequest.newBuilder()
+   *     .setRouter(router.toString())
+   *     .build();
+   *   while (true) {
+   *     VmEndpointNatMappingsList response = routerClient.getNatMappingInfoRoutersCallable().call(request);
+   *     for (VmEndpointNatMappings element : response.getResultList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList>
+      getNatMappingInfoRoutersCallable() {
+    return stub.getNatMappingInfoRoutersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Retrieves runtime information of the specified router.
    *
    * <p>Sample code:
@@ -1307,6 +1447,106 @@ public class RouterClient implements BackgroundResource {
     protected AggregatedListRoutersFixedSizeCollection createCollection(
         List<AggregatedListRoutersPage> pages, int collectionSize) {
       return new AggregatedListRoutersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class GetNatMappingInfoRoutersPagedResponse
+      extends AbstractPagedListResponse<
+          GetNatMappingInfoRoutersHttpRequest,
+          VmEndpointNatMappingsList,
+          VmEndpointNatMappings,
+          GetNatMappingInfoRoutersPage,
+          GetNatMappingInfoRoutersFixedSizeCollection> {
+
+    public static ApiFuture<GetNatMappingInfoRoutersPagedResponse> createAsync(
+        PageContext<
+                GetNatMappingInfoRoutersHttpRequest,
+                VmEndpointNatMappingsList,
+                VmEndpointNatMappings>
+            context,
+        ApiFuture<VmEndpointNatMappingsList> futureResponse) {
+      ApiFuture<GetNatMappingInfoRoutersPage> futurePage =
+          GetNatMappingInfoRoutersPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<GetNatMappingInfoRoutersPage, GetNatMappingInfoRoutersPagedResponse>() {
+            @Override
+            public GetNatMappingInfoRoutersPagedResponse apply(GetNatMappingInfoRoutersPage input) {
+              return new GetNatMappingInfoRoutersPagedResponse(input);
+            }
+          });
+    }
+
+    private GetNatMappingInfoRoutersPagedResponse(GetNatMappingInfoRoutersPage page) {
+      super(page, GetNatMappingInfoRoutersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class GetNatMappingInfoRoutersPage
+      extends AbstractPage<
+          GetNatMappingInfoRoutersHttpRequest,
+          VmEndpointNatMappingsList,
+          VmEndpointNatMappings,
+          GetNatMappingInfoRoutersPage> {
+
+    private GetNatMappingInfoRoutersPage(
+        PageContext<
+                GetNatMappingInfoRoutersHttpRequest,
+                VmEndpointNatMappingsList,
+                VmEndpointNatMappings>
+            context,
+        VmEndpointNatMappingsList response) {
+      super(context, response);
+    }
+
+    private static GetNatMappingInfoRoutersPage createEmptyPage() {
+      return new GetNatMappingInfoRoutersPage(null, null);
+    }
+
+    @Override
+    protected GetNatMappingInfoRoutersPage createPage(
+        PageContext<
+                GetNatMappingInfoRoutersHttpRequest,
+                VmEndpointNatMappingsList,
+                VmEndpointNatMappings>
+            context,
+        VmEndpointNatMappingsList response) {
+      return new GetNatMappingInfoRoutersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<GetNatMappingInfoRoutersPage> createPageAsync(
+        PageContext<
+                GetNatMappingInfoRoutersHttpRequest,
+                VmEndpointNatMappingsList,
+                VmEndpointNatMappings>
+            context,
+        ApiFuture<VmEndpointNatMappingsList> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class GetNatMappingInfoRoutersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          GetNatMappingInfoRoutersHttpRequest,
+          VmEndpointNatMappingsList,
+          VmEndpointNatMappings,
+          GetNatMappingInfoRoutersPage,
+          GetNatMappingInfoRoutersFixedSizeCollection> {
+
+    private GetNatMappingInfoRoutersFixedSizeCollection(
+        List<GetNatMappingInfoRoutersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static GetNatMappingInfoRoutersFixedSizeCollection createEmptyCollection() {
+      return new GetNatMappingInfoRoutersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected GetNatMappingInfoRoutersFixedSizeCollection createCollection(
+        List<GetNatMappingInfoRoutersPage> pages, int collectionSize) {
+      return new GetNatMappingInfoRoutersFixedSizeCollection(pages, collectionSize);
     }
   }
 

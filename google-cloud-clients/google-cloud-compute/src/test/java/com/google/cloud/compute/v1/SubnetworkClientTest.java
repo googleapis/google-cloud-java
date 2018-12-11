@@ -21,12 +21,15 @@ import static com.google.cloud.compute.v1.SubnetworkClient.ListUsableSubnetworks
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.aggregatedListSubnetworksMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.deleteSubnetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.expandIpCidrRangeSubnetworkMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.getIamPolicySubnetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.getSubnetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.insertSubnetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.listSubnetworksMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.listUsableSubnetworksMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.patchSubnetworkMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.setIamPolicySubnetworkMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.setPrivateIpGoogleAccessSubnetworkMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonSubnetworkStub.testIamPermissionsSubnetworkMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
@@ -63,11 +66,14 @@ public class SubnetworkClientTest {
               deleteSubnetworkMethodDescriptor,
               expandIpCidrRangeSubnetworkMethodDescriptor,
               getSubnetworkMethodDescriptor,
+              getIamPolicySubnetworkMethodDescriptor,
               insertSubnetworkMethodDescriptor,
               listSubnetworksMethodDescriptor,
               listUsableSubnetworksMethodDescriptor,
               patchSubnetworkMethodDescriptor,
-              setPrivateIpGoogleAccessSubnetworkMethodDescriptor));
+              setIamPolicySubnetworkMethodDescriptor,
+              setPrivateIpGoogleAccessSubnetworkMethodDescriptor,
+              testIamPermissionsSubnetworkMethodDescriptor));
   private static final MockHttpService mockService =
       new MockHttpService(METHOD_DESCRIPTORS, SubnetworkStubSettings.getDefaultEndpoint());
 
@@ -421,6 +427,56 @@ public class SubnetworkClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getIamPolicySubnetworkTest() {
+    Boolean iamOwned = false;
+    String etag = "etag3123477";
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setIamOwned(iamOwned).setEtag(etag).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectRegionSubnetworkResourceName resource =
+        ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+
+    Policy actualResponse = client.getIamPolicySubnetwork(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicySubnetworkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectRegionSubnetworkResourceName resource =
+          ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+
+      client.getIamPolicySubnetwork(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void insertSubnetworkTest() {
     String httpErrorMessage = "httpErrorMessage1276263769";
     String targetId = "targetId-815576439";
@@ -725,6 +781,60 @@ public class SubnetworkClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void setIamPolicySubnetworkTest() {
+    Boolean iamOwned = false;
+    String etag = "etag3123477";
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setIamOwned(iamOwned).setEtag(etag).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectRegionSubnetworkResourceName resource =
+        ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+    RegionSetPolicyRequest regionSetPolicyRequestResource =
+        RegionSetPolicyRequest.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicySubnetwork(resource, regionSetPolicyRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicySubnetworkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectRegionSubnetworkResourceName resource =
+          ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+      RegionSetPolicyRequest regionSetPolicyRequestResource =
+          RegionSetPolicyRequest.newBuilder().build();
+
+      client.setIamPolicySubnetwork(resource, regionSetPolicyRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void setPrivateIpGoogleAccessSubnetworkTest() {
     String httpErrorMessage = "httpErrorMessage1276263769";
     String targetId = "targetId-815576439";
@@ -815,6 +925,57 @@ public class SubnetworkClientTest {
 
       client.setPrivateIpGoogleAccessSubnetwork(
           subnetwork, subnetworksSetPrivateIpGoogleAccessRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsSubnetworkTest() {
+    TestPermissionsResponse expectedResponse = TestPermissionsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectRegionSubnetworkResourceName resource =
+        ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+    TestPermissionsRequest testPermissionsRequestResource =
+        TestPermissionsRequest.newBuilder().build();
+
+    TestPermissionsResponse actualResponse =
+        client.testIamPermissionsSubnetwork(resource, testPermissionsRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsSubnetworkExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectRegionSubnetworkResourceName resource =
+          ProjectRegionSubnetworkResourceName.of("[PROJECT]", "[REGION]", "[RESOURCE]");
+      TestPermissionsRequest testPermissionsRequestResource =
+          TestPermissionsRequest.newBuilder().build();
+
+      client.testIamPermissionsSubnetwork(resource, testPermissionsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

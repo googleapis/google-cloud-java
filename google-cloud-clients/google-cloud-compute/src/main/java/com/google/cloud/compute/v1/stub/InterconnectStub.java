@@ -21,10 +21,12 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteInterconnectHttpRequest;
+import com.google.cloud.compute.v1.GetDiagnosticsInterconnectHttpRequest;
 import com.google.cloud.compute.v1.GetInterconnectHttpRequest;
 import com.google.cloud.compute.v1.InsertInterconnectHttpRequest;
 import com.google.cloud.compute.v1.Interconnect;
 import com.google.cloud.compute.v1.InterconnectList;
+import com.google.cloud.compute.v1.InterconnectsGetDiagnosticsResponse;
 import com.google.cloud.compute.v1.ListInterconnectsHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchInterconnectHttpRequest;
@@ -48,6 +50,13 @@ public abstract class InterconnectStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<GetInterconnectHttpRequest, Interconnect> getInterconnectCallable() {
     throw new UnsupportedOperationException("Not implemented: getInterconnectCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<GetDiagnosticsInterconnectHttpRequest, InterconnectsGetDiagnosticsResponse>
+      getDiagnosticsInterconnectCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getDiagnosticsInterconnectCallable()");
   }
 
   @BetaApi

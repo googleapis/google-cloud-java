@@ -16,6 +16,7 @@
 package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.RouterClient.AggregatedListRoutersPagedResponse;
+import static com.google.cloud.compute.v1.RouterClient.GetNatMappingInfoRoutersPagedResponse;
 import static com.google.cloud.compute.v1.RouterClient.ListRoutersPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -81,6 +82,15 @@ public class RouterSettings extends ClientSettings<RouterSettings> {
   /** Returns the object with the settings used for calls to getRouter. */
   public UnaryCallSettings<GetRouterHttpRequest, Router> getRouterSettings() {
     return ((RouterStubSettings) getStubSettings()).getRouterSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getNatMappingInfoRouters. */
+  public PagedCallSettings<
+          GetNatMappingInfoRoutersHttpRequest,
+          VmEndpointNatMappingsList,
+          GetNatMappingInfoRoutersPagedResponse>
+      getNatMappingInfoRoutersSettings() {
+    return ((RouterStubSettings) getStubSettings()).getNatMappingInfoRoutersSettings();
   }
 
   /** Returns the object with the settings used for calls to getRouterStatusRouter. */
@@ -234,6 +244,15 @@ public class RouterSettings extends ClientSettings<RouterSettings> {
     /** Returns the builder for the settings used for calls to getRouter. */
     public UnaryCallSettings.Builder<GetRouterHttpRequest, Router> getRouterSettings() {
       return getStubSettingsBuilder().getRouterSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getNatMappingInfoRouters. */
+    public PagedCallSettings.Builder<
+            GetNatMappingInfoRoutersHttpRequest,
+            VmEndpointNatMappingsList,
+            GetNatMappingInfoRoutersPagedResponse>
+        getNatMappingInfoRoutersSettings() {
+      return getStubSettingsBuilder().getNatMappingInfoRoutersSettings();
     }
 
     /** Returns the builder for the settings used for calls to getRouterStatusRouter. */

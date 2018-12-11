@@ -720,6 +720,108 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   Policy response = nodeGroupClient.getIamPolicyNodeGroup(resource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicyNodeGroup(ProjectZoneNodeGroupResourceName resource) {
+
+    GetIamPolicyNodeGroupHttpRequest request =
+        GetIamPolicyNodeGroupHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return getIamPolicyNodeGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   Policy response = nodeGroupClient.getIamPolicyNodeGroup(resource.toString());
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicyNodeGroup(String resource) {
+
+    GetIamPolicyNodeGroupHttpRequest request =
+        GetIamPolicyNodeGroupHttpRequest.newBuilder().setResource(resource).build();
+    return getIamPolicyNodeGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   GetIamPolicyNodeGroupHttpRequest request = GetIamPolicyNodeGroupHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   Policy response = nodeGroupClient.getIamPolicyNodeGroup(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicyNodeGroup(GetIamPolicyNodeGroupHttpRequest request) {
+    return getIamPolicyNodeGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   GetIamPolicyNodeGroupHttpRequest request = GetIamPolicyNodeGroupHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = nodeGroupClient.getIamPolicyNodeGroupCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<GetIamPolicyNodeGroupHttpRequest, Policy>
+      getIamPolicyNodeGroupCallable() {
+    return stub.getIamPolicyNodeGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Creates a NodeGroup resource in the specified project using the data included in the request.
    *
    * <p>Sample code:
@@ -1121,6 +1223,119 @@ public class NodeGroupClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
+   *   Policy response = nodeGroupClient.setIamPolicyNodeGroup(resource, zoneSetPolicyRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param zoneSetPolicyRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicyNodeGroup(
+      ProjectZoneNodeGroupResourceName resource,
+      ZoneSetPolicyRequest zoneSetPolicyRequestResource) {
+
+    SetIamPolicyNodeGroupHttpRequest request =
+        SetIamPolicyNodeGroupHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
+            .build();
+    return setIamPolicyNodeGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
+   *   Policy response = nodeGroupClient.setIamPolicyNodeGroup(resource.toString(), zoneSetPolicyRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param zoneSetPolicyRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicyNodeGroup(
+      String resource, ZoneSetPolicyRequest zoneSetPolicyRequestResource) {
+
+    SetIamPolicyNodeGroupHttpRequest request =
+        SetIamPolicyNodeGroupHttpRequest.newBuilder()
+            .setResource(resource)
+            .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
+            .build();
+    return setIamPolicyNodeGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
+   *   SetIamPolicyNodeGroupHttpRequest request = SetIamPolicyNodeGroupHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
+   *     .build();
+   *   Policy response = nodeGroupClient.setIamPolicyNodeGroup(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicyNodeGroup(SetIamPolicyNodeGroupHttpRequest request) {
+    return setIamPolicyNodeGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
+   *   SetIamPolicyNodeGroupHttpRequest request = SetIamPolicyNodeGroupHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = nodeGroupClient.setIamPolicyNodeGroupCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SetIamPolicyNodeGroupHttpRequest, Policy>
+      setIamPolicyNodeGroupCallable() {
+    return stub.setIamPolicyNodeGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Updates the node template of the node group.
    *
    * <p>Sample code:
@@ -1230,6 +1445,120 @@ public class NodeGroupClient implements BackgroundResource {
   public final UnaryCallable<SetNodeTemplateNodeGroupHttpRequest, Operation>
       setNodeTemplateNodeGroupCallable() {
     return stub.setNodeTemplateNodeGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response = nodeGroupClient.testIamPermissionsNodeGroup(resource, testPermissionsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param testPermissionsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final TestPermissionsResponse testIamPermissionsNodeGroup(
+      ProjectZoneNodeGroupResourceName resource,
+      TestPermissionsRequest testPermissionsRequestResource) {
+
+    TestIamPermissionsNodeGroupHttpRequest request =
+        TestIamPermissionsNodeGroupHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setTestPermissionsRequestResource(testPermissionsRequestResource)
+            .build();
+    return testIamPermissionsNodeGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response = nodeGroupClient.testIamPermissionsNodeGroup(resource.toString(), testPermissionsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param testPermissionsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final TestPermissionsResponse testIamPermissionsNodeGroup(
+      String resource, TestPermissionsRequest testPermissionsRequestResource) {
+
+    TestIamPermissionsNodeGroupHttpRequest request =
+        TestIamPermissionsNodeGroupHttpRequest.newBuilder()
+            .setResource(resource)
+            .setTestPermissionsRequestResource(testPermissionsRequestResource)
+            .build();
+    return testIamPermissionsNodeGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestIamPermissionsNodeGroupHttpRequest request = TestIamPermissionsNodeGroupHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
+   *     .build();
+   *   TestPermissionsResponse response = nodeGroupClient.testIamPermissionsNodeGroup(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final TestPermissionsResponse testIamPermissionsNodeGroup(
+      TestIamPermissionsNodeGroupHttpRequest request) {
+    return testIamPermissionsNodeGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (NodeGroupClient nodeGroupClient = NodeGroupClient.create()) {
+   *   ProjectZoneNodeGroupResourceName resource = ProjectZoneNodeGroupResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestIamPermissionsNodeGroupHttpRequest request = TestIamPermissionsNodeGroupHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
+   *     .build();
+   *   ApiFuture&lt;TestPermissionsResponse&gt; future = nodeGroupClient.testIamPermissionsNodeGroupCallable().futureCall(request);
+   *   // Do something
+   *   TestPermissionsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<TestIamPermissionsNodeGroupHttpRequest, TestPermissionsResponse>
+      testIamPermissionsNodeGroupCallable() {
+    return stub.testIamPermissionsNodeGroupCallable();
   }
 
   @Override

@@ -21,10 +21,13 @@ import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.aggregatedListDi
 import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.createSnapshotDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.deleteDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.getDiskMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.getIamPolicyDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.insertDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.listDisksMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.resizeDiskMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.setIamPolicyDiskMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.setLabelsDiskMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonDiskStub.testIamPermissionsDiskMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
@@ -60,10 +63,13 @@ public class DiskClientTest {
               createSnapshotDiskMethodDescriptor,
               deleteDiskMethodDescriptor,
               getDiskMethodDescriptor,
+              getIamPolicyDiskMethodDescriptor,
               insertDiskMethodDescriptor,
               listDisksMethodDescriptor,
               resizeDiskMethodDescriptor,
-              setLabelsDiskMethodDescriptor));
+              setIamPolicyDiskMethodDescriptor,
+              setLabelsDiskMethodDescriptor,
+              testIamPermissionsDiskMethodDescriptor));
   private static final MockHttpService mockService =
       new MockHttpService(METHOD_DESCRIPTORS, DiskStubSettings.getDefaultEndpoint());
 
@@ -423,6 +429,56 @@ public class DiskClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getIamPolicyDiskTest() {
+    Boolean iamOwned = false;
+    String etag = "etag3123477";
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setIamOwned(iamOwned).setEtag(etag).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectZoneDiskResourceName resource =
+        ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+
+    Policy actualResponse = client.getIamPolicyDisk(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicyDiskExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectZoneDiskResourceName resource =
+          ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+
+      client.getIamPolicyDisk(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void insertDiskTest() {
     String httpErrorMessage = "httpErrorMessage1276263769";
     String targetId = "targetId-815576439";
@@ -663,6 +719,58 @@ public class DiskClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void setIamPolicyDiskTest() {
+    Boolean iamOwned = false;
+    String etag = "etag3123477";
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setIamOwned(iamOwned).setEtag(etag).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectZoneDiskResourceName resource =
+        ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+    ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicyDisk(resource, zoneSetPolicyRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyDiskExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectZoneDiskResourceName resource =
+          ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+      ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
+
+      client.setIamPolicyDisk(resource, zoneSetPolicyRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void setLabelsDiskTest() {
     String httpErrorMessage = "httpErrorMessage1276263769";
     String targetId = "targetId-815576439";
@@ -747,6 +855,57 @@ public class DiskClientTest {
       ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
 
       client.setLabelsDisk(resource, zoneSetLabelsRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsDiskTest() {
+    TestPermissionsResponse expectedResponse = TestPermissionsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectZoneDiskResourceName resource =
+        ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+    TestPermissionsRequest testPermissionsRequestResource =
+        TestPermissionsRequest.newBuilder().build();
+
+    TestPermissionsResponse actualResponse =
+        client.testIamPermissionsDisk(resource, testPermissionsRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsDiskExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectZoneDiskResourceName resource =
+          ProjectZoneDiskResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+      TestPermissionsRequest testPermissionsRequestResource =
+          TestPermissionsRequest.newBuilder().build();
+
+      client.testIamPermissionsDisk(resource, testPermissionsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

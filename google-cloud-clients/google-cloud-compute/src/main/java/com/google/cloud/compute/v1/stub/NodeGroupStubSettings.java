@@ -45,6 +45,7 @@ import com.google.cloud.compute.v1.AddNodesNodeGroupHttpRequest;
 import com.google.cloud.compute.v1.AggregatedListNodeGroupsHttpRequest;
 import com.google.cloud.compute.v1.DeleteNodeGroupHttpRequest;
 import com.google.cloud.compute.v1.DeleteNodesNodeGroupHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyNodeGroupHttpRequest;
 import com.google.cloud.compute.v1.GetNodeGroupHttpRequest;
 import com.google.cloud.compute.v1.InsertNodeGroupHttpRequest;
 import com.google.cloud.compute.v1.ListNodeGroupsHttpRequest;
@@ -56,7 +57,11 @@ import com.google.cloud.compute.v1.NodeGroupNode;
 import com.google.cloud.compute.v1.NodeGroupsListNodes;
 import com.google.cloud.compute.v1.NodeGroupsScopedList;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicyNodeGroupHttpRequest;
 import com.google.cloud.compute.v1.SetNodeTemplateNodeGroupHttpRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsNodeGroupHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -118,6 +123,8 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
   private final UnaryCallSettings<DeleteNodesNodeGroupHttpRequest, Operation>
       deleteNodesNodeGroupSettings;
   private final UnaryCallSettings<GetNodeGroupHttpRequest, NodeGroup> getNodeGroupSettings;
+  private final UnaryCallSettings<GetIamPolicyNodeGroupHttpRequest, Policy>
+      getIamPolicyNodeGroupSettings;
   private final UnaryCallSettings<InsertNodeGroupHttpRequest, Operation> insertNodeGroupSettings;
   private final PagedCallSettings<
           ListNodeGroupsHttpRequest, NodeGroupList, ListNodeGroupsPagedResponse>
@@ -125,8 +132,12 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
   private final PagedCallSettings<
           ListNodesNodeGroupsHttpRequest, NodeGroupsListNodes, ListNodesNodeGroupsPagedResponse>
       listNodesNodeGroupsSettings;
+  private final UnaryCallSettings<SetIamPolicyNodeGroupHttpRequest, Policy>
+      setIamPolicyNodeGroupSettings;
   private final UnaryCallSettings<SetNodeTemplateNodeGroupHttpRequest, Operation>
       setNodeTemplateNodeGroupSettings;
+  private final UnaryCallSettings<TestIamPermissionsNodeGroupHttpRequest, TestPermissionsResponse>
+      testIamPermissionsNodeGroupSettings;
 
   /** Returns the object with the settings used for calls to addNodesNodeGroup. */
   public UnaryCallSettings<AddNodesNodeGroupHttpRequest, Operation> addNodesNodeGroupSettings() {
@@ -158,6 +169,12 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
     return getNodeGroupSettings;
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicyNodeGroup. */
+  public UnaryCallSettings<GetIamPolicyNodeGroupHttpRequest, Policy>
+      getIamPolicyNodeGroupSettings() {
+    return getIamPolicyNodeGroupSettings;
+  }
+
   /** Returns the object with the settings used for calls to insertNodeGroup. */
   public UnaryCallSettings<InsertNodeGroupHttpRequest, Operation> insertNodeGroupSettings() {
     return insertNodeGroupSettings;
@@ -176,10 +193,22 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
     return listNodesNodeGroupsSettings;
   }
 
+  /** Returns the object with the settings used for calls to setIamPolicyNodeGroup. */
+  public UnaryCallSettings<SetIamPolicyNodeGroupHttpRequest, Policy>
+      setIamPolicyNodeGroupSettings() {
+    return setIamPolicyNodeGroupSettings;
+  }
+
   /** Returns the object with the settings used for calls to setNodeTemplateNodeGroup. */
   public UnaryCallSettings<SetNodeTemplateNodeGroupHttpRequest, Operation>
       setNodeTemplateNodeGroupSettings() {
     return setNodeTemplateNodeGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissionsNodeGroup. */
+  public UnaryCallSettings<TestIamPermissionsNodeGroupHttpRequest, TestPermissionsResponse>
+      testIamPermissionsNodeGroupSettings() {
+    return testIamPermissionsNodeGroupSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -261,10 +290,14 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
     deleteNodeGroupSettings = settingsBuilder.deleteNodeGroupSettings().build();
     deleteNodesNodeGroupSettings = settingsBuilder.deleteNodesNodeGroupSettings().build();
     getNodeGroupSettings = settingsBuilder.getNodeGroupSettings().build();
+    getIamPolicyNodeGroupSettings = settingsBuilder.getIamPolicyNodeGroupSettings().build();
     insertNodeGroupSettings = settingsBuilder.insertNodeGroupSettings().build();
     listNodeGroupsSettings = settingsBuilder.listNodeGroupsSettings().build();
     listNodesNodeGroupsSettings = settingsBuilder.listNodesNodeGroupsSettings().build();
+    setIamPolicyNodeGroupSettings = settingsBuilder.setIamPolicyNodeGroupSettings().build();
     setNodeTemplateNodeGroupSettings = settingsBuilder.setNodeTemplateNodeGroupSettings().build();
+    testIamPermissionsNodeGroupSettings =
+        settingsBuilder.testIamPermissionsNodeGroupSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -476,6 +509,8 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
         deleteNodesNodeGroupSettings;
     private final UnaryCallSettings.Builder<GetNodeGroupHttpRequest, NodeGroup>
         getNodeGroupSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyNodeGroupHttpRequest, Policy>
+        getIamPolicyNodeGroupSettings;
     private final UnaryCallSettings.Builder<InsertNodeGroupHttpRequest, Operation>
         insertNodeGroupSettings;
     private final PagedCallSettings.Builder<
@@ -484,8 +519,13 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
     private final PagedCallSettings.Builder<
             ListNodesNodeGroupsHttpRequest, NodeGroupsListNodes, ListNodesNodeGroupsPagedResponse>
         listNodesNodeGroupsSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyNodeGroupHttpRequest, Policy>
+        setIamPolicyNodeGroupSettings;
     private final UnaryCallSettings.Builder<SetNodeTemplateNodeGroupHttpRequest, Operation>
         setNodeTemplateNodeGroupSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsNodeGroupHttpRequest, TestPermissionsResponse>
+        testIamPermissionsNodeGroupSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -539,6 +579,8 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
 
       getNodeGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getIamPolicyNodeGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       insertNodeGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listNodeGroupsSettings = PagedCallSettings.newBuilder(LIST_NODE_GROUPS_PAGE_STR_FACT);
@@ -546,7 +588,11 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
       listNodesNodeGroupsSettings =
           PagedCallSettings.newBuilder(LIST_NODES_NODE_GROUPS_PAGE_STR_FACT);
 
+      setIamPolicyNodeGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       setNodeTemplateNodeGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      testIamPermissionsNodeGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -555,10 +601,13 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
               deleteNodeGroupSettings,
               deleteNodesNodeGroupSettings,
               getNodeGroupSettings,
+              getIamPolicyNodeGroupSettings,
               insertNodeGroupSettings,
               listNodeGroupsSettings,
               listNodesNodeGroupsSettings,
-              setNodeTemplateNodeGroupSettings);
+              setIamPolicyNodeGroupSettings,
+              setNodeTemplateNodeGroupSettings,
+              testIamPermissionsNodeGroupSettings);
 
       initDefaults(this);
     }
@@ -600,6 +649,11 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .getIamPolicyNodeGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .insertNodeGroupSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -615,7 +669,17 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .setIamPolicyNodeGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .setNodeTemplateNodeGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .testIamPermissionsNodeGroupSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -630,10 +694,14 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
       deleteNodeGroupSettings = settings.deleteNodeGroupSettings.toBuilder();
       deleteNodesNodeGroupSettings = settings.deleteNodesNodeGroupSettings.toBuilder();
       getNodeGroupSettings = settings.getNodeGroupSettings.toBuilder();
+      getIamPolicyNodeGroupSettings = settings.getIamPolicyNodeGroupSettings.toBuilder();
       insertNodeGroupSettings = settings.insertNodeGroupSettings.toBuilder();
       listNodeGroupsSettings = settings.listNodeGroupsSettings.toBuilder();
       listNodesNodeGroupsSettings = settings.listNodesNodeGroupsSettings.toBuilder();
+      setIamPolicyNodeGroupSettings = settings.setIamPolicyNodeGroupSettings.toBuilder();
       setNodeTemplateNodeGroupSettings = settings.setNodeTemplateNodeGroupSettings.toBuilder();
+      testIamPermissionsNodeGroupSettings =
+          settings.testIamPermissionsNodeGroupSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -642,10 +710,13 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
               deleteNodeGroupSettings,
               deleteNodesNodeGroupSettings,
               getNodeGroupSettings,
+              getIamPolicyNodeGroupSettings,
               insertNodeGroupSettings,
               listNodeGroupsSettings,
               listNodesNodeGroupsSettings,
-              setNodeTemplateNodeGroupSettings);
+              setIamPolicyNodeGroupSettings,
+              setNodeTemplateNodeGroupSettings,
+              testIamPermissionsNodeGroupSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -696,6 +767,12 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
       return getNodeGroupSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicyNodeGroup. */
+    public UnaryCallSettings.Builder<GetIamPolicyNodeGroupHttpRequest, Policy>
+        getIamPolicyNodeGroupSettings() {
+      return getIamPolicyNodeGroupSettings;
+    }
+
     /** Returns the builder for the settings used for calls to insertNodeGroup. */
     public UnaryCallSettings.Builder<InsertNodeGroupHttpRequest, Operation>
         insertNodeGroupSettings() {
@@ -716,10 +793,23 @@ public class NodeGroupStubSettings extends StubSettings<NodeGroupStubSettings> {
       return listNodesNodeGroupsSettings;
     }
 
+    /** Returns the builder for the settings used for calls to setIamPolicyNodeGroup. */
+    public UnaryCallSettings.Builder<SetIamPolicyNodeGroupHttpRequest, Policy>
+        setIamPolicyNodeGroupSettings() {
+      return setIamPolicyNodeGroupSettings;
+    }
+
     /** Returns the builder for the settings used for calls to setNodeTemplateNodeGroup. */
     public UnaryCallSettings.Builder<SetNodeTemplateNodeGroupHttpRequest, Operation>
         setNodeTemplateNodeGroupSettings() {
       return setNodeTemplateNodeGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissionsNodeGroup. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsNodeGroupHttpRequest, TestPermissionsResponse>
+        testIamPermissionsNodeGroupSettings() {
+      return testIamPermissionsNodeGroupSettings;
     }
 
     @Override

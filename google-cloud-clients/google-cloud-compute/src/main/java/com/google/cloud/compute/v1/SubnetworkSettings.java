@@ -90,6 +90,12 @@ public class SubnetworkSettings extends ClientSettings<SubnetworkSettings> {
     return ((SubnetworkStubSettings) getStubSettings()).getSubnetworkSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicySubnetwork. */
+  public UnaryCallSettings<GetIamPolicySubnetworkHttpRequest, Policy>
+      getIamPolicySubnetworkSettings() {
+    return ((SubnetworkStubSettings) getStubSettings()).getIamPolicySubnetworkSettings();
+  }
+
   /** Returns the object with the settings used for calls to insertSubnetwork. */
   public UnaryCallSettings<InsertSubnetworkHttpRequest, Operation> insertSubnetworkSettings() {
     return ((SubnetworkStubSettings) getStubSettings()).insertSubnetworkSettings();
@@ -115,11 +121,23 @@ public class SubnetworkSettings extends ClientSettings<SubnetworkSettings> {
     return ((SubnetworkStubSettings) getStubSettings()).patchSubnetworkSettings();
   }
 
+  /** Returns the object with the settings used for calls to setIamPolicySubnetwork. */
+  public UnaryCallSettings<SetIamPolicySubnetworkHttpRequest, Policy>
+      setIamPolicySubnetworkSettings() {
+    return ((SubnetworkStubSettings) getStubSettings()).setIamPolicySubnetworkSettings();
+  }
+
   /** Returns the object with the settings used for calls to setPrivateIpGoogleAccessSubnetwork. */
   public UnaryCallSettings<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation>
       setPrivateIpGoogleAccessSubnetworkSettings() {
     return ((SubnetworkStubSettings) getStubSettings())
         .setPrivateIpGoogleAccessSubnetworkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissionsSubnetwork. */
+  public UnaryCallSettings<TestIamPermissionsSubnetworkHttpRequest, TestPermissionsResponse>
+      testIamPermissionsSubnetworkSettings() {
+    return ((SubnetworkStubSettings) getStubSettings()).testIamPermissionsSubnetworkSettings();
   }
 
   public static final SubnetworkSettings create(SubnetworkStubSettings stub) throws IOException {
@@ -249,6 +267,12 @@ public class SubnetworkSettings extends ClientSettings<SubnetworkSettings> {
       return getStubSettingsBuilder().getSubnetworkSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicySubnetwork. */
+    public UnaryCallSettings.Builder<GetIamPolicySubnetworkHttpRequest, Policy>
+        getIamPolicySubnetworkSettings() {
+      return getStubSettingsBuilder().getIamPolicySubnetworkSettings();
+    }
+
     /** Returns the builder for the settings used for calls to insertSubnetwork. */
     public UnaryCallSettings.Builder<InsertSubnetworkHttpRequest, Operation>
         insertSubnetworkSettings() {
@@ -277,12 +301,25 @@ public class SubnetworkSettings extends ClientSettings<SubnetworkSettings> {
       return getStubSettingsBuilder().patchSubnetworkSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setIamPolicySubnetwork. */
+    public UnaryCallSettings.Builder<SetIamPolicySubnetworkHttpRequest, Policy>
+        setIamPolicySubnetworkSettings() {
+      return getStubSettingsBuilder().setIamPolicySubnetworkSettings();
+    }
+
     /**
      * Returns the builder for the settings used for calls to setPrivateIpGoogleAccessSubnetwork.
      */
     public UnaryCallSettings.Builder<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation>
         setPrivateIpGoogleAccessSubnetworkSettings() {
       return getStubSettingsBuilder().setPrivateIpGoogleAccessSubnetworkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissionsSubnetwork. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsSubnetworkHttpRequest, TestPermissionsResponse>
+        testIamPermissionsSubnetworkSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSubnetworkSettings();
     }
 
     @Override
