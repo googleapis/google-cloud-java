@@ -32,8 +32,9 @@ public final class ProjectRegionTargetPoolName implements ResourceName {
   private final String region;
   private final String targetPool;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/regions/{region}/targetPools/{targetPool}");
+      PathTemplate.createWithoutUrlEncoding("{project}/regions/{region}/targetPools/{targetPool}");
+
+  public static final String SERVICE_ADDRESS = "https://www.googleapis.com/compute/v1/projects/";
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -100,15 +101,22 @@ public final class ProjectRegionTargetPoolName implements ResourceName {
   }
 
   public static ProjectRegionTargetPoolName parse(String formattedString) {
+    String resourcePath = formattedString;
+    if (formattedString.startsWith(SERVICE_ADDRESS)) {
+      resourcePath = formattedString.substring(SERVICE_ADDRESS.length());
+    }
     Map<String, String> matchMap =
         PATH_TEMPLATE.validatedMatch(
-            formattedString,
-            "ProjectRegionTargetPoolName.parse: formattedString not in valid format");
+            resourcePath, "ProjectRegionTargetPoolName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("region"), matchMap.get("targetPool"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    String resourcePath = formattedString;
+    if (formattedString.startsWith(SERVICE_ADDRESS)) {
+      resourcePath = formattedString.substring(SERVICE_ADDRESS.length());
+    }
+    return PATH_TEMPLATE.matches(resourcePath);
   }
 
   public static class Builder {
