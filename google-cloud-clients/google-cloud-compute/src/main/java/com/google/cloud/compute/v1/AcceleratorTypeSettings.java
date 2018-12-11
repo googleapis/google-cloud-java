@@ -66,8 +66,7 @@ import javax.annotation.Generated;
 public class AcceleratorTypeSettings extends ClientSettings<AcceleratorTypeSettings> {
   /** Returns the object with the settings used for calls to aggregatedListAcceleratorTypes. */
   public PagedCallSettings<
-          AggregatedListAcceleratorTypesHttpRequest,
-          AcceleratorTypeAggregatedList,
+          AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
           AggregatedListAcceleratorTypesPagedResponse>
       aggregatedListAcceleratorTypesSettings() {
     return ((AcceleratorTypeStubSettings) getStubSettings())
@@ -191,8 +190,7 @@ public class AcceleratorTypeSettings extends ClientSettings<AcceleratorTypeSetti
 
     /** Returns the builder for the settings used for calls to aggregatedListAcceleratorTypes. */
     public PagedCallSettings.Builder<
-            AggregatedListAcceleratorTypesHttpRequest,
-            AcceleratorTypeAggregatedList,
+            AggregatedListAcceleratorTypesHttpRequest, AcceleratorTypeAggregatedList,
             AggregatedListAcceleratorTypesPagedResponse>
         aggregatedListAcceleratorTypesSettings() {
       return getStubSettingsBuilder().aggregatedListAcceleratorTypesSettings();

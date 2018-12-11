@@ -216,8 +216,7 @@ public class TargetHttpProxySettings extends ClientSettings<TargetHttpProxySetti
 
     /** Returns the builder for the settings used for calls to listTargetHttpProxies. */
     public PagedCallSettings.Builder<
-            ListTargetHttpProxiesHttpRequest,
-            TargetHttpProxyList,
+            ListTargetHttpProxiesHttpRequest, TargetHttpProxyList,
             ListTargetHttpProxiesPagedResponse>
         listTargetHttpProxiesSettings() {
       return getStubSettingsBuilder().listTargetHttpProxiesSettings();

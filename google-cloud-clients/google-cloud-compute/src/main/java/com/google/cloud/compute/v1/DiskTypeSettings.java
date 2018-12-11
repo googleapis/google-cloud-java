@@ -66,8 +66,7 @@ import javax.annotation.Generated;
 public class DiskTypeSettings extends ClientSettings<DiskTypeSettings> {
   /** Returns the object with the settings used for calls to aggregatedListDiskTypes. */
   public PagedCallSettings<
-          AggregatedListDiskTypesHttpRequest,
-          DiskTypeAggregatedList,
+          AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList,
           AggregatedListDiskTypesPagedResponse>
       aggregatedListDiskTypesSettings() {
     return ((DiskTypeStubSettings) getStubSettings()).aggregatedListDiskTypesSettings();
@@ -187,8 +186,7 @@ public class DiskTypeSettings extends ClientSettings<DiskTypeSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListDiskTypes. */
     public PagedCallSettings.Builder<
-            AggregatedListDiskTypesHttpRequest,
-            DiskTypeAggregatedList,
+            AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList,
             AggregatedListDiskTypesPagedResponse>
         aggregatedListDiskTypesSettings() {
       return getStubSettingsBuilder().aggregatedListDiskTypesSettings();

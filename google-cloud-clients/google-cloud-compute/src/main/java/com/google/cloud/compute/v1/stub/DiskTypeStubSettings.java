@@ -98,8 +98,7 @@ public class DiskTypeStubSettings extends StubSettings<DiskTypeStubSettings> {
           .build();
 
   private final PagedCallSettings<
-          AggregatedListDiskTypesHttpRequest,
-          DiskTypeAggregatedList,
+          AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList,
           AggregatedListDiskTypesPagedResponse>
       aggregatedListDiskTypesSettings;
   private final UnaryCallSettings<GetDiskTypeHttpRequest, DiskType> getDiskTypeSettings;
@@ -109,8 +108,7 @@ public class DiskTypeStubSettings extends StubSettings<DiskTypeStubSettings> {
 
   /** Returns the object with the settings used for calls to aggregatedListDiskTypes. */
   public PagedCallSettings<
-          AggregatedListDiskTypesHttpRequest,
-          DiskTypeAggregatedList,
+          AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList,
           AggregatedListDiskTypesPagedResponse>
       aggregatedListDiskTypesSettings() {
     return aggregatedListDiskTypesSettings;
@@ -289,13 +287,11 @@ public class DiskTypeStubSettings extends StubSettings<DiskTypeStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListDiskTypesHttpRequest,
-          DiskTypeAggregatedList,
+          AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList,
           AggregatedListDiskTypesPagedResponse>
       AGGREGATED_LIST_DISK_TYPES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListDiskTypesHttpRequest,
-              DiskTypeAggregatedList,
+              AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList,
               AggregatedListDiskTypesPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListDiskTypesPagedResponse> getFuturePagedResponse(
@@ -304,8 +300,7 @@ public class DiskTypeStubSettings extends StubSettings<DiskTypeStubSettings> {
                 ApiCallContext context,
                 ApiFuture<DiskTypeAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListDiskTypesHttpRequest,
-                      DiskTypeAggregatedList,
+                      AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList,
                       DiskTypesScopedList>
                   pageContext =
                       PageContext.create(
@@ -336,8 +331,7 @@ public class DiskTypeStubSettings extends StubSettings<DiskTypeStubSettings> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            AggregatedListDiskTypesHttpRequest,
-            DiskTypeAggregatedList,
+            AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList,
             AggregatedListDiskTypesPagedResponse>
         aggregatedListDiskTypesSettings;
     private final UnaryCallSettings.Builder<GetDiskTypeHttpRequest, DiskType> getDiskTypeSettings;
@@ -459,8 +453,7 @@ public class DiskTypeStubSettings extends StubSettings<DiskTypeStubSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListDiskTypes. */
     public PagedCallSettings.Builder<
-            AggregatedListDiskTypesHttpRequest,
-            DiskTypeAggregatedList,
+            AggregatedListDiskTypesHttpRequest, DiskTypeAggregatedList,
             AggregatedListDiskTypesPagedResponse>
         aggregatedListDiskTypesSettings() {
       return aggregatedListDiskTypesSettings;

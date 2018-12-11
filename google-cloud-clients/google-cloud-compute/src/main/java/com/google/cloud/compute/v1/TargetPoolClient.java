@@ -56,13 +56,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1473,16 +1473,12 @@ public class TargetPoolClient implements BackgroundResource {
 
   public static class AggregatedListTargetPoolsPagedResponse
       extends AbstractPagedListResponse<
-          AggregatedListTargetPoolsHttpRequest,
-          TargetPoolAggregatedList,
-          TargetPoolsScopedList,
-          AggregatedListTargetPoolsPage,
-          AggregatedListTargetPoolsFixedSizeCollection> {
+          AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList, TargetPoolsScopedList,
+          AggregatedListTargetPoolsPage, AggregatedListTargetPoolsFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListTargetPoolsPagedResponse> createAsync(
         PageContext<
-                AggregatedListTargetPoolsHttpRequest,
-                TargetPoolAggregatedList,
+                AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
                 TargetPoolsScopedList>
             context,
         ApiFuture<TargetPoolAggregatedList> futureResponse) {
@@ -1506,15 +1502,12 @@ public class TargetPoolClient implements BackgroundResource {
 
   public static class AggregatedListTargetPoolsPage
       extends AbstractPage<
-          AggregatedListTargetPoolsHttpRequest,
-          TargetPoolAggregatedList,
-          TargetPoolsScopedList,
+          AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList, TargetPoolsScopedList,
           AggregatedListTargetPoolsPage> {
 
     private AggregatedListTargetPoolsPage(
         PageContext<
-                AggregatedListTargetPoolsHttpRequest,
-                TargetPoolAggregatedList,
+                AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
                 TargetPoolsScopedList>
             context,
         TargetPoolAggregatedList response) {
@@ -1528,8 +1521,7 @@ public class TargetPoolClient implements BackgroundResource {
     @Override
     protected AggregatedListTargetPoolsPage createPage(
         PageContext<
-                AggregatedListTargetPoolsHttpRequest,
-                TargetPoolAggregatedList,
+                AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
                 TargetPoolsScopedList>
             context,
         TargetPoolAggregatedList response) {
@@ -1539,8 +1531,7 @@ public class TargetPoolClient implements BackgroundResource {
     @Override
     public ApiFuture<AggregatedListTargetPoolsPage> createPageAsync(
         PageContext<
-                AggregatedListTargetPoolsHttpRequest,
-                TargetPoolAggregatedList,
+                AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
                 TargetPoolsScopedList>
             context,
         ApiFuture<TargetPoolAggregatedList> futureResponse) {
@@ -1550,11 +1541,8 @@ public class TargetPoolClient implements BackgroundResource {
 
   public static class AggregatedListTargetPoolsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AggregatedListTargetPoolsHttpRequest,
-          TargetPoolAggregatedList,
-          TargetPoolsScopedList,
-          AggregatedListTargetPoolsPage,
-          AggregatedListTargetPoolsFixedSizeCollection> {
+          AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList, TargetPoolsScopedList,
+          AggregatedListTargetPoolsPage, AggregatedListTargetPoolsFixedSizeCollection> {
 
     private AggregatedListTargetPoolsFixedSizeCollection(
         List<AggregatedListTargetPoolsPage> pages, int collectionSize) {
@@ -1574,10 +1562,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   public static class ListTargetPoolsPagedResponse
       extends AbstractPagedListResponse<
-          ListTargetPoolsHttpRequest,
-          TargetPoolList,
-          TargetPool,
-          ListTargetPoolsPage,
+          ListTargetPoolsHttpRequest, TargetPoolList, TargetPool, ListTargetPoolsPage,
           ListTargetPoolsFixedSizeCollection> {
 
     public static ApiFuture<ListTargetPoolsPagedResponse> createAsync(
@@ -1631,10 +1616,7 @@ public class TargetPoolClient implements BackgroundResource {
 
   public static class ListTargetPoolsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListTargetPoolsHttpRequest,
-          TargetPoolList,
-          TargetPool,
-          ListTargetPoolsPage,
+          ListTargetPoolsHttpRequest, TargetPoolList, TargetPool, ListTargetPoolsPage,
           ListTargetPoolsFixedSizeCollection> {
 
     private ListTargetPoolsFixedSizeCollection(

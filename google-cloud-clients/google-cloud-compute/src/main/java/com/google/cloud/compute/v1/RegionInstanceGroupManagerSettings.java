@@ -107,8 +107,7 @@ public class RegionInstanceGroupManagerSettings
 
   /** Returns the object with the settings used for calls to listRegionInstanceGroupManagers. */
   public PagedCallSettings<
-          ListRegionInstanceGroupManagersHttpRequest,
-          RegionInstanceGroupManagerList,
+          ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
           ListRegionInstanceGroupManagersPagedResponse>
       listRegionInstanceGroupManagersSettings() {
     return ((RegionInstanceGroupManagerStubSettings) getStubSettings())
@@ -314,8 +313,7 @@ public class RegionInstanceGroupManagerSettings
 
     /** Returns the builder for the settings used for calls to listRegionInstanceGroupManagers. */
     public PagedCallSettings.Builder<
-            ListRegionInstanceGroupManagersHttpRequest,
-            RegionInstanceGroupManagerList,
+            ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
             ListRegionInstanceGroupManagersPagedResponse>
         listRegionInstanceGroupManagersSettings() {
       return getStubSettingsBuilder().listRegionInstanceGroupManagersSettings();

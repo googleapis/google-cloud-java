@@ -98,8 +98,7 @@ public class NodeTypeStubSettings extends StubSettings<NodeTypeStubSettings> {
           .build();
 
   private final PagedCallSettings<
-          AggregatedListNodeTypesHttpRequest,
-          NodeTypeAggregatedList,
+          AggregatedListNodeTypesHttpRequest, NodeTypeAggregatedList,
           AggregatedListNodeTypesPagedResponse>
       aggregatedListNodeTypesSettings;
   private final UnaryCallSettings<GetNodeTypeHttpRequest, NodeType> getNodeTypeSettings;
@@ -109,8 +108,7 @@ public class NodeTypeStubSettings extends StubSettings<NodeTypeStubSettings> {
 
   /** Returns the object with the settings used for calls to aggregatedListNodeTypes. */
   public PagedCallSettings<
-          AggregatedListNodeTypesHttpRequest,
-          NodeTypeAggregatedList,
+          AggregatedListNodeTypesHttpRequest, NodeTypeAggregatedList,
           AggregatedListNodeTypesPagedResponse>
       aggregatedListNodeTypesSettings() {
     return aggregatedListNodeTypesSettings;
@@ -289,13 +287,11 @@ public class NodeTypeStubSettings extends StubSettings<NodeTypeStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListNodeTypesHttpRequest,
-          NodeTypeAggregatedList,
+          AggregatedListNodeTypesHttpRequest, NodeTypeAggregatedList,
           AggregatedListNodeTypesPagedResponse>
       AGGREGATED_LIST_NODE_TYPES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListNodeTypesHttpRequest,
-              NodeTypeAggregatedList,
+              AggregatedListNodeTypesHttpRequest, NodeTypeAggregatedList,
               AggregatedListNodeTypesPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListNodeTypesPagedResponse> getFuturePagedResponse(
@@ -304,8 +300,7 @@ public class NodeTypeStubSettings extends StubSettings<NodeTypeStubSettings> {
                 ApiCallContext context,
                 ApiFuture<NodeTypeAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListNodeTypesHttpRequest,
-                      NodeTypeAggregatedList,
+                      AggregatedListNodeTypesHttpRequest, NodeTypeAggregatedList,
                       NodeTypesScopedList>
                   pageContext =
                       PageContext.create(
@@ -336,8 +331,7 @@ public class NodeTypeStubSettings extends StubSettings<NodeTypeStubSettings> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            AggregatedListNodeTypesHttpRequest,
-            NodeTypeAggregatedList,
+            AggregatedListNodeTypesHttpRequest, NodeTypeAggregatedList,
             AggregatedListNodeTypesPagedResponse>
         aggregatedListNodeTypesSettings;
     private final UnaryCallSettings.Builder<GetNodeTypeHttpRequest, NodeType> getNodeTypeSettings;
@@ -459,8 +453,7 @@ public class NodeTypeStubSettings extends StubSettings<NodeTypeStubSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListNodeTypes. */
     public PagedCallSettings.Builder<
-            AggregatedListNodeTypesHttpRequest,
-            NodeTypeAggregatedList,
+            AggregatedListNodeTypesHttpRequest, NodeTypeAggregatedList,
             AggregatedListNodeTypesPagedResponse>
         aggregatedListNodeTypesSettings() {
       return aggregatedListNodeTypesSettings;

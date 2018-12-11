@@ -83,8 +83,7 @@ public class HttpsHealthCheckSettings extends ClientSettings<HttpsHealthCheckSet
 
   /** Returns the object with the settings used for calls to listHttpsHealthChecks. */
   public PagedCallSettings<
-          ListHttpsHealthChecksHttpRequest,
-          HttpsHealthCheckList,
+          ListHttpsHealthChecksHttpRequest, HttpsHealthCheckList,
           ListHttpsHealthChecksPagedResponse>
       listHttpsHealthChecksSettings() {
     return ((HttpsHealthCheckStubSettings) getStubSettings()).listHttpsHealthChecksSettings();
@@ -224,8 +223,7 @@ public class HttpsHealthCheckSettings extends ClientSettings<HttpsHealthCheckSet
 
     /** Returns the builder for the settings used for calls to listHttpsHealthChecks. */
     public PagedCallSettings.Builder<
-            ListHttpsHealthChecksHttpRequest,
-            HttpsHealthCheckList,
+            ListHttpsHealthChecksHttpRequest, HttpsHealthCheckList,
             ListHttpsHealthChecksPagedResponse>
         listHttpsHealthChecksSettings() {
       return getStubSettingsBuilder().listHttpsHealthChecksSettings();

@@ -113,8 +113,7 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
           .build();
 
   private final PagedCallSettings<
-          AggregatedListSubnetworksHttpRequest,
-          SubnetworkAggregatedList,
+          AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList,
           AggregatedListSubnetworksPagedResponse>
       aggregatedListSubnetworksSettings;
   private final UnaryCallSettings<DeleteSubnetworkHttpRequest, Operation> deleteSubnetworkSettings;
@@ -128,8 +127,7 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
           ListSubnetworksHttpRequest, SubnetworkList, ListSubnetworksPagedResponse>
       listSubnetworksSettings;
   private final PagedCallSettings<
-          ListUsableSubnetworksHttpRequest,
-          UsableSubnetworksAggregatedList,
+          ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
           ListUsableSubnetworksPagedResponse>
       listUsableSubnetworksSettings;
   private final UnaryCallSettings<PatchSubnetworkHttpRequest, Operation> patchSubnetworkSettings;
@@ -142,8 +140,7 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
 
   /** Returns the object with the settings used for calls to aggregatedListSubnetworks. */
   public PagedCallSettings<
-          AggregatedListSubnetworksHttpRequest,
-          SubnetworkAggregatedList,
+          AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList,
           AggregatedListSubnetworksPagedResponse>
       aggregatedListSubnetworksSettings() {
     return aggregatedListSubnetworksSettings;
@@ -184,8 +181,7 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
 
   /** Returns the object with the settings used for calls to listUsableSubnetworks. */
   public PagedCallSettings<
-          ListUsableSubnetworksHttpRequest,
-          UsableSubnetworksAggregatedList,
+          ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
           ListUsableSubnetworksPagedResponse>
       listUsableSubnetworksSettings() {
     return listUsableSubnetworksSettings;
@@ -310,8 +306,7 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
           AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList, SubnetworksScopedList>
       AGGREGATED_LIST_SUBNETWORKS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              AggregatedListSubnetworksHttpRequest,
-              SubnetworkAggregatedList,
+              AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList,
               SubnetworksScopedList>() {
             @Override
             public String emptyToken() {
@@ -395,8 +390,7 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
           ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList, UsableSubnetwork>
       LIST_USABLE_SUBNETWORKS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListUsableSubnetworksHttpRequest,
-              UsableSubnetworksAggregatedList,
+              ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
               UsableSubnetwork>() {
             @Override
             public String emptyToken() {
@@ -439,13 +433,11 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListSubnetworksHttpRequest,
-          SubnetworkAggregatedList,
+          AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList,
           AggregatedListSubnetworksPagedResponse>
       AGGREGATED_LIST_SUBNETWORKS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListSubnetworksHttpRequest,
-              SubnetworkAggregatedList,
+              AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList,
               AggregatedListSubnetworksPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListSubnetworksPagedResponse> getFuturePagedResponse(
@@ -455,8 +447,7 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
                 ApiCallContext context,
                 ApiFuture<SubnetworkAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListSubnetworksHttpRequest,
-                      SubnetworkAggregatedList,
+                      AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList,
                       SubnetworksScopedList>
                   pageContext =
                       PageContext.create(
@@ -484,13 +475,11 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
           };
 
   private static final PagedListResponseFactory<
-          ListUsableSubnetworksHttpRequest,
-          UsableSubnetworksAggregatedList,
+          ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
           ListUsableSubnetworksPagedResponse>
       LIST_USABLE_SUBNETWORKS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListUsableSubnetworksHttpRequest,
-              UsableSubnetworksAggregatedList,
+              ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
               ListUsableSubnetworksPagedResponse>() {
             @Override
             public ApiFuture<ListUsableSubnetworksPagedResponse> getFuturePagedResponse(
@@ -500,8 +489,7 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
                 ApiCallContext context,
                 ApiFuture<UsableSubnetworksAggregatedList> futureResponse) {
               PageContext<
-                      ListUsableSubnetworksHttpRequest,
-                      UsableSubnetworksAggregatedList,
+                      ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
                       UsableSubnetwork>
                   pageContext =
                       PageContext.create(
@@ -515,8 +503,7 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            AggregatedListSubnetworksHttpRequest,
-            SubnetworkAggregatedList,
+            AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList,
             AggregatedListSubnetworksPagedResponse>
         aggregatedListSubnetworksSettings;
     private final UnaryCallSettings.Builder<DeleteSubnetworkHttpRequest, Operation>
@@ -533,8 +520,7 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
             ListSubnetworksHttpRequest, SubnetworkList, ListSubnetworksPagedResponse>
         listSubnetworksSettings;
     private final PagedCallSettings.Builder<
-            ListUsableSubnetworksHttpRequest,
-            UsableSubnetworksAggregatedList,
+            ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
             ListUsableSubnetworksPagedResponse>
         listUsableSubnetworksSettings;
     private final UnaryCallSettings.Builder<PatchSubnetworkHttpRequest, Operation>
@@ -760,8 +746,7 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
 
     /** Returns the builder for the settings used for calls to aggregatedListSubnetworks. */
     public PagedCallSettings.Builder<
-            AggregatedListSubnetworksHttpRequest,
-            SubnetworkAggregatedList,
+            AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList,
             AggregatedListSubnetworksPagedResponse>
         aggregatedListSubnetworksSettings() {
       return aggregatedListSubnetworksSettings;
@@ -805,8 +790,7 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
 
     /** Returns the builder for the settings used for calls to listUsableSubnetworks. */
     public PagedCallSettings.Builder<
-            ListUsableSubnetworksHttpRequest,
-            UsableSubnetworksAggregatedList,
+            ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
             ListUsableSubnetworksPagedResponse>
         listUsableSubnetworksSettings() {
       return listUsableSubnetworksSettings;

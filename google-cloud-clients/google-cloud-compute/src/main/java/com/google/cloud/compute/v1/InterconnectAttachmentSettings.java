@@ -68,8 +68,7 @@ public class InterconnectAttachmentSettings extends ClientSettings<InterconnectA
    * Returns the object with the settings used for calls to aggregatedListInterconnectAttachments.
    */
   public PagedCallSettings<
-          AggregatedListInterconnectAttachmentsHttpRequest,
-          InterconnectAttachmentAggregatedList,
+          AggregatedListInterconnectAttachmentsHttpRequest, InterconnectAttachmentAggregatedList,
           AggregatedListInterconnectAttachmentsPagedResponse>
       aggregatedListInterconnectAttachmentsSettings() {
     return ((InterconnectAttachmentStubSettings) getStubSettings())
@@ -99,8 +98,7 @@ public class InterconnectAttachmentSettings extends ClientSettings<InterconnectA
 
   /** Returns the object with the settings used for calls to listInterconnectAttachments. */
   public PagedCallSettings<
-          ListInterconnectAttachmentsHttpRequest,
-          InterconnectAttachmentList,
+          ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
           ListInterconnectAttachmentsPagedResponse>
       listInterconnectAttachmentsSettings() {
     return ((InterconnectAttachmentStubSettings) getStubSettings())
@@ -221,8 +219,7 @@ public class InterconnectAttachmentSettings extends ClientSettings<InterconnectA
      * Returns the builder for the settings used for calls to aggregatedListInterconnectAttachments.
      */
     public PagedCallSettings.Builder<
-            AggregatedListInterconnectAttachmentsHttpRequest,
-            InterconnectAttachmentAggregatedList,
+            AggregatedListInterconnectAttachmentsHttpRequest, InterconnectAttachmentAggregatedList,
             AggregatedListInterconnectAttachmentsPagedResponse>
         aggregatedListInterconnectAttachmentsSettings() {
       return getStubSettingsBuilder().aggregatedListInterconnectAttachmentsSettings();
@@ -248,8 +245,7 @@ public class InterconnectAttachmentSettings extends ClientSettings<InterconnectA
 
     /** Returns the builder for the settings used for calls to listInterconnectAttachments. */
     public PagedCallSettings.Builder<
-            ListInterconnectAttachmentsHttpRequest,
-            InterconnectAttachmentList,
+            ListInterconnectAttachmentsHttpRequest, InterconnectAttachmentList,
             ListInterconnectAttachmentsPagedResponse>
         listInterconnectAttachmentsSettings() {
       return getStubSettingsBuilder().listInterconnectAttachmentsSettings();

@@ -119,8 +119,7 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
   private final UnaryCallSettings<GetProjectHttpRequest, Project> getProjectSettings;
   private final UnaryCallSettings<GetXpnHostProjectHttpRequest, Project> getXpnHostProjectSettings;
   private final PagedCallSettings<
-          GetXpnResourcesProjectsHttpRequest,
-          ProjectsGetXpnResources,
+          GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources,
           GetXpnResourcesProjectsPagedResponse>
       getXpnResourcesProjectsSettings;
   private final PagedCallSettings<
@@ -172,8 +171,7 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
 
   /** Returns the object with the settings used for calls to getXpnResourcesProjects. */
   public PagedCallSettings<
-          GetXpnResourcesProjectsHttpRequest,
-          ProjectsGetXpnResources,
+          GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources,
           GetXpnResourcesProjectsPagedResponse>
       getXpnResourcesProjectsSettings() {
     return getXpnResourcesProjectsSettings;
@@ -394,13 +392,11 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          GetXpnResourcesProjectsHttpRequest,
-          ProjectsGetXpnResources,
+          GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources,
           GetXpnResourcesProjectsPagedResponse>
       GET_XPN_RESOURCES_PROJECTS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              GetXpnResourcesProjectsHttpRequest,
-              ProjectsGetXpnResources,
+              GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources,
               GetXpnResourcesProjectsPagedResponse>() {
             @Override
             public ApiFuture<GetXpnResourcesProjectsPagedResponse> getFuturePagedResponse(
@@ -451,8 +447,7 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
     private final UnaryCallSettings.Builder<GetXpnHostProjectHttpRequest, Project>
         getXpnHostProjectSettings;
     private final PagedCallSettings.Builder<
-            GetXpnResourcesProjectsHttpRequest,
-            ProjectsGetXpnResources,
+            GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources,
             GetXpnResourcesProjectsPagedResponse>
         getXpnResourcesProjectsSettings;
     private final PagedCallSettings.Builder<
@@ -726,8 +721,7 @@ public class ProjectStubSettings extends StubSettings<ProjectStubSettings> {
 
     /** Returns the builder for the settings used for calls to getXpnResourcesProjects. */
     public PagedCallSettings.Builder<
-            GetXpnResourcesProjectsHttpRequest,
-            ProjectsGetXpnResources,
+            GetXpnResourcesProjectsHttpRequest, ProjectsGetXpnResources,
             GetXpnResourcesProjectsPagedResponse>
         getXpnResourcesProjectsSettings() {
       return getXpnResourcesProjectsSettings;

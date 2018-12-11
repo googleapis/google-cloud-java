@@ -57,13 +57,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -2042,16 +2042,13 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   public static class AggregatedListInstanceGroupManagersPagedResponse
       extends AbstractPagedListResponse<
-          AggregatedListInstanceGroupManagersHttpRequest,
-          InstanceGroupManagerAggregatedList,
-          InstanceGroupManagersScopedList,
-          AggregatedListInstanceGroupManagersPage,
+          AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
+          InstanceGroupManagersScopedList, AggregatedListInstanceGroupManagersPage,
           AggregatedListInstanceGroupManagersFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListInstanceGroupManagersPagedResponse> createAsync(
         PageContext<
-                AggregatedListInstanceGroupManagersHttpRequest,
-                InstanceGroupManagerAggregatedList,
+                AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
                 InstanceGroupManagersScopedList>
             context,
         ApiFuture<InstanceGroupManagerAggregatedList> futureResponse) {
@@ -2079,15 +2076,12 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   public static class AggregatedListInstanceGroupManagersPage
       extends AbstractPage<
-          AggregatedListInstanceGroupManagersHttpRequest,
-          InstanceGroupManagerAggregatedList,
-          InstanceGroupManagersScopedList,
-          AggregatedListInstanceGroupManagersPage> {
+          AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
+          InstanceGroupManagersScopedList, AggregatedListInstanceGroupManagersPage> {
 
     private AggregatedListInstanceGroupManagersPage(
         PageContext<
-                AggregatedListInstanceGroupManagersHttpRequest,
-                InstanceGroupManagerAggregatedList,
+                AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
                 InstanceGroupManagersScopedList>
             context,
         InstanceGroupManagerAggregatedList response) {
@@ -2101,8 +2095,7 @@ public class InstanceGroupManagerClient implements BackgroundResource {
     @Override
     protected AggregatedListInstanceGroupManagersPage createPage(
         PageContext<
-                AggregatedListInstanceGroupManagersHttpRequest,
-                InstanceGroupManagerAggregatedList,
+                AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
                 InstanceGroupManagersScopedList>
             context,
         InstanceGroupManagerAggregatedList response) {
@@ -2112,8 +2105,7 @@ public class InstanceGroupManagerClient implements BackgroundResource {
     @Override
     public ApiFuture<AggregatedListInstanceGroupManagersPage> createPageAsync(
         PageContext<
-                AggregatedListInstanceGroupManagersHttpRequest,
-                InstanceGroupManagerAggregatedList,
+                AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
                 InstanceGroupManagersScopedList>
             context,
         ApiFuture<InstanceGroupManagerAggregatedList> futureResponse) {
@@ -2123,10 +2115,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   public static class AggregatedListInstanceGroupManagersFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AggregatedListInstanceGroupManagersHttpRequest,
-          InstanceGroupManagerAggregatedList,
-          InstanceGroupManagersScopedList,
-          AggregatedListInstanceGroupManagersPage,
+          AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
+          InstanceGroupManagersScopedList, AggregatedListInstanceGroupManagersPage,
           AggregatedListInstanceGroupManagersFixedSizeCollection> {
 
     private AggregatedListInstanceGroupManagersFixedSizeCollection(
@@ -2147,16 +2137,12 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   public static class ListInstanceGroupManagersPagedResponse
       extends AbstractPagedListResponse<
-          ListInstanceGroupManagersHttpRequest,
-          InstanceGroupManagerList,
-          InstanceGroupManager,
-          ListInstanceGroupManagersPage,
-          ListInstanceGroupManagersFixedSizeCollection> {
+          ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList, InstanceGroupManager,
+          ListInstanceGroupManagersPage, ListInstanceGroupManagersFixedSizeCollection> {
 
     public static ApiFuture<ListInstanceGroupManagersPagedResponse> createAsync(
         PageContext<
-                ListInstanceGroupManagersHttpRequest,
-                InstanceGroupManagerList,
+                ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
                 InstanceGroupManager>
             context,
         ApiFuture<InstanceGroupManagerList> futureResponse) {
@@ -2180,15 +2166,12 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   public static class ListInstanceGroupManagersPage
       extends AbstractPage<
-          ListInstanceGroupManagersHttpRequest,
-          InstanceGroupManagerList,
-          InstanceGroupManager,
+          ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList, InstanceGroupManager,
           ListInstanceGroupManagersPage> {
 
     private ListInstanceGroupManagersPage(
         PageContext<
-                ListInstanceGroupManagersHttpRequest,
-                InstanceGroupManagerList,
+                ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
                 InstanceGroupManager>
             context,
         InstanceGroupManagerList response) {
@@ -2202,8 +2185,7 @@ public class InstanceGroupManagerClient implements BackgroundResource {
     @Override
     protected ListInstanceGroupManagersPage createPage(
         PageContext<
-                ListInstanceGroupManagersHttpRequest,
-                InstanceGroupManagerList,
+                ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
                 InstanceGroupManager>
             context,
         InstanceGroupManagerList response) {
@@ -2213,8 +2195,7 @@ public class InstanceGroupManagerClient implements BackgroundResource {
     @Override
     public ApiFuture<ListInstanceGroupManagersPage> createPageAsync(
         PageContext<
-                ListInstanceGroupManagersHttpRequest,
-                InstanceGroupManagerList,
+                ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
                 InstanceGroupManager>
             context,
         ApiFuture<InstanceGroupManagerList> futureResponse) {
@@ -2224,11 +2205,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   public static class ListInstanceGroupManagersFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListInstanceGroupManagersHttpRequest,
-          InstanceGroupManagerList,
-          InstanceGroupManager,
-          ListInstanceGroupManagersPage,
-          ListInstanceGroupManagersFixedSizeCollection> {
+          ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList, InstanceGroupManager,
+          ListInstanceGroupManagersPage, ListInstanceGroupManagersFixedSizeCollection> {
 
     private ListInstanceGroupManagersFixedSizeCollection(
         List<ListInstanceGroupManagersPage> pages, int collectionSize) {

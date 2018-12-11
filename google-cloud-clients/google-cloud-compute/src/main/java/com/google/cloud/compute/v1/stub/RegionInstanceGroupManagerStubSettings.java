@@ -117,8 +117,7 @@ public class RegionInstanceGroupManagerStubSettings
   private final UnaryCallSettings<InsertRegionInstanceGroupManagerHttpRequest, Operation>
       insertRegionInstanceGroupManagerSettings;
   private final PagedCallSettings<
-          ListRegionInstanceGroupManagersHttpRequest,
-          RegionInstanceGroupManagerList,
+          ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
           ListRegionInstanceGroupManagersPagedResponse>
       listRegionInstanceGroupManagersSettings;
   private final UnaryCallSettings<
@@ -175,8 +174,7 @@ public class RegionInstanceGroupManagerStubSettings
 
   /** Returns the object with the settings used for calls to listRegionInstanceGroupManagers. */
   public PagedCallSettings<
-          ListRegionInstanceGroupManagersHttpRequest,
-          RegionInstanceGroupManagerList,
+          ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
           ListRegionInstanceGroupManagersPagedResponse>
       listRegionInstanceGroupManagersSettings() {
     return listRegionInstanceGroupManagersSettings;
@@ -334,13 +332,11 @@ public class RegionInstanceGroupManagerStubSettings
   }
 
   private static final PagedListDescriptor<
-          ListRegionInstanceGroupManagersHttpRequest,
-          RegionInstanceGroupManagerList,
+          ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
           InstanceGroupManager>
       LIST_REGION_INSTANCE_GROUP_MANAGERS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              ListRegionInstanceGroupManagersHttpRequest,
-              RegionInstanceGroupManagerList,
+              ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
               InstanceGroupManager>() {
             @Override
             public String emptyToken() {
@@ -383,13 +379,11 @@ public class RegionInstanceGroupManagerStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListRegionInstanceGroupManagersHttpRequest,
-          RegionInstanceGroupManagerList,
+          ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
           ListRegionInstanceGroupManagersPagedResponse>
       LIST_REGION_INSTANCE_GROUP_MANAGERS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListRegionInstanceGroupManagersHttpRequest,
-              RegionInstanceGroupManagerList,
+              ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
               ListRegionInstanceGroupManagersPagedResponse>() {
             @Override
             public ApiFuture<ListRegionInstanceGroupManagersPagedResponse> getFuturePagedResponse(
@@ -400,8 +394,7 @@ public class RegionInstanceGroupManagerStubSettings
                 ApiCallContext context,
                 ApiFuture<RegionInstanceGroupManagerList> futureResponse) {
               PageContext<
-                      ListRegionInstanceGroupManagersHttpRequest,
-                      RegionInstanceGroupManagerList,
+                      ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
                       InstanceGroupManager>
                   pageContext =
                       PageContext.create(
@@ -433,8 +426,7 @@ public class RegionInstanceGroupManagerStubSettings
     private final UnaryCallSettings.Builder<InsertRegionInstanceGroupManagerHttpRequest, Operation>
         insertRegionInstanceGroupManagerSettings;
     private final PagedCallSettings.Builder<
-            ListRegionInstanceGroupManagersHttpRequest,
-            RegionInstanceGroupManagerList,
+            ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
             ListRegionInstanceGroupManagersPagedResponse>
         listRegionInstanceGroupManagersSettings;
     private final UnaryCallSettings.Builder<
@@ -719,8 +711,7 @@ public class RegionInstanceGroupManagerStubSettings
 
     /** Returns the builder for the settings used for calls to listRegionInstanceGroupManagers. */
     public PagedCallSettings.Builder<
-            ListRegionInstanceGroupManagersHttpRequest,
-            RegionInstanceGroupManagerList,
+            ListRegionInstanceGroupManagersHttpRequest, RegionInstanceGroupManagerList,
             ListRegionInstanceGroupManagersPagedResponse>
         listRegionInstanceGroupManagersSettings() {
       return listRegionInstanceGroupManagersSettings;

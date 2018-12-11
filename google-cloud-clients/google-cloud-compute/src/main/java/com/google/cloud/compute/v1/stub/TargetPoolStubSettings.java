@@ -112,8 +112,7 @@ public class TargetPoolStubSettings extends StubSettings<TargetPoolStubSettings>
   private final UnaryCallSettings<AddInstanceTargetPoolHttpRequest, Operation>
       addInstanceTargetPoolSettings;
   private final PagedCallSettings<
-          AggregatedListTargetPoolsHttpRequest,
-          TargetPoolAggregatedList,
+          AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
           AggregatedListTargetPoolsPagedResponse>
       aggregatedListTargetPoolsSettings;
   private final UnaryCallSettings<DeleteTargetPoolHttpRequest, Operation> deleteTargetPoolSettings;
@@ -145,8 +144,7 @@ public class TargetPoolStubSettings extends StubSettings<TargetPoolStubSettings>
 
   /** Returns the object with the settings used for calls to aggregatedListTargetPools. */
   public PagedCallSettings<
-          AggregatedListTargetPoolsHttpRequest,
-          TargetPoolAggregatedList,
+          AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
           AggregatedListTargetPoolsPagedResponse>
       aggregatedListTargetPoolsSettings() {
     return aggregatedListTargetPoolsSettings;
@@ -290,8 +288,7 @@ public class TargetPoolStubSettings extends StubSettings<TargetPoolStubSettings>
           AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList, TargetPoolsScopedList>
       AGGREGATED_LIST_TARGET_POOLS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              AggregatedListTargetPoolsHttpRequest,
-              TargetPoolAggregatedList,
+              AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
               TargetPoolsScopedList>() {
             @Override
             public String emptyToken() {
@@ -372,13 +369,11 @@ public class TargetPoolStubSettings extends StubSettings<TargetPoolStubSettings>
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListTargetPoolsHttpRequest,
-          TargetPoolAggregatedList,
+          AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
           AggregatedListTargetPoolsPagedResponse>
       AGGREGATED_LIST_TARGET_POOLS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListTargetPoolsHttpRequest,
-              TargetPoolAggregatedList,
+              AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
               AggregatedListTargetPoolsPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListTargetPoolsPagedResponse> getFuturePagedResponse(
@@ -388,8 +383,7 @@ public class TargetPoolStubSettings extends StubSettings<TargetPoolStubSettings>
                 ApiCallContext context,
                 ApiFuture<TargetPoolAggregatedList> futureResponse) {
               PageContext<
-                      AggregatedListTargetPoolsHttpRequest,
-                      TargetPoolAggregatedList,
+                      AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
                       TargetPoolsScopedList>
                   pageContext =
                       PageContext.create(
@@ -425,8 +419,7 @@ public class TargetPoolStubSettings extends StubSettings<TargetPoolStubSettings>
     private final UnaryCallSettings.Builder<AddInstanceTargetPoolHttpRequest, Operation>
         addInstanceTargetPoolSettings;
     private final PagedCallSettings.Builder<
-            AggregatedListTargetPoolsHttpRequest,
-            TargetPoolAggregatedList,
+            AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
             AggregatedListTargetPoolsPagedResponse>
         aggregatedListTargetPoolsSettings;
     private final UnaryCallSettings.Builder<DeleteTargetPoolHttpRequest, Operation>
@@ -659,8 +652,7 @@ public class TargetPoolStubSettings extends StubSettings<TargetPoolStubSettings>
 
     /** Returns the builder for the settings used for calls to aggregatedListTargetPools. */
     public PagedCallSettings.Builder<
-            AggregatedListTargetPoolsHttpRequest,
-            TargetPoolAggregatedList,
+            AggregatedListTargetPoolsHttpRequest, TargetPoolAggregatedList,
             AggregatedListTargetPoolsPagedResponse>
         aggregatedListTargetPoolsSettings() {
       return aggregatedListTargetPoolsSettings;

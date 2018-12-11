@@ -110,8 +110,7 @@ public class InstanceTemplateStubSettings extends StubSettings<InstanceTemplateS
   private final UnaryCallSettings<InsertInstanceTemplateHttpRequest, Operation>
       insertInstanceTemplateSettings;
   private final PagedCallSettings<
-          ListInstanceTemplatesHttpRequest,
-          InstanceTemplateList,
+          ListInstanceTemplatesHttpRequest, InstanceTemplateList,
           ListInstanceTemplatesPagedResponse>
       listInstanceTemplatesSettings;
   private final UnaryCallSettings<SetIamPolicyInstanceTemplateHttpRequest, Policy>
@@ -146,8 +145,7 @@ public class InstanceTemplateStubSettings extends StubSettings<InstanceTemplateS
 
   /** Returns the object with the settings used for calls to listInstanceTemplates. */
   public PagedCallSettings<
-          ListInstanceTemplatesHttpRequest,
-          InstanceTemplateList,
+          ListInstanceTemplatesHttpRequest, InstanceTemplateList,
           ListInstanceTemplatesPagedResponse>
       listInstanceTemplatesSettings() {
     return listInstanceTemplatesSettings;
@@ -297,13 +295,11 @@ public class InstanceTemplateStubSettings extends StubSettings<InstanceTemplateS
           };
 
   private static final PagedListResponseFactory<
-          ListInstanceTemplatesHttpRequest,
-          InstanceTemplateList,
+          ListInstanceTemplatesHttpRequest, InstanceTemplateList,
           ListInstanceTemplatesPagedResponse>
       LIST_INSTANCE_TEMPLATES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListInstanceTemplatesHttpRequest,
-              InstanceTemplateList,
+              ListInstanceTemplatesHttpRequest, InstanceTemplateList,
               ListInstanceTemplatesPagedResponse>() {
             @Override
             public ApiFuture<ListInstanceTemplatesPagedResponse> getFuturePagedResponse(
@@ -332,8 +328,7 @@ public class InstanceTemplateStubSettings extends StubSettings<InstanceTemplateS
     private final UnaryCallSettings.Builder<InsertInstanceTemplateHttpRequest, Operation>
         insertInstanceTemplateSettings;
     private final PagedCallSettings.Builder<
-            ListInstanceTemplatesHttpRequest,
-            InstanceTemplateList,
+            ListInstanceTemplatesHttpRequest, InstanceTemplateList,
             ListInstanceTemplatesPagedResponse>
         listInstanceTemplatesSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyInstanceTemplateHttpRequest, Policy>
@@ -527,8 +522,7 @@ public class InstanceTemplateStubSettings extends StubSettings<InstanceTemplateS
 
     /** Returns the builder for the settings used for calls to listInstanceTemplates. */
     public PagedCallSettings.Builder<
-            ListInstanceTemplatesHttpRequest,
-            InstanceTemplateList,
+            ListInstanceTemplatesHttpRequest, InstanceTemplateList,
             ListInstanceTemplatesPagedResponse>
         listInstanceTemplatesSettings() {
       return listInstanceTemplatesSettings;

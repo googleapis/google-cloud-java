@@ -67,8 +67,7 @@ import javax.annotation.Generated;
 public class RouterSettings extends ClientSettings<RouterSettings> {
   /** Returns the object with the settings used for calls to aggregatedListRouters. */
   public PagedCallSettings<
-          AggregatedListRoutersHttpRequest,
-          RouterAggregatedList,
+          AggregatedListRoutersHttpRequest, RouterAggregatedList,
           AggregatedListRoutersPagedResponse>
       aggregatedListRoutersSettings() {
     return ((RouterStubSettings) getStubSettings()).aggregatedListRoutersSettings();
@@ -86,8 +85,7 @@ public class RouterSettings extends ClientSettings<RouterSettings> {
 
   /** Returns the object with the settings used for calls to getNatMappingInfoRouters. */
   public PagedCallSettings<
-          GetNatMappingInfoRoutersHttpRequest,
-          VmEndpointNatMappingsList,
+          GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList,
           GetNatMappingInfoRoutersPagedResponse>
       getNatMappingInfoRoutersSettings() {
     return ((RouterStubSettings) getStubSettings()).getNatMappingInfoRoutersSettings();
@@ -229,8 +227,7 @@ public class RouterSettings extends ClientSettings<RouterSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListRouters. */
     public PagedCallSettings.Builder<
-            AggregatedListRoutersHttpRequest,
-            RouterAggregatedList,
+            AggregatedListRoutersHttpRequest, RouterAggregatedList,
             AggregatedListRoutersPagedResponse>
         aggregatedListRoutersSettings() {
       return getStubSettingsBuilder().aggregatedListRoutersSettings();
@@ -248,8 +245,7 @@ public class RouterSettings extends ClientSettings<RouterSettings> {
 
     /** Returns the builder for the settings used for calls to getNatMappingInfoRouters. */
     public PagedCallSettings.Builder<
-            GetNatMappingInfoRoutersHttpRequest,
-            VmEndpointNatMappingsList,
+            GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList,
             GetNatMappingInfoRoutersPagedResponse>
         getNatMappingInfoRoutersSettings() {
       return getStubSettingsBuilder().getNatMappingInfoRoutersSettings();

@@ -73,8 +73,7 @@ public class InstanceGroupSettings extends ClientSettings<InstanceGroupSettings>
 
   /** Returns the object with the settings used for calls to aggregatedListInstanceGroups. */
   public PagedCallSettings<
-          AggregatedListInstanceGroupsHttpRequest,
-          InstanceGroupAggregatedList,
+          AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
           AggregatedListInstanceGroupsPagedResponse>
       aggregatedListInstanceGroupsSettings() {
     return ((InstanceGroupStubSettings) getStubSettings()).aggregatedListInstanceGroupsSettings();
@@ -106,8 +105,7 @@ public class InstanceGroupSettings extends ClientSettings<InstanceGroupSettings>
 
   /** Returns the object with the settings used for calls to listInstancesInstanceGroups. */
   public PagedCallSettings<
-          ListInstancesInstanceGroupsHttpRequest,
-          InstanceGroupsListInstances,
+          ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
           ListInstancesInstanceGroupsPagedResponse>
       listInstancesInstanceGroupsSettings() {
     return ((InstanceGroupStubSettings) getStubSettings()).listInstancesInstanceGroupsSettings();
@@ -235,8 +233,7 @@ public class InstanceGroupSettings extends ClientSettings<InstanceGroupSettings>
 
     /** Returns the builder for the settings used for calls to aggregatedListInstanceGroups. */
     public PagedCallSettings.Builder<
-            AggregatedListInstanceGroupsHttpRequest,
-            InstanceGroupAggregatedList,
+            AggregatedListInstanceGroupsHttpRequest, InstanceGroupAggregatedList,
             AggregatedListInstanceGroupsPagedResponse>
         aggregatedListInstanceGroupsSettings() {
       return getStubSettingsBuilder().aggregatedListInstanceGroupsSettings();
@@ -269,8 +266,7 @@ public class InstanceGroupSettings extends ClientSettings<InstanceGroupSettings>
 
     /** Returns the builder for the settings used for calls to listInstancesInstanceGroups. */
     public PagedCallSettings.Builder<
-            ListInstancesInstanceGroupsHttpRequest,
-            InstanceGroupsListInstances,
+            ListInstancesInstanceGroupsHttpRequest, InstanceGroupsListInstances,
             ListInstancesInstanceGroupsPagedResponse>
         listInstancesInstanceGroupsSettings() {
       return getStubSettingsBuilder().listInstancesInstanceGroupsSettings();

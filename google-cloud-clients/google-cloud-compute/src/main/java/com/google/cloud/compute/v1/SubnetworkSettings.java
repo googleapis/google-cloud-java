@@ -67,8 +67,7 @@ import javax.annotation.Generated;
 public class SubnetworkSettings extends ClientSettings<SubnetworkSettings> {
   /** Returns the object with the settings used for calls to aggregatedListSubnetworks. */
   public PagedCallSettings<
-          AggregatedListSubnetworksHttpRequest,
-          SubnetworkAggregatedList,
+          AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList,
           AggregatedListSubnetworksPagedResponse>
       aggregatedListSubnetworksSettings() {
     return ((SubnetworkStubSettings) getStubSettings()).aggregatedListSubnetworksSettings();
@@ -109,8 +108,7 @@ public class SubnetworkSettings extends ClientSettings<SubnetworkSettings> {
 
   /** Returns the object with the settings used for calls to listUsableSubnetworks. */
   public PagedCallSettings<
-          ListUsableSubnetworksHttpRequest,
-          UsableSubnetworksAggregatedList,
+          ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
           ListUsableSubnetworksPagedResponse>
       listUsableSubnetworksSettings() {
     return ((SubnetworkStubSettings) getStubSettings()).listUsableSubnetworksSettings();
@@ -243,8 +241,7 @@ public class SubnetworkSettings extends ClientSettings<SubnetworkSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListSubnetworks. */
     public PagedCallSettings.Builder<
-            AggregatedListSubnetworksHttpRequest,
-            SubnetworkAggregatedList,
+            AggregatedListSubnetworksHttpRequest, SubnetworkAggregatedList,
             AggregatedListSubnetworksPagedResponse>
         aggregatedListSubnetworksSettings() {
       return getStubSettingsBuilder().aggregatedListSubnetworksSettings();
@@ -288,8 +285,7 @@ public class SubnetworkSettings extends ClientSettings<SubnetworkSettings> {
 
     /** Returns the builder for the settings used for calls to listUsableSubnetworks. */
     public PagedCallSettings.Builder<
-            ListUsableSubnetworksHttpRequest,
-            UsableSubnetworksAggregatedList,
+            ListUsableSubnetworksHttpRequest, UsableSubnetworksAggregatedList,
             ListUsableSubnetworksPagedResponse>
         listUsableSubnetworksSettings() {
       return getStubSettingsBuilder().listUsableSubnetworksSettings();

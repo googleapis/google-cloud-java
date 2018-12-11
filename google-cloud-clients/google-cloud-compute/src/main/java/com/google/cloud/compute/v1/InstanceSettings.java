@@ -73,8 +73,7 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
 
   /** Returns the object with the settings used for calls to aggregatedListInstances. */
   public PagedCallSettings<
-          AggregatedListInstancesHttpRequest,
-          InstanceAggregatedList,
+          AggregatedListInstancesHttpRequest, InstanceAggregatedList,
           AggregatedListInstancesPagedResponse>
       aggregatedListInstancesSettings() {
     return ((InstanceStubSettings) getStubSettings()).aggregatedListInstancesSettings();
@@ -130,8 +129,7 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
 
   /** Returns the object with the settings used for calls to listReferrersInstances. */
   public PagedCallSettings<
-          ListReferrersInstancesHttpRequest,
-          InstanceListReferrers,
+          ListReferrersInstancesHttpRequest, InstanceListReferrers,
           ListReferrersInstancesPagedResponse>
       listReferrersInstancesSettings() {
     return ((InstanceStubSettings) getStubSettings()).listReferrersInstancesSettings();
@@ -354,8 +352,7 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListInstances. */
     public PagedCallSettings.Builder<
-            AggregatedListInstancesHttpRequest,
-            InstanceAggregatedList,
+            AggregatedListInstancesHttpRequest, InstanceAggregatedList,
             AggregatedListInstancesPagedResponse>
         aggregatedListInstancesSettings() {
       return getStubSettingsBuilder().aggregatedListInstancesSettings();
@@ -417,8 +414,7 @@ public class InstanceSettings extends ClientSettings<InstanceSettings> {
 
     /** Returns the builder for the settings used for calls to listReferrersInstances. */
     public PagedCallSettings.Builder<
-            ListReferrersInstancesHttpRequest,
-            InstanceListReferrers,
+            ListReferrersInstancesHttpRequest, InstanceListReferrers,
             ListReferrersInstancesPagedResponse>
         listReferrersInstancesSettings() {
       return getStubSettingsBuilder().listReferrersInstancesSettings();

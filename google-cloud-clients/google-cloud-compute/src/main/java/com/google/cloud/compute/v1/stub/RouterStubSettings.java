@@ -111,15 +111,13 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
           .build();
 
   private final PagedCallSettings<
-          AggregatedListRoutersHttpRequest,
-          RouterAggregatedList,
+          AggregatedListRoutersHttpRequest, RouterAggregatedList,
           AggregatedListRoutersPagedResponse>
       aggregatedListRoutersSettings;
   private final UnaryCallSettings<DeleteRouterHttpRequest, Operation> deleteRouterSettings;
   private final UnaryCallSettings<GetRouterHttpRequest, Router> getRouterSettings;
   private final PagedCallSettings<
-          GetNatMappingInfoRoutersHttpRequest,
-          VmEndpointNatMappingsList,
+          GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList,
           GetNatMappingInfoRoutersPagedResponse>
       getNatMappingInfoRoutersSettings;
   private final UnaryCallSettings<GetRouterStatusRouterHttpRequest, RouterStatusResponse>
@@ -134,8 +132,7 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
 
   /** Returns the object with the settings used for calls to aggregatedListRouters. */
   public PagedCallSettings<
-          AggregatedListRoutersHttpRequest,
-          RouterAggregatedList,
+          AggregatedListRoutersHttpRequest, RouterAggregatedList,
           AggregatedListRoutersPagedResponse>
       aggregatedListRoutersSettings() {
     return aggregatedListRoutersSettings;
@@ -153,8 +150,7 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
 
   /** Returns the object with the settings used for calls to getNatMappingInfoRouters. */
   public PagedCallSettings<
-          GetNatMappingInfoRoutersHttpRequest,
-          VmEndpointNatMappingsList,
+          GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList,
           GetNatMappingInfoRoutersPagedResponse>
       getNatMappingInfoRoutersSettings() {
     return getNatMappingInfoRoutersSettings;
@@ -327,8 +323,7 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
           GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList, VmEndpointNatMappings>
       GET_NAT_MAPPING_INFO_ROUTERS_PAGE_STR_DESC =
           new PagedListDescriptor<
-              GetNatMappingInfoRoutersHttpRequest,
-              VmEndpointNatMappingsList,
+              GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList,
               VmEndpointNatMappings>() {
             @Override
             public String emptyToken() {
@@ -409,13 +404,11 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          AggregatedListRoutersHttpRequest,
-          RouterAggregatedList,
+          AggregatedListRoutersHttpRequest, RouterAggregatedList,
           AggregatedListRoutersPagedResponse>
       AGGREGATED_LIST_ROUTERS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              AggregatedListRoutersHttpRequest,
-              RouterAggregatedList,
+              AggregatedListRoutersHttpRequest, RouterAggregatedList,
               AggregatedListRoutersPagedResponse>() {
             @Override
             public ApiFuture<AggregatedListRoutersPagedResponse> getFuturePagedResponse(
@@ -432,13 +425,11 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
           };
 
   private static final PagedListResponseFactory<
-          GetNatMappingInfoRoutersHttpRequest,
-          VmEndpointNatMappingsList,
+          GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList,
           GetNatMappingInfoRoutersPagedResponse>
       GET_NAT_MAPPING_INFO_ROUTERS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              GetNatMappingInfoRoutersHttpRequest,
-              VmEndpointNatMappingsList,
+              GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList,
               GetNatMappingInfoRoutersPagedResponse>() {
             @Override
             public ApiFuture<GetNatMappingInfoRoutersPagedResponse> getFuturePagedResponse(
@@ -448,8 +439,7 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
                 ApiCallContext context,
                 ApiFuture<VmEndpointNatMappingsList> futureResponse) {
               PageContext<
-                      GetNatMappingInfoRoutersHttpRequest,
-                      VmEndpointNatMappingsList,
+                      GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList,
                       VmEndpointNatMappings>
                   pageContext =
                       PageContext.create(
@@ -480,16 +470,14 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
 
     private final PagedCallSettings.Builder<
-            AggregatedListRoutersHttpRequest,
-            RouterAggregatedList,
+            AggregatedListRoutersHttpRequest, RouterAggregatedList,
             AggregatedListRoutersPagedResponse>
         aggregatedListRoutersSettings;
     private final UnaryCallSettings.Builder<DeleteRouterHttpRequest, Operation>
         deleteRouterSettings;
     private final UnaryCallSettings.Builder<GetRouterHttpRequest, Router> getRouterSettings;
     private final PagedCallSettings.Builder<
-            GetNatMappingInfoRoutersHttpRequest,
-            VmEndpointNatMappingsList,
+            GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList,
             GetNatMappingInfoRoutersPagedResponse>
         getNatMappingInfoRoutersSettings;
     private final UnaryCallSettings.Builder<GetRouterStatusRouterHttpRequest, RouterStatusResponse>
@@ -694,8 +682,7 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
 
     /** Returns the builder for the settings used for calls to aggregatedListRouters. */
     public PagedCallSettings.Builder<
-            AggregatedListRoutersHttpRequest,
-            RouterAggregatedList,
+            AggregatedListRoutersHttpRequest, RouterAggregatedList,
             AggregatedListRoutersPagedResponse>
         aggregatedListRoutersSettings() {
       return aggregatedListRoutersSettings;
@@ -713,8 +700,7 @@ public class RouterStubSettings extends StubSettings<RouterStubSettings> {
 
     /** Returns the builder for the settings used for calls to getNatMappingInfoRouters. */
     public PagedCallSettings.Builder<
-            GetNatMappingInfoRoutersHttpRequest,
-            VmEndpointNatMappingsList,
+            GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList,
             GetNatMappingInfoRoutersPagedResponse>
         getNatMappingInfoRoutersSettings() {
       return getNatMappingInfoRoutersSettings;

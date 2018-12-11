@@ -107,8 +107,7 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
   private final UnaryCallSettings<InsertTargetHttpsProxyHttpRequest, Operation>
       insertTargetHttpsProxySettings;
   private final PagedCallSettings<
-          ListTargetHttpsProxiesHttpRequest,
-          TargetHttpsProxyList,
+          ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList,
           ListTargetHttpsProxiesPagedResponse>
       listTargetHttpsProxiesSettings;
   private final UnaryCallSettings<SetQuicOverrideTargetHttpsProxyHttpRequest, Operation>
@@ -140,8 +139,7 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
 
   /** Returns the object with the settings used for calls to listTargetHttpsProxies. */
   public PagedCallSettings<
-          ListTargetHttpsProxiesHttpRequest,
-          TargetHttpsProxyList,
+          ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList,
           ListTargetHttpsProxiesPagedResponse>
       listTargetHttpsProxiesSettings() {
     return listTargetHttpsProxiesSettings;
@@ -304,13 +302,11 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
           };
 
   private static final PagedListResponseFactory<
-          ListTargetHttpsProxiesHttpRequest,
-          TargetHttpsProxyList,
+          ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList,
           ListTargetHttpsProxiesPagedResponse>
       LIST_TARGET_HTTPS_PROXIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListTargetHttpsProxiesHttpRequest,
-              TargetHttpsProxyList,
+              ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList,
               ListTargetHttpsProxiesPagedResponse>() {
             @Override
             public ApiFuture<ListTargetHttpsProxiesPagedResponse> getFuturePagedResponse(
@@ -337,8 +333,7 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
     private final UnaryCallSettings.Builder<InsertTargetHttpsProxyHttpRequest, Operation>
         insertTargetHttpsProxySettings;
     private final PagedCallSettings.Builder<
-            ListTargetHttpsProxiesHttpRequest,
-            TargetHttpsProxyList,
+            ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList,
             ListTargetHttpsProxiesPagedResponse>
         listTargetHttpsProxiesSettings;
     private final UnaryCallSettings.Builder<SetQuicOverrideTargetHttpsProxyHttpRequest, Operation>
@@ -540,8 +535,7 @@ public class TargetHttpsProxyStubSettings extends StubSettings<TargetHttpsProxyS
 
     /** Returns the builder for the settings used for calls to listTargetHttpsProxies. */
     public PagedCallSettings.Builder<
-            ListTargetHttpsProxiesHttpRequest,
-            TargetHttpsProxyList,
+            ListTargetHttpsProxiesHttpRequest, TargetHttpsProxyList,
             ListTargetHttpsProxiesPagedResponse>
         listTargetHttpsProxiesSettings() {
       return listTargetHttpsProxiesSettings;

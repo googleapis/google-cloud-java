@@ -280,8 +280,7 @@ public class HttpHealthCheckStubSettings extends StubSettings<HttpHealthCheckStu
           ListHttpHealthChecksHttpRequest, HttpHealthCheckList, ListHttpHealthChecksPagedResponse>
       LIST_HTTP_HEALTH_CHECKS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListHttpHealthChecksHttpRequest,
-              HttpHealthCheckList,
+              ListHttpHealthChecksHttpRequest, HttpHealthCheckList,
               ListHttpHealthChecksPagedResponse>() {
             @Override
             public ApiFuture<ListHttpHealthChecksPagedResponse> getFuturePagedResponse(

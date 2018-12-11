@@ -90,8 +90,7 @@ public class InstanceTemplateSettings extends ClientSettings<InstanceTemplateSet
 
   /** Returns the object with the settings used for calls to listInstanceTemplates. */
   public PagedCallSettings<
-          ListInstanceTemplatesHttpRequest,
-          InstanceTemplateList,
+          ListInstanceTemplatesHttpRequest, InstanceTemplateList,
           ListInstanceTemplatesPagedResponse>
       listInstanceTemplatesSettings() {
     return ((InstanceTemplateStubSettings) getStubSettings()).listInstanceTemplatesSettings();
@@ -239,8 +238,7 @@ public class InstanceTemplateSettings extends ClientSettings<InstanceTemplateSet
 
     /** Returns the builder for the settings used for calls to listInstanceTemplates. */
     public PagedCallSettings.Builder<
-            ListInstanceTemplatesHttpRequest,
-            InstanceTemplateList,
+            ListInstanceTemplatesHttpRequest, InstanceTemplateList,
             ListInstanceTemplatesPagedResponse>
         listInstanceTemplatesSettings() {
       return getStubSettingsBuilder().listInstanceTemplatesSettings();

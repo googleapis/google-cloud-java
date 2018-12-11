@@ -72,8 +72,7 @@ public class RegionInstanceGroupSettings extends ClientSettings<RegionInstanceGr
 
   /** Returns the object with the settings used for calls to listRegionInstanceGroups. */
   public PagedCallSettings<
-          ListRegionInstanceGroupsHttpRequest,
-          RegionInstanceGroupList,
+          ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList,
           ListRegionInstanceGroupsPagedResponse>
       listRegionInstanceGroupsSettings() {
     return ((RegionInstanceGroupStubSettings) getStubSettings()).listRegionInstanceGroupsSettings();
@@ -81,8 +80,7 @@ public class RegionInstanceGroupSettings extends ClientSettings<RegionInstanceGr
 
   /** Returns the object with the settings used for calls to listInstancesRegionInstanceGroups. */
   public PagedCallSettings<
-          ListInstancesRegionInstanceGroupsHttpRequest,
-          RegionInstanceGroupsListInstances,
+          ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
           ListInstancesRegionInstanceGroupsPagedResponse>
       listInstancesRegionInstanceGroupsSettings() {
     return ((RegionInstanceGroupStubSettings) getStubSettings())
@@ -206,8 +204,7 @@ public class RegionInstanceGroupSettings extends ClientSettings<RegionInstanceGr
 
     /** Returns the builder for the settings used for calls to listRegionInstanceGroups. */
     public PagedCallSettings.Builder<
-            ListRegionInstanceGroupsHttpRequest,
-            RegionInstanceGroupList,
+            ListRegionInstanceGroupsHttpRequest, RegionInstanceGroupList,
             ListRegionInstanceGroupsPagedResponse>
         listRegionInstanceGroupsSettings() {
       return getStubSettingsBuilder().listRegionInstanceGroupsSettings();
@@ -215,8 +212,7 @@ public class RegionInstanceGroupSettings extends ClientSettings<RegionInstanceGr
 
     /** Returns the builder for the settings used for calls to listInstancesRegionInstanceGroups. */
     public PagedCallSettings.Builder<
-            ListInstancesRegionInstanceGroupsHttpRequest,
-            RegionInstanceGroupsListInstances,
+            ListInstancesRegionInstanceGroupsHttpRequest, RegionInstanceGroupsListInstances,
             ListInstancesRegionInstanceGroupsPagedResponse>
         listInstancesRegionInstanceGroupsSettings() {
       return getStubSettingsBuilder().listInstancesRegionInstanceGroupsSettings();

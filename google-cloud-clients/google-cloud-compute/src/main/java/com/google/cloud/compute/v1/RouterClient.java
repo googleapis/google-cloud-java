@@ -55,13 +55,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li>A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li>A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -1364,11 +1364,8 @@ public class RouterClient implements BackgroundResource {
 
   public static class AggregatedListRoutersPagedResponse
       extends AbstractPagedListResponse<
-          AggregatedListRoutersHttpRequest,
-          RouterAggregatedList,
-          RoutersScopedList,
-          AggregatedListRoutersPage,
-          AggregatedListRoutersFixedSizeCollection> {
+          AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList,
+          AggregatedListRoutersPage, AggregatedListRoutersFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListRoutersPagedResponse> createAsync(
         PageContext<AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList>
@@ -1393,9 +1390,7 @@ public class RouterClient implements BackgroundResource {
 
   public static class AggregatedListRoutersPage
       extends AbstractPage<
-          AggregatedListRoutersHttpRequest,
-          RouterAggregatedList,
-          RoutersScopedList,
+          AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList,
           AggregatedListRoutersPage> {
 
     private AggregatedListRoutersPage(
@@ -1428,11 +1423,8 @@ public class RouterClient implements BackgroundResource {
 
   public static class AggregatedListRoutersFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AggregatedListRoutersHttpRequest,
-          RouterAggregatedList,
-          RoutersScopedList,
-          AggregatedListRoutersPage,
-          AggregatedListRoutersFixedSizeCollection> {
+          AggregatedListRoutersHttpRequest, RouterAggregatedList, RoutersScopedList,
+          AggregatedListRoutersPage, AggregatedListRoutersFixedSizeCollection> {
 
     private AggregatedListRoutersFixedSizeCollection(
         List<AggregatedListRoutersPage> pages, int collectionSize) {
@@ -1452,16 +1444,12 @@ public class RouterClient implements BackgroundResource {
 
   public static class GetNatMappingInfoRoutersPagedResponse
       extends AbstractPagedListResponse<
-          GetNatMappingInfoRoutersHttpRequest,
-          VmEndpointNatMappingsList,
-          VmEndpointNatMappings,
-          GetNatMappingInfoRoutersPage,
-          GetNatMappingInfoRoutersFixedSizeCollection> {
+          GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList, VmEndpointNatMappings,
+          GetNatMappingInfoRoutersPage, GetNatMappingInfoRoutersFixedSizeCollection> {
 
     public static ApiFuture<GetNatMappingInfoRoutersPagedResponse> createAsync(
         PageContext<
-                GetNatMappingInfoRoutersHttpRequest,
-                VmEndpointNatMappingsList,
+                GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList,
                 VmEndpointNatMappings>
             context,
         ApiFuture<VmEndpointNatMappingsList> futureResponse) {
@@ -1484,15 +1472,12 @@ public class RouterClient implements BackgroundResource {
 
   public static class GetNatMappingInfoRoutersPage
       extends AbstractPage<
-          GetNatMappingInfoRoutersHttpRequest,
-          VmEndpointNatMappingsList,
-          VmEndpointNatMappings,
+          GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList, VmEndpointNatMappings,
           GetNatMappingInfoRoutersPage> {
 
     private GetNatMappingInfoRoutersPage(
         PageContext<
-                GetNatMappingInfoRoutersHttpRequest,
-                VmEndpointNatMappingsList,
+                GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList,
                 VmEndpointNatMappings>
             context,
         VmEndpointNatMappingsList response) {
@@ -1506,8 +1491,7 @@ public class RouterClient implements BackgroundResource {
     @Override
     protected GetNatMappingInfoRoutersPage createPage(
         PageContext<
-                GetNatMappingInfoRoutersHttpRequest,
-                VmEndpointNatMappingsList,
+                GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList,
                 VmEndpointNatMappings>
             context,
         VmEndpointNatMappingsList response) {
@@ -1517,8 +1501,7 @@ public class RouterClient implements BackgroundResource {
     @Override
     public ApiFuture<GetNatMappingInfoRoutersPage> createPageAsync(
         PageContext<
-                GetNatMappingInfoRoutersHttpRequest,
-                VmEndpointNatMappingsList,
+                GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList,
                 VmEndpointNatMappings>
             context,
         ApiFuture<VmEndpointNatMappingsList> futureResponse) {
@@ -1528,11 +1511,8 @@ public class RouterClient implements BackgroundResource {
 
   public static class GetNatMappingInfoRoutersFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          GetNatMappingInfoRoutersHttpRequest,
-          VmEndpointNatMappingsList,
-          VmEndpointNatMappings,
-          GetNatMappingInfoRoutersPage,
-          GetNatMappingInfoRoutersFixedSizeCollection> {
+          GetNatMappingInfoRoutersHttpRequest, VmEndpointNatMappingsList, VmEndpointNatMappings,
+          GetNatMappingInfoRoutersPage, GetNatMappingInfoRoutersFixedSizeCollection> {
 
     private GetNatMappingInfoRoutersFixedSizeCollection(
         List<GetNatMappingInfoRoutersPage> pages, int collectionSize) {
@@ -1552,10 +1532,7 @@ public class RouterClient implements BackgroundResource {
 
   public static class ListRoutersPagedResponse
       extends AbstractPagedListResponse<
-          ListRoutersHttpRequest,
-          RouterList,
-          Router,
-          ListRoutersPage,
+          ListRoutersHttpRequest, RouterList, Router, ListRoutersPage,
           ListRoutersFixedSizeCollection> {
 
     public static ApiFuture<ListRoutersPagedResponse> createAsync(
@@ -1606,10 +1583,7 @@ public class RouterClient implements BackgroundResource {
 
   public static class ListRoutersFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListRoutersHttpRequest,
-          RouterList,
-          Router,
-          ListRoutersPage,
+          ListRoutersHttpRequest, RouterList, Router, ListRoutersPage,
           ListRoutersFixedSizeCollection> {
 
     private ListRoutersFixedSizeCollection(List<ListRoutersPage> pages, int collectionSize) {

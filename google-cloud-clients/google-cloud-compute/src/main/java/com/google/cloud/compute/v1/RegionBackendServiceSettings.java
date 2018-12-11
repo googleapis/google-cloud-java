@@ -92,8 +92,7 @@ public class RegionBackendServiceSettings extends ClientSettings<RegionBackendSe
 
   /** Returns the object with the settings used for calls to listRegionBackendServices. */
   public PagedCallSettings<
-          ListRegionBackendServicesHttpRequest,
-          BackendServiceList,
+          ListRegionBackendServicesHttpRequest, BackendServiceList,
           ListRegionBackendServicesPagedResponse>
       listRegionBackendServicesSettings() {
     return ((RegionBackendServiceStubSettings) getStubSettings())
@@ -244,8 +243,7 @@ public class RegionBackendServiceSettings extends ClientSettings<RegionBackendSe
 
     /** Returns the builder for the settings used for calls to listRegionBackendServices. */
     public PagedCallSettings.Builder<
-            ListRegionBackendServicesHttpRequest,
-            BackendServiceList,
+            ListRegionBackendServicesHttpRequest, BackendServiceList,
             ListRegionBackendServicesPagedResponse>
         listRegionBackendServicesSettings() {
       return getStubSettingsBuilder().listRegionBackendServicesSettings();
