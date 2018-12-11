@@ -17,9 +17,12 @@ package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.InstanceTemplateClient.ListInstanceTemplatesPagedResponse;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceTemplateStub.deleteInstanceTemplateMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonInstanceTemplateStub.getIamPolicyInstanceTemplateMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceTemplateStub.getInstanceTemplateMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceTemplateStub.insertInstanceTemplateMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceTemplateStub.listInstanceTemplatesMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonInstanceTemplateStub.setIamPolicyInstanceTemplateMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonInstanceTemplateStub.testIamPermissionsInstanceTemplateMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
@@ -51,8 +54,11 @@ public class InstanceTemplateClientTest {
           Lists.<ApiMethodDescriptor>newArrayList(
               deleteInstanceTemplateMethodDescriptor,
               getInstanceTemplateMethodDescriptor,
+              getIamPolicyInstanceTemplateMethodDescriptor,
               insertInstanceTemplateMethodDescriptor,
-              listInstanceTemplatesMethodDescriptor));
+              listInstanceTemplatesMethodDescriptor,
+              setIamPolicyInstanceTemplateMethodDescriptor,
+              testIamPermissionsInstanceTemplateMethodDescriptor));
   private static final MockHttpService mockService =
       new MockHttpService(METHOD_DESCRIPTORS, InstanceTemplateStubSettings.getDefaultEndpoint());
 
@@ -236,6 +242,56 @@ public class InstanceTemplateClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getIamPolicyInstanceTemplateTest() {
+    Boolean iamOwned = false;
+    String etag = "etag3123477";
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setIamOwned(iamOwned).setEtag(etag).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalInstanceTemplateResourceName resource =
+        ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+
+    Policy actualResponse = client.getIamPolicyInstanceTemplate(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicyInstanceTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalInstanceTemplateResourceName resource =
+          ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+
+      client.getIamPolicyInstanceTemplate(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void insertInstanceTemplateTest() {
     String httpErrorMessage = "httpErrorMessage1276263769";
     String targetId = "targetId-815576439";
@@ -378,6 +434,112 @@ public class InstanceTemplateClientTest {
       ProjectName project = ProjectName.of("[PROJECT]");
 
       client.listInstanceTemplates(project);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyInstanceTemplateTest() {
+    Boolean iamOwned = false;
+    String etag = "etag3123477";
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setIamOwned(iamOwned).setEtag(etag).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalInstanceTemplateResourceName resource =
+        ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+    GlobalSetPolicyRequest globalSetPolicyRequestResource =
+        GlobalSetPolicyRequest.newBuilder().build();
+
+    Policy actualResponse =
+        client.setIamPolicyInstanceTemplate(resource, globalSetPolicyRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyInstanceTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalInstanceTemplateResourceName resource =
+          ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+      GlobalSetPolicyRequest globalSetPolicyRequestResource =
+          GlobalSetPolicyRequest.newBuilder().build();
+
+      client.setIamPolicyInstanceTemplate(resource, globalSetPolicyRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsInstanceTemplateTest() {
+    TestPermissionsResponse expectedResponse = TestPermissionsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalInstanceTemplateResourceName resource =
+        ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+    TestPermissionsRequest testPermissionsRequestResource =
+        TestPermissionsRequest.newBuilder().build();
+
+    TestPermissionsResponse actualResponse =
+        client.testIamPermissionsInstanceTemplate(resource, testPermissionsRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsInstanceTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalInstanceTemplateResourceName resource =
+          ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+      TestPermissionsRequest testPermissionsRequestResource =
+          TestPermissionsRequest.newBuilder().build();
+
+      client.testIamPermissionsInstanceTemplate(resource, testPermissionsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -24,6 +24,7 @@ import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.attachDiskIn
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.deleteAccessConfigInstanceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.deleteInstanceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.detachDiskInstanceMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.getIamPolicyInstanceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.getInstanceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.getSerialPortOutputInstanceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.insertInstanceMethodDescriptor;
@@ -32,6 +33,7 @@ import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.listReferrer
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.resetInstanceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.setDeletionProtectionInstanceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.setDiskAutoDeleteInstanceMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.setIamPolicyInstanceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.setLabelsInstanceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.setMachineResourcesInstanceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.setMachineTypeInstanceMethodDescriptor;
@@ -44,6 +46,7 @@ import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.simulateMain
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.startInstanceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.startWithEncryptionKeyInstanceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.stopInstanceMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.testIamPermissionsInstanceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.updateAccessConfigInstanceMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInstanceStub.updateNetworkInterfaceInstanceMethodDescriptor;
 
@@ -85,6 +88,7 @@ public class InstanceClientTest {
               deleteAccessConfigInstanceMethodDescriptor,
               detachDiskInstanceMethodDescriptor,
               getInstanceMethodDescriptor,
+              getIamPolicyInstanceMethodDescriptor,
               getSerialPortOutputInstanceMethodDescriptor,
               insertInstanceMethodDescriptor,
               listInstancesMethodDescriptor,
@@ -92,6 +96,7 @@ public class InstanceClientTest {
               resetInstanceMethodDescriptor,
               setDeletionProtectionInstanceMethodDescriptor,
               setDiskAutoDeleteInstanceMethodDescriptor,
+              setIamPolicyInstanceMethodDescriptor,
               setLabelsInstanceMethodDescriptor,
               setMachineResourcesInstanceMethodDescriptor,
               setMachineTypeInstanceMethodDescriptor,
@@ -104,6 +109,7 @@ public class InstanceClientTest {
               startInstanceMethodDescriptor,
               startWithEncryptionKeyInstanceMethodDescriptor,
               stopInstanceMethodDescriptor,
+              testIamPermissionsInstanceMethodDescriptor,
               updateAccessConfigInstanceMethodDescriptor,
               updateNetworkInterfaceInstanceMethodDescriptor));
   private static final MockHttpService mockService =
@@ -748,6 +754,56 @@ public class InstanceClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getIamPolicyInstanceTest() {
+    Boolean iamOwned = false;
+    String etag = "etag3123477";
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setIamOwned(iamOwned).setEtag(etag).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectZoneInstanceResourceName resource =
+        ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+
+    Policy actualResponse = client.getIamPolicyInstance(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicyInstanceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectZoneInstanceResourceName resource =
+          ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+
+      client.getIamPolicyInstance(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void getSerialPortOutputInstanceTest() {
     String next = "next3377907";
     String contents = "contents-567321830";
@@ -1290,6 +1346,58 @@ public class InstanceClientTest {
       String deviceName = "deviceName-1543071020";
 
       client.setDiskAutoDeleteInstance(instance, autoDelete, deviceName);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyInstanceTest() {
+    Boolean iamOwned = false;
+    String etag = "etag3123477";
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setIamOwned(iamOwned).setEtag(etag).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectZoneInstanceResourceName resource =
+        ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+    ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicyInstance(resource, zoneSetPolicyRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyInstanceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectZoneInstanceResourceName resource =
+          ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+      ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
+
+      client.setIamPolicyInstance(resource, zoneSetPolicyRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception
@@ -2408,6 +2516,57 @@ public class InstanceClientTest {
           ProjectZoneInstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]");
 
       client.stopInstance(instance);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsInstanceTest() {
+    TestPermissionsResponse expectedResponse = TestPermissionsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectZoneInstanceResourceName resource =
+        ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+    TestPermissionsRequest testPermissionsRequestResource =
+        TestPermissionsRequest.newBuilder().build();
+
+    TestPermissionsResponse actualResponse =
+        client.testIamPermissionsInstance(resource, testPermissionsRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsInstanceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectZoneInstanceResourceName resource =
+          ProjectZoneInstanceResourceName.of("[PROJECT]", "[ZONE]", "[RESOURCE]");
+      TestPermissionsRequest testPermissionsRequestResource =
+          TestPermissionsRequest.newBuilder().build();
+
+      client.testIamPermissionsInstance(resource, testPermissionsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

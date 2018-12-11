@@ -44,17 +44,22 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListSubnetworksHttpRequest;
 import com.google.cloud.compute.v1.DeleteSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.ExpandIpCidrRangeSubnetworkHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicySubnetworkHttpRequest;
 import com.google.cloud.compute.v1.GetSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.InsertSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.ListSubnetworksHttpRequest;
 import com.google.cloud.compute.v1.ListUsableSubnetworksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchSubnetworkHttpRequest;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicySubnetworkHttpRequest;
 import com.google.cloud.compute.v1.SetPrivateIpGoogleAccessSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.Subnetwork;
 import com.google.cloud.compute.v1.SubnetworkAggregatedList;
 import com.google.cloud.compute.v1.SubnetworkList;
 import com.google.cloud.compute.v1.SubnetworksScopedList;
+import com.google.cloud.compute.v1.TestIamPermissionsSubnetworkHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UsableSubnetwork;
 import com.google.cloud.compute.v1.UsableSubnetworksAggregatedList;
 import com.google.common.collect.ImmutableList;
@@ -116,6 +121,8 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
   private final UnaryCallSettings<ExpandIpCidrRangeSubnetworkHttpRequest, Operation>
       expandIpCidrRangeSubnetworkSettings;
   private final UnaryCallSettings<GetSubnetworkHttpRequest, Subnetwork> getSubnetworkSettings;
+  private final UnaryCallSettings<GetIamPolicySubnetworkHttpRequest, Policy>
+      getIamPolicySubnetworkSettings;
   private final UnaryCallSettings<InsertSubnetworkHttpRequest, Operation> insertSubnetworkSettings;
   private final PagedCallSettings<
           ListSubnetworksHttpRequest, SubnetworkList, ListSubnetworksPagedResponse>
@@ -126,8 +133,12 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
           ListUsableSubnetworksPagedResponse>
       listUsableSubnetworksSettings;
   private final UnaryCallSettings<PatchSubnetworkHttpRequest, Operation> patchSubnetworkSettings;
+  private final UnaryCallSettings<SetIamPolicySubnetworkHttpRequest, Policy>
+      setIamPolicySubnetworkSettings;
   private final UnaryCallSettings<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation>
       setPrivateIpGoogleAccessSubnetworkSettings;
+  private final UnaryCallSettings<TestIamPermissionsSubnetworkHttpRequest, TestPermissionsResponse>
+      testIamPermissionsSubnetworkSettings;
 
   /** Returns the object with the settings used for calls to aggregatedListSubnetworks. */
   public PagedCallSettings<
@@ -152,6 +163,12 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
   /** Returns the object with the settings used for calls to getSubnetwork. */
   public UnaryCallSettings<GetSubnetworkHttpRequest, Subnetwork> getSubnetworkSettings() {
     return getSubnetworkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicySubnetwork. */
+  public UnaryCallSettings<GetIamPolicySubnetworkHttpRequest, Policy>
+      getIamPolicySubnetworkSettings() {
+    return getIamPolicySubnetworkSettings;
   }
 
   /** Returns the object with the settings used for calls to insertSubnetwork. */
@@ -179,10 +196,22 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
     return patchSubnetworkSettings;
   }
 
+  /** Returns the object with the settings used for calls to setIamPolicySubnetwork. */
+  public UnaryCallSettings<SetIamPolicySubnetworkHttpRequest, Policy>
+      setIamPolicySubnetworkSettings() {
+    return setIamPolicySubnetworkSettings;
+  }
+
   /** Returns the object with the settings used for calls to setPrivateIpGoogleAccessSubnetwork. */
   public UnaryCallSettings<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation>
       setPrivateIpGoogleAccessSubnetworkSettings() {
     return setPrivateIpGoogleAccessSubnetworkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissionsSubnetwork. */
+  public UnaryCallSettings<TestIamPermissionsSubnetworkHttpRequest, TestPermissionsResponse>
+      testIamPermissionsSubnetworkSettings() {
+    return testIamPermissionsSubnetworkSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -265,12 +294,16 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
     expandIpCidrRangeSubnetworkSettings =
         settingsBuilder.expandIpCidrRangeSubnetworkSettings().build();
     getSubnetworkSettings = settingsBuilder.getSubnetworkSettings().build();
+    getIamPolicySubnetworkSettings = settingsBuilder.getIamPolicySubnetworkSettings().build();
     insertSubnetworkSettings = settingsBuilder.insertSubnetworkSettings().build();
     listSubnetworksSettings = settingsBuilder.listSubnetworksSettings().build();
     listUsableSubnetworksSettings = settingsBuilder.listUsableSubnetworksSettings().build();
     patchSubnetworkSettings = settingsBuilder.patchSubnetworkSettings().build();
+    setIamPolicySubnetworkSettings = settingsBuilder.setIamPolicySubnetworkSettings().build();
     setPrivateIpGoogleAccessSubnetworkSettings =
         settingsBuilder.setPrivateIpGoogleAccessSubnetworkSettings().build();
+    testIamPermissionsSubnetworkSettings =
+        settingsBuilder.testIamPermissionsSubnetworkSettings().build();
   }
 
   private static final PagedListDescriptor<
@@ -492,6 +525,8 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
         expandIpCidrRangeSubnetworkSettings;
     private final UnaryCallSettings.Builder<GetSubnetworkHttpRequest, Subnetwork>
         getSubnetworkSettings;
+    private final UnaryCallSettings.Builder<GetIamPolicySubnetworkHttpRequest, Policy>
+        getIamPolicySubnetworkSettings;
     private final UnaryCallSettings.Builder<InsertSubnetworkHttpRequest, Operation>
         insertSubnetworkSettings;
     private final PagedCallSettings.Builder<
@@ -504,9 +539,14 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
         listUsableSubnetworksSettings;
     private final UnaryCallSettings.Builder<PatchSubnetworkHttpRequest, Operation>
         patchSubnetworkSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicySubnetworkHttpRequest, Policy>
+        setIamPolicySubnetworkSettings;
     private final UnaryCallSettings.Builder<
             SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation>
         setPrivateIpGoogleAccessSubnetworkSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsSubnetworkHttpRequest, TestPermissionsResponse>
+        testIamPermissionsSubnetworkSettings;
 
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
@@ -558,6 +598,8 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
 
       getSubnetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getIamPolicySubnetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       insertSubnetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       listSubnetworksSettings = PagedCallSettings.newBuilder(LIST_SUBNETWORKS_PAGE_STR_FACT);
@@ -567,7 +609,11 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
 
       patchSubnetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      setIamPolicySubnetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       setPrivateIpGoogleAccessSubnetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      testIamPermissionsSubnetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -575,11 +621,14 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
               deleteSubnetworkSettings,
               expandIpCidrRangeSubnetworkSettings,
               getSubnetworkSettings,
+              getIamPolicySubnetworkSettings,
               insertSubnetworkSettings,
               listSubnetworksSettings,
               listUsableSubnetworksSettings,
               patchSubnetworkSettings,
-              setPrivateIpGoogleAccessSubnetworkSettings);
+              setIamPolicySubnetworkSettings,
+              setPrivateIpGoogleAccessSubnetworkSettings,
+              testIamPermissionsSubnetworkSettings);
 
       initDefaults(this);
     }
@@ -616,6 +665,11 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .getIamPolicySubnetworkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .insertSubnetworkSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -636,7 +690,17 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .setIamPolicySubnetworkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .setPrivateIpGoogleAccessSubnetworkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .testIamPermissionsSubnetworkSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -651,12 +715,16 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
       expandIpCidrRangeSubnetworkSettings =
           settings.expandIpCidrRangeSubnetworkSettings.toBuilder();
       getSubnetworkSettings = settings.getSubnetworkSettings.toBuilder();
+      getIamPolicySubnetworkSettings = settings.getIamPolicySubnetworkSettings.toBuilder();
       insertSubnetworkSettings = settings.insertSubnetworkSettings.toBuilder();
       listSubnetworksSettings = settings.listSubnetworksSettings.toBuilder();
       listUsableSubnetworksSettings = settings.listUsableSubnetworksSettings.toBuilder();
       patchSubnetworkSettings = settings.patchSubnetworkSettings.toBuilder();
+      setIamPolicySubnetworkSettings = settings.setIamPolicySubnetworkSettings.toBuilder();
       setPrivateIpGoogleAccessSubnetworkSettings =
           settings.setPrivateIpGoogleAccessSubnetworkSettings.toBuilder();
+      testIamPermissionsSubnetworkSettings =
+          settings.testIamPermissionsSubnetworkSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -664,11 +732,14 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
               deleteSubnetworkSettings,
               expandIpCidrRangeSubnetworkSettings,
               getSubnetworkSettings,
+              getIamPolicySubnetworkSettings,
               insertSubnetworkSettings,
               listSubnetworksSettings,
               listUsableSubnetworksSettings,
               patchSubnetworkSettings,
-              setPrivateIpGoogleAccessSubnetworkSettings);
+              setIamPolicySubnetworkSettings,
+              setPrivateIpGoogleAccessSubnetworkSettings,
+              testIamPermissionsSubnetworkSettings);
     }
 
     // NEXT_MAJOR_VER: remove 'throws Exception'
@@ -713,6 +784,12 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
       return getSubnetworkSettings;
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicySubnetwork. */
+    public UnaryCallSettings.Builder<GetIamPolicySubnetworkHttpRequest, Policy>
+        getIamPolicySubnetworkSettings() {
+      return getIamPolicySubnetworkSettings;
+    }
+
     /** Returns the builder for the settings used for calls to insertSubnetwork. */
     public UnaryCallSettings.Builder<InsertSubnetworkHttpRequest, Operation>
         insertSubnetworkSettings() {
@@ -741,12 +818,25 @@ public class SubnetworkStubSettings extends StubSettings<SubnetworkStubSettings>
       return patchSubnetworkSettings;
     }
 
+    /** Returns the builder for the settings used for calls to setIamPolicySubnetwork. */
+    public UnaryCallSettings.Builder<SetIamPolicySubnetworkHttpRequest, Policy>
+        setIamPolicySubnetworkSettings() {
+      return setIamPolicySubnetworkSettings;
+    }
+
     /**
      * Returns the builder for the settings used for calls to setPrivateIpGoogleAccessSubnetwork.
      */
     public UnaryCallSettings.Builder<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation>
         setPrivateIpGoogleAccessSubnetworkSettings() {
       return setPrivateIpGoogleAccessSubnetworkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissionsSubnetwork. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsSubnetworkHttpRequest, TestPermissionsResponse>
+        testIamPermissionsSubnetworkSettings() {
+      return testIamPermissionsSubnetworkSettings;
     }
 
     @Override

@@ -21,12 +21,15 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.DeleteLicenseHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyLicenseHttpRequest;
 import com.google.cloud.compute.v1.GetLicenseHttpRequest;
 import com.google.cloud.compute.v1.InsertLicenseHttpRequest;
 import com.google.cloud.compute.v1.License;
 import com.google.cloud.compute.v1.LicensesListResponse;
 import com.google.cloud.compute.v1.ListLicensesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicyLicenseHttpRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsLicenseHttpRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
@@ -52,6 +55,11 @@ public abstract class LicenseStub implements BackgroundResource {
   }
 
   @BetaApi
+  public UnaryCallable<GetIamPolicyLicenseHttpRequest, Policy> getIamPolicyLicenseCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyLicenseCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<InsertLicenseHttpRequest, Operation> insertLicenseCallable() {
     throw new UnsupportedOperationException("Not implemented: insertLicenseCallable()");
   }
@@ -65,6 +73,11 @@ public abstract class LicenseStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<ListLicensesHttpRequest, LicensesListResponse> listLicensesCallable() {
     throw new UnsupportedOperationException("Not implemented: listLicensesCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<SetIamPolicyLicenseHttpRequest, Policy> setIamPolicyLicenseCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyLicenseCallable()");
   }
 
   @BetaApi

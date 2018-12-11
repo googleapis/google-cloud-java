@@ -73,6 +73,13 @@ public class InterconnectSettings extends ClientSettings<InterconnectSettings> {
     return ((InterconnectStubSettings) getStubSettings()).getInterconnectSettings();
   }
 
+  /** Returns the object with the settings used for calls to getDiagnosticsInterconnect. */
+  public UnaryCallSettings<
+          GetDiagnosticsInterconnectHttpRequest, InterconnectsGetDiagnosticsResponse>
+      getDiagnosticsInterconnectSettings() {
+    return ((InterconnectStubSettings) getStubSettings()).getDiagnosticsInterconnectSettings();
+  }
+
   /** Returns the object with the settings used for calls to insertInterconnect. */
   public UnaryCallSettings<InsertInterconnectHttpRequest, Operation> insertInterconnectSettings() {
     return ((InterconnectStubSettings) getStubSettings()).insertInterconnectSettings();
@@ -202,6 +209,13 @@ public class InterconnectSettings extends ClientSettings<InterconnectSettings> {
     public UnaryCallSettings.Builder<GetInterconnectHttpRequest, Interconnect>
         getInterconnectSettings() {
       return getStubSettingsBuilder().getInterconnectSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDiagnosticsInterconnect. */
+    public UnaryCallSettings.Builder<
+            GetDiagnosticsInterconnectHttpRequest, InterconnectsGetDiagnosticsResponse>
+        getDiagnosticsInterconnectSettings() {
+      return getStubSettingsBuilder().getDiagnosticsInterconnectSettings();
     }
 
     /** Returns the builder for the settings used for calls to insertInterconnect. */

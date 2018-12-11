@@ -17,6 +17,7 @@ package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.InterconnectClient.ListInterconnectsPagedResponse;
 import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectStub.deleteInterconnectMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectStub.getDiagnosticsInterconnectMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectStub.getInterconnectMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectStub.insertInterconnectMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonInterconnectStub.listInterconnectsMethodDescriptor;
@@ -53,6 +54,7 @@ public class InterconnectClientTest {
           Lists.<ApiMethodDescriptor>newArrayList(
               deleteInterconnectMethodDescriptor,
               getInterconnectMethodDescriptor,
+              getDiagnosticsInterconnectMethodDescriptor,
               insertInterconnectMethodDescriptor,
               listInterconnectsMethodDescriptor,
               patchInterconnectMethodDescriptor));
@@ -255,6 +257,54 @@ public class InterconnectClientTest {
           ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
 
       client.getInterconnect(interconnect);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getDiagnosticsInterconnectTest() {
+    InterconnectsGetDiagnosticsResponse expectedResponse =
+        InterconnectsGetDiagnosticsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalInterconnectName interconnect =
+        ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+
+    InterconnectsGetDiagnosticsResponse actualResponse =
+        client.getDiagnosticsInterconnect(interconnect);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getDiagnosticsInterconnectExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalInterconnectName interconnect =
+          ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+
+      client.getDiagnosticsInterconnect(interconnect);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

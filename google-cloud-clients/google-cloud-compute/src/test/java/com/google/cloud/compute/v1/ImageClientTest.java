@@ -19,10 +19,13 @@ import static com.google.cloud.compute.v1.ImageClient.ListImagesPagedResponse;
 import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.deleteImageMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.deprecateImageMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.getFromFamilyImageMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.getIamPolicyImageMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.getImageMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.insertImageMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.listImagesMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.setIamPolicyImageMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.setLabelsImageMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonImageStub.testIamPermissionsImageMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
@@ -56,9 +59,12 @@ public class ImageClientTest {
               deprecateImageMethodDescriptor,
               getImageMethodDescriptor,
               getFromFamilyImageMethodDescriptor,
+              getIamPolicyImageMethodDescriptor,
               insertImageMethodDescriptor,
               listImagesMethodDescriptor,
-              setLabelsImageMethodDescriptor));
+              setIamPolicyImageMethodDescriptor,
+              setLabelsImageMethodDescriptor,
+              testIamPermissionsImageMethodDescriptor));
   private static final MockHttpService mockService =
       new MockHttpService(METHOD_DESCRIPTORS, ImageStubSettings.getDefaultEndpoint());
 
@@ -433,6 +439,56 @@ public class ImageClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getIamPolicyImageTest() {
+    Boolean iamOwned = false;
+    String etag = "etag3123477";
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setIamOwned(iamOwned).setEtag(etag).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalImageResourceName resource =
+        ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+
+    Policy actualResponse = client.getIamPolicyImage(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicyImageExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalImageResourceName resource =
+          ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+
+      client.getIamPolicyImage(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void insertImageTest() {
     String httpErrorMessage = "httpErrorMessage1276263769";
     String targetId = "targetId-815576439";
@@ -585,6 +641,60 @@ public class ImageClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void setIamPolicyImageTest() {
+    Boolean iamOwned = false;
+    String etag = "etag3123477";
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setIamOwned(iamOwned).setEtag(etag).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalImageResourceName resource =
+        ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+    GlobalSetPolicyRequest globalSetPolicyRequestResource =
+        GlobalSetPolicyRequest.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicyImage(resource, globalSetPolicyRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyImageExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalImageResourceName resource =
+          ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+      GlobalSetPolicyRequest globalSetPolicyRequestResource =
+          GlobalSetPolicyRequest.newBuilder().build();
+
+      client.setIamPolicyImage(resource, globalSetPolicyRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void setLabelsImageTest() {
     String httpErrorMessage = "httpErrorMessage1276263769";
     String targetId = "targetId-815576439";
@@ -671,6 +781,57 @@ public class ImageClientTest {
           GlobalSetLabelsRequest.newBuilder().build();
 
       client.setLabelsImage(resource, globalSetLabelsRequestResource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsImageTest() {
+    TestPermissionsResponse expectedResponse = TestPermissionsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalImageResourceName resource =
+        ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+    TestPermissionsRequest testPermissionsRequestResource =
+        TestPermissionsRequest.newBuilder().build();
+
+    TestPermissionsResponse actualResponse =
+        client.testIamPermissionsImage(resource, testPermissionsRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsImageExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalImageResourceName resource =
+          ProjectGlobalImageResourceName.of("[PROJECT]", "[RESOURCE]");
+      TestPermissionsRequest testPermissionsRequestResource =
+          TestPermissionsRequest.newBuilder().build();
+
+      client.testIamPermissionsImage(resource, testPermissionsRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -1,11 +1,11 @@
 {
-  "updateTime": "2018-12-08T08:36:32.837586Z",
+  "updateTime": "2018-12-11T08:36:44.801706Z",
   "sources": [
     {
       "git": {
         "name": "discovery-artifact-manager",
         "remote": "https://github.com/googleapis/discovery-artifact-manager.git",
-        "sha": "e91a43b559cdf54e5148f6e558a1b182917f1cff"
+        "sha": "0c2b7d9787d601bce81e5f8f2d1ad320d67c3792"
       }
     },
     {

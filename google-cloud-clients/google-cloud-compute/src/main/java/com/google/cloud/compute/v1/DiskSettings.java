@@ -86,6 +86,11 @@ public class DiskSettings extends ClientSettings<DiskSettings> {
     return ((DiskStubSettings) getStubSettings()).getDiskSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicyDisk. */
+  public UnaryCallSettings<GetIamPolicyDiskHttpRequest, Policy> getIamPolicyDiskSettings() {
+    return ((DiskStubSettings) getStubSettings()).getIamPolicyDiskSettings();
+  }
+
   /** Returns the object with the settings used for calls to insertDisk. */
   public UnaryCallSettings<InsertDiskHttpRequest, Operation> insertDiskSettings() {
     return ((DiskStubSettings) getStubSettings()).insertDiskSettings();
@@ -102,9 +107,20 @@ public class DiskSettings extends ClientSettings<DiskSettings> {
     return ((DiskStubSettings) getStubSettings()).resizeDiskSettings();
   }
 
+  /** Returns the object with the settings used for calls to setIamPolicyDisk. */
+  public UnaryCallSettings<SetIamPolicyDiskHttpRequest, Policy> setIamPolicyDiskSettings() {
+    return ((DiskStubSettings) getStubSettings()).setIamPolicyDiskSettings();
+  }
+
   /** Returns the object with the settings used for calls to setLabelsDisk. */
   public UnaryCallSettings<SetLabelsDiskHttpRequest, Operation> setLabelsDiskSettings() {
     return ((DiskStubSettings) getStubSettings()).setLabelsDiskSettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissionsDisk. */
+  public UnaryCallSettings<TestIamPermissionsDiskHttpRequest, TestPermissionsResponse>
+      testIamPermissionsDiskSettings() {
+    return ((DiskStubSettings) getStubSettings()).testIamPermissionsDiskSettings();
   }
 
   public static final DiskSettings create(DiskStubSettings stub) throws IOException {
@@ -231,6 +247,12 @@ public class DiskSettings extends ClientSettings<DiskSettings> {
       return getStubSettingsBuilder().getDiskSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicyDisk. */
+    public UnaryCallSettings.Builder<GetIamPolicyDiskHttpRequest, Policy>
+        getIamPolicyDiskSettings() {
+      return getStubSettingsBuilder().getIamPolicyDiskSettings();
+    }
+
     /** Returns the builder for the settings used for calls to insertDisk. */
     public UnaryCallSettings.Builder<InsertDiskHttpRequest, Operation> insertDiskSettings() {
       return getStubSettingsBuilder().insertDiskSettings();
@@ -247,9 +269,21 @@ public class DiskSettings extends ClientSettings<DiskSettings> {
       return getStubSettingsBuilder().resizeDiskSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setIamPolicyDisk. */
+    public UnaryCallSettings.Builder<SetIamPolicyDiskHttpRequest, Policy>
+        setIamPolicyDiskSettings() {
+      return getStubSettingsBuilder().setIamPolicyDiskSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setLabelsDisk. */
     public UnaryCallSettings.Builder<SetLabelsDiskHttpRequest, Operation> setLabelsDiskSettings() {
       return getStubSettingsBuilder().setLabelsDiskSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissionsDisk. */
+    public UnaryCallSettings.Builder<TestIamPermissionsDiskHttpRequest, TestPermissionsResponse>
+        testIamPermissionsDiskSettings() {
+      return getStubSettingsBuilder().testIamPermissionsDiskSettings();
     }
 
     @Override
