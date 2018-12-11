@@ -191,10 +191,11 @@ public final class AutoMlProto {
           + "aluationsRequest\0329.google.cloud.automl.v"
           + "1beta1.ListModelEvaluationsResponse\"J\202\323\344"
           + "\223\002D\022B/v1beta1/{parent=projects/*/locatio"
-          + "ns/*/models/*}/modelEvaluationsBs\n\037com.g"
-          + "oogle.cloud.automl.v1beta1B\013AutoMlProtoP"
-          + "\001ZAgoogle.golang.org/genproto/googleapis"
-          + "/cloud/automl/v1beta1;automlb\006proto3"
+          + "ns/*/models/*}/modelEvaluationsB\221\001\n\037com."
+          + "google.cloud.automl.v1beta1B\013AutoMlProto"
+          + "P\001ZAgoogle.golang.org/genproto/googleapi"
+          + "s/cloud/automl/v1beta1;automl\312\002\033Google\\C"
+          + "loud\\AutoMl\\V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
