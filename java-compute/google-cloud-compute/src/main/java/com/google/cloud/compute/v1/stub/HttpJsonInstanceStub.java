@@ -38,6 +38,7 @@ import com.google.cloud.compute.v1.AttachDiskInstanceHttpRequest;
 import com.google.cloud.compute.v1.DeleteAccessConfigInstanceHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstanceHttpRequest;
 import com.google.cloud.compute.v1.DetachDiskInstanceHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyInstanceHttpRequest;
 import com.google.cloud.compute.v1.GetInstanceHttpRequest;
 import com.google.cloud.compute.v1.GetSerialPortOutputInstanceHttpRequest;
 import com.google.cloud.compute.v1.InsertInstanceHttpRequest;
@@ -48,6 +49,7 @@ import com.google.cloud.compute.v1.InstanceListReferrers;
 import com.google.cloud.compute.v1.ListInstancesHttpRequest;
 import com.google.cloud.compute.v1.ListReferrersInstancesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.ProjectName;
 import com.google.cloud.compute.v1.ProjectZoneInstanceName;
 import com.google.cloud.compute.v1.ProjectZoneInstanceResourceName;
@@ -56,6 +58,7 @@ import com.google.cloud.compute.v1.ResetInstanceHttpRequest;
 import com.google.cloud.compute.v1.SerialPortOutput;
 import com.google.cloud.compute.v1.SetDeletionProtectionInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetDiskAutoDeleteInstanceHttpRequest;
+import com.google.cloud.compute.v1.SetIamPolicyInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetMachineResourcesInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetMachineTypeInstanceHttpRequest;
@@ -68,6 +71,8 @@ import com.google.cloud.compute.v1.SimulateMaintenanceEventInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceHttpRequest;
 import com.google.cloud.compute.v1.StopInstanceHttpRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsInstanceHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateAccessConfigInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceHttpRequest;
 import com.google.common.collect.Sets;
@@ -232,6 +237,27 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<GetIamPolicyInstanceHttpRequest, Policy>
+      getIamPolicyInstanceMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyInstanceHttpRequest, Policy>newBuilder()
+              .setFullMethodName("compute.instances.getIamPolicy")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<GetIamPolicyInstanceHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/instances/{resource}/getIamPolicy"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectZoneInstanceResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Policy>newBuilder()
+                      .setResponseInstance(Policy.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
       getSerialPortOutputInstanceMethodDescriptor =
           ApiMethodDescriptor.<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>newBuilder()
@@ -376,6 +402,27 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .setResponseParser(
                   ApiMessageHttpResponseParser.<Operation>newBuilder()
                       .setResponseInstance(Operation.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
+  public static final ApiMethodDescriptor<SetIamPolicyInstanceHttpRequest, Policy>
+      setIamPolicyInstanceMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyInstanceHttpRequest, Policy>newBuilder()
+              .setFullMethodName("compute.instances.setIamPolicy")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<SetIamPolicyInstanceHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/instances/{resource}/setIamPolicy"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectZoneInstanceResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Policy>newBuilder()
+                      .setResponseInstance(Policy.getDefaultInstance())
                       .build())
               .build();
 
@@ -633,6 +680,29 @@ public class HttpJsonInstanceStub extends InstanceStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<
+          TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
+      testIamPermissionsInstanceMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("compute.instances.testIamPermissions")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<TestIamPermissionsInstanceHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create(
+                              "{project}/zones/{zone}/instances/{resource}/testIamPermissions"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectZoneInstanceResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setResponseInstance(TestPermissionsResponse.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<UpdateAccessConfigInstanceHttpRequest, Operation>
       updateAccessConfigInstanceMethodDescriptor =
           ApiMethodDescriptor.<UpdateAccessConfigInstanceHttpRequest, Operation>newBuilder()
@@ -690,6 +760,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
       deleteAccessConfigInstanceCallable;
   private final UnaryCallable<DetachDiskInstanceHttpRequest, Operation> detachDiskInstanceCallable;
   private final UnaryCallable<GetInstanceHttpRequest, Instance> getInstanceCallable;
+  private final UnaryCallable<GetIamPolicyInstanceHttpRequest, Policy> getIamPolicyInstanceCallable;
   private final UnaryCallable<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
       getSerialPortOutputInstanceCallable;
   private final UnaryCallable<InsertInstanceHttpRequest, Operation> insertInstanceCallable;
@@ -706,6 +777,7 @@ public class HttpJsonInstanceStub extends InstanceStub {
       setDeletionProtectionInstanceCallable;
   private final UnaryCallable<SetDiskAutoDeleteInstanceHttpRequest, Operation>
       setDiskAutoDeleteInstanceCallable;
+  private final UnaryCallable<SetIamPolicyInstanceHttpRequest, Policy> setIamPolicyInstanceCallable;
   private final UnaryCallable<SetLabelsInstanceHttpRequest, Operation> setLabelsInstanceCallable;
   private final UnaryCallable<SetMachineResourcesInstanceHttpRequest, Operation>
       setMachineResourcesInstanceCallable;
@@ -726,6 +798,8 @@ public class HttpJsonInstanceStub extends InstanceStub {
   private final UnaryCallable<StartWithEncryptionKeyInstanceHttpRequest, Operation>
       startWithEncryptionKeyInstanceCallable;
   private final UnaryCallable<StopInstanceHttpRequest, Operation> stopInstanceCallable;
+  private final UnaryCallable<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
+      testIamPermissionsInstanceCallable;
   private final UnaryCallable<UpdateAccessConfigInstanceHttpRequest, Operation>
       updateAccessConfigInstanceCallable;
   private final UnaryCallable<UpdateNetworkInterfaceInstanceHttpRequest, Operation>
@@ -804,6 +878,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
         HttpJsonCallSettings.<GetInstanceHttpRequest, Instance>newBuilder()
             .setMethodDescriptor(getInstanceMethodDescriptor)
             .build();
+    HttpJsonCallSettings<GetIamPolicyInstanceHttpRequest, Policy>
+        getIamPolicyInstanceTransportSettings =
+            HttpJsonCallSettings.<GetIamPolicyInstanceHttpRequest, Policy>newBuilder()
+                .setMethodDescriptor(getIamPolicyInstanceMethodDescriptor)
+                .build();
     HttpJsonCallSettings<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
         getSerialPortOutputInstanceTransportSettings =
             HttpJsonCallSettings
@@ -837,6 +916,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
         setDiskAutoDeleteInstanceTransportSettings =
             HttpJsonCallSettings.<SetDiskAutoDeleteInstanceHttpRequest, Operation>newBuilder()
                 .setMethodDescriptor(setDiskAutoDeleteInstanceMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<SetIamPolicyInstanceHttpRequest, Policy>
+        setIamPolicyInstanceTransportSettings =
+            HttpJsonCallSettings.<SetIamPolicyInstanceHttpRequest, Policy>newBuilder()
+                .setMethodDescriptor(setIamPolicyInstanceMethodDescriptor)
                 .build();
     HttpJsonCallSettings<SetLabelsInstanceHttpRequest, Operation>
         setLabelsInstanceTransportSettings =
@@ -896,6 +980,12 @@ public class HttpJsonInstanceStub extends InstanceStub {
         HttpJsonCallSettings.<StopInstanceHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(stopInstanceMethodDescriptor)
             .build();
+    HttpJsonCallSettings<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
+        testIamPermissionsInstanceTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsInstanceMethodDescriptor)
+                .build();
     HttpJsonCallSettings<UpdateAccessConfigInstanceHttpRequest, Operation>
         updateAccessConfigInstanceTransportSettings =
             HttpJsonCallSettings.<UpdateAccessConfigInstanceHttpRequest, Operation>newBuilder()
@@ -943,6 +1033,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
     this.getInstanceCallable =
         callableFactory.createUnaryCallable(
             getInstanceTransportSettings, settings.getInstanceSettings(), clientContext);
+    this.getIamPolicyInstanceCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyInstanceTransportSettings,
+            settings.getIamPolicyInstanceSettings(),
+            clientContext);
     this.getSerialPortOutputInstanceCallable =
         callableFactory.createUnaryCallable(
             getSerialPortOutputInstanceTransportSettings,
@@ -979,6 +1074,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
         callableFactory.createUnaryCallable(
             setDiskAutoDeleteInstanceTransportSettings,
             settings.setDiskAutoDeleteInstanceSettings(),
+            clientContext);
+    this.setIamPolicyInstanceCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyInstanceTransportSettings,
+            settings.setIamPolicyInstanceSettings(),
             clientContext);
     this.setLabelsInstanceCallable =
         callableFactory.createUnaryCallable(
@@ -1034,6 +1134,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
     this.stopInstanceCallable =
         callableFactory.createUnaryCallable(
             stopInstanceTransportSettings, settings.stopInstanceSettings(), clientContext);
+    this.testIamPermissionsInstanceCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsInstanceTransportSettings,
+            settings.testIamPermissionsInstanceSettings(),
+            clientContext);
     this.updateAccessConfigInstanceCallable =
         callableFactory.createUnaryCallable(
             updateAccessConfigInstanceTransportSettings,
@@ -1093,6 +1198,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
   }
 
   @BetaApi
+  public UnaryCallable<GetIamPolicyInstanceHttpRequest, Policy> getIamPolicyInstanceCallable() {
+    return getIamPolicyInstanceCallable;
+  }
+
+  @BetaApi
   public UnaryCallable<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
       getSerialPortOutputInstanceCallable() {
     return getSerialPortOutputInstanceCallable;
@@ -1141,6 +1251,11 @@ public class HttpJsonInstanceStub extends InstanceStub {
   public UnaryCallable<SetDiskAutoDeleteInstanceHttpRequest, Operation>
       setDiskAutoDeleteInstanceCallable() {
     return setDiskAutoDeleteInstanceCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<SetIamPolicyInstanceHttpRequest, Policy> setIamPolicyInstanceCallable() {
+    return setIamPolicyInstanceCallable;
   }
 
   @BetaApi
@@ -1208,6 +1323,12 @@ public class HttpJsonInstanceStub extends InstanceStub {
   @BetaApi
   public UnaryCallable<StopInstanceHttpRequest, Operation> stopInstanceCallable() {
     return stopInstanceCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
+      testIamPermissionsInstanceCallable() {
+    return testIamPermissionsInstanceCallable;
   }
 
   @BetaApi

@@ -132,6 +132,13 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
         .listManagedInstancesInstanceGroupManagersSettings();
   }
 
+  /** Returns the object with the settings used for calls to patchInstanceGroupManager. */
+  public UnaryCallSettings<PatchInstanceGroupManagerHttpRequest, Operation>
+      patchInstanceGroupManagerSettings() {
+    return ((InstanceGroupManagerStubSettings) getStubSettings())
+        .patchInstanceGroupManagerSettings();
+  }
+
   /**
    * Returns the object with the settings used for calls to recreateInstancesInstanceGroupManager.
    */
@@ -330,6 +337,12 @@ public class InstanceGroupManagerSettings extends ClientSettings<InstanceGroupMa
             InstanceGroupManagersListManagedInstancesResponse>
         listManagedInstancesInstanceGroupManagersSettings() {
       return getStubSettingsBuilder().listManagedInstancesInstanceGroupManagersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patchInstanceGroupManager. */
+    public UnaryCallSettings.Builder<PatchInstanceGroupManagerHttpRequest, Operation>
+        patchInstanceGroupManagerSettings() {
+      return getStubSettingsBuilder().patchInstanceGroupManagerSettings();
     }
 
     /**

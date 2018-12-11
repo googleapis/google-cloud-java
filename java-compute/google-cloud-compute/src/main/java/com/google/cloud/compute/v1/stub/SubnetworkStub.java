@@ -25,16 +25,21 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListSubnetworksHttpRequest;
 import com.google.cloud.compute.v1.DeleteSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.ExpandIpCidrRangeSubnetworkHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicySubnetworkHttpRequest;
 import com.google.cloud.compute.v1.GetSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.InsertSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.ListSubnetworksHttpRequest;
 import com.google.cloud.compute.v1.ListUsableSubnetworksHttpRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchSubnetworkHttpRequest;
+import com.google.cloud.compute.v1.Policy;
+import com.google.cloud.compute.v1.SetIamPolicySubnetworkHttpRequest;
 import com.google.cloud.compute.v1.SetPrivateIpGoogleAccessSubnetworkHttpRequest;
 import com.google.cloud.compute.v1.Subnetwork;
 import com.google.cloud.compute.v1.SubnetworkAggregatedList;
 import com.google.cloud.compute.v1.SubnetworkList;
+import com.google.cloud.compute.v1.TestIamPermissionsSubnetworkHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UsableSubnetworksAggregatedList;
 import javax.annotation.Generated;
 
@@ -79,6 +84,11 @@ public abstract class SubnetworkStub implements BackgroundResource {
   }
 
   @BetaApi
+  public UnaryCallable<GetIamPolicySubnetworkHttpRequest, Policy> getIamPolicySubnetworkCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicySubnetworkCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<InsertSubnetworkHttpRequest, Operation> insertSubnetworkCallable() {
     throw new UnsupportedOperationException("Not implemented: insertSubnetworkCallable()");
   }
@@ -113,10 +123,22 @@ public abstract class SubnetworkStub implements BackgroundResource {
   }
 
   @BetaApi
+  public UnaryCallable<SetIamPolicySubnetworkHttpRequest, Policy> setIamPolicySubnetworkCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicySubnetworkCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<SetPrivateIpGoogleAccessSubnetworkHttpRequest, Operation>
       setPrivateIpGoogleAccessSubnetworkCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: setPrivateIpGoogleAccessSubnetworkCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<TestIamPermissionsSubnetworkHttpRequest, TestPermissionsResponse>
+      testIamPermissionsSubnetworkCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: testIamPermissionsSubnetworkCallable()");
   }
 
   @Override

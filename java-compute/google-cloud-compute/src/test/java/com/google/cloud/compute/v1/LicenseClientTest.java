@@ -17,9 +17,11 @@ package com.google.cloud.compute.v1;
 
 import static com.google.cloud.compute.v1.LicenseClient.ListLicensesPagedResponse;
 import static com.google.cloud.compute.v1.stub.HttpJsonLicenseStub.deleteLicenseMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonLicenseStub.getIamPolicyLicenseMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonLicenseStub.getLicenseMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonLicenseStub.insertLicenseMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonLicenseStub.listLicensesMethodDescriptor;
+import static com.google.cloud.compute.v1.stub.HttpJsonLicenseStub.setIamPolicyLicenseMethodDescriptor;
 import static com.google.cloud.compute.v1.stub.HttpJsonLicenseStub.testIamPermissionsLicenseMethodDescriptor;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -52,8 +54,10 @@ public class LicenseClientTest {
           Lists.<ApiMethodDescriptor>newArrayList(
               deleteLicenseMethodDescriptor,
               getLicenseMethodDescriptor,
+              getIamPolicyLicenseMethodDescriptor,
               insertLicenseMethodDescriptor,
               listLicensesMethodDescriptor,
+              setIamPolicyLicenseMethodDescriptor,
               testIamPermissionsLicenseMethodDescriptor));
   private static final MockHttpService mockService =
       new MockHttpService(METHOD_DESCRIPTORS, LicenseStubSettings.getDefaultEndpoint());
@@ -239,6 +243,56 @@ public class LicenseClientTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getIamPolicyLicenseTest() {
+    Boolean iamOwned = false;
+    String etag = "etag3123477";
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setIamOwned(iamOwned).setEtag(etag).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalLicenseResourceName resource =
+        ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
+
+    Policy actualResponse = client.getIamPolicyLicense(resource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getIamPolicyLicenseExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalLicenseResourceName resource =
+          ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
+
+      client.getIamPolicyLicense(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void insertLicenseTest() {
     String httpErrorMessage = "httpErrorMessage1276263769";
     String targetId = "targetId-815576439";
@@ -379,6 +433,60 @@ public class LicenseClientTest {
       ProjectName project = ProjectName.of("[PROJECT]");
 
       client.listLicenses(project);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyLicenseTest() {
+    Boolean iamOwned = false;
+    String etag = "etag3123477";
+    Integer version = 351608024;
+    Policy expectedResponse =
+        Policy.newBuilder().setIamOwned(iamOwned).setEtag(etag).setVersion(version).build();
+    mockService.addResponse(expectedResponse);
+
+    ProjectGlobalLicenseResourceName resource =
+        ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
+    GlobalSetPolicyRequest globalSetPolicyRequestResource =
+        GlobalSetPolicyRequest.newBuilder().build();
+
+    Policy actualResponse = client.setIamPolicyLicense(resource, globalSetPolicyRequestResource);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void setIamPolicyLicenseExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ProjectGlobalLicenseResourceName resource =
+          ProjectGlobalLicenseResourceName.of("[PROJECT]", "[RESOURCE]");
+      GlobalSetPolicyRequest globalSetPolicyRequestResource =
+          GlobalSetPolicyRequest.newBuilder().build();
+
+      client.setIamPolicyLicense(resource, globalSetPolicyRequestResource);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -31,15 +31,18 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteLicenseHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyLicenseHttpRequest;
 import com.google.cloud.compute.v1.GetLicenseHttpRequest;
 import com.google.cloud.compute.v1.InsertLicenseHttpRequest;
 import com.google.cloud.compute.v1.License;
 import com.google.cloud.compute.v1.LicensesListResponse;
 import com.google.cloud.compute.v1.ListLicensesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.ProjectGlobalLicenseName;
 import com.google.cloud.compute.v1.ProjectGlobalLicenseResourceName;
 import com.google.cloud.compute.v1.ProjectName;
+import com.google.cloud.compute.v1.SetIamPolicyLicenseHttpRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsLicenseHttpRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.Sets;
@@ -95,6 +98,26 @@ public class HttpJsonLicenseStub extends LicenseStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<GetIamPolicyLicenseHttpRequest, Policy>
+      getIamPolicyLicenseMethodDescriptor =
+          ApiMethodDescriptor.<GetIamPolicyLicenseHttpRequest, Policy>newBuilder()
+              .setFullMethodName("compute.licenses.getIamPolicy")
+              .setHttpMethod(HttpMethods.GET)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<GetIamPolicyLicenseHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/global/licenses/{resource}/getIamPolicy"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectGlobalLicenseResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Policy>newBuilder()
+                      .setResponseInstance(Policy.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<InsertLicenseHttpRequest, Operation>
       insertLicenseMethodDescriptor =
           ApiMethodDescriptor.<InsertLicenseHttpRequest, Operation>newBuilder()
@@ -134,6 +157,26 @@ public class HttpJsonLicenseStub extends LicenseStub {
               .build();
 
   @InternalApi
+  public static final ApiMethodDescriptor<SetIamPolicyLicenseHttpRequest, Policy>
+      setIamPolicyLicenseMethodDescriptor =
+          ApiMethodDescriptor.<SetIamPolicyLicenseHttpRequest, Policy>newBuilder()
+              .setFullMethodName("compute.licenses.setIamPolicy")
+              .setHttpMethod(HttpMethods.POST)
+              .setRequestFormatter(
+                  ApiMessageHttpRequestFormatter.<SetIamPolicyLicenseHttpRequest>newBuilder()
+                      .setPathTemplate(
+                          PathTemplate.create("{project}/global/licenses/{resource}/setIamPolicy"))
+                      .setQueryParams(Sets.<String>newHashSet())
+                      .setResourceNameFactory(ProjectGlobalLicenseResourceName.newFactory())
+                      .setResourceNameField("resource")
+                      .build())
+              .setResponseParser(
+                  ApiMessageHttpResponseParser.<Policy>newBuilder()
+                      .setResponseInstance(Policy.getDefaultInstance())
+                      .build())
+              .build();
+
+  @InternalApi
   public static final ApiMethodDescriptor<
           TestIamPermissionsLicenseHttpRequest, TestPermissionsResponse>
       testIamPermissionsLicenseMethodDescriptor =
@@ -160,10 +203,12 @@ public class HttpJsonLicenseStub extends LicenseStub {
 
   private final UnaryCallable<DeleteLicenseHttpRequest, Operation> deleteLicenseCallable;
   private final UnaryCallable<GetLicenseHttpRequest, License> getLicenseCallable;
+  private final UnaryCallable<GetIamPolicyLicenseHttpRequest, Policy> getIamPolicyLicenseCallable;
   private final UnaryCallable<InsertLicenseHttpRequest, Operation> insertLicenseCallable;
   private final UnaryCallable<ListLicensesHttpRequest, LicensesListResponse> listLicensesCallable;
   private final UnaryCallable<ListLicensesHttpRequest, ListLicensesPagedResponse>
       listLicensesPagedCallable;
+  private final UnaryCallable<SetIamPolicyLicenseHttpRequest, Policy> setIamPolicyLicenseCallable;
   private final UnaryCallable<TestIamPermissionsLicenseHttpRequest, TestPermissionsResponse>
       testIamPermissionsLicenseCallable;
 
@@ -213,6 +258,11 @@ public class HttpJsonLicenseStub extends LicenseStub {
         HttpJsonCallSettings.<GetLicenseHttpRequest, License>newBuilder()
             .setMethodDescriptor(getLicenseMethodDescriptor)
             .build();
+    HttpJsonCallSettings<GetIamPolicyLicenseHttpRequest, Policy>
+        getIamPolicyLicenseTransportSettings =
+            HttpJsonCallSettings.<GetIamPolicyLicenseHttpRequest, Policy>newBuilder()
+                .setMethodDescriptor(getIamPolicyLicenseMethodDescriptor)
+                .build();
     HttpJsonCallSettings<InsertLicenseHttpRequest, Operation> insertLicenseTransportSettings =
         HttpJsonCallSettings.<InsertLicenseHttpRequest, Operation>newBuilder()
             .setMethodDescriptor(insertLicenseMethodDescriptor)
@@ -221,6 +271,11 @@ public class HttpJsonLicenseStub extends LicenseStub {
         listLicensesTransportSettings =
             HttpJsonCallSettings.<ListLicensesHttpRequest, LicensesListResponse>newBuilder()
                 .setMethodDescriptor(listLicensesMethodDescriptor)
+                .build();
+    HttpJsonCallSettings<SetIamPolicyLicenseHttpRequest, Policy>
+        setIamPolicyLicenseTransportSettings =
+            HttpJsonCallSettings.<SetIamPolicyLicenseHttpRequest, Policy>newBuilder()
+                .setMethodDescriptor(setIamPolicyLicenseMethodDescriptor)
                 .build();
     HttpJsonCallSettings<TestIamPermissionsLicenseHttpRequest, TestPermissionsResponse>
         testIamPermissionsLicenseTransportSettings =
@@ -235,6 +290,11 @@ public class HttpJsonLicenseStub extends LicenseStub {
     this.getLicenseCallable =
         callableFactory.createUnaryCallable(
             getLicenseTransportSettings, settings.getLicenseSettings(), clientContext);
+    this.getIamPolicyLicenseCallable =
+        callableFactory.createUnaryCallable(
+            getIamPolicyLicenseTransportSettings,
+            settings.getIamPolicyLicenseSettings(),
+            clientContext);
     this.insertLicenseCallable =
         callableFactory.createUnaryCallable(
             insertLicenseTransportSettings, settings.insertLicenseSettings(), clientContext);
@@ -244,6 +304,11 @@ public class HttpJsonLicenseStub extends LicenseStub {
     this.listLicensesPagedCallable =
         callableFactory.createPagedCallable(
             listLicensesTransportSettings, settings.listLicensesSettings(), clientContext);
+    this.setIamPolicyLicenseCallable =
+        callableFactory.createUnaryCallable(
+            setIamPolicyLicenseTransportSettings,
+            settings.setIamPolicyLicenseSettings(),
+            clientContext);
     this.testIamPermissionsLicenseCallable =
         callableFactory.createUnaryCallable(
             testIamPermissionsLicenseTransportSettings,
@@ -264,6 +329,11 @@ public class HttpJsonLicenseStub extends LicenseStub {
   }
 
   @BetaApi
+  public UnaryCallable<GetIamPolicyLicenseHttpRequest, Policy> getIamPolicyLicenseCallable() {
+    return getIamPolicyLicenseCallable;
+  }
+
+  @BetaApi
   public UnaryCallable<InsertLicenseHttpRequest, Operation> insertLicenseCallable() {
     return insertLicenseCallable;
   }
@@ -277,6 +347,11 @@ public class HttpJsonLicenseStub extends LicenseStub {
   @BetaApi
   public UnaryCallable<ListLicensesHttpRequest, LicensesListResponse> listLicensesCallable() {
     return listLicensesCallable;
+  }
+
+  @BetaApi
+  public UnaryCallable<SetIamPolicyLicenseHttpRequest, Policy> setIamPolicyLicenseCallable() {
+    return setIamPolicyLicenseCallable;
   }
 
   @BetaApi
