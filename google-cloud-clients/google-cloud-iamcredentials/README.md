@@ -1,7 +1,7 @@
-Google Cloud Java Client for FIXME
+Google Cloud Java Client for IAM Service Account Credentials API
 ===================================================
 
-Java idiomatic client for [FIXME][product-overview].
+Java idiomatic client for [IAM Service Account Credentials API][product-overview].
 
 [![Kokoro CI](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.svg)](http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/master.html)
 [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-iamcredentials.svg)](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-iamcredentials.svg)
@@ -40,17 +40,17 @@ Authentication
 
 See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section in the base directory's README.
 
-About FIXME
+About IAM Service Account Credentials API
 ----------------------------
 
-[FIXME][product-overview] FIXME
+Creates short-lived, limited-privilege credentials for IAM service accounts.
 
-See the [FIXME client library docs][lib-docs] to learn how to use this FIXME Client Library.
+See the [IAM Service Account Credentials API client library docs][lib-docs] to learn how to use this IAM Service Account Credentials Client Library.
 
 Getting Started
 ---------------
 #### Prerequisites
-You will need a [Google Developers Console](https://console.developers.google.com/) project with the FIXME API enabled. [Follow these instructions](https://cloud.google.com/resource-manager/docs/creating-managing-projects) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
+You will need a [Google Developers Console](https://console.developers.google.com/) project with the IAM Service Account Credentials API enabled. [Follow these instructions](https://cloud.google.com/resource-manager/docs/creating-managing-projects) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 #### Installation and setup
 You'll need to obtain the `google-cloud-iamcredentials` library.  See the [Quickstart](#quickstart) section to add `google-cloud-iamcredentials` as a dependency in your code.
@@ -62,7 +62,7 @@ To get help, follow the instructions in the [shared Troubleshooting document](ht
 
 Transport
 ---------
-FIXME uses gRPC for the transport layer.
+IAM Service Account Credentials Client uses gRPC for the transport layer.
 
 Java Versions
 -------------
@@ -95,6 +95,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
 [LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
-[product-overview]: FIXME
-[product-docs]: FIXME
+[product-overview]: https://cloud.google.com/iam/credentials/reference/rest/
+[product-docs]: https://cloud.google.com/iam/credentials/reference/rest/
 [lib-docs]: https://googleapis.github.io/google-cloud-java/google-cloud-clients/apidocs/index.html?com/google/cloud/iamcredentials/v1/package-summary.html
