@@ -3,11 +3,14 @@
 
 package com.google.cloud.iam.credentials.v1;
 
-public interface GenerateAccessTokenResponseOrBuilder extends
+public interface GenerateAccessTokenResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.iam.credentials.v1.GenerateAccessTokenResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The OAuth 2.0 access token.
    * </pre>
@@ -16,16 +19,19 @@ public interface GenerateAccessTokenResponseOrBuilder extends
    */
   java.lang.String getAccessToken();
   /**
+   *
+   *
    * <pre>
    * The OAuth 2.0 access token.
    * </pre>
    *
    * <code>string access_token = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getAccessTokenBytes();
+  com.google.protobuf.ByteString getAccessTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * Token expiration time.
    * The expiration time is always set.
@@ -35,6 +41,8 @@ public interface GenerateAccessTokenResponseOrBuilder extends
    */
   boolean hasExpireTime();
   /**
+   *
+   *
    * <pre>
    * Token expiration time.
    * The expiration time is always set.
@@ -44,6 +52,8 @@ public interface GenerateAccessTokenResponseOrBuilder extends
    */
   com.google.protobuf.Timestamp getExpireTime();
   /**
+   *
+   *
    * <pre>
    * Token expiration time.
    * The expiration time is always set.

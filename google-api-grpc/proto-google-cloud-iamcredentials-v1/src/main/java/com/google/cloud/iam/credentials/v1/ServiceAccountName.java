@@ -14,13 +14,13 @@
 
 package com.google.cloud.iam.credentials.v1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +56,11 @@ public class ServiceAccountName implements ResourceName {
   }
 
   public static ServiceAccountName of(String project, String serviceAccount) {
-    return newBuilder()
-      .setProject(project)
-      .setServiceAccount(serviceAccount)
-      .build();
+    return newBuilder().setProject(project).setServiceAccount(serviceAccount).build();
   }
 
   public static String format(String project, String serviceAccount) {
-    return newBuilder()
-      .setProject(project)
-      .setServiceAccount(serviceAccount)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setServiceAccount(serviceAccount).build().toString();
   }
 
   public static ServiceAccountName parse(String formattedString) {
@@ -75,7 +68,8 @@ public class ServiceAccountName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ServiceAccountName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ServiceAccountName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("service_account"));
   }
 
@@ -150,8 +144,7 @@ public class ServiceAccountName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ServiceAccountName serviceAccountName) {
       project = serviceAccountName.project;
@@ -186,4 +179,3 @@ public class ServiceAccountName implements ResourceName {
     return h;
   }
 }
-

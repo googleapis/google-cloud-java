@@ -3,11 +3,14 @@
 
 package com.google.cloud.iam.credentials.v1;
 
-public interface GenerateIdTokenResponseOrBuilder extends
+public interface GenerateIdTokenResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.iam.credentials.v1.GenerateIdTokenResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The OpenId Connect ID token.
    * </pre>
@@ -16,12 +19,13 @@ public interface GenerateIdTokenResponseOrBuilder extends
    */
   java.lang.String getToken();
   /**
+   *
+   *
    * <pre>
    * The OpenId Connect ID token.
    * </pre>
    *
    * <code>string token = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getTokenBytes();
+  com.google.protobuf.ByteString getTokenBytes();
 }

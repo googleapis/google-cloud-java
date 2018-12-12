@@ -3,11 +3,14 @@
 
 package com.google.cloud.iam.credentials.v1;
 
-public interface SignJwtResponseOrBuilder extends
+public interface SignJwtResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.iam.credentials.v1.SignJwtResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The ID of the key used to sign the JWT.
    * </pre>
@@ -16,16 +19,19 @@ public interface SignJwtResponseOrBuilder extends
    */
   java.lang.String getKeyId();
   /**
+   *
+   *
    * <pre>
    * The ID of the key used to sign the JWT.
    * </pre>
    *
    * <code>string key_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getKeyIdBytes();
+  com.google.protobuf.ByteString getKeyIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The signed JWT.
    * </pre>
@@ -34,12 +40,13 @@ public interface SignJwtResponseOrBuilder extends
    */
   java.lang.String getSignedJwt();
   /**
+   *
+   *
    * <pre>
    * The signed JWT.
    * </pre>
    *
    * <code>string signed_jwt = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getSignedJwtBytes();
+  com.google.protobuf.ByteString getSignedJwtBytes();
 }

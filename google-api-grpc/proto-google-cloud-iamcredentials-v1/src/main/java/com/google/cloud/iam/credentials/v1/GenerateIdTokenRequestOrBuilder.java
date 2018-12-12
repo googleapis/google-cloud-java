@@ -3,11 +3,14 @@
 
 package com.google.cloud.iam.credentials.v1;
 
-public interface GenerateIdTokenRequestOrBuilder extends
+public interface GenerateIdTokenRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.iam.credentials.v1.GenerateIdTokenRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resource name of the service account for which the credentials
    * are requested, in the following format:
@@ -18,6 +21,8 @@ public interface GenerateIdTokenRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The resource name of the service account for which the credentials
    * are requested, in the following format:
@@ -26,10 +31,11 @@ public interface GenerateIdTokenRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The sequence of service accounts in a delegation chain. Each service
    * account must be granted the `roles/iam.serviceAccountTokenCreator` role
@@ -43,9 +49,10 @@ public interface GenerateIdTokenRequestOrBuilder extends
    *
    * <code>repeated string delegates = 2;</code>
    */
-  java.util.List<java.lang.String>
-      getDelegatesList();
+  java.util.List<java.lang.String> getDelegatesList();
   /**
+   *
+   *
    * <pre>
    * The sequence of service accounts in a delegation chain. Each service
    * account must be granted the `roles/iam.serviceAccountTokenCreator` role
@@ -61,6 +68,8 @@ public interface GenerateIdTokenRequestOrBuilder extends
    */
   int getDelegatesCount();
   /**
+   *
+   *
    * <pre>
    * The sequence of service accounts in a delegation chain. Each service
    * account must be granted the `roles/iam.serviceAccountTokenCreator` role
@@ -76,6 +85,8 @@ public interface GenerateIdTokenRequestOrBuilder extends
    */
   java.lang.String getDelegates(int index);
   /**
+   *
+   *
    * <pre>
    * The sequence of service accounts in a delegation chain. Each service
    * account must be granted the `roles/iam.serviceAccountTokenCreator` role
@@ -89,10 +100,11 @@ public interface GenerateIdTokenRequestOrBuilder extends
    *
    * <code>repeated string delegates = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDelegatesBytes(int index);
+  com.google.protobuf.ByteString getDelegatesBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * The audience for the token, such as the API or account that this token
    * grants access to.
@@ -102,6 +114,8 @@ public interface GenerateIdTokenRequestOrBuilder extends
    */
   java.lang.String getAudience();
   /**
+   *
+   *
    * <pre>
    * The audience for the token, such as the API or account that this token
    * grants access to.
@@ -109,10 +123,11 @@ public interface GenerateIdTokenRequestOrBuilder extends
    *
    * <code>string audience = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getAudienceBytes();
+  com.google.protobuf.ByteString getAudienceBytes();
 
   /**
+   *
+   *
    * <pre>
    * Include the service account email in the token. If set to `true`, the
    * token will contain `email` and `email_verified` claims.

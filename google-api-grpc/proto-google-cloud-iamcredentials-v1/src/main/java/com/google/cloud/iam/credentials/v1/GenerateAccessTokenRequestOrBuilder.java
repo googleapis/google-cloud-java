@@ -3,11 +3,14 @@
 
 package com.google.cloud.iam.credentials.v1;
 
-public interface GenerateAccessTokenRequestOrBuilder extends
+public interface GenerateAccessTokenRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.iam.credentials.v1.GenerateAccessTokenRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resource name of the service account for which the credentials
    * are requested, in the following format:
@@ -18,6 +21,8 @@ public interface GenerateAccessTokenRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The resource name of the service account for which the credentials
    * are requested, in the following format:
@@ -26,10 +31,11 @@ public interface GenerateAccessTokenRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The sequence of service accounts in a delegation chain. Each service
    * account must be granted the `roles/iam.serviceAccountTokenCreator` role
@@ -43,9 +49,10 @@ public interface GenerateAccessTokenRequestOrBuilder extends
    *
    * <code>repeated string delegates = 2;</code>
    */
-  java.util.List<java.lang.String>
-      getDelegatesList();
+  java.util.List<java.lang.String> getDelegatesList();
   /**
+   *
+   *
    * <pre>
    * The sequence of service accounts in a delegation chain. Each service
    * account must be granted the `roles/iam.serviceAccountTokenCreator` role
@@ -61,6 +68,8 @@ public interface GenerateAccessTokenRequestOrBuilder extends
    */
   int getDelegatesCount();
   /**
+   *
+   *
    * <pre>
    * The sequence of service accounts in a delegation chain. Each service
    * account must be granted the `roles/iam.serviceAccountTokenCreator` role
@@ -76,6 +85,8 @@ public interface GenerateAccessTokenRequestOrBuilder extends
    */
   java.lang.String getDelegates(int index);
   /**
+   *
+   *
    * <pre>
    * The sequence of service accounts in a delegation chain. Each service
    * account must be granted the `roles/iam.serviceAccountTokenCreator` role
@@ -89,10 +100,11 @@ public interface GenerateAccessTokenRequestOrBuilder extends
    *
    * <code>repeated string delegates = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDelegatesBytes(int index);
+  com.google.protobuf.ByteString getDelegatesBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Code to identify the scopes to be included in the OAuth 2.0 access token.
    * See https://developers.google.com/identity/protocols/googlescopes for more
@@ -102,9 +114,10 @@ public interface GenerateAccessTokenRequestOrBuilder extends
    *
    * <code>repeated string scope = 4;</code>
    */
-  java.util.List<java.lang.String>
-      getScopeList();
+  java.util.List<java.lang.String> getScopeList();
   /**
+   *
+   *
    * <pre>
    * Code to identify the scopes to be included in the OAuth 2.0 access token.
    * See https://developers.google.com/identity/protocols/googlescopes for more
@@ -116,6 +129,8 @@ public interface GenerateAccessTokenRequestOrBuilder extends
    */
   int getScopeCount();
   /**
+   *
+   *
    * <pre>
    * Code to identify the scopes to be included in the OAuth 2.0 access token.
    * See https://developers.google.com/identity/protocols/googlescopes for more
@@ -127,6 +142,8 @@ public interface GenerateAccessTokenRequestOrBuilder extends
    */
   java.lang.String getScope(int index);
   /**
+   *
+   *
    * <pre>
    * Code to identify the scopes to be included in the OAuth 2.0 access token.
    * See https://developers.google.com/identity/protocols/googlescopes for more
@@ -136,10 +153,11 @@ public interface GenerateAccessTokenRequestOrBuilder extends
    *
    * <code>repeated string scope = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getScopeBytes(int index);
+  com.google.protobuf.ByteString getScopeBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * The desired lifetime duration of the access token in seconds.
    * Must be set to a value less than or equal to 3600 (1 hour). If a value is
@@ -151,6 +169,8 @@ public interface GenerateAccessTokenRequestOrBuilder extends
    */
   boolean hasLifetime();
   /**
+   *
+   *
    * <pre>
    * The desired lifetime duration of the access token in seconds.
    * Must be set to a value less than or equal to 3600 (1 hour). If a value is
@@ -162,6 +182,8 @@ public interface GenerateAccessTokenRequestOrBuilder extends
    */
   com.google.protobuf.Duration getLifetime();
   /**
+   *
+   *
    * <pre>
    * The desired lifetime duration of the access token in seconds.
    * Must be set to a value less than or equal to 3600 (1 hour). If a value is

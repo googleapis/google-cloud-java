@@ -3,11 +3,14 @@
 
 package com.google.cloud.iam.credentials.v1;
 
-public interface SignJwtRequestOrBuilder extends
+public interface SignJwtRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.iam.credentials.v1.SignJwtRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resource name of the service account for which the credentials
    * are requested, in the following format:
@@ -18,6 +21,8 @@ public interface SignJwtRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The resource name of the service account for which the credentials
    * are requested, in the following format:
@@ -26,10 +31,11 @@ public interface SignJwtRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The sequence of service accounts in a delegation chain. Each service
    * account must be granted the `roles/iam.serviceAccountTokenCreator` role
@@ -43,9 +49,10 @@ public interface SignJwtRequestOrBuilder extends
    *
    * <code>repeated string delegates = 3;</code>
    */
-  java.util.List<java.lang.String>
-      getDelegatesList();
+  java.util.List<java.lang.String> getDelegatesList();
   /**
+   *
+   *
    * <pre>
    * The sequence of service accounts in a delegation chain. Each service
    * account must be granted the `roles/iam.serviceAccountTokenCreator` role
@@ -61,6 +68,8 @@ public interface SignJwtRequestOrBuilder extends
    */
   int getDelegatesCount();
   /**
+   *
+   *
    * <pre>
    * The sequence of service accounts in a delegation chain. Each service
    * account must be granted the `roles/iam.serviceAccountTokenCreator` role
@@ -76,6 +85,8 @@ public interface SignJwtRequestOrBuilder extends
    */
   java.lang.String getDelegates(int index);
   /**
+   *
+   *
    * <pre>
    * The sequence of service accounts in a delegation chain. Each service
    * account must be granted the `roles/iam.serviceAccountTokenCreator` role
@@ -89,10 +100,11 @@ public interface SignJwtRequestOrBuilder extends
    *
    * <code>repeated string delegates = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDelegatesBytes(int index);
+  com.google.protobuf.ByteString getDelegatesBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * The JWT payload to sign: a JSON object that contains a JWT Claims Set.
    * </pre>
@@ -101,12 +113,13 @@ public interface SignJwtRequestOrBuilder extends
    */
   java.lang.String getPayload();
   /**
+   *
+   *
    * <pre>
    * The JWT payload to sign: a JSON object that contains a JWT Claims Set.
    * </pre>
    *
    * <code>string payload = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getPayloadBytes();
+  com.google.protobuf.ByteString getPayloadBytes();
 }
