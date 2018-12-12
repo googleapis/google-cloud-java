@@ -778,7 +778,7 @@
                 <links>
                   <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
                   <link>http://google.github.io/google-auth-library-java/releases/latest/apidocs/</link>
-                  <link>http://googleapis.github.io/gax-java/latest/apidocs/</link>
+                  <link>https://googleapis.github.io/gax-java/latest/apidocs/</link>
                   <link>https://googleapis.github.io/api-common-java/${api.common.java.version}/apidocs/</link>
                 </links>
               </configuration>
@@ -886,7 +886,7 @@
           <links>
             <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
             <link>http://googleapis.github.io/google-auth-library-java/releases/latest/apidocs/</link>
-            <link>http://googleapis.github.io/gax-java/latest/apidocs/</link>
+            <link>https://googleapis.github.io/gax-java/latest/apidocs/</link>
             <link>http://googleapis.github.io/googleapis/java/all/latest/apidocs/</link>
           </links>
         </configuration>
