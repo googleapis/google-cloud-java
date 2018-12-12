@@ -16,6 +16,7 @@
 
 import synthtool as s
 import synthtool.gcp as gcp
+import synthtool.languages.java as java
 
 gapic = gcp.GAPICGenerator()
 common_templates = gcp.CommonTemplates()
@@ -33,3 +34,7 @@ for version in versions:
     s.copy(library / f'gapic-google-cloud-{service}-{version}/src', 'src')
     s.copy(library / f'grpc-google-cloud-{service}-{version}/src', f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
     s.copy(library / f'proto-google-cloud-{service}-{version}/src', f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
+
+    java.format_code('./src')
+    java.format_code(f'../../google-api-grpc/grpc-google-cloud-{service}-{version}/src')
+    java.format_code(f'../../google-api-grpc/proto-google-cloud-{service}-{version}/src')
