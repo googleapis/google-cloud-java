@@ -653,7 +653,8 @@
     <module>grpc-google-cloud-dlp-v2</module>
     <module>grpc-google-cloud-error-reporting-v1beta1</module>
     <module>grpc-google-cloud-firestore-v1beta1</module>
-    <module>grpc-google-cloud-iamcredentials-v1</module><module>grpc-google-cloud-iot-v1</module>
+    <module>grpc-google-cloud-iamcredentials-v1</module>
+    <module>grpc-google-cloud-iot-v1</module>
     <module>grpc-google-cloud-kms-v1</module>
     <module>grpc-google-cloud-language-v1</module>
     <module>grpc-google-cloud-language-v1beta2</module>
@@ -704,7 +705,8 @@
     <module>proto-google-cloud-dlp-v2</module>
     <module>proto-google-cloud-error-reporting-v1beta1</module>
     <module>proto-google-cloud-firestore-v1beta1</module>
-    <module>proto-google-cloud-iamcredentials-v1</module><module>proto-google-cloud-iot-v1</module>
+    <module>proto-google-cloud-iamcredentials-v1</module>
+    <module>proto-google-cloud-iot-v1</module>
     <module>proto-google-cloud-kms-v1</module>
     <module>proto-google-cloud-language-v1</module>
     <module>proto-google-cloud-language-v1beta2</module>
