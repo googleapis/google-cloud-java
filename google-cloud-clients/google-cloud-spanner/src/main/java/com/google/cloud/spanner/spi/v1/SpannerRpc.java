@@ -34,6 +34,8 @@ import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
+import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.PartialResultSet;
 import com.google.spanner.v1.PartitionQueryRequest;
@@ -213,6 +215,8 @@ public interface SpannerRpc extends ServiceRpc {
 
   StreamingCall executeQuery(
       ExecuteSqlRequest request, ResultStreamConsumer consumer, @Nullable Map<Option, ?> options);
+
+  ExecuteBatchDmlResponse executeBatchDml(ExecuteBatchDmlRequest build, Map<Option,?> options);
 
   Transaction beginTransaction(BeginTransactionRequest request, @Nullable Map<Option, ?> options)
       throws SpannerException;

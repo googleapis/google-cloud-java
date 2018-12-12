@@ -82,6 +82,12 @@ public final class SpannerExceptionFactory {
     return newSpannerException(null, cause);
   }
 
+  public static SpannerBatchUpdateException newSpannerBatchUpdateException(
+      ErrorCode code, String message, long[] updateCounts) {
+    DoNotConstructDirectly token = DoNotConstructDirectly.ALLOWED;
+    return new SpannerBatchUpdateException(token, code, message, updateCounts);
+  }
+
   /**
    * Creates a new exception based on {@code cause}. If {@code cause} indicates cancellation, {@code
    * context} will be inspected to establish the type of cancellation.
