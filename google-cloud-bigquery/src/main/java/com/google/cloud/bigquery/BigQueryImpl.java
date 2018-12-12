@@ -539,7 +539,13 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   @Override
   public InsertAllResponse insertAll(InsertAllRequest request) {
-    final TableId tableId = request.getTable().setProjectId(getOptions().getProjectId());
+    final TableId tableId =
+        request
+            .getTable()
+            .setProjectId(
+                Strings.isNullOrEmpty(request.getTable().getProject())
+                    ? getOptions().getProjectId()
+                    : request.getTable().getProject());
     final TableDataInsertAllRequest requestPb = new TableDataInsertAllRequest();
     requestPb.setIgnoreUnknownValues(request.ignoreUnknownValues());
     requestPb.setSkipInvalidRows(request.skipInvalidRows());
