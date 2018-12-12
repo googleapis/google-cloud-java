@@ -634,7 +634,17 @@
         <artifactId>grpc-google-cloud-websecurityscanner-v1alpha</artifactId>
         <version>0.38.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1alpha:current} -->
       </dependency>
-    <dependency><groupId>com.google.api.grpc</groupId><artifactId>proto-google-cloud-iamcredentials-v1</artifactId><version>0.0.1-alpha-SNAPSHOT</version><!--{x-version-update:proto-google-cloud-iamcredentials-v1:current}--></dependency><dependency><groupId>com.google.api.grpc</groupId><artifactId>grpc-google-cloud-iamcredentials-v1</artifactId><version>0.0.1-alpha-SNAPSHOT</version><!--{x-version-update:grpc-google-cloud-iamcredentials-v1:current}--></dependency></dependencies>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-iamcredentials-v1</artifactId>
+        <version>0.0.1-alpha-SNAPSHOT</version><!--{x-version-update:proto-google-cloud-iamcredentials-v1:current}-->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-iamcredentials-v1</artifactId>
+        <version>0.0.1-alpha-SNAPSHOT</version><!--{x-version-update:grpc-google-cloud-iamcredentials-v1:current}-->
+      </dependency>
+    </dependencies>
   </dependencyManagement>
 
   <modules>
