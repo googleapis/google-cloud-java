@@ -25,10 +25,12 @@ public interface AckReplyConsumer {
    * message again.
    */
   void ack();
-  
+
   /**
    * Signals that the message has not been successfully processed. The service should resend the
    * message.
    */
   void nack();
+
+  void abandon();
 }
