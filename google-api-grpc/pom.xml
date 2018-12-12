@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
@@ -634,7 +634,7 @@
         <artifactId>grpc-google-cloud-websecurityscanner-v1alpha</artifactId>
         <version>0.38.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1alpha:current} -->
       </dependency>
-    </dependencies>
+    <dependency><groupId>com.google.api.grpc</groupId><artifactId>proto-google-cloud-iamcredentials-v1</artifactId><version>0.0.1-alpha-SNAPSHOT</version><!--{x-version-update:proto-google-cloud-iamcredentials-v1:current}--></dependency><dependency><groupId>com.google.api.grpc</groupId><artifactId>grpc-google-cloud-iamcredentials-v1</artifactId><version>0.0.1-alpha-SNAPSHOT</version><!--{x-version-update:grpc-google-cloud-iamcredentials-v1:current}--></dependency></dependencies>
   </dependencyManagement>
 
   <modules>
@@ -653,7 +653,7 @@
     <module>grpc-google-cloud-dlp-v2</module>
     <module>grpc-google-cloud-error-reporting-v1beta1</module>
     <module>grpc-google-cloud-firestore-v1beta1</module>
-    <module>grpc-google-cloud-iot-v1</module>
+    <module>grpc-google-cloud-iamcredentials-v1</module><module>grpc-google-cloud-iot-v1</module>
     <module>grpc-google-cloud-kms-v1</module>
     <module>grpc-google-cloud-language-v1</module>
     <module>grpc-google-cloud-language-v1beta2</module>
@@ -704,7 +704,7 @@
     <module>proto-google-cloud-dlp-v2</module>
     <module>proto-google-cloud-error-reporting-v1beta1</module>
     <module>proto-google-cloud-firestore-v1beta1</module>
-    <module>proto-google-cloud-iot-v1</module>
+    <module>proto-google-cloud-iamcredentials-v1</module><module>proto-google-cloud-iot-v1</module>
     <module>proto-google-cloud-kms-v1</module>
     <module>proto-google-cloud-language-v1</module>
     <module>proto-google-cloud-language-v1beta2</module>
