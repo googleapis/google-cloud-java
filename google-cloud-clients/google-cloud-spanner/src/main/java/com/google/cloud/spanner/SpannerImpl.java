@@ -87,9 +87,6 @@ import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
-import org.threeten.bp.Duration;
-import org.threeten.bp.Instant;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.AbstractList;
@@ -241,14 +238,11 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     Span span = tracer.getCurrentSpan();
     ExponentialBackOff backOff = newBackOff();
     Context context = Context.current();
-
     int attempt = 0;
     int maxAttempt = 6;
-
-    if(retrySettings != null) {
+    if (retrySettings != null) {
       maxAttempt = retrySettings.getMaxAttempts();
     }
-
     while (true) {
       attempt++;
       if (attempt >= maxAttempt) {
