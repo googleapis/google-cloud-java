@@ -94,14 +94,14 @@ def add_to_versions(ctx: Context) -> None:
 
     ctx.versions = versions
 
-def add_module_to_pom(pom: str, module_name: str) -> None:
+def add_module_to_pom(pom: pathlib.Path, module_name: str) -> None:
     """
     Insert a new <module>name</module> into a pom.xml file.
 
     This assumes that the modules are in alphabetical order and inserts it
     in the correct place
     """
-    tree = etree.parse(pom)
+    tree = etree.parse(str(pom))
     root = tree.getroot()
     modules = root.find("{http://maven.apache.org/POM/4.0.0}modules")
 
@@ -117,11 +117,11 @@ def add_module_to_pom(pom: str, module_name: str) -> None:
             modules.insert(i, new_module)
             break
 
-    tree.write(pom, pretty_print=True, xml_declaration=True, encoding="utf-8")
+    tree.write(str(pom), pretty_print=True, xml_declaration=True, encoding="utf-8")
 
-def add_dependency_management_to_pom(pom: str, group: str, artifact: str, version: str) -> None:
+def add_dependency_management_to_pom(pom: pathlib.Path, group: str, artifact: str, version: str) -> None:
     """Adds a <dependency>...</depedency> section into a pom.xml file."""
-    tree = etree.parse(pom)
+    tree = etree.parse(str(pom))
     root = tree.getroot()
     dependencies = root.find("{http://maven.apache.org/POM/4.0.0}dependencyManagement/{http://maven.apache.org/POM/4.0.0}dependencies")
 
@@ -146,7 +146,7 @@ def add_dependency_management_to_pom(pom: str, group: str, artifact: str, versio
     new_dependency.append(comment)
     dependencies.append(new_dependency)
 
-    tree.write(pom, pretty_print=True, xml_declaration=True, encoding="utf-8")
+    tree.write(str(pom), pretty_print=True, xml_declaration=True, encoding="utf-8")
 
 
 def write_synthfile(ctx: Context) -> None:
@@ -190,7 +190,7 @@ def update_stub_packages(ctx: Context) -> None:
     """Updates the pom.xml documentation section to scrub certain packages."""
     # open google-cloud-clients/pom.xml and fix the Stub packages list
     pom = ctx.root_directory / "google-cloud-clients/pom.xml"
-    tree = etree.parse(pom)
+    tree = etree.parse(str(pom))
 
     grpc_artifacts = [v.module for v in ctx.versions if v.module.startswith("grpc-")]
     stub_classes = []
@@ -202,7 +202,7 @@ def update_stub_packages(ctx: Context) -> None:
         if group.find("{http://maven.apache.org/POM/4.0.0}title").text == "Stub packages":
             group.find("{http://maven.apache.org/POM/4.0.0}packages").text = ":".join(stub_classes)
 
-    tree.write(pom, pretty_print=True, xml_declaration=True, encoding="utf-8")
+    tree.write(str(pom), pretty_print=True, xml_declaration=True, encoding="utf-8")
 
 def write_readme(ctx: Context) -> None:
     """Creates a README.md from a template."""
@@ -218,7 +218,7 @@ def write_readme(ctx: Context) -> None:
     directory = os.path.dirname(path)
     if not os.path.isdir(directory):
         os.makedirs(directory)
-    pom.dump(path)
+    pom.dump(str(path))
 
 def main():
     parser = argparse.ArgumentParser(description="Create a new client")
