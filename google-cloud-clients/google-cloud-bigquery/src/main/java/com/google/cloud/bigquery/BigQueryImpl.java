@@ -625,7 +625,11 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       final BigQueryOptions serviceOptions,
       final Map<BigQueryRpc.Option, ?> optionsMap) {
     try {
-      final TableId completeTableId = tableId.setProjectId(serviceOptions.getProjectId());
+      final TableId completeTableId =
+          tableId.setProjectId(
+              Strings.isNullOrEmpty(serviceOptions.getProjectId())
+                  ? tableId.getProject()
+                  : serviceOptions.getProjectId());
       TableDataList result =
           runWithRetries(
               new Callable<TableDataList>() {
@@ -829,8 +833,14 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       JobId jobId, WriteChannelConfiguration writeChannelConfiguration) {
     return new TableDataWriteChannel(
         getOptions(),
-        jobId.setProjectId(getOptions().getProjectId()),
-        writeChannelConfiguration.setProjectId(getOptions().getProjectId()));
+        jobId.setProjectId(
+            Strings.isNullOrEmpty(jobId.getProject())
+                ? getOptions().getProjectId()
+                : jobId.getProject()),
+        writeChannelConfiguration.setProjectId(
+            Strings.isNullOrEmpty(jobId.getProject())
+                ? getOptions().getProjectId()
+                : jobId.getProject()));
   }
 
   @VisibleForTesting
