@@ -1,0 +1,5 @@
+com.google.cloud.bigquery
+com.google.cloud.bigquery.benchmark
+com.google.cloud.bigquery.spi
+com.google.cloud.bigquery.spi.v2
+com.google.cloud.bigquery.testing
