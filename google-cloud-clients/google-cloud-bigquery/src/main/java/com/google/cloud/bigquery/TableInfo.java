@@ -20,6 +20,7 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.util.Data;
+import com.google.api.client.util.Strings;
 import com.google.api.core.BetaApi;
 import com.google.api.services.bigquery.model.Table;
 import com.google.common.base.Function;
@@ -396,7 +397,10 @@ public class TableInfo implements Serializable {
   }
 
   TableInfo setProjectId(String projectId) {
-    return toBuilder().setTableId(getTableId().setProjectId(projectId)).build();
+    if (Strings.isNullOrEmpty(getTableId().getProject())) {
+      return toBuilder().setTableId(getTableId().setProjectId(projectId)).build();
+    }
+    return this;
   }
 
   Table toPb() {
