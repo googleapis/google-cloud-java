@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
@@ -889,6 +889,21 @@
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-websecurityscanner-v1alpha</artifactId>
         <version>0.38.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1alpha:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-iamcredentials-v1</artifactId>
+        <version>0.0.1-alpha-SNAPSHOT</version><!--{x-version-update:proto-google-cloud-iamcredentials-v1:current}-->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-iamcredentials-v1</artifactId>
+        <version>0.0.1-alpha-SNAPSHOT</version><!--{x-version-update:grpc-google-cloud-iamcredentials-v1:current}-->
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-iamcredentials</artifactId>
+        <version>0.0.1-alpha-SNAPSHOT</version><!--{x-version-update:google-cloud-iamcredentials:current}-->
       </dependency>
     </dependencies>
   </dependencyManagement>
