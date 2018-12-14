@@ -173,7 +173,6 @@ public class JobStatisticsTest {
     assertEquals(OUTPUT_ROWS, LOAD_STATISTICS.getOutputRows());
     assertEquals(BAD_RECORDS, LOAD_STATISTICS.getBadRecords());
 
-
     assertEquals(CREATION_TIME, QUERY_STATISTICS.getCreationTime());
     assertEquals(START_TIME, QUERY_STATISTICS.getStartTime());
     assertEquals(END_TIME, QUERY_STATISTICS.getEndTime());

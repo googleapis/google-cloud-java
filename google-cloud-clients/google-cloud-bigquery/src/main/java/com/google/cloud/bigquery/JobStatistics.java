@@ -185,7 +185,6 @@ public abstract class JobStatistics implements Serializable {
       private Long outputRows;
       private Long badRecords;
 
-
       private Builder() {}
 
       private Builder(com.google.api.services.bigquery.model.JobStatistics statisticsPb) {
@@ -260,7 +259,9 @@ public abstract class JobStatistics implements Serializable {
     }
 
     /** Returns the number of bad records reported in a job. */
-    public Long getBadRecords() { return badRecords; }
+    public Long getBadRecords() {
+      return badRecords;
+    }
 
     @Override
     ToStringHelper toStringHelper() {
@@ -282,7 +283,8 @@ public abstract class JobStatistics implements Serializable {
 
     @Override
     public final int hashCode() {
-      return Objects.hash(baseHashCode(), inputBytes, inputFiles, outputBytes, outputRows, badRecords);
+      return Objects.hash(
+          baseHashCode(), inputBytes, inputFiles, outputBytes, outputRows, badRecords);
     }
 
     @Override
