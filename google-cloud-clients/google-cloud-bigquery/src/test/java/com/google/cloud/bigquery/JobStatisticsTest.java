@@ -46,6 +46,7 @@ public class JobStatisticsTest {
   private static final Long INPUT_FILES = 2L;
   private static final Long OUTPUT_BYTES = 3L;
   private static final Long OUTPUT_ROWS = 4L;
+  private static final Long BAD_RECORDS = 1L;
   private static final List<TableId> REFERENCED_TABLES =
       ImmutableList.of(TableId.of("foo", "bar", "table1"), TableId.of("foo", "bar", "table2"));
   private static final List<Long> FILE_COUNT = ImmutableList.of(1L, 2L, 3L);
@@ -74,6 +75,7 @@ public class JobStatisticsTest {
           .setInputFiles(INPUT_FILES)
           .setOutputBytes(OUTPUT_BYTES)
           .setOutputRows(OUTPUT_ROWS)
+          .setBadRecords(BAD_RECORDS)
           .build();
   private static final LoadStatistics LOAD_STATISTICS_INCOMPLETE =
       LoadStatistics.newBuilder()
@@ -82,6 +84,7 @@ public class JobStatisticsTest {
           .setStartTime(START_TIME)
           .setInputBytes(INPUT_BYTES)
           .setInputFiles(INPUT_FILES)
+          .setBadRecords(BAD_RECORDS)
           .build();
   private static final List<String> SUBSTEPS1 = ImmutableList.of("substep1", "substep2");
   private static final List<String> SUBSTEPS2 = ImmutableList.of("substep3", "substep4");
@@ -168,6 +171,8 @@ public class JobStatisticsTest {
     assertEquals(INPUT_FILES, LOAD_STATISTICS.getInputFiles());
     assertEquals(OUTPUT_BYTES, LOAD_STATISTICS.getOutputBytes());
     assertEquals(OUTPUT_ROWS, LOAD_STATISTICS.getOutputRows());
+    assertEquals(BAD_RECORDS, LOAD_STATISTICS.getBadRecords());
+
 
     assertEquals(CREATION_TIME, QUERY_STATISTICS.getCreationTime());
     assertEquals(START_TIME, QUERY_STATISTICS.getStartTime());
@@ -192,6 +197,7 @@ public class JobStatisticsTest {
     assertEquals(END_TIME, LOAD_STATISTICS_INCOMPLETE.getEndTime());
     assertEquals(INPUT_BYTES, LOAD_STATISTICS_INCOMPLETE.getInputBytes());
     assertEquals(INPUT_FILES, LOAD_STATISTICS_INCOMPLETE.getInputFiles());
+    assertEquals(BAD_RECORDS, LOAD_STATISTICS_INCOMPLETE.getBadRecords());
     assertEquals(null, LOAD_STATISTICS_INCOMPLETE.getOutputBytes());
     assertEquals(null, LOAD_STATISTICS_INCOMPLETE.getOutputRows());
 

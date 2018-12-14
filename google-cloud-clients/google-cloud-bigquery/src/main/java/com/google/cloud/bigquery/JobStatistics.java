@@ -175,6 +175,7 @@ public abstract class JobStatistics implements Serializable {
     private final Long inputFiles;
     private final Long outputBytes;
     private final Long outputRows;
+    private final Long badRecords;
 
     static final class Builder extends JobStatistics.Builder<LoadStatistics, Builder> {
 
@@ -182,6 +183,8 @@ public abstract class JobStatistics implements Serializable {
       private Long inputFiles;
       private Long outputBytes;
       private Long outputRows;
+      private Long badRecords;
+
 
       private Builder() {}
 
@@ -192,6 +195,7 @@ public abstract class JobStatistics implements Serializable {
           this.inputFiles = statisticsPb.getLoad().getInputFiles();
           this.outputBytes = statisticsPb.getLoad().getOutputBytes();
           this.outputRows = statisticsPb.getLoad().getOutputRows();
+          this.badRecords = statisticsPb.getLoad().getBadRecords();
         }
       }
 
@@ -215,6 +219,11 @@ public abstract class JobStatistics implements Serializable {
         return self();
       }
 
+      Builder setBadRecords(Long badRecords) {
+        this.badRecords = badRecords;
+        return self();
+      }
+
       @Override
       LoadStatistics build() {
         return new LoadStatistics(this);
@@ -227,6 +236,7 @@ public abstract class JobStatistics implements Serializable {
       this.inputFiles = builder.inputFiles;
       this.outputBytes = builder.outputBytes;
       this.outputRows = builder.outputRows;
+      this.badRecords = builder.badRecords;
     }
 
     /** Returns the number of bytes of source data in a load job. */
@@ -249,13 +259,17 @@ public abstract class JobStatistics implements Serializable {
       return outputRows;
     }
 
+    /** Returns the number of bad records reported in a job. */
+    public Long getBadRecords() { return badRecords; }
+
     @Override
     ToStringHelper toStringHelper() {
       return super.toStringHelper()
           .add("inputBytes", inputBytes)
           .add("inputFiles", inputFiles)
           .add("outputBytes", outputBytes)
-          .add("outputRows", outputRows);
+          .add("outputRows", outputRows)
+          .add("badRecords", badRecords);
     }
 
     @Override
@@ -268,7 +282,7 @@ public abstract class JobStatistics implements Serializable {
 
     @Override
     public final int hashCode() {
-      return Objects.hash(baseHashCode(), inputBytes, inputFiles, outputBytes, outputRows);
+      return Objects.hash(baseHashCode(), inputBytes, inputFiles, outputBytes, outputRows, badRecords);
     }
 
     @Override
@@ -278,6 +292,7 @@ public abstract class JobStatistics implements Serializable {
       loadStatisticsPb.setInputFiles(inputFiles);
       loadStatisticsPb.setOutputBytes(outputBytes);
       loadStatisticsPb.setOutputRows(outputRows);
+      loadStatisticsPb.setBadRecords(badRecords);
       return super.toPb().setLoad(loadStatisticsPb);
     }
 
