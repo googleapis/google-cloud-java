@@ -53,6 +53,7 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
 import com.google.api.core.ApiFunction;
+import org.threeten.bp.Instant;
 
 /**
  * A Cloud Pub/Sub <a href="https://cloud.google.com/pubsub/docs/subscriber">subscriber</a> that is
@@ -106,8 +107,7 @@ public class Subscriber extends AbstractApiService {
   private final Duration maxAckExtensionPeriod;
   private final ScheduledExecutorService executor;
   @Nullable private final ScheduledExecutorService alarmsExecutor;
-  private final Distribution ackLatencyDistribution =
-      new Distribution(MAX_ACK_DEADLINE_SECONDS + 1);
+  private Distribution ackLatencyDistribution;
 
   private SubscriberStub subStub;
   private final SubscriberStubSettings subStubSettings;
@@ -121,6 +121,17 @@ public class Subscriber extends AbstractApiService {
   private final ApiClock clock;
   private final List<AutoCloseable> closeables = new ArrayList<>();
   private ScheduledFuture<?> ackDeadlineUpdater;
+  private Instant distributionStartTime;
+
+  public Instant getDistributionStartTime() {
+    return distributionStartTime;
+  }
+
+  public void resetDistribution() {
+    ackLatencyDistribution = new Distribution(MAX_ACK_DEADLINE_SECONDS + 1);
+    distributionStartTime = Instant.ofEpochMilli(clock.millisTime());
+    ackLatencyDistribution.record(60);
+  }
 
   private Subscriber(Builder builder) {
     receiver = builder.receiver;
@@ -197,7 +208,7 @@ public class Subscriber extends AbstractApiService {
     // We regularly look up the distribution for a good subscription deadline.
     // So we seed the distribution with something reasonable to start with.
     // Distribution is percentile-based, so this value will eventually lose importance.
-    ackLatencyDistribution.record(60);
+    resetDistribution();
   }
 
   /**
@@ -340,6 +351,7 @@ public class Subscriber extends AbstractApiService {
                 ackExpirationPadding,
                 maxAckExtensionPeriod,
                 ackLatencyDistribution,
+                this,
                 subStub,
                 i,
                 flowController,

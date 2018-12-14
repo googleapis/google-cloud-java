@@ -95,6 +95,7 @@ class MessageDispatcher {
 
   // To keep track of number of seconds the receiver takes to process messages.
   private final Distribution ackLatencyDistribution;
+  private final Subscriber subscriber;
 
   /** Stores the data needed to asynchronously modify acknowledgement deadlines. */
   static class PendingModifyAckDeadline {
@@ -173,6 +174,11 @@ class MessageDispatcher {
       switch (reply) {
         case ACK:
           destination = pendingAcks;
+          Instant distributionExpire =
+              subscriber.getDistributionStartTime().plus(6, ChronoUnit.HOURS);
+          if (now().isAfter(distributionExpire)) {
+            subscriber.resetDistribution();
+          }
           // Record the latency rounded to the next closest integer.
           ackLatencyDistribution.record(
               Ints.saturatedCast(
@@ -200,6 +206,7 @@ class MessageDispatcher {
       Duration ackExpirationPadding,
       Duration maxAckExtensionPeriod,
       Distribution ackLatencyDistribution,
+      Subscriber subscriber,
       FlowController flowController,
       Deque<OutstandingMessageBatch> outstandingMessageBatches,
       Executor executor,
@@ -215,6 +222,7 @@ class MessageDispatcher {
     this.outstandingMessageBatches = outstandingMessageBatches;
     // 601 buckets of 1s resolution from 0s to MAX_ACK_DEADLINE_SECONDS
     this.ackLatencyDistribution = ackLatencyDistribution;
+    this.subscriber = subscriber;
     jobLock = new ReentrantLock();
     messagesWaiter = new MessageWaiter();
     this.clock = clock;

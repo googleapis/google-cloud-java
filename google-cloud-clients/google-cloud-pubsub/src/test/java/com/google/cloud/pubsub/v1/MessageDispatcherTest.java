@@ -17,6 +17,7 @@
 package com.google.cloud.pubsub.v1;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertNotEquals;
 
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
@@ -36,6 +37,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Before;
 import org.junit.Test;
 import org.threeten.bp.Duration;
+import org.threeten.bp.Instant;
 
 public class MessageDispatcherTest {
   private static final ReceivedMessage TEST_MESSAGE =
@@ -57,6 +59,7 @@ public class MessageDispatcherTest {
   private List<ModAckItem> sentModAcks;
   private FakeClock clock;
   private FlowController flowController;
+  private Subscriber subscriber;
 
   @AutoValue
   abstract static class ModAckItem {
@@ -74,7 +77,6 @@ public class MessageDispatcherTest {
     consumers = new LinkedBlockingQueue<>();
     sentAcks = new ArrayList<>();
     sentModAcks = new ArrayList<>();
-
     MessageReceiver receiver =
         new MessageReceiver() {
           @Override
@@ -102,6 +104,8 @@ public class MessageDispatcherTest {
     systemExecutor.shutdownNow();
 
     clock = new FakeClock();
+    subscriber = Subscriber.newBuilder("",receiver)
+            .setClock(clock).build();
     flowController =
         new FlowController(
             FlowControlSettings.newBuilder()
@@ -116,11 +120,13 @@ public class MessageDispatcherTest {
             Duration.ofSeconds(5),
             Duration.ofMinutes(60),
             new Distribution(Subscriber.MAX_ACK_DEADLINE_SECONDS + 1),
+            subscriber,
             flowController,
             new LinkedList<MessageDispatcher.OutstandingMessageBatch>(),
             MoreExecutors.directExecutor(),
             systemExecutor,
-            clock);
+            clock
+            );
     dispatcher.setMessageDeadlineSeconds(Subscriber.MIN_ACK_DEADLINE_SECONDS);
   }
 
@@ -146,6 +152,17 @@ public class MessageDispatcherTest {
     consumers.take().nack();
     dispatcher.processOutstandingAckOperations();
     assertThat(sentModAcks).contains(ModAckItem.of(TEST_MESSAGE.getAckId(), 0));
+  }
+
+  @Test
+  public void testExpireRecords() throws Exception {
+    Instant startTime = subscriber.getDistributionStartTime();
+    clock.advance(6 * 60 * 60 + 1, TimeUnit.SECONDS);
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
+    consumers.take().ack();
+    dispatcher.processOutstandingAckOperations();
+    Instant resetTime = subscriber.getDistributionStartTime();
+    assertNotEquals(startTime, resetTime);
   }
 
   @Test
