@@ -164,6 +164,14 @@ public class WriteChannelConfigurationTest {
     compareLoadConfiguration(configuration, WriteChannelConfiguration.fromPb(configuration.toPb()));
   }
 
+  @Test
+  public void testSetProjectIdDoNotOverride() {
+    WriteChannelConfiguration configuration =
+        WriteChannelConfiguration.of(TABLE_ID).setProjectId("project");
+    configuration.setProjectId("different-project").toBuilder();
+    assertEquals("project", configuration.getDestinationTable().getProject());
+  }
+
   private void compareLoadConfiguration(
       WriteChannelConfiguration expected, WriteChannelConfiguration value) {
     assertEquals(expected, value);

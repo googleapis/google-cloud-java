@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.client.util.Strings;
 import com.google.api.services.bigquery.model.JobConfigurationLoad;
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
@@ -390,7 +391,10 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   }
 
   WriteChannelConfiguration setProjectId(String projectId) {
-    return toBuilder().setDestinationTable(getDestinationTable().setProjectId(projectId)).build();
+    if (Strings.isNullOrEmpty(getDestinationTable().getProject())) {
+      return toBuilder().setDestinationTable(getDestinationTable().setProjectId(projectId)).build();
+    }
+    return this;
   }
 
   com.google.api.services.bigquery.model.JobConfiguration toPb() {

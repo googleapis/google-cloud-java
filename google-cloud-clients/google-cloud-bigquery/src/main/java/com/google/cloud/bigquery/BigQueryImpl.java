@@ -833,14 +833,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       JobId jobId, WriteChannelConfiguration writeChannelConfiguration) {
     return new TableDataWriteChannel(
         getOptions(),
-        jobId.setProjectId(
-            Strings.isNullOrEmpty(jobId.getProject())
-                ? getOptions().getProjectId()
-                : jobId.getProject()),
-        writeChannelConfiguration.setProjectId(
-            Strings.isNullOrEmpty(jobId.getProject())
-                ? getOptions().getProjectId()
-                : jobId.getProject()));
+        jobId.setProjectId(getOptions().getProjectId()),
+        writeChannelConfiguration.setProjectId(getOptions().getProjectId()));
   }
 
   @VisibleForTesting
