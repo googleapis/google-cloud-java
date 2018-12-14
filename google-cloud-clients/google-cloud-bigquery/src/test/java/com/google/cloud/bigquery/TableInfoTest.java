@@ -228,9 +228,9 @@ public class TableInfoTest {
 
   @Test
   public void testSetProjectIdDoNotOverride() {
-	  TableInfo tableInfo = TableInfo.of(TABLE_ID, TABLE_DEFINITION).setProjectId("project");
-	  tableInfo.setProjectId("not-override-project").toBuilder();
-	  assertEquals("project", tableInfo.getTableId().getProject());
+    TableInfo tableInfo = TableInfo.of(TABLE_ID, TABLE_DEFINITION).setProjectId("project");
+    tableInfo.setProjectId("not-override-project").toBuilder();
+    assertEquals("project", tableInfo.getTableId().getProject());
   }
 
   private void compareTableInfo(TableInfo expected, TableInfo value) {
