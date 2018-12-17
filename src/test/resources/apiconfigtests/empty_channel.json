@@ -1,0 +1,16 @@
+{
+  "method": [
+    {
+      "name": [ "/google.spanner.v1.Spanner/CreateSession" ],
+    },
+    {
+      "name": [ "/google.spanner.v1.Spanner/GetSession", "additional name" ],
+      "affinity": {
+        "command": "BOUND",
+        "affinityKey": "name"
+      }
+    },
+    {      
+    }
+  ]
+}
