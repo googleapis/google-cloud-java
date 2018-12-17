@@ -4,10 +4,10 @@
   <artifactId>google-cloud-iamcredentials</artifactId>
   <version>0.1.1-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-iamcredentials:current} -->
   <packaging>jar</packaging>
-  <name>FIXME</name>
+  <name>Google Cloud Java Client for IAM Service Account Credentials API</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-iamcredentials</url>
   <description>
-    FIXME
+    Java idiomatic client for Google Cloud IAM Service Account Credentials API.
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
