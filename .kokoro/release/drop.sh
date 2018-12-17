@@ -22,7 +22,7 @@ if [ -z "${STAGING_REPOSITORY_ID}" ]; then
 fi
 
 source $(dirname "$0")/common.sh
-MAVEN_SETTINGS_FILE=$(realpath $(dirname "$0")/../)/settings.xml
+MAVEN_SETTINGS_FILE=$(realpath $(dirname "$0")/../../)/settings.xml
 pushd $(dirname "$0")/../../
 
 setup_environment_secrets
