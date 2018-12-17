@@ -23,9 +23,11 @@ fi
 
 source $(dirname "$0")/common.sh
 MAVEN_SETTINGS_FILE=$(realpath $(dirname "$0")/../)/settings.xml
-pushd $(dirname "$0")/../
+pushd $(dirname "$0")/../../
 
 setup_environment_secrets
 create_settings_xml_file "settings.xml"
 
-mvn nexus-staging:drop -P release -DstagingRepositoryId=${STAGING_REPOSITORY_ID}
+mvn nexus-staging:drop -B \
+  -P release \
+  -DstagingRepositoryId=${STAGING_REPOSITORY_ID}
