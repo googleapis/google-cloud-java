@@ -30,4 +30,5 @@ create_settings_xml_file "settings.xml"
 
 mvn nexus-staging:release -B \
   -P release \
+  --settings ${MAVEN_SETTINGS_FILE} \
   -DstagingRepositoryId=${STAGING_REPOSITORY_ID}
