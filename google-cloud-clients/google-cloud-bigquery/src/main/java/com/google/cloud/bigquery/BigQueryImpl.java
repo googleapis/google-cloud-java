@@ -625,7 +625,11 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       final BigQueryOptions serviceOptions,
       final Map<BigQueryRpc.Option, ?> optionsMap) {
     try {
-      final TableId completeTableId = tableId.setProjectId(serviceOptions.getProjectId());
+      final TableId completeTableId =
+          tableId.setProjectId(
+              Strings.isNullOrEmpty(serviceOptions.getProjectId())
+                  ? tableId.getProject()
+                  : serviceOptions.getProjectId());
       TableDataList result =
           runWithRetries(
               new Callable<TableDataList>() {
