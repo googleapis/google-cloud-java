@@ -88,18 +88,18 @@ public class RegionCommitmentClientTest {
   @Test
   @SuppressWarnings("all")
   public void aggregatedListRegionCommitmentsTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     CommitmentsScopedList itemsItem = CommitmentsScopedList.newBuilder().build();
     Map<String, CommitmentsScopedList> items = new HashMap<>();
     items.put("items", itemsItem);
     CommitmentAggregatedList expectedResponse =
         CommitmentAggregatedList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .putAllItems(items)
             .build();
@@ -151,32 +151,32 @@ public class RegionCommitmentClientTest {
   @Test
   @SuppressWarnings("all")
   public void getRegionCommitmentTest() {
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
     String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String description = "description-1724546052";
     String endTimestamp = "endTimestamp1004967602";
+    String id = "id3355";
+    String kind = "kind3292052";
+    String name = "name3373707";
     String plan = "plan3443497";
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
     String startTimestamp = "startTimestamp-1526966919";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
     Commitment expectedResponse =
         Commitment.newBuilder()
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
             .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setId(id)
-            .setRegion(region.toString())
+            .setDescription(description)
             .setEndTimestamp(endTimestamp)
+            .setId(id)
+            .setKind(kind)
+            .setName(name)
             .setPlan(plan)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
             .setStartTimestamp(startTimestamp)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -223,50 +223,50 @@ public class RegionCommitmentClientTest {
   @Test
   @SuppressWarnings("all")
   public void insertRegionCommitmentTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region2 = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region2 = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     Operation expectedResponse =
         Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region2.toString())
             .setClientOperationId(clientOperationId)
-            .setUser(user)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region2.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -313,17 +313,17 @@ public class RegionCommitmentClientTest {
   @Test
   @SuppressWarnings("all")
   public void listRegionCommitmentsTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     Commitment itemsElement = Commitment.newBuilder().build();
     List<Commitment> items = Arrays.asList(itemsElement);
     CommitmentList expectedResponse =
         CommitmentList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .addAllItems(items)
             .build();
