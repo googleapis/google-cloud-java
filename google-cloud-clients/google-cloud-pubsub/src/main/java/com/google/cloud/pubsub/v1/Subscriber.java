@@ -123,7 +123,7 @@ public class Subscriber extends AbstractApiService {
   private ScheduledFuture<?> ackDeadlineUpdater;
 
   private Subscriber(Builder builder) {
-    receiver = builder.receiver;
+    receiver = OpenCensusUtil.createOpenCensusMessageReceiver(builder.receiver);
     flowControlSettings = builder.flowControlSettings;
     subscriptionName = builder.subscriptionName;
 

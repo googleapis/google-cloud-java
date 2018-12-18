@@ -16,6 +16,7 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-pubsub</site.installationModule>
+    <opencensus.version>0.15.1</opencensus.version>
   </properties>
   <dependencies>
     <dependency>
@@ -45,6 +46,11 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-auth</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opencensus</groupId>
+      <artifactId>opencensus-api</artifactId>
+      <version>${opencensus.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.auto.value</groupId>

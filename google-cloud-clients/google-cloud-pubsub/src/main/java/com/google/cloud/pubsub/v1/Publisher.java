@@ -187,11 +187,11 @@ public class Publisher {
    * @param message the message to publish.
    * @return the message ID wrapped in a future.
    */
-  public ApiFuture<String> publish(PubsubMessage message) {
+  public ApiFuture<String> publish(PubsubMessage originalMessage) {
     if (shutdown.get()) {
       throw new IllegalStateException("Cannot publish on a shut-down publisher.");
     }
-
+    PubsubMessage message = OpenCensusUtil.putOpenCensusAttributes(originalMessage);
     final int messageSize = message.getSerializedSize();
     OutstandingBatch batchToSend = null;
     SettableApiFuture<String> publishResult = SettableApiFuture.<String>create();
