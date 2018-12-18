@@ -19,6 +19,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.rpc.NotFoundException;
+import com.google.bigtable.admin.v2.InstanceName;
 import com.google.bigtable.admin.v2.ProjectName;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings;
@@ -30,23 +31,27 @@ import com.google.cloud.bigtable.admin.v2.models.StorageType;
 import java.io.IOException;
 import java.util.List;
 import org.junit.AfterClass;
+import org.junit.AssumptionViolatedException;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class InstanceAdminTest {
 
-  private static final String GCLOUD_PROJECT = "test-project"; // Replace with your project ID
+  private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
   private static final String PRODUCTION_INSTANCE = "test-instance";
   private static final String PRODUCTION_CLUSTER = "test-cluster" + System.currentTimeMillis();
-  private static BigtableInstanceAdminSettings instanceAdminSettings;
   private static BigtableInstanceAdminClient adminClient;
 
   @BeforeClass
   public static void beforeClass() throws IOException {
-    instanceAdminSettings =
-        BigtableInstanceAdminSettings.newBuilder()
-            .setProjectName(ProjectName.of(GCLOUD_PROJECT))
-            .build();
+    String targetProject = System.getProperty(INSTANCE_PROPERTY_NAME);
+    ProjectName projectName = ProjectName.of(InstanceName.parse(targetProject).getProject());
+    if (targetProject == null) {
+      adminClient = null;
+    }
+    BigtableInstanceAdminSettings instanceAdminSettings =
+        BigtableInstanceAdminSettings.newBuilder().setProjectName(projectName).build();
     adminClient = BigtableInstanceAdminClient.create(instanceAdminSettings);
     if (!adminClient.exists(PRODUCTION_INSTANCE)) {
       adminClient.createInstance(
@@ -61,6 +66,14 @@ public class InstanceAdminTest {
   public static void afterClass() {
     adminClient.deleteInstance(PRODUCTION_INSTANCE);
     adminClient.close();
+  }
+
+  @Before
+  public void setup() {
+    if (adminClient == null) {
+      throw new AssumptionViolatedException(
+          INSTANCE_PROPERTY_NAME + " property is not set, skipping integration tests.");
+    }
   }
 
   @Test

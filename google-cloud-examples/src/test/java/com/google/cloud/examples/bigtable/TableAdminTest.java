@@ -18,6 +18,7 @@ package com.google.cloud.examples.bigtable;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.ColumnFamily;
@@ -27,23 +28,26 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
 import org.junit.AfterClass;
+import org.junit.AssumptionViolatedException;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class TableAdminTest {
 
-  private static final String GCLOUD_PROJECT = "test-project"; // Replace with your project ID
-  private static final String INSTANCE_ID = "test-instance"; // Replace with your instance ID
+  private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
   private static final String TABLE_ID = "test-table" + System.currentTimeMillis();
-  private static BigtableTableAdminSettings adminSettings;
   private static BigtableTableAdminClient adminClient;
 
   @BeforeClass
   public static void beforeClass() throws IOException {
-    adminSettings =
-        BigtableTableAdminSettings.newBuilder()
-            .setInstanceName(
-                com.google.bigtable.admin.v2.InstanceName.of(GCLOUD_PROJECT, INSTANCE_ID))
+    String targetInstance = System.getProperty(INSTANCE_PROPERTY_NAME);
+    if (targetInstance == null) {
+      adminClient = null;
+      return;
+    }
+    BigtableTableAdminSettings adminSettings =
+        BigtableTableAdminSettings.newBuilder().setInstanceName(InstanceName.parse(targetInstance))
             .build();
     adminClient = BigtableTableAdminClient.create(adminSettings);
     if (!adminClient.exists(TABLE_ID)) {
@@ -55,6 +59,14 @@ public class TableAdminTest {
   public static void afterClass() {
     adminClient.deleteTable(TABLE_ID);
     adminClient.close();
+  }
+
+  @Before
+  public void setup() {
+    if (adminClient == null) {
+      throw new AssumptionViolatedException(
+          INSTANCE_PROPERTY_NAME + " property is not set, skipping integration tests.");
+    }
   }
 
   @Test

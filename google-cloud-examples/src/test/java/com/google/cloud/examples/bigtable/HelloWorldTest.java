@@ -30,33 +30,35 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import java.io.IOException;
 import org.junit.AfterClass;
+import org.junit.AssumptionViolatedException;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class HelloWorldTest {
 
-  private static final String PROJECT_ID = "test-project"; // Replace with your project ID
-  private static final String INSTANCE_ID = "test-instance"; // Replace with your instance ID
+  private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
   private static final String TABLE_ID = "test-table" + System.currentTimeMillis();
   private static final String COLUMN_FAMILY_ID = "test-cf";
   private static final String COLUMN_QUALIFIER = "test-greeting";
   private static final String ROW_KEY_PREFIX = "test-rowKey";
-  private static BigtableDataSettings settings;
   private static BigtableDataClient dataClient;
-  private static BigtableTableAdminSettings adminSettings;
   private static BigtableTableAdminClient adminClient;
 
   @BeforeClass
   public static void beforeClass() throws IOException {
-    settings =
-        BigtableDataSettings.newBuilder()
-            .setInstanceName(InstanceName.of(PROJECT_ID, INSTANCE_ID))
+    String targetInstance = System.getProperty(INSTANCE_PROPERTY_NAME);
+    if (targetInstance == null) {
+      dataClient = null;
+      adminClient = null;
+      return;
+    }
+    BigtableDataSettings settings =
+        BigtableDataSettings.newBuilder().setInstanceName(InstanceName.parse(targetInstance))
             .build();
     dataClient = BigtableDataClient.create(settings);
-    adminSettings =
-        BigtableTableAdminSettings.newBuilder()
-            .setInstanceName(com.google.bigtable.admin.v2.InstanceName.of(PROJECT_ID, INSTANCE_ID))
-            .build();
+    BigtableTableAdminSettings adminSettings = BigtableTableAdminSettings.newBuilder()
+        .setInstanceName(com.google.bigtable.admin.v2.InstanceName.parse(targetInstance)).build();
     adminClient = BigtableTableAdminClient.create(adminSettings);
     if (!adminClient.exists(TABLE_ID)) {
       adminClient.createTable(CreateTableRequest.of(TABLE_ID).addFamily(COLUMN_FAMILY_ID));
@@ -68,6 +70,14 @@ public class HelloWorldTest {
     adminClient.deleteTable(TABLE_ID);
     dataClient.close();
     adminClient.close();
+  }
+
+  @Before
+  public void setup() {
+    if (adminClient == null || dataClient == null) {
+      throw new AssumptionViolatedException(
+          INSTANCE_PROPERTY_NAME + " property is not set, skipping integration tests.");
+    }
   }
 
   @Test
