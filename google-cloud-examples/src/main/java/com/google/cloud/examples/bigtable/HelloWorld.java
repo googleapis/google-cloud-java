@@ -88,29 +88,19 @@ public class HelloWorld {
     }
   }
 
-  public static Table createTable(
-      BigtableTableAdminClient adminClient, String TABLE_ID, String COLUMN_FAMILY_ID) {
+  public static Table createTable(BigtableTableAdminClient adminClient, String TABLE_ID,
+      String COLUMN_FAMILY_ID) {
     // [START creating_a_table]
-    Table table;
-    if (!adminClient.exists(TABLE_ID)) {
-      table = creatingTable(adminClient, TABLE_ID, COLUMN_FAMILY_ID);
-    } else {
-      // Delete and recreate table
-      System.out.println("Deleting existing table and creating new one");
+    if (adminClient.exists(TABLE_ID)) {
+      System.out.println("Deleting existing table");
       adminClient.deleteTable(TABLE_ID);
-      table = creatingTable(adminClient, TABLE_ID, COLUMN_FAMILY_ID);
     }
-    return table;
-    // [END creating_a_table]
-  }
-
-  private static Table creatingTable(
-      BigtableTableAdminClient adminClient, String TABLE_ID, String COLUMN_FAMILY_ID) {
     CreateTableRequest createTableRequest =
         CreateTableRequest.of(TABLE_ID).addFamily(COLUMN_FAMILY_ID);
     System.out.println("Creating table: " + TABLE_ID);
     Table table = adminClient.createTable(createTableRequest);
     return table;
+    // [END creating_a_table]
   }
 
   public static RowMutation writeToTable(
@@ -184,7 +174,7 @@ public class HelloWorld {
     System.out.println("Delete the table:");
     try {
       adminClient.deleteTable(TABLE_ID);
-      System.out.printf("Table: %s deleted successfully", TABLE_ID);
+      System.out.printf("Table: %s deleted successfully\n", TABLE_ID);
     } catch (Exception e) {
       System.out.println("Exception while deleting table: " + e.getMessage());
     }
