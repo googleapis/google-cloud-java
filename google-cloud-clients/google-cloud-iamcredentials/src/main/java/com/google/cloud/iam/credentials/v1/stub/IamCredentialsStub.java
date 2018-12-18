@@ -18,14 +18,16 @@ package com.google.cloud.iam.credentials.v1.stub;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.iam.credentials.v1.GenerateAccessTokenRequest;
-import com.google.cloud.iam.credentials.v1.GenerateAccessTokenResponse;
-import com.google.cloud.iam.credentials.v1.GenerateIdTokenRequest;
-import com.google.cloud.iam.credentials.v1.GenerateIdTokenResponse;
-import com.google.cloud.iam.credentials.v1.SignBlobRequest;
-import com.google.cloud.iam.credentials.v1.SignBlobResponse;
-import com.google.cloud.iam.credentials.v1.SignJwtRequest;
-import com.google.cloud.iam.credentials.v1.SignJwtResponse;
+import com.google.iam.credentials.v1.GenerateAccessTokenRequest;
+import com.google.iam.credentials.v1.GenerateAccessTokenResponse;
+import com.google.iam.credentials.v1.GenerateIdTokenRequest;
+import com.google.iam.credentials.v1.GenerateIdTokenResponse;
+import com.google.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest;
+import com.google.iam.credentials.v1.GenerateIdentityBindingAccessTokenResponse;
+import com.google.iam.credentials.v1.SignBlobRequest;
+import com.google.iam.credentials.v1.SignBlobResponse;
+import com.google.iam.credentials.v1.SignJwtRequest;
+import com.google.iam.credentials.v1.SignJwtResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -53,6 +55,13 @@ public abstract class IamCredentialsStub implements BackgroundResource {
 
   public UnaryCallable<SignJwtRequest, SignJwtResponse> signJwtCallable() {
     throw new UnsupportedOperationException("Not implemented: signJwtCallable()");
+  }
+
+  public UnaryCallable<
+          GenerateIdentityBindingAccessTokenRequest, GenerateIdentityBindingAccessTokenResponse>
+      generateIdentityBindingAccessTokenCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: generateIdentityBindingAccessTokenCallable()");
   }
 
   @Override

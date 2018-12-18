@@ -22,6 +22,16 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.iam.credentials.v1.GenerateAccessTokenRequest;
+import com.google.iam.credentials.v1.GenerateAccessTokenResponse;
+import com.google.iam.credentials.v1.GenerateIdTokenRequest;
+import com.google.iam.credentials.v1.GenerateIdTokenResponse;
+import com.google.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest;
+import com.google.iam.credentials.v1.GenerateIdentityBindingAccessTokenResponse;
+import com.google.iam.credentials.v1.SignBlobRequest;
+import com.google.iam.credentials.v1.SignBlobResponse;
+import com.google.iam.credentials.v1.SignJwtRequest;
+import com.google.iam.credentials.v1.SignJwtResponse;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
 import com.google.protobuf.GeneratedMessageV3;
@@ -271,6 +281,56 @@ public class IamCredentialsClientTest {
       String payload = "-114";
 
       client.signJwt(formattedName, delegates, payload);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void generateIdentityBindingAccessTokenTest() {
+    String accessToken = "accessToken-1938933922";
+    GenerateIdentityBindingAccessTokenResponse expectedResponse =
+        GenerateIdentityBindingAccessTokenResponse.newBuilder().setAccessToken(accessToken).build();
+    mockIAMCredentials.addResponse(expectedResponse);
+
+    String formattedName =
+        IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+    List<String> scope = new ArrayList<>();
+    String jwt = "jwt105671";
+
+    GenerateIdentityBindingAccessTokenResponse actualResponse =
+        client.generateIdentityBindingAccessToken(formattedName, scope, jwt);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockIAMCredentials.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateIdentityBindingAccessTokenRequest actualRequest =
+        (GenerateIdentityBindingAccessTokenRequest) actualRequests.get(0);
+
+    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(scope, actualRequest.getScopeList());
+    Assert.assertEquals(jwt, actualRequest.getJwt());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void generateIdentityBindingAccessTokenExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    mockIAMCredentials.addException(exception);
+
+    try {
+      String formattedName =
+          IamCredentialsClient.formatServiceAccountName("[PROJECT]", "[SERVICE_ACCOUNT]");
+      List<String> scope = new ArrayList<>();
+      String jwt = "jwt105671";
+
+      client.generateIdentityBindingAccessToken(formattedName, scope, jwt);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception

@@ -16,8 +16,18 @@
 package com.google.cloud.iam.credentials.v1;
 
 import com.google.api.core.BetaApi;
-import com.google.cloud.iam.credentials.v1.IAMCredentialsGrpc.IAMCredentialsImplBase;
+import com.google.iam.credentials.v1.GenerateAccessTokenRequest;
+import com.google.iam.credentials.v1.GenerateAccessTokenResponse;
+import com.google.iam.credentials.v1.GenerateIdTokenRequest;
+import com.google.iam.credentials.v1.GenerateIdTokenResponse;
+import com.google.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest;
+import com.google.iam.credentials.v1.GenerateIdentityBindingAccessTokenResponse;
+import com.google.iam.credentials.v1.SignBlobRequest;
+import com.google.iam.credentials.v1.SignBlobResponse;
+import com.google.iam.credentials.v1.SignJwtRequest;
+import com.google.iam.credentials.v1.SignJwtResponse;
 import com.google.protobuf.GeneratedMessageV3;
+import com.google.protos.google.iam.credentials.v1.IAMCredentialsGrpc.IAMCredentialsImplBase;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -107,6 +117,22 @@ public class MockIAMCredentialsImpl extends IAMCredentialsImplBase {
     if (response instanceof SignJwtResponse) {
       requests.add(request);
       responseObserver.onNext((SignJwtResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void generateIdentityBindingAccessToken(
+      GenerateIdentityBindingAccessTokenRequest request,
+      StreamObserver<GenerateIdentityBindingAccessTokenResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof GenerateIdentityBindingAccessTokenResponse) {
+      requests.add(request);
+      responseObserver.onNext((GenerateIdentityBindingAccessTokenResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

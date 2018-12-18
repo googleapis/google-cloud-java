@@ -26,6 +26,16 @@ import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.iam.credentials.v1.stub.IamCredentialsStubSettings;
+import com.google.iam.credentials.v1.GenerateAccessTokenRequest;
+import com.google.iam.credentials.v1.GenerateAccessTokenResponse;
+import com.google.iam.credentials.v1.GenerateIdTokenRequest;
+import com.google.iam.credentials.v1.GenerateIdTokenResponse;
+import com.google.iam.credentials.v1.GenerateIdentityBindingAccessTokenRequest;
+import com.google.iam.credentials.v1.GenerateIdentityBindingAccessTokenResponse;
+import com.google.iam.credentials.v1.SignBlobRequest;
+import com.google.iam.credentials.v1.SignBlobResponse;
+import com.google.iam.credentials.v1.SignJwtRequest;
+import com.google.iam.credentials.v1.SignJwtResponse;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -80,6 +90,14 @@ public class IamCredentialsSettings extends ClientSettings<IamCredentialsSetting
   /** Returns the object with the settings used for calls to signJwt. */
   public UnaryCallSettings<SignJwtRequest, SignJwtResponse> signJwtSettings() {
     return ((IamCredentialsStubSettings) getStubSettings()).signJwtSettings();
+  }
+
+  /** Returns the object with the settings used for calls to generateIdentityBindingAccessToken. */
+  public UnaryCallSettings<
+          GenerateIdentityBindingAccessTokenRequest, GenerateIdentityBindingAccessTokenResponse>
+      generateIdentityBindingAccessTokenSettings() {
+    return ((IamCredentialsStubSettings) getStubSettings())
+        .generateIdentityBindingAccessTokenSettings();
   }
 
   public static final IamCredentialsSettings create(IamCredentialsStubSettings stub)
@@ -199,6 +217,15 @@ public class IamCredentialsSettings extends ClientSettings<IamCredentialsSetting
     /** Returns the builder for the settings used for calls to signJwt. */
     public UnaryCallSettings.Builder<SignJwtRequest, SignJwtResponse> signJwtSettings() {
       return getStubSettingsBuilder().signJwtSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to generateIdentityBindingAccessToken.
+     */
+    public UnaryCallSettings.Builder<
+            GenerateIdentityBindingAccessTokenRequest, GenerateIdentityBindingAccessTokenResponse>
+        generateIdentityBindingAccessTokenSettings() {
+      return getStubSettingsBuilder().generateIdentityBindingAccessTokenSettings();
     }
 
     @Override
