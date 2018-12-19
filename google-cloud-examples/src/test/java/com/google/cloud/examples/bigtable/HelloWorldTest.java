@@ -54,11 +54,14 @@ public class HelloWorldTest {
       return;
     }
     BigtableDataSettings settings =
-        BigtableDataSettings.newBuilder().setInstanceName(InstanceName.parse(targetInstance))
+        BigtableDataSettings.newBuilder()
+            .setInstanceName(InstanceName.parse(targetInstance))
             .build();
     dataClient = BigtableDataClient.create(settings);
-    BigtableTableAdminSettings adminSettings = BigtableTableAdminSettings.newBuilder()
-        .setInstanceName(com.google.bigtable.admin.v2.InstanceName.parse(targetInstance)).build();
+    BigtableTableAdminSettings adminSettings =
+        BigtableTableAdminSettings.newBuilder()
+            .setInstanceName(com.google.bigtable.admin.v2.InstanceName.parse(targetInstance))
+            .build();
     adminClient = BigtableTableAdminClient.create(adminSettings);
     if (!adminClient.exists(TABLE_ID)) {
       adminClient.createTable(CreateTableRequest.of(TABLE_ID).addFamily(COLUMN_FAMILY_ID));

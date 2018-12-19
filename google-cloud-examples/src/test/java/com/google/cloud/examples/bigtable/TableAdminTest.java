@@ -47,7 +47,8 @@ public class TableAdminTest {
       return;
     }
     BigtableTableAdminSettings adminSettings =
-        BigtableTableAdminSettings.newBuilder().setInstanceName(InstanceName.parse(targetInstance))
+        BigtableTableAdminSettings.newBuilder()
+            .setInstanceName(InstanceName.parse(targetInstance))
             .build();
     adminClient = BigtableTableAdminClient.create(adminSettings);
     if (!adminClient.exists(TABLE_ID)) {

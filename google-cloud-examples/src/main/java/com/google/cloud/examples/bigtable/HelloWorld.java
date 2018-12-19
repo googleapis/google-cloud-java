@@ -88,8 +88,8 @@ public class HelloWorld {
     }
   }
 
-  public static Table createTable(BigtableTableAdminClient adminClient, String TABLE_ID,
-      String COLUMN_FAMILY_ID) {
+  public static Table createTable(
+      BigtableTableAdminClient adminClient, String TABLE_ID, String COLUMN_FAMILY_ID) {
     // [START creating_a_table]
     if (adminClient.exists(TABLE_ID)) {
       System.out.println("Deleting existing table");
