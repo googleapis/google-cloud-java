@@ -43,8 +43,8 @@ import java.util.logging.Logger;
 final class OpenCensusUtil {
   private static final Logger logger = Logger.getLogger(OpenCensusUtil.class.getName());
 
-  public static final String OPEN_CENSUS_TAG_CONTEXT = "OpenCensusTagContext";
-  public static final String OPEN_CENSUS_TRACE_CONTEXT = "OpenCensusTraceContext";
+  public static final String TAG_CONTEXT_KEY = "googclient_OpenCensusTagContextKey";
+  public static final String TRACE_CONTEXT_KEY = "googclient_OpenCensusTraceContextKey";
 
   private static final Tagger tagger = Tags.getTagger();
   private static final TagContextBinarySerializer serializer =
@@ -54,14 +54,15 @@ final class OpenCensusUtil {
   private static final Tracer tracer = Tracing.getTracer();
 
   // Used in Publisher.
+  // TODO(dpo): add configuration support to control adding these attributes.
   static PubsubMessage putOpenCensusAttributes(PubsubMessage message) {
     return PubsubMessage.newBuilder(message)
         .putAttributes(
-            OpenCensusUtil.OPEN_CENSUS_TRACE_CONTEXT,
-            OpenCensusUtil.encodeSpanContext(tracer.getCurrentSpan().getContext()))
+            TRACE_CONTEXT_KEY,
+            encodeSpanContext(tracer.getCurrentSpan().getContext()))
         .putAttributes(
-            OpenCensusUtil.OPEN_CENSUS_TAG_CONTEXT,
-            OpenCensusUtil.encodeTagContext(tagger.getCurrentTagContext()))
+            TAG_CONTEXT_KEY,
+            encodeTagContext(tagger.getCurrentTagContext()))
         .build();
   }
 
@@ -160,8 +161,8 @@ final class OpenCensusUtil {
 
     @Override
     public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
-      String encodedTagContext = message.getAttributesOrDefault(OPEN_CENSUS_TAG_CONTEXT, "");
-      String encodedSpanContext = message.getAttributesOrDefault(OPEN_CENSUS_TRACE_CONTEXT, "");
+      String encodedTagContext = message.getAttributesOrDefault(TAG_CONTEXT_KEY, "");
+      String encodedSpanContext = message.getAttributesOrDefault(TRACE_CONTEXT_KEY, "");
       try (
           Scope spanScope = createScopedSpan("receiver");
           Scope statsScope = createScopedTagContext(encodedTagContext)) {
