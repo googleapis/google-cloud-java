@@ -134,7 +134,7 @@ class MessageDispatcher {
     private final int outstandingBytes;
     private final long receivedTimeMillis;
     private final Instant totalExpiration;
-    private boolean abandon = false;
+    private boolean extending = true;
 
     AckHandler(String ackId, int outstandingBytes, Instant totalExpiration) {
       this.ackId = ackId;
@@ -153,6 +153,7 @@ class MessageDispatcher {
          */
         return;
       }
+      extending = false;
       flowController.release(1, outstandingBytes);
       messagesWaiter.incrementPendingMessages(-1);
       processOutstandingBatches();
@@ -419,7 +420,7 @@ class MessageDispatcher {
 
             @Override
             public void abandon() {
-              ackHandler.abandon = true;
+              ackHandler.forget();
             }
           };
       ApiFutures.addCallback(response, ackHandler, MoreExecutors.directExecutor());
@@ -472,7 +473,7 @@ class MessageDispatcher {
     Instant extendTo = now.plusSeconds(extendSeconds);
 
     for (Map.Entry<String, AckHandler> entry : pendingMessages.entrySet()) {
-      if (entry.getValue().abandon) {
+      if (!entry.getValue().extending) {
         continue;
       }
       String ackId = entry.getKey();
