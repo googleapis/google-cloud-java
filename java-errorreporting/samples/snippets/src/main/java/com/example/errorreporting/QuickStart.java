@@ -16,7 +16,9 @@
 
 package com.example.errorreporting;
 
-//[START errorreporting_quickstart]
+// [START errorreporting_quickstart]
+// [START error_reporting_quickstart]
+
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.errorreporting.v1beta1.ReportErrorsServiceClient;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorContext;
@@ -26,7 +28,7 @@ import com.google.devtools.clouderrorreporting.v1beta1.SourceLocation;
 
 /**
  * Snippet demonstrates using the Stackdriver Error Reporting API to report a custom error event.
-
+ * <p>
  * This library is not required on App Engine, errors written to stderr are automatically written
  * to Stackdriver Error Reporting.
  * It is also not required if you are writing logs to Stackdriver Logging.
@@ -46,21 +48,22 @@ public class QuickStart {
       // Custom error events require an error reporting location as well.
       ErrorContext errorContext = ErrorContext.newBuilder()
           .setReportLocation(SourceLocation.newBuilder()
-                  .setFilePath("Test.java")
-                  .setLineNumber(10)
-                  .setFunctionName("myMethod")
-                  .build())
+              .setFilePath("Test.java")
+              .setLineNumber(10)
+              .setFunctionName("myMethod")
+              .build())
           .build();
 
       //Report a custom error event
       ReportedErrorEvent customErrorEvent = ReportedErrorEvent.getDefaultInstance()
-              .toBuilder()
-              .setMessage("custom error event")
-              .setContext(errorContext)
-              .build();
+          .toBuilder()
+          .setMessage("custom error event")
+          .setContext(errorContext)
+          .build();
       // Report an event synchronously, use .reportErrorEventCallable for asynchronous reporting.
       reportErrorsServiceClient.reportErrorEvent(projectName, customErrorEvent);
     }
   }
 }
+// [END error_reporting_quickstart]
 // [END errorreporting_quickstart]
