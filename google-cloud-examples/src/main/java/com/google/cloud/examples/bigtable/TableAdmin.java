@@ -15,6 +15,7 @@
  */
 package com.google.cloud.examples.bigtable;
 
+import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.ColumnFamily;
@@ -25,17 +26,20 @@ import com.google.cloud.bigtable.admin.v2.models.Table;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class TableAdmin {
 
-  public static void main(String... args) {
+  private static final String tablePrefix = "table";
+
+  public static void main(String[] args) {
 
     final String GCLOUD_PROJECT = args[0];
     final String INSTANCE_ID = args[1];
-    final String TABLE_ID = "table";
+    final String TABLE_ID = generateTableId();
 
-    if (args.length < 2) {
+    if (args.length != 2) {
       System.out.println("Missing required project id or instance id");
       return;
     }
@@ -91,7 +95,7 @@ public class TableAdmin {
       deleteTable(adminClient, TABLE_ID);
 
     } catch (IOException ex) {
-      System.out.println("Exception while running BigtableTableAdmin: " + ex.getMessage());
+      System.err.println("Exception while running BigtableTableAdmin: " + ex.getMessage());
     }
   }
 
@@ -106,9 +110,9 @@ public class TableAdmin {
       try {
         CreateTableRequest createTableRequest = CreateTableRequest.of(TABLE_ID).addFamily("cf");
         table = adminClient.createTable(createTableRequest);
-        System.out.printf("Table: %s created successfully\n", table.getId());
-      } catch (Exception ex) {
-        System.out.println("Error creating table: " + ex.getMessage());
+        System.out.printf("Table: %s created successfully%n", table.getId());
+      } catch (ApiException ex) {
+        System.err.println("Error creating table: " + ex.getMessage());
       }
     } else {
       System.out.println("Table exists");
@@ -128,8 +132,8 @@ public class TableAdmin {
       for (String tableName : listTables) {
         System.out.println(tableName);
       }
-    } catch (Exception ex) {
-      System.out.println("Error listing tables in current instance: " + ex.getMessage());
+    } catch (ApiException ex) {
+      System.err.println("Error listing tables in current instance: " + ex.getMessage());
     }
     // [END bigtable_list_tables]
     return listTables;
@@ -147,15 +151,15 @@ public class TableAdmin {
       for (ColumnFamily columnFamily : columnFamilies) {
         printColumnFamily(columnFamily);
       }
-    } catch (Exception ex) {
-      System.out.println("Error retrieving table metadata: " + ex.getMessage());
+    } catch (ApiException ex) {
+      System.err.println("Error retrieving table metadata: " + ex.getMessage());
     }
     // [END bigtable_get_table_metadata]
     return table;
   }
 
   public static Table maxAgeRule(BigtableTableAdminClient adminClient, String TABLE_ID, String cf) {
-    System.out.printf("\nCreating column family %s with max age GC rule:\n", cf);
+    System.out.printf("%nCreating column family %s with max age GC rule:%n", cf);
     // [START bigtable_create_family_gc_max_age]
     // Create a column family with GC policy : maximum age
     // where age = current time minus cell timestamp
@@ -170,8 +174,8 @@ public class TableAdmin {
           ModifyColumnFamiliesRequest.of(TABLE_ID).addFamily(cf, maxAgeRule1);
       table = adminClient.modifyFamilies(columnFamiliesRequest1);
       System.out.println("Created column family: " + cf);
-    } catch (Exception ex) {
-      System.out.println("Error creating column family: " + ex.getMessage());
+    } catch (ApiException ex) {
+      System.err.println("Error creating column family: " + ex.getMessage());
     }
     // [END bigtable_create_family_gc_max_age]
     return table;
@@ -179,7 +183,7 @@ public class TableAdmin {
 
   public static Table maxVersionsRule(
       BigtableTableAdminClient adminClient, String TABLE_ID, String cf) {
-    System.out.printf("\nCreating column family %s with max versions GC rule:\n", cf);
+    System.out.printf("%nCreating column family %s with max versions GC rule:%n", cf);
     // [START bigtable_create_family_gc_max_versions]
     // Create a column family with GC policy : most recent N versions
     // where 1 = most recent version
@@ -194,15 +198,15 @@ public class TableAdmin {
           ModifyColumnFamiliesRequest.of(TABLE_ID).addFamily(cf, versionRule1);
       table = adminClient.modifyFamilies(columnFamiliesRequest2);
       System.out.println("Created column family: " + cf);
-    } catch (Exception ex) {
-      System.out.println("Error creating column family: " + ex.getMessage());
+    } catch (ApiException ex) {
+      System.err.println("Error creating column family: " + ex.getMessage());
     }
     // [END bigtable_create_family_gc_max_versions]
     return table;
   }
 
   public static Table unionRule(BigtableTableAdminClient adminClient, String TABLE_ID, String cf) {
-    System.out.printf("\nCreating column family %s with union GC rule:\n", cf);
+    System.out.printf("%nCreating column family %s with union GC rule:%n", cf);
     // [START bigtable_create_family_gc_union]
     // Create a column family with GC policy to drop data that matches at least one condition.
 
@@ -219,8 +223,8 @@ public class TableAdmin {
           ModifyColumnFamiliesRequest.of(TABLE_ID).addFamily(cf, unionRule1);
       table = adminClient.modifyFamilies(columnFamiliesRequest3);
       System.out.println("Created column family: " + cf);
-    } catch (Exception ex) {
-      System.out.println("Error creating column family: " + ex.getMessage());
+    } catch (ApiException ex) {
+      System.err.println("Error creating column family: " + ex.getMessage());
     }
     // [END bigtable_create_family_gc_union]
     return table;
@@ -228,7 +232,7 @@ public class TableAdmin {
 
   public static Table intersectionRule(
       BigtableTableAdminClient adminClient, String TABLE_ID, String cf) {
-    System.out.printf("\nCreating column family %s with intersection GC rule:\n", cf);
+    System.out.printf("%nCreating column family %s with intersection GC rule:%n", cf);
     // [START bigtable_create_family_gc_intersection]
     // Create a column family with GC policy to drop data that matches all conditions
 
@@ -245,15 +249,15 @@ public class TableAdmin {
           ModifyColumnFamiliesRequest.of(TABLE_ID).addFamily(cf, intersectionRule1);
       table = adminClient.modifyFamilies(columnFamiliesRequest4);
       System.out.println("Created column family: " + cf);
-    } catch (Exception ex) {
-      System.out.println("Error creating column family: " + ex.getMessage());
+    } catch (ApiException ex) {
+      System.err.println("Error creating column family: " + ex.getMessage());
     }
     // [END bigtable_create_family_gc_intersection]
     return table;
   }
 
   public static Table nestedRule(BigtableTableAdminClient adminClient, String TABLE_ID, String cf) {
-    System.out.printf("\nCreating column family %s with a nested GC rule:\n", cf);
+    System.out.printf("%nCreating column family %s with a nested GC rule:%n", cf);
     // [START bigtable_create_family_gc_nested]
     // Create a nested GC rule:
     // Drop cells that are either older than the 10 recent versions
@@ -274,8 +278,8 @@ public class TableAdmin {
           ModifyColumnFamiliesRequest.of(TABLE_ID).addFamily(cf, unionRule2);
       table = adminClient.modifyFamilies(columnFamiliesRequest5);
       System.out.println("Created column family: " + cf);
-    } catch (Exception ex) {
-      System.out.println("Error creating column family: " + ex.getMessage());
+    } catch (ApiException ex) {
+      System.err.println("Error creating column family: " + ex.getMessage());
     }
     // [END bigtable_create_family_gc_nested]
     return table;
@@ -293,8 +297,8 @@ public class TableAdmin {
       for (ColumnFamily columnFamily : columnFamilies) {
         printColumnFamily(columnFamily);
       }
-    } catch (Exception ex) {
-      System.out.println("Error retrieving families: " + ex.getMessage());
+    } catch (ApiException ex) {
+      System.err.println("Error retrieving families: " + ex.getMessage());
     }
     // [END bigtable_list_column_families]
     return columnFamilies;
@@ -302,7 +306,7 @@ public class TableAdmin {
 
   public static Table modifyColumnFamilyRule(
       BigtableTableAdminClient adminClient, String TABLE_ID, String cf) {
-    System.out.printf("\nUpdating column family %s GC rule:\n", cf);
+    System.out.printf("%nUpdating column family %s GC rule:%n", cf);
     // [START bigtable_update_gc_rule]
     // Update the column family metadata to update the GC rule
     // Update a column family GC rule
@@ -313,9 +317,9 @@ public class TableAdmin {
       ModifyColumnFamiliesRequest updateRequest =
           ModifyColumnFamiliesRequest.of(TABLE_ID).updateFamily(cf, versionRule6);
       table = adminClient.modifyFamilies(updateRequest);
-      System.out.printf("Column family %s GC rule updated\n", cf);
-    } catch (Exception ex) {
-      System.out.printf("Error updating GC rule for %s: %s\n", cf, ex.getMessage());
+      System.out.printf("Column family %s GC rule updated%n", cf);
+    } catch (ApiException ex) {
+      System.err.printf("Error updating GC rule for %s: %s%n", cf, ex.getMessage());
     }
     // [END bigtable_update_gc_rule]
     return table;
@@ -323,7 +327,7 @@ public class TableAdmin {
 
   public static ColumnFamily printModifiedColumnFamily(
       BigtableTableAdminClient adminClient, String TABLE_ID, String cf) {
-    System.out.printf("\nPrint updated GC rule for column family: %s\n", cf);
+    System.out.printf("%nPrint updated GC rule for column family: %s%n", cf);
     // [START bigtable_family_get_gc_rule]
     ColumnFamily colFamily = null;
     try {
@@ -335,9 +339,9 @@ public class TableAdmin {
           colFamily = columnFamily;
         }
       }
-    } catch (Exception ex) {
-      System.out.printf(
-          "Error retrieving metadata for column family: %s\n%s\n", cf, ex.getMessage());
+    } catch (ApiException ex) {
+      System.err.printf(
+          "Error retrieving metadata for column family: %s%n%s%n", cf, ex.getMessage());
     }
     // [END bigtable_family_get_gc_rule]
     return colFamily;
@@ -352,9 +356,9 @@ public class TableAdmin {
     try {
       ModifyColumnFamiliesRequest deleted = ModifyColumnFamiliesRequest.of(TABLE_ID).dropFamily(cf);
       table = adminClient.modifyFamilies(deleted);
-      System.out.printf("Column family %s deleted successfully\n", cf);
-    } catch (Exception ex) {
-      System.out.printf("Error deleting family: %s\n%s\n", cf, ex.getMessage());
+      System.out.printf("Column family %s deleted successfully%n", cf);
+    } catch (ApiException ex) {
+      System.err.printf("Error deleting family: %s%n%s%n", cf, ex.getMessage());
     }
     // [END bigtable_delete_family]
     return table;
@@ -367,15 +371,20 @@ public class TableAdmin {
     try {
       adminClient.deleteTable(TABLE_ID);
       System.out.println("Table deleted: " + TABLE_ID);
-    } catch (Exception ex) {
-      System.out.printf("Error deleting table %s: %s\n", TABLE_ID, ex.getMessage());
+    } catch (ApiException ex) {
+      System.err.printf("Error deleting table %s: %s%n", TABLE_ID, ex.getMessage());
     }
     // [END bigtable_delete_table]
   }
 
   private static void printColumnFamily(ColumnFamily columnFamily) {
     System.out.printf(
-        "Column family: %s\nMetadata: %s\n",
+        "Column family: %s%nMetadata: %s%n",
         columnFamily.getId(), columnFamily.getGCRule().toString());
+  }
+
+  private static String generateTableId() {
+    return String.format(
+        "%s-%016x-%d", tablePrefix, System.currentTimeMillis(), new Random().nextLong());
   }
 }

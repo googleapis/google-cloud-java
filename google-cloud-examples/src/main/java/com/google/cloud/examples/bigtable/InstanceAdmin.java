@@ -15,6 +15,7 @@
  */
 package com.google.cloud.examples.bigtable;
 
+import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.bigtable.admin.v2.ProjectName;
 import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
@@ -31,13 +32,13 @@ import java.util.Map;
 
 public class InstanceAdmin {
 
-  public static void main(String... args) {
+  public static void main(String[] args) {
 
     final String GCLOUD_PROJECT = args[0];
     final String PRODUCTION_INSTANCE = "ssd-instance";
     final String PRODUCTION_CLUSTER = "ssd-cluster";
 
-    if (args.length < 1) {
+    if (args.length != 1) {
       System.out.println("Missing required project id");
       return;
     }
@@ -75,7 +76,7 @@ public class InstanceAdmin {
       deleteInstance(adminClient, PRODUCTION_INSTANCE);
 
     } catch (IOException ex) {
-      System.out.println("Exception while running InstanceAdmin: " + ex.getMessage());
+      System.err.println("Exception while running InstanceAdmin: " + ex.getMessage());
     }
   }
 
@@ -86,8 +87,8 @@ public class InstanceAdmin {
     boolean found = false;
     try {
       found = adminClient.exists(instanceID);
-    } catch (Exception e) {
-      System.out.println("Error checking if instance exists: " + e.getMessage());
+    } catch (ApiException e) {
+      System.err.println("Error checking if instance exists: " + e.getMessage());
     }
     // [END bigtable_check_instance_exists]
 
@@ -107,8 +108,8 @@ public class InstanceAdmin {
       try {
         instance = adminClient.createInstance(createInstanceRequest);
         System.out.printf("PRODUCTION type instance: %s, created successfully", instance.getId());
-      } catch (Exception e) {
-        System.out.println("Error creating PRODUCTION instance: " + e.getMessage());
+      } catch (ApiException e) {
+        System.err.println("Error creating PRODUCTION instance: " + e.getMessage());
         System.exit(0);
       }
       // [END bigtable_create_prod_instance]
@@ -128,8 +129,8 @@ public class InstanceAdmin {
       for (Instance instance : instances) {
         System.out.println(instance.getId());
       }
-    } catch (Exception e) {
-      System.out.println("Error listing instances: " + e.getMessage());
+    } catch (ApiException e) {
+      System.err.println("Error listing instances: " + e.getMessage());
     }
     // [END bigtable_list_instances]
     return instances;
@@ -151,8 +152,8 @@ public class InstanceAdmin {
       }
       System.out.println("State: " + instance.getState());
       System.out.println("Type: " + instance.getType());
-    } catch (Exception e) {
-      System.out.println("Error getting instance: " + e.getMessage());
+    } catch (ApiException e) {
+      System.err.println("Error getting instance: " + e.getMessage());
     }
     // [END bigtable_get_instance]
     return instance;
@@ -168,8 +169,8 @@ public class InstanceAdmin {
       for (Cluster cluster : clusters) {
         System.out.println(cluster.getId());
       }
-    } catch (Exception e) {
-      System.out.println("Error listing clusters: " + e.getMessage());
+    } catch (ApiException e) {
+      System.err.println("Error listing clusters: " + e.getMessage());
     }
     // [END bigtable_get_clusters]
     return clusters;
@@ -182,8 +183,7 @@ public class InstanceAdmin {
       adminClient.deleteInstance(instanceID);
       System.out.println("Instance deleted: " + instanceID);
     } catch (NotFoundException e) {
-      System.out.println("Error deleting instance: " + instanceID);
-      System.out.println(e.getMessage());
+      System.err.println("Error deleting instance: " + instanceID + " " + e.getMessage());
     }
     // [END bigtable_delete_instance]
   }
@@ -201,8 +201,8 @@ public class InstanceAdmin {
                   .setServeNodes(3)
                   .setStorageType(StorageType.SSD));
       System.out.printf("Cluster: %s created successfully", cluster.getId());
-    } catch (Exception e) {
-      System.out.println("Error creating cluster: " + e.getMessage());
+    } catch (ApiException e) {
+      System.err.println("Error creating cluster: " + e.getMessage());
     }
     // [END bigtable_create_cluster]
     return cluster;
@@ -215,8 +215,8 @@ public class InstanceAdmin {
     try {
       adminClient.deleteCluster(instanceID, clusterID);
       System.out.printf("Cluster: %s deleted successfully", clusterID);
-    } catch (Exception e) {
-      System.out.println("Error deleting cluster: " + e.getMessage());
+    } catch (ApiException e) {
+      System.err.println("Error deleting cluster: " + e.getMessage());
     }
     // [END bigtable_delete_cluster]
   }

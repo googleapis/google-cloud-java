@@ -15,20 +15,21 @@
  */
 package com.google.cloud.examples.bigtable;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
 import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
-import com.google.cloud.bigtable.admin.v2.models.Table;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.Row;
-import com.google.cloud.bigtable.data.v2.models.RowMutation;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import org.junit.AfterClass;
 import org.junit.AssumptionViolatedException;
 import org.junit.Before;
@@ -38,79 +39,109 @@ import org.junit.Test;
 public class HelloWorldTest {
 
   private static final String INSTANCE_PROPERTY_NAME = "bigtable.instance";
-  private static final String TABLE_ID = "test-table" + System.currentTimeMillis();
-  private static final String COLUMN_FAMILY_ID = "test-cf";
-  private static final String COLUMN_QUALIFIER = "test-greeting";
-  private static final String ROW_KEY_PREFIX = "test-rowKey";
+  private static String tableId;
+  private static final String columnFamily = "cf1";
   private static BigtableDataClient dataClient;
   private static BigtableTableAdminClient adminClient;
+  private static HelloWorld helloWorld;
+  private static InstanceName instanceName;
 
   @BeforeClass
   public static void beforeClass() throws IOException {
     String targetInstance = System.getProperty(INSTANCE_PROPERTY_NAME);
+    instanceName = InstanceName.parse(targetInstance);
     if (targetInstance == null) {
       dataClient = null;
       adminClient = null;
       return;
     }
     BigtableDataSettings settings =
-        BigtableDataSettings.newBuilder()
-            .setInstanceName(InstanceName.parse(targetInstance))
-            .build();
+        BigtableDataSettings.newBuilder().setInstanceName(instanceName).build();
     dataClient = BigtableDataClient.create(settings);
     BigtableTableAdminSettings adminSettings =
         BigtableTableAdminSettings.newBuilder()
             .setInstanceName(com.google.bigtable.admin.v2.InstanceName.parse(targetInstance))
             .build();
     adminClient = BigtableTableAdminClient.create(adminSettings);
-    if (!adminClient.exists(TABLE_ID)) {
-      adminClient.createTable(CreateTableRequest.of(TABLE_ID).addFamily(COLUMN_FAMILY_ID));
-    }
   }
 
   @AfterClass
   public static void afterClass() throws Exception {
-    adminClient.deleteTable(TABLE_ID);
+    adminClient.deleteTable(tableId);
     dataClient.close();
     adminClient.close();
   }
 
   @Before
-  public void setup() {
+  public void setup() throws IOException {
     if (adminClient == null || dataClient == null) {
       throw new AssumptionViolatedException(
           INSTANCE_PROPERTY_NAME + " property is not set, skipping integration tests.");
     }
+    tableId = "test-table";
+    helloWorld = new HelloWorld(instanceName.getProject(), instanceName.getInstance(), tableId);
+    if (!adminClient.exists(tableId)) {
+      adminClient.createTable(CreateTableRequest.of(tableId).addFamily(columnFamily));
+    }
   }
 
   @Test
-  public void testCreateAndDeleteTable() {
+  public void testCreateAndDeleteTable() throws IOException {
     // Create table
-    Table table = HelloWorld.createTable(adminClient, "fake-table", "fake-column-family-id");
-    assertNotNull(table);
+    String fakeTable = "fake-table";
+    HelloWorld testHelloWorld =
+        new HelloWorld(instanceName.getProject(), instanceName.getInstance(), fakeTable);
+    testHelloWorld.createTable();
+    assertTrue(adminClient.exists(fakeTable));
 
     // Delete table
-    HelloWorld.deleteTable(adminClient, "fake-table");
-    assertTrue(!adminClient.exists("fake-table"));
+    testHelloWorld.deleteTable();
+    assertTrue(!adminClient.exists(fakeTable));
   }
 
   @Test
   public void testWriteToAndReadFromTable() {
     // Write to table
-    RowMutation rowMutation =
-        HelloWorld.writeToTable(
-            dataClient, TABLE_ID, ROW_KEY_PREFIX, COLUMN_FAMILY_ID, COLUMN_QUALIFIER);
-    assertNotNull(rowMutation);
+    helloWorld.writeToTable();
+    Row row = dataClient.readRow(tableId, "rowKey0");
+    assertNotNull(row);
 
     // Read a single row
-    Row row = HelloWorld.readSingleRow(dataClient, TABLE_ID, ROW_KEY_PREFIX);
-    assertNotNull(row);
+    OutputStream outputStream = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(outputStream));
+    helloWorld.readSingleRow();
+    assertTrue(outputStream.toString().contains("Reading a single row by row key"));
+    assertTrue(outputStream.toString().contains("Row: rowKey0"));
+    assertTrue(
+        outputStream
+            .toString()
+            .contains("Family: cf1    Qualifier: greeting    Value: Hello World!"));
+
+    // Restore normal output
+    System.setOut(new PrintStream(System.out));
   }
 
   @Test
   public void testReadTable() {
     // Read whole table
-    ServerStream<Row> stream = HelloWorld.readTable(dataClient, TABLE_ID);
-    assertNotNull(stream);
+    OutputStream outputStream = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(outputStream));
+    helloWorld.readTable();
+    assertTrue(
+        outputStream.toString().contains("============= Reading the entire table ============="));
+
+    // Restore normal output
+    System.setOut(new PrintStream(System.out));
+  }
+
+  @Test
+  public void testGarbageCollect() {
+    boolean exceptionThrown = false;
+    try {
+      helloWorld.garbageCollect();
+    } catch (Exception e) {
+      exceptionThrown = true;
+    }
+    assertFalse(exceptionThrown);
   }
 }
