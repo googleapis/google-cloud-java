@@ -246,6 +246,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
   static <T> T runWithRetries(Callable<T> callable, RetrySettings retrySettings) {
     Instant start = Instant.now();
     Instant end;
+
     // Use same backoff setting as abort, somewhat arbitrarily.
     Span span = tracer.getCurrentSpan();
     ExponentialBackOff backOff = newBackOff();
@@ -267,7 +268,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       retryDuration = Duration.between(start, end);
       if (retryDuration.compareTo(totalTimeout) > 0) {
         throw newSpannerException(
-            ErrorCode.INTERNAL, "Exceeded totalTimeout " + totalTimeout.toMillis() + " ms");
+            ErrorCode.INTERNAL, "Exceeded totalTimeout " + totalTimeout.toMillis());
       }
       try {
         span.addAnnotation(
@@ -1679,8 +1680,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 public com.google.spanner.v1.ResultSet call() throws Exception {
                   return rpc.executeQuery(builder.build(), session.options);
                 }
-              },
-              null);
+              });
       if (!resultSet.hasStats()) {
         throw new IllegalArgumentException(
             "DML response missing stats possibly due to non-DML statement as input");
