@@ -129,8 +129,7 @@ public class SpannerImplTest {
             public Void call() throws Exception {
               throw new Exception("Should be translated to SpannerException");
             }
-          },
-          null);
+          });
     } catch (SpannerException e) {
       assertThat(e.getErrorCode()).isEqualTo(ErrorCode.INTERNAL);
       assertThat(e.getMessage()).contains("Unexpected exception thrown");

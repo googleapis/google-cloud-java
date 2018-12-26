@@ -239,6 +239,10 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
    *
    * <p>TODO: Consider replacing with RetryHelper from gcloud-core.
    */
+  static <T> T runWithRetries(Callable<T> callable) {
+    return runWithRetries(callable, null);
+  }
+
   static <T> T runWithRetries(Callable<T> callable, RetrySettings retrySettings) {
     Instant start = Instant.now();
     Instant end;
@@ -443,8 +447,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 public Paginated<T> call() {
                   return getNextPage(nextPageToken);
                 }
-              },
-              null);
+              });
       this.nextPageToken = nextPage.getNextPageToken();
       List<S> results = new ArrayList<>();
       for (T proto : nextPage.getResults()) {
@@ -513,7 +516,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               return Database.fromProto(rpc.getDatabase(dbName), DatabaseAdminClientImpl.this);
             }
           };
-      return runWithRetries(callable, null);
+      return runWithRetries(callable);
     }
 
     @Override
@@ -557,7 +560,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               return null;
             }
           };
-      runWithRetries(callable, null);
+      runWithRetries(callable);
     }
 
     @Override
@@ -570,7 +573,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               return rpc.getDatabaseDdl(dbName);
             }
           };
-      return runWithRetries(callable, null);
+      return runWithRetries(callable);
     }
 
     @Override
@@ -629,8 +632,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               return InstanceConfig.fromProto(
                   rpc.getInstanceConfig(instanceConfigName), InstanceAdminClientImpl.this);
             }
-          },
-          null);
+          });
     }
 
     @Override
@@ -700,8 +702,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               return Instance.fromProto(
                   rpc.getInstance(instanceName), InstanceAdminClientImpl.this, dbClient);
             }
-          },
-          null);
+          });
     }
 
     @Override
@@ -737,8 +738,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
               rpc.deleteInstance(new InstanceId(projectId, instanceId).getName());
               return null;
             }
-          },
-          null);
+          });
     }
 
     @Override
@@ -847,8 +847,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                   public CommitResponse call() throws Exception {
                     return gapicRpc.commit(request, options);
                   }
-                },
-                null);
+                });
         Timestamp t = Timestamp.fromProto(response.getCommitTimestamp());
         span.end();
         return t;
@@ -915,8 +914,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 gapicRpc.deleteSession(name, options);
                 return null;
               }
-            },
-            null);
+            });
         span.end();
       } catch (RuntimeException e) {
         TraceUtil.endSpanWithFailure(span, e);
@@ -941,8 +939,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                   public Transaction call() throws Exception {
                     return gapicRpc.beginTransaction(request, options);
                   }
-                },
-                null);
+                });
         if (txn.getId().isEmpty()) {
           throw newSpannerException(ErrorCode.INTERNAL, "Missing id in transaction\n" + getName());
         }
@@ -1445,8 +1442,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 public Transaction call() throws Exception {
                   return rpc.beginTransaction(request, session.options);
                 }
-              },
-              null);
+              });
       if (txn.getId().isEmpty()) {
         throw SpannerExceptionFactory.newSpannerException(
             ErrorCode.INTERNAL,
@@ -1478,8 +1474,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                 public com.google.spanner.v1.ResultSet call() throws Exception {
                   return rpc.executeQuery(builder.build(), session.options);
                 }
-              },
-              null);
+              });
       if (!resultSet.hasStats()) {
         throw new IllegalArgumentException(
             "Partitioned DML response missing stats possibly due to non-DML statement as input");
@@ -1570,8 +1565,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                   public CommitResponse call() throws Exception {
                     return rpc.commit(commitRequest, session.options);
                   }
-                },
-                null);
+                });
 
         if (!commitResponse.hasCommitTimestamp()) {
           throw newSpannerException(
@@ -1876,8 +1870,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
                     public Transaction call() throws Exception {
                       return rpc.beginTransaction(request, session.options);
                     }
-                  },
-                  null);
+                  });
           if (!transaction.hasReadTimestamp()) {
             throw SpannerExceptionFactory.newSpannerException(
                 ErrorCode.INTERNAL, "Missing expected transaction.read_timestamp metadata field");
