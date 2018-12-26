@@ -37,7 +37,7 @@ public class CheckAndMutateIT {
 
   @Test
   public void test() throws Exception {
-    String tableId = testEnvRule.env().getTableName().getTable();
+    String tableId = testEnvRule.env().getTableId();
     String rowKey = testEnvRule.env().getRowPrefix();
     String familyId = testEnvRule.env().getFamilyId();
 

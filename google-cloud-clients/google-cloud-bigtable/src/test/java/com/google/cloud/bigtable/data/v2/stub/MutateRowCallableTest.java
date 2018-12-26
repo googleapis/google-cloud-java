@@ -21,7 +21,6 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.common.truth.Truth;
 import org.junit.Before;
@@ -35,7 +34,7 @@ import org.mockito.Mockito;
 public class MutateRowCallableTest {
 
   private static final RequestContext REQUEST_CONTEXT =
-      RequestContext.create(InstanceName.of("fake-project", "fake-instance"), "fake-profile");
+      RequestContext.create("fake-project", "fake-instance", "fake-profile");
   private UnaryCallable<MutateRowRequest, MutateRowResponse> innerCallable;
   private ArgumentCaptor<MutateRowRequest> innerMutation;
   private SettableApiFuture<MutateRowResponse> innerResult;
@@ -47,7 +46,7 @@ public class MutateRowCallableTest {
     innerMutation = ArgumentCaptor.forClass(MutateRowRequest.class);
     innerResult = SettableApiFuture.create();
     Mockito.when(
-            innerCallable.futureCall(innerMutation.capture(), Mockito.any(ApiCallContext.class)))
+        innerCallable.futureCall(innerMutation.capture(), Mockito.any(ApiCallContext.class)))
         .thenReturn(innerResult);
   }
 

@@ -73,11 +73,12 @@ To run the tests:
 2. Download the [JSON service account credentials file][create-service-account] from the Google
    Developer's Console.
 3. Set the environment variable `GOOGLE_APPLICATION_CREDENTIALS` to the path of the credentials file
-4. Set the system property `bigtable.instance` to the full instance name you
-    created earlier. Example:
+4. Set the system properties `bigtable.project` and `bigtable.instance` to the project and instance
+   id of the instance you created earlier. Example:
     ```shell
     mvn verify -am -pl google-cloud-bigtable-admin \
-      -Dbigtable.instance=projects/my-project/instances/my-instance
+      -Dbigtable.project=my-project
+      -Dbigtable.instance=my-instance
     ```
 
 ### Testing code that uses Compute

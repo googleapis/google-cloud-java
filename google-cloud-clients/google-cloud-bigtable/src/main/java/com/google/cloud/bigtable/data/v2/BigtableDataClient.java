@@ -26,7 +26,6 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.BulkMutationBatcher;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
@@ -45,8 +44,7 @@ import java.util.List;
  * get started:
  *
  * <pre>{@code
- * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
- * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+ * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
  *   for(Row row : bigtableDataClient.readRows(Query.create("[TABLE]")) {
  *     // Do something with row
  *   }
@@ -87,7 +85,8 @@ import java.util.List;
  * <pre>{@code
  * BigtableDataSettings bigtableDataSettings =
  *     BigtableDataSettings.newBuilder()
- *         .setInstanceName(InstanceName.of("[PROJECT]", "[INSTANCE]"))
+ *         .setProjectId("[PROJECT]")
+ *         .setInstanceId("[INSTANCE]")
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * try(BigtableDataClient bigtableDataClient = BigtableDataClient.create(bigtableDataSettings)) {
@@ -100,7 +99,8 @@ import java.util.List;
  * <pre>{@code
  * BigtableDataSettings bigtableDataSettings =
  *     BigtableDataSettings.newBuilder()
- *       .setInstanceName(InstanceName.of("[PROJECT]", "[INSTANCE]"))
+ *       .setProjectId("[PROJECT]")
+ *       .setInstanceId("[INSTANCE]")
  *       .setEndpoint(myEndpoint).build();
  * try(BigtableDataClient bigtableDataClient = BigtableDataClient.create(bigtableDataSettings)) {
  *   // ..
@@ -113,11 +113,30 @@ public class BigtableDataClient implements AutoCloseable {
   /**
    * Constructs an instance of BigtableDataClient with default settings.
    *
-   * @param instanceName The instance to connect to.
+   * @param projectId The project id of the instance to connect to.
+   * @param instanceId The id of the instance to connect to.
    * @return A new client.
    * @throws IOException If any.
    */
-  public static BigtableDataClient create(InstanceName instanceName) throws IOException {
+  public static BigtableDataClient create(String projectId, String instanceId) throws IOException {
+    BigtableDataSettings settings = BigtableDataSettings.newBuilder()
+        .setProjectId(projectId)
+        .setInstanceId(instanceId)
+        .build();
+    return create(settings);
+  }
+
+  /**
+   * Constructs an instance of BigtableDataClient with default settings.
+   *
+   * @param instanceName The instance to connect to.
+   * @return A new client.
+   * @throws IOException If any.
+   *
+   * @deprecated Please use {@link #create(String, String)}.
+   */
+  @Deprecated
+  public static BigtableDataClient create(com.google.cloud.bigtable.data.v2.models.InstanceName instanceName) throws IOException {
     BigtableDataSettings settings =
         BigtableDataSettings.newBuilder().setInstanceName(instanceName).build();
     return create(settings);
@@ -144,8 +163,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   String tableId = "[TABLE]";
    *
    *   Row row = bigtableDataClient.readRow(tableId, ByteString.copyFromUtf8("key"));
@@ -174,8 +192,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   String tableId = "[TABLE]";
    *
    *   Row row = bigtableDataClient.readRow(tableId, "key");
@@ -204,8 +221,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   String tableId = "[TABLE]";
    *
    *   ApiFuture<Row> futureResult = bigtableDataClient.readRowAsync(tableId,  "key");
@@ -238,8 +254,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   String tableId = "[TABLE]";
    *
    *   ApiFuture<Row> futureResult = bigtableDataClient.readRowAsync(tableId,  ByteString.copyFromUtf8("key"));
@@ -274,8 +289,7 @@ public class BigtableDataClient implements AutoCloseable {
    * // Import the filter DSL
    * import static com.google.cloud.bigtable.data.v2.models.Filters.FILTERS;
    *
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   String tableId = "[TABLE]";
    *
    *   Query query = Query.create(tableId)
@@ -309,8 +323,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   String tableId = "[TABLE]";
    *
    *   Query query = Query.create(tableId)
@@ -347,8 +360,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   String tableId = "[TABLE]";
    *
    *   Query query = Query.create(tableId)
@@ -410,8 +422,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   String tableId = "[TABLE]";
    *
    *   Query query = Query.create(tableId)
@@ -447,8 +458,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   String tableId = "[TABLE_ID]";
    *
    *   List<KeyOffset> keyOffsets = bigtableDataClient.sampleRowKeys(tableId);
@@ -474,8 +484,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableClient bigtableDataClient = BigtableClient.create(instanceName)) {
+   * try (BigtableClient bigtableDataClient = BigtableClient.create("[PROJECT]", "[INSTANCE]")) {
    *   ApiFuture<List<KeyOffset>> keyOffsetsFuture = bigtableClient.sampleRowKeysAsync("[TABLE]");
    *
    *   ApiFutures.addCallback(keyOffsetsFuture, new ApiFutureCallback<List<KeyOffset>>() {
@@ -506,8 +515,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   // Synchronous invocation
    *   try {
    *     List<KeyOffset> keyOffsets = bigtableDataClient.sampleRowKeysCallable().call("[TABLE]");
@@ -546,8 +554,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   RowMutation mutation = RowMutation.create("[TABLE]", "[ROW KEY]")
    *     .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
    *
@@ -570,8 +577,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   RowMutation mutation = RowMutation.create("[TABLE]", "[ROW KEY]")
    *     .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
    *
@@ -603,8 +609,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   RowMutation mutation = RowMutation.create("[TABLE]", "[ROW KEY]")
    *     .setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]");
    *
@@ -630,8 +635,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   try (BulkMutationBatcher batcher = bigtableDataClient.newBulkMutationBatcher()) {
    *     for (String someValue : someCollection) {
    *       RowMutation mutation = RowMutation.create("[TABLE]", "[ROW KEY]")
@@ -659,8 +663,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   BulkMutation batch = BulkMutation.create("[TABLE]");
    *   for (String someValue : someCollection) {
    *     batch.add("[ROW KEY]", Mutation.create().setCell("[FAMILY NAME]", "[QUALIFIER]", "[VALUE]"));
@@ -689,8 +692,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableClient bigtableClient = BigtableClient.create(instanceName)) {
+   * try (BigtableClient bigtableClient = BigtableClient.create("[PROJECT]", "[INSTANCE]")) {
    *   BulkMutation batch = BulkMutation.create("[TABLE]");
    *   for (String someValue : someCollection) {
    *     ApiFuture<Void> entryFuture = batch.add("[ROW KEY]",
@@ -725,8 +727,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   BulkMutation batch = BulkMutation.create("[TABLE]");
    *   for (String someValue : someCollection) {
    *     ApiFuture<Void> entryFuture = batch.add("[ROW KEY]",
@@ -746,8 +747,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   ConditionalRowMutation mutation = ConditionalRowMutation.create("[TABLE]", "[KEY]")
    *     .condition(FILTERS.value().regex("old-value"))
    *     .then(
@@ -773,8 +773,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   ConditionalRowMutation mutation = ConditionalRowMutation.create("[TABLE]", "[KEY]")
    *     .condition(FILTERS.value().regex("old-value"))
    *     .then(
@@ -809,8 +808,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   ConditionalRowMutation mutation = ConditionalRowMutation.create("[TABLE]", "[KEY]")
    *     .condition(FILTERS.value().regex("old-value"))
    *     .then(
@@ -845,8 +843,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   ReadModifyWriteRow mutation = ReadModifyWriteRow.create("[TABLE]", "[KEY]")
    *     .increment("[FAMILY]", "[QUALIFIER]", 1)
    *     .append("[FAMILY2]", "[QUALIFIER2]", "suffix");
@@ -872,8 +869,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   ReadModifyWriteRow mutation = ReadModifyWriteRow.create("[TABLE]", "[KEY]")
    *     .increment("[FAMILY]", "[QUALIFIER]", 1)
    *     .append("[FAMILY2]", "[QUALIFIER2]", "suffix");
@@ -908,8 +904,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   ReadModifyWriteRow mutation = ReadModifyWriteRow.create("[TABLE]", "[KEY]")
    *     .increment("[FAMILY]", "[QUALIFIER]", 1)
    *     .append("[FAMILY2]", "[QUALIFIER2]", "suffix");

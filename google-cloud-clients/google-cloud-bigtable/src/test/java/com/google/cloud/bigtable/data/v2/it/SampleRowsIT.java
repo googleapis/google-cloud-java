@@ -47,7 +47,7 @@ public class SampleRowsIT {
       ApiFuture<Void> future =
           client.mutateRowAsync(
               RowMutation.create(
-                      testEnvRule.env().getTableName().getTable(),
+                      testEnvRule.env().getTableId(),
                       testEnvRule.env().getRowPrefix() + "-" + i)
                   .setCell(testEnvRule.env().getFamilyId(), "", "value"));
       futures.add(future);
@@ -55,7 +55,7 @@ public class SampleRowsIT {
     ApiFutures.allAsList(futures).get(1, TimeUnit.MINUTES);
 
     ApiFuture<List<KeyOffset>> future =
-        client.sampleRowKeysAsync(testEnvRule.env().getTableName().getTable());
+        client.sampleRowKeysAsync(testEnvRule.env().getTableId());
 
     List<KeyOffset> results = future.get(1, TimeUnit.MINUTES);
 

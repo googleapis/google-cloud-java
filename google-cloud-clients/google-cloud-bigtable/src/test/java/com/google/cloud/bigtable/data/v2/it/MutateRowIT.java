@@ -41,7 +41,7 @@ public class MutateRowIT {
         .env()
         .getDataClient()
         .mutateRowAsync(
-            RowMutation.create(testEnvRule.env().getTableName().getTable(), rowKey)
+            RowMutation.create(testEnvRule.env().getTableId(), rowKey)
                 .setCell(familyId, "q", "myVal")
                 .setCell(familyId, "q2", "myVal2")
                 .setCell(familyId, "q3", "myVal3"))
@@ -51,7 +51,7 @@ public class MutateRowIT {
         .env()
         .getDataClient()
         .mutateRowAsync(
-            RowMutation.create(testEnvRule.env().getTableName().getTable(), rowKey)
+            RowMutation.create(testEnvRule.env().getTableId(), rowKey)
                 .deleteCells(familyId, "q2"))
         .get(1, TimeUnit.MINUTES);
 
@@ -61,7 +61,7 @@ public class MutateRowIT {
             .getDataClient()
             .readRowsCallable()
             .first()
-            .call(Query.create(testEnvRule.env().getTableName().getTable()).rowKey(rowKey));
+            .call(Query.create(testEnvRule.env().getTableId()).rowKey(rowKey));
 
     assertThat(row.getCells()).hasSize(2);
     assertThat(row.getCells().get(0).getValue()).isEqualTo(ByteString.copyFromUtf8("myVal"));
