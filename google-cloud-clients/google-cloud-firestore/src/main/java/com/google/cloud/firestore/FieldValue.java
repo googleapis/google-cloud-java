@@ -103,7 +103,7 @@ public abstract class FieldValue {
     FieldTransform toProto(FieldPath path) {
       FieldTransform.Builder fieldTransform = FieldTransform.newBuilder();
       fieldTransform.setFieldPath(path.getEncodedPath());
-      fieldTransform.setNumericAdd(
+      fieldTransform.setIncrement(
           UserDataConverter.encodeValue(FieldPath.of(""), operand, UserDataConverter.ARGUMENT));
       return fieldTransform.build();
     }

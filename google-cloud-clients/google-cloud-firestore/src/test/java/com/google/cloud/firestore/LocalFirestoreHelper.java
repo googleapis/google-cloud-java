@@ -273,7 +273,7 @@ public final class LocalFirestoreHelper {
   }
 
   public static FieldTransform increment(Value value) {
-    return FieldTransform.newBuilder().setNumericAdd(value).build();
+    return FieldTransform.newBuilder().setIncrement(value).build();
   }
 
   public static FieldTransform arrayUnion(Value... values) {
