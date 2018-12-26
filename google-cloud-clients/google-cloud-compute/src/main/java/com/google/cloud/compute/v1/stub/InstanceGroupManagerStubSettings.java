@@ -54,6 +54,7 @@ import com.google.cloud.compute.v1.InstanceGroupManagersScopedList;
 import com.google.cloud.compute.v1.ListInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.RecreateInstancesInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.ResizeInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.SetInstanceTemplateInstanceGroupManagerHttpRequest;
@@ -133,6 +134,8 @@ public class InstanceGroupManagerStubSettings
           ListManagedInstancesInstanceGroupManagersHttpRequest,
           InstanceGroupManagersListManagedInstancesResponse>
       listManagedInstancesInstanceGroupManagersSettings;
+  private final UnaryCallSettings<PatchInstanceGroupManagerHttpRequest, Operation>
+      patchInstanceGroupManagerSettings;
   private final UnaryCallSettings<RecreateInstancesInstanceGroupManagerHttpRequest, Operation>
       recreateInstancesInstanceGroupManagerSettings;
   private final UnaryCallSettings<ResizeInstanceGroupManagerHttpRequest, Operation>
@@ -201,6 +204,12 @@ public class InstanceGroupManagerStubSettings
           InstanceGroupManagersListManagedInstancesResponse>
       listManagedInstancesInstanceGroupManagersSettings() {
     return listManagedInstancesInstanceGroupManagersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to patchInstanceGroupManager. */
+  public UnaryCallSettings<PatchInstanceGroupManagerHttpRequest, Operation>
+      patchInstanceGroupManagerSettings() {
+    return patchInstanceGroupManagerSettings;
   }
 
   /**
@@ -320,6 +329,7 @@ public class InstanceGroupManagerStubSettings
     listInstanceGroupManagersSettings = settingsBuilder.listInstanceGroupManagersSettings().build();
     listManagedInstancesInstanceGroupManagersSettings =
         settingsBuilder.listManagedInstancesInstanceGroupManagersSettings().build();
+    patchInstanceGroupManagerSettings = settingsBuilder.patchInstanceGroupManagerSettings().build();
     recreateInstancesInstanceGroupManagerSettings =
         settingsBuilder.recreateInstancesInstanceGroupManagerSettings().build();
     resizeInstanceGroupManagerSettings =
@@ -520,6 +530,8 @@ public class InstanceGroupManagerStubSettings
             ListManagedInstancesInstanceGroupManagersHttpRequest,
             InstanceGroupManagersListManagedInstancesResponse>
         listManagedInstancesInstanceGroupManagersSettings;
+    private final UnaryCallSettings.Builder<PatchInstanceGroupManagerHttpRequest, Operation>
+        patchInstanceGroupManagerSettings;
     private final UnaryCallSettings.Builder<
             RecreateInstancesInstanceGroupManagerHttpRequest, Operation>
         recreateInstancesInstanceGroupManagerSettings;
@@ -593,6 +605,8 @@ public class InstanceGroupManagerStubSettings
       listManagedInstancesInstanceGroupManagersSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      patchInstanceGroupManagerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       recreateInstancesInstanceGroupManagerSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -613,6 +627,7 @@ public class InstanceGroupManagerStubSettings
               insertInstanceGroupManagerSettings,
               listInstanceGroupManagersSettings,
               listManagedInstancesInstanceGroupManagersSettings,
+              patchInstanceGroupManagerSettings,
               recreateInstancesInstanceGroupManagerSettings,
               resizeInstanceGroupManagerSettings,
               setInstanceTemplateInstanceGroupManagerSettings,
@@ -673,6 +688,11 @@ public class InstanceGroupManagerStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .patchInstanceGroupManagerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .recreateInstancesInstanceGroupManagerSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -710,6 +730,7 @@ public class InstanceGroupManagerStubSettings
       listInstanceGroupManagersSettings = settings.listInstanceGroupManagersSettings.toBuilder();
       listManagedInstancesInstanceGroupManagersSettings =
           settings.listManagedInstancesInstanceGroupManagersSettings.toBuilder();
+      patchInstanceGroupManagerSettings = settings.patchInstanceGroupManagerSettings.toBuilder();
       recreateInstancesInstanceGroupManagerSettings =
           settings.recreateInstancesInstanceGroupManagerSettings.toBuilder();
       resizeInstanceGroupManagerSettings = settings.resizeInstanceGroupManagerSettings.toBuilder();
@@ -728,6 +749,7 @@ public class InstanceGroupManagerStubSettings
               insertInstanceGroupManagerSettings,
               listInstanceGroupManagersSettings,
               listManagedInstancesInstanceGroupManagersSettings,
+              patchInstanceGroupManagerSettings,
               recreateInstancesInstanceGroupManagerSettings,
               resizeInstanceGroupManagerSettings,
               setInstanceTemplateInstanceGroupManagerSettings,
@@ -813,6 +835,12 @@ public class InstanceGroupManagerStubSettings
             InstanceGroupManagersListManagedInstancesResponse>
         listManagedInstancesInstanceGroupManagersSettings() {
       return listManagedInstancesInstanceGroupManagersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patchInstanceGroupManager. */
+    public UnaryCallSettings.Builder<PatchInstanceGroupManagerHttpRequest, Operation>
+        patchInstanceGroupManagerSettings() {
+      return patchInstanceGroupManagerSettings;
     }
 
     /**

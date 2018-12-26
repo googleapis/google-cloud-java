@@ -86,18 +86,18 @@ public class AcceleratorTypeClientTest {
   @Test
   @SuppressWarnings("all")
   public void aggregatedListAcceleratorTypesTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     AcceleratorTypesScopedList itemsItem = AcceleratorTypesScopedList.newBuilder().build();
     Map<String, AcceleratorTypesScopedList> items = new HashMap<>();
     items.put("items", itemsItem);
     AcceleratorTypeAggregatedList expectedResponse =
         AcceleratorTypeAggregatedList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .putAllItems(items)
             .build();
@@ -149,24 +149,24 @@ public class AcceleratorTypeClientTest {
   @Test
   @SuppressWarnings("all")
   public void getAcceleratorTypeTest() {
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String kind = "kind3292052";
     String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
     String description = "description-1724546052";
-    Integer maximumCardsPerInstance = 1883669166;
     String id = "id3355";
+    String kind = "kind3292052";
+    Integer maximumCardsPerInstance = 1883669166;
+    String name = "name3373707";
     String selfLink = "selfLink-1691268851";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     AcceleratorType expectedResponse =
         AcceleratorType.newBuilder()
-            .setZone(zone.toString())
-            .setKind(kind)
             .setCreationTimestamp(creationTimestamp)
-            .setName(name)
             .setDescription(description)
-            .setMaximumCardsPerInstance(maximumCardsPerInstance)
             .setId(id)
+            .setKind(kind)
+            .setMaximumCardsPerInstance(maximumCardsPerInstance)
+            .setName(name)
             .setSelfLink(selfLink)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -213,17 +213,17 @@ public class AcceleratorTypeClientTest {
   @Test
   @SuppressWarnings("all")
   public void listAcceleratorTypesTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     AcceleratorType itemsElement = AcceleratorType.newBuilder().build();
     List<AcceleratorType> items = Arrays.asList(itemsElement);
     AcceleratorTypeList expectedResponse =
         AcceleratorTypeList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .addAllItems(items)
             .build();

@@ -80,28 +80,28 @@ public class RegionDiskTypeClientTest {
   @Test
   @SuppressWarnings("all")
   public void getRegionDiskTypeTest() {
-    String defaultDiskSizeGb = "defaultDiskSizeGb807490165";
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String kind = "kind3292052";
     String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
+    String defaultDiskSizeGb = "defaultDiskSizeGb807490165";
     String description = "description-1724546052";
     String id = "id3355";
-    String validDiskSize = "validDiskSize-1653521184";
+    String kind = "kind3292052";
+    String name = "name3373707";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String selfLink = "selfLink-1691268851";
+    String validDiskSize = "validDiskSize-1653521184";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     DiskType expectedResponse =
         DiskType.newBuilder()
-            .setDefaultDiskSizeGb(defaultDiskSizeGb)
-            .setZone(zone.toString())
-            .setKind(kind)
             .setCreationTimestamp(creationTimestamp)
-            .setName(name)
+            .setDefaultDiskSizeGb(defaultDiskSizeGb)
             .setDescription(description)
             .setId(id)
-            .setValidDiskSize(validDiskSize)
+            .setKind(kind)
+            .setName(name)
             .setRegion(region.toString())
             .setSelfLink(selfLink)
+            .setValidDiskSize(validDiskSize)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -148,17 +148,17 @@ public class RegionDiskTypeClientTest {
   @Test
   @SuppressWarnings("all")
   public void listRegionDiskTypesTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     DiskType itemsElement = DiskType.newBuilder().build();
     List<DiskType> items = Arrays.asList(itemsElement);
     RegionDiskTypeList expectedResponse =
         RegionDiskTypeList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .addAllItems(items)
             .build();

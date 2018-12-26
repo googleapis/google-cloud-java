@@ -86,18 +86,18 @@ public class MachineTypeClientTest {
   @Test
   @SuppressWarnings("all")
   public void aggregatedListMachineTypesTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     MachineTypesScopedList itemsItem = MachineTypesScopedList.newBuilder().build();
     Map<String, MachineTypesScopedList> items = new HashMap<>();
     items.put("items", itemsItem);
     MachineTypeAggregatedList expectedResponse =
         MachineTypeAggregatedList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .putAllItems(items)
             .build();
@@ -149,34 +149,34 @@ public class MachineTypeClientTest {
   @Test
   @SuppressWarnings("all")
   public void getMachineTypeTest() {
-    Boolean isSharedCpu = false;
-    Integer guestCpus = 1754126894;
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String selfLink = "selfLink-1691268851";
-    Integer memoryMb = 1726613907;
-    Integer maximumPersistentDisks = 1033091853;
-    String maximumPersistentDisksSizeGb = "maximumPersistentDisksSizeGb-1993209177";
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
+    String description = "description-1724546052";
+    Integer guestCpus = 1754126894;
     String id = "id3355";
     Integer imageSpaceGb = 461539048;
+    Boolean isSharedCpu = false;
+    String kind = "kind3292052";
+    Integer maximumPersistentDisks = 1033091853;
+    String maximumPersistentDisksSizeGb = "maximumPersistentDisksSizeGb-1993209177";
+    Integer memoryMb = 1726613907;
+    String name = "name3373707";
+    String selfLink = "selfLink-1691268851";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     MachineType expectedResponse =
         MachineType.newBuilder()
-            .setIsSharedCpu(isSharedCpu)
-            .setGuestCpus(guestCpus)
-            .setKind(kind)
-            .setDescription(description)
-            .setSelfLink(selfLink)
-            .setMemoryMb(memoryMb)
-            .setMaximumPersistentDisks(maximumPersistentDisks)
-            .setMaximumPersistentDisksSizeGb(maximumPersistentDisksSizeGb)
-            .setZone(zone.toString())
             .setCreationTimestamp(creationTimestamp)
-            .setName(name)
+            .setDescription(description)
+            .setGuestCpus(guestCpus)
             .setId(id)
             .setImageSpaceGb(imageSpaceGb)
+            .setIsSharedCpu(isSharedCpu)
+            .setKind(kind)
+            .setMaximumPersistentDisks(maximumPersistentDisks)
+            .setMaximumPersistentDisksSizeGb(maximumPersistentDisksSizeGb)
+            .setMemoryMb(memoryMb)
+            .setName(name)
+            .setSelfLink(selfLink)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -223,17 +223,17 @@ public class MachineTypeClientTest {
   @Test
   @SuppressWarnings("all")
   public void listMachineTypesTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     MachineType itemsElement = MachineType.newBuilder().build();
     List<MachineType> items = Arrays.asList(itemsElement);
     MachineTypeList expectedResponse =
         MachineTypeList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .addAllItems(items)
             .build();

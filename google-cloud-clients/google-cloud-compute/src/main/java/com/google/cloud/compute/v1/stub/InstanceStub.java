@@ -28,6 +28,7 @@ import com.google.cloud.compute.v1.AttachDiskInstanceHttpRequest;
 import com.google.cloud.compute.v1.DeleteAccessConfigInstanceHttpRequest;
 import com.google.cloud.compute.v1.DeleteInstanceHttpRequest;
 import com.google.cloud.compute.v1.DetachDiskInstanceHttpRequest;
+import com.google.cloud.compute.v1.GetIamPolicyInstanceHttpRequest;
 import com.google.cloud.compute.v1.GetInstanceHttpRequest;
 import com.google.cloud.compute.v1.GetSerialPortOutputInstanceHttpRequest;
 import com.google.cloud.compute.v1.InsertInstanceHttpRequest;
@@ -38,10 +39,12 @@ import com.google.cloud.compute.v1.InstanceListReferrers;
 import com.google.cloud.compute.v1.ListInstancesHttpRequest;
 import com.google.cloud.compute.v1.ListReferrersInstancesHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.Policy;
 import com.google.cloud.compute.v1.ResetInstanceHttpRequest;
 import com.google.cloud.compute.v1.SerialPortOutput;
 import com.google.cloud.compute.v1.SetDeletionProtectionInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetDiskAutoDeleteInstanceHttpRequest;
+import com.google.cloud.compute.v1.SetIamPolicyInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetLabelsInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetMachineResourcesInstanceHttpRequest;
 import com.google.cloud.compute.v1.SetMachineTypeInstanceHttpRequest;
@@ -54,6 +57,8 @@ import com.google.cloud.compute.v1.SimulateMaintenanceEventInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartInstanceHttpRequest;
 import com.google.cloud.compute.v1.StartWithEncryptionKeyInstanceHttpRequest;
 import com.google.cloud.compute.v1.StopInstanceHttpRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsInstanceHttpRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateAccessConfigInstanceHttpRequest;
 import com.google.cloud.compute.v1.UpdateNetworkInterfaceInstanceHttpRequest;
 import javax.annotation.Generated;
@@ -115,6 +120,11 @@ public abstract class InstanceStub implements BackgroundResource {
   }
 
   @BetaApi
+  public UnaryCallable<GetIamPolicyInstanceHttpRequest, Policy> getIamPolicyInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyInstanceCallable()");
+  }
+
+  @BetaApi
   public UnaryCallable<GetSerialPortOutputInstanceHttpRequest, SerialPortOutput>
       getSerialPortOutputInstanceCallable() {
     throw new UnsupportedOperationException(
@@ -166,6 +176,11 @@ public abstract class InstanceStub implements BackgroundResource {
   public UnaryCallable<SetDiskAutoDeleteInstanceHttpRequest, Operation>
       setDiskAutoDeleteInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: setDiskAutoDeleteInstanceCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<SetIamPolicyInstanceHttpRequest, Policy> setIamPolicyInstanceCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyInstanceCallable()");
   }
 
   @BetaApi
@@ -236,6 +251,13 @@ public abstract class InstanceStub implements BackgroundResource {
   @BetaApi
   public UnaryCallable<StopInstanceHttpRequest, Operation> stopInstanceCallable() {
     throw new UnsupportedOperationException("Not implemented: stopInstanceCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<TestIamPermissionsInstanceHttpRequest, TestPermissionsResponse>
+      testIamPermissionsInstanceCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: testIamPermissionsInstanceCallable()");
   }
 
   @BetaApi

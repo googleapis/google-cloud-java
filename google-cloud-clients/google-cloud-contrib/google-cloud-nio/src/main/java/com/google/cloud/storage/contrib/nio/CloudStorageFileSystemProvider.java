@@ -907,11 +907,11 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       // instead of true/false, this method returns true/null.
       Boolean isRP = storage.get(bucketName).requesterPays();
       return isRP != null && isRP.booleanValue();
-    } catch (StorageException sex) {
-      if (sex.getCode() == 400 && sex.getMessage().contains("Bucket is requester pays")) {
+    } catch (StorageException ex) {
+      if (ex.getCode() == 400 && ex.getMessage().contains("Bucket is requester pays")) {
         return true;
       }
-      throw sex;
+      throw ex;
     }
   }
 

@@ -39,10 +39,11 @@ public final class ImageProto {
           + ".ClassificationType\"x\n ImageClassificati"
           + "onModelMetadata\022\025\n\rbase_model_id\030\001 \001(\t\022\024"
           + "\n\014train_budget\030\002 \001(\003\022\022\n\ntrain_cost\030\003 \001(\003"
-          + "\022\023\n\013stop_reason\030\005 \001(\tBr\n\037com.google.clou"
-          + "d.automl.v1beta1B\nImageProtoP\001ZAgoogle.g"
-          + "olang.org/genproto/googleapis/cloud/auto"
-          + "ml/v1beta1;automlb\006proto3"
+          + "\022\023\n\013stop_reason\030\005 \001(\tB\220\001\n\037com.google.clo"
+          + "ud.automl.v1beta1B\nImageProtoP\001ZAgoogle."
+          + "golang.org/genproto/googleapis/cloud/aut"
+          + "oml/v1beta1;automl\312\002\033Google\\Cloud\\AutoMl"
+          + "\\V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

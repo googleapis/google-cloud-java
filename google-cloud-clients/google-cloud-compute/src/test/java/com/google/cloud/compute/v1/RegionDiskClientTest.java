@@ -93,50 +93,50 @@ public class RegionDiskClientTest {
   @Test
   @SuppressWarnings("all")
   public void createSnapshotRegionDiskTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     Operation expectedResponse =
         Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region.toString())
             .setClientOperationId(clientOperationId)
-            .setUser(user)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -183,50 +183,50 @@ public class RegionDiskClientTest {
   @Test
   @SuppressWarnings("all")
   public void deleteRegionDiskTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     Operation expectedResponse =
         Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region.toString())
             .setClientOperationId(clientOperationId)
-            .setUser(user)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -271,46 +271,48 @@ public class RegionDiskClientTest {
   @Test
   @SuppressWarnings("all")
   public void getRegionDiskTest() {
-    String sizeGb = "sizeGb2105542105";
-    String sourceSnapshotId = "sourceSnapshotId-1511650478";
-    String lastDetachTimestamp = "lastDetachTimestamp-480399885";
-    String description = "description-1724546052";
-    String sourceSnapshot = "sourceSnapshot-947679896";
-    String type = "type3575610";
-    String labelFingerprint = "labelFingerprint714995737";
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     String creationTimestamp = "creationTimestamp567396278";
-    String options = "options-1249474914";
+    String description = "description-1724546052";
     String id = "id3355";
-    String sourceImageId = "sourceImageId-2092155357";
     String kind = "kind3292052";
+    String labelFingerprint = "labelFingerprint714995737";
     String lastAttachTimestamp = "lastAttachTimestamp-2105323995";
-    String selfLink = "selfLink-1691268851";
+    String lastDetachTimestamp = "lastDetachTimestamp-480399885";
     String name = "name3373707";
-    String sourceImage = "sourceImage1661056055";
+    String options = "options-1249474914";
+    String physicalBlockSizeBytes = "physicalBlockSizeBytes-1190604793";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String sizeGb = "sizeGb2105542105";
+    String sourceImage = "sourceImage1661056055";
+    String sourceImageId = "sourceImageId-2092155357";
+    String sourceSnapshot = "sourceSnapshot-947679896";
+    String sourceSnapshotId = "sourceSnapshotId-1511650478";
     String status = "status-892481550";
+    String type = "type3575610";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     Disk expectedResponse =
         Disk.newBuilder()
-            .setSizeGb(sizeGb)
-            .setSourceSnapshotId(sourceSnapshotId)
-            .setLastDetachTimestamp(lastDetachTimestamp)
-            .setDescription(description)
-            .setSourceSnapshot(sourceSnapshot)
-            .setType(type)
-            .setLabelFingerprint(labelFingerprint)
-            .setZone(zone.toString())
             .setCreationTimestamp(creationTimestamp)
-            .setOptions(options)
+            .setDescription(description)
             .setId(id)
-            .setSourceImageId(sourceImageId)
             .setKind(kind)
+            .setLabelFingerprint(labelFingerprint)
             .setLastAttachTimestamp(lastAttachTimestamp)
-            .setSelfLink(selfLink)
+            .setLastDetachTimestamp(lastDetachTimestamp)
             .setName(name)
-            .setSourceImage(sourceImage)
+            .setOptions(options)
+            .setPhysicalBlockSizeBytes(physicalBlockSizeBytes)
             .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setSizeGb(sizeGb)
+            .setSourceImage(sourceImage)
+            .setSourceImageId(sourceImageId)
+            .setSourceSnapshot(sourceSnapshot)
+            .setSourceSnapshotId(sourceSnapshotId)
             .setStatus(status)
+            .setType(type)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -355,50 +357,50 @@ public class RegionDiskClientTest {
   @Test
   @SuppressWarnings("all")
   public void insertRegionDiskTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region2 = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region2 = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     Operation expectedResponse =
         Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region2.toString())
             .setClientOperationId(clientOperationId)
-            .setUser(user)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region2.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -445,17 +447,17 @@ public class RegionDiskClientTest {
   @Test
   @SuppressWarnings("all")
   public void listRegionDisksTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     Disk itemsElement = Disk.newBuilder().build();
     List<Disk> items = Arrays.asList(itemsElement);
     DiskList expectedResponse =
         DiskList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .addAllItems(items)
             .build();
@@ -505,50 +507,50 @@ public class RegionDiskClientTest {
   @Test
   @SuppressWarnings("all")
   public void resizeRegionDiskTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     Operation expectedResponse =
         Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region.toString())
             .setClientOperationId(clientOperationId)
-            .setUser(user)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -597,50 +599,50 @@ public class RegionDiskClientTest {
   @Test
   @SuppressWarnings("all")
   public void setLabelsRegionDiskTest() {
-    String httpErrorMessage = "httpErrorMessage1276263769";
-    String targetId = "targetId-815576439";
-    String kind = "kind3292052";
-    String description = "description-1724546052";
-    String statusMessage = "statusMessage-239442758";
-    String selfLink = "selfLink-1691268851";
-    String insertTime = "insertTime-103148397";
-    Integer httpErrorStatusCode = 1386087020;
-    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
-    String targetLink = "targetLink-2084812312";
-    String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
-    Integer progress = 1001078227;
-    String operationType = "operationType-1432962286";
-    String startTime = "startTime-1573145462";
-    String endTime = "endTime1725551537";
-    String id = "id3355";
-    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String clientOperationId = "clientOperationId-239630617";
-    String user = "user3599307";
+    String creationTimestamp = "creationTimestamp567396278";
+    String description = "description-1724546052";
+    String endTime = "endTime1725551537";
+    String httpErrorMessage = "httpErrorMessage1276263769";
+    Integer httpErrorStatusCode = 1386087020;
+    String id = "id3355";
+    String insertTime = "insertTime-103148397";
+    String kind = "kind3292052";
+    String name = "name3373707";
+    String operationType = "operationType-1432962286";
+    Integer progress = 1001078227;
+    ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
+    String selfLink = "selfLink-1691268851";
+    String startTime = "startTime-1573145462";
     String status = "status-892481550";
+    String statusMessage = "statusMessage-239442758";
+    String targetId = "targetId-815576439";
+    String targetLink = "targetLink-2084812312";
+    String user = "user3599307";
+    ProjectZoneName zone = ProjectZoneName.of("[PROJECT]", "[ZONE]");
     Operation expectedResponse =
         Operation.newBuilder()
-            .setHttpErrorMessage(httpErrorMessage)
-            .setTargetId(targetId)
-            .setKind(kind)
-            .setDescription(description)
-            .setStatusMessage(statusMessage)
-            .setSelfLink(selfLink)
-            .setInsertTime(insertTime)
-            .setHttpErrorStatusCode(httpErrorStatusCode)
-            .setZone(zone.toString())
-            .setTargetLink(targetLink)
-            .setCreationTimestamp(creationTimestamp)
-            .setName(name)
-            .setProgress(progress)
-            .setOperationType(operationType)
-            .setStartTime(startTime)
-            .setEndTime(endTime)
-            .setId(id)
-            .setRegion(region.toString())
             .setClientOperationId(clientOperationId)
-            .setUser(user)
+            .setCreationTimestamp(creationTimestamp)
+            .setDescription(description)
+            .setEndTime(endTime)
+            .setHttpErrorMessage(httpErrorMessage)
+            .setHttpErrorStatusCode(httpErrorStatusCode)
+            .setId(id)
+            .setInsertTime(insertTime)
+            .setKind(kind)
+            .setName(name)
+            .setOperationType(operationType)
+            .setProgress(progress)
+            .setRegion(region.toString())
+            .setSelfLink(selfLink)
+            .setStartTime(startTime)
             .setStatus(status)
+            .setStatusMessage(statusMessage)
+            .setTargetId(targetId)
+            .setTargetLink(targetLink)
+            .setUser(user)
+            .setZone(zone.toString())
             .build();
     mockService.addResponse(expectedResponse);
 
