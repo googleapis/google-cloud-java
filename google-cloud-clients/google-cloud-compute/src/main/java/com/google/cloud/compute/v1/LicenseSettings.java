@@ -73,6 +73,11 @@ public class LicenseSettings extends ClientSettings<LicenseSettings> {
     return ((LicenseStubSettings) getStubSettings()).getLicenseSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicyLicense. */
+  public UnaryCallSettings<GetIamPolicyLicenseHttpRequest, Policy> getIamPolicyLicenseSettings() {
+    return ((LicenseStubSettings) getStubSettings()).getIamPolicyLicenseSettings();
+  }
+
   /** Returns the object with the settings used for calls to insertLicense. */
   public UnaryCallSettings<InsertLicenseHttpRequest, Operation> insertLicenseSettings() {
     return ((LicenseStubSettings) getStubSettings()).insertLicenseSettings();
@@ -82,6 +87,11 @@ public class LicenseSettings extends ClientSettings<LicenseSettings> {
   public PagedCallSettings<ListLicensesHttpRequest, LicensesListResponse, ListLicensesPagedResponse>
       listLicensesSettings() {
     return ((LicenseStubSettings) getStubSettings()).listLicensesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicyLicense. */
+  public UnaryCallSettings<SetIamPolicyLicenseHttpRequest, Policy> setIamPolicyLicenseSettings() {
+    return ((LicenseStubSettings) getStubSettings()).setIamPolicyLicenseSettings();
   }
 
   /** Returns the object with the settings used for calls to testIamPermissionsLicense. */
@@ -201,6 +211,12 @@ public class LicenseSettings extends ClientSettings<LicenseSettings> {
       return getStubSettingsBuilder().getLicenseSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicyLicense. */
+    public UnaryCallSettings.Builder<GetIamPolicyLicenseHttpRequest, Policy>
+        getIamPolicyLicenseSettings() {
+      return getStubSettingsBuilder().getIamPolicyLicenseSettings();
+    }
+
     /** Returns the builder for the settings used for calls to insertLicense. */
     public UnaryCallSettings.Builder<InsertLicenseHttpRequest, Operation> insertLicenseSettings() {
       return getStubSettingsBuilder().insertLicenseSettings();
@@ -211,6 +227,12 @@ public class LicenseSettings extends ClientSettings<LicenseSettings> {
             ListLicensesHttpRequest, LicensesListResponse, ListLicensesPagedResponse>
         listLicensesSettings() {
       return getStubSettingsBuilder().listLicensesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicyLicense. */
+    public UnaryCallSettings.Builder<SetIamPolicyLicenseHttpRequest, Policy>
+        setIamPolicyLicenseSettings() {
+      return getStubSettingsBuilder().setIamPolicyLicenseSettings();
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissionsLicense. */

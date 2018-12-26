@@ -80,20 +80,20 @@ public class RegionClientTest {
   @Test
   @SuppressWarnings("all")
   public void getRegionTest() {
-    String kind = "kind3292052";
     String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
     String description = "description-1724546052";
     String id = "id3355";
+    String kind = "kind3292052";
+    String name = "name3373707";
     String selfLink = "selfLink-1691268851";
     String status = "status-892481550";
     Region expectedResponse =
         Region.newBuilder()
-            .setKind(kind)
             .setCreationTimestamp(creationTimestamp)
-            .setName(name)
             .setDescription(description)
             .setId(id)
+            .setKind(kind)
+            .setName(name)
             .setSelfLink(selfLink)
             .setStatus(status)
             .build();
@@ -140,17 +140,17 @@ public class RegionClientTest {
   @Test
   @SuppressWarnings("all")
   public void listRegionsTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     Region itemsElement = Region.newBuilder().build();
     List<Region> items = Arrays.asList(itemsElement);
     RegionList expectedResponse =
         RegionList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .addAllItems(items)
             .build();

@@ -29,6 +29,7 @@ import com.google.cloud.compute.v1.InstanceGroupManager;
 import com.google.cloud.compute.v1.ListManagedInstancesRegionInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.ListRegionInstanceGroupManagersHttpRequest;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.RecreateInstancesRegionInstanceGroupManagerHttpRequest;
 import com.google.cloud.compute.v1.RegionInstanceGroupManagerList;
 import com.google.cloud.compute.v1.RegionInstanceGroupManagersListInstancesResponse;
@@ -104,6 +105,13 @@ public abstract class RegionInstanceGroupManagerStub implements BackgroundResour
       listManagedInstancesRegionInstanceGroupManagersCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listManagedInstancesRegionInstanceGroupManagersCallable()");
+  }
+
+  @BetaApi
+  public UnaryCallable<PatchRegionInstanceGroupManagerHttpRequest, Operation>
+      patchRegionInstanceGroupManagerCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: patchRegionInstanceGroupManagerCallable()");
   }
 
   @BetaApi

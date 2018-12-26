@@ -352,6 +352,107 @@ public class InterconnectClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * Returns the interconnectDiagnostics for the specified interconnect.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
+   *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   InterconnectsGetDiagnosticsResponse response = interconnectClient.getDiagnosticsInterconnect(interconnect);
+   * }
+   * </code></pre>
+   *
+   * @param interconnect Name of the interconnect resource to query.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final InterconnectsGetDiagnosticsResponse getDiagnosticsInterconnect(
+      ProjectGlobalInterconnectName interconnect) {
+
+    GetDiagnosticsInterconnectHttpRequest request =
+        GetDiagnosticsInterconnectHttpRequest.newBuilder()
+            .setInterconnect(interconnect == null ? null : interconnect.toString())
+            .build();
+    return getDiagnosticsInterconnect(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the interconnectDiagnostics for the specified interconnect.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
+   *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   InterconnectsGetDiagnosticsResponse response = interconnectClient.getDiagnosticsInterconnect(interconnect.toString());
+   * }
+   * </code></pre>
+   *
+   * @param interconnect Name of the interconnect resource to query.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final InterconnectsGetDiagnosticsResponse getDiagnosticsInterconnect(String interconnect) {
+
+    GetDiagnosticsInterconnectHttpRequest request =
+        GetDiagnosticsInterconnectHttpRequest.newBuilder().setInterconnect(interconnect).build();
+    return getDiagnosticsInterconnect(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the interconnectDiagnostics for the specified interconnect.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
+   *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   GetDiagnosticsInterconnectHttpRequest request = GetDiagnosticsInterconnectHttpRequest.newBuilder()
+   *     .setInterconnect(interconnect.toString())
+   *     .build();
+   *   InterconnectsGetDiagnosticsResponse response = interconnectClient.getDiagnosticsInterconnect(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final InterconnectsGetDiagnosticsResponse getDiagnosticsInterconnect(
+      GetDiagnosticsInterconnectHttpRequest request) {
+    return getDiagnosticsInterconnectCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns the interconnectDiagnostics for the specified interconnect.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InterconnectClient interconnectClient = InterconnectClient.create()) {
+   *   ProjectGlobalInterconnectName interconnect = ProjectGlobalInterconnectName.of("[PROJECT]", "[INTERCONNECT]");
+   *   GetDiagnosticsInterconnectHttpRequest request = GetDiagnosticsInterconnectHttpRequest.newBuilder()
+   *     .setInterconnect(interconnect.toString())
+   *     .build();
+   *   ApiFuture&lt;InterconnectsGetDiagnosticsResponse&gt; future = interconnectClient.getDiagnosticsInterconnectCallable().futureCall(request);
+   *   // Do something
+   *   InterconnectsGetDiagnosticsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<
+          GetDiagnosticsInterconnectHttpRequest, InterconnectsGetDiagnosticsResponse>
+      getDiagnosticsInterconnectCallable() {
+    return stub.getDiagnosticsInterconnectCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Creates a Interconnect in the specified project using the data included in the request.
    *
    * <p>Sample code:

@@ -83,6 +83,11 @@ public class ImageSettings extends ClientSettings<ImageSettings> {
     return ((ImageStubSettings) getStubSettings()).getFromFamilyImageSettings();
   }
 
+  /** Returns the object with the settings used for calls to getIamPolicyImage. */
+  public UnaryCallSettings<GetIamPolicyImageHttpRequest, Policy> getIamPolicyImageSettings() {
+    return ((ImageStubSettings) getStubSettings()).getIamPolicyImageSettings();
+  }
+
   /** Returns the object with the settings used for calls to insertImage. */
   public UnaryCallSettings<InsertImageHttpRequest, Operation> insertImageSettings() {
     return ((ImageStubSettings) getStubSettings()).insertImageSettings();
@@ -94,9 +99,20 @@ public class ImageSettings extends ClientSettings<ImageSettings> {
     return ((ImageStubSettings) getStubSettings()).listImagesSettings();
   }
 
+  /** Returns the object with the settings used for calls to setIamPolicyImage. */
+  public UnaryCallSettings<SetIamPolicyImageHttpRequest, Policy> setIamPolicyImageSettings() {
+    return ((ImageStubSettings) getStubSettings()).setIamPolicyImageSettings();
+  }
+
   /** Returns the object with the settings used for calls to setLabelsImage. */
   public UnaryCallSettings<SetLabelsImageHttpRequest, Operation> setLabelsImageSettings() {
     return ((ImageStubSettings) getStubSettings()).setLabelsImageSettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissionsImage. */
+  public UnaryCallSettings<TestIamPermissionsImageHttpRequest, TestPermissionsResponse>
+      testIamPermissionsImageSettings() {
+    return ((ImageStubSettings) getStubSettings()).testIamPermissionsImageSettings();
   }
 
   public static final ImageSettings create(ImageStubSettings stub) throws IOException {
@@ -222,6 +238,12 @@ public class ImageSettings extends ClientSettings<ImageSettings> {
       return getStubSettingsBuilder().getFromFamilyImageSettings();
     }
 
+    /** Returns the builder for the settings used for calls to getIamPolicyImage. */
+    public UnaryCallSettings.Builder<GetIamPolicyImageHttpRequest, Policy>
+        getIamPolicyImageSettings() {
+      return getStubSettingsBuilder().getIamPolicyImageSettings();
+    }
+
     /** Returns the builder for the settings used for calls to insertImage. */
     public UnaryCallSettings.Builder<InsertImageHttpRequest, Operation> insertImageSettings() {
       return getStubSettingsBuilder().insertImageSettings();
@@ -233,10 +255,22 @@ public class ImageSettings extends ClientSettings<ImageSettings> {
       return getStubSettingsBuilder().listImagesSettings();
     }
 
+    /** Returns the builder for the settings used for calls to setIamPolicyImage. */
+    public UnaryCallSettings.Builder<SetIamPolicyImageHttpRequest, Policy>
+        setIamPolicyImageSettings() {
+      return getStubSettingsBuilder().setIamPolicyImageSettings();
+    }
+
     /** Returns the builder for the settings used for calls to setLabelsImage. */
     public UnaryCallSettings.Builder<SetLabelsImageHttpRequest, Operation>
         setLabelsImageSettings() {
       return getStubSettingsBuilder().setLabelsImageSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissionsImage. */
+    public UnaryCallSettings.Builder<TestIamPermissionsImageHttpRequest, TestPermissionsResponse>
+        testIamPermissionsImageSettings() {
+      return getStubSettingsBuilder().testIamPermissionsImageSettings();
     }
 
     @Override

@@ -47,10 +47,11 @@ public final class ModelOuterClass {
           + "(\01622.google.cloud.automl.v1beta1.Model.D"
           + "eploymentState\"Q\n\017DeploymentState\022 \n\034DEP"
           + "LOYMENT_STATE_UNSPECIFIED\020\000\022\014\n\010DEPLOYED\020"
-          + "\001\022\016\n\nUNDEPLOYED\020\002B\020\n\016model_metadataBf\n\037c"
-          + "om.google.cloud.automl.v1beta1P\001ZAgoogle"
-          + ".golang.org/genproto/googleapis/cloud/au"
-          + "toml/v1beta1;automlb\006proto3"
+          + "\001\022\016\n\nUNDEPLOYED\020\002B\020\n\016model_metadataB\204\001\n\037"
+          + "com.google.cloud.automl.v1beta1P\001ZAgoogl"
+          + "e.golang.org/genproto/googleapis/cloud/a"
+          + "utoml/v1beta1;automl\312\002\033Google\\Cloud\\Auto"
+          + "Ml\\V1beta1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

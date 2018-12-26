@@ -80,21 +80,21 @@ public class ZoneClientTest {
   @Test
   @SuppressWarnings("all")
   public void getZoneTest() {
-    String kind = "kind3292052";
     String creationTimestamp = "creationTimestamp567396278";
-    String name = "name3373707";
     String description = "description-1724546052";
     String id = "id3355";
+    String kind = "kind3292052";
+    String name = "name3373707";
     ProjectRegionName region = ProjectRegionName.of("[PROJECT]", "[REGION]");
     String selfLink = "selfLink-1691268851";
     String status = "status-892481550";
     Zone expectedResponse =
         Zone.newBuilder()
-            .setKind(kind)
             .setCreationTimestamp(creationTimestamp)
-            .setName(name)
             .setDescription(description)
             .setId(id)
+            .setKind(kind)
+            .setName(name)
             .setRegion(region.toString())
             .setSelfLink(selfLink)
             .setStatus(status)
@@ -142,17 +142,17 @@ public class ZoneClientTest {
   @Test
   @SuppressWarnings("all")
   public void listZonesTest() {
+    String id = "id3355";
     String kind = "kind3292052";
     String nextPageToken = "";
-    String id = "id3355";
     String selfLink = "selfLink-1691268851";
     Zone itemsElement = Zone.newBuilder().build();
     List<Zone> items = Arrays.asList(itemsElement);
     ZoneList expectedResponse =
         ZoneList.newBuilder()
+            .setId(id)
             .setKind(kind)
             .setNextPageToken(nextPageToken)
-            .setId(id)
             .setSelfLink(selfLink)
             .addAllItems(items)
             .build();

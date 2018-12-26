@@ -32,7 +32,9 @@ public final class ProjectGlobalHttpsHealthCheckName implements ResourceName {
   private final String project;
   private static final PathTemplate PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/global/httpsHealthChecks/{httpsHealthCheck}");
+          "{project}/global/httpsHealthChecks/{httpsHealthCheck}");
+
+  public static final String SERVICE_ADDRESS = "https://www.googleapis.com/compute/v1/projects/";
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -93,15 +95,23 @@ public final class ProjectGlobalHttpsHealthCheckName implements ResourceName {
   }
 
   public static ProjectGlobalHttpsHealthCheckName parse(String formattedString) {
+    String resourcePath = formattedString;
+    if (formattedString.startsWith(SERVICE_ADDRESS)) {
+      resourcePath = formattedString.substring(SERVICE_ADDRESS.length());
+    }
     Map<String, String> matchMap =
         PATH_TEMPLATE.validatedMatch(
-            formattedString,
+            resourcePath,
             "ProjectGlobalHttpsHealthCheckName.parse: formattedString not in valid format");
     return of(matchMap.get("httpsHealthCheck"), matchMap.get("project"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    String resourcePath = formattedString;
+    if (formattedString.startsWith(SERVICE_ADDRESS)) {
+      resourcePath = formattedString.substring(SERVICE_ADDRESS.length());
+    }
+    return PATH_TEMPLATE.matches(resourcePath);
   }
 
   public static class Builder {
