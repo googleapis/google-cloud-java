@@ -61,7 +61,9 @@ To use the `prod` environment:
     ```shell
     mvn verify -am -pl google-cloud-bigtable \
       -Dbigtable.env=prod \
-      -Dbigtable.table=projects/my-project/instances/my-instance/tables/my-table
+      -Dbigtable.project=my-project
+      -Dbigtable.instance=my-instance
+      -Dbigtable.table=my-table
     ```
 
 ### Testing code that uses Bigtable Admin
@@ -73,12 +75,11 @@ To run the tests:
 2. Download the [JSON service account credentials file][create-service-account] from the Google
    Developer's Console.
 3. Set the environment variable `GOOGLE_APPLICATION_CREDENTIALS` to the path of the credentials file
-4. Set the system properties `bigtable.project` and `bigtable.instance` to the project and instance
-   id of the instance you created earlier. Example:
+4. Set the system property `bigtable.instance` to the full instance name you
+    created earlier. Example:
     ```shell
     mvn verify -am -pl google-cloud-bigtable-admin \
-      -Dbigtable.project=my-project
-      -Dbigtable.instance=my-instance
+      -Dbigtable.instance=projects/my-project/instances/my-instance
     ```
 
 ### Testing code that uses Compute
