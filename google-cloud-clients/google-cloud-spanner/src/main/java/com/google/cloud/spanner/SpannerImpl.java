@@ -248,7 +248,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     Context context = Context.current();
     int attempt = 0;
     int maxAttempt = 6;
-    Duration retryDuration ;
+    Duration retryDuration;
     Duration totalTimeout = Duration.ofSeconds(50);
     if (retrySettings != null) {
       maxAttempt = retrySettings.getMaxAttempts();
@@ -262,7 +262,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       end = Instant.now();
       retryDuration = Duration.between(start, end);
       if (retryDuration.compareTo(totalTimeout) > 0) {
-        throw newSpannerException(ErrorCode.INTERNAL, "Exceeded totalTimeout "+ totalTimeout.toMillis()+" ms");
+        throw newSpannerException(
+            ErrorCode.INTERNAL, "Exceeded totalTimeout " + totalTimeout.toMillis() + " ms");
       }
       try {
         span.addAnnotation(
