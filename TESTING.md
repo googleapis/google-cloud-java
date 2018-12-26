@@ -77,7 +77,8 @@ To run the tests:
     created earlier. Example:
     ```shell
     mvn verify -am -pl google-cloud-bigtable-admin \
-      -Dbigtable.instance=projects/my-project/instances/my-instance
+      -Dbigtable.project=my-project
+      -Dbigtable.instance=my-instance
     ```
 
 ### Testing code that uses Compute
