@@ -186,8 +186,14 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   Synchronicity getWriteSynchronicity();
 
   /**
-   * Sets flush severity for asynchronous logging writes. Default is ERROR. Logs will be immediately
-   * written out for entries at or higher than flush severity.
+   * Sets flush severity for asynchronous logging writes. It is disabled by default, enabled when
+   * this method is called with not null value. Logs will be immediately written out for entries at
+   * or higher than flush severity.
+   *
+   * Enabling this can cause the leaking and hanging threads, see BUG(2796) BUG(3880). However you
+   * can explicitly call {@link #flush}.
+   *
+   * TODO: Enable this by default once functionality to trigger rpc is available in generated code.
    */
   void setFlushSeverity(Severity flushSeverity);
 
@@ -664,7 +670,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   /**
    * Flushes any pending asynchronous logging writes. Logs are automatically flushed based on time
    * and message count that be configured via {@link com.google.api.gax.batching.BatchingSettings},
-   * Logs are also flushed if at or above flush severity, see {@link #setFlushSeverity}. Logging
+   * Logs are also flushed if enabled, at or above flush severity, see {@link #setFlushSeverity}. Logging
    * frameworks require support for an explicit flush. See usage in the java.util.logging
    * handler{@link LoggingHandler}.
    */
