@@ -32,12 +32,19 @@ import org.junit.runners.JUnit4;
 public final class GcpManagedChannelTest {
 
   private static final String TARGET = "www.jenny.com";
+  private static final String API_FILE = "src/test/resources/apiconfigtests/apiconfig.json";
 
   private static final int MAX_CHANNEL = 10;
   private static final int MAX_STREAM = 100;
 
   private GcpManagedChannel gcpChannel;
   private ManagedChannelBuilder builder;
+
+  /** Close and delete all the channelRefs inside a gcpchannel. */
+  private void resetGcpChannel() {
+    gcpChannel.shutdownNow();
+    gcpChannel.channelRefs.clear();
+  }
 
   @Before
   public void setUpChannel() {
@@ -48,6 +55,16 @@ public final class GcpManagedChannelTest {
   @After
   public void shutdown() throws Exception {
     gcpChannel.shutdownNow();
+  }
+
+  @Test
+  public void testLoadApiConfig() throws Exception {
+    resetGcpChannel();
+    gcpChannel = new GcpManagedChannel(builder, API_FILE);
+    assertEquals(1, gcpChannel.channelRefs.size());
+    assertEquals(10, gcpChannel.getMaxSize());
+    assertEquals(1, gcpChannel.getStreamsLowWatermark());
+    assertEquals(3, gcpChannel.methodToAffinity.size());
   }
 
   @Test
@@ -63,7 +80,7 @@ public final class GcpManagedChannelTest {
   @Test
   public void testGetChannelRefPickUpSmallest() throws Exception {
     // All channels have max number of streams
-    gcpChannel.channelRefs.clear();
+    resetGcpChannel();
     for (int i = 0; i < 5; i++) {
       ManagedChannel channel = builder.build();
       gcpChannel.channelRefs.add(new ChannelRef(channel, i, i, MAX_STREAM));
@@ -84,7 +101,7 @@ public final class GcpManagedChannelTest {
 
   @Test
   public void testGetChannelRefMaxSize() throws Exception {
-    gcpChannel.channelRefs.clear();
+    resetGcpChannel();
     for (int i = 0; i < MAX_CHANNEL; i++) {
       ManagedChannel channel = builder.build();
       gcpChannel.channelRefs.add(new ChannelRef(channel, i, i, MAX_STREAM));
@@ -92,5 +109,36 @@ public final class GcpManagedChannelTest {
     assertEquals(MAX_CHANNEL, gcpChannel.channelRefs.size());
     assertEquals(MAX_STREAM, gcpChannel.getChannelRef().getActiveStreamsCount());
     assertEquals(MAX_CHANNEL, gcpChannel.channelRefs.size());
+  }
+
+  @Test
+  public void testBindUnbindKey() throws Exception {
+    // Initialize the channel and bind the key, check the affinity count.
+    ChannelRef cf1 = new ChannelRef(builder.build(), 1, 0, 5);
+    ChannelRef cf2 = new ChannelRef(builder.build(), 1, 0, 4);
+    gcpChannel.channelRefs.add(cf1);
+    gcpChannel.channelRefs.add(cf2);
+    gcpChannel.bind(1, "key1");
+    gcpChannel.bind(2, "key2");
+    gcpChannel.bind(1, "key1");
+    assertEquals(2, gcpChannel.channelRefs.get(1).getAffinityCount());
+    assertEquals(1, gcpChannel.channelRefs.get(2).getAffinityCount());
+    assertEquals(2, gcpChannel.affinityKeyToChannelRef.size());
+
+    // Try to use the channel with the affinity key.
+    assertEquals(cf1, gcpChannel.getChannelRef("key1"));
+
+    // Unbind the affinity key.
+    gcpChannel.unbind("key1");
+    assertEquals(2, gcpChannel.affinityKeyToChannelRef.size());
+    gcpChannel.unbind("key1");
+    gcpChannel.unbind("key2");
+    assertEquals(0, gcpChannel.affinityKeyToChannelRef.size());
+    assertEquals(0, gcpChannel.channelRefs.get(1).getAffinityCount());
+    assertEquals(0, gcpChannel.channelRefs.get(2).getAffinityCount());
+
+    // Finally, get the channelRef again.
+    ChannelRef cf = gcpChannel.getChannelRef("key1");
+    assertEquals(0, cf.getActiveStreamsCount());
   }
 }

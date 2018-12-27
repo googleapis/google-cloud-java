@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import static org.junit.Assert.assertEquals;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.BigtableGrpc.BigtableBlockingStub;
+import com.google.bigtable.v2.BigtableGrpc.BigtableFutureStub;
 import com.google.bigtable.v2.BigtableGrpc.BigtableStub;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
@@ -30,6 +31,7 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.RowSet;
 import com.google.common.collect.ImmutableList;
+import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.protobuf.ByteString;
 import io.grpc.ManagedChannelBuilder;
@@ -67,10 +69,6 @@ public class BigtableIntegrationTest {
   private GcpManagedChannel gcpChannel;
   private ManagedChannelBuilder builder;
 
-  private ByteString getCol(int idx) {
-    return ByteString.copyFromUtf8(COLUMN_NAME + idx);
-  }
-
   private GoogleCredentials getCreds() {
     GoogleCredentials creds;
     try {
@@ -98,6 +96,13 @@ public class BigtableIntegrationTest {
     return stub;
   }
 
+  private BigtableFutureStub getBigtableFutureStub() throws InterruptedException {
+    GoogleCredentials creds = getCreds();
+    BigtableFutureStub stub =
+        BigtableGrpc.newFutureStub(gcpChannel).withCallCredentials(MoreCallCredentials.from(creds));
+    return stub;
+  }
+
   @Before
   public void setupBuilder() throws InterruptedException {
     builder = ManagedChannelBuilder.forAddress(BIGTABLE_TARGET, 443);
@@ -112,21 +117,8 @@ public class BigtableIntegrationTest {
   public void testMutateRowReuse() throws Exception {
     gcpChannel = new GcpManagedChannel(builder);
     BigtableBlockingStub stub = getBigtableBlockingStub();
-    ByteString value = ByteString.copyFromUtf8("test-mutation");
-    Mutation mutation =
-        Mutation.newBuilder()
-            .setSetCell(
-                Mutation.SetCell.newBuilder()
-                    .setFamilyName(FAMILY_NAME)
-                    .setColumnQualifier(getCol(100))
-                    .setValue(value))
-            .build();
-    MutateRowRequest request =
-        MutateRowRequest.newBuilder()
-            .setTableName(TABLE_NAME)
-            .setRowKey(ByteString.copyFromUtf8("test-row"))
-            .addMutations(mutation)
-            .build();
+    MutateRowRequest request = getMutateRequest("test-mutation", 100, "test-row");
+
     for (int i = 0; i < DEFAULT_MAX_CHANNEL * 2; i++) {
       MutateRowResponse response = stub.mutateRow(request);
       assertThat(response).isNotEqualTo(null);
@@ -138,23 +130,9 @@ public class BigtableIntegrationTest {
   public void testMutateRowAsyncReuse() throws Exception {
     gcpChannel = new GcpManagedChannel(builder);
     BigtableStub stub = getBigtableStub();
-    ByteString value = ByteString.copyFromUtf8("test-mutation-async");
 
     for (int i = 0; i < DEFAULT_MAX_CHANNEL * 2; i++) {
-      Mutation mutation =
-          Mutation.newBuilder()
-              .setSetCell(
-                  Mutation.SetCell.newBuilder()
-                      .setFamilyName(FAMILY_NAME)
-                      .setColumnQualifier(getCol(i))
-                      .setValue(value))
-              .build();
-      MutateRowRequest request =
-          MutateRowRequest.newBuilder()
-              .setTableName(TABLE_NAME)
-              .setRowKey(ByteString.copyFromUtf8("test-row"))
-              .addMutations(mutation)
-              .build();
+      MutateRowRequest request = getMutateRequest("test-mutation-async", i, "test-row");
       AsyncResponseObserver<MutateRowResponse> responseObserver =
           new AsyncResponseObserver<MutateRowResponse>();
       stub.mutateRow(request, responseObserver);
@@ -166,29 +144,29 @@ public class BigtableIntegrationTest {
   }
 
   @Test
-  public void testConcurrentStreams() throws Exception {
+  public void testMutateRowFutureReuse() throws Exception {
+    gcpChannel = new GcpManagedChannel(builder);
+    BigtableFutureStub stub = getBigtableFutureStub();
+    for (int i = 0; i < DEFAULT_MAX_CHANNEL; i++) {
+      MutateRowRequest request = getMutateRequest("test-mutation-future", i, "test-row-future");
+      ListenableFuture<MutateRowResponse> future = stub.mutateRow(request);
+      assertEquals(1, gcpChannel.channelRefs.size());
+      assertEquals(1, gcpChannel.channelRefs.get(0).getActiveStreamsCount());
+      future.get();
+      assertEquals(0, gcpChannel.channelRefs.get(0).getActiveStreamsCount());
+    }
+  }
+
+  @Test
+  public void testConcurrentStreamsAndChannels() throws Exception {
     // For our current channel pool, the max_stream is 5 and the max_size is 5.
     gcpChannel = new GcpManagedChannel(builder, TEST_APICONFIG_FILE);
     BigtableStub stub = getBigtableStub();
-    ByteString value = ByteString.copyFromUtf8("test-mutation-async");
-    Mutation mutation =
-        Mutation.newBuilder()
-            .setSetCell(
-                Mutation.SetCell.newBuilder()
-                    .setFamilyName(FAMILY_NAME)
-                    .setColumnQualifier(getCol(100))
-                    .setValue(value))
-            .build();
-    MutateRowRequest request =
-        MutateRowRequest.newBuilder()
-            .setTableName(TABLE_NAME)
-            .setRowKey(ByteString.copyFromUtf8("test-row-async"))
-            .addMutations(mutation)
-            .build();
     List<AsyncResponseObserver<MutateRowResponse>> clearObservers = new ArrayList<>();
 
     // The number of streams is <= 5 * 5.
     for (int i = 0; i < NEW_MAX_STREAM * NEW_MAX_CHANNEL; i++) {
+      MutateRowRequest request = getMutateRequest("test-mutation-async", i, "test-row-async");
       AsyncResponseObserver<MutateRowResponse> responseObserver =
           new AsyncResponseObserver<MutateRowResponse>();
       stub.mutateRow(request, responseObserver);
@@ -207,6 +185,7 @@ public class BigtableIntegrationTest {
     }
 
     // The number of streams is 26, new channel won't be created.
+    MutateRowRequest request = getMutateRequest("test-mutation-async", 100, "test-row-async");
     AsyncResponseObserver<MutateRowResponse> responseObserver =
         new AsyncResponseObserver<MutateRowResponse>();
     stub.mutateRow(request, responseObserver);
@@ -234,6 +213,25 @@ public class BigtableIntegrationTest {
     Iterator<ReadRowsResponse> response = stub.readRows(request);
     assertEquals(21, response.next().getChunksCount());
     assertEquals(1, gcpChannel.channelRefs.size());
+  }
+
+  private static MutateRowRequest getMutateRequest(String val, int col, String rowKey) {
+    ByteString value = ByteString.copyFromUtf8(val);
+    Mutation mutation =
+        Mutation.newBuilder()
+            .setSetCell(
+                Mutation.SetCell.newBuilder()
+                    .setFamilyName(FAMILY_NAME)
+                    .setColumnQualifier(ByteString.copyFromUtf8(COLUMN_NAME + col))
+                    .setValue(value))
+            .build();
+    MutateRowRequest request =
+        MutateRowRequest.newBuilder()
+            .setTableName(TABLE_NAME)
+            .setRowKey(ByteString.copyFromUtf8(rowKey))
+            .addMutations(mutation)
+            .build();
+    return request;
   }
 
   private static class AsyncResponseObserver<RespT> implements StreamObserver<RespT> {

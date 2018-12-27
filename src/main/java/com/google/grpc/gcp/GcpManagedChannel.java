@@ -42,10 +42,10 @@ public class GcpManagedChannel extends ManagedChannel {
   private ApiConfig apiConfig;
   private int maxSize;
   private int maxConcurrentStreamsLowWatermark;
-  private final Map<String, AffinityConfig> methodToAffinity;
-  private final Map<String, ChannelRef> affinityKeyToChannelRef;
   private final ManagedChannelBuilder builder;
 
+  @VisibleForTesting final Map<String, AffinityConfig> methodToAffinity;
+  @VisibleForTesting final Map<String, ChannelRef> affinityKeyToChannelRef;
   @VisibleForTesting List<ChannelRef> channelRefs;
 
   public GcpManagedChannel(ManagedChannelBuilder builder, String... jsonPath) {
@@ -87,6 +87,14 @@ public class GcpManagedChannel extends ManagedChannel {
       }
     }
     return;
+  }
+
+  public int getMaxSize() {
+    return maxSize;
+  }
+
+  public int getStreamsLowWatermark() {
+    return maxConcurrentStreamsLowWatermark;
   }
 
   // ----TODO: How to initialize a new managed channel? currently we use ---
@@ -241,8 +249,12 @@ public class GcpManagedChannel extends ManagedChannel {
    * <p>One channel can be mapped to more than one keys. But one key can only be mapped to one
    * channel.
    */
-  public synchronized void bind(ChannelRef channelRef, String affinityKey) {
-    if (affinityKey != null && !affinityKey.equals("") && channelRef != null) {
+  public synchronized void bind(int channelRefIdx, String affinityKey) {
+    if (affinityKey != null
+        && !affinityKey.equals("")
+        && channelRefIdx < channelRefs.size()
+        && channelRefIdx >= 0) {
+      ChannelRef channelRef = channelRefs.get(channelRefIdx);
       if (!affinityKeyToChannelRef.containsKey(affinityKey)) {
         affinityKeyToChannelRef.put(affinityKey, channelRef);
       }
