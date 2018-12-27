@@ -60,6 +60,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private final Boolean dryRun;
   private final Boolean useLegacySql;
   private final Integer maximumBillingTier;
+  private final Long maximumBytesBilled;
   private final List<SchemaUpdateOption> schemaUpdateOptions;
   private final EncryptionConfiguration destinationEncryptionConfiguration;
   private final TimePartitioning timePartitioning;
@@ -104,6 +105,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private Boolean dryRun;
     private Boolean useLegacySql = false;
     private Integer maximumBillingTier;
+    private Long maximumBytesBilled;
     private List<SchemaUpdateOption> schemaUpdateOptions;
     private EncryptionConfiguration destinationEncryptionConfiguration;
     private TimePartitioning timePartitioning;
@@ -131,6 +133,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.dryRun = jobConfiguration.dryRun;
       this.useLegacySql = jobConfiguration.useLegacySql;
       this.maximumBillingTier = jobConfiguration.maximumBillingTier;
+      this.maximumBytesBilled = jobConfiguration.maximumBytesBilled;
       this.schemaUpdateOptions = jobConfiguration.schemaUpdateOptions;
       this.destinationEncryptionConfiguration = jobConfiguration.destinationEncryptionConfiguration;
       this.timePartitioning = jobConfiguration.timePartitioning;
@@ -166,6 +169,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
       useLegacySql = queryConfigurationPb.getUseLegacySql();
       if (queryConfigurationPb.getMaximumBillingTier() != null) {
         maximumBillingTier = queryConfigurationPb.getMaximumBillingTier();
+      }
+      if (queryConfigurationPb.getMaximumBytesBilled() != null) {
+        maximumBytesBilled = queryConfigurationPb.getMaximumBytesBilled();
       }
       dryRun = configurationPb.getDryRun();
       if (queryConfigurationPb.getDestinationTable() != null) {
@@ -481,7 +487,18 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.maximumBillingTier = maximumBillingTier;
       return this;
     }
-
+    
+    /**
+     * Limits the bytes billed for this job. Queries that will have bytes billed beyond this limit
+     * will fail (without incurring a charge). If unspecified, this will be set to your project default.
+     *
+     * @param maximumBytesBilled maximum bytes billed for this job
+     */
+    public Builder setMaximumBytesBilled(Long maximumBytesBilled) {
+      this.maximumBytesBilled = maximumBytesBilled;
+      return this;
+    }
+    
     /**
      * [Experimental] Sets options allowing the schema of the destination table to be updated as a
      * side effect of the query job. Schema update options are supported in two cases: when
@@ -538,6 +555,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     this.dryRun = builder.dryRun;
     this.useLegacySql = builder.useLegacySql;
     this.maximumBillingTier = builder.maximumBillingTier;
+    this.maximumBytesBilled = builder.maximumBytesBilled;
     this.schemaUpdateOptions = builder.schemaUpdateOptions;
     this.destinationEncryptionConfiguration = builder.destinationEncryptionConfiguration;
     this.timePartitioning = builder.timePartitioning;
@@ -685,6 +703,11 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return maximumBillingTier;
   }
 
+  /** Returns the optional bytes billed limit for this job. */
+  public Long getMaximumBytesBilled() {
+    return maximumBytesBilled;
+  }
+
   /**
    * [Experimental] Returns options allowing the schema of the destination table to be updated as a
    * side effect of the query job. Schema update options are supported in two cases: when
@@ -731,6 +754,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
         .add("dryRun", dryRun)
         .add("useLegacySql", useLegacySql)
         .add("maximumBillingTier", maximumBillingTier)
+        .add("maximumBytesBilled", maximumBytesBilled)
         .add("schemaUpdateOptions", schemaUpdateOptions)
         .add("timePartitioning", timePartitioning)
         .add("clustering", clustering);
@@ -762,6 +786,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
         dryRun,
         useLegacySql,
         maximumBillingTier,
+        maximumBytesBilled,
         schemaUpdateOptions,
         timePartitioning,
         clustering);
@@ -834,6 +859,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
     }
     if (maximumBillingTier != null) {
       queryConfigurationPb.setMaximumBillingTier(maximumBillingTier);
+    }
+    if (maximumBytesBilled != null) {
+      queryConfigurationPb.setMaximumBytesBilled(maximumBytesBilled);
     }
     if (schemaUpdateOptions != null) {
       ImmutableList.Builder<String> schemaUpdateOptionsBuilder = new ImmutableList.Builder<>();
