@@ -487,10 +487,11 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.maximumBillingTier = maximumBillingTier;
       return this;
     }
-    
+
     /**
      * Limits the bytes billed for this job. Queries that will have bytes billed beyond this limit
-     * will fail (without incurring a charge). If unspecified, this will be set to your project default.
+     * will fail (without incurring a charge). If unspecified, this will be set to your project
+     * default.
      *
      * @param maximumBytesBilled maximum bytes billed for this job
      */
@@ -498,7 +499,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.maximumBytesBilled = maximumBytesBilled;
       return this;
     }
-    
+
     /**
      * [Experimental] Sets options allowing the schema of the destination table to be updated as a
      * side effect of the query job. Schema update options are supported in two cases: when
