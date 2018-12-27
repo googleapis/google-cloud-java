@@ -29,7 +29,9 @@ public class NameUtil {
   public static String formatInstanceName(@Nonnull String projectId, @Nonnull String instanceId) {
     return "projects/" + projectId + "/instances/" + instanceId;
   }
-  public static String formatTableName(@Nonnull String projectId, @Nonnull String instanceId, @Nonnull String tableId) {
+
+  public static String formatTableName(
+      @Nonnull String projectId, @Nonnull String instanceId, @Nonnull String tableId) {
     return formatInstanceName(projectId, instanceId) + "/tables/" + tableId;
   }
 }

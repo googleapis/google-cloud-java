@@ -32,23 +32,17 @@ import com.google.auto.value.AutoValue;
 @AutoValue
 public abstract class RequestContext {
 
-  /**
-   * Creates a new instance of the {@link RequestContext}.
-   */
+  /** Creates a new instance of the {@link RequestContext}. */
   public static RequestContext create(String projectId, String instanceId, String appProfileId) {
     return new AutoValue_RequestContext(projectId, instanceId, appProfileId);
   }
 
-  /**
-   * @deprecated Please use {@link #create(String, String, String)}.
-   */
+  /** @deprecated Please use {@link #create(String, String, String)}. */
   @Deprecated
   public static RequestContext create(
       com.google.cloud.bigtable.data.v2.models.InstanceName instanceName, String appProfileId) {
     return new AutoValue_RequestContext(
-        instanceName.getProject(),
-        instanceName.getInstance(),
-        appProfileId);
+        instanceName.getProject(), instanceName.getInstance(), appProfileId);
   }
 
   /** The project id that the client is configured to target. */

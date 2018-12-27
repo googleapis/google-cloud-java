@@ -77,8 +77,7 @@ public class MutateRowsBatchingDescriptorTest {
   public void partitionKeyTest() {
     String myTableName = NameUtil.formatTableName("my-project", "my-instance", "my-table");
 
-    MutateRowsRequest request =
-        createRequest(2).toBuilder().setTableName(myTableName).build();
+    MutateRowsRequest request = createRequest(2).toBuilder().setTableName(myTableName).build();
 
     PartitionKey actual = descriptor.getBatchPartitionKey(request);
     assertThat(actual).isEqualTo(new PartitionKey(myTableName));
@@ -206,8 +205,8 @@ public class MutateRowsBatchingDescriptorTest {
 
   private static MutateRowsRequest createRequest(int count) {
     MutateRowsRequest.Builder request =
-        MutateRowsRequest.newBuilder().setTableName(
-            NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID));
+        MutateRowsRequest.newBuilder()
+            .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID));
 
     for (int i = 0; i < count; i++) {
       Builder entry =

@@ -118,8 +118,7 @@ public class ResourceHeaderTest {
   @Test
   public void checkAndMutateRowTest() {
     client.checkAndMutateRowAsync(
-        ConditionalRowMutation.create(TABLE_ID, "fake-key")
-            .then(Mutation.create().deleteRow()));
+        ConditionalRowMutation.create(TABLE_ID, "fake-key").then(Mutation.create().deleteRow()));
     verifyHeaderSent();
   }
 

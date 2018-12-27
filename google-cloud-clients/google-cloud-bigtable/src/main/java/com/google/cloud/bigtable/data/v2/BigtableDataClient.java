@@ -121,10 +121,8 @@ public class BigtableDataClient implements AutoCloseable {
    * @throws IOException If any.
    */
   public static BigtableDataClient create(String projectId, String instanceId) throws IOException {
-    BigtableDataSettings settings = BigtableDataSettings.newBuilder()
-        .setProjectId(projectId)
-        .setInstanceId(instanceId)
-        .build();
+    BigtableDataSettings settings =
+        BigtableDataSettings.newBuilder().setProjectId(projectId).setInstanceId(instanceId).build();
     return create(settings);
   }
 
@@ -134,11 +132,11 @@ public class BigtableDataClient implements AutoCloseable {
    * @param instanceName The instance to connect to.
    * @return A new client.
    * @throws IOException If any.
-   *
    * @deprecated Please use {@link #create(String, String)}.
    */
   @Deprecated
-  public static BigtableDataClient create(com.google.cloud.bigtable.data.v2.models.InstanceName instanceName) throws IOException {
+  public static BigtableDataClient create(
+      com.google.cloud.bigtable.data.v2.models.InstanceName instanceName) throws IOException {
     BigtableDataSettings settings =
         BigtableDataSettings.newBuilder().setInstanceName(instanceName).build();
     return create(settings);

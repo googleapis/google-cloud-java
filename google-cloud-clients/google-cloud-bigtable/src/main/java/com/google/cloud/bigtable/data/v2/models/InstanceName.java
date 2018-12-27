@@ -25,9 +25,7 @@ import java.util.Map;
 
 // Copied from com.google.bigtable.admin.v2
 
-/**
- * @deprecated Please use project id and instance id strings instead.
- */
+/** @deprecated Please use project id and instance id strings instead. */
 @Deprecated
 public class InstanceName implements ResourceName {
   private static final PathTemplate PATH_TEMPLATE =

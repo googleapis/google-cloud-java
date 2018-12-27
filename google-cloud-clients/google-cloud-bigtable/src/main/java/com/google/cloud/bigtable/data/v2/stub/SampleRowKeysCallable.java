@@ -46,9 +46,7 @@ class SampleRowKeysCallable extends UnaryCallable<String, List<KeyOffset>> {
   public ApiFuture<List<KeyOffset>> futureCall(String tableId, ApiCallContext context) {
     String tableName =
         NameUtil.formatTableName(
-            requestContext.getProjectId(),
-            requestContext.getInstanceId(),
-            tableId);
+            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
 
     SampleRowKeysRequest request =
         SampleRowKeysRequest.newBuilder()

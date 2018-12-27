@@ -87,7 +87,7 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
     return getTypedStubSettings().getInstanceId();
   }
 
-  /** Returns the configured AppProfile id to use.  */
+  /** Returns the configured AppProfile id to use. */
   public String getAppProfileId() {
     return getTypedStubSettings().getAppProfileId();
   }
@@ -187,9 +187,7 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
       return this;
     }
 
-    /**
-     * Gets the project id that was previously set on this Builder.
-     */
+    /** Gets the project id that was previously set on this Builder. */
     public String getProjectId() {
       return getTypedStubSettings().getProjectId();
     }
@@ -203,9 +201,7 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
       return this;
     }
 
-    /**
-     * Gets the instance id that was previously set on this Builder.
-     */
+    /** Gets the instance id that was previously set on this Builder. */
     public String getInstanceId() {
       return getTypedStubSettings().getInstanceId();
     }

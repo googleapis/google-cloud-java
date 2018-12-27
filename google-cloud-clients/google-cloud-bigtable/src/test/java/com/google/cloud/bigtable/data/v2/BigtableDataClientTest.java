@@ -108,8 +108,7 @@ public class BigtableDataClientTest {
     ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
     Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
 
-    RequestContext ctx =
-        RequestContext.create("fake-project", "fake-instance", "fake-profile");
+    RequestContext ctx = RequestContext.create("fake-project", "fake-instance", "fake-profile");
     // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
     assertThat(requestCaptor.getValue().toProto(ctx))
         .isEqualTo(
@@ -126,8 +125,7 @@ public class BigtableDataClientTest {
     ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
     Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
 
-    RequestContext ctx =
-        RequestContext.create("fake-project", "fake-instance", "fake-profile");
+    RequestContext ctx = RequestContext.create("fake-project", "fake-instance", "fake-profile");
     // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
     assertThat(requestCaptor.getValue().toProto(ctx))
         .isEqualTo(
@@ -150,8 +148,7 @@ public class BigtableDataClientTest {
     ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
     Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
 
-    RequestContext ctx =
-        RequestContext.create("fake-project", "fake-instance", "fake-profile");
+    RequestContext ctx = RequestContext.create("fake-project", "fake-instance", "fake-profile");
     // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
     assertThat(requestCaptor.getValue().toProto(ctx))
         .isEqualTo(
@@ -180,8 +177,7 @@ public class BigtableDataClientTest {
     ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
     Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
 
-    RequestContext ctx =
-        RequestContext.create("fake-project", "fake-instance", "fake-profile");
+    RequestContext ctx = RequestContext.create("fake-project", "fake-instance", "fake-profile");
     // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
     assertThat(requestCaptor.getValue().toProto(ctx))
         .isEqualTo(
@@ -210,8 +206,7 @@ public class BigtableDataClientTest {
     ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
     Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
 
-    RequestContext ctx =
-        RequestContext.create("fake-project", "fake-instance", "fake-profile");
+    RequestContext ctx = RequestContext.create("fake-project", "fake-instance", "fake-profile");
     // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
     assertThat(requestCaptor.getValue().toProto(ctx))
         .isEqualTo(
@@ -234,8 +229,7 @@ public class BigtableDataClientTest {
     ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
     Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
 
-    RequestContext ctx =
-        RequestContext.create("fake-project", "fake-instance", "fake-profile");
+    RequestContext ctx = RequestContext.create("fake-project", "fake-instance", "fake-profile");
     // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
     assertThat(requestCaptor.getValue().toProto(ctx))
         .isEqualTo(
@@ -264,8 +258,7 @@ public class BigtableDataClientTest {
     ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
     Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
 
-    RequestContext ctx =
-        RequestContext.create("fake-project", "fake-instance", "fake-profile");
+    RequestContext ctx = RequestContext.create("fake-project", "fake-instance", "fake-profile");
     // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
     assertThat(requestCaptor.getValue().toProto(ctx))
         .isEqualTo(
@@ -300,8 +293,7 @@ public class BigtableDataClientTest {
     ArgumentCaptor<Query> requestCaptor = ArgumentCaptor.forClass(Query.class);
     Mockito.verify(mockReadRowsCallable.first()).futureCall(requestCaptor.capture());
 
-    RequestContext ctx =
-        RequestContext.create("fake-project", "fake-instance", "fake-profile");
+    RequestContext ctx = RequestContext.create("fake-project", "fake-instance", "fake-profile");
     // NOTE: limit(1) is added by the mocked first() call, so it's not tested here
     assertThat(requestCaptor.getValue().toProto(ctx))
         .isEqualTo(

@@ -42,8 +42,8 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class CheckAndMutateRowCallableTest {
 
-  private final RequestContext requestContext = RequestContext
-      .create("my-project", "my-instance", "my-app-profile");
+  private final RequestContext requestContext =
+      RequestContext.create("my-project", "my-instance", "my-app-profile");
   private FakeCallable inner;
   private CheckAndMutateRowCallable callable;
 
@@ -63,7 +63,7 @@ public class CheckAndMutateRowCallableTest {
             CheckAndMutateRowRequest.newBuilder()
                 .setTableName(
                     NameUtil.formatTableName(
-                        requestContext.getProjectId(), requestContext.getInstanceId(),"my-table"))
+                        requestContext.getProjectId(), requestContext.getInstanceId(), "my-table"))
                 .setRowKey(ByteString.copyFromUtf8("row-key"))
                 .setAppProfileId(requestContext.getAppProfileId())
                 .addTrueMutations(

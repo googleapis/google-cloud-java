@@ -248,9 +248,7 @@ public final class Query implements Serializable {
   public ReadRowsRequest toProto(RequestContext requestContext) {
     String tableName =
         NameUtil.formatTableName(
-            requestContext.getProjectId(),
-            requestContext.getInstanceId(),
-            tableId);
+            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
 
     return builder
         .setTableName(tableName)

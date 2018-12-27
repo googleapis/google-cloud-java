@@ -146,9 +146,10 @@ public class EnhancedBigtableStubSettingsTest {
     String dummyProjectId = "my-project";
     String dummyInstanceId = "my-instance";
 
-    EnhancedBigtableStubSettings.Builder builder = EnhancedBigtableStubSettings.newBuilder()
-        .setProjectId(dummyProjectId)
-        .setInstanceId(dummyInstanceId);
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId(dummyProjectId)
+            .setInstanceId(dummyInstanceId);
 
     InstantiatingGrpcChannelProvider provider =
         (InstantiatingGrpcChannelProvider) builder.getTransportChannelProvider();
@@ -161,9 +162,10 @@ public class EnhancedBigtableStubSettingsTest {
     String dummyProjectId = "my-project";
     String dummyInstanceId = "my-instance";
 
-    EnhancedBigtableStubSettings.Builder builder = EnhancedBigtableStubSettings.newBuilder()
-        .setProjectId(dummyProjectId)
-        .setInstanceId(dummyInstanceId);
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId(dummyProjectId)
+            .setInstanceId(dummyInstanceId);
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -214,9 +216,10 @@ public class EnhancedBigtableStubSettingsTest {
     String dummyProjectId = "my-project";
     String dummyInstanceId = "my-instance";
 
-    EnhancedBigtableStubSettings.Builder builder = EnhancedBigtableStubSettings.newBuilder()
-        .setProjectId(dummyProjectId)
-        .setInstanceId(dummyInstanceId);
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId(dummyProjectId)
+            .setInstanceId(dummyInstanceId);
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -260,9 +263,10 @@ public class EnhancedBigtableStubSettingsTest {
     String dummyProjectId = "my-project";
     String dummyInstanceId = "my-instance";
 
-    EnhancedBigtableStubSettings.Builder builder = EnhancedBigtableStubSettings.newBuilder()
-        .setProjectId(dummyProjectId)
-        .setInstanceId(dummyInstanceId);
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId(dummyProjectId)
+            .setInstanceId(dummyInstanceId);
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -306,9 +310,10 @@ public class EnhancedBigtableStubSettingsTest {
     String dummyProjectId = "my-project";
     String dummyInstanceId = "my-instance";
 
-    EnhancedBigtableStubSettings.Builder builder = EnhancedBigtableStubSettings.newBuilder()
-        .setProjectId(dummyProjectId)
-        .setInstanceId(dummyInstanceId);
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId(dummyProjectId)
+            .setInstanceId(dummyInstanceId);
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -364,10 +369,10 @@ public class EnhancedBigtableStubSettingsTest {
     assertThat(builder.getBatchingSettings().getRequestByteThreshold())
         .isLessThan(256L * 1024 * 1024);
     assertThat(
-        builder.getBatchingSettings().getFlowControlSettings().getMaxOutstandingElementCount())
+            builder.getBatchingSettings().getFlowControlSettings().getMaxOutstandingElementCount())
         .isLessThan(10_000L);
     assertThat(
-        builder.getBatchingSettings().getFlowControlSettings().getMaxOutstandingRequestBytes())
+            builder.getBatchingSettings().getFlowControlSettings().getMaxOutstandingRequestBytes())
         .isLessThan(512L * 1024 * 1024);
   }
 
@@ -376,9 +381,10 @@ public class EnhancedBigtableStubSettingsTest {
     String dummyProjectId = "my-project";
     String dummyInstanceId = "my-instance";
 
-    EnhancedBigtableStubSettings.Builder builder = EnhancedBigtableStubSettings.newBuilder()
-        .setProjectId(dummyProjectId)
-        .setInstanceId(dummyInstanceId);
+    EnhancedBigtableStubSettings.Builder builder =
+        EnhancedBigtableStubSettings.newBuilder()
+            .setProjectId(dummyProjectId)
+            .setInstanceId(dummyInstanceId);
 
     RetrySettings retrySettings = RetrySettings.newBuilder().build();
     builder

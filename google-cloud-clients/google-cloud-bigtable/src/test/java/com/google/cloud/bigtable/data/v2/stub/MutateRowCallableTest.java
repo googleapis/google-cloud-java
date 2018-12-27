@@ -46,7 +46,7 @@ public class MutateRowCallableTest {
     innerMutation = ArgumentCaptor.forClass(MutateRowRequest.class);
     innerResult = SettableApiFuture.create();
     Mockito.when(
-        innerCallable.futureCall(innerMutation.capture(), Mockito.any(ApiCallContext.class)))
+            innerCallable.futureCall(innerMutation.capture(), Mockito.any(ApiCallContext.class)))
         .thenReturn(innerResult);
   }
 

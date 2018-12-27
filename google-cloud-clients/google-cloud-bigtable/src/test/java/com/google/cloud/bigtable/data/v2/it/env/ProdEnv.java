@@ -57,8 +57,7 @@ public class ProdEnv implements TestEnv {
     return new ProdEnv(
         getRequiredProperty(PROJECT_PROPERTY_NAME),
         getRequiredProperty(INSTANCE_PROPERTY_NAME),
-        getRequiredProperty(TABLE_PROPERTY_NAME)
-    );
+        getRequiredProperty(TABLE_PROPERTY_NAME));
   }
 
   public ProdEnv(String projectId, String instanceId, String tableId) {
@@ -116,8 +115,7 @@ public class ProdEnv implements TestEnv {
     ServerStream<Row> rows = dataClient.readRows(query);
     for (Row row : rows) {
       ApiFuture<Void> future =
-          dataClient.mutateRowAsync(
-              RowMutation.create(tableId, row.getKey()).deleteRow());
+          dataClient.mutateRowAsync(RowMutation.create(tableId, row.getKey()).deleteRow());
       futures.add(future);
     }
 

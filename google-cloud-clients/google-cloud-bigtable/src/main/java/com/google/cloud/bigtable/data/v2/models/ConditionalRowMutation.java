@@ -130,9 +130,7 @@ public final class ConditionalRowMutation implements Serializable {
         "ConditionalRowMutations must have `then` or `otherwise` mutations.");
     String tableName =
         NameUtil.formatTableName(
-            requestContext.getProjectId(),
-            requestContext.getInstanceId(),
-            tableId);
+            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
     return builder
         .setTableName(tableName.toString())
         .setAppProfileId(requestContext.getAppProfileId())

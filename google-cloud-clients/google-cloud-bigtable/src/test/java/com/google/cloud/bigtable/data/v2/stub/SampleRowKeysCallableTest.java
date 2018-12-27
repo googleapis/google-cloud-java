@@ -60,11 +60,9 @@ public class SampleRowKeysCallableTest {
     assertThat(inner.request)
         .isEqualTo(
             SampleRowKeysRequest.newBuilder()
-                .setTableName(NameUtil
-                    .formatTableName(
-                        requestContext.getProjectId(),
-                        requestContext.getInstanceId(),
-                        "my-table"))
+                .setTableName(
+                    NameUtil.formatTableName(
+                        requestContext.getProjectId(), requestContext.getInstanceId(), "my-table"))
                 .setAppProfileId(requestContext.getAppProfileId())
                 .build());
   }

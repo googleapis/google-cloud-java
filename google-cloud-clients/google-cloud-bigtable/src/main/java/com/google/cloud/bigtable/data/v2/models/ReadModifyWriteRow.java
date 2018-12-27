@@ -130,9 +130,7 @@ public final class ReadModifyWriteRow implements Serializable {
   public ReadModifyWriteRowRequest toProto(RequestContext requestContext) {
     String tableName =
         NameUtil.formatTableName(
-            requestContext.getProjectId(),
-            requestContext.getInstanceId(),
-            tableId);
+            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
 
     return builder
         .setTableName(tableName)

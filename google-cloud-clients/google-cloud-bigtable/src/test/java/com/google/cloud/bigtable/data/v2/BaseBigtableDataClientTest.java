@@ -40,7 +40,6 @@ import com.google.bigtable.v2.ReadRowsResponse;
 import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.SampleRowKeysResponse;
-import com.google.bigtable.v2.TableName;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.GeneratedMessageV3;
@@ -103,8 +102,7 @@ public class BaseBigtableDataClientTest {
         ReadRowsResponse.newBuilder().setLastScannedRowKey(lastScannedRowKey).build();
     mockBigtable.addResponse(expectedResponse);
     String tableName = NameUtil.formatTableName("[PROJECT]", "[INSTANCE]", "[TABLE]");
-    ReadRowsRequest request =
-        ReadRowsRequest.newBuilder().setTableName(tableName).build();
+    ReadRowsRequest request = ReadRowsRequest.newBuilder().setTableName(tableName).build();
 
     MockStreamObserver<ReadRowsResponse> responseObserver = new MockStreamObserver<>();
 
@@ -122,8 +120,7 @@ public class BaseBigtableDataClientTest {
     StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
     mockBigtable.addException(exception);
     String tableName = NameUtil.formatTableName("[PROJECT]", "[INSTANCE]", "[TABLE]");
-    ReadRowsRequest request =
-        ReadRowsRequest.newBuilder().setTableName(tableName).build();
+    ReadRowsRequest request = ReadRowsRequest.newBuilder().setTableName(tableName).build();
 
     MockStreamObserver<ReadRowsResponse> responseObserver = new MockStreamObserver<>();
 
@@ -240,10 +237,7 @@ public class BaseBigtableDataClientTest {
     String tableName = NameUtil.formatTableName("[PROJECT]", "[INSTANCE]", "[TABLE]");
     List<MutateRowsRequest.Entry> entries = new ArrayList<>();
     MutateRowsRequest request =
-        MutateRowsRequest.newBuilder()
-            .setTableName(tableName)
-            .addAllEntries(entries)
-            .build();
+        MutateRowsRequest.newBuilder().setTableName(tableName).addAllEntries(entries).build();
 
     MockStreamObserver<MutateRowsResponse> responseObserver = new MockStreamObserver<>();
 
@@ -264,10 +258,7 @@ public class BaseBigtableDataClientTest {
     String tableName = NameUtil.formatTableName("[PROJECT]", "[INSTANCE]", "[TABLE]");
     List<MutateRowsRequest.Entry> entries = new ArrayList<>();
     MutateRowsRequest request =
-        MutateRowsRequest.newBuilder()
-            .setTableName(tableName)
-            .addAllEntries(entries)
-            .build();
+        MutateRowsRequest.newBuilder().setTableName(tableName).addAllEntries(entries).build();
 
     MockStreamObserver<MutateRowsResponse> responseObserver = new MockStreamObserver<>();
 

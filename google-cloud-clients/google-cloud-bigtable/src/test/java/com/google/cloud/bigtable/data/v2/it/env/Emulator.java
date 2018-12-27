@@ -101,10 +101,10 @@ class Emulator {
     dataClient =
         BigtableDataClient.create(
             configureClient(
-                BigtableDataSettings.newBuilder()
-                    .setProjectId(PROJECT_ID)
-                    .setInstanceId(INSTANCE_ID)
-            ).build());
+                    BigtableDataSettings.newBuilder()
+                        .setProjectId(PROJECT_ID)
+                        .setInstanceId(INSTANCE_ID))
+                .build());
 
     Runtime.getRuntime()
         .addShutdownHook(

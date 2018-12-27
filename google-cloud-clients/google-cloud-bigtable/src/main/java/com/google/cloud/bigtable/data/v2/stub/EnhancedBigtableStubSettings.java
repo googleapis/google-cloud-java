@@ -361,7 +361,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       return this;
     }
 
-    /** Gets the project id  of the target instance that was previously set on this Builder. */
+    /** Gets the project id of the target instance that was previously set on this Builder. */
     public String getProjectId() {
       return projectId;
     }

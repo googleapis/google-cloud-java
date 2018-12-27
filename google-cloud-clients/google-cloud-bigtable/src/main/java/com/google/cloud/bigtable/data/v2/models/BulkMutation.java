@@ -91,9 +91,9 @@ public final class BulkMutation implements Serializable {
 
   @InternalApi
   public MutateRowsRequest toProto(RequestContext requestContext) {
-    String tableName = NameUtil
-        .formatTableName(requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
-
+    String tableName =
+        NameUtil.formatTableName(
+            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
 
     return builder
         .setTableName(tableName)

@@ -65,8 +65,9 @@ public class ReadModifyWriteRowCallableTest {
     assertThat(inner.request)
         .isEqualTo(
             ReadModifyWriteRowRequest.newBuilder()
-                .setTableName(NameUtil.formatTableName(
-                    requestContext.getProjectId(), requestContext.getInstanceId(), "my-table"))
+                .setTableName(
+                    NameUtil.formatTableName(
+                        requestContext.getProjectId(), requestContext.getInstanceId(), "my-table"))
                 .setAppProfileId(requestContext.getAppProfileId())
                 .setRowKey(ByteString.copyFromUtf8("my-key"))
                 .addRules(

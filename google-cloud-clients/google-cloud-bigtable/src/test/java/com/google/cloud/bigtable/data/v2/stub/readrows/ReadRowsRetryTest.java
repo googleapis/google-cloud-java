@@ -92,8 +92,7 @@ public class ReadRowsRetryTest {
             .expectRequest(Range.closedOpen("r1", "r3"))
             .respondWith("k1", "r1", "r2"));
 
-    List<String> actualResults =
-        getResults(Query.create(TABLE_ID).rowKey("k1").range("r1", "r3"));
+    List<String> actualResults = getResults(Query.create(TABLE_ID).rowKey("k1").range("r1", "r3"));
     Truth.assertThat(actualResults).containsExactly("k1", "r1", "r2").inOrder();
   }
 
@@ -110,8 +109,7 @@ public class ReadRowsRetryTest {
             .expectRequest(Range.closedOpen("r1", "r3"))
             .respondWith("k1", "r1", "r2"));
 
-    List<String> actualResults =
-        getResults(Query.create(TABLE_ID).rowKey("k1").range("r1", "r3"));
+    List<String> actualResults = getResults(Query.create(TABLE_ID).rowKey("k1").range("r1", "r3"));
     Truth.assertThat(actualResults).containsExactly("k1", "r1", "r2").inOrder();
   }
 
@@ -154,8 +152,7 @@ public class ReadRowsRetryTest {
             .expectRowLimit(1)
             .respondWith("r2"));
 
-    List<String> actualResults =
-        getResults(Query.create(TABLE_ID).range("r1", "r3").limit(2));
+    List<String> actualResults = getResults(Query.create(TABLE_ID).range("r1", "r3").limit(2));
     Truth.assertThat(actualResults).containsExactly("r1", "r2").inOrder();
   }
 
@@ -170,8 +167,7 @@ public class ReadRowsRetryTest {
 
     // Second retry request is handled locally in ReadRowsRetryCompletedCallable
 
-    List<String> actualResults =
-        getResults(Query.create(TABLE_ID).range("r1", "r3").limit(2));
+    List<String> actualResults = getResults(Query.create(TABLE_ID).range("r1", "r3").limit(2));
 
     Truth.assertThat(actualResults).containsExactly("r1", "r2");
   }
@@ -187,8 +183,7 @@ public class ReadRowsRetryTest {
 
     // Second retry request is handled locally in ReadRowsRetryCompletedCallable
 
-    List<String> actualResults =
-        getResults(Query.create(TABLE_ID).range("r1", "r3").rowKey("r4"));
+    List<String> actualResults = getResults(Query.create(TABLE_ID).range("r1", "r3").rowKey("r4"));
 
     Truth.assertThat(actualResults).containsExactly("r2", "r4");
   }
@@ -202,8 +197,7 @@ public class ReadRowsRetryTest {
             .respondWithStatus(Code.UNAVAILABLE));
     service.expectations.add(RpcExpectation.create().expectRequest("r2").respondWith("r2"));
 
-    List<String> actualResults =
-        getResults(Query.create(TABLE_ID).rowKey("r1").rowKey("r2"));
+    List<String> actualResults = getResults(Query.create(TABLE_ID).rowKey("r1").rowKey("r2"));
     Truth.assertThat(actualResults).containsExactly("r1", "r2").inOrder();
   }
 
@@ -228,8 +222,7 @@ public class ReadRowsRetryTest {
         RpcExpectation.create().expectRequest(Range.open("r1", "r9")).respondWith("r2"));
 
     List<String> actualResults =
-        getResults(
-            Query.create(TABLE_ID).range(ByteStringRange.unbounded().endOpen("r9")));
+        getResults(Query.create(TABLE_ID).range(ByteStringRange.unbounded().endOpen("r9")));
     Truth.assertThat(actualResults).containsExactly("r1", "r2").inOrder();
   }
 
@@ -244,9 +237,7 @@ public class ReadRowsRetryTest {
         RpcExpectation.create().expectRequest(Range.greaterThan("r1")).respondWith("r2"));
 
     List<String> actualResults =
-        getResults(
-            Query.create(TABLE_ID)
-                .range(ByteStringRange.unbounded().startClosed("r1")));
+        getResults(Query.create(TABLE_ID).range(ByteStringRange.unbounded().startClosed("r1")));
     Truth.assertThat(actualResults).containsExactly("r1", "r2").inOrder();
   }
 
@@ -308,9 +299,9 @@ public class ReadRowsRetryTest {
     List<ReadRowsResponse> responses;
 
     private RpcExpectation() {
-      this.requestBuilder = ReadRowsRequest.newBuilder().setTableName(
-          NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID)
-      );
+      this.requestBuilder =
+          ReadRowsRequest.newBuilder()
+              .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID));
       this.statusCode = Status.Code.OK;
       this.responses = Lists.newArrayList();
     }

@@ -160,9 +160,7 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
   public MutateRowRequest toProto(RequestContext requestContext) {
     String tableName =
         NameUtil.formatTableName(
-            requestContext.getProjectId(),
-            requestContext.getInstanceId(),
-            tableId);
+            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
 
     return MutateRowRequest.newBuilder()
         .setAppProfileId(requestContext.getAppProfileId())
@@ -180,9 +178,7 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
   public MutateRowsRequest toBulkProto(RequestContext requestContext) {
     String tableName =
         NameUtil.formatTableName(
-            requestContext.getProjectId(),
-            requestContext.getInstanceId(),
-            tableId);
+            requestContext.getProjectId(), requestContext.getInstanceId(), tableId);
 
     return MutateRowsRequest.newBuilder()
         .setAppProfileId(requestContext.getAppProfileId())

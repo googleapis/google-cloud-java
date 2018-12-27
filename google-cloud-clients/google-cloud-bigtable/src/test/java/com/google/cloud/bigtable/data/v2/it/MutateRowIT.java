@@ -51,8 +51,7 @@ public class MutateRowIT {
         .env()
         .getDataClient()
         .mutateRowAsync(
-            RowMutation.create(testEnvRule.env().getTableId(), rowKey)
-                .deleteCells(familyId, "q2"))
+            RowMutation.create(testEnvRule.env().getTableId(), rowKey).deleteCells(familyId, "q2"))
         .get(1, TimeUnit.MINUTES);
 
     Row row =
