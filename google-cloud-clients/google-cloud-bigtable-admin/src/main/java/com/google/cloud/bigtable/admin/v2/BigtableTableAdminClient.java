@@ -99,9 +99,8 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   private final String instanceId;
 
   /** Constructs an instance of BigtableTableAdminClient with the given project and instance ids. */
-  public static BigtableTableAdminClient create(@Nonnull String projectId,
-      @Nonnull String instanceId)
-      throws IOException {
+  public static BigtableTableAdminClient create(
+      @Nonnull String projectId, @Nonnull String instanceId) throws IOException {
     return create(
         BigtableTableAdminSettings.newBuilder()
             .setProjectId(projectId)
@@ -116,8 +115,7 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @Deprecated
   public static BigtableTableAdminClient create(
-      @Nonnull com.google.bigtable.admin.v2.InstanceName instanceName)
-      throws IOException {
+      @Nonnull com.google.bigtable.admin.v2.InstanceName instanceName) throws IOException {
     return create(instanceName.getProject(), instanceName.getInstance());
   }
 
@@ -316,7 +314,8 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Table> modifyFamiliesAsync(ModifyColumnFamiliesRequest request) {
     return transformToTableResponse(
-        this.stub.modifyColumnFamiliesCallable()
+        this.stub
+            .modifyColumnFamiliesCallable()
             .futureCall(request.toProto(projectId, instanceId)));
   }
 
@@ -541,9 +540,10 @@ public final class BigtableTableAdminClient implements AutoCloseable {
    */
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<List<String>> listTablesAsync() {
-    ListTablesRequest request = ListTablesRequest.newBuilder()
-        .setParent(NameUtil.formatInstanceName(projectId, instanceId))
-        .build();
+    ListTablesRequest request =
+        ListTablesRequest.newBuilder()
+            .setParent(NameUtil.formatInstanceName(projectId, instanceId))
+            .build();
 
     // TODO(igorbernstein2): try to upstream pagination spooling or figure out a way to expose the
     // paginated responses while maintaining the wrapper facade.
@@ -762,8 +762,8 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   @SuppressWarnings("WeakerAccess")
   public void awaitReplication(String tableId) {
     // TODO(igorbernstein2): remove usage of typesafe names
-    com.google.bigtable.admin.v2.TableName tableName = com.google.bigtable.admin.v2.TableName
-        .of(projectId, instanceId, tableId);
+    com.google.bigtable.admin.v2.TableName tableName =
+        com.google.bigtable.admin.v2.TableName.of(projectId, instanceId, tableId);
 
     ApiExceptions.callAndTranslateApiException(
         stub.awaitReplicationCallable().futureCall(tableName));
@@ -798,8 +798,8 @@ public final class BigtableTableAdminClient implements AutoCloseable {
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Void> awaitReplicationAsync(final String tableId) {
     // TODO(igorbernstein2): remove usage of trypesafe names
-    com.google.bigtable.admin.v2.TableName tableName = com.google.bigtable.admin.v2.TableName
-        .of(projectId, instanceId, tableId);
+    com.google.bigtable.admin.v2.TableName tableName =
+        com.google.bigtable.admin.v2.TableName.of(projectId, instanceId, tableId);
     return stub.awaitReplicationCallable().futureCall(tableName);
   }
 

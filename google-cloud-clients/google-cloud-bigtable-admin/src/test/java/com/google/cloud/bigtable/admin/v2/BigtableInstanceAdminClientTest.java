@@ -74,13 +74,15 @@ public class BigtableInstanceAdminClientTest {
 
   private static final String PROJECT_ID = "my-project";
   private static final String INSTANCE_ID = "my-instance";
-  private static final String CLUSTER_ID ="my-cluster";
-  private static final String APP_PROFILE_ID ="my-app-profile";
+  private static final String CLUSTER_ID = "my-cluster";
+  private static final String APP_PROFILE_ID = "my-app-profile";
 
   private static final String PROJECT_NAME = NameUtil.formatProjectName(PROJECT_ID);
   private static final String INSTANCE_NAME = NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID);
-  private static final String CLUSTER_NAME = NameUtil.formatClusterName(PROJECT_ID, INSTANCE_ID, CLUSTER_ID);
-  private static final String APP_PROFILE_NAME = NameUtil.formatAppProfileName(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID);
+  private static final String CLUSTER_NAME =
+      NameUtil.formatClusterName(PROJECT_ID, INSTANCE_ID, CLUSTER_ID);
+  private static final String APP_PROFILE_NAME =
+      NameUtil.formatAppProfileName(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID);
 
   private BigtableInstanceAdminClient adminClient;
 
@@ -246,9 +248,7 @@ public class BigtableInstanceAdminClientTest {
             .build();
 
     com.google.bigtable.admin.v2.Instance expectedResponse =
-        com.google.bigtable.admin.v2.Instance.newBuilder()
-            .setName(INSTANCE_NAME)
-            .build();
+        com.google.bigtable.admin.v2.Instance.newBuilder().setName(INSTANCE_NAME).build();
 
     mockOperationResult(mockCreateInstanceCallable, expectedRequest, expectedResponse);
 
@@ -276,17 +276,14 @@ public class BigtableInstanceAdminClientTest {
             .build();
 
     com.google.bigtable.admin.v2.Instance expectedResponse =
-        com.google.bigtable.admin.v2.Instance.newBuilder()
-            .setName(INSTANCE_NAME)
-            .build();
+        com.google.bigtable.admin.v2.Instance.newBuilder().setName(INSTANCE_NAME).build();
 
     mockOperationResult(mockUpdateInstanceCallable, expectedRequest, expectedResponse);
 
     // Execute
     Instance actualResult =
         adminClient.updateInstance(
-            UpdateInstanceRequest.of(INSTANCE_ID)
-                .setDisplayName("new display name"));
+            UpdateInstanceRequest.of(INSTANCE_ID).setDisplayName("new display name"));
 
     // Verify
     assertThat(actualResult).isEqualTo(Instance.fromProto(expectedResponse));
@@ -296,14 +293,10 @@ public class BigtableInstanceAdminClientTest {
   public void testGetInstance() {
     // Setup
     com.google.bigtable.admin.v2.GetInstanceRequest expectedRequest =
-        com.google.bigtable.admin.v2.GetInstanceRequest.newBuilder()
-            .setName(INSTANCE_NAME)
-            .build();
+        com.google.bigtable.admin.v2.GetInstanceRequest.newBuilder().setName(INSTANCE_NAME).build();
 
     com.google.bigtable.admin.v2.Instance expectedResponse =
-        com.google.bigtable.admin.v2.Instance.newBuilder()
-            .setName(INSTANCE_NAME)
-            .build();
+        com.google.bigtable.admin.v2.Instance.newBuilder().setName(INSTANCE_NAME).build();
 
     Mockito.when(mockGetInstanceCallable.futureCall(expectedRequest))
         .thenReturn(ApiFutures.immediateFuture(expectedResponse));
@@ -362,7 +355,7 @@ public class BigtableInstanceAdminClientTest {
                 com.google.bigtable.admin.v2.Instance.newBuilder()
                     .setName(INSTANCE_NAME + "1")
                     .build())
-            .addFailedLocations(NameUtil.formatLocationName(PROJECT_ID,"us-east1-d"))
+            .addFailedLocations(NameUtil.formatLocationName(PROJECT_ID, "us-east1-d"))
             .build();
 
     Mockito.when(mockListInstancesCallable.futureCall(expectedRequest))
@@ -446,9 +439,7 @@ public class BigtableInstanceAdminClientTest {
   public void testGetCluster() {
     // Setup
     com.google.bigtable.admin.v2.GetClusterRequest expectedRequest =
-        com.google.bigtable.admin.v2.GetClusterRequest.newBuilder()
-            .setName(CLUSTER_NAME)
-            .build();
+        com.google.bigtable.admin.v2.GetClusterRequest.newBuilder().setName(CLUSTER_NAME).build();
 
     com.google.bigtable.admin.v2.Cluster expectedResponse =
         com.google.bigtable.admin.v2.Cluster.newBuilder().setName(CLUSTER_NAME).build();
@@ -457,8 +448,7 @@ public class BigtableInstanceAdminClientTest {
         .thenReturn(ApiFutures.immediateFuture(expectedResponse));
 
     // Execute
-    Cluster actualResult =
-        adminClient.getCluster(INSTANCE_ID, CLUSTER_ID);
+    Cluster actualResult = adminClient.getCluster(INSTANCE_ID, CLUSTER_ID);
 
     // Verify
     assertThat(actualResult).isEqualTo(Cluster.fromProto(expectedResponse));
@@ -475,11 +465,9 @@ public class BigtableInstanceAdminClientTest {
     com.google.bigtable.admin.v2.ListClustersResponse expectedResponse =
         com.google.bigtable.admin.v2.ListClustersResponse.newBuilder()
             .addClusters(
-                com.google.bigtable.admin.v2.Cluster.newBuilder()
-                    .setName(CLUSTER_NAME + "1"))
+                com.google.bigtable.admin.v2.Cluster.newBuilder().setName(CLUSTER_NAME + "1"))
             .addClusters(
-                com.google.bigtable.admin.v2.Cluster.newBuilder()
-                    .setName(CLUSTER_NAME + "2"))
+                com.google.bigtable.admin.v2.Cluster.newBuilder().setName(CLUSTER_NAME + "2"))
             .build();
 
     Mockito.when(mockListClustersCallable.futureCall(expectedRequest))
@@ -505,8 +493,7 @@ public class BigtableInstanceAdminClientTest {
 
     com.google.bigtable.admin.v2.ListClustersResponse expectedResponse =
         com.google.bigtable.admin.v2.ListClustersResponse.newBuilder()
-            .addClusters(
-                com.google.bigtable.admin.v2.Cluster.newBuilder().setName(CLUSTER_NAME))
+            .addClusters(com.google.bigtable.admin.v2.Cluster.newBuilder().setName(CLUSTER_NAME))
             .addFailedLocations(NameUtil.formatLocationName(PROJECT_ID, "us-east1-c"))
             .build();
 
@@ -550,8 +537,7 @@ public class BigtableInstanceAdminClientTest {
     mockOperationResult(mockUpdateClusterCallable, expectedRequest, expectedResponse);
 
     // Execute
-    Cluster actualResult =
-        adminClient.resizeCluster(INSTANCE_ID, CLUSTER_ID, 30);
+    Cluster actualResult = adminClient.resizeCluster(INSTANCE_ID, CLUSTER_ID, 30);
 
     // Verify
     assertThat(actualResult).isEqualTo(Cluster.fromProto(expectedResponse));
@@ -614,8 +600,7 @@ public class BigtableInstanceAdminClientTest {
     // Execute
     AppProfile actualResult =
         adminClient.createAppProfile(
-            CreateAppProfileRequest.of(
-                    INSTANCE_ID, APP_PROFILE_ID)
+            CreateAppProfileRequest.of(INSTANCE_ID, APP_PROFILE_ID)
                 .setDescription("my description")
                 .setRoutingPolicy(MultiClusterRoutingPolicy.of()));
 
@@ -644,8 +629,7 @@ public class BigtableInstanceAdminClientTest {
         .thenReturn(ApiFutures.immediateFuture(expectedResponse));
 
     // Execute
-    AppProfile actualResult =
-        adminClient.getAppProfile(INSTANCE_ID, APP_PROFILE_ID);
+    AppProfile actualResult = adminClient.getAppProfile(INSTANCE_ID, APP_PROFILE_ID);
 
     // Verify
     assertThat(actualResult).isEqualTo(AppProfile.fromProto(expectedResponse));
@@ -729,8 +713,7 @@ public class BigtableInstanceAdminClientTest {
     // Execute
     AppProfile actualResult =
         adminClient.updateAppProfile(
-            UpdateAppProfileRequest.of(
-                    INSTANCE_ID, APP_PROFILE_ID)
+            UpdateAppProfileRequest.of(INSTANCE_ID, APP_PROFILE_ID)
                 .setDescription("updated description"));
 
     // Verify

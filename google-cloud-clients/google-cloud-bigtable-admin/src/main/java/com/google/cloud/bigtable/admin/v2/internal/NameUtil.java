@@ -27,10 +27,10 @@ import java.util.regex.Pattern;
  */
 @InternalApi
 public class NameUtil {
-  private static final Pattern TABLE_PATTERN = Pattern.compile(
-      "projects/([^/]+)/instances/([^/]+)/tables/([^/]+)");
-  private static final Pattern LOCATION_PATTERN = Pattern.compile(
-      "projects/([^/]+)/locations/([^/]+)");
+  private static final Pattern TABLE_PATTERN =
+      Pattern.compile("projects/([^/]+)/instances/([^/]+)/tables/([^/]+)");
+  private static final Pattern LOCATION_PATTERN =
+      Pattern.compile("projects/([^/]+)/locations/([^/]+)");
 
   public static String formatProjectName(String projectId) {
     return "projects/" + projectId;
@@ -39,9 +39,11 @@ public class NameUtil {
   public static String formatInstanceName(String projectId, String instanceId) {
     return formatProjectName(projectId) + "/instances/" + instanceId;
   }
+
   public static String formatTableName(String projectId, String instanceId, String tableId) {
     return formatInstanceName(projectId, instanceId) + "/tables/" + tableId;
   }
+
   public static String formatLocationName(String projectId, String zone) {
     return formatProjectName(projectId) + "/locations/" + zone;
   }
@@ -66,8 +68,8 @@ public class NameUtil {
     return formatInstanceName(projectId, instanceId) + "/clusters/" + clusterId;
   }
 
-  public static String formatAppProfileName(String projectId, String instanceId,
-      String appProfileId) {
+  public static String formatAppProfileName(
+      String projectId, String instanceId, String appProfileId) {
     return formatInstanceName(projectId, instanceId) + "/appProfiles/" + appProfileId;
   }
 }

@@ -155,8 +155,7 @@ public final class CreateInstanceRequest {
     builder.setParent(NameUtil.formatProjectName(projectId)).clearClusters();
 
     for (CreateClusterRequest clusterRequest : clusterRequests) {
-      builder.putClusters(
-          clusterRequest.getClusterId(), clusterRequest.toEmbeddedProto(projectId));
+      builder.putClusters(clusterRequest.getClusterId(), clusterRequest.toEmbeddedProto(projectId));
     }
 
     return builder.build();

@@ -26,8 +26,7 @@ import javax.annotation.Nullable;
 /**
  * Settings class to configure an instance of {@link BigtableInstanceAdminClient}.
  *
- * <p>It must be configured with a project id and can be used to change default RPC
- * settings.
+ * <p>It must be configured with a project id and can be used to change default RPC settings.
  *
  * <p>Example usage:
  *
@@ -128,6 +127,7 @@ public final class BigtableInstanceAdminSettings {
 
     /**
      * Gets the name of the project whose instances the client will manage.
+     *
      * @deprecated Please use {@link #getProjectId()}.
      */
     @Deprecated

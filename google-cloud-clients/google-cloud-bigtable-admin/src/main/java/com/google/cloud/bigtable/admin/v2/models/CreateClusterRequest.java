@@ -111,9 +111,7 @@ public final class CreateClusterRequest {
   @InternalApi
   public com.google.bigtable.admin.v2.CreateClusterRequest toProto(String projectId) {
     proto.setParent(NameUtil.formatInstanceName(projectId, instanceId));
-    proto
-        .getClusterBuilder()
-        .setLocation(NameUtil.formatLocationName(projectId, zone));
+    proto.getClusterBuilder().setLocation(NameUtil.formatLocationName(projectId, zone));
 
     return proto.build();
   }
@@ -139,9 +137,7 @@ public final class CreateClusterRequest {
    */
   @InternalApi
   com.google.bigtable.admin.v2.Cluster toEmbeddedProto(String projectId) {
-    proto
-        .getClusterBuilder()
-        .setLocation(NameUtil.formatLocationName(projectId, zone));
+    proto.getClusterBuilder().setLocation(NameUtil.formatLocationName(projectId, zone));
 
     return proto.getClusterBuilder().build();
   }

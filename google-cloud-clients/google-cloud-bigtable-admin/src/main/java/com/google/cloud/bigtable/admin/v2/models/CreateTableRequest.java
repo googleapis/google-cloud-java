@@ -111,7 +111,8 @@ public final class CreateTableRequest {
   }
 
   @InternalApi
-  public com.google.bigtable.admin.v2.CreateTableRequest toProto(@Nonnull String projectId, @Nonnull String instanceId) {
+  public com.google.bigtable.admin.v2.CreateTableRequest toProto(
+      @Nonnull String projectId, @Nonnull String instanceId) {
     Preconditions.checkNotNull(projectId);
     Preconditions.checkNotNull(instanceId);
 

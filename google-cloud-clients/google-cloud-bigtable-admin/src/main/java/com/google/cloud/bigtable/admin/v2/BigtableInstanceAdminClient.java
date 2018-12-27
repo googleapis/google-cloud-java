@@ -104,13 +104,8 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   private final BigtableInstanceAdminStub stub;
 
   /** Constructs an instance of BigtableInstanceAdminClient with the given project id. */
-  public static BigtableInstanceAdminClient create(@Nonnull String projectId)
-      throws IOException {
-    return create(
-        BigtableInstanceAdminSettings.newBuilder()
-            .setProjectId(projectId)
-            .build()
-    );
+  public static BigtableInstanceAdminClient create(@Nonnull String projectId) throws IOException {
+    return create(BigtableInstanceAdminSettings.newBuilder().setProjectId(projectId).build());
   }
 
   /**
@@ -120,8 +115,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    */
   @Deprecated
   public static BigtableInstanceAdminClient create(
-      @Nonnull com.google.bigtable.admin.v2.ProjectName projectName)
-      throws IOException {
+      @Nonnull com.google.bigtable.admin.v2.ProjectName projectName) throws IOException {
     return create(projectName.getProject());
   }
 
@@ -302,9 +296,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     String name = NameUtil.formatInstanceName(projectId, instanceId);
 
     com.google.bigtable.admin.v2.GetInstanceRequest request =
-        com.google.bigtable.admin.v2.GetInstanceRequest.newBuilder()
-            .setName(name)
-            .build();
+        com.google.bigtable.admin.v2.GetInstanceRequest.newBuilder().setName(name).build();
 
     return ApiFutures.transform(
         stub.getInstanceCallable().futureCall(request),
@@ -598,9 +590,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
     String name = NameUtil.formatClusterName(projectId, instanceId, clusterId);
 
     com.google.bigtable.admin.v2.GetClusterRequest request =
-        com.google.bigtable.admin.v2.GetClusterRequest.newBuilder()
-            .setName(name)
-            .build();
+        com.google.bigtable.admin.v2.GetClusterRequest.newBuilder().setName(name).build();
 
     return ApiFutures.transform(
         stub.getClusterCallable().futureCall(request),
@@ -667,9 +657,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   public ApiFuture<List<Cluster>> listClustersAsync(String instanceId) {
     String name = NameUtil.formatInstanceName(projectId, instanceId);
     com.google.bigtable.admin.v2.ListClustersRequest request =
-        com.google.bigtable.admin.v2.ListClustersRequest.newBuilder()
-            .setParent(name)
-            .build();
+        com.google.bigtable.admin.v2.ListClustersRequest.newBuilder().setParent(name).build();
 
     return ApiFutures.transform(
         stub.listClustersCallable().futureCall(request),
@@ -1075,8 +1063,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   @SuppressWarnings("WeakerAccess")
   public ApiFuture<Void> deleteAppProfileAsync(String instanceId, String appProfileId) {
     String name = NameUtil.formatAppProfileName(projectId, instanceId, appProfileId);
-    DeleteAppProfileRequest request =
-        DeleteAppProfileRequest.newBuilder().setName(name).build();
+    DeleteAppProfileRequest request = DeleteAppProfileRequest.newBuilder().setName(name).build();
 
     return ApiFutures.transform(
         stub.deleteAppProfileCallable().futureCall(request),
@@ -1141,8 +1128,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   public ApiFuture<Policy> getIamPolicyAsync(String instanceId) {
     String name = NameUtil.formatInstanceName(projectId, instanceId);
 
-    GetIamPolicyRequest request =
-        GetIamPolicyRequest.newBuilder().setResource(name).build();
+    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(name).build();
 
     final IamPolicyMarshaller marshaller = new IamPolicyMarshaller();
 
@@ -1253,10 +1239,10 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   @SuppressWarnings({"WeakerAccess", "deprecation"})
   public List<String> testIamPermission(String instanceId, String... permissions) {
     // TODO(igorbernstein2): Stop using typesafe names
-    com.google.bigtable.admin.v2.InstanceName instanceName = com.google.bigtable.admin.v2.InstanceName
-        .of(projectId, instanceId);
+    com.google.bigtable.admin.v2.InstanceName instanceName =
+        com.google.bigtable.admin.v2.InstanceName.of(projectId, instanceId);
 
-    return testIamPermission(instanceName,permissions);
+    return testIamPermission(instanceName, permissions);
   }
 
   /**
@@ -1290,8 +1276,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
   public ApiFuture<List<String>> testIamPermissionAsync(String instanceId, String... permissions) {
     // TODO(igorbernstein2): Stop using typesafe names
     return testIamPermissionAsync(
-        com.google.bigtable.admin.v2.InstanceName.of(projectId, instanceId),
-        permissions);
+        com.google.bigtable.admin.v2.InstanceName.of(projectId, instanceId), permissions);
   }
 
   /**
@@ -1349,8 +1334,7 @@ public final class BigtableInstanceAdminClient implements AutoCloseable {
    * }</pre>
    *
    * @see <a href="https://cloud.google.com/bigtable/docs/access-control#permissions">Cloud Bigtable
-   * permissions</a>
-   *
+   *     permissions</a>
    * @deprecated Please use {@link #testIamPermissionAsync(String, String...)}
    */
   @SuppressWarnings("WeakerAccess")

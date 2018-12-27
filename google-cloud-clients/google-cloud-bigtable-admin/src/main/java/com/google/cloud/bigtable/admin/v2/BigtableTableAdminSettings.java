@@ -51,8 +51,8 @@ public final class BigtableTableAdminSettings {
   private BigtableTableAdminSettings(Builder builder) throws IOException {
     this.projectId = Preconditions.checkNotNull(builder.projectId, "Project id must be set");
     this.instanceId = Preconditions.checkNotNull(builder.instanceId, "Instance id must be set");
-    this.stubSettings = Verify.verifyNotNull(
-        builder.stubSettings, "stubSettings should never be null").build();
+    this.stubSettings =
+        Verify.verifyNotNull(builder.stubSettings, "stubSettings should never be null").build();
   }
 
   /** Gets the project id of instance whose tables the client will manage. */
@@ -114,7 +114,7 @@ public final class BigtableTableAdminSettings {
       return this;
     }
 
-    /** Gets the  project id of the instance whose tables the client will manage. */
+    /** Gets the project id of the instance whose tables the client will manage. */
     @Nullable
     public String getProjectId() {
       return projectId;
@@ -139,7 +139,8 @@ public final class BigtableTableAdminSettings {
      * @deprecated Please use {@link #setProjectId(String)} and {@link #setInstanceId(String)}.
      */
     @Deprecated
-    public Builder setInstanceName(@Nonnull com.google.bigtable.admin.v2.InstanceName instanceName) {
+    public Builder setInstanceName(
+        @Nonnull com.google.bigtable.admin.v2.InstanceName instanceName) {
       Preconditions.checkNotNull(instanceName);
       this.projectId = instanceName.getProject();
       this.instanceId = instanceName.getInstance();

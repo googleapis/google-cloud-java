@@ -58,11 +58,7 @@ public class CreateAppProfileRequestTest {
         CreateAppProfileRequest.of("my-instance", "my-profile")
             .setRoutingPolicy(MultiClusterRoutingPolicy.of());
 
-    assertThat(
-            wrapper
-                .toProto("my-project")
-                .getAppProfile()
-                .getMultiClusterRoutingUseAny())
+    assertThat(wrapper.toProto("my-project").getAppProfile().getMultiClusterRoutingUseAny())
         .isEqualTo(MultiClusterRoutingUseAny.getDefaultInstance());
   }
 

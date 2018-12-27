@@ -31,8 +31,7 @@ public class CreateClusterRequestTest {
             .setType(Instance.Type.PRODUCTION)
             .addCluster("cluster1", "us-east1-c", 3, StorageType.SSD);
 
-    com.google.bigtable.admin.v2.CreateInstanceRequest actual =
-        input.toProto("my-project");
+    com.google.bigtable.admin.v2.CreateInstanceRequest actual = input.toProto("my-project");
 
     com.google.bigtable.admin.v2.CreateInstanceRequest expected =
         com.google.bigtable.admin.v2.CreateInstanceRequest.newBuilder()
@@ -62,8 +61,7 @@ public class CreateClusterRequestTest {
             .addCluster("cluster1", "us-east1-c", 3, StorageType.SSD)
             .addCluster("cluster2", "us-east1-a", 3, StorageType.SSD);
 
-    com.google.bigtable.admin.v2.CreateInstanceRequest actual =
-        input.toProto("my-project");
+    com.google.bigtable.admin.v2.CreateInstanceRequest actual = input.toProto("my-project");
 
     com.google.bigtable.admin.v2.CreateInstanceRequest expected =
         com.google.bigtable.admin.v2.CreateInstanceRequest.newBuilder()
@@ -99,8 +97,7 @@ public class CreateClusterRequestTest {
             .setType(Instance.Type.DEVELOPMENT)
             .addCluster("cluster1", "us-east1-c", 1, StorageType.SSD);
 
-    com.google.bigtable.admin.v2.CreateInstanceRequest actual =
-        input.toProto("my-project");
+    com.google.bigtable.admin.v2.CreateInstanceRequest actual = input.toProto("my-project");
 
     com.google.bigtable.admin.v2.CreateInstanceRequest expected =
         com.google.bigtable.admin.v2.CreateInstanceRequest.newBuilder()
@@ -132,8 +129,7 @@ public class CreateClusterRequestTest {
             .setType(Instance.Type.DEVELOPMENT)
             .addCluster("cluster1", "us-east1-c", 1, StorageType.SSD);
 
-    com.google.bigtable.admin.v2.CreateInstanceRequest actual =
-        input.toProto("my-project");
+    com.google.bigtable.admin.v2.CreateInstanceRequest actual = input.toProto("my-project");
 
     com.google.bigtable.admin.v2.CreateInstanceRequest expected =
         com.google.bigtable.admin.v2.CreateInstanceRequest.newBuilder()

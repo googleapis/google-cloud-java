@@ -105,7 +105,8 @@ public final class ModifyColumnFamiliesRequest {
   }
 
   @InternalApi
-  public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest toProto(@Nonnull String projectId, @Nonnull String instanceId) {
+  public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest toProto(
+      @Nonnull String projectId, @Nonnull String instanceId) {
     Preconditions.checkNotNull(projectId, "Project id can't be null");
     Preconditions.checkNotNull(instanceId, "Instance id can't be null");
 

@@ -63,7 +63,8 @@ public class BigtableTableAdminClientTest {
 
   private static final String PROJECT_NAME = NameUtil.formatProjectName(PROJECT_ID);
   private static final String INSTANCE_NAME = NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID);
-  private static final String TABLE_NAME = NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID);
+  private static final String TABLE_NAME =
+      NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID);
 
   private BigtableTableAdminClient adminClient;
   @Mock private EnhancedBigtableTableAdminStub mockStub;
@@ -154,8 +155,7 @@ public class BigtableTableAdminClientTest {
 
     // Execute
     Table actualResult =
-        adminClient.modifyFamilies(
-            ModifyColumnFamiliesRequest.of(TABLE_ID).addFamily("cf"));
+        adminClient.modifyFamilies(ModifyColumnFamiliesRequest.of(TABLE_ID).addFamily("cf"));
 
     // Verify
     assertThat(actualResult).isEqualTo(Table.fromProto(fakeResponse));
@@ -220,9 +220,7 @@ public class BigtableTableAdminClientTest {
     List<com.google.bigtable.admin.v2.Table> expectedProtos = Lists.newArrayList();
     for (int i = 0; i < 3; i++) {
       expectedProtos.add(
-          com.google.bigtable.admin.v2.Table.newBuilder()
-              .setName(TABLE_NAME + i)
-              .build());
+          com.google.bigtable.admin.v2.Table.newBuilder().setName(TABLE_NAME + i).build());
     }
     // 2 on the first page
     ListTablesPage page0 = Mockito.mock(ListTablesPage.class);

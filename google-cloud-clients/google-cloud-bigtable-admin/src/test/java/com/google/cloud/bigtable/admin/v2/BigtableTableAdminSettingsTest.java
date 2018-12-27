@@ -25,9 +25,10 @@ public class BigtableTableAdminSettingsTest {
 
   @Test
   public void testInstanceName() throws IOException {
-    BigtableTableAdminSettings.Builder builder = BigtableTableAdminSettings.newBuilder()
-        .setProjectId("my-project")
-        .setInstanceId("my-instance");
+    BigtableTableAdminSettings.Builder builder =
+        BigtableTableAdminSettings.newBuilder()
+            .setProjectId("my-project")
+            .setInstanceId("my-instance");
 
     assertThat(builder.getProjectId()).isEqualTo("my-project");
     assertThat(builder.getInstanceId()).isEqualTo("my-instance");
@@ -35,7 +36,6 @@ public class BigtableTableAdminSettingsTest {
     assertThat(builder.build().getInstanceId()).isEqualTo("my-instance");
     assertThat(builder.build().toBuilder().getProjectId()).isEqualTo("my-project");
     assertThat(builder.build().toBuilder().getInstanceId()).isEqualTo("my-instance");
-
   }
 
   @Test
@@ -53,9 +53,10 @@ public class BigtableTableAdminSettingsTest {
 
   @Test
   public void testStubSettings() throws IOException {
-    BigtableTableAdminSettings.Builder builder = BigtableTableAdminSettings.newBuilder()
-        .setProjectId("my-project")
-        .setInstanceId("my-instance");
+    BigtableTableAdminSettings.Builder builder =
+        BigtableTableAdminSettings.newBuilder()
+            .setProjectId("my-project")
+            .setInstanceId("my-instance");
 
     builder.stubSettings().createTableSettings().setRetryableCodes(Code.INVALID_ARGUMENT);
 
