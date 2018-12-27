@@ -103,10 +103,7 @@ import com.google.spanner.v1.Transaction;
 import io.grpc.Context;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 import javax.annotation.Nullable;
 import org.threeten.bp.Duration;
 
@@ -139,6 +136,7 @@ public class GapicSpannerRpc implements SpannerRpc {
   private final Duration checkInterval =
       systemProperty(PROPERTY_PERIOD_SECONDS, DEFAULT_PERIOD_SECONDS);
 
+  private final ScheduledExecutorService spannerWatchdog;
   public static GapicSpannerRpc create(SpannerOptions options) {
     return new GapicSpannerRpc(options);
   }
@@ -191,14 +189,13 @@ public class GapicSpannerRpc implements SpannerRpc {
     CredentialsProvider credentialsProvider =
         GrpcTransportOptions.setUpCredentialsProvider(options);
 
+    spannerWatchdog = Executors.newSingleThreadScheduledExecutor(new ThreadFactoryBuilder()
+            .setDaemon(true)
+            .setNameFormat("RK-Cloud-Spanner-WatchdogProvider-%d")
+            .build());
     WatchdogProvider watchdogProvider =
         InstantiatingWatchdogProvider.create()
-            .withExecutor(
-                Executors.newSingleThreadScheduledExecutor(
-                    new ThreadFactoryBuilder()
-                        .setDaemon(true)
-                        .setNameFormat("Cloud-Spanner-WatchdogProvider-%d")
-                        .build()))
+            .withExecutor(spannerWatchdog)
             .withCheckInterval(checkInterval)
             .withClock(NanoClock.getDefaultClock());
 
@@ -572,6 +569,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     this.spannerStub.close();
     this.instanceAdminStub.close();
     this.databaseAdminStub.close();
+    this.spannerWatchdog.shutdown();
   }
 
   /**
