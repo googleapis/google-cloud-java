@@ -87,8 +87,6 @@ import io.opencensus.trace.AttributeValue;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.Tracer;
 import io.opencensus.trace.Tracing;
-import org.threeten.bp.Duration;
-import org.threeten.bp.Instant;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.AbstractList;
@@ -115,6 +113,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
+import org.threeten.bp.Duration;
+import org.threeten.bp.Instant;
 
 /** Default implementation of the Cloud Spanner interface. */
 class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
