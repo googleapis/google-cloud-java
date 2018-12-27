@@ -1,3 +1,19 @@
+/*
+ * Copyright 2019 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.google.grpc.gcp;
 
 import com.google.grpc.gcp.proto.AffinityConfig;
@@ -45,17 +61,17 @@ public class ParseApiConfig {
     // Get the ChannelPoolConfig.
     if (jsonFile.get("channelPool") != null) {
       ChannelPoolConfig.Builder channelPoolConfig = ChannelPoolConfig.newBuilder();
-      JSONObject channelJson = (JSONObject) jsonFile.get("channelPool");     
+      JSONObject channelJson = (JSONObject) jsonFile.get("channelPool");
       if (channelJson.get("maxSize") != null) {
         channelPoolConfig.setMaxSize((int) (long) channelJson.get("maxSize"));
-      }        
-      if (channelJson.get("maxConcurrentStreamsLowWatermark") != null){
-        channelPoolConfig.setMaxConcurrentStreamsLowWatermark(
-          (int) (long) channelJson.get("maxConcurrentStreamsLowWatermark"));
       }
-      if (channelJson.get("idleTimeout") != null){
+      if (channelJson.get("maxConcurrentStreamsLowWatermark") != null) {
+        channelPoolConfig.setMaxConcurrentStreamsLowWatermark(
+            (int) (long) channelJson.get("maxConcurrentStreamsLowWatermark"));
+      }
+      if (channelJson.get("idleTimeout") != null) {
         channelPoolConfig.setIdleTimeout((long) channelJson.get("idleTimeout"));
-      }      
+      }
       apiConfig.setChannelPool(channelPoolConfig.build());
     }
 
@@ -70,13 +86,13 @@ public class ParseApiConfig {
       JSONObject methodJson = (JSONObject) iterMethods.next();
 
       // For each method, there can be multiple names.
-      if (methodJson.get("name") != null){
+      if (methodJson.get("name") != null) {
         JSONArray namesJson = (JSONArray) methodJson.get("name");
         Iterator iterNames = namesJson.iterator();
         while (iterNames.hasNext()) {
           methodConfig.addName((String) iterNames.next());
         }
-      }     
+      }
 
       // Get the affinity config.
       if (methodJson.get("affinity") != null) {
@@ -84,7 +100,7 @@ public class ParseApiConfig {
         JSONObject affinityJson = (JSONObject) methodJson.get("affinity");
         if (affinityJson.get("affinityKey") != null) {
           affinityConfig.setAffinityKey((String) affinityJson.get("affinityKey"));
-        }        
+        }
         if (affinityJson.get("command") != null) {
           switch ((String) affinityJson.get("command")) {
             case "UNBIND":
@@ -97,12 +113,11 @@ public class ParseApiConfig {
               affinityConfig.setCommand(AffinityConfig.Command.BIND);
               break;
           }
-        }        
+        }
         methodConfig.setAffinity(affinityConfig.build());
       }
       apiConfig.addMethod(methodConfig.build());
     }
     return apiConfig.build();
   }
-
 }

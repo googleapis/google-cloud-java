@@ -1,7 +1,7 @@
 {
   "channelPool": {
-    "maxSize": 1011,
-    "maxConcurrentStreamsLowWatermark": 100,
+    "maxSize": 5,
+    "maxConcurrentStreamsLowWatermark": 5,
     "idleTimeout": 1000
   }
 }
